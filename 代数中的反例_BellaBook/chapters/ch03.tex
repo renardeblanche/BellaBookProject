@@ -1,0 +1,500 @@
+\chapter{线性空间}
+\orig{24--41}
+
+\section{线性空间}
+
+\subsection{定义及公理的独立性}
+
+\textbf{1. 定义。} 设 $V$ 是一个非空集合，$F$ 是一个数域，$V$ 上有一个加法，$F$ 与 $V$ 之间有一个数乘。若满足以下条件，就称 $V$ 为 $F$ 上的一个\textbf{线性空间}。
+
+加法满足
+\begin{enumerate}[label=\arabic*),leftmargin=2.6em,itemsep=0.35em]
+\item $\alpha+\beta=\beta+\alpha$；
+\item $(\alpha+\beta)+\gamma=\alpha+(\beta+\gamma)$；
+\item 在 $V$ 中有一个元素 $0$，对任意 $\alpha\in V$，有 $\alpha+0=\alpha$；
+\item 对任意 $\alpha\in V$，存在 $\beta\in V$，使 $\alpha+\beta=0$。
+\end{enumerate}
+数乘满足
+\begin{enumerate}[label=\arabic*),leftmargin=2.6em,itemsep=0.35em,start=5]
+\item $1\alpha=\alpha$；
+\item $k(l\alpha)=(kl)\alpha$。
+\end{enumerate}
+数乘与加法满足
+\begin{enumerate}[label=\arabic*),leftmargin=2.6em,itemsep=0.35em,start=7]
+\item $(k+l)\alpha=k\alpha+l\alpha$；
+\item $k(\alpha+\beta)=k\alpha+k\beta$。
+\end{enumerate}
+其中 $k,l\in F$，$\alpha,\beta,\gamma\in V$。
+
+根据这个定义，条件 1) 可由其他七条推出。只要分别计算
+\[
+(1+1)(\alpha+\beta)
+ =(1+1)\alpha+(1+1)\beta
+ =\alpha+(\alpha+\beta)+\beta
+\]
+以及
+\[
+(1+1)(\alpha+\beta)
+ =1(\alpha+\beta)+1(\alpha+\beta)
+ =\alpha+(\beta+\alpha)+\beta,
+\]
+即可得到
+\[
+\alpha+\beta=\beta+\alpha.
+\]
+
+但是其余七条 2)--8) 是相互独立的。为此，也可以采用下面与上述定义等价的公理组：加法满足
+\[
+\text{A) }\alpha+\beta=\beta+\alpha,
+\qquad
+\text{B) }(\alpha+\beta)+\gamma=\alpha+(\beta+\gamma),
+\]
+以及
+\[
+\text{C) 对任意 }\alpha,\beta\in V,
+\quad \alpha+x=\beta\text{ 在 }V\text{ 中可解};
+\]
+数乘满足
+\[
+\text{D) }1\alpha=\alpha,
+\qquad
+\text{E) }k(l\alpha)=(kl)\alpha,
+\]
+且
+\[
+\text{F) }(k+l)\alpha=k\alpha+l\alpha,
+\qquad
+\text{G) }k(\alpha+\beta)=k\alpha+k\beta.
+\]
+
+下面逐条给出 A)--G 独立的例子。
+
+\textbf{例 1（A 独立）。} $F$ 为数域，$V$ 为所有正有理数。规定
+\[
+\alpha+\beta=\beta,
+\qquad
+k\alpha=\alpha.
+\]
+容易验证 B)--G 均成立，但 A 不成立，例如
+\[
+2+3=3,
+\qquad
+3+2=2.
+\]
+
+\textbf{例 2（B 独立）。} 令 $V=\{0,\alpha,\beta\}$，加法表为
+\[
+\begin{array}{c|ccc}
++&0&\alpha&\beta\\\hline
+0&0&\beta&\alpha\\
+\alpha&\beta&\alpha&0\\
+\beta&\alpha&0&\beta
+\end{array}
+\]
+并对任意标量 $k\in F$、任意 $v\in V$ 规定 $kv=v$。这个运算交换、幂等，而且每一行都是 $V$ 的一个排列，所以 A 与 C 成立；D--G 也直接成立。但
+\[
+(0+\alpha)+\alpha=\beta+\alpha=0,
+\qquad
+0+(\alpha+\alpha)=0+\alpha=\beta,
+\]
+故 B 不成立。\jiaokan{第 26 页所列四元素表中，$\alpha$ 行只出现 $\alpha$ 与 $0$，因此方程 $\alpha+x=\beta$ 无解，条件 C 也不成立，不能据此证明 B 的独立性。这里改用满足 A、C、D--G 而只破坏 B 的三元素反例。}
+
+\textbf{例 3（C 独立）。} $F$ 为数域，$V=\{0,\alpha,\beta\}$，加法表为
+\[
+\begin{array}{c|ccc}
++&0&\alpha&\beta\\\hline
+0&0&\alpha&\alpha\\
+\alpha&\alpha&\alpha&\alpha\\
+\beta&\alpha&\alpha&\beta
+\end{array}
+\]
+并规定 $k\alpha=\alpha$。则方程
+\[
+\alpha+x=\beta
+\]
+在 $V$ 中无解，而其余条件可验证成立。
+
+\textbf{例 4（D 独立）。} 取 $F=\mathbb R$，$V=\mathbb R$，使用普通加法，并规定
+\[
+k\alpha=0.
+\]
+则 $1\alpha=\alpha$ 一般不成立，而其余各条成立。
+
+\textbf{例 5（E 独立）。} 取
+\[
+F=\mathbb Q(\sqrt2)=\{a+b\sqrt2\mid a,b\in\mathbb Q\},
+\qquad
+V=\mathbb Q.
+\]
+使用普通加法，并规定
+\[
+(a+b\sqrt2)\alpha=(a+b)\alpha.
+\]
+由于
+\[
+(\sqrt2\sqrt2)\cdot1=2,
+\qquad
+\sqrt2(\sqrt2\cdot1)=1,
+\]
+故 E 不成立，而其余各条成立。
+
+\textbf{例 6（F 独立）。} 取 $F=V=\mathbb R$，使用普通加法，并规定
+\[
+k\alpha=\alpha.
+\]
+显然一般有
+\[
+(k+l)\alpha\ne k\alpha+l\alpha,
+\]
+而其余各条成立。
+
+\textbf{例 7（G 独立）。} 取 $F=\mathbb C$，$V=\mathbb C^2$，向量加法为通常加法。对每一条复直线 $L\subset V$，规定一个域自同构 $\sigma_L$：令
+\[
+L_0=\mathbb C(1,1),
+\qquad
+\sigma_{L_0}(z)=\bar z,
+\]
+而其余复直线上的 $\sigma_L$ 均取恒等自同构。对 $v\ne0$，若 $v\in L$，定义
+\[
+k\cdot v=\sigma_L(k)v,
+\qquad  k\cdot0=0.
+\]
+在每一条直线上，D、E、F 均由 $\sigma_L$ 是域自同构而成立；A、B、C 来自 $V$ 的通常加法。但是取
+\[
+u=(1,0),\qquad v=(0,1),\qquad k=i,
+\]
+有
+\[
+i\cdot(u+v)=-i(1,1),
+\qquad
+ i\cdot u+i\cdot v=i(1,1),
+\]
+故 G 不成立。\jiaokan{第 27--28 页的例 7 规定“向量加法”为实数乘法、数乘仍为通常乘法，并声称只有 G 失败；但 F 也失败。例如取 $k=l=1,\alpha=3$，则 $(k+l)\alpha=6$，而 $k\alpha+_V l\alpha=3\cdot3=9$。为保持“各公理相互独立”的论证目的，这里以一个确实只破坏 G 的例子替换。}
+
+\subsection{加群未必能作成域上的线性空间}
+
+是不是每一个加群都能作成某个域上的线性空间？答案是否定的。一个加群能否作成域上的线性空间，数乘起着重要作用；也可能无论怎样规定数乘都不能作成线性空间。
+
+例如令 $V$ 为整数加群，$\mathbb Z_p$ 为以素数 $p$ 为模的剩余类域。若 $V$ 能作成 $\mathbb Z_p$ 上的线性空间，则因 $\operatorname{char}\mathbb Z_p=p$，有
+\[
+\underbrace{1+1+\cdots+1}_{p\text{ 个}}=0.
+\]
+取 $2\in V$，由线性空间公理应有
+\[
+1\cdot2=2,
+\qquad
+0\cdot2=0.
+\]
+于是
+\[
+0=0\cdot2
+ =\Bigl(\underbrace{1+1+\cdots+1}_{p\text{ 个}}\Bigr)\cdot2
+ =\underbrace{2+2+\cdots+2}_{p\text{ 个}}
+ =2p,
+\]
+但在整数加群中 $2p\ne0$，矛盾。因此无论怎样规定数乘，整数加群都不能作成 $\mathbb Z_p$ 上的线性空间。
+
+\section{线性相关性}
+
+\textbf{1. 定义。} 设 $\alpha_1,\ldots,\alpha_r$ 是线性空间 $V$ 的 $r$ 个向量。若在 $F$ 中存在不全为零的数 $k_1,\ldots,k_r$，使
+\[
+k_1\alpha_1+k_2\alpha_2+\cdots+k_r\alpha_r=0,
+\]
+则称 $\alpha_1,\ldots,\alpha_r$ \textbf{线性相关}。
+
+\textbf{2.} $\beta$ 不能由 $\alpha_1,\ldots,\alpha_r$ 线性表示，并不保证 $\beta,\alpha_1,\ldots,\alpha_r$ 线性无关。
+
+例如
+\[
+\beta=(1,1,1),\qquad \alpha_1=(1,0,0),\qquad \alpha_2=(2,0,0).
+\]
+明显 $\beta$ 不能由 $\alpha_1,\alpha_2$ 线性表示，但 $\beta,\alpha_1,\alpha_2$ 仍线性相关。这个例子也说明：一组向量线性相关，并不意味着其中每一个向量都能由其余向量线性表示。
+
+\textbf{3.} 若 $\alpha_1,\ldots,\alpha_r$ 线性无关，则其中任意两个不同向量都线性无关；反之不真。取
+\[
+\alpha_1=(1,1,1),\quad \alpha_2=(0,1,0),\quad \alpha_3=(1,0,1).
+\]
+任意两个向量都线性无关，但
+\[
+\alpha_1=\alpha_2+\alpha_3,
+\]
+故三者线性相关。
+
+\textbf{4.} 设 $\alpha_1,\ldots,\alpha_m$ 线性无关，考察
+\[
+\alpha_1+\alpha_2,\ \alpha_2+\alpha_3,\ \ldots,\ \alpha_{m-1}+\alpha_m,\ \alpha_m+\alpha_1.
+\]
+当 $m$ 为奇数且 $\operatorname{char}F\ne2$ 时，这 $m$ 个向量线性无关。事实上若
+\[
+\sum_{j=1}^{m-1}k_j(\alpha_j+\alpha_{j+1})+k_m(\alpha_m+\alpha_1)=0,
+\]
+由 $\alpha_1,\ldots,\alpha_m$ 线性无关得到
+\[
+k_1+k_m=0,
+\quad k_1+k_2=0,
+\quad \ldots,
+\quad k_{m-1}+k_m=0.
+\]
+其系数行列式为
+\[
+D=1-(-1)^m=2
+\]
+（$m$ 为奇数），故在 $\operatorname{char}F\ne2$ 时 $D\ne0$，只有零解。
+
+当 $m$ 为偶数时，上述向量一定线性相关，因为
+\[
+(\alpha_1+\alpha_2)-(\alpha_2+\alpha_3)+\cdots-(\alpha_m+\alpha_1)=0.
+\]
+\jiaokan{由 $D=2\ne0$ 推出线性无关需要排除特征 $2$。若把 $F$ 理解为一般域，则特征 $2$ 时结论不成立；旧式“数域”通常默认特征 $0$，在该语境下结论成立。}
+
+\section{子空间}
+
+\textbf{1. 定义。}
+
+1) 数域 $F$ 上线性空间 $V$ 的一个非空子集 $S$，若对 $V$ 的加法与数乘也构成线性空间，则称 $S$ 为 $V$ 的一个\textbf{子空间}。
+
+2) 若 $S_1,S_2$ 是 $V$ 的子空间，定义它们的和为
+\[
+S_1+S_2=\{\alpha_1+\alpha_2\mid \alpha_1\in S_1,\ \alpha_2\in S_2\}.
+\]
+
+3) 若 $S_1+S_2$ 中每个向量的表示
+\[
+\alpha=\alpha_1+\alpha_2,
+\qquad \alpha_i\in S_i\ (i=1,2)
+\]
+都是唯一的，则称 $S_1+S_2$ 为\textbf{直和}。
+
+\textbf{2.} 子空间的直和当然是子空间的和，但子空间的和未必是直和。
+
+例如取 $F=\mathbb R$，
+\[
+V=\{(a_1,a_2,a_3)\mid a_i\in\mathbb R\},
+\]
+\[
+S_1=\{(a_1,a_2,0)\mid a_i\in\mathbb R\},
+\qquad
+S_2=\{(0,b_2,b_3)\mid b_i\in\mathbb R\}.
+\]
+显然 $V=S_1+S_2$。对 $(x,y,z)\in V$，有
+\[
+(x,y,z)=(x,y,0)+(0,0,z)
+       =(x,0,0)+(0,y,z).
+\]
+只要 $y\ne0$，这就是两种不同表示，所以 $S_1+S_2$ 不是直和。
+
+\textbf{3.} 设 $S_1,\ldots,S_n\ (n\ge4)$ 是 $V$ 的子空间，并满足
+\[
+S_i\cap(S_j+S_k)=0\qquad(i\ne j,k).
+\]
+也不能推出 $S_1+\cdots+S_n$ 一定是直和。
+
+例如在 $F=\mathbb R$、$V=\mathbb R^3$ 中令
+\[
+S_1=L[(1,0,0)],\quad
+S_2=L[(0,1,0)],\quad
+S_3=L[(0,0,1)],\quad
+S_4=L[(-1,-1,-1)].
+\]
+容易验证 $S_i\cap(S_j+S_k)=0$（$i\ne j,k$），但
+\[
+(1,0,0)+(0,1,0)+(0,0,1)+(-1,-1,-1)=0,
+\]
+故 $S_1+S_2+S_3+S_4$ 不是直和。
+
+\section{环上的线性空间}
+
+在数域 $F$ 上的线性空间中，维数是唯一的，而且子空间的维数不超过原线性空间的维数。因此有限维空间的子空间仍为有限维。把数域换成环以后，这些结论未必成立。下面给出若干例子。
+
+\subsection{定义}
+
+以下的环 $R$ 均指有单位元的环。
+
+1) \textbf{环上的线性空间。} 一个加群 $V$ 若配有 $R$ 到 $V$ 的数乘，并满足
+\[
+1\alpha=\alpha,
+\qquad
+k(l\alpha)=(kl)\alpha,
+\]
+\[
+(k+l)\alpha=k\alpha+l\alpha,
+\qquad
+k(\alpha+\beta)=k\alpha+k\beta,
+\]
+则称 $V$ 为环 $R$ 上的一个左线性空间。这里 $k,l\in R$，$\alpha,\beta\in V$。
+
+2) \textbf{循环空间。} 若 $V$ 恰好包含所有 $k\alpha\ (k\in R)$，记
+\[
+R\alpha=\{k\alpha\mid k\in R\},
+\]
+则称其为由 $\alpha$ 生成的循环空间，$\alpha$ 称为一个生成元。
+
+3) \textbf{有限空间。} 若 $V$ 是有限多个循环子空间
+\[
+R\alpha_1,\ldots,R\alpha_n
+\]
+的和，则称 $V$ 为 $R$ 上的一个有限空间。
+
+4) \textbf{有基底空间。} 若 $V$ 是 $R\alpha_1,\ldots,R\alpha_n$ 的直和，则称 $\alpha_1,\ldots,\alpha_n$ 为 $V$ 的一个基底，$V$ 称为有基底空间。
+
+5) \textbf{自由空间。} 若上述直和还满足 $0$ 是每个 $\alpha_i$ 唯一的零化子，即
+\[
+k\alpha_i=0\Longrightarrow k=0,
+\]
+则称 $V$ 为自由空间，$\alpha_1,\ldots,\alpha_n$ 为自由基底，并把 $n$ 称为这个自由基底的长度。\jiaokan{本节沿用“有限空间”“有基底空间”“自由空间”等旧式术语；它们分别更接近现代模论中的“有限生成模”“若干循环子模的内直和”与“自由模”。现代教材通常把“基底”保留给自由模，这里的术语与今天的通行用法并不完全一致。}
+
+\textbf{2.} 整数加群不能作成 $\mathbb Z_p$ 上的线性空间，见本章第 1 节的例子。
+
+\textbf{3.} 环上线性空间中，子空间和中的元素表示法未必唯一。
+
+例如 $R=V=\mathbb Z$，把 $V$ 看作 $R$ 上的线性空间。令
+\[
+S_1=(4),\qquad S_2=(6).
+\]
+则 $10\in S_1+S_2$，且
+\[
+10=4+6=16+(-6),
+\]
+有两种不同的表示。
+
+\textbf{4.} 有限空间未必是有基底空间。
+
+例如 $\mathbb Z[x]$ 是整数环 $\mathbb Z$ 上的多项式环，理想
+\[
+(2,x)
+\]
+是 $\mathbb Z[x]$ 上由 $2,x$ 生成的有限空间，但不是有基底空间。
+
+若 $(2,x)$ 有基底 $f_1(x),\ldots,f_n(x)$。若其中有两个非零元 $f_1,f_2$，则
+\[
+0\ne f_1f_2\in\mathbb Z[x]f_1,
+\qquad
+0\ne -f_1f_2\in\mathbb Z[x]f_2,
+\]
+从而
+\[
+f_2f_1+(-f_1)f_2=0
+\]
+给出非平凡关系，和不可能是直和。于是基底中至多有一个非零元，这又意味着 $(2,x)$ 是主理想；但 $(2,x)$ 不是主理想，矛盾。
+
+\textbf{5.} 有基底空间未必是自由空间。
+
+取 $V=\mathbb Z_p$（$p$ 为素数），$R=\mathbb Z$，规定数乘为整数倍。则 $V$ 是 $R$ 上的有基底空间：
+\[
+V=R\cdot[1],
+\]
+而 $[1]$ 是一个基底。但 $[1]$ 的零化子理想为 $(p)$，并非只有 $0$；因此 $V$ 不是自由空间。
+
+\textbf{6.} 自由空间可以有长度不同的自由基底。
+
+设 $F$ 为域，$R$ 是所有 $F$ 上“每行、每列只有有限多个非零元”的无限矩阵所成的环，其单位元为无限单位矩阵 $E$。令 $V=R$，按左乘看作 $R$ 上的自由空间。把矩阵的奇数行、偶数行分别抽取并重新编号，定义 $K_1,K_2$；相应地，把奇数列、偶数列重新嵌回原列位置定义 $K_1',K_2'$。具体地，$K_1$ 的第 $r$ 行在第 $\lceil r/2\rceil$ 列为 $1$（$r$ 为奇数时），偶数行为 $0$；$K_2$ 则在偶数行做同样的抽取。相应的 $K_1',K_2'$ 满足
+\[
+(K_1,K_2)
+\binom{K_1'}{K_2'}=E,
+\]
+以及
+\[
+\binom{K_1'}{K_2'}(K_1,K_2)
+=\begin{pmatrix}E&O\\O&E\end{pmatrix}.
+\]
+因此 $E$ 是 $V$ 的一个自由基底，长度为 $1$；另一方面 $K_1',K_2'$ 也构成一个自由基底，长度为 $2$。这给出自由基底长度不唯一的例子。
+
+\textbf{7.} 自由空间与其子空间的自由基底可以有相同长度。
+
+取 $R=\mathbb Z$，$V$ 是 $R$ 上自由空间，$\alpha_1,\ldots,\alpha_n$ 为一个自由基底。令 $S$ 为 $2\alpha_1,\ldots,2\alpha_n$ 生成的子空间，则 $2\alpha_1,\ldots,2\alpha_n$ 仍是 $S$ 的自由基底，所以 $S$ 的长度仍为 $n$。
+
+\textbf{8.} 环 $R$ 上的有限空间可以有不是有限空间的子空间。
+
+设 $F$ 为域，
+\[
+R=F[x_1]\cup F[x_1,x_2]\cup F[x_1,x_2,x_3]\cup\cdots,
+\]
+即有限多个不定元 $x_1,x_2,\ldots$ 上的多项式环之并。令 $V=R$，则 $V$ 是 $R$ 上的有限空间，以 $1$ 为自由基底。令
+\[
+S=\{0\}\cup\{\text{所有不含常数项的多项式}\}.
+\]
+显然 $S$ 是 $V$ 的子空间，但不是 $R$ 上的有限空间。否则若 $S$ 由
+\[
+\alpha_i=f_i(x_{i1},\ldots,x_{i r_i})\qquad(i=1,\ldots,n)
+\]
+有限生成，取一个没有出现在任何这些多项式中的不定元 $x_k$。若
+\[
+x_k=g_1\alpha_1+\cdots+g_n\alpha_n,
+\qquad g_i\in R,
+\]
+令 $X$ 为所有出现在 $f_1,\ldots,f_n$ 中的不定元的有限集合，并取 $x_k\notin X$。考虑把 $X$ 中所有不定元都送到 $0$、而保持 $x_k$ 不变的代入同态。由于每个 $f_i$ 都无常数项且只含 $X$ 中的不定元，代入后 $f_i$ 全部变为 $0$；于是等式右端变为 $0$，左端仍为 $x_k$，矛盾。
+
+\textbf{9.} 自由空间的子空间可以不是有限空间。
+
+取一个有非有限生成左理想 $A$ 的环 $R$。令
+\[
+V=R\oplus R,
+\qquad
+S=\{(a,0)\mid a\in A\}.
+\]
+$V$ 是 $R$ 上的自由空间，$S$ 是其子空间。若 $S$ 有有限生成元
+\[
+\alpha_i=(a_i,0),\qquad i=1,\ldots,n,
+\]
+则任意 $(x,0)\in S$ 都可写成
+\[
+(x,0)=l_1\alpha_1+\cdots+l_n\alpha_n
+=(l_1a_1+\cdots+l_na_n,0),
+\]
+于是
+\[
+A=Ra_1+\cdots+Ra_n,
+\]
+与 $A$ 不是有限生成左理想矛盾。
+
+\textbf{10.} 自由空间的子空间未必是自由空间。
+
+取有零因子的环 $R=\mathbb Z_n$，其中 $n=2m$ 为偶数。令 $V=\mathbb Z_n$，则 $V$ 是 $R$ 上的自由空间。令
+\[
+S=\{[0],[2],\ldots,[n-2]\}.
+\]
+则 $S$ 是 $V$ 的子空间，由 $[2]$ 生成，但不是自由空间，因为
+\[
+[2][m]=[2m]=[n]=[0]
+\]
+而 $[m]\ne[0]$。例如在 $\mathbb Z_6$ 中，
+\[
+S=\{[0],[2],[4]\},
+\qquad [2][3]=[0].
+\]
+
+\textbf{11.} 把环 $R$ 上的左线性空间 $V$ 中的数乘形式地改写为
+\[
+\alpha k=k\alpha
+\]
+并不总能得到一个右线性空间；当 $R$ 非交换时尤其如此。
+
+例如取
+\[
+R=\left\{\begin{pmatrix}a&0\\b&c\end{pmatrix}\middle|a,b,c\in\mathbb Z_2\right\},
+\]
+这是一个有单位元的非交换环，共有 $8$ 个元素。令
+\[
+V=M_2(\mathbb Z_2),
+\]
+以矩阵加法为加法，以左乘为数乘，则 $V$ 是 $R$ 上的左线性空间。若硬性规定右作用 $\alpha k:=k\alpha$，则右模结合律要求
+\[
+\alpha(kl)=(\alpha k)l.
+\]
+取
+\[
+k=\begin{pmatrix}1&0\\0&0\end{pmatrix},
+\qquad
+l=\begin{pmatrix}1&0\\1&0\end{pmatrix},
+\qquad
+\alpha=\begin{pmatrix}1&0\\0&1\end{pmatrix},
+\]
+有
+\[
+\alpha(kl)=(kl)\alpha=\begin{pmatrix}1&0\\0&0\end{pmatrix},
+\]
+而
+\[
+(\alpha k)l=l(k\alpha)=\begin{pmatrix}1&0\\1&0\end{pmatrix}.
+\]
+二者不等，因此不能这样把该左线性空间变成右线性空间。

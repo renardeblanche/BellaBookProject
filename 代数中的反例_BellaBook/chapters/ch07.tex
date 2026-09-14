@@ -1,0 +1,754 @@
+\chapter{环与域}
+\orig{89--120}
+
+\section{环、域}
+
+先给出环的定义。一个集合 $R$ 叫做一个\textbf{环}，如果：
+\begin{enumerate}[label=\roman*),leftmargin=3em]
+\item $R$ 对加法作成交换群；
+\item $R$ 对乘法封闭；
+\item 乘法满足结合律
+\[
+a(bc)=(ab)c;
+\]
+\item 左、右分配律都成立：
+\[
+a(b+c)=ab+ac,\qquad (b+c)a=ba+ca.
+\]
+\end{enumerate}
+这里并不预先要求乘法交换，也不预先要求存在乘法单位元。
+
+\subsection*{1. 环}
+
+\textbf{1) 关于交换律。} 环的乘法未必交换。最典型的例子是实数域上的矩阵环
+\[
+M_n(\mathbb R),
+\]
+它对矩阵加法与矩阵乘法构成环，而当 $n\ge2$ 时一般有 $AB\ne BA$。
+
+另取一个四元有限环的例子。令
+\[
+R=\{0,a,b,c\},
+\]
+加法与乘法表为
+\[
+\begin{array}{c|cccc}
++&0&a&b&c\\\hline
+0&0&a&b&c\\
+a&a&0&c&b\\
+b&b&c&0&a\\
+c&c&b&a&0
+\end{array}
+\qquad
+\begin{array}{c|cccc}
+\cdot&0&a&b&c\\\hline
+0&0&0&0&0\\
+a&0&0&0&0\\
+b&0&a&b&c\\
+c&0&a&b&c
+\end{array}.
+\]
+容易逐项验证 $R$ 为环，而
+\[
+ab=0,\qquad ba=a,
+\]
+故 $ab\ne ba$，所以它是非交换环。
+
+\textbf{2) 关于单位元。} 环未必有乘法单位元；即使有单侧单位元，也未必有另一侧单位元。
+
+\textbf{例 1。} 偶数环 $2\mathbb Z$ 没有乘法单位元。
+
+\textbf{例 2。} 上述四元环中，$b,c$ 都是左单位元，因为从乘法表可见
+\[
+bx=x,\qquad cx=x\qquad(x\in R),
+\]
+但不存在右单位元。
+
+\textbf{例 3。} 令
+\[
+R=\{(a,b)\mid a,b\in\mathbb Z\},
+\]
+规定
+\[
+(a,b)+(c,d)=(a+c,b+d),
+\qquad
+(a,b)(c,d)=(ac,ad).
+\]
+则 $R$ 为环。对任意 $b\in\mathbb Z$，
+\[
+(1,b)(c,d)=(c,d),
+\]
+所以 $(1,b)$ 都是左单位元，因而有无穷多个左单位元；但 $R$ 没有右单位元。
+
+对于有单位元的环，加法交换律可以由其余适当条件推出；但反之并不成立。偶数环的加法交换，却没有乘法单位元。
+
+\textbf{3) 关于零因子。} 在环中，若
+\[
+a\ne0,\qquad b\ne0,\qquad ab=0,
+\]
+则称 $a$ 为一个\textbf{左零因子}，$b$ 为一个\textbf{右零因子}。
+
+模 $6$ 的剩余类环 $\mathbb Z/6\mathbb Z$ 有零因子，例如
+\[
+[2]\ne[0],\qquad[3]\ne[0],\qquad [2][3]=[0].
+\]
+矩阵环同样可以有零因子，例如对任意 $n\ge2$，可取两个非零对角矩阵使其乘积为零。
+
+在前述四元环中，$a^2=0$，所以 $a$ 同时是左、右零因子；又
+\[
+ab=0,\qquad ac=0,
+\]
+故 $b,c$ 是右零因子，但它们不是左零因子。
+
+单位元本身当然不是零因子；但是一个\emph{单侧}单位元未必不是零因子。例如令
+\[
+R=\left\{
+\begin{pmatrix}a&b\\0&0\end{pmatrix}
+\middle|a,b\in\mathbb Z
+\right\}
+\]
+取通常的矩阵加法和乘法。则
+\[
+\begin{pmatrix}1&c\\0&0\end{pmatrix}
+\]
+是左单位元，但
+\[
+\begin{pmatrix}0&d\\0&0\end{pmatrix}
+\begin{pmatrix}1&c\\0&0\end{pmatrix}=0,
+\]
+所以这个左单位元可以是右零因子。
+
+有零因子的环中消去律未必成立。以 $M_2(\mathbb Z)$ 为例，可取
+\[
+A=\begin{pmatrix}a&0\\0&0\end{pmatrix}\ne0,
+\quad
+B=\begin{pmatrix}b&0\\c&d\end{pmatrix},
+\quad
+C=\begin{pmatrix}b&0\\h&k\end{pmatrix},
+\]
+其中 $c\ne h$，则 $B\ne C$ 而 $AB=AC$。另一侧消去律同样可以失败。
+
+\textbf{4) 关于逆元。} 在有单位元的环中，若
+\[
+ba=1\quad(\text{或 }ab=1),
+\]
+则称 $b$ 为 $a$ 的一个左（右）逆元；若
+\[
+ba=ab=1,
+\]
+则称 $b$ 为 $a$ 的逆元。
+
+整数环中除了 $\pm1$ 以外，其余非零整数既没有左逆也没有右逆。
+
+“有一个右逆”并不推出“有左逆”。令 $R$ 为每行、每列只有有限多个非零项的无限整数矩阵所成的环。令 $A$ 为右移矩阵
+\[
+A=\begin{pmatrix}
+0&1&0&0&\cdots\\
+0&0&1&0&\cdots\\
+0&0&0&1&\cdots\\
+\vdots&\vdots&\vdots&\ddots&\ddots
+\end{pmatrix}.
+\]
+可构造一族矩阵 $C_n$（$n=0,1,2,\ldots$）满足
+\[
+AC_n=E.
+\]
+因此 $A$ 有多个右逆；但 $A$ 没有左逆。类似地可以构造有多个左逆而无右逆的元素。
+
+\subsection*{2. 域}
+
+下面采用如下术语。
+
+\textbf{整环。} 一个环 $R$ 称为整环，若：
+\begin{enumerate}[label=\roman*),leftmargin=3em]
+\item 乘法交换；
+\item $R$ 有单位元 $1$；
+\item $R$ 没有零因子。
+\end{enumerate}
+
+\textbf{除环。} 一个环 $R$ 称为除环，若 $R$ 至少有一个非零元、有单位元，并且每个非零元都有逆元。
+
+\textbf{域。} 一个交换除环称为域。
+
+\subsection*{3. 域定义中八个条件的独立性}
+
+把域的条件拆成下列八项：
+\begin{enumerate}[label=\roman*),leftmargin=3em]
+\item $a+b=b+a$；
+\item $a+(b+c)=(a+b)+c$；
+\item 对任意 $a,b$，方程 $a+x=b$ 可解；
+\item $ab=ba$；
+\item $a(bc)=(ab)c$；
+\item 对 $a\ne0$，方程 $ax=b$ 可解；
+\item 集合中至少有一个非零元；
+\item $a(b+c)=ab+ac$。
+\end{enumerate}
+并逐项给出“只破坏这一条”的反例。
+
+\textbf{例 1（i 独立）。} 取正有理数集，定义
+\[
+a\oplus b=b,\qquad a\odot b=ab.
+\]
+则加法交换律失败，例如 $2\oplus3=3$ 而 $3\oplus2=2$；其余七条均成立。
+
+\textbf{例 2（ii 独立）。} 在 $\mathbb Q$ 上定义
+\[
+a\oplus b=-a-b,\qquad a\odot b=ab.
+\]
+则加法结合律失败，例如
+\[
+2\oplus(3\oplus4)=5,
+\qquad
+(2\oplus3)\oplus4=1,
+\]
+而其余七条均成立。
+
+\textbf{例 3（iii 独立）。} 取正有理数，使用通常加法与乘法。方程
+\[
+3+x=2
+\]
+在正有理数中无解，但其余七条成立。
+
+\textbf{例 4（iv 独立）。} 在 $\mathbb Q$ 上取通常加法，定义
+\[
+a\odot b=b.
+\]
+则 $2\odot3=3$ 而 $3\odot2=2$，所以乘法不交换；其余七条成立。
+
+\textbf{例 5（v 独立）。} 在 $\mathbb R^2$ 上取分量加法，定义
+\[
+(a_1,a_2)\odot(b_1,b_2)
+=(a_1b_1-a_2b_2,-a_1b_2-a_2b_1).
+\]
+例如
+\begin{align*}
+(1,2)\odot\bigl((3,4)\odot(5,6)\bigr)&=(67,56),\\
+\bigl((1,2)\odot(3,4)\bigr)\odot(5,6)&=(35,80),
+\end{align*}
+故乘法不结合，而其余七条成立。
+
+\textbf{例 6（vi 独立）。} 取整数集，使用通常加法与乘法。方程
+\[
+2x=3
+\]
+在 $\mathbb Z$ 中无解，其余七条成立。
+
+\textbf{例 7（vii 独立）。} 取一元素集合 $\{0\}$，使用通常的零运算。它不含非零元素，其余七条均成立。
+
+\textbf{例 8（viii 独立）。} 在 $\mathbb Q$ 上取通常加法，定义
+\[
+a\odot b=a+b.
+\]
+则
+\[
+2\odot(1+1)=4,
+\qquad
+(2\odot1)+(2\odot1)=6,
+\]
+所以分配律失败，而其余七条成立。
+
+以上八例同时也是八个不构成域的例子。
+
+\subsection*{4. 若干反例与数环、数域}
+
+除环未必是域。一个标准例子是 Hamilton 四元数除环
+\[
+\mathbb H=\{a+bi+cj+dk\mid a,b,c,d\in\mathbb R\},
+\]
+其中
+\[
+i^2=j^2=k^2=-1,
+\quad ij=k=-ji,
+\quad jk=i=-kj,
+\quad ki=j=-ik.
+\]
+它是除环但乘法不交换，故不是域。
+
+在一个域上两个多项式相等，当然给出相同的多项式函数；反之不真。例如在有限域上，不同多项式可以诱导同一个函数（第一章已经给过反例）。
+
+\subsection*{5. 特征}
+
+在无零因子环中，所有非零元对加法的阶相同；这个公共的阶称为环的\textbf{特征}。若所有非零元都是无限加法阶，则说特征为 $0$。
+
+例如 $\mathbb Z/6\mathbb Z$ 有零因子，其中 $[2]$ 的加法阶为 $3$，$[3]$ 的加法阶为 $2$，说明如果去掉“无零因子”的限制，各非零元的加法阶不必相同。
+
+在特征为素数 $p$ 的交换环中，Frobenius 公式给出
+\[
+(a+b)^p=a^p+b^p,
+\]
+更一般地
+\[
+(a_1+\cdots+a_m)^p=a_1^p+\cdots+a_m^p,
+\]
+以及
+\[
+(a\pm b)^{p^n}=a^{p^n}\pm b^{p^n}\qquad(n\ge0).
+\]
+
+考虑一个“反向分配律”问题：若把域的分配律换成
+\[
+a+(bc)=(a+b)(a+c),
+\]
+能否仍构成域？答案是否定的。若单位元为 $e$，代入 $a=b=c=e$；当特征不为 $2$ 时立即导出矛盾；特征为 $2$ 时再令 $c=0$，同样得到 $e=0$ 的矛盾。因此不存在满足这种条件的域。
+
+\subsection*{6. 数环与数域的例子}
+
+\textbf{1)} 含 $7$ 与 $18$ 的最小数环是整数环 $\mathbb Z$。因为它还含
+\[
+18-7=11,
+\quad 11-7=4,
+\quad 7-4=3,
+\quad 4-3=1,
+\]
+一旦含 $1$ 就含所有整数。
+
+\textbf{2)} 含 $\sqrt3$ 的最小数环（这里环不要求含 $1$）是
+\[
+R=\{3m+n\sqrt3\mid m,n\in\mathbb Z\}.
+\]
+它包含 $\sqrt3$，且对加、减、乘封闭；反过来，任何含 $\sqrt3$ 的环都必须包含 $(\sqrt3)^2=3$ 及其所有整数线性组合，故必须包含上述 $R$。
+
+\textbf{3)} 在 $\mathbb Z$ 中，含 $3$ 而不含 $5$ 的最大子环是
+\[
+3\mathbb Z.
+\]
+若再加入某个不被 $3$ 整除的整数 $n$，则 $(n,3)=1$，由 Bézout 等式可得 $1$，于是整个 $\mathbb Z$ 都被生成，从而必包含 $5$。
+
+\textbf{4)} 令
+\[
+F=\mathbb Q(\sqrt[3]{2})
+=\{a+b\alpha+c\alpha^2\mid a,b,c\in\mathbb Q,\ \alpha=\sqrt[3]{2}\}.
+\]
+则 $F$ 是域。也可以直接计算乘法与逆元；等价地，由 $x^3-2$ 在 $\mathbb Q[x]$ 中不可约可知 $\mathbb Q[\alpha]$ 已经是域。\jiaokan{此处的记号印作类似 $R[\sqrt[3]2]$，但紧接着明确规定系数 $a,b,c$ 均为有理数，并把所得对象称为数域；按上下文应为 $\mathbb Q(\sqrt[3]2)=\mathbb Q[\sqrt[3]2]$，据此改正记号。}
+
+若作显式计算，对非零
+\[
+u=a+b\alpha+c\alpha^2
+\]
+可取
+\[
+v=(a^2-2bc)+(2c^2-ab)\alpha+(b^2-ac)\alpha^2,
+\]
+则
+\[
+uv=a^3+2b^3+4c^3-6abc\in\mathbb Q.
+\]
+分母若为 $0$，将导致 $\alpha=\sqrt[3]2$ 为有理数，矛盾；故 $u^{-1}=v/(uv)\in F$。
+
+\section{子环}
+
+一个环 $R$ 的子集 $S$ 若对 $R$ 的加法与乘法本身构成环，则称 $S$ 为 $R$ 的\textbf{子环}。下面分别比较环与子环的交换性、零因子和单位元。
+
+\subsection*{1. 关于交换性}
+
+若 $R$ 是交换环，则任意子环 $S$ 也是交换环。例如 $\mathbb Z$ 是 $\mathbb R$ 的子环。
+
+非交换环可以含交换子环。例如矩阵环 $M_n(\mathbb R)$ 非交换，而标量矩阵
+\[
+S=\{aI_n\mid a\in\mathbb R\}
+\]
+构成交换子环。
+
+Hamilton 四元数除环 $\mathbb H$ 也是非交换环，而
+\[
+\mathbb C=\{a+bi\mid a,b\in\mathbb R\}
+\]
+是它的交换子环。
+
+当然，非交换环也可以含非交换子环。例如 $M_3(\mathbb R)$ 中全体严格上三角矩阵
+\[
+\left\{
+\begin{pmatrix}
+0&a&b\\0&0&c\\0&0&0
+\end{pmatrix}
+\middle|a,b,c\in\mathbb R
+\right\}
+\]
+构成非交换子环。
+
+\subsection*{2. 关于零因子}
+
+若环 $R$ 无零因子，则其子环 $S$ 也无零因子；例如 $\mathbb Z\subset\mathbb R$。
+
+反之不真。$M_2(\mathbb R)$ 有零因子，而
+\[
+S=\left\{\begin{pmatrix}a&0\\0&0\end{pmatrix}\middle|a\in\mathbb R\right\}
+\]
+是子环，并且在自身乘法下无零因子。
+
+也可以有“环有零因子、子环也有零因子”的情形，例如 $M_2(\mathbb R)$ 的对角矩阵子环；其中
+\[
+\begin{pmatrix}1&0\\0&0\end{pmatrix}
+\begin{pmatrix}0&0\\0&1\end{pmatrix}=0.
+\]
+
+\subsection*{3. 关于单位元}
+
+环与子环的单位元关系有五种可能。
+
+\textbf{1)} 环有单位元，子环也有单位元，而且两者相同。例如 $\mathbb Z\subset\mathbb Q$，两者单位元都是 $1$。
+
+\textbf{2)} 环有单位元，子环也有单位元，但两者不同。例如 $M_2(\mathbb R)$ 的单位元是 $I_2$，而
+\[
+S=\left\{\begin{pmatrix}a&0\\0&0\end{pmatrix}\middle|a\in\mathbb R\right\}
+\]
+的单位元是 $\operatorname{diag}(1,0)$。
+
+\textbf{3)} 环有单位元，而子环无单位元。例如 $\mathbb Z$ 有单位元 $1$，其偶数子环 $2\mathbb Z$ 没有单位元。
+
+\textbf{4)} 环无单位元，而子环有单位元。令
+\[
+R=\left\{\begin{pmatrix}a&0\\0&b\end{pmatrix}\middle|a,b\in\mathbb Z\right\}
+\]
+取通常加法，但规定
+\[
+\begin{pmatrix}a&0\\0&b\end{pmatrix}
+\begin{pmatrix}c&0\\0&d\end{pmatrix}
+=\begin{pmatrix}ac&0\\0&0\end{pmatrix}.
+\]
+则 $R$ 没有单位元，而
+\[
+S=\left\{\begin{pmatrix}a&0\\0&0\end{pmatrix}\middle|a\in\mathbb Z\right\}
+\]
+是子环，单位元为 $\operatorname{diag}(1,0)$。
+
+\textbf{5)} 环无单位元，子环也无单位元。例如 $2\mathbb Z$ 的子环 $4\mathbb Z$。
+
+\subsection*{4. 关于左、右单位元}
+
+无左单位元也无右单位元的环当然存在，例如偶数环。
+
+若一个环同时存在左单位元和右单位元，则两者必相等，且这个单位元唯一。因此：若有唯一左单位元，则它必为右单位元；若有唯一右单位元，则它必为左单位元。
+
+但是“有多个左单位元而无右单位元”的环存在。令
+\[
+R=\left\{\begin{pmatrix}a&b\\0&0\end{pmatrix}\middle|a,b\in\mathbb Z\right\}
+\]
+取普通矩阵运算。对任意整数 $c$，
+\[
+\begin{pmatrix}1&c\\0&0\end{pmatrix}
+\]
+都是左单位元，而不存在右单位元。前述二元环
+\[
+(a,b)(c,d)=(ac,ad)
+\]
+也提供了无穷多个左单位元而无右单位元的例子。
+
+\section{环的同态}
+
+\subsection*{1. 与环同态者未必是环}
+
+若存在从一个环 $R$ 到非空代数系统 $\bar R$ 的满射，并且同时保持加法和乘法，则 $\bar R$ 自动是环。反之不真：一个非环的代数系统可以满射同态到一个环。
+
+例如在整数集上定义
+\[
+a\oplus b=b,
+\qquad
+ a\odot b=ab,
+\]
+则该代数系统不是环；但常值映射
+\[
+\phi:a\longmapsto0
+\]
+把它满射同态到零环 $\{0\}$。
+
+\subsection*{2. 同态不反向保持交换性与单位元}
+
+若 $R\twoheadrightarrow\bar R$ 是环的满射同态，则 $R$ 交换必推出 $\bar R$ 交换；$R$ 有单位元也必推出 $\bar R$ 有单位元。但反过来都不真。
+
+例如 $M_n(\mathbb R)$ 可以通过零同态满射到零环；目标环交换而源环非交换。
+
+又如 $2\mathbb Z$ 满射到零环，目标有单位元（零环的 $0$ 同时是其乘法单位元），而源环没有单位元。
+
+更有意思的例子是
+\[
+R=\left\{\begin{pmatrix}a&b\\0&0\end{pmatrix}\middle|a,b\in\mathbb Z\right\},
+\qquad
+\phi\!\left(\begin{pmatrix}a&b\\0&0\end{pmatrix}\right)=a.
+\]
+$R$ 是无单位元的非交换环，而 $\phi$ 是到 $\mathbb Z$ 的满射同态。
+
+\subsection*{3. 关于零因子}
+
+同态满射不保持“无零因子”性质的双向传递。
+
+从 $\mathbb Z$ 到 $\mathbb Z/n\mathbb Z$ 的自然满射
+\[
+a\longmapsto[a]
+\]
+说明：源环 $\mathbb Z$ 无零因子，而当 $n$ 为合数时，目标环可以有零因子。
+
+反过来，令
+\[
+R=\mathbb Z\times\mathbb Z,
+\qquad
+(a_1,b_1)(a_2,b_2)=(a_1a_2,b_1b_2),
+\]
+投影
+\[
+\phi(a,b)=a
+\]
+是到 $\mathbb Z$ 的满射同态。$R$ 有零因子，例如
+\[
+(a,0)(0,b)=(0,0),
+\]
+而 $\mathbb Z$ 没有零因子。
+
+\subsection*{4. 环可以与真子环同构}
+
+令 $R[x]$ 为一元多项式环，
+\[
+R[x^2]=\{a_0+a_1x^2+\cdots+a_nx^{2n}\mid a_i\in R\}.
+\]
+显然 $R[x^2]\subsetneq R[x]$，但
+\[
+\phi:R[x]\longrightarrow R[x^2],
+\qquad
+f(x)\longmapsto f(x^2)
+\]
+是环同构。因此一个环可以与自己的真子环同构。
+
+\subsection*{5. 特征也不由同态保持}
+
+自然满射
+\[
+\mathbb Z\longrightarrow\mathbb Z/p\mathbb Z,
+\qquad n\longmapsto[n]
+\]
+说明同态环的特征可以不同：$\mathbb Z$ 的特征为 $0$，而 $\mathbb Z/p\mathbb Z$ 的特征为 $p$。
+
+\section{理想}
+
+\textbf{定义。} 环 $R$ 的非空子集 $N$ 称为左（右）理想，若
+\[
+a,b\in N\Longrightarrow a-b\in N
+\]
+并且
+\[
+a\in N,\ r\in R\Longrightarrow ra\in N
+\quad(\text{左理想}),
+\]
+或
+\[
+a\in N,\ r\in R\Longrightarrow ar\in N
+\quad(\text{右理想}).
+\]
+若 $N$ 同时是左、右理想，则简称为 $R$ 的\textbf{理想}。
+
+偶数环 $2\mathbb Z$ 是 $\mathbb Z$ 的理想。
+
+在 $M_2(\mathbb Z)$ 中，
+\[
+N_L=\left\{\begin{pmatrix}a&0\\b&0\end{pmatrix}\middle|a,b\in\mathbb Z\right\}
+\]
+是左理想而不是右理想；
+\[
+N_R=\left\{\begin{pmatrix}a&b\\0&0\end{pmatrix}\middle|a,b\in\mathbb Z\right\}
+\]
+是右理想而不是左理想；而上三角矩阵集合
+\[
+N=\left\{\begin{pmatrix}a&b\\0&c\end{pmatrix}\middle|a,b,c\in\mathbb Z\right\}
+\]
+既不是左理想也不是右理想。
+
+只有零理想与单位理想的环未必是除环。例如 $M_2(\mathbb Q)$：它只有 $0$ 与 $M_2(\mathbb Q)$ 两个双边理想，因为任一非零双边理想中取非零矩阵后，通过左右乘矩阵单位可以得到某个非零矩阵单位，再生成 $I_2$；但 $M_2(\mathbb Q)$ 不是除环，例如
+\[
+\begin{pmatrix}1&2\\2&4\end{pmatrix}
+\]
+不可逆。
+
+\subsection*{1. 主理想与有限生成理想}
+
+在一般（可能无单位、非交换）环中，由 $a$ 生成的双边理想要包含所有
+\[
+xay,
+\quad xa,
+\quad ay,
+\quad na
+\]
+的有限和（其中 $x,y\in R$，$n\in\mathbb Z$），记作 $(a)$。在有单位元的交换环中这简化为
+\[
+(a)=\{ra\mid r\in R\}.
+\]
+若理想由 $a_1,\ldots,a_m$ 生成，则记作
+\[
+(a_1,\ldots,a_m).
+\]
+
+主理想一定是理想，但理想未必主。经典例子是
+\[
+(2,x)\subset\mathbb Z[x].
+\]
+若 $(2,x)=(p(x))$，则 $p(x)$ 同时整除 $2$ 与 $x$，于是 $p(x)$ 只能是单位 $\pm1$，从而 $(p(x))=\mathbb Z[x]$，与 $(2,x)$ 为真理想矛盾。因此 $(2,x)$ 不是主理想。
+
+若把同样的生成元放到 $\mathbb Q[x]$ 中，则
+\[
+(2,x)=\mathbb Q[x],
+\]
+因为 $2$ 已是单位；所以在 $\mathbb Q[x]$ 中它当然是主理想 $(1)$。\jiaokan{“$(2,x)$ 是 $\mathbb Q[x]$ 的一个主理想”若不补充说明，容易被误读为非平凡理想。在 $\mathbb Q[x]$ 中 $2$ 可逆，因此该理想就是整个 $\mathbb Q[x]=(1)$。}
+
+在无单位元环中，集合 $\{ra\mid r\in R\}$ 虽然可以是理想，却未必包含生成元 $a$。例如 $R=2\mathbb Z$，取
+\[
+N=\{4r\mid r\in R\}=8\mathbb Z.
+\]
+则 $N$ 是 $R$ 的理想，但 $4\notin N$；所以不能把它称作“由 $4$ 生成的主理想”。
+
+\subsection*{2. 最大理想}
+
+一个真理想 $N\subsetneq R$ 称为\textbf{最大理想}，若除了 $N$ 和 $R$ 本身以外，没有严格包含 $N$ 的理想。
+
+最大理想一般不唯一。整数环中，对每个素数 $p$，
+\[
+(p)=p\mathbb Z
+\]
+都是最大理想；而若 $p=mn$ 为合数，则
+\[
+(p)\subsetneq(m)\subsetneq\mathbb Z,
+\]
+所以 $(p)$ 不是最大理想。
+
+若 $F$ 是域，$p(x)\in F[x]$ 是不可约多项式，则
+\[
+(p(x))
+\]
+是 $F[x]$ 的最大理想。\jiaokan{此处末句印作“$(p(x))$ 是 $F(x)$ 的最大理想”。若 $F(x)$ 表示有理函数域，则它是域，除零理想外没有真理想；由前句“$p(x)$ 是多项式环 $F[x]$ 里的不可约多项式”及标准定理，此处应为 $F[x]$。}
+
+$\mathbb Z[x]$ 中的理想 $(x)$ 不是最大理想，因为
+\[
+(x)\subsetneq(2,x)\subsetneq\mathbb Z[x].
+\]
+
+一个无零因子的非交换环不一定能被一个除环包含。参看 A. I. Mal'cev, ``On the Immersion of an Algebraic Ring into a Field, \emph{Math. Ann.} 113 (1936).
+
+\section{整环里的因子分解}
+
+\subsection*{1. 单位与相伴元}
+
+在整环 $I$ 中，一个可逆元称为\textbf{单位}。若
+\[
+b=\varepsilon a
+\]
+其中 $\varepsilon$ 为单位，则称 $b$ 与 $a$\textbf{相伴}。
+
+单位元一定是单位，但反之不真。例如在整数环中，$-1$ 是单位，却不是单位元 $1$。
+
+\subsection*{2. 唯一分解}
+
+\textbf{定义。} 整环中的一个非零、非单位元，若只有平凡因子，则称为一个\textbf{素元}。\jiaokan{这里“素元”的定义对应现代通常所称的“不可约元（irreducible）”。现代交换代数中，“素元（prime element）”通常指满足 $p\mid ab\Rightarrow p\mid a$ 或 $p\mid b$ 的非零非单位元；在一般整环中这一条件更强。正文保留这里的旧式术语。}
+
+若整环中每个非零非单位元 $a$ 都能写成有限个素元的积
+\[
+a=p_1p_2\cdots p_r,
+\]
+并且若另有
+\[
+a=q_1q_2\cdots q_s,
+\]
+则必有 $r=s$，且重新排列后
+\[
+q_i=\varepsilon_i p_i
+\]
+（$\varepsilon_i$ 为单位），则称 $a$ 有唯一分解。
+
+有的整环根本不存在素元。例如任何域都没有非零非单位元，因而也没有素元。
+
+也有整环中的某些元素根本不能分解成有限个素元。
+
+\textbf{例 1。} 令 $R$ 为所有有限和
+\[
+a_1 2^{x_1}+\cdots+a_n2^{x_n},
+\]
+其中 $a_i\in\mathbb Z$，$x_i$ 是非负二进有理数（形如 $m/2^k$）。$R$ 是整环并含 $1$，但
+\[
+2=2^{1/2}2^{1/2}
+=2^{1/4}2^{1/4}2^{1/4}2^{1/4}
+=\cdots.
+\]
+而 $2^{1/2^k}$ 都不是单位；因此 $2$ 不可能在 $R$ 中分解成有限个素元。
+
+\textbf{例 2。} 设 $F$ 为域，令 $R$ 为有限和
+\[
+a_1x^{\alpha_1}+\cdots+a_nx^{\alpha_n},
+\qquad a_i\in F,
+\]
+其中 $\alpha_i$ 为非负有理数。按指数相加定义乘法，则 $R$ 是整环。元素 $x$ 满足
+\[
+x=x^{1/2}x^{1/2}=x^{1/4}x^{1/4}x^{1/4}x^{1/4}=\cdots,
+\]
+同样不能分解为有限个素元。
+
+即使每个元素都能分解，分解也未必唯一。令
+\[
+I=\mathbb Z[\sqrt{-3}]=\{a+b\sqrt{-3}\mid a,b\in\mathbb Z\}.
+\]
+在 $I$ 中，一个元素是单位当且仅当它的复数模平方为 $1$，所以单位只有 $\pm1$。若元素 $\alpha$ 满足 $|\alpha|^2=4$，则它是素元：若 $\alpha=\beta\gamma$，则
+\[
+4=|\beta|^2|\gamma|^2,
+\]
+而 $|\beta|^2=a^2+3b^2$ 不可能等于 $2$，故必有一个因子的模平方为 $1$。
+
+于是
+\[
+4=2\cdot2=(1+\sqrt{-3})(1-\sqrt{-3}).
+\]
+这里 $2,1+\sqrt{-3},1-\sqrt{-3}$ 都是素元，且后两者不与 $2$ 相伴，所以 $4$ 有两种本质不同的素元分解。因而 $I$ 不是唯一分解整环。
+
+\subsection*{3. 最大公因子未必存在}
+
+元素 $c$ 若同时整除 $a_1,\ldots,a_n$，称为它们的公因子。若一个公因子 $d$ 能被所有公因子整除，则称 $d$ 为最大公因子（只确定到相伴）。
+
+在一般整环中，两个元素未必存在最大公因子。令
+\[
+I=\mathbb Z[\sqrt5].
+\]
+该环的单位满足 Pell 型方程
+\[
+a^2-5b^2=\pm1,
+\]
+例如 $2+\sqrt5$ 是单位。考察元素
+\[
+4,
+\qquad
+2+2\sqrt5=2(1+\sqrt5).
+\]
+有
+\[
+1+\sqrt5=(2+\sqrt5)(3-\sqrt5),
+\]
+故 $1+\sqrt5$ 与 $3-\sqrt5$ 相伴；同理 $1-\sqrt5$ 与 $3+\sqrt5$ 相伴。又
+\[
+4=2\cdot2=(3+\sqrt5)(3-\sqrt5).
+\]
+因此 $2$ 与 $1+\sqrt5$ 都是 $4$ 和 $2+2\sqrt5$ 的公因子，但二者互不整除，且不存在一个公因子同时被它们二者整除并仍保持“最大”的要求；故这两个元素没有最大公因子。
+
+\subsection*{4. 唯一分解整环、主理想整环与 Euclidean 整环}
+
+\textbf{唯一分解整环（UFD）。} 每个非零非单位元都有唯一素元分解的整环。
+
+\textbf{主理想整环（PID）。} 每个理想都是主理想的整环。
+
+\textbf{Euclidean 整环。} 存在映射
+\[
+\varphi:I\setminus\{0\}\longrightarrow\mathbb Z_{\ge0}
+\]
+使对任意 $a\ne0$ 与 $b\in I$，都能写成
+\[
+b=qa+r,
+\]
+其中 $r=0$ 或 $\varphi(r)<\varphi(a)$。
+
+我们知道：
+\[
+\text{Euclidean 整环}\Longrightarrow\text{PID}\Longrightarrow\text{UFD},
+\]
+但反向一般不成立。
+
+\textbf{例 1。} $\mathbb Z$ 是 UFD，所以 $\mathbb Z[x]$ 也是 UFD；但 $\mathbb Z[x]$ 不是 PID，因为理想 $(2,x)$ 不是主理想。
+
+\textbf{例 2。} 若 $I$ 是 UFD，则 $I[x,y]$ 也是 UFD。理想
+\[
+J=(x,y)=\{xf(x,y)+yg(x,y)\mid f,g\in I[x,y]\}
+\]
+不是主理想：若 $J=(h(x,y))$，则 $h$ 必同时整除 $x,y$，从而 $h$ 只能是单位；这会迫使 $J=I[x,y]$，但 $J$ 不含非零常数，矛盾。
+
+\textbf{例 3。} 主理想整环未必是 Euclidean 整环。参看 T. S. Motzkin, ``The Euclidean algorithm'', \emph{Bull. Amer. Math. Soc.} 55 (1949), 1142--1146 所讨论的反例。

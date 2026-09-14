@@ -1,0 +1,695 @@
+\chapter{基本概念}
+\orig{50--68}
+
+\section{映射、变换}
+
+设 $A_1,A_2,\ldots,A_n$ 是 $n$ 个集合，$D$ 是另一个集合。
+
+\textbf{定义。} 若通过一个法则 $\phi$，对 $A_1\times A_2\times\cdots\times A_n$ 的每一个元
+\[
+(a_1,a_2,\ldots,a_n),\qquad a_i\in A_i,
+\]
+都得到唯一的一个 $D$ 中的元 $d$，那么这个法则 $\phi$ 叫做集合 $A_1\times A_2\times\cdots\times A_n$ 到集合 $D$ 的一个\textbf{映射}，记作
+\[
+\phi:(a_1,a_2,\ldots,a_n)\longmapsto d=\phi(a_1,a_2,\ldots,a_n).
+\]
+
+\textbf{定义。} $A\times B$ 到 $D$ 的一个映射叫做 $A\times B$ 到 $D$ 的一个\textbf{代数运算}。一个代数运算也可写成
+\[
+(a,b)\longmapsto d=a\circ b.
+\]
+
+\textbf{定义。} 在集合 $A$ 到集合 $\bar A$ 的一个映射 $\phi$ 下，$\bar A$ 的每一个元都至少是 $A$ 中某一个元的像，那么 $\phi$ 叫做 $A$ 到 $\bar A$ 的一个\textbf{满射}。
+
+\textbf{定义。} $A$ 到 $\bar A$ 的一个映射
+\[
+\phi:a\longmapsto \bar a
+\]
+叫做 $A$ 到 $\bar A$ 的一个\textbf{单射}，如果
+\[
+a\ne b\Longrightarrow \bar a\ne\bar b.
+\]
+
+\textbf{定义。} 若 $A$ 到 $\bar A$ 的一个映射既是满射又是单射，则称 $\phi$ 为 $A$ 与 $\bar A$ 间的一个\textbf{一一映射}。
+
+\textbf{定义。} $A$ 到 $A$ 的映射叫做 $A$ 的一个\textbf{变换}。$A$ 到 $A$ 的满射、单射或一一映射，分别叫做 $A$ 的一个\textbf{满射变换}、\textbf{单射变换}或\textbf{一一变换}。
+
+下面给出若干反例。
+
+\textbf{1.} 令 $A=D=\mathbb R$，写
+\[
+\phi:\quad
+\begin{cases}
+a\longmapsto a,&a\ne1,\\
+1\longmapsto b,&b^2=1.
+\end{cases}
+\]
+这不是 $A$ 到 $D$ 的一个映射，因为 $1$ 的像不是唯一的。
+
+\textbf{2.} 令 $A=D=\mathbb R$，写
+\[
+\phi:a\longmapsto\sqrt a.
+\]
+这也不是 $A$ 到 $D$ 的一个映射，因为当 $a<0$ 时，$\sqrt a\notin D$。
+
+\textbf{3.} 令
+\[
+A=\{1,2,3\},\qquad D=\{1,2,\ldots,16\},
+\]
+并定义
+\[
+\phi_1(a)=2^a,\qquad \phi_2(a)=a^2-a+2.
+\]
+容易验证 $\phi_1$ 与 $\phi_2$ 是 $A$ 到 $D$ 的两个相同的映射。
+
+\textbf{4.} 若改取
+\[
+A=\{1,2,3,4\},\qquad D=\{1,2,\ldots,16\},
+\]
+仍令
+\[
+\phi_1(a)=2^a,\qquad \phi_2(a)=a^2-a+2,
+\]
+则 $\phi_1$ 与 $\phi_2$ 都是 $A$ 到 $D$ 的映射，但不相等，因为
+\[
+\phi_1(4)=2^4\ne4^2-4+2=\phi_2(4).
+\]
+
+\textbf{5.} 令
+\[
+A=\{1,2,3\},\qquad \bar A=\{4,5,6,7\},
+\]
+定义
+\[
+1\mapsto4,
+\qquad2\mapsto5,
+\qquad3\mapsto6.
+\]
+这是单射而不是满射，故不是一一映射。
+
+\textbf{6.} 令
+\[
+A=\{1,2,3\},\qquad \bar A=\{0\},
+\]
+定义 $a\mapsto0$。这是满射而不是单射，故不是一一映射。
+
+\textbf{7.} 令 $A=\mathbb R$，
+\[
+\tau:x\longmapsto e^x.
+\]
+这是 $A$ 的一个单射变换，不是满射变换，故不是一一变换。
+
+\textbf{8.} 令 $A=\mathbb Z$，定义
+\[
+\tau(a)=
+\begin{cases}
+\dfrac a2,&a\text{ 为偶数},\\[4pt]
+\dfrac{a+1}{2},&a\text{ 为奇数}.
+\end{cases}
+\]
+这是 $A$ 的一个满射变换，不是单射变换，故不是一一变换。
+
+\textbf{9.} 令 $A=\mathbb Z$，$\bar A=2\mathbb Z$，定义
+\[
+\phi:n\longmapsto2n.
+\]
+$\phi$ 是 $A$ 与 $\bar A$ 间的一一映射，而 $\bar A$ 是 $A$ 的真子集。因此不能说 $\phi$ 是 $A$ 的一一变换；若把同一法则看作 $A\to A$ 的映射，则它只是 $A$ 的单射变换。
+
+\textbf{10.} 令 $\bar A=2\mathbb Z$，$A=\mathbb Z$，定义
+\[
+\phi:2n\longmapsto n.
+\]
+这是 $\bar A$ 与 $A$ 间的一一映射，而 $\bar A$ 是 $A$ 的真子集，所以它不是 $A$ 的变换，更不是 $A$ 的一一变换。
+
+\textbf{11.} 令
+\[
+\omega=-\frac12+\frac{\sqrt3}{2}i,
+\]
+并置
+\[
+A=\{a+b\omega+c\omega^2\mid a,b,c\in\mathbb Q\},
+\qquad
+\bar A=\{x+y\sqrt2\mid x,y\in\mathbb Q\}.
+\]
+定义
+\[
+\phi(a+b\omega+c\omega^2)=(2a-b-c)+(b-c)\sqrt2.
+\]
+下面说明 $\phi$ 是 $A$ 到 $\bar A$ 的一一映射。
+
+首先验证它确实是映射。若
+\[
+a+b\omega+c\omega^2=d+e\omega+f\omega^2,
+\]
+则利用
+\[
+\omega=-\frac12+\frac{\sqrt3}{2}i,
+\qquad
+\omega^2=-\frac12-\frac{\sqrt3}{2}i,
+\]
+比较实部与虚部，得到
+\[
+a-\frac12(b+c)=d-\frac12(e+f),
+\qquad
+b-c=e-f.
+\]
+也就是
+\[
+2a-b-c=2d-e-f,
+\qquad
+b-c=e-f,
+\]
+所以两种表示在 $\phi$ 下有相同的像。这一点是必要的，因为 $1+\omega+\omega^2=0$，同一元素的三元系数表示并不唯一。
+
+其次验证满射。任取
+\[
+p+q\sqrt2\in\bar A,
+\]
+有
+\[
+\frac{p+q}{2}+q\omega+0\omega^2
+\longmapsto p+q\sqrt2.
+\]
+
+最后验证单射。若
+\[
+(2a-b-c)+(b-c)\sqrt2=(2a'-b'-c')+(b'-c')\sqrt2,
+\]
+则
+\[
+2a-b-c=2a'-b'-c',
+\qquad
+b-c=b'-c'.
+\]
+由此得到
+\[
+a-c=a'-c',
+\qquad
+ a-b=a'-b'.
+\]
+于是
+\begin{align*}
+a+b\omega+c\omega^2
+&=a+(a-a'+b')\omega+(a-a'+c')\omega^2\\
+&=(a+a\omega+a\omega^2)-a'(\omega+\omega^2)+b'\omega+c'\omega^2\\
+&=a'+b'\omega+c'\omega^2,
+\end{align*}
+其中使用了 $1+\omega+\omega^2=0$。故 $\phi$ 是单射，从而是一一映射。
+
+\section{基本算律}
+
+\textbf{定义。} 一个集合 $A$ 的代数运算 $\circ$ 称为适合\textbf{结合律}，若对任意 $a,b,c\in A$ 都有
+\[
+(a\circ b)\circ c=a\circ(b\circ c).
+\]
+
+\textbf{定义。} 一个 $A\times A$ 到 $D$ 的代数运算称为适合\textbf{交换律}，若对任意 $a,b\in A$ 都有
+\[
+a\circ b=b\circ a.
+\]
+
+以下给分配律以定义。设 $\odot$ 是一个 $B\times A$ 到 $A$ 的代数运算，$\oplus$ 是 $A$ 的代数运算。若
+\[
+b\odot(a_1\oplus a_2)=(b\odot a_1)\oplus(b\odot a_2),
+\]
+则称 $\odot$ 对 $\oplus$ 适合\textbf{第一（左）分配律}。第二个（右）分配律的定义完全类似。
+
+\subsection*{关于结合律}
+
+\textbf{1.} $A=\mathbb Z$，运算为普通减法。它不适合结合律，因为当 $c\ne0$ 时
+\[
+(a-b)-c\ne a-(b-c).
+\]
+
+\textbf{2.} $A=\mathbb R\setminus\{0\}$，令
+\[
+a\circ b=\frac ab.
+\]
+该运算不适合结合律，例如
+\[
+(1\circ1)\circ2=\frac12,
+\qquad
+1\circ(1\circ2)=2.
+\]
+
+\textbf{3.} $A=\mathbb R$，令
+\[
+a\circ b=a+2b.
+\]
+则
+\[
+(a\circ b)\circ c=a+2b+2c,
+\qquad
+ a\circ(b\circ c)=a+2b+4c,
+\]
+所以当 $c\ne0$ 时结合律不成立。
+
+\textbf{4.} $A=\mathbb Z_{>0}$，令
+\[
+a\circ b=a^b.
+\]
+该运算不适合结合律，因为
+\[
+(2\circ1)\circ3=(2^1)^3=8,
+\qquad
+2\circ(1\circ3)=2^{1^3}=2.
+\]
+
+\textbf{5.} 一个集合 $A$ 的代数运算若适合结合律，则对 $A$ 中任意 $n\ge3$ 个元 $a_1,a_2,\ldots,a_n$，用各种加括号的步骤所得结果都一样；但反之不真。
+
+例如取 $A=\{a,b,c,d\}$，代数运算由表
+\[
+\begin{array}{c|cccc}
+\circ&a&b&c&d\\\hline
+ a&b&c&d&d\\
+ b&d&d&d&d\\
+ c&d&d&d&d\\
+ d&d&d&d&d
+\end{array}
+\]
+给出。任意四个元的任意加括号乘积都为 $d$，即“四元结合”成立；但三元结合律不成立，因为
+\[
+a\circ(a\circ a)=a\circ b=c,
+\qquad
+(a\circ a)\circ a=b\circ a=d.
+\]
+
+\textbf{6.} 下面给出一个对任意 $n>3$，“$n$ 元结合律”均不成立的例。取 $A=\{a,b,c\}$，运算表为
+\[
+\begin{array}{c|ccc}
+\circ&a&b&c\\\hline
+ a&b&c&a\\
+ b&c&c&c\\
+ c&c&c&c
+\end{array}
+\]
+三元结合律已经不成立：
+\[
+(a\circ b)\circ b=c\circ b=c,
+\qquad
+ a\circ(b\circ b)=a\circ c=a.
+\]
+对任意 $n>3$，同样比较
+\[
+(a\circ b)\circ(b\circ\cdots\circ b)=c,
+\qquad
+ a\circ\bigl(b\circ(b\circ\cdots\circ b)\bigr)=a,
+\]
+可见相应的多元结合律也不成立。
+
+\subsection*{关于交换律}
+
+\textbf{1.} $A=\mathbb R$，普通减法 $a\circ b=a-b$ 不适合交换律；当 $a\ne b$ 时一般有
+\[
+a-b\ne b-a.
+\]
+
+\textbf{2.} 取 $A=\{a,b,c,d\}$，代数运算由
+\[
+\begin{array}{c|cccc}
+\circ&a&b&c&d\\\hline
+ a&a&b&c&d\\
+ b&b&d&a&c\\
+ c&c&a&b&d\\
+ d&d&c&a&b
+\end{array}
+\]
+给出。该运算不适合交换律，例如
+\[
+c\circ d=d,
+\qquad
+ d\circ c=a.
+\]
+
+\textbf{3.} 若集合 $A$ 的代数运算同时适合结合律与交换律，那么计算
+\[
+a_1\circ a_2\circ\cdots\circ a_n
+\]
+时可以任意掉换元素次序；但反之不真。
+
+例如仍取 $A=\{a,b,c,d\}$，令
+\[
+\begin{array}{c|cccc}
+\circ&a&b&c&d\\\hline
+ a&d&c&d&d\\
+ b&d&d&d&d\\
+ c&d&d&d&d\\
+ d&d&d&d&d
+\end{array}
+\]
+任意三个元之积均为 $d$，因而三元结合律及三元交换律成立；但二元交换律不成立，因为
+\[
+a\circ b\ne b\circ a.
+\]
+
+\textbf{4.} 取 $A=\{a,b,c\}$，运算表为
+\[
+\begin{array}{c|ccc}
+\circ&a&b&c\\\hline
+ a&b&c&c\\
+ b&c&b&b\\
+ c&c&b&b
+\end{array}
+\]
+从表中可见二元交换律成立，但三元结合律不成立：
+\[
+(a\circ b)\circ c=c\circ c=b,
+\qquad
+ a\circ(b\circ c)=a\circ b=c.
+\]
+三元交换律也不成立，例如
+\[
+(a\circ b)\circ c=b,
+\qquad
+ a\circ(c\circ b)=c.
+\]
+
+\textbf{5.} 三元结合律成立、二元交换律不成立，并不能推出多元结合交换律。例如全体 $n$ 阶方阵在矩阵乘法下满足结合律，但一般不满足交换律；若 $AB\ne BA$，则
+\[
+(EA)B\ne E(BA).
+\]
+
+\textbf{6.} 取 $A=\{a,b\}$，运算表
+\[
+\begin{array}{c|cc}
+\circ&a&b\\\hline
+ a&a&a\\
+ b&b&a
+\end{array}
+\]
+满足三元结合律，但多元交换律不成立。实际上
+\[
+a\circ b\circ a\circ\cdots\circ a=a,
+\qquad
+ b\circ a\circ a\circ\cdots\circ a=b,
+\]
+故改变因子的次序可能改变结果。
+
+\subsection*{关于分配律}
+
+若 $\oplus$ 适合结合律，且 $\odot$ 对 $\oplus$ 适合第一（左）分配律，那么
+\[
+b\odot(a_1\oplus\cdots\oplus a_n)
+=(b\odot a_1)\oplus\cdots\oplus(b\odot a_n),
+\]
+但反之不真。
+
+例如取 $A=\{a,b,c\}$，令 $\oplus$ 与 $\odot$ 分别由
+\[
+\begin{array}{c|ccc}
+\oplus&a&b&c\\\hline
+ a&b&c&c\\
+ b&c&c&c\\
+ c&c&c&c
+\end{array}
+\qquad
+\begin{array}{c|ccc}
+\odot&a&b&c\\\hline
+ a&a&c&c\\
+ b&c&c&c\\
+ c&c&c&c
+\end{array}
+\]
+给出。容易验证 $\oplus$ 适合三元结合律，并且 $\odot$ 对 $\oplus$ 满足三元分配式
+\[
+b\odot(a_1\oplus a_2\oplus a_3)
+=(b\odot a_1)\oplus(b\odot a_2)\oplus(b\odot a_3),
+\]
+但二元分配律并不成立，因为
+\[
+a\odot(a\oplus a)=a\odot b=c,
+\]
+而
+\[
+(a\odot a)\oplus(a\odot a)=a\oplus a=b.
+\]
+
+\section{同态、同构}
+
+\textbf{定义。} 一个 $A$ 到 $\bar A$ 的映射 $\phi$，若对代数运算 $\circ$ 和 $\bar\circ$ 来说满足：只要
+\[
+a\longmapsto\bar a,
+\qquad b\longmapsto\bar b,
+\]
+就有
+\[
+a\circ b\longmapsto\bar a\,\bar\circ\,\bar b,
+\]
+则称 $\phi$ 为关于这两个代数运算的\textbf{同态映射}。
+
+\textbf{定义。} 若关于 $\circ$ 和 $\bar\circ$ 有一个 $A$ 到 $\bar A$ 的满射同态映射，则称它为\textbf{同态满射}，并说 $A$ 与 $\bar A$ 关于这两个运算\textbf{同态}。
+
+\textbf{定义。} 若 $A$ 与 $\bar A$ 间的一一映射 $\phi$ 同时是关于 $\circ$ 和 $\bar\circ$ 的同态映射，则称 $\phi$ 为\textbf{同构映射}，并说 $A$ 与 $\bar A$ 同构，记为
+\[
+A\cong\bar A.
+\]
+
+\textbf{定义。} 关于 $\circ$ 的一个 $A$ 与 $A$ 间的同构映射叫做 $A$ 的一个\textbf{自同构}。
+
+\textbf{1.} 令 $A=\mathbb Z$，$A$ 的代数运算是普通加法；令 $\bar A=\{1,-1\}$，$\bar A$ 的代数运算是普通乘法。映射
+\[
+\phi:a\longmapsto-1
+\]
+虽是 $A$ 到 $\bar A$ 的映射，却不是同态映射，因为
+\[
+a\mapsto-1,
+\quad b\mapsto-1,
+\quad a+b\mapsto-1\ne(-1)(-1).
+\]
+
+\textbf{2.} 仍令 $A=\mathbb Z$（普通加法），$\bar A=\{1,-1\}$（普通乘法），定义
+\[
+\phi(a)=
+\begin{cases}
+1,&a\text{ 为偶数},\\
+-1,&a\text{ 为奇数}.
+\end{cases}
+\]
+这是 $A$ 到 $\bar A$ 的同态满射，但不是同构映射。
+
+\textbf{3.} 若改为
+\[
+\phi(a)=
+\begin{cases}
+-1,&a\text{ 为偶数},\\
+1,&a\text{ 为奇数},
+\end{cases}
+\]
+则它不是同态满射。例如
+\[
+2+2=4\mapsto-1\ne(-1)(-1).
+\]
+
+这说明：即使某个映射不是同态满射，也不妨碍存在另一个同态满射；只要存在一个满射同态映射，就说相应的两个代数系统同态。
+
+\textbf{4.} 再取 $A=\mathbb Z$，但这次 $A$ 的代数运算为普通乘法；$\bar A=\{1,-1\}$ 仍用普通乘法。定义
+\[
+\psi(a)=
+\begin{cases}
+1,&a\text{ 为偶数},\\
+-1,&a\text{ 为奇数}.
+\end{cases}
+\]
+虽然 $\psi$ 是满射，却不是同态映射，因为
+\[
+2\mapsto1,
+\qquad 3\mapsto-1,
+\qquad 2\cdot3=6\mapsto1\ne1\cdot(-1).
+\]
+同一个集合之间的映射能否成为同态，不能脱离所指定的代数运算来判断。
+
+\textbf{5.} 令 $A=\mathbb R$，$A$ 的代数运算是普通乘法。考察下列映射是否是 $A$ 到某个子集 $\bar A$ 的同态满射：
+\[
+\text{a) }x\mapsto|x|,
+\qquad
+\text{b) }x\mapsto2x,
+\qquad
+\text{c) }x\mapsto x^2,
+\qquad
+\text{d) }x\mapsto-x.
+\]
+答案为：
+
+\textbf{a)} $x\mapsto|x|$ 是 $A$ 到 $\bar A=\mathbb R_{\ge0}$ 的同态满射，但不是同构映射。
+
+\textbf{b)} 由于
+\[
+\phi(xy)=2xy\ne(2x)(2y)=\phi(x)\phi(y)
+\]
+（除非 $xy=0$），故 $x\mapsto2x$ 不是同态满射。
+
+\textbf{c)} $x\mapsto x^2$ 是 $A$ 到 $\mathbb R_{\ge0}$ 的同态满射，但不是同构映射。
+
+\textbf{d)} 一般有
+\[
+-(xy)\ne(-x)(-y),
+\]
+故 $x\mapsto-x$ 不是同态满射。
+
+这个例子说明：同态满射既要是满射，又要保持运算；同构还要求是一一映射。
+
+\textbf{6.} 令 $A=\{a,b,c\}$，代数运算由
+\[
+\begin{array}{c|ccc}
+\circ&a&b&c\\\hline
+ a&c&c&c\\
+ b&c&c&c\\
+ c&c&c&c
+\end{array}
+\]
+给出。$A$ 的一一变换共有六个：
+\begin{align*}
+\tau_1&:a\mapsto a,
+&b\mapsto b,
+&c\mapsto c;\\
+\tau_2&:a\mapsto b,
+&b\mapsto a,
+&c\mapsto c;\\
+\tau_3&:a\mapsto b,
+&b\mapsto c,
+&c\mapsto a;\\
+\tau_4&:a\mapsto c,
+&b\mapsto b,
+&c\mapsto a;\\
+\tau_5&:a\mapsto c,
+&b\mapsto a,
+&c\mapsto b;\\
+\tau_6&:a\mapsto a,
+&b\mapsto c,
+&c\mapsto b.
+\end{align*}
+容易验证 $\tau_1,\tau_2$ 是 $A$ 的自同构，而 $\tau_3,\tau_4,\tau_5,\tau_6$ 不是。
+
+\textbf{7.} 假定关于代数运算 $\circ$ 与 $\bar\circ$，$A$ 与 $\bar A$ 同态，那么：
+
+(i) 若 $\circ$ 适合结合律，则 $\bar\circ$ 也适合结合律；
+
+(ii) 若 $\circ$ 适合交换律，则 $\bar\circ$ 也适合交换律；但两者的逆命题都不真。
+
+\textbf{例 1。} 令 $A=\mathbb Q$，定义
+\[
+a\circ b=-a-b;
+\]
+令 $\bar A=\{1\}$，$\bar\circ$ 为普通乘法，并令 $\phi(a)=1$。显然 $\phi$ 是同态满射，$\bar\circ$ 适合结合律；但 $\circ$ 不适合结合律，例如
+\[
+(2\circ1)\circ1=(-2-1)\circ1=3-1=2,
+\]
+而
+\[
+2\circ(1\circ1)=2\circ(-1-1)=-2-(-2)=0.
+\]
+
+\textbf{例 2。} 令 $A=\mathbb Q$，定义
+\[
+a\circ b=b;
+\]
+仍令 $\bar A=\{1\}$，$\bar\circ$ 为普通乘法，$\phi(a)=1$。此时 $\bar\circ$ 适合交换律，而 $\circ$ 不适合交换律，例如
+\[
+3\circ2=2\ne3=2\circ3.
+\]
+
+\textbf{8.} 设 $\odot,\oplus$ 都是集合 $A$ 的代数运算，$\bar\odot,\bar\oplus$ 都是集合 $\bar A$ 的代数运算，并存在一个 $A$ 到 $\bar A$ 的满射 $\phi$，使 $\phi$ 同时给出两对运算的同态。则：
+
+(i) 若 $\odot$ 对 $\oplus$ 适合第一分配律，$\bar\odot$ 对 $\bar\oplus$ 也适合第一分配律；
+
+(ii) 若 $\odot$ 对 $\oplus$ 适合第二分配律，$\bar\odot$ 对 $\bar\oplus$ 也适合第二分配律；反之不真。
+
+例如令 $A=\mathbb Q$，定义
+\[
+a\odot b=a+b,
+\qquad
+a\oplus b=a+b,
+\]
+令 $\bar A=\{0\}$，$\bar\odot$ 为普通乘法，$\bar\oplus$ 为普通加法，并令 $\phi(a)=0$。对两对运算而言，$A$ 与 $\bar A$ 都同态。显然 $\bar\odot$ 对 $\bar\oplus$ 满足左右两个分配律，但 $\odot$ 对 $\oplus$ 两个分配律都不满足，例如
+\[
+1\odot(1\oplus1)=3\ne4=(1\odot1)\oplus(1\odot1),
+\]
+又
+\[
+(1\oplus1)\odot1=3\ne4=(1\odot1)\oplus(1\odot1).
+\]
+
+\textbf{9.} 令 $A=\mathbb Q$，$A$ 的运算为普通加法；令
+\[
+\bar A=\mathbb Q\setminus\{0\},
+\]
+$\bar A$ 的运算为普通乘法。可以证明，对这两个给定的代数运算来说，$A$ 与 $\bar A$ 之间不存在同构映射。
+
+证明如下。假设 $\phi:A\to\bar A$ 是同构。加法单位元 $0$ 必须映到乘法单位元 $1$。由于 $\phi$ 是满射，存在 $x\in\mathbb Q$ 使
+\[
+\phi(x)=-1.
+\]
+又 $x\ne0$。于是
+\[
+\phi(2x)=\phi(x+x)=\phi(x)^2=(-1)^2=1=\phi(0).
+\]
+由于 $\phi$ 是单射，得到 $2x=0$，从而 $x=0$，矛盾。
+
+也可更直接地观察：若 $\phi$ 是同构，则任意 $a\in\mathbb Q$ 都有
+\[
+\phi(a)=\phi\left(\frac a2+\frac a2\right)=\phi\left(\frac a2\right)^2>0,
+\]
+所以负有理数不可能出现在像中，与满射矛盾。
+
+\section{等价关系}
+
+设 $A$ 是一个集合，$D=\{\text{对},\text{错}\}$。
+
+\textbf{定义。} $A\times A$ 到 $D$ 的一个映射 $R$ 叫做 $A$ 的元素间的一个\textbf{关系}。若 $R(a,b)=\text{对}$，称 $a$ 与 $b$ 符合关系 $R$，记作 $aRb$；若 $R(a,b)=\text{错}$，则称 $a$ 与 $b$ 不符合关系 $R$。
+
+\textbf{定义。} 集合 $A$ 的元素间的一个关系 $\sim$ 叫做一个\textbf{等价关系}，若它满足：
+\begin{enumerate}[label=\Roman*.,leftmargin=3em]
+\item 反射律：$a\sim a$，对每个 $a\in A$；
+\item 对称律：$a\sim b\Longrightarrow b\sim a$；
+\item 推移律：$a\sim b,\ b\sim c\Longrightarrow a\sim c$。
+\end{enumerate}
+下面的例题说明这三个条件是相互独立的。
+
+\textbf{1.} 有人试图由对称律和推移律推出反射律：由 $aRb$ 得 $bRa$，再由 $aRb,bRa$ 得 $aRa$。错误在于，这里的 $a$ 已经受到“存在 $b$ 使 $aRb$”这一条件的限制，并不是集合中任意的 $a$。
+
+取 $A=\{a,b,c\}$，定义关系表
+\[
+\begin{array}{c|ccc}
+R&a&b&c\\\hline
+ a&\text{错}&\text{错}&\text{错}\\
+ b&\text{错}&\text{对}&\text{对}\\
+ c&\text{错}&\text{对}&\text{对}
+\end{array}
+\]
+可直接验证 $R$ 满足对称律与推移律，但 $aRa$ 为错，所以不满足反射律。这说明反射律是独立的。
+
+\textbf{2.} 令
+\[
+A=\{1,2,4,6,10\},
+\qquad
+aRb\Longleftrightarrow4\mid(a+b).
+\]
+$R$ 显然满足对称律。它也满足推移律：若 $aRb$ 与 $bRc$，则 $a\equiv c\equiv-b\pmod4$；在集合 $A$ 中，能与别的元素发生关系的余数类只有 $0$ 与 $2$，从而 $a+c\equiv0\pmod4$，即 $aRc$。更直接地说，关系的非空块为 $\{4\}$ 与 $\{2,6,10\}$。但
+\[
+4\nmid1+1,
+\]
+所以 $1$ 与自身不符合关系，$R$ 不满足反射律。
+\jiaokan{此处用 $a=4q_1+\gamma_1$、$c=4q_3+\gamma_3$ 作分类讨论时，符号与余数限制的书写较为含混。结论本身正确；这里改用同余类直接验证推移律，并保留集合与关系不变。}
+
+\textbf{3.} 令 $A=\{a,b\}$，定义
+\[
+\begin{array}{c|cc}
+R&a&b\\\hline
+ a&\text{对}&\text{错}\\
+ b&\text{对}&\text{对}
+\end{array}
+\]
+则 $R$ 满足反射律，也满足推移律，但不满足对称律。这说明对称律是独立的。
+
+\textbf{4.} 令 $A=\mathbb R$，关系 $\ge$ 满足反射律和推移律，但不满足对称律。
+
+\textbf{5.} 令 $A=\{a,b,c\}$，定义
+\[
+\begin{array}{c|ccc}
+R&a&b&c\\\hline
+ a&\text{对}&\text{对}&\text{对}\\
+ b&\text{对}&\text{对}&\text{错}\\
+ c&\text{对}&\text{错}&\text{对}
+\end{array}
+\]
+则 $R$ 满足反射律和对称律，但不满足推移律：有 $bRa$ 且 $aRc$，却没有 $bRc$。这说明推移律也是独立的。
