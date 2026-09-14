@@ -1,0 +1,36 @@
+{
+  "version": "2026-09-11.v18",
+  "title": "Sciences du langage : de Platon à Chomsky",
+  "author": "Lionel Spinosa",
+  "status": "附录与阅读版面整理；既有校勘结论及待核状态保留",
+  "source_pages_total": 546,
+  "retypeset_source_range": [
+    1,
+    546
+  ],
+  "retypeset_source_pages": 546,
+  "new_source_ranges": [],
+  "new_source_pages": 0,
+  "retypeset_pdf_pages": 590,
+  "editorial_notes": 627,
+  "original_notes": 60,
+  "new_editorial_notes": 0,
+  "new_original_notes": 0,
+  "continuation_source_pdf_page": null,
+  "checks": {
+    "source_markers_complete": true,
+    "overfull_box_warnings": 0,
+    "missing_glyph_warnings": 0,
+    "undefined_reference_warning": false,
+    "labels_need_rerun": false,
+    "text_outside_page": [],
+    "bad_internal_links": []
+  },
+  "output": {
+    "Spinosa_BellaBook_v18_complete.pdf": {
+      "bytes": 12634609,
+      "sha256": "a79f414e96fae3891ff7233a924347b12e6ba12dc3c556917d86c440d13051f1"
+    }
+  },
+  "comparison_pdf_generated": false
+}

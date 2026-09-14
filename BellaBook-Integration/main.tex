@@ -1,0 +1,61 @@
+\documentclass[11pt,twoside,openany]{book}
+\usepackage[paperwidth=7.5in,paperheight=10in,inner=21mm,outer=17mm,top=20mm,bottom=22mm,headheight=15pt,headsep=7mm,footskip=11mm]{geometry}
+\usepackage{fontspec,amsmath,amssymb,mathtools,bm,xcolor,fancyhdr,titlesec,enumitem,tikz}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref,bookmark}
+\setmainfont[Path=fonts/,BoldFont=NotoSerifCJKsc-Regular.otf,BoldFeatures={FakeBold=1.5},ItalicFont=NotoSerifCJKsc-Regular.otf,ItalicFeatures={FakeSlant=.15}]{NotoSerifCJKsc-Regular.otf}
+\XeTeXlinebreaklocale "zh"\XeTeXlinebreakskip=0pt plus 1pt
+\definecolor{BellaBlue}{HTML}{3C71B7}\definecolor{BellaTeal}{HTML}{159A9C}
+\definecolor{BellaInk}{HTML}{24313F}\definecolor{BellaGray}{HTML}{6C7884}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=BellaBlue,urlcolor=BellaTeal,pdftitle={积分论 | BellaBook 全书可编辑重排版},pdfauthor={T. Claesson; L. Hörmander; 黄明游（译）},bookmarksopen=true,bookmarksnumbered=true}
+\setlength{\parindent}{2em}\setlength{\parskip}{.2em}\linespread{1.12}
+\emergencystretch=3em\setcounter{tocdepth}{1}\setlist{nosep,leftmargin=2em}
+\titleformat{\chapter}[display]{\normalfont\bfseries\color{BellaInk}}{\filleft\color{BellaBlue}\fontsize{14}{16}\selectfont 第\thechapter 章}{.7ex}{\filleft\fontsize{30}{35}\selectfont}[\vspace{1ex}\titlerule]
+\titlespacing*{\chapter}{0pt}{-8pt}{24pt}
+\titleformat{\section}{\Large\bfseries\color{BellaInk}}{\colorbox{BellaBlue}{\color{white}\thesection}}{.7em}{}
+\pagestyle{fancy}\fancyhf{}\fancyhead[LE]{\color{BellaGray}\fontsize{8}{10}\selectfont\leftmark}\fancyhead[RO]{\color{BellaGray}\fontsize{8}{10}\selectfont\rightmark}
+\fancyfoot[LE,RO]{\color{BellaBlue}\thepage}\fancyfoot[C]{\hyperlink{contents}{\color{BellaGray}\fontsize{7}{9}\selectfont 目录}}
+\renewcommand{\headrulewidth}{.3pt}\renewcommand{\chaptermark}[1]{\markboth{第\thechapter 章\quad #1}{}}\renewcommand{\sectionmark}[1]{\markright{\thesection\quad #1}}
+\renewcommand{\contentsname}{目录}\renewcommand{\footnotesize}{\fontsize{8}{11}\selectfont}\interfootnotelinepenalty=10000
+\newcommand{\R}{\mathbb R}\newcommand{\N}{\mathbb N}\newcommand{\C}{\mathbb C}
+\newcommand{\uint}{\overline{\int}}\newcommand{\lint}{\underline{\int}}\newcommand{\ustar}{\int^{*}}\newcommand{\dd}{\,dx}
+\newcommand{\SourcePage}[1]{\hypertarget{src#1}{}\label{src:#1}}
+\newcommand{\eqn}[2]{\begin{equation}#2\tag{#1}\label{eq:#1}\end{equation}}
+\newcommand{\eref}[1]{\hyperref[eq:#1]{(#1)}}
+\newenvironment{statement}[2]{\par\medskip\noindent{\color{BellaTeal}\bfseries #1\,#2.}\enspace\hypertarget{thm#2}{}}{\par\medskip}
+\newcommand{\Proof}{\par\noindent\textbf{证明.}\enspace}
+\newcommand{\Exercise}{\par\medskip\noindent\textbf{练习.}\enspace}
+\newcommand{\Note}{\par\noindent\textbf{注.}\enspace}
+\newcommand{\Corr}[1]{\footnote{\textbf{校勘：}\csname correction#1\endcsname}}
+\input{notes}
+\begin{document}\color{BellaInk}\frontmatter
+\thispagestyle{empty}\pdfbookmark[0]{封面}{cover}\vspace*{20mm}
+\noindent{\color{BellaBlue}\small 现代数学译丛}\par\vspace{16mm}
+\noindent{\fontsize{48}{60}\selectfont\bfseries 积分论}\par\vspace{8mm}
+\noindent{\fontsize{18}{25}\selectfont INTEGRATIONSTEORI}\par\vspace{20mm}
+\noindent{\large T. Claesson\quad L. Hörmander\quad 著}\par\vspace{5mm}
+\noindent{\large 黄明游\quad 译}\par\vfill
+\noindent{\color{BellaBlue}\rule{\textwidth}{.6pt}}\par\vspace{5mm}
+\noindent{\color{BellaBlue}\large BellaBook}\par\noindent 全书可编辑 LaTeX 重排版\par\vspace*{12mm}
+\chapter*{版本说明}\addcontentsline{toc}{chapter}{版本说明}
+本版以《积分论》中译本为底本。原著为 T. Claesson、L. Hörmander 的 \textit{Integrationsteori}，Studentlitteratur，1970；中译本由黄明游翻译，科学出版社1987年出版。
+
+本版将正文、公式、证明、练习及提示重排为可编辑 LaTeX，保留原章、节、定理和公式编号。原书页码作为源码中的对照锚点保留，重排页码重新编排。已确认的原文错误在正文中订正，并以“校勘”脚注说明原页码、原文与理由；原译者注和编者注分别保留。
+
+数学家姓名统一采用约定的原文形式：俄／苏学者用西里尔字母，欧美学者用拉丁字母，中国和日本学者保留汉字。数学术语中的人名也遵循此约定。
+
+\section*{内容简介}
+本书与通常以测度论为始的教科书不同，它借助非负下方半连续函数来引进和讨论抽象的积分和测度概念及其性质，内容丰富而精炼，贯穿了近代分析学的观点和方法。
+
+全书共三章、一个附录和综合练习及提示。第一章 Riemann 积分，第二章 Lebesgue 积分，第三章 Radon--Stieltjes 积分。
+
+读者对象是大学数学专业的高年级学生、研究生、教师以及其他有关的科技工作者。
+\input{chapters/preface}
+\clearpage\hypertarget{contents}{}{\fontsize{9.5}{11.5}\selectfont\setlength{\parskip}{0pt}\tableofcontents}\mainmatter
+\input{chapters/ch01}
+\input{chapters/ch02}
+\input{chapters/ch03}
+\input{chapters/appendix}
+\input{chapters/exercises}
+\input{chapters/hints}
+\end{document}

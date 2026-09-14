@@ -1,0 +1,37 @@
+[
+  {
+    "id": "E18",
+    "author": "Immanuel Kant.",
+    "title": "The Critique of Pure Reason.",
+    "scope": "J. M. D. Meiklejohn 英译本，Project Gutenberg 第4280号电子书；本次核对导论I—V，特别是先天／后验、分析／综合的区分，以及先天综合的数学判断。",
+    "url": "https://www.gutenberg.org/files/4280/4280-h/4280-h.htm"
+  },
+  {
+    "id": "E19",
+    "author": "Ludwig Wittgenstein.",
+    "title": "Tractatus Logico-Philosophicus.",
+    "scope": "Project Gutenberg 第5740号德英对照文本，C. K. Ogden 英译。核对3.326—3.328、4.024、4.461—4.4611等条目；对Ulysses／Odysseus的检索未定位到本书所归引例句，因此相关归属仅标待核。",
+    "url": "https://www.gutenberg.org/files/5740/5740-pdf.pdf"
+  },
+  {
+    "id": "E20",
+    "author": "Erwin Schrödinger (1935); John D. Trimmer, trans. (1980).",
+    "title": "The Present Situation in Quantum Mechanics.",
+    "scope": "原论文英译，Proceedings of the American Philosophical Society 124, 323–338；所核对为汉堡工业大学原网页的Internet Archive存档，第5节。用于区分量子叠加与经典命题的逻辑合取，不据此断言量子实验违反非矛盾律。",
+    "url": "https://web.archive.org/web/20161020061333/https://www.tuhh.de/rzt/rzt/it/QM/cat.html"
+  },
+  {
+    "id": "E21",
+    "author": "Bertrand Russell (1905).",
+    "title": "On Denoting.",
+    "scope": "核对原论文全文的限定描述分析、存在与唯一性条件、primary／secondary occurrence和否定的辖域。在线全文由Cosma Shalizi网站转载；未将网站本身的评论当作Russell原文。",
+    "url": "https://bactra.org/Russell/denoting/"
+  },
+  {
+    "id": "E22",
+    "author": "Ludwig Wittgenstein; Harper Collins.",
+    "title": "The Blue and Brown Books.",
+    "scope": "1965版，ISBN 9780061312113。Google Books展示的出版社书介明确将《蓝皮书》的口授笔记标为1933—1934年。本次据书介核对年代，未声称通读此版本。",
+    "url": "https://books.google.com/books/about/The_Blue_and_Brown_Books.html?id=R7CxDSdN6mcC"
+  }
+]

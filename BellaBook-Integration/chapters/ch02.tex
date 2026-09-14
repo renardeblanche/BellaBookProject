@@ -1,0 +1,737 @@
+\chapter{Lebesgue 积分}
+\section{下方半连续正函数的积分}
+\SourcePage{20}
+按第一章第4节所引进的记号，关于 $C_0$ 中函数的积分的基本性质，仅就下面讨论中所要用到的而言，有
+\eqn{2.1.1}{\int(af+bg)\dd=a\int f\dd+b\int g\dd;\quad a,b\in\R;\ f,g\in C_0,}
+和
+\eqn{2.1.2}{\int f\dd\ge0,\quad f\in C_0^+.}
+由 \eref{2.1.1} 和 \eref{2.1.2} 又有
+\eqn{2.1.3}{\int f\dd\le\int g\dd,\quad f\le g,\ f,g\in C_0.}
+请注意，这里我们没有利用 Riemann 积分对坐标平移的不变性质。关于这一点到第三章就会明白了。
+
+作为开始，我们将积分概念推广到这样一些函数，它们可以表示成和 $\sum u_n$，其中所有 $u_n\in C_0^+$。首先，我们研究何种函数可以如此表示。
+\begin{statement}{定义}{2.1.1}
+一个值域为 $(-\infty,+\infty]$ 的函数 $f$，若对于任意 $x$ 和任意 $a<f(x)$，均可找到 $x$ 的一个邻域 $U$，使得 $f(y)>a$ 对一切 $y\in U$，则称 $f$ 为下方半连续。下方半连续的非负函数的集合记作 $I^+$。如果 $-f$ 为下方半连续，则称 $f$ 为上方半连续。
+\end{statement}
+此处及以后，允许 $+\infty$ 作为函数值，这常常带来方便。此时约定
+\[a<+\infty,\quad a\text{ 为一实数值},\qquad (+\infty)+a=a+(+\infty)=+\infty,\quad-\infty<a\le+\infty,\]
+\SourcePage{21}
+\[a\cdot(+\infty)=(+\infty)\cdot a=+\infty,\quad0<a\le+\infty.\]
+引用 $+\infty$ 的优越性之一是使得任一非空的实数集恒有上确界。
+
+由开集的定义（见附录），定义2.1.1也可以叙述成：若 $\{y;f(y)>a\}$ 对任意 $a$ 恒为开集，则 $f$ 为下方半连续。因为开集的任意并集以及有限个开集的交集仍然为开集，由此可知
+\begin{statement}{引理}{2.1.2}
+设 $f_\alpha$，$\alpha\in A$ 为任意一个下方半连续函数族，则 $\sup_{\alpha\in A}f_\alpha$ 仍然为下方半连续。其次，当 $A$ 为有限集时，$\inf_{\alpha\in A}f_\alpha$ 也是下方半连续的。
+\end{statement}
+现在，我们可以得到 $C_0^+$ 中函数的和的特征了。
+\begin{statement}{定理}{2.1.3}
+一个非负函数 $f$ 可以写成和式
+\eqn{2.1.4}{f=\sum_{n=1}^\infty u_n,\quad u_n\in C_0^+}
+的充分必要条件是 $f\in I^+$。
+\end{statement}
+\Proof 由于非负级数的和是其部分和的上确界，故由引理2.1.2立即可知，和函数 \eref{2.1.4} 是下方半连续的。另一方面，设 $f$ 是 $I^+$ 中任意一个函数。作为开始，我们构造一个非负连续函数的递增序列，它趋于 $f$。令
+\eqn{2.1.5}{S_n(x)=\min\left\{n,\inf_z\bigl(f(z)+n\|z-x\|\bigr)\right\},\quad n=1,2,\ldots.}
+\Corr{4}显然，$S_n$ 关于 $n$ 是递增的，并且 $0\le S_n(x)\le f(x)$，这只要令 $z=x$ 便可立即看出。根据 $|\|z-x\|-\|z-y\||\le\|x-y\|$，我们得到（见附录）
+\[|S_n(x)-S_n(y)|\le n\|x-y\|.\]
+可见，$S_n(x)$ 为连续。为了证明：$S_n(x)\uparrow f(x)$，当 $n\to\infty$，我们令 $a<f(x)$ 并按下方半连续的定义固定 $x$ 的邻域 $U$。于是 $f(z)+n\|z-x\|>a$，当 $z\in U$。其次，当 $n$ 取得充分大时也必有 $n>a$ 及 $n\|z-x\|>a$，只要 $z\notin U$。这也就是说，对于如此之 $n$，$S_n(x)\ge a$，
+\SourcePage{22}
+从而，可以断定 $S_n(x)\to f(x)$。
+
+令 $S_0=0$。这里，以 $u_n=S_n-S_{n-1}$ 来作为定理中所要求的函数是不完全满足要求的，因为 $u_n$ 的支集不见得有界。为此，我们取一个连续函数 $g(x)\ge0$，它满足：当 $\|x\|<1$ 时 $g(x)=1$；而当 $\|x\|>2$ 时 $g(x)=0$；同时 $g(x)$ 是 $\|x\|$ 的下降函数。这样一来，函数序列 $\widetilde S_n(x)=S_n(x)g(x/n)$ 关于 $n$ 也是递增的并趋于 $f(x)$。现在，令 $u_n=\widetilde S_n-\widetilde S_{n-1}$，所得级数 $\sum_{n=1}^\infty u_n$ 即满足定理的要求，定理证毕。
+\Exercise 试证定义式 \eref{2.1.5} 中的下确界是可以实际达到的。
+
+假定 $f\in I^+$ 和 \eref{2.1.4} 是 $f$ 的一个表示式，把定理1.2.1的证明简单修改一下，可以证明
+\[\sum_{n=1}^\infty\int u_n\dd=\sup_{f\ge g\in C_0}\int g\dd.\]
+据此，自然地引进如下定义。
+\begin{statement}{定义}{2.1.4}
+若 $f\in I^+$，定义 $f$ 的上积分为如下之非负实数（可能是 $+\infty$）
+\eqn{2.1.6}{\ustar f\dd=\sup_{g\le f}\int g\dd,\quad g\in C_0.}
+\end{statement}
+实际上，让 $g$ 取遍 $C_0^+$ 就够了。为了说明何以把 $I^+$ 中函数的 Riemann 下积分称之为上积分的理由，我们愿意指出，$I^+$ 中每个满足条件 $\ustar f\dd<\infty$ 的函数，按以后的定义必定都是可积的，因而这时同样地也可以称之为积分。
+\begin{statement}{引理}{2.1.5}
+设 $M\subset C_0^+$，并假定对任意 $g_1,g_2\in M$ 存在 $g\in M$，使得 $g_1\le g$ 和 $g_2\le g$ 成立。令 $f=\sup_{g\in M}g$，则 $f\in I^+$ 且
+\eqn{2.1.7}{\ustar f\dd=\sup_{g\in M}\int g\dd.}
+\end{statement}
+\Proof \eref{2.1.7} 的右端显然不超过 $\ustar f\dd$。为证明另一方向的不等关系，对任意满足 $g\le f$ 的函数 $g\in C_0$，我们取函数 $h\in C_0^+$，它
+\SourcePage{23}
+满足：$h>0$ 于 $g$ 的支集。下面证明：对任给 $\varepsilon>0$，存在一个函数 $G\in M$ 使得 $G>g-\varepsilon h$。如此，我们得到
+\[\sup_{G\in M}\int G\dd\ge\int g\dd-\varepsilon\int h\dd.\]
+由于 $\varepsilon$ 为任意正数和 $g$ 为 $C_0$ 中满足 $\le f$ 的任意函数，所以 \eref{2.1.7} 的左端所代表的上确界等于右端。
+
+为证函数 $G$ 的存在性，我们注意到，对任一 $x\in\operatorname{supp}g$，可以找到一个 $G_x\in M$ 使得 $G_x(x)>g(x)-\varepsilon h(x)$。此不等式自然于 $x$ 的某个邻域 $U_x$ 内也成立。根据 Borel--Lebesgue 引理，我们可以选出有限个点 $x_1,x_2,\ldots,x_k$，使得 $\operatorname{supp}g\subset U_{x_1}\cup\cdots\cup U_{x_k}$，同时选出一个函数 $G\in M$ 使得 $G\ge\max(G_{x_1},\ldots,G_{x_k})$，它就具有所要求的性质。
+
+特别地，我们可以将 $M$ 取作一个函数序列 $f_n\in C_0^+$，它上升地趋于 $f$，于是 $\ustar f\dd=\lim_{n\to\infty}\int f_n\dd$ 对所有如此之序列 $\{f_n\}$ 成立。
+
+现在，我们把 $I^+$ 中函数上积分的最重要的性质概括为
+\begin{statement}{定理}{2.1.6}
+若 $f,g\in I^+$ 和 $f\le g$，则 $\ustar f\dd\le\ustar g\dd$。假如 $f\in I^+$ 和 $a$ 为一正实数，则 $\ustar(af)\dd=a\ustar f\dd$ 成立。如果 $\{f_n\}_{n=1}^\infty$ 为 $I^+$ 中的一个序列，则 $\sum_{n=1}^\infty f_n\in I^+$ 并且
+\eqn{2.1.8}{\ustar\left(\sum_{n=1}^\infty f_n\right)\dd=\sum_{n=1}^\infty\ustar f_n\dd.}
+另外，若 $f_n\in I^+$，$f_n\uparrow f$ 当 $n\to\infty$，则 $f\in I^+$ 且
+\eqn{2.1.9}{\ustar f_n\dd\longrightarrow\ustar f\dd,\quad n\to\infty.}
+\end{statement}
+\Proof 所有论断除 \eref{2.1.8} 和 \eref{2.1.9} 外都是明显地成立。无论如何，\eref{2.1.8}（\eref{2.1.9}）可以通过应用引理2.1.5来证明，其时 $M$ 取作为
+\SourcePage{24}
+所有和函数 $\sum_{n=1}^\infty g_n$ 的集合（所有上确界 $\sup_n g_n$ 的集合），其中 $g_n\le f_n$，$g_n\in C_0^+$ 并且所有 $g_n$ 除有限个外是恒等于零的。
+\section{正函数的上积分}
+同 Riemann 意义上、下积分的定义类似，我们得到如下定义，所不同的地方，就是借助 $I^+$ 的函数，以之代替分片常数或者连续函数。
+\begin{statement}{定义}{2.2.1}
+设 $f$ 是任一非负函数，则 $f$ 的上积分由下式定义
+\eqn{2.2.1}{\ustar f\dd=\inf_{f\le h\in I^+}\ustar h\dd.}
+\end{statement}
+显然，若 $f\in I^+$，则 $\ustar f\dd$ 的定义与第1节中的定义是等同的。
+
+注意，若 $f\ge0$ 为有界并具有紧致的支集，则有
+\eqn{2.2.2}{\ustar f\dd\le\uint f\dd.}
+类似于定理2.1.6，我们得到上积分的如下性质。
+\begin{statement}{定理}{2.2.2}
+若 $0\le f\le g$，则 $\ustar f\dd\le\ustar g\dd$。当 $f\ge0$ 和 $0\le a<\infty$ 时，有 $\ustar(af)\dd=a\ustar f\dd$。其次，对于非负函数序列 $\{f_n\}_{n=1}^\infty$ 有
+\eqn{2.2.3}{\ustar\left(\sum_{n=1}^\infty f_n\right)\dd\le\sum_{n=1}^\infty\ustar f_n\dd}
+和
+\eqn{2.2.4}{\ustar f_n\dd\uparrow\ustar f\dd,\quad\text{若 }f_n\uparrow f,\quad n\to\infty.}
+\end{statement}
+\Proof 头两个结论是明显的。为证 \eref{2.2.3}，我们取 $\varepsilon>0$ 和选 $g_n\in I^+$ 使 $g_n\ge f_n$ 和 $\ustar g_n\dd\le\ustar f_n\dd+\varepsilon/2^n$。
+\SourcePage{25}
+若令 $g=\sum_{n=1}^\infty g_n$，则 $\sum_{n=1}^\infty f_n\le g\in I^+$，并由 \eref{2.1.8} 我们得到
+\[\ustar\left(\sum_{n=1}^\infty f_n\right)\dd\le\ustar g\dd=\sum_{n=1}^\infty\ustar g_n\dd\le\sum_{n=1}^\infty\ustar f_n\dd+\varepsilon,\]
+由此 \eref{2.2.3} 得证。为证 \eref{2.2.4}，我们先证如下引理。
+\begin{statement}{引理}{2.2.3}
+假设 $0\le f_i\le g_i\in I^+$ 和 $\ustar g_i\dd\le\ustar f_i\dd+\varepsilon_i$，$i=1,2$。那么，若 $f_1\le f_2$，则有
+\[\ustar\max(g_1,g_2)\dd\le\ustar f_2\dd+(\varepsilon_1+\varepsilon_2).\]
+\end{statement}
+\Proof 定理2.1.6和公式 $\max(g_1,g_2)+\min(g_1,g_2)=g_1+g_2$ 告诉我们\Corr{5}
+\[\begin{aligned}\ustar\max(g_1,g_2)\dd+\ustar\min(g_1,g_2)\dd
+&=\ustar g_1\dd+\ustar g_2\dd\\&\le\ustar f_1\dd+\ustar f_2\dd+(\varepsilon_1+\varepsilon_2).\end{aligned}\]
+又因 $f_1=\min(f_1,f_2)\le\min(g_1,g_2)$，所以引理得证。
+
+\textbf{\eref{2.2.4}的证明：} 令 $\varepsilon>0$ 并选 $g_n\in I^+$ 使得 $f_n\le g_n$ 和 $\ustar g_n\dd\le\ustar f_n\dd+\varepsilon/2^n$。因为序列 $\{g_n\}$ 不一定是递增的，所以我们令 $g'_n=\max(g_1,\ldots,g_n)=\max(g'_{n-1},g_n)$。由引理
+\eqn{2.2.5}{\ustar g'_n\dd\le\ustar f_n\dd+\sum_{k=1}^n\varepsilon/2^k.}
+我们令 $n\to\infty$，并设 $g=\lim g'_n$，则由 \eref{2.2.5} 和定理2.1.6有
+\[\ustar f\dd\le\ustar g\dd\le\lim\ustar f_n\dd+\varepsilon,\]
+\SourcePage{26}
+这是因为 $f\le g$ 和当 $n\to\infty$ 时 $I^+\ni g'_n\uparrow g$。由于 $\varepsilon>0$ 是任意的，故 $\ustar f\dd\le\lim\ustar f_n\dd$，而反方向的不等式成立是显然的，至此 \eref{2.2.4} 得证。
+
+\eref{2.2.3} 和 \eref{2.2.4} 是 Riemann 上积分所没有的性质，所以上积分 $\ustar$ 比 Riemann 上积分优越。
+\section{零集合和零函数}
+在这一节里，我们要研究：在什么样的集合上人们可以任意地修改一个函数，而不致改变其积分值。
+\begin{statement}{定义}{2.3.1}
+一个函数 $f\ge0$，若 $\ustar f\dd=0$，则称为零函数（Bourbaki 的术语是：可忽略函数）。
+\end{statement}
+由定理2.2.2，立即可得
+\begin{statement}{引理}{2.3.2}
+若 $0\le f\le g$ 而 $g$ 是一个零函数，则 $f$ 也是零函数。又若所有 $f_n$ 为零函数，那么 $\sum_{n=1}^\infty f_n$ 亦为零函数。
+\end{statement}
+据此，容易得到
+\begin{statement}{定理}{2.3.3}
+若 $f$ 和 $g$ 为非负函数，其中 $g$ 是一零函数，同时 $f(x)\ne0$ 蕴含 $g(x)\ne0$，则 $f$ 是零函数。
+\end{statement}
+\Proof 根据引理2.3.2，$g+g+\cdots=\lim_{n\to\infty}ng$ 是一个零函数。然而，于 $f(x)\ne0$ 的地方，上述函数的值为 $+\infty$，从而 $\ge f$，因此，$f$ 是零函数。
+
+根据定理2.3.3，确定 $f$ 是否是零函数只需把注意力放在 $\{x;f(x)\ne0\}$ 上。因此，我们引进
+\begin{statement}{定义}{2.3.4}
+$\R^d$ 的一个部分集 $E$，如果它的特征函数是一个零函数，则称 $E$ 为零集合。
+\end{statement}
+类似于引理2.3.2和定理2.3.3，我们得到
+\SourcePage{27}
+\begin{statement}{定理}{2.3.5}
+一个零集的部分集为零集，可数多个零集的并集也是一个零集。一个函数为零函数的充分与必要的条件是它仅仅在一个零集上不等于零。
+\end{statement}
+注意，根据 \eref{2.2.2}，一个 Jordan 外测度为零的有界集（特别地一个点），在定义2.3.4的意义下为零集。然而，逆命题不一定成立，这是因为，由定理2.3.5，任一可数集合为零集，同时，确实存在 Jordan 外测度为正的有界可数集。无论如何，根据下面的练习，对于紧致集合，上述逆命题成立。
+\Exercise 若 $K$ 为一紧致零集，则 $\overline m(K)=0$。（提示：往证若 $C_0^+\ni g_n\uparrow g\ge\chi_K$ 则 $g_n\ge(1-\varepsilon)\chi_K$ 对充分大的 $n$。）
+
+特别是，这表明：倘若 $K=[0,1]$ 为可数集，那么 $K$ 必然就是零集并导致矛盾 $0=\overline m(K)=1$。所以 $K=[0,1]$ 是不可数集。
+
+一个依赖于 $x$ 的命题，若对除去属于一个零集的 $x$ 成立，则说这个命题几乎处处成立（简记为 a.e.）。前面的定理表明：一个函数为零函数的充分必要条件是它几乎处处等于零。
+\begin{statement}{定理}{2.3.6}
+假定 $f$ 和 $g$ 为非负函数并且几乎处处相等，则 $\ustar f\dd=\ustar g\dd$。
+\end{statement}
+\Proof 令 $h=\min(f,g)$ 和 $H=\max(f,g)$。则 $H-h$ 是一个零函数（若令 $\infty-\infty=0$），并且
+\[\ustar H\dd\le\ustar h\dd+\ustar(H-h)\dd=\ustar h\dd\le\ustar H\dd,\]
+所以 $H$ 和 $h$ 具有同一的上积分。因为 $f$ 和 $g$ 位于 $h$ 与 $H$ 的中间，所以它们的上积分相等。
+\begin{statement}{定理}{2.3.7}
+若 $f\ge0$ 且 $\ustar f\dd<\infty$，则 $f$ 为几乎处处有限的函数。
+\end{statement}
+\Proof 设 $\chi$ 是 $\{x;f(x)=+\infty\}$ 的特征函数。因 $f\ge0$，故
+\SourcePage{28}
+$n\chi\le f$，从而 $0\le\ustar\chi\dd\le\frac1n\ustar f\dd$，对所有 $n$。令 $n\to\infty$，得到 $\ustar\chi\dd=0$。
+
+这个定理与定理2.2.2合在一起，我们得到
+\begin{statement}{定理}{2.3.8}
+设 $f_n\ge0$ 和 $\sum_{n=1}^\infty\ustar f_n\dd<\infty$，则 $\sum_{n=1}^\infty f_n(x)<\infty$，a.e. 在 $\R^d$ 上。
+\end{statement}
+\section{Lebesgue 积分的定义及其重要性质}
+同第一章第1节里关于 Riemann 可积的准则类似，我们引进
+\begin{statement}{定义}{2.4.1}
+设 $f$ 是值域为 $[-\infty,+\infty]$ 的函数，若对任意 $\varepsilon>0$ 存在函数 $g\in C_0$ 使得 $\ustar|f-g|\dd<\varepsilon$，则称 $f$ 在 Lebesgue 意义下可积。
+\end{statement}
+由定义可知：$f$ 为可积的充分与必要条件是对任意 $\varepsilon>0$，存在 $g\in C_0$ 和 $h\in I^+$ 使得 $|f-g|\le h$ 并且 $\ustar h\dd<\varepsilon$。
+
+作为练习，试证如下两定理。
+\begin{statement}{定理}{2.4.2}
+假如对任意 $\varepsilon>0$，$f$ 能够被一个可积函数 $g$ 逼近，使 $\ustar|f-g|\dd<\varepsilon$，则 $f$ 为可积的函数。
+\end{statement}
+\begin{statement}{定理}{2.4.3}
+函数 $f\in I^+$ 可积的充分与必要条件是 $\ustar f\dd<\infty$。
+\end{statement}
+现在假定 $f$ 是一可积函数。根据定义，可以取适当的 $g_n\in C_0$ 使得
+\SourcePage{29}
+\eqn{2.4.1}{\ustar|f-g_n|\dd\longrightarrow0.}
+于是
+\[\left|\int g_n\dd-\int g_m\dd\right|\le\int|g_n-g_m|\dd\le\ustar|f-g_n|\dd+\ustar|f-g_m|\dd\longrightarrow0,\]
+根据 Cauchy 收敛准则，$\int g_n\dd$ 有一极限值。此值是与 $g_n$ 的选择无关的，因为如果 $h_n\in C_0$ 是另一序列使 $\ustar|f-h_n|\dd\to0$，则有
+\[\left|\int g_n\dd-\int h_n\dd\right|\le\int|g_n-h_n|\dd\le\ustar|g_n-f|\dd+\ustar|h_n-f|\dd\longrightarrow0.\]
+我们把 $\int g_n\dd$ 的极限值（当 $n\to\infty$）叫做 $f$ 的积分并记作 $\int f\dd$。
+
+根据定理2.3.6，在一个零集合上改变函数 $f$ 的定义，既不影响 $f$ 的可积性，也不影响积分值 $\int f\dd$。两个可积函数，如果它们除了在一个零集之外相等，则可看成是等价的。所有等价类组成的集合记作 $L^1$。为了确定 $L^1$ 的一个元素，只要几乎处处确定一个函数就够了。
+\Exercise 设 $0\le f\in L^1$，试证 $\int f\dd=\ustar f\dd$。
+\begin{statement}{定理}{2.4.4}
+若 $f,g\in L^1$ 和 $a,b\in\R$，则 $af+bg\in L^1$ 并且
+\eqn{2.4.2}{\int(af+bg)\dd=a\int f\dd+b\int g\dd.}
+（注意，$af+bg$ 几乎处处有意义。）其次，$\max(f,g),\min(f,g)\in L^1$ 和
+\eqn{2.4.3}{\int f\dd\le\int g\dd,\quad\text{当 }f\le g}
+成立。
+\end{statement}
+\SourcePage{30}
+\Proof 利用不等式
+\[|\max(f,g)-\max(f_0,g_0)|\le\max(|f-f_0|,|g-g_0|)\le|f-f_0|+|g-g_0|\]
+和定义2.4.1，我们立即得到 $\max(f,g)\in L^1$。\eref{2.4.2} 可按同样方法证明，同练习结合一起导出 \eref{2.4.3}。
+
+特别地，注意若 $f\in L^1$ 则 $|f|=\max(f,-f)\in L^1$。
+\Exercise 设 $f\in L^1$，试证 $\int|f(x+h)-f(x)|\dd$ 为 $h$ 的连续函数。
+
+我们补充一个练习，它表明定理2.4.4中的线性性质同可积性的联系。
+\Exercise 设 $f\ge0$ 和 $\ustar f\dd<\infty$。试证等式 $\ustar(f+g)\dd=\ustar f\dd+\ustar g\dd$ 对任意 $g\ge0$ 成立的充要条件是 $f\in L^1$。
+\begin{statement}{定理}{2.4.5}[Beppo Levi]
+设 $f_n\in L^1$，$f_n\uparrow f$，则 $f\in L^1$ 并且
+\eqn{2.4.4}{\int f\dd=\lim\int f_n\dd,\quad\text{当右端为有限};}
+反之，若 $f\in L^1$，则右端为有限。
+\end{statement}
+\Proof $\int f_n\dd$ 关于 $n$ 是递增的，并且其极限值当 $f\in L^1$ 时为有限，鉴于 $\int f_n\dd\le\int f\dd$。现在，假定极限 $I=\lim\int f_n\dd$ 存在，则当 $n\ge m$ 时
+\[\ustar(f_n-f_m)\dd=\int(f_n-f_m)\dd\longrightarrow I-\int f_m\dd,\quad n\to\infty,\]
+从而（定理2.2.2）
+\SourcePage{31}
+\[\ustar(f-f_m)\dd=I-\int f_m\dd\longrightarrow0,\quad m\to\infty.\]
+于是，定理2.4.2告诉我们 $f\in L^1$，且鉴于 $\int f\dd-\int f_m\dd=\int(f-f_m)\dd\to0$ 当 $m\to\infty$，故 \eref{2.4.4} 成立。
+
+定理2.4.5可以叙述成关于正项级数的一个定理：若 $0\le u_n\in L^1$，则 $\sum u_n\in L^1$ 的充分必要条件为 $\sum\int u_n\dd<+\infty$，其时
+\[\int\left(\sum_{n=1}^\infty u_n\right)\dd=\sum_{n=1}^\infty\int u_n\dd.\]
+由此我们看到，通过 Lebesgue 积分，关于正项级数的定理1.2.1得到了实质上的改进。
+
+我们给出以后所需要的定理2.4.5的一个简单推论。
+\begin{statement}{定理}{2.4.6}
+设 $f\ge0$ 和 $\ustar f\dd<\infty$。则存在序列 $g_n\in I^+$ 使得 $f\le g_n\downarrow g\in L^1$，其中 $g\ge f$ 且 $\ustar f\dd=\ustar g\dd=\int g\dd$。若 $f\in L^1$，则 $f=g$ 几乎处处成立。
+\end{statement}
+将定理2.4.6作为练习。借助于定理2.4.6可以给出定理2.2.2的一个容易的证明，即将其中任意非负函数改换成 $L^1$ 中相应的某一函数便可。
+
+不难看出，对 $-f_n$ 应用定理2.4.5，可得关于 $L^1$ 中递减函数序列 $\{f_n\}$ 的相应定理。在下一定理中，我们研究它对于非单调序列的推广。
+\begin{statement}{定理}{2.4.7}[Fatou 引理]
+若 $f_n\ge0$，则
+\eqn{2.4.5}{\ustar(\liminf f_n)\dd\le\liminf_{n\to\infty}\ustar f_n\dd.}
+进一步，若 $f_n\in L^1$（对一切 $n$）同时上式右端为有限，则有 $\liminf f_n\in L^1$。
+\end{statement}
+\Proof 假设对 $n\le m$
+\SourcePage{32}
+$h_{nm}=\min(f_n,\ldots,f_m)$。则存在
+\[\lim_{m\to\infty}h_{nm}=h_n\text{（下降）},\qquad\lim_{n\to\infty}h_n=\liminf f_n\text{（上升）}.\]
+其次，根据定理2.2.2和由于 $h_n\le f_n$，有
+\[\ustar\liminf f_n\dd=\ustar\lim h_n\dd=\lim\ustar h_n\dd\le\liminf\ustar f_n\dd,\]
+由此 \eref{2.4.5} 得证。现在，若 $f_n\in L^1$ 对一切 $n$，则有 $L^1\ni h_{nm}\downarrow h_n\ge0$，当 $m\to\infty$，由此，根据定理2.4.5知 $h_n\in L^1$。假若 $\lim\int h_n\dd<\infty$，同一定理断定 $\lim h_n=\liminf f_n\in L^1$。若 $\liminf\ustar f_n\dd<\infty$，这就是上面所述情形。
+\Exercise 设 $f_n=n^2|x|e^{-n|x|}$（$x\in\R^1$），确定 \eref{2.4.5} 的两端。
+\begin{statement}{定理}{2.4.8}[Lebesgue 控制收敛定理]
+设 $f_n\in L^1$，$\lim_{n\to\infty}f_n(x)=f(x)$ 几乎处处成立。进一步假设存在函数 $g(x)\ge0$ 满足 $\ustar g\dd<\infty$ 并使得 $|f_n|\le g$ 对一切 $n$。则 $f\in L^1$ 并有
+\eqn{2.4.6}{\int f\dd=\lim_{n\to\infty}\int f_n\dd.}
+\end{statement}
+\Proof 不带来任何附加限制，我们可以假定 $g\in L^1$，这是因为可以用一个优函数 $h\in I^+$ 去替代 $g$，这里，$h\in L^1$ 和 $\ustar h\dd<+\infty$ 成立。现在，我们对序列 $2g-|f-f_n|\ge0$ 应用 Fatou 引理，可得
+\[\int2g\dd\le\liminf\ustar(2g-|f-f_n|)\dd.\]
+由于 $\liminf_{n\to\infty}\ustar|f_n-f_m|\dd\le2\ustar g\dd<+\infty$，
+\SourcePage{33}
+再次利用 Fatou 引理，得知 $|f-f_n|\in L^1$。这也就是说，
+\[\ustar(2g-|f-f_n|)\dd=\int2g\dd-\int|f-f_n|\dd,\]
+故 $\limsup\int|f-f_n|\dd\le0$，从而 $f\in L^1$ 且 \eref{2.4.6} 成立。
+
+鉴于前一练习给出的例子，那里 \eref{2.4.6} 并不成立，可见上述可积控制函数的条件一般不能省略。\Corr{6}
+\Exercise 直接验证前一练习中的 $\sup_n f_n$ 不存在有限的上积分。
+\begin{statement}{定理}{2.4.9}
+假设 $u_n\in L^1$ 和 $\sum_{n=1}^\infty\int|u_n|\dd<\infty$，则级数
+\eqn{2.4.7}{f(x)=\sum_{n=1}^\infty u_n(x)}
+几乎处处绝对收敛，并且 $f\in L^1$。其次，有
+\eqn{2.4.8}{\int\left|f-\sum_{k=1}^n u_k\right|\dd\longrightarrow0,\quad n\to\infty.}
+\end{statement}
+\Proof 根据定理2.4.5，$F=\sum|u_n|$ 是 $L^1$ 中的一个函数。级数 $\sum u_n(x)$ 对于每个满足 $F(x)<\infty$ 的点 $x$，从而对几乎所有 $x$，绝对收敛。所以 \eref{2.4.7} 几乎处处存在。若令 $f_n(x)=\sum_{k=1}^n u_k(x)$，则 $|f_n|\le F$ 对一切 $n$，并且几乎处处 $f_n\to f$。由定理2.4.8，这表明 $f\in L^1$。又因 $F\ge|f-f_n|\to0$ 当 $n\to\infty$ 几乎处处成立，从而，由定理2.4.8，\eref{2.4.8} 也成立。
+\Exercise 利用 $u_n^+=\max(u_n,0)$，$u_n^-=\max(-u_n,0)$\Corr{7}，以及对级数 $\sum_{n=1}^\infty u_n^+$ 和 $\sum_{n=1}^\infty u_n^-$ 应用定理2.4.5，给出定理2.4.9的一
+\SourcePage{34}
+个新证明。
+\Exercise 假定 $f\in L^1$。试证存在 $f_1,f_2\in I^+$ 使得 $f=f_1-f_2$ 几乎处处成立。（提示：首先证明 $f$ 可以几乎处处表示成 \eref{2.4.7} 的形式，其中 $u_n\in C_0$，然后利用前一练习。）
+\Exercise 证明若 $f\in L^1$（一元函数）则 $\sum_{n=-\infty}^{+\infty}f(x+n)$ 几乎处处收敛。
+\begin{statement}{定理}{2.4.10}[Riesz--Fischer 定理]
+若 $f_n\in L^1$ 且
+\eqn{2.4.9}{\int|f_n-f_m|\dd\longrightarrow0,\quad n,m\to\infty,}
+则存在一个函数 $f\in L^1$ 使得
+\eqn{2.4.10}{\int|f-f_n|\dd\longrightarrow0,\quad n\to\infty.}
+相反地，由 \eref{2.4.10} 可以推出 \eref{2.4.9}。
+\end{statement}
+\Proof 最后那个论断可由 $\int|f_n-f_m|\dd\le\int|f-f_n|\dd+\int|f-f_m|\dd$ 直接推出。为证前一论断，我们用 $n_k$ 记这样的整数，它使得 $\int|f_n-f_m|\dd\le2^{-k}$，当 $n,m\ge n_k$。这样，有 $\int|f_{n_{k+1}}-f_{n_k}|\dd\le2^{-k}$。从而，根据定理2.4.9，对几乎所有的 $x$ 和 $f\in L^1$，极限
+\[f(x)=f_{n_1}(x)+\sum_{k=1}^\infty(f_{n_{k+1}}(x)-f_{n_k}(x))=\lim_{k\to\infty}f_{n_k}(x)\]
+存在。由 \eref{2.4.8}，$\int|f-f_{n_k}|\dd\to0$，当 $k\to\infty$。
+
+现在，对任意 $k$ 我们有
+\[\int|f_m-f|\dd\le\int|f_{n_k}-f|\dd+\int|f_m-f_{n_k}|\dd,\]
+\SourcePage{35}
+让 $m$ 和 $k$ 同时地趋于 $\infty$，即得 \eref{2.4.10}。
+
+如果不加选择的话，$f_n(x)$ 可能对某些 $x$ 不收敛。下面的练习给出一个例子，那里我们假定维数是1。
+\Exercise 设 $n$ 为一正整数而 $m$ 为如此之整数使得 $m^3\le n\le(m+1)^3$ 成立。我们令
+\[f_n(x)=\begin{cases}1,&0\le n-m^3-m|x|<1;\\0,&\text{其它}.\end{cases}\]
+试证 $\int|f_n|\dd\to0$ 当 $n\to\infty$，但是 $\lim f_n(x)$ 对某些 $x$ 不存在。
+
+定理2.4.10完全类似于实数序列的 Cauchy 收敛准则。前面的证明也是与 Cauchy 收敛准则的证明平行的，它以级数绝对收敛蕴含收敛的定理作为出发点。
+\section{可测和局部可积函数}
+为使一个函数 $f$ 成为可积，除要求 $f$ 有一定的正则性，同时还要 $|f|$ 具有某种局部和整体的有界性质（在 $\R^d$ 的紧致集上的和当 $x\to\infty$ 时的）。这里，我们首先研究出自 $L^1$ 但不带有界性限制的函数类。
+\begin{statement}{定义}{2.5.1}
+一个在 $\R^d$ 上几乎处处定义和在 $[-\infty,+\infty]$ 上取值的函数 $f$，若 $T_gf\in L^1$，对所有 $g\in C_0^+$，则称 $f$ 为可测的，其中 $T_gf=\max(-g,\min(g,f))$（画图！）。
+\end{statement}
+不难看出，在一个零集合上修改 $f$，不改变 $f$ 的可测性。定义也表明，若 $f$ 为连续或者可积，则 $f$ 为可测。因为对一可积函数 $f$，$\ustar|f|\dd=\int|f|\dd<+\infty$，所以，若函数为可积，则必定可测。下面的定理给出了可积与可测的关系。
+\begin{statement}{定理}{2.5.2}
+函数 $f$ 可积的充分与必要条件是 $f$ 可测并且 $\ustar|f|\dd<+\infty$。
+\end{statement}
+\SourcePage{36}
+\Proof 在 $C_0^+$ 中选一适当 $\{g_n\}$，使得当 $n\to\infty$，对所有 $x\in\R^d$ 有 $g_n(x)\to+\infty$。若 $f$ 为可测，则有 $L^1\ni T_{g_n}f\to f$，当 $n\to\infty$，和 $|T_{g_n}f|\le|f|$，对所有 $n$。根据 Lebesgue 控制收敛定理，若 $\ustar|f|\dd<+\infty$ 则 $f\in L^1$。
+
+定理2.5.2常常是这样应用的：若 $f$ 为可测且 $|f|\le g\in L^1$，则 $f\in L^1$。
+\begin{statement}{定理}{2.5.3}
+假设 $\{f_n\}$ 为一可测函数序列，并且 $f_n$ 几乎处处收敛于 $f$ 当 $n\to\infty$，则 $f$ 为可测函数。
+\end{statement}
+\Proof 令 $g\in C_0^+$，则有 $L^1\ni T_gf_n\to T_gf$ a.e.，当 $n\to\infty$。其次，因 $|T_gf_n|\le g$，这样一来，由 Lebesgue 控制收敛定理知 $T_gf\in L^1$。
+
+任一函数 $f\in I^+$ 是可测的，所以定理2.4.3是定理2.5.2的一个特例。同时，定理2.5.3以及定理2.5.2的证明表明，$f$ 为可测函数的充分必要条件是存在有界的 $f_n\in L^1$ 使得 $f=\lim f_n$。由此我们得到
+\begin{statement}{定理}{2.5.4}
+假定 $f$ 和 $g$ 可测，则 $\max(f,g)$ 和 $\min(f,g)$ 亦为可测。进一步，若 $f$ 和 $g$ 几乎处处有限，则 $f+g$ 和 $f\cdot g$ 为可测。
+\end{statement}
+\Proof 这里我们只来证明 $f\cdot g$ 是可测的。为此，注意到 $f\cdot g=((f+g)^2-(f-g)^2)/4$，所以，只要证明一个可测函数的平方仍然是可测的就够了。若 $f$ 为可测，则存在有界的 $f_n\in L^1$ 使 $f_n\to f$ 当 $n\to\infty$。因为一个有界可积函数的平方是可积的，所以 $f^2$ 为可测。定理其余部分的证明留给读者作为练习。
+
+对于一个可测函数的序列 $\{f_n\}$，定理2.5.3和定理2.5.4告诉我们 $\sup f_n$ 和 $\liminf f_n$ 皆是可测的。
+\SourcePage{37}
+从定理2.5.2和定理2.5.4，我们得到
+\begin{statement}{推论}{2.5.5}
+假定 $f\in L^1$，并假定 $g$ 为可测和有界，则 $f\cdot g$ 为可积。
+\end{statement}
+现在我们转向讨论这样的函数类，它是当仅仅把无穷远处有界的限制取消后从 $L^1$ 所得到的函数类。
+\begin{statement}{定义}{2.5.6}
+一个几乎处处定义在 $\R^d$ 上并在 $[-\infty,+\infty]$ 上取值的函数 $f$，若 $f\cdot g\in L^1$ 对所有 $g\in C_0^+$，则称 $f$ 为局部可积的。所有局部可积函数的集合记作 $L^1_{\mathrm{loc}}$。
+\end{statement}
+\Exercise 假设 $f\in L^1_{\mathrm{loc}}$。试证 $f$ 几乎处处有限。
+\Exercise 试证：a）若 $f\in L^1_{\mathrm{loc}}$，则 $f$ 为可测；b）若 $f$ 为局部有界（即于任一紧致集上有界）且可测，则 $f\in L^1_{\mathrm{loc}}$。
+\begin{statement}{定理}{2.5.7}
+$f\in L^1_{\mathrm{loc}}$ 的充分与必要条件是：对任意 $\varepsilon>0$，存在一个连续函数 $g$ 使得 $\ustar|f-g|\dd<\varepsilon$。
+\end{statement}
+\Proof 取 $h_n\in C_0^+$，$0\le h_n\le1$ 并满足：$h_n(x)=1$ 当 $\|x\|\le n$ 和 $h_n(x)=0$ 当 $\|x\|>n+1$。若 $f\in L^1_{\mathrm{loc}}$，因 $h_n-h_{n-1}\in C_0^+$，我们可以选 $g_n\in C_0$ 使得
+\[\ustar|f(h_n-h_{n-1})-g_n|\dd<\varepsilon/2^n.\]
+因为 $h_{n+1}(x)-h_{n-2}(x)=1$ 于 $\{x;n-1\le\|x\|\le n+1\}$（此集包含 $h_n-h_{n-1}$ 的支集），故上式乘以 $|h_{n+1}-h_{n-2}|$（$\le1$）得到
+\[\ustar|f(h_n-h_{n-1})-g_n(h_{n+1}-h_{n-2})|\dd<\varepsilon/2^n.\]
+我们令 $g=\sum_{n=1}^\infty g_n(h_{n+1}-h_{n-2})$，则
+\SourcePage{38}
+\[\ustar|f-g|\dd=\ustar\left|f\sum_{n=1}^\infty(h_n-h_{n-1})-\sum_{n=1}^\infty g_n(h_{n+1}-h_{n-2})\right|\dd<\sum_{n=1}^\infty\varepsilon/2^n=\varepsilon.\]
+这里假定 $h_{-1}=h_0=0$。此外，因 $h_{n+1}-h_{n-2}$ 的支集属于 $\{x;n-2\le\|x\|\le n+2\}$，故任意点都有一个邻域，在其内，等式 $g_n(h_{n+1}-h_{n-2})=0$ 除有限个之外对所有的 $n$ 成立，从而 $g$ 是连续的。
+
+充分性的证明留给读者。
+
+作为这节的结尾，我们以练习的形式给出 $L^1_{\mathrm{loc}}$ 的一些进一步性质。
+\Exercise 若 $f$ 可测且 $|f|\le g\in L^1_{\mathrm{loc}}$，则 $f\in L^1_{\mathrm{loc}}$。
+\Exercise 若 $f,g\in L^1_{\mathrm{loc}}$，则 $|f|$，$af$（$a\in\R$），$f+g$，$\max(f,g)$ 和 $\min(f,g)$ 局部可积。
+
+注意，局部可积函数的乘积 $f\cdot g$ 不一定是局部可积。然而，我们有
+\Exercise 若 $f\in L^1_{\mathrm{loc}}$ 而 $g$ 为局部有界和可测函数，则 $f\cdot g\in L^1_{\mathrm{loc}}$。
+\section{可测和可积集合}
+借助前一节的积分理论，我们容易得到 $\R^d$ 中集合的一个测度理论。
+\begin{statement}{定义}{2.6.1}
+设 $E$ 为 $\R^d$ 的一个子集而 $\chi_E$ 为 $E$ 的特征函数。$E$ 的外测度由下式定义 $m^*(E)=\ustar\chi_E\dd$。若 $\chi_E$ 可积，则称 $E$ 为可积，并且 $E$ 的测度（Lebesgue 测度）定义为
+\[m(E)=\int\chi_E\dd=\ustar\chi_E\dd=m^*(E).\]
+相应地，若 $\chi_E$ 可测，则称 $E$ 为可测。
+\end{statement}
+根据定理2.5.2，若 $E$ 可测且 $m^*(E)<+\infty$，则 $E$ 为可积。所以，对于可测集 $E$，当 $m^*(E)<+\infty$ 时，我们可以用 $m(E)$ 代替
+\SourcePage{39}
+$m^*(E)$ 记 $E$ 的测度。
+
+外测度的进一步性质可由定理2.2.2直接得到，但我们将这些性质陈述作为一个新的定理。
+\begin{statement}{定理}{2.6.2}
+若 $E_1\subset E_2$，则 $m^*(E_1)\le m^*(E_2)$。若 $E=\bigcup_{n=1}^\infty E_n$，则有
+\eqn{2.6.1}{m^*(E)\le\sum_{n=1}^\infty m^*(E_n).}
+若当 $n\to\infty$ 时 $E_n$ 上升地趋于 $E$，也就是说 $E_n\subset E_{n+1}$ 对所有 $n$ 和 $E=\bigcup_{n=1}^\infty E_n$，则 $m^*(E_n)\uparrow m^*(E)$ 当 $n\to\infty$。
+\end{statement}
+容易看出，$\chi_E\in I^+$ 的充分必要条件是 $E$ 为开集。所以，开集在测度理论中起着与 $I^+$ 中函数在积分理论中同等的作用。例如，有
+\begin{statement}{定理}{2.6.3}
+对任意集合 $E$，
+\eqn{2.6.2}{m^*(E)=\inf_{O\supset E}m^*(O),}
+其中 $O$ 取遍所有的开集。
+\end{statement}
+\Proof 因 $E\subset O$，故 $m^*(E)\le m^*(O)$，从而 $m^*(E)\le\inf m^*(O)$。这样只需在 $m^*(E)<\infty$ 的假定下证明反方向的不等式就行了。对任意 $\varepsilon>0$，可以找到 $f\in I^+$ 使得 $\chi_E\le f$ 和 $\ustar f\dd\le m^*(E)+\varepsilon$。令 $O$ 是这样的开集，使于 $O$ 内 $f(x)>1-\varepsilon$，于是有 $E\subset O$，并且若 $0<\varepsilon<1$ 则 $\chi_O\le f/(1-\varepsilon)$，从而 $m^*(O)\le(m^*(E)+\varepsilon)/(1-\varepsilon)$。因为 $\varepsilon$ 可以任意小，故定理得证。
+
+从前一节的定理，可直接得到关于可测与可积集合的下述定
+\SourcePage{40}
+理。
+\begin{statement}{定理}{2.6.4}
+一个可测集合的余集为可测集合。可数个可测集合的并集或交集仍是可测集。类似地，可测集的 $\liminf$ 和 $\limsup$ 也是可测集。可测集的对称差是可测的。任一开集和闭集为可测集。
+\end{statement}
+定理2.6.4的证明留作练习。我们仅仅提醒下列事实。对于一个集合的序列 $\{E_n\}_{n=1}^\infty$，$\liminf E_n$ 和 $\limsup E_n$ 是通过特征函数的相应运算来定义的。记号 $\liminf E_n$（$\limsup E_n$）代表由属于除有限多个以外的所有 $E_n$（属于无限多个 $E_n$）的点所组成的集合。其次，对称差 $E_1\mathbin\triangle E_2$ 是所有这样的点的集合，它仅仅属于 $E_1$ 和 $E_2$ 中的一个，因此 $E_1\mathbin\triangle E_2$ 的特征函数为 $|\chi_{E_1}-\chi_{E_2}|$。最后，我们提醒，对于开集 $E$，$\chi_E\in I^+$。
+
+对于可积集合的相应定理是：
+\begin{statement}{定理}{2.6.5}
+可数多个可积集合的交集是可积的。一个开集或闭集为可积集合的充分与必要条件是其外测度为有限。特别地，任意一个紧致集合是可积的。若 $\{E_n\}_{n=1}^\infty$ 是一个可积集合的序列，则 $E=\bigcup_{n=1}^\infty E_n$ 可积并且 $m(E)\le\sum_{n=1}^\infty m(E_n)$ 当不等式右端为有限时。又当 $E_n$ 互不相交时，如下等式成立
+\eqn{2.6.3}{m(E)=\sum_{n=1}^\infty m(E_n)}
+（Lebesgue 测度的完全可加性质）。
+\end{statement}
+对于一个不是可积的可测集合，人们有时也定义测度，按这种定义，测度$=$外测度$=+\infty$。在这种约定下，对于所有可测集，测度按集合是完全可加的。
+
+定理2.6.5的证明留给读者。
+\Exercise 证明 $E$ 为可测集合的充分必要条件是：对所有紧致集 $K$，$E\cap K$ 皆为可测（可积）。
+\Exercise 证明
+\SourcePage{41}
+\[m^*(E)=\inf\sum_{n=1}^\infty m(I_n),\]
+其中 $\inf$ 是对所有满足 $\bigcup_{n=1}^\infty I_n\supset E$ 的区间序列 $\{I_n\}_{n=1}^\infty$ 取的。（提示：首先，注意每个开集 $O$ 是可数多个区间 $J_1,J_2,\ldots$ 的并集，这些区间具有包含在 $O$ 内的有理的顶点。然后，作新的区间 $J_{k_1},\ldots,J_{k_l}$，它们没有共同的内点，并且它们的并集是 $J_k\setminus(J_1\cup\cdots\cup J_{k-1})$ 的闭包。）
+
+特别地，$E$ 为零集的充分必要条件是：对任意 $\varepsilon>0$，存在区间序列 $\{I_n\}$ 使得 $E\subset\bigcup_{n=1}^\infty I_n$ 和 $\sum_{n=1}^\infty m(I_n)<\varepsilon$。这就是零集的通常的定义。
+\Exercise 证明 $E$ 为可积集合的充分必要条件是：对任意 $\varepsilon>0$，存在有限多个区间 $I_1,\ldots,I_k$ 使得 $m^*(E\mathbin\triangle(I_1\cup\cdots\cup I_k))<\varepsilon$。
+
+至此，我们有了在整个 $\R^d$ 上的积分。现在，令 $f$ 为一个定义在可测集 $E$ 上的函数，设：$f_0=f$ 在 $E$ 上，$f_0=0$ 在其它地方。如果 $f_0$ 可积（可测），我们就说 $f$ 是可积（可测）的，并记 $\int_E f(x)\dd=\int f_0(x)\dd$。
+
+若 $E'$ 是 $E$ 的一个可测子集，根据定理2.5.5，$f$ 也在 $E'$ 上可积（因 $\chi_{E'}$ 可测同时有界）。不难看出，前面关于可积与可测函数的定理可以直接地搬到定义在可测集上的函数上来。其次，根据前面的定理（如定理2.4.4）直接可知，下面的公式成立：
+\[\int_{E\cup E'}f(x)\dd=\int_E f(x)\dd+\int_{E'}f(x)\dd,\]
+其中 $E$ 和 $E'$ 为不相交的可测集合。
+
+以下，我们将限于陈述整个 $\R^d$ 上积分的理论。
+\SourcePage{42}
+\Exercise 证明 $f\in L^1_{\mathrm{loc}}$ 的充分必要条件是 $f$ 在任一紧致集上可积。
+
+借助于定理2.5.7，我们将给出可测集合的特性，在以测度理论为开端的教科书里，这通常是放在前面的。
+\begin{statement}{定理}{2.6.6}
+关于 $\R^d$ 的子集 $E$ 下列条件是等价的：
+\begin{enumerate}[label=(\arabic*)]
+\item $E$ 是可测的；
+\item 对任意 $\varepsilon>0$，存在一个开集 $O\supset E$ 使得 $m^*(O\setminus E)<\varepsilon$；
+\item[(2')] 对任意 $\varepsilon>0$，存在一个闭集 $F\subset E$ 使得 $m^*(E\setminus F)<\varepsilon$；
+\item[(3)] 存在一个下降的开集序列 $\{O_n\}_{n=1}^\infty$ 使得 $O_n\supset E$ 和 $\bigcap_{n=1}^\infty O_n\setminus E$ 是一个零集；
+\item[(3')] 存在一个上升的闭集序列 $\{F_n\}_{n=1}^\infty$ 使得 $F_n\subset E$ 和 $E\setminus\bigcup_{n=1}^\infty F_n$ 是一个零集。
+\end{enumerate}
+\end{statement}
+\Proof 因一集合为开集的充要条件是它的余集是闭集，所以只要证明 (1)、(2) 和 (3) 等价就够了。
+
+假定 (1) 成立。此时 $\chi_E$ 为局部可积。根据定理2.5.7存在一个连续函数 $g$ 使得 $\ustar|\chi_E-g|\dd<\varepsilon/4$。这也就是说，对某一 $h\in I^+$，$|\chi_E-g|\le h$ 和 $\int h\dd<\varepsilon/4$。设 $O=\{x;g(x)+h(x)>1/2\}$，因 $g+h$ 下方半连续，它是开集。其次，不等式 $\chi_E\le g+h$ 表明 $E\subset O$。现在，若 $x\in O\setminus E$，则 $g(x)+h(x)>\frac12$ 且 $g(x)-h(x)\le\chi_E(x)=0$，
+\SourcePage{43}
+因此 $2h(x)>\frac12$。这也就是说，有 $\chi\le4h$ 和 $\ustar\chi\dd\le4\ustar h\dd<\varepsilon$，其中 $\chi$ 是 $O\setminus E$ 的特征函数。
+
+现在，假定 (2) 成立。那么，可选 $O_n\supset E$ 使得 $m^*(O_n\setminus E)\to0$ 当 $n\to\infty$。通过以 $O_1\cap O_2\cap\cdots\cap O_n$ 代 $O_n$，可以假定 $\{O_n\}_{n=1}^\infty$ 是下降的。由于
+\[0\le m^*\left(\bigcap_{n=1}^\infty O_n\setminus E\right)\le m^*(O_n\setminus E)\longrightarrow0,\quad n\to\infty,\]
+故 $\bigcap O_n\setminus E$ 必为零集。
+
+根据定理2.6.4，$(3)\Longrightarrow(1)$，定理的证明至此完成。\Corr{8}
+\Exercise 证明 $E$ 为可积的充分必要条件是：对任意 $\varepsilon>0$，存在一个开集 $O$ 和一个紧致集 $K$ 使得 $K\subset E\subset O$ 并且 $m(O\setminus K)=m(O)-m(K)<\varepsilon$。
+\Exercise 假定 $E$ 可积。试证 $m(E)=\sup m(K)$，这里 $K$ 取遍 $E$ 的所有紧致子集。
+
+现在，我们给出一个不可测集合的例子。对于实数 $x$ 和 $y$，若 $x-y$ 为有理数，则令 $x\sim y$，即 $x$ 与 $y$ 等价。据此，实数被分成等价类。让我们假定如下之作法是可能的，即从每一等价类选择恰好一个元素，如此我们得到一个集合 $E$，它包含每个等价类中的一个而且仅仅一个元素（若承认选择公理，此作法是可能的），并且，我们可以假定 $E$ 是含于 $[0,1]$ 的。这样，$E$ 不可能是可测的。因为若 $E_r=r+E=\{r+x;x\in E\}$，则有
+\eqn{2.6.4}{\bigcup_{r\in\mathbb Q}E_r=\R}
+和
+\eqn{2.6.5}{E_r\subset(0,2)\quad\text{若 }0<r<1,}
+这里，$\mathbb Q$ 和 $\R$ 像通常那样表示有理数和实数的集合。假若 $E$ 可测，因其外测度 $\le1$，那么 $E$ 一定是可积的。这样一来，所有 $E_r$ 具有同一测度，因为它们的差别仅仅是一个平移。由于所有 $E_r$，$0<r<1$，
+\SourcePage{44}
+$r\in\mathbb Q$ 是不相交的，则 \eref{2.6.5} 表明 $\sum_{r\in\mathbb Q\cap(0,1)}m(E_r)\le2$。由于此级数有无穷多项，所有的项又相等，故 $m(E_r)=0$ 对所有的 $r$。已知可数多个零集的并集仍是零集，所以，按照 \eref{2.6.4}，$(-\infty,+\infty)$ 势必就是零集了。这个矛盾证明 $E$ 是不可测的。
+
+现在，我们来证明这里关于可测性的定义是与通常的定义完全一致的。
+\begin{statement}{定理}{2.6.7}
+$f$ 是可测的充分与必要条件是：对任意实数 $a$，$\{x;f(x)>a\}$ 为可测集。
+\end{statement}
+\Proof a）必要性。因为若 $f$ 为可测，则 $f-a$ 为可测，故可假定 $a$ 是零，从而归之于证明 $E=\{x;f(x)>0\}$ 为可测集。因为 $\chi_E=\lim_{n\to\infty}\min(nf^+,1)$，其中 $f^+=\max(f,0)$，所以 $E$ 确实为可测集。
+
+b）充分性。设 $[t]$ 表示 $<t$ 的最大整数，并令 $f_n=\frac1n[nf]$。若 $[nf(x)]=k$，则 $k/n<f(x)\le(k+1)/n$ 且 $f_n(x)=k/n$，所以 $0\le f-f_n\le\frac1n$ 并且
+\[f_n=\sum_{k=-\infty}^{+\infty}\frac kn\chi_{E_{nk}},\]
+其中 $E_{nk}=\{x;k/n<f(x)\le(k+1)/n\}$ 是可测的。由此可知 $f_n$ 可测，从而 $f=\lim f_n$ 为可测。
+\Exercise 假定 $f$ 可测和 $\phi$ 在 $\R$ 上连续或者上升，试证 $\phi\circ f$ 可测（假定 $f$ 几乎处处有限）。
+
+最后，我们来证明几个表明可测性与连续性之间关系的定理。
+\begin{statement}{定理}{2.6.9}\footnote{原书漏掉定理号2.6.8，译文未加更动。——编者注}[Лузин 定理]
+设 $f$ 是一个几乎处处有
+\SourcePage{45}
+限的可测函数。则对于任意 $\varepsilon>0$，可以找到一个闭集 $F$，使得 $f$ 在 $F$ 上的限制是连续的，并且 $m(F^c)<\varepsilon$。反之，具有上述性质的函数是可测的。
+\end{statement}
+\Proof a）必要性。令 $\phi(x)=x/(1+|x|)$，它是从 $\R$ 到 $(-1,+1)$ 的单调上升连续函数，并令 $\phi(\pm\infty)=\pm1$。由于 $f$ 的可测性和连续性跟函数 $\phi\circ f$ 的同样性质是等价的，所以，没有附加任何限制，我们可以假定 $f\in L^1_{\mathrm{loc}}$。根据定理2.5.7，我们选一连续函数序列 $\{g_n\}$ 使得 $\ustar|f-g_n|\dd<4^{-n}$。并取 $h_n$ 使 $\ustar h_n\dd<4^{-n}$ 和 $|f-g_n|\le h_n\in I^+$。设 $E_n=\{x;h_n(x)>2^{-n}\}$，则 $2^{-n}\chi_{E_n}\le h_n$ 和 $m^*(E_n)\le2^n\ustar h_n\dd<2^{-n}$，故
+\[m^*\left(\bigcup_{n\ge N}E_n\right)\le\sum_{n=N}^\infty m^*(E_n)\le\sum_{n=N}^\infty2^{-n}<\varepsilon\]
+对充分大的 $N$。我们取 $F=\bigcap_{n\ge N}E_n^c$，因为 $h_n\in I^+$ 蕴含着 $E_n$ 为开集，所以 $m^*(F^c)<\varepsilon$ 并且 $F$ 为闭集。其次，当 $n\to\infty$ 时 $h_n$ 在 $F$ 上一致趋于零，从而 $f-g_n$ 在 $F$ 上一致趋于零。事实上，$x\in F$ 蕴含 $x\notin E_n$，从而 $0\le h_n(x)\le2^{-n}$ 当 $n\ge N$。已知一个连续函数序列的一致收敛极限仍是连续的，所以 $f$ 在 $F$ 上的限制为连续。
+
+b）充分性。若定理的条件成立，则可找到一个闭集序列 $\{F_n\}$，使对任意 $n$，$f$ 在 $F_n$ 上的限制为连续并且 $\sum m(F_n^c)<\infty$。令
+\[f_n=\begin{cases}f&\text{在 }F_n\text{ 上};\\+\infty&\text{在 }F_n^c\text{ 上},\end{cases}\]
+\SourcePage{46}
+则 $f_n$ 为下半连续，从而为可测。当 $n\to\infty$ 时，除零集 $\limsup F_n^c$ 之外 $f_n$ 收敛到 $f$，根据定理2.5.3，$f$ 为可测，由此定理得证。
+
+Bourbaki 把 Лузин 定理作为可测函数的定义，当考虑向量值函数时，这是有好处的。
+
+Лузин 定理同定理2.6.6的 (2) 和 (2') 一起告诉我们：一个在可测集 $E$ 上连续的函数，它在 $E$ 上是可测的。
+\Exercise 试证：假若 $f$ 是一可测集的特征函数，则 Лузин 定理可由定理2.6.6的 (2) 和 (2') 得到。
+
+注意 Лузин 定理并未断言可测函数在任意点连续。例如，函数 $f(x)=1$ 当 $x$ 为无理数，$f(x)=0$ 当 $x$ 为有理数，为可测，然而此函数在任何点处都不连续。
+
+对于 Riemann 积分，情况则是另一个样。我们仅定义了具紧致支集函数的积分，对于这种函数，有如下结论：
+\begin{statement}{定理}{2.6.10}
+一个具紧致支集的函数为 Riemann 可积的充分必要条件是它有界且其不连续点构成一个零集。
+\end{statement}
+\Proof 令 $f_1(x)=\liminf_{y\to x}f(y)$ 和 $f_2(x)=\limsup_{y\to x}f(y)$。则 $f_1\le f\le f_2$ 和 $f_1$（$f_2$）为下（上）方半连续（试证之作为练习）。若 $\phi$ 属于 $C_0$ 和 $\phi\le f$，则有 $\phi\le f_1$。从而 $\int\phi\dd\le\lint f_1\dd$，由此可得 $\lint f\dd\le\lint f_1\dd$。因为 $f_1\le f$，故反方向的不等式也成立，从而 $\lint f\dd=\lint f_1\dd$。类似地，可得 $\uint f\dd=\uint f_2\dd$。由于 $I^+$ 中函数的 Riemann 下积分等于它的 Lebesgue 积分，所以，利用 $f_1$ 和 $f_2$ 在 Lebesgue 意义下的积分我们
+\SourcePage{47}
+得到
+\[\lint f\dd=\int f_1\dd,\qquad\uint f\dd=\int f_2\dd.\]
+这也就是说，$f$ 为 Riemann 可积的充要条件是 $\int(f_2-f_1)\dd=0$，所以 $f_2=f_1$ a.e.，即 $f$ 为几乎处处连续。
+
+对 Лузин 定理的证明作类似的修改，可以得到
+\begin{statement}{定理}{2.6.11}[Егоров 定理]
+假设 $f_n$ 为一个几乎处处取有限值的函数序列，它几乎处处趋于一个几乎处处有限的极限 $f$。若所有的 $f_n$ 为可测，则对任一紧致集 $K$ 和 $\varepsilon>0$，可以找到一个紧致集 $K_1\subset K$ 使得 $m(K\setminus K_1)<\varepsilon$ 并且 $f_n$ 在 $K_1$ 上一致收敛于 $f$。
+\end{statement}
+\Proof 令 $h_n(x)=\sup_{m\ge n}|f-f_m|$，这里，约定 $h_n=+\infty$ 当 $f$ 或者某个 $f_m$ 为无限时。根据假设，$h_n$ 在一个零集合之外单调地趋于零。从而，可测集 $E_{n,\delta}=\{x;x\in K,h_n(x)>\delta\}$ 随 $n$ 下降，并且对任一 $\delta>0$，$\lim_{n\to\infty}E_{n,\delta}$ 为零集。因 $E_{n,\delta}\subset K$ 和 $K$ 为一可测集，故由 Lebesgue 控制收敛定理有 $m(E_{n,\delta})\to0$ 当 $n\to\infty$。所以，对 $j=1,2,\ldots$，我们可以选 $N_j$ 足够大使得 $e_j=E_{N_j,1/j}$ 满足
+\[m(e_j)<\varepsilon/2^j,\qquad h_n(x)\le1/j\quad\text{当 }n\ge N_j,\ x\in K\setminus e_j.\]
+这里，最后那个推断是根据 $E_{n,\delta}$ 的定义。令 $e=\bigcup e_j$，则 $e$ 可测且 $m(e)<\varepsilon$。对 $x\in K\setminus e$，有 $h_n(x)\le1/j$ 当 $n\ge N_j$，即在 $K\setminus e$ 上 $h_n$ 一致地趋于零。现在，有 $m(K\setminus e)=m(K)-m(e)>m(K)-\varepsilon$，故可找到一个紧致集 $K_1\subset K\setminus e$ 使得 $m(K_1)>m(K)-\varepsilon$。由此可知 $m(K\setminus K_1)<\varepsilon$ 和在 $K_1$ 上 $f_n$ 一致收敛到 $f$。定理证毕。
+\Exercise 证明 Lebesgue 控制收敛定理和 Лузин 定理是 Егоров 定
+\SourcePage{48}
+理的推论。
+\section{变量替换}
+首先，注意到若 $O$ 是 $\R^d$ 的开集，则可对仅在 $O$ 内有定义的函数定义上积分和积分，作法与以前类似，先从 $C_0(O)$（即具紧致支集属于 $O$ 的连续函数类）入手。我们留作练习，要读者往证：$f\in L^1(O)$ 的充分与必要条件是在 $O$ 内取值为 $f$ 而在 $O$ 外取值为零的函数属于 $L^1(\R^d)$。
+
+现在，设 $O_1$ 和 $O_2$ 是 $\R^d$ 的两个开集，并设 $\phi$（如同在定理1.4.5中）是一个从 $O_1$ 到 $O_2$ 的一对一映射，并且 $\phi$ 和 $\phi^{-1}$ 都是连续可微的。若 $f$ 是一个定义在 $O_2$ 内的函数，象在第一章第4节里那样，我们将 $f\circ\phi$ 记作 $\phi^*f$。
+\begin{statement}{定理}{2.7.1}
+$f\in L^1(O_2)$ 的充分与必要条件是 $(\phi^*f)|\det\phi'|\in L^1(O_1)$，并且有
+\eqn{2.7.1}{\int_{O_2}f\dd=\int_{O_1}(\phi^*f)|\det\phi'|\dd.}
+\end{statement}
+\Proof 据定理1.4.5知，当 $f\in C_0(O_2)$ 时，\eref{2.7.1} 为真。鉴于我们可取一序列 $f_n\in C_0^+(O_2)$ 且 $f_n\uparrow f$，由此立即可得
+\eqn{2.7.2}{\ustar f\dd=\ustar(\phi^*f)|\det\phi'|\dd,\quad f\in I^+(O_2).}
+注意 $\phi^*f\in I^+(O_1)$，且根据连续可微逆映射 $\phi^{-1}$ 的存在性知 $\det\phi'\ne0$，故映射 $I^+(O_2)\ni f\mapsto(\phi^*f)|\det\phi'|\in I^+(O_1)$ 是一对一的满射。由此立即得知，对于任一函数 $f\ge0$ 的上积分，\eref{2.7.2} 成立。
+
+这样一来，存在一个函数 $g\in C_0(O_2)$，使 $\ustar|g-f|\dd<\varepsilon$ 这一命题等价于 $\ustar|g_1-(\phi^*f)|\det\phi'||\dd<\varepsilon$，其中 $g_1=(\phi^*g)|\det\phi'|$。这就证明了：$f\in L^1(O_2)$ 当而且仅当
+\SourcePage{49}
+$(\phi^*f)|\det\phi'|\in L^1(O_1)$，并且鉴于此式当 $f\in C_0(O_2)$ 时为真，此时亦有 \eref{2.7.1} 成立。
+\section{累次积分，Lebesgue--Fubini 定理}
+这里我们将考虑 $(x,y)\in\R^{d+e}$ 的函数 $f$，其中 $x\in\R^d$ 和 $y\in\R^e$。若 $f\in C_0(\R^{d+e})$，从第一章第3节我们知道
+\eqn{2.8.1}{\iint f\,dx\,dy=\int\left(\int f\,dy\right)\dd,}
+其中左端表示 $\R^{d+e}$ 上函数 $f$ 的积分，而右端则是 $f$ 先就固定的 $x$ 对 $y$ 积分，然后将所得结果再对 $x$ 积分。\Corr{23}
+现在，我们来证明 \eref{2.8.1} 在 Lebesgue 意义下成立。为此，象往常那样从考虑 $I^+$ 中的函数开始。
+\begin{statement}{定理}{2.8.1}
+设 $f$ 作为 $(x,y)$ 的函数属于 $I^+$。则对固定的 $x$，$f$ 视作 $y$ 的函数属于 $I^+$，而且 $\ustar f(x,y)\,dy$ 作为 $x$ 的函数也属于 $I^+$ 并有
+\eqn{2.8.2}{\iint^{*}f\,dx\,dy=\ustar\left(\ustar f\,dy\right)\dd.}
+\end{statement}
+\Proof 我们能够取 $f_n\in C_0$ 使 $0\le f_n\uparrow f$。这就表明 $f(x,y)$ 对固定的 $x$ 视作 $y$ 的函数属于 $I^+$，并且
+\[g_n(x)=\int f_n(x,y)\,dy\uparrow\ustar f(x,y)\,dy=g(x).\]
+因 $0\le g_n\in C_0$，我们得到 $g\in I^+$ 和
+\[\ustar g\dd=\lim\int g_n\dd=\lim\iint f_n\,dx\,dy=\iint^{*}f\,dx\,dy,\]
+这里我们用到 \eref{2.8.1} 对 $f_n$ 成立。\eref{2.8.2} 证毕。
+\begin{statement}{定理}{2.8.2}
+对任意 $f\ge0$ 有
+\eqn{2.8.3}{\ustar\left(\ustar f\,dy\right)\dd\le\iint^{*}f\,dx\,dy.}
+\end{statement}
+\SourcePage{50}
+\Proof 若 $f\le g\in I^+$，由上积分的单调性，
+\[\ustar\left(\ustar f\,dy\right)\dd\le\ustar\left(\ustar g\,dy\right)\dd=\iint^*g\,dx\,dy,\]
+其中最后的等式是根据定理2.8.1。因为右端的下确界是 $\iint^* f\,dx\,dy$，故 \eref{2.8.3} 成立。
+\Exercise 证明若 $f(x,y)=g(x)h(y)$，则 \eref{2.8.3} 中的等号成立。
+\Exercise 设 $g_1$ 和 $g_2$ 为 $x$ 的非负函数，且满足\Corr{24}
+\eqn{2.8.4}{\ustar(g_1+g_2)\dd<\ustar g_1\dd+\ustar g_2\dd.}
+（见定理2.4.5前面的练习。）设 $h_1$ 和 $h_2$ 是 $\R^e$ 中互不相交、测度皆是1的两个开集的特征函数，并设 $f(x,y)=g_1(x)h_1(y)+g_2(x)h_2(y)$。试证 \eref{2.8.3} 的两端分别地与 \eref{2.8.4} 的对应端相等。这也就是说，\eref{2.8.3} 中的等号不一定成立。
+\begin{statement}{推论}{2.8.3}
+若 $f$ 是一个零函数，则 $y\mapsto f(x,y)$ 对几乎所有的 $x$ 为一零函数。
+\end{statement}
+\begin{statement}{定理}{2.8.4}[Lebesgue--Fubini]
+若 $f\in L^1(\R^{d+e})$，则 $\R^e\ni y\mapsto f(x,y)$ 对几乎所有的 $x\in\R^d$ 为可积，同时，函数 $\R^d\ni x\mapsto\int f(x,y)\,dy$ 几乎处处有定义且可积，并有
+\eqn{2.8.5}{\iint f\,dx\,dy=\int\left(\int f\,dy\right)\dd.}
+\end{statement}
+\Proof 选 $g_n\in C_0$ 使 $\sum_n\iint^*|f-g_n|\,dx\,dy<\infty$，这表明
+\SourcePage{51}
+\[\begin{aligned}\ustar\left(\sum_n\ustar|f(x,y)-g_n(x,y)|\,dy\right)\dd
+&\le\sum_n\ustar\left(\ustar|f-g_n|\,dy\right)\dd\\&\le\sum_n\iint^*|f-g_n|\,dx\,dy<\infty,\end{aligned}\]
+所以级数 $\sum_n\ustar|f(x,y)-g_n(x,y)|\,dy$ 对几乎所有的 $x$ 收敛。特别地，级数中的一般项对几乎所有的 $x$ 趋于零。由此可知，函数 $y\mapsto f(x,y)$ 对几乎所有的 $x$ 为可积。因此，函数 $F(x)=\int f(x,y)\,dy$ 几乎处处有定义。令 $G_n(x)=\int g_n(x,y)\,dy$，则 $G_n\in C_0$ 且
+\[\ustar|F-G_n|\dd\le\ustar\left(\ustar|f(x,y)-g_n(x,y)|\,dy\right)\dd\le\iint^*|f-g_n|\,dx\,dy\longrightarrow0.\]
+从而，$F$ 可积并有
+\[\int F\dd=\lim\int G_n\dd=\lim\iint g_n\,dx\,dy=\iint f\,dx\,dy,\]
+由此定理得证。
+
+定理2.8.4中的函数 $y\mapsto f(x,y)$ 一般说来不一定对所有 $x$ 是可积的。事实上，在一固定 $x$ 处，$f(x,y)$ 的任意变动不影响其在 $\R^{d+e}$ 上的可积性。
+\Exercise 设 $f(x,y)=g(x)h(y)$，其中 $g$ 和 $h$ 可积（可测）。试证 $f$ 为可积（可测）。
+\Exercise 设 $f,g\in L^1(\R^d)$。试证对几乎所有的 $x$ 存在 $h(x)=\int f(x-y)g(y)\,dy$，并证明 $h\in L^1(\R^d)$ 和 $\int|h|\dd\le\int|f|\dd\int|g|\dd$。
+\SourcePage{52}
+\Exercise 若 $f(x,y)$ 可测，试证 $x\mapsto\ustar|f(x,y)|\,dy$ 为可测和 $y\mapsto f(x,y)$ 对几乎所有的 $x$ 为可测。
+
+注意，即使 \eref{2.8.5} 的右端存在，我们仍不能断定左端存在。推论2.8.3前面那个练习给出一个说明的例子，即特别地取 $g_1$ 和 $g_2$ 使 $g_1+g_2\in L^1$。另一方面，我们有
+\begin{statement}{定理}{2.8.5}
+若 $f$ 可测，则当而且仅当
+\eqn{2.8.6}{\int\left(\int|f(x,y)|\,dy\right)\dd<\infty}
+时 $f$ 为可积。
+\end{statement}
+\Proof 若 $f$ 可积，则 $|f|$ 亦可积，同时 Lebesgue--Fubini 定理表明 \eref{2.8.6} 成立。当我们证明反方向的论断时，据定理2.5.2，可以假定 $f\ge0$。选 $g_n\in C_0^+$ 使对所有 $(x,y)\in\R^{d+e}$，$g_n(x,y)\uparrow+\infty$，当 $n\to\infty$。当 $f\ge0$ 为可测函数时，有 $L^1\ni T_{g_n}f\uparrow f$。那么，由于
+\[\iint T_{g_n}f\,dx\,dy=\int\left(\int T_{g_n}f\,dy\right)\dd\le\int\left(\int f\,dy\right)\dd<+\infty,\]
+和 Beppo Levi 定理，有 $f\in L^1$。
+
+定理2.8.4和定理2.8.5表明，对于一个满足 \eref{2.8.6} 的可测函数 $f$，下式成立
+\eqn{2.8.7}{\int\left(\int f(x,y)\,dy\right)\dd=\int\left(\int f(x,y)\dd\right)\,dy.}
+特别地，当 $f$ 为可测并且是非负的时候，如果其中每个积分都存在，则可以改变积分的次序。这里，$f\ge0$ 的假定是关键的。
+\Exercise 试证下面两个累次积分
+\[\int_0^1\left(\int_0^\infty(e^{-xy}-2e^{-2xy})\,dy\right)\dd,\qquad\int_0^\infty\left(\int_0^1(e^{-xy}-2e^{-2xy})\dd\right)\,dy\]
+\SourcePage{53}
+是不等的（有不等号！）。
+
+定理2.8.5的另一个推论为：$\R^{d+e}$ 的一个可测子集为零集的充分与必要条件是 $E_x=\{y\in\R^e;(x,y)\in E\}$ 对几乎所有的 $x$ 为零集。特别地，若 $E$ 可测并且 $E_x$ 对几乎所有的 $x$ 是零集，则 $E$ 为零集。$E$ 为可测集的条件是关键的，即使对每个 $x$，$E_x$ 是一个点，这个条件也是不能去掉的。
+\section{\texorpdfstring{$L^p$}{Lp} 空间}
+设 $1\le p<\infty$。现在，我们来定义 $L^p$，包括 $p>1$ 的情形。这里，我们选择一个基于定理2.5.2的定义，当 $p=1$ 时它等价于原来的 $L^1$。
+\begin{statement}{定义}{2.9.1}
+若 $f$ 可测且
+\eqn{2.9.1}{\|f\|_p=\left(\ustar|f|^p\dd\right)^{1/p}<+\infty,}
+则说 $f$ 属于 $L^p$。
+\end{statement}
+根据定理2.5.2，\eref{2.9.1} 等价于 $|f|^p\in L^1$ 故其中的上积分可以改写成积分。
+\begin{statement}{定理}{2.9.2}[Hölder 不等式]
+若 $f\in L^p$ 和 $g\in L^q$，这里 $1<p<\infty$，$1<q<\infty$，$\frac1p+\frac1q=1$，则 $f\cdot g$ 为可积函数并且
+\eqn{2.9.2}{\left|\int f\cdot g\dd\right|\le\|f\|_p\cdot\|g\|_q.}
+反过来，若 $f\in L^p$ 和
+\eqn{2.9.3}{\left|\int f\cdot g\dd\right|\le C\|g\|_q,\quad g\in L^q,}
+则 $\|f\|_p\le C$。
+\end{statement}
+\SourcePage{54}
+\Proof 设 $\frac1p=\alpha$，$\frac1q=\beta$。则 $\alpha+\beta=1$ 并且数 $\alpha$ 和 $\beta$ 为正的。对任意非负数 $a$ 和 $b$，下述算术--几何不等式成立 $a^\alpha b^\beta\le\alpha a+\beta b$，这是因为若令 $a=e^A$，$b=e^B$ 此不等式根据 $e^x$ 的凸性是成立的。现在，令 $a=|f(x)|^p$ 和 $b=|g(x)|^q$，我们得到 $|f(x)g(x)|\le\alpha|f(x)|^p+\beta|g(x)|^q$，故有
+\[\ustar|fg|\dd\le\alpha\|f\|_p^p+\beta\|g\|_q^q.\]
+根据定理2.5.2和定理2.5.4，上式表明 $fg\in L^1$。若 $\|f\|_p=\|g\|_q=1$，由于 $\alpha+\beta=1$，知 \eref{2.9.2} 成立。又因不等式 \eref{2.9.2} 关于 $f$ 和 $g$ 是齐次的，所以一般情形它也成立。另一方面，若 \eref{2.9.3} 成立，我们在 $f\ne0$ 处定义 $g=|f|^p/f$，并定义 $g$ 为零当 $f=0$，则这是一个可测函数且 $|g|^q=|f|^p$，故 $\ustar|g|^q\dd<\infty$，所以 $g\in L^q$。这时由 \eref{2.9.3} 我们得到 $\|f\|_p^p\le C\|f\|_p^{p/q}$，从而 $\|f\|_p\le C$。
+
+在第三章第7节里，我们将给出定理2.9.2的一个非常一般的形式。
+\Exercise 证明当把 Hölder 不等式中的积分改成上积分时，它对于任意 $f,g\ge0$ 成立。
+\begin{statement}{定理}{2.9.3}[Minkowski 不等式]
+若 $f,g\in L^p$，则 $f+g\in L^p$ 并且
+\eqn{2.9.4}{\|f+g\|_p\le\|f\|_p+\|g\|_p.}
+\end{statement}
+\Proof 根据定理2.5.4，$f+g$ 是可测的。其次，估计式 $|f+g|\le2\max(|f|,|g|)$ 表明 $|f+g|^p\le2^p(|f|^p+|g|^p)$，从而 $\ustar|f+g|^p\dd<\infty$，即 $f+g\in L^p$。若 $h\in L^q$，这里 $\frac1p+\frac1q=1$（可以假定 $p>1$），由
+\SourcePage{55}
+Hölder 不等式知
+\[\left|\int(f+g)h\dd\right|\le\left|\int fh\dd\right|+\left|\int gh\dd\right|\le(\|f\|_p+\|g\|_p)\|h\|_q,\]
+根据定理2.9.2的后一部分，\eref{2.9.4} 由此得证。
+\Exercise 将不等式 \eref{2.9.4} 推广到 $f$ 和 $g$ 不一定可测的情形。
+
+下面定理给出 $L^p$ 的一个等价定义，它与第4节中原来 $L^1$ 的定义相似。
+\begin{statement}{定理}{2.9.4}
+$f\in L^p$ 的充分与必要条件是：对任意 $\varepsilon>0$，可以找到 $g\in C_0$，使得
+\eqn{2.9.5}{\ustar|f-g|^p\dd<\varepsilon^p.}
+\end{statement}
+\Proof a）必要性。令 $f_n(x)=f(x)$ 当 $\frac1n<|f(x)|<n$，否则令 $f_n(x)=0$。则 $f_n(x)$ 为可测。由于 $|f_n|\le|f|$，故 $f_n\in L^p$。又因 $|f_n|\le n^{p-1}|f_n|^p$，所以同时有 $f_n\in L^1$。由于 $|f|^p\ge|f-f_n|^p\to0$，根据 Lebesgue 控制收敛定理，对给定的 $\varepsilon>0$，我们可以选充分大的 $n$，使得
+\[\|f-f_n\|_p^p=\int|f-f_n|^p\dd<\varepsilon^p.\]
+现在，固定 $n$ 并取 $g\in C_0$，使 $\int|f_n-g|\dd<\varepsilon^p/(2n)^{p-1}$。因为若用 $\max(-n,\min(n,g))$ 替代上式中的 $g$，不导致左端增大，故可假定 $|g|\le n$。于是 $|f_n-g|<2n$，从而 $\|f_n-g\|_p^p=\int|f_n-g|^p\dd<\varepsilon^p$。现在，由 Minkowski 不等式，即得 $\|f-g\|_p<2\varepsilon$。
+
+b）充分性。设 $h$ 是 $L^q$ 中处处不为零的连续函数，则由定理2.9.2后面的练习和 \eref{2.9.5} 有
+\[\ustar|fh-gh|\dd\le\|h\|_q\|f-g\|_p<\|h\|_q\varepsilon,\]
+\SourcePage{56}
+故 $fh$ 可积从而可测。又因 $1/h$ 是连续函数，所以 $f$ 可测，至此定理证毕。
+
+现在，我们推广 Riesz--Fischer 定理（定理2.4.10）到 $p>1$ 的情形。
+\begin{statement}{定理}{2.9.5}
+若 $f_n\in L^p$，$1\le p<\infty$，同时 $\|f_n-f_m\|_p\to0$，当 $n,m\to\infty$，则存在 $f\in L^p$ 使得 $\|f-f_n\|_p\to0$，当 $n\to\infty$。
+\end{statement}
+\Proof 如同定理2.4.10的证明，取序列 $n_k$ 使 $\sum_{k=1}^\infty\|f_{n_k}-f_{n_{k+1}}\|_p<\infty$。设 $h$ 是 $L^q$ 中的连续函数，它处处不等于零。由 Hölder 不等式，有 $\sum_{k=1}^\infty\|hf_{n_k}-hf_{n_{k+1}}\|_1<\infty$。这表明（见定理2.4.10的证明）$\lim_{k\to\infty}hf_{n_k}$ 几乎处处存在。那么，$f=\lim_{k\to\infty}f_{n_k}$ 几乎处处存在，并且可测。对任给 $\varepsilon>0$，我们可选 $N$ 使 $\|f_m-f_n\|_p<\varepsilon$，当 $m,n>N$。故当 $k$ 充分大时，$\int|f_m-f_{n_k}|^p\dd<\varepsilon^p$，对 $m>N$。从而，根据 Fatou 引理，$|f_m-f|^p$ 可积，且 $\int|f_m-f|^p\dd\le\varepsilon^p$，当 $m>N$。可见 $f\in L^p$ 和 $\|f_m-f\|_p\to0$，当 $m\to\infty$。至此定理证明完成。
+
+最后，我们引进空间 $L^\infty$。它由所有本质有界的可测函数 $f$ 的几乎处处相等等价类组成：存在常数 $C$，使 $|f(x)|\le C$ 几乎处处成立。这样的 $C$ 有最小值（作为练习加以证明），记作 $\|f\|_\infty$。注意，Hölder 不等式对 $p=1$ 和 $q=\infty$ 仍然成立。\Corr{9}
+\Exercise 假定 $f\in L^\infty$，同时 $f\in L^p$ 对任意 $p<\infty$，试证
+\SourcePage{57}
+$\|f\|_\infty=\lim_{p\to\infty}\|f\|_p$。
+\section{Lebesgue 积分的微商}
+下面的 Lebesgue 定理对积分理论在三角级数、调和函数及其他许多领域中的应用是很基本的。
+\begin{statement}{定理}{2.10.1}
+若 $f\in L^1_{\mathrm{loc}}$，则对几乎所有的 $x$
+\eqn{2.10.1}{f(x)=\lim_{m(S)\to0}(m(S))^{-1}\int_S f\,dy,}
+其中 $S$ 记包含点 $x$ 的球。除此之外，对几乎所有的 $x$ 我们有
+\eqn{2.10.2}{\lim_{m(S)\to0}(m(S))^{-1}\int_S|f(y)-f(x)|\,dy=0.}
+\end{statement}
+若 $f$ 为连续，由中值定理上述定理显然成立。为给出一般情形的证明，我们研究函数
+\eqn{2.10.3}{\widetilde f(x)=\sup_{x\in S}(m(S))^{-1}\int_S|f|\,dy,}
+其中 $S$ 仍然表示包含点 $x$ 的球。
+\Exercise 证明 $\widetilde f$ 是下方半连续函数，即 $\widetilde f\in I^+$。
+\begin{statement}{定理}{2.10.2}
+若 $f\in L^1_{\mathrm{loc}}$，则有不等式
+\eqn{2.10.4}{m\{x;\widetilde f(x)>s\}\le\frac{4^d}{s}\ustar|f|\dd.}
+\end{statement}
+\Proof 不妨假定 $f\in L^1$。要估计的是集合 $E_s=\{x;\widetilde f(x)>s\}$ 的测度。显然，$E_s$ 是一族球 $F$ 的并集，$|f|$ 在 $F$ 的每一个球上的平均值 $>s$。我们将证明，可以在 $F$ 中找到一个序列 $S_k$，它们是互不相交的，并能使 $E_s\subset\bigcup S'_k$，其中 $S'_k$ 是 $S_k$ 的同心球，它的半径是 $S_k$ 的四倍。由此得到
+\[m(E_s)\le\sum_km(S'_k)=4^d\sum_km(S_k)\le4^ds^{-1}\sum_k\int_{S_k}|f|\dd.\]
+由于 $S_k$ 互不相交，所以 \eref{2.10.4} 成立。
+
+为证 $S_k$ 的存在性，我们首先注意：由于当 $S\in F$ 时 $m(S)<
+\SourcePage{58}
+ s^{-1}\int|f|\,dy$，所以 $F$ 中的球的半径是上方有界的。记此上界为 $R_1$ 并选 $S_1$ 使其半径 $r_1>2R_1/3$。假设互不相交的球 $S_1,\ldots,S_{k-1}$ 已经选出，并令 $R_k$ 是 $F$ 中与 $S_1,\ldots,S_{k-1}$ 不相交的球的半径的上界。那末，我们在 $F$ 中选半径为 $r_k$ 的球 $S_k$，它与前面那些球不相交，并且 $r_k>2R_k/3$。
+
+假若上述过程进行到某一有限 $k$ 而告终，此时定义 $R_k=0$。否则，我们得到一个无穷序列 $\{S_k\}$，其时 $\lim R_k=0$。由于 $S_k$ 互不相交，故 $\sum_km(S_k)\le s^{-1}\int|f|\dd<\infty$，从而 $m(S_k)\to0$，这表明 $r_k$ 和 $R_k$ 趋于零。
+
+现在，设 $x\in E_s$，则存在 $S\in F$ 使 $x\in S$。若 $S$ 的半径为 $r$，则 $S$ 必定与某一球 $S_k$ 相交，因为不然的话，将有 $R_k\ge r$ 对所有 $k$。选 $k$ 使 $S$ 与 $S_1,\ldots,S_{k-1}$ 不相交，但同 $S_k$ 相交。设 $x_k$ 是 $S_k$ 的中心，则有
+\[\|x-x_k\|\le2r+r_k\le2R_k+r_k\le4r_k,\]
+故 $x\in S'_k$，由此定理得证。
+
+通常地，称定理2.10.2为 Hardy 最大定理。当 $d=1$ 时，除记号之外，这就是通常的 Riesz 引理。
+
+\textbf{定理2.10.1的证明：} 设对 $\varepsilon>0$
+\[E_\varepsilon=\left\{x;\limsup_{\substack{m(S)\to0\\x\in S}}m(S)^{-1}\int_S|f(y)-f(x)|\,dy>\varepsilon\right\},\]
+则对任意 $x\in E_{2\varepsilon}$，$|\widetilde f(x)|>\varepsilon$ 或者 $|f(x)|>\varepsilon$ 成立。因 $\varepsilon m\{x;|f(x)|>\varepsilon\}\le\ustar|f|\dd$，故由定理2.10.2我们得到
+\[m^*(E_{2\varepsilon})\le(4^d+1)\varepsilon^{-1}\ustar|f|\dd.\]
+注意，用 $f-g$ 替代 $f$ 不改变 $E_{2\varepsilon}$，这里 $g\in C$，这是因为 $m(S)^{-1}\int_S|g(y)-g(x)|\,dy\to0$，当 $m(S)\to0$，$x\in S$。现在，可以选 $g$ 使得 $\ustar|f-g|\,dy$ 随意地小，故有 $m^*(E_{2\varepsilon})=0$，
+\SourcePage{59}
+从而 $E=\bigcup_{k=1}^\infty E_{1/k}$ 是一零集，并且在它的余集中 \eref{2.10.2} 成立。
+\Exercise 试证定理2.10.2和定理2.10.1在下述情形仍然成立：把其中仅仅考虑含 $x$ 的球 $S$ 代之以考虑所有那样的可测集合 $E$，即对一固定常数 $K$，存在一个球 $S\supset E\cup\{x\}$ 使得 $m(S)\le Km(E)$。
+\Exercise 设 $f\in L^1$ 并假定 $g$ 是 $L^1$ 中有界和关于 $|x|$ 的下降函数，令 $g_\varepsilon(x)=\varepsilon^{-d}g(x/\varepsilon)$。试证
+\[\lim_{\varepsilon\to0}\int f(x-y)g_\varepsilon(y)\,dy=f(x)\int g\,dy\]
+对几乎所有的 $x$ 成立。并证明左端函数是连续的（提示：首先考虑 $g$ 具有紧致支集的情形和利用定理2.10.2）。
+
+对于 $L^p$ 中函数，现在我们来改进定理2.10.2和定理2.10.1。
+\begin{statement}{定理}{2.10.3}
+若 $f\in L^p$，$1<p<\infty$，则
+\eqn{2.10.5}{\|\widetilde f\|_p\le C_p\|f\|_p}
+其中 $C_p^p=4^d2^pp/(p-1)$。
+\end{statement}
+自然地，上述常数不是最佳的。但是，通过把 $f$ 取作为任意非负函数，我们可以看出，当 $p\to1$ 时 $C_p$ 的阶是不可能再改进的。特别地，对于 $p=1$ 就不存在形如 \eref{2.10.5} 的不等式，其时仅有弱估计 \eref{2.10.4}。
+
+\textbf{定理2.10.3的证明：} 设 $E_s=\{x;\widetilde f(x)>s\}$ 和 $\phi(s)=m(E_s)$。因 $\widetilde f\in I^+$，集合 $\{(x,s);0\le s<|\widetilde f(x)|^p\}$ 是可测的，将 Fubini 定理用于此集合的特征函数，可以得到
+\[\int|\widetilde f|^p\dd=\int_0^\infty\phi(s^{1/p})\,ds=\int_0^\infty\phi(s)\,d(s^p).\]
+为估计 $\phi(s)$，我们令 $f=g_s+h_s$，其中 $g_s=f$ 当 $|f|\le s/2$，$g_s=0$ 在其它地方，则有 $\widetilde g_s\le s/2$，并因 $\widetilde f\le\widetilde g_s+\widetilde h_s$，故 $\widetilde h_s>s/2$ 于 $E_s$。从而，由定理2.10.2，
+\SourcePage{60}
+\[\phi(s)\le m\{x;\widetilde h_s(x)>s/2\}\le4^d(s/2)^{-1}\int|h_s|\dd.\]
+由此得到
+\[\begin{aligned}\int|\widetilde f|^p\dd&\le p\int_0^\infty s^{p-1}\left(2s^{-1}4^d\int|h_s|\dd\right)\,ds\\&=2^{1-p}(p-1)C_p^p\int\left(\int_0^\infty s^{p-2}|h_s(x)|\,ds\right)\dd=C_p^p\|f\|_p^p,\end{aligned}\]
+这里用到
+\[2^{1-p}(p-1)\int_0^\infty s^{p-2}|h_s(x)|\,ds=2^{1-p}(p-1)\int_0^{2|f(x)|}s^{p-2}|f(x)|\,ds=|f(x)|^p.\]
+若 $|f|\in I^+$，作一函数 $G=s^{p-2}|f(x)|$ 当 $|f(x)|>s/2$，否则 $G=0$，则它作为 $(x,s)$ 的函数也属于 $I^+$，故根据定理2.8.1，积分次序的交换是允许的。由于可以找到 $F\in I^+$ 使 $F\ge|f|$ 和 $\int|F|^p\dd\le\int|f|^p\dd+\varepsilon$，所以不等式一般地成立。
+\begin{statement}{定理}{2.10.4}
+设 $f\in L^p_{\mathrm{loc}}$，$1<p<\infty$，则几乎对所有的 $x$，
+\eqn{2.10.6}{f(x)=\lim(m(I))^{-1}\int_I f\,dy,}
+这里 $I$ 记包含 $x$ 且直径趋于零的区间。
+\end{statement}
+注意，定理中不含区间边界长度之间比例的任何条件。定理当 $p=1$ 和 $d>1$ 时不成立。
+\Proof 借助关于所有含 $x$ 的区间 $I$ 的上确界，我们令 $f^*(x)=\sup(m(I))^{-1}\int_I|f|\,dy$。若 $K_p^p=2^{p+2}p/(p-1)$，则
+\eqn{2.10.7}{\|f^*\|_p\le K_p^d\|f\|_p,\quad f\in L^p.}
+当 $d=1$ 时此与 \eref{2.10.5} 一致。鉴于 $f^*$ 可以由逐次按 $x_1,\ldots,
+\SourcePage{61}
+ x_d$ 依次地施行运算 $\widetilde{\phantom f}$ 所得的函数控制，所以一般地 \eref{2.10.7} 也成立（作为练习仔细证明一下）。\Corr{25}由 \eref{2.10.7} 有
+\eqn{2.10.8}{m\{x;f^*(x)>s\}\le K_p^{dp}(\|f\|_p/s)^p.}
+现在，可以重复定理2.10.1的证明，唯一不同的是，用 \eref{2.10.8} 代替 \eref{2.10.4}。我们把它留作练习。
+
+实际上，只要假定 $|f|(\max(0,\log|f|))^{d-1}$ 为可积和 $f$ 可测，则 \eref{2.10.6} 成立。（见 Zygmund，\textit{Trigonometrical Series} II，第七章，第二节。）
+\Exercise 设 $F$ 是原点的一族闭的、有界的凸的对称邻域，满足 $\bigcap_{S\in F}S=\{0\}$ 以及对任意 $S$ 和 $S'\in F$ 有 $S\subset S'$ 或 $S'\subset S$。试证：若 $f\in L^1$，则下式几乎处处成立
+\[m(S)^{-1}\int_S|f(x+y)-f(x)|\,dy\longrightarrow0,\quad S\in F,\ m(S)\to0.\]
+（提示：首先扩张族 $F$ 使 $F\ni S_n\uparrow S$ 时恒有 $\overline S\in F$。注意，若 $S,S'\in F$，$S'\subset S$ 以及 $(x+S)\cap(x'+S')\ne\varnothing$，则 $x'+S'\subset x+3S$。然后，将定理2.10.2推广到最大函数 $\widetilde f(x)=\sup_{S\in F}m(S)^{-1}\int_S|f(x+y)|\,dy$。）
+
+现在，我们利用定理2.10.1和定理2.10.2来证明：$\R$ 上的任意一个增函数 $f$ 是几乎处处可微的。证明的思路若沿用第三章的一般方法虽然更为自然，但是一个简短的直接证明也是有意义的。
+
+让我们引进 $f$ 的下微商 $f'_u(x)=\liminf_{m(I)\to0}f(I)/m(I)$，其中 $I=[x_1,x_2]$ 是包含 $x$ 的区间且 $f(I)=f(x_2)-f(x_1)$。我们用 $f'_o(x)$ 记相应于 $\limsup$ 所定义的上微商。容易看出，$f'_u\in L^1_{\mathrm{loc}}$ 而且
+\[g(x)=f(x)-\int_0^x f'_u(t)\,dt\]
+\SourcePage{62}
+为一增函数。（若 $x<0$，积分自然地定义为从 $x$ 到0的积分乘以 $-1$。）为此，作积分\Corr{10}
+\[\frac1{2\varepsilon}\int_{x+\varepsilon}^{y-\varepsilon}(f(t+\varepsilon)-f(t-\varepsilon))\,dt=\frac1{2\varepsilon}\int_{y-2\varepsilon}^y f(t)\,dt-\frac1{2\varepsilon}\int_x^{x+2\varepsilon}f(t)\,dt,\]
+并令 $\varepsilon$ 按序列趋于零，根据 Fatou 引理有
+\[\int_x^y f'_u(t)\,dt\le f(y-0)-f(x+0)\le f(y)-f(x),\]
+（这里自然假定 $x<y$），这表明 $g$ 是增函数。
+
+根据定理2.10.1，$f'_u$ 的积分的微商几乎处处与 $f'_u$ 相等，所以 $g'_u=0$ 几乎处处成立。我们将证明 $g$ 的微商几乎处处是零。为此目的只需证明：对任意 $\varepsilon>0$，$E=\{x;g'_u(x)=0\text{ 和 }g'_o(x)>\varepsilon\}$ 是一个零集合。若 $\delta>0$ 和 $x\in E$，我们可以找到一个包含 $x$ 的区间 $I=[x_1,x_2]$ 使得 $g(I)<\delta m(I)$。
+
+令 $G(x)=g(x_1)$ 当 $x<x_1$，$G(x)=g(x_2)$ 当 $x>x_2$ 和 $G=g$ 于 $I$ 内。若令 $H(x)=\sup_{x\in J}G(J)/m(J)$，其中 $J$ 是一个区间。把定理2.10.2的证明稍微修改一下，即可证明：对任一增函数 $G$，
+\[m\{x;H(x)>\varepsilon\}\le4(G(+\infty)-G(-\infty))/\varepsilon,\]
+因此，有
+\[\begin{aligned}m(I\cap E)&\le m\{x\in I;g'_o(x)>\varepsilon\}\\&\le m\{x;H(x)>\varepsilon\}\le4g(I)/\varepsilon\le4\delta m(I)/\varepsilon.\end{aligned}\]
+由于 $\delta>0$ 是任意的，我们得到：若 $\chi$ 为 $E$ 的特征函数，则 $\int_0^x\chi(t)\,dt$ 在 $E$ 内任意一点，只要微商存在其微商必定等于零。所以 $E$ 的特征函数在 $E$ 内几乎处处等于零，这表明 $E$ 为一零集。这样，我们就证明了
+\SourcePage{63}
+\begin{statement}{定理}{2.10.5}
+若 $f$ 是 $\R$ 上的一个增函数，则 $f'$ 几乎处处存在，同时是一个局部可积的函数，并且有 $f(x)=\int_0^x f'(t)\,dt+g(x)$，其中 $g$ 为一增函数和 $g'(x)$ 几乎处处等于零。
+\end{statement}
+显然地，$g(x)$ 不必是常数，例如 $g$ 可以是一个阶梯函数。但是，确实存在一个连续的增函数 $g$，其微商几乎处处等于零。下面是一个古典的例子。
+
+\textbf{例子.} 我们在 $[0,1]$ 上构造一个连续的增函数，使得在 Cantor 集合 $C$ 以外的地方 $g'(x)=0$。（见定理1.1.3前面的例子。）\Corr{11}设 $O_n=[0,1]\setminus E_n$，则 $O_n$ 由 $2^n-1$ 个开区间所组成，这些开区间是在构造 Cantor 集合时为得到 $E_n$ 从 $[0,1]$ 删掉的那些。在 $O_n$ 上我们这样定义 $g_n$：若 $x$ 属于 $O_n$ 中从左边数的第 $k$ 个区间，则令 $g_n(x)=k/2^n$。由于 $O_n\subset O_{n+1}$ 和 $g_n$ 是 $g_{n+1}$ 在 $O_n$ 上的限制（画图！）\Corr{26}，故可在 $O=[0,1]\setminus C=\bigcup O_n$ 上定义函数 $g$，即令 $g(x)=g_n(x)$，若 $x\in O_n$，此时有
+\[|g(x)-g(y)|\le2^{-n},\quad\text{当 }|x-y|\le3^{-n}.\]
+所以，$g$ 为一致连续并能按唯一的方式连续地开拓到 $\overline O=[0,1]$ 上。很明显 $g$ 是不减的且 $g'(x)=0$ 当 $x\in O$，因为 $x\in O_n$ 对所有充分大的 $n$，从而在 $x$ 的一个邻域内 $g=g_n$ 为常数。

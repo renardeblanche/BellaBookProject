@@ -1,0 +1,30 @@
+[
+  {
+    "id": 41,
+    "author": "International Phonetic Association",
+    "title": "The International Phonetic Alphabet — official IPA Kiel chart (2026; revised to 2015/2005)",
+    "urls": [
+      "https://www.internationalphoneticassociation.org/content/ipa-chart",
+      "https://www.internationalphoneticassociation.org/IPAcharts/common_files/pdfs/pdfs_IPA_charts_E/IPA_Kiel.pdf"
+    ],
+    "checked": "已读取官方网页并查看官方单页 PDF 图表：核对 ʁ / ʀ、l、j / ɥ / w、ø 与鼻化符号，以及非肺部气流辅音的分列。此表不作为法语各地区音位总数或其历史变化的证据。"
+  },
+  {
+    "id": 42,
+    "author": "J. Gordon Betts et al.; OpenStax, Rice University",
+    "title": "Anatomy and Physiology 2e (2022), §23.3 The Mouth, Pharynx, and Esophagus",
+    "urls": [
+      "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-3-the-mouth-pharynx-and-esophagus"
+    ],
+    "checked": "核对 The Mouth 中硬腭、软腭、小舌的区别；The Pharynx 中鼻咽、口咽、喉咽的划分。仅用于解剖名词订正，不涉及临床建议。"
+  },
+  {
+    "id": 43,
+    "author": "J. Gordon Betts et al.; OpenStax, Rice University",
+    "title": "Anatomy and Physiology 2e (2022), §22.1 Organs and Structures of the Respiratory System",
+    "urls": [
+      "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-1-organs-and-structures-of-the-respiratory-system"
+    ],
+    "checked": "核对 Pharynx、Larynx、Trachea 各节及其解剖位置关系，用于区分声道组成、声带所在结构和软腭／小舌。未据此订正 Garcia 轶事或本章频率统计。"
+  }
+]

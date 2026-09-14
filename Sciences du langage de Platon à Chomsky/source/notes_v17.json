@@ -1,0 +1,4811 @@
+[
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 5,
+    "file": "frontmatter/preface.tex",
+    "text_tex": "杨亦鸣，徐杰．语言学应该调整为一级学科 [J]．语言科学，2010（01）：5–13。"
+  },
+  {
+    "kind": "原",
+    "number": "2",
+    "source_pdf_page": 5,
+    "file": "frontmatter/preface.tex",
+    "text_tex": "恕我孤陋寡闻，挂一漏万，这里国内首先想到蓝纯的《语言学概论》（2009，外语教学与研究出版社）、姚小平的《西方语言学史》（2011，外语教学与研究出版社）和刘润清的《西方语言学流派》（1995，外语教学与研究出版社）。"
+  },
+  {
+    "kind": "校",
+    "number": 1,
+    "source_pdf_page": 7,
+    "file": "frontmatter/remerciements.tex",
+    "text_tex": "原文如此（PDF 第 7 页）。“这明”应为“这名”，指前文提到的学者；正文保留底本字形。"
+  },
+  {
+    "kind": "校",
+    "number": 2,
+    "source_pdf_page": 9,
+    "file": "frontmatter/au_lecteur.tex",
+    "text_tex": "原文作 « savoirs-faire »。此复合名词应写作 « savoir-faire »，复数形式不变，故此处为 « les quatre savoir-faire »。"
+  },
+  {
+    "kind": "校",
+    "number": 3,
+    "source_pdf_page": 9,
+    "file": "frontmatter/au_lecteur.tex",
+    "text_tex": "原文生卒年如此。Pascal 的卒年应为 1662，故应作 « 1623-1662 »；参见法国国家图书馆作者资料。\\ecite{1}"
+  },
+  {
+    "kind": "校",
+    "number": 4,
+    "source_pdf_page": 9,
+    "file": "frontmatter/au_lecteur.tex",
+    "text_tex": "原文缺少代词 « en »；应作 « Il y en a bien d’autres »，意为还存在其他领域。"
+  },
+  {
+    "kind": "校",
+    "number": 5,
+    "source_pdf_page": 14,
+    "file": "frontmatter/original_contents.tex",
+    "text_tex": "原文 « LES DÉVELOPPEMENT RÉCENTS » 中名词缺复数词尾，应为 « LES DÉVELOPPEMENTS RÉCENTS »。"
+  },
+  {
+    "kind": "校",
+    "number": 6,
+    "source_pdf_page": 14,
+    "file": "frontmatter/original_contents.tex",
+    "text_tex": "原文如此；应为 « la prise en compte de l’extralinguistique »，在 « compte » 后补介词 « de »。"
+  },
+  {
+    "kind": "校",
+    "number": 7,
+    "source_pdf_page": 15,
+    "file": "chapters/00_liminaires.tex",
+    "text_tex": "原文 « à de quoi » 应为 « a de quoi »，此处为动词 avoir，而非介词 à。"
+  },
+  {
+    "kind": "校",
+    "number": 8,
+    "source_pdf_page": 15,
+    "file": "chapters/00_liminaires.tex",
+    "text_tex": "原文如此；关系从句缺少助动词 « sont »，应作 « Les deux questions qui y sont posées sont très simples »。"
+  },
+  {
+    "kind": "校",
+    "number": 9,
+    "source_pdf_page": 15,
+    "file": "chapters/00_liminaires.tex",
+    "text_tex": "原文 « cette interdiction été levée » 缺少助动词 « a »，应为 « cette interdiction a été levée »。"
+  },
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 15,
+    "file": "chapters/00_liminaires.tex",
+    "text_tex": "Citons par exemple \\textit{La langue d’Adam} (2010), du linguiste américain Derek Bickerton (1926-2018)."
+  },
+  {
+    "kind": "校",
+    "number": 10,
+    "source_pdf_page": 15,
+    "file": "chapters/00_liminaires.tex",
+    "text_tex": "原文 « leur découvertes » 应为 « leurs découvertes »，限定词与复数名词保持一致。"
+  },
+  {
+    "kind": "校",
+    "number": 11,
+    "source_pdf_page": 18,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "原文 « relative l’origine » 缺介词，应作 « relative à l’origine »。"
+  },
+  {
+    "kind": "校",
+    "number": 12,
+    "source_pdf_page": 18,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "原文 « au moyens » 应为 « au moyen »；固定结构为 « au moyen de »。"
+  },
+  {
+    "kind": "校",
+    "number": 13,
+    "source_pdf_page": 18,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "原文多出 « un »；应为 « à l’origine d’un phénomène »。同段末句 « Un célèbre récit étiologique concerne le langage est… » 缺少关系代词 « qui »，应作 « Un célèbre récit étiologique qui concerne le langage est… »。"
+  },
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 19,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "Tout cela sera développé dans le chapitre 5 de notre livre : Linguistique comparative et typologique."
+  },
+  {
+    "kind": "校",
+    "number": 14,
+    "source_pdf_page": 19,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "这里混用了语言和文字系统。苏美尔语、阿卡德语是语言，楔形文字是用来记录这些语言的文字系统；此外，“文字起源于美索不达米亚，确定且无可置疑”的表述过强。牛津大学 ETCSL 对最早有文字记录的语言同时列出苏美尔语和古埃及语为候选。\\ecite{2}"
+  },
+  {
+    "kind": "原",
+    "number": "2",
+    "source_pdf_page": 19,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "Nous reviendrons en détail sur le rapport entre linguistique et évolutionnisme dans les chapitres 5 (Linguistique comparative et typologique) et 16 (Biolinguistique et psycholinguistique)."
+  },
+  {
+    "kind": "校",
+    "number": 15,
+    "source_pdf_page": 19,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "两点应区分：现代人类的起源证据本身不能逻辑上证明所有语言起源于同一种语言；这里把“人群起源”直接推作“语言单一起源”的证成，推论过强。另，原注 2 的 « 16 (Biolinguistique et psycholinguistique) » 与本书总目录不符，应为第 15 章；第 16 章为 « Langage et cognition : la linguistique cognitive »。"
+  },
+  {
+    "kind": "原",
+    "number": "3",
+    "source_pdf_page": 20,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "Nous reviendrons sur cela dans le chapitre 13 : Sociolinguistique et géolinguistique."
+  },
+  {
+    "kind": "校",
+    "number": 16,
+    "source_pdf_page": 20,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "原文把苏美尔语列为闪米特语，系分类错误。苏美尔语是孤立语言，没有已被可靠确立的亲属语言；阿卡德语属于闪米特语。应把 « sumérien » 从这一闪米特语列举中移出，并另作说明。参见牛津大学 ETCSL 的 « Sumerian language »。\\ecite{2}"
+  },
+  {
+    "kind": "校",
+    "number": 17,
+    "source_pdf_page": 20,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "此处 « directs » 与前半句的层级关系不一致：按本句本身给出的链条，拉丁、西里尔和科普特字母经由希腊字母这一中间层，不能一概称为腓尼基字母的“直接”后裔；宜区分直接与间接传承。"
+  },
+  {
+    "kind": "校",
+    "number": 18,
+    "source_pdf_page": 20,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "原文 « motakkadien » 中漏空格，应为 « mot akkadien »。下一句 « Édifiée sous les règnes des rois » 是本书使用的历史叙述，不据此假定《创世记》故事可与考古建筑逐项等同。"
+  },
+  {
+    "kind": "校",
+    "number": 19,
+    "source_pdf_page": 20,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "原文 « que rédacteurs » 缺少冠词，应为 « que les rédacteurs »。"
+  },
+  {
+    "kind": "校",
+    "number": 20,
+    "source_pdf_page": 22,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "原文 « empêcher les hommes « faire » » 中缺少 « de »，应作 « empêcher les hommes de « faire » quelque chose »。"
+  },
+  {
+    "kind": "校",
+    "number": 21,
+    "source_pdf_page": 22,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "标题原文 « Actes de apôtres » 应为 « Actes des apôtres »；本页上文也使用 « Actes des Apôtres »。"
+  },
+  {
+    "kind": "校",
+    "number": 22,
+    "source_pdf_page": 23,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "此处两种术语的希腊语词源解释不一致：« glôssa/glōssa » 指“舌、语言”，不是“说话”；“说话”在下一词的解释中对应 « laléô »。因此 xénoglossie 的解释至少应把 « glossis, parler » 更正为指“语言”的成分。这里只纠正本段的词义混淆，超常语言能力的案例仍属待核，不据本段叙事当作已证实事实。"
+  },
+  {
+    "kind": "校",
+    "number": 23,
+    "source_pdf_page": 23,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "原文生卒年后的右括号缺失，应为 « Théodore Flournoy (1854-1920), spécialiste… »。"
+  },
+  {
+    "kind": "原",
+    "number": "4",
+    "source_pdf_page": 23,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "Réincarnation : dans certaines religions (hindouisme, bouddhisme, etc.), croyance selon laquelle l’âme au moment de la mort passe dans un autre corps."
+  },
+  {
+    "kind": "校",
+    "number": 24,
+    "source_pdf_page": 24,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "底本引文作 « par suit aussi »，此处固定短语应为 « par suite aussi »。"
+  },
+  {
+    "kind": "原",
+    "number": "5",
+    "source_pdf_page": 26,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "Cette question qui touche à l’acquisition des langues a suscité de vifs débats entre linguistes et psychologues. Nous étudierons cela en détail dans le chapitre 15, consacré à la biolinguistique et à la psycholinguistique."
+  },
+  {
+    "kind": "校",
+    "number": 25,
+    "source_pdf_page": 26,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "此句把“语言能力的先天基础”与“某种具体语言无需习得”混为一谈。应改为：他们强调语言能力或语言习得机制具有先天基础，而不是认为法语、汉语等具体语言不经接触即可获得。Pinker 对《语言本能》的作者说明明确同时讨论语言的本能基础和儿童如何习得语言。\\ecite{3}"
+  },
+  {
+    "kind": "原",
+    "number": "6",
+    "source_pdf_page": 26,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "Nous reviendrons longuement sur tout cela dans le chapitre 6 (Saussure, et la naissance de la linguistique moderne)."
+  },
+  {
+    "kind": "原",
+    "number": "7",
+    "source_pdf_page": 27,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "Voir le chapitre 7 : Phonétique articulatoire."
+  },
+  {
+    "kind": "原",
+    "number": "8",
+    "source_pdf_page": 27,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "Quant aux pathologies du langage, elles seront présentées dans notre chapitre 15 : Psycholinguistique."
+  },
+  {
+    "kind": "校",
+    "number": 26,
+    "source_pdf_page": 27,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "本条两处漏词：« en la preuve » 应为 « en est la preuve »；« au bon fonctionnement organes » 应为 « au bon fonctionnement des organes »。上一条 « dédié du langage » 应为 « dédié au langage »。"
+  },
+  {
+    "kind": "校",
+    "number": 27,
+    "source_pdf_page": 28,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "原文 « le juste et d’injuste » 应为 « le juste et l’injuste »，可与前引 Aristote 文本对校。"
+  },
+  {
+    "kind": "校",
+    "number": 28,
+    "source_pdf_page": 29,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "原文 « chez : » 后缺少所指人名。下文引用与本节前引 Aristote 文本对应，故宜补为 « chez Aristote : »。"
+  },
+  {
+    "kind": "校",
+    "number": 29,
+    "source_pdf_page": 29,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "底本引文末句在 « et à laquelle la vie en commun » 处缺文，句法不完整。本版保留断残原文；缺失文字尚未用对应法译版本确证，不凭意译补齐。"
+  },
+  {
+    "kind": "校",
+    "number": 30,
+    "source_pdf_page": 31,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "原文 « de plein pied » 应为 « de plain-pied »，这里意为直接进入。"
+  },
+  {
+    "kind": "校",
+    "number": 31,
+    "source_pdf_page": 32,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "这个时间区间过晚。作者原注 9 已提到的 Jebel Irhoud 化石，在 Hublin 等人 2017 年论文中与约 $315\\pm34$ 千年前的年代联系，早于此处的 20 万—10 万年。可更正为：至少约 30 万年前，非洲已出现被该研究归入 Homo sapiens 早期阶段的化石；不能据本句时间区间界定首次出现。\\ecite{4}"
+  },
+  {
+    "kind": "原",
+    "number": "9",
+    "source_pdf_page": 32,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "En 2017, on a retrouvé au Maroc sur le site de Jbel Irhoud les plus anciens fossiles d’Homo Sapiens. L’étude des restes de crânes de cinq individus a montré l’expansion de la boîte crânienne et l’augmentation considérable du volume du cerveau de l’Homo Sapiens : de 1100 cm\\textsuperscript{3} pour les premiers sapiens à 1 650 cm\\textsuperscript{3} il y a 40 000 ans, sachant que notre capacité est en moyenne de 1400 cm\\textsuperscript{3}."
+  },
+  {
+    "kind": "原",
+    "number": "10",
+    "source_pdf_page": 32,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "génétique : Sous-discipline de la biologie, la génétique est la science qui étudie l’hérédité et les gènes."
+  },
+  {
+    "kind": "原",
+    "number": "11",
+    "source_pdf_page": 33,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "L’ADN (L’acide désoxyribonucléique) est une macromolécule biologique présente dans toutes les cellules. Il contient toute l’information génétique (appelée génome) permettant le développement, le fonctionnement et la reproduction des êtres vivants."
+  },
+  {
+    "kind": "原",
+    "number": "12",
+    "source_pdf_page": 34,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "Les aires de Broca et de Wernicke, ainsi que la découverte de FOXP2 seront présentées en détail dans notre chapitre 15 : Biolinguistique et psycholinguistique."
+  },
+  {
+    "kind": "校",
+    "number": 32,
+    "source_pdf_page": 34,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "这里把一个相关基因写成了语法和脑区起源的单一充分原因，证据不足。Lai 等人（2001）发现的是 FOXP2 变异与严重言语和语言障碍的关联，并未证明某一次变异产生 Broca、Wernicke 区，或独自使人类获得句法。宜改为：FOXP2 参与言语和语言相关的神经发育过程；不能称为单独决定语言能力的“语言基因”。\\ecite{5}"
+  },
+  {
+    "kind": "校",
+    "number": 33,
+    "source_pdf_page": 34,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "Krause 等人（2007）的主要结果是尼安德特人与现代人共享所考察的两个衍生氨基酸变化，并非证明整个 FOXP2 基因所有位点都完全相同，更非证明现代人式语言能力已经存在。此处应把“没有任何差别”限定为该研究考察的变异，把后一句的确定性结论改为对相关生物学条件的证据。\\ecite{6}"
+  },
+  {
+    "kind": "校",
+    "number": 34,
+    "source_pdf_page": 34,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "底本地名与介词黏连：« Huesosen Espagne » 应为 « Huesos en Espagne »。"
+  },
+  {
+    "kind": "校",
+    "number": 35,
+    "source_pdf_page": 35,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "本段把发声的解剖条件直接等同于语言已经出现，推论过强。即使证明某古人类能产生若干语音，也不能仅由此推出其具备语法、语义和交际系统，更不能由此把“语言诞生于 200 万年前”写成已经确立的年代。这里宜表述为有关早期发声条件或原始语言的假说；本文所给材料不足以判定具体起源日期。"
+  },
+  {
+    "kind": "校",
+    "number": 36,
+    "source_pdf_page": 36,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "原书目作 « LIBERMAN »，与本章正文反复出现的 « Lieberman » 不一致；应更正为 « LIEBERMAN (Philip) »。"
+  },
+  {
+    "kind": "校",
+    "number": 37,
+    "source_pdf_page": 37,
+    "file": "chapters/01_originelle.tex",
+    "text_tex": "底本作“位置形式”。依“根据已知形式推知新形式”的上下文，此处疑为“未知形式”之误，属于拟校，尚未获得编者所据词典的对应条目确证；不将拟校静默写回正文。"
+  },
+  {
+    "kind": "校",
+    "number": 38,
+    "source_pdf_page": 40,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "原文 « la fonction je peut se mettre en place que » 缺否定限制结构中的 ne，应为 « la fonction je ne peut se mettre en place que »。"
+  },
+  {
+    "kind": "校",
+    "number": 39,
+    "source_pdf_page": 41,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "本段三处 « tâche » 均指身体上的色斑，应写作 « tache »，与前页的 « une tache de couleur » 一致。tâche 意为任务、工作。"
+  },
+  {
+    "kind": "校",
+    "number": 40,
+    "source_pdf_page": 41,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "原文 « celle qui avait son assistante » 不通，应为 « celle qui avait été son assistante »（曾担任其助手的人）。"
+  },
+  {
+    "kind": "校",
+    "number": 41,
+    "source_pdf_page": 41,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "本句两次写 1744 有误。本次核对的 Leyde、Élie Luzac fils 版书名页标有 MDCCXLVIII，即 1748；引用该版应标 1748，而非 1744。初刊流通时间与书名页印年应区别处理。\\ecite{11}"
+  },
+  {
+    "kind": "校",
+    "number": 42,
+    "source_pdf_page": 43,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "此处把 Kanzi 的语言研究笼统归入“手语”不准确。有关研究涉及英语口语理解和 lexigram 图形符号系统；研究机构也明确说明它用图形符号键盘表达请求。词汇量还须区别听懂口语、识认符号与主动使用，不宜把本句的“千词”径直理解为掌握千个手语词。\\ecite{8}"
+  },
+  {
+    "kind": "校",
+    "number": 43,
+    "source_pdf_page": 43,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "本段“永远不会超过三至四岁儿童”的表述强于其所给证据。具体任务的成绩不能直接确定所有语言能力的永久年龄上限；1993 年对 Kanzi 和一名儿童的研究报告了对新句子及某些简单句法手段的理解。这也不等于两者具有完全相同的语言能力。\\ecite{8}"
+  },
+  {
+    "kind": "校",
+    "number": 44,
+    "source_pdf_page": 45,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "这里混淆了意义关联与词源。discourir 的词源属拉丁语 discurrere 一系，并非希腊语 logos；不能由 logos 的多义性推出法语 discourir 的词源关系。\\ecite{12}"
+  },
+  {
+    "kind": "校",
+    "number": 45,
+    "source_pdf_page": 46,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "原文 « a monté »、« sont fréquemment utilisé » 应分别为 « a montré »、« sont fréquemment utilisés »。"
+  },
+  {
+    "kind": "校",
+    "number": 46,
+    "source_pdf_page": 46,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "原文 « son dépendance » 中 dépendance 为阴性，应为 « sa dépendance »。"
+  },
+  {
+    "kind": "校",
+    "number": 47,
+    "source_pdf_page": 46,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "“海面下十米起视觉信号便无法使用”有误。海水透光随水质等条件变化；NOAA 的说明将通常有显著日光的表层范围概括为约二百米，适当条件下更深处仍能检出微弱日光。不能把十米当作统一的无光界限。夜间是否能使用视觉信号也取决于环境光和视觉适应。\\ecite{9}"
+  },
+  {
+    "kind": "校",
+    "number": 48,
+    "source_pdf_page": 47,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "原文 « ne sonts pas » 应为 « ne sont pas »。"
+  },
+  {
+    "kind": "校",
+    "number": 49,
+    "source_pdf_page": 47,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "卒年误为 1990，应为 1980；Gregory Bateson 生卒年为 1904—1980。\\ecite{10}"
+  },
+  {
+    "kind": "校",
+    "number": 50,
+    "source_pdf_page": 47,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "原文 « La grand orateur » 应为 « Le grand orateur »。"
+  },
+  {
+    "kind": "校",
+    "number": 51,
+    "source_pdf_page": 48,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "本段把特定实验结果推广为一切交际的信息比例，错误。Mehrabian 本人的说明明确限定：这些比例来自情感和态度（喜欢／不喜欢）的传达实验，尤其涉及彼此不一致的线索；不能据此断言日常交际的 93\\% 无需语言。公式的 55\\% 指面部线索，亦不能无条件推广到全部身体动作。应更正为：在所研究的态度判断任务中，词语、声音和面部线索的相对权重约为 7、38、55；这些权重不是普遍的交际定律。\\ecite{7}"
+  },
+  {
+    "kind": "校",
+    "number": 52,
+    "source_pdf_page": 48,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "原文 « doivent en être en accord » 多出 en，应为 « doivent être en accord »。"
+  },
+  {
+    "kind": "校",
+    "number": 53,
+    "source_pdf_page": 48,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "原文 « Nous l’avons un peu plus haut » 缺过去分词，应为 « Nous l’avons vu un peu plus haut »。"
+  },
+  {
+    "kind": "校",
+    "number": 54,
+    "source_pdf_page": 48,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "本段内部计数不一致：前列七项“初级情绪”，后列十一项“次级情绪”，合计十八项，而非十六项。不能只把总数改成十八并当作 Ekman 的正式分类；原段把不同阶段、不同分类口径混合，具体“十六项”所据出处尚待核。"
+  },
+  {
+    "kind": "校",
+    "number": 55,
+    "source_pdf_page": 49,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "原文 « chacune ... interagissent » 主谓不一致，可改为 « ces deux substances interagissent »，与后文所述相互作用相符。"
+  },
+  {
+    "kind": "校",
+    "number": 56,
+    "source_pdf_page": 50,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "原文 « leurs pensée » 应为 « leurs pensées »，亦与上段引文一致。"
+  },
+  {
+    "kind": "校",
+    "number": 57,
+    "source_pdf_page": 52,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "原文 « Les fleurs ne poussent pas les nuages » 缺介词，应为 « Les fleurs ne poussent pas dans les nuages »。此注只订正句法，不据此独立确证引语的原始出处。"
+  },
+  {
+    "kind": "校",
+    "number": 58,
+    "source_pdf_page": 52,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "此句为原引文的历史性主张，不在引文内改写。若作为一般定义，“没有声音就没有语言”排除了手语；本章第 031 页已把手语与口语相提并论。应区分语言系统与发声模态，不能将声音视为语言的必要条件。"
+  },
+  {
+    "kind": "校",
+    "number": 59,
+    "source_pdf_page": 53,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "下表按底本逐格保留，并非重排者认可的普遍二分。仅依本章第 037–038 页，蜜蜂已能传达不在蜂巢现场的食物位置，因此把动物交际一概限定为“此时此地”与本章自己的实例冲突。应区分有限的空间移位能力与人类语言可谈论过去、假设等更广泛的移位能力；不能把“动物没有人类语言的全部特征”改写成“所有动物完全没有其中任一特征”。"
+  },
+  {
+    "kind": "校",
+    "number": 60,
+    "source_pdf_page": 55,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "底本左列第 2、3 行均印为 « Bêler »，此处保留重复。它可能是重复排印，也可能要求对应不同动物；缺少答案或编者说明，不擅自换入另一个动词。"
+  },
+  {
+    "kind": "校",
+    "number": 61,
+    "source_pdf_page": 55,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "此处 « Gordon J. » 与本章正文第 026 页的 « Gordon G. Gallup » 不一致；应为 Gordon G. Gallup。"
+  },
+  {
+    "kind": "校",
+    "number": 62,
+    "source_pdf_page": 56,
+    "file": "chapters/02_animale.tex",
+    "text_tex": "本章中 inné 与 acquis 对举，表示“先天的／与生俱来的”，而非仅指“内在的”。宜将此词条译作“inné 先天的：与生俱来的，而非通过后天学习获得的”。这是词义订正，不改变正文有关先天与习得的原有论述。"
+  },
+  {
+    "kind": "校",
+    "number": 63,
+    "source_pdf_page": 57,
+    "file": "chapters/03_partie1.tex",
+    "text_tex": "原文 « on rencontra » 为简单过去时；本段是在预告下文，与后面的 « nous verrons »、« nous allons » 一致时，应作 « on rencontrera »。"
+  },
+  {
+    "kind": "校",
+    "number": 64,
+    "source_pdf_page": 57,
+    "file": "chapters/03_partie1.tex",
+    "text_tex": "此处以同位语说明单数名词 « la sémiologie »，应为 « science des signes »。"
+  },
+  {
+    "kind": "校",
+    "number": 65,
+    "source_pdf_page": 57,
+    "file": "chapters/03_partie1.tex",
+    "text_tex": "原文此处作 « Pierce »，与同句开头及第六章题名中的 « Peirce » 不一致；应为 Charles S. Peirce。"
+  },
+  {
+    "kind": "校",
+    "number": 66,
+    "source_pdf_page": 61,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "原文 « qui nous apprend le verbe s’accorde » 缺连接词，应为 « qui nous apprend que le verbe s’accorde »。"
+  },
+  {
+    "kind": "校",
+    "number": 67,
+    "source_pdf_page": 61,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "底本在 « remplir » 后打开圆括号，而在 « etc. » 后未闭合；此处应补右括号。引文其余内容保留底本文字。"
+  },
+  {
+    "kind": "校",
+    "number": 68,
+    "source_pdf_page": 62,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "本句 « a pour fonction de prévenir ou à réparer » 的并列结构不一致，应作 « a pour fonction de prévenir ou de réparer »。原引文中 « sert à prévenir ou à réparer » 则无此问题。"
+  },
+  {
+    "kind": "校",
+    "number": 69,
+    "source_pdf_page": 62,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "本段所列生卒年 560–480 avant J.-C. 与“约公元前 350 年”著书不能同时成立：后一年代比所列卒年晚 130 年。此处至少一项有误；本轮未据可靠证据确定唯一断代，故不臆改生卒年或成书年。"
+  },
+  {
+    "kind": "校",
+    "number": 70,
+    "source_pdf_page": 64,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "此处将不同年代的教学情形混在一起。原文所列 Denys 卒年为公元前 90 年，而 Virgile 生于公元前 70 年（Biblissima 的作者规范记录，见\\ecite{14}），晚于前述卒年；因此不能把讲授 Virgile 作品写作 Denys 本人的经历。应将一般的罗马语法教学概述与 Denys 的传记分开。"
+  },
+  {
+    "kind": "校",
+    "number": 71,
+    "source_pdf_page": 64,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "第二个 « professeurs de grec » 显为重复误写；与 « Latinus » 对应，应作 « professeurs de latin »。"
+  },
+  {
+    "kind": "校",
+    "number": 72,
+    "source_pdf_page": 64,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "此处叙述内部不一致：本段最初八类已经包含 « article »，后面却再把 « l’ajout de l’article » 作为新变化。不能据此直接重建各时期完整词类表；有关 Lhomond 及 1910 年分类的具体对应仍待版本核验。"
+  },
+  {
+    "kind": "校",
+    "number": 73,
+    "source_pdf_page": 65,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "原文 « effet continue » 既未正确释出 scriptio，形容词亦不与阳性名词 effet 配合。此拉丁术语在这里应释为 « écriture continue »，即不以空格分词的连续书写。"
+  },
+  {
+    "kind": "校",
+    "number": 74,
+    "source_pdf_page": 65,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "若按本句先列的“强—中—弱停顿”顺序类比现代标点，末尾应按 « au point, au point-virgule et à la virgule » 排列，而非原文的相反顺序；古今标点功能也不宜理解为完全一一对应。"
+  },
+  {
+    "kind": "校",
+    "number": 75,
+    "source_pdf_page": 66,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "原文缺少表示作者关系的介词，应为 « des œuvres d’Aristote »。"
+  },
+  {
+    "kind": "校",
+    "number": 76,
+    "source_pdf_page": 67,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "正文此处的带圈序号在底本作 3，而本节此前只有第 1 小项；章首提纲相应条目作 2。序号应为 2，此处保留底本正文的 3 并加注说明。"
+  },
+  {
+    "kind": "校",
+    "number": 77,
+    "source_pdf_page": 70,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "底本所标 « Translittération » 实为现代化转写，且第 111 条漏掉前列原文中的 « commissions, sentences »。与本页原文对齐时，« contrats » 后应补 « commissions, sentences »；这不是据外部版本改动旧法文。"
+  },
+  {
+    "kind": "校",
+    "number": 78,
+    "source_pdf_page": 70,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "将两书一并说成 « écrites en anglais » 与底本前两页展示的 Barton 前言冲突：该段文字及作者自己的说明均将其认作 anglo-normand，而非英语。应区分“面向英国读者”与“用英语写成”。"
+  },
+  {
+    "kind": "校",
+    "number": 79,
+    "source_pdf_page": 70,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "原文 « d’une d’étude » 多出第二个 d’，应为 « d’une étude »。"
+  },
+  {
+    "kind": "校",
+    "number": 80,
+    "source_pdf_page": 71,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "本小节混合了不同作者。1579 年《De la précellence du langage françois》的作者为 Henri Estienne，而非此处所述 1503–1559 年的 Robert Estienne；所据 1579 年版本书名及书目记录明确署名 Henri Estienne，见\\ecite{13}。1569 年语法书的版本归属另需分别核对，不能把本段所有 « Robert » 一律改成 « Henri »。"
+  },
+  {
+    "kind": "校",
+    "number": 81,
+    "source_pdf_page": 72,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "此处人名 « Le Ramée » 与本节及章首的 « La Ramée » 不一致，应为 « La Ramée »。"
+  },
+  {
+    "kind": "校",
+    "number": 82,
+    "source_pdf_page": 74,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "原文此句缺主句谓语，« Clément Marot, ... qui en effet a introduit » 应作 « Clément Marot, ... a en effet introduit »，或在句首补 « C’est » 形成强调句。此注仅订正句法，不据此确认有关“引入”过去分词一致规则的历史归属。"
+  },
+  {
+    "kind": "校",
+    "number": 83,
+    "source_pdf_page": 74,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "本引文标题作 « Épigrammes ses disciples »，缺介词 à，并与上一句的单数书目题名不一致；按上一句应作 « Épigramme à ses disciples »。"
+  },
+  {
+    "kind": "校",
+    "number": 84,
+    "source_pdf_page": 75,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "原文 « est n’est » 重复，应为 « l’analyse grammaticale n’est encore que balbutiante »。"
+  },
+  {
+    "kind": "校",
+    "number": 85,
+    "source_pdf_page": 76,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "原文卒年 1659 有误，应为 1650。Académie française 的官方传记记载其卒于 1650 年 2 月 26 日，见\\ecite{15}。"
+  },
+  {
+    "kind": "校",
+    "number": 86,
+    "source_pdf_page": 77,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "本行末有未与开引号配对的闭引号 »；按此处引文的连续结构应删去。保留底本并在此说明，不改变诗句内容。"
+  },
+  {
+    "kind": "校",
+    "number": 87,
+    "source_pdf_page": 78,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "原文卒年 1996 为排印错误，应为 1696。Hachette Livre–BnF 重印书信集的书目资料明确标示 1626–1696，见\\ecite{16}。"
+  },
+  {
+    "kind": "校",
+    "number": 88,
+    "source_pdf_page": 79,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "原文 « ont fini par chassé » 应为 « ont fini par chasser »：finir par 后接不定式。"
+  },
+  {
+    "kind": "校",
+    "number": 89,
+    "source_pdf_page": 79,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "原文 « la raison un » 缺系词，应为 « la raison est un »。"
+  },
+  {
+    "kind": "校",
+    "number": 90,
+    "source_pdf_page": 81,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "本引文中 « imminent » 疑为 « immanent » 之误：前者为“即将发生的”，后者为“内在于……的”，与 « à toute parole prononcée » 相接及前文“内在法则”相应。此为拟校，尚未核到对应原刊页的字形，不将它当作已确证的引文订正。"
+  },
+  {
+    "kind": "校",
+    "number": 91,
+    "source_pdf_page": 82,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "此书共同作者应为 Antoine Arnauld 与 Pierre Nicole，而非 Claude Lancelot。与本条相同的 Dominique Descotes 2011 年校订版在 CiNii Books 的责任者记录为 « Antoine Arnauld, Pierre Nicole »，见\\ecite{17}。Lancelot 是前一条《Grammaire générale et raisonnée》的共同作者。"
+  },
+  {
+    "kind": "校",
+    "number": 92,
+    "source_pdf_page": 83,
+    "file": "chapters/03_grammaire.tex",
+    "text_tex": "此条把 Vaugelas 的名字写为 « René L. »，与正文及章首提纲的 « Claude Favre de Vaugelas » 不一致；作者名应订正为 « VAUGELAS (Claude Favre de) »。此注只订正作者姓名，不据此认定所列 1975 年版本的全部出版信息无误。"
+  },
+  {
+    "kind": "校",
+    "number": 93,
+    "source_pdf_page": 88,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "应区分推理有效性与命题事实真值：有效推理保证的是“若前提真，则结论真”，单凭形式正确不能保证前提或结论实际为真。下文原书第 090 页亦区分 vérité 与 validité；此处定义不宜理解为逻辑形式本身足以确保事实真理。"
+  },
+  {
+    "kind": "校",
+    "number": 94,
+    "source_pdf_page": 89,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "原文 naturel 与阴性名词 langue 不一致，应作 naturelle。另，单列一个公式或其自然语言表达尚不构成有前提和结论的完整“推理”；这两个例子直接展示的是表达方式的区别。"
+  },
+  {
+    "kind": "校",
+    "number": 95,
+    "source_pdf_page": 89,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "“a priori”与“analytique”不是同义词，尤其不能在 Kant 的论述中等同。前者涉及认识是否独立于经验，后者涉及判断中谓词与主词概念的关系；Kant 明确讨论“先天综合判断”。见 \\ecite{18}，导论 IV–VI。"
+  },
+  {
+    "kind": "校",
+    "number": 96,
+    "source_pdf_page": 90,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "演绎并不必然是“从原因到结果”或“从一般到个别”，也不要求以形式语言写出。由“A 且 B”推出“A”就是反例；经验获得的前提也可用于演绎。应更正为：演绎有效性要求不存在前提全真而结论假的情形。"
+  },
+  {
+    "kind": "校",
+    "number": 97,
+    "source_pdf_page": 91,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "原文 et 应作 est：“Le deuxième haricot […] est lui aussi rouge”。"
+  },
+  {
+    "kind": "校",
+    "number": 98,
+    "source_pdf_page": 91,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "假说并非“按定义不真”；其真值尚未由当前证据确立，可以为真，也可以为假。应作“尚未证实，而被认为具有一定可信性”。同页“comme suit :”之后未见归纳例子的续式，故不擅补。"
+  },
+  {
+    "kind": "校",
+    "number": 99,
+    "source_pdf_page": 92,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "à l’encontre 后应接 de，故“à l’encontre le bon sens”应作“à l’encontre du bon sens”。"
+  },
+  {
+    "kind": "校",
+    "number": 100,
+    "source_pdf_page": 92,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "下列 non sequitur 并非与前两者互不相交的第三种形式：作者在该节列出的两式正是肯定后件与否定前件。宜将此句理解并更正为“这里讨论以下形式及其总称”，而非穷尽形式谬误的三分法。"
+  },
+  {
+    "kind": "校",
+    "number": 101,
+    "source_pdf_page": 94,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "若三个句子中的“rare”“cher”取相同含义，且将第一个全称前提视为真，形式本身是有效的。问题在大前提并非普遍真实，或“rare”的使用发生偷换，不宜把本例当成单纯的形式无效。原例保留。"
+  },
+  {
+    "kind": "校",
+    "number": 102,
+    "source_pdf_page": 94,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "此步推论不成立。“并非所有克里特人都说谎”只要求存在一个反例，不推出 Épiménide 本人的当前发言为真；“说谎者”也不等于每句话都为假。严格的说谎者悖论须将语句明确自指为“本句为假”，不能直接以这里的全称陈述代替。另，“formulé par poète crétois”缺冠词，应为“par le poète crétois”。"
+  },
+  {
+    "kind": "校",
+    "number": 103,
+    "source_pdf_page": 95,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "这里应区分集合论的 Russell 悖论与理发师故事的具体表述；正文将两者的年代直接合并。此次未完成理发师故事最早版本的文献核定，暂保留年份为待核，不据集合论悖论的发表年替故事定年。"
+  },
+  {
+    "kind": "校",
+    "number": 104,
+    "source_pdf_page": 96,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "“这些悖论证明自然语言不适于逻辑思考”并不由前例推出。集合论悖论可直接形式化为 $R\\in R\\leftrightarrow R\\notin R$；理发师条件也可形式化。因此矛盾不能仅归因于自然语言，应检查有关定义、公理或语义假设。"
+  },
+  {
+    "kind": "校",
+    "number": 105,
+    "source_pdf_page": 98,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "原文“il veut dire aucun…”漏 que，应为“il veut dire qu’aucun…”。下段“Si la copule […] est […] et les autres verbes […] jouent…”结构也不完整，宜去掉 et，使第二分句成为主句；正文保留底本。"
+  },
+  {
+    "kind": "校",
+    "number": 106,
+    "source_pdf_page": 99,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "“le thème l’élément”漏 est，应为“le thème est l’élément”。本段与下段的“已知／新信息”描述是此书采用的简化框架，不应把定冠词或不定冠词单独当成识别 thème／rhème 的充分条件：新信息也可用定指表达，具体分析须结合语境。"
+  },
+  {
+    "kind": "校",
+    "number": 107,
+    "source_pdf_page": 100,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "原列公元前 540–580 年作为生卒年顺序不可能成立（公元前 580 年早于 540 年）。可确证其数字或顺序有误；本轮未据可靠传记确定本书意图采用的两端年代，故不把推测日期写入正文。"
+  },
+  {
+    "kind": "校",
+    "number": 108,
+    "source_pdf_page": 100,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "矛盾律 $\\neg(p\\land\\neg p)$ 与排中律 $p\\lor\\neg p$ 应区分；仅禁止“同时真”并不自动排除“既不判真也不判假”。由前者得到后者还涉及所采用的逻辑及否定规则，不能不加限定地称为前者的直接后果。"
+  },
+  {
+    "kind": "校",
+    "number": 109,
+    "source_pdf_page": 101,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "这里把量子态的叠加直接说成两个经典断言同时为真，或位于生与死之间的第三种经典状态，均不准确。应区分态矢量的线性叠加、测量结果与命题真值；思想实验讨论宏观叠加和测量解释的问题，不凭自身证明经典矛盾律或排中律遭到实验推翻。参见 Schrödinger 原文第 5 节，\\ecite{20}。"
+  },
+  {
+    "kind": "校",
+    "number": 110,
+    "source_pdf_page": 102,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "本句有数的一致错误：“affirmatives ou négative”应作“affirmatives ou négatives”，“un procédé mnémotechniques”应作“un procédé mnémotechnique”。下列公式中的 H、M 沿用底本，不另改为 C、G。"
+  },
+  {
+    "kind": "校",
+    "number": 111,
+    "source_pdf_page": 102,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "quatre 作数词不加复数 -s，此处 quatres 应作 quatre。"
+  },
+  {
+    "kind": "校",
+    "number": 112,
+    "source_pdf_page": 102,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "按本页使用的现代量词解释，反对、下反对与差等关系须补充主词类非空的条件 $\\exists x\\,Hx$。若没有猫，A、E 都真而 I、O 都假，故原列这三组关系不成立；A–O、E–I 的矛盾关系仍成立。上句“peuvent simultanément vrais”另漏 être，应为“peuvent être simultanément vrais”。"
+  },
+  {
+    "kind": "校",
+    "number": 113,
+    "source_pdf_page": 104,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "概念订正：有效性是论证或推理形式的性质，真值是命题的性质。有效推理保证：若前提全真，则结论必真；仅仅“把前提假定为真”不足以构成有效性的定义。此处结论“nécessairement valide”宜改为“nécessairement vraie”，并明确以前面的推理形式有效为条件。"
+  },
+  {
+    "kind": "校",
+    "number": 114,
+    "source_pdf_page": 104,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "按本段关于省略一个前提或结论的说明，应是把明说的命题减少为两个，而不是把三段论的项减少为两个：“deux termes”在这里宜作“deux propositions exprimées”。“une des prémisses, même la conclusion peut être implicites”数的一致亦有问题；可作“une des prémisses, voire la conclusion, peut être implicite”。"
+  },
+  {
+    "kind": "校",
+    "number": 115,
+    "source_pdf_page": 105,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "书名订正：此处和下面引文标题均误作“Méditations physiques”，应为“Méditations métaphysiques”；本章此前所列书名亦作后者。"
+  },
+  {
+    "kind": "校",
+    "number": 116,
+    "source_pdf_page": 106,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "语法订正：“reprises les manuels”应为“reprise dans les manuels”。下图实际展示的是“实体”属下的逐层划分，并没有展示前文列举的全部十范畴，因此不宜将图本身称作十范畴的层级图。"
+  },
+  {
+    "kind": "校",
+    "number": 117,
+    "source_pdf_page": 107,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "原句“Dans la philosophie occidentale, et les universaux ...”结构残缺，可能混入多余的“et”并漏去主句谓语；不在正文中猜补。下段“Les tenants du nominalistes”应为“Les tenants du nominalisme”。同段所否定的是共相作为独立实在的存在，而非“普遍词项”作为词语或概念的存在，后一句的说明也表明了这一点。"
+  },
+  {
+    "kind": "校",
+    "number": 118,
+    "source_pdf_page": 108,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "句法订正：“Sa pensée Roscelin”混合了两种构句，可作“La pensée de Roscelin”或“Sa pensée”。"
+  },
+  {
+    "kind": "校",
+    "number": 119,
+    "source_pdf_page": 109,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "语法订正：“attribué Guillaume d’Ockham”漏去介词，应为“attribué à Guillaume d’Ockham”；“en très détail”应为“en grand détail”或“très en détail”。正文保留原貌。"
+  },
+  {
+    "kind": "校",
+    "number": 120,
+    "source_pdf_page": 110,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "排印订正：“Elles ont une bien réalité”应为“Elles ont bien une réalité”。"
+  },
+  {
+    "kind": "校",
+    "number": 121,
+    "source_pdf_page": 111,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "语法订正：“des raisonnement”应为“des raisonnements”；“Frege en conclut notre langage”应补“que”，即“Frege en conclut que notre langage”。"
+  },
+  {
+    "kind": "校",
+    "number": 122,
+    "source_pdf_page": 112,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "范围说明：这里不能把所有指称对象限制为可感知的具体事物。下文原书自己的数学例子“2+2”和“3+1”指向数4，已说明必须容纳抽象对象。此外，“l’étoile du matin”等是名词性表达式，而不是可判真假的完整命题；下段反复用“propositions”称这些例子时，宜改为“expressions”。"
+  },
+  {
+    "kind": "校",
+    "number": 123,
+    "source_pdf_page": 113,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "姓名订正：“Russel”应为“Russell”。概念上，没有指称对象的单称描述与外延为空的谓词须加区分，不能一概视为同一种语义对象。Russell 的方案是在句子层次消去限定描述，不是简单把不存在的对象替换成“空外延”。参见 \\ecite{21}。"
+  },
+  {
+    "kind": "校",
+    "number": 124,
+    "source_pdf_page": 113,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "语法订正：“pour à mettre”应为“pour mettre”。"
+  },
+  {
+    "kind": "校",
+    "number": 125,
+    "source_pdf_page": 114,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "术语订正：“descriptions finies”应为“descriptions définies”（限定描述），不是“有限描述”。"
+  },
+  {
+    "kind": "校",
+    "number": 126,
+    "source_pdf_page": 115,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "关键补正：必须区别句内否定和句外否定。令 $P$ 为“存在唯一法国国王且他秃头”，句外否定 $\\neg P$ 在不存在法国国王时为真；而“存在唯一法国国王且他不秃头”仍为假。后二者不是 $P$ 与 $\\neg P$，两者均假不违反排中律。Russell 原文明确区别限定描述的 primary／secondary occurrence。参见 \\ecite{21}。"
+  },
+  {
+    "kind": "校",
+    "number": 127,
+    "source_pdf_page": 116,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "术语、排印订正：“la définition finie”在此应为“la description définie”；“C’est est”重复，应为“C’est”。注意限定描述“le roi de France”本身不是命题；上句“cet énoncé ... est faux”须理解为完整的秃头断言，而不是单独的名词短语。"
+  },
+  {
+    "kind": "校",
+    "number": 128,
+    "source_pdf_page": 116,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "理论层次说明：这里已经转入预设分析，不能把它与前面 Russell 把存在和唯一性纳入断言真值条件的分析等同。普通否定下仍承诺某前提，是预设分析的诊断；Russell 的句外否定则可一并否定存在条件。参见 \\ecite{21}。"
+  },
+  {
+    "kind": "校",
+    "number": 129,
+    "source_pdf_page": 118,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "形式记号订正：单写“$\\exists(x)$”缺少量词后的公式，不能表示“有一只猫”。令 $C(x)$ 表示“$x$ 是猫”，应写 $\\exists x\\,C(x)$。下文把个体与种类的不等同解释为“外延不等于内涵”也混淆了层次：个体不是外延集合，种类也不自动等于内涵。应分别说明个体的归属、集合的同一和表达式的意义。"
+  },
+  {
+    "kind": "校",
+    "number": 130,
+    "source_pdf_page": 119,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "概念订正：“子非鱼”是否定述谓（你不具有“鱼”的类别属性），不是否定存在。令 $F(x)$ 为“$x$ 是鱼”、$z$ 指“子”，可写 $\\neg F(z)$；它既不表示“你不存在”，也不表示“鱼不存在”。“子非我”则可以作个体不相同 $z\\ne w$ 的分析。"
+  },
+  {
+    "kind": "校",
+    "number": 131,
+    "source_pdf_page": 119,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "年份订正：《哲学研究》首次以德英对照本于1953年身后出版，非1956年；本章原书第109页也明确写作1953，与此处自相矛盾。此处可据同章后文订为1953。"
+  },
+  {
+    "kind": "校",
+    "number": 132,
+    "source_pdf_page": 119,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "排印订正：小标题“La Tractatus”应为“Le Tractatus”。书目与年代须区分：这里的1989至多可指后出的版本，不能作为 Russell 最初提出这些思想的年份——原书前页已列其卒年为1970；且本段把它说成1921年《逻辑哲学论》的思想来源。未据此猜改具体初刊年份。"
+  },
+  {
+    "kind": "校",
+    "number": 133,
+    "source_pdf_page": 120,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "语境说明：这句话对应《逻辑哲学论》3.328，附近3.326—3.327讨论符号的有意义使用和逻辑句法使用。因此不能仅据此把早期著作直接等同于后文晚期的“意义即使用”分析。参见 \\ecite{19}。"
+  },
+  {
+    "kind": "校",
+    "number": 134,
+    "source_pdf_page": 121,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "几处须分开：（1）“ne réfèrent pas à rien de réel”按上下文应为“ne réfèrent à rien de réel”；“une pseudo-propositions”应为单数。（2）将意义条件直接概括成经验可验证性，把后述证实论读进了《逻辑哲学论》；4.024区分理解命题和知道命题为真。（3）不能把“无内容”与“胡说”并为一类；4.461—4.4611明确说重言式与矛盾式虽无实质内容，却不是无意义的胡说。参见 \\ecite{19}。"
+  },
+  {
+    "kind": "校",
+    "number": 135,
+    "source_pdf_page": 121,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "此处再把 Kant 的“先天”与“分析”当作同义词是不正确的：Kant 明确讨论先天综合判断，并把纯数学判断列入其中，参见 \\ecite{18}，导论V。文字上“une la tautologie”多出冠词；“on n’obtient donc de prédicat”及“ne posent cependant de problèmes”均漏“pas”。此外，四个直角并不足以定义正方形，也适用于非正方形的矩形。"
+  },
+  {
+    "kind": "校",
+    "number": 136,
+    "source_pdf_page": 122,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "引文归属待核：本次在所核对的《逻辑哲学论》德英全文中检索 Ulysses／Odysseus，未找到这一例句。暂保留原文，不把这段转述当作已经确证的该书原话；“没有指称”也不应未经论证就与“没有意义”直接画等号。参见 \\ecite{19}。"
+  },
+  {
+    "kind": "校",
+    "number": 137,
+    "source_pdf_page": 122,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "排印订正：“philo sophiques”中间的空格应删，作“philosophiques”。"
+  },
+  {
+    "kind": "校",
+    "number": 138,
+    "source_pdf_page": 124,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "年份订正：《蓝皮书》是1933—1934年向剑桥学生口授的笔记；这里的1934—1935不宜用作《蓝皮书》的时间范围。参见所用版本的出版社说明 \\ecite{22}。"
+  },
+  {
+    "kind": "校",
+    "number": 139,
+    "source_pdf_page": 124,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "语法订正：“ne veut pas à s’attarder”中“à”多余，应为“ne veut pas s’attarder”。引文“plus simples que celles dont nous utilisons”亦有关系结构问题，可作“plus simples que celles que nous utilisons”；此为法语句法拟校，不冒称核过该法译本。"
+  },
+  {
+    "kind": "校",
+    "number": 140,
+    "source_pdf_page": 125,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "引文中的数一致订正：“des mesure”应为“des mesures”；“d’une expériences”应为“d’une expérience”。"
+  },
+  {
+    "kind": "校",
+    "number": 141,
+    "source_pdf_page": 125,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "此处的“换言之”不成立：验证方法或真值条件不是某个既定真值；两个不同命题可以同为真而意义不同。“synthétiques (dépourvus de sens)”也不能泛指所有综合命题；原书第114页所引宣言本身承认经验科学命题有意义。前述“il faut savoir le Tractatus”另漏“que”，应为“il faut savoir que le Tractatus”。"
+  },
+  {
+    "kind": "校",
+    "number": 142,
+    "source_pdf_page": 127,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "引文句法订正：“à réclame”应为“à réclamer”，“la phrases”应为“les phrases”。“la polémique contre”与前面的不定式并列不齐，可能漏有动词；“moyen d’indexation”亦与上下文的“表达手段”对照不够清晰。后两处须对照原法译版本，暂列待核，不静默改写引文。"
+  },
+  {
+    "kind": "校",
+    "number": 143,
+    "source_pdf_page": 129,
+    "file": "chapters/04_logique.tex",
+    "text_tex": "术语订正：在本章讨论的认识论语境中，\\textit{a posteriori}应译“后验的／后验地”，指依赖经验，不等于归纳推理或由果溯因。下一词\\textit{a priori}应译“先验的／先天的”，指其根据不依赖经验，亦不等于由因溯果。参见 \\ecite{18}，导论I—V。"
+  },
+  {
+    "kind": "校",
+    "number": 144,
+    "source_pdf_page": 133,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "年代范围须区别：段首说19世纪初，后文原书第125页自身却把Schleicher与Darwin理论的联系放在1860年代。本段把不同时段的影响压缩在同一时期，宜把有关影响的年代分别交代。"
+  },
+  {
+    "kind": "校",
+    "number": 145,
+    "source_pdf_page": 133,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文如此。按本页所列1304与1816计算，相隔512年，应为约五百年而非六百年。"
+  },
+  {
+    "kind": "校",
+    "number": 146,
+    "source_pdf_page": 134,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文如此。分词修饰阳性复数mots，应作enregistrés。"
+  },
+  {
+    "kind": "校",
+    "number": 147,
+    "source_pdf_page": 134,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文如此。此处名词短语缺限定词，应为l’indianiste français。"
+  },
+  {
+    "kind": "校",
+    "number": 148,
+    "source_pdf_page": 135,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文此处作Kreb；下文及所引论文均作Krebs，应补末尾s。"
+  },
+  {
+    "kind": "校",
+    "number": 149,
+    "source_pdf_page": 137,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文句末多出孤立的études，语法关系不成立，疑为编辑残留；可删该词及其前逗号。正文仍保留。"
+  },
+  {
+    "kind": "校",
+    "number": 150,
+    "source_pdf_page": 137,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文如此。此处复合过去时缺助动词，应为il a ajouté。"
+  },
+  {
+    "kind": "校",
+    "number": 151,
+    "source_pdf_page": 137,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文如此。两名词之间漏连接词，按上下文应为déclinaisons et conjugaisons。"
+  },
+  {
+    "kind": "校",
+    "number": 152,
+    "source_pdf_page": 138,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "底本引文如此。主语Les origines为复数，动词应作se révèlent；这里只订语法，不声称已核定所引法译版本。"
+  },
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 139,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "D’autres sources plus récentes seront présentées dans le chapitre 13."
+  },
+  {
+    "kind": "校",
+    "number": 153,
+    "source_pdf_page": 140,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文在同一列举中两次写espagnol，疑为重复排印。删除后一项即可消除重复；无证据确定作者原拟列举哪一种语言，故不擅补其他语名。"
+  },
+  {
+    "kind": "校",
+    "number": 154,
+    "source_pdf_page": 140,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "此处把“未有直接文字见证”和“并非真实祖语”混在一起。紧接的说明实际只支持“祖语未直接见于文献、其具体形式依比较重建”，不能由此推出共同祖语不曾真实存在。应将véritable改为directement attestée，或明确区分历史祖语与重建模型。"
+  },
+  {
+    "kind": "校",
+    "number": 155,
+    "source_pdf_page": 140,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "此句的a découvert把前一句仍属有争议的假说改说成了确证发现；在本段自己的证据层级内，应作a proposé。对“半数”及“涵盖全部人类语言”的数量断言，本轮未取得足够依据，不作确定性背书。"
+  },
+  {
+    "kind": "校",
+    "number": 156,
+    "source_pdf_page": 140,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "定义不应只限于langues vivantes（活语言），还须考虑有文献记录的灭绝语言；若与某种灭绝语言的亲缘关系已经确立，也不能仅因该亲属灭绝就称其在谱系分类上为孤立语。见Glottolog对独立语系与孤立语的区分\\ecite{24}。"
+  },
+  {
+    "kind": "校",
+    "number": 157,
+    "source_pdf_page": 141,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "至少“日语是孤立语”不准确：日语与琉球诸语言构成日琉语系（Japonic），不能因为尚未确证其与其他语系的关系就把其中的日语单独算作孤立语。见Glottolog的Japonic分类\\ecite{25}。"
+  },
+  {
+    "kind": "校",
+    "number": 158,
+    "source_pdf_page": 141,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "罗马字题名与汉字题名不对应：“新明解”应读Shinmeikai，而Shinsen通常对应“新選”。应作Shinmeikai kokugo jiten。底本未标所据版次与词汇统计口径，“la plupart”的数量判断尚待核，不据题名订正推定其正确。"
+  },
+  {
+    "kind": "校",
+    "number": 159,
+    "source_pdf_page": 141,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "这里的“八支”仅列所取分类下仍有活语言的分支；本章后面另列安纳托利亚语支和吐火罗语支。若把本句当作包括灭绝语支在内的完整列表，会与本章自己的后文冲突，宜补明范围。"
+  },
+  {
+    "kind": "校",
+    "number": 160,
+    "source_pdf_page": 141,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文如此，l’ensemble后漏介词，应为l’ensemble des langues。"
+  },
+  {
+    "kind": "校",
+    "number": 161,
+    "source_pdf_page": 141,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文如此。remonter à的介词缺失，应为remontent tous deux à l’adjectif。"
+  },
+  {
+    "kind": "校",
+    "number": 162,
+    "source_pdf_page": 142,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文如此；若回指les catégories sociales，应为ces dernières；若指这些阶层的成员，则须补明确的人称指称。"
+  },
+  {
+    "kind": "校",
+    "number": 163,
+    "source_pdf_page": 142,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "此句把传闻写成了确定史实。Suétone《Divus Iulius》82先说Caesar未发出言语，随后才把“{\\BBFifthTranslit καὶ σὺ τέκνον}”列作另一些人的传述；宜改为“据一种古代传述……”，不应断言他必说了此句\\ecite{26}。"
+  },
+  {
+    "kind": "校",
+    "number": 164,
+    "source_pdf_page": 142,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文如此，列举中的de应与前项一致，作des textes courants。"
+  },
+  {
+    "kind": "校",
+    "number": 165,
+    "source_pdf_page": 142,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "作者归属及年代待核。底本把该材料归于1世纪的Valerius Probus，却未说明所据版本；题名中的Probi本身不足以完成作者鉴定。本批未取得有关校订研究全文，暂不把某一订值列为确证；待核文献线索见\\ecite{27}。"
+  },
+  {
+    "kind": "校",
+    "number": 166,
+    "source_pdf_page": 142,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文如此，分词与阴性复数erreurs配合，应作commises。"
+  },
+  {
+    "kind": "校",
+    "number": 167,
+    "source_pdf_page": 142,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "末例应区别民间继承与学术借入：oculus经民间音变产生的法语词是œil；oculaire来自拉丁语ocularis，不能作为本段oculus→oclus音变的直接结果\\ecite{28}。"
+  },
+  {
+    "kind": "校",
+    "number": 168,
+    "source_pdf_page": 142,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "“/mt/变为/t/”与紧接的domtare→dompter例子不符。所示变化是在m与t之间出现p的增音，而不是把m删去；该例不能证明/mt/→/t/。"
+  },
+  {
+    "kind": "校",
+    "number": 169,
+    "source_pdf_page": 143,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "“罗曼诸语言不再有变格”须限定词类，不能直接推广到整个语言系统。法语je/me等人称代词仍随句法功能改变形式；各罗曼语的名词格情况还须分别核对。"
+  },
+  {
+    "kind": "校",
+    "number": 170,
+    "source_pdf_page": 143,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "法译原文如此。拉丁语aut表示“或”，此处漏掉连接关系；应为“en langue romane rustique ou en langue tudesque”。依据为本句并列给出的拉丁原文。"
+  },
+  {
+    "kind": "校",
+    "number": 171,
+    "source_pdf_page": 143,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文dans en重复，应删除dans或改写为dans une langue romane。"
+  },
+  {
+    "kind": "校",
+    "number": 172,
+    "source_pdf_page": 143,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文如此，主语为三人，应为petits-fils。"
+  },
+  {
+    "kind": "校",
+    "number": 173,
+    "source_pdf_page": 144,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文缺介词，应为s’explique aussi par la présence。"
+  },
+  {
+    "kind": "校",
+    "number": 174,
+    "source_pdf_page": 146,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文如此，应为de l’écriture。"
+  },
+  {
+    "kind": "校",
+    "number": 175,
+    "source_pdf_page": 147,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "此句混淆了古代安纳托利亚语与突厥语。两者不是同一语系，不能把古代小亚细亚诸王国的文字材料称为最早土耳其语文本；宜改为相应的古代安纳托利亚语言，具体所指仍须原著资料确认。与本章后面将le turc列为非印欧语言的说明亦不相容。"
+  },
+  {
+    "kind": "校",
+    "number": 176,
+    "source_pdf_page": 147,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "此处采用拉丁字母的改革应改为1928年，而非1919—1922年。所查二级历史资料将第1353号法律的通过日期列为1928年11月1日；本批未取得法律原件，不声称核过原始法条\\ecite{29}。"
+  },
+  {
+    "kind": "校",
+    "number": 177,
+    "source_pdf_page": 149,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文如此。此书初刊年应为1836，不是1936；见1836年原版书目与数字化文本\\ecite{30}。"
+  },
+  {
+    "kind": "校",
+    "number": 178,
+    "source_pdf_page": 151,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文sur de l’étude中de赘余，应为basés sur l’étude de 30 langues。"
+  },
+  {
+    "kind": "校",
+    "number": 179,
+    "source_pdf_page": 152,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "括号内的顺序是O-S-V，不是标题所说的O-V-S。按本章统一以chat为主语、souris为宾语的例法，OVS应写“la souris mange le chat”。"
+  },
+  {
+    "kind": "校",
+    "number": 180,
+    "source_pdf_page": 152,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文法语译文缺助动词a，应作“le jaguar a mangé l’homme”。此处保留源例的语序与转写；作为OVS例，首项为宾语、末项为主语。"
+  },
+  {
+    "kind": "校",
+    "number": 181,
+    "source_pdf_page": 152,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "此处565没有说明是哪个版本或子样本，不能当作WALS全库规模。查阅的WALS第81章81A表覆盖1376种语言，其中OSV为4种；还单列无主导语序的语言。它与上文Tomlin的百分比并非同一统计样本，不宜直接拼接\\ecite{31}。"
+  },
+  {
+    "kind": "校",
+    "number": 182,
+    "source_pdf_page": 153,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "应区分具体构式的线性排列与语言的基本语序分类。法语前置宾语弱代词确实可呈S-O-V，但这不把法语改列为基本SOV语言。WALS第81章明确以主语、宾语均为名词短语的陈述句为比较依据\\ecite{31}。"
+  },
+  {
+    "kind": "校",
+    "number": 183,
+    "source_pdf_page": 153,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "底本越南语例句漏、错多处附加符号。按所给法译拟校为“Khi tôi đến nhà bạn tôi, chúng tôi bắt đầu làm bài”。其中bắt đầu须分词，đến、bạn、chúng、làm的字形不能省略或以其他声调替代；译文所添过去体信息未由本句单独标记。此为语言形式拟校，非原版引文比对。"
+  },
+  {
+    "kind": "校",
+    "number": 184,
+    "source_pdf_page": 154,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文末句缺宾语代词，应为mais ne le précède pas。"
+  },
+  {
+    "kind": "校",
+    "number": 185,
+    "source_pdf_page": 154,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文est en une中en赘余，应为est une langue。"
+  },
+  {
+    "kind": "校",
+    "number": 186,
+    "source_pdf_page": 154,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文缺介词à，应为contrairement à une langue isolante。"
+  },
+  {
+    "kind": "校",
+    "number": 187,
+    "source_pdf_page": 154,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "本章把synthétique与fusionnel等同，容易混淆两个分类维度：综合程度涉及一个词包含多少语素，融合性涉及语素边界与形式的可分解程度。黏着结构也可以高度综合，故“黏着／综合”不是严格对立；本段拟比较的是“黏着／融合”\\ecite{32}。"
+  },
+  {
+    "kind": "校",
+    "number": 188,
+    "source_pdf_page": 154,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "日语的孤立语分类问题见原书127页对应校注及\\ecite{25}；形态类型相似不构成谱系孤立或同源的证据。"
+  },
+  {
+    "kind": "校",
+    "number": 189,
+    "source_pdf_page": 155,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文此处漏a，应为kiswahili。本段有关swahili与kiswahili关系的说明另列待核。"
+  },
+  {
+    "kind": "校",
+    "number": 190,
+    "source_pdf_page": 155,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文est n’est系重复误植，应为et n’est pas fléchi。"
+  },
+  {
+    "kind": "校",
+    "number": 191,
+    "source_pdf_page": 157,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "“综合”与“融合”不宜当作同义词；本段对“一种形式表示多个概念成分”的说明属于累积表达。综合程度、语音融合及累积表达须分别界定；参见原书140页校注及\\ecite{32}。"
+  },
+  {
+    "kind": "校",
+    "number": 192,
+    "source_pdf_page": 157,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "此处再次把黏着与综合当成排他类型，不能由“黏着”推出“非综合”。同一种语言还可能因语法范畴不同而同时采用分析和综合手段；将整个印欧语系概括为一种形态类型过强，参见\\ecite{32}。"
+  },
+  {
+    "kind": "校",
+    "number": 193,
+    "source_pdf_page": 157,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文dans ajout d’affixe应为sans ajout d’affixe。"
+  },
+  {
+    "kind": "校",
+    "number": 194,
+    "source_pdf_page": 158,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "对应mes“我的（复数领有物）”，此处in应为im；原书142页的ev-ler-im-de已经给出相同分析。in表示第二人称单数领有者，不能在此代替im。"
+  },
+  {
+    "kind": "校",
+    "number": 195,
+    "source_pdf_page": 158,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "hommasse不是homme的阴性形式，而是形容“女子外貌或举止粗壮、似男子”的形容词（带贬义）；若举homme的阴性词汇对应，应为femme，且属不同词根的对应，不能分析为加阴性词尾。参见词典释义\\ecite{34}。"
+  },
+  {
+    "kind": "校",
+    "number": 196,
+    "source_pdf_page": 158,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文aïl误加分音符，应为ail。"
+  },
+  {
+    "kind": "校",
+    "number": 197,
+    "source_pdf_page": 158,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文vers un l’intérieur多出un，应为vers l’intérieur。illere词源亦可疑，宜参核illatus／inferre；本批暂保留为待核词源，不据猜测替换正文。"
+  },
+  {
+    "kind": "校",
+    "number": 198,
+    "source_pdf_page": 158,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文essere不是拉丁语“是”的通常不定式，拉丁语为esse；本句在右括号后还漏est，应为L’inessif (…) est le cas grammatical…。"
+  },
+  {
+    "kind": "校",
+    "number": 199,
+    "source_pdf_page": 159,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原文缺介词par，应为il s’exprime généralement par une préposition。此处flexionnelles沿用作者与agglutinantes对比的用法，不能据此认为黏着结构没有屈折。"
+  },
+  {
+    "kind": "校",
+    "number": 200,
+    "source_pdf_page": 159,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "这里应为in + ablatif，不是datif。拉丁语in表示处所时支配夺格，表示进入的方向时支配宾格；cubiculo在此为单数夺格，虽与该词单数与格同形，不能据词尾同形误定句法格。参见Allen与Greenough语法§221\\ecite{33}。"
+  },
+  {
+    "kind": "校",
+    "number": 201,
+    "source_pdf_page": 161,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "原书书目此处Hagège姓氏重复，应删去右括号后的Hagège。"
+  },
+  {
+    "kind": "校",
+    "number": 202,
+    "source_pdf_page": 163,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "本词条法文indo-européene少一个n，应为indo-européenne。正文按底本保留。"
+  },
+  {
+    "kind": "校",
+    "number": 203,
+    "source_pdf_page": 163,
+    "file": "chapters/05_comparative.tex",
+    "text_tex": "本条把黏着型也纳入综合型，与原书140、143页正文的排他性分类不一致；综合程度与融合程度应分别说明。保留原释义，并提示读者对照有关校注及\\ecite{32}。"
+  },
+  {
+    "kind": "校",
+    "number": 204,
+    "source_pdf_page": 164,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文如此；修饰复数 catégories 的形容词应为 phanéroscopiques。正文相应小节标题已用复数。"
+  },
+  {
+    "kind": "校",
+    "number": 205,
+    "source_pdf_page": 164,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文如此；应为 Le sinsigne，正文相应标题也使用 Le。"
+  },
+  {
+    "kind": "校",
+    "number": 206,
+    "source_pdf_page": 167,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 fonds baptismaux 如此；固定搭配应为 fonts baptismaux（洗礼盆），此处借指一门学科的创立。"
+  },
+  {
+    "kind": "校",
+    "number": 207,
+    "source_pdf_page": 167,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 « il n’y en pas »、« renvient » 如此；分别应为 « il n’y en a pas »、« renvoient »。"
+  },
+  {
+    "kind": "校",
+    "number": 208,
+    "source_pdf_page": 167,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "IASS–AIS 官方历届大会名录将 1974 年 Milano 大会列为第一届；因此不能称为 1969 年的首届大会。见\\ecite{35}。"
+  },
+  {
+    "kind": "校",
+    "number": 209,
+    "source_pdf_page": 168,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "此概括不宜直接当作 Peirce 的真理论。Peirce 的实用主义准则借可设想的实践效果澄清概念；真理则与无限探究所趋向的共同意见及独立于个体意见的实在相联，不等于“有用所以为真”。见 Peirce, « How to Make Our Ideas Clear » (1878)，\\ecite{36}。"
+  },
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 168,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "On verra cela de façon approfondie dans les pages qui suivent ainsi que dans le chapitre 11, consacré à la sémantique."
+  },
+  {
+    "kind": "校",
+    "number": 210,
+    "source_pdf_page": 169,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 « rien n’écrit » 如此；应为 « rien écrit »。关于著述数量，\\textit{Recueil des publications scientifiques de Ferdinand de Saussure} (1922) 除早期专著外还收录多篇论文，故“几乎没有再写作或发表”也过强；不能由 CLG 为身后编成推得这一结论。见\\ecite{39}。"
+  },
+  {
+    "kind": "校",
+    "number": 211,
+    "source_pdf_page": 169,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "此处 trois leçons 宜理解为三轮课程，而非三节课。CLG 第一版序言署 Charles Bally、Albert Sechehaye，书名页注明 Albert Riedlinger 协作；编辑者说明主要材料来自听课笔记，Saussure 留下的课程相关笔记非常有限。见\\ecite{38}，第一版序言。"
+  },
+  {
+    "kind": "校",
+    "number": 212,
+    "source_pdf_page": 170,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 « à ses yeux de Saussure » 如此；应删去重复成分，作 « aux yeux de Saussure » 或 « à ses yeux »。"
+  },
+  {
+    "kind": "校",
+    "number": 213,
+    "source_pdf_page": 171,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 saisi 如此；谓语动词应为 saisit。"
+  },
+  {
+    "kind": "校",
+    "number": 214,
+    "source_pdf_page": 171,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "需区分两门在 Peirce 体系中相关却不同的学科：phaneroscopy（现象学）研究经验的一般范畴；逻辑／符号学则属规范科学。不能把两者无条件作为同义词。见 Peirce 的 1903 年科学分类，\\ecite{37}。"
+  },
+  {
+    "kind": "校",
+    "number": 215,
+    "source_pdf_page": 172,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 fait des règles 如此；按语意应为 fait de règles（由规则构成）。"
+  },
+  {
+    "kind": "校",
+    "number": 216,
+    "source_pdf_page": 172,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "此处 Secondéité 与本小节论述及前一句不符，应为 Tiercéité。与 Aristote 术语的对应是作者的解释性类比，不宜当作三套范畴严格同一。"
+  },
+  {
+    "kind": "校",
+    "number": 217,
+    "source_pdf_page": 173,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "此处“物质符号”把范围说窄了。Peirce 的符号可以是性质、个别事物，也可以是一般规律；representamen 在三元关系中充当第一项，不等于它本身必然只是物质实体或 qualisign。下文的三分表也应据此理解。见\\ecite{37}。"
+  },
+  {
+    "kind": "校",
+    "number": 218,
+    "source_pdf_page": 174,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文括号未闭合，宜在 representamen 后补右括号，作 « l’effet du signe (c’est-à-dire du representamen) sur une personne »。此为标点拟校，不据此宣称已核定引文的原始出处。"
+  },
+  {
+    "kind": "原",
+    "number": "2",
+    "source_pdf_page": 176,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "Nous y reviendrons dans le chapitre 11 consacré à la sémantique."
+  },
+  {
+    "kind": "校",
+    "number": 219,
+    "source_pdf_page": 176,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "应区分符号的三项关系与三种分类依据。表中是三组三分：符号自身、符号与对象的关系、符号与解释项的关系；不是把一个符号拆成九个独立“子符号”。1903 年分类在相容限制下给出十类复合符号。见\\ecite{37}。"
+  },
+  {
+    "kind": "校",
+    "number": 220,
+    "source_pdf_page": 177,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 « ou ‘écrit » 如此；应为 « ou l’écrit »。"
+  },
+  {
+    "kind": "校",
+    "number": 221,
+    "source_pdf_page": 177,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "icone 与 légisigne 属于不同分类维度，并不互斥；一个一般性的图示可以同时是 iconic legisign。不能据“约定使用”便推断其像似关系消失。见\\ecite{37}，1903 年十类符号中的第五类。"
+  },
+  {
+    "kind": "校",
+    "number": 222,
+    "source_pdf_page": 177,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "这里不是对象本身变为 indice，而是符号因与对象有现实联系而被归为 indice。下引 Peirce 的定义也以“Un indice est un signe”开头。见\\ecite{37}。"
+  },
+  {
+    "kind": "校",
+    "number": 223,
+    "source_pdf_page": 178,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "“非意图性”不是 Peirce 的 index 的必要条件；他也将有意指点的手指、指示词等列入指示性符号。这里把 Prieto 式 signal／indice 区分直接移用于 Peirce，宜分别说明其理论框架。见\\ecite{37}。"
+  },
+  {
+    "kind": "校",
+    "number": 224,
+    "source_pdf_page": 178,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "底本在“Charles Peirce explique :”之后未另列可辨识的引文，下一段以“D’ailleurs que”起。疑有脱漏或引文标识缺失；未取得可确证的对勘材料，不补造文字。"
+  },
+  {
+    "kind": "校",
+    "number": 225,
+    "source_pdf_page": 178,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 « ne pouvons n’en citer que » 如此；两种规范表达分别是 « nous ne pouvons en citer que quelques-uns » 和 « nous n’en citerons que quelques-uns »。"
+  },
+  {
+    "kind": "校",
+    "number": 226,
+    "source_pdf_page": 178,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 « il convient définir » 如此；应为 « il convient de définir »。"
+  },
+  {
+    "kind": "校",
+    "number": 227,
+    "source_pdf_page": 180,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 1926-2019 如此；Hilary Putnam 于 2016 年 3 月 13 日去世，生卒年应为 1926-2016。见 Harvard 纪念资料，\\ecite{40}。"
+  },
+  {
+    "kind": "校",
+    "number": 228,
+    "source_pdf_page": 180,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "待核：本句把解释者作为“第四因素”的说明归于一个修订版本，却未列该版年份及页码。本版尚未取得可与此句对应的修订版原文，不据此确认其先后关系。"
+  },
+  {
+    "kind": "校",
+    "number": 229,
+    "source_pdf_page": 181,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文在 Cratyle 后用分号，隔断主语与谓语；应为逗号。"
+  },
+  {
+    "kind": "校",
+    "number": 230,
+    "source_pdf_page": 183,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 elles 如此；照应单数 la réalité 应为 elle。"
+  },
+  {
+    "kind": "校",
+    "number": 231,
+    "source_pdf_page": 183,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 tandis d’autres 如此；应为 tandis que d’autres。本段复述对话中的词源说明，不应把它们当作现代历史语言学已确认的词源。"
+  },
+  {
+    "kind": "校",
+    "number": 232,
+    "source_pdf_page": 183,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 faites 如此；与单数 réalité 一致应为 faite。"
+  },
+  {
+    "kind": "校",
+    "number": 233,
+    "source_pdf_page": 183,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 voir Saussure s’est 如此；在此句法中应为 voir que Saussure s’est。"
+  },
+  {
+    "kind": "校",
+    "number": 234,
+    "source_pdf_page": 183,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "此处把所指 signifié 换成了外部现实 réalité。CLG 的任意性原则直接涉及能指与所指的联系，不能不加区别地改说成符号与外部对象的关系。见\\ecite{38}，第一部分第 I 章。"
+  },
+  {
+    "kind": "校",
+    "number": 235,
+    "source_pdf_page": 184,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "Peirce 的 symbole 与 Saussure 在下引文字中的 symbole 不是同一个术语定义：前者以规律或习惯性联系界定，后者特别指出仍有一定自然联系。不能仅凭相同词形把两套定义接成同一分类；亦应与 CLG 的“相对任意性／相对理据性”区分。见\\ecite{37}、\\ecite{38}。"
+  },
+  {
+    "kind": "校",
+    "number": 236,
+    "source_pdf_page": 186,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "CLG 的第二原则准确标题为“能指的线条性”（caractère linéaire du signifiant），首先限定于听觉能指；不宜把整个符号或一切语言模态都说成只能一维排列。下引首句保留了这一限定。见\\ecite{38}，第一部分第 I 章 § 3。"
+  },
+  {
+    "kind": "校",
+    "number": 237,
+    "source_pdf_page": 187,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "这一说法需要 CLG 中的限定：能指或所指各自具有差异性，但“符号作为整体”被明确称为在自身秩序中的积极事实（fait positif）。不能删去这一层区别而一概否认整个符号的积极性质。见\\ecite{38}，第二部分第 IV 章 § 4。"
+  },
+  {
+    "kind": "校",
+    "number": 238,
+    "source_pdf_page": 191,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "此处把研究对象的区分说成完全排除，过于绝对。CLG“导论”第 V 章明确承认外部语言学研究的重要性，但主张不必借助外部因素才能认识语言内部组织；不宜把这一方法论区分等同于外部语言学不属于语言研究。见\\ecite{38}。"
+  },
+  {
+    "kind": "校",
+    "number": 239,
+    "source_pdf_page": 191,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "语序误，应为 dont les principales branches sont。下列“语用学与言语行为”一项是本教材的现代编排，不宜读作 CLG 原书给出的分科表。"
+  },
+  {
+    "kind": "校",
+    "number": 240,
+    "source_pdf_page": 194,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "引文“est à celle”在本句中语法不通，疑为 est celle；未取得此引文所据 Gustave Guillaume 课程版次及页码，故只列拟校，不改正文。"
+  },
+  {
+    "kind": "校",
+    "number": 241,
+    "source_pdf_page": 194,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文“ont des disciplines”疑漏 s，应为 sont des disciplines。仍需与所据课程版本核对。"
+  },
+  {
+    "kind": "校",
+    "number": 242,
+    "source_pdf_page": 194,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "本框不是 CLG 的逐字引文。CLG 第二部分第 V 章使用 rapports associatifs，与 syntagmatiques 对举；“paradigmatiques”是这里采用的后起术语。关联关系也不只限于同一语法位置可替换的项目，后文举 enseigner、armement 等即显示其范围更广。见\\ecite{38}。"
+  },
+  {
+    "kind": "校",
+    "number": 243,
+    "source_pdf_page": 194,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "Plus de clarté 在此缺少引介介词，宜为 Pour plus de clarté。"
+  },
+  {
+    "kind": "校",
+    "number": 244,
+    "source_pdf_page": 195,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "原文 ne succèdent 应为 se succèdent。"
+  },
+  {
+    "kind": "校",
+    "number": 245,
+    "source_pdf_page": 196,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "此处 syntagmatiques 与本段标题及“替换／或”的解释相矛盾，应为 paradigmatiques。"
+  },
+  {
+    "kind": "校",
+    "number": 246,
+    "source_pdf_page": 197,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "术语通常写作 actes de langage，此处 langages 的复数不当。前面“语义学／句法学”的列举次序与全书目录第 10 章 Syntaxe、第 11 章 Sémantique 相反；正文仍按底本保留。"
+  },
+  {
+    "kind": "校",
+    "number": 247,
+    "source_pdf_page": 200,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "此释义属于交际参与者的二人组合；本章 dyade 指能指与所指构成的二元关系，不是两个交谈者。应按本章语境释为“二元组／二元结构”。"
+  },
+  {
+    "kind": "校",
+    "number": 248,
+    "source_pdf_page": 201,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "这一定义比本章的用法窄：本章还讨论非语言符号；Saussure 的语言符号也并非仅指“代表事物的单词”，而是能指与所指的结合，且不能化约为名称与事物的配对。见\\ecite{38}，第一部分第 I 章。"
+  },
+  {
+    "kind": "校",
+    "number": 249,
+    "source_pdf_page": 201,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "“能指”误释为“具体含义”，与下条“所指”混淆。在 Saussure 的术语中，能指是音响形象（image acoustique），所指是概念；音响形象也不等于外界的物理声波。本章所述任意性针对两者间的联系。见\\ecite{38}，第一部分第 I 章。"
+  },
+  {
+    "kind": "校",
+    "number": 250,
+    "source_pdf_page": 201,
+    "file": "chapters/06_signe.tex",
+    "text_tex": "“符号所代表的事物”与意义概念混淆，也与本章关于 signifié／référent 的区分不符。signification 可依语境指意义、意指或表意关系，并不专指“语法意义”；不应把它等同于指称对象。参见本章原书 157、160、173 页及\\ecite{38}。"
+  },
+  {
+    "kind": "校",
+    "number": 251,
+    "source_pdf_page": 202,
+    "file": "chapters/07_partie2.tex",
+    "text_tex": "原文 sciences langage 如此；应为 sciences du langage，与本页标题一致。"
+  },
+  {
+    "kind": "校",
+    "number": 252,
+    "source_pdf_page": 202,
+    "file": "chapters/07_partie2.tex",
+    "text_tex": "原文 ceux Roman Jakobson 如此；应为 ceux de Roman Jakobson，与后面的 et d’André Martinet 对应。"
+  },
+  {
+    "kind": "校",
+    "number": 253,
+    "source_pdf_page": 202,
+    "file": "chapters/07_partie2.tex",
+    "text_tex": "原文 Nous répond 如此；现在时应为 Nous répondons；若与前句预告下文的将来时一致，则为 Nous répondrons。"
+  },
+  {
+    "kind": "校",
+    "number": 254,
+    "source_pdf_page": 205,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "原文 ses caractéristiques 如此；此处所列频率、强度、时长是声音的物理特征，若回指 les sons，应为 leurs caractéristiques。"
+  },
+  {
+    "kind": "校",
+    "number": 255,
+    "source_pdf_page": 205,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "原文 se poser question 如此；应为 se poser la question。"
+  },
+  {
+    "kind": "校",
+    "number": 256,
+    "source_pdf_page": 206,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "“n’importe quel son”范围过大。此处描述肺部气流及喉部参与的典型言语发声过程，不是所有声音的必要条件；例如本章后文也说明清擦音不依赖声带振动，且国际音标表另列非肺部气流辅音。见\\ecite{41}。"
+  },
+  {
+    "kind": "校",
+    "number": 257,
+    "source_pdf_page": 207,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "原文 perçus、ce sont voisé 如此；分别应为 perçues 和 ce son est voisé，句意为所感到的振动表明这个音有声。"
+  },
+  {
+    "kind": "校",
+    "number": 258,
+    "source_pdf_page": 207,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "“在法语中不起任何作用”过强，也与上一段把声门上腔体作为共鸣腔的说明不一致。不能把“不以独立咽辅音为特征”与“咽腔不参与语音产生”混为一谈；咽腔在解剖上仍属喉以上的声道。咽、喉的位置见\\ecite{43}。"
+  },
+  {
+    "kind": "校",
+    "number": 259,
+    "source_pdf_page": 207,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "gutturales 是宽泛的传统称呼，不等同于现代发音部位分类中的 pharyngales。国际音标表分别列软腭、小舌、咽和声门等部位；不能由“喉音”这一名称直接推断列举的辅音均在咽部形成阻碍。见\\ecite{41}。"
+  },
+  {
+    "kind": "校",
+    "number": 260,
+    "source_pdf_page": 207,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "控制口鼻通路的主要结构应表述为软腭／腭帆及腭咽闭合机制，不是单独“小舌黏在咽腔上”。小舌是软腭后缘的悬垂部分；小舌与整个软腭不能等同。下文相同的简化说法亦应据此理解。解剖区分见\\ecite{42}、\\ecite{43}。"
+  },
+  {
+    "kind": "校",
+    "number": 261,
+    "source_pdf_page": 208,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "原文 produits 如此；与阴性复数 consonnes 一致时应为 produites。"
+  },
+  {
+    "kind": "校",
+    "number": 262,
+    "source_pdf_page": 209,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "对法语 \\bipa{[l]}，要点是舌尖／舌端在齿龈处形成中央阻碍，气流经一侧或两侧逸出；不能仅用“舌背抬高”界定。国际音标将 \\bipa{[l]} 列为齿龈边近音。见\\ecite{41}。"
+  },
+  {
+    "kind": "校",
+    "number": 263,
+    "source_pdf_page": 209,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "原文 et produisant 如此；并列谓语应为 et produisent，或改写为 avec la langue ou la luette produisant des vibrations。"
+  },
+  {
+    "kind": "校",
+    "number": 264,
+    "source_pdf_page": 210,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "原文用 \\bipa{[ʁ]} 表示 vibrante。国际音标中 \\bipa{[ʁ]} 是浊小舌擦音，小舌颤音符号为 \\bipa{[ʀ]}；字形及发音方式不可混同。此处与下表保留底本的 \\bipa{[ʁ]}，不静默改成 \\bipa{[ʀ]}。见\\ecite{41}。"
+  },
+  {
+    "kind": "校",
+    "number": 265,
+    "source_pdf_page": 210,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "原表把 \\bipa{[l]} 记为 sagittale；与上一页的 latérale 相冲突，应为 latérale。在现代 IPA 方式分类中，\\bipa{[l]} 属 lateral approximant，而非中央气流擦音。见\\ecite{41}。"
+  },
+  {
+    "kind": "校",
+    "number": 266,
+    "source_pdf_page": 212,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "原文 la formes 如此；应为 la forme。"
+  },
+  {
+    "kind": "校",
+    "number": 267,
+    "source_pdf_page": 213,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "原表 Nasales 中前、不圆唇、半开这一格印为无鼻化符号的 \\bipa{ɛ}；据本页元音梯形图及下一页完整分类表，应为 \\bipa{ɛ̃}。此处保留原格字形，订正在注中列明。"
+  },
+  {
+    "kind": "校",
+    "number": 268,
+    "source_pdf_page": 214,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "此格原文用大写 Ø。国际音标的前圆唇半闭元音符号为小写 \\bipa{ø}，亦与上页梯形图和口元音表一致。见\\ecite{41}。"
+  },
+  {
+    "kind": "校",
+    "number": 269,
+    "source_pdf_page": 214,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "此表三项均称 constrictive，而前文又把 constrictive 等同 fricative。国际音标中 \\bipa{[j]}、\\bipa{[ɥ]}、\\bipa{[w]} 为近音：分别为硬腭、唇硬腭、唇软腭近音，不应据此表误作带摩擦噪声的擦音。见\\ecite{41}。"
+  },
+  {
+    "kind": "校",
+    "number": 270,
+    "source_pdf_page": 214,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "原文 des phonème 如此；应为 des phonèmes。"
+  },
+  {
+    "kind": "校",
+    "number": 271,
+    "source_pdf_page": 216,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "“某一部位”范围不当；appareil phonatoire 指参与发声的器官系统，不是口、鼻、喉中某个单一部位。本章正文还明确列入肺、气管及相应肌肉。"
+  },
+  {
+    "kind": "校",
+    "number": 272,
+    "source_pdf_page": 216,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "“气管（喉中）”混淆喉与气管的位置及包含关系。喉是连接咽与气管、位于气管上方的独立结构，内含声带；不能说气管处于喉内。见\\ecite{43}，Larynx 与 Trachea 两节。"
+  },
+  {
+    "kind": "校",
+    "number": 273,
+    "source_pdf_page": 217,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "硬腭的支架为骨，表面覆以黏膜等软组织；不能把其结构与主要由肌肉构成的软腭混同。“由骨和肌肉构成”宜订正为“以骨为支架、表面覆有黏膜的腭前部”。见\\ecite{42}。"
+  },
+  {
+    "kind": "校",
+    "number": 274,
+    "source_pdf_page": 217,
+    "file": "chapters/07_phonetique.tex",
+    "text_tex": "此释义只近似描述语音学中的一段咽腔，不能作为完整解剖定义：咽分鼻咽、口咽、喉咽，声带位于喉内，不是整个咽的边界。见\\ecite{42}、\\ecite{43}。"
+  },
+  {
+    "kind": "校",
+    "number": 275,
+    "source_pdf_page": 218,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "章首提纲保留原字。LES FONCTION 应为 LES FONCTIONS；systématique fonctionnelle 应为 systémique fonctionnelle，与本章正文第 212 页的标题一致。章名按第 204 页原题转写。"
+  },
+  {
+    "kind": "校",
+    "number": 276,
+    "source_pdf_page": 220,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "原文 phonologie.Dans 缺少句间空格，应为 phonologie. Dans。“structure 一词首次出现”的范围没有限定，本轮未取得足以支持这一优先权断言的历史词例或原刊证据，故列为待核；不能把本句作为该词在所有学科中首次使用的依据。"
+  },
+  {
+    "kind": "校",
+    "number": 277,
+    "source_pdf_page": 220,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "此句句法衔接有误：可改为 La notion de fonction dans le fonctionnalisme pragois est polysémique，或 Quant à la notion de fonction dans le fonctionnalisme pragois, elle est polysémique。正文保留原句。"
+  },
+  {
+    "kind": "校",
+    "number": 278,
+    "source_pdf_page": 220,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "原文在逗号后大写 Né。可断为 celui de Roman Jakobson. Né à Moscou en 1896, cofondateur…；这里不静默改变底本标点。"
+  },
+  {
+    "kind": "校",
+    "number": 279,
+    "source_pdf_page": 221,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "辨析：本句把制度化交际一概等同于单向交际，范围过宽。制度化访谈、审讯、课堂问答等在概念上都容许双方轮流发言；“制度化”与“是否双向”不是同一个分类维度。可改为“某些制度化传播情境主要是单向的”，而不能据本句排除制度化对话。"
+  },
+  {
+    "kind": "校",
+    "number": 280,
+    "source_pdf_page": 221,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "原文 passe des supports 缺少介词，应为 passe par des supports。ce cas là 的规范连写为 ce cas-là。此处仅指出文字问题，不改动原段。"
+  },
+  {
+    "kind": "校",
+    "number": 281,
+    "source_pdf_page": 223,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "本段“四种功能”的归属与上段矛盾：上段已说明 Bühler 原为三分法，第四项由 Popper 增补。因而此处应限定为“经 Popper 扩充的分类”，不能把四项均归于 Bühler 原始三分法。有关 1953 年和下列价值配对的具体原刊页码，本轮仍待核。"
+  },
+  {
+    "kind": "校",
+    "number": 282,
+    "source_pdf_page": 224,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "引文此处两个 a 均应为介词 à：eut à reconnaître、à partir。另，正文两处俄语拉丁转写形式不同，均依底本保留，不以统一转写静默替换。"
+  },
+  {
+    "kind": "校",
+    "number": 283,
+    "source_pdf_page": 224,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "原文 dans avant d’être repris 中 dans 后无成分，句子残缺。若仅作语法修复可删去 dans；若原本拟列著作名称或日期，则须另据底本补证。本版不臆补缺文。"
+  },
+  {
+    "kind": "校",
+    "number": 284,
+    "source_pdf_page": 225,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "原文 n’en sont quelques illustrations 缺少 que，应为 n’en sont que quelques illustrations。"
+  },
+  {
+    "kind": "校",
+    "number": 285,
+    "source_pdf_page": 225,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "句末 fonction. etc. 的 etc. 与前面的 etc. 重复，且单独成残句；应删去后一个 etc.。"
+  },
+  {
+    "kind": "校",
+    "number": 286,
+    "source_pdf_page": 226,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "原文 par, maintenir 中 par, 为赘文，拟删为 … à la fois : maintenir par exemple…；不据此改动正文。"
+  },
+  {
+    "kind": "校",
+    "number": 287,
+    "source_pdf_page": 226,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "a publié 应为 publié（过去分词修饰 ouvrage），或改写为 qui a été publié。出版社将 1997 年第一卷明确标为第二次修订版，不能把该身后版本的年份直接等同于理论首次发展的年份。Dik 与 Halliday 的具体理论影响关系，本轮仍列待核。\\ecite{48}"
+  },
+  {
+    "kind": "校",
+    "number": 288,
+    "source_pdf_page": 226,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "引文 instrument d’interaction social 中形容词若修饰 interaction，应为 sociale。其余译句按底本保留；本轮未取得该法语译文的确切原始出处，不用自行翻译的英语段落替换。"
+  },
+  {
+    "kind": "校",
+    "number": 289,
+    "source_pdf_page": 226,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "待核：底本将 systémique 这一名称的缘由直接归于计算机运作类比，却未列该句出处。本轮未取得可核查的 Halliday 原著段落来确认此归因，故保留为作者的解释，不把类比当作已经证实的术语史结论。"
+  },
+  {
+    "kind": "校",
+    "number": 290,
+    "source_pdf_page": 227,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "certains événement 应为 certains événements，名词须用复数。"
+  },
+  {
+    "kind": "校",
+    "number": 291,
+    "source_pdf_page": 228,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "任期误。SLE 官方历史页所录首任会长为 1966 年的 André Martinet，任至 1967 年年会；1967 年已由 Björn Collinder 接任。原文不能把 1966–1999 当作连续会长任期。\\ecite{45}"
+  },
+  {
+    "kind": "校",
+    "number": 292,
+    "source_pdf_page": 229,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "le prosodèmes 应为 les prosodèmes，冠词与复数名词须一致。"
+  },
+  {
+    "kind": "校",
+    "number": 293,
+    "source_pdf_page": 229,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "法语词 rateau 缺少长音符，应为 râteau。音标中的元音选取依底本保留，不把某一地区的元音合流分析强加给所有法语变体。"
+  },
+  {
+    "kind": "校",
+    "number": 294,
+    "source_pdf_page": 229,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "术语层级有误：按本段和随后定义，具有区别功能的声调单位 tonème 属于音系分析，应将 en phonétique 改为 en phonologie。音色 timbre 也不能不加限定地全算为超音段特征；如元音音质同时用于区分音段。参见官方 IPA 表对元音、超音段特征和声调的分别列示。\\ecite{41}"
+  },
+  {
+    "kind": "校",
+    "number": 295,
+    "source_pdf_page": 230,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "统计与范围提示：这里未注明估计的抽样框及“声调语言”口径，不宜作为精确普查比例。WALS 第 13 章明确提醒其样本不按各地区语言密度比例取样，并将挪威语等欧洲语言列入声调或边缘声调类。因此，既不能由该样本直接推出全球比例，也不能把声调限定为非欧洲现象。底本估计保留，不用另一口径的新数字替换。\\ecite{44}"
+  },
+  {
+    "kind": "校",
+    "number": 296,
+    "source_pdf_page": 230,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "待核：“十五调”以及“最高纪录”未指明侗语方言、调类与实际调值的计数口径，不能当作该语言所有变体共同的音位数。越南语“六调”的适用方言也须限定；本轮不在未取得各方言原始描写时另填数字。"
+  },
+  {
+    "kind": "校",
+    "number": 297,
+    "source_pdf_page": 231,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "这些音位数没有注明语言变体及分析口径，不能视为各语言唯一而固定的值。是否将长短对立、双元音、塞擦音等计作独立单位也会改变结果。本轮未取得支撑这一整组数值的原始清单，故保留数字并列待核，不擅自换上一组同样未说明口径的数字。"
+  },
+  {
+    "kind": "校",
+    "number": 298,
+    "source_pdf_page": 231,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "发音部位误：\\bipa{[ʀ]} 是小舌颤音（roulée uvulaire），不是舌尖颤音（apicale）；\\bipa{[r]} 则是齿龈颤音。符号依底本保留，名称在此订正。\\ecite{41}"
+  },
+  {
+    "kind": "校",
+    "number": 299,
+    "source_pdf_page": 231,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "按此处定义，allophone 是“同一音位”的不同语音实现，应将 d’un même son 改为 d’un même phonème，避免把具体语音与音位混为一谈。依据为本章前述音段／音位区分。"
+  },
+  {
+    "kind": "校",
+    "number": 300,
+    "source_pdf_page": 232,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "待核：此处“阿拉伯语”未指明变体，也没有给出验证 \\bipa{[r]／[ʀ]} 对立的最小对立语料。\\bipa{[ʀ]} 和小舌擦音 \\bipa{[ʁ]} 不能仅因形近而互换。原书可能混淆了颤音与擦音符号，本版不未经方言和语料核实就代换该例。\\ecite{41}"
+  },
+  {
+    "kind": "校",
+    "number": 301,
+    "source_pdf_page": 232,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "est réalisé deux manières 缺少介词，应为 est réalisé de deux manières。"
+  },
+  {
+    "kind": "校",
+    "number": 302,
+    "source_pdf_page": 232,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "“所有声调语言均有变调”是强于“具有声调对立”的全称判断；本段没有给出跨语言证据或限定 sandhi 的定义。故保留原句并列为待核，不把声调语言的定义本身当作这一断言的证明。"
+  },
+  {
+    "kind": "校",
+    "number": 303,
+    "source_pdf_page": 233,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "“un allophone（一个变体）”不能概括本段已列的多种声调变体：前文同时讨论了上声变升调、半上声及“一／不”的变调。应区分四个基本声调与它们在具体环境中的实现，不能把所有变调相加后固定为“一个变体”。“轻声”亦不等于语音上完全没有音高；参见声调与音高使用的区分。\\ecite{44} 轻声前上声的具体条件、“一”的轻声等规则仍需专项核对。"
+  },
+  {
+    "kind": "校",
+    "number": 304,
+    "source_pdf_page": 233,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "定义缺少关键限定：应为被中和的音位所共有的区别特征（particularités distinctives communes），而不是把各自所有特征相加。可直接与本章第 220 页随后所引定义对照。"
+  },
+  {
+    "kind": "校",
+    "number": 305,
+    "source_pdf_page": 233,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "此例不能证明两个元音之间的 /k/ 与 /g/ 对立。Duden 所列 singen 为 \\bipa{[ˈzɪŋən]}，sinken 为 \\bipa{[ˈzɪŋkn̩]}；前者没有独立发出的 [g]，后者的 [k] 前接 [ŋ]，也不是本句声称的元音间位置。应另选确实包含相应音位、环境相同的最小对立例；正文仍保留原例。\\ecite{47}"
+  },
+  {
+    "kind": "校",
+    "number": 306,
+    "source_pdf_page": 233,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "应区分三个层次：\\bipa{/k/} 是原有音位，\\bipa{[k]} 是此例中和位置的语音实现，\\bipa{/K/} 表示所分析的共同特征单位（原音位／超音位）。不宜直接把“清辅音音位 \\bipa{/k/}”称为 archiphonème；依据同下页本书所引定义。"
+  },
+  {
+    "kind": "校",
+    "number": 307,
+    "source_pdf_page": 234,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "本句把“参与中和的不同音位”与“archiphonème 本身”混为一谈；应改为：archiphonème 表示在中和位置仍有效的共同区别特征。不是每个不能在某位置出现的音位都单独叫作 archiphonème。可由本页最后引文中的“communes aux deux phonèmes”直接校核。"
+  },
+  {
+    "kind": "校",
+    "number": 308,
+    "source_pdf_page": 234,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "记号应与分析层级一致：既然此处把两者作为同一音位的语音变体，应写 \\bipa{[z]} 和 \\bipa{[s]}，而不是先用两组音位斜线再否认它们是不同音位。依据本章第 215、217–218 页自己的记号约定。"
+  },
+  {
+    "kind": "校",
+    "number": 309,
+    "source_pdf_page": 234,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "place au morphèmes 应为 place aux morphèmes，与复数名词配合。"
+  },
+  {
+    "kind": "校",
+    "number": 310,
+    "source_pdf_page": 236,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "此处年份 1929 与本章第 206 页对同文所注 1960（法译 1963）不一致，不能把两者同时当作此文的发表年；应采用正文该处的 1960／1963 区分。本轮另对照了该文英语原文节选中的诗歌功能段落，但未据它回译替换本书法文。\\ecite{46}"
+  },
+  {
+    "kind": "校",
+    "number": 311,
+    "source_pdf_page": 236,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "引文 il la fonction poétique 应为 à la fonction poétique；此处为明确的文字讹误。"
+  },
+  {
+    "kind": "校",
+    "number": 312,
+    "source_pdf_page": 236,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "原文 second i des deux mots 中 i 疑为赘字，应为 second des deux mots。/like /Ike/ 的字形和斜线也依底本保留；其上下文的音标已显示要比较的是 like 与 Ike。原文以 y 表示双元音第二部分，属于所引旧式转写，不改作现代 IPA 后冒充底本文字。"
+  },
+  {
+    "kind": "校",
+    "number": 313,
+    "source_pdf_page": 237,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "两条书目的人名 Mickael 均应为 Michael（通常署 M. A. K. Halliday），与本章正文第 212 页 Michael Halliday 不一致。此处只訂正人名，不把尚未逐页核验的书目细节默认为已审定。"
+  },
+  {
+    "kind": "校",
+    "number": 314,
+    "source_pdf_page": 237,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "词条例释混用了“音位”与“送气音”。较准确的说法是：当送气与不送气在某语言中不区别词义、而属同一音位的不同实现时，两者是该音位的变体。不能不指明语言就把“不送气”定义为“送气音”的变体；依据本章第 217–218 页的定义和语言相对性说明。"
+  },
+  {
+    "kind": "校",
+    "number": 315,
+    "source_pdf_page": 237,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "此释义与本章术语用法不符。在 Jakobson 的功能划分中，conative 指向受话者，典型语法表现为呼格和祈使式，并不是“正在进行”的时体意义。宜释为“意动的／受话者导向的：旨在作用于受话者、促使其作出反应”。与本章第 210–211 页及原文节选相互校核。\\ecite{46}"
+  },
+  {
+    "kind": "校",
+    "number": 316,
+    "source_pdf_page": 238,
+    "file": "chapters/08_phonologie.tex",
+    "text_tex": "“他把个体看作”中代词回指“功能主义语言学”，拟校为“它把个体看作”。未改变词条对该理论的概括内容。"
+  },
+  {
+    "kind": "校",
+    "number": 317,
+    "source_pdf_page": 239,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "提纲原文 La variantes 应为 Les variantes；第227页 Les emprunt arabes 应为 Les emprunts arabes，Inférence linguistique 疑为 Interférence linguistique，与第260页正文主题相符。此处及下文均保留底本原字。"
+  },
+  {
+    "kind": "校",
+    "number": 318,
+    "source_pdf_page": 242,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "ceci 与 ceux-ci 并非音系形式相同：通常分别为 \\bipa{/səsi/} 与 \\bipa{/søsi/}。二者也不只相差连字符；ceux-ci 在通常法语正字法中视为连字符复合代词，不宜不加说明便算作“两词”。例词仍依原书保留。"
+  },
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 242,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "Nous retrouverons Leonard Bloomfield, considéré par certains comme « le Saussure français », dans le chapitre 14, consacré au structuralisme américain."
+  },
+  {
+    "kind": "校",
+    "number": 319,
+    "source_pdf_page": 242,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "原注称 Bloomfield 为 « le Saussure français »，与正文所述 américain 及其美国结构主义背景不合，此处 français 疑应为 américain；“被某些人如此称呼”的具体出处未注明，不据此另造引文。本段 qui est étude 和 son objet est étude 均缺冠词 l’。"
+  },
+  {
+    "kind": "校",
+    "number": 320,
+    "source_pdf_page": 243,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "pour le remplacer, avons 缺少主语 nous。另，“所有语言学家必须取消 mot”是作者的立场，不是全学科统一术语规范；本章后文实际仍使用 mot。词、词位、词目形式与语素各有分析用途，参见\\ecite{49}。"
+  },
+  {
+    "kind": "校",
+    "number": 321,
+    "source_pdf_page": 243,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "按原例逐词计数：Le / livre / de / linguistique / est / dans / le / tiroir，共8个词次；忽略句首大小写后为7种词形，并非6与5。certains personnes 应为 certaines personnes。"
+  },
+  {
+    "kind": "校",
+    "number": 322,
+    "source_pdf_page": 243,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "本例使用的是 grand / grande，说明中的 petit / petite 与例句不符；可相应改为 grand / grande，或把例句中的形容词改为 petit / petite，但正文不作替换。“同一 occurrence 的不同形式”也混淆层级，此处应指同一词位或词汇单位，而非同一次出现。"
+  },
+  {
+    "kind": "校",
+    "number": 323,
+    "source_pdf_page": 243,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "按印出的例句，Je / lis / le / livre / de / linguistique / que / tu / lisais / hier，共10个词次及10种词形；把 lis 与 lisais 归并为同一词位后为9个单位，不是8、8、7。"
+  },
+  {
+    "kind": "校",
+    "number": 324,
+    "source_pdf_page": 243,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "两处词类颠倒：Je la vois 中第一个 la 是宾语代词；la maison 中第二个 la 是定冠词。"
+  },
+  {
+    "kind": "校",
+    "number": 325,
+    "source_pdf_page": 244,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "本段采用的 lemme、lexème 用法不等同于许多形态学及词典学著作的约定：常以 lexème 指抽象词汇单位，lemme 指其词典代表形式，不能一概把 lexème 等同于词根。参见\\ecite{49}。所列音标按括号内 schwa 实现与否分别为19或18个音段，计数需说明；其6段切分混合了不同历史层次，不能仅由拼写证明各段在共时分析中均为独立语素。"
+  },
+  {
+    "kind": "校",
+    "number": 326,
+    "source_pdf_page": 244,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "单语素词仍由一个语素构成，不能说“不由语素构成”；孤立型也不排除复合构词，原段自己的大学例已说明这一点。文字单位“字”与语法单位“语素／词”应分别判断，不能从是否可分解字形直接推出语素结构。"
+  },
+  {
+    "kind": "校",
+    "number": 327,
+    "source_pdf_page": 245,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "本例的复数拼写 -s 通常不发音，不能把字母 s、音位 /s/ 和复数语素直接等同。可改为“书写上的 -s 标示复数，而其语音实现须另行分析”。peut-être 在此应为 peut être；上文前缀 -in 的连字符位置应为 in-，immangeable 中的拼写变体为 im-。"
+  },
+  {
+    "kind": "校",
+    "number": 328,
+    "source_pdf_page": 245,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“词汇化后等于一个不可分语素”与紧接着所引 Martinet 定义不一致：引文明确要求可分析为两个或更多 monèmes。作为一个句法单位运作，不等于内部不再具有语素结构；应区分功能上的整体性与内部可分析性。"
+  },
+  {
+    "kind": "校",
+    "number": 329,
+    "source_pdf_page": 246,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "incompréhensible 的后缀为 -ible（\\bipa{/ibl/}），不能把四例一概记为 /abl/。这些形容词按本章后文的分类属于派生词，不宜与独立词汇单位组合的 composition 混同；本段 syntagmes 与 synthèmes 的用词也需区分。"
+  },
+  {
+    "kind": "校",
+    "number": 330,
+    "source_pdf_page": 246,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "ont réutilisés 缺少 été，应为 ont été réutilisés。"
+  },
+  {
+    "kind": "校",
+    "number": 331,
+    "source_pdf_page": 246,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "此处研究的是 mon / ton / leur 以及 professeur / ami 等语法或词汇单位的替换，连续出现的 phonème(s) 应按所分析层级改为 morphème(s) 或 unité(s)，不能把后文所列词当作音位。"
+  },
+  {
+    "kind": "校",
+    "number": 332,
+    "source_pdf_page": 247,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "Le test permutation 应为 Le test de permutation。以整词或副词在句中的位置变换为例，涉及的是句法分布；不能称置换测试专属于形态学。"
+  },
+  {
+    "kind": "校",
+    "number": 333,
+    "source_pdf_page": 247,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“封闭类”不意味着形式永不变化、历史上永不增加；本章随后讨论语法语素的异形态，已与 ne jamais varier 的绝对说法不符。定冠词类也不等于全部限定词类，应将 quatrième déterminant 限定为第四个定冠词成员。"
+  },
+  {
+    "kind": "校",
+    "number": 334,
+    "source_pdf_page": 248,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "et mais aussi disparitions 应为 mais aussi des disparitions，或 et aussi des disparitions。"
+  },
+  {
+    "kind": "原",
+    "number": "2",
+    "source_pdf_page": 248,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "Nous verrons cela dans le chapitre 11, dans la partie consacrée à la sémantique componentielle de Bernard Pottier."
+  },
+  {
+    "kind": "原",
+    "number": "3",
+    "source_pdf_page": 249,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "Embrayeurs, déictiques et anaphores seront présentés en détail dans le chapitre 12, dans la partie consacrée à la linguistique de l’énonciation."
+  },
+  {
+    "kind": "校",
+    "number": 335,
+    "source_pdf_page": 249,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "辨析：这里混用了句法依附、照应关系和语境指示三个标准。demain 的解释依赖说话时间，不因此便在句法上依附于另一个词；上文“difficile”作为简短回答也依赖问题语境。故语境依赖本身不足以划分所谓自主与依附语素。"
+  },
+  {
+    "kind": "校",
+    "number": 336,
+    "source_pdf_page": 250,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "末尾 au dessus (circonfixe) 与前项重复，按后文第243页应为 suprafixe，即通过声调、重音等超音段特征实现的词缀；并非又一种环缀。"
+  },
+  {
+    "kind": "校",
+    "number": 337,
+    "source_pdf_page": 250,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "两例都不涉及前缀，应将 ici, préfixe 改为 ici, suffixe：-ible 与 -ment 位于词基之后。"
+  },
+  {
+    "kind": "校",
+    "number": 338,
+    "source_pdf_page": 250,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "dérivationnel 应为 dérivationnels；派生词缀也并不总改变词类，如本章自己的 recommencer 仍是动词。因此“与派生相反”不能理解为所有派生都改变词类。"
+  },
+  {
+    "kind": "校",
+    "number": 339,
+    "source_pdf_page": 251,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "puis 的通常音标应为 \\bipa{[pɥi]}，底本 [pyi] 将半元音 \\bipa{[ɥ]} 写作元音 [y]。其字形依底本保留。"
+  },
+  {
+    "kind": "校",
+    "number": 340,
+    "source_pdf_page": 251,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "第239页同类例 mangions 明写 /j/，而此处及图中用 /i/。若表示通常语流中 chantions、chantiez 等的表面实现，应为 /j/；若 /i/ 表示底层元音，则须明确其与表层 [j] 的关系。另，第二条的左圆括号缺少相应右括号。图仍按原样保留。"
+  },
+  {
+    "kind": "校",
+    "number": 341,
+    "source_pdf_page": 252,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "原列 illogique 还显示 il-，所以按所列拼写变体应有4种而非3种。此外“语素异形态”是同一语素的形式变体，不是 signifié 自身具有多种形式；应改为 ce morphème possède…。标题 L’exemple allomorphie 缺 d’。"
+  },
+  {
+    "kind": "校",
+    "number": 342,
+    "source_pdf_page": 252,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "紧邻上下文均说4种，trois allomorphes 应为 quatre allomorphes。末条方括号内首字底本近似 \\bipa{Ɔ}，与上文和 oxen 内部的 ə 不同，应为 [ən]。英语各词的元音还涉及口音及旧式转写，本轮不把底本全套音标静默改为另一口音规范。"
+  },
+  {
+    "kind": "校",
+    "number": 343,
+    "source_pdf_page": 253,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "woman / women 的重读元音通常为 \\bipa{/ʊ/} 与 \\bipa{/ɪ/}，不能归入 man / men 的 \\bipa{/æ/} 与 /e/ 交替。第一行把两组词套用同一替换式有误。原来用 aj、aw 的转写保留，不作逐字现代化替换。"
+  },
+  {
+    "kind": "校",
+    "number": 344,
+    "source_pdf_page": 253,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "d’une autre germanique 缺名词 langue，应为 d’une autre langue germanique。"
+  },
+  {
+    "kind": "校",
+    "number": 345,
+    "source_pdf_page": 253,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "原文用 ø 表示零实现，勿与国际音标的圆唇前元音 [ø] 混同，宜使用 $\\varnothing$；/ons/ 又混入拼写，若用音标应为 \\bipa{/ɔ̃/}。Nous 开头三行的斜线中仅转写动词而省略主语 /nu/，不能当作整个句子的完整音标。"
+  },
+  {
+    "kind": "校",
+    "number": 346,
+    "source_pdf_page": 254,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "按本节所举 au = à + le 的分析，共同的 /o/ 形式应称 morph（形素）或融合实现，而非“一个 morphème 同时属于两个 morphèmes”。此处需要区分实现形式与被实现的语法单位；例词保持原样。"
+  },
+  {
+    "kind": "校",
+    "number": 347,
+    "source_pdf_page": 255,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "commento 应为 comment，为明显赘字。"
+  },
+  {
+    "kind": "校",
+    "number": 348,
+    "source_pdf_page": 256,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "同属南岛语系不足以推出某语言“中缀很丰富”；具体形式还须区分共时能产中缀、固化词形和借用构词。原书未给出这些印尼语例子的分析来源，本轮保留语料，不将这一因果推断视为已确证。"
+  },
+  {
+    "kind": "校",
+    "number": 349,
+    "source_pdf_page": 256,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "ge-…-t 只适用于一部分德语第二分词；强变化动词常以 -(e)n 结尾，有些动词没有 ge-，不能概括所有过去分词。此处举例本身可保留，应缩小概括范围。参见\\ecite{50}。"
+  },
+  {
+    "kind": "校",
+    "number": 350,
+    "source_pdf_page": 257,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "两例中的“transfixe”与本小节自己的术语不一致，应作 interfixe（连接成分）。德语 arbeitslos 是形容词“失业的”，并非名词 chômeur 的直接对应；作名词时须用相应的名词化形式。"
+  },
+  {
+    "kind": "校",
+    "number": 351,
+    "source_pdf_page": 257,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“le plupart”应作 la plupart。这里三例只显示词汇声调对立，尚不能仅凭例子证明它们是同一词基加上语法性超音段词缀的派生关系；原书把声调与 suprafixe 直接等同，需加此分析限度。"
+  },
+  {
+    "kind": "校",
+    "number": 352,
+    "source_pdf_page": 258,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "表中项目不全满足上文“两个词缀必须同时加入”的标准。例如 alunissage 可以由同表已有的 alunir 再派生，并不能作为不存在中间形式的例证。正文与表格均照录，不将整表都视为已确证的同步加缀分析。"
+  },
+  {
+    "kind": "校",
+    "number": 353,
+    "source_pdf_page": 259,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“eun sculpture”应作 une sculpture。"
+  },
+  {
+    "kind": "校",
+    "number": 354,
+    "source_pdf_page": 259,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "anthroponyme 专指人名，不是所有 nom propre（专名）的同义词；如本页已经出现的 toponyme 指地名。此处只在专名是人名时才成立。"
+  },
+  {
+    "kind": "校",
+    "number": 355,
+    "source_pdf_page": 260,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "两个人名有误：Heinrich Herz 应作 Heinrich Hertz；力的单位 newton 得名于 Isaac Newton，不是“Benjamin Newton”。参见\\ecite{51}。"
+  },
+  {
+    "kind": "原",
+    "number": "4",
+    "source_pdf_page": 260,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "Dans le chapitre suivant, qui sera en grande partie consacré à la syntaxe fonctionnelle de \\textbf{Lucien Tesnière}, nous reviendrons sur ces exemples de conversion : gardez-les bien à l’esprit."
+  },
+  {
+    "kind": "校",
+    "number": 356,
+    "source_pdf_page": 261,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“qu’à seul un paradigme”应作 qu’à un seul paradigme。"
+  },
+  {
+    "kind": "校",
+    "number": 357,
+    "source_pdf_page": 262,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“deux deux”叠印，应删去一个 deux。"
+  },
+  {
+    "kind": "校",
+    "number": 358,
+    "source_pdf_page": 262,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "表示“远”的希腊语成分应为 {\\BBSixGreek τῆλε}（tēle / têle），此处“teleo”有误。拉丁部分经由 vision 构成，不宜把现代词直接等同于两个未经中介的古语词的拼接。"
+  },
+  {
+    "kind": "校",
+    "number": 359,
+    "source_pdf_page": 263,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "这里描述的是不同词位的历时词源双式，不是本章此前所定义的“同一语素的不同实现”意义上的共时异形态。“allomorphie”在此被扩大使用，应与词源关系区别；下文“voie populaire / voie savante”比“dérivation populaire / savante”更准确地概括本段自己的说明。"
+  },
+  {
+    "kind": "校",
+    "number": 360,
+    "source_pdf_page": 264,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "表头“Mots latin”应为 Mots latins。“captivus / captivum”两行的法语结果相同，底本确实重复列出，故不合并。词源表中的拉丁形式与借入年代还需逐项核对，不据此表直接推出每对词的具体传播途径。"
+  },
+  {
+    "kind": "校",
+    "number": 361,
+    "source_pdf_page": 264,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“alare”在此作为已确证拉丁词源给出，缺乏依据；aller 的词源涉及拟构与音变分析，不能把未注明拟构性质的 alare 当作无争议实证。本轮保留并标待核，不以猜测词源替换。"
+  },
+  {
+    "kind": "校",
+    "number": 362,
+    "source_pdf_page": 265,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "本段“basé un autre”缺少 sur，应作 basé sur un autre。incarcérer 与 emprisonner 均可用于实指监禁，不能以“emprisonner 具有比喻义”作为前者产生的充分原因。此处不同来源的相关词与前页同一屈折范式中的补充关系，也应在分析层次上分开。"
+  },
+  {
+    "kind": "校",
+    "number": 363,
+    "source_pdf_page": 265,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“et de faire”应作 et faisons，与 Quittons 构成并列祈使句。"
+  },
+  {
+    "kind": "校",
+    "number": 364,
+    "source_pdf_page": 265,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“doivent prononcées”应为 doivent être prononcées。前段 Institut…économiques 后遗漏右引号。"
+  },
+  {
+    "kind": "校",
+    "number": 365,
+    "source_pdf_page": 266,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "名称中的 Général 应作 Générale，与阴性名词 Confédération 配合。这些机构、福利和制度名称在本章作为词汇构造实例保留，不代表本重排版断言其仍全部维持出版时的制度状态。"
+  },
+  {
+    "kind": "校",
+    "number": 366,
+    "source_pdf_page": 266,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "英语国家名应为 Netherlands，而不是 Netherland；这里保留底本对 Benelux 构成的说明形式。"
+  },
+  {
+    "kind": "原",
+    "number": "5",
+    "source_pdf_page": 267,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "\\textit{ufo} en anglais, est l’acronyme d’\\textit{unidentified flying object}."
+  },
+  {
+    "kind": "校",
+    "number": 367,
+    "source_pdf_page": 267,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“des métaplasmes dite”应为 des métaplasmes dits。"
+  },
+  {
+    "kind": "校",
+    "number": 368,
+    "source_pdf_page": 268,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“de de métaplasme”叠印，应删去一个 de。"
+  },
+  {
+    "kind": "校",
+    "number": 369,
+    "source_pdf_page": 269,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "此例的方向疑被倒置：若由 l’Ascension 误切为 la Cension / la Cencion，才符合本段“去掉误认作冠词的词首成分”的定义；正文所述从 la Cencion 到 l’Ascension 并不能示范该过程。原书未给例证出处，本轮只作拟校。"
+  },
+  {
+    "kind": "校",
+    "number": 370,
+    "source_pdf_page": 269,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“vient latin”缺少 du。prosthèse 按本段自己的定义是词首增音，不能直接等同于“以 /e/ 替换 /s/”；词首增音与其后 /s/ 的消失是须区别的变化阶段。"
+  },
+  {
+    "kind": "校",
+    "number": 371,
+    "source_pdf_page": 269,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“des rares exemple”应为 des rares exemples；“j usques”应合写 jusques。此处书写 s 在元音前连诵实现为 [z]，不可把字母 s 与其具体语音值直接等同。"
+  },
+  {
+    "kind": "原",
+    "number": "6",
+    "source_pdf_page": 270,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "Les Catilinaires sont une série de quatre célèbres discours de Cicéron prononcées en 63 avant J.-C., alors qu’il était consul, pour attaquer Catilina, qui conspirait contre la République romaine."
+  },
+  {
+    "kind": "校",
+    "number": 372,
+    "source_pdf_page": 270,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "这些例子混合了倒装形式、词尾元音变化与增音，不宜一概解释为增加新音。“dussé-je”所对应的 devoir 形式是虚拟式未完成过去时 dusse，而非虚拟式现在时（应为 doive）；“puissé-je”才对应现在时 puisse。"
+  },
+  {
+    "kind": "校",
+    "number": 373,
+    "source_pdf_page": 270,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“Les locuteurs donc ajouté”缺少 ont；此处 /b/ 是 phonème（音素／音位层面的插入音），不是具有意义或语法功能的 morphème。"
+  },
+  {
+    "kind": "原",
+    "number": "7",
+    "source_pdf_page": 270,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "En phonétique diachronique, ce phénomène est appelé palatalisation."
+  },
+  {
+    "kind": "校",
+    "number": 374,
+    "source_pdf_page": 271,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“d’une double d’agglutination”中第二个 d’ 多余，应为 d’une double agglutination。"
+  },
+  {
+    "kind": "原",
+    "number": "8",
+    "source_pdf_page": 272,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "Comme dans l’expression « docteur ès lettres »."
+  },
+  {
+    "kind": "校",
+    "number": 375,
+    "source_pdf_page": 272,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "in dem Wagen 是介词 in 与第三格定冠词构成的处所短语，不是德语另有一个名为“inessif”的形态格。原书第五章的相同术语亦应作此区分。"
+  },
+  {
+    "kind": "校",
+    "number": 376,
+    "source_pdf_page": 272,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“du premier lexèmes”应为 du premier lexème；“peut parfois n’être parfois”有重复且否定结构不完整，拟作 peut parfois n’être qu’une seule lettre。Bollywood 的拼合位置也不能仅凭字母 o 就完成音节分析。"
+  },
+  {
+    "kind": "校",
+    "number": 377,
+    "source_pdf_page": 273,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "原书未列证据证明 probably 历史上由 probablely 经叠音省略而来；不能把构词拼写中的去 e 与同音节省略混同。此例保留待核，不据这一拼法推定词源。"
+  },
+  {
+    "kind": "校",
+    "number": 378,
+    "source_pdf_page": 274,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "此处混淆了两种同形词。西班牙语 abogado（律师）来自拉丁语 advocātus，不来自纳瓦特尔语；水果名称对应的西班牙语词为 aguacate，其词源为 ahuacatl。参见 RAE–ASALE 两词条\\ecite{52}。法语水果名称的具体借入中介还须另行核对，不由同形关系直接推定。"
+  },
+  {
+    "kind": "原",
+    "number": "9",
+    "source_pdf_page": 274,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "Nous y reviendrons dans le chapitre 13, consacré à la sociolinguistique."
+  },
+  {
+    "kind": "校",
+    "number": 379,
+    "source_pdf_page": 274,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "小标题 Inférence 与上文术语不一致，应为 Interférence。11\\,825/60\\,000 约为19.7\\%，但这是所称词典的词条比例，不能直接作为整个法语词汇的无条件比例；原书未说明词典版本、统计口径和年份，数字保留待核。"
+  },
+  {
+    "kind": "校",
+    "number": 380,
+    "source_pdf_page": 275,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "这张表混合了阿拉伯语中介借词、语义翻译及词源有争议的项目，不能一概理解为每个词都具有相同的“阿拉伯语词源”。尤其 chemise、bedaine、caramel 等需逐项重核；本轮保留全部45个条目并标明待核，不以现代清单静默替换。"
+  },
+  {
+    "kind": "校",
+    "number": 381,
+    "source_pdf_page": 276,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“日语只允许开音节”的概括过强，还须处理拨音等特殊拍；两词中的补元音现象本身可以保留。这里以 /r/ 代表日语流音是宽式记法，不意味着它与英语 /r/ 的实际发音相同。"
+  },
+  {
+    "kind": "校",
+    "number": 382,
+    "source_pdf_page": 276,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“un autre langue”应为 une autre langue。“一旦借入便不再可作形态分析”不是必然规律。此处还应区别阿拉伯语词根 ṭālib 与借词中的 -ān 复数形式；“taliban 是阿拉伯语复数”的分析需订正：RAE–ASALE 的 talibán 条把 ṭālibān 列为波斯语复数，词干 ṭālib 才进一步追溯到阿拉伯语。不能从词干来源推出整个词形的语法来源，参见\\ecite{52}。法语复数书写 -s 也不等于处处发音 /s/。"
+  },
+  {
+    "kind": "原",
+    "number": "10",
+    "source_pdf_page": 277,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "Contrairement à l’anglais : \\textit{a cherub}."
+  },
+  {
+    "kind": "校",
+    "number": 383,
+    "source_pdf_page": 278,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "“ceci expliquer”应为 ceci explique；“entre le français et anglais”应为 entre le français et l’anglais。具体借词数量、比例与首次见证年代需给出词典、语料和计数口径；未注明口径的“deux tiers”不能作为全语言的精确统计。"
+  },
+  {
+    "kind": "校",
+    "number": 384,
+    "source_pdf_page": 278,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "表中的 house / home 都是日耳曼语来源，不能示范“一项日耳曼、一项罗曼”的配对；bookstore 的 store 等成分也使“整词纯属盎格鲁－撒克逊语来源”的说法过于简单。此表又不同于前文“同一词源的双式词”的定义，应区分词源双式与近义词配对。"
+  },
+  {
+    "kind": "原",
+    "number": "11",
+    "source_pdf_page": 279,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "C’est au moyen de cet exemple que Saussure, illustre la notion de valeur linguistique."
+  },
+  {
+    "kind": "校",
+    "number": 385,
+    "source_pdf_page": 279,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "本页 bougette 的转写括号不配对，照原样保留。“tunnel 于15世纪借入法语”及“flirt 必然来自 fleureter”两项词源史断言需要词典证据，本轮标为待核，不据相似形式确证借入关系。"
+  },
+  {
+    "kind": "校",
+    "number": 386,
+    "source_pdf_page": 281,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "题干“racines greces”应为 racines grecques。"
+  },
+  {
+    "kind": "校",
+    "number": 387,
+    "source_pdf_page": 282,
+    "file": "chapters/09_morphologie.tex",
+    "text_tex": "第13、23项均为 inter-，这是底本的重复，不擅自替换为另一个前缀；表中词缀来源也应逐项研究，不能先验地断定所有项目都只可能源于希腊语或拉丁语。"
+  },
+  {
+    "kind": "校",
+    "number": 388,
+    "source_pdf_page": 286,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 toutes les énoncés 的性配合有误，应为 tous les énoncés。"
+  },
+  {
+    "kind": "校",
+    "number": 389,
+    "source_pdf_page": 286,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 entre pour 连用，句法不完整；按本句意思可校为 des mots et groupes de mots entre eux pour former des phrases，或删去 entre。正文保留原字，不将拟补 eux 当作已见原文。"
+  },
+  {
+    "kind": "校",
+    "number": 390,
+    "source_pdf_page": 287,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 échanges quotidien 应为 échanges quotidiens，形容词须与复数名词配合。"
+  },
+  {
+    "kind": "校",
+    "number": 391,
+    "source_pdf_page": 287,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 du champ d’étude la pragmatique 缺少 de，应为 du champ d’étude de la pragmatique。"
+  },
+  {
+    "kind": "校",
+    "number": 392,
+    "source_pdf_page": 287,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "“复句必有多个变位动词”不宜作为无例外的判据。本章下一页即把 après m’avoir ouvert la porte 当作嵌入部分，其中 avoir 为不定式。应以所采用的分句分析标准判断，不能仅以变位动词的个数定义简单句和复句。此注依据本章例证作内部辨析。"
+  },
+  {
+    "kind": "校",
+    "number": 393,
+    "source_pdf_page": 287,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "待核：这里未注明43、20、847等词数所用的版本、语料与分词标准；« le record absolu » 的比较范围也未界定。本版保留原数，不据这些数值断言其为所有法语文学的绝对纪录。"
+  },
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 287,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "L’incipit (du latin \\textit{incipere}, « commencer ») désigne la première phrase d’une œuvre littéraire."
+  },
+  {
+    "kind": "校",
+    "number": 394,
+    "source_pdf_page": 289,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 puis fait 的祈使式词形有误，应为 puis fais。这里的作者归属未给作品与页码，尚待原始出处核验；本注仅确证词形错误，不将流传的署名当作已核实引文。"
+  },
+  {
+    "kind": "校",
+    "number": 395,
+    "source_pdf_page": 289,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 est aussi appelée aussi 重复 aussi；通常写 est aussi appelée parataxe asyndétique。"
+  },
+  {
+    "kind": "校",
+    "number": 396,
+    "source_pdf_page": 290,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 comme comme 重复，删去一处 comme 即可。"
+  },
+  {
+    "kind": "校",
+    "number": 397,
+    "source_pdf_page": 290,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 un phrase 应为 une phrase。"
+  },
+  {
+    "kind": "校",
+    "number": 398,
+    "source_pdf_page": 291,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 joue un rôle est central 混入 est，应为 joue un rôle central。下句 c’est le verbe s’accorde 缺少关系词 qui，应为 c’est le verbe qui s’accorde。"
+  },
+  {
+    "kind": "校",
+    "number": 399,
+    "source_pdf_page": 291,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 autour l’antécédent 缺少 de，且把 heureux 称为关系从句的“先行词”不准确。此例 heureux 是评述性的形容词；qui comme Ulysse a fait un beau voyage 可按无显式先行词的名词性关系从句分析，不是修饰先行词 heureux 的关系从句。参见\\ecite{53}第60、80页有关名词性关系从句与非动词句的区分。"
+  },
+  {
+    "kind": "校",
+    "number": 400,
+    "source_pdf_page": 291,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "这里三项都有明示的主句系词 est，结构分别为主语名词组＋est＋表语，不应仅因主语含先行词 femme 就判为“非动词句”。按本段自己的定义，这组例句不能证明该结论。au delà la morale 另应写 au-delà de la morale。"
+  },
+  {
+    "kind": "校",
+    "number": 401,
+    "source_pdf_page": 291,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "“无动词”不等于“无句法”。上列 À la recherche du temps perdu、Victoire de la France 等例中仍有介词支配、名词补足语等结构；后文 Habitude, servitude 也被作者分析为主语与谓语关系。应区分“没有明示动词／系词”和“没有句法组织”。"
+  },
+  {
+    "kind": "校",
+    "number": 402,
+    "source_pdf_page": 292,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 Le couple est sous-entendue 应为 La copule est sous-entendue，意为系词被省略。原词 couple 与这里的句法概念不合，且不能与阴性的 sous-entendue 配合。"
+  },
+  {
+    "kind": "原",
+    "number": "2",
+    "source_pdf_page": 292,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "Expression italienne, soit littéralement « Traducteur, traître »."
+  },
+  {
+    "kind": "校",
+    "number": 403,
+    "source_pdf_page": 292,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "把 grammaticalité 概念的起点定为1960年代初并不准确：本章第281页原注6已将讨论语法性与意义的经典例句归于 Chomsky 的 Syntactic Structures（1957）。至少在1957年这一问题已明确进入生成语法的论述，不宜写成始于1960年代。"
+  },
+  {
+    "kind": "原",
+    "number": "3",
+    "source_pdf_page": 292,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "Pour rappel, en linguistique, on utilise l’astérisque pour souligner qu’une forme est fautive."
+  },
+  {
+    "kind": "原",
+    "number": "4",
+    "source_pdf_page": 293,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "En stylistique, l’anadiplose est une figure de style consistant à reprendre le dernier mot d’une proposition au début de la proposition qui suit. Ex : « 道生一，一生二，二生三，三生万物 »."
+  },
+  {
+    "kind": "原",
+    "number": "5",
+    "source_pdf_page": 295,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "L’hyperhypotaxe est une figure de style qui consiste en une insertion de propositions subordonnées en trop grand nombre."
+  },
+  {
+    "kind": "校",
+    "number": 404,
+    "source_pdf_page": 295,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "这里的 donc acceptables 与作者刚在第280页作出的区分不一致：能够解释、甚至同时合乎语法，并不由此保证在特定处理条件与使用情境中可接受。应删去这一必然推论，或改为“在适当条件下可接受”。"
+  },
+  {
+    "kind": "原",
+    "number": "6",
+    "source_pdf_page": 295,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "« D’incolores idées vertes dorment furieusement ». Ce très célèbre exemple a été utilisé par Noam Chomsky dans \\textit{Syntactic Structures} (1957). Nous y reviendrons dans le chapitre 14."
+  },
+  {
+    "kind": "校",
+    "number": 405,
+    "source_pdf_page": 295,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 la première de ce chapitre 疑漏 partie，按上下文应为 la première partie de ce chapitre。"
+  },
+  {
+    "kind": "校",
+    "number": 406,
+    "source_pdf_page": 296,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 ne correspond en rien l’axe 缺少 à，应为 ne correspond en rien à l’axe。此前 ce qui se faisait l’époque 也缺 à，应为 ce qui se faisait à l’époque。"
+  },
+  {
+    "kind": "原",
+    "number": "7",
+    "source_pdf_page": 298,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "Les stemmas de Tesnière préfigurent les arbres syntaxiques de la grammaire générative."
+  },
+  {
+    "kind": "校",
+    "number": 407,
+    "source_pdf_page": 300,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 Si on illustrer 是不完整的动词结构；按下文展示图示的语境，可校为 Si on illustre cela…（则还需补后件），或较自然地写 Illustrons cela…；也可能漏了 veut。本版不凭语感把拟补写进正文。"
+  },
+  {
+    "kind": "校",
+    "number": 408,
+    "source_pdf_page": 300,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 dans le ci-dessous 疑漏 stemma 或 schéma。图中文字按原图保留；本底本为灰度扫描，无法重建所谓“红色”箭头的原色。"
+  },
+  {
+    "kind": "校",
+    "number": 409,
+    "source_pdf_page": 300,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "按这句话前半及下一页汇总图，次序应为“régissant/subordonné 对应 déterminé/déterminant”：petits 在结构上从属于 ruisseaux，而在语义上限定 ruisseaux。原文将后一个二元组的顺序颠倒。"
+  },
+  {
+    "kind": "校",
+    "number": 410,
+    "source_pdf_page": 301,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "本页第一图的语义箭头仍向下，déterminant/déterminé 标签也与本页下方汇总图相反。依作者给出的 petits « détermine » ruisseaux，语义方向应由下方 petits（déterminant）指向上方 ruisseaux（déterminé）；正文的 du déterminé au déterminant 同样颠倒。两张底本图均原样保存，不静默改图。"
+  },
+  {
+    "kind": "校",
+    "number": 411,
+    "source_pdf_page": 302,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "“pronoms 一概属于不能占据节点的虚词”与本章后面的图示不一致：第291页 je crois…、第292页 Alfred a avoué qu’il a tué 的图中，人称代词 je、il 均为依存节点。至少应限定代词的种类与相应分析，不能把这句概括当作后面所有图示的通则。"
+  },
+  {
+    "kind": "校",
+    "number": 412,
+    "source_pdf_page": 303,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 donc internucléaire 作复数主语的表述，应为 donc internucléaires。"
+  },
+  {
+    "kind": "校",
+    "number": 413,
+    "source_pdf_page": 304,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原图左侧为 la mode parisienne，图题 la mode de parisienne 多出 de，正文仍照录。此处是两个同功能表达的比较，不应将箭头读成派生方向：“Paris（名词）经 de 转成形容词性依存成分”，不是“parisienne 变成 Paris”。"
+  },
+  {
+    "kind": "校",
+    "number": 414,
+    "source_pdf_page": 304,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "正文 transférendre 应为 transférende。下图却把 parisienne 标为 TRANSFÉRENDE、Paris 标为 TRANSFÉRÉ，与前页三项定义相反：就 de Paris 而言，Paris 是输入项 transférende，de 是 translatif，形容词性成分 de Paris 才是转类结果 transféré；parisienne 是用于比较的原生形容词。原图标签保留。"
+  },
+  {
+    "kind": "校",
+    "number": 415,
+    "source_pdf_page": 306,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 il n’y en qu’un seul exemple 缺少 a，应为 il n’y en a qu’un seul exemple。"
+  },
+  {
+    "kind": "校",
+    "number": 416,
+    "source_pdf_page": 307,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 le première partie 应为 la première partie。"
+  },
+  {
+    "kind": "校",
+    "number": 417,
+    "source_pdf_page": 307,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "底本图题词序错乱；按图中两对支配关系，例句应为 Alfred chante et Bernard crie。图题仍保留原词序。"
+  },
+  {
+    "kind": "校",
+    "number": 418,
+    "source_pdf_page": 310,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 sur même plan 缺少定冠词，通常应为 sur le même plan。"
+  },
+  {
+    "kind": "校",
+    "number": 419,
+    "source_pdf_page": 311,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 la démarche de Tesnière à la grammaire traditionnelle 缺少表达比较或对照的连接成分；可拟读为 oppose la démarche de Tesnière à celle de la grammaire traditionnelle，但此处仅据上下文拟校，不视作已经恢复的原句。"
+  },
+  {
+    "kind": "校",
+    "number": 420,
+    "source_pdf_page": 312,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "图题与图中词项不一致：图有 toujours 和 partout，没有 de。按图中词项顺序还原应为 Alfred fourre toujours son nez partout。保留原图题，不把二者静默统一。"
+  },
+  {
+    "kind": "校",
+    "number": 421,
+    "source_pdf_page": 313,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "此处 CH4 是甲烷的分子式，不是其名称；宜作 d’où sa formule CH\\textsubscript{4}。原书正文中的数字 4 按底本保留，规范化学式在本注中以下标表示。"
+  },
+  {
+    "kind": "校",
+    "number": 422,
+    "source_pdf_page": 313,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "非人称形式不自动意味着零配价。falloir 可以带不定式或命题性补足成分，如 Il faut partir、Il faut que tu partes；因此不能仅因形式主语 il 不指称就把该动词所有用法一概归为 avalent。本注只指出原概括过强，不替换正文的理论框架；参见\\ecite{53}第189页的非人称动词补足语表；配价判断是据这些构式作出的辨析。"
+  },
+  {
+    "kind": "校",
+    "number": 423,
+    "source_pdf_page": 314,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "原文 verbes intransitifs la grammaire traditionnelle 缺少 de，通常应为 verbes intransitifs de la grammaire traditionnelle。"
+  },
+  {
+    "kind": "校",
+    "number": 424,
+    "source_pdf_page": 315,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "此处 jonctifs 与本章此前的术语定义冲突：原书 p.293 把 jonctif 对应于并列连词，而此处列举 à、de、pour 等介词。就此句而言可直接改称 prépositions；按本章 translation 的分析，介词所起的作用应与 translatif 区分说明，而不宜与 jonctif 混同。"
+  },
+  {
+    "kind": "校",
+    "number": 425,
+    "source_pdf_page": 316,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "底本此题显见串行或缺文：Alfred mange une pomme 与 voisin et sa femme ont acheté une belle maison 不能按现有词序组成一个通常的句子。可能是两个例句误接，但后一部分的限定词无法仅据底本确证；保留原题，不擅自拆题或补造确定版本。本注不提供习题答案。"
+  },
+  {
+    "kind": "校",
+    "number": 426,
+    "source_pdf_page": 317,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "这条释义只覆盖主从复句，而本章原书 pp.272–275 也把并列连接、并置的多小句句子放在 phrase complexe 范围内。为与本章定义一致，应把并列和并置的情形一并包括，而不能要求每个复句都含从属从句。"
+  },
+  {
+    "kind": "校",
+    "number": 427,
+    "source_pdf_page": 317,
+    "file": "chapters/10_syntaxe.tex",
+    "text_tex": "“由从属连词”限制过窄：本章 p.274 已列出由关系代词连接的从属结构，并举出含不定式的嵌入结构。宜释为一个分句在结构上依附于另一分句或其组成部分的连接关系；标记不限于从属连词。"
+  },
+  {
+    "kind": "校",
+    "number": 428,
+    "source_pdf_page": 319,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "章首提纲 Le métatermes 应为 Les métatermes；正文对应小标题已用复数 Les。"
+  },
+  {
+    "kind": "校",
+    "number": 429,
+    "source_pdf_page": 320,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 des signification 的数配合有误，应为 des significations。"
+  },
+  {
+    "kind": "校",
+    "number": 430,
+    "source_pdf_page": 320,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "1751 为《百科全书》第一卷刊年，不足以证明后文所引 « sens » 条目亦于该年刊行；且“首次区分”须另有历史文献依据。条目卷次、作者归属及刊年尚待核实，暂不据本句断言为首创。"
+  },
+  {
+    "kind": "校",
+    "number": 431,
+    "source_pdf_page": 320,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "规范拼写须以连字符连接肯定命令式后的两个代词，即 Donne-le-moi。此处按底本保留空格。"
+  },
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 321,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "Quelques années plus tard, Saussure fera de même avec la sémiologie."
+  },
+  {
+    "kind": "校",
+    "number": 432,
+    "source_pdf_page": 322,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 et été 缺少助动词，依句法应为 et a été。"
+  },
+  {
+    "kind": "原",
+    "number": "2",
+    "source_pdf_page": 323,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "BRÉAL (Michel). L’histoire des mots. \\textit{Revue des deux mondes} 82 (1er juillet), 187-212p."
+  },
+  {
+    "kind": "原",
+    "number": "3",
+    "source_pdf_page": 323,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "BRÉAL (Michel). \\textit{Essai de sémantique : Science des significations}. Paris, Hachette, 1897, édition de 1924, 287p."
+  },
+  {
+    "kind": "校",
+    "number": 433,
+    "source_pdf_page": 323,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "此处“历时研究是错误”的概括过强。上述引文批评的是以词源替代词在当下语境中的意义，并不能推出历时研究本身错误。应区分研究问题：考察现时意义不能仅凭词源，研究意义演变仍可采用历时方法。"
+  },
+  {
+    "kind": "校",
+    "number": 434,
+    "source_pdf_page": 324,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 ne l’emploie dans un même type d’analyse 缺少通常的否定成分；据“各家使用方式不同”的上下文，拟校为 ne l’emploie pas dans un même type d’analyse。"
+  },
+  {
+    "kind": "校",
+    "number": 435,
+    "source_pdf_page": 324,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 1862 应为 1662；此处所叙为 Port-Royal《逻辑》初刊，而非十九世纪重印本。参见本书第三章及既有书目依据\\ecite{17}。"
+  },
+  {
+    "kind": "校",
+    "number": 436,
+    "source_pdf_page": 324,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "引文边界待核：从 Voilà bien 起的“aujourd’hui par connotation”及后续现代术语串列，疑为后世评论误并入古典引文。暂保留底本整段框引，不将其全部确认为十七世纪原文。"
+  },
+  {
+    "kind": "校",
+    "number": 437,
+    "source_pdf_page": 324,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 1860 应为 1660，与第三章所列《普遍唯理语法》初版年相互印证。"
+  },
+  {
+    "kind": "校",
+    "number": 438,
+    "source_pdf_page": 325,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "此概括把整句命题的意义与名称的指称混为一谈。后文实际讨论的是名称所指的对象与其蕴含的属性；不能由“名称指对象”直接推出“命题的意义即其所指对象”。Mill 对专名、通名的区分亦不宜简化为一条涵盖所有命题的直接指称原则。"
+  },
+  {
+    "kind": "校",
+    "number": 439,
+    "source_pdf_page": 325,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "« apocalypse » 是否为 Mill 原书所举例尚待原文定位；本文没有提供卷、章或页码。此处只保留底本的归引，不把尚未核出的例证当作已确证原话。"
+  },
+  {
+    "kind": "校",
+    "number": 440,
+    "source_pdf_page": 325,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 dont est écrit 的搭配不合通常法语，应为 dans laquelle est écrit。因属引文，保留底本词形，原刊措辞仍待核。"
+  },
+  {
+    "kind": "校",
+    "number": 441,
+    "source_pdf_page": 326,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 qu Barthes 应为 que Barthes；此处无省音条件。"
+  },
+  {
+    "kind": "原",
+    "number": "4",
+    "source_pdf_page": 326,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "HJELMSLEV (Louis). \\textit{Prolégomènes à une théorie du Langage}. Éd. de Minuit, chap. 22, 155p."
+  },
+  {
+    "kind": "校",
+    "number": 442,
+    "source_pdf_page": 326,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "据紧邻上文“文学为语言的内涵系统”，本句末 dénotation 与论述层级不符，疑应为 connotation；作为拟校列出，不静默改正文。"
+  },
+  {
+    "kind": "校",
+    "number": 443,
+    "source_pdf_page": 329,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "术语混淆：glossème 不应简单等同于由能指与所指构成的完整 signe。下方本书所引 Hjelmslev 原文把 glossèmes 称为构成内容或表达的 éléments，恰表明它们是分析所得成分，而非整一符号的另名。"
+  },
+  {
+    "kind": "校",
+    "number": 444,
+    "source_pdf_page": 329,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 sans son 意为“不用其……”，与“在著作中定义”不合；此处显系 dans son 的排印讹误。"
+  },
+  {
+    "kind": "校",
+    "number": 445,
+    "source_pdf_page": 329,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "“理论传播有限”及其因果关系不能仅据写作语言断定；本章已列举其若干法语论文，故也不宜让读者误以为他只以丹麦语发表。原书对传播范围与原因的概括仍需专门的接受史证据。"
+  },
+  {
+    "kind": "校",
+    "number": 446,
+    "source_pdf_page": 330,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原书上列把 s1 定为“有靠背”、s4 定为“供坐”，但下表和次页解释把 s1 用作“供坐”、s4 用作“有靠背”，二者对调。本版保留两处原编号；阅读表格与次页公式时须按表头，不能混用前列编号。表头 Pour une personnes3 亦为排印粘连，应分作 Pour une personne s3。"
+  },
+  {
+    "kind": "校",
+    "number": 447,
+    "source_pdf_page": 331,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "以上两项均疑有编写叠句：第一项 qui déterminent 的先行关系不清，第二项 qui la caractérisent 的 la 缺少明确先行项。可分别整理为“外延义素以较稳定、共同认可的方式确定意义”“内涵义素受语境与个人联想影响”；此为对句法问题的说明，不替换底本定义。"
+  },
+  {
+    "kind": "原",
+    "number": "5",
+    "source_pdf_page": 331,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "Dans la typologie des sèmes par proposée par François Rastier, les sèmes dénotatifs sont appelés sèmes inhérents, tandis que les sèmes connotatifs sont appelés sèmes afférents. Par exemple, «caviar» comprend le sème inhérent /comestible/ et le sème afférent /luxe/."
+  },
+  {
+    "kind": "校",
+    "number": 448,
+    "source_pdf_page": 331,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原注“par proposée par”多出一个 par。此外，原注把两套区分等同；本章后文将 inhérent/afférent 系于系统与语境所赋特征，不能不加条件地换名为 dénotatif/connotatif。此处保留原注，参见第五节的定义与例子。"
+  },
+  {
+    "kind": "校",
+    "number": 449,
+    "source_pdf_page": 332,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 à proposé 中 à 应为动词 avoir 的 a。"
+  },
+  {
+    "kind": "校",
+    "number": 450,
+    "source_pdf_page": 332,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "“communs à un sémème”未表达“共同”的比较范围。结合前页例子，应指某组 sémèmes 共同具有的义素之集合，而不是任一单独 sémème 的全部义素。"
+  },
+  {
+    "kind": "校",
+    "number": 451,
+    "source_pdf_page": 332,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 reconnus de façon stable les locuteurs 缺少施事介词 par，应为 reconnus de façon stable par les locuteurs。"
+  },
+  {
+    "kind": "校",
+    "number": 452,
+    "source_pdf_page": 332,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "本例应区分“机上有人驾驶”与“无人机上驾驶”，而非一概说“有／无驾驶者”；远程操控的无人机也有驾驶者，且无人固定翼飞机仍可归为 avion。此特征只适用于本例设定的词义对比，不能当作两类飞行器无例外的技术分类。"
+  },
+  {
+    "kind": "校",
+    "number": 453,
+    "source_pdf_page": 332,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 le lexèmes 的数配合有误，应为 les lexèmes。"
+  },
+  {
+    "kind": "校",
+    "number": 454,
+    "source_pdf_page": 332,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "卒年有误：BnF 与 IdRef 人名规范记录均记为 2024 年12月4日，故生卒年应为1928–2024，而非1928–2014；参见\\ecite{54}。"
+  },
+  {
+    "kind": "校",
+    "number": 455,
+    "source_pdf_page": 334,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "前页 fleur magique 后的 actant 标签应为单数 objet，而非 objets；et la lui remettre 通常亦应补为 et de la lui remettre。"
+  },
+  {
+    "kind": "校",
+    "number": 456,
+    "source_pdf_page": 335,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 les isotopie 应为 les isotopies。概念上，复现单个义素也可构成语义同位关系；“义素分子复现”不能取代全部 isotopie 的定义。本页首段与下文“曙光”例本身即按单个共同义素解释。"
+  },
+  {
+    "kind": "校",
+    "number": 457,
+    "source_pdf_page": 335,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "此处惯用语为 De prime abord，原文混入了 d’abord 的 d’。"
+  },
+  {
+    "kind": "校",
+    "number": 458,
+    "source_pdf_page": 335,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 Ceci exemple 应为 Cet exemple。"
+  },
+  {
+    "kind": "校",
+    "number": 459,
+    "source_pdf_page": 336,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "须区分基本项与复合项：下图四个基本位置是 A、B、非 B、非 A；“既 A 又 B”与“既非 A 又非 B”则是图中的第5、6个元项，并非与 A、B 并列的另两个基本角点。所谓“四类”与“四角”不能混为一谈。"
+  },
+  {
+    "kind": "校",
+    "number": 460,
+    "source_pdf_page": 336,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 au centre de carré) 多一右括号；通常可校为 au centre du carré。"
+  },
+  {
+    "kind": "校",
+    "number": 461,
+    "source_pdf_page": 337,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "第6项按图为非 B 与非 A 的结合，即“既非 B 又非 A”。若将 disjonction 按形式逻辑“或”理解便会误读；该项应形式化为 $\\neg B\\land\\neg A$，而不是 $\\neg B\\lor\\neg A$。另，第9、10项在图中位于内部，与“均在外部”的说明不符。"
+  },
+  {
+    "kind": "校",
+    "number": 462,
+    "source_pdf_page": 337,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "本例必须限定为整数。分数或无理数并不按整数奇偶性归为“偶数或奇数”；应为 tout nombre entier est pair ou impair。"
+  },
+  {
+    "kind": "校",
+    "number": 463,
+    "source_pdf_page": 338,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "本句混杂两种结构且遗漏 pas；可校为 dire d’un nombre entier qu’il n’est pas pair，或 dire qu’un nombre entier n’est pas pair。"
+  },
+  {
+    "kind": "校",
+    "number": 464,
+    "source_pdf_page": 338,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 ne revient pas forcément affirmer 应补介词 à，即 ne revient pas forcément à affirmer。"
+  },
+  {
+    "kind": "校",
+    "number": 465,
+    "source_pdf_page": 338,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 le gris est ni noir ni blanc 应为 le gris n’est ni noir ni blanc。"
+  },
+  {
+    "kind": "校",
+    "number": 466,
+    "source_pdf_page": 338,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原图引号内的词是作者选择的文化联想例项，不应当作现实人物的性别分类定义。特别是图中“男性／女性”“男性化／女性化”并非同一对概念；将两者直接等同会使方阵的比较维度发生变化。本版保留原图及措辞。"
+  },
+  {
+    "kind": "校",
+    "number": 467,
+    "source_pdf_page": 339,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "这里把 Schrödinger 的猫归为“既非生又非死”并不严谨。思想实验中的量子叠加不能等同于经典逻辑的两个否定项的合取；它不是方阵第6位的物理证明。参见第四章既有校勘及原论文译文\\ecite{20}。"
+  },
+  {
+    "kind": "校",
+    "number": 468,
+    "source_pdf_page": 341,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "原文 Il ne faut maintenant apporter 既不构成完整否定，也与即将补充说明的语境相反；可校为 Il faut maintenant apporter。"
+  },
+  {
+    "kind": "校",
+    "number": 469,
+    "source_pdf_page": 342,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "此项只能描述特定传统称谓系统中 femme 与 demoiselle 的一种对比义，不能作为 femme 所有用法的必要义素；未婚女性仍可称 femme。本文强调 taxème 随比较集合而定，故例子的适用范围须同时保留。"
+  },
+  {
+    "kind": "校",
+    "number": 470,
+    "source_pdf_page": 342,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "par Rastier par comme 中第二个 par 属衍字，应为 par Rastier comme。"
+  },
+  {
+    "kind": "校",
+    "number": 471,
+    "source_pdf_page": 342,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "此处“universels”不能理解为超越所有语言、文化与语境的普遍必然性；紧接的解释仍将固有义素限定于语言的功能系统。附加义素也可来自共同社会规范，不必只是个人联想；二分并非与“有无解释作用”一一对应。参见本章下文对 classème、sémantème 及语境激活的讨论。"
+  },
+  {
+    "kind": "校",
+    "number": 472,
+    "source_pdf_page": 343,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "否定缺少 pas，可校为 n’ont pas de caractère définitoire au même titre que les sèmes inhérents。按上文所述，附加义素仍能在具体文本中参与释义，不应把此句理解成“附加义素没有意义”。"
+  },
+  {
+    "kind": "校",
+    "number": 473,
+    "source_pdf_page": 344,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "présentées 应随单数阴性 typologie 配合为 présentée。"
+  },
+  {
+    "kind": "校",
+    "number": 474,
+    "source_pdf_page": 345,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "引文中 peut 后应接不定式 manifester，而非 manifeste；引文按底本照录。"
+  },
+  {
+    "kind": "原",
+    "number": "6",
+    "source_pdf_page": 345,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "Comme dans l’expression « une planche de salut »."
+  },
+  {
+    "kind": "校",
+    "number": 475,
+    "source_pdf_page": 345,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "此处把 vers 只归入前文所列的第一条“宴饮”同位线，有可能混淆了随后练习要求辨认的其他同位线，或存在引文转述错位。vers 是底本可见字形，不擅自替换为同音的 verre；有待核对 Rastier 原文的分类表与解释，亦不在此代答练习。"
+  },
+  {
+    "kind": "校",
+    "number": 476,
+    "source_pdf_page": 348,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "作者姓氏应作 Courtés，而非 Courté；本页与 Greimas 合著条中的 COURTÉ 同误。此处书目保留底本拼法，供检索时注意；书名及版本资料参见\\ecite{55}。"
+  },
+  {
+    "kind": "校",
+    "number": 477,
+    "source_pdf_page": 348,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "此词条把 actant、analyse actantielle 和题元角色混在一起，且“主目”疑为排印讹误，未据推测订字。本章的 actant 指行动元，analyse actantielle 指行动元分析；行动元不限于语法主语，也不与生成语法中的 theta-role 自动等同。见本章六行动元与三个轴的定义。"
+  },
+  {
+    "kind": "校",
+    "number": 478,
+    "source_pdf_page": 349,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "该释义过宽，更接近 sémantique。按本章第三节的定义，analyse sémique 特指把词义或义位分解为义素，并比较其共同与区别特征的“义素分析”。"
+  },
+  {
+    "kind": "校",
+    "number": 479,
+    "source_pdf_page": 349,
+    "file": "chapters/11_semantique.tex",
+    "text_tex": "此处误用物理学同位素的释义来解释本章的语义学术语。语义学 isotopie 指文本中义素等意义特征的重复所形成的语义一致性／同位线，不是关于原子核或同位素的学科。原文物理学定义保留，但不能据此理解本章 Greimas、Rastier 的分析；参见本章 IV.2、V.3。"
+  },
+  {
+    "kind": "校",
+    "number": 480,
+    "source_pdf_page": 351,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "章首 implicature 用了单数，但与 les、conversationnelles 不一致，应为 implicatures conversationnelles；正文对应标题亦见。"
+  },
+  {
+    "kind": "校",
+    "number": 481,
+    "source_pdf_page": 353,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "此处将所有语言一概称为“被说出”的语言，需限定：自然手语并不使用口语的声音通道。若 parlées 仅宽泛指语言被使用，须与本段随后讨论的 parole 及书面语对立区别。参见本书第七章及前文关于手语的讨论。"
+  },
+  {
+    "kind": "校",
+    "number": 482,
+    "source_pdf_page": 353,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "原文 dans la deuxième partie dans ce chapitre 的后一 dans 应为 de；按本章实际编号，言语行为与会话语用学位于第三节（III），并非第二节。原文 actes de langages 通常亦写作 actes de langage。"
+  },
+  {
+    "kind": "校",
+    "number": 483,
+    "source_pdf_page": 353,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "1907 应为 1902；下一页同书例句亦给出 1902。此项依据本书内部对照。\\ecite{56}"
+  },
+  {
+    "kind": "校",
+    "number": 484,
+    "source_pdf_page": 353,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "任教终年待核：应区分实际停止授课与正式教席任期的终点。本轮未取得可核验的正式任职记录，故不据二手年表把 1969 直接改为另一年份。"
+  },
+  {
+    "kind": "校",
+    "number": 485,
+    "source_pdf_page": 354,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "例中含两个话语层次：“La semaine dernière”相对于转述者说话时间定位；引号内 demain、je、ici、vous 则相对于教师说话时的语境定位。不能把全部指示语统一回指到转述时刻；本页列表只分析了直接引语层。"
+  },
+  {
+    "kind": "校",
+    "number": 486,
+    "source_pdf_page": 355,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "版本待核：此处将题名“诗学”与 1929 年连用，需区分早期版本与修订本，不宜仅凭后出译本题名确定初版信息。法文书名的单复数也待相应题名页核对。本轮未取得两个俄文版本的题名页，故不在正文中改名改年。\\ecite{57}"
+  },
+  {
+    "kind": "校",
+    "number": 487,
+    "source_pdf_page": 356,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "引语中的 il n’a que 应为 il n’y a que；原文如此。"
+  },
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 356,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "Contrairement au sujet parlant qui est un être empirique, le sujet modal est une image intérieure au sens. Ce dernier n’est pas celui qui parle et pense effectivement, mais celui que le langage présente « comme celui » qui parle et pense ce qui est dit."
+  },
+  {
+    "kind": "校",
+    "number": 488,
+    "source_pdf_page": 356,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "d’adresse 应为 s’adresse，系代词误植。"
+  },
+  {
+    "kind": "校",
+    "number": 489,
+    "source_pdf_page": 356,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "“与发话者不同”这一限制过强：多人合署的声明等也可有共同发话主体。此处可作为单一发话者的分析假设，不宜读成对一切交际的排他规定。"
+  },
+  {
+    "kind": "校",
+    "number": 490,
+    "source_pdf_page": 356,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "parle 后有一个无对应左括号的右括号；照录并注明排印疑误。"
+  },
+  {
+    "kind": "校",
+    "number": 491,
+    "source_pdf_page": 357,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "prononcée 的前置宾语 l’ 指阳性的 énoncé，应为 prononcé。"
+  },
+  {
+    "kind": "校",
+    "number": 492,
+    "source_pdf_page": 357,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "lieu 后缺左括号，应为 circonstances de lieu (embrayeurs spatiaux)。"
+  },
+  {
+    "kind": "校",
+    "number": 493,
+    "source_pdf_page": 358,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "本例明列于第二人称项下，括注却用第一人称 Notre。若母亲为双方共有，Notre 可以成立；若专举第二人称隐含领属，应为 Ta。原文情境不足，保留并注明例证与分类的不完全对应。"
+  },
+  {
+    "kind": "校",
+    "number": 494,
+    "source_pdf_page": 358,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "此例实际对比直陈式复合过去时 a assassiné 与条件式过去时 aurait assassiné；前文“直陈式现在时”与例句不符。"
+  },
+  {
+    "kind": "校",
+    "number": 495,
+    "source_pdf_page": 358,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "sans doute 为副词性短语，selon moi、d’après eux 为介词性结构；不能把三个完整形式一律标为 syntagme nominal（名词短语）。"
+  },
+  {
+    "kind": "校",
+    "number": 496,
+    "source_pdf_page": 359,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "à gauche、près de moi 整体为介词性／副词性空间表达，而非名词短语；这是句法类别的误标，不影响其可具有空间指示功能。"
+  },
+  {
+    "kind": "校",
+    "number": 497,
+    "source_pdf_page": 359,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "第三人称加叙述时态并不足以推出“脱离口头话语”或无指示定位。例如 Il dormait ici hier 即为第三人称未完成过去时，却由 ici、hier 明确联系说话情境。“非接合叙述”须按整个话语的定位方式判断。"
+  },
+  {
+    "kind": "校",
+    "number": 498,
+    "source_pdf_page": 359,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "“仅限口语”过窄：书信中的 je、ici、demain 同样可具有指示功能，且指示不必伴随手势。下文自己的“时间指示”定义也并未要求可见手势。术语的较窄用法应与一般的 deixis 概念区别。"
+  },
+  {
+    "kind": "校",
+    "number": 499,
+    "source_pdf_page": 360,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "希腊语 {\\BBSixGreek δεῖξις} 是名词，义为“指示／展示”；“montrer”是对相关动词 {\\BBSixGreek δείκνυμι} 的释义。此处不宜把名词词性误解为动词。"
+  },
+  {
+    "kind": "校",
+    "number": 500,
+    "source_pdf_page": 360,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "est en une référence 应为 est une référence，或 consiste en une référence；两种结构发生混合。"
+  },
+  {
+    "kind": "校",
+    "number": 501,
+    "source_pdf_page": 361,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "这里“dépendant”指指称解释依赖语境，不等于形态学上必须附着于另一形式的黏着语素。demain 可以独立成答语，应区分语境依赖与形态依附。"
+  },
+  {
+    "kind": "校",
+    "number": 502,
+    "source_pdf_page": 362,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "cet animal 后漏闭引号，应为 (« cet animal » ou « ce dernier »)。此外 ce dernier 倾向指较近先行项，并非在任何语境中都能机械地消除歧义。"
+  },
+  {
+    "kind": "校",
+    "number": 503,
+    "source_pdf_page": 363,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "énonciateur destinataire 之间缺连接词 et；应为 entre énonciateur et destinataire。"
+  },
+  {
+    "kind": "校",
+    "number": 504,
+    "source_pdf_page": 364,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "原句 une expression anaphorique qui marque… alors que… 缺少主句谓语；按与后半句平行的结构，qui 宜删去，作 une expression anaphorique marque…。"
+  },
+  {
+    "kind": "校",
+    "number": 505,
+    "source_pdf_page": 365,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "Paul glissé 缺助动词，应为 Paul a glissé。"
+  },
+  {
+    "kind": "校",
+    "number": 506,
+    "source_pdf_page": 365,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "pas main 应为 pas la main，缺少定冠词。"
+  },
+  {
+    "kind": "校",
+    "number": 507,
+    "source_pdf_page": 365,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "chose 后的 pas 游离于句法结构，疑为残留误植；可删去，保留其余句子。"
+  },
+  {
+    "kind": "原",
+    "number": "2",
+    "source_pdf_page": 365,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« \\textit{the study of the relation of signs to interpreters} », cité dans Morris (Charles W.) \\textit{Foundations of the Theory of Signs}, Chicago, The University of Chicago Press., 1938, 6p."
+  },
+  {
+    "kind": "校",
+    "number": 508,
+    "source_pdf_page": 366,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "élève 前的开引号没有对应闭引号；宜删去该开引号，将引号仅用于后面的直接引语。生卒年括注按底本保留，不作为当前人物状态资料。"
+  },
+  {
+    "kind": "校",
+    "number": 509,
+    "source_pdf_page": 366,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "所列 The acts of language 不是英文原著书名；英文原著为 Speech Acts: An Essay in the Philosophy of Language（1969）。本轮核对英文书目记录，法译本的版年另待核，不把英法题名和年份混合。\\ecite{58}"
+  },
+  {
+    "kind": "校",
+    "number": 510,
+    "source_pdf_page": 366,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "fondateurs cette nouvelle discipline 中缺 de，应为 fondateurs de cette nouvelle discipline。"
+  },
+  {
+    "kind": "校",
+    "number": 511,
+    "source_pdf_page": 366,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "constatatifs 应为 constatifs，多植 ta。"
+  },
+  {
+    "kind": "校",
+    "number": 512,
+    "source_pdf_page": 366,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "“适配方向”不能与“施为／记述”一一对应：Searle 的分类中，断言为词适配世界，指令与承诺为世界适配词，表达类无此适配方向，宣告类为双向。施为行为也不保证期望的外部结果已经发生。\\ecite{59}"
+  },
+  {
+    "kind": "原",
+    "number": "3",
+    "source_pdf_page": 367,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "Texte original : « The term […] « performative » is derived, of course, from “perform” […] : it indicates that the issuing of the utterance is the performing of an action. The uttering of the words is, indeed, usually a, or even the, leading incident in the performance of the act »."
+  },
+  {
+    "kind": "校",
+    "number": 513,
+    "source_pdf_page": 368,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "长引文有三处可明确定位的排印／语法问题：plus 后缺闭括号；procédure conventionnelles 应为 procédure conventionnelle；je… ne tend 应为 je… ne tends。均按底本照录，不据此反推为 Austin 原著的错误。"
+  },
+  {
+    "kind": "校",
+    "number": 514,
+    "source_pdf_page": 369,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "vérité 与 énoncés 之间缺 des，应为 les conditions de vérité des énoncés constatifs。"
+  },
+  {
+    "kind": "校",
+    "number": 515,
+    "source_pdf_page": 370,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "施事力不能等同于“意动功能”：断言、感谢、宣告等也具有施事力，却不能全部还原成促使听者行动的功能。间接请求只是施事行为的一例。\\ecite{59}"
+  },
+  {
+    "kind": "校",
+    "number": 516,
+    "source_pdf_page": 370,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "取效行为并非“解码阶段”：Austin 区分听者对意义及施事力的理解（uptake）与说服、惊吓、促使行动等进一步效果。理解请求而不照办仍可完成理解，但未产生说话者预期的取效结果。\\ecite{60}"
+  },
+  {
+    "kind": "校",
+    "number": 517,
+    "source_pdf_page": 370,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "“施事行为不能失败”不成立，且与本章原书 pp.353、355 关于合适条件及失误的说明冲突。说出句子不保证成功实施命名、宣告等行为；例如无权限者实施命名可以无效。须区分行为是否成立与成立后承诺是否履行。\\ecite{60}"
+  },
+  {
+    "kind": "校",
+    "number": 518,
+    "source_pdf_page": 370,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "引文归属与论证方向待核：本段把“绝对充盈并掌握自身”作为 Derrida 的正面主张，但紧接着的引文讨论的是施为话语产生或改变情境；仅凭这两段不能推出行为不受语境制约。需以 « Signature événement contexte » 原篇核对被引短语的主语及上下文，本轮不把拟校写作确证。\\ecite{61}"
+  },
+  {
+    "kind": "校",
+    "number": 519,
+    "source_pdf_page": 371,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "此段的推论仍待原篇核对：“最终结果不决定是否构成施为”并不逻辑蕴含“无须语境、自给自足”。后一命题比前一命题更强，也不能直接由前页“产生或改变情境”的引文推出。保留原文，不凭摘要重构 Derrida 的完整立场。\\ecite{61}"
+  },
+  {
+    "kind": "校",
+    "number": 520,
+    "source_pdf_page": 371,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "1962 是 Austin 讲稿的身后出版年，不是他在世时作出这一转变的年份。该书依据 1955 年 William James 讲座整理；以下分类见第十二讲。\\ecite{60}"
+  },
+  {
+    "kind": "校",
+    "number": 521,
+    "source_pdf_page": 371,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "列举中 « nommer déclarer » 之间缺少分隔标点，应作 « nommer, déclarer »。"
+  },
+  {
+    "kind": "校",
+    "number": 522,
+    "source_pdf_page": 371,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "下列五类对应 Searle 后来系统提出的施事行为分类，参见 1975 年 « A Taxonomy of Illocutionary Acts »；不宜全部归于 1969 年首著。该文还明确区分“施事行为的分类”和“施事动词的分类”。\\ecite{59}"
+  },
+  {
+    "kind": "校",
+    "number": 523,
+    "source_pdf_page": 372,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« appartient à pragmatique » 缺冠词，应为 « appartient à la pragmatique »。"
+  },
+  {
+    "kind": "校",
+    "number": 524,
+    "source_pdf_page": 372,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "术语通常写作 « actes de langage »，此处 « langages » 的复数不合本章所用术语。"
+  },
+  {
+    "kind": "校",
+    "number": 525,
+    "source_pdf_page": 373,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« on ne doit de parler » 多出介词 de，应作 « on ne doit parler »。"
+  },
+  {
+    "kind": "校",
+    "number": 526,
+    "source_pdf_page": 373,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« signification naturelle » 应为 « signification non naturelle »。在 Grice 的区分中，诉诸说话者意图及听者对该意图的识别，属于非自然意义（meaning\\textsubscript{NN}）；自然意义的典型例子则是症状表示疾病。\\ecite{62}"
+  },
+  {
+    "kind": "校",
+    "number": 527,
+    "source_pdf_page": 374,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« à travers par la voie » 为两个表达的叠合，应择 « par la voie » 或 « à travers »，不应连用。"
+  },
+  {
+    "kind": "校",
+    "number": 528,
+    "source_pdf_page": 374,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« Paul Grice édicté » 缺谓语助动词，宜作 « Paul Grice a édicté »；也可采用现在时 « édicte »，但不能只用过去分词。"
+  },
+  {
+    "kind": "校",
+    "number": 529,
+    "source_pdf_page": 374,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "数量准则第一项并非“信息越多越好”，而是提供当前交谈目的所要求的充分信息（as informative as is required）。应将 « que possible » 改为 « qu’il est requis pour les buts de l’échange » 一类表述；否则与下项“不要过量”相冲突。\\ecite{63}"
+  },
+  {
+    "kind": "校",
+    "number": 530,
+    "source_pdf_page": 375,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« visait communiquer » 缺 à，应为 « visait à communiquer »。"
+  },
+  {
+    "kind": "校",
+    "number": 531,
+    "source_pdf_page": 375,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "Grice 区分隐蔽违反（violate）、公开不遵守以产生含意（flout）及准则冲突（clash）。本节用同一 « violation » 覆盖这些情形，容易遮蔽区别；下文“信息不足以免无据”尤其是准则冲突的例子。\\ecite{63}"
+  },
+  {
+    "kind": "校",
+    "number": 532,
+    "source_pdf_page": 375,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« preuve) » 之前缺闭引号，应作 « preuve »)。关于重复出现的 « autant d’informations que possible »，参见原书 p.360 对应校注；此处仍照底本保留。"
+  },
+  {
+    "kind": "校",
+    "number": 533,
+    "source_pdf_page": 375,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« selon laquelle qui interdit » 句法叠合，宜删去 « selon laquelle »，保留 « qui interdit »。"
+  },
+  {
+    "kind": "校",
+    "number": 534,
+    "source_pdf_page": 376,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "本段正解释“规约含意”，故 « conversationnelle » 应为 « conventionnelle »；« courageaux » 应作 « courageux »。所给英文例句传达“其勇敢可由其英国人身份推出”的联系，并未直接断言“所有英国人都勇敢”，不宜将两者完全等同。\\ecite{63}"
+  },
+  {
+    "kind": "校",
+    "number": 535,
+    "source_pdf_page": 377,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "第一项“Jean 喜欢语言学”是此句断言的核心内容，不应同后两项一起列作含意；这也与前页对“所说”及“含意”的区分冲突。后两项的尺度、备选项及地位须结合所采理论分析，不在正文静默改写。"
+  },
+  {
+    "kind": "校",
+    "number": 536,
+    "source_pdf_page": 377,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« encore » 在这里要求已有过相应失败，而不必是“已经失败多次”：仅一次既往失败也足以使该用法成立。此外，此类重复性背景常按预设处理，不应不加说明地全部等同于 Grice 式规约含意。"
+  },
+  {
+    "kind": "校",
+    "number": 537,
+    "source_pdf_page": 377,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "“推得任何命题”过宽：逻辑蕴涵、听者偶然联想到的命题等并不因此成为会话含意；还须有可归属于说话者交际用意的推理联系。Grice 的推导条件包括共享知识、合作假设及说话者可预期听者作出该推断。\\ecite{63}"
+  },
+  {
+    "kind": "校",
+    "number": 538,
+    "source_pdf_page": 378,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "书名有误：本章原书 p.371 的延伸书目列作 \\textit{Principles of pragmatics}（1983），应据该书目订正；不是此处的 \\textit{Pragmatics of politeness}。"
+  },
+  {
+    "kind": "校",
+    "number": 539,
+    "source_pdf_page": 379,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "两句法译将 dispraise / approval 误作“使对方不快／愉快”。应为“尽量减少对他人的贬抑／尽量增加对他人的赞许”；原书下一页表格的 « la critique de l’autre / l’éloge de l’autre » 也支持此订正。"
+  },
+  {
+    "kind": "校",
+    "number": 540,
+    "source_pdf_page": 379,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "同上，praise / dispraise 并非“快乐／不快乐”，此处应为减少自赞、增加自谦或自我贬抑。下一页表格的 « l’éloge de soi / l’autocritique » 与英文相合。"
+  },
+  {
+    "kind": "校",
+    "number": 541,
+    "source_pdf_page": 380,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "表中 générosité 行最后一格重复了 tact 行的 « les bénéfices pour autrui »，与前页英文及法文“最大化自己的付出”不符，应为 « les coûts pour soi »。"
+  },
+  {
+    "kind": "校",
+    "number": 542,
+    "source_pdf_page": 380,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« Steven Levinson » 中名字应作 Stephen；本章原书 p.371 的书目也使用 Stephen。后文同类拼写照底本保留，不再逐处重复注释。"
+  },
+  {
+    "kind": "校",
+    "number": 543,
+    "source_pdf_page": 381,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« avec d’autrui » 中 d’ 多余，应作 « avec autrui »。"
+  },
+  {
+    "kind": "校",
+    "number": 544,
+    "source_pdf_page": 382,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« aux notions de notions de politesse » 中 « notions de » 重复，应删一组。"
+  },
+  {
+    "kind": "校",
+    "number": 545,
+    "source_pdf_page": 383,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "« ta nouvelle coiffure très jolie » 作为完整断言缺系词，宜作 « ta nouvelle coiffure est très jolie »；若为口语省略形式则需交代，本处照底本保留。"
+  },
+  {
+    "kind": "校",
+    "number": 546,
+    "source_pdf_page": 384,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "题干 « Ducros » 为 « Ducrot » 之误；本章相应小节及书目均为 Oswald Ducrot。"
+  },
+  {
+    "kind": "校",
+    "number": 547,
+    "source_pdf_page": 384,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "第四段对话称呼底本作“主总”，可能为“朱总”等姓氏误字，但现有上下文不能唯一确定，故仅列待核，不猜改人名。"
+  },
+  {
+    "kind": "校",
+    "number": 548,
+    "source_pdf_page": 386,
+    "file": "chapters/12_pragmatique.tex",
+    "text_tex": "法文名词 performativité 指“施为性／行事性”，不是执行行为的“语句”本身。若保留此中文定义，法文词头宜为 « énoncé performatif »；若保留词头，则定义应改为话语实施行为的性质。参见本章前文对 énoncé performatif 的说明。"
+  },
+  {
+    "kind": "校",
+    "number": 549,
+    "source_pdf_page": 387,
+    "file": "chapters/13_partie3.tex",
+    "text_tex": "原文 « prise en compte l’extralinguistique » 如此；现代法语通常应作 « prise en compte de l’extralinguistique »。"
+  },
+  {
+    "kind": "校",
+    "number": 550,
+    "source_pdf_page": 387,
+    "file": "chapters/13_partie3.tex",
+    "text_tex": "原文在主语 « Le distributionnalisme de Léonard Bloomfield et Zellig Harris » 与关系从句之间用了分号；此处标点应为逗号或不加标点。"
+  },
+  {
+    "kind": "校",
+    "number": 551,
+    "source_pdf_page": 388,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "章首提纲写 « schibboleth »；正文标题主要用 « shibboleth »。标准拼写通常为 shibboleth，本版依底本保留两种拼写。"
+  },
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 391,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "Joshua Fishman, \\textit{Sociolinguistique}, Nathan, Paris, 1971."
+  },
+  {
+    "kind": "校",
+    "number": 552,
+    "source_pdf_page": 391,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "原文 « sous la direction de qui À l’Université de Columbia » 句法与大小写均有问题；较自然的表述应为 « sous la direction de qui, à l’Université de Columbia, il a rédigé… » 或改用 « sous la direction duquel »。正文依底本保留。"
+  },
+  {
+    "kind": "校",
+    "number": 553,
+    "source_pdf_page": 392,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "原文 « sur ce les les gens »；语法上显然缺 que 且多出一个 les，应为 « sur ce que les gens »。"
+  },
+  {
+    "kind": "校",
+    "number": 554,
+    "source_pdf_page": 393,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "传统规范语法中 pallier 通常作直接及物动词，写作 « pallier son insécurité linguistique »；正文保留底本 « pallier à »。"
+  },
+  {
+    "kind": "校",
+    "number": 555,
+    "source_pdf_page": 393,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "原文在 « choix linguistiques ; qui révèlent » 之间用分号切断关系从句；按句法应改为逗号或直接删除分号。"
+  },
+  {
+    "kind": "校",
+    "number": 556,
+    "source_pdf_page": 395,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "原文 « se manifeste à travers par des choix particuliers » 介词叠用；应删去 par。"
+  },
+  {
+    "kind": "原",
+    "number": "2",
+    "source_pdf_page": 395,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "Alberto Mioni, \\textit{Italiano tendenziale : Osservazioni su alcuni aspetti della standardizzazione}, in \\textit{Scritti linguistici in onore di Giovan Battista Pellegrini}, 1983. Mioni y définit la dimension diamésique comme l’étude des « différences de moyens utilisés à mesure pour communiquer » (\\textit{differenze di mezzo via via usato per comunicare}). Il s’agit donc bien de l’opposition entre l’écrit et le parlé."
+  },
+  {
+    "kind": "校",
+    "number": 557,
+    "source_pdf_page": 395,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "本章在 shibboleth / schibboleth 两种拼写间摇摆；标准法语通常写 shibboleth。正文依底本保留异形。"
+  },
+  {
+    "kind": "原",
+    "number": "3",
+    "source_pdf_page": 396,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "« Qu’est-ce que c’est ? »"
+  },
+  {
+    "kind": "校",
+    "number": 558,
+    "source_pdf_page": 396,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "原文把动词 a 写成介词 à；应为 « La classe moyenne a tendance »。"
+  },
+  {
+    "kind": "原",
+    "number": "4",
+    "source_pdf_page": 396,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "du latin \\textit{sine nobilitate}, « sans noblesse »"
+  },
+  {
+    "kind": "校",
+    "number": 559,
+    "source_pdf_page": 397,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "原文缺介词 de；应为 « les habitudes langagières de la classe ouvrière »。"
+  },
+  {
+    "kind": "校",
+    "number": 560,
+    "source_pdf_page": 397,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "原文 « ou et » 连词重复；依句义应保留其一。"
+  },
+  {
+    "kind": "校",
+    "number": 561,
+    "source_pdf_page": 397,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "原文多出 et；句义应为 « trahir à son insu son milieu social »。"
+  },
+  {
+    "kind": "校",
+    "number": 562,
+    "source_pdf_page": 399,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "原文缺介词 de；应为 « l’utilisation correcte de deux langues »。"
+  },
+  {
+    "kind": "校",
+    "number": 563,
+    "source_pdf_page": 401,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "在现代规范法语中，bien que 通常支配虚拟式；此处应作 « bien que ce dernier parle »。"
+  },
+  {
+    "kind": "校",
+    "number": 564,
+    "source_pdf_page": 402,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "原文将 code-switching 又称为 « alternance vocalique »，属于术语误写；应为 « alternance codique »，并非“元音交替”。"
+  },
+  {
+    "kind": "原",
+    "number": "5",
+    "source_pdf_page": 403,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "Espagnol : « Vous-êtes allé à la parade ? »"
+  },
+  {
+    "kind": "校",
+    "number": 565,
+    "source_pdf_page": 405,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "原文缺助动词 a；应为 « Sa Diglossie arabe a été écrite »。"
+  },
+  {
+    "kind": "校",
+    "number": 566,
+    "source_pdf_page": 406,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "原文 « Medir » 疑为 « Mérida » 的误植；圣欧拉利亚传统上称 Eulalie de Mérida。"
+  },
+  {
+    "kind": "校",
+    "number": 567,
+    "source_pdf_page": 410,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "原文 « entretien » 为名词形；此处主语为 « la linguistique structurale américaine »，应作动词 « entretient »。"
+  },
+  {
+    "kind": "校",
+    "number": 568,
+    "source_pdf_page": 424,
+    "file": "chapters/13_sociolinguistique.tex",
+    "text_tex": "底本第410页在 plurilinguisme 后直接进入 sociolinguistique 词条，故此处不以本章前文定义补写缺失内容。"
+  },
+  {
+    "kind": "校",
+    "number": 569,
+    "source_pdf_page": 428,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "Le groupe « jusqu’au à début » cumule deux constructions. La forme attendue est « jusqu’au début ». Le texte de base est conservé."
+  },
+  {
+    "kind": "校",
+    "number": 570,
+    "source_pdf_page": 428,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "Après le titre d’ouvrage, la phrase appelle une préposition : « Dans \\textit{Aspects of the Theory of Syntax} (1965), Chomsky la définit ainsi »."
+  },
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 429,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "En particulier le fox, le cree, le menominee, et l’ojibwa."
+  },
+  {
+    "kind": "原",
+    "number": "2",
+    "source_pdf_page": 430,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "En particulier les langues hopi, maya et inuit."
+  },
+  {
+    "kind": "校",
+    "number": 571,
+    "source_pdf_page": 432,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "La suite « a rédigé terminé » superpose deux verbes. On attend soit « a rédigé un manuscrit », soit « a terminé un manuscrit ». Le texte de base est maintenu."
+  },
+  {
+    "kind": "校",
+    "number": 572,
+    "source_pdf_page": 437,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "La recension de Chomsky, « A Review of B. F. Skinner’s Verbal Behavior », a paru dans \\textit{Language}, vol. 35, no 1, en 1959, et non en 1957. 1957 est l’année de publication du livre de Skinner."
+  },
+  {
+    "kind": "校",
+    "number": 573,
+    "source_pdf_page": 442,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "Le nombre de phonèmes du français dépend de la variété et de l’analyse retenues ; « 36 » ne constitue pas un inventaire universellement fixe. L’exemple peut être lu comme un ordre de grandeur pédagogique."
+  },
+  {
+    "kind": "原",
+    "number": "3",
+    "source_pdf_page": 446,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "Nous verrons dans le dernier chapitre que ce modèle chomskyen, centré sur la syntaxe, a soulevé à l’époque récente un certain nombre de critiques."
+  },
+  {
+    "kind": "原",
+    "number": "4",
+    "source_pdf_page": 448,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "Saussure (Ferdinand de). \\emph{Cours de linguistique générale}, Paris, Payot, 1916, 30p."
+  },
+  {
+    "kind": "校",
+    "number": 574,
+    "source_pdf_page": 457,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "La contrainte locale interdit surtout que \\textit{le} soit lié par le sujet local \\textit{Paul}. Le pronom peut en principe renvoyer à Pierre ou à un référent discursif extérieur ; « qu’avec Pierre » est donc trop restrictif."
+  },
+  {
+    "kind": "校",
+    "number": 575,
+    "source_pdf_page": 458,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "Dans la théorie du liage, le principe C est usuellement formulé ainsi : une expression R doit être libre, c’est-à-dire ne pas être liée par un antécédent co-indexé qui la c-commande. Le verbe « commande » du texte est donc trop vague et peut inverser la relation pertinente."
+  },
+  {
+    "kind": "校",
+    "number": 576,
+    "source_pdf_page": 462,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "Dans le programme minimaliste, D-Structure et S-Structure sont éliminées comme niveaux de représentation. \\textit{Merge} construit les objets syntaxiques et \\textit{Spell-Out} transfère une dérivation vers les interfaces ; parler de remplacement terme à terme simplifie excessivement le changement de modèle."
+  },
+  {
+    "kind": "校",
+    "number": 577,
+    "source_pdf_page": 464,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "« ofien » est une coquille pour \\textit{often}. De plus, le prétérit \\textit{kissed} ne correspond pas au présent de « Jean embrasse souvent Marie » ; la phrase parallèle attendue serait « John often kisses Mary »."
+  },
+  {
+    "kind": "校",
+    "number": 578,
+    "source_pdf_page": 466,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "La référence finale « pp. 371-3721 » comporte manifestement un chiffre surnuméraire ; l’intervalle attendu est pp. 371-372. Le corps du texte est laissé tel quel."
+  },
+  {
+    "kind": "校",
+    "number": 579,
+    "source_pdf_page": 466,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "La maxime grammaticale célèbre est « Time flies like an arrow ». Le pluriel \\textit{Times} du texte de base paraît être une coquille."
+  },
+  {
+    "kind": "校",
+    "number": 580,
+    "source_pdf_page": 466,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "原文如此。one 与 are 数不一致；应按所指改为 the one who is 或 the ones who are。保留原题，不代作练习。"
+  },
+  {
+    "kind": "校",
+    "number": 581,
+    "source_pdf_page": 468,
+    "file": "chapters/14_generative.tex",
+    "text_tex": "Le nom de l’auteur est imprimé « POLLOCKP » dans le fond. Il s’agit de Jean-Yves Pollock ; le second P est une coquille."
+  },
+  {
+    "kind": "校",
+    "number": 582,
+    "source_pdf_page": 474,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "Le plan du chapitre imprime « Carl Wernicke », qui est aussi la forme usuelle du prénom du neurologue ; le corps du texte imprime ici « Karl ». La divergence du fond est conservée."
+  },
+  {
+    "kind": "校",
+    "number": 583,
+    "source_pdf_page": 474,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "Accord : « patients conscients ». Le fond imprime le singulier « conscient »."
+  },
+  {
+    "kind": "校",
+    "number": 584,
+    "source_pdf_page": 474,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "Le signe « + » du fond est employé comme abréviation graphique de « plus » ; en prose suivie : « chez plus de 100 patients »."
+  },
+  {
+    "kind": "校",
+    "number": 585,
+    "source_pdf_page": 475,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "Le passage situe ici une « naissance officielle » en 1955, alors que le même chapitre affirme quelques lignes plus bas que le mot « biolinguistique » serait apparu pour la première fois en 1974. Ces deux datations ne peuvent servir simultanément de repère univoque ; le texte de base est conservé."
+  },
+  {
+    "kind": "校",
+    "number": 586,
+    "source_pdf_page": 476,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "Cette affirmation est en tension avec la datation de 1955 donnée quelques lignes plus haut dans le même chapitre. La première attestation lexicale du terme demande une vérification historique distincte ; le texte de base est conservé."
+  },
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 477,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "Le linguiste américain Derek Bickerton a publié sur ces questions des ouvrages remarqués : \\textit{Lingua ex Machina: Reconciling Darwin and Chomsky with the Human Brain} (2000), et, plus récemment, \\textit{La Langue d’Adam} (2010)."
+  },
+  {
+    "kind": "校",
+    "number": 587,
+    "source_pdf_page": 479,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "Formulation historiquement contestable : le séminaire de Cornell de 1951 a joué un rôle institutionnel majeur, mais le terme anglais psycholinguistics est attesté auparavant. Il vaut mieux parler ici d’institutionnalisation du champ que de création certaine du mot."
+  },
+  {
+    "kind": "校",
+    "number": 588,
+    "source_pdf_page": 479,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "Le titre de l’ouvrage issu du programme Osgood-Sebeok est généralement donné au pluriel : « Psycholinguistics: A Survey of Theory and Research Problems » (1954). Le singulier imprimé dans le fond paraît être une coquille."
+  },
+  {
+    "kind": "校",
+    "number": 589,
+    "source_pdf_page": 480,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "Le fond annonce « trois approches », puis en énumère quatre : béhavioriste, constructiviste, nativiste et empiriste."
+  },
+  {
+    "kind": "校",
+    "number": 590,
+    "source_pdf_page": 481,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "L’énumération qui suit comporte quatre stades : sensorimoteur, préopératoire, opératoire concret et opératoire formel. « cinq » est donc incohérent avec la liste donnée dans le fond."
+  },
+  {
+    "kind": "校",
+    "number": 591,
+    "source_pdf_page": 483,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "Le LAD chomskyen est un dispositif théorique d’acquisition du langage, non le nom d’une aire cérébrale anatomiquement localisée. L’identification à « une aire du cerveau » simplifie abusivement le concept."
+  },
+  {
+    "kind": "校",
+    "number": 592,
+    "source_pdf_page": 484,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "La phrase du fond est syntaxiquement incomplète : le sujet du verbe « exprimait » manque. Une rédaction attendue serait, par exemple, « Dans Aspects of the Theory of Syntax (1965), Chomsky exprimait l’idée suivante »."
+  },
+  {
+    "kind": "校",
+    "number": 593,
+    "source_pdf_page": 493,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "La numérotation est incohérente avec le plan du chapitre, qui annonce « 3. La dyspraxie », et avec la rubrique précédente « 2. L’aphasie ». Le chiffre imprimé dans le corps est conservé."
+  },
+  {
+    "kind": "校",
+    "number": 594,
+    "source_pdf_page": 493,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "L’expression « gène de la parole » est une simplification. FOXP2 code un facteur de transcription impliqué dans plusieurs réseaux neurodéveloppementaux ; il ne constitue pas, à lui seul, un gène déterminant le langage ou la parole."
+  },
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 495,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "Sans aucune structure grammaticale."
+  },
+  {
+    "kind": "校",
+    "number": 595,
+    "source_pdf_page": 497,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "Le titre publié est généralement donné comme \\textit{The Biolinguistic Enterprise: New Perspectives on the Evolution and Nature of the Human Language Faculty}. Le fond imprime « Biolinguistics Entreprise » et omet « Language » dans le sous-titre."
+  },
+  {
+    "kind": "校",
+    "number": 596,
+    "source_pdf_page": 498,
+    "file": "chapters/15_biolinguistique.tex",
+    "text_tex": "L’éditeur est John Wiley \\& Sons ; « Willey » est une coquille du fond."
+  },
+  {
+    "kind": "校",
+    "number": 597,
+    "source_pdf_page": 503,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "Accord : les processus ont été « présentés ». Le fond imprime « présenté »."
+  },
+  {
+    "kind": "校",
+    "number": 598,
+    "source_pdf_page": 503,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "Le contexte désigne la discipline : on attend « la linguistique cognitiviste ». Le fond imprime « linguiste »."
+  },
+  {
+    "kind": "原",
+    "number": "1",
+    "source_pdf_page": 506,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "Sur ce point, revoir le texte de Jean-Pierre Changeux dans les exercices du chapitre précédent."
+  },
+  {
+    "kind": "校",
+    "number": 599,
+    "source_pdf_page": 506,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "Le fond imprime « mod-modèles » ; il s’agit manifestement d’un redoublement typographique, pour « modèles »."
+  },
+  {
+    "kind": "校",
+    "number": 600,
+    "source_pdf_page": 507,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "Avec l’auxiliaire avoir et sans complément d’objet direct antéposé, le participe reste invariable : « avaient tous deux assisté »."
+  },
+  {
+    "kind": "校",
+    "number": 601,
+    "source_pdf_page": 509,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "La construction est lacunaire dans le fond ; on attend vraisemblablement « on peut étudier celle-ci sans se soucier… »."
+  },
+  {
+    "kind": "校",
+    "number": 602,
+    "source_pdf_page": 510,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "La phrase du fond est dépourvue de sujet exprimé ; le contexte renvoie à Hubert Dreyfus."
+  },
+  {
+    "kind": "校",
+    "number": 603,
+    "source_pdf_page": 517,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "La construction du fond comporte un double verbe : on attend « qui est lui-même plongé »."
+  },
+  {
+    "kind": "校",
+    "number": 604,
+    "source_pdf_page": 517,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "La préposition du fond est fautive : l’expression usuelle est « qui nous passent par la tête »."
+  },
+  {
+    "kind": "原",
+    "number": "2",
+    "source_pdf_page": 522,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "ROSCH(Eleanor). Cognitive representation of semantic categories, dans \\emph{Journal of Experimental Psychology} N°104, 1975, 573-605p."
+  },
+  {
+    "kind": "原",
+    "number": "3",
+    "source_pdf_page": 523,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "RASTIER (François). Sémantique et recherches cognitives, PUF, 2001."
+  },
+  {
+    "kind": "校",
+    "number": 605,
+    "source_pdf_page": 524,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "Construction lacunaire : « il s’agit d’une remise en cause profonde »."
+  },
+  {
+    "kind": "校",
+    "number": 606,
+    "source_pdf_page": 525,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "本节标题原作“Richard Langacker”，而本页正文及前文均作“Ronald Langacker”。应为 Ronald；标题依底本保留。"
+  },
+  {
+    "kind": "校",
+    "number": 607,
+    "source_pdf_page": 526,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "La date « 1868 » est incompatible avec la chronologie de Ronald Langacker (né en 1942) ; le titre est généralement associé à 1968. Le fond est conservé."
+  },
+  {
+    "kind": "校",
+    "number": 608,
+    "source_pdf_page": 532,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "Construction : on attend « dans ce domaine »."
+  },
+  {
+    "kind": "原",
+    "number": "4",
+    "source_pdf_page": 532,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "Dans le chapitre 3, nous avons vu qu’au Moyen Âge, le quadrivium rassemblait l’arithmétique, la géométrie, l’astronomie mais aussi la musique, quatre sciences toutes liées aux mathématiques."
+  },
+  {
+    "kind": "校",
+    "number": 609,
+    "source_pdf_page": 533,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "Accord : « les activités ... sont liées »."
+  },
+  {
+    "kind": "校",
+    "number": 610,
+    "source_pdf_page": 534,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "Le fond présente une séquence fautive ; on attend « dans une interview donnée… »."
+  },
+  {
+    "kind": "校",
+    "number": 611,
+    "source_pdf_page": 534,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "La phrase est syntaxiquement lacunaire dans le fond ; une relative ou une autre articulation (« la philosophie de Spinoza, qui faisait… ») semble manquer."
+  },
+  {
+    "kind": "校",
+    "number": 612,
+    "source_pdf_page": 535,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "Accord : « des plans d’action »."
+  },
+  {
+    "kind": "校",
+    "number": 613,
+    "source_pdf_page": 535,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "La coordination est syntaxiquement défectueuse dans le fond ; la leçon exacte visée n’est pas rétablie sans preuve supplémentaire."
+  },
+  {
+    "kind": "校",
+    "number": 614,
+    "source_pdf_page": 539,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "Dans cette entrée bibliographique, le fond inverse le nom et le prénom : il s’agit de George Lakoff, normalement classé sous LAKOFF."
+  },
+  {
+    "kind": "校",
+    "number": 615,
+    "source_pdf_page": 539,
+    "file": "chapters/16_cognitive.tex",
+    "text_tex": "原文如此。作者姓名与姓氏倒置；此人是 Rafael E. Núñez，应按 NÚÑEZ (Rafael E.) 识别。出版社的该书记录列 George Lakoff 与 Rafael E. Nunez，见\\ecite{68}。"
+  },
+  {
+    "kind": "校",
+    "number": 616,
+    "source_pdf_page": 540,
+    "file": "chapters/17_bibliographie.tex",
+    "text_tex": "原文如此。\\emph{Brain and Language} 为期刊名；本条没有文章题名、完整作者或页码范围，尚不足以唯一识别所引论文。“346 p.”可能是引文定位，不宜当作全篇页数；保留待核。"
+  },
+  {
+    "kind": "校",
+    "number": 617,
+    "source_pdf_page": 541,
+    "file": "chapters/17_bibliographie.tex",
+    "text_tex": "原文如此。此条把信件日期与后出的期刊卷次连排，未列转引论文的作者、题名、刊年；不能据此认定该期刊出版于1879年。暂保留各项，不猜补转引信息。"
+  },
+  {
+    "kind": "校",
+    "number": 618,
+    "source_pdf_page": 541,
+    "file": "chapters/17_bibliographie.tex",
+    "text_tex": "原文如此。作者姓名的缩写应为 B. F. Skinner；同一总书目原书第531页列 SKINNER (Burrhus Frederic)。此处只订正姓名缩写，不把法译刊年改成英文原评刊年。"
+  },
+  {
+    "kind": "校",
+    "number": 619,
+    "source_pdf_page": 542,
+    "file": "chapters/17_bibliographie.tex",
+    "text_tex": "原文如此。该文刊于 Word 15(2)，页码为325–340；“435”不在该文页码范围内。此项据出版社提交的DOI书目元数据核对，不据此宣称重核全文引文。见\\ecite{69}。"
+  },
+  {
+    "kind": "校",
+    "number": 620,
+    "source_pdf_page": 542,
+    "file": "chapters/17_bibliographie.tex",
+    "text_tex": "原文如此。Amending 不是此处作者的名字；应为 FREGE (Gottlob)。本书第四章正文与延伸书目均作 Gottlob Frege。所列选集、附录标题与版本信息尚待进一步核对，不能因姓名已订正便视作整条书目无误。"
+  },
+  {
+    "kind": "校",
+    "number": 621,
+    "source_pdf_page": 542,
+    "file": "chapters/17_bibliographie.tex",
+    "text_tex": "原文如此。姓与名倒置，应为 FREGE (Gottlob)，与第四章姓名及书目一致。"
+  },
+  {
+    "kind": "校",
+    "number": 622,
+    "source_pdf_page": 542,
+    "file": "chapters/17_bibliographie.tex",
+    "text_tex": "原文如此。Hahn 与 Carnap 是两位作者的姓，不是同一人的姓与名；应分别识别为 Hans Hahn 与 Rudolf Carnap。所列2010年卷由 Antonia Soulez 协调编订，另收 Neurath、Schlick、Waismann 等人的文本。见出版社记录\\ecite{64}。"
+  },
+  {
+    "kind": "校",
+    "number": 623,
+    "source_pdf_page": 542,
+    "file": "chapters/17_bibliographie.tex",
+    "text_tex": "原文如此。标题中的不定冠词应为 An，而非 A。作者名 Mickael 应为 Michael，与本书第八章正文一致；标准姓名形式另见\\ecite{65}。"
+  },
+  {
+    "kind": "校",
+    "number": 624,
+    "source_pdf_page": 543,
+    "file": "chapters/17_bibliographie.tex",
+    "text_tex": "原文如此。本条只有期刊、卷期与页码，缺作者和文章题名；不能把期刊名当作文章题名或作者。本版保留待核，不补造缺失字段。"
+  },
+  {
+    "kind": "校",
+    "number": 625,
+    "source_pdf_page": 545,
+    "file": "chapters/17_bibliographie.tex",
+    "text_tex": "原文如此。本条不只是姓与名倒置：\\emph{La précellence du langage françois} 的作者为 Henri Estienne，应按 ESTIENNE (Henri) 识别；下一条语法著作则属于 Robert Estienne。见\\ecite{66}。"
+  },
+  {
+    "kind": "校",
+    "number": 626,
+    "source_pdf_page": 545,
+    "file": "chapters/17_bibliographie.tex",
+    "text_tex": "原文如此。此条姓与名倒置，应为 ESTIENNE (Robert)。2003年 Champion 校注本所据原著为1557年的 \\emph{Traicté de la Grammaire Francoise}，参见\\ecite{67}。"
+  },
+  {
+    "kind": "校",
+    "number": 627,
+    "source_pdf_page": 546,
+    "file": "chapters/17_bibliographie.tex",
+    "text_tex": "原文如此。括号内重复了姓氏，未给名字；本条所指为 Wilhelm von Humboldt，与本书第五章及原书第531页所列通信集中的姓名一致。"
+  }
+]

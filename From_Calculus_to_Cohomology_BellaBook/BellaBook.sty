@@ -1,0 +1,64 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{BellaBook}[2026/09/13 BellaBook mathematics]
+\usepackage[paperwidth=176mm,paperheight=250mm,inner=18mm,outer=17mm,top=20mm,bottom=20mm,headheight=14pt,headsep=6mm,footskip=10mm]{geometry}
+\usepackage{fontspec,xeCJK}
+\setmainfont{Latin Modern Roman}
+\setsansfont{NimbusSans-Regular.otf}[BoldFont=NimbusSans-Bold.otf,ItalicFont=NimbusSans-Italic.otf,BoldItalicFont=NimbusSans-BoldItalic.otf]
+\setmonofont{Latin Modern Mono}
+\setCJKmainfont[Path=fonts/,AutoFakeBold=2]{NotoSerifCJKsc-Regular.otf}
+\setCJKsansfont[Path=fonts/,AutoFakeBold=2]{NotoSerifCJKsc-Regular.otf}
+\usepackage{xcolor,graphicx,float,mathrsfs}
+\definecolor{BellaBlue}{HTML}{3C71B7}
+\definecolor{BellaTeal}{HTML}{159A9C}
+\definecolor{BellaInk}{HTML}{24313F}
+\definecolor{BellaGray}{HTML}{6C7884}
+\usepackage[shortlabels]{enumitem}
+\setlist[enumerate,1]{label=(\roman*),leftmargin=2em,itemsep=3pt}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows.meta,calc}
+\tikzcdset{scale cd/.style={every label/.append style={scale=#1},cells={nodes={scale=#1}}}}
+\usepackage{BellaMath}
+\usepackage{microtype,setspace,ragged2e,needspace,adjustbox}
+\setstretch{1.075}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt minus 1pt}
+\emergencystretch=2em
+\allowdisplaybreaks[2]
+\widowpenalty=10000
+\clubpenalty=10000
+\usepackage[skins,breakable]{tcolorbox}
+\newtcolorbox{keybox}[1][]{enhanced,breakable,colback=white,colframe=BellaTeal,boxrule=.5pt,arc=1mm,title=#1,fonttitle=\bfseries,coltitle=BellaInk,colbacktitle=white}
+\tcolorboxenvironment{theorem}{enhanced,breakable,colback=white,colframe=BellaBlue,boxrule=0pt,borderline west={1.5pt}{0pt}{BellaBlue},arc=0pt,left=8pt,right=3pt,top=0pt,bottom=0pt,before skip=9pt,after skip=9pt}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\normalfont\bfseries\color{BellaInk}}{\filleft\sffamily\color{BellaBlue}\fontsize{13}{16}\selectfont\chaptertitlename\ \thechapter}{8pt}{\filleft\fontsize{27}{32}\selectfont}[\vspace{8pt}{\color{BellaBlue}\titlerule}]
+\titlespacing*{\chapter}{0pt}{0pt}{22pt}
+\titleformat{\section}{\Large\bfseries\color{BellaInk}}{\color{BellaBlue}\thesection}{.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{BellaBlue}}{\thesubsection}{.6em}{}
+\usepackage{fancyhdr,emptypage}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\sffamily\color{BellaGray}From Calculus to Cohomology}
+\fancyhead[RO]{\scriptsize\sffamily\color{BellaGray}\nouppercase{\leftmark}}
+\fancyfoot[LE,RO]{\sffamily\color{BellaBlue}\thepage}
+\renewcommand{\headrulewidth}{.3pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\quad #1}{}}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[LE,RO]{\sffamily\color{BellaBlue}\thepage}\renewcommand{\headrulewidth}{0pt}}
+\usepackage{hyperref,bookmark}
+\hypersetup{unicode=true,colorlinks=true,linkcolor=BellaBlue,urlcolor=BellaTeal,citecolor=BellaTeal,bookmarksopen=true,bookmarksopenlevel=0,bookmarksnumbered=true,pdftitle={From Calculus to Cohomology},pdfauthor={Ib Madsen and Jørgen Tornehave},pdfsubject={BellaBook edition: de Rham cohomology and characteristic classes}}
+\setcounter{tocdepth}{0}
+\hypersetup{bookmarksdepth=1}
+\newcommand{\corr}[1]{\footnote{\textbf{校勘：}#1}}
+\newcommand{\now}[1]{\footnote{\textbf{今按：}#1}}
+\newcommand{\IfFontTimesTF}[2]{#2}
+\newcommand{\supercite}[1]{}
+\newcommand{\Index}[1]{\textit{#1}\index{#1}}
+\usepackage{makeidx}
+\makeindex
+\let\oldprintindex\printindex
+\renewcommand{\printindex}{\clearpage\phantomsection\addcontentsline{toc}{chapter}{Index}\oldprintindex}
+\renewcommand{\bibname}{References}
+\makeatletter
+\renewenvironment{thebibliography}[1]{\chapter*{\bibname}\phantomsection\addcontentsline{toc}{chapter}{References}\list{}{\setlength\leftmargin{1em}\setlength\itemindent{-1em}\setlength\itemsep{7pt}}\sloppy}{\endlist}
+\renewcommand{\@biblabel}[1]{[#1]}
+\makeatother
+\newcommand{\blankpage}{\null}

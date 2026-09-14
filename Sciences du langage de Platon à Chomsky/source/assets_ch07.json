@@ -1,0 +1,145 @@
+[
+  {
+    "file": "assets/partie2_illustration.png",
+    "source_pdf_page": 202,
+    "clip_points": [
+      360.5314254760742,
+      191.5209747642599,
+      502.49067425727844,
+      323.89576614543955
+    ],
+    "operation": "source-page crop only; no generated redrawing"
+  },
+  {
+    "file": "assets/ch07_vocal_tract.png",
+    "source_pdf_page": 205,
+    "clip_points": [
+      352.6448005437851,
+      607.5834248040312,
+      529.530531167984,
+      790.7602458256547
+    ],
+    "operation": "source-page crop only; no generated redrawing"
+  },
+  {
+    "file": "assets/ch07_respiratory.png",
+    "source_pdf_page": 206,
+    "clip_points": [
+      296.3117653131485,
+      219.12252700969736,
+      541.9237989187241,
+      437.1184600501932
+    ],
+    "operation": "source-page crop only; no generated redrawing"
+  },
+  {
+    "file": "assets/ch07_cavities.png",
+    "source_pdf_page": 207,
+    "clip_points": [
+      345.8848363161087,
+      591.2384161590248,
+      525.5872187018394,
+      791.8874878011724
+    ],
+    "operation": "source-page crop only; no generated redrawing"
+  },
+  {
+    "file": "assets/ch07_places.png",
+    "source_pdf_page": 208,
+    "clip_points": [
+      327.2949346899986,
+      549.7778569703461,
+      547.5571024417877,
+      791.4322633640741
+    ],
+    "operation": "source-page crop only; no generated redrawing"
+  },
+  {
+    "file": "assets/ch07_articulators.png",
+    "source_pdf_page": 209,
+    "clip_points": [
+      321.66163116693497,
+      160.63198151126986,
+      531.2205222249031,
+      391.71658649239487
+    ],
+    "operation": "source-page crop only; no generated redrawing"
+  },
+  {
+    "file": "assets/ch07_dorsovelar.png",
+    "source_pdf_page": 209,
+    "clip_points": [
+      323.35162222385406,
+      396.78917538222447,
+      531.2205222249031,
+      551.221326028147
+    ],
+    "operation": "source-page crop only; no generated redrawing"
+  },
+  {
+    "file": "assets/ch07_vowel_i.png",
+    "source_pdf_page": 211,
+    "clip_points": [
+      321.66163116693497,
+      59.18020371467837,
+      529.530531167984,
+      214.73959633611864
+    ],
+    "operation": "source-page crop only; no generated redrawing"
+  },
+  {
+    "file": "assets/ch07_vowel_a.png",
+    "source_pdf_page": 211,
+    "clip_points": [
+      321.66163116693497,
+      233.90270991991923,
+      529.530531167984,
+      388.8984815536007
+    ],
+    "operation": "source-page crop only; no generated redrawing"
+  },
+  {
+    "file": "assets/ch07_vowel_positions.png",
+    "source_pdf_page": 211,
+    "clip_points": [
+      143.08590948581696,
+      503.87716305640436,
+      422.4977642297745,
+      778.924205082719
+    ],
+    "operation": "source-page crop only; no generated redrawing"
+  },
+  {
+    "file": "assets/ch07_nasal_oral.png",
+    "source_pdf_page": 212,
+    "clip_points": [
+      111.53940975666046,
+      266.43947371616156,
+      526.7138794064522,
+      532.3156504477224
+    ],
+    "operation": "source-page crop only; no generated redrawing"
+  },
+  {
+    "file": "assets/ch07_trapezoid.png",
+    "source_pdf_page": 213,
+    "clip_points": [
+      92.38617777824402,
+      58.61658272691952,
+      442.2143265604973,
+      285.75584079373266
+    ],
+    "operation": "source-page crop only; no generated redrawing"
+  },
+  {
+    "file": "assets/ch07_exercise_diagrams.png",
+    "source_pdf_page": 215,
+    "clip_points": [
+      47.31974959373474,
+      200.08545065438875,
+      521.0805758833885,
+      499.36819515433365
+    ],
+    "operation": "source-page crop only; no generated redrawing"
+  }
+]

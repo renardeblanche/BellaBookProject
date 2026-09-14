@@ -1,0 +1,19 @@
+{
+  "pdf_pages": 71,
+  "body_pages": 67,
+  "front_matter_pages": 4,
+  "text_characters": 77281,
+  "cjk_characters": 27954,
+  "image_instances": 0,
+  "links": 308,
+  "bookmarks": 32,
+  "source_page_anchors": 98,
+  "corrections": 29,
+  "original_printed_pages": 98,
+  "comprehensive_exercises": 41,
+  "hints": 41,
+  "undefined_references": false,
+  "missing_glyphs": false,
+  "overfull_boxes": false,
+  "visual_qa": "All-page contact sheets reviewed; detailed chapter, formula, footnote, exercise, and final table-of-contents views checked."
+}

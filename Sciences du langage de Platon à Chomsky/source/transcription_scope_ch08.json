@@ -1,0 +1,45 @@
+{
+  "source_pdf_pages": [
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238
+  ],
+  "printed_pages": [
+    204,
+    224
+  ],
+  "chapter_title": "LINGUISTIQUE FONCTIONNELLE ET PHONOLOGIE",
+  "method": "从用户扫描页直接视觉转写；未使用OCR",
+  "exercise_groups": 3,
+  "exercise_I_answer_rows": {
+    "left": 12,
+    "right": 10
+  },
+  "bibliography_entries": 8,
+  "glossary_entries": 11,
+  "original_note_count": 0,
+  "editorial_note_count": 42,
+  "images": [
+    "assets/ch08_communication_original.png"
+  ],
+  "next_source_pdf_page": 239,
+  "next_title": "MORPHOLOGIE ET LEXICOLOGIE : ÉTUDES DES MORPHÈMES ET DES LEXÈMES"
+}

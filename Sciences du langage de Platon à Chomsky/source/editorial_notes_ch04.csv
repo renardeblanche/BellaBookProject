@@ -1,0 +1,52 @@
+﻿cumulative_note,source_pdf_page,printed_page,note_tex
+93,88,074,应区分推理有效性与命题事实真值：有效推理保证的是“若前提真，则结论真”，单凭形式正确不能保证前提或结论实际为真。下文原书第 090 页亦区分 vérité 与 validité；此处定义不宜理解为逻辑形式本身足以确保事实真理。
+94,89,075,原文 naturel 与阴性名词 langue 不一致，应作 naturelle。另，单列一个公式或其自然语言表达尚不构成有前提和结论的完整“推理”；这两个例子直接展示的是表达方式的区别。
+95,89,075,“a priori”与“analytique”不是同义词，尤其不能在 Kant 的论述中等同。前者涉及认识是否独立于经验，后者涉及判断中谓词与主词概念的关系；Kant 明确讨论“先天综合判断”。见 \ecite{18}，导论 IV–VI。
+96,90,076,演绎并不必然是“从原因到结果”或“从一般到个别”，也不要求以形式语言写出。由“A 且 B”推出“A”就是反例；经验获得的前提也可用于演绎。应更正为：演绎有效性要求不存在前提全真而结论假的情形。
+97,91,077,原文 et 应作 est：“Le deuxième haricot […] est lui aussi rouge”。
+98,91,077,假说并非“按定义不真”；其真值尚未由当前证据确立，可以为真，也可以为假。应作“尚未证实，而被认为具有一定可信性”。同页“comme suit :”之后未见归纳例子的续式，故不擅补。
+99,92,078,à l’encontre 后应接 de，故“à l’encontre le bon sens”应作“à l’encontre du bon sens”。
+100,92,078,下列 non sequitur 并非与前两者互不相交的第三种形式：作者在该节列出的两式正是肯定后件与否定前件。宜将此句理解并更正为“这里讨论以下形式及其总称”，而非穷尽形式谬误的三分法。
+101,94,080,若三个句子中的“rare”“cher”取相同含义，且将第一个全称前提视为真，形式本身是有效的。问题在大前提并非普遍真实，或“rare”的使用发生偷换，不宜把本例当成单纯的形式无效。原例保留。
+102,94,080,此步推论不成立。“并非所有克里特人都说谎”只要求存在一个反例，不推出 Épiménide 本人的当前发言为真；“说谎者”也不等于每句话都为假。严格的说谎者悖论须将语句明确自指为“本句为假”，不能直接以这里的全称陈述代替。另，“formulé par poète crétois”缺冠词，应为“par le poète crétois”。
+103,95,081,这里应区分集合论的 Russell 悖论与理发师故事的具体表述；正文将两者的年代直接合并。此次未完成理发师故事最早版本的文献核定，暂保留年份为待核，不据集合论悖论的发表年替故事定年。
+104,96,082,“这些悖论证明自然语言不适于逻辑思考”并不由前例推出。集合论悖论可直接形式化为 $R\in R\leftrightarrow R\notin R$；理发师条件也可形式化。因此矛盾不能仅归因于自然语言，应检查有关定义、公理或语义假设。
+105,98,084,原文“il veut dire aucun…”漏 que，应为“il veut dire qu’aucun…”。下段“Si la copule […] est […] et les autres verbes […] jouent…”结构也不完整，宜去掉 et，使第二分句成为主句；正文保留底本。
+106,99,085,“le thème l’élément”漏 est，应为“le thème est l’élément”。本段与下段的“已知／新信息”描述是此书采用的简化框架，不应把定冠词或不定冠词单独当成识别 thème／rhème 的充分条件：新信息也可用定指表达，具体分析须结合语境。
+107,100,086,原列公元前 540–580 年作为生卒年顺序不可能成立（公元前 580 年早于 540 年）。可确证其数字或顺序有误；本轮未据可靠传记确定本书意图采用的两端年代，故不把推测日期写入正文。
+108,100,086,矛盾律 $\neg(p\land\neg p)$ 与排中律 $p\lor\neg p$ 应区分；仅禁止“同时真”并不自动排除“既不判真也不判假”。由前者得到后者还涉及所采用的逻辑及否定规则，不能不加限定地称为前者的直接后果。
+109,101,087,这里把量子态的叠加直接说成两个经典断言同时为真，或位于生与死之间的第三种经典状态，均不准确。应区分态矢量的线性叠加、测量结果与命题真值；思想实验讨论宏观叠加和测量解释的问题，不凭自身证明经典矛盾律或排中律遭到实验推翻。参见 Schrödinger 原文第 5 节，\ecite{20}。
+110,102,088,本句有数的一致错误：“affirmatives ou négative”应作“affirmatives ou négatives”，“un procédé mnémotechniques”应作“un procédé mnémotechnique”。下列公式中的 H、M 沿用底本，不另改为 C、G。
+111,102,088,quatre 作数词不加复数 -s，此处 quatres 应作 quatre。
+112,102,088,"按本页使用的现代量词解释，反对、下反对与差等关系须补充主词类非空的条件 $\exists x\,Hx$。若没有猫，A、E 都真而 I、O 都假，故原列这三组关系不成立；A–O、E–I 的矛盾关系仍成立。上句“peuvent simultanément vrais”另漏 être，应为“peuvent être simultanément vrais”。"
+113,104,090,概念订正：有效性是论证或推理形式的性质，真值是命题的性质。有效推理保证：若前提全真，则结论必真；仅仅“把前提假定为真”不足以构成有效性的定义。此处结论“nécessairement valide”宜改为“nécessairement vraie”，并明确以前面的推理形式有效为条件。
+114,104,090,"按本段关于省略一个前提或结论的说明，应是把明说的命题减少为两个，而不是把三段论的项减少为两个：“deux termes”在这里宜作“deux propositions exprimées”。“une des prémisses, même la conclusion peut être implicites”数的一致亦有问题；可作“une des prémisses, voire la conclusion, peut être implicite”。"
+115,105,091,书名订正：此处和下面引文标题均误作“Méditations physiques”，应为“Méditations métaphysiques”；本章此前所列书名亦作后者。
+116,106,092,语法订正：“reprises les manuels”应为“reprise dans les manuels”。下图实际展示的是“实体”属下的逐层划分，并没有展示前文列举的全部十范畴，因此不宜将图本身称作十范畴的层级图。
+117,107,093,"原句“Dans la philosophie occidentale, et les universaux ...”结构残缺，可能混入多余的“et”并漏去主句谓语；不在正文中猜补。下段“Les tenants du nominalistes”应为“Les tenants du nominalisme”。同段所否定的是共相作为独立实在的存在，而非“普遍词项”作为词语或概念的存在，后一句的说明也表明了这一点。"
+118,108,094,句法订正：“Sa pensée Roscelin”混合了两种构句，可作“La pensée de Roscelin”或“Sa pensée”。
+119,109,095,语法订正：“attribué Guillaume d’Ockham”漏去介词，应为“attribué à Guillaume d’Ockham”；“en très détail”应为“en grand détail”或“très en détail”。正文保留原貌。
+120,110,096,排印订正：“Elles ont une bien réalité”应为“Elles ont bien une réalité”。
+121,111,097,语法订正：“des raisonnement”应为“des raisonnements”；“Frege en conclut notre langage”应补“que”，即“Frege en conclut que notre langage”。
+122,112,098,范围说明：这里不能把所有指称对象限制为可感知的具体事物。下文原书自己的数学例子“2+2”和“3+1”指向数4，已说明必须容纳抽象对象。此外，“l’étoile du matin”等是名词性表达式，而不是可判真假的完整命题；下段反复用“propositions”称这些例子时，宜改为“expressions”。
+123,113,099,姓名订正：“Russel”应为“Russell”。概念上，没有指称对象的单称描述与外延为空的谓词须加区分，不能一概视为同一种语义对象。Russell 的方案是在句子层次消去限定描述，不是简单把不存在的对象替换成“空外延”。参见 \ecite{21}。
+124,113,099,语法订正：“pour à mettre”应为“pour mettre”。
+125,114,100,术语订正：“descriptions finies”应为“descriptions définies”（限定描述），不是“有限描述”。
+126,115,101,关键补正：必须区别句内否定和句外否定。令 $P$ 为“存在唯一法国国王且他秃头”，句外否定 $\neg P$ 在不存在法国国王时为真；而“存在唯一法国国王且他不秃头”仍为假。后二者不是 $P$ 与 $\neg P$，两者均假不违反排中律。Russell 原文明确区别限定描述的 primary／secondary occurrence。参见 \ecite{21}。
+127,116,102,术语、排印订正：“la définition finie”在此应为“la description définie”；“C’est est”重复，应为“C’est”。注意限定描述“le roi de France”本身不是命题；上句“cet énoncé ... est faux”须理解为完整的秃头断言，而不是单独的名词短语。
+128,116,102,理论层次说明：这里已经转入预设分析，不能把它与前面 Russell 把存在和唯一性纳入断言真值条件的分析等同。普通否定下仍承诺某前提，是预设分析的诊断；Russell 的句外否定则可一并否定存在条件。参见 \ecite{21}。
+129,118,104,"形式记号订正：单写“$\exists(x)$”缺少量词后的公式，不能表示“有一只猫”。令 $C(x)$ 表示“$x$ 是猫”，应写 $\exists x\,C(x)$。下文把个体与种类的不等同解释为“外延不等于内涵”也混淆了层次：个体不是外延集合，种类也不自动等于内涵。应分别说明个体的归属、集合的同一和表达式的意义。"
+130,119,105,概念订正：“子非鱼”是否定述谓（你不具有“鱼”的类别属性），不是否定存在。令 $F(x)$ 为“$x$ 是鱼”、$z$ 指“子”，可写 $\neg F(z)$；它既不表示“你不存在”，也不表示“鱼不存在”。“子非我”则可以作个体不相同 $z\ne w$ 的分析。
+131,119,105,年份订正：《哲学研究》首次以德英对照本于1953年身后出版，非1956年；本章原书第109页也明确写作1953，与此处自相矛盾。此处可据同章后文订为1953。
+132,119,105,排印订正：小标题“La Tractatus”应为“Le Tractatus”。书目与年代须区分：这里的1989至多可指后出的版本，不能作为 Russell 最初提出这些思想的年份——原书前页已列其卒年为1970；且本段把它说成1921年《逻辑哲学论》的思想来源。未据此猜改具体初刊年份。
+133,120,106,语境说明：这句话对应《逻辑哲学论》3.328，附近3.326—3.327讨论符号的有意义使用和逻辑句法使用。因此不能仅据此把早期著作直接等同于后文晚期的“意义即使用”分析。参见 \ecite{19}。
+134,121,107,几处须分开：（1）“ne réfèrent pas à rien de réel”按上下文应为“ne réfèrent à rien de réel”；“une pseudo-propositions”应为单数。（2）将意义条件直接概括成经验可验证性，把后述证实论读进了《逻辑哲学论》；4.024区分理解命题和知道命题为真。（3）不能把“无内容”与“胡说”并为一类；4.461—4.4611明确说重言式与矛盾式虽无实质内容，却不是无意义的胡说。参见 \ecite{19}。
+135,121,107,此处再把 Kant 的“先天”与“分析”当作同义词是不正确的：Kant 明确讨论先天综合判断，并把纯数学判断列入其中，参见 \ecite{18}，导论V。文字上“une la tautologie”多出冠词；“on n’obtient donc de prédicat”及“ne posent cependant de problèmes”均漏“pas”。此外，四个直角并不足以定义正方形，也适用于非正方形的矩形。
+136,122,108,引文归属待核：本次在所核对的《逻辑哲学论》德英全文中检索 Ulysses／Odysseus，未找到这一例句。暂保留原文，不把这段转述当作已经确证的该书原话；“没有指称”也不应未经论证就与“没有意义”直接画等号。参见 \ecite{19}。
+137,122,108,排印订正：“philo sophiques”中间的空格应删，作“philosophiques”。
+138,124,110,年份订正：《蓝皮书》是1933—1934年向剑桥学生口授的笔记；这里的1934—1935不宜用作《蓝皮书》的时间范围。参见所用版本的出版社说明 \ecite{22}。
+139,124,110,语法订正：“ne veut pas à s’attarder”中“à”多余，应为“ne veut pas s’attarder”。引文“plus simples que celles dont nous utilisons”亦有关系结构问题，可作“plus simples que celles que nous utilisons”；此为法语句法拟校，不冒称核过该法译本。
+140,125,111,引文中的数一致订正：“des mesure”应为“des mesures”；“d’une expériences”应为“d’une expérience”。
+141,125,111,此处的“换言之”不成立：验证方法或真值条件不是某个既定真值；两个不同命题可以同为真而意义不同。“synthétiques (dépourvus de sens)”也不能泛指所有综合命题；原书第114页所引宣言本身承认经验科学命题有意义。前述“il faut savoir le Tractatus”另漏“que”，应为“il faut savoir que le Tractatus”。
+142,127,113,引文句法订正：“à réclame”应为“à réclamer”，“la phrases”应为“les phrases”。“la polémique contre”与前面的不定式并列不齐，可能漏有动词；“moyen d’indexation”亦与上下文的“表达手段”对照不够清晰。后两处须对照原法译版本，暂列待核，不静默改写引文。
+143,129,115,术语订正：在本章讨论的认识论语境中，\textit{a posteriori}应译“后验的／后验地”，指依赖经验，不等于归纳推理或由果溯因。下一词\textit{a priori}应译“先验的／先天的”，指其根据不依赖经验，亦不等于由因溯果。参见 \ecite{18}，导论I—V。

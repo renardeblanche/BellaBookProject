@@ -1,0 +1,41 @@
+﻿note_global,note_chapter,source_pdf_page,printed_page,status,text
+388,1,286,272,订正／辨析,原文 toutes les énoncés 的性配合有误，应为 tous les énoncés。
+389,2,286,272,待核／拟校,原文 entre pour 连用，句法不完整；按本句意思可校为 des mots et groupes de mots entre eux pour former des phrases，或删去 entre。正文保留原字，不将拟补 eux 当作已见原文。
+390,3,287,273,订正／辨析,原文 échanges quotidien 应为 échanges quotidiens，形容词须与复数名词配合。
+391,4,287,273,订正／辨析,原文 du champ d’étude la pragmatique 缺少 de，应为 du champ d’étude de la pragmatique。
+392,5,287,273,订正／辨析,“复句必有多个变位动词”不宜作为无例外的判据。本章下一页即把 après m’avoir ouvert la porte 当作嵌入部分，其中 avoir 为不定式。应以所采用的分句分析标准判断，不能仅以变位动词的个数定义简单句和复句。此注依据本章例证作内部辨析。
+393,6,287,273,待核／拟校,待核：这里未注明43、20、847等词数所用的版本、语料与分词标准；« le record absolu » 的比较范围也未界定。本版保留原数，不据这些数值断言其为所有法语文学的绝对纪录。
+394,7,289,275,订正／辨析,原文 puis fait 的祈使式词形有误，应为 puis fais。这里的作者归属未给作品与页码，尚待原始出处核验；本注仅确证词形错误，不将流传的署名当作已核实引文。
+395,8,289,275,订正／辨析,原文 est aussi appelée aussi 重复 aussi；通常写 est aussi appelée parataxe asyndétique。
+396,9,290,276,订正／辨析,原文 comme comme 重复，删去一处 comme 即可。
+397,10,290,276,订正／辨析,原文 un phrase 应为 une phrase。
+398,11,291,277,订正／辨析,原文 joue un rôle est central 混入 est，应为 joue un rôle central。下句 c’est le verbe s’accorde 缺少关系词 qui，应为 c’est le verbe qui s’accorde。
+399,12,291,277,订正／辨析,原文 autour l’antécédent 缺少 de，且把 heureux 称为关系从句的“先行词”不准确。此例 heureux 是评述性的形容词；qui comme Ulysse a fait un beau voyage 可按无显式先行词的名词性关系从句分析，不是修饰先行词 heureux 的关系从句。参见\ecite{53}第60、80页有关名词性关系从句与非动词句的区分。
+400,13,291,277,订正／辨析,这里三项都有明示的主句系词 est，结构分别为主语名词组＋est＋表语，不应仅因主语含先行词 femme 就判为“非动词句”。按本段自己的定义，这组例句不能证明该结论。au delà la morale 另应写 au-delà de la morale。
+401,14,291,277,订正／辨析,"“无动词”不等于“无句法”。上列 À la recherche du temps perdu、Victoire de la France 等例中仍有介词支配、名词补足语等结构；后文 Habitude, servitude 也被作者分析为主语与谓语关系。应区分“没有明示动词／系词”和“没有句法组织”。"
+402,15,292,278,订正／辨析,原文 Le couple est sous-entendue 应为 La copule est sous-entendue，意为系词被省略。原词 couple 与这里的句法概念不合，且不能与阴性的 sous-entendue 配合。
+403,16,292,278,订正／辨析,把 grammaticalité 概念的起点定为1960年代初并不准确：本章第281页原注6已将讨论语法性与意义的经典例句归于 Chomsky 的 Syntactic Structures（1957）。至少在1957年这一问题已明确进入生成语法的论述，不宜写成始于1960年代。
+404,17,295,281,订正／辨析,这里的 donc acceptables 与作者刚在第280页作出的区分不一致：能够解释、甚至同时合乎语法，并不由此保证在特定处理条件与使用情境中可接受。应删去这一必然推论，或改为“在适当条件下可接受”。
+405,18,295,281,订正／辨析,原文 la première de ce chapitre 疑漏 partie，按上下文应为 la première partie de ce chapitre。
+406,19,296,282,订正／辨析,原文 ne correspond en rien l’axe 缺少 à，应为 ne correspond en rien à l’axe。此前 ce qui se faisait l’époque 也缺 à，应为 ce qui se faisait à l’époque。
+407,20,300,286,待核／拟校,原文 Si on illustrer 是不完整的动词结构；按下文展示图示的语境，可校为 Si on illustre cela…（则还需补后件），或较自然地写 Illustrons cela…；也可能漏了 veut。本版不凭语感把拟补写进正文。
+408,21,300,286,待核／拟校,原文 dans le ci-dessous 疑漏 stemma 或 schéma。图中文字按原图保留；本底本为灰度扫描，无法重建所谓“红色”箭头的原色。
+409,22,300,286,订正／辨析,按这句话前半及下一页汇总图，次序应为“régissant/subordonné 对应 déterminé/déterminant”：petits 在结构上从属于 ruisseaux，而在语义上限定 ruisseaux。原文将后一个二元组的顺序颠倒。
+410,23,301,287,订正／辨析,本页第一图的语义箭头仍向下，déterminant/déterminé 标签也与本页下方汇总图相反。依作者给出的 petits « détermine » ruisseaux，语义方向应由下方 petits（déterminant）指向上方 ruisseaux（déterminé）；正文的 du déterminé au déterminant 同样颠倒。两张底本图均原样保存，不静默改图。
+411,24,302,288,订正／辨析,“pronoms 一概属于不能占据节点的虚词”与本章后面的图示不一致：第291页 je crois…、第292页 Alfred a avoué qu’il a tué 的图中，人称代词 je、il 均为依存节点。至少应限定代词的种类与相应分析，不能把这句概括当作后面所有图示的通则。
+412,25,303,289,订正／辨析,原文 donc internucléaire 作复数主语的表述，应为 donc internucléaires。
+413,26,304,290,订正／辨析,原图左侧为 la mode parisienne，图题 la mode de parisienne 多出 de，正文仍照录。此处是两个同功能表达的比较，不应将箭头读成派生方向：“Paris（名词）经 de 转成形容词性依存成分”，不是“parisienne 变成 Paris”。
+414,27,304,290,订正／辨析,正文 transférendre 应为 transférende。下图却把 parisienne 标为 TRANSFÉRENDE、Paris 标为 TRANSFÉRÉ，与前页三项定义相反：就 de Paris 而言，Paris 是输入项 transférende，de 是 translatif，形容词性成分 de Paris 才是转类结果 transféré；parisienne 是用于比较的原生形容词。原图标签保留。
+415,28,306,292,订正／辨析,原文 il n’y en qu’un seul exemple 缺少 a，应为 il n’y en a qu’un seul exemple。
+416,29,307,293,订正／辨析,原文 le première partie 应为 la première partie。
+417,30,307,293,订正／辨析,底本图题词序错乱；按图中两对支配关系，例句应为 Alfred chante et Bernard crie。图题仍保留原词序。
+418,31,310,296,订正／辨析,原文 sur même plan 缺少定冠词，通常应为 sur le même plan。
+419,32,311,297,待核／拟校,原文 la démarche de Tesnière à la grammaire traditionnelle 缺少表达比较或对照的连接成分；可拟读为 oppose la démarche de Tesnière à celle de la grammaire traditionnelle，但此处仅据上下文拟校，不视作已经恢复的原句。
+420,33,312,298,订正／辨析,图题与图中词项不一致：图有 toujours 和 partout，没有 de。按图中词项顺序还原应为 Alfred fourre toujours son nez partout。保留原图题，不把二者静默统一。
+421,34,313,299,订正／辨析,此处 CH4 是甲烷的分子式，不是其名称；宜作 d’où sa formule CH\textsubscript{4}。原书正文中的数字 4 按底本保留，规范化学式在本注中以下标表示。
+422,35,313,299,订正／辨析,非人称形式不自动意味着零配价。falloir 可以带不定式或命题性补足成分，如 Il faut partir、Il faut que tu partes；因此不能仅因形式主语 il 不指称就把该动词所有用法一概归为 avalent。本注只指出原概括过强，不替换正文的理论框架；参见\ecite{53}第189页的非人称动词补足语表；配价判断是据这些构式作出的辨析。
+423,36,314,300,订正／辨析,原文 verbes intransitifs la grammaire traditionnelle 缺少 de，通常应为 verbes intransitifs de la grammaire traditionnelle。
+424,37,315,301,订正／辨析,此处 jonctifs 与本章此前的术语定义冲突：原书 p.293 把 jonctif 对应于并列连词，而此处列举 à、de、pour 等介词。就此句而言可直接改称 prépositions；按本章 translation 的分析，介词所起的作用应与 translatif 区分说明，而不宜与 jonctif 混同。
+425,38,316,302,待核／拟校,底本此题显见串行或缺文：Alfred mange une pomme 与 voisin et sa femme ont acheté une belle maison 不能按现有词序组成一个通常的句子。可能是两个例句误接，但后一部分的限定词无法仅据底本确证；保留原题，不擅自拆题或补造确定版本。本注不提供习题答案。
+426,39,317,303,订正／辨析,这条释义只覆盖主从复句，而本章原书 pp.272–275 也把并列连接、并置的多小句句子放在 phrase complexe 范围内。为与本章定义一致，应把并列和并置的情形一并包括，而不能要求每个复句都含从属从句。
+427,40,317,303,订正／辨析,“由从属连词”限制过窄：本章 p.274 已列出由关系代词连接的从属结构，并举出含不定式的嵌入结构。宜释为一个分句在结构上依附于另一分句或其组成部分的连接关系；标记不限于从属连词。

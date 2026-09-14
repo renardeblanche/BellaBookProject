@@ -1,0 +1,66 @@
+\chapter*{附录}\addcontentsline{toc}{chapter}{附录}\markboth{附录}{附录}
+\SourcePage{85}
+众所周知，空间 $\R^d$ 是实数域 $\R$ 上的一个向量空间，我们于其上建立积分理论。$\R^d$ 上的每一个线性映射具有形式 $x\mapsto Ax$，其中 $A$ 是一个 $d\times d$ 实矩阵，而 $x$ 可以理解成一个 $d\times1$ 矩阵。由所有可逆的 $d\times d$ 矩阵作成的群记为 $GL(d,\R)$。
+
+当 $x\in\R^d$，我们总是用 $\|x\|$ 表示 $x$ 的Euclid 范数，即
+\[\|x\|=(x_1^2+\cdots+x_d^2)^{1/2},\quad\text{若 }x=(x_1,\ldots,x_d).\]
+回忆，$\R^d$ 的一个子集 $O$，若 $O$ 中的任意一点皆为包含在 $O$ 内的某个球的中心，亦即对某个 $\delta>0$，$\{y;\|y-x\|<\delta\}\subset O$，则称 $O$ 为\textbf{开集}。已知：开集的任意并集和有限交集为开集。因此，包含在一个给定集合 $M$ 中的所有开集的并集仍然是开集。$M$ 的最大的开子集叫做 $M$ 的内部。注意，$x$ 属于 $M$ 的内部的充分与必要条件是 $x$ 为包含在 $M$ 中的某个开球的中心。
+
+一个集合 $F$，若它的余集 $F^c=\R^d\setminus F$ 是开的，则称之为\textbf{闭集}。我们知道，闭集的任意交集和有限并集为闭集。那个包含给定集合 $M$ 的最小闭集（即所有包含 $M$ 的闭集之交集）叫做 $M$ 的闭包并记作 $\overline M$。注意，$x\in\overline M$ 的充分与必要条件是每个以 $x$ 为心的开球皆切割 $M$。其次，称 $\overline M\cap\overline{M^c}=\partial M$ 为 $M$ 的边界，从而 $\partial M$ 由所有这样的点 $x$ 组成，即任一以 $x$ 为中心的球既切割 $M$ 同时也切割它的余集 $M^c$。
+
+$\R^d$ 的一个闭的且为有界的子集称之为\textbf{紧致集}。根据 Borel--Lebesgue 引理，覆盖一个紧致集 $K$ 的任意一族开集含有一个有限子族，此子族也覆盖 $K$。
+\Exercise 试证：a) $F$ 为一闭集的充分与必要条件是 $F$ 中的每一收敛序列的极限属于 $F$。b) $K$ 为紧致集的充分与必要条件是 $K$ 中每一序列有一个收敛的子序列，其极限在 $K$ 中。
+\SourcePage{86}
+对于一个函数 $f:\R^d\to\R$，其支集 $\operatorname{supp}f$ 定义为使 $f(x)\ne0$ 的所有 $x$ 之集合的闭包。这也就是说，$(\operatorname{supp}f)^c$ 是使 $f(x)=0$ 的点集的内部。因为支集恒为闭集，所以 $\operatorname{supp}f$ 为紧致集的充分必要条件是在一个有界集之外 $f(x)=0$。把从 $\R^d$ 到 $\R$ 的所有连续函数的集合记作 $C=C(\R^d)=C(\R^d,\R)$，另外，$C_0=C_0(\R^d)$ 为由 $C$ 中所有具有紧致支集的函数所组成的集合。
+
+对于任意函数 $f_n$，可按通常的方法逐点定义函数
+\[|f_1|,\quad f_1+f_2,\quad f_1f_2,\quad\max(f_1,f_2),\quad\min(f_1,f_2),\]
+\[\lim_n f_n,\quad\sup_n f_n\quad\text{和}\quad\inf_n f_n,\]
+例如
+\[(\max(f_1,f_2))(x)=\max(f_1(x),f_2(x))\]
+而
+\[(\sup_n f_n)(x)=\sup_n f_n(x),\quad\text{对所有 }x\in\R^d.\]
+我们令 $f^+=\max(f,0)\ge0$ 和 $f^-=\max(-f,0)\ge0$，\Corr{16}则有
+\[f=f^+-f^-,\qquad |f|=f^++f^-.\]
+若 $E$ 是 $\R^d$ 的一个子集，我们定义它的特征函数 $\chi_E$ 为
+\[\chi_E(x)=\begin{cases}1&\text{当 }x\in E,\\0&\text{当 }x\in E^c=\R^d\setminus E.\end{cases}\]
+于是有
+\begin{align*}
+\chi_{E^c}&=1-\chi_E,\\
+\chi_{E_1\cup E_2}&=\max(\chi_{E_1},\chi_{E_2})=\chi_{E_1}+\chi_{E_2}-\chi_{E_1}\chi_{E_2},\\
+\chi_{E_1\cap E_2}&=\min(\chi_{E_1},\chi_{E_2})=\chi_{E_1}\chi_{E_2},\\
+\chi_{E_1\triangle E_2}&=|\chi_{E_1}-\chi_{E_2}|=\chi_{E_1}+\chi_{E_2}-2\chi_{E_1}\chi_{E_2}.
+\end{align*}
+这里，$E_1\triangle E_2=(E_1\cup E_2)\setminus(E_1\cap E_2)$，称为 $E_1$ 和 $E_2$ 的对称差，即 $E_1\triangle E_2$ 由属于 $E_1$ 和 $E_2$ 中之一但不同时属于 $E_1$ 和 $E_2$ 之点所组成。
+\Exercise 试证 $\chi_E$ 于点 $x$ 为连续的充分必要条件是 $x\notin\partial E$。
+
+对于一个序列 $(a_n)_1^\infty$，其中 $a_n$ 可以是实数，是 $+\infty$，或者是 $-\infty$。若当 $n\to\infty$ 时 $a_n$ 上升（下降）地趋于 $a$，即若对所有 $n$
+\SourcePage{87}
+\[a_n\le a_{n+1}\ (a_n\ge a_{n+1})\quad\text{且}\quad\lim_{n\to\infty}a_n=a,\]
+则用记号 $a_n\uparrow a$（$a_n\downarrow a$）当 $n\to\infty$ 来表示。对于一个任意序列 $(a_n)_1^\infty$，优于它的最小下降序列是 $(\sup_{k\ge n}a_k)_{n=1}^\infty$，我们令
+\[\limsup_{n\to\infty}a_n=\lim_{n\to\infty}(\sup_{k\ge n}a_k)=\inf_n(\sup_{k\ge n}a_k).\]
+类似地，令
+\[\liminf_{n\to\infty}a_n=\lim_{n\to\infty}(\inf_{k\ge n}a_k)=\sup_n(\inf_{k\ge n}a_k).\]
+显然地，有
+\[\liminf a_n\le\limsup a_n,\]
+其中等号当而且仅当 $\lim a_n$ 存在时成立。
+
+设 $f:M\to\R$ 是一个任意函数，我们分别地用 $\sup_M f$ 和 $\inf_M f$ 表示值集的上确界和下确界。这里，若 $f$ 为上方无界，则令 $\sup_M f=+\infty$。显然地，
+\[\sup_M f=-\inf_M(-f)\]\Corr{17}
+并且
+\[\sup_M(f+g)\le\sup_M f+\sup_M g.\]
+我们取 $M=\{k;k\ge n\}$ 就知，若 $(a_n)$ 和 $(b_n)$ 为下方有界序列则有
+\[\limsup(a_n+b_n)\le\limsup a_n+\limsup b_n.\]\Corr{18}
+若 $f$ 和 $g$ 是上方有界的，则由不等式 $f\le g+|f-g|$ 和 $g\le f+|f-g|$ 即得
+\[\left|\sup_M f-\sup_M g\right|\le\sup_M|f-g|.\]
+若 $M=\{1,2\}$，由此可得
+\[|\max(a_1,a_2)-\max(b_1,b_2)|\le\max(|a_1-b_1|,|a_2-b_2|).\]
+对于 $\R^d$ 的一个非空子集 $M$，我们令
+\[d(x,M)=\inf_{y\in M}\|x-y\|=-\sup_{y\in M}(-\|x-y\|).\]
+注意，$d(x,M)=0$ 的充分必要条件是 $x\in\overline M$。其次，由于
+\SourcePage{88}
+\[|d(x_1,M)-d(x_2,M)|\le\sup_{y\in M}|-\|x_1-y\|+\|x_2-y\||\le\|x_1-x_2\|,\]
+从而 $x\mapsto d(x,M)$ 是连续的（甚至是一致连续的）。
+\Exercise 假设 $F$ 是开集 $O$ 的一个闭子集。试证函数
+\[f(x)=\frac{d(x,O^c)}{d(x,F)+d(x,O^c)},\quad x\in\R^d\]
+是连续的，并有 $0\le f\le1$，当 $x\in F$ 时 $f(x)=1$ 和 $\operatorname{supp}f\subset\overline O$。其次，证明：若 $K$ 是紧致的，则有 $f\in C_0$，$0\le f\le1$，在 $K$ 的一个邻域内 $f=1$ 和 $\operatorname{supp}f\subset O$。

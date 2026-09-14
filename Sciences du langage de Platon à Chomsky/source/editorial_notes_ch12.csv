@@ -1,0 +1,157 @@
+﻿number,source_pdf_page,printed_page,note_tex,preceding_text
+480,351,337,章首 implicature 用了单数，但与 les、conversationnelles 不一致，应为 implicatures conversationnelles；正文对应标题亦见。,"{enumerate}[label=\textcircled{\scriptsize\arabic*}]
+\item Oswald Ducrot : les lois du discours
+\item Paul Grice : les maximes et implicature conversationnelles"
+481,353,339,此处将所有语言一概称为“被说出”的语言，需限定：自然手语并不使用口语的声音通道。若 parlées 仅宽泛指语言被使用，须与本段随后讨论的 parole 及书面语对立区别。参见本书第七章及前文关于手语的讨论。,"9}
+\begin{keybox}[Introduction]
+\renewcommand{\thempfootnote}{校\arabic{editorialnote}}
+S’il est un point commun à toutes les langues, c’est bien d’être parlées."
+482,353,339,原文 dans la deuxième partie dans ce chapitre 的后一 dans 应为 de；按本章实际编号，言语行为与会话语用学位于第三节（III），并非第二节。原文 actes de langages 通常亦写作 actes de langage。,"ctes de langages, performativité, linguistique conversationnelle, linguistique de la politesse, etc.) seront présentés dans la deuxième partie dans ce chapitre."
+483,353,339,1907 应为 1902；下一页同书例句亦给出 1902。此项依据本书内部对照。\ecite{56},"e。}
+\end{keybox}
+
+\section{LA LINGUISTIQUE DE L’ÉNONCIATION}
+Élève d’\textbf{Antoine Meillet} à l’École Pratique des Hautes Études, Émile Benveniste (1907-1976)"
+484,353,339,任教终年待核：应区分实际停止授课与正式教席任期的终点。本轮未取得可核验的正式任职记录，故不据二手年表把 1969 直接改为另一年份。,"此项依据本书内部对照。\ecite{56}} a enseigné lui-même dans cet établissement, ainsi qu’au Collège de France, où il a occupé la chaire de grammaire comparée de 1937 à 1969."
+485,354,340,例中含两个话语层次：“La semaine dernière”相对于转述者说话时间定位；引号内 demain、je、ici、vous 则相对于教师说话时的语境定位。不能把全部指示语统一回指到转述时刻；本页列表只分析了直接引语层。,"ème personne du pluriel renvoyant aux destinataires, soit « les étudiants ».
+\item L’adverbe « ici », embrayeur spatial, signifiant « dans la salle de classe »."
+486,355,341,版本待核：此处将题名“诗学”与 1929 年连用，需区分早期版本与修订本，不宜仅凭后出译本题名确定初版信息。法文书名的单复数也待相应题名页核对。本轮未取得两个俄文版本的题名页，故不在正文中改名改年。\ecite{57},"par le philosophe et théoricien de la littérature \textbf{Mikhaïl Bakhtine} (1895-1975) dans son ouvrage \textit{Problème de la poétique de Dostoïevski} (1929),"
+487,356,342,引语中的 il n’a que 应为 il n’y a que；原文如此。,"m des autres, tout cela, pour Ducrot, relève de la polyphonie :
+
+\textbf{Ex :} Le professeur dit : « Pour Saussure, dans la langue il n’a que des différences. »"
+488,356,342,d’adresse 应为 s’adresse，系代词误植。,"u narrateur).
+
+\minititle{\textcircled{\scriptsize 2} Le destinataire}
+Vous l’avez sûrement deviné : le destinataire est l’actant à qui l’énonciateur d’adresse."
+489,356,342,“与发话者不同”这一限制过强：多人合署的声明等也可有共同发话主体。此处可作为单一发话者的分析假设，不宜读成对一切交际的排他规定。,"cutaire. À l’écrit, on parle de lecteur. Contrairement à l’énonciateur, le destinataire peut être multiple (quand on s’adresse à plusieurs personnes à la fois)."
+490,356,342,parle 后有一个无对应左括号的右括号；照录并注明排印疑误。,"onstances de lieu et de temps. Un circonstant de lieu est déterminé par rapport au lieu de l’énonciation : « ici », c’est-à-dire, l’endroit où le « je » parle)."
+491,357,343,prononcée 的前置宾语 l’ 指阳性的 énoncé，应为 prononcé。,"e vais me coucher.
+
+Si l’on sait que c’est Paul qui a prononcé cet énoncé, on peut en déduire que « je » représente Paul. Mais si l’on ignore qui l’a prononcée,"
+492,357,343,lieu 后缺左括号，应为 circonstances de lieu (embrayeurs spatiaux)。,"re, sont appelés embrayeurs subjectifs (ou personnels). Les seconds se réfèrent aux circonstances de l’énonciation : circonstances de lieu embrayeurs spatiaux),"
+493,358,344,本例明列于第二人称项下，括注却用第一人称 Notre。若母亲为双方共有，Notre 可以成立；若专举第二人称隐含领属，应为 Ta。原文情境不足，保留并注明例证与分类的不完全对应。,"Un voisin voudrait te voir. (sous entendu : Un \textit{de tes} voisins voudrait te voir.)
+
+\hspace*{1.5em}Maman a téléphoné. (\textit{Notre} maman a téléphoné.)"
+494,358,344,此例实际对比直陈式复合过去时 a assassiné 与条件式过去时 aurait assassiné；前文“直陈式现在时”与例句不符。,"u lieu du présent de l’indicatif, pour exprimer le doute :
+\end{itemize}
+\textbf{Ex :} Le mari a assassiné sa femme / le mari \textit{aurait} assassiné sa femme"
+495,358,344,sans doute 为副词性短语，selon moi、d’après eux 为介词性结构；不能把三个完整形式一律标为 syntagme nominal（名词短语）。,"e ou une locution adverbiale : franchement, sincèrement, malheureusement, pas du tout, etc.
+\item un syntagme nominal : sans doute, selon moi, d’après eux, etc."
+496,359,345,à gauche、près de moi 整体为介词性／副词性空间表达，而非名词短语；这是句法类别的误标，不影响其可具有空间指示功能。,"tains adverbes de lieu (« ici », « là-bas », « là-haut », « céans », « derrière », etc.)
+\item certains syntagmes nominaux (« à gauche », « près de moi », etc.)"
+497,359,345,第三人称加叙述时态并不足以推出“脱离口头话语”或无指示定位。例如 Il dormait ici hier 即为第三人称未完成过去时，却由 ici、hier 明确联系说话情境。“非接合叙述”须按整个话语的定位方式判断。," passé simple et imparfait) ne constituent pas des embrayeurs temporels, car ils se trouvent ainsi hors discours oral. On dit qu’ils sont « hors plan embrayé »."
+498,359,345,“仅限口语”过窄：书信中的 je、ici、demain 同样可具有指示功能，且指示不必伴随手势。下文自己的“时间指示”定义也并未要求可见手势。术语的较窄用法应与一般的 deixis 概念区别。,"oyé comme synonyme d’embrayeur. Au sens strict, le déictique est un embrayeur particulier, réservé à l’usage oral, souvent accompagné d’un geste de monstration."
+499,360,346,希腊语 {\BBSixGreek δεῖξις} 是名词，义为“指示／展示”；“montrer”是对相关动词 {\BBSixGreek δείκνυμι} 的释义。此处不宜把名词词性误解为动词。,"it{Linguistique générale et linguistique française} (1932).
+
+\minititle{\textcircled{\scriptsize 1} Définition}
+Deixis est un mot grec qui signifie « montrer »."
+500,360,346,est en une référence 应为 est une référence，或 consiste en une référence；两种结构发生混合。,"al démonstratif (« cet objet-ci », « cet objet-là »).
+
+\minititle{3. La déixis temporelle}
+La déixis temporelle est en une référence au moment de l’énonciation."
+501,361,347,这里“dépendant”指指称解释依赖语境，不等于形态学上必须附着于另一形式的黏着语素。demain 可以独立成答语，应区分语境依赖与形态依附。, « demain \textit{par rapport au moment où je parle.} » C’est un déictique temporel exprimant un futur \textit{relatif} au moment de la situation d’énonciation.
+502,362,348,cet animal 后漏闭引号，应为 (« cet animal » ou « ce dernier »)。此外 ce dernier 倾向指较近先行项，并非在任何语境中都能机械地消除歧义。,"ès laid ? Est-ce le voisin ou le gros chien ? Pour dissiper cette amphibologie, l’utilisation d’un syntagme nominal anaphorique (« cet animal ou « ce dernier »)"
+503,363,349,énonciateur destinataire 之间缺连接词 et；应为 entre énonciateur et destinataire。,"xis mémorielle se caractérise par le recours à des connaissances, des références ou à des événements extralinguistiques partagés entre énonciateur destinataire,"
+504,364,350,原句 une expression anaphorique qui marque… alors que… 缺少主句谓语；按与后半句平行的结构，qui 宜删去，作 une expression anaphorique marque…。,"t déjà placé dans le focus, alors qu’une expression déictique a précisément pour rôle d’attirer l’attention de l’interlocuteur sur un nouvel objet de référence."
+505,365,351,Paul glissé 缺助动词，应为 Paul a glissé。,"s dans les énoncés ci-dessous :
+
+\textbf{Ex :} Fais attention à \textit{la} marche ! (emploi de situation immédiate)
+
+\hspace*{1.5em}Paul glissé sur une marche."
+506,365,351,pas main 应为 pas la main，缺少定冠词。,"âtisserie)
+
+\hspace*{1.5em}J’ai interrogé ma fille sur le vase cassé. \textit{Celle-ci} ne sait rien. (emploi anaphorique)
+
+\textbf{Ex :} Ne te brûle pas main !"
+507,365,351,chose 后的 pas 游离于句法结构，疑为残留误植；可删去，保留其余句子。,"esseur. \textit{Il} déteste la linguistique. (emploi anaphorique)
+
+C’est sur cet exemple, qui, j’espère, ne vous donnera pas l’idée de faire la même chose, pas,"
+508,366,352,élève 前的开引号没有对应闭引号；宜删去该开引号，将引号仅用于后面的直接引语。生卒年括注按底本保留，不作为当前人物状态资料。,"e. Pour le linguiste américain \textbf{John Searle} (1932-), « élève et continuateur de John Austin, « Parler une langue, c’est réaliser des actes de langage »."
+509,366,352,所列 The acts of language 不是英文原著书名；英文原著为 Speech Acts: An Essay in the Philosophy of Language（1969）。本轮核对英文书目记录，法译本的版年另待核，不把英法题名和年份混合。\ecite{58}," actes de langage ».\ednote{élève 前的开引号没有对应闭引号；宜删去该开引号，将引号仅用于后面的直接引语。生卒年括注按底本保留，不作为当前人物状态资料。} Son célèbre ouvrage éponyme, \textit{The acts of language} (1970),"
+510,366,352,fondateurs cette nouvelle discipline 中缺 de，应为 fondateurs de cette nouvelle discipline。,Speech Acts: An Essay in the Philosophy of Language（1969）。本轮核对英文书目记录，法译本的版年另待核，不把英法题名和年份混合。\ecite{58}} est un des ouvrages fondateurs cette nouvelle discipline.
+511,366,352,constatatifs 应为 constatifs，多植 ta。,"’il existe des énoncés qui ont la particularité d’être eux-mêmes l’acte qu’ils désignent, et qui donc n’entrent pas dans la catégorie des énoncés constatatifs :"
+512,366,352,“适配方向”不能与“施为／记述”一一对应：Searle 的分类中，断言为词适配世界，指令与承诺为世界适配词，表达类无此适配方向，宣告类为双向。施为行为也不保证期望的外部结果已经发生。\ecite{59},"paravant. À l’opposé, après un énoncé performatif, le réel n’est plus tout à fait ce qu’il était auparavant. Dans ce cas, c’est le réel qui s’ajuste à l’énoncé."
+513,368,354,长引文有三处可明确定位的排印／语法问题：plus 后缺闭括号；procédure conventionnelles 应为 procédure conventionnelle；je… ne tend 应为 je… ne tends。均按底本照录，不据此反推为 Austin 原著的错误。,"uelque chose, dire « D’accord! », par exemple). Et l’on peut difficilement parler d’un don si je dis « Je te le donne », mais ne tend point l’objet en question."
+514,369,355,vérité 与 énoncés 之间缺 des，应为 les conditions de vérité des énoncés constatifs。, directeur. Austin en conclut que l’opposition initiale entre les conditions de félicité des énoncés performatifs et les conditions de vérité énoncés constatifs
+515,370,356,施事力不能等同于“意动功能”：断言、感谢、宣告等也具有施事力，却不能全部还原成促使听者行动的功能。间接请求只是施事行为的一例。\ecite{59}," volonté de réaliser certains actes que réside la force illocutoire des énoncés. Cette volonté, cet élan, c’est, rappelez-vous, la fonction conative du langage."
+516,370,356,取效行为并非“解码阶段”：Austin 区分听者对意义及施事力的理解（uptake）与说服、惊吓、促使行动等进一步效果。理解请求而不照办仍可完成理解，但未产生说话者预期的取效结果。\ecite{60},"ici de comprendre le sens immédiat (de l’acte locutoire) d’un énoncé, mais aussi la force illocutoire (l’intention) qu’il contient, et de réagir en conséquence."
+517,370,356,“施事行为不能失败”不成立，且与本章原书 pp.353、355 关于合适条件及失误的说明冲突。说出句子不保证成功实施命名、宣告等行为；例如无权限者实施命名可以无效。须区分行为是否成立与成立后承诺是否履行。\ecite{60},"es de langage qui ne peuvent échouer, justement parce qu’ils sont inséparables du langage : selon une formule familière aux pragmaticiens, « dire c’est faire »."
+518,370,356,引文归属与论证方向待核：本段把“绝对充盈并掌握自身”作为 Derrida 的正面主张，但紧接着的引文讨论的是施为话语产生或改变情境；仅凭这两段不能推出行为不受语境制约。需以 « Signature événement contexte » 原篇核对被引短语的主语及上下文，本轮不把拟校写作确证。\ecite{61},ar le contexte de réalisation. Derrida envisage au contraire la performativité comme un « pouvoir-dire et vouloir-dire absolument plein et maître de lui-même ».
+519,371,357,此段的推论仍待原篇核对：“最终结果不决定是否构成施为”并不逻辑蕴含“无须语境、自给自足”。后一命题比前一命题更强，也不能直接由前页“产生或改变情境”的引文推出。保留原文，不凭摘要重构 Derrida 的完整立场。\ecite{61},"on du concept de performativité dans la mesure où il affirme que l’action contenue dans l’énoncé performatif peut être effective, mais peut aussi ne pas l’être."
+520,371,357,1962 是 Austin 讲稿的身后出版年，不是他在世时作出这一转变的年份。该书依据 1955 年 William James 讲座整理；以下分类见第十二讲。\ecite{60},"atifs, Austin a admis que toute énonciation correspond à l’accomplissement d’un acte illocutoire et a classé les actes illocutoires en cinq grandes catégories :"
+521,371,357,"列举中 « nommer déclarer » 之间缺少分隔标点，应作 « nommer, déclarer »。","ettent de commander, ordonner, pardonner, léguer, plaider pour, supplier, recommander, implorer, conseiller, nommer déclarer une séance ouverte, proclamer, etc."
+522,371,357,下列五类对应 Searle 后来系统提出的施事行为分类，参见 1975 年 « A Taxonomy of Illocutionary Acts »；不宜全部归于 1969 年首著。该文还明确区分“施事行为的分类”和“施事动词的分类”。\ecite{59},"it{Speech Acts} (1969), s’appuyant sur la théorie des actes de langage de son ancien professeur, il a proposé sa propre classification des verbes performatifs :"
+523,372,358,« appartient à pragmatique » 缺冠词，应为 « appartient à la pragmatique »。,"e des actes de langage d’Austin et Searle, de la théorie de l’argumentation d’Oswald Ducrot, et de l’interactionnisme sociologique d’Erving Goffman (1922-1982)."
+524,372,358,术语通常写作 « actes de langage »，此处 « langages » 的复数不合本章所用术语。,"articiper au jeu, c’est en accepter les règles. De même, utiliser le langage, c’est se soumettre à ses « lois ». Ducrot a donc formulé quatre lois du discours :"
+525,373,359,« on ne doit de parler » 多出介词 de，应作 « on ne doit parler »。,"{itemize}
+\origpage{373}{359}
+\begin{itemize}
+\item Selon la loi d’intérêt, on ne doit de parler que de ce qui est susceptible d’intéresser notre interlocuteur."
+526,373,359,« signification naturelle » 应为 « signification non naturelle »。在 Grice 的区分中，诉诸说话者意图及听者对该意图的识别，属于非自然意义（meaning\textsubscript{NN}）；自然意义的典型例子则是症状表示疾病。\ecite{62},"ntiels :
+\begin{itemize}
+\item le principe de signification naturelle : pour le destinataire, comprendre un énoncé consiste à récupérer l’intention du locuteur."
+527,374,360,« à travers par la voie » 为两个表达的叠合，应择 « par la voie » 或 « à travers »，不应连用。,intention (le « vouloir-dire ») du locuteur. Son hypothèse est qu’il y parvient à travers par la voie du principe de coopération et des maximes de conversation.
+528,374,360,« Paul Grice édicté » 缺谓语助动词，宜作 « Paul Grice a édicté »；也可采用现在时 « édicte »，但不能只用过去分词。,"不应连用。}
+
+\minititle{2. Les maximes conversationnelles}
+Paul Grice édicté des maximes conversationnelles auxquelles les interlocuteurs sont tenus de se conformer."
+529,374,360,数量准则第一项并非“信息越多越好”，而是提供当前交谈目的所要求的充分信息（as informative as is required）。应将 « que possible » 改为 « qu’il est requis pour les buts de l’échange » 一类表述；否则与下项“不要过量”相冲突。\ecite{63},"\textbf{Ducrot} :
+\begin{itemize}
+\item Maxime de quantité :
+\begin{itemize}
+\item Fais en sorte que ta contribution apporte autant d’informations que possible."
+530,375,361,« visait communiquer » 缺 à，应为 « visait à communiquer »。," les maximes apparemment enfreintes.
+\item Le destinataire en infère que le locuteur visait communiquer B. On dit alors que « B est l’implicature de A dans C »."
+531,375,361,Grice 区分隐蔽违反（violate）、公开不遵守以产生含意（flout）及准则冲突（clash）。本节用同一 « violation » 覆盖这些情形，容易遮蔽区别；下文“信息不足以免无据”尤其是准则冲突的例子。\ecite{63}," Les violations volontaires}
+Dans une conversation, on peut être amené à violer volontairement des maximes conversationnelles. Illustrons cela avec un exemple :"
+532,375,361,« preuve) » 之前缺闭引号，应作 « preuve »)。关于重复出现的 « autant d’informations que possible »，参见原书 p.360 对应校注；此处仍照底本保留。,e de qualité (« Ne dis pas ce pour quoi tu manques de preuve) et de quantité (« Fais en sorte que ta contribution apporte autant d’informations que possible »).
+533,375,361,« selon laquelle qui interdit » 句法叠合，宜删去 « selon laquelle »，保留 « qui interdit »。,"xime de quantité, B aurait pris le risque de violer la deuxième maxime de qualité, selon laquelle qui interdit de donner des informations dont on n’est pas sûr."
+534,376,362,本段正解释“规约含意”，故 « conversationnelle » 应为 « conventionnelle »；« courageaux » 应作 « courageux »。所给英文例句传达“其勇敢可由其英国人身份推出”的联系，并未直接断言“所有英国人都勇敢”，不宜将两者完全等同。\ecite{63},"’implicature conversationnelle est déclenchée par le terme \textit{therefore}. Ce qui est implicité (l’implicature), c’est que tous les anglais sont courageaux."
+535,377,363,第一项“Jean 喜欢语言学”是此句断言的核心内容，不应同后两项一起列作含意；这也与前页对“所说”及“含意”的区分冲突。后两项的尺度、备选项及地位须结合所采理论分析，不在正文静默改写。,"itemize}
+\item Jean aime la linguistique
+\item D’autres personnes aiment la linguistique
+\item Jean est la personne la moins susceptible d’aimer la linguistique"
+536,377,363,« encore » 在这里要求已有过相应失败，而不必是“已经失败多次”：仅一次既往失败也足以使该用法成立。此外，此类重复性背景常按预设处理，不应不加说明地全部等同于 Grice 式规约含意。,"examen\\
+(Implicature : il a déjà raté plusieurs examens.)
+
+Martin est \textit{parvenu} à me convaincre.\\
+(Implicature : ce n’est pas facile de me convaincre.)"
+537,377,363,“推得任何命题”过宽：逻辑蕴涵、听者偶然联想到的命题等并不因此成为会话含意；还须有可归属于说话者交际用意的推理联系。Grice 的推导条件包括共享知识、合作假设及说话者可预期听者作出该推断。\ecite{63}," relève de la pragmatique. Si l’interlocuteur infère une proposition quelconque, on dira qu’il a tiré de l’énoncé du locuteur une implicature conversationnelle."
+538,378,364,书名有误：本章原书 p.371 的延伸书目列作 \textit{Principles of pragmatics}（1983），应据该书目订正；不是此处的 \textit{Pragmatics of politeness}。,"ragmatics of politeness} (1983), le linguiste anglais \textbf{Geoffrey Leech} (1936-2014) a proposé sa propre interprétation des phénomènes liés à la politesse."
+539,379,365,两句法译将 dispraise / approval 误作“使对方不快／愉快”。应为“尽量减少对他人的贬抑／尽量增加对他人的赞许”；原书下一页表格的 « la critique de l’autre / l’éloge de l’autre » 也支持此订正。,"pression of beliefs which express approval of other.
+\end{quote}
+\begin{itemize}
+\item Minimisez le déplaisir de l’autre.
+\item Maximisez le plaisir de l’autre."
+540,379,365,同上，praise / dispraise 并非“快乐／不快乐”，此处应为减少自赞、增加自谦或自我贬抑。下一页表格的 « l’éloge de soi / l’autocritique » 与英文相合。,"aise of self; maximize the expression of dispraise of self .
+\end{quote}
+\begin{itemize}
+\item Minimisez le plaisir de soi.
+\item Maximisez le déplaisir de soi."
+541,380,366,表中 générosité 行最后一格重复了 tact 行的 « les bénéfices pour autrui »，与前页英文及法文“最大化自己的付出”不符，应为 « les coûts pour soi »。,"} & l’antipathie & la sympathie\\ \hline
+\end{tabularx}
+\end{center}
+Table: Les maximes de politesse de G. N. Leech (\textit{apud} C. Alberdi Urquizi 2009, 28)."
+542,380,366,« Steven Levinson » 中名字应作 Stephen；本章原书 p.371 的书目也使用 Stephen。后文同类拼写照底本保留，不再逐处重复注释。,ven Levinson} (1947-) se basent sur les notions de « face » et de « territoire » proposées initialement par le sociologue et linguiste américain Erving Goffman.
+543,381,367,« avec d’autrui » 中 d’ 多余，应作 « avec autrui »。,d’autrui est source de conflit potentiel. Des contraintes rituelles (les règles de politesse) sont donc mises en œuvre pour protéger la face des interlocuteurs.
+544,382,368,« aux notions de notions de politesse » 中 « notions de » 重复，应删一组。,"ioni s’est également intéressée aux notions de notions de politesse négative et positive, qui sont, selon elle, sans rapport avec la face positive et négative :"
+545,383,369,« ta nouvelle coiffure très jolie » 作为完整断言缺系词，宜作 « ta nouvelle coiffure est très jolie »；若为口语省略形式则需交代，本处照底本保留。,"nouvelle coiffure \textit{très} jolie », « tu es \textit{vraiment} sympa », etc. L’intonation et les mimiques peuvent aussi jouer le rôle d’intensifieur du FFA."
+546,384,370,题干 « Ducros » 为 « Ducrot » 之误；本章相应小节及书目均为 Oswald Ducrot。,"keybox}
+
+\Needspace{14\baselineskip}
+\minititle{III. Dans les dialogues suivants, dites quelles maximes de Ducros, Grice et Leech ont été utilisées ou violées :"
+547,384,370,第四段对话称呼底本作“主总”，可能为“朱总”等姓氏误字，但现有上下文不能唯一确定，故仅列待核，不猜改人名。," salle de réunion
+
+A : 你所提的条件，有一些，我是同意的，只是对其中的某些条款我还需要回去和同事们研究研究，再向上级请示一下。
+
+B : 我很高兴您能表示同意，希望能早日达成协议。
+
+\medskip
+Dialogue 4 : dans le bureau du directeur
+
+A : 主总"
+548,386,372,法文名词 performativité 指“施为性／行事性”，不是执行行为的“语句”本身。若保留此中文定义，法文词头宜为 « énoncé performatif »；若保留词头，则定义应改为话语实施行为的性质。参见本章前文对 énoncé performatif 的说明。,"saire}
+\origpage{386}{372}
+\gloss{énoncé 陈述}{描述事态、行动、情感或信念的语句。}
+\gloss{déictique 指示成分}{词或短语将话语直接与时间、地点或人物联系起来的一种说法。}
+\gloss{performativité 行事话语}{言语行为理论中执行动作的语句。"

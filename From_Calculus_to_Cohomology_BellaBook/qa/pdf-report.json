@@ -1,0 +1,42 @@
+{
+  "pages": 311,
+  "paper_mm": [
+    176.0,
+    250.0
+  ],
+  "toc_entries": 49,
+  "link_count": 1258,
+  "bad_internal_links": [],
+  "boundary_flags": [],
+  "low_text_pages": [
+    6
+  ],
+  "notes_on_pages": [
+    2,
+    7,
+    10,
+    14,
+    20,
+    24,
+    25,
+    35,
+    36,
+    39,
+    45,
+    60,
+    71,
+    103,
+    231,
+    247,
+    263,
+    264,
+    266,
+    307
+  ],
+  "replacement_character_count": 0,
+  "text_characters": 436173,
+  "editorial_notes": 23,
+  "exercises": 188,
+  "index_entries_accepted": 243,
+  "visual_qa": "All pages reviewed in contact sheets; representative formulas, chapter openings, notes and index checked at larger size."
+}

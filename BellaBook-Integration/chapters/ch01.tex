@@ -1,0 +1,308 @@
+\chapter{Riemann 积分}
+\section{Riemann 积分的定义}
+\SourcePage{1}
+我们将仅考虑定义在一固定有限区间 $I\subset\R^d$
+\[
+I=\{x;a_j\le x_j\le b_j,\ 1\le j\le d\}=[a_1,b_1]\times\cdots\times[a_d,b_d]
+\]
+上的有界函数（这里区间总指这样的轴向平行体）。我们定义 $I$ 的测度为
+\[m(I)=\prod_{j=1}^d(b_j-a_j).\]
+对于不同于 $I$ 的区间，其测度的定义类似。
+
+设 $f$ 为 $I$ 上的函数。若 $I$ 可以剖分成有限多个子区间 $I_i$，使在每个 $I_i$ 内 $f$ 为常数，则说 $f$ 为分片常数。若在 $I_i$ 内 $f=c_i$，我们令
+\[\int_I f\dd=\int_I f(x)\dd=\sum_i c_i m(I_i).\]
+显然，在利用区间 $I$ 的另一个剖分 $I'_i$ 时，此值不会改变。事实上，只要把 $I'_i\cap I_k$（它是 $I'_i$ 或 $I_k$ 的加密）当作 $I$ 的新的剖分便可立即看出。
+
+我们将限于实值函数，并用 $T$ 记 $I$ 上所有分片常数函数之集合。上面所定义的 $T$ 中函数的积分具有性质：
+\eqn{1.1.1}{\int_I f\dd\ge0,\quad\text{若 }f\in T\text{ 且 }f\ge0,}
+\eqn{1.1.2}{\int_I(af+bg)\dd=a\int_I f\dd+b\int_I g\dd,\quad f,g\in T,\ a,b\in\R.}
+\SourcePage{2}
+若 $f$ 是 $I$ 上的有界实值函数，我们定义 $f$ 的 Riemann 上、下积分分别为
+\eqn{1.1.3}{\uint_I f\dd=\inf_{f\le h\in T}\int_I h\dd,\qquad\lint_I f\dd=\sup_{f\ge h\in T}\int_I h\dd.}
+这样，我们有
+\eqn{1.1.4}{\lint_I f\dd\le\uint_I f\dd.}
+事实上，若 $h_1\le f\le h_2$，则 $h_2-h_1\ge0$。其次，若 $h_1,h_2\in T$，则由 \eref{1.1.1} 和 \eref{1.1.2} 有
+\[0\le\int_I(h_2-h_1)\dd=\int_I h_2\dd-\int_I h_1\dd,\]
+此式表明所述论断。
+\begin{statement}{定义}{1.1.1}
+如果 $\lint_I f\dd=\uint_I f\dd$，则称 $f$ 是 Riemann 可积的，并令 $\int_I f\dd$ 等于上述共同值，称此值为 $f$ 的积分。
+\end{statement}
+上述定义又可以陈述为：对任意 $\varepsilon>0$，存在 $h_1,h_2\in T$，使得 $h_1\le f\le h_2$ 和
+\eqn{1.1.5}{\int_I(h_2-h_1)\dd<\varepsilon.}
+$I$ 上的任一连续函数皆是 Riemann 可积的，这是因为此种函数为一致连续。假若剖分充分的细，并如此定义 $h_1$ 和 $h_2$，即在每个子区间内它们分别等于 $f$ 的最小和最大值，则对于任给 $\varepsilon$，可以使得 $h_2-h_1<\varepsilon$，从而
+\[\int_I(h_2-h_1)\dd<\varepsilon m(I),\]
+\eref{1.1.5} 由此得证。因 $\int f\dd$ 位于 $\int h_1\dd$ 和 $\int h_2\dd$ 的中间，所以 $\int f\dd$ 与 $\int h_1\dd$ 或 $\int h_2\dd$ 之差也小于 $\varepsilon m(I)$。这也就是说，当剖分的细密度即子区间的最大直径趋于零时，$\int h_1\dd$ 和 $\int h_2\dd$ 收敛于
+\SourcePage{3}
+$\int f\dd$。若 $\xi_j$ 是子区间 $I_j$ 中任意选定的一点，则当剖分的细密度趋于 $0$ 且 $f$ 为连续时，我们有
+\[\sum_j f(\xi_j)m(I_j)\longrightarrow\int_I f\dd.\]
+假设 $a$ 和 $b$ 为非负实数而 $f,g$ 为有界实值函数，则
+\eqn{1.1.6}{\begin{aligned}\uint_I(af+bg)\dd&\le a\uint_I f\dd+b\uint_I g\dd,\\\lint_I(af+bg)\dd&\ge a\lint_I f\dd+b\lint_I g\dd.\end{aligned}}
+（作为练习验证一下！）假若 $f$ 和 $g$ 为 Riemann 可积，则上述二不等式的右端相等，又根据 \eref{1.1.4} 知它们的左端也相等，所以 $af+bg$ 可积。其次，若 $f$ Riemann 可积，则 $-f$ 也 Riemann 可积。这样，我们证明了
+\begin{statement}{定理}{1.1.2}
+若 $f$ 和 $g$ 为 Riemann 可积，$a$ 和 $b$ 是常数，则 $af+bg$ Riemann 可积，并且
+\eqn{1.1.7}{\int_I(af+bg)\dd=a\int_I f\dd+b\int_I g\dd.}
+\end{statement}
+\Exercise 试证：若 $f$ 或 $g$ Riemann 可积，则 \eref{1.1.6} 中的等号成立。其次，若 $f$ 为有界函数并对任一有界函数 $g$ 下式成立
+\[\uint_I(f+g)\dd=\uint_I f\dd+\uint_I g\dd,\]
+则 $f$ 必为 Riemann 可积。
+
+前面，我们从分片常数函数出发定义了 Riemann 积分。换一种方法，上述积分也可以通过 $I$ 上所有连续函数的集合即函数类 $C=C(I)$ 来加以定义，这是由于
+\eqn{1.1.3'}{\uint_I f\dd=\inf_{f\le h\in C}\int_I h\dd,\qquad\lint_I f\dd=\sup_{f\ge h\in C}\int_I h\dd.}
+上面的等式可以这样来证明：若 $h$ 为连续和 $h\ge f$，则有
+\[\uint_I f\dd\le\uint_I h\dd=\int_I h\dd,\]
+从而 $\uint_I f\dd\le\inf_{f\le h\in C}\int_I h\dd$。
+\SourcePage{4}
+另一方面，可取一个分片常数函数 $g$ 使 $f\le g$ 和 $\int g\dd\le\uint f\dd+\varepsilon$。对于 $g$ 又可找到一个连续函数 $h$，例如分片线性函数，使得 $g\le h$ 和 $\int h\dd\le\int g\dd+\varepsilon$。这样一来，我们有 $f\le h$ 和
+\[\int h\dd\le\uint f\dd+2\varepsilon,\]
+\eref{1.1.3'} 由此得证。
+
+Riemann 积分的定义还可以这样叙述：一个函数 $f$，当而且仅当对任意 $\varepsilon>0$ 存在 $h_j\in C$，$j=1,2$，使得 $h_1\le f\le h_2$ 和 $\int(h_2-h_1)\dd<\varepsilon$ 时为 Riemann 可积。注意，一旦对 $f\in C$ 按这种或那种方式定义了 $\int f\dd$，那么这个定义便总是可以利用的，同时 \eref{1.1.1} 和 \eref{1.1.2} 成立。
+\Exercise 试证函数 $f$ 为 Riemann 可积的充分与必要条件是：对任意 $\varepsilon>0$，恒可找到 $g\in C$，使得 $\uint_I|f-g|\dd<\varepsilon$ 成立。
+\Exercise 证明 Darboux 定理：对任意有界函数 $f$，当剖分的细密度趋于 $0$ 时，下式成立
+\[\sum_j(\sup_{I_j}f)m(I_j)\longrightarrow\uint_I f\dd\quad\text{和}\quad\sum_j(\inf_{I_j}f)m(I_j)\longrightarrow\lint_I f\dd.\]
+（提示：利用上式对连续函数为真的事实。）
+
+现在，通过所建立的积分，我们同时也得到测量区间 $I$ 的子集 $E$ 之体积（测度）的一个方法。若 $\chi_E$ 是集合 $E$ 的特征函数（见附录），则将 $\chi_E$ 的上（下）积分定义为 $E$ 的外（内）Jordan 测度，并记作 $\overline m(E)$（$\underline m(E)$）。假若 $\chi_E$ 为 Riemann 可积，则称 $E$ 为 Jordan 可测并用 $m(E)$ 表示 $\int_E\chi_E\dd$。其次，我们规定
+\[\uint_E f\dd=\uint_I\chi_E f\dd.\]
+显然，一个有限集合是 Jordan 可测的且其 Jordan 测度为零。然而，
+\SourcePage{5}
+一个有界的可数集合并不一定是 Jordan 可测的。
+
+\textbf{例1.} 令 $E$ 为给定区间 $I$ 中坐标为有理数的所有点之集合。因 $I$ 的任一开子区间与 $E$ 及其余集均相交，故由定义直接可知 $\overline m(E)=m(I)$ 和 $\underline m(E)=0$。
+
+其次，一个 Jordan 测度为零的 Jordan 可测集并不一定可数。当空间维数 $d\ge2$ 时此为显然，对于 $d=1$ 的情形 Cantor 给出了下面的一个例子。
+
+\textbf{例2.} 从 $E_0=[0,1]$ 开始，作
+\[E_1=E_0\setminus(\tfrac13,\tfrac23)=[0,\tfrac13]\cup[\tfrac23,1].\]
+对余下的两个子区间中的每一个，重复上面的作法，即删去中间的一个三分之一开子区间，这样我们得到
+\[E_2=[0,\tfrac19]\cup[\tfrac29,\tfrac13]\cup[\tfrac23,\tfrac79]\cup[\tfrac89,1].\]
+如此以往，重复以上构造法，我们得到 $E_n$，它由 $2^n$ 个长度为 $3^{-n}$ 的闭区间组成。这样 Cantor 集合 $C=\bigcap_{n=1}^\infty E_n$ 是一个 Jordan 可测的完备集，由于 $0\le\overline m(C)\le m(E_n)=(\tfrac23)^n$ 对一切 $n$ 成立，所以 $\overline m(C)=0$，从而 $C$ 的 Jordan 测度为零。其次，$C$ 集合是不可数的，这是因为它是由能用下式表示的那些 $x$ 所组成
+\[x=\sum_{n=1}^\infty\frac{x_n}{3^n},\quad\text{其中 }x_n=0\text{ 或 }2\]
+（模仿 $\R$ 为不可数集的证明）。
+
+最后，我们给出一个关于积分号下取极限的简单定理：
+\begin{statement}{定理}{1.1.3}
+设函数 $f_n$，$n=1,2,\ldots$，在 $I$ 上 Riemann 可积，并假定当 $n\to\infty$ 时 $f_n$ 在 $I$ 上一致收敛于函数 $f$，则 $f$ 也是 Riemann 可积的并且
+\eqn{1.1.8}{\lim_{n\to\infty}\int_I f_n\dd=\int_I f\dd.}
+\end{statement}
+\Proof 对 $\varepsilon>0$，让 $n$ 足够的大，使
+\SourcePage{6}
+$f_n-\varepsilon\le f\le f_n+\varepsilon$ 成立，则有
+\[\int_I f_n\dd-\varepsilon m(I)\le\lint_I f\dd\le\uint_I f\dd\le\int_I f_n\dd+\varepsilon m(I).\]
+由于上式的外层两项相差 $2\varepsilon m(I)$ 和 $\varepsilon$ 为任意，故内层两项必须相等，这表明 $f$ 是 Riemann 可积的。由此还得到
+\[\left|\int_I f\dd-\int_I f_n\dd\right|\le\varepsilon m(I),\]
+它保证 \eref{1.1.8} 成立。
+\section{正项级数的积分}
+若 $a_{nm}$（$n,m=1,2,\ldots$）为一具非负项的双重序列，周知恒有
+\[\sum_{n=1}^\infty\sum_{m=1}^\infty a_{nm}=\sum_{m=1}^\infty\sum_{n=1}^\infty a_{nm};\]
+即如果其中的一端有意义（有限），则另一端亦有意义，并且等式成立。这一事实可由一正项级数之和是其有限部分和的极限直接得知。
+
+倘若我们仅仅限定于 Riemann 积分，当将上式中的一个（或者两个）求和换成求积，那么情形就不是同样令人满意了。下面定理的缺欠就是引进 Lebesgue 积分的主要原由。
+\begin{statement}{定理}{1.2.1}
+设 $u_n$ 是 $I$ 上的非负 Riemann 可积函数，则有
+\eqn{1.2.1}{\lint_I\left(\sum_{n=1}^\infty u_n\right)\dd=\sum_{n=1}^\infty\int_I u_n\dd.}
+然而，可能出现这样的情况：尽管所有 $u_n$ 连续并且上式的右端为有限，但是 $\sum_{n=1}^\infty u_n$ 并非 Riemann 可积。
+\end{statement}
+注意，对于任一下方有界的函数其下积分是确定的。
+\SourcePage{7}
+Dini 定理是上述定理证明的基本步骤，因此我们把它作为一个单独的引理。
+\begin{statement}{引理}{1.2.2}
+若 $f_n$ 为 $I$ 上的非负连续函数，并且对任一 $x$，当 $n\to\infty$ 时，$f_n$ 下降地趋于零，则 $f_n$ 一致地趋于零，从而
+\eqn{1.2.2}{\int_I f_n\dd\longrightarrow0.}
+\end{statement}
+\Proof 对任一 $x\in I$ 和给定正数 $\varepsilon$，我们可以找到整数 $N$，使得 $f_N(x)<\varepsilon$。显然对属于 $x$ 的一个邻域 $O_x$ 内的 $y$ 亦有 $f_N(y)<\varepsilon$。根据序列的单调性，从而有 $f_n(y)<\varepsilon$ 当 $y\in O_x$ 和 $n>N$。当 $I$ 为紧致时，根据 Borel 引理可以用有限多个邻域 $O_x$ 覆盖 $I$。这也就是说，当 $n$ 充分大时，$f_n<\varepsilon$ 处处成立，由此引理得证。
+
+\textbf{定理1.2.1的证明：} 令 $\varepsilon>0$ 并选一连续函数 $H$，使
+\[H\le\sum_{n=1}^\infty u_n,\qquad\lint\left(\sum_{n=1}^\infty u_n\right)\dd\le\int H\dd+\varepsilon/2.\]
+其次，对每个 $n$ 选一连续函数 $h_n$ 使得
+\[h_n\ge u_n,\qquad\int h_n\dd\le\int u_n\dd+\varepsilon/2^{n+1}.\]
+这样一来，对每一 $x$ 我们有 $\sum_{n=1}^\infty h_n(x)\ge H(x)$。令
+\[f_n(x)=\max\left(H(x)-\sum_{k=1}^n h_k(x),0\right),\]
+则 $f_n$ 单调地趋于零。从而，由引理知 $\int f_n\dd\to0$。现在有
+\[\int f_n\dd\ge\int H\dd-\sum_{k=1}^n\int h_k\dd\ge\lint\left(\sum_{n=1}^\infty u_n\right)\dd-\sum_{k=1}^n\int u_k\dd-\varepsilon,\]
+令 $n\to\infty$，我们得到
+\SourcePage{8}
+\[\lint\left(\sum_{k=1}^\infty u_k\right)\dd\le\sum_{k=1}^\infty\int u_k\dd+\varepsilon.\]
+根据 $\varepsilon$ 的任意性，得知 \eref{1.2.1} 的左端最大不超过其右端。另一方面，不难看出
+\[\lint\left(\sum_{n=1}^\infty u_n\right)\dd\ge\int\left(\sum_{n=1}^N u_n\right)\dd=\sum_{n=1}^N\int u_n\dd\longrightarrow\sum_{n=1}^\infty\int u_n\dd,\quad N\to\infty,\]
+从而，\eref{1.2.1} 得证。
+
+现在剩下就是给出一个例子来说明定理最后的那个论断。如果我们并非一定要求 $u_n$ 具有连续性的话，那么就完全可以把 $I$ 中具有有理坐标的那些点排成一个序列 $r_1,r_2,\ldots$，并令 $u_n(x)=0$ 对 $x\ne r_n$ 和令 $u_n(r_n)=1$。为了达到连续性的要求，我们稍为修改一下作法。作连续函数 $f_n$，使满足
+\[0\le f_n\le1,\quad f_n(r_n)=1,\quad\int_I f_n\dd\le m(I)/2^{n+1}.\]
+并令
+\[u_n=\begin{cases}f_1,&n=1\text{ 时};\\f_n(1-f_1)\cdots(1-f_{n-1}),&n>1\text{ 时},\end{cases}\]
+则有 $\sum_{k=1}^n u_k=1-(1-f_1)\cdots(1-f_n)\le1$，于是相应的无穷级数的和 $\le1$ 并在所有的有理点上等号成立，这就说明
+\[\uint_I\left(\sum_{n=1}^\infty u_n\right)\dd=m(I).\]
+然而，根据 \eref{1.2.1}，
+\[\lint_I\left(\sum_{n=1}^\infty u_n\right)\dd=\sum_{n=1}^\infty\int_I u_n\dd\le m(I)/2.\]
+由此可见，$\sum_{n=1}^\infty u_n$ 是 Riemann 不可积的。至此定理证毕。
+\SourcePage{9}
+这个定理表明了积分概念上的一个缺欠。逐项积分无穷级数的和，必须不同地理解出现在两端的“积分”，这样 \eref{1.2.1} 才能成立。在下一章里将看到人们怎样推广积分概念，从而使得定理1.2.1变得完好。
+\section{累次积分}
+设 $I$（相应地 $J$）是 $\R^d$（相应地 $\R^e$）中的一个区间，我们用 $x$（相应地 $y$）表示变量，那么
+\[I\times J=\{(x,y)\in\R^{d+e};x\in I,y\in J\}\]
+是 $\R^{d+e}$ 中的一个区间。现在，令 $f$ 是 $I\times J$ 上一个有界实值函数，我们断言
+\eqn{1.3.1}{\uint_I\left(\uint_J f(x,y)\,dy\right)\dd\le\overline{\iint}_{I\times J} f(x,y)\,dx\,dy,}
+\eqn{1.3.2}{\lint_I\left(\lint_J f(x,y)\,dy\right)\dd\ge\underline{\iint}_{I\times J} f(x,y)\,dx\,dy.}
+这里，不等式的左端项是 $f$ 先对 $y$ 作上积分（或下积分），其时固定 $x$，所得结果是一个 $x$ 的函数，对它又按同一方式在 $I$ 上进行积分。在不等式的右端，$f$ 被视作 $I\times J$ 上的函数进行积分。为证 \eref{1.3.1}，我们注意到，若 $f$ 为分片常数则不等式显然成立。这是因为若区间 $I_j$（相应地 $J_k$）$\subset I$（相应地 $\subset J$），根据区间的测度的定义则 $m(I_j)m(J_k)=m(I_j\times J_k)$。现在，如果 $f\le h$ 是一个分片常数函数，那么
+\[\uint_I\left(\uint_J f(x,y)\,dy\right)\dd\le\uint_I\left(\uint_J h(x,y)\,dy\right)\dd=\iint_{I\times J}h(x,y)\,dx\,dy,\]
+同时，根据上积分的定义，上式右端对所有如此之 $h$ 的下确界\Corr{22}与 \eref{1.3.1} 的右端相等，由此 \eref{1.3.1} 得证。
+\eref{1.3.2} 可按同一方式证明或者通过对 $-f$ 应用 \eref{1.3.1} 加以证明。
+\SourcePage{10}
+现在，让我们特别地假定 $f$ 为 $I\times J$ 上的连续函数。因为 $f$ 系一致连续，则可证
+\[I(x)=\int_J f(x,y)\,dy\]
+是 $x$ 的连续函数。因为若 $x_n\in I$ 和 $x_n\to x$，则 $f(x_n,y)$ 关于 $y$ 一致地趋于 $f(x,y)$。根据定理1.1.3，这也就是说 $I(x_n)\to I(x)$，因此 \eref{1.3.1} 和 \eref{1.3.2} 中的上、下积分可以换成积分，从而我们得到
+\begin{statement}{定理}{1.3.1}
+若 $f$ 是 $I\times J$ 上的连续函数，则
+\eqn{1.3.3}{\int_I\left(\int_J f(x,y)\,dy\right)\dd=\iint_{I\times J} f(x,y)\,dx\,dy,}
+同时左端里层关于 $y$ 的积分是 $x$ 的一个连续函数。
+\end{statement}
+现在，我们转向 $f$ 是一般的 Riemann 可积函数的情形。但是这只能非常简单扼要地讲，因为即便是这种情形，为了使这些定理能够令人满意，也需要扩充积分概念。假定 $f$ 在 $I\times J$ 上 Riemann 可积，由 \eref{1.3.1} 和 \eref{1.3.2} 有
+\eqn{1.3.4}{\begin{aligned}\iint_{I\times J}f\,dx\,dy&\le\lint_I\left(\lint_J f(x,y)\,dy\right)\dd\\&\le\uint_I\left(\lint_J f(x,y)\,dy\right)\dd\le\iint_{I\times J}f\,dx\,dy\end{aligned}}
+和
+\eqn{1.3.5}{\begin{aligned}\iint_{I\times J}f\,dx\,dy&\le\lint_I\left(\uint_J f(x,y)\,dy\right)\dd\\&\le\uint_I\left(\uint_J f(x,y)\,dy\right)\dd\le\iint_{I\times J}f\,dx\,dy.\end{aligned}}
+由于上述式子的外部两端是相等的，所以可以断定
+\[x\mapsto\uint_J f(x,y)\,dy,\qquad x\mapsto\lint_J f(x,y)\,dy\]
+是在 $I$ 上 Riemann 可积的，并且
+\eqn{1.3.6}{\iint_{I\times J}f(x,y)\,dx\,dy=\int_I\left(\uint_J f(x,y)\,dy\right)\dd}
+和
+\SourcePage{11}
+\eqn{1.3.7}{\iint_{I\times J}f(x,y)\,dx\,dy=\int_I\left(\lint_J f(x,y)\,dy\right)\dd}
+成立。
+
+\textbf{例.} 设 $I=J=[0,1]\subset\R$ 并令
+\[g(x)=\begin{cases}1/q&x=p/q,\ p,q\text{ 互质};\\0&x\text{ 为无理数},\end{cases}\qquad h(y)=\begin{cases}1&y\text{ 为有理数};\\0&y\text{ 为无理数},\end{cases}\]
+则 $\int_I g\dd=0$，$\uint_J h\,dy=1$ 和 $\lint_J h\,dy=0$。令 $f(x,y)=g(x)h(y)$。因为 $0\le f(x,y)\le g(x)$，立即可知 $f$ 在 $I\times J$ 上 Riemann 可积并且其积分值等于零。然而，
+\[\uint_J f(x,y)\,dy-\lint_J f(x,y)\,dy=g(x)\]
+同时，当 $x$ 为有理数时 $g(x)\ne0$。这也就是说，积分 $\int_J f(x,y)\,dy$ 对于这样的 $x$ 是没有定义的。所以，一般说来 \eref{1.3.3} 是没有意义的。
+\Exercise 设 $f(x,y)=g(x)h(y)$，其中 $g$ 和 $h$ 是任意非负有界函数，试证 \eref{1.3.1} 和 \eref{1.3.2} 中的等号成立。特别地，若取 $g$ 和 $h$ 为特征函数，可得
+\[\overline m(E\times F)=\overline m(E)\overline m(F),\quad E\subset I,\ F\subset J.\]
+在此练习中，假定条件 $g,h\ge0$ 是很本质的，这可由下面的练习看出。
+\Exercise 设 $I=[0,1]$ 和 $J=[0,2]$ 并对 $x\in I$ 和 $y\in J$ 定义
+\[g(x)=\begin{cases}1&x\text{ 为有理数};\\-x&x\text{ 为无理数},\end{cases}\qquad h(y)=\begin{cases}-1&y\text{ 为有理数};\\y&y\text{ 为无理数}.\end{cases}\]
+\SourcePage{12}
+令 $f(x,y)=g(x)h(y)+c$，其中 $c$ 为任意常数。试证以下三个积分
+\[\overline{\iint}_{I\times J}f(x,y)\,dx\,dy,\quad\uint_I\left(\uint_J f(x,y)\,dy\right)\dd,\quad\uint_J\left(\uint_I f(x,y)\dd\right)\,dy\]
+互不相等。
+\section{变量替换}
+这里，为避免使记号过于复杂，引进某些略有变化的约定将是适用的。我们用 $C_0$ 表示所有在 $\R^d$ 上连续并具紧致支集的函数的集合，而 $C_0^+$ 代表 $C_0$ 中非负函数的集合。若 $f\in C_0$，则 Riemann 积分 $\int_I f\dd$ 对任一含 $f$ 的支集的区间 $I$ 取同一值。我们记此值为 $\int f\dd$ 并把它叫做 $f$ 在整个空间的积分。
+
+我们已经证明：
+\eqn{1.4.1}{\int(af+bg)\dd=a\int f\dd+b\int g\dd,\quad a,b\in\R,\quad f,g\in C_0;}
+\eqn{1.4.2}{\int f\dd\ge0\quad\text{若 }f\in C_0^+.}
+现在，设 $\phi:\R^d\to\R^d$ 是一仿射变换，即
+\eqn{1.4.3}{\phi(x)=Ax+x_0,}
+其中 $x_0\in\R^d$ 和 $A\in GL(d,\R)$，即 $A$ 是一个 $d\times d$ 可逆矩阵。
+
+若 $f$ 为一 $\R^d\to\R$ 函数，我们将从 $\R^d$ 到 $\R$ 的函数 $f\circ\phi$ 记作 $\phi^*f$。这个记号对于非仿射变换 $\phi$ 自然也可以采用。很明显，$f\in C_0$ 蕴含 $\phi^*f\in C_0$。然而，当 $A=(a_{ik})$ 为对角矩阵时\Corr{1}
+\SourcePage{13}
+有：$f\in T$ 蕴含 $\phi^*f\in T$（分片常数函数的集合）。在这种情形，我们立即得到
+\eqn{1.4.4}{|\det A|\int\phi^*f\dd=\int f\dd,\quad f\in C_0.}
+事实上，若 $f$ 是区间 $I=\{x;a_j\le x_j\le b_j,\ j=1,2,\ldots,d\}$ 的特征函数，则 $\phi^*f$ 就是区间
+\[\{x;a_j-x_{0j}\le a_{jj}x_j\le b_j-x_{0j},\ j=1,2,\ldots,d\}\]
+的特征函数。可见对于这种函数从而对任意 $f\in T$，\eref{1.4.4} 成立。由此，根据积分的定义，\eref{1.4.4} 对所有 $f\in C_0$ 成立。一般地，\eref{1.4.4} 对 $\R^d$ 上的有界并具紧致支集的函数的上积分和下积分成立。
+
+特别地，若令 $f_h(x)=f(x-h)$，则 \eref{1.4.4} 蕴含\Corr{2}
+\eqn{1.4.5}{\int f\dd=\int f_h\dd,\quad f\in C_0,\ h\in\R^d.}
+现在，我们来说明：\eref{1.4.1}、\eref{1.4.2} 和 \eref{1.4.5} 是积分的本质属性。
+\begin{statement}{定理}{1.4.1}
+设 $I:C_0\to\R$ 是一个泛函，它满足：
+\begin{enumerate}[label=(\roman*)]
+\item $I(af+bg)=aI(f)+bI(g)$，对 $f,g\in C_0$ 和 $a,b\in\R$；
+\item $I(f)\ge0$ 当 $f\in C_0^+$；
+\item $I(f_h)=I(f)$，$f\in C_0$，$h\in\R^d$。
+\end{enumerate}
+这里 $f_h(x)=f(x-h)$。则存在一个常数 $C$ 使得 $I(f)=C\int f\dd$，对 $f\in C_0$。
+\end{statement}
+\Proof 首先注意到，若 $f,g\in C_0$ 和 $f\le g$，则由 (i) 和 (ii) 知 $0\le I(g-f)=I(g)-I(f)$，亦即 $I(f)\le I(g)$。因此，若所有 $f_n\in C_0$ 的支集均含于一个固定的有界集合 $M$，并且 $f_n$ 一致地收敛于 $f$，则 $I(f_n)\to I(f)$。事实上，若 $0\le g\in C_0$ 和 $g\ge1$ 于 $M$ 上，则有 $-\varepsilon_ng\le f-f_n\le\varepsilon_ng$，其中 $\varepsilon_n=\sup|f-f_n|\to0$ 当 $n\to\infty$。这也就是说，
+\SourcePage{14}
+$|I(f)-I(f_n)|\le\varepsilon_n I(g)\to0$ 当 $n\to\infty$。
+
+现在，设 $f$ 和 $g$ 属于 $C_0$ 且其支集在 $I$ 内，并设 $I_1,\ldots,I_N$ 是 $I$ 的一个剖分，它们没有公共内点。取 $h_j\in I_j$ 并注意到 (iii) 和 (i)，则有
+\eqn{1.4.6}{I(F)=I(f)\sum_{j=1}^N g(h_j)m(I_j)}
+其中 $F(x)=\sum_{j=1}^N f(x-h_j)g(h_j)m(I_j)$。对于一个充分细的剖分，$F(x)$ 将接近于
+\eqn{1.4.7}{(f*g)(x)=\int f(x-h)g(h)\,dh.}
+也就是说，由于函数 $(x,h)\mapsto f(x-h)g(h)$ 连续并有支集 $\subset2I\times I$，从而也一致连续，故有不等式 $|F(x)-(f*g)(x)|<\varepsilon m(I)$，只要剖分如此之细使得 $h\mapsto f(x-h)g(h)$ 在 $I_j$ 上的振幅小于 $\varepsilon$，对所有 $x$ 和 $j$。当剖分的细密度趋于零时，由 \eref{1.4.6} 我们得到
+\eqn{1.4.8}{I(f*g)=I(f)\int g\dd.}
+若在 \eref{1.4.7} 中引进变换 $h=x-y$，根据 \eref{1.4.4} 不难验证 $f*g=g*f$，由此可得
+\eqn{1.4.9}{I(f)\int g\dd=I(g)\int f\dd.}
+对于 $\int g\dd\ne0$ 的固定 $g\in C_0$，我们有 $I(f)=C\int f\dd$，其中 $C=I(g)/\int g\dd$。
+
+把定理1.4.1概括起来也就是说：除一个常数因子外，积分就是从 $C_0$ 到 $\R$ 对平移为不变的线性正泛函。
+
+现在，设 $A\in GL(d,\R)$ 并考虑映射 $f\mapsto\int f(Ax)\dd$。
+\SourcePage{15}
+显然，它是正的并是线性的，同时
+\[\int f_h(Ax)\dd=\int f(Ax-h)\dd=\int f\bigl(A(x-A^{-1}h)\bigr)\dd=\int f(Ax)\dd.\]
+根据定理1.4.1，我们于是有
+\eqn{1.4.10}{\int f(Ax)\dd=C(A)\int f\dd,\quad f\in C_0,}
+其中 $C$ 仅依赖于 $A$ 但独立于 $f$。同时，由于
+\[\int f(ABx)\dd=C(B)\int f(Ax)\dd=C(A)C(B)\int f\dd,\]
+故得
+\eqn{1.4.11}{C(AB)=C(A)C(B),\quad A,B\in GL(d,\R).}
+若 $A$ 为正交矩阵，则 $C(A)=1$。事实上，若 $\|x\|$ 代表Euclid 范数 $(x_1^2+\cdots+x_d^2)^{1/2}$ 而 $f(x)=g(\|x\|)$，则 $f(Ax)=f(x)$。其次，已知若 $A$ 是一个对角矩阵，则 $C(A)=1/|\det A|$。我们断言：任一矩阵 $A\in GL(d,\R)$ 可以写成 $A=O_1DO_2$，其中 $O_1$ 和 $O_2$ 为正交矩阵而 $D$ 为对角矩阵。如此立即可得
+\[C(A)=C(O_1)C(D)C(O_2)=1/|\det D|=1/|\det A|,\]
+这是因为 $|\det A|=|\det O_1|\,|\det D|\,|\det O_2|=|\det D|$。这样，我们证明了 \eref{1.4.4} 对所有仿射变换成立。
+
+为证前面那个断言，我们用 $A^*$ 记 $A$ 的转置，同时利用以下的事实：正对称矩阵 $A^*A$ 可以通过正交变换化成正对角矩阵 $D^2$，即存在一个正交矩阵 $O_2$ 使 $A^*A=O_2^*D^2O_2$。我们令 $O_1=AO_2^{-1}D^{-1}$，亦即 $A=O_1DO_2$，从而得到 $O_2^*DO_1^*O_1DO_2=O_2^*D^2O_2$，这表明 $O_1^*O_1=I$，这也就是说 $O_1$ 也是正交的。
+
+显然，若 $f$ 有界并具有紧致支集，则等式 \eref{1.4.4} 对上和下 Riemann 积分成立，这表明：$\phi^*f$ Riemann 可积的充分与必要条件是 $f$ Riemann 可积。特别是，在区间 $I\subset\R^d$ 的像 $A(I)=\{Ax;x\in I\}$ 内我们可以取 $f=1$。那么，\eref{1.4.4} 告诉我们，$A(I)$ 为 Jordan 可测并且
+\SourcePage{16}
+\[m(A(I))=|\det A|m(I),\]
+这就严格证实了把行列式当作体积比的解释。注意，当 $\det A=0$ 时，等式 $m(A(I))=|\det A|m(I)$ 也成立。这是因为 $A(I)$ 属于一超平面，通过正交变换（既不影响可测性也不影响测度值）它可以变到坐标平面 $x_d=0$ 内，那么，显然此时 $m(A(I))=0$。
+
+一个矩阵 $A$ 的范数定义为 $\|A\|=\max_{x\ne0}\|Ax\|/\|x\|$。若 $\det A\ne0$，如前面那样把 $A$ 表示成 $A=O_1DO_2$，则显然 $\|A\|=\|D\|$，它是 $D$ 的对角元素\footnote{确切言之，应该是 $D$ 的对角元素的按模的最大值。——译者注}，从而
+\[|\det A|=|\det D|\le\|D\|^d=\|A\|^d.\]
+由此可知，$A(I)$ 的体积最大不超过 $\|A\|^dm(I)$。若 $I$ 是一个边长为 $\delta$ 的立方体，则 $A(I)$ 被包含在一个以 $\delta\sqrt d\|A\|$ 为边长的立方体之中，此立方体的中心是 $Ax_0$，这里 $x_0$ 是 $I$ 的中心，$I$ 中任一点到 $x_0$ 的距离不超过 $(\delta/2)\sqrt d$。由上述简单观察得一粗略估计 $m(A(I))\le(\delta\sqrt d)^d\|A\|^d$。在下面的引理的证明中我们将用到这个估计式。此引理对 \eref{1.4.4} 在非仿射变换情形的推广是重要的。
+\begin{statement}{引理}{1.4.2}
+设 $A$ 为一 $d\times d$ 实矩阵，$I$ 是 $\R^d$ 中边长为 $\delta$ 的立方体，并设 $A(I)_\eta$ 是所有至 $A(I)$ 距离 $\le\eta$ 的点组成之集合。则有
+\eqn{1.4.12}{\overline m(A(I)_\eta)\le\delta^d|\det A|+4d\eta(2\eta+\delta\sqrt{d-1}\|A\|)^{d-1}.}
+\end{statement}
+\Proof 若 $\partial I$ 是 $I$ 的边界，那么 $A(\partial I)$ 与 $A(I)$ 的边界等同。当 $\det A\ne0$ 时，由于这时 $I$ 的内点被映射为 $A(I)$ 的内点，上述结论显然为真。若 $\det A=0$，这时过 $I$ 的每一个点存在一条线，它被 $A$ 映射成一个点，并且此线必与 $I$ 的边界相交，于是得到 $A(I)=A(\partial I)$。设点 $x$ 至 $A(I)$ 的距离 $\le\eta$ 并且不属于 $A(I)$，故 $x$ 必与 $A(\partial I)$ 中某个点的距离 $\le\eta$（就 $d=2$ 的情形画出图形！）。因为 $A(I)$ 的测度是 $\delta^d|\det A|$，所以只要证明所有与 $A(I')$ 距离 $\le\eta$ 的点之集合的 Jordan 外测度不超过
+\[2\eta(2\eta+\delta\sqrt{d-1}\|A\|)^{d-1}\]
+\SourcePage{17}
+就够了，这里 $I'\subset\partial I$ 是 $I$ 的一个 $d-1$ 维边，而 $\partial I$ 是 $I$ 的 $2d$ 个这种边的并集。基于正交不变性和平移不变性，我们可以假定 $A(I')$ 位于超平面 $x_d=0$ 内。若 $(x',x_d)$ 至 $A(I')$ 的距离 $\le\eta$，那么 $(x',0)$ 至 $A(I')$ 的距离必定 $\le\eta$ 并且 $|x_d|\le\eta$。然而，$A(I')$ 属于一个边长 $\le\delta\sqrt{d-1}\|A\|$ 的 $d-1$ 维立方体的内部。所以，若 $x$ 至 $A(I')$ 的距离 $\le\eta$，那么 $x$ 必属于 $x_d=0$ 中一个边长为 $2\eta+\delta\sqrt{d-1}\|A\|$ 的立方体与 $x_d$ 轴上一个长度为 $2\eta$ 的一维区间的直积。由此可知，所有这种点 $x$ 之集合的外测度不超过 $2\eta(2\eta+\delta\sqrt{d-1}\|A\|)^{d-1}$。至此引理证毕。
+
+现在，我们可以讨论一般连续可微的映射了。作为开始，我们不假设映射是一对一的。
+\begin{statement}{定理}{1.4.3}
+设 $\Omega_1,\Omega_2$ 为 $\R^d$ 中的开集而 $\phi:\Omega_1\to\Omega_2$ 为一连续可微的映射。若 $K$ 是 $\Omega_1$ 中的一个紧致集合，则
+\eqn{1.4.13}{\uint_{\phi(K)}u\dd\le\uint_K u(\phi(x))|\det\phi'(x)|\dd,\quad u\in C_0(\Omega_2),\ u\ge0.}
+\end{statement}
+这里，当 $\phi(x)=(\phi_1(x),\ldots,\phi_d(x))$ 时，我们利用记号 $\phi'(x)=(\partial\phi_j(x)/\partial x_k)$。证明定理之前，我们给出定理的一个有趣的推论。
+\begin{statement}{推论}{1.4.4}[Morse--Sard]
+在定理的假设下，集合 $\{\phi(x);x\in K,\det\phi'(x)=0\}$ 的 Jordan 测度为零。
+\end{statement}
+注意，推论表明：对绝大多数 $y\in\Omega_2$，根据隐函数定理可以断定集合 $\{x;x\in K,\phi(x)=y\}$ 由有限多个点组成，并在这种点的一个邻域内映射 $\phi$ 是一对一的。
+
+\textbf{定理1.4.3的证明：} 设 $\varepsilon$ 为任一正数。若 $I$ 是一个边长为 $\delta$ 的立方体，它与 $K$ 相交，并设 $\delta$ 充分小，那么根据一致连续性和 Taylor 公式有
+\[\|\phi(x)-\phi_y(x)\|\le\varepsilon\delta,\quad x,y\in I,\]
+其中 $\phi_y(x)=\phi(y)+\phi'(y)(x-y)$ 是 Taylor 展式中的线性项。
+\SourcePage{18}
+根据引理1.4.2的记号，此即 $\phi(I)\subset(\phi_y(I))_{\varepsilon\delta}$。这也就是说，对于一个适当的常数 $C$，我们有
+\[\overline m(\phi(I))\le\delta^d|\det\phi'(y)|+C\varepsilon\delta^d=m(I)(|\det\phi'(y)|+C\varepsilon).\]
+现在，选 $K$ 的一个由立方体 $\{I_j\}$ 作成的开覆盖，并在每个 $I_j$ 中取一点 $y_j$，于 $y_j$ 处函数 $u(\phi(y_j))$ 取最大值，那么有
+\[\chi_{\phi(K)}u\le\sum_j\chi_{\phi(I_j)}u(\phi(y_j))\]
+（这里同往常一样，$\chi_E$ 表示 $E$ 的特征函数）。由此我们得到
+\[\uint\chi_{\phi(K)}u\dd\le\sum_jm(I_j)(|\det\phi'(y_j)|+C\varepsilon)u(\phi(y_j)).\]
+现在，我们可以如此选择 $\{I_j\}$ 使上式右端充分地靠近
+\[\uint_K u(\phi(x))|\det\phi'(x)|\dd,\]
+由此定理得证。\Corr{3}
+
+至此，不难得到关于多重积分变量代换的定理。
+\begin{statement}{定理}{1.4.5}
+设 $\Omega_1,\Omega_2$ 是 $\R^d$ 中的开集，并设 $\phi$ 是一个从 $\Omega_1$ 到 $\Omega_2$ 的一对一映射并且 $\phi$ 和 $\phi^{-1}$ 都是连续可微的。若 $u$ 是一个有界函数并具紧致支集属于 $\Omega_2$。那么，$\phi^*u$ Riemann 可积的充分与必要条件是 $u$ Riemann 可积，并且有
+\eqn{1.4.14}{\int\phi^*u|\det\phi'|\dd=\int u\dd.}
+\end{statement}
+\Proof 令 $\phi_1=\phi^{-1}$，则 $|\det\phi'(\phi_1(x))|\,|\det\phi_1'(x)|=1$。对 $\phi$ 以及 $\phi_1$ 应用 \eref{1.4.13} 并取 $K$ 充分大使于 $\phi(K)$ 之外 $u=0$，我们由此得到
+\[\uint u\dd\le\uint u(\phi(x))|\det\phi'(x)|\dd\le\uint u\dd,\quad u\in C_0(\Omega_2),\ u\ge0,\]
+因此等号必然成立。此外，这里的被积函数是连续的，所以 Riemann 积分存在。这样一来，首先当 $u$ 为连续且 $\ge0$ 时我们得到 \eref{1.4.14}，然后根据线性性质，对所有的 $u\in C_0$ 得到 \eref{1.4.14}。如同往常那
+\SourcePage{19}
+样，由此即可推出 \eref{1.4.14} 对上积分和下积分成立，只要 $u$ 是有界并在 $\Omega_2$ 的一个紧致子集之外为零。至此定理得证。
+
+现在，将 Riemann 积分的定义扩展到不一定具有紧致支集的函数以及将定理1.4.5推广到这种情形就应该是非常容易的事了。因为我们的主要目标是研究 Lebesgue 积分，于是这里我们仅仅满足于给予几个简短的启示，而将细节留给感兴趣的读者。
+
+设 $f$ 为任一非负连续函数，我们将其在开集 $\Omega$ 上的积分定义为
+\[\uint_\Omega f\dd=\sup\left\{\int g\dd;0\le g\le f,\ g\in C_0(\Omega)\right\}.\]
+此积分的值自然可能是 $+\infty$，并且若 $f\in C_0$，这个定义显然是同原先的定义完全一致的。对于一个在 $\Omega$ 上局部有界的函数 $f\ge0$，也就是说在 $\Omega$ 的每一个紧致子集上有界，我们令
+\[\uint_\Omega f(x)\dd=\inf_{f\le g\in C(\Omega)}\int_\Omega g(x)\dd.\]
+（如此之函数 $g$ 存在！）一个在 $\Omega$ 上局部有界的函数 $f$，我们称之为 Riemann 可积，如果对任意 $\varepsilon>0$，存在一个函数 $g_\varepsilon\in C_0(\Omega)$ 使得 $\uint_\Omega|f(x)-g_\varepsilon(x)|\dd<\varepsilon$。同时，将 $f$ 的积分定义作为 $\int g_\varepsilon(x)\dd$ 当 $\varepsilon\to0$ 时的极限值（此极限值存在且有限）。用这个积分概念，我们立即得到定理1.4.5在任意局部有界 Riemann 可积函数上的一个推广。

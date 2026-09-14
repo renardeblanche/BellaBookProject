@@ -1,0 +1,779 @@
+[
+  {
+    "file": "01-introduction.tex",
+    "old": ".defined",
+    "new": "defined",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "$\\RR^2$ .",
+    "new": "$\\RR^2$.",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "$f:\\RR^2 \\to \\RR^2$ given by",
+    "new": "$f:\\RR^2-\\{0\\} \\to \\RR^2$ given by\\corr{原书第 1 页，例 1.2 的定义域误写为 $\\RR^2$；分母在原点为零，应除去原点。}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "\\frac{x_1}{x_1^2 +x_2^2},",
+    "new": "\\frac{x_1}{x_1^2 +x_2^2}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "\\frac{\\dd F}{\\dd x}",
+    "new": "\\frac{\\partial F}{\\partial x_1}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "\\frac{\\dd F}{\\dd y}",
+    "new": "\\frac{\\partial F}{\\partial x_2}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "be star-shaped",
+    "new": "be an open star-shaped set",
+    "count": 2,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "\\frac{\\dd }{\\dd t} tf_1(tx_1, tx_2) \n  = f_1(tx_1, tx_2) + tx_1\\frac{\\partial f_1}{\\partial x_1}(tx_1, tx_2) + tx_2\\frac{\\partial f_2}{\\partial x_1}(tx_1, tx_2)",
+    "new": "\\frac{\\dd }{\\dd t} tf_1(tx_1, tx_2) = f_1(tx_1, tx_2) + tx_1\\frac{\\partial f_1}{\\partial x_1}(tx_1, tx_2) + tx_2\\frac{\\partial f_1}{\\partial x_2}(tx_1, tx_2)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "f_1(tx_1, tx_2)\\big|_{t=0}^1",
+    "new": "\\big[t f_1(tx_1, tx_2)\\big]_{t=0}^1",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "``shape'' of",
+    "new": "``shape'' or",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "a further examples",
+    "new": "further examples",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "of set $U$ and fucntion $f$",
+    "new": "of sets $U$ and functions $f$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "tells us or not",
+    "new": "tells us whether or not",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "Give the open set",
+    "new": "Given the open set",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "vecter",
+    "new": "vector",
+    "count": 2,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "filed on",
+    "new": "field on",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "\\grad: C^\\infty(U, \\RR^2) \\to C^\\infty(U, \\RR)",
+    "new": "\\rot: C^\\infty(U, \\RR^2) \\to C^\\infty(U, \\RR)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "cosets 0: $",
+    "new": "cosets $",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "where 0: $",
+    "new": "where $",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "\\frac{\\partial f}{\\partial x_n}\\right)",
+    "new": "\\frac{\\partial f}{\\partial x_k}\\right)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "\\{x\\in U|f(x) = f(x_0) = f^{-1}(f(x_0))\\}",
+    "new": "\\{x\\in U\\mid f(x) = f(x_0)\\} = f^{-1}(f(x_0))",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "is precisely the number of connected components of $U$.",
+    "new": "equals the number of connected components when this number is finite; if there are infinitely many components, $H^0(U)$ is infinite-dimensional.\\corr{原书第 3 页的维数计数应理解为有限数或“无穷”，不能把无限情形的 Hamel 维数等同于连通分支的基数。$H^0(U)$ 是各分支上常数值的直积空间。}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "\\div(f) & =",
+    "new": "\\div(f) & =",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "\\end{align*}\n\nNote that $\\rot\\circ\\grad",
+    "new": "\\end{align*}\\corr{原书第 4 页，三维旋度第三分量的第一项分母误排为 $\\partial x_2$，应为 $\\partial x_1$。}\n\nNote that $\\rot\\circ\\grad",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "\\begin{align*}\n  H^2(U) = \\ker(\\div)/\\im(\\rot)\n\\end{align*}",
+    "new": "\\begin{align}\\label{eq:1-6}\n  H^2(U) = \\ker(\\div)/\\im(\\rot)\n\\end{align}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "$H^0(U) = R,",
+    "new": "$H^0(U) = \\RR,",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "(f_1, f_2, f_2)\\times",
+    "new": "(f_1, f_2, f_3)\\times",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "$U\\in\\RR^3$",
+    "new": "$U\\subseteq\\RR^3$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "\\int_{\\pi-\\epsilon}^{-\\pi+\\epsilon}",
+    "new": "\\int_{-\\pi+\\epsilon}^{\\pi-\\epsilon}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "F(\\gamma(-\\pi+\\epsilon)) - F(\\gamma(\\pi-\\epsilon))",
+    "new": "F(\\gamma(\\pi-\\epsilon)) - F(\\gamma(-\\pi+\\epsilon))",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "On the hand",
+    "new": "On the one hand",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "$\\Phi_\\gamma(a) = \\Phi_\\gamma(b)$",
+    "new": "$\\Phi(\\gamma(a)) = \\Phi(\\gamma(b))$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "01-introduction.tex",
+    "old": "by the rule;",
+    "new": "by the chain rule;",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\lambda_{j_1, 1}, \\ldots, \\lambda_{j_k, k}",
+    "new": "\\lambda_{j_1, 1}\\cdots\\lambda_{j_k, k}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "elments",
+    "new": "elements",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "Furthemiore",
+    "new": "Furthermore",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\sign(\\sigma)\\circ\\sign(\\tau)",
+    "new": "\\sign(\\sigma)\\sign(\\tau)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "eoccurring",
+    "new": "occurring",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\omega_{i,j} (\\xi_i + \\xi_j) + \\omega_{i,j} (\\xi_j + \\xi_i)",
+    "new": "\\omega_{i,j} (\\xi_i, \\xi_j) + \\omega_{i,j} (\\xi_j, \\xi_i)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "$(\\omega_1\\wedge\\omega_2) =",
+    "new": "$(\\omega_1\\wedge\\omega_2)(\\xi_1,\\xi_2) =",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\omega_2(\\xi_1)\\omega_1(\\xi_2)$.",
+    "new": "\\omega_2(\\xi_1)\\omega_1(\\xi_2)$.\\corr{原书第 8 页，左端漏排自变量 $(\\xi_1,\\xi_2)$；外积是双线性形式，右端是其在这两个向量上的取值。}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "we defined",
+    "new": "we define",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "$\\omega_2\\alt^q(V)$",
+    "new": "$\\omega_2\\in\\alt^q(V)$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\xi_1,,",
+    "new": "\\xi_1,",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "bijiection",
+    "new": "bijection",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\sigma\\mapsto\\tau\\circ\\sigma",
+    "new": "\\sigma\\mapsto\\sigma\\circ\\tau",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\sigma\\gamma",
+    "new": "\\sigma\\tau",
+    "count": 4,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\tau\\sigma",
+    "new": "\\sigma",
+    "count": 10,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\cdot <",
+    "new": "\\cdots <",
+    "count": 3,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "S(p, q, r) \\times S(p, q, r)",
+    "new": "S(p, q+r) \\times S(\\bar{p}, q, r)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "S(p, q, r) \\times S(p, q, \\bar{r})",
+    "new": "S(p+q, r) \\times S(p, q, \\bar{r})",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "(\\sigma, \\tau)\\mapsto\\tau\\circ\\sigma",
+    "new": "(\\sigma, \\tau)\\mapsto\\sigma\\circ\\tau",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\sum_{\\sigma\\in S(p,q,r)}\\sign(\\tau)",
+    "new": "\\sum_{\\tau\\in S(\\bar{p},q,r)}\\sign(\\tau)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "abvious",
+    "new": "obvious",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "procced",
+    "new": "proceed",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\xi_{1},\\quad,\\dot{\\xi}_{j}",
+    "new": "\\xi_{1},\\ldots,\\hat{\\xi}_{j}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "elements $\\xi\\in V$ with $\\omega_i(\\xi_i) = 0$ for $i\\neq j$ and $\\omega_j(\\xi_j) = 0$",
+    "new": "elements $\\xi_j\\in V$ with $\\omega_i(\\xi_j) = 0$ for $i\\neq j$ and $\\omega_j(\\xi_j) = 1$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "has two rows",
+    "new": "has two equal rows",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "For 1-form",
+    "new": "For 1-forms",
+    "count": 2,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\epsilon_{\\sigma(k)}\\right\\}_{\\sigma\\in S(p, n-p)}",
+    "new": "\\epsilon_{\\sigma(p)}\\right\\}_{\\sigma\\in S(p, n-p)}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\alt^p(V^*)",
+    "new": "\\alt^p(V)",
+    "count": 2,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "Here $\\sigma$ is the permutation $\\epsilon(i_k) = j_k$. From Lemma \\ref{lemma:2-13}",
+    "new": "Here $\\sigma$ is the permutation matching the two ordered index lists. From Lemma 2.2",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "fonn",
+    "new": "form",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\alt^p(f)(W)",
+    "new": "\\alt^p(f)(\\omega)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\alt^P(\\id)",
+    "new": "\\alt^p(\\id)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\alt^p(f): \\alt^n(V)",
+    "new": "\\alt^n(f): \\alt^n(V)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\ref{theorem:2-16} below",
+    "new": "\\ref{theorem:2-16}\\corr{原书第 13 页误引不存在的定理 2.18，应为本章定理 2.16。} below",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "$\\dd = \\det(f)$",
+    "new": "$d = \\det(f)$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "ofa linear",
+    "new": "of a linear",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\det(f-t)",
+    "new": "\\det(f-t\\id_V)",
+    "count": 2,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "when $n = \\dim V$.",
+    "new": "when $n = \\dim V$.\\corr{原书第 13 页两处写作 $\\det(f-t)$；此处将标量 $t$ 所乘的恒等映射写出，以明确特征多项式的含义。}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "gf^{-1}g^{-1}",
+    "new": "gfg^{-1}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "we. must",
+    "new": "we must",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "${E_1, \\ldots,E_n}$",
+    "new": "${\\epsilon_1, \\ldots,\\epsilon_n}$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "$w:U\\to \\alt^1(\\RR^n)$",
+    "new": "$\\omega:U\\to \\alt^p(\\RR^n)$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "If $p = 0$ then $\\alt^1(\\RR^n)",
+    "new": "If $p = 0$ then $\\alt^0(\\RR^n)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "$\\Omega^0(U) = \\Omega^0(U, \\RR)$",
+    "new": "$\\Omega^0(U) = C^\\infty(U, \\RR)$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "the basis $\\epsilon_1\\wedge\\ldots\\wedge\\epsilon_p$",
+    "new": "the basis $\\epsilon_I=\\epsilon_{i_1}\\wedge\\ldots\\wedge\\epsilon_{i_p}$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "$\\dd x_i \\Omega^1(U)$",
+    "new": "$\\dd x_i\\in\\Omega^1(U)$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "\\frac{\\partial f }{\\partial x_i }\\zeta^1",
+    "new": "\\frac{\\partial f }{\\partial x_1 }\\zeta^1",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "J=(i_1, \\ldots, i_r, k, \\ldots, i_p)",
+    "new": "J=(i_1, \\ldots, i_r, k, i_{r+1},\\ldots, i_p)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "$\\Omega^p(U)\\to\\Omega^{p+1}(U)\\to\\Omega^{p+2}(U)$",
+    "new": "$\\Omega^p(U)\\xrightarrow{\\dd}\\Omega^{p+1}(U)\\xrightarrow{\\dd}\\Omega^{p+2}(U)$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "indentity zero.",
+    "new": "identically zero.\\corr{原书第 16 页的两个箭头漏排 $d$；这里明确复合的是相邻两级的外微分。}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "anti-commutative algebra $\\Omega^*(U)$",
+    "new": "anti-commutative graded algebra $\\Omega^*(U)$\\corr{原书第 17 页此处漏写 graded。交换符号取决于次数，须表述为分次反交换代数。}",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "$\\dd:\\Omega^0(U)\\to\\Omega^{p+1}(U)",
+    "new": "$\\dd:\\Omega^p(U)\\to\\Omega^{p+1}(U)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "$f\\in\\Omega^*(U), \\dd f = \\frac{\\partial f }{\\partial x_i }",
+    "new": "$f\\in\\Omega^0(U), \\dd f = \\frac{\\partial f }{\\partial x_1 }",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "(-1)^p\\dd\\omega_1\\wedge\\dd\\omega_1",
+    "new": "(-1)^p\\omega_1\\wedge\\dd\\omega_2",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "on $\\Omega^0(V)$",
+    "new": "on $\\Omega^0(U)$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "we have that $\\dd'\\epsilon_i$",
+    "new": "we have that $\\dd'\\epsilon_i=0$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "For an open set $V$ in",
+    "new": "For an open set $U$ in",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "on the open set $V$ such",
+    "new": "on the open set $U$ such",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "\\to V$ with",
+    "new": "\\to U$ with",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "partition $V$ into",
+    "new": "partition $U$ into",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "the image $\\Omega^{p-1}(U)\\subset\\Omega^p(U)$",
+    "new": "the image $\\dd\\Omega^{p-1}(U)\\subset\\Omega^p(U)$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "H^p(u)",
+    "new": "H^p(U)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "$\\omega\\subset\\Omega^p(U)$",
+    "new": "$\\omega\\in\\Omega^p(U)$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "\\dd\\eta_1\\wedge\\omega_2 + \\dd\\eta_1\\wedge\\omega_2",
+    "new": "\\dd\\eta_1\\wedge\\omega_2 + \\omega_1\\wedge\\dd\\eta_2",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "(-1)^p\\omega_1\\wedge\\omega_2 + \\eta_1",
+    "new": "(-1)^p\\omega_1\\wedge\\eta_2 + \\eta_1",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "is defines by",
+    "new": "is defined by",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "D_x(\\phi\\circ\\phi) = D_{\\phi(x)}\\phi",
+    "new": "D_x(\\psi\\circ\\phi) = D_{\\phi(x)}\\psi",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "noteed",
+    "new": "noted",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "then $\\phi'=\\phi$",
+    "new": "then $\\phi'=\\phi^*$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "\\sum_{i=k}^{n}",
+    "new": "\\sum_{k=1}^{m}",
+    "count": 2,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "q > O",
+    "new": "q > 0",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "forrn",
+    "new": "form",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "where $\\phi(t)$",
+    "new": "where $\\psi(t)$",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "(=\\phi^*(\\omega))",
+    "new": "(=[\\phi^*(\\omega)])",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "\\phi^*(\\omega) + \\phi^*(\\omega) + \\dd\\phi^*(v)",
+    "new": "\\phi^*(\\omega) + \\dd\\phi^*(v)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "g_J(x, t)\\dd x_J\\wedge\\dd t",
+    "new": "g_J(x, t)\\dd t\\wedge\\dd x_J",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "g_J(0, t)",
+    "new": "g_J(x, t)",
+    "count": 1,
+    "kind": "transcription"
+  },
+  {
+    "file": "03-de-Rham-Cohomology.tex",
+    "old": "Form Example",
+    "new": "From Example",
+    "count": 1,
+    "kind": "transcription"
+  }
+]

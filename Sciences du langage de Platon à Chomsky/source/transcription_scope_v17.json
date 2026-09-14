@@ -1,0 +1,31 @@
+{
+  "source_pages": 546,
+  "main_chapters": 16,
+  "bibliography_entries": 154,
+  "new_source_pages": [
+    1,
+    2,
+    3,
+    4,
+    540,
+    541,
+    542,
+    543,
+    544,
+    545,
+    546
+  ],
+  "targeted_rechecked_chapters": [
+    13,
+    14,
+    16
+  ],
+  "layout_heading_repair_chapters": [
+    14,
+    15,
+    16
+  ],
+  "source_hash": "8a9b5179ccfd0fa9c5beca9386dbaf5808f79bde1bb348e7297dad229332a0ea",
+  "faithfulness": "OCR转写错误恢复底本可见字形；底本自身疑误留文出校；保留练习空白。",
+  "not_claimed": "未声称本轮独立重核所有历史事实、法译引文及前版全部校注来源。"
+}

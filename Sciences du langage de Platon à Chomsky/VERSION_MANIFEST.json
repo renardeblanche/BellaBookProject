@@ -1,0 +1,1700 @@
+{
+  "version": "2026-09-11.v18",
+  "source_range": [
+    1,
+    546
+  ],
+  "retypeset_source_pages": 546,
+  "retypeset_pdf_pages": 590,
+  "editorial_notes": 627,
+  "original_notes": 60,
+  "body_chapters_complete": true,
+  "bibliography_complete": true,
+  "source_text_coverage_complete": true,
+  "scholarly_final_review_complete": false,
+  "appendix_b_removed": true,
+  "appendix_a_references_continuous": true,
+  "comparison_pdf_generated": false,
+  "checks": {
+    "source_markers_complete": true,
+    "overfull_box_warnings": 0,
+    "missing_glyph_warnings": 0,
+    "undefined_reference_warning": false,
+    "labels_need_rerun": false,
+    "text_outside_page": [],
+    "bad_internal_links": []
+  },
+  "pdf_output": {
+    "Spinosa_BellaBook_v18_complete.pdf": {
+      "bytes": 12634609,
+      "sha256": "a79f414e96fae3891ff7233a924347b12e6ba12dc3c556917d86c440d13051f1"
+    }
+  },
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 11358,
+      "sha256": "1530bc283e9be3a5934680079e5a7f45b8b09b4e10ef521a3ffec0885df2f128"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2009,
+      "sha256": "9f74c75a88a6f4d320b0faee99819b4c5a027ca316107284e67f5d4518259544"
+    },
+    {
+      "path": "appendices/collation.tex",
+      "bytes": 36056,
+      "sha256": "a59bd2a36df87bf8b11022959e9b21df83199fe2218f822829fa4c03d1d261e3"
+    },
+    {
+      "path": "assets/author_signature.png",
+      "bytes": 15471,
+      "sha256": "c60d438140fc2563aeb6fef770e71284cf3b9382d3e63d226fb3e73a271930a7"
+    },
+    {
+      "path": "assets/bee_dances_original.png",
+      "bytes": 115607,
+      "sha256": "289930a9d38a64a9c2fdeb4b02a6cf9f3d9112134ba224e272dd4bbcea12ac25"
+    },
+    {
+      "path": "assets/ch04_abduction_original.png",
+      "bytes": 97156,
+      "sha256": "ab8fa68cf877eb6a99407a616b979d791bdc3433b6dfbf25cd7e6ccffb03c893"
+    },
+    {
+      "path": "assets/ch04_deduction_original.png",
+      "bytes": 112923,
+      "sha256": "eeac3712a9aa09c62889f062a355cdd0e17c48aee09f9cbc7f8204ce160fa725"
+    },
+    {
+      "path": "assets/ch04_induction_original.png",
+      "bytes": 85085,
+      "sha256": "50ce0341df891d6f48cbad9755c5c7c87a7143ee8759a5cbfafece8ce217c8f9"
+    },
+    {
+      "path": "assets/ch04_porphyre_original.png",
+      "bytes": 174439,
+      "sha256": "c9965aba8d38c32cc5acf8dbede17df3ba5bbfdfaabdc987fe840ec650e7c60b"
+    },
+    {
+      "path": "assets/ch04_square_original.png",
+      "bytes": 357139,
+      "sha256": "abcd7d0b6ec19c45bc37ce12371479c14af269aec26432a58e1040bc76c22ecb"
+    },
+    {
+      "path": "assets/ch07_articulators.png",
+      "bytes": 124087,
+      "sha256": "96287cc3fe4ed119190ed739d87d88cd1653d7cb05b5aa40547745d9e8f9d49a"
+    },
+    {
+      "path": "assets/ch07_cavities.png",
+      "bytes": 235901,
+      "sha256": "06a4568183a729c1431a08da97f3266957df19f6982f071d5374d3492fc7918d"
+    },
+    {
+      "path": "assets/ch07_dorsovelar.png",
+      "bytes": 77758,
+      "sha256": "6a898d5ce0a14f6b1ba3b4e197cc4746ebcb5dd662a28cb484c6892e1322b680"
+    },
+    {
+      "path": "assets/ch07_exercise_diagrams.png",
+      "bytes": 425842,
+      "sha256": "2ad04dc740fbc00a05f7260492124add7af25186bcff4051876ae0be46c3c8b0"
+    },
+    {
+      "path": "assets/ch07_nasal_oral.png",
+      "bytes": 663720,
+      "sha256": "e11e372ee95582b8214addd858716a103f819a1129e78672d4020002e5a0667c"
+    },
+    {
+      "path": "assets/ch07_places.png",
+      "bytes": 171517,
+      "sha256": "d09787cca70d36a36d49e3725222d82c4889ed2ff6a6635605160f8f499894c8"
+    },
+    {
+      "path": "assets/ch07_respiratory.png",
+      "bytes": 274776,
+      "sha256": "9630a000571693a5c9321446d3888c9a174341142056b35b7408132604b1247e"
+    },
+    {
+      "path": "assets/ch07_trapezoid.png",
+      "bytes": 111085,
+      "sha256": "996956992862671758cc88d940101375511cd5b6d4256b576f6f91cddb38d077"
+    },
+    {
+      "path": "assets/ch07_vocal_tract.png",
+      "bytes": 198735,
+      "sha256": "59978f5dd182be188b656caf4296e8afc9b9ff781745d60021688665f8e29808"
+    },
+    {
+      "path": "assets/ch07_vowel_a.png",
+      "bytes": 73097,
+      "sha256": "8329f878e2f2a818363a68f427d212628f7d68901b0bd9fc9d52cfba704e3d68"
+    },
+    {
+      "path": "assets/ch07_vowel_i.png",
+      "bytes": 67768,
+      "sha256": "9e150ec9f8786cdf52df9021a839ea5b36633690a9d2f18f3a2c2cffeae040ae"
+    },
+    {
+      "path": "assets/ch07_vowel_positions.png",
+      "bytes": 196097,
+      "sha256": "c5daee75233bc0f0c18d2aefbe8be562d3dc99351e0deb758e03b5589dee614d"
+    },
+    {
+      "path": "assets/ch08_communication_original.png",
+      "bytes": 184120,
+      "sha256": "b835be9870e766ffe0a6c1d9d91154f10621a0cea07f169b26d720eee1507ec1"
+    },
+    {
+      "path": "assets/ch09_imparfait_original.png",
+      "bytes": 23225,
+      "sha256": "3391fcfa03bbedb8e9fe29be6779e01d69f90c0fea4bd440a43ad36510b5b4f9"
+    },
+    {
+      "path": "assets/ch10_alfred_avoue.png",
+      "bytes": 45717,
+      "sha256": "61a6f59a73bdb9ec59cf767a8c39b97710b4fef891c5311482d00388b060b673"
+    },
+    {
+      "path": "assets/ch10_alfred_bernard.png",
+      "bytes": 50513,
+      "sha256": "bc36f491960dbc67e78ac42b22fb4e5cdebd495cbfbf2d2267f9707050df83ab"
+    },
+    {
+      "path": "assets/ch10_alfred_dort.png",
+      "bytes": 21172,
+      "sha256": "0aa950c5eb277bb5a420356de86495ec6cc6fc5e61a3faf1d611657d7726bb32"
+    },
+    {
+      "path": "assets/ch10_alfred_rappel.png",
+      "bytes": 28579,
+      "sha256": "1f21964f5150d3799ad9e788d20bb39800932f25b5fb33fd99cd9fbdf7496b52"
+    },
+    {
+      "path": "assets/ch10_anaphore.png",
+      "bytes": 140672,
+      "sha256": "4dbd776ea821640521a7cf310ad86471a663320e528b870eaab8751d3719489b"
+    },
+    {
+      "path": "assets/ch10_categories_OA.png",
+      "bytes": 6423,
+      "sha256": "28e7321e0732dc557c7bf701c671e8a65bf1f64103f13953932d86fd2d230d07"
+    },
+    {
+      "path": "assets/ch10_chante_crie.png",
+      "bytes": 54413,
+      "sha256": "7b2ba1c4a377370ad0fb734e6d7d2fa9cf12d0836648e9f61b93ed5546ee0261"
+    },
+    {
+      "path": "assets/ch10_circonstants.png",
+      "bytes": 109080,
+      "sha256": "1ad0fd13f97bb8a28cc3c02cc6c64657b924864b9c3ce9df60658f8f2a2e1f6a"
+    },
+    {
+      "path": "assets/ch10_docteur.png",
+      "bytes": 43371,
+      "sha256": "9e2e22bba1483c44a5c481bcafa78565e347582eb9debd427e4eeec1c70e6d82"
+    },
+    {
+      "path": "assets/ch10_ecrivez.png",
+      "bytes": 38089,
+      "sha256": "6f19f0352b7e025dd95647b192bc8e5cb1ab23ea762b025418b24bab98de5b63"
+    },
+    {
+      "path": "assets/ch10_frappe_comparaison.png",
+      "bytes": 60620,
+      "sha256": "101340c98cfe56a256217e9822a5dcf2b4d28135801e0d41658919267aa859a0"
+    },
+    {
+      "path": "assets/ch10_il_pleut.png",
+      "bytes": 17134,
+      "sha256": "5f78f08d64b9d9a156b2636e64e048cfc7a503b63f103b7ec3d2176e3fa53862"
+    },
+    {
+      "path": "assets/ch10_incidence_semantique.png",
+      "bytes": 136406,
+      "sha256": "1db574149d8943462bacb58ee9371746bf7f7a69a7e9d190cc3601eaee4cbe83"
+    },
+    {
+      "path": "assets/ch10_incidence_structurale.png",
+      "bytes": 89167,
+      "sha256": "085c139cb0a1624a57e867f5564d45d42f70476d45b98d3d835e94c623981e55"
+    },
+    {
+      "path": "assets/ch10_je_crois.png",
+      "bytes": 47842,
+      "sha256": "8177b2f4818bab935698998c5697a5d0955d107847b89d7e6834390bc29bccac"
+    },
+    {
+      "path": "assets/ch10_livre_ami.png",
+      "bytes": 70042,
+      "sha256": "b98ffdecc35428caa47fe39236b8bbe8bd31c77a0eb05ea8424c38915e3788d5"
+    },
+    {
+      "path": "assets/ch10_mode_labels.png",
+      "bytes": 96457,
+      "sha256": "747764976222bc70c9380362ef00f8abebf73ca81f773807f9ae5b6ea406a6b0"
+    },
+    {
+      "path": "assets/ch10_mode_paris.png",
+      "bytes": 64439,
+      "sha256": "ed4375991fb691313376ceec77978c5f1eb020ee80bb469f785b365931a040d8"
+    },
+    {
+      "path": "assets/ch10_nucleus_deuxieme.png",
+      "bytes": 54630,
+      "sha256": "5c2f2e4da64a5b64958b67a95b13002091eed97c2f457c610f4213f14c839c28"
+    },
+    {
+      "path": "assets/ch10_nucleus_premiere.png",
+      "bytes": 77210,
+      "sha256": "ede09041d08faaab0659f5eeb2b5a6ded6e893f438a248cb5a024048d5b0ec2e"
+    },
+    {
+      "path": "assets/ch10_stemma_adjectifs.png",
+      "bytes": 65854,
+      "sha256": "528114a418f2b37223661879da773eae2c19fbdd8c18286bd2847a25d431d854"
+    },
+    {
+      "path": "assets/ch10_stemma_alfred.png",
+      "bytes": 14831,
+      "sha256": "511f948b416b5624791a0219ac0c4327e1d677c61f140b4362bef2061fc81807"
+    },
+    {
+      "path": "assets/ch10_stemma_ami.png",
+      "bytes": 17438,
+      "sha256": "e34a0a86e8a2aab0bbfa1172aed5265e27b083cef00d4f7575f0452a73a69a87"
+    },
+    {
+      "path": "assets/ch10_stemma_ruisseaux.png",
+      "bytes": 98128,
+      "sha256": "e1d11cd57a73d0e6175d1697c203a6c8aa1e6a3b9338ed42947e09013e1676ff"
+    },
+    {
+      "path": "assets/ch10_stemma_signal.png",
+      "bytes": 88735,
+      "sha256": "59870fff9f20afa277ae5cd9df9722fb15318bcf93939edfb0d6427fc7f53f30"
+    },
+    {
+      "path": "assets/ch10_stemma_silence.png",
+      "bytes": 88622,
+      "sha256": "42ccfd17682bd7fc2a536e7422ab0fe9f78e2ee2a24b209dad3e8c0682861dce"
+    },
+    {
+      "path": "assets/ch10_structure_sens.png",
+      "bytes": 176956,
+      "sha256": "380a13bf4e8ef8bdc1bd337f06bd51c0d33631033382da710a40d91bb7cbb48b"
+    },
+    {
+      "path": "assets/ch10_sujet_predicat.png",
+      "bytes": 35282,
+      "sha256": "de0fe51f4eb5c7fa0f509c461ba652f2f209cf40c4e995783d684c77b05b4dab"
+    },
+    {
+      "path": "assets/ch10_tau_schema.png",
+      "bytes": 98431,
+      "sha256": "df93cb431921ce834b8a6e92f9bd4a973df5a1d399ed92f5d01ba6b4f8d3cb99"
+    },
+    {
+      "path": "assets/ch10_trois_actants.png",
+      "bytes": 97967,
+      "sha256": "eaed49a35d15920d8784ab4d778e6a34561d962b138d616b7afd02c97702b58f"
+    },
+    {
+      "path": "assets/ch10_votre_ami.png",
+      "bytes": 25056,
+      "sha256": "2c32ee3110160b56d96ec5307422cc65fc239631ff589ca1860b73f31f5880a7"
+    },
+    {
+      "path": "assets/ch11_actantiel_original.png",
+      "bytes": 67799,
+      "sha256": "874e47c5945dcebb31bdcebf6fa83168070a1e08311866a14fc051035fc7054b"
+    },
+    {
+      "path": "assets/ch11_square_extended_original.png",
+      "bytes": 204699,
+      "sha256": "1a8bd446351dffb4e21c40235b827d129d05c79ee3997eb5bed3ad56dbe7f859"
+    },
+    {
+      "path": "assets/ch11_square_gender_original.png",
+      "bytes": 156496,
+      "sha256": "506355bf832803adef2e11ea6313d1c57fb27401dca9e7fa2a0900fff178341f"
+    },
+    {
+      "path": "assets/ch11_square_relations_original.png",
+      "bytes": 44484,
+      "sha256": "79f65b21ffebbb0796082d31b8caa9b5e96cef6ce7ce5aaf2a76d8e03e9cbcbe"
+    },
+    {
+      "path": "assets/ch13_bislama_lexicon.png",
+      "bytes": 260740,
+      "sha256": "6d8f724f43958c8def334a1b67ba13278dc8084291d1cf7ec1836702b0a22e4b"
+    },
+    {
+      "path": "assets/ch13_bislama_lexicon_1.jpg",
+      "bytes": 103272,
+      "sha256": "00de2c2a576d4ba04200761d65300060182da4390273e595bfcf0fba3ebf7fe5"
+    },
+    {
+      "path": "assets/ch13_bislama_lexicon_2.jpg",
+      "bytes": 234685,
+      "sha256": "43e38fe5015d99caf2308a4c899765a124187ecff4620448345635a08b83c63f"
+    },
+    {
+      "path": "assets/ch13_joret_examples.jpg",
+      "bytes": 188872,
+      "sha256": "f028ddd081256052d213375635e40e08ebc059e817d42c0f6665bd98500e70e5"
+    },
+    {
+      "path": "assets/ch13_pidgin_chinese.png",
+      "bytes": 191470,
+      "sha256": "9dd9bd11e0ff1eed96fd537e5322b7b169998c67df28aa9f2855e47430545ce3"
+    },
+    {
+      "path": "assets/ch14_ambiguity_artist.jpg",
+      "bytes": 88822,
+      "sha256": "5b3020076fdeb362673d9f3fdf30028bdfe66c45f90689f816aad1b58996df96"
+    },
+    {
+      "path": "assets/ch14_ambiguity_trees.jpg",
+      "bytes": 239317,
+      "sha256": "a4a87733c05c014878596dab89a8e8d1c7c39b0759b4d9dbe25d1e327b410ab0"
+    },
+    {
+      "path": "assets/ch14_color_categories.jpg",
+      "bytes": 284646,
+      "sha256": "96cf27d8e3f019432268238d0116e3ac4a4cf439ab55456fb4afb21cc9f469b6"
+    },
+    {
+      "path": "assets/ch14_exercise_trees.jpg",
+      "bytes": 225383,
+      "sha256": "be69ea90ff3ec0d2e0c13b72b4ff21bc9750c845cd1981a7dbc4ee8d9e485e2f"
+    },
+    {
+      "path": "assets/ch14_extended_model.jpg",
+      "bytes": 219098,
+      "sha256": "ba8fe3256082994d45c3b853b3aaef4d6de7525de04b4736b4a95d288fd85bef"
+    },
+    {
+      "path": "assets/ch14_hockett_1.jpg",
+      "bytes": 309615,
+      "sha256": "278a0cb1e99e3d12d60ec5bce7d88819ccb217809ac9d889603d38d136277eb5"
+    },
+    {
+      "path": "assets/ch14_hockett_2.jpg",
+      "bytes": 96204,
+      "sha256": "b45520839cd89cbcb0e80592c6f03e30927452d519f1d52a9f2f220d22e44c44"
+    },
+    {
+      "path": "assets/ch14_pp_model.jpg",
+      "bytes": 169080,
+      "sha256": "bb8a972dddc475b82599e594a2e0b1feebd02342471cfe24fcb688e906ab619d"
+    },
+    {
+      "path": "assets/ch14_rewrite_sp_trees.jpg",
+      "bytes": 399069,
+      "sha256": "b2b225f9c104d7ed24987c553bac97156e953c14df672a0578701b106cb12927"
+    },
+    {
+      "path": "assets/ch14_rewrite_trees.jpg",
+      "bytes": 234371,
+      "sha256": "cdf6fff60c5c28fc57ef918186b9946243d83fd3d98317b5476bff178203b302"
+    },
+    {
+      "path": "assets/ch14_sa_tree.jpg",
+      "bytes": 225512,
+      "sha256": "7af558c95e71d1856033b1ce04dbc5cdb0b479f8090a61854329b505ccbfbd0b"
+    },
+    {
+      "path": "assets/ch14_spellout.jpg",
+      "bytes": 84703,
+      "sha256": "0a5360b471a5f5701f11edc5bfb536554a72a8650816f009d9d4153dc240b9b1"
+    },
+    {
+      "path": "assets/ch14_standard_model.jpg",
+      "bytes": 140335,
+      "sha256": "73a9f790b634997c04f68a69f6733ce0cf4cab38884deae8ef639b475224872b"
+    },
+    {
+      "path": "assets/ch14_transform_deep_surface.jpg",
+      "bytes": 120661,
+      "sha256": "c40817f77a2bd1d35185fe4d22e5e892a64024ac06575e6b5ee2223ed14883f5"
+    },
+    {
+      "path": "assets/ch14_transform_interrogative.jpg",
+      "bytes": 313607,
+      "sha256": "f8f639b2639f2388b3c1b0b9dfe1cd451faf6b17a2c76c5b55b2a379bcd006ec"
+    },
+    {
+      "path": "assets/ch14_transform_passive_negative.jpg",
+      "bytes": 230582,
+      "sha256": "12c34e439d75fcf37d0816a086a380be9fbe6487d9166f6f7dd9caca5f856b09"
+    },
+    {
+      "path": "assets/ch14_tree_schematic.jpg",
+      "bytes": 156163,
+      "sha256": "b0185415c7d00df32802c8ea562d9966095c7ac9abf7d0951f2bf3086e520e79"
+    },
+    {
+      "path": "assets/ch14_xbar_examples.jpg",
+      "bytes": 225705,
+      "sha256": "2abc084db1cb2e2e3cd7c5169488d5b19b939359a2773d7caee588e092db10c7"
+    },
+    {
+      "path": "assets/ch14_xbar_general.jpg",
+      "bytes": 52983,
+      "sha256": "b2da13352a53c1e3c07c8d91b419f4d12a95aaf02d2ff51d74cedbb2c736f4ae"
+    },
+    {
+      "path": "assets/ch15_broca_wernicke.jpg",
+      "bytes": 152920,
+      "sha256": "3af08f941eefd058057c5e4910e73ed98b47ad36a353f073de5c63fed22e693f"
+    },
+    {
+      "path": "assets/ch15_brodmann_brain.jpg",
+      "bytes": 147099,
+      "sha256": "f31e80e59b5c0cf59df0e51e51c9b3142a6d64494a7cd9d213dd6b90c096d129"
+    },
+    {
+      "path": "assets/liminaires_illustration.png",
+      "bytes": 150032,
+      "sha256": "bcf2120d15c13ee737f70d9c297b5d452eb7ea6a576aa43ed04aa3ba5c3d89d6"
+    },
+    {
+      "path": "assets/partie1_illustration.png",
+      "bytes": 112479,
+      "sha256": "ece643ad7d4debe1321dd2d808229773fe89884f98e2dc5e60117b2e32f9e1a0"
+    },
+    {
+      "path": "assets/partie2_illustration.png",
+      "bytes": 98659,
+      "sha256": "6e1cdb5646edf46acbd8eba3bf35027735691f624cb7f1fa43dbd3e6a6a6ca82"
+    },
+    {
+      "path": "assets/partie3_illustration.png",
+      "bytes": 101063,
+      "sha256": "182e387fcdbf21cab29cc798da6d4e23a9502cc2e3fa3ee7081805c022848c48"
+    },
+    {
+      "path": "assets/v17_ambiguity.png",
+      "bytes": 159248,
+      "sha256": "82ab68f71839d3c9bbb4579f465d2de492d9c803bfc1f2cceacaad7318dbe94d"
+    },
+    {
+      "path": "assets/v17_artist.png",
+      "bytes": 225747,
+      "sha256": "e8a21341f02ba615f94b790f613d526e1b8b6276d6e69f6bf6b2cbc4888c7b8a"
+    },
+    {
+      "path": "assets/v17_boyread.png",
+      "bytes": 80343,
+      "sha256": "ca07db3dffe7d9e7222c4586bc20b750a309e9c73509a0eb83c6c55d34e0da14"
+    },
+    {
+      "path": "assets/v17_boytree.png",
+      "bytes": 131646,
+      "sha256": "7a217e240a162e78a6e0005ca92990bae8ee6a04985af846b2779b583da0e606"
+    },
+    {
+      "path": "assets/v17_colors.png",
+      "bytes": 149128,
+      "sha256": "223b6ed8eede4b3ec3e08b69e2926d750359ae218e70fb449afc6c8d8839edc2"
+    },
+    {
+      "path": "assets/v17_deepsurface.png",
+      "bytes": 157451,
+      "sha256": "4b7e953ba11121cd9959fad0e90849dc062dfd2b873a78302683e1a6126653e1"
+    },
+    {
+      "path": "assets/v17_dogtree.png",
+      "bytes": 132860,
+      "sha256": "9a08adde7e697d500c9b0d4b0c24e48096c272f3d36837c6809efc5cd95a94bc"
+    },
+    {
+      "path": "assets/v17_exercises.png",
+      "bytes": 367903,
+      "sha256": "d605ea953bf9b0fd1b5b3a940ad47e86e9a8f4de999d8ebc81746f46168d0d8c"
+    },
+    {
+      "path": "assets/v17_extended.png",
+      "bytes": 281361,
+      "sha256": "ec49960a476538f3374f574ec9d0a8735fff7fb669baeddaee9f3f0f1f5ca456"
+    },
+    {
+      "path": "assets/v17_hockett1.png",
+      "bytes": 286189,
+      "sha256": "805ef396a071ed5dd7316faae6063c5c60df399d7a6f2db36afbddfa8d893e97"
+    },
+    {
+      "path": "assets/v17_hockett2.png",
+      "bytes": 166722,
+      "sha256": "27139bd51ff6eeebedcd12e16ed12bba1f4dd8a618fb7edfd565cf939c2f46d8"
+    },
+    {
+      "path": "assets/v17_interrogative.png",
+      "bytes": 225589,
+      "sha256": "17abb578640ac126c809324c8da53b64368cdeac7aacb51c437bffd64287b347"
+    },
+    {
+      "path": "assets/v17_mantree.png",
+      "bytes": 109380,
+      "sha256": "3a27daf9cc597c73659fc1a8065befb891d4f75c7929c1a907dfcf17d0be4783"
+    },
+    {
+      "path": "assets/v17_negative.png",
+      "bytes": 181388,
+      "sha256": "c942d0c7f32ac094c893001acbbc142e541f9a9f70439af93f1f6fe97471dc21"
+    },
+    {
+      "path": "assets/v17_passive.png",
+      "bytes": 183933,
+      "sha256": "b4ea84416a55ff9a5b6dbb033dbdfb321b3d0e9ff90911b250ac6fd894e75872"
+    },
+    {
+      "path": "assets/v17_pp.png",
+      "bytes": 222648,
+      "sha256": "3bec67e08922d885df72b9b733e6db4853cc22f94ab1d01a4961e1e0fdec6100"
+    },
+    {
+      "path": "assets/v17_sa.png",
+      "bytes": 142501,
+      "sha256": "eb09372bf6d5c009add733a7b61af42134327845f0cd778ab88d5dd633a0dd2e"
+    },
+    {
+      "path": "assets/v17_schematic.png",
+      "bytes": 72090,
+      "sha256": "1fdd6ad05935f7e912329de56658432bb285aab75b447f7464bb2a8a0ec4b574"
+    },
+    {
+      "path": "assets/v17_sigma.png",
+      "bytes": 50981,
+      "sha256": "b300e473942555d3af17806cf4baaabf4b7f4000fe5ae69be07a4d5b1093dc4b"
+    },
+    {
+      "path": "assets/v17_sophietree.png",
+      "bytes": 139753,
+      "sha256": "49b81019f419796313370424197b2c81ce3cae7e148d206407f85476cc359307"
+    },
+    {
+      "path": "assets/v17_spellout.png",
+      "bytes": 66784,
+      "sha256": "eb467f5b8bd2dd798d2f9c1e078a6c921214a2877cf6969293f28b41e8879eb5"
+    },
+    {
+      "path": "assets/v17_standard.png",
+      "bytes": 237360,
+      "sha256": "9faeb0f330cdb71b42aafda671b8d3e4472a2d05474f29b078deac4cc8e563b5"
+    },
+    {
+      "path": "assets/v17_xexamples.png",
+      "bytes": 170637,
+      "sha256": "308fb58470cfc2bb17f61b7e69787eee055ae8c7298daa61c1570118624bb5d9"
+    },
+    {
+      "path": "assets/v17_xgeneral.png",
+      "bytes": 44599,
+      "sha256": "62a557d9a7094c194b9f65c42eee3f9dedd512ebabdaca97652dc540c653dc29"
+    },
+    {
+      "path": "bellabook.cls",
+      "bytes": 6428,
+      "sha256": "6d74de339486f9acaeab93fa206d09a2e59f85e516f58b4f6ea239e97a466f6b"
+    },
+    {
+      "path": "chapters/00_liminaires.tex",
+      "bytes": 3267,
+      "sha256": "7e5b47bdf0a85d6590a9d78e9d2bf3c973a86de499b20c5c761e18b647c18501"
+    },
+    {
+      "path": "chapters/01_originelle.tex",
+      "bytes": 72354,
+      "sha256": "6771c36bf151ae94a65fc3c60223677f21c7b61728b561ecf471b65df3f61443"
+    },
+    {
+      "path": "chapters/02_animale.tex",
+      "bytes": 59168,
+      "sha256": "8d3851c4e87db898b351ac6641a0919e979b433c7bd16ea3f2c4de02cbab9d0c"
+    },
+    {
+      "path": "chapters/03_grammaire.tex",
+      "bytes": 81082,
+      "sha256": "f96367675525fae227cb57fb29e9df0911ff394e836e8e00f956e9bbca7c613a"
+    },
+    {
+      "path": "chapters/03_partie1.tex",
+      "bytes": 3842,
+      "sha256": "24f9f1268e054a3e016bd9a0d6e0ae4c7d58d47a91eb39b6080fd4985aeb7855"
+    },
+    {
+      "path": "chapters/04_logique.tex",
+      "bytes": 143360,
+      "sha256": "3540c7d00650a25b3386661ab4168ca7368efd65cf157a5479da7b81ffcdd6c5"
+    },
+    {
+      "path": "chapters/05_comparative.tex",
+      "bytes": 108870,
+      "sha256": "30c6753f1f5f3e776487143c9781e4038e5d08b3d2e3aab40e28103eabe40253"
+    },
+    {
+      "path": "chapters/06_signe.tex",
+      "bytes": 113698,
+      "sha256": "6e284c47c3020dbe969a88b4c6975e9f9a6203bf72d4a23e930c6a3990a960a8"
+    },
+    {
+      "path": "chapters/07_partie2.tex",
+      "bytes": 3901,
+      "sha256": "fa614a47d54ea806eef1af7fe1f1de0eebace79f518f2204c09a8b25451e4a31"
+    },
+    {
+      "path": "chapters/07_phonetique.tex",
+      "bytes": 30527,
+      "sha256": "d09aa7df0965071f3d3c3f5ef01682db5cceb6797808e043e84d0b27d6ae47a3"
+    },
+    {
+      "path": "chapters/08_phonologie.tex",
+      "bytes": 64836,
+      "sha256": "8b63ff23eb58d3d7214006d915501e02960d2027b5979ad9e72f31b29e36c5ca"
+    },
+    {
+      "path": "chapters/09_morphologie.tex",
+      "bytes": 132293,
+      "sha256": "17d63dfd979b0770abd133214c66d048deea16fea31cc7dd2bcaef273df8746b"
+    },
+    {
+      "path": "chapters/10_syntaxe.tex",
+      "bytes": 84768,
+      "sha256": "6c324b93d810b137c45271442be1adce3a5b776d87af077b552eaad8ac0678ea"
+    },
+    {
+      "path": "chapters/11_semantique.tex",
+      "bytes": 93406,
+      "sha256": "37c26c835096be54bffcc4c9bdc19601ac73ce6b2beed19f00536f01a4cdc3e5"
+    },
+    {
+      "path": "chapters/12_pragmatique.tex",
+      "bytes": 110239,
+      "sha256": "7ab7cd6cd66ce80538b0b5b96da11961b6db00ffe3c9c1a71591be67f7261282"
+    },
+    {
+      "path": "chapters/13_partie3.tex",
+      "bytes": 3810,
+      "sha256": "382da5144e4225e49084eccf8e64db6e7988bc1ba912f1262c81a687141c8e52"
+    },
+    {
+      "path": "chapters/13_sociolinguistique.tex",
+      "bytes": 99787,
+      "sha256": "277a89b447220251ff3ff36a23db19723ff3c8a8e0d2b8924d8a703992f88e91"
+    },
+    {
+      "path": "chapters/14_generative.tex",
+      "bytes": 109670,
+      "sha256": "4b151c8b05d7300e9b116e6de498058bfea9b61b891512f2383f2a1f59acb91b"
+    },
+    {
+      "path": "chapters/15_biolinguistique.tex",
+      "bytes": 89258,
+      "sha256": "a1b2154eddfd0c58e2d8513fce1462075f11e86cd7b05c5e8b03decc5c78f8c4"
+    },
+    {
+      "path": "chapters/16_cognitive.tex",
+      "bytes": 120736,
+      "sha256": "c59b2435aed976e356fac60a4b33003e9527c04af4491c386c9e837a4a0e8b81"
+    },
+    {
+      "path": "chapters/17_bibliographie.tex",
+      "bytes": 21217,
+      "sha256": "3a23f3bffc93cad42ed67f1cd6f0d1a84498e3943a8d4a0a98b813ce2daecf20"
+    },
+    {
+      "path": "frontmatter/au_lecteur.tex",
+      "bytes": 20551,
+      "sha256": "1157c9cc81b9d751c01c14744a6011ebd3888a0f885a21443fe0e5c664498e4a"
+    },
+    {
+      "path": "frontmatter/original_contents.tex",
+      "bytes": 1731,
+      "sha256": "3b23ddc523932878b936a1c97b9712b1d9b1839480719b57b06f30f8b940debd"
+    },
+    {
+      "path": "frontmatter/preface.tex",
+      "bytes": 5249,
+      "sha256": "16557977820d03d802004b2717af454888fe763986fe5601d322a66c03341622"
+    },
+    {
+      "path": "frontmatter/publication.tex",
+      "bytes": 4198,
+      "sha256": "27848dd3c8f6b30606e7f12152d02fcd4162cc96b34b6a6f9e2b69ceb286877d"
+    },
+    {
+      "path": "frontmatter/remerciements.tex",
+      "bytes": 2456,
+      "sha256": "607111a489f064c1d25ea9cd864f41e20f4eeedc074f33ad3a3b1ec069c28719"
+    },
+    {
+      "path": "frontmatter/title.tex",
+      "bytes": 1352,
+      "sha256": "ff384a484a2996dfb1c9deb5b794d137838f1b2eab1440a09a4090f33b8b3372"
+    },
+    {
+      "path": "main.tex",
+      "bytes": 1065,
+      "sha256": "d932a0a9c14bf9321a76bd6521bedf686b8d9203efc4965df6e00e45bdf1862c"
+    },
+    {
+      "path": "qa/build_report.json",
+      "bytes": 1011,
+      "sha256": "1e73a29424a9d640ace767e6a3fbda74b6f4b7bacd76a535e6f84b63a99f6d32"
+    },
+    {
+      "path": "qa/v17_changes.patch",
+      "bytes": 287774,
+      "sha256": "c9ab9829f3968024a21c3106ea3500ee90e813084bf43cd5a55d7e5ba6491c15"
+    },
+    {
+      "path": "qa/v17_manual_changes.json",
+      "bytes": 504469,
+      "sha256": "c24589d5023d364406dcb2e20e623a7409f28a615cba13ad801ba675c451fc9f"
+    },
+    {
+      "path": "qa/v18_changes.patch",
+      "bytes": 175435,
+      "sha256": "6028aff644c5e498af959d7e2da760a895d656ecb652260060d754cc2850ada6"
+    },
+    {
+      "path": "qa/v18_integrity.json",
+      "bytes": 1048,
+      "sha256": "705ab6cd4f3bf53fc9e82efa5a71a51b8859fc05870e01c0bb9cfb18ddce7183"
+    },
+    {
+      "path": "qa/visual_review.json",
+      "bytes": 765,
+      "sha256": "ba1a858da9cf5cd5f232af90308bcd2fb9c615911ae03fc5543da6388b75ba76"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 25,
+      "sha256": "5fc27f5b9aa15252a59c8fa11f295044e96c1edefa74aff4f3725e12dd8aafcc"
+    },
+    {
+      "path": "scripts/build.sh",
+      "bytes": 682,
+      "sha256": "c701ed9e0c93b72ec90d632150bf7c184e24b27c1a09626d7be058a2f7b0b7d1"
+    },
+    {
+      "path": "scripts/build_outputs.py",
+      "bytes": 6268,
+      "sha256": "1cd9da684dcbfb0af3b30966711200ee6a2abee18310b6827f67b0328e6a424c"
+    },
+    {
+      "path": "scripts/crop_ch10.py",
+      "bytes": 2045,
+      "sha256": "280568aebf7885de83262e2e33c0437e6b1ec50d0ce9bc263e8c26c9dec5ac0d"
+    },
+    {
+      "path": "scripts/crop_ch11.py",
+      "bytes": 673,
+      "sha256": "8a67335d72f5230cff5de5915e8dfee2dc10e885e1c5bb88d85287bfbfc19359"
+    },
+    {
+      "path": "scripts/package_project.py",
+      "bytes": 3522,
+      "sha256": "a37d38adec1b9675a814e0af820ce3d43faf72a7627b5d1a566fe019db54bfd1"
+    },
+    {
+      "path": "source/assets_ch07.json",
+      "bytes": 3547,
+      "sha256": "f4dbcf441fa19839570792172d457f7ff00f6a63d72a76a5f4373b403747c02b"
+    },
+    {
+      "path": "source/assets_ch08.json",
+      "bytes": 313,
+      "sha256": "a229d5004acc3814b29cc12700474d2577a5dbd8c3c1a538020800528b5b91ad"
+    },
+    {
+      "path": "source/assets_ch09.json",
+      "bytes": 361,
+      "sha256": "9d951235c5cfb2711c4100a924a11ba9880cf3ec9dbb565d205fe7f536de7ad9"
+    },
+    {
+      "path": "source/assets_ch10.json",
+      "bytes": 7321,
+      "sha256": "205ed160e903b6e67ca2878aaa9b88684c5bf8dbcb26148e864084fc725840e8"
+    },
+    {
+      "path": "source/assets_ch11.json",
+      "bytes": 1201,
+      "sha256": "c3fb197c104f7fdac3214680075b2ec3a0717ce0ed3b26320dab5360e78ebd42"
+    },
+    {
+      "path": "source/assets_ch12.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "source/assets_v17.json",
+      "bytes": 3788,
+      "sha256": "a81b267e5f7782bba634e8a09004c1f4438268792049383dd68af3efc5370db7"
+    },
+    {
+      "path": "source/editorial_notes_ch02.csv",
+      "bytes": 5452,
+      "sha256": "20bba95c46a68317aa346db1ca223e65b002c450dea2ce2204c877730c2f168a"
+    },
+    {
+      "path": "source/editorial_notes_ch03.csv",
+      "bytes": 6724,
+      "sha256": "c4682eed83cdb4aa00772d89e2bf3f47cd22ac2a9f84a6bc2f88d7e7fc123074"
+    },
+    {
+      "path": "source/editorial_notes_ch04.csv",
+      "bytes": 14266,
+      "sha256": "1ef0f3535d5cbdd0e20103c862ee9e1a23b6e5f5aa25a4b5c58eec224cf31806"
+    },
+    {
+      "path": "source/editorial_notes_ch05.csv",
+      "bytes": 10621,
+      "sha256": "3407e548c6046dc05ec7059d24e2d5dca468df206e67a1b52286b2002ec88131"
+    },
+    {
+      "path": "source/editorial_notes_ch06.csv",
+      "bytes": 9358,
+      "sha256": "88d8c40063ec8b51b15457205f55ba9191805f83abb6628eee88ded113e9bd89"
+    },
+    {
+      "path": "source/editorial_notes_ch07.csv",
+      "bytes": 5296,
+      "sha256": "19a7c756384d759fb76da0eb2400b36d55cfcdc4e113b2a4964f14466b599bf8"
+    },
+    {
+      "path": "source/editorial_notes_ch08.csv",
+      "bytes": 11286,
+      "sha256": "5306a40d1326ee5045a0707e12df1be470eebf893ce9e365308de6bd0e981c9e"
+    },
+    {
+      "path": "source/editorial_notes_ch09.csv",
+      "bytes": 16550,
+      "sha256": "0e03f70e6868d8bef901a03c1f27d646fc70c370db3a8ca5d824058e290e5e56"
+    },
+    {
+      "path": "source/editorial_notes_ch10.csv",
+      "bytes": 9720,
+      "sha256": "87f41bca0b203d36a0722d2fec5bcd3144e4e57ebb0976503bb68ae2c5f2dd52"
+    },
+    {
+      "path": "source/editorial_notes_ch11.csv",
+      "bytes": 19178,
+      "sha256": "bfa40cf7e3444a530062b6b95e17037e1749c99d2c564a46603c241c1044d1f0"
+    },
+    {
+      "path": "source/editorial_notes_ch12.csv",
+      "bytes": 25603,
+      "sha256": "11a853532eca12d56627f12488cce94faee2d0a28b1f1f6796bb15e4c8ef264b"
+    },
+    {
+      "path": "source/editorial_notes_ch16.csv",
+      "bytes": 2040,
+      "sha256": "d88f58b5f7fffdc20c92269c601c6ecccd447717d673038af1c2223efc12508d"
+    },
+    {
+      "path": "source/ferguson_crossref.json",
+      "bytes": 527,
+      "sha256": "ab04001bffcf68158a5f5cf8c4d4c820ee7c8a8bfd8e5cf49c4d5d038ab17333"
+    },
+    {
+      "path": "source/notes_v17.json",
+      "bytes": 223117,
+      "sha256": "aba3b256810e3f64ddb32b785b44d6ba28c39606e13ef7224f31268f9ca1e6ad"
+    },
+    {
+      "path": "source/notes_v18.json",
+      "bytes": 222091,
+      "sha256": "1f81168545aa4dd92fd89a50c52c416657c4b9893ff9ff9b5bc2c0fca2cae596"
+    },
+    {
+      "path": "source/original.pdf",
+      "bytes": 117627163,
+      "sha256": "8a9b5179ccfd0fa9c5beca9386dbaf5808f79bde1bb348e7297dad229332a0ea"
+    },
+    {
+      "path": "source/original_notes_ch11.json",
+      "bytes": 1071,
+      "sha256": "0699b57880735e39024b19c66784a7b9fbcd83cd82c68099c42100c15dba7f08"
+    },
+    {
+      "path": "source/original_notes_ch12.json",
+      "bytes": 1081,
+      "sha256": "e039ea7bae381de3bd0e2937b7123ef6dc0bd9d044f360419a8659a43d083796"
+    },
+    {
+      "path": "source/original_notes_ch16.json",
+      "bytes": 671,
+      "sha256": "110169ba0325c7c3074d4b364af9eeb0cff8dfa7a082de011f89183d685d8cbf"
+    },
+    {
+      "path": "source/original_toc.json",
+      "bytes": 18610,
+      "sha256": "31c6b235f8a57b01e9779cf5ad09bb06495f307fbc28344d4bba2d41be7aeb00"
+    },
+    {
+      "path": "source/page_coverage.csv",
+      "bytes": 16244,
+      "sha256": "e0a74ef9f91a612a88a6d485bb94f9de38ed328e09c3a88dc76287ca86fe30d5"
+    },
+    {
+      "path": "source/references_ch03.json",
+      "bytes": 835,
+      "sha256": "e41e2edf1311506c81dbc8643966bd055742c510c94e8756227656808244ddcf"
+    },
+    {
+      "path": "source/references_ch04.json",
+      "bytes": 2140,
+      "sha256": "f85c8fc1bec39442122e387b9d621a551dcc9c25f62e52ad285060d2a1a6f2a1"
+    },
+    {
+      "path": "source/references_ch05.json",
+      "bytes": 4867,
+      "sha256": "e145148be10f5ebdd2ab79fc2428417a3f2f5bb2cd2a866150127619d0f54154"
+    },
+    {
+      "path": "source/references_ch06.json",
+      "bytes": 2725,
+      "sha256": "e0325f0924594f6a20210e7dc7bc4f8afdacad63b24fdd3f145ab1e9e98bdd61"
+    },
+    {
+      "path": "source/references_ch07.json",
+      "bytes": 1664,
+      "sha256": "a76b2bf01082b5138d8f082ac6c74faf78266e03dcc6817df25a635f381e1b5b"
+    },
+    {
+      "path": "source/references_ch08.json",
+      "bytes": 2646,
+      "sha256": "9757cba5263d72a1e5d91141a383fd5ab6dd64958c583657f16bf584390f5771"
+    },
+    {
+      "path": "source/references_ch09.json",
+      "bytes": 1440,
+      "sha256": "275031988221b19c318aaeb730d30c7729f9f60d2a1d252798cb098eb36cc542"
+    },
+    {
+      "path": "source/references_ch10.json",
+      "bytes": 458,
+      "sha256": "a7e2771ba72f681a04858b141d5fb08fe0e2ddf82ac64ad99ab55a05de3f9909"
+    },
+    {
+      "path": "source/references_ch11.json",
+      "bytes": 709,
+      "sha256": "fcca5c1b535746a7a5ec275b28cac42d34c86123b4ecadd7965f62656d9d7cce"
+    },
+    {
+      "path": "source/references_ch12.json",
+      "bytes": 3906,
+      "sha256": "8635db358f5718029e71941d24765923e4560d3eda009593fea94af57d9c0179"
+    },
+    {
+      "path": "source/transcription_scope_ch08.json",
+      "bytes": 778,
+      "sha256": "0d03c3fa5c35b8c2275dfec8d39a225984f0c1b6d5eea9fed67af9b18b37b2ff"
+    },
+    {
+      "path": "source/transcription_scope_ch09.json",
+      "bytes": 785,
+      "sha256": "69c063165b46ab7299eccaacd0192df858eeb016e458ef111d14e8ee68045357"
+    },
+    {
+      "path": "source/transcription_scope_ch10.json",
+      "bytes": 629,
+      "sha256": "421bf7390f5e534a85b5768f205b4c0e3f93c6b67fe5fc5c8d914a9fe935366d"
+    },
+    {
+      "path": "source/transcription_scope_ch11.json",
+      "bytes": 643,
+      "sha256": "c1fb22c970384a53bb6ecb81e080dc88d5023fc6732ad2cbf1c0bd12acbb9271"
+    },
+    {
+      "path": "source/transcription_scope_ch12.json",
+      "bytes": 803,
+      "sha256": "22a0978b5d1a630ee6ff4021878f53ab542d845888f7b47fcaa6e0936dbbc48e"
+    },
+    {
+      "path": "source/transcription_scope_ch15.json",
+      "bytes": 608,
+      "sha256": "9c2a5cbfebdb2ff579d5cf5a723c47386926a470f5ed7fe7a6a90bb09e1a6569"
+    },
+    {
+      "path": "source/transcription_scope_ch16.json",
+      "bytes": 406,
+      "sha256": "d8c2ccaa3e1e7231ed0dceb6deece83d1da72861c6a3045131db5884b46f8a42"
+    },
+    {
+      "path": "source/transcription_scope_v17.json",
+      "bytes": 641,
+      "sha256": "4439966a7dddda694f88fc1de5d4d2592b6adabf8859c3dcd3a90552a4d83e43"
+    },
+    {
+      "path": "text/retypeset_v18.txt",
+      "bytes": 1527965,
+      "sha256": "bf0d25c5fb0670d8adbf31a342e3ad50042cd156d831a98f1d261f8cec611105"
+    },
+    {
+      "path": "vendor/README.md",
+      "bytes": 1038,
+      "sha256": "37becec9fae21caa6242a82b325e6ee7497b6f0eb4197d694966fd55922d6881"
+    },
+    {
+      "path": "vendor/fonts/CharisSIL-Bold.ttf",
+      "bytes": 738488,
+      "sha256": "68460d2b76c8f781b49f9168f2c7dc3c9f7b788a3a1b8f267c5fa6bb47d5c64d"
+    },
+    {
+      "path": "vendor/fonts/CharisSIL-BoldItalic.ttf",
+      "bytes": 802588,
+      "sha256": "acdf6dc54c0ee5e03cae3398f64133c335084cd1ecab655f2a8636c5d56acedb"
+    },
+    {
+      "path": "vendor/fonts/CharisSIL-Italic.ttf",
+      "bytes": 775668,
+      "sha256": "e776e2961117b39cf924c0139de01748a77b2fcb99c437b2c77bdd9401606c13"
+    },
+    {
+      "path": "vendor/fonts/CharisSIL-OFL.txt",
+      "bytes": 4406,
+      "sha256": "d2a66950cb3cf727f07a572e7b3ddd92944a96c66cfc77950412522895d8f769"
+    },
+    {
+      "path": "vendor/fonts/CharisSIL-Regular.ttf",
+      "bytes": 752900,
+      "sha256": "346337374aa347d64ee015b26d441f1970d8631914e2f3941b00e1c4761e28c5"
+    },
+    {
+      "path": "vendor/fonts/DejaVu-COPYRIGHT.txt",
+      "bytes": 3859,
+      "sha256": "63d3ba759d12804c5b31a9d5940d855c1820d1f5999e6b0872eb1c7ff045fbc9"
+    },
+    {
+      "path": "vendor/fonts/DejaVuSerif-Bold.ttf",
+      "bytes": 356668,
+      "sha256": "847b33e13925f19ff87e4d934d6b3cf7cac35ce16424f6f670e40c2f377cf2df"
+    },
+    {
+      "path": "vendor/fonts/DejaVuSerif.ttf",
+      "bytes": 380660,
+      "sha256": "8f2c103bfa3fd5de71f1b92b18f21906b5a26871fb7e19a9a4c9af539c3cc7ab"
+    },
+    {
+      "path": "vendor/fonts/GUST-FONT-LICENSE.txt",
+      "bytes": 1456,
+      "sha256": "2bd69affc3da00715116f713f57eab9707e96daf3562ad0215987b15b9c16f73"
+    },
+    {
+      "path": "vendor/fonts/NotoSansCJK-LICENSE.txt",
+      "bytes": 4301,
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+    },
+    {
+      "path": "vendor/fonts/NotoSansCJKsc-Bold.otf",
+      "bytes": 17002248,
+      "sha256": "b5f0d1a190a7f9b43c310a8850630af12553df32c4c050543f9059732d9b4c0a"
+    },
+    {
+      "path": "vendor/fonts/NotoSansCJKsc-Regular.otf",
+      "bytes": 16437364,
+      "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b"
+    },
+    {
+      "path": "vendor/fonts/NotoSansSymbols2-OFL.txt",
+      "bytes": 4383,
+      "sha256": "b118dd41337806a5d4797052c77caf3bd096aed783e5eb21b4d11154351e1ac0"
+    },
+    {
+      "path": "vendor/fonts/NotoSansSymbols2-Regular.ttf",
+      "bytes": 1233128,
+      "sha256": "7d5fb73b7ca67a6798101741f5d280a3d016a56a197afcd4199dbb57b4b82a21"
+    },
+    {
+      "path": "vendor/fonts/NotoSerifCJK-LICENSE.txt",
+      "bytes": 4301,
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+    },
+    {
+      "path": "vendor/fonts/NotoSerifCJKsc-Bold.otf",
+      "bytes": 25521460,
+      "sha256": "8af07d4b6c2e82bcc72a30e066eaf295f11b9424f4aad2eaa9fe0e9c3b38fc73"
+    },
+    {
+      "path": "vendor/fonts/NotoSerifCJKsc-Regular.otf",
+      "bytes": 24543080,
+      "sha256": "2a2eae2628df83556c54018c41e20fa532c1b862c5256ae8b3f23feb918d12ca"
+    },
+    {
+      "path": "vendor/fonts/texgyrecursor-bold.otf",
+      "bytes": 87288,
+      "sha256": "95e9755bfa05759e8d1f8fba21a919ba46091e1275aeb5bf831dffd9c93b041e"
+    },
+    {
+      "path": "vendor/fonts/texgyrecursor-bolditalic.otf",
+      "bytes": 90360,
+      "sha256": "6aa5c41f489b898aa890c543e7dcd5e732c63894babc65569e01ee7e46533d82"
+    },
+    {
+      "path": "vendor/fonts/texgyrecursor-italic.otf",
+      "bytes": 87536,
+      "sha256": "545f24a2a9e5dd5ace865fe5e80134f55a37794b36e26abae5424aebff600056"
+    },
+    {
+      "path": "vendor/fonts/texgyrecursor-regular.otf",
+      "bytes": 84652,
+      "sha256": "0667deb48aa0e88be8f499c4d308e8b9116f290e7f969b0f5a34ee15c9644272"
+    },
+    {
+      "path": "vendor/fonts/texgyreheros-bold.otf",
+      "bytes": 135204,
+      "sha256": "b170162835f4efc288886dd4231406dc47e19b614cf4416836635599d44a7d60"
+    },
+    {
+      "path": "vendor/fonts/texgyreheros-bolditalic.otf",
+      "bytes": 135264,
+      "sha256": "166fc6d068d9c9974281555cb3d730365537a9b676ab269bb5163f5a75496505"
+    },
+    {
+      "path": "vendor/fonts/texgyreheros-italic.otf",
+      "bytes": 139208,
+      "sha256": "6473df7fa107b3fb4be38973710afe22b0640c2ac076d5337cf126bed9aa108c"
+    },
+    {
+      "path": "vendor/fonts/texgyreheros-regular.otf",
+      "bytes": 133600,
+      "sha256": "6ae1a09d5a940367b7aaaa91ee8bd8a2c333bfe193e7096e23f931357d62081f"
+    },
+    {
+      "path": "vendor/fonts/texgyretermes-bold.otf",
+      "bytes": 139480,
+      "sha256": "2fb3e952065fa153c7e4e64e04b98b9d79225739b6025aa3f0f0782d299ff61e"
+    },
+    {
+      "path": "vendor/fonts/texgyretermes-bolditalic.otf",
+      "bytes": 144180,
+      "sha256": "1bf6af99cb0e26c12951317032d79b96ae009551e59ccf02a5b24f325ecfec87"
+    },
+    {
+      "path": "vendor/fonts/texgyretermes-italic.otf",
+      "bytes": 141324,
+      "sha256": "6dd103a1672e50568cd2f8a706ccd48443d44d7d073a59d2286f4e6f746575d6"
+    },
+    {
+      "path": "vendor/fonts/texgyretermes-regular.otf",
+      "bytes": 140932,
+      "sha256": "cc3fe7c707b81428d23d54df3eadd9228a2bf6a4d43125d94df56f5f63134659"
+    },
+    {
+      "path": "vendor/texmf/fonts/misc/xetex/fontmapping/xecjk/full-stop.map",
+      "bytes": 182,
+      "sha256": "99c5139c0f4ec4068b97be2fd57931ab2eb91fb8f07386c10b80c8fd4589db9b"
+    },
+    {
+      "path": "vendor/texmf/fonts/misc/xetex/fontmapping/xecjk/full-stop.tec",
+      "bytes": 139,
+      "sha256": "43cb62a749ca8cb99fb6334bf20dffffbfb7029f3568c87e9ed9609f9fc4351f"
+    },
+    {
+      "path": "vendor/texmf/fonts/misc/xetex/fontmapping/xecjk/fullwidth-stop.map",
+      "bytes": 182,
+      "sha256": "de60f46fa707e81626df5d418a56c8fe34ba60aa1c331a2a72f8a78c810ff03e"
+    },
+    {
+      "path": "vendor/texmf/fonts/misc/xetex/fontmapping/xecjk/fullwidth-stop.tec",
+      "bytes": 143,
+      "sha256": "0a682ac2a98a399cceb01bf7e67c6ddde96e9ffc5240ea4dc87b0af1e9216214"
+    },
+    {
+      "path": "vendor/texmf/fonts/misc/xetex/fontmapping/xecjk/han-simp.map",
+      "bytes": 111791,
+      "sha256": "8de7ff4dadc187e4ff5556640b7aa468c5d20d74642cdb7167d67acb6d517a2d"
+    },
+    {
+      "path": "vendor/texmf/fonts/misc/xetex/fontmapping/xecjk/han-simp.tec",
+      "bytes": 70587,
+      "sha256": "6308f0425d30f8187808a9ea5c2bb75010c71ce91af03735f8c78fc5a61165ea"
+    },
+    {
+      "path": "vendor/texmf/fonts/misc/xetex/fontmapping/xecjk/han-trad.map",
+      "bytes": 111609,
+      "sha256": "e3e9b7852cd22471d97fb000b1fbaedc93483dd201202990b2fa213df5c22a35"
+    },
+    {
+      "path": "vendor/texmf/fonts/misc/xetex/fontmapping/xecjk/han-trad.tec",
+      "bytes": 70115,
+      "sha256": "e8198cb455ee1ccfdcfb23c140ec13fabb31fc6ea1571830ed6659c52735c29c"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/babel-french/acadian.ldf",
+      "bytes": 1269,
+      "sha256": "fcfee08ba089d370a1a7a27a1d1c4690e8eff3b78d6aefe806bb86f212f6be3e"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/babel-french/canadien.ldf",
+      "bytes": 1487,
+      "sha256": "88cbce94753f807a0a8b31b415c56bb274f053c16a91c4c948e92c2b85d5505a"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/babel-french/francais.ldf",
+      "bytes": 1298,
+      "sha256": "74dba775f7ee78c21d153114549e53bec07f1b00ce8c2d05272c92a4c7c8e5ca"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/babel-french/french.ldf",
+      "bytes": 67734,
+      "sha256": "3f9de0c9a978fc153c0a9580da5903404c94145c332e2c41c585c432fa794ddf"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/babel-french/french3.ldf",
+      "bytes": 64577,
+      "sha256": "75bc593a3e6cfa77a966e5291cde973c58902b6f03e28a815e248278642c5a13"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/babel-french/frenchb.ldf",
+      "bytes": 2073,
+      "sha256": "92e2636a58b85e6478cbfffe98f19444733e83555d2035ec8a029a0ae666e87d"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/babel-french/frenchb.lua",
+      "bytes": 12214,
+      "sha256": "5c3d248b6b524b7783ae3e58fb5c0474bc6f605abd6f9c563583c87ba41edc94"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/config/language.dat",
+      "bytes": 101,
+      "sha256": "00b47c947bbf361c394920add4f65cd4a8aae4ef3425131cd9ce4119ad1216ed"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/ctex/ctex-spa-macro.tex",
+      "bytes": 2870,
+      "sha256": "f07f09b9d914284533e153abf0b44301cee8478195a65b45257f91f00d06b565"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/ctex/ctex-spa-make.tex",
+      "bytes": 2885,
+      "sha256": "7215e19384cd6ed923a12c07e3c4cd7e92a3915ac7d5619c60b33f2a0862a262"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/ctex/ctxdocstrip.tex",
+      "bytes": 2894,
+      "sha256": "424e0e0d75ed144d5dfdf0b67a97325074b7897fcd191bf3e07d3abc2af7aba6"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/ctex/zhmap/ctex-zhmap-adobe.tex",
+      "bytes": 4230,
+      "sha256": "8480c84ca52fca3dac77869e708cf827b26281a1a0967212c28ecbf8afb627b2"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/ctex/zhmap/ctex-zhmap-fandol.tex",
+      "bytes": 4159,
+      "sha256": "2d28637708399a47aed32bed4f384f6b02d106b0c900e00848a30ed6b9433fcf"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/ctex/zhmap/ctex-zhmap-founder.tex",
+      "bytes": 5516,
+      "sha256": "a683ef305f69f3c6283fd27d849681986bf16711eba0a7ebc32e2065ab52d722"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/ctex/zhmap/ctex-zhmap-mac.tex",
+      "bytes": 4608,
+      "sha256": "fef8faf8034cf90a44f3dc6f96b27f1cf21c39dc5a6de6f8f2106e3ea38fd79a"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/ctex/zhmap/ctex-zhmap-ubuntu.tex",
+      "bytes": 4113,
+      "sha256": "f4b6fd62da43310c1793098ffb05b50cdd2aed72d2444548f88c54b3e258a39d"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/ctex/zhmap/ctex-zhmap-windows.tex",
+      "bytes": 5818,
+      "sha256": "84c93a6974c42fbf6a63156ccb5d96301cc2d31b358feac088806409e7711959"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/hyph-utf8/loadhyph/loadhyph-fr.tex",
+      "bytes": 1204,
+      "sha256": "a6180a6456b37c37fd80e5fed6c8366c7694c0816f75b71464ddad5e062bed05"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/hyph-utf8/patterns/ptex/hyph-fr.ec.tex",
+      "bytes": 10072,
+      "sha256": "2d5fc14ba7a2e23a2107821946732b3a3293ca69d0a1feb6e8559cad2939cc18"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/hyph-utf8/patterns/quote/hyph-quote-fr.tex",
+      "bytes": 768,
+      "sha256": "708975d63ba0777eed42b57046d4514c88170c1c924ec714837870d753bd794d"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/hyph-utf8/patterns/tex/hyph-fr.tex",
+      "bytes": 30353,
+      "sha256": "526cad6fe8f52fcd3caa3fcaf667cb1740cfc14bca198680e00dc343a84594de"
+    },
+    {
+      "path": "vendor/texmf/tex/generic/hyph-utf8/patterns/txt/hyph-fr.pat.txt",
+      "bytes": 9674,
+      "sha256": "fd40a89e9e8eb0784a0919e50378814843e44afa41c5beaf0a85f6562820f6c2"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/config/ctex-name-gbk.cfg",
+      "bytes": 1730,
+      "sha256": "38dc197ebda4b6b4a7f76f8587359e42beac46bc9ecf1f8c56bc5e459a860299"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/config/ctex-name-utf8.cfg",
+      "bytes": 1770,
+      "sha256": "778bb83f395cf149e33db9980ff12946927c778faeaecd69fba0ebf50326f587"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/config/ctex.cfg",
+      "bytes": 1230,
+      "sha256": "4a8ec7a1657410266fafa163ce656c923b714c53818e99dbeafbc08ac99709b8"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/config/ctexbackend.cfg",
+      "bytes": 1904,
+      "sha256": "ac452bc753fc440c29e73a0319f17148524412b3e67478e2012dbc50af0e605f"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/config/ctexopts.cfg",
+      "bytes": 1291,
+      "sha256": "57def444aad796d361c44f4b3be4f8221042df015de9fdc97010fb7f842b39ef"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctex-c5size.clo",
+      "bytes": 2616,
+      "sha256": "bbcb9f53fee79765958176b580622721feb7b8691454f5ba0b68baae52d300e8"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctex-cs4size.clo",
+      "bytes": 2637,
+      "sha256": "fd540d05bd7689c022b2410b4563fb5891c1eeffd5a017b3c9a7a9f9aa538a51"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctex.sty",
+      "bytes": 32650,
+      "sha256": "dd868cf1e82815ff9544e222c5eebe528dfc7799b69f7fe1762646ebe23dcd6b"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctexart.cls",
+      "bytes": 55219,
+      "sha256": "822d4a8c15e964c068c28be77c026ab891c4ab5b224503546c2994ac077efd93"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctexbeamer.cls",
+      "bytes": 39382,
+      "sha256": "6f731df93444ca969bd155f58eac78cccf6d92e2e381b9f72fcedb9666b5069b"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctexbook.cls",
+      "bytes": 58747,
+      "sha256": "1d75b5d67fa79f771326658235498a64c94c0de2bd4538c16f7ba49169ecb65b"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctexcap.sty",
+      "bytes": 1838,
+      "sha256": "30ef22fbaa8ee3864e752ab089433e06dbdfed2c16256b1113063afaded21491"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctexheading.sty",
+      "bytes": 8606,
+      "sha256": "c5f40e1dfa9e63e30d04620035cc4a6c0f025e4bf729196b54725d1e2618fa23"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctexhook.sty",
+      "bytes": 6505,
+      "sha256": "40e83f5ed34900870bb14fbe09dc24440bb98bc01813e28c59575c69134ffae6"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctexpatch.sty",
+      "bytes": 8448,
+      "sha256": "9f7980ed971ea9ee22583726d4760ebcba5a6e4cc2edc1576f2b71b613d64c29"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctexrep.cls",
+      "bytes": 58604,
+      "sha256": "aa28de78a0bee0ac97c9ab4f5da7ea2c83276d207a2ff2e6d5224297343515da"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctexsize.sty",
+      "bytes": 10396,
+      "sha256": "a6032914268ff42c0d721bbb4070ad5598f7f8aa36046f8315a14b3932770fad"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctexspa.def",
+      "bytes": 10881,
+      "sha256": "87b85009ae75ed01e10f018c29a38c488df9eb988bcf09401e4b614fb7326294"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/ctxdoc.cls",
+      "bytes": 30714,
+      "sha256": "f0d71fe9ae4f0491bb64f88520958145a9a7709a38a51c9988d826f10cc25a81"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/dictionary/translator-theorem-dictionary-ChineseGBK.dict",
+      "bytes": 4320,
+      "sha256": "4bdeca75d75051f5531e08e1e357ce07c63fbb2f22d45fd2d048c1ab99ac2ced"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/dictionary/translator-theorem-dictionary-ChineseUTF8.dict",
+      "bytes": 4520,
+      "sha256": "5dabaa80bfaa77148829cf23f5e4d109ea7bac7960dbb2d456fba3596c1aa1d6"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/engine/ctex-engine-aptex.def",
+      "bytes": 10160,
+      "sha256": "14fd2307f8f81d8cd4e601186dd0a5fcedf54642d86c7a0745be8ab080bfdd72"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/engine/ctex-engine-luatex.def",
+      "bytes": 46544,
+      "sha256": "bf13ba55952bcf8785777dab84c8a9f00b65029aee8049b533f50bcfeb4049ff"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/engine/ctex-engine-pdftex.def",
+      "bytes": 20297,
+      "sha256": "ef2c0374bf6748a86790c903d1bf809269146a2a1720519cd5fe7d61c2cdc106"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/engine/ctex-engine-uptex.def",
+      "bytes": 10155,
+      "sha256": "2530bcc8a42d5063db0eafd48df2300456f0066e643b0d721e4eca99cc311fea"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/engine/ctex-engine-xetex.def",
+      "bytes": 4760,
+      "sha256": "23ca571bb8631b994e041e09b9a8dadf3ba5b75240e1774f6f61b97589287d0e"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fd/c19rm.fd",
+      "bytes": 1839,
+      "sha256": "15dbc27abc9cc59f7088cb38f3bb2219527eabdf4d41e41d5ad206379fbe2025"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fd/c19sf.fd",
+      "bytes": 1833,
+      "sha256": "f607aefc069d2a85b7af531d12de2952e67143be1c3f9623fa2918a87c4e10c0"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fd/c19tt.fd",
+      "bytes": 1824,
+      "sha256": "ce1ed4e7e671e526cb872d1ea5a20efc80e83aeb845bc22a6e6a9021539877b9"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fd/c70rm.fd",
+      "bytes": 1820,
+      "sha256": "b131d54e23a2d6a2c0fb207f1b336d04da293d8dfbd56846d615fcc3b41eb64b"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fd/c70sf.fd",
+      "bytes": 1814,
+      "sha256": "f08707e8fb2a4b86c5e17d9de561db307e6f90760ccdfb0e9238e95e0cb9494d"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fd/c70tt.fd",
+      "bytes": 1805,
+      "sha256": "1838b28607b682895568973b39944dc1e720e5dab716c744621c3ba8aaff5790"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fd/jt2zhrm.fd",
+      "bytes": 1365,
+      "sha256": "60da18a1863ea71ccabece1877639c92a3fd433b04772b68d3ce0f30c012eed7"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fd/jt2zhsf.fd",
+      "bytes": 1305,
+      "sha256": "2fbda08a2c6e8c3e5997149d37fa8eecfd7bc5c7eeacafbbb281054cf1256157"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fd/jt2zhtt.fd",
+      "bytes": 1196,
+      "sha256": "4e8e13172ec5472ea88aed1f8aae2b1d0224b889d577bc3e05f104b9052ed8f3"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fd/jy2zhrm.fd",
+      "bytes": 1365,
+      "sha256": "254208299993bcefe804bd2b28f79178d98b4c12daba33850fd061e7c2388405"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fd/jy2zhsf.fd",
+      "bytes": 1305,
+      "sha256": "9423fcde946caf95e6fcb18d967554027204b80af0ae1e80714b2c5dd49b88e8"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fd/jy2zhtt.fd",
+      "bytes": 1196,
+      "sha256": "7b7c8cc5e84f3782d4fa43a8189ff6417c491607a3ae3a55a4cc7403f7f5f5ed"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fontset/ctex-fontset-adobe.def",
+      "bytes": 4143,
+      "sha256": "f150471619d50e26ab4cead5a40608ea65b9c7d4ce5a593ced7671b33da63108"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fontset/ctex-fontset-fandol.def",
+      "bytes": 4554,
+      "sha256": "b40e53afbc885efc048c7a54cb3cea41f236eebe3c5164b12b60cacfa1193897"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fontset/ctex-fontset-founder.def",
+      "bytes": 4431,
+      "sha256": "329b6479fb33e4fc2f99de5cdbf0ea37331ea406bab5dff227a9fb4b89bd5faa"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fontset/ctex-fontset-mac.def",
+      "bytes": 1427,
+      "sha256": "8b76f3297eab28b12e1f035642a8f72414b12a4274d73a2f969df78949f087f1"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fontset/ctex-fontset-macnew.def",
+      "bytes": 5350,
+      "sha256": "1e158c46ab8e2e6b25de021b2c0185b8a5320b6341ef22c813dfd5c0db274b7f"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fontset/ctex-fontset-macold.def",
+      "bytes": 2068,
+      "sha256": "722acd8b61e0a783288f96be56dcfb50794b88b8596978b8b7beed1cf36bda8c"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fontset/ctex-fontset-ubuntu.def",
+      "bytes": 3984,
+      "sha256": "c37bb5d74fb723fc04fc840d4e7d74e2018b21d998abb861eaa795b346f20678"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/fontset/ctex-fontset-windows.def",
+      "bytes": 4952,
+      "sha256": "2b96fb8a96e08299b552cf32b6e8a173f66143dfc7142d294ea280329d924b7d"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/heading/ctex-heading-article.def",
+      "bytes": 24735,
+      "sha256": "1c4d48dee90c9b50179287e6b5c50d150fbd6a4bbb71a9f693dd2841bc71aec6"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/heading/ctex-heading-beamer.def",
+      "bytes": 9077,
+      "sha256": "64f95fe9222915613d639231866c25acbc4229cfe838c6605150d0a4d66e3f75"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/heading/ctex-heading-book.def",
+      "bytes": 28253,
+      "sha256": "6763abf46497a8b827d548c0b8d5fd58dc6a036782d07592738924c86088af20"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/heading/ctex-heading-report.def",
+      "bytes": 28118,
+      "sha256": "04942ad3f262c1fe911a5545213895a1f21f37b860d82026bd9d8289e511fea9"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/scheme/ctex-scheme-chinese-article.def",
+      "bytes": 4622,
+      "sha256": "cb6461f507b40cbc30f910403081fec6932ce412abcf6e4865e0c88e35596fc4"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/scheme/ctex-scheme-chinese-beamer.def",
+      "bytes": 2785,
+      "sha256": "bef8408806f6f508c78fcbfaebd017459dad13985e11d8f8805a835ba7d771f6"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/scheme/ctex-scheme-chinese-book.def",
+      "bytes": 5190,
+      "sha256": "88f02b637c6861f82036dafaec946870373d9955a7b4d58c45ae4ec299c5f98a"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/scheme/ctex-scheme-chinese-report.def",
+      "bytes": 5200,
+      "sha256": "e714dd8d4e0996ea205e6df90ac0da4c9751e55d10ca1a0afc35f6b3fc7af8e2"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/scheme/ctex-scheme-chinese.def",
+      "bytes": 2309,
+      "sha256": "06dff6fd73d34cfa6d65d6c20f2ef043844f4076b9ea7cff91554f582587f4b9"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/scheme/ctex-scheme-plain-article.def",
+      "bytes": 4089,
+      "sha256": "096c5920e40dbbbc3986d7212bdffb76c490dc9532f0b6c380346c0fb747172f"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/scheme/ctex-scheme-plain-beamer.def",
+      "bytes": 2414,
+      "sha256": "c8f37202a337aba58589513d4d95609af4ea662593be00238adb043c17b4b5ed"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/scheme/ctex-scheme-plain-book.def",
+      "bytes": 4802,
+      "sha256": "97e21f0ed3fc14703dadf956dcde4df130bacf427c34542bbff82f1c7d2b9d75"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/scheme/ctex-scheme-plain-report.def",
+      "bytes": 4812,
+      "sha256": "d17e99bf07e99ea134038fe3967fbdef9b9c23fc24da0eec2c105a6cca7409d2"
+    },
+    {
+      "path": "vendor/texmf/tex/latex/ctex/scheme/ctex-scheme-plain.def",
+      "bytes": 1277,
+      "sha256": "8d49bcc2f5f63ce60f5c292cb840bb1a8f6c49e348db8892d67cf36529e5eabf"
+    },
+    {
+      "path": "vendor/texmf/tex/luatex/ctex/ctex-zhconv-index.lua",
+      "bytes": 966719,
+      "sha256": "c3cc5956530d21f71b148af587c42adbd90df5df28974937455612b0b1fbab7c"
+    },
+    {
+      "path": "vendor/texmf/tex/luatex/ctex/ctex-zhconv.lua",
+      "bytes": 6180,
+      "sha256": "b1f73e869c96c73781c9a0beee2d002c3fd05f96df3f88696c0048cadb4d0178"
+    },
+    {
+      "path": "vendor/texmf/tex/xelatex/xecjk/xeCJK-listings.sty",
+      "bytes": 13930,
+      "sha256": "1f5a7af47fb1137dabe3a2f700e0664fce3f49eb604c5132f45f52e8138ecac9"
+    },
+    {
+      "path": "vendor/texmf/tex/xelatex/xecjk/xeCJK.cfg",
+      "bytes": 408,
+      "sha256": "d4fd750245a9702da242938637ece678b37862da73d1cf7d15df931828482a5c"
+    },
+    {
+      "path": "vendor/texmf/tex/xelatex/xecjk/xeCJK.sty",
+      "bytes": 183137,
+      "sha256": "c61660692befbcec0b52dfb3e2e69b360cbd3e187e07565d722a296df8e893ef"
+    },
+    {
+      "path": "vendor/texmf/tex/xelatex/xecjk/xeCJKfntef.sty",
+      "bytes": 39577,
+      "sha256": "3388a7a7d4c88c533d22cc6dbcb0e7b18b6bd1411376bfa5be6c3e5d6df9a35d"
+    },
+    {
+      "path": "vendor/texmf/tex/xelatex/xecjk/xunicode-addon.sty",
+      "bytes": 26486,
+      "sha256": "35a1503066b259f4c603aac031777cc86e1b14ae9aa793199ed2502ae079a026"
+    },
+    {
+      "path": "vendor/texmf/tex/xelatex/xecjk/xunicode-extra.def",
+      "bytes": 61684,
+      "sha256": "2563fa4faadcdb8c39de05fb9f98431685f617dd08a5cad81da2b60d1c59646c"
+    },
+    {
+      "path": "vendor/texmf/tlpkg/tlpobj/babel-french.tlpobj",
+      "bytes": 803,
+      "sha256": "c6ddaf5b503bd60e1dd63bfd89af2db7fa33daa84c99b800172dd78fbf9699c7"
+    },
+    {
+      "path": "vendor/texmf/tlpkg/tlpobj/ctex.tlpobj",
+      "bytes": 4478,
+      "sha256": "e1f3057309abc218829828d9e997ac6a860c3476f5b69382807e0877188af6bb"
+    },
+    {
+      "path": "vendor/texmf/tlpkg/tlpobj/hyphen-french.tlpobj",
+      "bytes": 673,
+      "sha256": "e2ae333eeba1f8fecd4284094782c99c9c826e292c55d9e183f14f57bb82fd17"
+    },
+    {
+      "path": "vendor/texmf/tlpkg/tlpobj/xecjk.tlpobj",
+      "bytes": 1471,
+      "sha256": "0bcb83a52bdd32cad9dc025a652650fd557bf6c1127002d5339252d452e9f95d"
+    }
+  ]
+}

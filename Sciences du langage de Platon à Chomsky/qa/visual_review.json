@@ -1,0 +1,24 @@
+{
+  "version": "2026-09-11.v18",
+  "pdf_pages": 590,
+  "pdf_sha256": "a79f414e96fae3891ff7233a924347b12e6ba12dc3c556917d86c440d13051f1",
+  "appendix_pages_reviewed": [
+    584,
+    585,
+    586,
+    587,
+    588,
+    589,
+    590
+  ],
+  "other_layouts_reviewed": [
+    "cover",
+    "linked table of contents",
+    "chapter 1 bibliography and glossary",
+    "chapter 2 outline-to-introduction transition",
+    "representative body, tables, footnotes and glossary layouts"
+  ],
+  "result": "通过；附录参考条目完整连排，待核事项集中于末页，无编辑标语、底本页界或附录B；检查范围内未见裁切、重叠或空疏尾页。",
+  "full_book_manual_proofreading_performed": false,
+  "source_text_and_original_notes_preserved": true
+}

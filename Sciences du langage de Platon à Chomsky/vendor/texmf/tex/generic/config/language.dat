@@ -1,0 +1,6 @@
+english hyphen.tex
+=usenglish
+=USenglish
+french loadhyph-fr.tex
+=francais
+nohyphenation zerohyph.tex

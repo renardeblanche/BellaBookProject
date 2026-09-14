@@ -1,0 +1,85 @@
+% --> typeset math 
+\RequirePackage{amsmath}
+% \RequirePackage{bm}
+\RequirePackage{amssymb}
+\let\ss\S
+\newcommand{\C}[1]{\ensuremath{\mathcal{#1}}}
+\renewcommand{\S}[1]{\ensuremath{\mathscr{#1}}}
+\newcommand{\B}[1]{\ensuremath{\mathbb{#1}}}
+\newcommand{\FF}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\F}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\R}[1]{\ensuremath{\mathrm{#1}}}
+\newcommand{\K}[1]{\ensuremath{\mathfrak{#1}}}
+\NewDocumentCommand{\xra}{s O{} D(){}}{\IfBooleanTF{#1}{\xrightarrow[\text{#3}]{\text{#2}}}{\xrightarrow[#3]{#2}}}
+\NewDocumentCommand{\xla}{s O{} D(){}}{\IfBooleanTF{#1}{\xleftarrow[\text{#3}]{\text{#2}}}{\xleftarrow[#3]{#2}}}
+
+\let\ra\rightarrow
+\newcommand{\se}{\ensuremath{\backsimeq}}
+\newcommand{\btd}{\bigtriangledown}
+
+
+
+% Math Operator
+\let\ker\relax
+\let\div\relax
+\let\hom\relax
+\let\Re\relax
+\DeclareMathOperator{\alt}{Alt}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\div}{div}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\cok}{Cok}
+\DeclareMathOperator{\ker}{Ker}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\ob}{ob}
+\DeclareMathOperator{\hom}{Hom}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\supp}{supp}
+
+
+% --> especially for this book
+\RequirePackage{mathtools, amsthm}
+\newcommand\RR{{\B{R}}}
+\newcommand\NN{{\B{N}}}
+\newcommand\CC{{\B{C}}}
+\newcommand\QQ{{\B{Q}}}
+\newcommand\ZZ{{\B{Z}}}
+\newcommand\CP{\mathbb{CP}}
+\newcommand\sseq{\subseteq}
+\newcommand\mrg[1]{\mathring{#1}}
+\newcommand\sime{\backsimeq}
+\newcommand\simee{\cong}
+\newcommand{\equ}{\ensuremath{\Longleftrightarrow}\,}
+\newcommand{\ma}{\ensuremath{\longmapsto}}
+\newcommand{\ns}{\ensuremath{\varnothing}}
+\newcommand{\A}{\ensuremath{\forall}}
+\newcommand{\dd}{\ensuremath{\mathchoice{\:}{\mspace{1.5mu}}{}{}\mathrm{d}}}
+
+
+% --> math thm
+\renewcommand{\theequation}{\arabic{equation}}
+\newtheoremstyle{CustomBookMath}%
+  {8pt}{8pt}{}{0pt}%
+  {\bfseries\color{BellaBlue}}{}{.45em}%
+  {\thmname{#1} \thmnumber{#2} \thmnote{(#3)}}
+\theoremstyle{CustomBookMath}
+\newtheorem{question}{Question}[chapter]
+\newtheorem{example}[question]{Example}
+\newtheorem{theorem}[question]{Theorem}
+\newtheorem{lemma}[question]{Lemma}
+\newtheorem{remark}[question]{Remark}
+\newtheorem{definition}[question]{Definition}
+\newtheorem{corollary}[question]{Corollary}
+\newtheorem{proposition}[question]{Proposition}
+\newtheorem{addendum}[question]{Addendum}
+\newtheorem{property}[question]{Property}
+% proof env
+\let\oldproofname=\proofname
+\renewcommand{\proofname}{\upshape\textbf{\oldproofname}}
+
+

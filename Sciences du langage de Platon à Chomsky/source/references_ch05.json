@@ -1,0 +1,99 @@
+[
+  {
+    "id": "E23",
+    "author": "Katrin Amunts, Axel Schleicher, Karl Zilles (2004).",
+    "title": "Outstanding language competence and cytoarchitecture in Broca’s speech region.",
+    "scope": "Brain and Language 89(2), 346–353；PubMed PMID 15068917。核对论文书目与摘要、Krebs姓名拼法。未据此推断多语能力的单一原因。",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15068917/",
+    "verification": "metadata_and_abstract"
+  },
+  {
+    "id": "E24",
+    "author": "Glottolog.",
+    "title": "Glottolog Information.",
+    "scope": "核对语系及孤立语分类原则，尤其不把“亲属是否仍有活语言”作为同源关系的定义。",
+    "url": "https://glottolog.org/glottolog/glottologinformation",
+    "verification": "consulted"
+  },
+  {
+    "id": "E25",
+    "author": "Glottolog.",
+    "title": "Family: Japonic (japo1237).",
+    "scope": "用于核对日琉语系分类。与其他语系关系未定，不等于日语本身没有可确证的亲属。",
+    "url": "https://glottolog.org/resource/languoid/id/japo1237",
+    "verification": "consulted"
+  },
+  {
+    "id": "E26",
+    "author": "Suetonius.",
+    "title": "Divus Iulius, §82.",
+    "scope": "The Latin Library所收拉丁原文。区分作者叙述与以tradiderunt quidam引入的另一传述，不将后者升格为确定遗言。",
+    "url": "https://www.thelatinlibrary.com/suetonius/suet.caesar.html",
+    "verification": "consulted"
+  },
+  {
+    "id": "E27",
+    "author": "Jonathan G. F. Powell (2007).",
+    "title": "A new text of the Appendix Probi.",
+    "scope": "The Classical Quarterly 57(2), 687–700。仅取得文献线索，本轮未读到校订全文；供后续作者归属及年代复核，不作为已经核验的正文替换依据。",
+    "url": "https://doi.org/10.1017/S0009838807000638",
+    "verification": "pending_full_text"
+  },
+  {
+    "id": "E28",
+    "author": "Académie française.",
+    "title": "oculaire, Dictionnaire de l’Académie française, 9e édition.",
+    "scope": "所查词条检索片段注明来自晚期拉丁语ocularis。用于区分学术借词oculaire与本章讨论的oculus民间音变；首页检索“oculaire”可定位词条。",
+    "url": "https://www.dictionnaire-academie.fr/",
+    "verification": "entry_search_excerpt"
+  },
+  {
+    "id": "E29",
+    "author": "Wikipedia contributors.",
+    "title": "Turkish alphabet reform.",
+    "scope": "二级历史资料，仅用于1928年改革与1928年11月1日法律通过日期的初校。第1353号法律原件本轮未取得，后续须补原始公报核验；本项不作为现代法律操作指南。",
+    "url": "https://en.wikipedia.org/wiki/Turkish_alphabet_reform",
+    "verification": "secondary_history_primary_pending"
+  },
+  {
+    "id": "E30",
+    "author": "Wilhelm von Humboldt (1836).",
+    "title": "Über die Verschiedenheit des menschlichen Sprachbaues und ihren Einfluss auf die geistige Entwickelung des Menschengeschlechts.",
+    "scope": "Dümmler，1836。Google Books所收巴伐利亚州立图书馆原本的书目记录，用于订正原文1936为1836；不声称通读此版本。",
+    "url": "https://books.google.com/books?id=NhBcAAAAcAAJ",
+    "verification": "edition_metadata"
+  },
+  {
+    "id": "E31",
+    "author": "Matthew S. Dryer.",
+    "title": "Order of Subject, Object and Verb.",
+    "scope": "WALS Online，第81章。核对词汇性名词短语的取样原则、无主导语序类别与81A表，不把不同调查的百分比和样本总数混合。",
+    "url": "https://wals.info/chapter/81",
+    "verification": "consulted"
+  },
+  {
+    "id": "E32",
+    "author": "Balthasar Bickel and Johanna Nichols.",
+    "title": "Fusion of Selected Inflectional Formatives; Inflectional Synthesis of the Verb.",
+    "scope": "WALS Online，第20、22章。用于区分综合程度、语音融合与其他形态参数，并说明同一种语言不同构式可采用不同程度的综合手段。",
+    "url": "https://wals.info/chapter/20",
+    "verification": "consulted",
+    "additional_url": "https://wals.info/chapter/22"
+  },
+  {
+    "id": "E33",
+    "author": "J. H. Allen and J. B. Greenough; Meagan Ayer, ed.",
+    "title": "New Latin Grammar: Uses of Prepositions, §§220–221.",
+    "scope": "Dickinson College Commentaries。in在方向用法中支配宾格、在处所用法中支配夺格；用于校正in cubiculo sum的格标记。",
+    "url": "https://dcc.dickinson.edu/grammar/latin/uses-prepositions",
+    "verification": "consulted"
+  },
+  {
+    "id": "E34",
+    "author": "ATILF–CNRTL.",
+    "title": "hommasse, Trésor de la langue française informatisé.",
+    "scope": "核对该形容词的词类、词义和派生关系；不把它当作homme的屈折阴性形式。",
+    "url": "https://www.cnrtl.fr/definition/hommasse",
+    "verification": "consulted"
+  }
+]

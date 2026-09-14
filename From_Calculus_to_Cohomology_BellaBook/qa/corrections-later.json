@@ -1,0 +1,614 @@
+[
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "T_{f(p)}M",
+    "new": "T_{f(p)}N",
+    "count": 3
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "\\partial_{y_i}",
+    "new": "y_j",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "\\partial \\varphi_j }{\\partial x_j",
+    "new": "\\partial \\varphi_j }{\\partial x_i",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "is a a smooth",
+    "new": "is a smooth",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "notion of w being",
+    "new": "notion of $\\omega$ being",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "where\nW is",
+    "new": "where\n$W$ is",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "function whom value",
+    "new": "function whose value",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "\\omega_g(x)",
+    "new": "\\omega_{g(x)}",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "$N = \\cup_{g_i}(\\omega)$ is \n  smooth for all $i$, then $\\omega$ is smooth.",
+    "new": "$N=\\bigcup_i g_i(W_i)$. If $g_i^*(\\omega)$ is smooth for all $i$, then $\\omega$ is smooth.",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "parametrization. and",
+    "new": "parametrization, and",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "g^*(w)",
+    "new": "g^*(\\omega)",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "g=g_i\\circ g = g_i\\circ h",
+    "new": "g=g_i\\circ h",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "h=g_i^{-1}\\circ g(g_i(W_i))\\to",
+    "new": "h=g_i^{-1}\\circ g:g^{-1}(g_i(W_i))\\to",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "(g\\circ \\phi)^* & = \\phi^*(g^*(\\omega))",
+    "new": "(g\\circ \\phi)^*(\\omega) & = \\phi^*(g^*(\\omega))",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "It is obviously",
+    "new": "It is obvious",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "$(\\omega\\wedge\\tau)_p = \\tau_{\\phi(p)}$",
+    "new": "$(\\omega\\wedge\\tau)_p = \\omega_p\\wedge\\tau_p$",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "\\Omega^k(M)\\times\\Omega^l(M)\\to \\Omega^{k+1}(M)",
+    "new": "\\Omega^k(M)\\times\\Omega^l(M)\\to \\Omega^{k+l}(M)",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "\\dd(\\omega\\wedge\\tau) & = \\dd\\omega +",
+    "new": "\\dd(\\omega\\wedge\\tau) & = \\dd\\omega\\wedge\\tau +",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "$H^p(M) x H^q(M)",
+    "new": "$H^p(M)\\times H^q(M)",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "We say that wand",
+    "new": "We say that $\\omega$ and",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "$M^n\\sseq \\RR^n$",
+    "new": "$M^n\\sseq \\RR^l$",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "topology induced by $\\RR^n$",
+    "new": "topology induced by $\\RR^l$",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "M = Vi",
+    "new": "M = V_i",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "every other if with $p\\in V_i$",
+    "new": "every other $i\\prime$ with $p\\in V_{i\\prime}$",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "and wp are",
+    "new": "and $\\omega_p$ are",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "detennin",
+    "new": "determin",
+    "count": 4
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "\\{h_1:U_1\\to U_i'\\}",
+    "new": "\\{h_i:U_i\\to U_i'\\}",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "all hi are",
+    "new": "all $h_i$ are",
+    "count": 1
+  },
+  {
+    "file": "09-Differential-Forms-on-Smooth-Manifolds.tex",
+    "old": "inbular",
+    "new": "tubular",
+    "count": 1
+  },
+  {
+    "file": "10-Integration-on-Manifolds.tex",
+    "old": "h^{-1}(\\omega)^*",
+    "new": "(h^{-1})^*(\\omega)",
+    "count": 1
+  },
+  {
+    "file": "10-Integration-on-Manifolds.tex",
+    "old": "W=\\subset",
+    "new": "W\\subset",
+    "count": 1
+  },
+  {
+    "file": "10-Integration-on-Manifolds.tex",
+    "old": "where $W$ is the orientation",
+    "new": "where $W$ has the orientation",
+    "count": 1
+  },
+  {
+    "file": "10-Integration-on-Manifolds.tex",
+    "old": "orientation persevering",
+    "new": "orientation preserving",
+    "count": 1
+  },
+  {
+    "file": "10-Integration-on-Manifolds.tex",
+    "old": "\\int_{h(u)}",
+    "new": "\\int_{h(U)}",
+    "count": 1
+  },
+  {
+    "file": "10-Integration-on-Manifolds.tex",
+    "old": "I_\\sigma: C^n_c",
+    "new": "I_\\sigma: C^0_c",
+    "count": 1
+  },
+  {
+    "file": "10-Integration-on-Manifolds.tex",
+    "old": "with $M\\cap \\supp_M(\\omega)$ compact",
+    "new": "with $N\\cap \\supp_M(\\omega)$ compact",
+    "count": 1
+  },
+  {
+    "file": "10-Integration-on-Manifolds.tex",
+    "old": "case where $\\omega\\in\\Omega^n_c(M)$",
+    "new": "case where $\\omega\\in\\Omega^{n-1}_c(M)$",
+    "count": 1
+  },
+  {
+    "file": "10-Integration-on-Manifolds.tex",
+    "old": "For a connected compact smooth manifold $M^n$, integration",
+    "new": "For a connected compact oriented smooth manifold $M^n$,\\corr{原书第 91 页推论 10.14 漏写定向假设；此处积分需要定向，现补明。} integration",
+    "count": 1
+  },
+  {
+    "file": "10-Integration-on-Manifolds.tex",
+    "old": "$p\\in U_\\alpha$",
+    "new": "$p\\in U_{\\alpha_1}$",
+    "count": 1
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "$K\\sseq S$",
+    "new": "$K\\sseq U$",
+    "count": 3
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "offinitely",
+    "new": "of finitely",
+    "count": 1
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "ofsubmanifolds",
+    "new": "of submanifolds",
+    "count": 1
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "\\Phi:P^{n+1}\\to\\RR^{n+1}-J",
+    "new": "\\Phi:P^{l+1}\\to\\RR^{n+1}-J",
+    "count": 1
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "$F\\in C^\\infty(U, \\RR)$",
+    "new": "$F\\in C^\\infty(U, \\RR^n)$",
+    "count": 1
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "\\RR^n, \\RR^N",
+    "new": "\\RR^n, \\RR^n",
+    "count": 2
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "there exists an $F\\in",
+    "new": "there exists an $\\widetilde F\\in",
+    "count": 1
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "$M^n\\sseq\\RR^n$",
+    "new": "$M^n\\sseq\\RR^{n+k}$",
+    "count": 1
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "imgae",
+    "new": "image",
+    "count": 1
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "on Mn and",
+    "new": "on $M^n$ and",
+    "count": 1
+  },
+  {
+    "file": "12-The-Poincare-Hopf-Theorem.tex",
+    "old": "exsits",
+    "new": "exists",
+    "count": 1
+  },
+  {
+    "file": "12-The-Poincare-Hopf-Theorem.tex",
+    "old": "quadratic fonn",
+    "new": "quadratic form",
+    "count": 1
+  },
+  {
+    "file": "12-The-Poincare-Hopf-Theorem.tex",
+    "old": "$f\\in C^\\infty(W, \\RR)$ is a Morse function",
+    "new": "$f\\in C^\\infty(M, \\RR)$ is a Morse function",
+    "count": 1
+  },
+  {
+    "file": "12-The-Poincare-Hopf-Theorem.tex",
+    "old": "For every point $p\\in M,",
+    "new": "For every non-critical point $p\\in M$,",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "\\int_{U_1\\cap U_1}",
+    "new": "\\int_{U_1\\cap U_2}",
+    "count": 2
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "H_c^{n-p-1}(U)\\ar",
+    "new": "H_c^{n-p-1}(U)^*\\ar",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "$U\\in V_\\beta$",
+    "new": "$U\\subseteq V_\\beta$",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "$U_1, U_1, U_1\\cap U_2$",
+    "new": "$U_1, U_2, U_1\\cap U_2$",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "disjointj",
+    "new": "disjoint",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "$h-1$",
+    "new": "$h^{-1}$",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "$\\dd\\tau$ is $\\tau-\\dd\\sigma$ is identically zero some open set in $N$ contaning $M$",
+    "new": "$\\dd\\tau$ is identically zero on some open set in $N$ containing $M$",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "\\tau_N",
+    "new": "r_N",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "\\tau_M",
+    "new": "r_M",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "\\tau^*_M",
+    "new": "r^*_M",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "Let $\\omega\\in\\Omega^q(N)$ be closed",
+    "new": "Let $\\omega\\in\\Omega^q(M)$ be closed",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "to the equal",
+    "new": "to be equal",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "\\Omega_{q-1}",
+    "new": "\\Omega^{q-1}",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "N\\cap V_m",
+    "new": "N\\cap V_M",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "remaning",
+    "new": "remaining",
+    "count": 1
+  },
+  {
+    "file": "14-The-Complex-Projective-Space-CPn.tex",
+    "old": "(C^{n+1})",
+    "new": "(c^{n+1})",
+    "count": 1
+  },
+  {
+    "file": "14-The-Complex-Projective-Space-CPn.tex",
+    "old": "cohomolog ",
+    "new": "cohomology ",
+    "count": 2
+  },
+  {
+    "file": "15-Fiber-Bundles-and-Vector-Bundle.tex",
+    "old": "and Vector Bundle}",
+    "new": "and Vector Bundles}",
+    "count": 1
+  },
+  {
+    "file": "15-Fiber-Bundles-and-Vector-Bundle.tex",
+    "old": "\\pi_{\\pi\\oplus\\eta}",
+    "new": "\\pi_{\\xi\\oplus\\eta}",
+    "count": 1
+  },
+  {
+    "file": "15-Fiber-Bundles-and-Vector-Bundle.tex",
+    "old": "\\pi\\circ s = E",
+    "new": "\\pi\\circ s = \\id_B",
+    "count": 1
+  },
+  {
+    "file": "16-Operations-on-Vector-Bundles-and-their-Sections.tex",
+    "old": "\\arrow[rr, \"f\"],",
+    "new": "\\arrow[rr, \"f\"]",
+    "count": 1
+  },
+  {
+    "file": "App-A-Smooth-Partition-of-Unit.tex",
+    "old": "$A\\in\\RR^n$",
+    "new": "$A\\subseteq\\RR^n$",
+    "count": 1
+  },
+  {
+    "file": "App-A-Smooth-Partition-of-Unit.tex",
+    "old": "[0, \\infty]",
+    "new": "[0, \\infty)",
+    "count": 1
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "p(gag^{-1})",
+    "new": "P(gAg^{-1})",
+    "count": 1
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "\\sigma(i)",
+    "new": "\\sigma(t)",
+    "count": 1
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "\\sum_{k=0}^{\\infty}{s_k(A)t^k}",
+    "new": "\\sum_{k=1}^{\\infty}{s_k(A)t^k}",
+    "count": 1
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "$\\det(I - tA$)",
+    "new": "$\\det(I-tA)-1$",
+    "count": 1
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "\\sum_{i=1}^{\\infty}\\sigma_it^i = \\exp\\left(\\int \\frac{s(-t)}{t}\\dd t\\right)",
+    "new": "\\sum_{i=0}^{\\infty}\\sigma_it^i = \\exp\\left(-\\int_0^t \\frac{s(-u)}{u}\\dd u\\right)",
+    "count": 1
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "\\diag(\\lambda_1,,",
+    "new": "\\diag(\\lambda_1,",
+    "count": 2
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "\\sum_{k=1}^{n}{\\frac{t\\lambda_i}",
+    "new": "\\sum_{i=1}^{n}{\\frac{t\\lambda_i}",
+    "count": 1
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "\\R{tr}(A_k)",
+    "new": "\\R{tr}(A^k)",
+    "count": 1
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "s_{k-2}\\sigma_2(A)",
+    "new": "s_{k-2}(A)\\sigma_2(A)",
+    "count": 1
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "(-1)^k\\sigma_k(A) = 0",
+    "new": "(-1)^k k\\sigma_k(A) = 0",
+    "count": 1
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "  he coefficient",
+    "new": "  The coefficient",
+    "count": 1
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "s_2(A) = \\sigma_1(A)-2",
+    "new": "s_2(A) = \\sigma_1(A)^2-2",
+    "count": 1
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "indentities",
+    "new": "identities",
+    "count": 1
+  },
+  {
+    "file": "App-C-Proof-of-Lemmas-2.12-and-12.13.tex",
+    "old": "$f:W\\to\\RR^n$",
+    "new": "$f:W\\to\\RR$",
+    "count": 1
+  },
+  {
+    "file": "App-C-Proof-of-Lemmas-2.12-and-12.13.tex",
+    "old": "\\sum_{i=1}^\\lambda x_i^2 + \\sum_{i=\\lambda+1}^{n }{x_i^2}",
+    "new": "\\sum_{i=1}^\\lambda x_i^2 + 2\\sum_{i=\\lambda+1}^{n }{x_i^2}",
+    "count": 2
+  },
+  {
+    "file": "App-C-Proof-of-Lemmas-2.12-and-12.13.tex",
+    "old": "$-1\\le \\mu'(t)\\le 0$",
+    "new": "$-1<\\mu'(t)\\le 0$",
+    "count": 1
+  },
+  {
+    "file": "App-C-Proof-of-Lemmas-2.12-and-12.13.tex",
+    "old": "sp that",
+    "new": "so that",
+    "count": 1
+  },
+  {
+    "file": "App-C-Proof-of-Lemmas-2.12-and-12.13.tex",
+    "old": " os decreasing",
+    "new": " is decreasing",
+    "count": 1
+  },
+  {
+    "file": "App-C-Proof-of-Lemmas-2.12-and-12.13.tex",
+    "old": "j^{-1}",
+    "new": "f^{-1}",
+    "count": 1
+  },
+  {
+    "file": "App-D-Exercises.tex",
+    "old": "calculations of Theorem \\ref{theorem:1-6}.",
+    "new": "calculations of Example \\ref{example:1-7}.\\corr{原书第 243 页习题 1.1 误称 Theorem 1.7；实际指 Example 1.7。}",
+    "count": 1
+  },
+  {
+    "file": "App-D-Exercises.tex",
+    "old": "$f\\in C^\\infty(W, \\RR)$",
+    "new": "$F\\in C^\\infty(W, \\RR)$",
+    "count": 1
+  },
+  {
+    "file": "App-D-Exercises.tex",
+    "old": "Example \\ref{example:1-8} and",
+    "new": "Example \\ref{example:1-7}\\corr{原书第 243 页习题 1.2 所引 Example 1.8 应为 Example 1.7。} and",
+    "count": 1
+  },
+  {
+    "file": "App-D-Exercises.tex",
+    "old": "$v_1, v_2\\in\\RR^2$",
+    "new": "$v_1, v_2\\in\\RR^3$",
+    "count": 1
+  },
+  {
+    "file": "App-D-Exercises.tex",
+    "old": "{b_1^*,\\ldots,{b}_{k}^*}",
+    "new": "{b_1^*,\\ldots,{b}_{n}^*}",
+    "count": 1
+  },
+  {
+    "file": "App-D-Exercises.tex",
+    "old": "is the dual basis. Conclude",
+    "new": "is the dual basis.\\corr{原书第 243 页习题 2.4 的对偶基末项下标应为 $n$，与原基维数一致。} Conclude",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "Григорий Перельман",
+    "new": "{\\fontspec{DejaVu Serif}Григорий Перельман}",
+    "count": 1
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "E56",
+    "author": "Lionel Spinosa.",
+    "title": "Sciences du langage : de Platon à Chomsky.",
+    "scope": "本章原书第339页（PDF 353）写1907，第340页（PDF 354）又写1902。本条仅记录底本内部出生年对照；教席任职终年未取得正式档案，另列待核。",
+    "url": null,
+    "status": "内部对照"
+  },
+  {
+    "id": "E57",
+    "author": "版本学待核线索：原书所引作品。",
+    "title": "Problème de la poétique de Dostoïevski.",
+    "scope": "本轮只确认底本使用此题名和1929年。尚未取得相应初版与修订本的俄文题名页；不将后出英文书目预览当作已经核验的俄文初版，不作确证改年。",
+    "url": null,
+    "status": "待核，不作为确证依据"
+  },
+  {
+    "id": "E58",
+    "author": "John R. Searle.",
+    "title": "Speech Acts: An Essay in the Philosophy of Language. Cambridge University Press, 1969.",
+    "scope": "已读取书目记录以核对英文题名、作者及1969年；没有据此宣称已逐页核对该书全部理论内容。法译本版年不在本轮确证范围。",
+    "url": "https://books.google.com/books/about/Speech_Acts.html?id=t3_WhfknvF0C",
+    "status": "英文书目记录"
+  },
+  {
+    "id": "E59",
+    "author": "John R. Searle.",
+    "title": "A Taxonomy of Illocutionary Acts. In Keith Gunderson (ed.), Language, Mind, and Knowledge, Minnesota Studies in the Philosophy of Science, VII, 1975, pp.344–369.",
+    "scope": "已查看版权页及正文pp.344–347、354–359：区分行为与动词的分类；核对五类行为、适配方向和施事目的。使用芝加哥大学课程所附原刊扫描，不以1969年首著替代此后分类论文。",
+    "url": "https://semantics.uchicago.edu/kennedy/classes/f09/semprag1/searle75a.pdf",
+    "status": "原刊扫描"
+  },
+  {
+    "id": "E60",
+    "author": "J. L. Austin; J. O. Urmson (ed.).",
+    "title": "How to Do Things with Words. Oxford: Clarendon Press, 1962.",
+    "scope": "已读取题名页、编者前言、有关uptake与进一步效果的段落及最后一讲。题名页载1955年William James讲座、1962年出版；pp.115–117区分对意义及施事力的理解与取效后果。网页上传者所填年份不代替书内题名页。",
+    "url": "https://archive.org/stream/austin-how-to-do-things-with-words/Austin,%20how%20to%20do%20things%20with%20words_djvu.txt",
+    "status": "馆藏扫描所附检索文本"
+  },
+  {
+    "id": "E61",
+    "author": "Jacques Derrida（待核原篇）。",
+    "title": "Signature événement contexte. In Marges de la philosophie, Paris: Minuit, 1972.",
+    "scope": "本轮未取得可充分核对的原篇，不把该篇列作已读的确证材料。对应脚注仅提出底本内部的引文归属问题和推论强弱区别；Derrida的完整立场仍待原篇审定。",
+    "url": null,
+    "status": "待核，不作为确证依据"
+  },
+  {
+    "id": "E62",
+    "author": "H. P. Grice.",
+    "title": "Meaning. The Philosophical Review, 66(3), 1957, pp.377–388.",
+    "scope": "已读取原刊扫描的可检索文本，核对自然意义与非自然意义之别，以及说话者意图和对该意图的识别。",
+    "url": "https://semantics.uchicago.edu/kennedy/classes/f09/semprag1/grice57.pdf",
+    "status": "原刊扫描"
+  },
+  {
+    "id": "E63",
+    "author": "H. P. Grice.",
+    "title": "Logic and Conversation. In P. Cole and J. L. Morgan (eds.), Syntax and Semantics, 3, 1975, pp.41–58.",
+    "scope": "本轮实际查看的是1989年Studies in the Way of Words重印本扫描，相关页为pp.24–33。核对therefore例、数量准则及violate、flout、clash的区分；以下链接文件名虽为grice75，不能当作1975年原刊的页码。",
+    "url": "https://semantics.uchicago.edu/kennedy/classes/f09/semprag1/grice75.pdf",
+    "status": "所核重印文本扫描"
+  }
+]

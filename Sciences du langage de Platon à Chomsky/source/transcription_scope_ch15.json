@@ -1,0 +1,17 @@
+{
+  "chapter": 15,
+  "title": "BIOLINGUISTIQUE ET PSYCHOLINGUISTIQUE : LE LANGAGE DANS LA TÊTE",
+  "source_pdf_pages": [470, 499],
+  "printed_pages": [456, 485],
+  "source_pages_count": 30,
+  "method": "scan-first transcription with page-by-page visual collation; OCR used only as an aid",
+  "figures_preserved_as_scan_crops": [
+    "assets/ch15_brodmann_brain.jpg",
+    "assets/ch15_broca_wernicke.jpg"
+  ],
+  "exercises_answered": false,
+  "comparison_pdf_generated": false,
+  "next_source_pdf_page": 500,
+  "next_printed_page": 486,
+  "next_chapter": "Langage et cognition : la linguistique cognitive"
+}

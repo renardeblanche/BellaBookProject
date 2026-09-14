@@ -1,0 +1,1744 @@
+--- v17/main.tex
++++ v18/main.tex
+@@ -2,7 +2,6 @@
+ \begin{document}
+ \frontmatter
+ \input{frontmatter/title}
+-\input{frontmatter/editorial}
+ \begingroup\setstretch{1}\setlength{\parskip}{0pt}\small\tableofcontents\endgroup
+ \input{frontmatter/publication}
+ \input{frontmatter/preface}
+@@ -34,5 +33,4 @@
+ \bookmarksetup{startatroot}
+ \appendix
+ \input{appendices/collation}
+-\input{appendices/coverage}
+ \end{document}
+--- v17/bellabook.cls
++++ v18/bellabook.cls
+@@ -42,7 +42,7 @@
+ \definecolor{BellaInk}{HTML}{24313F}
+ \definecolor{BellaPale}{HTML}{F3F7FA}
+ \definecolor{BellaGray}{HTML}{6C7884}
+-\hypersetup{unicode=true,colorlinks=true,linkcolor=BellaBlue,urlcolor=BellaTeal,citecolor=BellaTeal,bookmarksopen=true,bookmarksnumbered=true,pdftitle={语言学导论：从柏拉图到乔姆斯基 | BellaBook 全书重排与补校版 v17},pdfauthor={Lionel Spinosa},pdfsubject={Fidèle transcription du fac-similé; notes de collation distinctes}}
++\hypersetup{unicode=true,colorlinks=true,linkcolor=BellaBlue,urlcolor=BellaTeal,citecolor=BellaTeal,bookmarksopen=true,bookmarksnumbered=true,pdftitle={语言学导论：从柏拉图到乔姆斯基},pdfauthor={Lionel Spinosa},pdfsubject={Fidèle transcription du fac-similé; notes de collation distinctes}}
+ \setlength{\parindent}{1.5em}
+ \setlength{\parskip}{0.35em}
+ \setstretch{1.12}
+@@ -67,15 +67,15 @@
+ \fancyhead[LE]{\small\sffamily\color{BellaGray}Sciences du langage}
+ \fancyhead[RO]{\small\sffamily\color{BellaGray}\nouppercase{\rightmark}}
+ \fancyfoot[LE,RO]{\sffamily\color{BellaBlue}\thepage}
+-\fancyfoot[RE,LO]{\scriptsize\sffamily\color{BellaGray}BellaBook\enspace /\enspace Texte et notes de collation}
++\fancyfoot[RE,LO]{}
+ \renewcommand{\headrulewidth}{.3pt}
+ \renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+ \renewcommand{\sectionmark}[1]{\markright{#1}}
+ \fancypagestyle{plain}{\fancyhf{}\fancyfoot[LE,RO]{\sffamily\color{BellaBlue}\thepage}\renewcommand{\headrulewidth}{0pt}}
+ \newtcolorbox{keybox}[1][]{enhanced,breakable,colback=white,colframe=BellaTeal,boxrule=.55pt,arc=1.2mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title=#1,fonttitle=\sffamily\bfseries,colbacktitle=BellaTeal}
+ \newcommand{\frontchapter}[1]{\chapter*{#1}\addcontentsline{toc}{chapter}{#1}\markboth{#1}{#1}}
+-\newcommand{\origpage}[2]{\par\addvspace{.6em}\noindent\hypertarget{src-#1}{}\label{src-#1}\href{https://bellabook.invalid/source/#1}{\sffamily\scriptsize\color{BellaGray}〔原书 #2 · PDF #1〕}\par\nobreak\vspace{.15em}}
+-\newcommand{\origcont}[2]{\unskip\space\hypertarget{src-#1}{}\label{src-#1}\href{https://bellabook.invalid/source/#1}{\mbox{\sffamily\tiny\color{BellaGray}〔原书 #2〕}}\space\ignorespaces}
++\newcommand{\origpage}[2]{\par\hypertarget{src-#1}{}\label{src-#1}\ignorespaces}
++\newcommand{\origcont}[2]{\unskip\space\hypertarget{src-#1}{}\label{src-#1}\ignorespaces}
+ \newcounter{editorialnote}
+ \newcommand{\ednote}[1]{\stepcounter{editorialnote}\begingroup\renewcommand{\thefootnote}{校\arabic{editorialnote}}\footnote{\normalfont #1}\endgroup}
+ \newcommand{\origfoot}[2]{\begingroup\renewcommand{\thefootnote}{原#1}\footnote{\normalfont #2}\endgroup}
+@@ -83,7 +83,7 @@
+ \newenvironment{lecture}[1]{\lecturetitle{#1}\begin{adjustwidth}{4mm}{4mm}\small\itshape\setlength{\parindent}{0pt}}{\par\end{adjustwidth}\vspace{.3em}}
+ \newenvironment{bbcomplement}[1]{\lecturetitle{Lecture Complémentaire}\begin{adjustwidth}{4mm}{4mm}\small\setlength{\parindent}{0pt}\begin{center}\bfseries #1\end{center}}{\par\end{adjustwidth}\vspace{.5em}}
+ \newcommand{\minititle}[1]{\par\Needspace{3\baselineskip}\noindent\textbf{#1}\par\nobreak}
+-\newcommand{\gloss}[2]{\par\Needspace{3\baselineskip}\noindent\textbf{#1}\par\nobreak #2\par}
++\NewDocumentCommand{\gloss}{m m g}{\par\Needspace{4\baselineskip}\noindent\IfNoValueTF{#3}{\textbf{#1}\par\nobreak #2\par}{\textbf{#1\quad #2}\par\nobreak #3\par}}
+ \newcommand{\ecite}[1]{\hyperref[ref-#1]{[E#1]}}
+ \renewcommand{\footnoterule}{\kern-3pt\hrule width .27\columnwidth\kern2.6pt}
+ \setlength{\skip\footins}{13pt plus 3pt minus 2pt}
+--- v17/frontmatter/editorial.tex
++++ v18/frontmatter/editorial.tex
+@@ -1,16 +0,0 @@
+-\frontchapter{重排说明与版本范围}
+-\begin{keybox}[全书文字重排完成]
+-本册包含卷首、全部十六章和书末总书目。底本 PDF 第 5—546 页均已重排；第 1—4 页的封面、封底、书名页与版权文字另在卷首完整收录。全书保持原语言、篇章顺序、引文、练习和词汇表，不增加习题答案。
+-\end{keybox}
+-本次底本为《语言学导论：从柏拉图到乔姆斯基（法语版）》，书名页署名 Lionel Spinosa，外语教学与研究出版社出版。版权页载明2020年1月第1版、第1次印刷，ISBN 978-7-5213-1463-2。CIP中的2019.12与版次栏分别照录，不合并为一个日期。
+-
+-字体、字号、行距、分页与层级采用 BellaBook 版式。原书图表在可可靠转写时重排；复杂句法树、图像与少数多语种材料保留必要的局部原图。封面装饰、商标和条码不当作正文复制，封面图内术语另行录入。灰色标记保留原书页界；附录B提供全部546页到本版的可点击页码映射。
+-
+-脚注分为两类：\textbf{“原”}为底本已有注释，保留原编号；\textbf{“校”}为新增校勘。扫描识别错误按可见底本恢复；确认属于原书的实质性错误仍保留原文，在校注中说明更正及依据。拟校、证据不足与学术争议分别注明，不把推测写成定论。
+-
+-本版接续第16版，补齐总书目与出版文字，修复第13、14、16章发现的识别乱码、引文边界和表格结构，更新封面、目录及覆盖说明。书末校勘材料中此前登记的待核事项继续保留。因此，\textbf{全书重排完成不等于所有历史引文、版本和学术陈述均已作终审}；本版为可完整阅读的校勘重排本。
+-
+-本册不附扫描底本合订卷。完整 LaTeX 工程保留底本、图件、校勘记录与构建脚本，便于复核及继续修订。
+-
+-\vfill
+-\noindent{\small\textcolor{BellaGray}{构建版本：2026-09-11 · v17\quad /\quad 全书文字重排与补校版}}
+--- v17/frontmatter/title.tex
++++ v18/frontmatter/title.tex
+@@ -7,6 +7,6 @@
+ \node[anchor=north west,text=white,text width=145mm,align=left] at ([xshift=29mm,yshift=-63mm]current page.north west) {\sffamily\bfseries\fontsize{36}{45}\selectfont 语言学导论\\[5mm]\fontsize{22}{31}\selectfont 从柏拉图到乔姆斯基};
+ \node[anchor=north west,text=white!86,text width=140mm,align=left] at ([xshift=29mm,yshift=-119mm]current page.north west) {\sffamily\fontsize{23}{29}\selectfont Sciences du langage :\\de Platon à Chomsky};
+ \node[anchor=north west,text=white!85,text width=140mm] at ([xshift=29mm,yshift=-167mm]current page.north west) {\sffamily\large Lionel Spinosa\quad 编著\\[4mm]\normalsize 法语版};
+-\node[anchor=south west,text=white!75,text width=140mm,align=left] at ([xshift=29mm,yshift=31mm]current page.south west) {\sffamily\small BellaBook · 忠实重排与脚注校勘\\[2mm]v17 · 全书文字重排与补校版};
++\node[anchor=south west,text=white!75,text width=140mm,align=left] at ([xshift=29mm,yshift=31mm]current page.south west) {\sffamily\small BellaBook};
+ \end{tikzpicture}
+ \null\clearpage
+--- v17/chapters/01_originelle.tex
++++ v18/chapters/01_originelle.tex
+@@ -283,7 +283,7 @@
+ Si l’homme possède des forces plastiques qui ne se limitent pas à construire une cellule de miel ou à tisser une toile d’araignée, des forces qui, en ce domaine, sont inférieures aux facultés industrieuses des bêtes, celles-ci ont aussi une tout autre perspective. L’homme n’est pas condamné à œuvrer toujours sur une seule chose ; il a le champ libre pour s’exercer sur beaucoup, et se perfectionner sans cesse. Ses idées ne sont pas un pur produit de la nature, mais peuvent par conséquent devenir également son œuvre propre.
+ \end{adjustwidth}
+ \section*{Pour aller plus loin}\phantomsection\addcontentsline{toc}{section}{Pour aller plus loin}\markright{Pour aller plus loin}
+-\begingroup\small\setlength{\parindent}{-4mm}\leftskip=4mm
++\begingroup\small\setlength{\parskip}{.15em}\setlength{\parindent}{-4mm}\leftskip=4mm
+ COPPENS (Yves) et PICQ (Pascal). \textit{Aux origines de l’humanité}. Tome 1, De l’apparition de la vie à l’homme modern, Tome 2, Le propre de l’homme, Fayard, 2001.
+ 
+ DESSALLES (Jean-Louis). \textit{Aux origines du langage}. Une histoire naturelle de la parole, Hermès, 2000.
+--- v17/chapters/02_animale.tex
++++ v18/chapters/02_animale.tex
+@@ -62,7 +62,7 @@
+ \minititle{Pour aller plus loin}
+ \minititle{Glossaire}
+ \endgroup
+-\clearpage
++\par\bigskip
+ \origpage{40}{026}
+ \lecturetitle{Introduction}
+ L’être humain est-il essentiellement un animal ou, au contraire, radicalement différent des autres espèces vivantes ? Dans le cas du langage, nous savons que les animaux communiquent entre eux, mais s’agit-il véritablement de langage ? Si ce n’est pas le cas, à partir de quel degré de complexité peut-on parler de langage ? Cette question a longtemps été le domaine réservé des philosophes. Dans ce chapitre, nous allons voir que pour Montaigne, il n’y a pas de différence de nature entre les deux, mais seulement de degré : c’est la thèse de la continuité. Les animaux, comme l’homme, parlent. Pour Descartes, au contraire, il existe une discontinuité radicale entre l’humain et l’animal, et seul l’homme possède un vrai langage. Comme souvent, la science moderne viendra nous éclairer, en particulier les travaux de Karl von Frisch sur la célèbre danse des abeilles. Sur la base de ces travaux, le linguiste français Émile Benveniste tracera une frontière nette entre langage humain et communication animale.
+@@ -215,7 +215,7 @@
+ \end{lecture}
+ Pour Benveniste, la conclusion s’impose : le soi-disant « langage » des abeilles n’est pas un langage mais un code de signaux. Voilà la question tranchée.
+ \subsection{Communication humaine et animale : tableau récapitulatif}
+-Le tableau ci-dessous récapitule et complète les arguments de Benveniste sur les différences entre la communication humaine et animale.\ednote{下表按底本逐格保留，并非重排者认可的普遍二分。仅依本章第 037–038 页，蜜蜂已能传达不在蜂巢现场的食物位置，因此把动物交际一概限定为“此时此地”与本章自己的实例冲突。应区分有限的空间移位能力与人类语言可谈论过去、假设等更广泛的移位能力；不能把“动物没有人类语言的全部特征”改写成“所有动物完全没有其中任一特征”。}
++Le tableau ci-dessous récapitule et complète les arguments de Benveniste sur les différences entre la communication humaine et animale.\ednote{仅依本章第 037–038 页，蜜蜂已能传达不在蜂巢现场的食物位置，因此把动物交际一概限定为“此时此地”与本章自己的实例冲突。应区分有限的空间移位能力与人类语言可谈论过去、假设等更广泛的移位能力；不能把“动物没有人类语言的全部特征”改写成“所有动物完全没有其中任一特征”。}
+ \begin{center}\small\renewcommand{\arraystretch}{1.2}
+ \begin{tabularx}{\linewidth}{|>{\centering\arraybackslash}p{.21\linewidth}|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+ \hline
+--- v17/chapters/03_grammaire.tex
++++ v18/chapters/03_grammaire.tex
+@@ -122,7 +122,7 @@
+ \section{GRAMMAIRE ET GRAMMAIRIENS ANTIQUES}
+ Nous avons défini plus haut le terme de « grammaire ». Dans un instant, son étymologie nous ramènera à la Grèce au temps de Platon. Mais si la Grèce et la Rome antiques ont produit d’illustres grammairiens, le berceau des études sur le langage se trouve en Inde.
+ \subsection{Les grammairiens indiens : les premiers linguistes ?}
+-\textbf{Panini} (560-480 avant J.-C.) est sans conteste le grammairien le plus célèbre de l’Inde antique. Il est l’auteur, vers 350 avant J.-C.,\ednote{本段所列生卒年 560–480 avant J.-C. 与“约公元前 350 年”著书不能同时成立：后一年代比所列卒年晚 130 年。此处至少一项有误；本轮未据可靠证据确定唯一断代，故不臆改生卒年或成书年。} d’un ouvrage majeur, l’\textit{Ashtadhyayi} (en sanskrit, « composé de huit parties »), composé de 3959 \textit{sutras} (courtes sentences) connues aussi sous le nom de \textit{Paniniya}.
++\textbf{Panini} (560-480 avant J.-C.) est sans conteste le grammairien le plus célèbre de l’Inde antique. Il est l’auteur, vers 350 avant J.-C.,\ednote{本段所列生卒年 560–480 avant J.-C. 与“约公元前 350 年”著书不能同时成立：后一年代比所列卒年晚 130 年。此处至少一项有误；具体断代待核。} d’un ouvrage majeur, l’\textit{Ashtadhyayi} (en sanskrit, « composé de huit parties »), composé de 3959 \textit{sutras} (courtes sentences) connues aussi sous le nom de \textit{Paniniya}.
+ \subsubsection*{1\quad Panini : l’\textit{Ashtadhyayi}}
+ Dans cet ouvrage, Panini met à jour les règles de morphologie, de syntaxe et de sémantique de la langue de l’Inde antique : le sanskrit. L’\textit{Ashtadhyayi} reste aujourd’hui encore un ouvrage de référence sur la grammaire du sanskrit. Pour beaucoup, Panini serait le premier grammairien ayant jamais existé. Grammaire en huit parties, l’\textit{Ashtadhyayi} est accompagnée de trois autres traités de Panini :
+ \begin{itemize}
+--- v17/chapters/04_logique.tex
++++ v18/chapters/04_logique.tex
+@@ -447,7 +447,7 @@
+ Le principe le plus solide de tous est celui à propos duquel il n’est pas possible de se tromper... Quel est ce principe ? Il est impossible que le même prédicat appartienne et n’appartienne pas en même temps à la même chose et sous le même rapport... Il est, en effet, impossible à quiconque de croire que le même à la fois est et n’est pas, comme certains s’imaginent qu’\textbf{Héraclite} l’a affirmé... Si donc il n’est pas possible que les contraires appartiennent en même temps à la même chose, et comme l’opinion contraire à une opinion est sa contradictoire, il est manifeste qu’il est impossible que le même homme pense simultanément que le même est et n’est pas.
+ \end{lecture}
+ 
+-Dans cet extrait, Aristote réfute le philosophe présocratique \textbf{Héraclite d’Éphèse} (540 - 580 avant J.-C.)\ednote{原列公元前 540–580 年作为生卒年顺序不可能成立（公元前 580 年早于 540 年）。可确证其数字或顺序有误；本轮未据可靠传记确定本书意图采用的两端年代，故不把推测日期写入正文。} pour qui « toutes choses sont mutuellement contraires » et pour qui « Dieu est jour nuit, hiver été, guerre paix, satiété faim ».
++Dans cet extrait, Aristote réfute le philosophe présocratique \textbf{Héraclite d’Éphèse} (540 - 580 avant J.-C.)\ednote{原列公元前 540–580 年作为生卒年顺序不可能成立（公元前 580 年早于 540 年）。可确证其数字或顺序有误；准确生卒年待核。} pour qui « toutes choses sont mutuellement contraires » et pour qui « Dieu est jour nuit, hiver été, guerre paix, satiété faim ».
+ 
+ \minititle{2. Le principe du tiers exclu}
+ Le principe du tiers exclu a été introduit par Aristote comme conséquence du principe de non-contradiction.\ednote{矛盾律 $\neg(p\land\neg p)$ 与排中律 $p\lor\neg p$ 应区分；仅禁止“同时真”并不自动排除“既不判真也不判假”。由前者得到后者还涉及所采用的逻辑及否定规则，不能不加限定地称为前者的直接后果。} En logique formelle, le principe soutient que soit une proposition est vraie, soit sa négation est vraie. Bien avant Aristote, le philosophe présocratique \textbf{Parménide} utilisait déjà implicitement le principe du tiers exclu : « Il [l’être] est absolument ou il n’est pas du tout ». Mais c’est Aristote qui l’a formalisé en premier :
+--- v17/chapters/05_comparative.tex
++++ v18/chapters/05_comparative.tex
+@@ -230,7 +230,7 @@
+ L’établissement de liens de parenté entre les langues ne repose pas toujours sur une langue originelle véritable.\ednote{此处把“未有直接文字见证”和“并非真实祖语”混在一起。紧接的说明实际只支持“祖语未直接见于文献、其具体形式依比较重建”，不能由此推出共同祖语不曾真实存在。应将véritable改为directement attestée，或明确区分历史祖语与重建模型。} Dans certains cas, il s’agit d’hypothèses formulées d’après des analyses comparatives et historiques afin de constituer des ensembles de langues. Nous avons vu avec Schleicher que les linguistes ont reconstitué des langues originelles (des protolangues) qui n’ont jamais été attestées et demeurent donc des langues purement hypothétiques. C’est le cas de l’indo-européen, reconstruit par les linguistes mais pour lequel il n’existe aucun document écrit ne pouvant en confirmer l’authenticité.
+ 
+ \minititle{\textcircled{\scriptsize 3} La notion de superfamille}
+-Les superfamilles (appelées aussi « macro-familles ») regroupent plusieurs familles de langues déjà établies au moyen des méthodes de la linguistique comparative et qui auraient une origine commune. Estimées entre 10 et 20 selon les auteurs, elles ne font pas toutes l’unanimité et suscitent parfois la controverse. \textbf{Joseph Harold Greenberg} (1915-2001) qui a été directeur du département d’anthropologie de l’Université de Stanford a découvert la moitié de ces macro-familles qui regroupent l’ensemble des langues humaines.\ednote{此句的a découvert把前一句仍属有争议的假说改说成了确证发现；在本段自己的证据层级内，应作a proposé。对“半数”及“涵盖全部人类语言”的数量断言，本轮未取得足够依据，不作确定性背书。} Parmi ses découvertes, citons la superfamille « amérindienne », présentée en 1987 dans son livre \textit{Language in the Americas}, dont l’aire de répartition s’étend du Canada à l’Amérique du Sud, et la superfamille « eurasiatique » (regroupant les langues indo-européennes, ouraliennes, altaïques, turques et langues mongoles) présentée dans \textit{Indo-European and Its Closest Relatives : The Eurasiatic Language Family} (2000 et 2002).
++Les superfamilles (appelées aussi « macro-familles ») regroupent plusieurs familles de langues déjà établies au moyen des méthodes de la linguistique comparative et qui auraient une origine commune. Estimées entre 10 et 20 selon les auteurs, elles ne font pas toutes l’unanimité et suscitent parfois la controverse. \textbf{Joseph Harold Greenberg} (1915-2001) qui a été directeur du département d’anthropologie de l’Université de Stanford a découvert la moitié de ces macro-familles qui regroupent l’ensemble des langues humaines.\ednote{此句的a découvert把前一句仍属有争议的假说改说成了确证发现；在本段自己的证据层级内，应作a proposé。对“半数”及“涵盖全部人类语言”的数量断言，依据不足，仍待核验。} Parmi ses découvertes, citons la superfamille « amérindienne », présentée en 1987 dans son livre \textit{Language in the Americas}, dont l’aire de répartition s’étend du Canada à l’Amérique du Sud, et la superfamille « eurasiatique » (regroupant les langues indo-européennes, ouraliennes, altaïques, turques et langues mongoles) présentée dans \textit{Indo-European and Its Closest Relatives : The Eurasiatic Language Family} (2000 et 2002).
+ 
+ \minititle{\textcircled{\scriptsize 4} La notion d’isolat linguistique}
+ Pour rester dans la métaphore familiale et généalogique, on pourrait dire qu’un isolat est une langue « née de parents inconnus ». Dans la terminologie linguistique, on dira qu’il s’agit d’une langue dont on ne peut démontrer la relation génétique avec d’autres langues vivantes.\ednote{定义不应只限于langues vivantes（活语言），还须考虑有文献记录的灭绝语言；若与某种灭绝语言的亲缘关系已经确立，也不能仅因该亲属灭绝就称其在谱系分类上为孤立语。见Glottolog对独立语系与孤立语的区分\ecite{24}。} Certaines langues deviennent des isolats lorsque toutes les langues auxquelles elles sont reliées s’éteignent : ce sont en quelque sorte des langues orphelines. Mais d’autres sont des isolats depuis que leur existence est documentée. C’est le cas par exemple du sumérien dont nous avons parlé dans le premier chapitre, mais c’est aussi le cas du basque, seul isolat encore vivant parmi les langues en Europe, et qui ne fait donc pas partie de la famille indo-européenne. L’origine de la langue basque étant antérieure à la diffusion de l’écriture en Europe, on a proposé des relations génétiques entre le
+@@ -253,7 +253,7 @@
+ La langue vernaculaire en \textit{Romania} n’était pas le latin classique des textes littéraires appelé \textit{sermo urbanus} (« langue de la ville ») mais une forme distincte très proche, mais plus libre : le \textit{sermo plebeius} (« langue vulgaire, langue du peuple »). Le latin classique ne se limitait pas à la langue écrite : il était couramment parlé parmi les catégories sociales élevées, bien que ces derniers\ednote{原文如此；若回指les catégories sociales，应为ces dernières；若指这些阶层的成员，则须补明确的人称指称。} trouvassent plus raffiné encore de s’exprimer en grec. Lorsque Jules César a été poignardé par Brutus, il ne lui a pas dit « \textit{Tu quoque, fili} » (en latin, « toi aussi, mon fils ») mais « \textit{Kaì sù, téknon} », ce qui est le même sens, mais en grec.\ednote{此句把传闻写成了确定史实。Suétone《Divus Iulius》82先说Caesar未发出言语，随后才把“{\BBFifthTranslit καὶ σὺ τέκνον}”列作另一些人的传述；宜改为“据一种古代传述……”，不应断言他必说了此句\ecite{26}。} Le \textit{sermo plebeius} était la langue des soldats, des commerçants, du petit peuple, bref, de la \textit{plèbe}. Le « \textit{Satyricon} », célèbre roman de l’écrivain romain \textbf{Pétrone}, qui est considéré comme l’un des premiers romans de l’histoire de la littérature, est un témoignage direct de cette diglossie : selon leur catégorie sociale, les personnages du roman (contemporains de l’empereur Néron) s’y expriment dans une langue plus ou moins proche du modèle classique.
+ 
+ \minititle{2) Valérius Probus : l’« Appendix Probi »}
+-N’ayant jamais accédé au statut de langue littéraire, le latin vulgaire nous est parvenu par des citations, des inscriptions, des registres, de textes courants,\ednote{原文如此，列举中的de应与前项一致，作des textes courants。} mais aussi à travers les critiques des « Vaugelas » de l’époque, défenseurs du latin littéraire, Parmi les textes qui ont consigné les formes jugées décadentes et fautives, il faut retenir l’« \textit{Appendix Probi} », compilation d’erreurs fréquentes relevées par \textbf{Valérius Probus}, grammairien lui aussi contemporain de Néron, comme Pétrone.\ednote{作者归属及年代待核。底本把该材料归于1世纪的Valerius Probus，却未说明所据版本；题名中的Probi本身不足以完成作者鉴定。本批未取得有关校订研究全文，暂不把某一订值列为确证；待核文献线索见\ecite{27}。} Ce document, qui énumère les erreurs commis\ednote{原文如此，分词与阴性复数erreurs配合，应作commises。} couramment dans la graphie de divers mots du latin classique, offre un intérêt considérable car il met en évidence les corruptions (évolutions) de la prononciation qui ont conduit du latin aux langues romanes. L’« \textit{Appendix Probi} » a la forme d’une liste de 227 paires de mots réparties en deux colonnes : dans celle de gauche figurent les formes correctes du latin classique ; dans celle de droite figurent les formes présentées comme incorrectes. On peut ainsi se faire une idée des différences existant dans l’Antiquité tardive entre les formes écrites et les formes orales correspondantes. Il est important de noter ici que ce sont les formes fautives du latin vulgaire, et non leur équivalent en latin classique, qui sont à l’origine des mots utilisés dans les langues romanes. Pour l’illustrer, on verra ci-dessous quelques exemples tirés de l’« \textit{Appendix Probi} » :
++N’ayant jamais accédé au statut de langue littéraire, le latin vulgaire nous est parvenu par des citations, des inscriptions, des registres, de textes courants,\ednote{原文如此，列举中的de应与前项一致，作des textes courants。} mais aussi à travers les critiques des « Vaugelas » de l’époque, défenseurs du latin littéraire, Parmi les textes qui ont consigné les formes jugées décadentes et fautives, il faut retenir l’« \textit{Appendix Probi} », compilation d’erreurs fréquentes relevées par \textbf{Valérius Probus}, grammairien lui aussi contemporain de Néron, comme Pétrone.\ednote{作者归属及年代待核。底本把该材料归于1世纪的Valerius Probus，却未说明所据版本；题名中的Probi本身不足以完成作者鉴定。校订研究全文尚待核读；文献线索见\ecite{27}。} Ce document, qui énumère les erreurs commis\ednote{原文如此，分词与阴性复数erreurs配合，应作commises。} couramment dans la graphie de divers mots du latin classique, offre un intérêt considérable car il met en évidence les corruptions (évolutions) de la prononciation qui ont conduit du latin aux langues romanes. L’« \textit{Appendix Probi} » a la forme d’une liste de 227 paires de mots réparties en deux colonnes : dans celle de gauche figurent les formes correctes du latin classique ; dans celle de droite figurent les formes présentées comme incorrectes. On peut ainsi se faire une idée des différences existant dans l’Antiquité tardive entre les formes écrites et les formes orales correspondantes. Il est important de noter ici que ce sont les formes fautives du latin vulgaire, et non leur équivalent en latin classique, qui sont à l’origine des mots utilisés dans les langues romanes. Pour l’illustrer, on verra ci-dessous quelques exemples tirés de l’« \textit{Appendix Probi} » :
+ \begin{itemize}
+ \item \textit{Calida non calda, masculus non masclus, tabula non tabla, oculus non oclus} : ces exemples illustrent le processus d’amuïssement, c’est-à-dire la disparition de voyelles post-toniques brèves. Les mots latins étaient en effet accentués et se prononçaient « \textit{cálida} », « \textit{másculus} », « \textit{tábula} » et « \textit{óculus} ». C’est à cet amuïssement que l’on doit les mots français « chaud », « mâle » (« masle » en ancien français), « table » et « oculaire ».\ednote{末例应区别民间继承与学术借入：oculus经民间音变产生的法语词是œil；oculaire来自拉丁语ocularis，不能作为本段oculus→oclus音变的直接结果\ecite{28}。}
+ \item \textit{Auctor non autor}. On note ici des réductions de groupes de consonnes. Le groupe /kt/ devient /t/, et \textit{auctor} devient \textit{autor} avant de devenir « auteur » en français. De même, /mt/ est réduit à /t/. C’est le cas du verbe \textit{domitare} devenu \textit{domtare} après amuïssement, puis « dompter ».\ednote{“/mt/变为/t/”与紧接的domtare→dompter例子不符。所示变化是在m与t之间出现p的增音，而不是把m删去；该例不能证明/mt/→/t/。} L’insertion d’un « p » entre le « m » et une consonne occlusive est normale :
+@@ -321,7 +321,7 @@
+ La famille indo-européenne possède également deux branches éteintes : la branche anatolienne et la branche tokharienne.
+ 
+ \minititle{1. La branche anatolienne}
+-L’Anatolie, péninsule située à l’extrémité occidentale de l’Asie, désigne aujourd’hui toute la partie asiatique de la Turquie (Anatolie vient du grec \textit{Anatolē}, qui signifie « Orient »). Pour désigner cette région, le terme d’Asie Mineure est encore très utilisé de nos jours. Les langues anatoliennes (le hittite, le louvite, le palaïte, le carien, le pisidien, le sidétique et le lydien) parlées aux IIe et Ier millénaires avant notre ère, sont toutes éteintes aujourd’hui. Si la Mésopotamie a été le berceau de l’écriture, les civilisations anatoliennes ont joué un rôle déterminant dans l’évolution du langage écrit. Les hittites, par exemple, utilisaient deux écritures : l’écriture cunéiforme et les hiéroglyphes. Les royaumes de l’Asie Mineure antique ont ensuite adopté l’alphabet grec pour noter les premiers textes en langue turque.\ednote{此句混淆了古代安纳托利亚语与突厥语。两者不是同一语系，不能把古代小亚细亚诸王国的文字材料称为最早土耳其语文本；宜改为相应的古代安纳托利亚语言，具体所指仍须原著资料确认。与本章后面将le turc列为非印欧语言的说明亦不相容。} Plus tard, l’Empire ottoman a utilisé l’alphabet arabe pour écrire le turc. Enfin, à la révolution turque (1919-1922), il a été décidé d’utiliser l’alphabet latin, plus moderne et plus accessible, pour une transcription totalement phonétique.\ednote{此处采用拉丁字母的改革应改为1928年，而非1919—1922年。所查二级历史资料将第1353号法律的通过日期列为1928年11月1日；本批未取得法律原件，不声称核过原始法条\ecite{29}。}
++L’Anatolie, péninsule située à l’extrémité occidentale de l’Asie, désigne aujourd’hui toute la partie asiatique de la Turquie (Anatolie vient du grec \textit{Anatolē}, qui signifie « Orient »). Pour désigner cette région, le terme d’Asie Mineure est encore très utilisé de nos jours. Les langues anatoliennes (le hittite, le louvite, le palaïte, le carien, le pisidien, le sidétique et le lydien) parlées aux IIe et Ier millénaires avant notre ère, sont toutes éteintes aujourd’hui. Si la Mésopotamie a été le berceau de l’écriture, les civilisations anatoliennes ont joué un rôle déterminant dans l’évolution du langage écrit. Les hittites, par exemple, utilisaient deux écritures : l’écriture cunéiforme et les hiéroglyphes. Les royaumes de l’Asie Mineure antique ont ensuite adopté l’alphabet grec pour noter les premiers textes en langue turque.\ednote{此句混淆了古代安纳托利亚语与突厥语。两者不是同一语系，不能把古代小亚细亚诸王国的文字材料称为最早土耳其语文本；宜改为相应的古代安纳托利亚语言，具体所指仍须原著资料确认。与本章后面将le turc列为非印欧语言的说明亦不相容。} Plus tard, l’Empire ottoman a utilisé l’alphabet arabe pour écrire le turc. Enfin, à la révolution turque (1919-1922), il a été décidé d’utiliser l’alphabet latin, plus moderne et plus accessible, pour une transcription totalement phonétique.\ednote{此处采用拉丁字母的改革应改为1928年，而非1919—1922年。所查二级历史资料将第1353号法律的通过日期列为1928年11月1日；法律原件仍待核\ecite{29}。}
+ 
+ \minititle{2. La branche tokharienne : koutchéen et agnéen}
+ Les langues tokhariennes (ou \textit{agni-kuči}) étaient des langues parlées et écrites durant le premier millénaire de notre ère dans le bassin du Tarim, dans une région qui correspond aujourd’hui au Xinjiang(Chine). Ces langues tokhariennes ont disparu avec l’arrivée des peuples turcophones, en particulier les Ouïghours, au 9\textsuperscript{e} siècle. Sur les manuscrits ramenés du bassin du Tarim par les expéditions européennes et japonaises au début du 20\textsuperscript{e} siècle figurait une langue inconnue, d’abord appelée la « langue I ». L’orientaliste et turcologue allemand \textbf{Friedrich. W. K. Müller} (1863-1930) lui a donné en 1907 le nom de tokharien. En fait, il n’y a pas une seule langue, mais deux langues : le tokharien A et le tokharien B. L’essentiel des manuscrits en tokharien A proviennent de la région de Karachar, et plus précisément des ruines d’un grand complexe monastique qui se trouve à une trentaine de kilomètres au sud-ouest de cette ville, sur le site de Chortchouq. Dans cette région se trouvait autrefois un royaume appelé « Agni » dans les textes sanskrits. Le tokharien A est donc aussi désigné sous le nom d’agnéen. Quant au tokharien B, il est également nommé « koutchéen », du nom de la région de Koutcha dans laquelle ont été trouvés les manuscrits écrits dans cette langue.
+@@ -576,7 +576,7 @@
+ Pour illustrer de façon plus concrète encore les différences entre langues agglutinantes et langues synthétiques, je vais montrer comment elles font pour exprimer la même idée, et cela à travers deux exemples : l’illatif et l’inessif.
+ 
+ \minititle{3) Illustration : illatif et inessif}
+-L’illatif (du latin \textit{illere}, « aller ») est le cas grammatical exprimant le mouvement vers un l’intérieur.\ednote{原文vers un l’intérieur多出un，应为vers l’intérieur。illere词源亦可疑，宜参核illatus／inferre；本批暂保留为待核词源，不据猜测替换正文。} L’inessif (du latin \textit{in}, « à l’intérieur », et \textit{essere}, « être ») le cas grammatical indiquant le lieu dans lequel se déroule l’action exprimée par le verbe.\ednote{原文essere不是拉丁语“是”的通常不定式，拉丁语为esse；本句在右括号后还漏est，应为L’inessif (…) est le cas grammatical…。} Les langues agglutinantes et les langues synthétiques ont deux manières différentes de les exprimer.
++L’illatif (du latin \textit{illere}, « aller ») est le cas grammatical exprimant le mouvement vers un l’intérieur.\ednote{原文vers un l’intérieur多出un，应为vers l’intérieur。illere词源亦可疑，宜参核illatus／inferre；词源仍待核。} L’inessif (du latin \textit{in}, « à l’intérieur », et \textit{essere}, « être ») le cas grammatical indiquant le lieu dans lequel se déroule l’action exprimée par le verbe.\ednote{原文essere不是拉丁语“是”的通常不定式，拉丁语为esse；本句在右括号后还漏est，应为L’inessif (…) est le cas grammatical…。} Les langues agglutinantes et les langues synthétiques ont deux manières différentes de les exprimer.
+ 
+ \origpage{159}{145}
+ \begin{itemize}
+--- v17/chapters/08_phonologie.tex
++++ v18/chapters/08_phonologie.tex
+@@ -91,7 +91,7 @@
+ \renewcommand{\thempfootnote}{校\arabic{editorialnote}}
+ Le cercle linguistique de Prague (« l’école de Prague ») est un mouvement de réflexion et d’analyse linguistique très influent au début du 20e siècle. Fondateur et premier président du Cercle, le linguiste tchèque Vilém Mathesius (1882-1945) défendait le principe d’une étude systématique, synchronique et immanente de la langue.
+ 
+-Les \textit{Travaux du cercle linguistique de Prague}, huit volumes publiés entre 1929 et 1939, ont été déterminants dans le domaine de la phonologie.Dans cet ouvrage, le terme de « structure » est apparu pour la première fois.\ednote{原文 phonologie.Dans 缺少句间空格，应为 phonologie. Dans。“structure 一词首次出现”的范围没有限定，本轮未取得足以支持这一优先权断言的历史词例或原刊证据，故列为待核；不能把本句作为该词在所有学科中首次使用的依据。} En considérant que « la langue est un système fonctionnel » et en préconisant « une méthode propre à permettre de découvrir les lois de structure des systèmes linguistiques », les membres du Cercle ont ouvert le programme des études structurales en linguistique.
++Les \textit{Travaux du cercle linguistique de Prague}, huit volumes publiés entre 1929 et 1939, ont été déterminants dans le domaine de la phonologie.Dans cet ouvrage, le terme de « structure » est apparu pour la première fois.\ednote{原文 phonologie.Dans 缺少句间空格，应为 phonologie. Dans。“structure 一词首次出现”的范围没有限定，此说仍需历史词例或原刊证据；不能把本句作为该词在所有学科中首次使用的依据。} En considérant que « la langue est un système fonctionnel » et en préconisant « une méthode propre à permettre de découvrir les lois de structure des systèmes linguistiques », les membres du Cercle ont ouvert le programme des études structurales en linguistique.
+ 
+ Quant à la notion de fonction dans le fonctionnalisme pragois est polysémique,\ednote{此句句法衔接有误：可改为 La notion de fonction dans le fonctionnalisme pragois est polysémique，或 Quant à la notion de fonction dans le fonctionnalisme pragois, elle est polysémique。正文保留原句。} elle peut être envisagée d’abord du point de vue du but de la communication : pour le Cercle, la langue, comme les autres produits de l’activité humaine, possède un caractère de finalité, c’est-à-dire qu’elle est utilisée en vue d’une fin. Mais la fonction est aussi ce qui permet de distinguer les signes ou leurs composants dans le système de la langue. C’est à ces deux aspects de la notion de fonction qu’est consacré ce chapitre : nous y présenterons les fonctions du langage, puis la phonologie, c’est-à-dire l’étude des sons du point de vue de leur « fonction ».
+ \end{keybox}
+@@ -148,7 +148,7 @@
+ La fonction argumentative ne figurait pas dans la triade originelle de Bühler. Elle a été ajoutée \origcont{223}{209}en 1953 par un de ses anciens étudiants, le philosophe des sciences \textbf{Karl Popper} (1902-1994). Pour Popper, la fonction argumentative, qui correspond à la discussion critique, à la rhétorique représente le niveau le plus élevé du langage, puisqu’elle repose sur la faculté qu’a l’homme de penser rationnellement.
+ 
+ \minititle{5. Hiérarchie et valeur des fonctions}
+-La classification proposée par Bühler établit une hiérarchie entre deux fonctions primaires de langage communes aux animaux et aux êtres humains, et deux fonctions supérieures qui sont l’apanage de l’homme.\ednote{本段“四种功能”的归属与上段矛盾：上段已说明 Bühler 原为三分法，第四项由 Popper 增补。因而此处应限定为“经 Popper 扩充的分类”，不能把四项均归于 Bühler 原始三分法。有关 1953 年和下列价值配对的具体原刊页码，本轮仍待核。} Par ailleurs, à chaque fonction est associée une valeur en lien avec le but visé :
++La classification proposée par Bühler établit une hiérarchie entre deux fonctions primaires de langage communes aux animaux et aux êtres humains, et deux fonctions supérieures qui sont l’apanage de l’homme.\ednote{本段“四种功能”的归属与上段矛盾：上段已说明 Bühler 原为三分法，第四项由 Popper 增补。因而此处应限定为“经 Popper 扩充的分类”，不能把四项均归于 Bühler 原始三分法。有关 1953 年和下列价值配对的具体原刊页码，仍待核。} Par ailleurs, à chaque fonction est associée une valeur en lien avec le but visé :
+ \begin{itemize}
+ \item Fonction argumentative : un argument sera soit pertinent, soit non pertinent.
+ \item Fonction de description : une description sera soit vraie, soit fausse.
+@@ -210,14 +210,14 @@
+ Une dernière remarque avant de quitter Jakobson : il considère que les six fonctions présentées au-dessus ne s’excluent pas les unes les autres, mais que souvent elles se superposent. Le langage peut ainsi servir à plusieurs choses à la fois : par, maintenir par exemple le contact (fonction phatique) tout en prenant pour objet le code du message (fonction métalinguistique).\ednote{原文 par, maintenir 中 par, 为赘文，拟删为 … à la fois : maintenir par exemple…；不据此改动正文。} « Vous voyez ce que je veux dire ? »
+ 
+ \minititle{\textcircled{\scriptsize 3} Le classement de Michael Halliday}
+-Née de la rencontre entre le fonctionnalisme et la grammaire, la théorie de la grammaire fonctionnelle a été initialement développée par \textbf{Simon Dik} (1940-1995), linguiste néerlandais, dans un ouvrage posthume : \textit{The Theory of Functional Grammar} a publié en 1997.\ednote{a publié 应为 publié（过去分词修饰 ouvrage），或改写为 qui a été publié。出版社将 1997 年第一卷明确标为第二次修订版，不能把该身后版本的年份直接等同于理论首次发展的年份。Dik 与 Halliday 的具体理论影响关系，本轮仍列待核。\ecite{48}} De son point de vue, la grammaire est un instrument d’interaction sociale entre êtres humains. Mettant l’accent sur la fonction de communication, Dik définit ainsi la grammaire fonctionnelle :
++Née de la rencontre entre le fonctionnalisme et la grammaire, la théorie de la grammaire fonctionnelle a été initialement développée par \textbf{Simon Dik} (1940-1995), linguiste néerlandais, dans un ouvrage posthume : \textit{The Theory of Functional Grammar} a publié en 1997.\ednote{a publié 应为 publié（过去分词修饰 ouvrage），或改写为 qui a été publié。出版社将 1997 年第一卷明确标为第二次修订版，不能把该身后版本的年份直接等同于理论首次发展的年份。Dik 与 Halliday 的具体理论影响关系，仍待核。\ecite{48}} De son point de vue, la grammaire est un instrument d’interaction sociale entre êtres humains. Mettant l’accent sur la fonction de communication, Dik définit ainsi la grammaire fonctionnelle :
+ \begin{quote}\small\itshape
+ D’un point de vue fonctionnel, une langue est tout d’abord un modèle de référence conceptualisé comme un instrument d’interaction social entre êtres humains, avec pour objectif d’établir des relations communicantes. C’est alors que l’on peut tenter de révéler l’instrumentalité linguistique dans les limites du possible en veillant à respecter l’utilisation et l’objectif de ces termes lors d’interactions sociales. En d’autres termes, le langage naturel fait partie intégrante de la compétence de communication.
+-\ednote{引文 instrument d’interaction social 中形容词若修饰 interaction，应为 sociale。其余译句按底本保留；本轮未取得该法语译文的确切原始出处，不用自行翻译的英语段落替换。}
++\ednote{引文 instrument d’interaction social 中形容词若修饰 interaction，应为 sociale。该法语译文的原始出处待核。}
+ \end{quote}
+ 
+ \minititle{1. La grammaire systémique fonctionnelle}
+-La théorie de Dik a reçu d’importants apports de la grammaire systémique fonctionnelle de \textbf{Michael Halliday} (1925-2018) un des linguistes contemporains les plus influents en Grande-Bretagne. Le modèle de Halliday est appelé systémique car il s’apparente, sur le plan des règles et des mécanismes, au fonctionnement d’un ordinateur.\ednote{待核：底本将 systémique 这一名称的缘由直接归于计算机运作类比，却未列该句出处。本轮未取得可核查的 Halliday 原著段落来确认此归因，故保留为作者的解释，不把类比当作已经证实的术语史结论。} Le postulat de base est le suivant :
++La théorie de Dik a reçu d’importants apports de la grammaire systémique fonctionnelle de \textbf{Michael Halliday} (1925-2018) un des linguistes contemporains les plus influents en Grande-Bretagne. Le modèle de Halliday est appelé systémique car il s’apparente, sur le plan des règles et des mécanismes, au fonctionnement d’un ordinateur.\ednote{待核：底本将 systémique 这一名称的缘由直接归于计算机运作类比，却未列该句出处。这一归因仍需 Halliday 原著支持，不能仅据类比确证术语史。} Le postulat de base est le suivant :
+ \begin{quote}\small\itshape
+ The explanation of how language works needs to be grounded in a functional analysis, since language has evolved in the process of carrying out certain critical functions as human beings interacted with their eco-social environment.
+ \end{quote}
+@@ -284,7 +284,7 @@
+ 
+ \origpage{230}{216}
+ \begin{bbcomplement}{Langue tonale}
+-Fait peu connu, soixante à soixante-dix pour cent des langues du monde sont tonales et presque toutes sont non-européennes.\ednote{统计与范围提示：这里未注明估计的抽样框及“声调语言”口径，不宜作为精确普查比例。WALS 第 13 章明确提醒其样本不按各地区语言密度比例取样，并将挪威语等欧洲语言列入声调或边缘声调类。因此，既不能由该样本直接推出全球比例，也不能把声调限定为非欧洲现象。底本估计保留，不用另一口径的新数字替换。\ecite{44}} On peut citer les langues d’Asie du Sud-Est, d’Extrême-Orient, les langues chinoises (mandarin, cantonais, min, gan, hakka...), les langues tai (thaï, lao, shan, zhuang), le birman, etc. Le thaï possède cinq tonèmes, le vietnamien en possède six. Le record, si je puis dire, appartient à la langue \textit{kam}, langue de l’ethnie Dong (侗族) parlée dans quelques endroits de la province du Guizhou et du Guangxi en Chine, et qui compte quinze tons.\ednote{待核：“十五调”以及“最高纪录”未指明侗语方言、调类与实际调值的计数口径，不能当作该语言所有变体共同的音位数。越南语“六调”的适用方言也须限定；本轮不在未取得各方言原始描写时另填数字。} Presque toutes les langues en Afrique au sud du Sahara sont également tonales. Le swahili est un rare exemple de langue africaine non tonale.
++Fait peu connu, soixante à soixante-dix pour cent des langues du monde sont tonales et presque toutes sont non-européennes.\ednote{统计与范围提示：这里未注明估计的抽样框及“声调语言”口径，不宜作为精确普查比例。WALS 第 13 章明确提醒其样本不按各地区语言密度比例取样，并将挪威语等欧洲语言列入声调或边缘声调类。因此，既不能由该样本直接推出全球比例，也不能把声调限定为非欧洲现象。底本估计保留，不用另一口径的新数字替换。\ecite{44}} On peut citer les langues d’Asie du Sud-Est, d’Extrême-Orient, les langues chinoises (mandarin, cantonais, min, gan, hakka...), les langues tai (thaï, lao, shan, zhuang), le birman, etc. Le thaï possède cinq tonèmes, le vietnamien en possède six. Le record, si je puis dire, appartient à la langue \textit{kam}, langue de l’ethnie Dong (侗族) parlée dans quelques endroits de la province du Guizhou et du Guangxi en Chine, et qui compte quinze tons.\ednote{待核：“十五调”以及“最高纪录”未指明侗语方言、调类与实际调值的计数口径，不能当作该语言所有变体共同的音位数。越南语“六调”的适用方言也须限定；具体数值须据各方言的原始描写核对。} Presque toutes les langues en Afrique au sud du Sahara sont également tonales. Le swahili est un rare exemple de langue africaine non tonale.
+ \end{bbcomplement}
+ 
+ \subsection{Les outils de la phonologie}
+@@ -309,7 +309,7 @@
+ Le but premier dans une analyse phonologique, on le sait à présent, est de déterminer si des différences phonétiques engendrent des différences sémantiques. En fonction de leurs propriétés, les sons peuvent avoir trois statuts phonologiques différents.
+ 
+ \minititle{\textcircled{\scriptsize 1} Les phonèmes}
+-Le phonème est une unité distinctive dépourvue elle-même de sens, mais qui induit une différence de sens dans le mot qui le contient : on l’a vu peu plus haut avec \bipa{[bato]}, \bipa{[rato]} et \bipa{[gato]}. L’espagnol compte 34 phonèmes, le français 36, l’italien 42, l’anglais 44, l’allemand 68.\ednote{这些音位数没有注明语言变体及分析口径，不能视为各语言唯一而固定的值。是否将长短对立、双元音、塞擦音等计作独立单位也会改变结果。本轮未取得支撑这一整组数值的原始清单，故保留数字并列待核，不擅自换上一组同样未说明口径的数字。}
++Le phonème est une unité distinctive dépourvue elle-même de sens, mais qui induit une différence de sens dans le mot qui le contient : on l’a vu peu plus haut avec \bipa{[bato]}, \bipa{[rato]} et \bipa{[gato]}. L’espagnol compte 34 phonèmes, le français 36, l’italien 42, l’anglais 44, l’allemand 68.\ednote{这些音位数没有注明语言变体及分析口径，不能视为各语言唯一而固定的值。是否将长短对立、双元音、塞擦音等计作独立单位也会改变结果。这组数值的原始清单与口径仍待核。}
+ 
+ \minititle{\textcircled{\scriptsize 2} Les allophones}
+ Avec des allophones, la substitution d’un son à un autre ne modifie pas le sens du mot : les locuteurs leur attribuent le même rôle fonctionnel en phonologie, même s’ils perçoivent la différence phonétique entre les deux. Par exemple en français, le mot « père » peut diversement se prononcer : \bipa{[pɛr]}, \bipa{[pɛʀ]} ou \bipa{[pɛʁ]}. Autrement dit, il y a trois prononciations possibles du phonème \bipa{/r/}. En utilisant la terminologie du chapitre précédent, on distingue :
+@@ -438,7 +438,7 @@
+ 
+ \Needspace{12\baselineskip}
+ \origpage{236}{222}
+-\minititle{III. Après avoir lu cet extrait de \textit{Linguistique et poétique} (1929) de Roman Jakobson, expliquez pourquoi il ne faut pas réduire la fonction poétique du langage à la poésie. Parmi les six fonctions du langage, quel est le statut de la fonction poétique ? Connaissez-vous des exemples de paronomase en français et en chinois ? Quelles différences faites-vous entre poésie lyrique et épique ?\ednote{此处年份 1929 与本章第 206 页对同文所注 1960（法译 1963）不一致，不能把两者同时当作此文的发表年；应采用正文该处的 1960／1963 区分。本轮另对照了该文英语原文节选中的诗歌功能段落，但未据它回译替换本书法文。\ecite{46}}}
++\minititle{III. Après avoir lu cet extrait de \textit{Linguistique et poétique} (1929) de Roman Jakobson, expliquez pourquoi il ne faut pas réduire la fonction poétique du langage à la poésie. Parmi les six fonctions du langage, quel est le statut de la fonction poétique ? Connaissez-vous des exemples de paronomase en français et en chinois ? Quelles différences faites-vous entre poésie lyrique et épique ?\ednote{此处年份 1929 与本章第 206 页对同文所注 1960（法译 1963）不一致，不能把两者同时当作此文的发表年；应采用正文该处的 1960／1963 区分。另参英语原文节选中的诗歌功能段落。\ecite{46}}}
+ \begin{quote}\small
+ Nous avons passé en revue tous les facteurs impliqués dans la communication linguistique sauf un, le message lui-même. [...] L’accent mis sur le message pour son propre compte est ce qui caractérise la fonction poétique du langage. Cette fonction ne peut être étudiée avec profit si on perd de vue les problèmes généraux du langage, et, d’un autre côté, une analyse minutieuse du langage exige que l’on prenne sérieusement en considération la fonction poétique. Toute tentative de réduire la sphère de la fonction poétique à la poésie, ou de confiner la poésie il la fonction poétique,\ednote{引文 il la fonction poétique 应为 à la fonction poétique；此处为明确的文字讹误。} n’aboutirait qu’à une simplification excessive et trompeuse. La fonction poétique n’est pas la seule fonction de l’art du langage, elle en est seulement la fonction dominante, déterminante, cependant que dans les autres activités verbales elle ne joue qu’un rôle subsidiaire, accessoire. Cette fonction, qui met en évidence le côté palpable des signes, approfondit par là même la dichotomie fondamentale des signes et des objets. Aussi, traitant de la fonction poétique, la linguistique ne peut se limiter au domaine de la poésie.
+ 
+--- v17/chapters/09_morphologie.tex
++++ v18/chapters/09_morphologie.tex
+@@ -366,7 +366,7 @@
+ \item \bipa{[iz]} : \textit{box} \bipa{[boks]}\qquad $\sim$ \textit{boxes} \bipa{[boksiz]}
+ \item \bipa{[Ɔn]} : \textit{ox} \bipa{[ɑks]}\qquad $\sim$ \textit{oxen} \bipa{[oksən]}
+ \end{itemize}
+-\ednote{紧邻上下文均说4种，trois allomorphes 应为 quatre allomorphes。末条方括号内首字底本近似 \bipa{Ɔ}，与上文和 oxen 内部的 ə 不同，应为 [ən]。英语各词的元音还涉及口音及旧式转写，本轮不把底本全套音标静默改为另一口音规范。}
++\ednote{紧邻上下文均说4种，trois allomorphes 应为 quatre allomorphes。末条方括号内首字底本近似 \bipa{Ɔ}，与上文和 oxen 内部的 ə 不同，应为 [ən]。英语各词的元音还涉及口音及旧式转写，不能将不同口音的转写规范混用。}
+ En plus des quatre allomorphes vus plus haut, et pour être complet, notez qu’il existe aussi ce qu’on \origcont{253}{239}appelle des formes de remplacement, comme par exemple :
+ \begin{itemize}
+ \item /e $\leftarrow$ (ae)/\quad :\quad man $\rightarrow$ men\qquad woman $\rightarrow$ women
+@@ -473,7 +473,7 @@
+ \item \textit{Dulu} ( « vieux ») $\rightarrow$ \textit{dahulu} ( « autrefois »)
+ \item \textit{Kerja} ( « travail ») $\rightarrow$ \textit{kinerja} ( « performance »).
+ \end{itemize}
+-\ednote{同属南岛语系不足以推出某语言“中缀很丰富”；具体形式还须区分共时能产中缀、固化词形和借用构词。原书未给出这些印尼语例子的分析来源，本轮保留语料，不将这一因果推断视为已确证。}
++\ednote{同属南岛语系不足以推出某语言“中缀很丰富”；具体形式还须区分共时能产中缀、固化词形和借用构词。原书未给出这些印尼语例子的分析来源，这一因果推断尚不能确证。}
+ 
+ \minititle{4. Les circonfixes en allemand et indonésien}
+ Les circonfixes se placent autour d’un radical. En allemand, le participe passé est construit avec le circonfixe « ge-...-t ». Le verbe \textit{haben} (« avoir ») devient « gehabt » (« eu »), \textit{sagen} (« dire ») devient « gesagt », \textit{wollen} (« vouloir ») devient \textit{gewollt} (« voulu »), etc.\ednote{ge-…-t 只适用于一部分德语第二分词；强变化动词常以 -(e)n 结尾，有些动词没有 ge-，不能概括所有过去分词。此处举例本身可保留，应缩小概括范围。参见\ecite{50}。}
+@@ -705,7 +705,7 @@
+ \item les formes en « va » proviennent du verbe latin \textit{vadere}
+ \item les formes en « ir- »viennent du verbe latin \textit{ire}
+ \end{itemize}
+-\ednote{“alare”在此作为已确证拉丁词源给出，缺乏依据；aller 的词源涉及拟构与音变分析，不能把未注明拟构性质的 alare 当作无争议实证。本轮保留并标待核，不以猜测词源替换。}
++\ednote{“alare”在此作为已确证拉丁词源给出，缺乏依据；aller 的词源涉及拟构与音变分析，不能把未注明拟构性质的 alare 当作无争议实证。词源仍待核。}
+ Dans le cas du supplétisme, les bases sont trop distantes pour parler d’allomorphie, car la flexion ne consiste donc plus seulement en une \textit{modification} du lexème, comme dans le cas d’allomorphie, mais de son \textit{remplacement} par un autre : les radicaux, dits « supplétifs » remplacent le radical usuel de même sens, mais indisponible.
+ 
+ \minititle{2) L’exemple de l’adjectif « ludique »}
+@@ -829,7 +829,7 @@
+ \end{itemize}
+ Je vous donne deux autres exemples de déglutination :
+ \begin{itemize}
+-\item La fête religieuse française de l’« Ascension » est elle aussi le résultat d’une mauvaise coupe de la fête de « la Cencion ».\ednote{此例的方向疑被倒置：若由 l’Ascension 误切为 la Cension / la Cencion，才符合本段“去掉误认作冠词的词首成分”的定义；正文所述从 la Cencion 到 l’Ascension 并不能示范该过程。原书未给例证出处，本轮只作拟校。}
++\item La fête religieuse française de l’« Ascension » est elle aussi le résultat d’une mauvaise coupe de la fête de « la Cencion ».\ednote{此例的方向疑被倒置：若由 l’Ascension 误切为 la Cension / la Cencion，才符合本段“去掉误认作冠词的词首成分”的定义；正文所述从 la Cencion 到 l’Ascension 并不能示范该过程。原书未给例证出处，此处仅作拟校。}
+ \item Le nom de la province française de la Guyenne vient du latin \textit{Aquitania} qui a d’abord donné « Aguienne » en ancien français, puis « l’Aguienne », et enfin « la Guyenne » au XIIIe siècle, le a- initial ayant été pris (par erreur) pour la voyelle finale de l’article « la ».
+ \end{itemize}
+ 
+@@ -995,7 +995,7 @@
+ aubergine&magasin&zéro\\\hline
+ \end{tabularx}
+ \end{center}
+-\ednote{这张表混合了阿拉伯语中介借词、语义翻译及词源有争议的项目，不能一概理解为每个词都具有相同的“阿拉伯语词源”。尤其 chemise、bedaine、caramel 等需逐项重核；本轮保留全部45个条目并标明待核，不以现代清单静默替换。}
++\ednote{这张表混合了阿拉伯语中介借词、语义翻译及词源有争议的项目，不能一概理解为每个词都具有相同的“阿拉伯语词源”。尤其 chemise、bedaine、caramel 等需逐项重核；表中45个条目的具体借入路径仍待核。}
+ Après 1830, c’est-à-dire après la conquête de l’Algérie par la France, une cinquantaine d’emprunts à l’arabe, directs cette fois-ci, sont entrés dans la langue française et sont toujours utilisés de nos jours : « \textit{zouave} », « \textit{razzia} », « \textit{maboul} », « \textit{barda} », « \textit{clebs} », « \textit{kif-kif} », « \textit{toubib} », etc.
+ 
+ \origpage{276}{262}
+@@ -1095,7 +1095,7 @@
+ \item Même chose pour le mot français « tunnel », emprunté au 15e siècle à l’anglais, qui l’avait emprunté à l’ancien français « tonnelle », qui désignait (et désigne encore) une longue voûte en berceau.
+ \item On pourrait citer l’exemple du français « flirter », forme lexicalisée de l’anglais \textit{flirt}, empruntée au français moyen « fleureter », c’est-à-dire « conter fleurette ».
+ \end{itemize}
+-\ednote{本页 bougette 的转写括号不配对，照原样保留。“tunnel 于15世纪借入法语”及“flirt 必然来自 fleureter”两项词源史断言需要词典证据，本轮标为待核，不据相似形式确证借入关系。}
++\ednote{本页 bougette 的转写括号不配对，照原样保留。“tunnel 于15世纪借入法语”及“flirt 必然来自 fleureter”两项词源史断言需要词典证据，两项均待核，不能仅据相似形式确证借入关系。}
+ Il est notable que ni « bougette » ni «recorder» ni « fleureter » n’existent encore dans le lexique français actuel, et que seuls les emprunts à l’anglais les y ont préservés de manière indirecte.
+ 
+ Dès les premières lignes de son ouvrage \textit{Honni soit qui mal y pense} (2001), la linguiste française \textbf{Henriette Walter} (1929-), qui a été disciple d’André Martinet, présente l’anglais et le français comme un vieux couple. Le sous-titre de son livre est d’ailleurs on ne peut plus clair : « L’incroyable histoire d’amour entre le français et l’anglais ». En voici un extrait :
+--- v17/chapters/12_pragmatique.tex
++++ v18/chapters/12_pragmatique.tex
+@@ -89,7 +89,7 @@
+ \end{keybox}
+ 
+ \section{LA LINGUISTIQUE DE L’ÉNONCIATION}
+-Élève d’\textbf{Antoine Meillet} à l’École Pratique des Hautes Études, Émile Benveniste (1907-1976)\ednote{1907 应为 1902；下一页同书例句亦给出 1902。此项依据本书内部对照。\ecite{56}} a enseigné lui-même dans cet établissement, ainsi qu’au Collège de France, où il a occupé la chaire de grammaire comparée de 1937 à 1969.\ednote{任教终年待核：应区分实际停止授课与正式教席任期的终点。本轮未取得可核验的正式任职记录，故不据二手年表把 1969 直接改为另一年份。} Spécialiste de l’iranien, il s’est illustré dans la grammaire comparée des langues indo-européennes et en linguistique générale. On considère que ce sont ses \textit{Problèmes de linguistique générale} (1966 et 1974), qui, les premiers, ont introduit en France la linguistique de l’énonciation.
++Élève d’\textbf{Antoine Meillet} à l’École Pratique des Hautes Études, Émile Benveniste (1907-1976)\ednote{1907 应为 1902；下一页同书例句亦给出 1902。此项依据本书内部对照。\ecite{56}} a enseigné lui-même dans cet établissement, ainsi qu’au Collège de France, où il a occupé la chaire de grammaire comparée de 1937 à 1969.\ednote{任教终年待核：应区分实际停止授课与正式教席任期的终点。正式任职记录仍待核。} Spécialiste de l’iranien, il s’est illustré dans la grammaire comparée des langues indo-européennes et en linguistique générale. On considère que ce sont ses \textit{Problèmes de linguistique générale} (1966 et 1974), qui, les premiers, ont introduit en France la linguistique de l’énonciation.
+ 
+ \subsection{Énonciation et situation d’énonciation}
+ Dans toute communication, aussi bien orale qu’écrite, on trouve à la fois un énoncé et une énonciation. Pour Benveniste : « C’est l’énonciation qui fait l’énoncé. »
+@@ -139,7 +139,7 @@
+ En linguistique, ce phénomène qui consiste à entendre dans un énoncé plusieurs « voix » distinctes est appelé dialogisme ou polyphonie.
+ 
+ \minititle{1. Mikhaïl Bakhtine : le dialogisme}
+-Le dialogisme, souvent associé à la polyphonie, est un concept développé par le philosophe et théoricien de la littérature \textbf{Mikhaïl Bakhtine} (1895-1975) dans son ouvrage \textit{Problème de la poétique de Dostoïevski} (1929),\ednote{版本待核：此处将题名“诗学”与 1929 年连用，需区分早期版本与修订本，不宜仅凭后出译本题名确定初版信息。法文书名的单复数也待相应题名页核对。本轮未取得两个俄文版本的题名页，故不在正文中改名改年。\ecite{57}} et dans lequel il définit le dialogisme comme l’interaction qui se constitue entre le discours du narrateur principal et les discours d’autres personnages ou entre deux discours internes d’un personnage. Dans la partie « Du discours romanesque » de son ouvrage posthume \textit{Esthétique et théorie du roman} (1978), il précise :
++Le dialogisme, souvent associé à la polyphonie, est un concept développé par le philosophe et théoricien de la littérature \textbf{Mikhaïl Bakhtine} (1895-1975) dans son ouvrage \textit{Problème de la poétique de Dostoïevski} (1929),\ednote{版本待核：此处将题名“诗学”与 1929 年连用，需区分早期版本与修订本，不宜仅凭后出译本题名确定初版信息。法文书名的单复数也待相应题名页核对。两个俄文版本的题名页仍待核。\ecite{57}} et dans lequel il définit le dialogisme comme l’interaction qui se constitue entre le discours du narrateur principal et les discours d’autres personnages ou entre deux discours internes d’un personnage. Dans la partie « Du discours romanesque » de son ouvrage posthume \textit{Esthétique et théorie du roman} (1978), il précise :
+ 
+ \begin{lecture}{}
+ Il suffit d’écouter et de méditer les paroles qu’on entend partout pour affirmer ceci : dans le parler courant de tout homme vivant en société, la moitié au moins des paroles qu’il prononce sont celles d’autrui.
+@@ -421,7 +421,7 @@
+ \end{lecture}
+ 
+ \origpage{366}{352}
+-Dans les années 60 et 70, cette discipline récente a connu un essor sous l’effet d’une part des travaux du philosophe anglais \textbf{John Langshaw Austin} (1911-1960) à Oxford, et d’autre part des travaux de Benveniste et Jakobson sur les embrayeurs. Si des divergences apparaissent entre linguistes du fait de la grande diversité de leurs travaux, ils partagent néanmoins une même conception du langage et s’opposent à toute dissociation d’une phrase et de son sens. Pour les pragmaticiens, l’énonciation n’est pas quelque chose d’accessoire qui s’ajoute à une phrase déjà porteuse de sens en elle-même : l’énonciation conditionne radicalement le sens de la phrase. Dans cette conception, l’idée très longtemps dominante en philosophie selon laquelle le langage n’a pour fonction que de représenter le monde et de transmettre des informations est mise à mal : le langage est un acte. Pour le linguiste américain \textbf{John Searle} (1932-), « élève et continuateur de John Austin, « Parler une langue, c’est réaliser des actes de langage ».\ednote{élève 前的开引号没有对应闭引号；宜删去该开引号，将引号仅用于后面的直接引语。生卒年括注按底本保留，不作为当前人物状态资料。} Son célèbre ouvrage éponyme, \textit{The acts of language} (1970),\ednote{所列 The acts of language 不是英文原著书名；英文原著为 Speech Acts: An Essay in the Philosophy of Language（1969）。本轮核对英文书目记录，法译本的版年另待核，不把英法题名和年份混合。\ecite{58}} est un des ouvrages fondateurs cette nouvelle discipline.\ednote{fondateurs cette nouvelle discipline 中缺 de，应为 fondateurs de cette nouvelle discipline。}
++Dans les années 60 et 70, cette discipline récente a connu un essor sous l’effet d’une part des travaux du philosophe anglais \textbf{John Langshaw Austin} (1911-1960) à Oxford, et d’autre part des travaux de Benveniste et Jakobson sur les embrayeurs. Si des divergences apparaissent entre linguistes du fait de la grande diversité de leurs travaux, ils partagent néanmoins une même conception du langage et s’opposent à toute dissociation d’une phrase et de son sens. Pour les pragmaticiens, l’énonciation n’est pas quelque chose d’accessoire qui s’ajoute à une phrase déjà porteuse de sens en elle-même : l’énonciation conditionne radicalement le sens de la phrase. Dans cette conception, l’idée très longtemps dominante en philosophie selon laquelle le langage n’a pour fonction que de représenter le monde et de transmettre des informations est mise à mal : le langage est un acte. Pour le linguiste américain \textbf{John Searle} (1932-), « élève et continuateur de John Austin, « Parler une langue, c’est réaliser des actes de langage ».\ednote{élève 前的开引号没有对应闭引号；宜删去该开引号，将引号仅用于后面的直接引语。生卒年括注按底本保留，不作为当前人物状态资料。} Son célèbre ouvrage éponyme, \textit{The acts of language} (1970),\ednote{所列 The acts of language 不是英文原著书名；英文原著为 Speech Acts: An Essay in the Philosophy of Language（1969）。依据英文书目记录；法译本版年另待核。\ecite{58}} est un des ouvrages fondateurs cette nouvelle discipline.\ednote{fondateurs cette nouvelle discipline 中缺 de，应为 fondateurs de cette nouvelle discipline。}
+ 
+ \subsection{Les énoncés constatifs et performatifs}
+ Professeur de philosophie morale à Oxford, John Langshaw Austin a donné une série de conférences à l’université de Harvard en 1955 qui ont été publiées en 1962 sous le titre \textit{How to do Things with Words}. Le livre sera traduit en français en 1970 sous le titre « Quand dire, c’est faire ». Le point de départ d’Austin est que les philosophes ont longtemps supposé qu’une affirmation ne pouvait que \textit{décrire} un état de fait :
+@@ -522,7 +522,7 @@
+ Il est parfois délicat de distinguer les actes illocutoires des actes perlocutoires. On peut s’accorder sur le fait que les actes illocutoires sont des actes de langage qui ne peuvent échouer, justement parce qu’ils sont inséparables du langage : selon une formule familière aux pragmaticiens, « dire c’est faire ».\ednote{“施事行为不能失败”不成立，且与本章原书 pp.353、355 关于合适条件及失误的说明冲突。说出句子不保证成功实施命名、宣告等行为；例如无权限者实施命名可以无效。须区分行为是否成立与成立后承诺是否履行。\ecite{60}} Autrement dit, il suffit d’avoir dit pour avoir fait. Ainsi, une promesse est constituée dès que l’on a prononcé l’énoncé « je promets », et il faut alors la distinguer de son exécution ou de son éventuel échec. C’est ce que le philosophe français Jacques Derrida appelle la plénitude des énoncés performatifs.
+ 
+ \minititle{\textcircled{\scriptsize 2} La performativité selon Derrida}
+-Le philosophe français \textbf{Jacques Derrida} (1930-2004) est connu, entre autres choses bien sûr, pour avoir polémiqué avec John Searle, le disciple et continuateur d’Austin. Dans \textit{Marges de la philosophie} (1972), le philosophe a mis en cause la pensée de Searle et Austin en critiquant les limites imposées au concept de performativité par le contexte de réalisation. Derrida envisage au contraire la performativité comme un « pouvoir-dire et vouloir-dire absolument plein et maître de lui-même ».\ednote{引文归属与论证方向待核：本段把“绝对充盈并掌握自身”作为 Derrida 的正面主张，但紧接着的引文讨论的是施为话语产生或改变情境；仅凭这两段不能推出行为不受语境制约。需以 « Signature événement contexte » 原篇核对被引短语的主语及上下文，本轮不把拟校写作确证。\ecite{61}} Il a bien sûr constaté que l’action en jeu dans les locutions performatives aboutit fréquemment à un échec, à sa non-réalisation : conformément à ce qu’avait observé Austin, très souvent l’énonciation performative échoue et échappe à son objectif. En réaction à cet échec de la performativité énonciative, Derrida insiste sur la plénitude de l’énoncé performatif :
++Le philosophe français \textbf{Jacques Derrida} (1930-2004) est connu, entre autres choses bien sûr, pour avoir polémiqué avec John Searle, le disciple et continuateur d’Austin. Dans \textit{Marges de la philosophie} (1972), le philosophe a mis en cause la pensée de Searle et Austin en critiquant les limites imposées au concept de performativité par le contexte de réalisation. Derrida envisage au contraire la performativité comme un « pouvoir-dire et vouloir-dire absolument plein et maître de lui-même ».\ednote{引文归属与论证方向待核：本段把“绝对充盈并掌握自身”作为 Derrida 的正面主张，但紧接着的引文讨论的是施为话语产生或改变情境；仅凭这两段不能推出行为不受语境制约。需以 « Signature événement contexte » 原篇核对被引短语的主语及上下文，此处为待核判断。\ecite{61}} Il a bien sûr constaté que l’action en jeu dans les locutions performatives aboutit fréquemment à un échec, à sa non-réalisation : conformément à ce qu’avait observé Austin, très souvent l’énonciation performative échoue et échappe à son objectif. En réaction à cet échec de la performativité énonciative, Derrida insiste sur la plénitude de l’énoncé performatif :
+ 
+ \begin{lecture}{}
+ L’énoncé performatif n’a pas son référent […] hors de lui, ou en tout cas avant lui et en face de lui. Il produit ou transforme une situation, il opère ; […] cela constitue sa structure interne, sa fonction ou sa destination ».
+--- v17/chapters/16_cognitive.tex
++++ v18/chapters/16_cognitive.tex
+@@ -757,6 +757,7 @@
+ Learning a language (including, of course, a first language) involves learning what the predicates of the language mean. Learning what the predicates of a language mean involves learning a determination of the extension of these predicates. Learning a determination of the extension of the predicates involves learning that they fall under certain rules (i.e., truth rules). But one cannot learn that P falls under R unless one has a language in which P and R can be represented. So one can not learn a language unless one has a language. (p. 63-64)
+ \end{lecture}
+ 
++\begingroup\small\setstretch{1.05}\setlength{\parskip}{.2em}
+ \lecturetitle{Pour aller plus loin}
+ BRESSON (François), BRUNER (Jerome) et Al. \emph{Logique et perception}. Paris, Puf, 1958.\par
+ BRUNER (Jerome). \emph{Car la culture donne forme à l’esprit : de la révolution cognitive à la psychologie culturelle}. Paris, Eshel, 1991.\par
+@@ -784,3 +785,5 @@
+ \gloss{cybernétique 控制论}{控制论研究的是一切物质动态系统的控制和通讯规律。}
+ \gloss{linguistique cognitive 认知语言学}{语言学的一个分支，强调语言和认知之间的相互作用，语言是组织、处理和传递信息的工具。}
+ \gloss{prototype 原型}{被（多数人）认为是某一类或某一组的典型的人或物。}
++
++\endgroup
+--- v17/appendices/collation.tex
++++ v18/appendices/collation.tex
+@@ -1,320 +1,463 @@
+ \titleformat{\chapter}[display]{\normalfont\bfseries\color{BellaInk}}{\filleft\sffamily\color{BellaBlue}\fontsize{13}{16}\selectfont ANNEXE~\thechapter\enspace /\enspace 附录}{1ex}{\filleft\fontsize{27}{32}\selectfont}[\vspace{1.2ex}\titlerule]
+-\chapter{校勘依据与待核事项}
+-\markright{校勘依据与待核事项}
+-本附录是重排者新增内容，不属于原书。正文中的“校”字号脚注与“原”字号脚注分别编号；前者给出字词、年代或论证方面的订正与说明，后者保留底本原注。
+-
+-\section*{校注的性质}
+-可直接依据句法、上下文或底本内部互见确认的漏词、错字，脚注给出应改形式。涉及外部事实的校注在相关处标引下列资料。对于推论超出所述证据范围的句子，校注说明推论的限度，而不把相反结论冒充为已确立的事实。未能确证的疑字或缺文明确标为拟校或待核。
+-
+-这些校注是各轮累计的初校结果，不是全书错误清单，也不表示本批所有人名、生卒年、文献版本、引文出处及科学断言都已完成独立核验。底本所引历史作者的观点不因与当代知识不同而直接改写。
+-
+-\section*{外部核验资料}
+-[E1]–[E12] 沿用前两章校勘资料；[E13]–[E17] 为第三章新增查阅的原版书目、机构传记或馆藏规范记录；[E18]–[E22] 为第四章所核对的原著、原论文译本及出版社书介。[E23]–[E34] 为第五章新增资料与待核文献线索，查阅层级逐项说明，未读到全文的条目不列为确证。[E35]–[E40] 为第六章核对的一手文本、原著译本、作者文集目录和机构资料；每项所查范围及所用版本单列说明。[E41]–[E43] 为第七章所核对的国际音标官方图表及解剖学教材。[E44]–[E48] 为第八章所核对的语言调查、协会档案、原著节选、发音词典和出版社版本记录。[E49]–[E52] 为第九章核对的术语表、语法说明、教材及词源词典。[E53] 为第十章核对的教育部语法术语手册；[E54]–[E55] 为第十一章核对的人名规范记录与书目记录。[E56]–[E63] 区分第十二章的内部对照、已读原典／书目和未取得原篇的待核线索，实际查阅层级逐项说明。新增查阅日期：2026 年 9 月 11 日。网址保留为可点击链接。
+-\Needspace{6\baselineskip}\phantomsection\label{ref-1}\noindent\textbf{[E1] Bibliothèque nationale de France.} \textit{Blaise Pascal (1623-1662) — Bibliographie}.\par 用于核对 Pascal 的生卒年。\par {\small\url{https://www.bnf.fr/fr/blaise-pascal-1623-1662-bibliographie}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-2}\noindent\textbf{[E2] University of Oxford, ETCSL.} \textit{Sumerian language}.\par 用于区分苏美尔语的孤立语言地位、阿卡德语的闪米特语归属，以及最早文字证据与语言起源问题。\par {\small\url{https://etcsl.orinst.ox.ac.uk/edition2/language.php}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-3}\noindent\textbf{[E3] Steven Pinker.} \textit{The Language Instinct (1994/2007)}.\par 作者书介同时涉及语言的先天基础与儿童语言习得；不能把前者写成具体语言无需习得。\par {\small\url{https://stevenpinker.com/publications/language-instinct-19942007}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-4}\noindent\textbf{[E4] Jean-Jacques Hublin et al. (2017).} \textit{New fossils from Jebel Irhoud, Morocco and the pan-African origin of Homo sapiens}.\par Nature 546, 289–292。用于核对 Jebel Irhoud 化石所关联的约 $315\pm34$ 千年前年代及早期智人形态归属。\par {\small\url{https://doi.org/10.1038/nature22336}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-5}\noindent\textbf{[E5] Cecilia S. L. Lai et al. (2001).} \textit{A forkhead-domain gene is mutated in a severe speech and language disorder}.\par Nature 413, 519–523。用于区分 FOXP2 与言语、语言发育的关联和“单一突变产生句法”的过强结论。\par {\small\url{https://doi.org/10.1038/35097076}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-6}\noindent\textbf{[E6] Johannes Krause et al. (2007).} \textit{The derived FOXP2 variant of modern humans was shared with Neandertals}.\par Current Biology 17(21), 1908–1912；PubMed PMID 17949978。用于限定该研究实际比较的 FOXP2 变异及其解释范围。\par {\small\url{https://doi.org/10.1016/j.cub.2007.10.008}}\par
+-
+-
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-7}\noindent\textbf{[E7] Albert Mehrabian.} \textit{“Silent Messages” — Description and Ordering Information}.\par 作者本人对 7\%—38\%—55\% 结果的适用范围作出的说明：情感与态度表达，不能推广为一切交流中言语与非言语信息的比例。\par {\small\url{https://www.kaaj.com/psych/smorder.html}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-8}\noindent\textbf{[E8] E. S. Savage-Rumbaugh et al. (1993).} \textit{Language comprehension in ape and child}.\par Monographs of the Society for Research in Child Development 58(3–4), 1–222；PubMed PMID 8366872，查阅摘要。另核对 Ape Initiative 的 Kanzi 介绍。用于区分口语理解、图形符号系统和手语，并限定跨物种任务比较的推论范围。\par {\small\url{https://pubmed.ncbi.nlm.nih.gov/8366872/}}\par {\small\url{https://www.apeinitiative.org/kanzi}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-9}\noindent\textbf{[E9] NOAA, National Ocean Service.} \textit{How far does light travel in the ocean?}\par 页面更新于 2024 年 6 月 16 日。用于核对海洋透光深度，反对把十米作为普遍无光界限。\par {\small\url{https://oceanservice.noaa.gov/facts/light_travel.html}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-10}\noindent\textbf{[E10] Wikipedia contributors.} \textit{Gregory Bateson}.\par 本轮用作生卒年复核的二级传记资料，仅据以订正 1990 为 1980；不据此审定本章对其理论的概括。\par {\small\url{https://en.wikipedia.org/wiki/Gregory_Bateson}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-11}\noindent\textbf{[E11] Julien Offray de La Mettrie.} \textit{L’Homme machine}. Leyde, Élie Luzac fils, 1748.\par 通过 Wikisource 查阅该版书名页转录，印年为 MDCCXLVIII。校注核对的是所引版本的印记，不把不同文献的初刊流通年与印年混为一谈。\par {\small\url{https://fr.wikisource.org/wiki/L’Homme_machine_(1748)}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-12}\noindent\textbf{[E12] Wiktionnaire.} \textit{discourir}, rubrique « Étymologie ».\par 词典条目标明拉丁语 discurrere 词源，用于订正原书所称的希腊语 logos 词源；更细的历史形式与借入途径不在此校注中展开。\par {\small\url{https://fr.wiktionary.org/wiki/discourir}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-13}\noindent\textbf{[E13] Henri Estienne.} \textit{Project du livre intitulé De la precellence du langage François}. Mamert Patisson, 1579.\par 查阅 Google Books 收录的里昂公共图书馆原本书目记录，题名及责任者均署 Henri Estienne，用于订正本章误署 Robert Estienne。未以该记录审定本章其他 Estienne 家族出版物。\par {\small\url{https://books.google.es/books?id=5gkVrK527vYC}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-14}\noindent\textbf{[E14] Biblissima+.} \textit{Virgile (0070-0019 av. J.-C.)}, auteur Q16458.\par 作者规范记录用于核对公元前 70 年的出生年代，与原文所列 Denys 的卒年比较；此记录本身不作为 Denys 任教地点的证据。\par {\small\href{https://portail.biblissima.fr/fr/ark:/43093/pdataa05dbb0900f756522136441ae64be4b0d2e7de1b}{Biblissima+ — Virgile，作者规范记录 Q16458}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-15}\noindent\textbf{[E15] Académie française.} \textit{Claude Favre de Vaugelas}, notice biographique.\par 机构官方传记明确记载 1585 年 1 月 6 日出生、1650 年 2 月 26 日去世，用于订正底本的卒年 1659。\par {\small\href{https://www.academie-francaise.fr/les-immortels/claude-favre-de-vaugelas}{Académie française — Claude Favre de Vaugelas}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-16}\noindent\textbf{[E16] Hachette Livre--BnF.} \textit{Lettres de Madame de Sévigné, de sa famille et de ses amis. Album}. Réimpression, 2013.\par Google Books 展示的出版社书目说明标明 Sévigné, Marie de Rabutin-Chantal (1626-1696)，用于订正原文 1996 的排印错误。本轮查阅的是书目说明，未宣称通读书信集。\par {\small\url{https://books.google.tt/books?id=9YLuoQEACAAJ}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-17}\noindent\textbf{[E17] National Institute of Informatics, CiNii Books.} \textit{La logique, ou, L’art de penser}, NCID BB06792048.\par 馆藏书目记录：Antoine Arnauld, Pierre Nicole；Dominique Descotes 校订，Honoré Champion, 2011，ISBN 9782745322654。用于核对原书本条文献的共同作者，并区分《逻辑》与《普遍唯理语法》。\par {\small\url{https://ci.nii.ac.jp/ncid/BB06792048}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-18}\noindent\textbf{[E18] Immanuel Kant.} \textit{The Critique of Pure Reason.}\par J. M. D. Meiklejohn 英译本，Project Gutenberg 第4280号电子书；本次核对导论I—V，特别是先天／后验、分析／综合的区分，以及先天综合的数学判断。\par {\small\url{https://www.gutenberg.org/files/4280/4280-h/4280-h.htm}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-19}\noindent\textbf{[E19] Ludwig Wittgenstein.} \textit{Tractatus Logico-Philosophicus.}\par Project Gutenberg 第5740号德英对照文本，C. K. Ogden 英译。核对3.326—3.328、4.024、4.461—4.4611等条目；对Ulysses／Odysseus的检索未定位到本书所归引例句，因此相关归属仅标待核。\par {\small\url{https://www.gutenberg.org/files/5740/5740-pdf.pdf}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-20}\noindent\textbf{[E20] Erwin Schrödinger (1935); John D. Trimmer, trans. (1980).} \textit{The Present Situation in Quantum Mechanics.}\par 原论文英译，Proceedings of the American Philosophical Society 124, 323–338；所核对为汉堡工业大学原网页的Internet Archive存档，第5节。用于区分量子叠加与经典命题的逻辑合取，不据此断言量子实验违反非矛盾律。\par {\small\url{https://web.archive.org/web/20161020061333/https://www.tuhh.de/rzt/rzt/it/QM/cat.html}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-21}\noindent\textbf{[E21] Bertrand Russell (1905).} \textit{On Denoting.}\par 核对原论文全文的限定描述分析、存在与唯一性条件、primary／secondary occurrence和否定的辖域。在线全文由Cosma Shalizi网站转载；未将网站本身的评论当作Russell原文。\par {\small\url{https://bactra.org/Russell/denoting/}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-22}\noindent\textbf{[E22] Ludwig Wittgenstein; Harper Collins.} \textit{The Blue and Brown Books.}\par 1965版，ISBN 9780061312113。Google Books展示的出版社书介明确将《蓝皮书》的口授笔记标为1933—1934年。本次据书介核对年代，未声称通读此版本。\par {\small\url{https://books.google.com/books/about/The_Blue_and_Brown_Books.html?id=R7CxDSdN6mcC}}\par
+-
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-23}\noindent\textbf{[E23] Katrin Amunts, Axel Schleicher, Karl Zilles (2004).} \textit{Outstanding language competence and cytoarchitecture in Broca’s speech region.}\par Brain and Language 89(2), 346–353；PubMed PMID 15068917。核对论文书目与摘要、Krebs姓名拼法。未据此推断多语能力的单一原因。\par {\small\url{https://pubmed.ncbi.nlm.nih.gov/15068917/}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-24}\noindent\textbf{[E24] Glottolog.} \textit{Glottolog Information.}\par 核对语系及孤立语分类原则，尤其不把“亲属是否仍有活语言”作为同源关系的定义。\par {\small\url{https://glottolog.org/glottolog/glottologinformation}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-25}\noindent\textbf{[E25] Glottolog.} \textit{Family: Japonic (japo1237).}\par 用于核对日琉语系分类。与其他语系关系未定，不等于日语本身没有可确证的亲属。\par {\small\url{https://glottolog.org/resource/languoid/id/japo1237}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-26}\noindent\textbf{[E26] Suetonius.} \textit{Divus Iulius, §82.}\par The Latin Library所收拉丁原文。区分作者叙述与以tradiderunt quidam引入的另一传述，不将后者升格为确定遗言。\par {\small\url{https://www.thelatinlibrary.com/suetonius/suet.caesar.html}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-27}\noindent\textbf{[E27] Jonathan G. F. Powell (2007).} \textit{A new text of the Appendix Probi.}\par The Classical Quarterly 57(2), 687–700。仅取得文献线索，本轮未读到校订全文；供后续作者归属及年代复核，不作为已经核验的正文替换依据。\par {\small\url{https://doi.org/10.1017/S0009838807000638}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-28}\noindent\textbf{[E28] Académie française.} \textit{oculaire, Dictionnaire de l’Académie française, 9e édition.}\par 所查词条检索片段注明来自晚期拉丁语ocularis。用于区分学术借词oculaire与本章讨论的oculus民间音变；首页检索“oculaire”可定位词条。\par {\small\url{https://www.dictionnaire-academie.fr/}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-29}\noindent\textbf{[E29] Wikipedia contributors.} \textit{Turkish alphabet reform.}\par 二级历史资料，仅用于1928年改革与1928年11月1日法律通过日期的初校。第1353号法律原件本轮未取得，后续须补原始公报核验；本项不作为现代法律操作指南。\par {\small\url{https://en.wikipedia.org/wiki/Turkish_alphabet_reform}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-30}\noindent\textbf{[E30] Wilhelm von Humboldt (1836).} \textit{Über die Verschiedenheit des menschlichen Sprachbaues und ihren Einfluss auf die geistige Entwickelung des Menschengeschlechts.}\par Dümmler，1836。Google Books所收巴伐利亚州立图书馆原本的书目记录，用于订正原文1936为1836；不声称通读此版本。\par {\small\url{https://books.google.com/books?id=NhBcAAAAcAAJ}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-31}\noindent\textbf{[E31] Matthew S. Dryer.} \textit{Order of Subject, Object and Verb.}\par WALS Online，第81章。核对词汇性名词短语的取样原则、无主导语序类别与81A表，不把不同调查的百分比和样本总数混合。\par {\small\url{https://wals.info/chapter/81}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-32}\noindent\textbf{[E32] Balthasar Bickel and Johanna Nichols.} \textit{Fusion of Selected Inflectional Formatives; Inflectional Synthesis of the Verb.}\par WALS Online，第20、22章。用于区分综合程度、语音融合与其他形态参数，并说明同一种语言不同构式可采用不同程度的综合手段。\par {\small\url{https://wals.info/chapter/20}}\par
+-{\small\url{https://wals.info/chapter/22}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-33}\noindent\textbf{[E33] J. H. Allen and J. B. Greenough; Meagan Ayer, ed.} \textit{New Latin Grammar: Uses of Prepositions, §§220–221.}\par Dickinson College Commentaries。in在方向用法中支配宾格、在处所用法中支配夺格；用于校正in cubiculo sum的格标记。\par {\small\url{https://dcc.dickinson.edu/grammar/latin/uses-prepositions}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-34}\noindent\textbf{[E34] ATILF–CNRTL.} \textit{hommasse, Trésor de la langue française informatisé.}\par 核对该形容词的词类、词义和派生关系；不把它当作homme的屈折阴性形式。\par {\small\url{https://www.cnrtl.fr/definition/hommasse}}\par
+-
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-35}
+-\noindent\textbf{[E35] IASS–AIS.} \textit{Congresses}.\par
+-官方大会表：1. A Semiotic Landscape，Milano，June 1974；仅用于订正“1969 年首届大会”。\par
++\chapter{校勘参考资料与待核事项}
++\markright{校勘参考资料与待核事项}
++本附录供查阅正文校注。脚注中的“原”为原书注释，“校”为新增校勘；[E1]–[E69] 对应下列资料。仅据摘要、书目或二级资料的条目分别注明，待核线索不作为确证。
++
++\section*{参考资料}
++\begingroup
++\small\setstretch{1.08}\setlength{\parindent}{0pt}\setlength{\parskip}{.38em}
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-1}\noindent\textbf{[E1] Bibliothèque nationale de France.} \textit{Blaise Pascal (1623-1662) — Bibliographie}.\par\nobreak
++Pascal 生卒年的书目依据。\par
++{\small\href{https://www.bnf.fr/fr/blaise-pascal-1623-1662-bibliographie}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-2}\noindent\textbf{[E2] University of Oxford, ETCSL.} \textit{Sumerian language}.\par\nobreak
++苏美尔语与阿卡德语的分类；区分最早文字证据与语言起源。\par
++{\small\href{https://etcsl.orinst.ox.ac.uk/edition2/language.php}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-3}\noindent\textbf{[E3] Steven Pinker.} \textit{The Language Instinct (1994/2007)}.\par\nobreak
++作者书介涉及语言的先天基础与儿童习得；先天基础不表示具体语言无需学习。\par
++{\small\href{https://stevenpinker.com/publications/language-instinct-19942007}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-4}\noindent\textbf{[E4] Jean-Jacques Hublin et al. (2017).} \textit{New fossils from Jebel Irhoud, Morocco and the pan-African origin of Homo sapiens}.\par\nobreak
++Nature 546, 289–292。Jebel Irhoud 化石的年代约为 $315\pm34$ 千年前。\par
++{\small\href{https://doi.org/10.1038/nature22336}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-5}\noindent\textbf{[E5] Cecilia S. L. Lai et al. (2001).} \textit{A forkhead-domain gene is mutated in a severe speech and language disorder}.\par\nobreak
++Nature 413, 519–523。FOXP2 与言语、语言发育有关，但不足以证明单一突变产生句法。\par
++{\small\href{https://doi.org/10.1038/35097076}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-6}\noindent\textbf{[E6] Johannes Krause et al. (2007).} \textit{The derived FOXP2 variant of modern humans was shared with Neandertals}.\par\nobreak
++Current Biology 17(21), 1908–1912；PMID 17949978。研究比较了现代人与尼安德特人的特定 FOXP2 变异。\par
++{\small\href{https://doi.org/10.1016/j.cub.2007.10.008}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-7}\noindent\textbf{[E7] Albert Mehrabian.} \textit{“Silent Messages” — Description and Ordering Information}.\par\nobreak
++作者对 7\%—38\%—55\% 结果的说明：适用于情感与态度表达，不能推广为所有交流的信息比例。\par
++{\small\href{https://www.kaaj.com/psych/smorder.html}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-8}\noindent\textbf{[E8] E. S. Savage-Rumbaugh et al. (1993).} \textit{Language comprehension in ape and child}.\par\nobreak
++Monographs of the Society for Research in Child Development 58(3–4), 1–222。依据论文摘要（PMID 8366872）及 Ape Initiative 介绍，区分口语理解、图形符号与手语。\par
++{\small\href{https://pubmed.ncbi.nlm.nih.gov/8366872/}{在线资料}}\par {\small\href{https://www.apeinitiative.org/kanzi}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-9}\noindent\textbf{[E9] NOAA, National Ocean Service.} \textit{How far does light travel in the ocean?}\par\nobreak
++海洋透光深度的说明；十米不是普遍无光界限。页面更新于2024年6月16日。\par
++{\small\href{https://oceanservice.noaa.gov/facts/light_travel.html}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-10}\noindent\textbf{[E10] Wikipedia contributors.} \textit{Gregory Bateson}.\par\nobreak
++二级传记资料，仅用于生卒年初校：卒年应为1980，而非1990。\par
++{\small\href{https://en.wikipedia.org/wiki/Gregory_Bateson}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-11}\noindent\textbf{[E11] Julien Offray de La Mettrie.} \textit{L’Homme machine}. Leyde, Élie Luzac fils, 1748.\par\nobreak
++依据1748年版书名页转录中的 MDCCXLVIII；版本印年与初刊流通年须区分。\par
++{\small\href{https://fr.wikisource.org/wiki/L’Homme_machine_(1748)}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-12}\noindent\textbf{[E12] Wiktionnaire.} \textit{discourir}, rubrique « Étymologie ».\par\nobreak
++词条将词源追溯至拉丁语 discurrere，而非希腊语 logos。\par
++{\small\href{https://fr.wiktionary.org/wiki/discourir}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-13}\noindent\textbf{[E13] Henri Estienne.} \textit{Project du livre intitulé De la precellence du langage François}. Mamert Patisson, 1579.\par\nobreak
++Google Books 所收里昂公共图书馆书目记录署 Henri Estienne，而非 Robert Estienne。\par
++{\small\href{https://books.google.es/books?id=5gkVrK527vYC}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-14}\noindent\textbf{[E14] Biblissima+.} \textit{Virgile (0070-0019 av. J.-C.)}, auteur Q16458.\par\nobreak
++作者规范记录 Q16458：Virgile 生于公元前70年，供与 Denys 所列年代对照。\par
++{\small\href{https://portail.biblissima.fr/fr/ark:/43093/pdataa05dbb0900f756522136441ae64be4b0d2e7de1b}{Biblissima+ — Virgile，作者规范记录 Q16458}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-15}\noindent\textbf{[E15] Académie française.} \textit{Claude Favre de Vaugelas}, notice biographique.\par\nobreak
++官方传记列生卒日为1585年1月6日、1650年2月26日；原书卒年1659有误。\par
++{\small\href{https://www.academie-francaise.fr/les-immortels/claude-favre-de-vaugelas}{Académie française — Claude Favre de Vaugelas}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-16}\noindent\textbf{[E16] Hachette Livre--BnF.} \textit{Lettres de Madame de Sévigné, de sa famille et de ses amis. Album}. Réimpression, 2013.\par\nobreak
++出版社书目说明列 Sévigné 生卒年为1626–1696；原书1996有误。依据书目，未核书信集全文。\par
++{\small\href{https://books.google.tt/books?id=9YLuoQEACAAJ}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-17}\noindent\textbf{[E17] National Institute of Informatics, CiNii Books.} \textit{La logique, ou, L’art de penser}, NCID BB06792048.\par\nobreak
++馆藏记录列共同作者 Antoine Arnauld、Pierre Nicole；Dominique Descotes 校订，Honoré Champion, 2011，ISBN 9782745322654。\par
++{\small\href{https://ci.nii.ac.jp/ncid/BB06792048}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-18}\noindent\textbf{[E18] Immanuel Kant.} \textit{The Critique of Pure Reason.}\par\nobreak
++J. M. D. Meiklejohn 英译，Project Gutenberg 第4280号。所据为导论 I–V：先天／后验、分析／综合及先天综合的数学判断。\par
++{\small\href{https://www.gutenberg.org/files/4280/4280-h/4280-h.htm}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-19}\noindent\textbf{[E19] Ludwig Wittgenstein.} \textit{Tractatus Logico-Philosophicus.}\par\nobreak
++C. K. Ogden 英译，Project Gutenberg 第5740号德英对照本。所据条目为3.326–3.328、4.024、4.461–4.4611；Ulysses／Odysseus 例句归属仍待核。\par
++{\small\href{https://www.gutenberg.org/files/5740/5740-pdf.pdf}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-20}\noindent\textbf{[E20] Erwin Schrödinger (1935); John D. Trimmer, trans. (1980).} \textit{The Present Situation in Quantum Mechanics.}\par\nobreak
++Proceedings of the American Philosophical Society 124, 323–338。依据原论文英译第5节，区分量子叠加与经典命题的逻辑合取；链接为原网页存档。\par
++{\small\href{https://web.archive.org/web/20161020061333/https://www.tuhh.de/rzt/rzt/it/QM/cat.html}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-21}\noindent\textbf{[E21] Bertrand Russell (1905).} \textit{On Denoting.}\par\nobreak
++原论文全文，转载于 Cosma Shalizi 网站。所据为限定描述、存在与唯一性条件，以及否定辖域的分析。\par
++{\small\href{https://bactra.org/Russell/denoting/}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-22}\noindent\textbf{[E22] Ludwig Wittgenstein; Harper Collins.} \textit{The Blue and Brown Books.}\par\nobreak
++1965年版，ISBN 9780061312113。出版社书介将《蓝皮书》口授笔记定于1933–1934年；依据书介，未核全书。\par
++{\small\href{https://books.google.com/books/about/The_Blue_and_Brown_Books.html?id=R7CxDSdN6mcC}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-23}\noindent\textbf{[E23] Katrin Amunts, Axel Schleicher, Karl Zilles (2004).} \textit{Outstanding language competence and cytoarchitecture in Broca’s speech region.}\par\nobreak
++Brain and Language 89(2), 346–353；PMID 15068917。依据书目与摘要核对 Krebs 姓名；研究不支持多语能力的单一成因解释。\par
++{\small\href{https://pubmed.ncbi.nlm.nih.gov/15068917/}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-24}\noindent\textbf{[E24] Glottolog.} \textit{Glottolog Information.}\par\nobreak
++语系及孤立语的分类原则；同源关系不以亲属语言是否仍存活为定义。\par
++{\small\href{https://glottolog.org/glottolog/glottologinformation}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-25}\noindent\textbf{[E25] Glottolog.} \textit{Family: Japonic (japo1237).}\par\nobreak
++日琉语系分类；与其他语系关系未定，不表示日语没有可确证的亲属。\par
++{\small\href{https://glottolog.org/resource/languoid/id/japo1237}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-26}\noindent\textbf{[E26] Suetonius.} \textit{Divus Iulius, §82.}\par\nobreak
++The Latin Library 所收拉丁原文。tradiderunt quidam 引入的是另一传述，不是已确定的遗言。\par
++{\small\href{https://www.thelatinlibrary.com/suetonius/suet.caesar.html}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-27}\noindent\textbf{[E27] Jonathan G. F. Powell (2007).} \textit{A new text of the Appendix Probi.}\par\nobreak
++The Classical Quarterly 57(2), 687–700。待核文献线索：尚未核读校订全文，不能据此确证作者归属与年代。\par
++{\small\href{https://doi.org/10.1017/S0009838807000638}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-28}\noindent\textbf{[E28] Académie française.} \textit{oculaire, Dictionnaire de l’Académie française, 9e édition.}\par\nobreak
++依据词条检索片段：oculaire 来自晚期拉丁语 ocularis，须与 oculus 的民间音变区分。可在词典首页检索词条。\par
++{\small\href{https://www.dictionnaire-academie.fr/}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-29}\noindent\textbf{[E29] Wikipedia contributors.} \textit{Turkish alphabet reform.}\par\nobreak
++二级历史资料将改革及第1353号法律通过日期列为1928年、1928年11月1日；法律原件仍待核。\par
++{\small\href{https://en.wikipedia.org/wiki/Turkish_alphabet_reform}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-30}\noindent\textbf{[E30] Wilhelm von Humboldt (1836).} \textit{Über die Verschiedenheit des menschlichen Sprachbaues und ihren Einfluss auf die geistige Entwickelung des Menschengeschlechts.}\par\nobreak
++Dümmler, 1836。依据 Google Books 所收巴伐利亚州立图书馆书目订正1936为1836；未核该版全文。\par
++{\small\href{https://books.google.com/books?id=NhBcAAAAcAAJ}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-31}\noindent\textbf{[E31] Matthew S. Dryer.} \textit{Order of Subject, Object and Verb.}\par\nobreak
++WALS Online 第81章。所据为词汇性名词短语的取样原则、无主导语序类别及81A表；不同样本的比例不可混用。\par
++{\small\href{https://wals.info/chapter/81}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-32}\noindent\textbf{[E32] Balthasar Bickel and Johanna Nichols.} \textit{Fusion of Selected Inflectional Formatives; Inflectional Synthesis of the Verb.}\par\nobreak
++WALS Online 第20、22章。区分综合程度、语音融合与其他形态参数；同一语言不同构式可有不同的综合程度。\par
++{\small\href{https://wals.info/chapter/20}{在线资料}}\par
++{\small\href{https://wals.info/chapter/22}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-33}\noindent\textbf{[E33] J. H. Allen and J. B. Greenough; Meagan Ayer, ed.} \textit{New Latin Grammar: Uses of Prepositions, §§220–221.}\par\nobreak
++Dickinson College Commentaries。in 表方向时支配宾格，表处所时支配夺格；in cubiculo sum 属后者。\par
++{\small\href{https://dcc.dickinson.edu/grammar/latin/uses-prepositions}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-34}\noindent\textbf{[E34] ATILF–CNRTL.} \textit{hommasse, Trésor de la langue française informatisé.}\par\nobreak
++hommasse 的词类、词义与派生关系；该词不是 homme 的屈折阴性形式。\par
++{\small\href{https://www.cnrtl.fr/definition/hommasse}{在线资料}}\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-35}\noindent\textbf{[E35] IASS–AIS.} \textit{Congresses}.\par\nobreak
++协会官方大会表列首届大会于1974年6月在 Milano 举行；原书1969有误。\par
+ {\small\href{https://iass-ais.org/congresses/}{电子核对文本}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-36}
+-\noindent\textbf{[E36] Charles S. Peirce.} \textit{How to Make Our Ideas Clear (1878)}.\par
+-原刊文章的全文转录；实践效果准则与最终共同意见的真理观，不把个别效用直接当作真理。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-36}\noindent\textbf{[E36] Charles S. Peirce.} \textit{How to Make Our Ideas Clear (1878)}.\par\nobreak
++原刊全文转录。所据为实践效果准则与最终共同意见的真理观，不能将个别效用直接等同于真理。\par
+ {\small\href{https://en.wikisource.org/wiki/Popular_Science_Monthly/Volume_12/January_1878/Illustrations_of_the_Logic_of_Science_II}{电子核对文本}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-37}
+-\noindent\textbf{[E37] Charles S. Peirce.} \textit{A Syllabus of Certain Topics of Logic (1903)；What Is a Sign? (1894)}.\par
+-Universidad de Navarra, Grupo de Estudios Peirceanos 所刊原著西班牙语译本；分别核对 CP 2.233–272 的三分法与十类、符号定义及指示实例、CP 1.180–202 的科学分类。并非本教材法语译文的底本。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-37}\noindent\textbf{[E37] Charles S. Peirce.} \textit{A Syllabus of Certain Topics of Logic (1903)；What Is a Sign? (1894)}.\par\nobreak
++Universidad de Navarra 所刊西班牙语译本。所据为 CP 2.233–272 的三分法与十类、符号定义与指示实例，以及 CP 1.180–202 的科学分类；法译引文版本另待核。\par
+ {\small\href{https://www.unav.es/gep/RelacionesTriadicas.html}{电子核对文本 1}}\par
+ {\small\href{https://www.unav.es/gep/DiversasConcepcionesLogicas.html}{电子核对文本 2}}\par
+ {\small\href{https://www.unav.es/gep/AnOutlineClassification.html}{电子核对文本 3}}\par
+ {\small\href{https://www.unav.es/gep/Signo.html}{电子核对文本 4}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-38}
+-\noindent\textbf{[E38] Ferdinand de Saussure；Charles Bally、Albert Sechehaye 编，Albert Riedlinger 协作.} \textit{Cours de linguistique générale（1916；所查电子文本据 Payot 1971 版）}.\par
+-第一版序言；导论第 III–V 章；第一部分第 I–III 章；第二部分第 IV–V 章。核对三轮课程、能指／所指、任意性、能指线条性、整体符号的积极性质、关联关系与外部语言学。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-38}\noindent\textbf{[E38] Ferdinand de Saussure；Charles Bally、Albert Sechehaye 编，Albert Riedlinger 协作.} \textit{Cours de linguistique générale（1916；所查电子文本据 Payot 1971 版）}.\par\nobreak
++所据为第一版序言、导论 III–V、第一部分 I–III、第二部分 IV–V，涉及三轮课程、能指／所指、任意性、线条性、关联关系与外部语言学。\par
+ {\small\href{https://fr.wikisource.org/wiki/Cours_de_linguistique_g%C3%A9n%C3%A9rale/Texte_entier}{电子核对文本}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-39}
+-\noindent\textbf{[E39] Ferdinand de Saussure.} \textit{Recueil des publications scientifiques de Ferdinand de Saussure (1922)}.\par
+-论文集书目与目录。用于核对除早期专著外另有多篇科学论文；不宣称本轮逐篇校读此集。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-39}\noindent\textbf{[E39] Ferdinand de Saussure.} \textit{Recueil des publications scientifiques de Ferdinand de Saussure (1922)}.\par\nobreak
++依据论文集书目与目录确认 Saussure 另有多篇科学论文；未逐篇核读全文。\par
+ {\small\href{https://fr.wikisource.org/wiki/Recueil_des_publications_scientifiques_de_Ferdinand_de_Saussure}{电子核对文本}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-40}
+-\noindent\textbf{[E40] Harvard University, Faculty of Arts and Sciences.} \textit{Hilary Whitehall Putnam, Memorial Minute (7 November 2023)}.\par
+-第一页明确记载 BORN: July 31, 1926；DIED: March 13, 2016。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-40}\noindent\textbf{[E40] Harvard University, Faculty of Arts and Sciences.} \textit{Hilary Whitehall Putnam, Memorial Minute (7 November 2023)}.\par\nobreak
++纪念文第一页列生卒日为1926年7月31日、2016年3月13日。\par
+ {\small\href{https://officeofthesecretary.fas.harvard.edu/sites/g/files/omnuum2291/files/2024-11/Putnam%20Memorial%20Minute_2023_11_07.pdf}{电子核对文本}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-41}
+-\noindent\textbf{[E41] International Phonetic Association.} \textit{The International Phonetic Alphabet — official IPA Kiel chart (2026; revised to 2015/2005)}.\par
+-已读取官方网页并查看官方单页 PDF 图表：核对 \bipa{ʁ / ʀ}、\bipa{l}、\bipa{j / ɥ / w}、\bipa{ø} 与鼻化符号，以及非肺部气流辅音的分列。此表不作为法语各地区音位总数或其历史变化的证据。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-41}\noindent\textbf{[E41] International Phonetic Association.} \textit{The International Phonetic Alphabet — official IPA Kiel chart (2026; revised to 2015/2005)}.\par\nobreak
++依据官方网页及单页图表，辨析 \bipa{ʁ / ʀ}、\bipa{l}、\bipa{j / ɥ / w}、\bipa{ø}、鼻化符号及非肺部气流辅音；法语地区音位数不由此表确定。\par
+ {\small\href{https://www.internationalphoneticassociation.org/content/ipa-chart}{International Phonetic Association · 官方图表说明}}\par
+ {\small\href{https://www.internationalphoneticassociation.org/IPAcharts/common_files/pdfs/pdfs_IPA_charts_E/IPA_Kiel.pdf}{International Phonetic Association · 官方 IPA Kiel 图表}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-42}
+-\noindent\textbf{[E42] J. Gordon Betts et al.; OpenStax, Rice University.} \textit{Anatomy and Physiology 2e (2022), §23.3 The Mouth, Pharynx, and Esophagus}.\par
+-核对 The Mouth 中硬腭、软腭、小舌的区别；The Pharynx 中鼻咽、口咽、喉咽的划分。仅用于解剖名词订正，不涉及临床建议。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-42}\noindent\textbf{[E42] J. Gordon Betts et al.; OpenStax, Rice University.} \textit{Anatomy and Physiology 2e (2022), §23.3 The Mouth, Pharynx, and Esophagus}.\par\nobreak
++所据为 The Mouth 与 The Pharynx：硬腭、软腭、小舌，以及鼻咽、口咽、喉咽的区分。\par
+ {\small\href{https://openstax.org/books/anatomy-and-physiology-2e/pages/23-3-the-mouth-pharynx-and-esophagus}{OpenStax · §23.3（电子核对文本）}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-43}
+-\noindent\textbf{[E43] J. Gordon Betts et al.; OpenStax, Rice University.} \textit{Anatomy and Physiology 2e (2022), §22.1 Organs and Structures of the Respiratory System}.\par
+-核对 Pharynx、Larynx、Trachea 各节及其解剖位置关系，用于区分声道组成、声带所在结构和软腭／小舌。未据此订正 Garcia 轶事或本章频率统计。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-43}\noindent\textbf{[E43] J. Gordon Betts et al.; OpenStax, Rice University.} \textit{Anatomy and Physiology 2e (2022), §22.1 Organs and Structures of the Respiratory System}.\par\nobreak
++所据为 Pharynx、Larynx、Trachea 各节：声道组成、声带所在结构与相关解剖位置。\par
+ {\small\href{https://openstax.org/books/anatomy-and-physiology-2e/pages/22-1-organs-and-structures-of-the-respiratory-system}{OpenStax · §22.1（电子核对文本）}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-44}
+-\noindent\textbf{[E44] Ian Maddieson.} \textit{Tone.}\par
+-WALS Online 第13章。核对声调的定义、边缘个案与取样限制，不将页面表格与文章不同版本的样本总数混合，也不将调查样本比例直接当作全世界语言比例。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-44}\noindent\textbf{[E44] Ian Maddieson.} \textit{Tone.}\par\nobreak
++WALS Online 第13章。声调定义、边缘个案与取样限制；样本比例不等于全世界语言比例。\par
+ {\small\href{https://wals.info/chapter/13}{电子核对文本}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-45}
+-\noindent\textbf{[E45] Societas Linguistica Europaea.} \textit{About Societas Linguistica Europaea — History / Presidents.}\par
+-协会官方历史与历任会长表。首任会长 André Martinet 任至1967年年会，随后为 Björn Collinder；用于订正原书1966–1999的任期。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-45}\noindent\textbf{[E45] Societas Linguistica Europaea.} \textit{About Societas Linguistica Europaea — History / Presidents.}\par\nobreak
++协会历史与历任会长表：André Martinet 任至1967年年会，继任者为 Björn Collinder。\par
+ {\small\href{https://societaslinguistica.eu/about-societas-linguistica-europaea/}{电子核对文本}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-46}
+-\noindent\textbf{[E46] Roman Jakobson.} \textit{Linguistics and Poetics.}\par
+-英语原著重印节选，所提供六页标为66–71页；已查看其中66–70页，核对六因素／六功能、Bühler的三个功能及诗学练习的对应段落。文件首页说明摘自 Language in Literature（Krystyna Pomorska、Stephen Rudy 编）。这不是本教材法语译文底本，不用英语另译来替换原文。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-46}\noindent\textbf{[E46] Roman Jakobson.} \textit{Linguistics and Poetics.}\par\nobreak
++Language in Literature 重印节选，所核页为66–70。涉及六因素／六功能、Bühler 三功能及诗学例证；法译引文版本另待核。\par
+ {\small\href{https://marul.ffst.hr/~bwillems/fymob/jakobsonfunctions.pdf}{电子核对文本}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-47}
+-\noindent\textbf{[E47] Dudenredaktion.} \textit{singen; sinken.}\par
+-Duden Online 词条的 Lautschrift 栏。singen 列为 \bipa{[ˈzɪŋən]}，sinken 列为 \bipa{[ˈzɪŋkn̩]}；用于核对原书所谓元音间 /k/ 与 /g/ 对立的例词。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-47}\noindent\textbf{[E47] Dudenredaktion.} \textit{singen; sinken.}\par\nobreak
++Duden Online 音标栏：singen 为 \bipa{[ˈzɪŋən]}，sinken 为 \bipa{[ˈzɪŋkn̩]}，不构成原书所称的元音间 /k/ 与 /g/ 对立。\par
+ {\small\href{https://www.duden.de/rechtschreibung/singen}{电子核对文本 1}}\par
+ {\small\href{https://www.duden.de/rechtschreibung/sinken}{电子核对文本 2}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-48}
+-\noindent\textbf{[E48] Simon C. Dik; De Gruyter Mouton.} \textit{The Theory of Functional Grammar, Part 1: The Structure of the Clause.}\par
+-出版社记录明确为 2nd rev. ed. 1997，纸本 ISBN 9783110154047。仅据书目确认1997不是该卷初版，不声称本轮通读付费正文，也不据此断言与Halliday的单向影响关系。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-48}\noindent\textbf{[E48] Simon C. Dik; De Gruyter Mouton.} \textit{The Theory of Functional Grammar, Part 1: The Structure of the Clause.}\par\nobreak
++出版社记录：2nd rev. ed., 1997，ISBN 9783110154047。1997不是该卷初版；依据书目，未核正文。\par
+ {\small\href{https://www.degruyterbrill.com/document/doi/10.1515/9783110218367/html}{电子核对文本}}\par
+-
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-49}
+-\noindent\textbf{[E49] SIL Dictionary \& Lexicography Services.} \textit{Glossary.}\par
+-核对 lemma、lexeme、lexical or lexeme form、inflectional variants 等条目的区分。仅用来说明本章部分术语与常见词典学约定不同，不以该术语表替换作者的定义或其引文。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-49}\noindent\textbf{[E49] SIL Dictionary \& Lexicography Services.} \textit{Glossary.}\par\nobreak
++lemma、lexeme、lexical or lexeme form 与 inflectional variants 的词典学区分；不同理论体系的术语不可直接等同。\par
+ {\small\href{https://sites.google.com/sil.org/dls-course/resources/glossary}{SIL · 词典学术语表}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-50}
+-\noindent\textbf{[E50] LEOs deutsche Grammatik.} \textit{1.3.1.3.6 Partizip Perfekt mit oder ohne ge–.}\par
+-语法条目列出不带 ge– 的类别，以及 reagiert、gestanden、vernommen 等例子；用以限制原书把所有德语第二分词概括为 ge–…–t 的断言。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-50}\noindent\textbf{[E50] LEOs deutsche Grammatik.} \textit{1.3.1.3.6 Partizip Perfekt mit oder ohne ge–.}\par\nobreak
++条目列不带 ge– 的类别及 reagiert、gestanden、vernommen 等例，说明德语第二分词不能一律概括为 ge–…–t。\par
+ {\small\href{https://dict.leo.org/grammatik/OnlineGrammar/InflectionRules/FRegeln-V/Texte/Partizip-mit-ohne-ge.html}{LEO · 第二分词中的 ge–}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-51}
+-\noindent\textbf{[E51] Paul Peter Urone; Roger Hinrichs.} \textit{College Physics 2e.} OpenStax, Rice University, 2022.\par
+-核对第4章导言中 Isaac Newton 的姓名、§4.3 Units of Force 中 newton 的单位名称，以及 §24.1 Hertz’s Observations 中 Heinrich Hertz 的拼写。本条只为姓名与单位订正，不据此审定本章全部人名转普通名词的历史。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-51}\noindent\textbf{[E51] Paul Peter Urone; Roger Hinrichs.} \textit{College Physics 2e.} OpenStax, Rice University, 2022.\par\nobreak
++所据为第4章导言、§4.3及§24.1：Isaac Newton、newton 与 Heinrich Hertz 的拼写。\par
+ {\small\href{https://openstax.org/books/college-physics-2e/pages/4-introduction-to-dynamics-newtons-laws-of-motion}{第4章导言}；\href{https://openstax.org/books/college-physics-2e/pages/4-3-newtons-second-law-of-motion-concept-of-a-system}{§4.3}；\href{https://openstax.org/books/college-physics-2e/pages/24-1-maxwells-equations-electromagnetic-waves-predicted-and-observed}{§24.1}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-52}
+-\noindent\textbf{[E52] Real Academia Española; Asociación de Academias de la Lengua Española.} \textit{Diccionario de la lengua española: abogado; aguacate; talibán.}\par
+-核对 abogado 来自拉丁语 advocātus，水果名称 aguacate 来自纳瓦特尔语 ahuacatl。talibán 条用于区分波斯语复数 ṭālibān 与阿拉伯语来源的词干。只订正原书混淆的词形与词源，不由此推定法语水果名称的全部借入路径。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-52}\noindent\textbf{[E52] Real Academia Española; Asociación de Academias de la Lengua Española.} \textit{Diccionario de la lengua española: abogado; aguacate; talibán.}\par\nobreak
++abogado 来自拉丁语 advocātus，aguacate 来自纳瓦特尔语 ahuacatl；talibán 须区分波斯语复数形式与阿拉伯语词干。\par
+ {\small\href{https://dle.rae.es/abogado}{abogado}；\href{https://dle.rae.es/aguacate}{aguacate}；\href{https://dle.rae.es/talibán}{talibán}}\par
+-
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-53}
+-\noindent\textbf{[E53] Ministère de l’Éducation nationale.} \textit{La grammaire du français : Terminologie grammaticale.}\par
+-Éduscol 发布的213页PDF。核对第60页的名词性关系从句、第80页的非动词句，以及第189页的非人称动词补足语。用以辨析本章有关先行词、非动词句与零配价的概括；不以此书术语静默替换本教材对 Tesnière 理论的介绍。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-53}\noindent\textbf{[E53] Ministère de l’Éducation nationale.} \textit{La grammaire du français : Terminologie grammaticale.}\par\nobreak
++Éduscol，213页。所据为第60页名词性关系从句、第80页非动词句、第189页非人称动词补足语。\par
+ {\small\href{https://eduscol.education.fr/document/1872/download}{Éduscol · 电子核对文本}}\par
+-
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-54}
+-\noindent\textbf{[E54] Bibliothèque nationale de France; Agence bibliographique de l’enseignement supérieur.} \textit{Picoche, Jacqueline (1928–2024).}\par
+-已读取 BnF 人名规范记录 FRBNF12051493 与 IdRef 028740998：两条记录均列卒日为2024年12月4日。只据此订正本章误列的2014，不据目录记录推定其理论细节。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-54}\noindent\textbf{[E54] Bibliothèque nationale de France; Agence bibliographique de l’enseignement supérieur.} \textit{Picoche, Jacqueline (1928–2024).}\par\nobreak
++BnF FRBNF12051493 与 IdRef 028740998 均列卒日为2024年12月4日；原书2014有误。\par
+ {\small\href{https://catalogue.bnf.fr/ark:/12148/cb12051493n}{BnF · 人名规范记录}；\href{https://www.idref.fr/028740998}{IdRef · 人名规范记录}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-55}
+-\noindent\textbf{[E55] Joseph Courtés.} \textit{Analyse sémiotique du discours : de l’énoncé à l’énonciation.} Hachette, 1991.\par
+-Google Livres 的书目记录列作者 Joseph Courtés、302页、ISBN 9782010169106；本轮仅据该记录核对作者姓氏、书名与版本资料，未读取无预览的全书，也不将其作为本章全部理论断言的校勘依据。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-55}\noindent\textbf{[E55] Joseph Courtés.} \textit{Analyse sémiotique du discours : de l’énoncé à l’énonciation.} Hachette, 1991.\par\nobreak
++Google Livres 书目记录：Joseph Courtés，302页，ISBN 9782010169106。仅据书目核对作者、题名与版次资料。\par
+ {\small\href{https://books.google.fr/books?id=ont0QgAACAAJ}{书目核对记录}}\par
+-
+-
+-\Needspace{11\baselineskip}
+-\section*{第十二章新增核对材料与待核线索}
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-56}
+-\noindent\textbf{[E56] Lionel Spinosa.} \textit{Sciences du langage : de Platon à Chomsky.}\par
+-本章原书第339页（PDF 353）写1907，第340页（PDF 354）又写1902。本条仅记录底本内部出生年对照；教席任职终年未取得正式档案，另列待核。\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-57}
+-\noindent\textbf{[E57] 版本学待核线索：原书所引作品。} \textit{Problème de la poétique de Dostoïevski.}\par
+-本轮只确认底本使用此题名和1929年。尚未取得相应初版与修订本的俄文题名页；不将后出英文书目预览当作已经核验的俄文初版，不作确证改年。\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-58}
+-\noindent\textbf{[E58] John R. Searle.} \textit{Speech Acts: An Essay in the Philosophy of Language. Cambridge University Press, 1969.}\par
+-已读取书目记录以核对英文题名、作者及1969年；没有据此宣称已逐页核对该书全部理论内容。法译本版年不在本轮确证范围。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-56}\noindent\textbf{[E56] Lionel Spinosa.} \textit{Sciences du langage : de Platon à Chomsky.}\par\nobreak
++原书第339页写1907，第340页写1902，为出生年的内部对照；Benveniste 教席任期终年仍待核。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-57}\noindent\textbf{[E57] 原书所引作品（版本待核）。} \textit{Problème de la poétique de Dostoïevski.}\par\nobreak
++待核文献线索：原书题名与1929年须对照俄文初版及修订本题名页，尚不能确证改名改年。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-58}\noindent\textbf{[E58] John R. Searle.} \textit{Speech Acts: An Essay in the Philosophy of Language. Cambridge University Press, 1969.}\par\nobreak
++依据英文书目核对题名、作者与1969年；法译本版年仍待核。\par
+ {\small\href{https://books.google.com/books/about/Speech_Acts.html?id=t3_WhfknvF0C}{英文书目记录}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-59}
+-\noindent\textbf{[E59] John R. Searle.} \textit{A Taxonomy of Illocutionary Acts. In Keith Gunderson (ed.), Language, Mind, and Knowledge, Minnesota Studies in the Philosophy of Science, VII, 1975, pp.344–369.}\par
+-已查看版权页及正文pp.344–347、354–359：区分行为与动词的分类；核对五类行为、适配方向和施事目的。使用芝加哥大学课程所附原刊扫描，不以1969年首著替代此后分类论文。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-59}\noindent\textbf{[E59] John R. Searle.} \textit{A Taxonomy of Illocutionary Acts. In Keith Gunderson (ed.), Language, Mind, and Knowledge, Minnesota Studies in the Philosophy of Science, VII, 1975, pp.344–369.}\par\nobreak
++原刊扫描。所核范围为版权页及正文第344–347、354–359页，涉及行为与动词的分类、五类行为、适配方向和施事目的。\par
+ {\small\href{https://semantics.uchicago.edu/kennedy/classes/f09/semprag1/searle75a.pdf}{原刊扫描}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-60}
+-\noindent\textbf{[E60] J. L. Austin; J. O. Urmson (ed.).} \textit{How to Do Things with Words. Oxford: Clarendon Press, 1962.}\par
+-已读取题名页、编者前言、有关uptake与进一步效果的段落及最后一讲。题名页载1955年William James讲座、1962年出版；pp.115–117区分对意义及施事力的理解与取效后果。网页上传者所填年份不代替书内题名页。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-60}\noindent\textbf{[E60] J. L. Austin; J. O. Urmson (ed.).} \textit{How to Do Things with Words. Oxford: Clarendon Press, 1962.}\par\nobreak
++所据为题名页、编者前言、第115–117页及最后一讲：1955年讲座、1962年出版；uptake 须与取效后果区分。\par
+ {\small\href{https://archive.org/stream/austin-how-to-do-things-with-words/Austin,%20how%20to%20do%20things%20with%20words_djvu.txt}{馆藏扫描所附检索文本}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-61}
+-\noindent\textbf{[E61] Jacques Derrida（待核原篇）。} \textit{Signature événement contexte. In Marges de la philosophie, Paris: Minuit, 1972.}\par
+-本轮未取得可充分核对的原篇，不把该篇列作已读的确证材料。对应脚注仅提出底本内部的引文归属问题和推论强弱区别；Derrida的完整立场仍待原篇审定。\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-62}
+-\noindent\textbf{[E62] H. P. Grice.} \textit{Meaning. The Philosophical Review, 66(3), 1957, pp.377–388.}\par
+-已读取原刊扫描的可检索文本，核对自然意义与非自然意义之别，以及说话者意图和对该意图的识别。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-61}\noindent\textbf{[E61] Jacques Derrida（待核原篇）。} \textit{Signature événement contexte. In Marges de la philosophie, Paris: Minuit, 1972.}\par\nobreak
++待核原篇。对应校注提出引文归属与推论强弱问题，Derrida 的完整立场仍须结合原篇上下文审定。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-62}\noindent\textbf{[E62] H. P. Grice.} \textit{Meaning. The Philosophical Review, 66(3), 1957, pp.377–388.}\par\nobreak
++原刊扫描的检索文本。所据为自然意义／非自然意义、说话者意图及对意图的识别。\par
+ {\small\href{https://semantics.uchicago.edu/kennedy/classes/f09/semprag1/grice57.pdf}{原刊扫描}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-63}
+-\noindent\textbf{[E63] H. P. Grice.} \textit{Logic and Conversation. In P. Cole and J. L. Morgan (eds.), Syntax and Semantics, 3, 1975, pp.41–58.}\par
+-本轮实际查看的是1989年Studies in the Way of Words重印本扫描，相关页为pp.24–33。核对therefore例、数量准则及violate、flout、clash的区分；以下链接文件名虽为grice75，不能当作1975年原刊的页码。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-63}\noindent\textbf{[E63] H. P. Grice.} \textit{Logic and Conversation. In P. Cole and J. L. Morgan (eds.), Syntax and Semantics, 3, 1975, pp.41–58.}\par\nobreak
++所核为1989年 Studies in the Way of Words 重印本第24–33页，涉及 therefore、数量准则及 violate、flout、clash；页码不能与1975年原刊混同。\par
+ {\small\href{https://semantics.uchicago.edu/kennedy/classes/f09/semprag1/grice75.pdf}{所核重印文本扫描}}\par
+-
+-\section*{待核与保留字形}
+-\textbf{致谢署名。} 中文译者署名末字在扫描件中尚未可靠辨清，故保留对应局部图像，没有填入推测的人名。
+-
+-\textbf{Schopenhauer 引文残句。} 原书正文第 015 页（PDF 第 29 页）的补充阅读末句在“et à laquelle la vie en commun”处缺文，尚未找到可确证的对应法译文本，故不凭意译补齐。
+-
+-\textbf{analogie 释义。} 原书第 023 页（PDF 第 37 页）的“建构位置形式”保留原字。脚注提出“未知形式”的拟校，但该拟校未被当作已确证的改字。
+-
+-\textbf{第二章的动物认知断言。} 镜像识别物种清单、蜜蜂各舞型的距离界限、Tinbergen 学位论文的研究对象，以及 Ekman 情绪分类的具体版本仍需进一步逐项核验。本轮不以未经查证的说法静默替换原文。题 II 中重复出现的 Bêler 原样保留。
+-
+-\textbf{第三章尚待进一步复核的事项。} Panini 年代与其著作成书年的内部矛盾、Denys 的任教地点、早期印刷品的先后及“1451 年第一本书”的确切证据、1569 年 Estienne 语法书的版本归属，均未在本轮完成版本学审定。Foucault 引文的 imminent/immanent 已作拟校说明，尚待原刊核对。原文关于 « se rappeler de » 的规范地位及若干“最早”“所有”等概括，也不因转写完成就视作获得事实确认。未确认事项不据推测改写正文。
+-
+-\textbf{第四章初校限度。} 已保留逻辑图表和中法引文，区分明确语法错误、概念订正和待核事项。理发师故事的最初刊载年、Heraclite生卒年的精确订值、Buridan与Ockham的师生说、若干版本年和引文来源尚未全面审定；Ulysse例句、Carnap引文的疑似缺字均已标明，不凭记忆替换。
+-
+-\textbf{第五章初校限度。} 已保留历史语料、法中词汇释义和全部四组习题。Appendix Probi作者归属、土耳其第1353号法律原件、illatif词源、若干“最早”“最多”“所有”等概括及古代引文的具体译本仍有待复核。越南语附加符号的订形标为拟校；泰米尔语、历史印欧语等转写按底本字形保留，尚未完成逐例的原语言专业审校。未以新的语言统计数替换底本的历史统计；不同取样口径另在脚注说明。
+-
+-\textbf{全文覆盖与审校范围。} v17已补齐底本第1–4页出版文字及第540–546页总书目，现有全书文字覆盖。上述历史校勘结论与待核项沿用前版；本轮重点复核后四章的转写与版面，不把全书重排完成等同于每一条理论和引文均已终审。
+-
+-\noindent\textbf{第六章新增待核项。} Gustave Guillaume 引文的具体课程卷次、页码，Morris 所谓“修订版本”的时间关系，以及部分历史引文的法语译本来源，仍待取得相应底本后复核。原书 164 页“Charles Peirce explique :”后未出现可明确划出的引文，本版保留可见文字，不从他书补造。拟校项与理论辨析均已在各处脚注标明，不能把本版理解为全章全部事实皆已审定。
+-
+-\noindent\textbf{第七章初校限度。} 发音器官图、口形图和练习图均保留底本原图；分类表与十二条谚语音标转为文字。鼻元音表漏鼻化符号、大写 Ø 以及小舌擦音／颤音混淆等已逐处注明。Garcia 观察与论文日期、手杖故事的出处、声带振动频率的统计口径、法语不同地区的元音系统以及谚语第10、12条等疑似转写异常，仍待专项复核。本轮不把已知谚语的通常说法倒填为底本，不补写习题答案。此章没有新增原书脚注。
+-
+-
+-\noindent\textbf{第八章初校限度。} 本轮保留章首提纲、交际图、三组习题、空白答题表及全部词条。Prague 学派中“structure 首次出现”的范围、1928年 Manifeste 的具体版本、Halliday 理论与计算机的得名类比、部分引文的法译来源、“声调最多”的统计及阿拉伯语 r 的例示仍待专项核验。待核说明不等于确证错误；没有用自拟译文补齐引文，也没有填入练习答案。本章没有新增原书脚注。
+-
+-
+-\noindent\textbf{第九章初校限度。} 本轮逐页保留形态学与词汇学的定义、长表、原图、全部五组练习、书目和法中词汇释义。术语 lemme、lexème、monème、morphème 的不同体系不静默统一；“非洲语言”“阿拉伯语借词”等概括及词源、首见年份、各语言借词数量仍有待逐项审定。源语词形疑误与校者拟校在脚注分开标明；不能确证的历史拼法、音标或词源链不凭相似形式补造。练习 V 的 inter- 重复项照录，不擅自替换题目，也不增加答案。
+-
+-
+-\noindent\textbf{第十章初校限度。} 本轮保留完整正文、引文、31幅原图、全部练习、书目及词汇表。图文标签或语序冲突在脚注说明，原图不静默改画。Proust句长统计及“绝对纪录”、若干引文版本、Tesnière的Comment construire une phrase?文献年份与部分转述，仍待原刊复核。Molière剧中人物的故意错序、夸张与伪学术措辞作为例证保留，不误作普通排印错误订改；练习II.5疑似串行，不据推测补字或作答。
+-
+-
+-\noindent\textbf{第十一章初校限度。} 本轮保留 Bréal、Hjelmslev、Pottier、Greimas、Rastier 的理论顺序、全部引文、矩阵、四幅原图、五组习题与法中词汇表。图中字形保持扫描原貌，不以文字重绘结果冒充原图。不同学派的 connotation、sémème、classème 等术语没有静默统一。1751年“首次区分”之说、百科全书 sens 条目的作者与卷次、Port-Royal 引文边界、Mill 的 apocalypse 例证及若干引文版本仍待原刊核对。正文与图表义素编号不一致、词汇表误把 isotopie 解释成同位素等已在对应位置加注；文学分析中的可争论解释不强作唯一答案。习题保留空格，没有补入解答。
+-
+-
+-\noindent\textbf{第十二章初校限度。} 本轮保留完整三页提纲、全部引文、例句、六项礼貌准则表、四组练习、十三条延伸书目与四个词条。底本内部拼写、编号和论述冲突分别加注；Austin、Searle与Grice的关键区分另据所列原典核查。Benveniste教席终年、俄文著作题名与版本、Derrida引文归属及多数法译引文出处仍待核验，不凭缺失上下文推定原作者立场。会话例句的可能解释不改写为唯一答案；中文对话“主总”保留疑字，不猜补姓名。
+-
+-
+-\noindent\textbf{第十三章初校限度。} 本轮保留第三部分导页、第十三章章首提纲、社会语言学正文、Proust 引文、双语/双言分类、方言学材料、洋泾浜语与克里奥语例证、两组习题、延伸书目和法中词汇表。底本中的明确语法/排印疑误仍在正文原样保留并以“校勘”脚注说明；仅属扫描/OCR 的错识则恢复为扫描件可见字形。Joret 对应词表与 bichlamar 词表为避免自动识别破坏多语种字形，按底本局部图像保留。Labov、Ross、Mitford、双语分类史、diglossie 概念史以及若干 pidgin/creole 历史断言仍待第二轮逐项原典核验，本轮不以现代知识静默改写。习题不补入答案。
+-
+-
+-\noindent\textbf{第十四章初校限度。} 本轮保留分布主义、行为主义、生成转换语法、标准理论、扩展标准理论、原则与参数及最简方案的原有结构，保留历史引文、句法树、转换图、四组习题、延伸书目及法中词汇表。对图表区域中自动识别产生的乱码不作正文猜补：可清楚辨认的正文重新逐页核对，树形图等复杂内容继续以底本裁图保留。底本把 Chomsky 对 Skinner 的评论年份写作1957、若干练习英语句含明显排印异常、书目作者 POLLOCKP 等问题均在对应位置加“校勘”脚注，不静默改写。Boas、Bloomfield、Sapir、Harris、Skinner、Chomsky 各阶段理论关系及若干法译引文的版本学出处仍待全书第二轮专项核验；本轮不以现代生成语法术语体系回写原教材。习题不补入答案。
+-
+-
+-\noindent\textbf{第十五章初校限度。} 本轮保留第十五章章首提纲、生物语言学与心理语言学正文、历史引文、两幅脑区图、Piaget／Chomsky／Pinker 等语言习得理论材料、语言障碍部分、全部七组习题、延伸书目和法中词汇表。复杂图件继续按底本图像保留；英文学术引文依据扫描页与英文OCR交叉核对，不把低置信度识别结果冒充底本文字。Carl／Karl Wernicke、1955／1974 的内部时间冲突、psycholinguistique 的“创建”时间、三／四种习得理论、Piaget“五阶段”而正文实际列四项、LAD 被说成脑区、dyspraxie 编号以及 FOXP2“语言基因”等问题均以校勘脚注说明。若干历史第一、神经定位的当代解释及法译引文版本仍待全书第二轮专项核验；本轮不以现代术语体系静默改写教材。习题不补入答案。
+-
+-
+-\noindent\textbf{第十六章初校限度。} 本轮保留认知语言学的完整章首提纲、Fodor、Searle、Lakoff、Varela、Rosch、Langacker、Jackendoff、Damásio 等各节正文、英文引文、九组习题、延伸书目及法中词汇表。底本自身的语法、年份与书目疑误仍在正文原样保留并以“校勘”脚注指出；仅属扫描/OCR 的错识则恢复为扫描件可见字形。Rosch 原型理论比较表等复杂版面以底本文字与结构为依据；本轮不把习题空格填入答案。关于认知革命史、计算主义／联结主义的发展、原型理论与具身认知的当代争议，以及若干法译引文的版本来源，仍待全书第二轮逐项原典核验；不以现代观点静默改写教材。
+-
+-\section*{v17 新增校勘依据}
+-本节为本轮实际读取的出版机构、馆藏与作者记录。前列 E1–E63 的核查说明与结论沿用前版，并非本轮重新全部验证。
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-64}
+-\noindent\textbf{[E64] Vrin：Manifeste du Cercle de Vienne et autres écrits}\par
+-出版社2010年版书目区分 Hans Hahn、Rudolf Carnap 等作者，并列 Antonia Soulez 为协调编订者。本条仅用于确认人物与编辑关系。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-64}\noindent\textbf{[E64] Vrin：Manifeste du Cercle de Vienne et autres écrits}\par\nobreak
++出版社2010年版书目区分 Hans Hahn、Rudolf Carnap 等作者与协调编订者 Antonia Soulez。\par
+ {\small\href{https://www.vrin.fr/livre/9782711622719/manifeste-du-cercle-de-vienne-et-autres-ecrits}{来源记录}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-65}
+-\noindent\textbf{[E65] Bloomsbury：The Bloomsbury Companion to M. A. K. Halliday}\par
+-出版社介绍明确全名 Michael Alexander Kirkwood Halliday；用以核对总书目 Mickael 的误拼，不据此审核全部版次。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-65}\noindent\textbf{[E65] Bloomsbury：The Bloomsbury Companion to M. A. K. Halliday}\par\nobreak
++出版社介绍列全名 Michael Alexander Kirkwood Halliday，支持订正总书目中的 Mickael。\par
+ {\small\href{https://www.bloomsbury.com/uk/bloomsbury-companion-to-m-a-k-halliday-9781350092501/}{来源记录}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-66}
+-\noindent\textbf{[E66] La précellence du langage françois：作者书目记录}\par
+-所读 Google Books 馆藏记录列作者 Henri Estienne。这里只据此核对作者，不声称已验证原书所列1896年版的全部出版细节。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-66}\noindent\textbf{[E66] La précellence du langage françois：作者书目记录}\par\nobreak
++Google Books 馆藏记录列作者 Henri Estienne；原书所列1896年版的其他出版细节仍待核。\par
+ {\small\href{https://books.google.fr/books?id=HqoGAAAAQAAJ&printsec=frontcover}{来源记录}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-67}
+-\noindent\textbf{[E67] 法国国家图书馆：Traicté de la grammaire françoise (1557)}\par
+-BNF书目记录列 Robert Estienne 为作者、Colette Demaizière 为校注者，2003年 H. Champion 版。用于区分 Robert 与 Henri，并核对书目姓名倒置。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-67}\noindent\textbf{[E67] 法国国家图书馆：Traicté de la grammaire françoise (1557)}\par\nobreak
++BnF 馆藏记录：Robert Estienne 著，Colette Demaizière 校注，H. Champion, 2003。\par
+ {\small\href{https://catalogue.bnf.fr/ark%3A/12148/cb39007830f}{来源记录}}\par
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-68}
+-\noindent\textbf{[E68] Basic Books：Where Mathematics Come From}\par
+-出版社页面列 George Lakoff、Rafael E. Nunez；UC San Diego认知科学阅读书目亦列两位作者。用于核对第十六章书目把 Rafael 当姓的错误，不以平装重版日期替换原文2000年。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-68}\noindent\textbf{[E68] Basic Books：Where Mathematics Come From}\par\nobreak
++出版社页面与 UC San Diego 阅读书目均列 George Lakoff、Rafael E. Nunez；Rafael 为名。平装重版日期不能替换原书所列2000年。\par
+ {\small\href{https://www.hachettebookgroup.com/titles/george-lakoff/where-mathematics-come-from/9780465037711/?lens=basic-books}{来源记录}}\par
+-
+-
+-\Needspace{6\baselineskip}\phantomsection\label{ref-69}
+-\noindent\textbf{[E69] Charles A. Ferguson：Diglossia。}\par
+-Crossref所载出版社DOI元数据列 Word 15(2), 1959, pp.325–340；用于核对总书目“435 p.”。本轮读取的是注册书目元数据，不是出版社限制访问的论文全文。\par
++\par\end{minipage}\par
++
++\par\noindent\begin{minipage}{\linewidth}
++\phantomsection\label{ref-69}\noindent\textbf{[E69] Charles A. Ferguson：Diglossia。}\par\nobreak
++出版社注册的 Crossref DOI 元数据列 Word 15(2), 1959, pp.325–340；原书“435 p.”有误。依据书目元数据，未核论文全文。\par
+ {\small\href{https://api.crossref.org/works/10.1080/00437956.1959.11659702}{DOI注册元数据}}\par
++\par\end{minipage}\par
++\endgroup
++
++\section*{待核事项}
++以下疑点尚不能据现有材料作确定订正，正文保留原文或以脚注标明拟校。
++
++\begingroup
++\small\setstretch{1.06}\setlength{\parindent}{0pt}\setlength{\parskip}{.25em}
++\textbf{卷首与第一章。} 致谢译者署名末字尚未辨清，保留局部图像。原书第15页 Schopenhauer 引文止于“et à laquelle la vie en commun”，缺文待核；第23页 analogie 释义中的“建构位置形式”暂拟为“未知形式”。
++
++\textbf{第二章。} 镜像识别物种清单、蜜蜂舞型的距离界限、Tinbergen 学位论文研究对象及 Ekman 情绪分类版本待核。习题 II 重复的 Bêler 保留原样。
++
++\textbf{第三章。} Panini 年代、Denys 任教地点、早期印刷品次序、“1451年第一本书”及1569年 Estienne 语法书归属待核。Foucault 引文的 imminent/immanent 为拟校；« se rappeler de » 的规范地位及若干“最早”“所有”的概括也需限定依据。
++
++\textbf{第四章。} 理发师故事最初刊载年、Héraclite 生卒年、Buridan 与 Ockham 的师生关系及若干版本、引文来源待核；Ulysse 例句归属与 Carnap 引文疑似缺字尚无定论。
++
++\textbf{第五章。} Appendix Probi 作者与年代、土耳其第1353号法律原件、illatif 词源、古代引文译本及若干数量、优先权断言待核。越南语附加符号为拟校；泰米尔语及历史印欧语等例证仍需逐例审校。原书统计应结合其年代与取样口径理解。
++
++\textbf{第六章。} Gustave Guillaume 引文卷次与页码、Morris“修订版本”的时间关系及部分法译引文来源待核。原书第164页“Charles Peirce explique :”后未见边界明确的引文。
++
++\textbf{第七章。} Garcia 观察与论文日期、手杖故事出处、声带频率统计口径、法语地区元音系统及谚语第10、12条音标待核。
++
++\textbf{第八章。} structure“首次出现”的范围、1928年 Manifeste 版本、Halliday 理论名称与计算机类比、部分法译引文、“声调最多”统计及阿拉伯语 r 的例示待核。
++
++\textbf{第九章。} “非洲语言”“阿拉伯语借词”等概括、词源、首见年份及借词数量待核；历史拼法与音标须按具体语言审定。lemme、lexème、monème、morphème 应结合各理论体系理解；习题 V 重复的 inter- 保留原样。
++
++\textbf{第十章。} Proust 句长统计及“绝对纪录”、Tesnière 的 Comment construire une phrase? 年份与相关引文待核。习题 II.5 疑似串行。Molière 人物的故意错序、夸张与伪学术措辞属于例证，不按普通排印错误处理。
++
++\textbf{第十一章。} 1751年“首次区分”之说、百科全书 sens 条目的作者与卷次、Port-Royal 引文边界、Mill 的 apocalypse 例证及引文版本待核。connotation、sémème、classème 等术语须区分学派用法。
++
++\textbf{第十二章。} Benveniste 教席任期终年、Bakhtine 著作的俄文题名与版本、Derrida 引文归属及多数法译引文出处待核。中文对话“主总”为疑字；会话例句可能有不同解释。
++
++\textbf{第十三章。} Labov、Ross、Mitford 的相关记述、双语分类史、diglossie 概念史及若干 pidgin／creole 历史断言待核。
++
++\textbf{第十四章。} Boas、Bloomfield、Sapir、Harris、Skinner、Chomsky 各阶段理论关系及若干法译引文的版本出处待核。
++
++\textbf{第十五章。} 若干“首次”断言、神经定位的当代解释及法译引文版本待核；语言习得与语言障碍的历史表述须结合其时代理解。
++
++\textbf{第十六章。} 认知革命史、计算主义与联结主义的发展、原型理论与具身认知的争议，以及若干法译引文版本待核。
++\endgroup
+--- v17/appendices/coverage.tex
++++ v18/appendices/coverage.tex
+@@ -1,567 +0,0 @@
+-\chapter{覆盖范围与页码对照}
+-\markright{覆盖范围与页码对照}
+-本版为 BellaBook v17 全书文字重排及初校本，覆盖底本 PDF 第1–546页，包括出版文字、卷首、十六章全部正文、引文、练习、延伸书目、词汇表及书末总书目。封面和封底按可见文字重排，复杂插图保留底本局部图像。
+-
+-本轮补齐出版文字四页与总书目七页，并对第十三、十四、十六章的识别乱码、引文边界、脚注、表格及句法图作重点复核。全书文字覆盖完成不等于所有历史事实与引文版本均已审定；仍待原典复核的事项列于校勘附录。
+-
+-下表页码为本版罗马数字卷首页码或阿拉伯数字正文页码，均可点击。正文灰色原书页码用于校勘定位。
+-
+-{\small\renewcommand{\arraystretch}{.96}
+-\begin{longtable}{@{}rll@{}}
+-\toprule
+-底本 PDF 页 & 原书印刷页码 & 本版页码\\
+-\midrule
+-\endfirsthead
+-\toprule
+-底本 PDF 页 & 原书印刷页码 & 本版页码\\
+-\midrule
+-\endhead
+-1 & 封面 & \pageref{src-1}\\
+-2 & 封底 & \pageref{src-2}\\
+-3 & 书名页 & \pageref{src-3}\\
+-4 & 版权页 & \pageref{src-4}\\
+-5 & 卷首 001 & \pageref{src-5}\\
+-6 & 卷首 002 & \pageref{src-6}\\
+-7 & 卷首 003 & \pageref{src-7}\\
+-8 & 卷首 004 & \pageref{src-8}\\
+-9 & 卷首 005 & \pageref{src-9}\\
+-10 & 卷首 006 & \pageref{src-10}\\
+-11 & 卷首 007 & \pageref{src-11}\\
+-12 & 卷首 008 & \pageref{src-12}\\
+-13 & 卷首 009 & \pageref{src-13}\\
+-14 & 目录（未编号） & \pageref{src-14}\\
+-15 & 正文 001 & \pageref{src-15}\\
+-16 & 正文 002 & \pageref{src-16}\\
+-17 & 正文 003 & \pageref{src-17}\\
+-18 & 正文 004 & \pageref{src-18}\\
+-19 & 正文 005 & \pageref{src-19}\\
+-20 & 正文 006 & \pageref{src-20}\\
+-21 & 正文 007 & \pageref{src-21}\\
+-22 & 正文 008 & \pageref{src-22}\\
+-23 & 正文 009 & \pageref{src-23}\\
+-24 & 正文 010 & \pageref{src-24}\\
+-25 & 正文 011 & \pageref{src-25}\\
+-26 & 正文 012 & \pageref{src-26}\\
+-27 & 正文 013 & \pageref{src-27}\\
+-28 & 正文 014 & \pageref{src-28}\\
+-29 & 正文 015 & \pageref{src-29}\\
+-30 & 正文 016 & \pageref{src-30}\\
+-31 & 正文 017 & \pageref{src-31}\\
+-32 & 正文 018 & \pageref{src-32}\\
+-33 & 正文 019 & \pageref{src-33}\\
+-34 & 正文 020 & \pageref{src-34}\\
+-35 & 正文 021 & \pageref{src-35}\\
+-36 & 正文 022 & \pageref{src-36}\\
+-37 & 正文 023 & \pageref{src-37}\\
+-38 & 正文 024 & \pageref{src-38}\\
+-39 & 正文 025 & \pageref{src-39}\\
+-40 & 正文 026 & \pageref{src-40}\\
+-41 & 正文 027 & \pageref{src-41}\\
+-42 & 正文 028 & \pageref{src-42}\\
+-43 & 正文 029 & \pageref{src-43}\\
+-44 & 正文 030 & \pageref{src-44}\\
+-45 & 正文 031 & \pageref{src-45}\\
+-46 & 正文 032 & \pageref{src-46}\\
+-47 & 正文 033 & \pageref{src-47}\\
+-48 & 正文 034 & \pageref{src-48}\\
+-49 & 正文 035 & \pageref{src-49}\\
+-50 & 正文 036 & \pageref{src-50}\\
+-51 & 正文 037 & \pageref{src-51}\\
+-52 & 正文 038 & \pageref{src-52}\\
+-53 & 正文 039 & \pageref{src-53}\\
+-54 & 正文 040 & \pageref{src-54}\\
+-55 & 正文 041 & \pageref{src-55}\\
+-56 & 正文 042 & \pageref{src-56}\\
+-57 & 正文 043 & \pageref{src-57}\\
+-58 & 正文 044 & \pageref{src-58}\\
+-59 & 正文 045 & \pageref{src-59}\\
+-60 & 正文 046 & \pageref{src-60}\\
+-61 & 正文 047 & \pageref{src-61}\\
+-62 & 正文 048 & \pageref{src-62}\\
+-63 & 正文 049 & \pageref{src-63}\\
+-64 & 正文 050 & \pageref{src-64}\\
+-65 & 正文 051 & \pageref{src-65}\\
+-66 & 正文 052 & \pageref{src-66}\\
+-67 & 正文 053 & \pageref{src-67}\\
+-68 & 正文 054 & \pageref{src-68}\\
+-69 & 正文 055 & \pageref{src-69}\\
+-70 & 正文 056 & \pageref{src-70}\\
+-71 & 正文 057 & \pageref{src-71}\\
+-72 & 正文 058 & \pageref{src-72}\\
+-73 & 正文 059 & \pageref{src-73}\\
+-74 & 正文 060 & \pageref{src-74}\\
+-75 & 正文 061 & \pageref{src-75}\\
+-76 & 正文 062 & \pageref{src-76}\\
+-77 & 正文 063 & \pageref{src-77}\\
+-78 & 正文 064 & \pageref{src-78}\\
+-79 & 正文 065 & \pageref{src-79}\\
+-80 & 正文 066 & \pageref{src-80}\\
+-81 & 正文 067 & \pageref{src-81}\\
+-82 & 正文 068 & \pageref{src-82}\\
+-83 & 正文 069 & \pageref{src-83}\\
+-84 & 正文 070 & \pageref{src-84}\\
+-85 & 正文 071 & \pageref{src-85}\\
+-86 & 正文 072 & \pageref{src-86}\\
+-87 & 正文 073 & \pageref{src-87}\\
+-88 & 正文 074 & \pageref{src-88}\\
+-89 & 正文 075 & \pageref{src-89}\\
+-90 & 正文 076 & \pageref{src-90}\\
+-91 & 正文 077 & \pageref{src-91}\\
+-92 & 正文 078 & \pageref{src-92}\\
+-93 & 正文 079 & \pageref{src-93}\\
+-94 & 正文 080 & \pageref{src-94}\\
+-95 & 正文 081 & \pageref{src-95}\\
+-96 & 正文 082 & \pageref{src-96}\\
+-97 & 正文 083 & \pageref{src-97}\\
+-98 & 正文 084 & \pageref{src-98}\\
+-99 & 正文 085 & \pageref{src-99}\\
+-100 & 正文 086 & \pageref{src-100}\\
+-101 & 正文 087 & \pageref{src-101}\\
+-102 & 正文 088 & \pageref{src-102}\\
+-103 & 正文 089 & \pageref{src-103}\\
+-104 & 正文 090 & \pageref{src-104}\\
+-105 & 正文 091 & \pageref{src-105}\\
+-106 & 正文 092 & \pageref{src-106}\\
+-107 & 正文 093 & \pageref{src-107}\\
+-108 & 正文 094 & \pageref{src-108}\\
+-109 & 正文 095 & \pageref{src-109}\\
+-110 & 正文 096 & \pageref{src-110}\\
+-111 & 正文 097 & \pageref{src-111}\\
+-112 & 正文 098 & \pageref{src-112}\\
+-113 & 正文 099 & \pageref{src-113}\\
+-114 & 正文 100 & \pageref{src-114}\\
+-115 & 正文 101 & \pageref{src-115}\\
+-116 & 正文 102 & \pageref{src-116}\\
+-117 & 正文 103 & \pageref{src-117}\\
+-118 & 正文 104 & \pageref{src-118}\\
+-119 & 正文 105 & \pageref{src-119}\\
+-120 & 正文 106 & \pageref{src-120}\\
+-121 & 正文 107 & \pageref{src-121}\\
+-122 & 正文 108 & \pageref{src-122}\\
+-123 & 正文 109 & \pageref{src-123}\\
+-124 & 正文 110 & \pageref{src-124}\\
+-125 & 正文 111 & \pageref{src-125}\\
+-126 & 正文 112 & \pageref{src-126}\\
+-127 & 正文 113 & \pageref{src-127}\\
+-128 & 正文 114 & \pageref{src-128}\\
+-129 & 正文 115 & \pageref{src-129}\\
+-130 & 正文 116 & \pageref{src-130}\\
+-131 & 正文 117 & \pageref{src-131}\\
+-132 & 正文 118 & \pageref{src-132}\\
+-133 & 正文 119 & \pageref{src-133}\\
+-134 & 正文 120 & \pageref{src-134}\\
+-135 & 正文 121 & \pageref{src-135}\\
+-136 & 正文 122 & \pageref{src-136}\\
+-137 & 正文 123 & \pageref{src-137}\\
+-138 & 正文 124 & \pageref{src-138}\\
+-139 & 正文 125 & \pageref{src-139}\\
+-140 & 正文 126 & \pageref{src-140}\\
+-141 & 正文 127 & \pageref{src-141}\\
+-142 & 正文 128 & \pageref{src-142}\\
+-143 & 正文 129 & \pageref{src-143}\\
+-144 & 正文 130 & \pageref{src-144}\\
+-145 & 正文 131 & \pageref{src-145}\\
+-146 & 正文 132 & \pageref{src-146}\\
+-147 & 正文 133 & \pageref{src-147}\\
+-148 & 正文 134 & \pageref{src-148}\\
+-149 & 正文 135 & \pageref{src-149}\\
+-150 & 正文 136 & \pageref{src-150}\\
+-151 & 正文 137 & \pageref{src-151}\\
+-152 & 正文 138 & \pageref{src-152}\\
+-153 & 正文 139 & \pageref{src-153}\\
+-154 & 正文 140 & \pageref{src-154}\\
+-155 & 正文 141 & \pageref{src-155}\\
+-156 & 正文 142 & \pageref{src-156}\\
+-157 & 正文 143 & \pageref{src-157}\\
+-158 & 正文 144 & \pageref{src-158}\\
+-159 & 正文 145 & \pageref{src-159}\\
+-160 & 正文 146 & \pageref{src-160}\\
+-161 & 正文 147 & \pageref{src-161}\\
+-162 & 正文 148 & \pageref{src-162}\\
+-163 & 正文 149 & \pageref{src-163}\\
+-164 & 正文 150 & \pageref{src-164}\\
+-165 & 正文 151 & \pageref{src-165}\\
+-166 & 正文 152 & \pageref{src-166}\\
+-167 & 正文 153 & \pageref{src-167}\\
+-168 & 正文 154 & \pageref{src-168}\\
+-169 & 正文 155 & \pageref{src-169}\\
+-170 & 正文 156 & \pageref{src-170}\\
+-171 & 正文 157 & \pageref{src-171}\\
+-172 & 正文 158 & \pageref{src-172}\\
+-173 & 正文 159 & \pageref{src-173}\\
+-174 & 正文 160 & \pageref{src-174}\\
+-175 & 正文 161 & \pageref{src-175}\\
+-176 & 正文 162 & \pageref{src-176}\\
+-177 & 正文 163 & \pageref{src-177}\\
+-178 & 正文 164 & \pageref{src-178}\\
+-179 & 正文 165 & \pageref{src-179}\\
+-180 & 正文 166 & \pageref{src-180}\\
+-181 & 正文 167 & \pageref{src-181}\\
+-182 & 正文 168 & \pageref{src-182}\\
+-183 & 正文 169 & \pageref{src-183}\\
+-184 & 正文 170 & \pageref{src-184}\\
+-185 & 正文 171 & \pageref{src-185}\\
+-186 & 正文 172 & \pageref{src-186}\\
+-187 & 正文 173 & \pageref{src-187}\\
+-188 & 正文 174 & \pageref{src-188}\\
+-189 & 正文 175 & \pageref{src-189}\\
+-190 & 正文 176 & \pageref{src-190}\\
+-191 & 正文 177 & \pageref{src-191}\\
+-192 & 正文 178 & \pageref{src-192}\\
+-193 & 正文 179 & \pageref{src-193}\\
+-194 & 正文 180 & \pageref{src-194}\\
+-195 & 正文 181 & \pageref{src-195}\\
+-196 & 正文 182 & \pageref{src-196}\\
+-197 & 正文 183 & \pageref{src-197}\\
+-198 & 正文 184 & \pageref{src-198}\\
+-199 & 正文 185 & \pageref{src-199}\\
+-200 & 正文 186 & \pageref{src-200}\\
+-201 & 正文 187 & \pageref{src-201}\\
+-202 & 正文 188 & \pageref{src-202}\\
+-203 & 正文 189 & \pageref{src-203}\\
+-204 & 正文 190 & \pageref{src-204}\\
+-205 & 正文 191 & \pageref{src-205}\\
+-206 & 正文 192 & \pageref{src-206}\\
+-207 & 正文 193 & \pageref{src-207}\\
+-208 & 正文 194 & \pageref{src-208}\\
+-209 & 正文 195 & \pageref{src-209}\\
+-210 & 正文 196 & \pageref{src-210}\\
+-211 & 正文 197 & \pageref{src-211}\\
+-212 & 正文 198 & \pageref{src-212}\\
+-213 & 正文 199 & \pageref{src-213}\\
+-214 & 正文 200 & \pageref{src-214}\\
+-215 & 正文 201 & \pageref{src-215}\\
+-216 & 正文 202 & \pageref{src-216}\\
+-217 & 正文 203 & \pageref{src-217}\\
+-218 & 正文 204 & \pageref{src-218}\\
+-219 & 正文 205 & \pageref{src-219}\\
+-220 & 正文 206 & \pageref{src-220}\\
+-221 & 正文 207 & \pageref{src-221}\\
+-222 & 正文 208 & \pageref{src-222}\\
+-223 & 正文 209 & \pageref{src-223}\\
+-224 & 正文 210 & \pageref{src-224}\\
+-225 & 正文 211 & \pageref{src-225}\\
+-226 & 正文 212 & \pageref{src-226}\\
+-227 & 正文 213 & \pageref{src-227}\\
+-228 & 正文 214 & \pageref{src-228}\\
+-229 & 正文 215 & \pageref{src-229}\\
+-230 & 正文 216 & \pageref{src-230}\\
+-231 & 正文 217 & \pageref{src-231}\\
+-232 & 正文 218 & \pageref{src-232}\\
+-233 & 正文 219 & \pageref{src-233}\\
+-234 & 正文 220 & \pageref{src-234}\\
+-235 & 正文 221 & \pageref{src-235}\\
+-236 & 正文 222 & \pageref{src-236}\\
+-237 & 正文 223 & \pageref{src-237}\\
+-238 & 正文 224 & \pageref{src-238}\\
+-239 & 正文 225 & \pageref{src-239}\\
+-240 & 正文 226 & \pageref{src-240}\\
+-241 & 正文 227 & \pageref{src-241}\\
+-242 & 正文 228 & \pageref{src-242}\\
+-243 & 正文 229 & \pageref{src-243}\\
+-244 & 正文 230 & \pageref{src-244}\\
+-245 & 正文 231 & \pageref{src-245}\\
+-246 & 正文 232 & \pageref{src-246}\\
+-247 & 正文 233 & \pageref{src-247}\\
+-248 & 正文 234 & \pageref{src-248}\\
+-249 & 正文 235 & \pageref{src-249}\\
+-250 & 正文 236 & \pageref{src-250}\\
+-251 & 正文 237 & \pageref{src-251}\\
+-252 & 正文 238 & \pageref{src-252}\\
+-253 & 正文 239 & \pageref{src-253}\\
+-254 & 正文 240 & \pageref{src-254}\\
+-255 & 正文 241 & \pageref{src-255}\\
+-256 & 正文 242 & \pageref{src-256}\\
+-257 & 正文 243 & \pageref{src-257}\\
+-258 & 正文 244 & \pageref{src-258}\\
+-259 & 正文 245 & \pageref{src-259}\\
+-260 & 正文 246 & \pageref{src-260}\\
+-261 & 正文 247 & \pageref{src-261}\\
+-262 & 正文 248 & \pageref{src-262}\\
+-263 & 正文 249 & \pageref{src-263}\\
+-264 & 正文 250 & \pageref{src-264}\\
+-265 & 正文 251 & \pageref{src-265}\\
+-266 & 正文 252 & \pageref{src-266}\\
+-267 & 正文 253 & \pageref{src-267}\\
+-268 & 正文 254 & \pageref{src-268}\\
+-269 & 正文 255 & \pageref{src-269}\\
+-270 & 正文 256 & \pageref{src-270}\\
+-271 & 正文 257 & \pageref{src-271}\\
+-272 & 正文 258 & \pageref{src-272}\\
+-273 & 正文 259 & \pageref{src-273}\\
+-274 & 正文 260 & \pageref{src-274}\\
+-275 & 正文 261 & \pageref{src-275}\\
+-276 & 正文 262 & \pageref{src-276}\\
+-277 & 正文 263 & \pageref{src-277}\\
+-278 & 正文 264 & \pageref{src-278}\\
+-279 & 正文 265 & \pageref{src-279}\\
+-280 & 正文 266 & \pageref{src-280}\\
+-281 & 正文 267 & \pageref{src-281}\\
+-282 & 正文 268 & \pageref{src-282}\\
+-283 & 正文 269 & \pageref{src-283}\\
+-284 & 正文 270 & \pageref{src-284}\\
+-285 & 正文 271 & \pageref{src-285}\\
+-286 & 正文 272 & \pageref{src-286}\\
+-287 & 正文 273 & \pageref{src-287}\\
+-288 & 正文 274 & \pageref{src-288}\\
+-289 & 正文 275 & \pageref{src-289}\\
+-290 & 正文 276 & \pageref{src-290}\\
+-291 & 正文 277 & \pageref{src-291}\\
+-292 & 正文 278 & \pageref{src-292}\\
+-293 & 正文 279 & \pageref{src-293}\\
+-294 & 正文 280 & \pageref{src-294}\\
+-295 & 正文 281 & \pageref{src-295}\\
+-296 & 正文 282 & \pageref{src-296}\\
+-297 & 正文 283 & \pageref{src-297}\\
+-298 & 正文 284 & \pageref{src-298}\\
+-299 & 正文 285 & \pageref{src-299}\\
+-300 & 正文 286 & \pageref{src-300}\\
+-301 & 正文 287 & \pageref{src-301}\\
+-302 & 正文 288 & \pageref{src-302}\\
+-303 & 正文 289 & \pageref{src-303}\\
+-304 & 正文 290 & \pageref{src-304}\\
+-305 & 正文 291 & \pageref{src-305}\\
+-306 & 正文 292 & \pageref{src-306}\\
+-307 & 正文 293 & \pageref{src-307}\\
+-308 & 正文 294 & \pageref{src-308}\\
+-309 & 正文 295 & \pageref{src-309}\\
+-310 & 正文 296 & \pageref{src-310}\\
+-311 & 正文 297 & \pageref{src-311}\\
+-312 & 正文 298 & \pageref{src-312}\\
+-313 & 正文 299 & \pageref{src-313}\\
+-314 & 正文 300 & \pageref{src-314}\\
+-315 & 正文 301 & \pageref{src-315}\\
+-316 & 正文 302 & \pageref{src-316}\\
+-317 & 正文 303 & \pageref{src-317}\\
+-318 & 正文 304 & \pageref{src-318}\\
+-319 & 正文 305 & \pageref{src-319}\\
+-320 & 正文 306 & \pageref{src-320}\\
+-321 & 正文 307 & \pageref{src-321}\\
+-322 & 正文 308 & \pageref{src-322}\\
+-323 & 正文 309 & \pageref{src-323}\\
+-324 & 正文 310 & \pageref{src-324}\\
+-325 & 正文 311 & \pageref{src-325}\\
+-326 & 正文 312 & \pageref{src-326}\\
+-327 & 正文 313 & \pageref{src-327}\\
+-328 & 正文 314 & \pageref{src-328}\\
+-329 & 正文 315 & \pageref{src-329}\\
+-330 & 正文 316 & \pageref{src-330}\\
+-331 & 正文 317 & \pageref{src-331}\\
+-332 & 正文 318 & \pageref{src-332}\\
+-333 & 正文 319 & \pageref{src-333}\\
+-334 & 正文 320 & \pageref{src-334}\\
+-335 & 正文 321 & \pageref{src-335}\\
+-336 & 正文 322 & \pageref{src-336}\\
+-337 & 正文 323 & \pageref{src-337}\\
+-338 & 正文 324 & \pageref{src-338}\\
+-339 & 正文 325 & \pageref{src-339}\\
+-340 & 正文 326 & \pageref{src-340}\\
+-341 & 正文 327 & \pageref{src-341}\\
+-342 & 正文 328 & \pageref{src-342}\\
+-343 & 正文 329 & \pageref{src-343}\\
+-344 & 正文 330 & \pageref{src-344}\\
+-345 & 正文 331 & \pageref{src-345}\\
+-346 & 正文 332 & \pageref{src-346}\\
+-347 & 正文 333 & \pageref{src-347}\\
+-348 & 正文 334 & \pageref{src-348}\\
+-349 & 正文 335 & \pageref{src-349}\\
+-350 & 336 & \pageref{src-350}\\
+-351 & 337 & \pageref{src-351}\\
+-352 & 338 & \pageref{src-352}\\
+-353 & 339 & \pageref{src-353}\\
+-354 & 340 & \pageref{src-354}\\
+-355 & 341 & \pageref{src-355}\\
+-356 & 342 & \pageref{src-356}\\
+-357 & 343 & \pageref{src-357}\\
+-358 & 344 & \pageref{src-358}\\
+-359 & 345 & \pageref{src-359}\\
+-360 & 346 & \pageref{src-360}\\
+-361 & 347 & \pageref{src-361}\\
+-362 & 348 & \pageref{src-362}\\
+-363 & 349 & \pageref{src-363}\\
+-364 & 350 & \pageref{src-364}\\
+-365 & 351 & \pageref{src-365}\\
+-366 & 352 & \pageref{src-366}\\
+-367 & 353 & \pageref{src-367}\\
+-368 & 354 & \pageref{src-368}\\
+-369 & 355 & \pageref{src-369}\\
+-370 & 356 & \pageref{src-370}\\
+-371 & 357 & \pageref{src-371}\\
+-372 & 358 & \pageref{src-372}\\
+-373 & 359 & \pageref{src-373}\\
+-374 & 360 & \pageref{src-374}\\
+-375 & 361 & \pageref{src-375}\\
+-376 & 362 & \pageref{src-376}\\
+-377 & 363 & \pageref{src-377}\\
+-378 & 364 & \pageref{src-378}\\
+-379 & 365 & \pageref{src-379}\\
+-380 & 366 & \pageref{src-380}\\
+-381 & 367 & \pageref{src-381}\\
+-382 & 368 & \pageref{src-382}\\
+-383 & 369 & \pageref{src-383}\\
+-384 & 370 & \pageref{src-384}\\
+-385 & 371 & \pageref{src-385}\\
+-386 & 372 & \pageref{src-386}\\
+-387 & 373 & \pageref{src-387}\\
+-388 & 374 & \pageref{src-388}\\
+-389 & 375 & \pageref{src-389}\\
+-390 & 376 & \pageref{src-390}\\
+-391 & 377 & \pageref{src-391}\\
+-392 & 378 & \pageref{src-392}\\
+-393 & 379 & \pageref{src-393}\\
+-394 & 380 & \pageref{src-394}\\
+-395 & 381 & \pageref{src-395}\\
+-396 & 382 & \pageref{src-396}\\
+-397 & 383 & \pageref{src-397}\\
+-398 & 384 & \pageref{src-398}\\
+-399 & 385 & \pageref{src-399}\\
+-400 & 386 & \pageref{src-400}\\
+-401 & 387 & \pageref{src-401}\\
+-402 & 388 & \pageref{src-402}\\
+-403 & 389 & \pageref{src-403}\\
+-404 & 390 & \pageref{src-404}\\
+-405 & 391 & \pageref{src-405}\\
+-406 & 392 & \pageref{src-406}\\
+-407 & 393 & \pageref{src-407}\\
+-408 & 394 & \pageref{src-408}\\
+-409 & 395 & \pageref{src-409}\\
+-410 & 396 & \pageref{src-410}\\
+-411 & 397 & \pageref{src-411}\\
+-412 & 398 & \pageref{src-412}\\
+-413 & 399 & \pageref{src-413}\\
+-414 & 400 & \pageref{src-414}\\
+-415 & 401 & \pageref{src-415}\\
+-416 & 402 & \pageref{src-416}\\
+-417 & 403 & \pageref{src-417}\\
+-418 & 404 & \pageref{src-418}\\
+-419 & 405 & \pageref{src-419}\\
+-420 & 406 & \pageref{src-420}\\
+-421 & 407 & \pageref{src-421}\\
+-422 & 408 & \pageref{src-422}\\
+-423 & 409 & \pageref{src-423}\\
+-424 & 410 & \pageref{src-424}\\
+-425 & 411 & \pageref{src-425}\\
+-426 & 412 & \pageref{src-426}\\
+-427 & 413 & \pageref{src-427}\\
+-428 & 414 & \pageref{src-428}\\
+-429 & 415 & \pageref{src-429}\\
+-430 & 416 & \pageref{src-430}\\
+-431 & 417 & \pageref{src-431}\\
+-432 & 418 & \pageref{src-432}\\
+-433 & 419 & \pageref{src-433}\\
+-434 & 420 & \pageref{src-434}\\
+-435 & 421 & \pageref{src-435}\\
+-436 & 422 & \pageref{src-436}\\
+-437 & 423 & \pageref{src-437}\\
+-438 & 424 & \pageref{src-438}\\
+-439 & 425 & \pageref{src-439}\\
+-440 & 426 & \pageref{src-440}\\
+-441 & 427 & \pageref{src-441}\\
+-442 & 428 & \pageref{src-442}\\
+-443 & 429 & \pageref{src-443}\\
+-444 & 430 & \pageref{src-444}\\
+-445 & 431 & \pageref{src-445}\\
+-446 & 432 & \pageref{src-446}\\
+-447 & 433 & \pageref{src-447}\\
+-448 & 434 & \pageref{src-448}\\
+-449 & 435 & \pageref{src-449}\\
+-450 & 436 & \pageref{src-450}\\
+-451 & 437 & \pageref{src-451}\\
+-452 & 438 & \pageref{src-452}\\
+-453 & 439 & \pageref{src-453}\\
+-454 & 440 & \pageref{src-454}\\
+-455 & 441 & \pageref{src-455}\\
+-456 & 442 & \pageref{src-456}\\
+-457 & 443 & \pageref{src-457}\\
+-458 & 444 & \pageref{src-458}\\
+-459 & 445 & \pageref{src-459}\\
+-460 & 446 & \pageref{src-460}\\
+-461 & 447 & \pageref{src-461}\\
+-462 & 448 & \pageref{src-462}\\
+-463 & 449 & \pageref{src-463}\\
+-464 & 450 & \pageref{src-464}\\
+-465 & 451 & \pageref{src-465}\\
+-466 & 452 & \pageref{src-466}\\
+-467 & 453 & \pageref{src-467}\\
+-468 & 454 & \pageref{src-468}\\
+-469 & 455 & \pageref{src-469}\\
+-470 & 456 & \pageref{src-470}\\
+-471 & 457 & \pageref{src-471}\\
+-472 & 458 & \pageref{src-472}\\
+-473 & 459 & \pageref{src-473}\\
+-474 & 460 & \pageref{src-474}\\
+-475 & 461 & \pageref{src-475}\\
+-476 & 462 & \pageref{src-476}\\
+-477 & 463 & \pageref{src-477}\\
+-478 & 464 & \pageref{src-478}\\
+-479 & 465 & \pageref{src-479}\\
+-480 & 466 & \pageref{src-480}\\
+-481 & 467 & \pageref{src-481}\\
+-482 & 468 & \pageref{src-482}\\
+-483 & 469 & \pageref{src-483}\\
+-484 & 470 & \pageref{src-484}\\
+-485 & 471 & \pageref{src-485}\\
+-486 & 472 & \pageref{src-486}\\
+-487 & 473 & \pageref{src-487}\\
+-488 & 474 & \pageref{src-488}\\
+-489 & 475 & \pageref{src-489}\\
+-490 & 476 & \pageref{src-490}\\
+-491 & 477 & \pageref{src-491}\\
+-492 & 478 & \pageref{src-492}\\
+-493 & 479 & \pageref{src-493}\\
+-494 & 480 & \pageref{src-494}\\
+-495 & 481 & \pageref{src-495}\\
+-496 & 482 & \pageref{src-496}\\
+-497 & 483 & \pageref{src-497}\\
+-498 & 484 & \pageref{src-498}\\
+-499 & 485 & \pageref{src-499}\\
+-500 & 486 & \pageref{src-500}\\
+-501 & 487 & \pageref{src-501}\\
+-502 & 488 & \pageref{src-502}\\
+-503 & 489 & \pageref{src-503}\\
+-504 & 490 & \pageref{src-504}\\
+-505 & 491 & \pageref{src-505}\\
+-506 & 492 & \pageref{src-506}\\
+-507 & 493 & \pageref{src-507}\\
+-508 & 494 & \pageref{src-508}\\
+-509 & 495 & \pageref{src-509}\\
+-510 & 496 & \pageref{src-510}\\
+-511 & 497 & \pageref{src-511}\\
+-512 & 498 & \pageref{src-512}\\
+-513 & 499 & \pageref{src-513}\\
+-514 & 500 & \pageref{src-514}\\
+-515 & 501 & \pageref{src-515}\\
+-516 & 502 & \pageref{src-516}\\
+-517 & 503 & \pageref{src-517}\\
+-518 & 504 & \pageref{src-518}\\
+-519 & 505 & \pageref{src-519}\\
+-520 & 506 & \pageref{src-520}\\
+-521 & 507 & \pageref{src-521}\\
+-522 & 508 & \pageref{src-522}\\
+-523 & 509 & \pageref{src-523}\\
+-524 & 510 & \pageref{src-524}\\
+-525 & 511 & \pageref{src-525}\\
+-526 & 512 & \pageref{src-526}\\
+-527 & 513 & \pageref{src-527}\\
+-528 & 514 & \pageref{src-528}\\
+-529 & 515 & \pageref{src-529}\\
+-530 & 516 & \pageref{src-530}\\
+-531 & 517 & \pageref{src-531}\\
+-532 & 518 & \pageref{src-532}\\
+-533 & 519 & \pageref{src-533}\\
+-534 & 520 & \pageref{src-534}\\
+-535 & 521 & \pageref{src-535}\\
+-536 & 522 & \pageref{src-536}\\
+-537 & 523 & \pageref{src-537}\\
+-538 & 524 & \pageref{src-538}\\
+-539 & 525 & \pageref{src-539}\\
+-540 & 526 & \pageref{src-540}\\
+-541 & 527 & \pageref{src-541}\\
+-542 & 528 & \pageref{src-542}\\
+-543 & 529 & \pageref{src-543}\\
+-544 & 530 & \pageref{src-544}\\
+-545 & 531 & \pageref{src-545}\\
+-546 & 532 & \pageref{src-546}\\
+-\bottomrule
+-\end{longtable}}
+-
+--- v17/scripts/build_outputs.py
++++ v18/scripts/build_outputs.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Finalize the cumulative BellaBook PDF for v17.
++"""Finalize the cumulative BellaBook PDF for v18.
+ 
+ This lightweight build intentionally does NOT create a typeset+full-scan comparison PDF.
+ The registered source scan remains in source/original.pdf only for collation/rebuilds.
+@@ -16,10 +16,10 @@
+ SOURCE = ROOT / 'source/original.pdf'
+ COMPILED = ROOT / 'build/main.pdf'
+ EXPECTED_SOURCE_SHA = '8a9b5179ccfd0fa9c5beca9386dbaf5808f79bde1bb348e7297dad229332a0ea'
+-VERSION = '2026-09-11.v17'
++VERSION = '2026-09-11.v18'
+ SOURCE_START, SOURCE_END = 1, 546
+ NEW_START, NEW_END = 540, 546
+-OUT_NAME = 'Spinosa_BellaBook_v17_complete.pdf'
++OUT_NAME = 'Spinosa_BellaBook_v18_complete.pdf'
+ 
+ def digest(path: Path) -> str:
+     h = hashlib.sha256()
+@@ -38,16 +38,11 @@
+         raise ValueError('Expected the registered 546-page source scan.')
+     typeset = fitz.open(COMPILED)
+ 
+-    page_map: dict[int, int] = {}
+-    for physical, page in enumerate(typeset, 1):
+-        for link in list(page.get_links()):
+-            uri = link.get('uri', '')
+-            if uri.startswith(PREFIX):
+-                original = int(uri.removeprefix(PREFIX))
+-                if original in page_map:
+-                    raise ValueError(f'Duplicate source marker: {original}')
+-                page_map[original] = physical
+-                page.delete_link(link)  # remove internal collation placeholders from reader PDF
++    # Source boundaries remain invisible named destinations in the reading PDF.
++    destinations = typeset.resolve_names()
++    page_map = {int(name[4:]): item['page'] + 1
++                for name, item in destinations.items()
++                if re.fullmatch(r'src-\d+', name)}
+     expected = set(range(SOURCE_START, SOURCE_END + 1))
+     if set(page_map) != expected:
+         missing = sorted(expected - set(page_map))
+@@ -76,7 +71,7 @@
+                         '初校转写' if physical else '未转写；扫描底本仅供内部校勘',
+                         physical, label])
+ 
+-    (ROOT / 'text/retypeset_v17.txt').write_text(
++    (ROOT / 'text/retypeset_v18.txt').write_text(
+         '\n\n'.join(f'=== 本版 PDF 第 {i+1} 页 / 页码 {p.get_label()} ===\n{p.get_text()}'
+                     for i, p in enumerate(typeset)), encoding='utf-8')
+ 
+@@ -106,17 +101,17 @@
+         'version': VERSION,
+         'title': 'Sciences du langage : de Platon à Chomsky',
+         'author': 'Lionel Spinosa',
+-        'status': '全书文字重排与初校完成；历史事实及引文版本的待核项保留于附录',
++        'status': '附录与阅读版面整理；既有校勘结论及待核状态保留',
+         'source_pages_total': 546,
+         'retypeset_source_range': [SOURCE_START, SOURCE_END],
+         'retypeset_source_pages': SOURCE_END - SOURCE_START + 1,
+-        'new_source_ranges': [[1, 4], [540, 546]],
+-        'new_source_pages': 11,
++        'new_source_ranges': [],
++        'new_source_pages': 0,
+         'retypeset_pdf_pages': len(typeset),
+         'editorial_notes': editorial_count,
+         'original_notes': original_count,
+-        'new_editorial_notes': new_editorial,
+-        'new_original_notes': new_original,
++        'new_editorial_notes': 0,
++        'new_original_notes': 0,
+         'continuation_source_pdf_page': None,
+         'checks': {
+             'source_markers_complete': len(page_map) == SOURCE_END - SOURCE_START + 1,

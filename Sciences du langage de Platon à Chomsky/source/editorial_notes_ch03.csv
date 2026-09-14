@@ -1,0 +1,31 @@
+﻿cumulative_note_number,source_pdf_page,source_tex,note_tex
+63,57,chapters/03_partie1.tex,原文 « on rencontra » 为简单过去时；本段是在预告下文，与后面的 « nous verrons »、« nous allons » 一致时，应作 « on rencontrera »。
+64,57,chapters/03_partie1.tex,此处以同位语说明单数名词 « la sémiologie »，应为 « science des signes »。
+65,57,chapters/03_partie1.tex,原文此处作 « Pierce »，与同句开头及第六章题名中的 « Peirce » 不一致；应为 Charles S. Peirce。
+66,61,chapters/03_grammaire.tex,原文 « qui nous apprend le verbe s’accorde » 缺连接词，应为 « qui nous apprend que le verbe s’accorde »。
+67,61,chapters/03_grammaire.tex,底本在 « remplir » 后打开圆括号，而在 « etc. » 后未闭合；此处应补右括号。引文其余内容保留底本文字。
+68,62,chapters/03_grammaire.tex,本句 « a pour fonction de prévenir ou à réparer » 的并列结构不一致，应作 « a pour fonction de prévenir ou de réparer »。原引文中 « sert à prévenir ou à réparer » 则无此问题。
+69,62,chapters/03_grammaire.tex,本段所列生卒年 560–480 avant J.-C. 与“约公元前 350 年”著书不能同时成立：后一年代比所列卒年晚 130 年。此处至少一项有误；本轮未据可靠证据确定唯一断代，故不臆改生卒年或成书年。
+70,64,chapters/03_grammaire.tex,此处将不同年代的教学情形混在一起。原文所列 Denys 卒年为公元前 90 年，而 Virgile 生于公元前 70 年（Biblissima 的作者规范记录，见\ecite{14}），晚于前述卒年；因此不能把讲授 Virgile 作品写作 Denys 本人的经历。应将一般的罗马语法教学概述与 Denys 的传记分开。
+71,64,chapters/03_grammaire.tex,第二个 « professeurs de grec » 显为重复误写；与 « Latinus » 对应，应作 « professeurs de latin »。
+72,64,chapters/03_grammaire.tex,此处叙述内部不一致：本段最初八类已经包含 « article »，后面却再把 « l’ajout de l’article » 作为新变化。不能据此直接重建各时期完整词类表；有关 Lhomond 及 1910 年分类的具体对应仍待版本核验。
+73,65,chapters/03_grammaire.tex,原文 « effet continue » 既未正确释出 scriptio，形容词亦不与阳性名词 effet 配合。此拉丁术语在这里应释为 « écriture continue »，即不以空格分词的连续书写。
+74,65,chapters/03_grammaire.tex,"若按本句先列的“强—中—弱停顿”顺序类比现代标点，末尾应按 « au point, au point-virgule et à la virgule » 排列，而非原文的相反顺序；古今标点功能也不宜理解为完全一一对应。"
+75,66,chapters/03_grammaire.tex,原文缺少表示作者关系的介词，应为 « des œuvres d’Aristote »。
+76,67,chapters/03_grammaire.tex,正文此处的带圈序号在底本作 3，而本节此前只有第 1 小项；章首提纲相应条目作 2。序号应为 2，此处保留底本正文的 3 并加注说明。
+77,70,chapters/03_grammaire.tex,"底本所标 « Translittération » 实为现代化转写，且第 111 条漏掉前列原文中的 « commissions, sentences »。与本页原文对齐时，« contrats » 后应补 « commissions, sentences »；这不是据外部版本改动旧法文。"
+78,70,chapters/03_grammaire.tex,将两书一并说成 « écrites en anglais » 与底本前两页展示的 Barton 前言冲突：该段文字及作者自己的说明均将其认作 anglo-normand，而非英语。应区分“面向英国读者”与“用英语写成”。
+79,70,chapters/03_grammaire.tex,原文 « d’une d’étude » 多出第二个 d’，应为 « d’une étude »。
+80,71,chapters/03_grammaire.tex,本小节混合了不同作者。1579 年《De la précellence du langage françois》的作者为 Henri Estienne，而非此处所述 1503–1559 年的 Robert Estienne；所据 1579 年版本书名及书目记录明确署名 Henri Estienne，见\ecite{13}。1569 年语法书的版本归属另需分别核对，不能把本段所有 « Robert » 一律改成 « Henri »。
+81,72,chapters/03_grammaire.tex,此处人名 « Le Ramée » 与本节及章首的 « La Ramée » 不一致，应为 « La Ramée »。
+82,74,chapters/03_grammaire.tex,"原文此句缺主句谓语，« Clément Marot, ... qui en effet a introduit » 应作 « Clément Marot, ... a en effet introduit »，或在句首补 « C’est » 形成强调句。此注仅订正句法，不据此确认有关“引入”过去分词一致规则的历史归属。"
+83,74,chapters/03_grammaire.tex,本引文标题作 « Épigrammes ses disciples »，缺介词 à，并与上一句的单数书目题名不一致；按上一句应作 « Épigramme à ses disciples »。
+84,75,chapters/03_grammaire.tex,原文 « est n’est » 重复，应为 « l’analyse grammaticale n’est encore que balbutiante »。
+85,76,chapters/03_grammaire.tex,原文卒年 1659 有误，应为 1650。Académie française 的官方传记记载其卒于 1650 年 2 月 26 日，见\ecite{15}。
+86,77,chapters/03_grammaire.tex,本行末有未与开引号配对的闭引号 »；按此处引文的连续结构应删去。保留底本并在此说明，不改变诗句内容。
+87,78,chapters/03_grammaire.tex,原文卒年 1996 为排印错误，应为 1696。Hachette Livre–BnF 重印书信集的书目资料明确标示 1626–1696，见\ecite{16}。
+88,79,chapters/03_grammaire.tex,原文 « ont fini par chassé » 应为 « ont fini par chasser »：finir par 后接不定式。
+89,79,chapters/03_grammaire.tex,原文 « la raison un » 缺系词，应为 « la raison est un »。
+90,81,chapters/03_grammaire.tex,本引文中 « imminent » 疑为 « immanent » 之误：前者为“即将发生的”，后者为“内在于……的”，与 « à toute parole prononcée » 相接及前文“内在法则”相应。此为拟校，尚未核到对应原刊页的字形，不将它当作已确证的引文订正。
+91,82,chapters/03_grammaire.tex,"此书共同作者应为 Antoine Arnauld 与 Pierre Nicole，而非 Claude Lancelot。与本条相同的 Dominique Descotes 2011 年校订版在 CiNii Books 的责任者记录为 « Antoine Arnauld, Pierre Nicole »，见\ecite{17}。Lancelot 是前一条《Grammaire générale et raisonnée》的共同作者。"
+92,83,chapters/03_grammaire.tex,此条把 Vaugelas 的名字写为 « René L. »，与正文及章首提纲的 « Claude Favre de Vaugelas » 不一致；作者名应订正为 « VAUGELAS (Claude Favre de) »。此注只订正作者姓名，不据此认定所列 1975 年版本的全部出版信息无误。

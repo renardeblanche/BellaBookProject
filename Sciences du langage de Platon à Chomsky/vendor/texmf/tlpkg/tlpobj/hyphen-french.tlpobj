@@ -1,0 +1,15 @@
+name hyphen-french
+category TLCore
+revision 58652
+shortdesc French hyphenation patterns.
+relocated 1
+longdesc Hyphenation patterns for French in T1/EC and UTF-8 encodings.
+depend hyph-utf8
+depend hyphen-base
+execute AddHyphen 	name=french synonyms=patois,francais 	lefthyphenmin=2 	righthyphenmin=2 	file=loadhyph-fr.tex 	file_patterns=hyph-fr.pat.txt 	file_exceptions=
+runfiles size=16
+ RELOC/tex/generic/hyph-utf8/loadhyph/loadhyph-fr.tex
+ RELOC/tex/generic/hyph-utf8/patterns/ptex/hyph-fr.ec.tex
+ RELOC/tex/generic/hyph-utf8/patterns/quote/hyph-quote-fr.tex
+ RELOC/tex/generic/hyph-utf8/patterns/tex/hyph-fr.tex
+ RELOC/tex/generic/hyph-utf8/patterns/txt/hyph-fr.pat.txt

@@ -1,0 +1,37 @@
+{
+  "consulted": "2026-09-11",
+  "references": [
+    {
+      "id": "E49",
+      "title": "SIL DLS Glossary",
+      "url": "https://sites.google.com/sil.org/dls-course/resources/glossary",
+      "scope": "lemma, lexeme, lexical or lexeme form, inflectional variants"
+    },
+    {
+      "id": "E50",
+      "title": "LEOs deutsche Grammatik: Partizip Perfekt mit oder ohne ge–",
+      "url": "https://dict.leo.org/grammatik/OnlineGrammar/InflectionRules/FRegeln-V/Texte/Partizip-mit-ohne-ge.html",
+      "scope": "participle exceptions and forms"
+    },
+    {
+      "id": "E51",
+      "title": "Urone & Hinrichs, College Physics 2e, OpenStax (2022)",
+      "urls": [
+        "https://openstax.org/books/college-physics-2e/pages/4-introduction-to-dynamics-newtons-laws-of-motion",
+        "https://openstax.org/books/college-physics-2e/pages/4-3-newtons-second-law-of-motion-concept-of-a-system",
+        "https://openstax.org/books/college-physics-2e/pages/24-1-maxwells-equations-electromagnetic-waves-predicted-and-observed"
+      ],
+      "scope": "Isaac Newton; newton force unit; Heinrich Hertz spelling"
+    },
+    {
+      "id": "E52",
+      "title": "RAE–ASALE, DLE: abogado; aguacate; talibán",
+      "urls": [
+        "https://dle.rae.es/abogado",
+        "https://dle.rae.es/aguacate",
+        "https://dle.rae.es/talibán"
+      ],
+      "scope": "lexical forms and etymology; Persian plural vs Arabic-derived stem"
+    }
+  ]
+}

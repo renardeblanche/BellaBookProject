@@ -1,0 +1,59 @@
+[
+  {
+    "id": 35,
+    "author": "IASS–AIS",
+    "title": "Congresses",
+    "urls": [
+      "https://iass-ais.org/congresses/"
+    ],
+    "checked": "官方大会表：1. A Semiotic Landscape，Milano，June 1974；仅用于订正“1969 年首届大会”。"
+  },
+  {
+    "id": 36,
+    "author": "Charles S. Peirce",
+    "title": "How to Make Our Ideas Clear (1878)",
+    "urls": [
+      "https://en.wikisource.org/wiki/Popular_Science_Monthly/Volume_12/January_1878/Illustrations_of_the_Logic_of_Science_II"
+    ],
+    "checked": "原刊文章的全文转录；实践效果准则与最终共同意见的真理观，不把个别效用直接当作真理。"
+  },
+  {
+    "id": 37,
+    "author": "Charles S. Peirce",
+    "title": "A Syllabus of Certain Topics of Logic (1903)；What Is a Sign? (1894)",
+    "urls": [
+      "https://www.unav.es/gep/RelacionesTriadicas.html",
+      "https://www.unav.es/gep/DiversasConcepcionesLogicas.html",
+      "https://www.unav.es/gep/AnOutlineClassification.html",
+      "https://www.unav.es/gep/Signo.html"
+    ],
+    "checked": "Universidad de Navarra, Grupo de Estudios Peirceanos 所刊原著西班牙语译本；分别核对 CP 2.233–272 的三分法与十类、符号定义及指示实例、CP 1.180–202 的科学分类。并非本教材法语译文的底本。"
+  },
+  {
+    "id": 38,
+    "author": "Ferdinand de Saussure；Charles Bally、Albert Sechehaye 编，Albert Riedlinger 协作",
+    "title": "Cours de linguistique générale（1916；所查电子文本据 Payot 1971 版）",
+    "urls": [
+      "https://fr.wikisource.org/wiki/Cours_de_linguistique_g%C3%A9n%C3%A9rale/Texte_entier"
+    ],
+    "checked": "第一版序言；导论第 III–V 章；第一部分第 I–III 章；第二部分第 IV–V 章。核对三轮课程、能指／所指、任意性、能指线条性、整体符号的积极性质、关联关系与外部语言学。"
+  },
+  {
+    "id": 39,
+    "author": "Ferdinand de Saussure",
+    "title": "Recueil des publications scientifiques de Ferdinand de Saussure (1922)",
+    "urls": [
+      "https://fr.wikisource.org/wiki/Recueil_des_publications_scientifiques_de_Ferdinand_de_Saussure"
+    ],
+    "checked": "论文集书目与目录。用于核对除早期专著外另有多篇科学论文；不宣称本轮逐篇校读此集。"
+  },
+  {
+    "id": 40,
+    "author": "Harvard University, Faculty of Arts and Sciences",
+    "title": "Hilary Whitehall Putnam, Memorial Minute (7 November 2023)",
+    "urls": [
+      "https://officeofthesecretary.fas.harvard.edu/sites/g/files/omnuum2291/files/2024-11/Putnam%20Memorial%20Minute_2023_11_07.pdf"
+    ],
+    "checked": "第一页明确记载 BORN: July 31, 1926；DIED: March 13, 2016。"
+  }
+]

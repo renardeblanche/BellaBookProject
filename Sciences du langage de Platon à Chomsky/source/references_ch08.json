@@ -1,0 +1,58 @@
+{
+  "checked_on": "2026-09-11",
+  "references": [
+    {
+      "id": "E44",
+      "author": "Ian Maddieson.",
+      "title": "Tone.",
+      "scope": "WALS Online 第13章。核对声调的定义、边缘个案与取样限制，不将页面表格与文章不同版本的样本总数混合，也不将调查样本比例直接当作全世界语言比例。",
+      "urls": [
+        "https://wals.info/chapter/13"
+      ]
+    },
+    {
+      "id": "E45",
+      "author": "Societas Linguistica Europaea.",
+      "title": "About Societas Linguistica Europaea — History / Presidents.",
+      "scope": "协会官方历史与历任会长表。首任会长 André Martinet 任至1967年年会，随后为 Björn Collinder；用于订正原书1966–1999的任期。",
+      "urls": [
+        "https://societaslinguistica.eu/about-societas-linguistica-europaea/"
+      ]
+    },
+    {
+      "id": "E46",
+      "author": "Roman Jakobson.",
+      "title": "Linguistics and Poetics.",
+      "scope": "英语原著重印节选，所提供六页标为66–71页；已查看其中66–70页，核对六因素／六功能、Bühler的三个功能及诗学练习的对应段落。文件首页说明摘自 Language in Literature（Krystyna Pomorska、Stephen Rudy 编）。这不是本教材法语译文底本，不用英语另译来替换原文。",
+      "urls": [
+        "https://marul.ffst.hr/~bwillems/fymob/jakobsonfunctions.pdf"
+      ]
+    },
+    {
+      "id": "E47",
+      "author": "Dudenredaktion.",
+      "title": "singen; sinken.",
+      "scope": "Duden Online 词条的 Lautschrift 栏。singen 列为 [ˈzɪŋən]，sinken 列为 [ˈzɪŋkn̩]；用于核对原书所谓元音间 /k/ 与 /g/ 对立的例词。",
+      "urls": [
+        "https://www.duden.de/rechtschreibung/singen",
+        "https://www.duden.de/rechtschreibung/sinken"
+      ]
+    },
+    {
+      "id": "E48",
+      "author": "Simon C. Dik; De Gruyter Mouton.",
+      "title": "The Theory of Functional Grammar, Part 1: The Structure of the Clause.",
+      "scope": "出版社记录明确为 2nd rev. ed. 1997，纸本 ISBN 9783110154047。仅据书目确认1997不是该卷初版，不声称本轮通读付费正文，也不据此断言与Halliday的单向影响关系。",
+      "urls": [
+        "https://www.degruyterbrill.com/document/doi/10.1515/9783110218367/html"
+      ]
+    }
+  ],
+  "reused": [
+    "E41 official IPA chart; viewed for r/ʀ and suprasegmentals"
+  ],
+  "limitations": [
+    "未取得可核查的Halliday原著段落来确认计算机得名说；保留为待核",
+    "法语历史引文以用户扫描为转写底本，英语对读不是替换底本"
+  ]
+}

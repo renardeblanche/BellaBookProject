@@ -1,0 +1,2846 @@
+--- transcription/01-introduction.tex
++++ BellaBook/01-introduction.tex
+@@ -4,7 +4,7 @@
+ simplicity we restrict ourselves to smooth (or $C^\infty$-) functions, i.e. functions that
+ have continuous partial derivatives of all orders.
+ We begin with functions of two variables. Let $f:U\to \RR^2$ be a smooth function
+-.defined on an open set of $\RR^2$ .
++defined on an open set of $\RR^2$.
+ 
+ \begin{question}\label{question:1-1}
+ Is there a smooth function $F:U\to \RR$, such that:
+@@ -33,9 +33,9 @@
+ 
+ 
+ \begin{example}\label{example:1-2}
+-Consider the function $f:\RR^2 \to \RR^2$ given by
+-\begin{align*}
+-  f(x_1, x_2) = \left(\frac{-x_2}{x_1^2 +x_2^2}, \frac{x_1}{x_1^2 +x_2^2},\right)
++Consider the function $f:\RR^2-\{0\} \to \RR^2$ given by\corr{原书第 1 页，例 1.2 的定义域误写为 $\RR^2$；分母在原点为零，应除去原点。}
++\begin{align*}
++  f(x_1, x_2) = \left(\frac{-x_2}{x_1^2 +x_2^2}, \frac{x_1}{x_1^2 +x_2^2}\right)
+ \end{align*}
+ \end{example}
+ 
+@@ -49,7 +49,7 @@
+ On the other hand the chain rule gives
+ \begin{align*}
+   \frac{\dd }{\dd\theta} F(\cos\theta, \sin\theta) 
+-  & = \frac{\dd F}{\dd x}\cdot (-\sin\theta) + \frac{\dd F}{\dd y}\cdot \cos\theta \\
++  & = \frac{\partial F}{\partial x_1}\cdot (-\sin\theta) + \frac{\partial F}{\partial x_2}\cdot \cos\theta \\
+   & = -f_1 (\cos\theta, \sin\theta)\cdot\sin\theta + f_2(\cos\theta, \sin\theta)\cdot \cos\theta\\
+   & = 1
+ \end{align*}
+@@ -57,12 +57,12 @@
+ This contradiction can only be explained by the non-existence of $F$.
+ 
+ \begin{definition}
+-  A subset $X\subseteq \RR^n$ is said to be star-shaped with respect to the point $x_0\in X$ if
++  A subset $X\subseteq \RR^n$ is said to be an open star-shaped set with respect to the point $x_0\in X$ if
+   the line segment $\{tx_0+(1-t)x\mid t\in[0,1]\}$ is contained in $X$ for all $x\in X$.
+ \end{definition}
+ 
+ \begin{theorem}\label{theorem:1-4}
+-  Let $U\subseteq \RR^2$ be star-shaped\index{star-shape set}. Then for any smooth function $f:U\to \RR^2$ that satisfies
++  Let $U\subseteq \RR^2$ be an open star-shaped set\index{star-shape set}. Then for any smooth function $f:U\to \RR^2$ that satisfies
+   \eqref{eq:1-2}, Question \ref{question:1-1} has a solution.
+ \end{theorem}
+ 
+@@ -78,32 +78,31 @@
+ \end{align*}
+ and 
+ \begin{align*}
+-  \frac{\dd }{\dd t} tf_1(tx_1, tx_2) 
+-  = f_1(tx_1, tx_2) + tx_1\frac{\partial f_1}{\partial x_1}(tx_1, tx_2) + tx_2\frac{\partial f_2}{\partial x_1}(tx_1, tx_2)
++  \frac{\dd }{\dd t} tf_1(tx_1, tx_2) = f_1(tx_1, tx_2) + tx_1\frac{\partial f_1}{\partial x_1}(tx_1, tx_2) + tx_2\frac{\partial f_1}{\partial x_2}(tx_1, tx_2)
+ \end{align*}
+ 
+ Substituting this result into the formula, we get
+ \begin{align*}
+   \frac{\partial F}{\partial x_1}(x_1, x_2)
+   & = \int_{0}^{1}{\left[\frac{\dd }{\dd t}tf_1(tx_1, tx_2) + tx_2\left(\frac{\partial f_2}{\partial x_1}(tx_1, tx_2) - \frac{\partial f_1}{\partial x_2}(tx_1, tx_2) \right)\right] \;\mathrm{d}t}\\
+-  & = f_1(tx_1, tx_2)\big|_{t=0}^1\\
++  & = \big[t f_1(tx_1, tx_2)\big]_{t=0}^1\\
+   & = f_1(x_1, x_2)
+ \end{align*}
+ 
+ Analogously, $\frac{\partial F }{\partial x_2} = f_2(x_1, x_2)$.
+ \end{proof}
+ 
+-Example \ref{example:1-2} and Theorem \ref{theorem:1-4} suggest that the answer to Question \ref{question:1-1} depends on the ``shape'' of
+-``topology'' of $U$. Instead of searching for a further examples or counterexamples of set $U$ and fucntion $f$, we
+-define an invariant of $U$, which tells us or not the question has an affirmative answer (for all $f$), assuming the 
++Example \ref{example:1-2} and Theorem \ref{theorem:1-4} suggest that the answer to Question \ref{question:1-1} depends on the ``shape'' or
++``topology'' of $U$. Instead of searching for further examples or counterexamples of sets $U$ and functions $f$, we
++define an invariant of $U$, which tells us whether or not the question has an affirmative answer (for all $f$), assuming the 
+ necessary condition \eqref{eq:1-2}.
+ 
+-Give the open set $U\subseteq \RR^2$, let $C^\infty(U, \RR^k)$ denote the set of smooth functions $\phi:U\to\RR^k$. This 
+-is a vecter space. If $k=2$ one may consider $\phi:U\to\RR^k$ as a vecter filed on $U$ by plotting $\phi(u)$ from the
++Given the open set $U\subseteq \RR^2$, let $C^\infty(U, \RR^k)$ denote the set of smooth functions $\phi:U\to\RR^k$. This 
++is a vector space. If $k=2$ one may consider $\phi:U\to\RR^k$ as a vector field on $U$ by plotting $\phi(u)$ from the
+ point $u$. We define the \Index{gradient} and \Index{rotation}:
+ \begin{align*}
+   \grad: C^\infty(U, \RR) \to C^\infty(U, \RR^2), &&
+-  \grad: C^\infty(U, \RR^2) \to C^\infty(U, \RR) 
++  \rot: C^\infty(U, \RR^2) \to C^\infty(U, \RR) 
+ \end{align*}
+ 
+ by 
+@@ -120,7 +119,7 @@
+ 
+ Since both rot and grad are linear operators, $\im(\grad)$ is a subspace of $\ker(\rot)$.
+ Therefore we can consider the quotient vector space, i.e. the vector space of
+-cosets 0: $\alpha + \im(\grad)$ where 0: $\alpha\in\ker(\rot)$:
++cosets $\alpha + \im(\grad)$ where $\alpha\in\ker(\rot)$:
+ \begin{align}\label{eq:1-3}
+   H^1(U) = \ker(\rot)/\im(\grad).
+ \end{align}
+@@ -143,7 +142,7 @@
+ 
+ This definition works for open sets $U$ of $\RR^k$ with $k\ge1$, when we define
+ \begin{align*}
+-  \grad(f) = \left(\frac{\partial f}{\partial x_1}, \ldots, \frac{\partial f}{\partial x_n}\right)
++  \grad(f) = \left(\frac{\partial f}{\partial x_1}, \ldots, \frac{\partial f}{\partial x_k}\right)
+ \end{align*}
+ 
+ \begin{theorem}\label{theorem:1-5}
+@@ -155,7 +154,7 @@
+ a neighborhood $V(x_0)$ with $f(x) = f(x_0)$ when $x\in V(x_0)$. If $U$ is connected,
+ then every locally constant function is constant. Indeed, for $x_0\in U$ the set
+ \begin{align*}
+-  \{x\in U|f(x) = f(x_0) = f^{-1}(f(x_0))\}
++  \{x\in U\mid f(x) = f(x_0)\} = f^{-1}(f(x_0))
+ \end{align*}
+ 
+ is closed because $f$ is continuous, and open since $f$ is locally constant. Hence
+@@ -165,7 +164,7 @@
+ \end{proof}
+ 
+ The reader may easily extend the proof of Theorem \ref{theorem:1-5} to show that $\dim H^0(U)$
+-is precisely the number of connected components of $U$.
++equals the number of connected components when this number is finite; if there are infinitely many components, $H^0(U)$ is infinite-dimensional.\corr{原书第 3 页的维数计数应理解为有限数或“无穷”，不能把无限情形的 Hamel 维数等同于连通分支的基数。$H^0(U)$ 是各分支上常数值的直积空间。}
+ 
+ 
+ We next consider functions of three variables. Let $U\subseteq\RR^3$ be an open set. A real
+@@ -182,17 +181,17 @@
+   \grad(f) & = \left(\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \frac{\partial f}{\partial x_3}\right) \\
+   \rot(f) & = \left(\frac{\partial f_3}{\partial x_2} - \frac{\partial f_2}{\partial x_3}, \frac{\partial f_1}{\partial x_3} - \frac{\partial f_3}{\partial x_1}, \frac{\partial f_2}{\partial x_1} - \frac{\partial f_1}{\partial x_2}\right) \\
+   \div(f) & = \frac{\partial f_1}{\partial x_1} + \frac{\partial f_2}{\partial x_2} + \frac{\partial f_3}{\partial x_3}
+-\end{align*}
++\end{align*}\corr{原书第 4 页，三维旋度第三分量的第一项分母误排为 $\partial x_2$，应为 $\partial x_1$。}
+ 
+ Note that $\rot\circ\grad = 0$ and $\div\circ\rot = 0$. We define $H^0(U)$ and set $H^1(U)$ as in 
+ Equations \eqref{eq:1-3} and \eqref{eq:1-5} and
+-\begin{align*}
++\begin{align}\label{eq:1-6}
+   H^2(U) = \ker(\div)/\im(\rot)
+-\end{align*}
++\end{align}
+ 
+ 
+ \begin{theorem}\label{theorem:1-6}
+-  For an open star-shaped set in $\RR^3$ we have that $H^0(U) = R, H^1(U) = 0$ and $H^2(U) = 0$.
++  For an open star-shaped set in $\RR^3$ we have that $H^0(U) = \RR, H^1(U) = 0$ and $H^2(U) = 0$.
+ \end{theorem}
+ 
+ \begin{proof}
+@@ -206,7 +205,7 @@
+ 
+ where the $\times$ denotes the cross product.
+ \begin{align*}
+-  (f_1, f_2, f_2)\times (x_1, x_2, x_3) 
++  (f_1, f_2, f_3)\times (x_1, x_2, x_3) 
+   = \begin{vmatrix}
+       e_1 & f_1 & x_1 \\
+       e_2 & f_2 & x_2 \\
+@@ -228,7 +227,7 @@
+ \end{align*}
+ \end{proof}
+ 
+-If $U\in\RR^3$ is not star-shaped both $H^1(U)$ and $H^2(U)$ may be non-zero.
++If $U\subseteq\RR^3$ is not star-shaped both $H^1(U)$ and $H^2(U)$ may be non-zero.
+ 
+ \begin{example}\label{example:1-7}
+   Let $S = \{(x_1, x_2, x_3)\in \RR^3\mid x_1^2 + x_2^2 = 1, x_3 = 0\}$ be the unit circle
+@@ -249,10 +248,10 @@
+ \end{align*}
+ 
+ Assume $\grad(F) = f$ as a function on $U$. We can determine the integral of 
+-$\frac{\dd }{\dd t}F(\gamma(t))$ in two ways. On the hand we have
+-\begin{align*}
+-  \int_{\pi-\epsilon}^{-\pi+\epsilon}{\frac{\dd }{\dd t}F(\gamma(t)) \;\mathrm{d}t}
+-  = F(\gamma(-\pi+\epsilon)) - F(\gamma(\pi-\epsilon))
++$\frac{\dd }{\dd t}F(\gamma(t))$ in two ways. On the one hand we have
++\begin{align*}
++  \int_{-\pi+\epsilon}^{\pi-\epsilon}{\frac{\dd }{\dd t}F(\gamma(t)) \;\mathrm{d}t}
++  = F(\gamma(\pi-\epsilon)) - F(\gamma(-\pi+\epsilon))
+   \to 0\qquad \text{ for } \epsilon\to 0
+ \end{align*}
+ 
+@@ -273,11 +272,11 @@
+   A_\gamma(X) = \int_{a}^{b}{\langle X\circ \gamma(t), \gamma'(t)\rangle\;\mathrm{d}t}
+ \end{align*}
+ 
+-where $\langle\cdot\rangle$ denotes the standard product. If $X = \grad(\Phi)$ and $\Phi_\gamma(a) = \Phi_\gamma(b)$,
++where $\langle\cdot\rangle$ denotes the standard product. If $X = \grad(\Phi)$ and $\Phi(\gamma(a)) = \Phi(\gamma(b))$,
+ then the energy is zero, since 
+ \begin{align*}
+   \langle X\circ \gamma(t), \gamma'(t)\rangle = \frac{\dd }{\dd t}\Phi(\gamma(t))
+ \end{align*}
+ 
+-by the rule; compare Example \ref{example:1-2}.
++by the chain rule; compare Example \ref{example:1-2}.
+ \end{example}
+--- transcription/02-The-Alternating-Algebra.tex
++++ BellaBook/02-The-Alternating-Algebra.tex
+@@ -21,13 +21,13 @@
+ \end{align*}
+ 
+ 
+-with $\lambda_J = \lambda_{j_1, 1}, \ldots, \lambda_{j_k, k}$. Since $k>n$, there must be at least one repetition
+-among the elments $e_{j_1}, \ldots, e_{j_k}$. Hence $\omega(e_{j_1}, \ldots, e_{j_k}) = 0$.
++with $\lambda_J = \lambda_{j_1, 1}\cdots\lambda_{j_k, k}$. Since $k>n$, there must be at least one repetition
++among the elements $e_{j_1}, \ldots, e_{j_k}$. Hence $\omega(e_{j_1}, \ldots, e_{j_k}) = 0$.
+ 
+ The symmetric group of permutations of the set $\{1, \ldots,k\}$ is denoted by $S(k)$.
+ We remind the reader that any permutation can be written as a composition of
+ transpositions. The transposition that interchanges $i$ and $j$ will be denoted by $(i, j)$.
+-Furthemiore, and this fact will be used below, any permutation can be written as a
++Furthermore, and this fact will be used below, any permutation can be written as a
+ composition of transpositions of the type $(i, i+1), (i, i+1)\circ(i+1, i+2)\circ(i, i+1) =
+   (i, i + 2)$ and so forth. The sign of a permutation:
+ \begin{align}\label{eq:2-1}
+@@ -35,11 +35,11 @@
+ \end{align}
+ 
+ 
+-is a homomorphism, $\sign(\sigma\circ\tau) = \sign(\sigma)\circ\sign(\tau)$, which maps every
++is a homomorphism, $\sign(\sigma\circ\tau) = \sign(\sigma)\sign(\tau)$, which maps every
+ transposition to $-1$. Thus the sign of $\sigma\in S(k)$ is $-1$ precisely if $\sigma$ decomposes into a
+ product consisting of an odd number of transpositions.
+ 
+-\begin{lemma}
++\begin{lemma}\label{lemma:2-2}
+   If $\omega\in\alt^k(V)$ and $\sigma\in S(k)$, then
+   \begin{align*}
+     \omega\big(\xi_{\sigma(1)},\ldots,\xi_{\sigma(k)}\big)=\mathrm{sign}(\sigma)\omega(\xi_{1},\ldots,\xi_{k}).
+@@ -52,10 +52,10 @@
+     \omega_{i,j}(\xi,\xi')=\omega(\xi_{1},\ldots,\xi,\ldots,\xi',\ldots,\xi_{k}),
+   \end{align*}
+ 
+-  with $\xi$ and $\xi'$ eoccurring at positions $i$ and $j$ respectively. The remaining $\xi_p\in V$
++  with $\xi$ and $\xi'$ occurring at positions $i$ and $j$ respectively. The remaining $\xi_p\in V$
+   are arbitrary but fixed vectors. From the definition it follows that $\omega_{i,j}\in\alt^2(V)$.
+   Hence $\omega_{i,j} (\xi_i + \xi_j, \xi_i + \xi_j) = 0$. Bilinearity yields that
+-  $\omega_{i,j} (\xi_i + \xi_j) + \omega_{i,j} (\xi_j + \xi_i) = 0$
++  $\omega_{i,j} (\xi_i, \xi_j) + \omega_{i,j} (\xi_j, \xi_i) = 0$
+ \end{proof}
+ 
+ 
+@@ -69,7 +69,7 @@
+   \wedge: \alt^p(V)\times\alt^q(V) \to \alt^{p+q}(V).
+ \end{align*}
+ 
+-When $p=q=1$, it is given by $(\omega_1\wedge\omega_2) = \omega_1(\xi_1)\omega_2(\xi_2) - \omega_2(\xi_1)\omega_1(\xi_2)$.
++When $p=q=1$, it is given by $(\omega_1\wedge\omega_2)(\xi_1,\xi_2) = \omega_1(\xi_1)\omega_2(\xi_2) - \omega_2(\xi_1)\omega_1(\xi_2)$.\corr{原书第 8 页，左端漏排自变量 $(\xi_1,\xi_2)$；外积是双线性形式，右端是其在这两个向量上的取值。}
+ 
+ \begin{definition}\label{definition:2-4}
+   A \Index{$(p, q)$-shuffle} $\sigma$ is a permutation of the set $\{1, \ldots, p + q\}$ satisfying
+@@ -83,7 +83,7 @@
+ 
+ 
+ \begin{definition}[Exterior product]\label{definition:2-5}
+-  For $\omega_1\in\alt^p(V)$ and $\omega_2\in\alt^q(V)$, we defined
++  For $\omega_1\in\alt^p(V)$ and $\omega_2\in\alt^q(V)$, we define
+   \begin{align*}
+     (\omega_1\wedge\omega_2) & (\xi_1,\ldots,\xi_{p+q})                                                             \\
+     =                        & \sum_{\sigma\in S(p,q)}\sign(\sigma)\omega_1(\xi_{\sigma(1)},\ldots,\xi_{\sigma(p)})
+@@ -93,27 +93,27 @@
+   It is obvious that $\omega_1\wedge\omega_2$ is a $(p+q)$-linear map, but moreover.
+ \end{definition}
+ 
+-\begin{lemma}\label{lemma:2-2}
+-  If $\omega_1\in\alt^p(V)$ and $\omega_2\alt^q(V)$ then $\omega_1\wedge\omega_2\in\alt^{p+q}(V)$.
+-\end{lemma}
+-
+-\begin{proof}
+-  We first show that $\omega_1\wedge\omega_2(\xi_1,, \xi_2, \ldots, \xi_{p+q}) = 0$ when $\xi_i = \xi_j$.
++\begin{lemma}\label{lemma:2-6}
++  If $\omega_1\in\alt^p(V)$ and $\omega_2\in\alt^q(V)$ then $\omega_1\wedge\omega_2\in\alt^{p+q}(V)$.
++\end{lemma}
++
++\begin{proof}
++  We first show that $\omega_1\wedge\omega_2(\xi_1, \xi_2, \ldots, \xi_{p+q}) = 0$ when $\xi_1 = \xi_2$.
+   We let
+   \begin{enumerate}[(i)]
+     \item $S_{12} = \{\sigma\in S(p, q) \mid \sigma(1) = 1, \sigma(p+1) = 2\}$
+     \item $S_{21} = \{\sigma\in S(p, q) \mid \sigma(1) = 2, \sigma(p+1) = 1\}$
+-    \item $S_0 = S(p, q) - (S_{12} - S_{21})$
++    \item $S_0 = S(p, q) - (S_{12} \cup S_{21})$
+   \end{enumerate}
+ 
+   If $\sigma\in S_0$ then either $\omega_1(\xi_{\sigma(1)}, \ldots, \xi_{\sigma(p)}) = 0$
+   or $\omega_2(\xi_{\sigma(p+1)}, \ldots, \xi_{\sigma(p+q)}) = 0$, since $\xi_{\sigma(1)} = \xi_{\sigma(2)}$
+-  or $\xi_{\sigma(p+1)} = \xi_{\sigma(p+2)}$. Left composition with  the transposition $\tau = (1, 2)$ is a bijecrtion
++  or $\xi_{\sigma(p+1)} = \xi_{\sigma(p+2)}$. Left composition with  the transposition $\tau = (1, 2)$ is a bijection
+   $S_{12}\to S_{21}$. We therefore have
+   \begin{align*}
+       & (\omega_{1}\wedge\omega_{2})(\xi_{1},\xi_{2},\ldots,\xi_{p+q})                                                                                             \\
+     = & \sum_{\sigma\in S_{12}}\sign(\sigma)\omega_1(\xi_{\sigma(1)},\ldots,\xi_{\sigma(p)})\omega_2(\xi_{\sigma(p+1)},\ldots,\xi_{\sigma(p+q)})                   \\
+-    - & \sum_{\sigma\in S_{12}}\sign(\sigma)\omega_1(\xi_{r\sigma(1)},\ldots,\xi_{\tau\sigma(p)})\cdot\omega_2(\xi_{\tau\sigma(p+1)},\ldots\xi_{\tau\sigma(p+q)}).
++    - & \sum_{\sigma\in S_{12}}\sign(\sigma)\omega_1(\xi_{\tau\sigma(1)},\ldots,\xi_{\tau\sigma(p)})\cdot\omega_2(\xi_{\tau\sigma(p+1)},\ldots,\xi_{\tau\sigma(p+q)}).
+   \end{align*}
+ 
+   Since $\sigma(1) = 1$ and $\sigma(p+1) = 2$, while $\tau\sigma(1) = 2$ and $\tau\sigma(p+1) = 1$, we see that
+@@ -141,7 +141,7 @@
+ It is clear from the definition that
+ \begin{align*}
+   (\omega_{1}+\omega_{1}^{\prime})\wedge\omega_{2}
+-  = \omega_{1}\wedge\omega_{2}+\omega_{1}^{\prime}\wedge w_{2}            \\
++  = \omega_{1}\wedge\omega_{2}+\omega_{1}^{\prime}\wedge\omega_{2}            \\
+   (\lambda\omega_{1})\wedge\omega_{2}
+   = \lambda(\omega_{1}\wedge\omega_{2})=\omega_{1}\wedge\lambda\omega_{2} \\
+   \omega_{1}\wedge\left(\omega_{2}+\omega_{2}^{\prime}\right)
+@@ -165,17 +165,17 @@
+     \end{array}
+   \end{align*}
+ 
+-  We have $\sign(\tau) = (-1)^{pq}$. Composition with $\tau$ defines bijiection
+-  \begin{align*}
+-    S(p, q) \xra[\cong] S(q, p), \quad \sigma\mapsto\tau\circ\sigma
++  We have $\sign(\tau) = (-1)^{pq}$. Composition with $\tau$ defines bijection
++  \begin{align*}
++    S(p, q) \xra[\cong] S(q, p), \quad \sigma\mapsto\sigma\circ\tau
+   \end{align*}
+ 
+   Note that
+   \begin{align*}
+-    \omega_2(\xi_{\sigma\gamma(1)}, \ldots, \xi_{\sigma\gamma(q)})
+-    & = \omega_2(\xi_{\tau\sigma(p+1)}, \ldots, \xi_{\tau\sigma(p+q)}). \\
+-    \omega_1(\xi_{\sigma\gamma(q+1)}, \ldots, \xi_{\sigma\gamma(p+q)})
+-    & = \omega_1(\xi_{\tau\sigma(1)}, \ldots, \xi_{\tau\sigma(p)}).
++    \omega_2(\xi_{\sigma\tau(1)}, \ldots, \xi_{\sigma\tau(q)})
++    & = \omega_2(\xi_{\sigma(p+1)}, \ldots, \xi_{\sigma(p+q)}). \\
++    \omega_1(\xi_{\sigma\tau(q+1)}, \ldots, \xi_{\sigma\tau(p+q)})
++    & = \omega_1(\xi_{\sigma(1)}, \ldots, \xi_{\sigma(p)}).
+   \end{align*}
+ 
+   Hence
+@@ -202,9 +202,9 @@
+ \begin{proof}
+   Let $S(p, q, r)\subseteq S(p+q+r)$ consist of the permutations $\sigma$ with
+   \begin{align*}
+-    \sigma(1) <     & \cdot < \sigma(p)      \\
+-    \sigma(p+1) <   & \cdot < \sigma(p+q)    \\
+-    \sigma(p+q+1) < & \cdot < \sigma(p+q+r).
++    \sigma(1) <     & \cdots < \sigma(p)      \\
++    \sigma(p+1) <   & \cdots < \sigma(p+q)    \\
++    \sigma(p+q+1) < & \cdots < \sigma(p+q+r).
+   \end{align*}
+ 
+   We will need the subset $S(\bar{p}, q, r)$ and $S(p, q, \bar{r})$ of $S(p, q, r)$ given by
+@@ -217,8 +217,8 @@
+   There are bijections
+   \begin{align}\label{eq:2-2}
+     \begin{aligned}
+-      S(p, q, r) \times S(p, q, r)         & \xra[\cong] S(p, q, r); \quad (\sigma, \tau)\mapsto\sigma\circ\tau   \\
+-      S(p, q, r) \times S(p, q, \bar{r}) & \xra[\cong] S(p, q, r); \quad (\sigma, \tau)\mapsto\tau\circ\sigma.
++      S(p, q+r) \times S(\bar{p}, q, r)         & \xra[\cong] S(p, q, r); \quad (\sigma, \tau)\mapsto\sigma\circ\tau   \\
++      S(p+q, r) \times S(p, q, \bar{r}) & \xra[\cong] S(p, q, r); \quad (\sigma, \tau)\mapsto\sigma\circ\tau.
+     \end{aligned}
+   \end{align}
+ 
+@@ -227,7 +227,7 @@
+     & [\omega_1\wedge(\omega_2\wedge\omega_3)](\xi_1,\ldots,\xi_{p+q+r})                                                                              \\
+     & = \sum_{\sigma\in S(p,q+r)}\sign(\sigma)\omega_1(\xi_{\sigma(1)},\ldots,\xi_{\sigma(p)})
+     (\omega_2\wedge\omega_3)(\xi_{\sigma(p+1)},\ldots,\xi_{\sigma(p+q+r)})                                                                             \\
+-    & = \sum_{\sigma\in S(p,q+r)}\sign(\sigma)\sum_{\sigma\in S(p,q,r)}\sign(\tau)\Big[\omega_1(\xi_{\sigma(1)},\ldots,\xi_{\sigma(p)})               \\
++    & = \sum_{\sigma\in S(p,q+r)}\sign(\sigma)\sum_{\tau\in S(\bar{p},q,r)}\sign(\tau)\Big[\omega_1(\xi_{\sigma(1)},\ldots,\xi_{\sigma(p)})               \\
+     & \hspace*{2em} \omega_2(\xi_{\sigma\tau(p+1)},\ldots,\xi_{\sigma\tau(p+q)})\omega_3(\xi_{\sigma\tau(p+q+1)},\ldots,\xi_{\sigma\tau(p+q+r)})\Big] \\
+     & = \sum_{u\in S(p,q,r)}\Big[\sign(u)\omega_1(\xi_{u(1)},\ldots,\xi_{u(p)})\omega_2(\xi_{u(p+1)},\ldots,\xi_{u(p+q)})                             \\
+     & \hspace*{2em} \omega_3(\xi_{u(p+q+1)},\ldots,\xi_{u(p+q+r)})\Big]
+@@ -290,7 +290,7 @@
+ 
+ 
+ \begin{lemma}\label{lemma:2-13}
+-  For 1-forms $\omega_1, \ldots, \omega_p\in\alt^1(V)$, we have 
++  For 1-formss $\omega_1, \ldots, \omega_p\in\alt^1(V)$, we have 
+   \begin{align*}
+     (\omega_1\wedge\dots\wedge\omega_p)(\xi_1,\dots,\xi_p)
+     = \det
+@@ -304,11 +304,11 @@
+ \end{lemma}
+ 
+ \begin{proof}
+-  The case $p=2$ is abvious. We procced by induction on $p$. According to Definition \ref{definition:2-5},
++  The case $p=2$ is obvious. We proceed by induction on $p$. According to Definition \ref{definition:2-5},
+   \begin{align*}
+       & \omega_{1}\wedge(\omega_{2}\wedge\ldots\wedge\omega_{p})(\xi_{1},\ldots,\xi_{p})\\
+     = & \sum_{j=1}^{p}(-1)^{j+1}\omega_{1}(\xi_{j})(\omega_{2}\wedge\ldots\wedge\omega_{p})
+-      \Big(\xi_{1},\quad,\dot{\xi}_{j},\ldots,\xi_{p}\Big)
++      \Big(\xi_{1},\ldots,\hat{\xi}_{j},\ldots,\xi_{p}\Big)
+   \end{align*}
+ 
+   where $(\xi_1, \ldots, \hat{\xi_j}, \ldots, \xi_p)$ denotes the $p-1$-tuple where 
+@@ -318,7 +318,7 @@
+ 
+ Note, from Lemma \ref{lemma:2-13}, that if the 1-forms $\omega_1, \ldots, \omega_p\in\alt^1(V)$ 
+ are linearly independent then $\omega_1\wedge\ldots\wedge\omega_p\neq 0$. Indeed, we can choose 
+-elements $\xi\in V$ with $\omega_i(\xi_i) = 0$ for $i\neq j$ and $\omega_j(\xi_j) = 0$, so that 
++elements $\xi_j\in V$ with $\omega_i(\xi_j) = 0$ for $i\neq j$ and $\omega_j(\xi_j) = 1$, so that 
+ $\det(\omega_i(\xi_j)) = 1$. Conversely, if $\omega_1, \ldots, \omega_p$ are linearly dependent,
+ we can express one of them, say $\omega_p$, as a linear combination of the others. If 
+ $\omega_p = \sum_{i=1}^{p-1}{r_i\omega_i}$, then
+@@ -327,24 +327,24 @@
+   = \sum_{i=1}^{p-1}r_{i}\omega_{1}\wedge\ldots\wedge\omega_{p-1}\wedge\omega_{i}=0,
+ \end{align*}
+ 
+-as the determinant in Lemma \ref{lemma:2-13} has two rows. We have proved.
++as the determinant in Lemma \ref{lemma:2-13} has two equal rows. We have proved.
+ 
+ 
+ 
+ \begin{lemma}
+-  For 1-form $\omega_1, \ldots, \omega_p$ on $V$, $\omega_1\wedge\ldots\wedge\omega_p \neq 0$ if and only if
++  For 1-forms $\omega_1, \ldots, \omega_p$ on $V$, $\omega_1\wedge\ldots\wedge\omega_p \neq 0$ if and only if
+   they are linearly independent.
+ \end{lemma}
+ 
+ \begin{theorem}\label{theorem:2-15}
+ Let $e_1, \ldots, e_n$ be a basis of $V$ and $\epsilon_1, \ldots, \epsilon_n$ the dual basis of $V^*$. Then 
+ \begin{align*}
+-  \left\{\epsilon_{\sigma(1)}\wedge\ldots\wedge\epsilon_{\sigma(k)}\right\}_{\sigma\in S(p, n-p)}
+-\end{align*}
+-
+-is a basis of $\alt^p(V^*)$. In particular
+-\begin{align*}
+-  \dim\alt^p(V^*) = \binom{\dim V}{p}.
++  \left\{\epsilon_{\sigma(1)}\wedge\ldots\wedge\epsilon_{\sigma(p)}\right\}_{\sigma\in S(p, n-p)}
++\end{align*}
++
++is a basis of $\alt^p(V)$. In particular
++\begin{align*}
++  \dim\alt^p(V) = \binom{\dim V}{p}.
+ \end{align*}
+ \end{theorem}
+ 
+@@ -358,7 +358,7 @@
+     \end{aligned}\right.
+   \end{align}
+ 
+-  Here $\sigma$ is the permutation $\epsilon(i_k) = j_k$. From Lemma \ref{lemma:2-13} and \eqref{eq:2-3} we get
++  Here $\sigma$ is the permutation matching the two ordered index lists. From Lemma 2.2 and \eqref{eq:2-3} we get
+   \begin{align*}
+     \omega = \sum_{\sigma\in S(p,n-p)}\omega\big(e_{\sigma(1)},\ldots,e_{\sigma(p)}\big)
+       \epsilon_{\sigma(1)}\wedge\ldots\wedge\epsilon_{\sigma(p)}
+@@ -375,23 +375,23 @@
+ 
+ Note from Theorem \ref{theorem:2-15} that $\alt^n(V)\xra[\cong]\RR$ if $n = \dim V$ and, as mentioned
+ earlier, that $\alt^p(V) = 0$ if $p > n$. A basis of $\alt^n(V)$ is given by $\epsilon_{1}\wedge\ldots\wedge\epsilon_{n}$.
+-In particular every alternating $n$-fonn on $\RR^n$ is proportional to the form in Example \ref{example:2-3}.
++In particular every alternating $n$-form on $\RR^n$ is proportional to the form in Example \ref{example:2-3}.
+ 
+ A linear map $f:V\to W$ induces the linear map 
+ \begin{align}\label{eq:2-4}
+   \alt^p(f): \alt^p(W)\to\alt^p(V)
+ \end{align}
+ 
+-by setting $\alt^p(f)(W)(\xi_1, \ldots, \xi_p) = \omega(f(\xi_1), \ldots, f(\xi_p))$. For the composition of
+-maps we have $\alt^p(g\circ f) = \alt^p(f)\circ\alt^p(g)$, and $\alt^P(\id) = \id$. These two
++by setting $\alt^p(f)(\omega)(\xi_1, \ldots, \xi_p) = \omega(f(\xi_1), \ldots, f(\xi_p))$. For the composition of
++maps we have $\alt^p(g\circ f) = \alt^p(f)\circ\alt^p(g)$, and $\alt^p(\id) = \id$. These two
+ properties are summarized by saying that $\alt^p(-)$ is a \Index{contravariant functor}\index{{functor!contravariant}}. If $\dim V = n$ and 
+ $f:V\to V$ is a linear map then
+ \begin{align*}
+-  \alt^p(f): \alt^n(V)\to\alt^n(V)
++  \alt^n(f): \alt^n(V)\to\alt^n(V)
+ \end{align*}
+ 
+ is a linear endomorphism of 1-dimensional vector space and thus multiplication by a number $d$. From Theorem 
+-\ref{theorem:2-16} below it follows that $\dd = \det(f)$. We shall also be using other maps 
++\ref{theorem:2-16}\corr{原书第 13 页误引不存在的定理 2.18，应为本章定理 2.16。} below it follows that $d = \det(f)$. We shall also be using other maps 
+ % ===> WRONG theorem number for Theorem 2.16 <===
+ \begin{align*}
+   \alt^p(f): \alt^p(V)\to\alt^p(V)
+@@ -401,12 +401,12 @@
+ 
+ 
+ \begin{theorem}\label{theorem:2-16}
+-  The characteristic polynomial ofa linear endomorphism $f:V\to V$ is given by
+-  \begin{align*}
+-    \det(f-t)=\sum\limits_{i=0}^n{(-1)}^i\mathrm{tr}\Big(\mathrm{Alt}^{n-i}(f)\Big)t^i,
+-  \end{align*}
+-
+-  when $n = \dim V$.
++  The characteristic polynomial of a linear endomorphism $f:V\to V$ is given by
++  \begin{align*}
++    \det(f-t\id_V)=\sum\limits_{i=0}^n{(-1)}^i\mathrm{tr}\Big(\mathrm{Alt}^{n-i}(f)\Big)t^i,
++  \end{align*}
++
++  when $n = \dim V$.\corr{原书第 13 页两处写作 $\det(f-t)$；此处将标量 $t$ 所乘的恒等映射写出，以明确特征多项式的含义。}
+ \end{theorem}
+ 
+ \begin{proof}
+@@ -428,7 +428,7 @@
+ 
+ On the other hand
+ \begin{align*}
+-  \det(f-t) 
++  \det(f-t\id_V) 
+   = \prod_{i=1}^{n}{(\lambda_i-t)} 
+   = \sum{(-1)^{n-p}\left(\sum{\lambda_{\sigma(1)}\cdot\ldots\lambda_{\sigma(p)}}\right)t^{n-p}}.
+ \end{align*}
+@@ -445,7 +445,7 @@
+ by the functor property. Hence $\tr\alt^p(g\circ f\circ g^{-1}) = \tr\alt^p(f)$. Consider the
+ set
+ \begin{align*}
+-  D = \{gf^{-1}g^{-1} \mid f \text{ diagonal }, g \in GL(V)\}.
++  D = \{gfg^{-1} \mid f \text{ diagonal }, g \in GL(V)\}.
+ \end{align*}
+ 
+ If $V$ is a vector space over $\B{C}$ and all maps are complex linear, then $D$ is dense
+@@ -466,5 +466,5 @@
+ It is not true that the set of diagonalizable matrices over $\RR$ is dense in the set of
+ matrices over $\RR - a$ matrix with imaginary eigenvalues cannot be approximated
+ by a matrix of the form $gfg^{-1}$, with f a real diagonal matrix. Therefore in the
+-proof of Theorem \ref{theorem:2-16} we. must pass to complex linear maps, even if we are
++proof of Theorem \ref{theorem:2-16} we must pass to complex linear maps, even if we are
+ mainly interested in real ones.--- transcription/03-de-Rham-Cohomology.tex
++++ BellaBook/03-de-Rham-Cohomology.tex
+@@ -1,14 +1,14 @@
+ \chapter{de Rham Cohomology}
+ In this chapter $U$ will denote an open set in $\RR^n, {e_1,\ldots, e_n}$ the standard basis
+-and ${E_1, \ldots,E_n}$ the dual basis of $\alt^1(\RR^n)$.
++and ${\epsilon_1, \ldots,\epsilon_n}$ the dual basis of $\alt^1(\RR^n)$.
+ 
+ \begin{definition}
+-  A differential $p$-form\index{differential!{$p$-form}} on $U$ is a smooth map $w:U\to \alt^1(\RR^n)$.
++  A differential $p$-form\index{differential!{$p$-form}} on $U$ is a smooth map $\omega:U\to \alt^p(\RR^n)$.
+ The vector space of all such maps is denoted by $\Omega^p(U)$.
+ \end{definition}
+ 
+-If $p = 0$ then $\alt^1(\RR^n) = \RR$ and $\Omega^0(U)$ is just the vector space of all smooth
+-real-valued functions on $U$, $\Omega^0(U) = \Omega^0(U, \RR)$.
++If $p = 0$ then $\alt^0(\RR^n) = \RR$ and $\Omega^0(U)$ is just the vector space of all smooth
++real-valued functions on $U$, $\Omega^0(U) = C^\infty(U, \RR)$.
+ 
+ The usual derivative of a smooth map $\omega:U\to\alt^p(\RR^n)$ is denoted $D\omega$ and its
+ value at $x$ by $D_x\omega$. It is the linear map
+@@ -23,7 +23,7 @@
+   = \frac{\partial \omega}{\partial x_i}(x)
+ \end{align*}
+ 
+-In $\alt^p(\RR^n)$ we have the basis $\epsilon_1\wedge\ldots\wedge\epsilon_p$ where 
++In $\alt^p(\RR^n)$ we have the basis $\epsilon_I=\epsilon_{i_1}\wedge\ldots\wedge\epsilon_{i_p}$ where 
+ $I$ runs over all sequences with $1\le i_1<i_2<\cdots<i_p\le n$. Hence every $\omega\in\Omega^p(U)$ 
+ can be written in the form $\omega(x) = \sum_{}^{}{\omega_I(x)\epsilon_I}$, with $\omega_I(x)$ smooth 
+ real-valued functions of $x\in U$. The differential $D_x\omega$ is the linear map
+@@ -58,11 +58,11 @@
+ because $(\xi_1, \ldots, \hat{\xi}_i, \ldots, \xi_{p+1}) = (\xi_1, \ldots, \hat{\xi}_{i+1}, \ldots, \xi_{p+1})$.
+ 
+ \begin{example}\label{example:3-3}
+-  Let $x_i:U\to \RR$ be the $i$-th projection. Then $\dd x_i \Omega^1(U)$ is the
++  Let $x_i:U\to \RR$ be the $i$-th projection. Then $\dd x_i\in\Omega^1(U)$ is the
+   constant map $\dd x_i:x\to \epsilon_i$. This follows from \eqref{eq:3-1}. In general, for $f\in\Omega^0(U)$,
+   \eqref{eq:3-1} shows that
+   \begin{align}\label{eq:3-2}
+-    \dd_x f(\zeta) = \frac{\partial f }{\partial x_i }\zeta^1 + \cdots + \frac{\partial f}{\partial x_n}\zeta^n
++    \dd_x f(\zeta) = \frac{\partial f }{\partial x_1 }\zeta^1 + \cdots + \frac{\partial f}{\partial x_n}\zeta^n
+   \end{align}
+ 
+   with $(\zeta^1, \ldots, \zeta^n) = \zeta$. In other words, $\dd f = \sum{\frac{\partial f}{\partial x_i}\dd x_i}$.  
+@@ -99,12 +99,12 @@
+   \end{aligned}\right.
+ \end{align*}
+ 
+-with $r$ the number determined by $i_r < k < i_{r+1}$ and $J=(i_1, \ldots, i_r, k, \ldots, i_p)$.
++with $r$ the number determined by $i_r < k < i_{r+1}$ and $J=(i_1, \ldots, i_r, k, i_{r+1},\ldots, i_p)$.
+ 
+ 
+ \begin{lemma}\label{lemma:3-5}
+-  For $p\ge 0$ the composition $\Omega^p(U)\to\Omega^{p+1}(U)\to\Omega^{p+2}(U)$ is 
+-  indentity zero.
++  For $p\ge 0$ the composition $\Omega^p(U)\xrightarrow{\dd}\Omega^{p+1}(U)\xrightarrow{\dd}\Omega^{p+2}(U)$ is 
++  identically zero.\corr{原书第 16 页的两个箭头漏排 $d$；这里明确复合的是相邻两级的外微分。}
+ \end{lemma}
+ 
+ \begin{proof}
+@@ -165,7 +165,7 @@
+   \end{align*}
+ \end{proof}
+ 
+-Summing up, we have introduced an anti-commutative algebra $\Omega^*(U)$ with a \Index{differential},
++Summing up, we have introduced an anti-commutative graded algebra $\Omega^*(U)$\corr{原书第 17 页此处漏写 graded。交换符号取决于次数，须表述为分次反交换代数。} with a \Index{differential},
+ \begin{align*}
+   \dd:\Omega^*(U)\to\Omega^{*+1}(U), \qquad \dd\circ\dd = 0
+ \end{align*}
+@@ -174,11 +174,11 @@
+ (differential graded algebra\index{differential!graded algebra}). It is called the \Index{de Rham complex} of $U$.
+ 
+ \begin{theorem}\label{theorem:3-7}
+-There is precisely one linear operator $\dd:\Omega^0(U)\to\Omega^{p+1}(U), p = 0,1, \ldots,$ such that  
++There is precisely one linear operator $\dd:\Omega^p(U)\to\Omega^{p+1}(U), p = 0,1, \ldots,$ such that  
+ \begin{enumerate}[(i)]
+-  \item $f\in\Omega^*(U), \dd f = \frac{\partial f }{\partial x_i }\epsilon_1 + \cdots + \frac{\partial f}{\partial x_n}\epsilon_n$
++  \item $f\in\Omega^0(U), \dd f = \frac{\partial f }{\partial x_1 }\epsilon_1 + \cdots + \frac{\partial f}{\partial x_n}\epsilon_n$
+   \item $\dd\circ\dd = 0$
+-  \item $\dd(\omega_1\wedge\omega_2) = \dd\omega_1\wedge\omega_2 + (-1)^p\dd\omega_1\wedge\dd\omega_1$ if $\omega_1\in\Omega^p(U)$.
++  \item $\dd(\omega_1\wedge\omega_2) = \dd\omega_1\wedge\omega_2 + (-1)^p\omega_1\wedge\dd\omega_2$ if $\omega_1\in\Omega^p(U)$.
+ \end{enumerate}
+ \end{theorem}
+ 
+@@ -187,9 +187,9 @@
+ that $\dd'$ is a linear operator satisfying (i), (ii) and (iii). We will show that $\dd'$ is
+ the exterior differential.
+ 
+-The first property tells us that $\dd = \dd'$ on $\Omega^0(V)$. In particular $\dd' x_i = \dd x_i$ for the
++The first property tells us that $\dd = \dd'$ on $\Omega^0(U)$. In particular $\dd' x_i = \dd x_i$ for the
+ $i$-th projection $x_i:U\to\RR$. It follows from Example \ref{example:3-3} that $\dd' x_i = \epsilon_i$, 
+-the constant function. Since $\dd'\circ\dd' = 0$ we have that $\dd'\epsilon_i$. Then (iii) gives $\dd'\epsilon_I = 0$. 
++the constant function. Since $\dd'\circ\dd' = 0$ we have that $\dd'\epsilon_i=0$. Then (iii) gives $\dd'\epsilon_I = 0$. 
+ Now let $\omega = f\epsilon_I = f\wedge\epsilon_I$. Again by using (iii),
+ \begin{align*}
+   \dd'\omega = \dd'f\wedge\epsilon_I + f\wedge \dd'\epsilon_I
+@@ -201,7 +201,7 @@
+ Since every $p$-form is the sum of such special $p$-forms, $\dd = \dd'$ on all of $\Omega^p(U)$.
+ \end{proof}
+ 
+-For an open set $V$ in $\RR^3$, $\dd:\Omega^1(U)\to\Omega^2(U)$ is given as 
++For an open set $U$ in $\RR^3$, $\dd:\Omega^1(U)\to\Omega^2(U)$ is given as 
+ \begin{align*}
+   & \dd(f_1\epsilon_1+f_2\epsilon_2+f_3\epsilon_3)
+   = \dd f_1\wedge\epsilon_1+\dd f_2\wedge\epsilon_2+\dd f_3\wedge\epsilon_3 \\
+@@ -239,9 +239,9 @@
+ and therefore is the vector space of maps $f\in C^\infty(U, \RR)$ with vanishing 
+ derivatives. This is precisely the space of locally constant maps.
+ 
+-Let $\sim$ be the equivalence relation on the open set $V$ such that $q_1\sim q_2$ if there
+-exists a continuous curve $\alpha: [a, b]\to V$ with $\alpha(a) = q_1$ and $\alpha(b) = q_2$. The
+-equivalence classes partition $V$ into disjoint open subsets, namely the connected components of $U$. 
++Let $\sim$ be the equivalence relation on the open set $U$ such that $q_1\sim q_2$ if there
++exists a continuous curve $\alpha: [a, b]\to U$ with $\alpha(a) = q_1$ and $\alpha(b) = q_2$. The
++equivalence classes partition $U$ into disjoint open subsets, namely the connected components of $U$. 
+ A connected component of $U$ is a maximal non-empty subset $W$ of $U$ that cannot be written as the 
+ disjoint union of two non-empty open subsets of $W$ (in the topology induced by $\RR^n$). An open 
+ set $U\subseteq\RR^n$ has at most countably many connected components (in each of them one can choose 
+@@ -266,9 +266,9 @@
+ 
+ 
+ The elements in $\Omega^p(U)$ with $\dd\omega = 0$ are called the closed \Index{$p$-forms}. The elements
+-of the image $\Omega^{p-1}(U)\subset\Omega^p(U)$ are the \Index{exact $p$-forms}. The $p$-th cohomology
++of the image $\dd\Omega^{p-1}(U)\subset\Omega^p(U)$ are the \Index{exact $p$-forms}. The $p$-th cohomology
+ group thus measures whether every closed $p$-form is exact. This condition is
+-satisfied precisely when $H^p(u) = 0$. A closed $p$-form $\omega\subset\Omega^p(U)$ gives a
++satisfied precisely when $H^p(U) = 0$. A closed $p$-form $\omega\in\Omega^p(U)$ gives a
+ cohomology class, denoted by
+ \begin{align*}
+   [\omega] = \omega + \dd\Omega^{p-1}(U) \in H^p(U),
+@@ -285,8 +285,8 @@
+ by setting $[\omega_1][\omega_2] = [\omega_1\wedge\omega_2]$. This is well-defined because
+ \begin{align*}
+   (\omega_1+\dd\eta_1)\wedge(\omega_2+\dd\eta_2)
+-  = \omega_1\wedge\omega_2 + \dd\eta_1\wedge\omega_2 + \dd\eta_1\wedge\omega_2 + \dd\eta_1\wedge\dd\eta_2 \\
+-  = \omega_1\wedge\omega_2 + \dd(\eta_1\wedge\omega_2 + (-1)^p\omega_1\wedge\omega_2 + \eta_1\wedge\dd\eta_2)
++  = \omega_1\wedge\omega_2 + \dd\eta_1\wedge\omega_2 + \omega_1\wedge\dd\eta_2 + \dd\eta_1\wedge\dd\eta_2 \\
++  = \omega_1\wedge\omega_2 + \dd(\eta_1\wedge\omega_2 + (-1)^p\omega_1\wedge\eta_2 + \eta_1\wedge\dd\eta_2)
+ \end{align*}
+ 
+ We want to make $U\to H^p(U)$ into a \Index{contravariant functor}. Thus to a smooth
+@@ -308,7 +308,7 @@
+ 
+ \begin{definition}\label{definition:3-10}
+   Let $U_1\subset\RR^n$ and $U_2\subset\RR^m$ be open sets and $\phi:U_1\to U_2$ a 
+-  smooth map. The induced morphism $\Omega^p(\phi):\Omega^p(U_2)\to \Omega^p(U_1)$ is defines by 
++  smooth map. The induced morphism $\Omega^p(\phi):\Omega^p(U_2)\to \Omega^p(U_1)$ is defined by 
+   \begin{align*}
+     \Omega^p(\phi)(\omega)_x=\mathrm{Alt}^p(D_x\phi)\circ\omega(\phi(x)),\quad\Omega^0(\phi)(\omega)_x=\omega_{\phi(x)}.    
+   \end{align*}
+@@ -320,14 +320,14 @@
+   \phi^*(\omega)_x(\xi_1,\ldots,\xi_p)=\omega_{\phi(x)}(D_x\phi(\xi_1),\ldots,D_x\phi(\xi_p)),
+ \end{align*}
+ 
+-and using the chain rule $D_x(\phi\circ\phi) = D_{\phi(x)}\phi\circ D_x\phi$, for $\phi:U_1\to U_2$, 
++and using the chain rule $D_x(\psi\circ\phi) = D_{\phi(x)}\psi\circ D_x\phi$, for $\phi:U_1\to U_2$, 
+ $\psi:U_2\to U_3$, it is easy to see that 
+ \begin{align*}
+   \Omega^p(\psi\circ\phi) = \Omega^p(\phi)\circ\Omega^p(\psi),\qquad 
+   \Omega^p(\id_U) = \id_{\Omega^p(U)}.
+ \end{align*}
+ 
+-It should be noteed that $\Omega^p(i)(\omega) = \omega\circ i$ when $i:U_1\hookrightarrow U_2$ is an inclusion, since 
++It should be noted that $\Omega^p(i)(\omega) = \omega\circ i$ when $i:U_1\hookrightarrow U_2$ is an inclusion, since 
+ then $D_xi = \id$.
+ 
+ \begin{example}\label{example:3-11}
+@@ -356,7 +356,7 @@
+   \item $\dd\phi^*(\omega) = \phi^*(\!\dd\omega)$
+ \end{enumerate}
+ 
+-Conversely, if $\phi':\Omega^*(U_2)\to\Omega^*(U_1)$ is a linear map satisfying three conditions, then $\phi'=\phi$.
++Conversely, if $\phi':\Omega^*(U_2)\to\Omega^*(U_1)$ is a linear map satisfying three conditions, then $\phi'=\phi^*$.
+ \end{theorem}
+ 
+ \begin{proof}
+@@ -371,13 +371,13 @@
+       & = (\phi^{*}(\omega)_{x}\wedge\phi^{*}(\tau)_{x})(\xi_{1},\ldots,\xi_{p+q}).
+   \end{align*}
+ 
+-  This shows (i) when $p > 0$ and $q > O$. If $p = 0$ or $q = 0$ the proof is quite
++  This shows (i) when $p > 0$ and $q > 0$. If $p = 0$ or $q = 0$ the proof is quite
+ analogous, but easier. Property (ii) is contained in the definition of $\phi^*$ for degree
+ 0. So we are left with (iii). We shall first show that $\dd\phi^*(f) = \phi^*(\!\dd f)$ when
+ $f\in \Omega^0(U_2)$. We have that
+ \begin{align*}
+-  \dd f = \sum_{i=k}^{n}\frac{\partial f}{\partial x_k}\epsilon_k
+-        = \sum_{i=k}^{n}\frac{\partial f}{\partial x_k}\wedge\epsilon_k,
++  \dd f = \sum_{k=1}^{m}\frac{\partial f}{\partial x_k}\epsilon_k
++        = \sum_{k=1}^{m}\frac{\partial f}{\partial x_k}\wedge\epsilon_k,
+ \end{align*}
+ 
+ when $\epsilon_k$ is considered as the element in $\Omega^1(U_2)$ with constant value $\epsilon_k$. From
+@@ -420,7 +420,7 @@
+ \end{align*}
+ 
+ instead of the (constant) $p$-form $\epsilon_{i_1}\wedge\ldots\wedge\epsilon_{i_p}$. An arbitrary 
+-$p$-forrn can then be written as
++$p$-form can then be written as
+ \begin{align*}
+   \omega(x) = \sum{\omega_I(x)\dd x_I}
+ \end{align*}
+@@ -462,7 +462,7 @@
+ \end{example}
+ 
+ \begin{example}\label{example:3-14}
+-If $\phi:\RR^n\times\RR\to\RR^n$ is given by $\phi(x, t) = \psi(t)x$, where $\phi(t)$ is a smooth real 
++If $\phi:\RR^n\times\RR\to\RR^n$ is given by $\phi(x, t) = \psi(t)x$, where $\psi(t)$ is a smooth real 
+ valued function, Then 
+ \begin{align*}
+   \phi^*(\!\dd x_i) = x_i \psi'(t)\dd t + \psi(t) \dd x_i.
+@@ -473,8 +473,8 @@
+   H^p(\phi): H^p(U_2) \to H^p(U_1)
+ \end{align*}
+ 
+-by setting $H^p(\phi)[\omega] = [\Omega^p(\phi)(\omega)] (=\phi^*(\omega))$. The definition is independent of the
+-choice of representative, since $\phi^*(\omega+\dd v) = \phi^*(\omega) + \phi^*(\omega) + \dd\phi^*(v)$. 
++by setting $H^p(\phi)[\omega] = [\Omega^p(\phi)(\omega)] (=[\phi^*(\omega)])$. The definition is independent of the
++choice of representative, since $\phi^*(\omega+\dd v) = \phi^*(\omega) + \dd\phi^*(v)$. 
+ 
+ Furthermore,
+ \begin{align*}
+@@ -507,12 +507,12 @@
+ 
+ Every $\omega\in\Omega^p(U\times\RR)$ can be written in the form
+ \begin{align*}
+-  \omega = \sum_{}^{}{f_I(x, t)\dd x_I} + \sum_{}^{}{g_J(x, t)\dd x_J\wedge\dd t}
++  \omega = \sum_{}^{}{f_I(x, t)\dd x_I} + \sum_{}^{}{g_J(x, t)\dd t\wedge\dd x_J}
+ \end{align*}
+ 
+ where $I= (i_1, \ldots, i_p)$ and $J = (j_1, \ldots, j_{p-1})$. We define
+ \begin{align*}
+-  \hat{S}_p(\omega) = \sum\left(\int_{0}^{1}g_J(0, t)\dd t\right)\dd x_J
++  \hat{S}_p(\omega) = \sum\left(\int_{0}^{1}g_J(x, t)\dd t\right)\dd x_J
+ \end{align*}
+ 
+ Then we have that 
+@@ -540,7 +540,7 @@
+ \end{align}
+ 
+ Define $S_p(\omega) = \hat{S}_p(\phi^*(\omega))$ with $\hat{S}_p:\Omega(U\times\RR)\to\Omega^{p-1}(U)$ as above. Assume 
+-that $\omega = \sum h_I(x)\dd x_I$. Form Example \ref{example:3-14} we have 
++that $\omega = \sum h_I(x)\dd x_I$. From Example \ref{example:3-14} we have 
+ \begin{align*}
+   \phi^{*}(\omega)
+   = \sum h_{I}(\psi(t)x)(d\psi(t)x_{i_{1}}+\psi(t)dx_{i_{1}})
+--- transcription/04-Chain-Complexes-and-their-Cohomology.tex
++++ BellaBook/04-Chain-Complexes-and-their-Cohomology.tex
+@@ -49,12 +49,12 @@
+ Every (long) exact sequence, as in \eqref{eq:4-2}, induces short \Index{exact sequences} (which can
+ be used to calculate $A^i$)
+ \begin{align*}
+-  0\xra[] \im\dd^{i-1} \xra[] \im\dd^i \xra[] 0
+-\end{align*}
+-
+-Furthennore the isomorphisms
+-\begin{align*}
+-  A^{i-1}/\im\dd^{i-1} {\cong} A^{i-1}/\ker\dd^{i-1} \xra[\cong]{\dd^{i-1}} \im\dd^{i-1}
++  0\xra[] \im\dd^{i-1} \xra[] A^i \xra[\dd^i] \im\dd^i \xra[] 0
++\end{align*}
++
++Furthermore the isomorphisms
++\begin{align*}
++  A^i/\im\dd^{i-1} = A^i/\ker\dd^i \xra[\cong] \im\dd^i
+ \end{align*}
+ 
+ are frequently applied in concrete calculations.
+@@ -73,14 +73,14 @@
+ \end{align*}
+ 
+ \begin{lemma}\label{lemma:4-1}
+-  Suppose $0\xra[]A\xra[f]B\xra[g]C\xra[]0$ is a short exact sequence ofvector
++  Suppose $0\xra[]A\xra[f]B\xra[g]C\xra[]0$ is a short exact sequence of vector
+   spaces. Then $B$ is finite-dimensional if both $A$ and $C$ are, and $B\cong A\oplus C$.
+ \end{lemma}
+ 
+ \begin{proof}
+   Choose a basis $\{a_i\}$ of $A$ and $\{c_j\}$ of\, $C$. Since $g$ is surjective there
+   exist $b_j\in B$ with $g(b_j) = c_j$. Then $\{f(a_i), b_j\}$ is a basis of $B$: For $b\in B$
+-  we have $g(b) = \sum_{}^{}{\lambda_ic_j}$. Hence $b - \sum_{}^{}{\lambda_ib_i}\in\ker g$. Since
++  we have $g(b) = \sum_{}^{}{\lambda_jc_j}$. Hence $b - \sum_{}^{}{\lambda_ib_i}\in\ker g$. Since
+   $\ker g= \im f$, $b - \sum_{}^{}{\lambda_ib_i} = f(a)$, so
+   \begin{align*}
+     b-\sum\lambda_jb_j=f\left(\sum\mu_ia_i\right)=\sum\mu_if(a_i).
+@@ -121,7 +121,7 @@
+ \end{lemma}
+ 
+ \begin{proof}
+-  Let $\alpha\in A^p$ be a cycle ($\dd^pa = 0$) and $[a] = a + \im\dd^{p-1}$ its corresponding
++  Let $a\in A^p$ be a cycle ($\dd^pa = 0$) and $[a] = a + \im\dd^{p-1}$ its corresponding
+   cohomology class in $H^p(A^*)$. We define $f^*([a]) = [f^p(a)]$. Two remarks are
+   needed. First, we have $\dd^p_B f^p(a) = f^{p+1}\dd^p_A(a) = f^{p+1}(0) = 0$. Hence $f^p(a)$ is
+   a cycle. Second, $[f^p(a)]$ is independent of which cycle $a$ we choose in the class
+@@ -132,17 +132,17 @@
+ 
+ A \Index{category}\, $C$ consists of ``objects'' and ``morphisms'' between them, such that
+ ``composition'' is defined. If $f:C_1\to C_2$ and $g:C_2\to C_3$ are morphisms, then
+-there exists a morphism $g\circ f: C_1\to C3$. Furthermore it is to be assumed that
+-$\id_C: C\to C$ is a morphism for every object $C$ of $C$. The concept is best illustrated
++there exists a morphism $g\circ f: C_1\to C_3$. Furthermore it is to be assumed that
++$\id_C: C\to C$ is an identity morphism for every object $C$ of $C$. Composition must be associative and the identity morphisms must act as two-sided identities.\corr{原书第 27 页的范畴定义未明确写出结合律和单位律；这两条是范畴公理，现补明。} The concept is best illustrated
+ by examples:
+ 
+ \begin{itemize}
+   \item The category of open sets in Euclidean spaces, where the morphisms are
+         the smooth maps.
+   \item The category of vector spaces, where the morphisms are the linear maps.
+-  \item The category of abelian groups, where the morphisms are homomor phisms.
++  \item The category of abelian groups, where the morphisms are homomorphisms.
+   \item The category of chain complexes, where the morphisms are the chain maps.
+-  \item A category with just one object is the same as a semigroup, namely the semigroup of morphisms of the object.
++  \item A category with just one object is the same as a monoid, namely the monoid of endomorphisms of the object.\corr{原书第 27 页写作 semigroup；单对象范畴的态射具有恒等态射作为单位元，准确说应是 monoid（幺半群）。}
+   \item Every partially ordered set is a category with one morphism from $c$ to $d$, when $c\le d$.
+ \end{itemize}
+ 
+@@ -164,10 +164,10 @@
+ 
+ \begin{itemize}
+   \item Let $A$ be a vector space and $F(C) = \hom(C, A)$, the linear maps from
+-        $C$ to $A$. For $\phi:C_1\to C_2$, $\hom(\phi, A):\hom(C_2, A)\to \hom(C_2,A)$ is
++        $C$ to $A$. For $\phi:C_1\to C_2$, $\hom(\phi, A):\hom(C_2, A)\to \hom(C_1,A)$ is
+         given by $\hom(\phi, A)(\psi) = \psi\circ\phi$. This is a contravariant functor from the
+         category of vector spaces to itself.
+-  \item $F(C) = \hom(C, A), F(\phi):\psi \to\phi\circ\psi$. This is a covariant functor from the
++  \item $F(C) = \hom(A, C), F(\phi):\psi \mapsto\phi\circ\psi$. This is a covariant functor from the
+         category of vector spaces to itself.
+   \item Let $\C{U}$ be the category of open sets in Euclidean spaces and smooth maps,
+         and \Index{Vect} the category of vector spaces. The vector space of differential
+@@ -177,7 +177,7 @@
+         \end{align*}
+   \item Let Vect* be the category of chain complexes. The de Rham complex
+         defines a contravariant functor $\Omega^*:\C{U}\to\R{Vect}^*$.
+-  \item For every $p$ the homology $H^p:\R{Vect}^*\to\R{Vect}$ is a covariant functor.
++  \item For every $p$ the cohomology $H^p:\R{Vect}^*\to\R{Vect}$ is a covariant functor.
+   \item The composition of the two functors above is exactly the de Rham
+         cohomology functor $H^p:\C{U}\to\R{Vect}$. It is contravariant.
+ \end{itemize}
+@@ -239,7 +239,7 @@
+ 
+ There are several things to be noted. The definition expresses that for every $b\in (g^p)^{-1}(c)$ we have
+ $\dd^p_B(b)\in\im(f^{p+1})$, and that the uniquely determined $a\in A^{p+1}$ with $f^{p+1}(a) = \dd^p_B(b)$ is a
+-$p+1$-cycle. Finally it is postulated that $[a]\in H^{p+1}(A^*)$ is independent of the choice of $b\in (g^b)^{-1}(c)$.
++$p+1$-cycle. Finally it is postulated that $[a]\in H^{p+1}(A^*)$ is independent of the choice of $b\in (g^p)^{-1}(c)$.
+ 
+ In order to prove these assertions it is convenient to write the given short exact
+ sequence in a diagram:
+@@ -262,9 +262,9 @@
+ The slanted arrow indicates the definition of $\partial^*$. We shall now prove the necessary
+ assertions which, when combined, make $\partial^*$ well-defined. Namely:
+ \begin{enumerate}[(i)]
+-  \item If $g^p(b) = c$  and $\dd^p_C(c) = 0$, then $\dd^p_B(b) \in f^{p+1}$.
++  \item If $g^p(b) = c$  and $\dd^p_C(c) = 0$, then $\dd^p_B(b) \in\im f^{p+1}$.
+   \item If $f^{p+1}(a) = \dd^p_B(b)$, then $\dd^{p+1}_A(a) = 0$.
+-  \item If $g^p(b_1)  g^p(b) = c$ and $f^{p+1}(a_i) = \dd^p_B(b_i)$, then $[a_1]=[a_2] \in H^{p+1}(A^*)$.
++  \item If $g^p(b_1) = g^p(b_2) = c$ and $f^{p+1}(a_i) = \dd^p_B(b_i)$, then $[a_1]=[a_2] \in H^{p+1}(A^*)$.
+ \end{enumerate}
+ 
+ 
+@@ -296,7 +296,7 @@
+ \end{lemma}
+ 
+ \begin{proof}
+-  We have $\partial^*g^*([b]) = \partial^*g^p([b]) = [(f^{p+1})^{-1} (\!\dd_B(b))] = 0$. Conversely assume 
++  We have $\partial^*g^*([b]) = \partial^*([g^p(b)]) = [(f^{p+1})^{-1} (\!\dd_B(b))] = 0$. Conversely assume 
+   that $\partial^*([c]) = 0$. Choose $b\in B^p$ with $g^p(b) = c$ and $a\in A^p$, such that 
+   \begin{align*}
+     \dd^p_B(b) = f^{p+1}(\!\dd^p_Aa).
+@@ -318,13 +318,13 @@
+ We can sum up Lemmas \ref{lemma:4-4}, \ref{lemma:4-7} and \ref{lemma:4-8} in the important.
+ 
+ 
+-\begin{theorem}[Long exact homology sequence]\label{theorem:4-9}
++\begin{theorem}[Long exact cohomology sequence]\label{theorem:4-9}
+ Let $0\xra[]A^*\xra[f]B^*\xra[g]C^*\xra[]0$ be a short exact sequence of chain complexes. Then the sequence
+ \begin{align*}
+   \cdots\xra[]H^p(A^*)\xra[f^*]H^p(B^*)\xra[g^*]H^p(C^*)\xra[\partial^*]H^{p+1}(A^*)\xra[f^*]H^{p+1}(B^*)\xra[] \cdots
+ \end{align*}
+ 
+-is exact.
++is exact.\corr{原书第 30 页定理 4.9 的标题误写 homology；此处各项为 $H^p$，连接同态提高次数，应为 cohomology。}
+ \end{theorem}
+ 
+ 
+@@ -360,7 +360,7 @@
+ \begin{proof}
+   If $[a]\in H^p(A^*)$, then 
+   \begin{align*}
+-    (f^* - g^*)[a] = [f^p(a) - g^p(a)] = [(\!\dd_B^{p-1}s(a) + s\dd^p_A(a)] 
++    (f^* - g^*)[a] = [f^p(a) - g^p(a)] = [\dd_B^{p-1}s(a) + s\dd^p_A(a)] 
+     = [\dd^{p-1}_Bs(a)] 
+     = 0.
+   \end{align*}
+@@ -381,15 +381,15 @@
+ \begin{lemma}\label{lemma:4-13}
+   If $A^*$ and $B^*$ are chain complexes then 
+   \begin{align*}
+-    H^p(A^*\otimes B^*) = H^p(A^*)\otimes H^p(B^*).
++    H^p(A^*\oplus B^*) = H^p(A^*)\oplus H^p(B^*).
+   \end{align*}
+ \end{lemma}
+ 
+ \begin{proof}
+   It is obvious that 
+   \begin{align*}
+-    \ker(\!\dd^p_{A\otimes B}) & = \ker\dd^p_A\otimes \ker\dd^p_B \\
+-    \im(\!\dd^{p-1}_{A\otimes B}) & = \im\dd^{p-1}_A\otimes \im\dd^{p-1}_B.
++    \ker(\!\dd^p_{A\oplus B}) & = \ker\dd^p_A\oplus \ker\dd^p_B \\
++    \im(\!\dd^{p-1}_{A\oplus B}) & = \im\dd^{p-1}_A\oplus \im\dd^{p-1}_B.
+   \end{align*}
+ 
+   and the lemma follows.
+--- transcription/05-The-Mayer-Vietoris-Sequence.tex
++++ BellaBook/05-The-Mayer-Vietoris-Sequence.tex
+@@ -1,10 +1,10 @@
+ \chapter{The Mayer-Vietoris Sequence}
+ This chapter introduces a fundamental calculational technique for de Rham
+ cohomology, namely the so-called Mayer-Vietoris sequence, which calculates
+-$H^*(U_1\cup U_2)$ as a ``function'' of $H^*(U_1), H^*(U_2)$ and $H^*(U_1\cap U_2)$. Here UI and
+-$U_2$ are open sets in $\RR^n$. By iteration we get a calculation of $H^*(U_1\cap\ldots\cap U_n)$ as
+-a ``function'' of $H^*(u_\alpha)$, where 0: runs over the subsets of ${1,\ldots, n}$ and 
+-$U_{i_1}\cap\ldots\cap U_{i_r}$ when $\alpha = {i_1,\ldots, i_r }$. Combined with the Poincar\'e lemma, this
++$H^*(U_1\cup U_2)$ as a ``function'' of $H^*(U_1), H^*(U_2)$ and $H^*(U_1\cap U_2)$. Here $U_1$ and
++$U_2$ are open sets in $\RR^n$. By iteration we get a calculation of $H^*(U_1\cup\ldots\cup U_n)$ as
++a ``function'' of $H^*(U_\alpha)$, where $\alpha$ runs over the subsets of ${1,\ldots, n}$ and 
++$U_\alpha=U_{i_1}\cap\ldots\cap U_{i_r}$ when $\alpha = {i_1,\ldots, i_r }$. Combined with the Poincar\'e lemma, this
+ yields a \Index{principal} calculation of $H^*(U)$ for quite general open sets in $\RR^n$. If, for
+ instance, $U$ can be covered by a finite number of convex open sets $U_i$, then every
+ $U_\alpha$ will also be convex and $H^*(U_\alpha)$ thus known from the Poincar\'e lemma
+@@ -14,7 +14,7 @@
+ Let $U_1$ and $U_2$ be open sets in $\RR^n$ with union $U = U_1\cup U_2$. For $\nu = 1, 2$, let 
+ $i_\nu: U_\nu\to U$ and $j_\nu:U_1\cap U_2\to U_\nu$ be the corresponding inclusions. Then the sequence
+ \begin{align*}
+-  0\xra[]\Omega^p(U)\xra[I^p]\Omega^p(U_1)\oplus\Omega^p(U_2)\xra[J^p]\Omega^p(U_1\cap U_2)\xra[]\xra[]0
++  0\xra[]\Omega^p(U)\xra[I^p]\Omega^p(U_1)\oplus\Omega^p(U_2)\xra[J^p]\Omega^p(U_1\cap U_2)\xra[]0
+ \end{align*}
+ 
+ is exact, where $I^p(\omega) = (i^*_1(\omega), i^*_2(\omega)), J^p(\omega_1, \omega_2) = j^*_1(\omega_1) - j^*_2(\omega_2)$.
+@@ -39,15 +39,15 @@
+   This will be used for $\phi = i_\nu, j_\nu, \nu=1, 2$. It follows from \eqref{eq:5-1} that $I^p$ is injective.
+   If namely $I^p(\omega) = 0$ then $i^*_1(\omega) = 0 = i^*_2(\omega)$, and 
+   \begin{align*}
+-    i^*(\nu) = \sum (f_I\circ i_\nu)\dd x_I = 0
++    i_\nu^*(\omega) = \sum (f_I\circ i_\nu)\dd x_I = 0
+   \end{align*}
+ 
+   If and only if $f_I\circ i_\nu = 0$ for all $I$. However $f_I\circ i_1 = 0$ and $f_I\circ i_2 = 0$ imply that
+   $f_I = 0$ on all of $U$, since $U_1$ and $U_2$ cover $U$. Similarly, we show that $\ker J^p = \im I^p$. First 
+   \begin{align*}
+     J^p\circ I^p(\omega) 
+-    = j^*_2i^*_2(\omega) - j^*_1i^*_1(\omega) 
+-    = j^*(\omega) - j^*_1(\omega) 
++    = j^*_1i^*_1(\omega) - j^*_2i^*_2(\omega) 
++    = j^*(\omega) - j^*(\omega) 
+     = 0
+   \end{align*}
+ 
+@@ -57,9 +57,9 @@
+     \omega_1 = \sum f_I\dd x_I, \quad \omega_2 = \sum g_I\dd x_I.
+   \end{align*}
+ 
+-  Since $J^p(\sum h_I\dd x_I) = (\omega_1, \omega_2)$, we have that $j_1^*(\omega_1) = j^*_2(\omega_2)$, which by 
++  If $J^p(\omega_1,\omega_2)=0$, we have that $j_1^*(\omega_1) = j^*_2(\omega_2)$, which by 
+   \eqref{eq:5-1} translates into $f_I\circ j_1 = g_I\circ j_2$ or $f_I(x) = g_I(x)$ for $x\in U_1\cap U_2$. We define 
+-  a smooth function $h_I:U\to \RR^n$ by
++  a smooth function $h_I:U\to \RR$ by
+   \begin{align*}
+     h_I(x) = \begin{cases}
+       f_I(x), & x\in U_1,\\
+@@ -68,9 +68,9 @@
+   \end{align*}
+   
+   Then  $I^p(\sum h_I\dd x_I) = (\omega_1, \omega_2)$. Finally we show that $J^p$ is surjective. To this end we use 
+-  a partition of unity $\{p-1, p_2\}$ with support in $\{U_1, U_2\}$. i.e., smooth functions $h_I:U\to \RR^n$ by 
+-  \begin{align*}
+-    p_\nu: U\to \{0, 1\}, \quad \nu = 1, 2
++  a partition of unity $\{p_1, p_2\}$ with support in $\{U_1, U_2\}$. i.e., smooth functions 
++  \begin{align*}
++    p_\nu: U\to [0, 1], \quad \nu = 1, 2
+   \end{align*}
+ 
+   for which $\R{supp}_U(p_\nu)\subset U_\nu$, and such that $p_1(x) + p_2(x) = 1$ for $x\in U$ (cf.
+@@ -110,7 +110,7 @@
+ complexes. From Theorem \ref{theorem:4-9} one thus obtains a long exact sequence of
+ cohomology vector spaces. Finally Lemma \ref{lemma:4-13} tells us that
+ \begin{align*}
+-  H^p(U)(\Omega^*(U_1)\oplus\Omega^*(U_2)) = H^p(U_1)\oplus H^p(U_2)
++  H^p(\Omega^*(U_1)\oplus\Omega^*(U_2)) = H^p(U_1)\oplus H^p(U_2)
+ \end{align*}
+ 
+ We have proved:
+@@ -122,7 +122,7 @@
+   \cdots\xra[]H^p(U)\xra[I^*]H^p(U_1)\oplus H^p(U_2)\xra[J^*]H^p(U_1\cap U_2)\xra[\partial^*]H^{p+1}(U)\xra[]\cdots
+ \end{align*}
+ 
+-Here $I^*(\omega) = (i^*_1([\omega]), i^*_2([\omega]))$ and $J^*([\omega_1], [\omega_2]) = [j^*_1(\omega_1) - j^*_2(\omega_2)]$
++Here $I^*([\omega]) = (i^*_1([\omega]), i^*_2([\omega]))$ and $J^*([\omega_1], [\omega_2]) = [j^*_1(\omega_1) - j^*_2(\omega_2)]$
+ in the notation of Theorem \ref{theorem:5-1}.
+ \end{theorem}
+ 
+@@ -145,7 +145,7 @@
+ \end{proof}
+ 
+ \begin{example}\label{example:5-4}
+-  We use Theorem \ref{theorem:5-2} to calculate the de Rham cohomology vector spaces of the punctured plane $\RR^n-\{0\}$. Let 
++  We use Theorem \ref{theorem:5-2} to calculate the de Rham cohomology vector spaces of the punctured plane $\RR^2-\{0\}$. Let 
+   \begin{align*}
+     U_{1} & = \RR^2-\{(x_1,x_2)\mid x_1\geq0, x_2=0\}\\
+     U_{2} & = \RR^2-\{(x_1,x_2)\mid x_1\leq0, x_2=0\}.
+@@ -160,8 +160,8 @@
+   is disjoint union of the open half-planes $x_2>0$ and $x_2<0$. Hence 
+   \begin{align}\label{eq:5-2}
+     H^p(U_1\cap U_2) = \left\{\begin{aligned}
+-      & 0 && \text{ if } p>0.
+-      & \RR\oplus\RR \text{ if} && p = 0
++      & 0 && \text{ if } p>0,\\
++      & \RR\oplus\RR && \text{ if } p = 0
+     \end{aligned}\right.
+   \end{align}
+ 
+@@ -177,7 +177,7 @@
+   0\xra[] H^p(U_1\cap U_2)\xra[\partial^*] H^{p+1}(\RR^2-\{0\})\xra[] 0
+ \end{align*}
+ 
+-is exact, i.e., $\partial^*$ is an isomorphism and $H^q(\RR^2-\{0\}) = 0$ for $q>0$ according 
++is exact, i.e., $\partial^*$ is an isomorphism and $H^q(\RR^2-\{0\}) = 0$ for $q>1$ according 
+ to \eqref{eq:5-2}.
+ 
+ If $p=0$, one gets the exact sequence
+@@ -189,18 +189,18 @@
+ \end{align}
+ 
+ Since $H^{-1}(U) = 0$ for all open sets, and in particular $H^{-1}(U_\nu)$, $I^0$ is
+-injective. Since $H^{-1}(U_\nu) = 0$, $\partial^*$ is surjective, and the sequence \eqref{eq:5-3} reduces to
++injective. Since $H^1(U_\nu) = 0$, $\partial^*$ is surjective, and the sequence \eqref{eq:5-3} reduces to
+ the exact sequence
+ \begin{align*}
+   0\xra[] H^0(\RR^2-\{0\})\xra[I^0] H^0(U_1)
+-  \hspace*{-1em}\overset{\substack{\displaystyle\RR\otimes\RR\\\big|\!\big|}}{\oplus}\hspace*{-1em} 
++  \hspace*{-1em}\overset{\substack{\displaystyle\RR\oplus\RR\\\big|\!\big|}}{\oplus}\hspace*{-1em} 
+   H^0(U_2)\xra[J^0] 
+-  \overset{\substack{\displaystyle\RR\otimes\RR\\\big|\!\big|}}{H^0(U_1\cap U_2)}
++  \overset{\substack{\displaystyle\RR\oplus\RR\\\big|\!\big|}}{H^0(U_1\cap U_2)}
+   \xra[\partial^*]H^1(\RR^2-\{0\})\xra[] 0
+ \end{align*}
+ 
+ However, $\RR^2-\{0\}$ is connected. Hence $H^0(\RR^2-\{0\}) \cong \RR$, and since $I^0$ is 
+-injective we must have that $\im J^0\cong\RR$. Exactness gives $\ker J^0\cong\RR$, so that $J^0$
++injective we must have that $\im I^0\cong\RR$. Exactness gives $\ker J^0\cong\RR$, so that $J^0$
+ has rank 1. Therefore $\im J^0\cong \RR$ and, once again, by exactness
+ \begin{align*}
+   \partial^*: H^0(U_1\cap U_2)/\im J^0 \to H^1(\RR^2-\{0\})
+@@ -208,13 +208,15 @@
+ 
+ Since $H^0(U_1\cap U_2)/\im J^0\cong \RR$, we have shown
+ \begin{align*}
+-  H^p(\RR - \{0\}) = \left\{\begin{aligned}
+-    & 0 && \text{ if } p>2,\\
++  H^p(\RR^2 - \{0\}) = \left\{\begin{aligned}
++    & 0 && \text{ if } p\ge 2,\\
+     & \RR && \text{ if } p = 1 \\
+     & \RR && \text{ if } p = 0
+   \end{aligned}\right.
+ \end{align*}
+ 
++\corr{原书第 36 页的汇总式漏排 $\RR$ 的上标 2；此处计算的是穿孔平面 $\RR^2-\{0\}$ 的上同调。}
++
+ In the proof above we could alternatively have calculated
+ \begin{align*}
+   J^0:H^0(U_1)\oplus H^0(U_2)\to H^0(U_1\cap U_2)
+@@ -223,7 +225,7 @@
+ by using Lemma \ref{lemma:3-9}: $H^0(U)$ consists of locally constant functions. If $f_i$ is a
+ constant function on $U_i$, then
+ \begin{align*}
+-  J^0(f_1) = f_{1|U_1\cap U_2} \text{ and } J^0(f_2) = f_{2|U_1\cap U_2}
++  J^0(f_1,0) = f_{1|U_1\cap U_2} \text{ and } J^0(0,f_2) = -f_{2|U_1\cap U_2}
+ \end{align*}
+ 
+ so that $J^0(a, b) = a - b$.
+@@ -238,12 +240,12 @@
+ let $V = U_1\cup\ldots\cup U_{r-1}$, such that $U = V\cup U_r$. From Theorem \ref{theorem:5-2} we have 
+ the exact sequence
+ \begin{align*}
+-  H^{p-1}(V\cup U_r) \xra[\partial^*] H^p(U) \xra[I^*] H^p(V)\oplus H^p(U_r)
++  H^{p-1}(V\cap U_r) \xra[\partial^*] H^p(U) \xra[I^*] H^p(V)\oplus H^p(U_r)
+ \end{align*}
+ 
+ which by Lemma \ref{lemma:4-1} yields
+ \begin{align*}
+-  H^p(U) \backsimeq \im\partial^* \oplus \ker I^*.
++  H^p(U) \backsimeq \im\partial^* \oplus \im I^*.
+ \end{align*}
+ 
+ Now both $V$ and $V\cap U_r = (U_1\cap U_r)\cup\ldots\cup (U_{r-1}\cap U_r)$ are unions by $r-1$ convex open sets.
+--- transcription/06-Homotopy.tex
++++ BellaBook/06-Homotopy.tex
+@@ -74,7 +74,7 @@
+ If $U, V$ are open sets in Euclidean spaces, then 
+ \begin{enumerate}[(i)]
+   \item Every continuous map $f:U\to V$ is homotopic to a smooth map.
+-  \item If two smooth maps $f_\nu:U\to V, \nu=0, 1$ are homotopic, then there exists a smooth map $F:U\times\RR\to U$ with 
++  \item If two smooth maps $f_\nu:U\to V, \nu=0, 1$ are homotopic, then there exists a smooth map $F:U\times\RR\to V$ with 
+     $F(x, \nu) = f_\nu(x)$ for $\nu=0, 1$ and all $x\in U$. ($F$  is called a \Index{smooth homotopy} from $f_0$ to $f_1$).
+ \end{enumerate}
+ \end{lemma}
+@@ -91,8 +91,8 @@
+ \end{align*}
+ 
+ Since $H(x, t) = f_0(x)$ for $t\le\frac13$ and $H(x, t) = f_1(x)$ for $t\ge\frac23$, $H$ is smooth 
+-on $U\times(-\infty)\cup U\times(\frac23, \infty)$. Lemma \ref{lemma:A.9} allows us to approximate $H$ by a smooth map 
+-$F:U\times\RR\to V$ such that $F$ and $H$ have the same restiction on $U\times\{0, 1\}$. For $\nu=0, 1$ and $x\in U$
++on $U\times(-\infty,\tfrac13)\cup U\times(\frac23, \infty)$. Lemma \ref{lemma:A.9} allows us to approximate $H$ by a smooth map 
++$F:U\times\RR\to V$ such that $F$ and $H$ have the same restriction on $U\times\{0, 1\}$. For $\nu=0, 1$ and $x\in U$
+ we have that $F(x, \nu) = H(x, \nu) = f_\nu(x)$.
+ \end{proof}
+ 
+@@ -114,20 +114,20 @@
+   \omega = \sum f_I(x, t)\dd x_I + \sum g_J(x, t)\dd t\wedge\dd x_J
+ \end{align*}
+ 
+-If $\phi:U\to U\times\RR$ is the inlclusion map $\phi(x) = \phi_0(x) = (x, 0)$, then 
+-\begin{align*}
+-  \phi^*(\omega) = \sum f_I(x, 0)\dd \phi_I = \sum F_I(x, 0)\dd x_I.
++If $\phi:U\to U\times\RR$ is the inclusion map $\phi(x) = \phi_0(x) = (x, 0)$, then 
++\begin{align*}
++  \phi^*(\omega) = \sum f_I(x, 0)\dd \phi_I = \sum f_I(x, 0)\dd x_I.
+ \end{align*}
+ 
+ Indeed, $\phi^*(\!\dd t\wedge\dd x_J) = 0$ since the last component (the $t$-component) of $\phi$ is
+ constant; see Example \ref{example:3-11}. Analogously, for $\phi_1(x) = (x, 1)$, we have that
+ \begin{align*}
+-  \phi^*_1(\omega) = \sum F_I(x, 1)\dd x_I.
++  \phi^*_1(\omega) = \sum f_I(x, 1)\dd x_I.
+ \end{align*}
+ 
+ In the proof of Theorem \ref{theorem:3-15} we constructed
+ \begin{align*}
+-  \hat{S}^*_p: \Omega^p(U\times\RR)\to \Omega^{p-1}(U)
++  \hat{S}_p: \Omega^p(U\times\RR)\to \Omega^{p-1}(U)
+ \end{align*}
+ 
+ such that 
+@@ -141,20 +141,20 @@
+   S_p:\Omega^p(V)\to \Omega^{p-1}(U)
+ \end{align*}
+ 
+-to be $S_p = \hat{S}_p\circ F$, and assert that 
++to be $S_p = \hat{S}_p\circ F^*$, and assert that 
+ \begin{align*}
+   \dd\hat{S}_p(F^*(\omega)) + \hat{S}_{p+1}\dd F^*(\omega)
+-  & = \phi_1^*(\omega) - \phi_0^*(\omega) \\
+-  & = (F\circ\phi_0)^*(\omega) - (F\circ\phi_0)^*(\omega) \\
++  & = \phi_1^*(F^*\omega) - \phi_0^*(F^*\omega) \\
++  & = (F\circ\phi_1)^*(\omega) - (F\circ\phi_0)^*(\omega) \\
+   & = g^*(\omega) - f^*(\omega).
+ \end{align*}
+ 
+-Furthermore $\hat{S}_{p+1}F^*(\omega) = \hat{S}_{p+1}F^*\dd(\omega) = S_{p+1}\dd(\omega)$, since 
++Furthermore $\hat{S}_{p+1}\dd F^*(\omega) = \hat{S}_{p+1}F^*\dd(\omega) = S_{p+1}\dd(\omega)$, since 
+ $F^*$ is a chain map.
+ \end{proof}
+ 
+ In the situation of Theorem \ref{theorem:6-7}, Lemma \ref{lemma:4-11} states that 
+-$f^* = g^*: H^p(V)\to H^(U)$. For a continuous map $\phi: U\to V$ we can find a smooth map 
++$f^* = g^*: H^p(V)\to H^p(U)$. For a continuous map $\phi: U\to V$ we can find a smooth map 
+ $f:U\to V$ with $\phi\sime f$ by (i) of Lemma \ref{lemma:6-6}, and by Lemma \ref{lemma:6-2} and the result 
+ above we see that $f^*: H^p(V)\to H^p(U)$ is independent of the choice of $f$. Hence we can define
+ \begin{align*}
+@@ -171,7 +171,7 @@
+     \begin{align*}
+       \phi_0^* = \phi_1^*: H^p(V)\to H^p(U).
+     \end{align*}
+-  \item If $\phi:U\to V$ and $\psi:V\to W$ are continuous, then $(\phi\circ\psi)^* = \psi^*\circ\phi^*: H^p(W)\to H^p(U)$. 
++  \item If $\phi:U\to V$ and $\psi:V\to W$ are continuous, then $(\psi\circ\phi)^* = \phi^*\circ\psi^*: H^p(W)\to H^p(U)$. 
+   \item If the continuous map $\phi:U\to V$ is a homotopy equivalence, then 
+     \begin{align*}
+       \phi^*: H^p(V)\to H^p(U)
+@@ -186,16 +186,16 @@
+ $\phi_1\sime f$ and (i) immediately follows. Part (ii), with smooth $\phi$ and $\psi$, follows
+ from the formula
+ \begin{align*}
+-  \Omega^p(\phi\circ\psi) = \Omega^p(\phi)\circ\Omega^p(\psi).
++  \Omega^p(\psi\circ\phi) = \Omega^p(\phi)\circ\Omega^p(\psi).
+ \end{align*}
+ 
+ In the general case, choose smooth maps $f:U\to V$ and $g:V\to W$ with $\phi\sime f$ and $\psi\sime g$. Lemma \ref{lemma:6-3}
+-shows that $\phi\circ\psi\sime g\circ f$, and we get 
+-\begin{align*}
+-  (\phi\circ\psi)^* = (g\circ f)^* = f^*\circ g^* = \psi^*\circ\phi^*.
+-\end{align*}
+-
+-If $\psi:U\to V$ is a homotopy inverse to $\phi$, i.e.,
++shows that $\psi\circ\phi\sime g\circ f$, and we get 
++\begin{align*}
++  (\psi\circ\phi)^* = (g\circ f)^* = f^*\circ g^* = \phi^*\circ\psi^*.
++\end{align*}
++
++If $\psi:V\to U$ is a homotopy inverse to $\phi$, i.e.,
+ \begin{align*}
+   \psi\circ\phi\sime\id_U, \text{ and } \phi\circ\psi\sime\id_V,
+ \end{align*}
+@@ -207,7 +207,7 @@
+ particular we have:
+ 
+ \begin{corollary}[Topological invariance]\index{invariance!topological}\index{topological invariance}\label{corollary:6-9}
+-A homeomorphism $h:U\to V$ between open sets in Euclidean spaces induces isomorphisms $h^*:H^p(U)\to H^p(V)$ for
++A homeomorphism $h:U\to V$ between open sets in Euclidean spaces induces isomorphisms $h^*:H^p(V)\to H^p(U)$ for
+ all $p$.
+ \end{corollary}
+ 
+@@ -217,7 +217,7 @@
+ \end{proof}
+ 
+ \begin{corollary}\label{corollary:6-10}
+-If $U\subseteq \RR$ is an open contractible set, then $H^p(U) = 0$ when
++If $U\subseteq \RR^n$ is an open contractible set, then $H^p(U) = 0$ when
+ $p > 0$ and $H^0(U) = \RR$.
+ \end{corollary}
+ 
+@@ -239,9 +239,9 @@
+ and $\RR\cdot 1$ denotes the 1-dimensional subspace consisting of constant functions.
+ 
+ \begin{proposition}\label{prop:6-11}
+-  For an arbitrary closed subset $A$ of $\RR$ with $A\neq\RR^n$ we have isomorphisms
+-  \begin{align*}
+-    H^p(\RR^n - A) &\cong H^p(\RR^n - A)\qquad\text{for} p\ge 1 \\
++  For an arbitrary closed subset $A$ of $\RR^n$ with $A\neq\RR^n$ we have isomorphisms
++  \begin{align*}
++    H^{p+1}(\RR^{n+1} - A) &\cong H^p(\RR^n - A)\qquad\text{for} p\ge 1 \\
+     H^1(\RR^{n+1} - A) &\cong H^0(\RR^n - A)/\RR\cdot 1 \\
+     H^0(\RR^{n+1} - A) &\cong \RR.
+   \end{align*}
+@@ -255,9 +255,9 @@
+     U_2 & = \RR^n \times (-\infty, 0)\cup (\RR^n-A)\times(-\infty, 1).
+   \end{align*}
+ 
+-  Then $U_1\cup U_2 = \RR_{n+1} - A$ and $U_1\cap U_2 = (\RR_n - A) x (-1,1)$. 
++  Then $U_1\cup U_2 = \RR^{n+1} - A$ and $U_1\cap U_2 = (\RR^n - A)\times(-1,1)$. 
+   Let $\phi: U_1\to U_1$ be given by adding 1 to the $(n + 1)$-st coordinate. For $x\in U_1$, $U_1$ contains the
+-line segments from $x$ to $\phi(x)$ and from $\phi(x)$ to a fixed point in $\RR_n\times (0, \infty)$. As
++line segments from $x$ to $\phi(x)$ and from $\phi(x)$ to a fixed point in $\RR^n\times (0, \infty)$. As
+ in Example \ref{example:6-5} we get homotopies from $\id_{U_1}$ to $\phi$ and from $\phi$ to a constant map.
+ It follows that $U_1$ is contractible. Analogously $U_2$ is contractible, and $H^p(U_\nu)$ is
+ described in Corollary \ref{corollary:6-10}.
+@@ -325,8 +325,8 @@
+   \hspace*{3em}
+   \begin{tikzcd}
+     \RR^{n+1}-A\rar{R} & \RR^{n+1}-A \\
+-    U_1\uar{i_1}\rar{R_2} & U_2\uar{i_2} \\
+-    U_1\cap U_2\uar{j_1}\rar{R_0} & U_1\cap U_2\uar{j_2}
++    U_2\uar{i_2}\rar{R_2} & U_1\uar{i_1} \\
++    U_1\cap U_2\uar{j_2}\rar{R_0} & U_1\cap U_2\uar{j_1}
+   \end{tikzcd}
+ \end{center}
+ 
+@@ -348,13 +348,13 @@
+   i^*_2(R^*\tau) & = R^*_2(i^*_1\tau) = R^*_2(\!\dd\omega_1) = \dd(R^*_2\omega_1)
+ \end{align*}
+ 
+-These equations and the definition of $\partial^*$ give $\partial^*(-[R^*_0\omega]) = [\partial^*\tau]$. Hence 
++These equations and the definition of $\partial^*$ give $\partial^*(-[R^*_0\omega]) = [R^*\tau]$. Hence 
+ \begin{align}\label{eq:6-2}
+   \partial^*\circ R^*_0([\omega])
+-  = -R^*_0\circ\partial^*([\omega]).
++  = -R^*\circ\partial^*([\omega]).
+ \end{align}
+ 
+-For the projection $\R{pr}:U_1\times U_2\to\RR^n-A$ we have that $\R{pr}\circ R_0 = \R{pr}$ and therefore 
++For the projection $\R{pr}:U_1\cap U_2\to\RR^n-A$ we have that $\R{pr}\circ R_0 = \R{pr}$ and therefore 
+ \begin{align*}
+   H^p(\RR^n-A)\xra[\R{pr}^*]H^p(U_1\cap U_2)\xra[R^*_0] H^p(U_1\cap U_2)
+ \end{align*}
+@@ -379,7 +379,7 @@
+ \end{proof}
+ 
+ 
+-An invertible real $n\times n$ matrix $A$ defines a linear isomorphism $\RR^n\to\RR$, and
++An invertible real $n\times n$ matrix $A$ defines a linear isomorphism $\RR^n\to\RR^n$, and
+ a diffeomorphism
+ \begin{align*}
+   f_A: \RR^n-\{0\}\to \RR^n-\{0\}
+@@ -404,9 +404,9 @@
+   (I+tcE_{r, s})A, \quad 0\le t\le 1.
+ \end{align*}
+ 
+-From Theorem \ref{theorem:6-8} it follows that $f_A = f_B$. Furthermore $\det_A = \det_B$.
++From Theorem \ref{theorem:6-8} it follows that $f_A^* = f_B^*$. Furthermore $\det A = \det B$.
+ By a sequence of elementary operations of this kind, $A$ can be changed to
+-$\R{diag} (1, \ldots, 1, \pm 1)$, where $d =\det A$. Hence it suffices to prove the assertion for
++$\R{diag} (1, \ldots, 1, d)$, where $d =\det A$. Hence it suffices to prove the assertion for
+ diagonal matrices. The matrices
+ \begin{align*}
+   \R{diag}(1, \ldots, 1, \frac{|d|^td}{|d|}), \quad 0\le t\le 1
+@@ -421,7 +421,7 @@
+ \ref{theorem:6-13}, supplemented with
+ \begin{align*}
+   H^p(\RR^1 - \{0\}) \cong \left\{\begin{aligned}
+-    & \RR\otimes\RR && \text{ if } p=0\\
++    & \RR\oplus\RR && \text{ if } p=0\\
+     & 0 && \text{ otherwise}
+   \end{aligned}\right.
+ \end{align*}
+@@ -443,16 +443,11 @@
+ 
+ \begin{remark}\label{remark:6-16}
+   We offer the following more conceptual proof of Addendum \ref{addendum:6-12}. Let
+-  \begin{center}
+-    \begin{tikzcd}
+-    \end{tikzcd}
+-  \end{center}
+-\end{remark}
+ 
+ \begin{center}
+   \begin{tikzcd}
+     0\rar & A^*\dar{\alpha^*}\rar{f^*} & B^*\dar{\beta^*}\rar{g^*} & C^*\dar{\gamma^*}\rar & 0\\
+-    0\rar & A_1^*\rar{f^*} & B_1^*\rar{g^*} & C_1^*\rar & 0\\
++    0\rar & A_1^*\rar{f_1^*} & B_1^*\rar{g_1^*} & C_1^*\rar & 0\\
+   \end{tikzcd}
+ \end{center}
+ 
+@@ -460,7 +455,7 @@
+ to prove that the diagram
+ \begin{center}
+   \begin{tikzcd}
+-    H^p(C^*)\dar{\gamma^*}\rar{\partial^*} & H^{p+1}\dar{A^*} \\
++    H^p(C^*)\dar{\gamma^*}\rar{\partial^*} & H^{p+1}(A^*)\dar{\alpha^*} \\
+     H^p(C_1^*)\rar{\partial_1^*} & H^{p+1}(A_1^*)
+   \end{tikzcd}
+ \end{center}
+@@ -474,4 +469,5 @@
+ \end{center}
+ 
+ With $R(\omega_1, \omega_2) = (R^*_1\omega_2, R^*_2\omega_1)$. This gives equation \eqref{eq:6-2} of the proof of the
+-addendum.+addendum..
++\end{remark}
+--- transcription/07-Applications-of-de-Rham-Cohomology.tex
++++ BellaBook/07-Applications-of-de-Rham-Cohomology.tex
+@@ -5,7 +5,7 @@
+   & S^{n-1} = \{x \in \RR^n \mid \| x \| = 1\} && \text{ the $(n-1)$-sphere } 
+ \end{align*}
+ 
+-A fixed point for a map $f:x\to X$ is a point $x\in X$, such that $f(x) = x$.
++A fixed point for a map $f:X\to X$ is a point $x\in X$, such that $f(x) = x$.
+ 
+ \begin{theorem}[Brouwer's fixed point theorem, 1912]\label{theorem:7-1}
+   Every continuous map $f:D^n \to D^n$ has a fixed point.
+@@ -13,7 +13,7 @@
+ 
+ \begin{proof}
+   Assume that $f(x)\neq x$ for all $x\in D^n$. For every $x\in D^n$ we can define 
+-  the point $g(x)\in S^{n-1}$ as the point of the intersection between $S^{n-1}$ ans the half-line 
++  the point $g(x)\in S^{n-1}$ as the point of the intersection between $S^{n-1}$ and the half-line 
+   from $f(x)$ to $x$.
+ 
+ \begin{figure}[!htb]
+@@ -40,11 +40,11 @@
+ \end{lemma}
+ 
+ \begin{proof}
+-  We may assume that $n\ge 2$. For the map $r:\RR-\{0\}\to \RR^n-\{0\}, r(x)=x/\|x\|$, we 
++  We may assume that $n\ge 2$. For the map $r:\RR^n-\{0\}\to \RR^n-\{0\}, r(x)=x/\|x\|$, we 
+   get that $\id_{\RR^n-\{0\}}\sime r$, because $\RR^n-\{0\}$ always contains the line
+   segment between $x$ and $r(x)$ (see Example \ref{example:6-5}). If $g$ is of the indicated 
+   type, then $g(t\cdot r(x)), 0\le t\le 1$ defines a homotopy from a constant map to $r$. This 
+-  shows that $\RR^n-{0}$ is contractible. Corollary \ref{corollary:6-10} asserts that $H^{n-1}(\RR^n-\{0\}) = 0$,
++  shows that $\RR^n-\{0\}$ is contractible. Corollary \ref{corollary:6-10} asserts that $H^{n-1}(\RR^n-\{0\}) = 0$,
+   which contradicts Theorem \ref{theorem:6-13}
+ \end{proof}
+ 
+@@ -58,7 +58,7 @@
+ \end{theorem}
+ 
+ \begin{proof}
+-  Such a vector field $v$ can be extended to a vector field $w$ on $\RR^n-\{0\}$
++  Such a vector field $v$ can be extended to a vector field $w$ on $\RR^{n+1}-\{0\}$
+   by setting
+   \begin{align*}
+     w(x) = v(\frac{x }{\|x\|})
+@@ -90,7 +90,7 @@
+ linearly independent tangent vector field on $S^n$ is equal to $2^b+8a-1$.
+ 
+ \begin{lemma}[Urysohn-Tietze]\label{lemma:7-4}\index{Urysohn-Tietze lemma}
+-  If $A\subseteq \RR^n$ is closed and $f:A\to\RR^n$ continuous, then there exists a continuous map 
++  If $A\subseteq \RR^n$ is closed and $f:A\to\RR^m$ continuous, then there exists a continuous map 
+   $g:\RR^n\to\RR^m$ with $g|_A = f$.
+ \end{lemma}
+ 
+@@ -125,7 +125,7 @@
+       < d(x_0, x) + \frac12d(p, A)
+       \le d(x_0, x) + \frac12d(p, x_0).
+   \end{align*}
+-  Hence $d(x_0, p)<2d(x_0, x)$ for $x\in U_p$. Since $d(p, a(p))<2d(p, A)\le d(x_0, p)$, we get 
++  Hence $d(x_0, p)<2d(x_0, x)$ for $x\in U_p$. Since $d(p, a(p))<2d(p, A)\le 2d(x_0, p)$, we get 
+   for $x\in U_p$ that $d(x_0, a(p))\le d(x_0, p) + d(p, a(p))<3d(x_0, p)<6d(x_0, x)$. For $x\in\RR^n-A$
+   we have 
+   \begin{align*}
+@@ -156,7 +156,7 @@
+   Let $A\subseteq\RR^n$ and $B\subseteq\RR^m$ be closed sets and let $\phi:A\to B$ be a 
+   homeomorphism. There is a homeomorphism $h$ of $\RR^{n+m}$ to itself, such that 
+   \begin{align*}
+-    h(x, 0_m) = (0_m, \phi(x))
++    h(x, 0_m) = (0_n, \phi(x))
+   \end{align*}
+   for all $x\in A$.
+ \end{lemma}
+@@ -175,7 +175,7 @@
+   \end{align*}
+   If $h$ is defined to be $h=h_2^{-1}\circ h_1$, then we have for $x\in A$ that 
+   \begin{align*}
+-    h_1(x, 0_m) 
++    h(x, 0_m) 
+     = h_2^{-1}(x, f_1(x))
+     = h_2^{-1}(x, \phi(x))
+     = (x-f_2(\phi(x)), \phi(x))
+@@ -193,7 +193,7 @@
+ 
+ \begin{proof}
+   We merely have to compose the homeomorphism $h$ from Lemma \ref{lemma:7-6} with
+-the homeomorphism of $\RR^{2n} = \RR^{2n}\times\RR^{2n}$ to itself that switches the two 
++the homeomorphism of $\RR^{2n} = \RR^n\times\RR^n$ to itself that switches the two 
+ factors.
+ \end{proof}
+ 
+@@ -205,7 +205,7 @@
+ 
+ \begin{theorem}\label{theorem:7-8}
+   Assume that $A\neq\RR^n$ and $B\neq\RR^n$ are closed subsets of $\RR^n$. If $A$ and $B$
+-  are homeomorphism, then 
++  are homeomorphic, then 
+   \begin{align*}
+     H^p(\RR^n-A)\simee H^p(\RR^n-B)
+   \end{align*}
+@@ -217,7 +217,7 @@
+     & H^{p+m}(\RR^{n+m}-A)\simee H^p(\RR^n-A) \\
+     & H^{m}(\RR^{n+m}-A)\simee H^0(\RR^n-A)/\RR\cdot 1 
+   \end{align*}
+-  for all $m\ge 1$. Analogously for $B$. From Corollary \ref{corollary:7-7} we known that $\RR^n-A$
++  for all $m\ge 1$. Analogously for $B$. From Corollary \ref{corollary:7-7} we know that $\RR^{2n}-A$
+   and $\RR^{2n}-B$ are homeomorphic. Topological invariance (Corollary \ref{corollary:6-9}) shows that 
+   they are isomorphic de Rham cohomologies. We thus have the isomorphism
+   \begin{align*}
+@@ -228,10 +228,7 @@
+   \end{align*}
+   for $p>0$ and 
+   \begin{align*}
+-    H^p(\RR^n-A)/\RR\cdot 1
+-      \simee H^{p+n}(\RR^{2n}-A) 
+-      \simee H^{p+n}(\RR^{2n}-B)
+-      \simee H^p(\RR^n-B)/\RR\cdot 1
++    H^0(\RR^n-A)/\RR\cdot 1 \simee H^n(\RR^{2n}-A) \simee H^n(\RR^{2n}-B) \simee H^0(\RR^n-B)/\RR\cdot 1
+   \end{align*}
+ \end{proof}
+ 
+@@ -271,7 +268,7 @@
+   \ref{corollary:7-9}, to verify it for $S^{n-1}\subseteq\RR^n$. The two connected components of $\RR^n-S^{n-1}$
+   are 
+   \begin{align*}
+-    D^n = \{x\in \RR^n \mid \|x\|<1 \} \text{ and } W = \{x\in\RR^n\mid \|x\|>1\}
++    \mathring D^n = \{x\in \RR^n \mid \|x\|<1 \} \text{ and } W = \{x\in\RR^n\mid \|x\|>1\}
+   \end{align*}
+   By choosing $r=\max\limits_{x\in\Sigma}\|x\|$, the connected set 
+   \begin{align*}
+@@ -288,13 +285,13 @@
+   $\Sigma$, i.e. $\gamma^{-1}(\Sigma)$ is nonempty. The closed set $\gamma^{-1}(\Sigma)\subseteq[a, b]$ has 
+   a first element $c_1$ and a last element $c_2$, which both belong to $(a, b)$. Hence $\gamma(c_1)\in\Sigma\cap V$
+   and $\gamma(c_2)\in\Sigma\cap V$ are points of contact for $\gamma([a, c_1))\subseteq U_1$ and 
+-  $\gamma([a, c_2))\subseteq U_2$ respectively. Therefore we can find $t_1\in [a, c_1)$ and $t_2\in[c_2, b)$,
++  $\gamma((c_2,b])\subseteq U_2$ respectively. Therefore we can find $t_1\in [a, c_1)$ and $t_2\in(c_2, b]$,
+   such that $\gamma(t_1)\in U_1\cap V$ and $\gamma(t_2)\in U_2\cap V$. This shows that $p$ is a boundary
+   point for both $U_1$ and $U_2$, and proves (ii).
+ \end{proof}
+ 
+ \begin{theorem}\label{theorem:7-11}
+-  If $A\subseteq\RR^n$ is homeomorphic to $D^k$, with $k\le n $, then $\RR^n-A$ is connected.
++  If $A\subseteq\RR^n$ is homeomorphic to $D^k$, with $k\le n$ and $n\ge2$, then $\RR^n-A$ is connected.\corr{原书第 53 页定理 7.11 需有 $n\ge2$；当 $n=k=1$ 时，闭区间的补集有两个连通分支。}
+ \end{theorem}
+ 
+ \begin{proof}
+@@ -317,13 +314,13 @@
+ \end{align*}
+ 
+ contained in $U$ with boundary $S$ and interior $\mathring{D}= D - S$. It is sufficient to show
+-that $f(\mathring{D})$ is open. The case $n = 1$ follows from elementary theorems about
++that $f(\mathring{D})$ is open. The case $m = 1$ follows from elementary theorems about
+ continuous functions of one variable, so we assume $n\ge 2$.
+ 
+-Both Sand $E = f(S)$ are homeomorphic to $S^{n-1}$. Let $U_1$ and $U_2$ be the two
++Both $S$ and $\Sigma = f(S)$ are homeomorphic to $S^{n-1}$. Let $U_1$ and $U_2$ be the two
+ connected components of $\RR^n-\Sigma$ from Theorem \ref{theorem:7-10}. They are open; $U_1$ is
+ bounded and $U_2$ is unbounded. By Theorem \ref{theorem:7-11}, $\RR^n - f(D)$ is connected.
+-Since this set is disjoint from $E$, it must be contained in $U_1$ or $U_2$. As $f(D)$ is
++Since this set is disjoint from $\Sigma$, it must be contained in $U_1$ or $U_2$. As $f(D)$ is
+ compact, $\RR^n - f(D)$ is unbounded. We must have $\RR^n - f(D)\subseteq U_2$. It follows
+ that $\Sigma\cup U_1 = \RR^n-U_2 \subseteq f(D)$. Hence
+ \begin{align*}
+@@ -335,7 +332,7 @@
+ \end{proof}
+ 
+ \begin{corollary}[Invariance of domain]\label{corollary:7-13}\index{invariance!domain}
+-  If $V\in\RR^n$ has the topology induced by $\RR^n$ and is homeomorphic to an open subset of $\RR^n$ then 
++  If $V\subseteq\RR^n$ has the topology induced by $\RR^n$ and is homeomorphic to an open subset of $\RR^n$ then 
+   $V$ is open in $\RR^n$.
+ \end{corollary}
+ 
+@@ -356,7 +353,7 @@
+ 
+ \begin{example}\label{example:7-15}\index{knot}
+   A knot in $\RR^3$ is a subset $\Sigma\subseteq\RR^3$ that is homeomorphic to $S^1$. The
+-corresponding knot-complement is the open set $U=\Sigma - \RR^3$. We show:
++corresponding knot-complement is the open set $U=\RR^3-\Sigma$. We show:
+ \begin{align*}
+   H^p(U)\simee \left\{\begin{aligned}
+     & \RR && \text{ if } 0\le p\le 2 \\
+@@ -369,8 +366,8 @@
+   H^p(\RR^2-S^1) = H^p(\mathring{D}^2)\oplus H^p(\RR^2-D^2)
+ \end{align}
+ 
+-Here $\mathring{D}^2$ is star-shaped, while $\RR^2-\mathring{D}^2$ is diffeomorphic 
+-to $\RR^2-{0}$. Using Theorem \ref{theorem:3-15} and Example \ref{example:5-4} it follows 
++Here $\mathring{D}^2$ is star-shaped, while $\RR^2-D^2$ is diffeomorphic 
++to $\RR^2-\{0\}$. Using Theorem \ref{theorem:3-15} and Example \ref{example:5-4} it follows 
+ that \eqref{eq:7-2} has dimension 2 for $p = 0$, dimension 1 for $p = 1$, and dimension 0 
+ for $p\ge 2$. Apply Proposition \ref{prop:6-11}.
+ \end{example}
+@@ -418,7 +415,7 @@
+       & 0 && \text{ otherwise }
+     \end{aligned}\right.
+   \end{align*}
+-  We now have that $H^p(U_1) = 0$ and $H^p(U_2) = 0$ when $p\neq \{0, n-1\}$. On the other hand the dimension
++  We now have that $H^p(U_1) = 0$ and $H^p(U_2) = 0$ when $p\notin \{0, n-1\}$. On the other hand the dimension
+   of $H^{n-1}(U_1)$ and $H^{n-1}(U_2)$ are 0 and 1, so it suffices to show that $H^{n-1}(U_2)\neq 0$.
+ 
+   Without loss of generality we may assume that $0\in U_1$ and that the bounded set
+@@ -435,7 +432,7 @@
+   \begin{center}
+     \begin{tikzcd}
+         & H^{n-1}(\RR^n-\{0\}) \dar{} \simee\RR\\
+-      H^{n-1}(W)\rar\urar[<-]{H^{n-1}(i)} & H^{n-1}(U_2)
++      H^{n-1}(W)\rar[<-]\urar[<-]{H^{n-1}(i)} & H^{n-1}(U_2)
+     \end{tikzcd}
+   \end{center}
+   where $H^{n-1}(i)$ is an isomorphism. It follows that $H^{n-1}(U_2)\neq 0$.
+@@ -453,7 +450,7 @@
+     h:U_1\cup \Sigma\to D^2.
+   \end{align*}
+ 
+-  By Theorem \ref{theorem:7-12}, such a homeomorphism applied to $h|_{v_1}$ and $h|_{\mathring{D}^2}^{-1}$
++  By Theorem \ref{theorem:7-12}, such a homeomorphism applied to $h|_{U_1}$ and $h|_{\mathring{D}^2}^{-1}$
+   will map $U_1$ homeomorphically to $\mathring{D}^2$.
+ \end{remark}
+ 
+@@ -472,13 +469,13 @@
+   to $S^{n-1}$. Hence the interiors $\mathring{K}_j = K_j - \Sigma_j$ are exactly the interior 
+   domains of $\Sigma_j$. One has
+   \begin{align}\label{eq:7-3}
+-    H^l(V) \simee \left\{\begin{aligned}
++    H^p(V) \simee \left\{\begin{aligned}
+       & \RR && \text{ if } p = 0 \\
+       & \RR^m && \text{ if } p = n-1 \\
+       & 0 && \text{otherwise}.
+     \end{aligned}\right.
+   \end{align}
+-  We use induction on $m$. The case $n = 1$ follows from Proposition \ref{proposition:7-16}. Assume
++  We use induction on $m$. The case $m = 1$ follows from Proposition \ref{proposition:7-16}. Assume
+   the assertion is true for 
+   \begin{align*}
+     V_1 = \RR^n - \biggl(\bigcup_{j=1}^{m-1} K_j\biggr).
+--- transcription/08-Smooth-Manifolds.tex
++++ BellaBook/08-Smooth-Manifolds.tex
+@@ -5,7 +5,7 @@
+ 
+ For instance $\RR^n$ has a countable basis for the topology given by
+ \begin{align*}
+-  \C{V} = \{\mrg{D}\mid x=(x_1, \ldots, x_n), x_i\in \QQ; \epsilon\in\QQ, \epsilon>0\}
++  \C{V} = \{\mrg{D}(x;\epsilon)\mid x=(x_1, \ldots, x_n), x_i\in \QQ; \epsilon\in\QQ, \epsilon>0\}
+ \end{align*}
+ 
+ where $\mrg{D}(x;\epsilon)$ is the open ball with center at $x$ and radius $\epsilon$.
+@@ -82,7 +82,7 @@
+     x\sim y \equ x = y \text{ or } x = -y
+   \end{align*}
+   The equivalence classes $[x] = \{x, -x\}$ define the set $\RR\B{P}^n$. Alternatively one can
+-  consider $\RR\B{P}^n$ as all lines in $\RR^{n+1}$ through 0. Let 1r be the canonical projection
++  consider $\RR\B{P}^n$ as all lines in $\RR^{n+1}$ through 0. Let $\pi$ be the canonical projection
+   \begin{align*}
+     \pi:S^n\to \RR\B{P}^n; && \pi(x) = [x].
+   \end{align*}
+@@ -92,13 +92,13 @@
+     U\sseq \RR\B{P}^n \text{ open } \equ \pi^{-1}(U)\sseq S^n \text{ open }.
+   \end{align*}
+   With the conventions of Example \ref{example:8-5}, $\pi(U_{-i}) = \pi(U_{+i})$. We define 
+-  $U_i = \pi_{\pm i}\sseq \RR\B{P}^n$, and note that $\pi^{-1}(U_i) = U_{+i}\cup U_{-i}$ with 
++  $U_i = \pi(U_{\pm i})\sseq \RR\B{P}^n$, and note that $\pi^{-1}(U_i) = U_{+i}\cup U_{-i}$ with 
+   $U_{+i}\cap U_{-i}=\ns$. An equivalence calss $[x]\in U_i$ has one representive in $U_{+i}$ and 
+-  one representive in $U_{-i}$. Hence $\pi:U_{+i}\to U_{-i}$ is a homeomorphism. We define
++  one representive in $U_{-i}$. Hence $\pi:U_{+i}\to U_i$ is a homeomorphism. We define
+   \begin{align*}
+     h_i = h_{+i}\circ \pi^{-1}:U_i\to\mrg{D}^n,
+   \end{align*}
+-  $i=1, \ldots, n$. This gives a smooth atlas on $\RR\B{P}^n$.
++  $i=1, \ldots, n+1$. This gives a smooth atlas on $\RR\B{P}^n$.
+ \end{example}
+ 
+ \begin{definition}\label{definition:8-7}
+@@ -107,7 +107,7 @@
+   $h_1:U_1\to U_1'$ and $h_2:U_2\to U_2'$ on $M_1$ and $M_2$ with $x\in U_1$ and $f(x)\in U_2$,
+   such that
+   \begin{align*}
+-    h_2\circ f\circ h_1^{-1}:h_1(f^{-1}(U_2))\to U_2'
++    h_2\circ f\circ h_1^{-1}:h_1(U_1\cap f^{-1}(U_2))\to U_2'
+   \end{align*}
+   is smooth in a neighborhood of $h_1(x)$. If $f$ is smooth at all points of $M_1$ then $f$ is said 
+   to be smooth.
+@@ -196,7 +196,7 @@
+   \begin{align*}
+     \phi_p:M\to \RR, && f_p:M\to \RR^n
+   \end{align*}
+-  such that $\phi_p(p)>0$, and $f_p$ maps open set $M\to \phi_p^{-1}(0)$ diffeomorphically onto 
++  such that $\phi_p(p)>0$, and $f_p$ maps open set $M-\phi_p^{-1}(0)$ diffeomorphically onto 
+   an open subset  of $\RR^n$.
+ \end{lemma}
+ 
+@@ -244,7 +244,7 @@
+ $\phi_j(q_2)=\phi_j(q_1)\neq 0, q_2\in U_j$, and by (ii), $q_1=q_2$. Hence $f$ is injective. 
+ Since $M$ is compact, $f$ is a homeomorphism from $M$ to $f(M).$ Let
+ \begin{align*}
+-  \pi_1:\RR^{nd+d}\to\RR, && \pi_2:\RR^{nd+d}\to\RR^{n(d-1) + d}
++  \pi_1:\RR^{nd+d}\to\RR^n, && \pi_2:\RR^{nd+d}\to\RR^{n(d-1) + d}
+ \end{align*}
+ be the projections on the first $n$ coordinates and the last $n(d - 1) + d$ coordinates,
+ respectively. By (ii) $\pi_1\circ f = f_1$ is a diffeomorphism from $U_1$ to $U_1'$. In particular
+@@ -264,7 +264,7 @@
+ required by Definition \ref{definition:8-8}. The remaining $f(U_j)$ are treated analogously. Hence
+ $f(M)$ is a smooth submanifold of $\RR^{nd+d}$. Note also that $f_{|U_1}:U_1\to f(U_1)$ is
+ a diffeomorphism, namely the composite of $f_{1|U_1}:U_1\to U_1'$ and the inverse to
+-the diffeomorphism $f(U_)\to U_1'$ induced by $\pi_1$. The remaining $U_j$ are treated
++the diffeomorphism $f(U_1)\to U_1'$ induced by $\pi_1$. The remaining $U_j$ are treated
+ analogously. Hence $f: M\to f(M)$ is a diffeomorphism. \hfill\(\qedsymbol\)
+ 
+ \begin{remark}\label{remark:8-13}
+@@ -312,7 +312,7 @@
+   yields a smooth map $f:M^n\to\RR^n$ and an open neighborhood $V$ of $p$ in $M$, such
+   that the restriction $f_{|V}$ is a diffeomorphism of $V$ onto an open subset of $\RR^n$. For the
+   $j$-th coordinate function $f_j\in C^\infty(M, \RR)$ we have $f_j\circ g = g^*(f_j)\in C^\infty(N, \RR)$,
+-  so that $f\circ g:N\to\RR$ is smooth. Using the chart $f_{|W}$ on $M$, $g$ is seen to be
++  so that $f\circ g:N\to\RR^n$ is smooth. Using the chart $f_{|V}$ on $M$, $g$ is seen to be
+   smooth at $q$.
+ \end{proof}
+ 
+@@ -331,14 +331,12 @@
+   \end{figure}
+ 
+   Non-orientable surfaces: $\B{RP}^2$, Klein's bottle, etc. See e.g. [Hirsch]\supercite{Hirsch}, [Massey]\supercite{Massey}.
+-  In dimension 3, one meets a famous open problem: the Poincare conjecture, which
+-  asserts that every compact topological 3-manifold that is homotopy equivalent to
+-  53 is homeomorphic to $S^3$. It is known that every topological 3-manifold $M^3$
++  In dimension 3, the Poincar\'e conjecture is now a theorem: every closed topological 3-manifold homotopy equivalent to $S^3$ is homeomorphic to $S^3$.\now{原书第 64 页称其为未解决问题，反映 1997 年出版时的状态。{\fontspec{DejaVu Serif}Григорий Перельман} 于 2002--2003 年的 Ricci 流论文完成了证明；参见 \href{https://arxiv.org/abs/math/0307245}{math/0307245}。} It is known that every topological 3-manifold $M^3$
+   has a smooth structure $\C{A}$ and that two homeomorphic smooth 3-manifolds also
+   are diffeomorphic. In the mid 1950s J. Milnor discovered smooth 7-manifolds
+   that are homeomorphic to $S^7$, but not diffeomorphic to $S^7$. In collaboration with
+   M. Kervaire he classified such exotic n-spheres. For example they showed that
+-  there are exactly 28 oriented diffeomorphism classes of exotic 7-spheres. In 1960
++  there are exactly 28 oriented diffeomorphism classes of smooth homotopy 7-spheres, including the standard sphere.\corr{原书第 64 页将 28 类均称为 exotic；$\Theta_7$ 的 28 个元素包括标准球面类。排除标准类后，定向异球面的微分同胚类为 27 个。参见 Kervaire--Milnor, \href{https://www.jstor.org/stable/1970128}{Groups of Homotopy Spheres: I} (1963)。} In 1960
+   Kervaire described a topological 10-manifold that has no smooth structure. During
+   the 1960s the so-called ``surgery'' technique was developed, which in principle
+   classifies all manifolds of a specified homotopy type, but only for $n\ge 5$.
+@@ -352,6 +350,6 @@
+ 
+   One of the most bizarre conclusions of the work of Donaldson and Freedman is
+   that there exists a smooth structure on $\RR^4$ such that the resulting smooth 4-manifold
+-  `$`\RR^4$'' is not diffeomorphic to the usual $\RR^4$. It was proved earlier by S. Smale that
++  ``$\RR^4$'' is not diffeomorphic to the usual $\RR^4$. It was proved earlier by S. Smale that
+   every smooth structure on $\RR^n$ for $n\neq 4$ is diffeomorphic to the standard $\RR^n$.
+ \end{remark}--- transcription/09-Differential-Forms-on-Smooth-Manifolds.tex
++++ BellaBook/09-Differential-Forms-on-Smooth-Manifolds.tex
+@@ -3,7 +3,7 @@
+ and generalize the material of earlier chapters to the manifold case.
+ For a given point $p\in M^m$ we shall construct an $m$-dimensional real 
+ vector space $T_pM$ called the \Index{tangent space} at $p$. Moreover we want a smooth 
+-map $j:M\to N$ to induce a linear map $D_pf:T_pM\to T_{f(p)}M$ known as the tangent 
++map $j:M\to N$ to induce a linear map $D_pf:T_pM\to T_{f(p)}N$ known as the tangent 
+ map of $j$ at $p$.
+ 
+ \begin{remark}\label{remark:9-1}
+@@ -82,7 +82,7 @@
+       then we have the following commutative diagram:
+       \begin{center}
+         \begin{tikzcd}
+-          T_pM \arrow[rrr, "D_pf"]\arrow[d, "\simee"', "\Phi_h"] &&& T_{f(p)}M \arrow[d, "\simee"', "\Phi_g"] \\
++          T_pM \arrow[rrr, "D_pf"]\arrow[d, "\simee"', "\Phi_h"] &&& T_{f(p)}N \arrow[d, "\simee"', "\Phi_g"] \\
+           \RR^m \arrow[rrr, "D_{h(p)}(g\circ f\circ h^{-1})"]    &&& \RR^n
+         \end{tikzcd}
+       \end{center}
+@@ -153,12 +153,12 @@
+ \end{align}
+ 
+ Under the assumptions of Lemma \ref{lemma:9-3}.(ii) there is a similar basis 
+-$(\partial/\partial_{y_i})_{f(p)}$, $1\le j\le n$, for $T_{f(p)}N$ and the $D_pf$ with 
+-respect to our bases for $T_pM$ and $T_{f(p)}M$ is the Jacobian matrix at $h(p)$ of $g\circ f\circ h^{-1}$.
++$(\partial/y_j)_{f(p)}$, $1\le j\le n$, for $T_{f(p)}N$ and the $D_pf$ with 
++respect to our bases for $T_pM$ and $T_{f(p)}N$ is the Jacobian matrix at $h(p)$ of $g\circ f\circ h^{-1}$.
+ Specializing this to the case $N=M$, $f=\id_M$ we find that 
+ \begin{align}\label{eq:9-7}
+   \left(\frac{\partial }{\partial x_i}\right)_p 
+-  = \sum_{j=1}^{m }{\frac{\partial \varphi_j }{\partial x_j } (h(p))\left(\frac{\partial }{\partial y_j}\right)_p}.
++  = \sum_{j=1}^{m }{\frac{\partial \varphi_j }{\partial x_i } (h(p))\left(\frac{\partial }{\partial y_j}\right)_p}.
+ \end{align}
+ This holds when $(U, h)$ and $(V, g)$ are two charts around $p$ with transition function
+ \begin{align*}
+@@ -173,13 +173,13 @@
+ Given the chart $(U, h)$, formula \eqref{eq:9-4} holds for $p\in U$ with certain coefficient
+ functions $a_i: U\to \RR$. If these are smooth in a neighborhood of $p\in U$, $X$ is
+ said to be smooth at $p$. From \eqref{eq:9-7}, this condition is independent of the choice of
+-smooth chart around $p$. If $X$ is smooth at every point $p\in M$, $X$ is a a smooth
++smooth chart around $p$. If $X$ is smooth at every point $p\in M$, $X$ is a smooth
+ vector field on $M$.
+ 
+ Let us next consider families $\omega=\{\omega_p\}_{p\in M}$ of alternating $k$-forms on $T_pM$, 
+-where $\omega_p\in \alt^k(T_pM)$. We need a notion of w being smooth as function of $p$. Let
++where $\omega_p\in \alt^k(T_pM)$. We need a notion of $\omega$ being smooth as function of $p$. Let
+ $g:W\to M$ be a local parametrization, i.e. the inverse of a smooth chart, where
+-W is an open set in $\RR^m$. For $x\in W$,
++$W$ is an open set in $\RR^m$. For $x\in W$,
+ \begin{align*}
+   D_xg:\RR^m\to T_{g(x)}M
+ \end{align*}
+@@ -189,11 +189,11 @@
+   \alt^k(D_xg):\alt^k(T_{g(x)}M)\to\alt^k(\RR^m).
+ \end{align*}
+ 
+-We define $g^*(\omega):W\to \alt^k(\RR^m)$ to be the function whom value at $x$ is 
++We define $g^*(\omega):W\to \alt^k(\RR^m)$ to be the function whose value at $x$ is 
+ \begin{align*}
+   g^*(\omega)_x = \alt^k(D_xg)(\omega_{g(x)})
+   && 
+-  (g^*(\omega)_x = \omega_g(x) \text{ for } k = 0)
++  (g^*(\omega)_x = \omega_{g(x)} \text{ for } k = 0)
+ \end{align*}
+ 
+ \begin{definition}\label{definition:9-5}
+@@ -204,14 +204,13 @@
+ \end{definition}
+ 
+ \begin{lemma}\label{lemma:9-6}
+-  Let $g_i:W_i\to N$ be a family of local parametrizations with $N = \cup_{g_i}(\omega)$ is 
+-  smooth for all $i$, then $\omega$ is smooth.
++  Let $g_i:W_i\to N$ be a family of local parametrizations with $N=\bigcup_i g_i(W_i)$. If $g_i^*(\omega)$ is smooth for all $i$, then $\omega$ is smooth.
+ \end{lemma}
+ 
+ \begin{proof}
+-  Let $g:W\to N$ be any local parametrization. and $z\in W$. We show that
+-$g^*(w)$ is smooth close to $z$. Choose an index $i$ with $g(z)\in g_i(W_i)$. 
+-Close to $z$ we can write $g=g_i\circ g = g_i\circ h$, where $h=g_i^{-1}\circ g(g_i(W_i))\to 
++  Let $g:W\to N$ be any local parametrization, and $z\in W$. We show that
++$g^*(\omega)$ is smooth close to $z$. Choose an index $i$ with $g(z)\in g_i(W_i)$. 
++Close to $z$ we can write $g=g_i\circ h$, where $h=g_i^{-1}\circ g:g^{-1}(g_i(W_i))\to 
+ W_i$ is a smooth map between open sets in Euclidean space. Thus 
+ \begin{align*}
+   g^*(\omega) = (g_i\circ h)^*(\omega) = h^*(g_i^*(\omega))
+@@ -244,11 +243,11 @@
+ 
+ where $\phi(x)= y$ and $D_x\phi(v_i) = w_i$. This follows from the equations 
+ \begin{align*}
+-  (g\circ \phi)^* & = \phi^*(g^*(\omega)) \\
++  (g\circ \phi)^*(\omega) & = \phi^*(g^*(\omega)) \\
+   \dd\phi^*(\tau) & = \phi^*\dd(\tau)
+ \end{align*}
+ 
+-where $\tau = g^*(\omega)$; see Theorem \ref{theorem:3-12}. It is obviously that $\dd\circ\dd = 0$.
++where $\tau = g^*(\omega)$; see Theorem \ref{theorem:3-12}. It is obvious that $\dd\circ\dd = 0$.
+ Hence we have defined a chain complex
+ \begin{align*}
+   \cdots \xra \Omega^{k-1}(M) \xra[\dd]\Omega^k(M)\xra[\dd]\Omega^{k+1}(M)\xra \cdots,
+@@ -263,16 +262,16 @@
+   & \phi^*(\tau)_p = \tau_{\phi(p)} \text{ if } k=0. 
+ \end{align}
+ 
+-One defines a bilinear product $\omega\wedge\tau$ by $(\omega\wedge\tau)_p = \tau_{\phi(p)}$,
++One defines a bilinear product $\omega\wedge\tau$ by $(\omega\wedge\tau)_p = \omega_p\wedge\tau_p$,
+ \begin{align}
+-  \wedge:\Omega^k(M)\times\Omega^l(M)\to \Omega^{k+1}(M).
++  \wedge:\Omega^k(M)\times\Omega^l(M)\to \Omega^{k+l}(M).
+ \end{align}
+ 
+ One shows by choosing local parametrizations that $\phi^*\omega$ and $\omega\wedge\tau$ are smooth.
+ It is equally easy to see that
+ \begin{align}
+   \begin{aligned}
+-    \dd(\omega\wedge\tau) & = \dd\omega + (-1)^k\omega\wedge\dd\tau \\
++    \dd(\omega\wedge\tau) & = \dd\omega\wedge\tau + (-1)^k\omega\wedge\dd\tau \\
+     \omega\wedge\tau & = (-1)^{kl}\tau\wedge\omega
+   \end{aligned}
+ \end{align}
+@@ -284,7 +283,7 @@
+   vector space of $\Omega^*(M)$.
+ \end{definition}
+ 
+-The exterior product induces a product $H^p(M) x H^q(M)\to H^{p+q}(M)$ which
++The exterior product induces a product $H^p(M)\times H^q(M)\to H^{p+q}(M)$ which
+ makes $H^*(M)$ into a graded algebra. Note that $H^p(M) = 0$ for $p> n = \dim M$
+ or $p<0$.
+ 
+@@ -322,7 +321,7 @@
+ is positive or negative. (It cannot be 0, because $\omega_p\neq 0$.) The sign depends only
+ on the orientation determined by $\omega$. If $\omega$ and $\tau$ are two orientation forms on $M^n$,
+ then $\tau=f\cdot\omega$ for a uniquely determined function $f\in\Omega^0(M)$ with $f(p)\neq 0$ for
+-all $p\in M$. We say that wand $\tau$ determine the same orientation at $p$, if $f(p) > 0$.
++all $p\in M$. We say that $\omega$ and $\tau$ determine the same orientation at $p$, if $f(p) > 0$.
+ Equivalently, $\omega$ and $\tau$ induce the same positively oriented bases of $T_pM$. If $M$
+ is connected, then $f$ has constant sign on $M$, so we have:
+ 
+@@ -344,7 +343,7 @@
+ 
+ 
+ \begin{theorem}\label{theorem:9-11}
+-  Let $\C{V} = (V_i)_{i\in I}$ be an open cover of the smooth manifold $M^n\sseq \RR^n$. Then 
++  Let $\C{V} = (V_i)_{i\in I}$ be an open cover of the smooth manifold $M^n\sseq \RR^l$. Then 
+   there exist smooth functions $\phi_i:M\to [0, 1] (i\in I)$ that satisfy
+   \begin{enumerate}[(i)]
+     \item $\R{Supp}_M(\phi_i)\sseq V_i$ for all $i\in I$.
+@@ -355,8 +354,8 @@
+ \end{theorem}
+ 
+ \begin{proof}
+-  Since $M$ has the topology induced by $\RR^n$, we can choose an open set
+-$U_i\sseq \RR^l$ with $U_i\cap M = Vi$ for each $i\in I$. By applying Theorem \ref{theorem:A.1} 
++  Since $M$ has the topology induced by $\RR^l$, we can choose an open set
++$U_i\sseq \RR^l$ with $U_i\cap M = V_i$ for each $i\in I$. By applying Theorem \ref{theorem:A.1} 
+ to $U= \cup_{i\in I} U_i$ we get smooth functions $\psi_i:U\to [0, 1]$ with
+ \begin{enumerate}[(i)]
+   \item $\R{Supp}_U(\psi_i)\sseq U_i$.
+@@ -377,7 +376,7 @@
+ where $\phi_i\omega_i$ is extended to an $n$-form on all of $M$ by letting it vanish on
+ $M-\R{Supp}_M(\phi_i)$. This is an orientation form, because if $p\in V_i\sseq M$ and
+ $b_1, \ldots, b_n$ is a basis of $T_pM$, with $\omega_{i,p}(b_1, \ldots ,b_n) > 0$, then 
+-$\omega_{i',p}(b_1, \ldots ,b_n)>0$ for every other if with $p\in V_i$, and in the formula
++$\omega_{i',p}(b_1, \ldots ,b_n)>0$ for every other $i\prime$ with $p\in V_{i\prime}$, and in the formula
+ \begin{align*}
+   \omega_p(b_1, \ldots ,b_n)
+   = \sum_{i}^{}{\phi_i(p)\omega_{i,p}(b_1, \ldots ,b_n)}
+@@ -389,14 +388,14 @@
+ 
+ If $\tau\in\Omega^n(M^n)$ is another orientation form that gives the orientation of the required
+ type, then $\tau=f\cdot \omega$ and $\tau_p(b_1, \ldots, b_n) = f(p)\omega_p(b_1, \ldots , b_n)$. 
+-Since both $\tau_p$ and wp are positive on $b_1, \ldots, b_n$ we have $f(p) > 0$. Hence $\omega$ 
+-and $\tau$ detennine the same orientation.\hfill\(\qedsymbol\)
++Since both $\tau_p$ and $\omega_p$ are positive on $b_1, \ldots, b_n$ we have $f(p) > 0$. Hence $\omega$ 
++and $\tau$ determine the same orientation.\hfill\(\qedsymbol\)
+ 
+ \begin{definition}\label{definition:9-12}
+   Let $\phi:M_1^n\to M_2^n$ be a diffeomorphism between manifolds that
+   are oriented by the orientation forms $\omega_j\in\Omega^n(M_j^n)$. Then $\phi^*(\omega_2)$ 
+   is an orientation form on $M_1^n$. We say $\phi$ is orientation-preserving\index{orientation!preserving/reversing} (resp. orientation-reversing),
+-  when $\phi^*(\omega_2)$ detennines the same orientation of $M_1^n$ as $\omega_1$ (resp. $-\omega_1$).
++  when $\phi^*(\omega_2)$ determines the same orientation of $M_1^n$ as $\omega_1$ (resp. $-\omega_1$).
+ \end{definition}
+ 
+ \begin{example}\label{example:9-13}
+@@ -404,7 +403,7 @@
+ $U_1, U_2$ of $\RR^n$, both equipped with the standard orientation of $\RR^n$. It 
+ follows from Example \ref{example:3-13}.(ii) that $\phi$ is orientation-preserving if and only if $\det(D_x\phi) > 0$
+ for all $x\in U_1$. Analogously $\phi$ is orientation-reversing if and only if all Jacobi
+-detenninants are negative.
++determinants are negative.
+ \end{example}
+ 
+ Around any point on an oriented smooth manifold $M^n$ we can find a chart
+@@ -412,12 +411,12 @@
+ given the orientation of $M$ and $U'$ the orientation of $\RR^n$. We call $h$ an oriented
+ chart of $M$. The transition function associated with two oriented charts\index{oriented chart} of $M$
+ is an orientation-preserving diffeomorphism. For any atlas of $M$ consisting of
+-oriented charts, all Jacobi detenninants of the transition functions will be positive.
++oriented charts, all Jacobi determinants of the transition functions will be positive.
+ Such an atlas is called positive.
+ 
+ \begin{proposition}\label{prop:9-14}
+-  If $\{h_1:U_1\to U_i'\}$ is a \Index{positive atlas} on $M^n$, then $M^n$ has
+-a uniquely determined orientation, so all hi are oriented charts.
++  If $\{h_i:U_i\to U_i'\}$ is a \Index{positive atlas} on $M^n$, then $M^n$ has
++a uniquely determined orientation, so all $h_i$ are oriented charts.
+ \end{proposition}
+ 
+ \begin{proof}
+@@ -943,7 +942,7 @@
+ \end{remark}
+ 
+ \begin{corollary}\label{corollary:9-28}
+-  If $M^n\sseq \RR^{n+k}$ is a smooth submanifold and $(V, i, r)$ an open inbular neighborhood, then 
++  If $M^n\sseq \RR^{n+k}$ is a smooth submanifold and $(V, i, r)$ an open tubular neighborhood, then 
+   $H^d(i):H^d(V)\to H^d(M)$ is an isomorphism with $H^d(r)$ as its inverse.
+ \end{corollary}
+ 
+--- transcription/10-Integration-on-Manifolds.tex
++++ BellaBook/10-Integration-on-Manifolds.tex
+@@ -62,7 +62,7 @@
+   with the following properties: If $\omega\in\Omega_c^n(M^n)$ has support contained in $U$, 
+   where $(U, h)$ is a positively oriented $C^\infty$-chart, then 
+   \begin{align}\label{eq:10-1}
+-    \int_M \omega = \int_{h(U)} h^{-1}(\omega)^*.
++    \int_M \omega = \int_{h(U)} (h^{-1})^*(\omega).
+   \end{align}
+ \end{proposition}
+ 
+@@ -81,7 +81,7 @@
+ \end{align*}
+ and $\phi^*(\tilde{h}^{-1})^*(\omega) = (h^{-1})^*(\omega)$, Lemma \ref{lemma:10-1} shows that 
+ \begin{align*}
+-  \int_{h(u)} (h^{-1})^*(\omega) = \int_{\tilde{h}(\tilde{U})} (\tilde{h}^{-1})^*(\omega).
++  \int_{h(U)} (h^{-1})^*(\omega) = \int_{\tilde{h}(\tilde{U})} (\tilde{h}^{-1})^*(\omega).
+ \end{align*}
+ So for $\omega\in\Omega_c^n(M)$ with ``small'' support the integral defined by \eqref{eq:10-1} is independent
+ of the chart.
+@@ -113,12 +113,12 @@
+ \begin{lemma}\label{lemma:10-3} 
+   \begin{enumerate}[(i)]
+     \item $\int_M\omega$ changes sign when the orientation of $M^n$ is reversed.
+-    \item If $\omega\in\Omega^n_c(M^n)$ has support contained in an open set $W=\subset M^n$, then 
++    \item If $\omega\in\Omega^n_c(M^n)$ has support contained in an open set $W\subset M^n$, then 
+       \begin{align*}
+         \int_M\omega = \int_W\omega,
+       \end{align*}
+-      where $W$ is the orientation induced by $M$.
+-    \item If $\phi:N^n\to M^n$ is an orientation persevering diffeomorphism, then we have that 
++      where $W$ has the orientation induced by $M$.
++    \item If $\phi:N^n\to M^n$ is an orientation preserving diffeomorphism, then we have that 
+       \begin{align*}
+         \int_M\omega = 
+         \int_N\phi^*(\omega)
+@@ -140,11 +140,11 @@
+   $f\sigma$, where $f\in C^0(M, \RR)$. The support of $f\sigma$ is equal to the support of $f$. The
+   integral of \eqref{eq:10-1} extended to continuous $n$-forms gives rise to a linear operator
+   \begin{align*}
+-    I_\sigma: C^n_c(M, \RR)\to \RR; && 
++    I_\sigma: C^0_c(M, \RR)\to \RR; && 
+     I_\sigma(f) = \int_M f\sigma.
+   \end{align*}
+   This linear operator is positive, i.e. $I_\sigma(f)\ge 0$ for $f\ge 0$. By a partition of unity 
+-  it is sufficient to show this when $\supp(f)\sseq U$, where $(U, h)$ is a positive oriented $C^\infty$-chart.
++  it is sufficient to show this when $\supp(f)\sseq U$, where $(U, h)$ is a positively oriented $C^\infty$-chart.
+   Then we have that 
+   \begin{align*}
+     I_\sigma(f) = \int_{h(U)} f\circ h^{-1}(x)\phi(x)\dd \mu_n,
+@@ -285,7 +285,7 @@
+ 
+ \begin{theorem}[Stokes' theorem]\label{theorem:10-8}\index{Stokes' Theorem}
+   Let $N\sseq M^n$ be a domain with smooth boundary in an oriented smooth manifold. Let $\partial N$
+-  have induced orientation. For every $\omega\in\Omega^{n-1}(M)$ with $M\cap \supp_M(\omega)$ compact
++  have induced orientation. For every $\omega\in\Omega^{n-1}(M)$ with $N\cap \supp_M(\omega)$ compact
+   we have 
+   \begin{align*}
+     \int_{\partial N} i^*(\omega) = \int_N \dd\omega,
+@@ -310,7 +310,7 @@
+     \int_N \dd\omega = \sum_{\alpha} \int_N \dd(\rho_\alpha\omega)
+   \end{align*}
+ 
+-  reduce the problem to the case where $\omega\in\Omega^n_c(M)$. $\supp_M(\omega)\sseq U$
++  reduce the problem to the case where $\omega\in\Omega^{n-1}_c(M)$. $\supp_M(\omega)\sseq U$
+   and $(U, h)$ is a smooth chart $h(U\cap N) = h(U)\cap\RR^n_-$. Furthermore the chart $(U, h)$
+   is assumed to be positively oriented.
+ 
+@@ -459,7 +459,7 @@
+ \end{theorem}
+ 
+ \begin{corollary}\label{corollary:10-14}
+-  For a connected compact smooth manifold $M^n$, integration over $M$ induces an isomorphism
++  For a connected compact oriented smooth manifold $M^n$,\corr{原书第 91 页推论 10.14 漏写定向假设；此处积分需要定向，现补明。} integration over $M$ induces an isomorphism
+   \begin{align*}
+     \int_M: H^n(M^n)\xra[\simee] \RR.\tag*{\qedsymbol}
+   \end{align*}
+@@ -543,7 +543,7 @@
+   Let $(U_\alpha)_{\alpha\in A}$ be an open cover of the connected manifold $M$, and 
+   let $p, q\in M$. There exists indices $\alpha_1, \ldots, \alpha_k$ such that 
+   \begin{enumerate}[(i)]
+-    \item $p\in U_\alpha$ and $q\in U_{\alpha_k}$.
++    \item $p\in U_{\alpha_1}$ and $q\in U_{\alpha_k}$.
+     \item $U_{\alpha_i}\cap U_{\alpha_{i+1}}\neq\ns$ for $1\le i\le k-1$.
+   \end{enumerate}
+ \end{lemma}
+--- transcription/11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex
++++ BellaBook/11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex
+@@ -110,14 +110,14 @@
+ 
+ Note that $x\in U$ belongs to $S$ if and only if every $m\times m$ submatrix of the Jacobi
+ matrix of $f$, evaluated at $x$, has determinant zero. Therefore $S$ is closed in $U$ and
+-we can write $S$ as a union of at most countably many compact subsets $K\sseq S$.
++we can write $S$ as a union of at most countably many compact subsets $K\sseq U$.
+ Theorem \ref{theorem:11-6} thus follows if $f(K)$ is a Lebesgue null-set for every compact
+ subset $K$ of $S$. We shall only use and prove these theorems in the case $m = n$,
+ where they follow from
+ 
+ \begin{proposition}\label{prop:11-7}
+   Let $f:U\to \RR^n$ be a $C^1$-map defined on an open set $U\sseq \RR^n$,
+-and let $K\sseq S$ be a compact set such that $\det(D_xf) = 0$ for all $x\in K$. Then
++and let $K\sseq U$ be a compact set such that $\det(D_xf) = 0$ for all $x\in K$. Then
+ $f(K)$ is a Lebesgue null-set in $\RR^n$.
+ \end{proposition}
+ 
+@@ -134,7 +134,7 @@
+     T = \prod_{i=1}^n [t_i, t_i + a]
+   \end{align*}
+ 
+-  be a cube such that $K\sseq S$, and let $\epsilon>0$. Since the functions $\partial f_j/\partial x_i$ 
++  be a cube such that $K\sseq U$, and let $\epsilon>0$. Since the functions $\partial f_j/\partial x_i$ 
+   are uniformly continuous on $L$, there exists a $\delta >0$ such that
+   \begin{align}\label{eq:11-5}
+     \|x-y\|\le \delta \implies 
+@@ -196,7 +196,7 @@
+ 
+ \begin{lemma}\label{lemma:11-8}
+   Let $p\in M^n$ be a regular value for the smooth map $f:N^n\to M^n$, with $N^n$ compact. 
+-  Then $f^{-1}(p)$ consists offinitely many points $q_1, \ldots, q_k$. Moreover, there exist 
++  Then $f^{-1}(p)$ consists of finitely many points $q_1, \ldots, q_k$. Moreover, there exist 
+   disjoint open neighborhoods $V_i$ of $q_i$ in $N^n$, and an open neighborhood $U$ of $p$ in $M^n$,
+   such that
+   \begin{enumerate}[(i)]
+@@ -275,8 +275,8 @@
+ \begin{proposition}\label{proposition:11-11}
+   Let $F:P^{n+1}\to M^n$ be a smooth map between oriented smooth
+   manifolds, with $M^n$ compact and connected. Let $X\sseq P$ be a compact domain with
+-  smooth boundary $N^n =\partial x$, and suppose $N$ is the disjoint union ofsubmanifolds
+-  $N_i^n,\ldots, N_k^n$. If $f_i = F_{|N_i}$, then
++  smooth boundary $N^n =\partial X$, and suppose $N$ is the disjoint union of submanifolds
++  $N_1^n,\ldots, N_k^n$. If $f_i = F_{|N_i}$, then
+   \begin{align*}
+     \sum_{i=1 }^{k }{\R{deg}(f_i)} = 0.
+   \end{align*}
+@@ -323,7 +323,7 @@
+     \item Let $g_t$ and $h_t$ be homotopies of the inclusions $g_0:J\to\RR^{n+1}$ and $h_0:K\to\RR^{n+1}$
+       to smooth embeddings $g_1$ and $h_1$, such that $g_t(J)\cap h_t(K) = \ns$ for all $t\in[0, 1]$. Then 
+       $\R{lk}(J, K) = \R{lk}(g_1(J), h_1(K))$.
+-    \item Let $\Phi:P^{n+1}\to\RR^{n+1}-J$ be a smooth map with $P$ oriented. Given a compact domain 
++    \item Let $\Phi:P^{l+1}\to\RR^{n+1}-J$ be a smooth map with $P$ oriented. Given a compact domain 
+       $R\sseq P$ with smooth boundary $\partial R$, let $Q_1, \ldots, Q_k$ be the connected components 
+       of $\partial R$. Suppose each $\Phi_{|Q_j}$ is a smooth embedding. If $K_i = \Phi(Q_i)$, then 
+       \begin{align*}
+@@ -360,14 +360,14 @@
+     F(x, y) = (\Phi(y) - x)\big/ \|\Phi(y) - x\|.
+   \end{align*}
+   and to the domain $X=J\times R$ with boundary components $I\times Q_i$. Indeed, 
+-  $f_i = E_{|J\times Q_i}$ has degree $\R{deg}(f_i) = \R{lk}(J, K_i)$.
++  $f_i = F_{|J\times Q_i}$ has degree $\R{deg}(f_i) = \R{lk}(J, K_i)$.
+ \end{proof}
+ 
+ Here is a picture to illustrate (iv):
+ \begin{figure}[!htb]
+   \centering
+   \includegraphics[width=.4\linewidth]{./pics/chap11-1-o.pdf} 
+-  \caption{Figure 1}
++  \caption{}
+   \label{fig:11-1}
+ \end{figure}
+ 
+@@ -384,7 +384,7 @@
+ with periods $a$ and $b$, respectively, corresponding to a single traversing of $J$ and
+ $K$, respectively, agreeing with the orientation. For $p\in S^2$, consider the set
+ \begin{align*}
+-  I(p) \{(q_1, q_2)\in J\times K\mid q_2-q_1 = \lambda p, \lambda>0\}.
++  I(p) = \{(q_1, q_2)\in J\times K\mid q_2-q_1 = \lambda p, \lambda>0\}.
+ \end{align*}
+ 
+ Let $v(q_1)$ and $w(q_2)$ denote the positively oriented unit tangent vectors to $J$ and
+@@ -397,7 +397,7 @@
+     \item (Gauss)
+       \begin{align*}
+         \R{lk}(J, K) = \frac{1}{4\pi }\int_0^a\mkern-8mu\int_0^b \frac{\det (\alpha(u) - \beta(v), \alpha'(u), \beta'(v))}
+-          {\|\alpha(u) - \beta(v)\|^3}
++          {\|\alpha(u) - \beta(v)\|^3}\,\dd v\,\dd u
+       \end{align*}
+     \item There exists a dense set of points $p\in S^2$ such that
+       \begin{align*}
+@@ -454,7 +454,7 @@
+ \begin{figure}[H]
+   \centering
+   \includegraphics[width=.6\linewidth]{./pics/chap11-2-o.pdf}
+-  \caption{Figure 2}
++  \caption{}
+   \label{fig:11-2}
+ \end{figure}
+ 
+@@ -464,7 +464,7 @@
+ \begin{figure}[H]
+   \centering
+   \includegraphics[width=.6\linewidth]{./pics/chap11-3-o.pdf}
+-  \caption{Figure 3}
++  \caption{}
+   \label{fig:11-3}
+ \end{figure}
+ 
+@@ -517,7 +517,7 @@
+ \end{proof}
+ 
+ Given a diffeomorphism $\phi:U\to V$ to an open set $V\sseq \RR^n$ and a vector field on 
+-$U$, we can define the direct imgae $\phi_*F \in C^\infty(V, \RR^n)$ by 
++$U$, we can define the direct image $\phi_*F \in C^\infty(V, \RR^n)$ by 
+ \begin{align*}
+   \phi_*F(q) = D_q\phi(F(q)), p = \phi^{-1}(q).
+ \end{align*}
+@@ -626,7 +626,7 @@
+   \label{fig:11-4}
+ \end{figure}
+ 
+-Let $X$ be a smooth tangent vector field on Mn and let $p_0\in M^n$ be a zero. Let
++Let $X$ be a smooth tangent vector field on $M^n$ and let $p_0\in M^n$ be a zero. Let
+ \begin{align*}
+   F = h_*(X_{|U})\in C^\infty(\RR^n, \RR^n)
+ \end{align*}
+@@ -686,7 +686,7 @@
+ \end{definition}
+ 
+ \begin{theorem}\label{theorem:11-22}
+-  Let $F\in C^\infty(U, \RR)$ be a vector field on an open set $U\sseq\RR^n$,
++  Let $F\in C^\infty(U, \RR^n)$ be a vector field on an open set $U\sseq\RR^n$,
+ with only isolated zeros. Let $R\sseq U$ be a compact domain with smooth boundary
+ $\partial R$, and assume that $F(p)\neq 0$ for $p\in\partial R$. Then
+ \begin{align*}
+@@ -737,8 +737,8 @@
+ \end{proof}
+ 
+ \begin{lemma}\label{lemma:11-25}
+-  Suppose $F\in C^\infty(\RR^n, \RR^N)$ has the origin as its only zero. Then
+-  there exists an $F\in C^\infty(\RR^n, \RR^N)$, with only non-degenerate zeros, that coincides
++  Suppose $F\in C^\infty(\RR^n, \RR^n)$ has the origin as its only zero. Then
++  there exists an $\widetilde F\in C^\infty(\RR^n, \RR^n)$, with only non-degenerate zeros, that coincides
+   with $F$ outside a compact set.
+ \end{lemma}
+ 
+@@ -799,7 +799,7 @@
+ \end{proof}
+ 
+ \begin{theorem}\label{theorem:11-27}
+-  Let $M^n\sseq\RR^n$ be a compact smooth submanifold and let $N_\epsilon$ be
++  Let $M^n\sseq\RR^{n+k}$ be a compact smooth submanifold and let $N_\epsilon$ be
+ a tubular neighborhood of radius $\epsilon>0$ around $M$. Denote by $g:\partial N_\epsilon\to S^{n+k-1}$
+ the outward pointing Gauss map. If $X$ is an arbitrary smooth vector field on $M^n$
+ with isolated singularities, then
+--- transcription/12-The-Poincare-Hopf-Theorem.tex
++++ BellaBook/12-The-Poincare-Hopf-Theorem.tex
+@@ -27,7 +27,7 @@
+ \begin{proposition}\label{proposition:12-2}
+   Suppose that $p\in M$ is a critical point for $f\in C^\infty(M, \RR)$.
+   \begin{enumerate}[(i)]
+-    \item There exsits a quadratic form $\dd_p^2f$ on $T_pM$ characterized by the equation
++    \item There exists a quadratic form $\dd_p^2f$ on $T_pM$ characterized by the equation
+       \[
+         \dd_p^2f(\alpha'(0)) = (f\circ\alpha)''(0)
+       \]
+@@ -36,7 +36,7 @@
+       \[
+         \RR^n\xra[D_qh^{-1}] T_pM\xra[\dd_p^2f] \RR
+       \]
+-      is the quadratic fonn associated to the symmetric matrix
++      is the quadratic form associated to the symmetric matrix
+       \[
+         \left(\frac{\partial^2f\circ h^{-1}}{\partial x_i\partial x_j}(q)\right)
+       \]
+@@ -273,7 +273,7 @@
+ \end{proof}
+ 
+ We point out that with the assumptions of Theorem \ref{theorem:12-6} $p$ is the only critical
+-point in $U$. If $M$ is compact and $f\in C^\infty(W, \RR)$ is a Morse function then $f$ has
++point in $U$. If $M$ is compact and $f\in C^\infty(M, \RR)$ is a Morse function then $f$ has
+ only finitely many critical points. Among them there will always be at least one
+ local minimum (index $\lambda = 0$) and at least one local maximum (index $\lambda=n$).
+ 
+@@ -282,7 +282,7 @@
+ vector field $X$ on $M$ is said to be \Index{gradient-like} for $f$, if the following conditions
+ are satisfied:
+ \begin{enumerate}[(i)]
+-  \item For every point $p\in M, \dd_pf(X(p)) > 0$.
++  \item For every non-critical point $p\in M$, $\dd_pf(X(p)) > 0$.
+   \item If $p\in M^n$ is a critical point of $f$ then there exists a $C^\infty$-chart $h:U\to h(U)\subseteq\RR^n$
+   with $p\in U$ and $h(p) = 0$ such that
+   \[
+--- transcription/13-Poincare-Duality.tex
++++ BellaBook/13-Poincare-Duality.tex
+@@ -294,7 +294,7 @@
+   \begin{align*}
+     \int_{U_1}\omega_1\wedge\!\dd\tau_1 + \int_{U_2}\omega_2\wedge\!\dd\tau_2
+     & = \int_{U_1}\omega_1\wedge j_{1*}(\sigma) - \int_{U_2}\omega_2\wedge j_{2*}(\sigma)\\
+-    & = \int_{U_1\cap U_1}j_{1}^*(\omega_1)\wedge\sigma - \int_{U_1\cap U_1}j_{2}^*(\omega_2)\wedge\sigma\\
++    & = \int_{U_1\cap U_2}j_{1}^*(\omega_1)\wedge\sigma - \int_{U_1\cap U_2}j_{2}^*(\omega_2)\wedge\sigma\\
+     & = \int_{U_1\cap U_2}\omega\wedge\sigma.
+   \end{align*}
+ \end{proof}
+@@ -311,11 +311,11 @@
+ 
+ \begin{proof}
+   Consider the diagram
+-  \[\begin{tikzcd}[scale cd=.75]
++  \[\begin{tikzcd}[scale cd=.75,column sep=1.3em]
+     \ar[r, shorten=2mm] & H^p(U)\rar{i^*}\dar{D_U^p} & H^p(U_1)\oplus H^p(U_2)\dar{D_{U_1}^p\oplus D_{U_2}^p}\rar{j^*}
+       & H^p(U_1\cap U_2)\dar{D_{U_1\cap U_2}^p}\rar{\partial^*} & H^{p+1}(U)\dar{D_{U}^{p+1}}\ar[r, shorten=2mm] & \quad \\
+     \ar[r, shorten=2mm] & H_c^{n-p}(U)^*\rar{i^!} & H_c^{n-p}(U_1)^*\oplus H_c^{n-p}(U_2)^*\rar{j^!}
+-      & H_c^{n-p}(U_1\cap U_2)^*\rar{(-1)^{p+1}\partial^!} & H_c^{n-p-1}(U)\ar[r, shorten=2mm] & \quad
++      & H_c^{n-p}(U_1\cap U_2)^*\rar{(-1)^{p+1}\partial^!} & H_c^{n-p-1}(U)^*\ar[r, shorten=2mm] & \quad
+   \end{tikzcd}\]
+   This is a commutative diagram according to the two lemmas above. Our assumptions are 
+   that $D_{U_1}^p\oplus D_{U_2}^p$ and $D_{U_1\cap U_2}^p$ are isomorphisms for all $p$, and it follows
+@@ -343,9 +343,9 @@
+   Suppose $\C U$ is a collection of open subsets of $M$ that satisfies the following four conditions
+   \begin{enumerate}
+     \item $\ns\in \C U$.
+-    \item Any open subset $U\in V_\beta$ diffeomorphic with $\RR^n$ belongs to $\C U$.
+-    \item If $U_1, U_1, U_1\cap U_2$ belongs to $\C U$ then $U_1\cup U_2\in \C U$.
+-    \item If $U_1, U_2,\ldots$ is a sequence of pairwise disjointj open subsets with $U_i\in \C U$
++    \item Any open subset $U\subseteq V_\beta$ diffeomorphic with $\RR^n$ belongs to $\C U$.
++    \item If $U_1, U_2, U_1\cap U_2$ belongs to $\C U$ then $U_1\cup U_2\in \C U$.
++    \item If $U_1, U_2,\ldots$ is a sequence of pairwise disjoint open subsets with $U_i\in \C U$
+       then their unions $\bigcup_i U_i\in\C U$.
+   \end{enumerate}
+   Then $M^n$ belongs to $\C U$.
+@@ -433,7 +433,7 @@
+ is diffeomorphic to $\RR^n$. Thus we can conclude from Lemma \ref{lemma:13-10} that $W\in\C U$. In the general case, 
+ consider first an open coordinate patch $(\C U, h)$ of $M$, $h:U\to W$ a diffeomorphism onto an open subset $W\subseteq\RR^n$. 
+ We apply the above special case to $W$ with cover $(h^{-1}(V_\beta))_{\beta\in B}$, and with $\C U^h$ the open sets of $W$ 
+-whose images by $h-1$ belong to the given $\C U$. The conclusion is that $U\in\C U$ for each coordinate
++whose images by $h^{-1}$ belong to the given $\C U$. The conclusion is that $U\in\C U$ for each coordinate
+ patch.
+ 
+ If $M$ is compact then we apply the argument of Lemma \ref{lemma:13-10} to a finite cover
+@@ -478,7 +478,7 @@
+   \begin{enumerate}
+     \item $j^*=\Omega^q(j):\Omega^q(N)\to\Omega^q(M)$ is an epimorphism.
+     \item If $\omega\in\Omega^q(M)$ is closed, there exists a $q$-form $\tau\in\Omega^q(N)$ such that 
+-      $j^*(\tau)=\omega$ and such that $\dd\tau$ is $\tau-\dd\sigma$ is identically zero some open set in $N$ contaning $M$.
++      $j^*(\tau)=\omega$ and such that $\dd\tau$ is identically zero on some open set in $N$ containing $M$.
+     \item If $\tau\in\Omega^q(N)$ has $\supp_N(\!\dd\tau)\cap M=\ns$ and $j^*(\tau)$ is exact, there exists a form $\sigma\in\Omega^{q-1}(N)$
+       such that $\tau-\dd\sigma$ is identically zero on some open set in $N$ containing $M$.
+   \end{enumerate}
+@@ -488,13 +488,13 @@
+ \begin{proof}
+   We can assume by Theorem \ref{theorem:8-11} that $N$ is a smooth submanifold of $\RR^k$.
+   Theorem \ref{theorem:9-23} gives us tubular neighborhoods in $\RR^k$ with corresponding smooth
+-  inclusions and retraction $(V_N, i_N, \tau_N), (V_M, i_M, \tau_M)$ for $N$ and $M$ respectively;
++  inclusions and retraction $(V_N, i_N, r_N), (V_M, i_M, r_M)$ for $N$ and $M$ respectively;
+   we may arrange that $V_M\subseteq V_N$. Let $\varphi:N\to [0, 1]$ be a smooth function such that 
+-  $\supp_N(\varphi)\subseteq N\cap V_N$ and such that $\varphi$ is constantly equal to 1 on some open 
++  $\supp_N(\varphi)\subseteq N\cap V_M$ and such that $\varphi$ is constantly equal to 1 on some open 
+   set $W\subseteq N\cap V_M$ with $M\subseteq W$.
+ 
+-  Let $\omega\in\Omega^q(N)$ be closed, and let $\widetilde{\omega}=\tau^*_M(\omega)\in\Omega^q(N\cap V_M)$. 
+-  Then (ii) follows upon defining $\tau\in\Omega^q(N)$ to the equal $\varphi\widetilde{\omega}$ on $N\cap V_M$ and 
++  Let $\omega\in\Omega^q(M)$ be closed, and let $\widetilde{\omega}=r^*_M(\omega)\in\Omega^q(N\cap V_M)$. 
++  Then (ii) follows upon defining $\tau\in\Omega^q(N)$ to be equal $\varphi\widetilde{\omega}$ on $N\cap V_M$ and 
+   extended trivially over the remaining part of $N$. The same argument proves (i).
+ 
+   To prove (iii) we set 
+@@ -510,8 +510,8 @@
+   \]
+   so $[i^*_M(\widetilde{\tau})]=0$ in $H^q(M)$. It follows from Corollary \ref{corollary:9-28} that $[\widetilde{\tau}]=0$
+   in $H^q(V_M)$. Pulling this back by the inclusion $N\cap V_M\to V_M$ we find that $\tau_{|N\cap V_M}$ is exact.
+-  Now choose $\sigma_0\in\Omega_{q-1}(N\cap V_M)$ with $\dd\sigma_0=\tau_{|N\cap V_M}$ and define $\sigma\in\Omega^{q-1}(N)$
+-  to be $\varphi\sigma_0$ on $N\cap V_m$ and extended trivially over the remaning part of $N$. Then $\tau-\dd\sigma$ vanishes 
++  Now choose $\sigma_0\in\Omega^{q-1}(N\cap V_M)$ with $\dd\sigma_0=\tau_{|N\cap V_M}$ and define $\sigma\in\Omega^{q-1}(N)$
++  to be $\varphi\sigma_0$ on $N\cap V_M$ and extended trivially over the remaining part of $N$. Then $\tau-\dd\sigma$ vanishes 
+   on $W$.
+ \end{proof}
+ 
+--- transcription/14-The-Complex-Projective-Space-CPn.tex
++++ BellaBook/14-The-Complex-Projective-Space-CPn.tex
+@@ -109,7 +109,7 @@
+ 
+ 
+ \begin{theorem}\label{theorem:14-2}
+-  The cohomolog of $\B{CP}^n$ is
++  The cohomology of $\B{CP}^n$ is
+   \begin{align*}
+     H^{2j}(\B{CP}^n) = \RR \quad & \text{ for } 0\le j\le n\\
+     H^k(\B{CP}^n) = 0 \quad & \text{ otherwise. }
+@@ -124,7 +124,7 @@
+ \[
+   \B{CP}^{n}-\B{CP}^{n-1} = U_n
+ \]
+-is by \eqref{eq:14-1} and \eqref{eq:14-2} homeomorphic with $\RR^{2n}$. The exact cohomolog sequence 
++is by \eqref{eq:14-1} and \eqref{eq:14-2} homeomorphic with $\RR^{2n}$. The exact cohomology sequence 
+ takes the form 
+ \[
+   \cdots\ra H_c^q(\RR^{2n})
+@@ -155,7 +155,7 @@
+ \begin{theorem}\label{theorem:14-3}
+   The cohomology algebra $H^*(\CP^n)$ is a truncated polynomial algebra
+   \[
+-    H^*(\CP^n) =\RR[c]/(C^{n+1})
++    H^*(\CP^n) =\RR[c]/(c^{n+1})
+   \]
+   where $c$ is a non-zero class in degree 2, and $(c^{n+1})$ the ideal generated by $c^{n+1}$.
+ \end{theorem}
+--- transcription/15-Fiber-Bundles-and-Vector-Bundle.tex
++++ BellaBook/15-Fiber-Bundles-and-Vector-Bundle.tex
+@@ -1,10 +1,10 @@
+-\chapter{Fiber Bundles and Vector Bundle}
++\chapter{Fiber Bundles and Vector Bundles}
+ \begin{definition}\label{definition:15-1}
+   A \Index{fiber bundle} consists of three topological spaces $E, B, F$ and a continuous 
+   map $\pi:E\to B$, such that the following condition is satisfied: Each
+   $b\in B$ has an open neighborhood $U_b$ and a homeomorphism
+   \[
+-    h:U_n\times F\to \pi^{-1}(U_b)
++    h:U_b\times F\to \pi^{-1}(U_b)
+   \]
+   such that $\pi\circ h=\R{proj}_1$.
+ \end{definition}
+@@ -193,7 +193,7 @@
+   \[
+     E(\xi\oplus\eta) = \{(v, w)\in E(\xi)\times E(\eta)\mid \pi_\xi(v)=\pi_\eta(w)\}
+   \]
+-  and projection $\pi_{\pi\oplus\eta}(v, w)=\pi_\xi(v)=\pi_\eta(w)$. The fiber $(\xi\oplus\eta)_b$
++  and projection $\pi_{\xi\oplus\eta}(v, w)=\pi_\xi(v)=\pi_\eta(w)$. The fiber $(\xi\oplus\eta)_b$
+   is equal to $\xi_b\oplus\eta_b$.
+ \end{definition}
+ 
+@@ -240,7 +240,7 @@
+ 
+ \begin{definition}\label{definition:15-15}
+   A (smooth) \Index{section} in a (smooth) fiber bundle $(E, B, F;\pi)$ is a (smooth) map $s:B\to E$ 
+-  such that $\pi\circ s = E$.
++  such that $\pi\circ s = \id_B$.
+ \end{definition}
+ 
+ The set of sections of a vector bundle $\xi$ is a vector space $\Gamma(\xi)$. One adds sections
+--- transcription/16-Operations-on-Vector-Bundles-and-their-Sections.tex
++++ BellaBook/16-Operations-on-Vector-Bundles-and-their-Sections.tex
+@@ -107,7 +107,7 @@
+     For every $R$-multilinear map $f:V_1\times\ldots\times V_k\to W$ there exists a unique $R$-linear map 
+     $\overline{f}:V_1\otr\ldots\otr V_k\to W$ such that the following diagram commutes.
+     \[\begin{tikzcd}
+-    V_1\times\ldots\times V_k \arrow[rr, "f"], \arrow[dr, "\pi"] &  & W \\
++    V_1\times\ldots\times V_k \arrow[rr, "f"] \arrow[dr, "\pi"] &  & W \\
+     & V_1\otr\cdots\otr V_k \arrow[ur, "\overline{f}"'] & 
+     \end{tikzcd}\]
+   \end{lemma}
+@@ -128,7 +128,7 @@
+ \begin{definition}\label{definition:16-5}
+   The quotient module 
+   \[
+-    \Lambda_R^k = \bigotimes_R^k (V) / A^k(V)
++    \Lambda_R^k(V) = \bigotimes_R^k (V) / A^k(V)
+   \]
+   is called the \Index{exterior {$k$}-th power}.
+ \end{definition}
+@@ -151,7 +151,7 @@
+ 
+ \begin{lemma}\label{lemma:16-6}
+   For any $R$-alternating map $\omega: V \times\ldots \times V\to W$ there is a unique $R$-linear 
+-  map $\overline{\omega}:\Lambda_R^k\to W$ such that $\omega = \overline{\omega}\circ\rho$.\hfill $\square$
++  map $\overline{\omega}:\Lambda_R^k(V)\to W$ such that $\omega = \overline{\omega}\circ\rho$.\hfill $\square$
+ \end{lemma}
+ 
+ In the special case where $R = \RR$ (or $\CC$) and where we restrict attention to finite 
+@@ -204,7 +204,7 @@
+ becomes multiplicative, $\overline{\varphi}(\omega_1\wedge\omega_2)=\overline{\omega_1}\wedge\overline{\varphi}(\omega_2)$, where 
+ the product on the range is the one from Definition \ref{definition:2-5}. The composition
+ \[
+-  \psi:\Lambda^k(V^*)\otimes \Lambda^l(V) \xra[\overline{\varphi}\otimes 1] 
++  \psi:\Lambda^k(V^*)\otimes \Lambda^k(V) \xra[\overline{\varphi}\otimes 1] 
+   \alt^k(V)\otimes \Lambda^k(V) \xra*[ev] \RR
+ \]
+ with $\R{ev}(\omega, v_1\wedge\ldots\wedge v_k) = \omega(v_1,\ldots,v_k)$ induces the 
+@@ -506,6 +506,6 @@
+ record for later use the obvious
+ \begin{lemma}\label{lemma:16-15}
+   Let $f:V\otr W\to U$ be an $R$-linear map which is $S$-balanced in the sense that $f(vs\otr w)=f(v\otr sw)$ 
+-  for $f\in V, w\in W$ and $s\in S$. Then there is an induced $R$-linear map $\overline{f}:V\otr[S] W\to U$.
++  for $v\in V, w\in W$ and $s\in S$. Then there is an induced $R$-linear map $\overline{f}:V\otr[S] W\to U$.
+   \hfill $\square$
+ \end{lemma}--- transcription/17-Connections-and-Curvature.tex
++++ BellaBook/17-Connections-and-Curvature.tex
+@@ -589,7 +589,7 @@
+   = ( {\omega  \land  \tau })  \otimes  \left\langle  {s,s^*}\right\rangle
+ \]
+ 
+-where $\omega  \in  \Omega^{i}(M),\tau  \in  \Omega^{j}(M)$ and $s \in  \Omega^0(\xi),s^* \in  \Omega^0(\xi)$.
++where $\omega  \in  \Omega^{i}(M),\tau  \in  \Omega^{j}(M)$ and $s \in  \Omega^0(\xi),s^* \in  \Omega^0(\xi^*)$.
+ 
+ Given a connection $\btd_{\xi }$ on $\xi$, we define the 
+ connection $\btd_{\xi^*}$ on $\xi^*$ by requiring
+@@ -615,7 +615,7 @@
+ 
+ Finally we can combine \eqref{eq:17-14} and \eqref{eq:17-15} to define
+ \[
+-\btd_{\xi^* \otimes  \eta }( {s \otimes  t})  = \btd_{\xi^*}(s)  \land  t + s \land  \btd_{\xi }(t).
++\btd_{\xi^* \otimes  \eta }( {s \otimes  t})  = \btd_{\xi^*}(s)  \land  t + s \land  \btd_{\eta }(t).
+ \]
+ 
+ Since $\xi^* \otimes  \eta  \simee  \hom( \xi, \eta)$, this defines a connection on $\hom( \xi, \eta)$. 
+@@ -654,7 +654,7 @@
+   \begin{align*}
+     ( {\btd_{\xi }(s),\alpha ( {s^* \otimes  t}) }) 
+       & = ( {\btd_{\xi }(s),s^*})  \land  t \\  
+-    ( {s,\btd_{\xi^* \otimes  \eta }\R{Im}( {s^* \otimes  t}) })  
++    ( {s,\btd_{\xi^* \otimes  \eta }( {s^* \otimes  t}) })  
+       & = ( {s,\btd_{\xi^*}( s^*) })  \land  t + ( {s,s^*}) \btd_{\eta }(t).
+   \end{align*}
+ 
+@@ -678,7 +678,7 @@
+ and the defining formulas generalize to the following lemma, whose proof is left to the reader.
+ 
+ \begin{lemma}\label{lemma:17-12}
+-Let $s \in  \Omega^{i}(\xi),s^* \in  \Omega^{i}( \xi^*),t \in  \Omega^{j}( \eta )$ and $\phi  \in  \Omega^{j}( {\hom( \xi, \eta) })$. 
++Let $s \in  \Omega^{i}(\xi),s^* \in  \Omega^{j}( \xi^*),t \in  \Omega^{j}( \eta )$ and $\phi  \in  \Omega^{j}( {\hom( \xi, \eta) })$. 
+ We have
+ \begin{enumerate}
+   \item $\dd( ( {s,s^*}) )  = ( {\dd^\btd(s),s^*})  + {(-1) }^{i}( {s,\dd^\btd( s^*) })$
+@@ -687,7 +687,7 @@
+ \end{enumerate}
+ 
+ where $\dd^\btd$ corresponds to $\btd  = \btd_{\xi },\btd_{\eta },\btd_{\xi^*}$ 
+-and $\btd_{\hom( {\xi,\xi^*}) }$, respectively.\hfill$\square$
++and $\btd_{\hom( {\xi,\eta}) }$, respectively.\hfill$\square$
+ \end{lemma}
+ 
+ The definitions above may appear somewhat abstract, so let us state in local coordinates the case of most 
+@@ -721,7 +721,7 @@
+ proved quite similarly.
+ 
+ If ${\mathbf{e}}^{\prime }$ is another frame for ${\left. \xi \right| }_{U}$ then ${\mathbf{e}}^{\prime } = G \cdot  \mathbf{e}$ 
+-with $G \in  {\mathrm{{GL}}}_{k}( {\Omega^0( U) })$, and the connection matrices $A = A( \mathbf{e}),{A}^{\prime } = A( \mathbf{e})$ 
++with $G \in  {\mathrm{{GL}}}_{k}( {\Omega^0( U) })$, and the connection matrices $A = A( \mathbf{e}),{A}^{\prime } = A( \mathbf{e}^{\prime})$ 
+ and the curvature forms ${F}^\btd( \mathbf{e})$, $F^\btd ({\mathbf{e}}^{\prime })$ are related by
+ \begin{align}\label{eq:17-18}
+   \begin{aligned}
+--- transcription/19-The-Euler-Class.tex
++++ BellaBook/19-The-Euler-Class.tex
+@@ -21,7 +21,7 @@
+   \]
+ 
+   We express this condition locally in terms of the connection form $A$ associated to an orthonormal 
+-  frame. Let $e_{1}, \ldots, e_{k} \in \Omega^{0}(\xi)$ be sections over $U$, so that $e_{1}(p), \ldots, e_{k}(p)$ 
++  frame. Let $e_{1}, \ldots, e_{2k} \in \Omega^{0}(\xi)$ be sections over $U$, so that $e_{1}(p), \ldots, e_{2k}(p)$ 
+   forms an orthonormal basis of $\xi$ for $p \in U$. Let $A$ be the associated connection form,
+   \[
+     \btd\left(e_{i}\right)=\sum A_{i j} \otimes e_{j}.
+@@ -62,7 +62,7 @@
+ \begin{equation}\label{eq:19-2}
+   F^{\btd}\left(\F{e}^{\prime}\right)_{p}=B_{p} F^{\btd}(\F{e}) B_{p}^{-1}
+ \end{equation}
+-where $B_{p}$ is the orthogonal transisition matrix between $\F{e}(p)$ and $\F{e}^{\prime}(p)$.
++where $B_{p}$ is the orthogonal transition matrix between $\F{e}(p)$ and $\F{e}^{\prime}(p)$.
+ 
+ Now suppose further that the vector bundle $\xi$ is oriented, and that $\F{e}(p)$ and $\F{e}^{\prime}(p)$ 
+ are oriented orthonormal bases for $\xi_{p}, p \in U$. Then $B_{p} \in S O_{2 k}$, and by Theorem \ref{theorem:B.5},
+@@ -95,7 +95,7 @@
+ \]
+ 
+ In this calculation we have only used \eqref{eq:19-4} over open sets that contain $\R{supp}_{M}\left(\rho_{\alpha}\right)$, and not 
+-neccesarily on all of $M$. This will be used in the proof of Lemma \ref{lemma:19-2} below.
++necessarily on all of $M$. This will be used in the proof of Lemma \ref{lemma:19-2} below.
+ 
+ Consider the maps
+ \[
+@@ -121,7 +121,7 @@
+ 
+   Let $\widetilde{\btd}$ be any metric connection on $\tilde{\xi}$ compatible with $\tilde{g}$. We have 
+   connections $\pi^{*}\left(\btd_{0}\right), \widetilde{\btd}$ and $\pi^{*}\left(\btd_{1}\right)$ compatible 
+-  with $\tilde{g}$ over $M \times(-\infty \times 1 / 4), M \times(1 / 8,7 / 8)$ and $M \times(3 / 4, \infty)$ respectively. 
++  with $\tilde{g}$ over $M \times(-\infty, 1 / 4), M \times(1 / 8,7 / 8)$ and $M \times(3 / 4, \infty)$ respectively. 
+   We use a partition of unity, subordinate to this cover, to glue together the three connections to construct a 
+   connection $\widetilde{\btd}$ over $M \times \RR$. This is metric w.r.t. $\tilde{g}$, and by 
+   construction, $i_{\nu}^{*} \widetilde{\btd}=\btd_\nu$.
+@@ -207,7 +207,7 @@
+ the matrix of 1 -forms given by the usual embedding of $M_{k}(\CC)$ into $M_{2 k}(\RR)$. This embedding sends 
+ skew-hermitian matrices into skewsymmetric matrices, and
+ \begin{equation}\label{eq:19-6}
+-  \R{Pf}\left(F \btd(\F{e})_{\RR}\right)=(-i)^{k} \R{det}\left(F^{\btd}(\F{e})\right)
++  \R{Pf}\left(F^\btd(\F{e})_{\RR}\right)=(-i)^{k} \R{det}\left(F^{\btd}(\F{e})\right)
+ \end{equation}
+ by Theorem \ref{theorem:B.6}.
+ 
+@@ -310,7 +310,7 @@
+ 
+ \begin{proof}
+   We give $\zeta$ a metric $\langle\,,\,\rangle$ and chose a compatible metric connection $\btd$. 
+-  Then $e(\zeta)$ is represented locally by $(-1)^{k} /(2 \pi)^{k} \R{Pf}(F \btd(\F{e}))$ 
++  Then $e(\zeta)$ is represented locally by $(-1)^{k} /(2 \pi)^{k} \R{Pf}(F^\btd(\F{e}))$ 
+   where $\F{e}$ is an orthonormal frame. If on the complexified bundle $\zeta_{\B{C}}$ we use 
+   the complexified metric then $\F{e}$ is still an orthonormal frame, and the connection $\btd$ 
+   becomes a hermitian connection on $\left(\zeta_{\B{C}},\langle\,,\,\rangle\right)$. It follows 
+--- transcription/20-Cohomology-of-Projective-and-Grassmannian-Bundles.tex
++++ BellaBook/20-Cohomology-of-Projective-and-Grassmannian-Bundles.tex
+@@ -32,7 +32,7 @@
+   The proof follows the pattern used to prove Poincaré duality in Chapter 13. Let $\mathcal{V}$ be the cover 
+   consisting of open sets $V \subset  M$, such that $E$ is trivial over $V$. Let $\mathcal{U}$ be the 
+   cover of $M$ by open sets, so that the theorem is satisfied with $M$ replaced by $U \in  \mathcal{U}$ and $E$ 
+-  replaced by ${\pi }^*( U)$. We must verify the conditions of Theorem \ref{theorem:13-9}. We leave conditions (i), (ii) 
++  replaced by ${\pi }^{-1}( U)$. We must verify the conditions of Theorem \ref{theorem:13-9}. We leave conditions (i), (ii) 
+   and (iv) to the reader and prove condition (iii). So suppose
+   \[
+     U = {U}_{1} \cup  {U}_{2},\;{U}_{12} = {U}_{1} \cap  {U}_{2}
+@@ -80,7 +80,7 @@
+   \begin{align}\label{eq:20-3}
+     {\delta }^*( {m \cdot  {i}_{12}^*( e) })  = {\delta }^*( m)  \cdot  e,
+   \end{align}
+-  valid for any $m \in  H^*( U)$ and $e \in  H^*( E)$, with ${i}_{12} : E_{12} \ra  E$ the inclusion. 
++  valid for any $m \in  H^*( U_{12})$ and $e \in  H^*( E)$, with ${i}_{12} : E_{12} \ra  E$ the inclusion. 
+   We leave the proof of \eqref{eq:20-3} as an exercise.
+ \end{proof}
+ 
+@@ -181,8 +181,8 @@
+   {\lambda }_{i}( \xi )  = {(-1) }^{i + 1}{c}_{n + 1- i}( \xi ).
+ \end{align}
+ 
+-To see this we use that ${\pi }_{1}^*( \xi )  = H( \xi )  \oplus  {\xi }_{1}$ and the exponential 
+-property of the total Chern class so that $c( {H( \xi ) }) c( {\xi }_{1})  = c( {{\pi }_{1}^*( \xi ) })$. 
++To see this we use that ${\pi }^*( \xi )  = H( \xi )  \oplus  {\xi }_{1}$ and the exponential 
++property of the total Chern class so that $c( {H( \xi ) }) c( {\xi }_{1})  = c( {{\pi }^*( \xi ) })$. 
+ Hence
+ \[
+   c( {\xi }_{1})  
+--- transcription/21-Thom-Isomorphism-and-the-General-Gauss-Bonnet-Formula.tex
++++ BellaBook/21-Thom-Isomorphism-and-the-General-Gauss-Bonnet-Formula.tex
+@@ -1,7 +1,7 @@
+ \chapter[Thom Isomorphism and the General Gauss-Bonnet Formula]{Thom Isomorphism and the General\IfFontTimesTF{\\}{} Gauss-Bonnet Formula}
+-Let $\xi$ be an oriented vector bundle over $M$ with total space $E = E( \xi )$. The Thom isomorphism theorem 
++Let $\xi$ be an oriented vector bundle over a compact manifold $M$ with total space $E = E( \xi )$. The Thom isomorphism theorem 
+ calculates the compactly supported cohomology $H_c^*( E)$ in terms of ${H}^*( M)$, 
+-namely ${H}^{q}( M)  \cong  H_c^{q + m}(E)$ where $m = \dim \xi$. Assuming $\xi$ to be 
++namely ${H}^{q}( M)  \cong  H_c^{q + m}(E)$ where $m = \dim \xi$.\corr{原书第 211 页开头的 $H^q(M)\cong H_c^{q+m}(E)$ 需要 $M$ 紧致；现补明，与定理 21.3 一致。非紧致底空间的一般形式应同时在底空间使用紧支撑上同调。} Assuming $\xi$ to be 
+ smooth (cf. Exercise \ref{exercise:15-8}) and $M$ to be oriented the Thom isomorphism theorem is a consequence of 
+ Poincar\'e duality. Indeed,
+ \[
+--- transcription/App-A-Smooth-Partition-of-Unit.tex
++++ BellaBook/App-A-Smooth-Partition-of-Unit.tex
+@@ -134,7 +134,7 @@
+ 
+ 
+ \begin{lemma}\label{lemma:A.7}
+-  If $A\in\RR^n$ is closed and $U\sseq\RR^n$ is open with $A\sseq U$, then there exists 
++  If $A\subseteq\RR^n$ is closed and $U\sseq\RR^n$ is open with $A\sseq U$, then there exists 
+   a smooth function $\psi:\RR^n\to [0, 1]$ with $\supp_{\RR^n}(\psi)\sseq U$ and $\psi(x)=1$
+   for $x\in A$.
+ \end{lemma}
+@@ -145,7 +145,7 @@
+ \end{proof}
+ 
+ \begin{proposition}[Whitney]\label{proposition:A.8}\index{Whitney}
+-  For an arbitary closed set $A\subseteq\RR^n$ there exists a smooth function $\phi:\RR^n\to[0, \infty]$ with $A=\phi^{-1}(0)$.
++  For an arbitary closed set $A\subseteq\RR^n$ there exists a smooth function $\phi:\RR^n\to[0, \infty)$ with $A=\phi^{-1}(0)$.
+ \end{proposition}
+ 
+ \begin{proof}
+--- transcription/App-B-Invariant-Polynomials.tex
++++ BellaBook/App-B-Invariant-Polynomials.tex
+@@ -4,7 +4,7 @@
+ homogeneous polynomials\index{homogeneous polynomial}, i.e. a sum of monomials of same degree, which will
+ be called the degree of $P$. The polynomial $P(A)$ is said to be invariant when
+ \[
+-  p(gag^{-1}) = P(A)
++  P(gAg^{-1}) = P(A)
+ \]
+ for all $g\in\R{GL}_n(\CC)$. Every polynomial $P(A)$ determines a function
+ \[
+@@ -18,19 +18,19 @@
+ for every $n$-dimensional complex vector space $V$ independent of choice of basis.
+ Let us consider the \Index{characteristic polynomial}
+ \[
+-  \sigma(i) = \det(I+tA) = \sum_{i=0}^n \sigma_i(A)t^i, \qquad \sigma_0(A) = 1.
++  \sigma(t) = \det(I+tA) = \sum_{i=0}^n \sigma_i(A)t^i, \qquad \sigma_0(A) = 1.
+ \]
+ 
+ Each of the functions $\sigma_i(A)$ is an invariant polynomial. Also consider
+ \begin{align}\label{eq:B.1}
+   s(t) = -t\frac{\dd }{\dd t}\log(\det(I-tA))
+-    = \sum_{k=0}^{\infty}{s_k(A)t^k}
++    = \sum_{k=1}^{\infty}{s_k(A)t^k}
+ \end{align}
+ where $\log$ denotes the power series
+ \[
+   \log(1+x) = \sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{k}x^k
+ \]
+-and $\log(\det(I - tA))$ means that we substitute the polynomial $\det(I - tA$) in the
++and $\log(\det(I - tA))$ means that we substitute the polynomial $\det(I-tA)-1$ in the
+ power series. Differentiation in \eqref{eq:B.1} is performed formally,
+ \[
+   \frac{\dd }{\dd t}\left(\sum_{i=0}^{\infty }{a_it^i}\right)
+@@ -39,23 +39,23 @@
+ 
+ Conversely
+ \[
+-  \sigma(t) = \sum_{i=1}^{\infty}\sigma_it^i = \exp\left(\int \frac{s(-t)}{t}\dd t\right),
+-\]
+-calculated formally too.
++  \sigma(t) = \sum_{i=0}^{\infty}\sigma_it^i = \exp\left(-\int_0^t \frac{s(-u)}{u}\dd u\right),
++\]
++calculated formally too.\corr{原书第 227 页此处求和应从 $i=0$ 开始，指数中应有负号；积分常数由 $\sigma(0)=1$ 确定。由 $s(-t)=-t\,\sigma\prime(t)/\sigma(t)$ 可直接核验。本页 $s(t)$ 的常数项为零，前式改从 $k=1$ 起写。}
+ 
+ \begin{lemma}\label{lemma:B.1}
+   For every $A\in M_n(\CC)$ we have $s_k(A)=\R{tr}(A^k)$.
+ \end{lemma}
+ 
+ \begin{proof}
+-  Let us assume that $A$ is a diagonal matrix, $A = \diag(\lambda_1,, \ldots, \lambda_n)$, such that
++  Let us assume that $A$ is a diagonal matrix, $A = \diag(\lambda_1, \ldots, \lambda_n)$, such that
+   \[
+     \det(I-tA) = \prod_{i=1}^n(1-t\lambda_i).
+   \]
+   This yields the following equation of power series 
+   \[
+     -t\frac{\dd }{\dd t}\log(\det(I-tA)) 
+-    = \sum_{k=1}^{n}{\frac{t\lambda_i}{1-t\lambda_i}}
++    = \sum_{i=1}^{n}{\frac{t\lambda_i}{1-t\lambda_i}}
+     = \sum_{i=1}^{n}{\sum_{k=1}^{\infty }{\lambda_i^k t^k}}
+     = \sum_{k=1}^{\infty }{\left(\sum_{i=1}^{n }{\lambda_i^k}\right)t^k}.
+   \]
+@@ -66,7 +66,7 @@
+     = \R{tr}(\diag(\lambda_1, \ldots, \lambda_n)^k).
+   \]
+ 
+-  Since both $s_k(A)$ and $\R{tr}(A_k)$ are unaltered when we replace $A$ by $gAg^{-1}$, and
++  Since both $s_k(A)$ and $\R{tr}(A^k)$ are unaltered when we replace $A$ by $gAg^{-1}$, and
+   since the diagonalizable matrices are dense in the vector space of all matrices, the
+   assertion follows.
+ \end{proof}
+@@ -74,14 +74,14 @@
+ \begin{lemma}\label{lemma:B.2}
+   For polynomials in $n^2$ variables we have that 
+   \[
+-    s_k(A) - s_{k-1}(A)\sigma_1(A) + s_{k-2}\sigma_2(A)
+-    - \ldots + (-1)^k\sigma_k(A) = 0.
++    s_k(A) - s_{k-1}(A)\sigma_1(A) + s_{k-2}(A)\sigma_2(A)
++    - \ldots + (-1)^k k\sigma_k(A) = 0.
+   \]
+ \end{lemma}
+ 
+ 
+ \begin{proof}
+-  It suffices to prove the equation for a diagonal matrix $A = \diag(\lambda_1,, \ldots, \lambda_n)$ where
++  It suffices to prove the equation for a diagonal matrix $A = \diag(\lambda_1, \ldots, \lambda_n)$ where
+   \[
+     \overline{\sigma}(t)
+     = \prod_{i=1}^n (1-t\lambda_i)
+@@ -97,7 +97,7 @@
+       = \sum_{i=1}^{n }{t\lambda_i \prod_{j\neq i }(1-t\lambda_j)} = -t\frac{\dd\overline{\sigma}}{\dd t}\\
+     & = \sum_{k=1}^{n }{(-1)^{k-1}k\sigma_k(A)t^k}.
+   \end{align*}
+-  he coefficient of $t^k$ in this equation yields the desired identity.
++  The coefficient of $t^k$ in this equation yields the desired identity.
+ \end{proof}
+ 
+ Note that the equation of Lemma \ref{lemma:B.2} inductively determines $s_k(A)$ as a 
+@@ -110,8 +110,8 @@
+   \end{matrix}
+ \end{align}
+ 
+-For instance $s_1(A)=\sigma_1(A)$ and $s_2(A) = \sigma_1(A)-2\sigma_2(A)$. We have the following 
+-indentities in $n_1^2+n_2^2$ variables
++For instance $s_1(A)=\sigma_1(A)$ and $s_2(A) = \sigma_1(A)^2-2\sigma_2(A)$. We have the following 
++identities in $n_1^2+n_2^2$ variables
+ \begin{align}\label{eq:B.3}
+   \begin{aligned}
+     \sigma_k(A_1\oplus A_2) & = \sum_{i=0}^{k}{\sigma_i(A_1)\sigma_{k-i}(A_2)} \\
+--- transcription/App-C-Proof-of-Lemmas-2.12-and-12.13.tex
++++ BellaBook/App-C-Proof-of-Lemmas-2.12-and-12.13.tex
+@@ -8,13 +8,13 @@
+ standard form of Example \ref{example:12-5}.
+ 
+ \begin{lemma}\label{lemma:C.1}
+-  Let $W\subseteq\RR^n$ be an open neighborhood of the origin in $\RR^n$ and let $f:W\to\RR^n$ be the function
+-  \[
+-    f(x) = a - \sum_{i=1}^\lambda x_i^2 + \sum_{i=\lambda+1}^{n }{x_i^2},
++  Let $W\subseteq\RR^n$ be an open neighborhood of the origin in $\RR^n$ and let $f:W\to\RR$ be the function
++  \[
++    f(x) = a - \sum_{i=1}^\lambda x_i^2 + 2\sum_{i=\lambda+1}^{n }{x_i^2},
+   \]
+   where $a\in\RR,\lambda\in\ZZ$ and $0\le\lambda\le n$. Choose $\epsilon>0$ such that $W$ contains the set 
+   \[
+-    E = \left\{x\in\RR^n\;\bigg|\; \sum_{i=1}^\lambda x_i^2 + \sum_{i=\lambda+1}^{n }{x_i^2}\le 2\epsilon\right\}.
++    E = \left\{x\in\RR^n\;\bigg|\; \sum_{i=1}^\lambda x_i^2 + 2\sum_{i=\lambda+1}^{n }{x_i^2}\le 2\epsilon\right\}.
+   \] 
+   Then there exists a Morse function $F:W\to\RR$ and contractible open sets $U\subseteq\RR^n$, $V\subseteq\RR^{n-\lambda+1}$
+   that satisfy:
+@@ -39,7 +39,7 @@
+   \end{align}
+   where $\mu\in C^\infty(\RR, \RR)$ is chosen to have the properties:
+   \begin{enumerate}[(a)]
+-    \item $-1\le \mu'(t)\le 0$ for all $t\in\RR$.
++    \item $-1<\mu'(t)\le 0$ for all $t\in\RR$.
+     \item $\mu(t)=0$ when $t\ge 2\epsilon$.
+     \item $\mu$ is constant on an open interval around 0 with $\mu(0)>\epsilon$.
+   \end{enumerate}
+@@ -47,7 +47,7 @@
+   \begin{figure}[!htb]
+     \centering
+     \includegraphics[width=.8\linewidth]{./pics/appC-1-o.pdf}
+-    \caption{Figure 1}
++    \caption{}
+     \label{fig:C-1}
+   \end{figure}
+ 
+@@ -90,7 +90,7 @@
+   \[
+     \varphi'_1(t) = \sum_{i=1 }^{\lambda}{x_i \frac{\partial F }{\partial x_i }(t\tilde{x})}\le 0,
+   \]
+-  sp that $\varphi_1$ os decreasing. If $0\le t\le 1$ then 
++  so that $\varphi_1$ is decreasing. If $0\le t\le 1$ then 
+   \[
+     F(t\tilde{x}) = \varphi_1(t) \le \varphi_1(0) = F(0) \le a-\epsilon.
+   \]
+@@ -191,7 +191,7 @@
+ \begin{theorem}\label{theorem:C.2}
+   Let $N^n$ be a smooth manifold of dimension $n\ge 1$ and $f:N\to\RR$
+   a smooth function without any critical points. Let $J$ be an open interval $J\subseteq\RR$
+-  with $f(N)\subseteq J$ and such that $j^{-1}([a, b])$ is compact for every bounded closed
++  with $f(N)\subseteq J$ and such that $f^{-1}([a, b])$ is compact for every bounded closed
+   interval $[a, b]\subset J$. There exists a compact smooth $(n-1)$-dimensional manifold
+   $Q^{n-1}$ and a diffeomorphism
+   \[
+@@ -233,7 +233,7 @@
+ \begin{figure}[!htb]
+   \centering
+   \includegraphics[width=.5\linewidth]{./pics/appC-3-o.pdf}
+-  \caption{Figure 3}
++  \caption{}
+   \label{fig:C.3}
+ \end{figure}
+ \endgroup
+@@ -252,7 +252,7 @@
+ It remains to prove Theorem \ref{theorem:C.2}. We first prove a few lemmas.
+ 
+ \begin{lemma}\label{lemma:C.4}
+-  There exists a smooth tangent vector field $X$ on $N^n$ such that $\dd_p f(X(p))=1$ for all $p\in M$.
++  There exists a smooth tangent vector field $X$ on $N^n$ such that $\dd_p f(X(p))=1$ for all $p\in N$.
+ \end{lemma}
+ 
+ \begin{proof}
+--- transcription/App-D-Exercises.tex
++++ BellaBook/App-D-Exercises.tex
+@@ -1,26 +1,18 @@
+ \chapter{Exercises}
+ \newcounter{exercise}
+ \setcounter{exercise}{1}
+-\newcommand{\newchap}[1][1]{\setcounter{exercise}{#1}\setcounter{enumi}{0}}
+-\let\oriITEM\item
+-\newcommand{\NewItem}{%
+-  \oriITEM{\hspace*{-5.5pt}.\;\,}\label{exercise:\theexercise-\arabic{enumi}}%
+-  % \textcolor{red}{[exercise:\theexercise-\arabic{enumi}]\;}%
+-}
+-% \AddToHook{cmd/item/after}[exercise-label]{\label{exercise:\theexercise.\arabic{enumi}}}
+-
+-\begin{enumerate}[\theexercise.1]
+-% \makeatletter
+-% \renewcommand\theenumi{\theexercise.\@arabic\c@enumi.}
+-% \def\labelenumi{\theenumi}
+-% \makeatother
+-  \NewItem Perform the calculations of Theorem \ref{theorem:1-6}.
++\newcommand{\newchap}[1][1]{\end{enumerate}\setcounter{exercise}{#1}\section*{Chapter #1}\addcontentsline{toc}{section}{Chapter #1 exercises}\begin{enumerate}[label=\theexercise.\arabic*.,ref=\theexercise.\arabic*,leftmargin=2.7em]}
++\newcommand{\NewItem}{\item\label{exercise:\theexercise-\arabic{enumi}}}
++\section*{Chapter 1}
++\addcontentsline{toc}{section}{Chapter 1 exercises}
++\begin{enumerate}[label=\theexercise.\arabic*.,ref=\theexercise.\arabic*,leftmargin=2.7em]
++  \NewItem Perform the calculations of Example \ref{example:1-7}.\corr{原书第 243 页习题 1.1 误称 Theorem 1.7；实际指 Example 1.7。}
+   \NewItem Let $W\subseteq\RR^3$ be the open set
+     \begin{align*}
+       W = \{(x_1, x_2, x_3)\in\RR^3\mid \text{ either } x_3\neq 0 \text{ or } x_1^2 + x_2^2<1\}.
+     \end{align*}
+-    Prove the existence and uniqueness of a function $f\in C^\infty(W, \RR)$ such that
+-    $\grad(F)$ is the vector field considered in Example \ref{example:1-8} and $F(0)= 0$.
++    Prove the existence and uniqueness of a function $F\in C^\infty(W, \RR)$ such that
++    $\grad(F)$ is the vector field considered in Example \ref{example:1-7}\corr{原书第 243 页习题 1.2 所引 Example 1.8 应为 Example 1.7。} and $F(0)= 0$.
+     Find a simple expression for $F$ valid when $x_1^2 + x_2^2 < 1$. ( Hint: First note that $F$ is
+     constant on the open disc in the $x_1, x_2$-plane bounded by the unit circle $S$. Then integrate
+     along lines parallel to the $x_3$-axis.) 
+@@ -35,7 +27,7 @@
+     \begin{align*}
+       i(v)(w) = \langle v, w \rangle, &  & j(v)(w_1, w_2) = \det(v, w_1, w_2)
+     \end{align*}
+-    where $\langle, \rangle$ is the usual inner product. Show that for $v_1, v_2\in\RR^2$, we have
++    where $\langle, \rangle$ is the usual inner product. Show that for $v_1, v_2\in\RR^3$, we have
+     \begin{align*}
+       i(v_1)\wedge i(v_2) = j(v_1\times v_2).
+     \end{align*}
+@@ -51,7 +43,7 @@
+     \[
+       i( {b}_{k})  = {b}_{k}^*,
+     \]
+-    where $\left\{  {b_1^*,\ldots,{b}_{k}^*}\right\}$ is the dual basis. Conclude
++    where $\left\{  {b_1^*,\ldots,{b}_{n}^*}\right\}$ is the dual basis.\corr{原书第 243 页习题 2.4 的对偶基末项下标应为 $n$，与原基维数一致。} Conclude
+     that $i$ is an isomorphism.
+   \NewItem Assumptions as in Exercise \ref{exercise:2-4}. Show the existence of an inner product on ${\alt}^{p}( V)$
+     such that
+@@ -116,7 +108,7 @@
+     \[
+       \alpha  \land  \alpha  = 0 \Leftrightarrow  \det ( A)  = 0.
+     \]
+-    Say $\alpha  \land  \alpha  = \lambda  \cdot  {\epsilon }_{1} \land  {\epsilon }_{2} \land  {\epsilon }_{3} \land  {\epsilon }_{4}$. What is the relation between $\lambda$ and $\det ( A)$ ? Let $V$ be an $n$-dimensional vector space with inner product $\langle$, $\rangle {andvolume}$ element vol $\in  {\alt}^{n}( V)$, as in Exercise \ref{exercise:2-9}. Let $v \in  {\alt}^{1}( V)$ and
++    Say $\alpha  \land  \alpha  = \lambda  \cdot  {\epsilon }_{1} \land  {\epsilon }_{2} \land  {\epsilon }_{3} \land  {\epsilon }_{4}$. What is the relation between $\lambda$ and $\det ( A)$ ? Let $V$ be an $n$-dimensional vector space with inner product $\langle$, $\rangle$ and volume element vol $\in  {\alt}^{n}( V)$, as in Exercise \ref{exercise:2-9}. Let $v \in  {\alt}^{1}( V)$ and
+     \[
+       {F}_{v} : {\alt}^{p}( V)  \ra  {\alt}^{p + 1}( V)
+     \]
+@@ -129,7 +121,7 @@
+       {F}_{v}^* = {(-1) }^{np} *  \circ  {F}_{v} \circ   *  : {\alt}^{p + 1}( V)  \ra  {\alt}^{p}( V)
+     \]
+     is adjoint to ${F}_{v}$, i.e. $\langle  {{F}_{v}\omega,\tau }\rangle   = \langle  {\omega,{F}_{v}^*\tau }\rangle$.
+-    Let $\left\{  {{e}_{1},\ldots,{e}_{n}}\right\}$ be an orthonormal basis of $V$ with $\R{vol}( {{\epsilon }_{1},\ldots,{\epsilon }_{n}}) = 1$
++    Let $\left\{  {{e}_{1},\ldots,{e}_{n}}\right\}$ be an orthonormal basis of $V$ with $\R{vol}( {{e}_{1},\ldots,{e}_{n}}) = 1$\corr{原书第 245 页习题 2.11 中体积形式应作用于基向量 $e_i$，而非对偶基 $\epsilon_i$。}
+     and $\left\{  {{\epsilon }_{1},\ldots,{\epsilon }_{n}}\right\}$ the dual (orthonormal) basis of ${\alt}^{1}( V)$;
+     see Exercise \ref{exercise:2-5}. Show that
+     \[
+--- transcription/cover.tex
++++ BellaBook/cover.tex
+@@ -1,13 +1,20 @@
+ \begin{titlepage}
+-\centering
+-\vspace*{7em}
+-{\scalebox{2.4}{\bfseries From Calculus to Cohomology}\par}
+-\vspace*{1.75em}
+-{\scalebox{1.5}{\bfseries de Rham cohomology and characteristic classes}\par}
+-\vspace*{3em}
+-{\Large\bfseries Ib Madsen and J\o{}rgen Tornehave\par}
+-\vspace*{1.75em}
+-{\large\itshape University of Aarhus\par}
+-\vspace*{\fill}
+-\includegraphics[width=.3\paperwidth]{./pics/cambridge-university-press-logo.pdf}
+-\end{titlepage}+\begin{tikzpicture}[remember picture,overlay]
++\fill[BellaBlue] ([xshift=18mm,yshift=-18mm]current page.north west) rectangle ([xshift=20mm,yshift=-210mm]current page.north west);
++\draw[BellaTeal,line width=1pt] ([xshift=28mm,yshift=-204mm]current page.north west)--([xshift=-17mm,yshift=-204mm]current page.north east);
++\end{tikzpicture}
++\vspace*{22mm}
++\hspace*{7mm}\begin{minipage}{.92\textwidth}
++{\sffamily\color{BellaTeal}\large MATHEMATICS}\par
++\vspace{16mm}
++{\sffamily\bfseries\color{BellaInk}\fontsize{36}{42}\selectfont From Calculus\\to Cohomology\par}
++\vspace{10mm}
++{\Large de Rham cohomology\\and characteristic classes}\par
++\vspace{22mm}
++{\Large Ib Madsen\\[5pt]Jørgen Tornehave}\par
++\vfill
++\end{minipage}
++\vfill
++\hspace*{7mm}{\sffamily\color{BellaGray}BellaBook}
++\vspace*{22mm}
++\end{titlepage}
+--- transcription/preface.tex
++++ BellaBook/preface.tex
+@@ -1,4 +1,4 @@
+-\chapter*{preface}
++\chapter*{Preface}
+ \phantomsection
+ \addcontentsline{toc}{chapter}{Preface}
+ 

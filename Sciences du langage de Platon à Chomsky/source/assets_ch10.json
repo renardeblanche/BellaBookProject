@@ -1,0 +1,343 @@
+[
+  {
+    "source_pdf_page": 298,
+    "file": "assets/ch10_stemma_ruisseaux.png",
+    "crop_pdf_points": [
+      132.66666666666666,
+      230.0,
+      438.0,
+      364.6666666666667
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 298,
+    "file": "assets/ch10_stemma_signal.png",
+    "crop_pdf_points": [
+      132.66666666666666,
+      436.6666666666667,
+      438.0,
+      572.6666666666666
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 298,
+    "file": "assets/ch10_stemma_silence.png",
+    "crop_pdf_points": [
+      133.33333333333334,
+      616.6666666666666,
+      438.6666666666667,
+      751.3333333333334
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 299,
+    "file": "assets/ch10_stemma_adjectifs.png",
+    "crop_pdf_points": [
+      128.0,
+      139.33333333333334,
+      434.0,
+      250.0
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 300,
+    "file": "assets/ch10_stemma_alfred.png",
+    "crop_pdf_points": [
+      224.66666666666666,
+      66.66666666666667,
+      357.3333333333333,
+      154.0
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 300,
+    "file": "assets/ch10_incidence_structurale.png",
+    "crop_pdf_points": [
+      138.66666666666666,
+      259.3333333333333,
+      444.6666666666667,
+      428.0
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 300,
+    "file": "assets/ch10_stemma_ami.png",
+    "crop_pdf_points": [
+      225.33333333333334,
+      525.3333333333334,
+      358.0,
+      669.3333333333334
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 301,
+    "file": "assets/ch10_incidence_semantique.png",
+    "crop_pdf_points": [
+      130.0,
+      58.666666666666664,
+      437.3333333333333,
+      228.66666666666666
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 301,
+    "file": "assets/ch10_structure_sens.png",
+    "crop_pdf_points": [
+      89.33333333333333,
+      281.3333333333333,
+      532.6666666666666,
+      446.0
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 303,
+    "file": "assets/ch10_categories_OA.png",
+    "crop_pdf_points": [
+      260.6666666666667,
+      228.0,
+      308.0,
+      314.6666666666667
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 304,
+    "file": "assets/ch10_tau_schema.png",
+    "crop_pdf_points": [
+      112.66666666666667,
+      142.0,
+      532.6666666666666,
+      245.33333333333334
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 304,
+    "file": "assets/ch10_livre_ami.png",
+    "crop_pdf_points": [
+      146.0,
+      334.6666666666667,
+      452.0,
+      468.0
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 304,
+    "file": "assets/ch10_mode_paris.png",
+    "crop_pdf_points": [
+      146.0,
+      512.0,
+      452.0,
+      614.0
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 304,
+    "file": "assets/ch10_mode_labels.png",
+    "crop_pdf_points": [
+      146.0,
+      675.3333333333334,
+      452.0,
+      792.0
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 305,
+    "file": "assets/ch10_ecrivez.png",
+    "crop_pdf_points": [
+      194.66666666666666,
+      85.33333333333333,
+      363.3333333333333,
+      256.6666666666667
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 305,
+    "file": "assets/ch10_docteur.png",
+    "crop_pdf_points": [
+      194.66666666666666,
+      301.3333333333333,
+      363.3333333333333,
+      466.6666666666667
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 305,
+    "file": "assets/ch10_je_crois.png",
+    "crop_pdf_points": [
+      174.66666666666666,
+      510.0,
+      384.6666666666667,
+      656.0
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 306,
+    "file": "assets/ch10_alfred_avoue.png",
+    "crop_pdf_points": [
+      200.0,
+      66.0,
+      380.6666666666667,
+      201.33333333333334
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 307,
+    "file": "assets/ch10_alfred_bernard.png",
+    "crop_pdf_points": [
+      132.0,
+      112.0,
+      419.3333333333333,
+      210.66666666666666
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 307,
+    "file": "assets/ch10_chante_crie.png",
+    "crop_pdf_points": [
+      132.66666666666666,
+      552.6666666666666,
+      419.3333333333333,
+      652.0
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 308,
+    "file": "assets/ch10_anaphore.png",
+    "crop_pdf_points": [
+      116.0,
+      182.0,
+      474.0,
+      351.3333333333333
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 308,
+    "file": "assets/ch10_alfred_rappel.png",
+    "crop_pdf_points": [
+      228.0,
+      668.0,
+      361.3333333333333,
+      754.6666666666666
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 309,
+    "file": "assets/ch10_votre_ami.png",
+    "crop_pdf_points": [
+      220.66666666666666,
+      157.33333333333334,
+      352.6666666666667,
+      284.6666666666667
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 309,
+    "file": "assets/ch10_nucleus_premiere.png",
+    "crop_pdf_points": [
+      174.66666666666666,
+      636.0,
+      400.0,
+      780.0
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 310,
+    "file": "assets/ch10_nucleus_deuxieme.png",
+    "crop_pdf_points": [
+      201.33333333333334,
+      314.6666666666667,
+      374.6666666666667,
+      448.0
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 311,
+    "file": "assets/ch10_sujet_predicat.png",
+    "crop_pdf_points": [
+      158.0,
+      59.333333333333336,
+      424.0,
+      115.33333333333333
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 311,
+    "file": "assets/ch10_alfred_dort.png",
+    "crop_pdf_points": [
+      238.0,
+      160.0,
+      344.6666666666667,
+      265.3333333333333
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 311,
+    "file": "assets/ch10_frappe_comparaison.png",
+    "crop_pdf_points": [
+      99.33333333333333,
+      373.3333333333333,
+      521.3333333333334,
+      484.0
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 312,
+    "file": "assets/ch10_trois_actants.png",
+    "crop_pdf_points": [
+      130.0,
+      64.66666666666667,
+      457.3333333333333,
+      210.66666666666666
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 312,
+    "file": "assets/ch10_circonstants.png",
+    "crop_pdf_points": [
+      129.33333333333334,
+      339.3333333333333,
+      456.6666666666667,
+      484.6666666666667
+    ],
+    "status": "原图保留，未改画"
+  },
+  {
+    "source_pdf_page": 313,
+    "file": "assets/ch10_il_pleut.png",
+    "crop_pdf_points": [
+      240.66666666666666,
+      362.6666666666667,
+      320.6666666666667,
+      448.0
+    ],
+    "status": "原图保留，未改画"
+  }
+]

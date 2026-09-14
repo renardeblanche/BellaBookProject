@@ -1,0 +1,104 @@
+﻿number,source_pdf_page,printed_page,note_tex,preceding_text
+428,319,305,章首提纲 Le métatermes 应为 Les métatermes；正文对应小标题已用复数 Les。,"tique
+\begin{enumerate}[label=\textcircled{\scriptsize\arabic*}]
+\item Présentation
+\item Éléments constitutifs\par 1. Les termes\par 2. Le métatermes"
+429,320,306,原文 des signification 的数配合有误，应为 des significations。,ntellectuelles du langage}) puis présentée dans son \textit{Essai de sémantique} paru en 1897. Dire que la sémantique est la science des signification
+430,320,306,1751 为《百科全书》第一卷刊年，不足以证明后文所引 « sens » 条目亦于该年刊行；且“首次区分”须另有历史文献依据。条目卷次、作者归属及刊年尚待核实，暂不据本句断言为首创。,"tion entre sens et signification apparaît pour la première fois dans la première édition de l’\textit{Encyclopédie} de Diderot et d’Alembert, en 1751."
+431,320,306,规范拼写须以连字符连接肯定命令式后的两个代词，即 Donne-le-moi。此处按底本保留空格。,"e par sa combinaison avec les autres qui constituent la phrase ».
+\end{itemize}
+Dans cette optique, on peut considérer que l’énoncé : « Donne-le moi »"
+432,322,308,原文 et été 缺少助动词，依句法应为 et a été。, un organisme soumis aux lois de l’évolution et bannir de la linguistique l’esprit et la volonté. Bréal s’est opposé à cela et été l’ennemi implacable
+433,323,309,此处“历时研究是错误”的概括过强。上述引文批评的是以词源替代词在当下语境中的意义，并不能推出历时研究本身错误。应区分研究问题：考察现时意义不能仅凭词源，研究意义演变仍可采用历时方法。,"es significations}. Paris, Hachette, 1897, édition de 1924, 287p.}. Ici encore, la parenté avec la linguistique synchronique de Saussure est évidente."
+434,324,310,原文 ne l’emploie dans un même type d’analyse 缺少通常的否定成分；据“各家使用方式不同”的上下文，拟校为 ne l’emploie pas dans un même type d’analyse。," linguistes mais aussi des sémioticiens : le problème, c’est que chacun la définit de manière différente, et ne l’emploie dans un même type d’analyse."
+435,324,310,原文 1862 应为 1662；此处所叙为 Port-Royal《逻辑》初刊，而非十九世纪重印本。参见本书第三章及既有书目依据\ecite{17}。,"instrument d’analyse des textes.
+
+\subsubsection*{\textcircled{\scriptsize 1} Chez Port Royal : les idées accessoires}
+Dans la \textit{Logique} (1862)"
+436,324,310,引文边界待核：从 Voilà bien 起的“aujourd’hui par connotation”及后续现代术语串列，疑为后世评论误并入古典引文。暂保留底本整段框引，不将其全部确认为十七世纪原文。,"cts, seconds, périphériques, implicites, additionnels, subjectifs, flous, aléatoires, non distinctifs, que peuvent engendrer les éléments du discours."
+437,324,310,原文 1860 应为 1660，与第三章所列《普遍唯理语法》初版年相互印证。,"-Royal se servaient déjà de la connotation pour distinguer le fonctionnement de l’adjectif de celui du substantif : dans la \textit{Grammaire} (1860),"
+438,325,311,此概括把整句命题的意义与名称的指称混为一谈。后文实际讨论的是名称所指的对象与其蕴含的属性；不能由“名称指对象”直接推出“命题的意义即其所指对象”。Mill 对专名、通名的区分亦不宜简化为一条涵盖所有命题的直接指称原则。," théorie de la référence\origcont{325}{311} directe, selon laquelle le sens d’une proposition réside dans ce à quoi elle fait référence dans le monde."
+439,325,311,« apocalypse » 是否为 Mill 原书所举例尚待原文定位；本文没有提供卷、章或页码。此处只保留底本的归引，不把尚未核出的例证当作已确证原话。,dénoté par le terme apocalypse n’existe ou n’a existé. Nous retrouvons une idée identique chez Frege avec son « étoile la plus éloignée de la terre ».
+440,325,311,原文 dont est écrit 的搭配不合通常法语，应为 dans laquelle est écrit。因属引文，保留底本词形，原刊措辞仍待核。,"in{quote}\small\itshape
+Les connotations sont des sens qui ne sont ni dans le dictionnaire, ni dans la grammaire de la langue dont est écrit le texte."
+441,326,312,原文 qu Barthes 应为 que Barthes；此处无省音条件。,"ent autre chose que le sens littéral : elles ouvrent le texte sur autre chose que lui-même, et en dévoilent la polysémie. C’est en ce sens qu Barthes,"
+442,326,312,据紧邻上文“文学为语言的内涵系统”，本句末 dénotation 与论述层级不符，疑应为 connotation；作为拟校列出，不静默改正文。,"ue le plan du contenu de la langue n’est pas isolable du texte, mais est inclus dans la relation qui fonde le texte en tant que langage de dénotation."
+443,329,315,术语混淆：glossème 不应简单等同于由能指与所指构成的完整 signe。下方本书所引 Hjelmslev 原文把 glossèmes 称为构成内容或表达的 éléments，恰表明它们是分析所得成分，而非整一符号的另名。,"ées en éléments plus petits : ce sont les phonèmes. Chez Hjelmslev, ils sont nommés « cénèmes ». Au total, le signe linguistique, appelé « glossème »,"
+444,329,315,原文 sans son 意为“不用其……”，与“在著作中定义”不合；此处显系 dans son 的排印讹误。,"t sur cette base élargie qu’il faut l’établir.
+\end{quote}
+Quant aux glossèmes, ils sont définis sans son \textit{Essai d’une théorie des morphèmes} :"
+445,329,315,“理论传播有限”及其因果关系不能仅据写作语言断定；本章已列举其若干法语论文，故也不宜让读者误以为他只以丹麦语发表。原书对传播范围与原因的概括仍需专门的接受史证据。,"andues dans le monde, car, comme \textbf{Rasmus Rask} avant lui, Hjelmslev écrivait dans la langue natale, le danois, langue de très faible diffusion."
+446,330,316,原书上列把 s1 定为“有靠背”、s4 定为“供坐”，但下表和次页解释把 s1 用作“供坐”、s4 用作“有靠背”，二者对调。本版保留两处原编号；阅读表格与次页公式时须按表头，不能混用前列编号。表头 Pour une personnes3 亦为排印粘连，应分作 Pour une personne s3。,nt chacun un contenu sémantique différent. Bernard Pottier représente l’analyse sémique des sémèmes d’un même champ lexical sous forme d’une matrice :
+447,331,317,以上两项均疑有编写叠句：第一项 qui déterminent 的先行关系不清，第二项 qui la caractérisent 的 la 缺少明确先行项。可分别整理为“外延义素以较稳定、共同认可的方式确定意义”“内涵义素受语境与个人联想影响”；此为对句法问题的说明，不替换底本定义。,"mes connotatifs, quant à eux, ont un caractère instable, virtuel, voire individuel, qui la caractérisent d’une façon instable et souvent individuelle."
+448,331,317,原注“par proposée par”多出一个 par。此外，原注把两套区分等同；本章后文将 inhérent/afférent 系于系统与语境所赋特征，不能不加条件地换名为 dénotatif/connotatif。此处保留原注，参见第五节的定义与例子。,"dis que les sèmes connotatifs sont appelés sèmes afférents. Par exemple, «caviar» comprend le sème inhérent /comestible/ et le sème afférent /luxe/.}."
+449,332,318,原文 à proposé 中 à 应为动词 avoir 的 a。,"见第五节的定义与例子。}
+\end{itemize}
+
+\origpage{332}{318}
+\subsection{Classement des sèmes}
+Sur la base des distinctions présentées ci-dessus, Pottier à proposé"
+450,332,318,“communs à un sémème”未表达“共同”的比较范围。结合前页例子，应指某组 sémèmes 共同具有的义素之集合，而不是任一单独 sémème 的全部义素。,"es de sèmes :
+
+\subsubsection*{\textcircled{\scriptsize 1} L’archisémème}
+L’archisémème, je le rappelle, est l’ensemble des sèmes communs à un sémème."
+451,332,318,原文 reconnus de façon stable les locuteurs 缺少施事介词 par，应为 reconnus de façon stable par les locuteurs。,"textcircled{\scriptsize 2} Le sémantème}
+Le sémantème est l’ensemble des sèmes dénotatifs \textit{spécifiques}, reconnus de façon stable les locuteurs"
+452,332,318,本例应区分“机上有人驾驶”与“无人机上驾驶”，而非一概说“有／无驾驶者”；远程操控的无人机也有驾驶者，且无人固定翼飞机仍可归为 avion。此特征只适用于本例设定的词义对比，不能当作两类飞行器无例外的技术分类。,"ettant de distinguer deux sémèmes voisins.
+\begin{itemize}
+\item Le sémantème /avec ou sans pilote/ distingue le lexème « avion » du lexème « drone »."
+453,332,318,原文 le lexèmes 的数配合有误，应为 les lexèmes。,"r reprendre l’archisémème « objet volant », le lexèmes « biréacteur » et « triréacteur » comportent tous deux dans leur classème le sème « matériel »."
+454,332,318,卒年有误：BnF 与 IdRef 人名规范记录均记为 2024 年12月4日，故生卒年应为1928–2024，而非1928–2014；参见\ecite{54}。,table et variable (selon les locuteurs et la situation du discours) un aspect de la signification d’un lexème. \textbf{Jacqueline Picoche (1928-2014)}
+455,334,320,前页 fleur magique 后的 actant 标签应为单数 objet，而非 objets；et la lui remettre 通常亦应补为 et de la lui remettre。,"tte (adjuvant), puis\origcont{334}{320} combattra un dragon (opposant) qu’il tuera grâce à une épée magique (adjuvant) donnée par un lutin (adjuvant)."
+456,335,321,原文 les isotopie 应为 les isotopies。概念上，复现单个义素也可构成语义同位关系；“义素分子复现”不能取代全部 isotopie 的定义。本页首段与下文“曙光”例本身即按单个共同义素解释。,us grandes difficultés à comprendre la « logique » des phrases. Mais en repérant les molécules sémiques et leur répétition (c’est-à-dire les isotopie)
+457,335,321,此处惯用语为 De prime abord，原文混入了 d’abord 的 d’。,"e. La même molécule fait l’objet de trois lexicalisations successives.
+
+\noindent\textbf{Ex :} La terre est bleue comme une orange.
+
+De prime d’abord,"
+458,335,321,原文 Ceci exemple 应为 Cet exemple。,"entes simultanément dans le lexème « orange », alors encore une fois tout s’éclaire : l’isotopie rend le vers cohérent au niveau sémique. Ceci exemple"
+459,336,322,须区分基本项与复合项：下图四个基本位置是 A、B、非 B、非 A；“既 A 又 B”与“既非 A 又非 B”则是图中的第5、6个元项，并非与 A、B 并列的另两个基本角点。所谓“四类”与“四角”不能混为一谈。,"iques découlant d’une opposition de deux seulement chez Aristote (vie / mort) à quatre (vie / mort / vie et mort / ni vie ni mort), voire huit ou dix."
+460,336,322,原文 au centre de carré) 多一右括号；通常可校为 au centre du carré。,"ps (de l’observation)
+\end{itemize}
+\minititle{1. Les termes}
+Le carré sémiotique est constitué de quatre \textit{termes} situés au centre de carré) :"
+461,337,323,第6项按图为非 B 与非 A 的结合，即“既非 B 又非 A”。若将 disjonction 按形式逻辑“或”理解便会误读；该项应形式化为 $\neg B\land\neg A$，而不是 $\neg B\lor\neg A$。另，第9、10项在图中位于内部，与“均在外部”的说明不符。,"osition 10 :\quad (terme 2 + terme 3)\quad pas de nom
+\end{itemize}
+Malgré leur nom, le terme « complexe » et le terme « neutre » sont des métatermes."
+462,337,323,本例必须限定为整数。分数或无理数并不按整数奇偶性归为“偶数或奇数”；应为 tout nombre entier est pair ou impair。,"de l’autre et réciproquement. Il n’y a pas de troisième position possible : par exemple, tout nombre est pair ou impair, sans autre position possible."
+463,338,324,本句混杂两种结构且遗漏 pas；可校为 dire d’un nombre entier qu’il n’est pas pair，或 dire qu’un nombre entier n’est pas pair。,"e du tiers exclu d’Aristote : soit une\origcont{338}{324} proposition est vraie, soit sa négation est vraie. Ainsi, dire qu’un nombre qu’il n’est pair"
+464,338,324,原文 ne revient pas forcément affirmer 应补介词 à，即 ne revient pas forcément à affirmer。,"em Deux termes sont contraires lorsque affirmer le premier revient à nier le second, mais nier le premier ne revient pas forcément affirmer le second."
+465,338,324,原文 le gris est ni noir ni blanc 应为 le gris n’est ni noir ni blanc。,"ires ne s’opposent pas comme deux termes d’une alternative exclusive : une troisième position est possible. Par exemple, le gris est ni noir ni blanc."
+466,338,324,原图引号内的词是作者选择的文化联想例项，不应当作现实人物的性别分类定义。特别是图中“男性／女性”“男性化／女性化”并非同一对概念；将两者直接等同会使方阵的比较维度发生变化。本版保留原图及措辞。,dans un terme ou dans un métaterme. Les points d’interrogation indiquent la difficulté de trouver des phénomènes correspondant aux métatermes 9 et 10.
+467,339,325,这里把 Schrödinger 的猫归为“既非生又非死”并不严谨。思想实验中的量子叠加不能等同于经典逻辑的两个否定项的合取；它不是方阵第6位的物理证明。参见第四章既有校勘及原论文译文\ecite{20}。,"re langue. Par exemple, le terme neutre « ni vie ni mort », c’est-à-dire la position 6 (non-B + non-A), qui pourrait désigner le chat de Schroedinger,"
+468,341,327,原文 Il ne faut maintenant apporter 既不构成完整否定，也与即将补充说明的语境相反；可校为 Il faut maintenant apporter。,"èmes spécifiques de « couteau » et de « fourchette »
+\end{itemize}
+
+\subsection{Typologie sémique}
+Il ne faut maintenant apporter certaines précisions"
+469,342,328,此项只能描述特定传统称谓系统中 femme 与 demoiselle 的一种对比义，不能作为 femme 所有用法的必要义素；未婚女性仍可称 femme。本文强调 taxème 随比较集合而定，故例子的适用范围须同时保留。,"mme » ou « demoiselle »\}, alors aux sèmes génériques /personne/ et /de sexe féminin/, il faudra ajouter le sème spécifique /qui a été ou est mariée/."
+470,342,328,par Rastier par comme 中第二个 par 属衍字，应为 par Rastier comme。,"omme l’extrémité d’une relation symétrique entre deux sémèmes appartenant au même taxème.
+\item Les sèmes afférents sont définis par Rastier par comme"
+471,342,328,此处“universels”不能理解为超越所有语言、文化与语境的普遍必然性；紧接的解释仍将固有义素限定于语言的功能系统。附加义素也可来自共同社会规范，不必只是个人联想；二分并非与“有无解释作用”一一对应。参见本章下文对 classème、sémantème 及语境激活的讨论。,"nhérents dénotatifs, distinctifs, définitoires et universels, et les sèmes afférents connotatifs, non-distinctifs, non définitoires et non universels."
+472,343,329,否定缺少 pas，可校为 n’ont pas de caractère définitoire au même titre que les sèmes inhérents。按上文所述，附加义素仍能在具体文本中参与释义，不应把此句理解成“附加义素没有意义”。,"te. La définition initiale est gardée, mais Rastier note que les sèmes afférents n’ont de caractère définitoire au même titre que les sèmes inhérents."
+473,344,330,présentées 应随单数阴性 typologie 配合为 présentée。,"e isotopie est théoriquement indéfini.
+\end{quote}
+
+\origpage{344}{330}
+Rastier a introduit l’isotopie dans sa typologie sémique présentées plus haut."
+474,345,331,引文中 peut 后应接不定式 manifester，而非 manifeste；引文按底本照录。," \textit{Systématique des isotopies}, il écrit :
+\begin{quote}\small\itshape
+Un même texte peut évidemment manifeste plusieurs isotopies enchevêtrées."
+475,345,331,此处把 vers 只归入前文所列的第一条“宴饮”同位线，有可能混淆了随后练习要求辨认的其他同位线，或存在引文转述错位。vers 是底本可见字形，不擅自替换为同音的 verre；有待核对 Rastier 原文的分类表与解释，亦不在此代答练习。,"tres sémèmes ne sont lisibles que sur une isotopie. Ainsi le sémème vers n’est lu que sur la première, le sémème solitude n’est lu que sur la seconde."
+476,348,334,作者姓氏应作 Courtés，而非 Courté；本页与 Greimas 合著条中的 COURTÉ 同误。此处书目保留底本拼法，供检索时注意；书名及版本资料参见\ecite{55}。,"flushleft}\small
+\setlength{\parskip}{.5em}
+COURTÉ (J.). \textit{Analyse sémiotique du discours : de l’énoncé à l’énonciation.} Paris, Hachette, 1991."
+477,348,334,此词条把 actant、analyse actantielle 和题元角色混在一起，且“主目”疑为排印讹误，未据推测订字。本章的 actant 指行动元，analyse actantielle 指行动元分析；行动元不限于语法主语，也不与生成语法中的 theta-role 自动等同。见本章六行动元与三个轴的定义。,"neskip}
+\section*{Glossaire}
+\phantomsection\addcontentsline{toc}{section}{Glossaire}
+\gloss{actant/analyse actantielle 主目，主语}{在生成语法里，与动词相关的某个名词的题元角色。"
+478,349,335,该释义过宽，更接近 sémantique。按本章第三节的定义，analyse sémique 特指把词义或义位分解为义素，并比较其共同与区别特征的“义素分析”。,"ctant 指行动元，analyse actantielle 指行动元分析；行动元不限于语法主语，也不与生成语法中的 theta-role 自动等同。见本章六行动元与三个轴的定义。}}
+\origpage{349}{335}
+\gloss{analyse sémique 语义分析}{关于意义的研究。"
+479,349,335,此处误用物理学同位素的释义来解释本章的语义学术语。语义学 isotopie 指文本中义素等意义特征的重复所形成的语义一致性／同位线，不是关于原子核或同位素的学科。原文物理学定义保留，但不能据此理解本章 Greimas、Rastier 的分析；参见本章 IV.2、V.3。,"现象联系起来的那部分意义。}
+\gloss{glossématique 语符学}{指丹麦哥本哈根学派创立的语言学科。语符学集中研究语言的内在结构，力图用符号逻辑建立“语言的代数”，用一套形式定义来描写语言。}
+\gloss{isotopie 同位素学}{具有相同核电荷数但质量数不同的原子互为同位素。"

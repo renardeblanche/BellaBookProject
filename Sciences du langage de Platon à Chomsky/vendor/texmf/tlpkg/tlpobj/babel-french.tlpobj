@@ -1,0 +1,20 @@
+name babel-french
+category Package
+revision 70261
+shortdesc Babel contributed support for French
+relocated 1
+longdesc The package, formerly known as frenchb, establishes French
+longdesc conventions in a document (or a subset of the conventions, if
+longdesc French is not the main language of the document).
+runfiles size=24
+ RELOC/tex/generic/babel-french/acadian.ldf
+ RELOC/tex/generic/babel-french/canadien.ldf
+ RELOC/tex/generic/babel-french/francais.ldf
+ RELOC/tex/generic/babel-french/french.ldf
+ RELOC/tex/generic/babel-french/frenchb.ldf
+ RELOC/tex/generic/babel-french/frenchb.lua
+catalogue-contact-home http://daniel.flipo.free.fr/babel-french
+catalogue-ctan /macros/latex/contrib/babel-contrib/french
+catalogue-license lppl1.3
+catalogue-topics french multilingual-addon
+catalogue-version 3.5s

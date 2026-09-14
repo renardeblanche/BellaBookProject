@@ -1,0 +1,80 @@
+\chapter*{综合练习的提示}\addcontentsline{toc}{chapter}{综合练习的提示}\markboth{综合练习的提示}{综合练习的提示}
+\newcommand{\HintItem}[1]{\item[\hyperlink{ex:#1}{\textbf{#1.}}]\hypertarget{hint:#1}{}}
+\begin{enumerate}[label=\textbf{\arabic*.},itemsep=.8em]
+\SourcePage{95}
+\HintItem{1} 根据 Weierstrass 逼近定理，一个连续的周期函数可以用三角多项式
+\[\sum c_l\exp(2\pi i\langle x,l\rangle)\]
+一致逼近，这里 $l$ 的坐标为整数。修改 \eref{1.1.5} 使其中 $h_1$ 和 $h_2$ 为三角多项式。思考一下当 $f$ 为一特征函数时论断的含义。
+\HintItem{2} 对映射 $f'$ 应用 Morse--Sard 定理（推论1.4.4）。（注意到当使用 Jordan 零集时，$K$ 为紧致集的限制是不必要的。）
+\HintItem{3} 对任意 $a>0$，$\{x;f(x)\ge a\}$ 是一个离散集从而是闭的。其次，当 $a\le0$ 时它由所有实数作成。
+\HintItem{4} B. Levi 定理。
+\HintItem{5} 仅仅是练习4的一个变体，这里每次删去区间的 $1/10$，删去的不是正当中的那个子区间。集合的测度为零。
+\HintItem{6} 当考虑一个固定的数字序列时，则是与练习5基本上相同的问题，仅仅存在可数多个有限的数字序列！
+\HintItem{7} 考虑特征函数之和。
+\HintItem{8} 同定理2.4.10前面的练习比较。证明 $\sum_1^\infty|f(x+a_n)|$ 是局部可积的。
+\HintItem{9} 考虑
+\[\int g(x)\sum_1^\infty|f(nx)|\dd,\]
+其中 $g\in C_0^+$ 在靠近 $0$ 的地方是零。
+\HintItem{10} 如果函数 $|x-a_n|^{-\alpha}$ 是可积的话，那么这基本上是练习8。若单独地考虑使
+\[|x-a_n|\le b_n^{1/\alpha}\quad\text{对无穷多个 }n\]
+成立的那些点 $x$（证明它们作成一个零集），那么可以排除奇
+\SourcePage{96}
+性并象练习8那样进行证明。
+\HintItem{11} 估计所有满足
+\[\|x\|\le M\quad\text{和}\quad|l_1x_1+\cdots+l_dx_d|\le\|l\|^{-a}\]
+的 $x$ 的测度。$\sum_{l\ne0}\|l\|^{-b}$ 对甚么样的 $b$ 为收敛？论断
+\[\liminf\|l\|^{d-1}|\langle l,x\rangle|\le C_d\|x\|\]
+的证明若不用积分理论是复杂的，当然若 $\langle l,x\rangle=0$ 对某 $l\ne0$ 成立，则这是平凡的。在其他情形考虑所有的纯量积 $\langle l,x\rangle$，其中 $\|l\|\le R$。它们是不同的并位于区间 $(-R\|x\|,R\|x\|)$ 之内。因为它们的数目至少是 $C(R-\sqrt d)^d$，其中 $C$ 是单位球的体积，故在 $\|l\|\le R$ 内有 $l_1(R)$ 和 $l_2(R)$ 使
+\[0<|\langle x,l_1(R)\rangle-\langle x,l_2(R)\rangle|\le2R\|x\|(C(R-\sqrt d)^d-1)^{-1}\to0\]
+当 $R\to\infty$。因此 $\liminf\|l(R)\|^{d-1}|\langle x,l(R)\rangle|\le2^d C^{-1}\|x\|$，其中 $l(R)=l_1(R)-l_2(R)\to\infty$ 当 $R\to\infty$。
+\HintItem{12} 若 $f$ 是 $E$ 的或者是包含 $E$ 的一个可积集合的特征函数，则有练习8的论断。
+\HintItem{13} 可数多个零集之并集为一零集。
+\HintItem{14} 引进特征函数。
+\HintItem{15} 不然的话，$E$ 和 $E_1=\{x;1-x\in E\}$ 就应当是分离的，这样它们的并集（含于 $(0,1)$）将有测度 $>1$。
+\HintItem{16} 若 $f\in C_0$ 则等号成立。用 $C_0$ 中非负连续函数从下方近似 $f$。\Corr{28}
+\HintItem{17} 由 Hölder 不等式有
+\[\left|\int f(x-y)g(y)\,dy\right|\le\|f\|_p\,\|g\|_q.\]
+按 $L^p$（$L^q$）的范数用连续函数近似 $f$（$g$）。
+\HintItem{18} 引进 $A$ 和 $B^c$ 的可积子集的特征函数并利用 Fubini 定理后面的练习。
+\HintItem{19} 若 $f$ 为 $E$ 的特征函数，则所考虑的集合包含使
+\[\int f(x+y)f(y)\,dy\ne0\]
+的每个点 $x$（为什么？）。我们可以假定 $E$ 具有有限的测度（为
+\SourcePage{97}
+什么？），那么根据练习17这个积分是连续的并在原点 $\ne0$。
+\HintItem{20} $f\in C_0$ 的情形是显然的。根据 $L^1$ 的定义作近似。
+\HintItem{21} 我们可以假定 $g\ge0$。若 $f\in C_0$，论断显然成立（分解成对 $nx$ 在 $g$ 的一些周期上积分并应用积分中值定理）。对一般的 $f\in L^1$ 可作其近似。当 $g$ 为正弦或余弦函数的特殊情形，这称为 Riemann--Lebesgue 引理。
+\HintItem{22} 各项绝对值的和在某个正测度集上是有界的。在这个集合上积分并利用练习21。
+\HintItem{23} $f\in C_0$ 的情形是容易的。利用近似。
+\HintItem{24} 首先考虑阶梯函数 $g$：$g(1)=0$。它们在 $L^1$ 中是稠密的（为什么？）。
+\HintItem{25} 用一个 $C_0$ 中的函数近似 $f$。
+\HintItem{26} 利用 Fatou 引理和考虑 $g_n=\min(f,f_n)$。注意 $A=\int f\dd$ 的情形。
+\HintItem{27} 根据 Егоров 定理和练习25，我们可以找到紧致集 $K$ 使 $\int_{K^c}|f|^p\dd$ 任意小，同时还使 $f_n$ 于 $K$ 上一致地收敛到 $f$。利用练习26。
+\HintItem{28} 利用 Егоров 定理、练习25和 Hölder 不等式。
+\HintItem{29} 利用练习28。
+\HintItem{30} a) 显然是可测的。b) 不可积，否则由 Lebesgue 控制收敛定理将导致 $\int f_n\dd\to0$。
+\HintItem{31} 令 $X_k(x)=j/k$，当 $j/k\le x<(j+1)/k$ 和 $j$ 是一个整数时，则 $f(x,y)$ 与 $\lim f(X_k(x),y)$ 相等，后一函数是可测的。
+\HintItem{32} 不是。从练习4可以得到一个反例。
+\HintItem{33} 首先将不等式推广到开集 $I$。可以假定 $m^*(E)<\infty$，由此可得 $m^*(E)\le k m^*(E)$，亦即 $m^*(E)=0$。
+\HintItem{34} 注意，只要关于一个开集的基底 $O_1,O_2,\ldots$ 来作就可以了。逐次地构造 $E_k$，它们关于 $O_1,\ldots,O_k$ 是合乎要求的并且
+\SourcePage{98}
+$m(E_k\triangle E_{k+1})$ 快速地趋近于零。
+\HintItem{35} 可以假定 $E$ 是可测的（为什么？）。然后选区间的一个有限并集 $A$，使得 $m(E\triangle A)$ 是小的。设 $\delta<\min(\varepsilon,1-\varepsilon)$。假定 $m(I_j\cap(A\triangle E))>\delta m(I_j)$ 不成立，我们有
+\begin{align*}
+m(I_j\cap A)>(\varepsilon+\delta)m(I_j)&\ \Rightarrow\ m(I_j\cap E)>\varepsilon m(I_j)\\
+&\ \Rightarrow\ m(I_j\cap A)>(\varepsilon-\delta)m(I_j).
+\end{align*}
+这些区间的测度有多大？
+\HintItem{36} 见定理2.4.10的证明。
+\HintItem{37} Fubini 定理。不要忘记检验可测性。
+\HintItem{38} Lebesgue 控制收敛定理给出极限值
+\[f(0)m\{x;g(x)<1\}+f(1)m\{x;g(x)=1\}.\]
+\HintItem{39} 若 $F(t)=\int_0^t f(a+x)\dd$，则 $F(t)/t\to f(a)$ 对几乎所有的 $a$。可将积分写成
+\[\int_0^1 F'(t)\,d(t^{1/n})=\frac{F(1)}n+\frac1n\left(1-\frac1n\right)\int_0^1 F(t)t^{1/n-2}\,dt.\]
+（假定 $f\ge0$ 和用 Fubini 定理。）首先考虑原点的一个邻域上的积分，于其上 $|F(t)/t-f(a)|<\varepsilon$。然后考虑这个邻域的余集上的积分。
+\HintItem{40} 方法之一：令 $f$ 是包含 $E$ 的一开集之特征函数的积分。方法之二：利用
+\[\lim_{x\to+\infty}(f(x)-f(-x))\ge\lim_{x\to+\infty}\int_{-x}^x f'(t)\,dt\]
+以及在一个包含 $E$ 的可测集合上 $f'$ 存在并且 $\ge1$。
+\HintItem{41} 值域的测度等于 $f(1-)-f(0+)$ 减去所有不连续点处跳跃度之和，也就是说等于
+\[\int_0^1 f'(x)\dd+\int_0^1 ds(x),\]
+其中 $ds$ 是 $df$ 的奇性弥散部分。\Corr{29}
+\end{enumerate}

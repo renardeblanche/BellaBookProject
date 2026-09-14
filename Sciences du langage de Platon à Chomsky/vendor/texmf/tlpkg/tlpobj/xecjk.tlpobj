@@ -1,0 +1,33 @@
+name xecjk
+category Package
+revision 64059
+shortdesc Support for CJK documents in XeLaTeX
+relocated 1
+longdesc A LaTeX package for typesetting CJK documents in the way users
+longdesc have become used to, in the CJK package. The package requires a
+longdesc current version of xtemplate (and hence of the current LaTeX3
+longdesc development environment).
+depend ctex
+runfiles size=179
+ RELOC/fonts/misc/xetex/fontmapping/xecjk/full-stop.map
+ RELOC/fonts/misc/xetex/fontmapping/xecjk/full-stop.tec
+ RELOC/fonts/misc/xetex/fontmapping/xecjk/fullwidth-stop.map
+ RELOC/fonts/misc/xetex/fontmapping/xecjk/fullwidth-stop.tec
+ RELOC/fonts/misc/xetex/fontmapping/xecjk/han-simp.map
+ RELOC/fonts/misc/xetex/fontmapping/xecjk/han-simp.tec
+ RELOC/fonts/misc/xetex/fontmapping/xecjk/han-trad.map
+ RELOC/fonts/misc/xetex/fontmapping/xecjk/han-trad.tec
+ RELOC/tex/xelatex/xecjk/xeCJK-listings.sty
+ RELOC/tex/xelatex/xecjk/xeCJK.cfg
+ RELOC/tex/xelatex/xecjk/xeCJK.sty
+ RELOC/tex/xelatex/xecjk/xeCJKfntef.sty
+ RELOC/tex/xelatex/xecjk/xunicode-addon.sty
+ RELOC/tex/xelatex/xecjk/xunicode-extra.def
+catalogue-contact-bugs https://github.com/CTeX-org/ctex-kit/issues
+catalogue-contact-home http://www.ctex.org/
+catalogue-contact-repository https://github.com/CTeX-org/ctex-kit
+catalogue-contact-support https://github.com/CTeX-org/ctex-kit/issues
+catalogue-ctan /macros/xetex/latex/xecjk
+catalogue-license lppl1.3c
+catalogue-topics chinese japanese korean xetex expl3
+catalogue-version 3.9.1

@@ -1,0 +1,319 @@
+\chapter{Radon--Stieltjes 积分}
+\section{正测度的定义}
+\SourcePage{64}
+在第二章第2节已经指出，从 Riemann 积分到 Lebesgue 积分的推广仅仅依赖连续函数的 Riemann 积分的一小部分性质。一般地，设 $f\mapsto\mu(f)$ 是从 $C_0$ 到实数的一个映射，并且满足
+\eqn{3.1.1}{\mu(af+bg)=a\mu(f)+b\mu(g),\quad a,b\in\R,\ f,g\in C_0,}
+和
+\eqn{3.1.2}{\mu(f)\ge0,\quad f\in C_0^+.}
+于是就还有
+\eqn{3.1.3}{\mu(f_n)\longrightarrow0,\quad\text{若 }C_0^+\ni f_n\downarrow0.}
+事实上，设 $M_n$ 为 $f_n$ 的最大值，引理1.2.2表明 $M_n\to0$ 当 $n\to\infty$。若令 $f$ 为 $C_0^+$ 中函数，在 $f_1\ne0$ 处其值为1。由于 $f_n\le M_nf$，从而 $0\le\mu(f_n)\le M_n\mu(f)\to0$ 当 $n\to\infty$。
+
+当 $f\in I^+$，与前面类似我们可以定义 $\mu^*(f)=\sup_{f\ge g\in C_0}\mu(g)$，并可证明类似于前面的关于上积分的断言。对于一般函数 $f\ge0$，我们令
+\[\mu^*(f)=\inf_{f\le g\in I^+}\mu^*(g).\]\Corr{12}
+与以前类似，现在可以这样定义关于 $\mu$ 可积的函数类 $L^1_\mu$：若对任意 $\varepsilon>0$，存在 $g\in C_0$ 使 $\mu^*(|f-g|)<\varepsilon$，则说 $f\in L^1_\mu$。当 $f\in L^1_\mu$ 时，可定义积分 $\mu(f)$，并且关于 Lebesgue 积分的那些定理完全成立。注意，$\mu$-零集合在很大的程度上取决于 $\mu$ 的选择，这就要求我们对于所有涉及到零集合的定理的叙述要特别的慎重。
+
+一个具有前面所述性质的泛函 $\mu(f)$ 被称为 Radon 正测度。特别地，若 $C_0$ 代表的是 $C_0(\Omega)$，其中 $\Omega$ 是 $\R^d$ 的一个开集，
+\SourcePage{65}
+那么我们得到 $\Omega$ 上的 Radon 测度，以后，为了避免繁杂的记号，我们将主要地考虑 $\R^d$ 上的 Radon 测度，并且让读者自己去验证所有的定理无更改地对 $\Omega$ 上的 Radon 测度也成立。
+\section{一维情形，Stieltjes 积分}
+设 $\Omega=(\alpha,\beta)$ 是一个有限或无限的开区间。我们将确定 $\Omega$ 上所有的正测度 $\mu$。令 $H_x(y)=1$ 当 $y>x$ 而 $H_x(y)=0$ 当 $y\le x$。则有 $H_x\in I^+$，并且，对 $x_i\in\Omega$，差 $H_{x_1}-H_{x_2}$ 为 $\mu$-可测。它的上积分显然是有限的，从而它属于 $L^1_\mu$。存在一个，并且除相差一个常数外只有一个函数 $\phi$，使得
+\eqn{3.2.1}{\phi(x_2)-\phi(x_1)=\mu(H_{x_1}-H_{x_2});\quad x_1,x_2\in\Omega.}
+事实上，取一固定 $x_0\in\Omega$，若 $\phi(x_0)=C$，则必有
+\eqn{3.2.2}{\phi(x)=\mu(H_{x_0}-H_x)+C.}
+根据积分的可加性，反过来也对，即对于任一常数值，函数 \eref{3.2.2} 满足 \eref{3.2.1}。
+
+$\mu$ 为正这一事实（\eref{3.1.2} 自然扩展及于 $L^1_\mu$ 中非负函数）表明 $\phi$ 必定是一个增函数。因 $H_{x+h}(y)\uparrow H_x(y)$ 当 $h\downarrow0$，所以 $\phi$ 还是右连续的。
+
+现在我们来说明，反过来测度 $\mu$ 也能够通过函数 $\phi$ 重新构造出来。设 $f$ 是 $C_0(\Omega)$ 中的一个函数，作 $\Omega$ 的一个剖分，分点为 $x_k$，并令 $M_k$ 和 $m_k$ 分别地是 $f$ 在 $(x_k,x_{k+1})$ 上的最大与最小值。由于
+\[\sum_km_k(H_{x_k}-H_{x_{k+1}})\le f\le\sum_kM_k(H_{x_k}-H_{x_{k+1}}),\]
+$\mu$ 的单调性和定义 \eref{3.2.1} 表明
+\eqn{3.2.3}{\sum_km_k(\phi(x_{k+1})-\phi(x_k))\le\mu(f)\le\sum_kM_k(\phi(x_{k+1})-\phi(x_k)).}
+现在，对任意给定的 $\Omega$ 上的一个增函数 $\phi$，类似于第一章第1节我们可以引进 Riemann--Stieltjes 上积分与下积分：
+\SourcePage{66}
+\[\uint f\,d\phi=\inf\sum_kM_k(\phi(x_{k+1})-\phi(x_k)),\qquad\lint f\,d\phi=\sup\sum_km_k(\phi(x_{k+1})-\phi(x_k)).\]
+并按同样的方法也可以看出：当 $f\in C_0(\Omega)$，有 $\uint f\,d\phi=\lint f\,d\phi$，同时，若以 $\int f\,d\phi$ 记这个共同值，则 $f\mapsto\int f\,d\phi$ 是一个正测度。特别地，若 $\phi$ 是根据 \eref{3.2.1} 从给定测度 $\mu$ 出发得到的，则由 \eref{3.2.3} 可知 $\mu(f)=\int f\,d\phi$。
+
+剩下我们要分析的就是什么时候两个不等的增函数 $\phi$ 和 $\psi$ 确定同一测度，也就是说，何时 $\int f\,d\phi=\int f\,d\psi$，对一切 $f\in C_0(\Omega)$。
+
+令 $x_1<x_2$（$x_i\in\Omega$）并取一函数序列 $f_n\in C_0(\Omega)$，其中 $f_n$ 于区间 $(x_1-\frac1n,x_2+\frac1n)$ 内等于1，在区间 $(x_1-\frac2n,x_2+\frac2n)$ 外其值为零，而在其余地方其值在0和1中间。那么，有
+\[\phi(x_2+\tfrac1n)-\phi(x_1-\tfrac1n)\le\int f_n\,d\phi\le\phi(x_2+\tfrac2n)-\phi(x_1-\tfrac2n).\]
+令 $n\to\infty$，由于不等式外侧的两项趋于同一极限值，故有
+\[\phi(x_2+0)-\phi(x_1-0)=\lim_{n\to\infty}\int f_n\,d\phi=\lim_{n\to\infty}\int f_n\,d\psi=\psi(x_2+0)-\psi(x_1-0),\]
+即
+\[\phi(x_2+0)-\psi(x_2+0)=\phi(x_1-0)-\psi(x_1-0)=C,\]\Corr{13}
+其中 $C$ 是一个常数。从而，对任意 $x\in\Omega$，有 $\phi(x+0)-\psi(x+0)=\phi(x-0)-\psi(x-0)=C$。
+\SourcePage{67}
+可见，$\phi$ 和 $\psi$ 在所有连续点只相差一个共同常数。若 $\phi$ 和 $\psi$ 两者都是右连续的，则 $\phi-\psi=C$ 处处成立。因此，我们证明了
+\begin{statement}{定理}{3.2.1}[F. Riesz]
+$(\alpha,\beta)$ 上的任意正测度 $\mu$ 是关于某个增函数 $\phi$ 的 Stieltjes 积分。如果要求 $\phi$ 是右连续并指定它在某一点的值，则此函数是由 $\mu$ 所唯一确定的。
+\end{statement}
+\Exercise 证明一个增函数至多有可数多个不连续点。（提示：证明若 $\varepsilon>0$ 则在每个紧致子区间上仅仅存在有限多个点，函数在这些点上的跃度 $>\varepsilon$。）
+
+所以，若只在可数多个点上改变一个增函数的定义，则相应的 Stieltjes 积分保持不变。
+
+因为一般的 Radon 测度是 Stieltjes 积分的推广，所以，即便在多变数的情形，人们也常常把 $\mu(f)$ 写成 $\int f\,d\mu$。
+\section{一般的 Radon 测度及其正部与负部的分解}
+若 $\mu$ 为一正测度，则当 $f_n\in C_0$ 在某一固定的紧致集 $K$ 外等于零，并且一致地趋于零时，$\mu(f_n)$ 趋于零。事实上，我们可以找到一个函数 $f\in C_0^+$，使在 $K$ 上 $f=1$。令 $M_n=\sup|f_n|$，则 $-M_nf\le f_n\le M_nf$，同时，$-M_n\mu(f)\le\mu(f_n)\le M_n\mu(f)$。又因当 $n\to\infty$ 时 $M_n\to0$，所以 $\mu(f_n)\to0$。基于这个原因，我们可以按下面的方法推广测度的概念。
+\begin{statement}{定义}{3.3.1}
+一个定义在 $C_0$ 上的实值泛函 $\mu(f)$，若满足条件 $\mu(af+bg)=a\mu(f)+b\mu(g)$ 对 $a,b\in\R$ 和 $f,g\in C_0$，且进一步还满足：$\mu(f_n)\to0$ 当 $n\to\infty$，其中序列 $f_n\in C_0$ 在某一固定的紧致集合外等于零，并且一致地趋于零。此时，我们称 $\mu(f)$ 是一个 Radon 测度。
+\end{statement}
+一般 Radon 测度的引进，使得确定测度的任意线性组合成为可
+\SourcePage{68}
+能：若 $\mu$ 和 $\nu$ 为 Radon 测度而 $a,b\in\R$，那么我们定义测度 $a\mu+b\nu$ 为 $(a\mu+b\nu)(f)=a\mu(f)+b\nu(f)$，$f\in C_0$。
+\begin{statement}{定义}{3.3.2}
+设 $\mu$ 和 $\nu$ 为 Radon 测度，若 $\nu-\mu$ 为一正的 Radon 测度，即 $\mu(f)\le\nu(f)$，$f\in C_0^+$，则记 $\mu\le\nu$。
+\end{statement}
+\begin{statement}{定理}{3.3.3}
+任一 Radon 测度 $\mu$ 可以写成 $\mu=\mu^+-\mu^-$，其中 $\mu^+$ 和 $\mu^-$ 为正测度，并且此分解在下述意义下是最小的，即对任意分解 $\mu=\mu_1-\mu_2$，$\mu_1,\mu_2\ge0$，均有 $\mu_1\ge\mu^+$ 和 $\mu_2\ge\mu^-$。而且，这样的 $\mu^+$ 和 $\mu^-$ 是唯一确定的。
+\end{statement}
+\Proof 首先请注意，当我们要构造一个正的 Radon 测度 $\nu$，只要就 $f\ge0$ 情形确定 $\nu(f)$，使得 \eref{3.1.1} 和 \eref{3.1.2}（以 $\nu$ 代替 $\mu$）对非负函数和纯量成立。这是因为每一个 $C_0$ 中函数都可以写成两个 $C_0^+$ 中函数之差，所以我们还可以将 $\nu(f)$ 的定义唯一地开拓到一般的 $f$ 上，使 \eref{3.1.1} 和 \eref{3.1.2} 成立。
+
+现在，假定我们有一个分解 $\mu=\mu_1-\mu_2$，其中 $\mu_1,\mu_2\ge0$。若 $0\le g\le f$ 和 $f,g\in C_0$，则得 $\mu(g)\le\mu_1(g)\le\mu_1(f)$。这也就是说，$\mu_1(f)\ge\sup_{0\le g\le f}\mu(g)=\mu^+(f)$。
+
+现在来证明上式所定义的泛函 $\mu^+(f)$ 确实满足 \eref{3.1.1} 和 \eref{3.1.2}。这里，$\mu^+(f)\ge0$ 和 $\mu^+(f_1+f_2)\ge\mu^+(f_1)+\mu^+(f_2)$ 当 $f,f_1,f_2\in C_0^+$ 是显然成立的。为证反方向的不等式，我们任取一函数 $g\in C_0^+$ 满足 $g\le f_1+f_2$。设 $g_1=\min(g,f_1)$ 和 $g_2=g-g_1$。显然 $g_1,g_2\in C_0^+$ 而 $g_1\le f_1$。进一步，我们有
+\[g_2=g-\min(g,f_1)=g+\max(-g,-f_1)=\max(0,g-f_1)\le f_2.\]
+这也就是说，对任意满足 $g\le f_1+f_2$ 的 $g\in C_0^+$，可得 $\mu(g)=\mu(g_1)+\mu(g_2)\le\mu^+(f_1)+\mu^+(f_2)$。由此可知
+\SourcePage{69}
+$\mu^+(f_1+f_2)\le\mu^+(f_1)+\mu^+(f_2)$。可见 $\mu^+$ 是可加的。由于 $\mu^+$ 的齐次性是明显的，从而 $\mu^+$ 是一个正测度。现在，我们令
+\[\mu^-(f)=\mu^+(f)-\mu(f)=\sup_{0\le g\le f}\mu(g-f)=\sup_{0\le h\le f}(-\mu(h)),\quad f\in C_0^+,\]
+则 $\mu^-=(-\mu)^+$，故 $\mu^-$ 也是一个正测度。同时，我们有 $\mu=\mu^+-\mu^-$。根据证明的第一部分，这个分解是最小的。
+
+我们称 $\mu^+$ 和 $\mu^-$ 分别为测度 $\mu$ 的正部和负部，而 $\mu$ 的绝对值则定义为测度 $|\mu|=\mu^++\mu^-$。
+\Exercise 设 $f\in C_0^+$，试证等式 $|\mu|(f)=\sup_{|g|\le f}\mu(g)$（$g\in C_0$）和三角不等式 $|\mu+\nu|\le|\mu|+|\nu|$ 成立。
+
+$\mu^+$ 和 $\mu^-$ 的形成是与前面经常作 $f^+=\max(f,0)$ 和 $f^-=\max(-f,0)$ 完全类似的。\Corr{14}类似于两个函数的最大与最小的公式，我们现在引进
+\begin{statement}{定义}{3.3.4}
+设 $\mu$ 和 $\nu$ 为两个测度，令
+\[\max(\mu,\nu)=(\mu+\nu+|\mu-\nu|)/2,\qquad\min(\mu,\nu)=(\mu+\nu-|\mu-\nu|)/2.\]
+\end{statement}
+为解释上述定义的依据，首先注意 $\max(\mu,\nu)\ge\mu$ 和 $\max(\mu,\nu)\ge\nu$，这可由下列表示式推知 $\max(\mu,\nu)-\mu=(|\mu-\nu|+\nu-\mu)/2=(\nu-\mu)^+$。
+
+另一方面，由 $\sigma\ge\mu$ 和 $\sigma\ge\nu$ 可知不等式 $\sigma\ge\max(\mu,\nu)$ 成立。事实上，若记 $\mu=\sigma-\mu'$ 和 $\nu=\sigma-\nu'$，则 $\mu'$ 和 $\nu'\ge0$。又因 $|\mu'-\nu'|\le\mu'+\nu'$，我们得到 $\sigma-\max(\mu,\nu)=(\mu'+\nu'-|\mu'-\nu'|)/2\ge0$。这样，我们证得
+\SourcePage{70}
+\begin{statement}{定理}{3.3.5}
+$\max(\mu,\nu)$ 是所有 $\ge\mu$ 和 $\nu$ 的测度中最小的那个，而 $\min(\mu,\nu)$ 是所有 $\le\mu$ 和 $\nu$ 的测度中最大的那个。
+\end{statement}
+特别地，有 $\mu^+=\max(\mu,0)$ 和 $\mu^-=\max(-\mu,0)$。
+\begin{statement}{定理}{3.3.6}
+对任一测度 $\mu$，可以找到互为余集的 $E^+$ 和 $E^-$（即 $(E^+)^c=E^-$），使得 $E^+$ 对 $\mu^-$ 是一零集而同时 $E^-$ 对 $\mu^+$ 也为零集。同时，还可以如此选择 $E^+$ 和 $E^-$，使它们关于任一正测度是可测的。
+\end{statement}
+\Proof 取一连续函数 $f$，使 $\int f\,d\mu^+<\infty$ 并且处处 $f>0$。因为 $f\in I^+$，故有 $\int f\,d\mu^+=\sup\int g\,d\mu$，其中上确界是在集合 $\{g\in C_0^+;g\le f\}$ 上取的。选一序列 $\{g_n\}\subset C_0^+$，其中 $g_n\le f$ 并使 $\mu(g_n)\ge\mu^+(f)-2^{-n}$。上式也可以写成 $(\mu^+(f)-\mu^+(g_n))+\mu^-(g_n)\le2^{-n}$。由此看出，上式左端的每一项是非负的并以 $2^{-n}$ 为上界。
+
+令 $g=\limsup g_n$。因为 $g_n\in C_0$，所以 $g$ 关于任一正测度是可测的，并有 $0\le g\le f$。其次，对任意 $N$，$g\le g_N+g_{N+1}+\cdots$，由此可知 $\mu^-(g)\le2^{1-N}$，故 $g$ 关于 $\mu^-$ 是一个零函数。又因 $\mu^+(f-g_n)\le2^{-n}$ 和 $\liminf(f-g_n)=f-g$，根据 Fatou 引理，进而得到 $\mu^+(f-g)=0$。
+
+现在，令 $E^+=\{x;g(x)>0\}$，$E^-=(E^+)^c=\{x;g(x)=0\}$。因 $\mu^-(g)=0$，故 $E^+$ 对 $\mu^-$ 为一零集。最后，注意在 $E^-$ 上 $f-g=f>0$，而 $f-g$ 关于 $\mu^+$ 是一零函数，所以 $E^-$ 对 $\mu^+$ 为零集。至此定理证毕。
+\begin{statement}{定理}{3.3.7}
+设 $\mu$ 和 $\nu$ 是两个 Radon 测度，则下列条件是等价的：
+\begin{enumerate}[label=(\arabic*)]
+\item $\min(|\mu|,|\nu|)=0$；
+\item 存在两个互余的集合 $E^\mu$ 和 $E^\nu$，它们分别地关于 $|\nu|$ 和 $|\mu|$ 为零集。
+\end{enumerate}
+\end{statement}
+\Proof 自然地，假定 $\mu$ 和 $\nu$ 为正测度也就够了。首先假定
+\SourcePage{71}
+$\min(\mu,\nu)=0$，这也就是说，$|\mu-\nu|=\mu+\nu$。令 $\rho=\mu-\nu$，此时 $\rho^+=\mu$ 而 $\rho^-=\nu$，根据定理3.3.6即知 (2) 成立。现在，假设条件 (2) 成立。令 $\sigma=\min(\mu,\nu)$。因 $\sigma\le\mu$ 和 $E^\nu$ 对 $\mu$ 为零集，故 $E^\nu$ 对 $\sigma$ 也是一个零集，由于 $\sigma\le\nu$，所以 $E^\mu$ 对 $\sigma$ 为零集。这样一来，整个空间对 $\sigma$ 为零集，所以 $\sigma$ 为零测度。
+\begin{statement}{定义}{3.3.8}
+假如定理3.3.7中的等价条件之一成立，则说 $\mu$ 和 $\nu$ 互为奇异的。（在古典术语中，称其中之一关于另一个是奇异的，但这个术语没有表示出这种关系是对称的。）
+\end{statement}
+\section{一维情形}
+为用 Stieltjes 积分去描述一般的 Radon 测度，如象第2节中描述 Radon 正测度那样，我们需要一个新的概念。
+\begin{statement}{定义}{3.4.1}
+一个定义在区间 $(\alpha,\beta)$ 上的函数 $\phi$，若对于每个紧致子区间 $[a,b]$ 存在一个常数 $V$，使得
+\[\sum_{k=1}^{n-1}|\phi(x_k)-\phi(x_{k+1})|\le V,\]
+其中 $a=x_1<x_2<\cdots<x_n=b$ 是 $[a,b]$ 的任一剖分，则说 $\phi$ 是一个局部有界变差函数，并称使上述不等式成立的最小常数叫做 $\phi$ 在 $[a,b]$ 上的全变差。
+\end{statement}
+\begin{statement}{定理}{3.4.2}
+任一有界变差函数 $\phi$ 可以写成 $\phi=\phi^+-\phi^-$，其中 $\phi^+$ 和 $\phi^-$ 为增函数。反之，每个这样的差也是一个有界变差函数。若 $\phi$ 为右连续，则函数 $\phi^+$ 和 $\phi^-$ 可以选成为右连续的。
+\end{statement}
+\Proof 只要在一个区间 $[a,b]$ 上讨论就够了。若 $r$ 是一个实数，象通常那样令 $r^+=\max(r,0)$ 和 $r^-=\max(-r,0)$。假定 $\phi(a)=0$ 并对 $x\in[a,b]$ 令
+\[\phi^+(x)=\sup\sum_{k=1}^{n-1}(\phi(x_{k+1})-\phi(x_k))^+,\qquad\phi^-(x)=\sup\sum_{k=1}^{n-1}(\phi(x_{k+1})-\phi(x_k))^-,\]
+\SourcePage{72}
+\[\Phi(x)=\sup\sum_{k=1}^{n-1}|\phi(x_{k+1})-\phi(x_k)|,\]
+其中上确界是对所有有限点列 $a=x_1<\cdots<x_n=x$ 取的。根据定义3.4.1中的假定条件，上面三个上确界均为有限并且显然是关于 $x$ 的增函数。同样明显的是：若 $\phi$ 是 $a$ 处为零的两个增函数之差，则这两个增函数必定分别地 $\ge\phi^+$ 和 $\phi^-$。那么，现在的问题就是要证明 $\phi=\phi^+-\phi^-$，同时还将证明 $\Phi=\phi^++\phi^-$。
+
+对于任意数 $r$，因 $r=r^+-r^-$ 和 $|r|=r^++r^-$ 成立，故有
+\[\phi(x)-\phi(a)+\sum_{k=1}^{n-1}(\phi(x_{k+1})-\phi(x_k))^-=\sum_{k=1}^{n-1}(\phi(x_{k+1})-\phi(x_k))^+.\]
+我们以 $\phi^+(x)$ 作为右端的估计，然后再取左端的上确界，由此得 $\phi(x)-\phi(a)+\phi^-(x)\le\phi^+(x)$。另一方面，如果从用 $\phi(x)-\phi(a)+\phi^-(x)$ 出发估计左端，我们又可得到反方向的不等式。由于 $\phi(a)=0$，故有 $\phi(x)=\phi^+(x)-\phi^-(x)$。关于 $\Phi=\phi^++\phi^-$ 的证明可以类似地进行，只需注意到定义中诸量不随剖分的加密而减小。
+
+由于已经知道分解 $\phi=\phi^+-\phi^-$ 是最小的，所以不可能出现 $\phi^+$ 和 $\phi^-$ 两个都在某个点有一右的正跃度。因为，如若不然，由简单地从两者同时去掉那个最小的跃度，人们势必得到一个由更小的 $\phi^+$ 和 $\phi^-$ 作成的分解。若 $\phi$ 为右连续，那么，$\phi^+$ 和 $\phi^-$ 处处有同样的右间断，因此它们为右连续。
+
+设 $\phi$ 为一有界变差函数。那么，如同 $\phi$ 为增函数时那样，一个函数 $f\in C_0$ 关于 $\phi$ 的 Stieltjes 积分就定义为
+\[\int f\,d\phi=\lim\sum_kf(\xi_k)(\phi(x_{k+1})-\phi(x_k)),\]
+其中 $\xi_k$ 是 $(x_k,x_{k+1})$ 中的任意一个点，并且剖分的细密度趋于零。上述极限之所以存在，是由于 $\phi$ 可以表示成两个增函数之差\Corr{15}，而对于增函数先前已经证明上述极限是存在的（同时，一个直接的证明
+\SourcePage{73}
+也不难得到，只要注意到 Riemann--Stieltjes 和的绝对值不超过 $\phi$ 的全变差乘以 $|f|$ 的最大值）。现在，根据定理3.4.2，每个一般的 Stieltjes 积分是二个关于增函数的 Stieltjes 积分之差，并且，反之亦然。从而，一维的一般 Radon 测度可以等同于关于一有界变差函数的 Stieltjes 积分。
+\Exercise 设有界变差函数 $\phi$ 定义测度 $\mu$，则定理3.4.2证明中引进的函数 $\phi^+$、$\phi^-$ 和 $\Phi$ 定义测度 $\mu^+$、$\mu^-$ 和 $|\mu|$。
+\section{以 \texorpdfstring{$\mu$}{μ} 为基的测度}
+若 $\mu$ 为一正测度，类似于第二章第5节，我们可以定义：一个函数 $g$，若它在每一紧致集合上是 $\mu$ 可积的，或等价地若 $fg\in L^1_\mu$ 对任意 $f\in C_0$，则称 $g$ 为 $\mu$ 局部可积的。
+\begin{statement}{定义}{3.5.1}
+若 $\mu$ 为一正测度而 $g$ 是局部 $\mu$ 可积的，则用 $g\mu$ 记测度
+\[\nu(f)=\mu(fg)=\int fg\,d\mu,\quad f\in C_0,\]
+并把它叫做测度 $\mu$ 与函数 $g$ 的乘积。任意一个这样的测度被称为以 $\mu$ 为基的测度（经典的术语是：关于 $\mu$ 绝对连续。与定理3.6.5比较）。
+\end{statement}
+为说明定义的合理性，我们注意，若在紧致集 $K$ 之外 $f=0$，则 $|\nu(f)|\le\sup|f|\int_K|g|\,d\mu$，所以测度的连续性得到满足。其次，线性性质是显然的。
+\begin{statement}{定理}{3.5.2}
+设 $g\ge0$ 为局部 $\mu$-可积。则 $f\in L^1_{g\mu}$ 的充分必要条件是 $fg\in L^1_\mu$（我们假定 $0\cdot\infty=0$）。并且，我们有 $(g\mu)(f)=\mu(fg)$。
+\end{statement}
+首先，我们证明一个辅助引理。
+\begin{statement}{引理}{3.5.3}
+若 $g\ge0$ 是局部 $\mu$-可积，则对任意 $f\ge0$，
+\eqn{3.5.1}{(g\mu)^*(f)=\mu^*(fg).}
+\end{statement}
+\Proof 由 $g\mu$ 的定义，若 $f\in C_0^+$，则 \eref{3.5.1} 成立。若 $f_n\uparrow f$ 和
+\SourcePage{74}
+\eref{3.5.1} 对所有 $f_n$ 成立，那么，由定理2.2.2，\eref{3.5.1} 对极限函数 $f$ 亦成立（注意，若 $f=\infty$ 和 $g=0$，这里规定 $fg=0$）。由此即知当 $f\in I^+$ 时 \eref{3.5.1} 成立。因为存在一个序列 $h_n\in C_0^+$，它上升地趋于 $\infty$，从而 $T_{h_n}f\uparrow f$，所以只需对能被 $C_0^+$ 中某个函数控制的 $f$ 证明 \eref{3.5.1} 就足够了。
+
+若 $f\ge0$ 且 $f\le F\in I^+$，则 $\mu^*(fg)\le\mu^*(Fg)=(g\mu)^*(F)$，故有
+\eqn{3.5.2}{\mu^*(fg)\le(g\mu)^*(f).}
+为证另一反方向的不等式，我们任取一函数 $H\in I^+$ 满足 $H\ge fg$。令 $F=H/g$ 当 $g\ne0$ 和令 $F=\infty$ 当 $g=0$，则有 $f\le F$ 和 $gF\le H$。此外，$F$ 关于 $\mu$ 可测。如果我们证明了 \eref{3.5.1} 对 $\mu$-可测函数 $f$ 成立的话，那么将有 $(g\mu)^*(f)\le(g\mu)^*(F)\le\mu^*(H)$，由右端对 $H$ 取下确界，即得一个与 \eref{3.5.2} 方向相反的不等式。
+
+现在剩下的就是证明当 $f$ 可测并且 $f\le h\in C_0$ 时 \eref{3.5.1} 成立。根据定理2.4.6，我们可以找到一个序列 $f_n\in I^+$，使在一个 $\mu$-零集之外 $f_n\downarrow f$，并且我们自然可以假定 $f_n\le h$，对所有 $n$。因为 $L^1_\mu\ni gf_n\le gh\in L^1_\mu$，于是根据 Lebesgue 定理有
+\[(g\mu)^*(f)\le(g\mu)^*(f_n)=\mu^*(gf_n)\longrightarrow\mu(gf).\]
+此不等式是与 \eref{3.5.2} 的方向相反的。从而 \eref{3.5.1} 得证。
+
+\textbf{定理3.5.2的证明：} 由 \eref{3.5.1}，特别地有：一个集合 $E$ 关于 $g\mu$ 为零集的充分必要条件是关于测度 $\mu$ 在 $E$ 上几乎处处 $g=0$。因此，根据定理2.6.6，一个集合 $E$ 关于 $g\mu$ 为可测的充分与必要条件是 $E\cap\{x;g(x)\ne0\}$ 关于 $\mu$ 为可测的。这也就是说，$f$ 关于 $g\mu$ 可测的充分与必要条件是函数 $f_0(x)=f(x)$ 当 $g(x)\ne0$，$f_0(x)=0$ 当 $g(x)=0$ 为 $\mu$-可测，亦即 $fg$ 为 $\mu$-可测。现在，由引理3.5.3和定理2.5.2，就知定理3.5.2成立。
+\SourcePage{75}
+以后我们还需要下述简单结果。
+\begin{statement}{定理}{3.5.4}
+若 $\mu$ 和 $\nu$ 为正测度，则有 $L^1_\mu\cap L^1_\nu=L^1_{\mu+\nu}$，并且
+\eqn{3.5.3}{(\mu+\nu)(f)=\mu(f)+\nu(f),\quad f\in L^1_{\mu+\nu}.}
+\end{statement}
+\Proof 对任意 $f\ge0$，有
+\eqn{3.5.4}{(\mu+\nu)^*(f)=\mu^*(f)+\nu^*(f).}
+若 $f\in C_0^+$，上式就是 $\mu+\nu$ 的定义，由此知 \eref{3.5.4} 对 $f\in I^+$ 成立。至一般函数的推广留作练习。特别地，一个集合关于 $\mu+\nu$ 为零集的充分与必要条件是它关于 $\mu$ 和 $\nu$ 两者皆为零集。借助于定理2.6.6，由此我们得知：一个函数为 $(\mu+\nu)$-可测的充要条件是它既是 $\mu$-可测同时也是 $\nu$-可测。并且，根据 \eref{3.5.4} 和定理2.5.2，$L^1_{\mu+\nu}=L^1_\mu\cap L^1_\nu$ 成立。同时，\eref{3.5.3} 是必定满足的，因为它对 $f\in C_0$ 成立。
+
+现在我们来研究第3节中所定义的运算在以 $\mu$ 为基的测度上是如何实行的。
+\begin{statement}{定理}{3.5.5}
+若 $g$ 为局部 $\mu$-可积，则有 $(g\mu)^+=g^+\mu$，$(g\mu)^-=g^-\mu$ 和 $|g\mu|=|g|\mu$。
+\end{statement}
+\Proof 令 $g^+\mu=\nu_1$ 和 $g^-\mu=\nu_2$ 并引进 $E^+=\{x;g(x)\ge0\}$，$E^-=\{x;g(x)<0\}$。这两个集合互为余集，并且由定理3.5.2可知，$E^+$ 关于 $\nu_2$ 是零集而 $E^-$ 则关于 $\nu_1$ 为零集。于是，根据定理3.3.7，有 $\min(\nu_1,\nu_2)=0$，亦即 $|\nu_1-\nu_2|=\nu_1+\nu_2$。这也就是说，$(\nu_1-\nu_2)^+=\nu_1$ 和 $(\nu_1-\nu_2)^-=\nu_2$。由于 $\nu_1-\nu_2=g\mu$，故定理得证。
+\begin{statement}{定理}{3.5.6}
+测度 $g\mu$ 是零的充分与必要条件是 $|g|$ 为一个 $\mu$-零函数。
+\end{statement}
+\Proof 充分性是显然的。现设 $g\mu$ 为零测度。此时，$|g|\mu=|g\mu|=0$。这也就是说，1关于 $|g|\mu$ 是可积的且其积分值为零。这样一来，根据定理3.5.2，$|g|$ 关于 $\mu$ 也是可积的，同时以零为积分值，由此定理得证。
+\begin{statement}{定理}{3.5.7}
+若 $0\le g_n\uparrow g$，且所有 $g_n$ 为局部 $\mu$-可积和 $g_n\mu\le\nu$，对某一 $\nu$ 和所有 $n$，则 $g$ 为局部 $\mu$-可积。
+\end{statement}
+\SourcePage{76}
+\Proof 设 $0\le f\in C_0$。则 $fg_n$ 上升地趋于 $fg$ 并且 $\mu(fg_n)=(g_n\mu)(f)\le\nu(f)$，这就说明 $fg$ 属于 $L^1_\mu$，由此定理得证。
+\section{Lebesgue 分解，Lebesgue--Radon--Nikodym 定理}
+我们来证明下述 Lebesgue 的定理。
+\begin{statement}{定理}{3.6.1}
+设 $\mu$ 为一正测度。则任一测度 $\nu$ 可按唯一的方式写成 $\nu=g\mu+\nu'$，其中 $g$ 为局部 $\mu$-可积而 $\nu'$ 是和 $\mu$ 互为奇异的测度。若 $\nu$ 是正的，则 $g\mu$ 和 $\nu'$ 也是正的。
+\end{statement}
+\Proof 只要证明 $g\mu+\nu'=0$ 蕴含 $g\mu$ 和 $\nu'$ 是零，那么唯一性为真。根据定理3.3.7我们知道，存在互余的两个集合 $E_1$ 和 $E_2$，使 $E_1$ 关于 $|\nu'|$ 为零集而 $E_2$ 关于 $\mu$ 为零集。则 $E_2$ 关于 $|g|\mu=|\nu'|$ 也是零集，从而整个空间是一个 $|\nu'|$-零集。这也就是说，$\nu'=0$，故唯一性得证。
+
+为证存在性只要考虑正测度 $\nu$ 就可以了。我们需要某些辅助引理。
+\begin{statement}{引理}{3.6.2}
+若 $\mu$ 和 $\nu$ 为正测度，则在所有以 $\mu$ 为基的并且 $\le\nu$ 的测度中可以找出一个最大的。
+\end{statement}
+\Proof 作一个处处为正的连续函数 $f$，使 $f$ 为 $\nu$-可积。令 $G=\sup_g(g\mu)(f)$，这里 $g$ 为 $\mu$-可积并且 $0\le g\mu\le\nu$。我们将证明此上确界可以达到，为此我们取一序列 $g_n$，使 $0\le g_n\mu\le\nu$ 和 $(g_n\mu)(f)\to G$。因为序列 $g_n$ 可以用序列 $\max(g_1,\ldots,g_n)$ 去替代，所以我们可以假定序列 $g_n$ 是递增的。根据定理3.5.7，极限 $g=\lim g_n$ 是一个局部 $\mu$-可积函数，并且有 $(g\mu)(f)\ge(g_n\mu)(f)\to G$，因而 $(g\mu)(f)=G$ 成立。
+
+现在，令 $h$ 是一个任意的 $\mu$-可积函数，使得 $h\mu\le\nu$，我们来证明 $h\mu\le g\mu$。这里，我们可以假定 $g\le h$，因为如若不然，根据 $(\max(h,g))\mu=\max(h\mu,g\mu)\le\nu$，我们可以用 $\max(h,g)$ 代替
+\SourcePage{77}
+$h$。
+
+现在，根据 $G$ 的定义我们有 $(h\mu)(f)\le G=(g\mu)(f)$，亦即 $\mu((h-g)f)=0$。因为 $(h-g)\ge0$ 和处处有 $f>0$，故知 $h-g$ 是一个 $\mu$-零函数，亦即 $h\mu=g\mu$，由此引理得证。
+
+$g$ 的最大性也可以这样陈述：若 $\nu=g\mu+\nu'$ 则 $\nu'\ge0$，并且若一个以 $\mu$ 为基的正测度 $\le\nu'$ 则此测度必定是零。关于定理3.6.1的证明，剩下的事就是要证明 $\nu'$ 和 $\mu$ 是互为奇异的了。
+\begin{statement}{引理}{3.6.3}
+设 $0\le\nu\le\mu$ 并假定 $\nu\ne0$。则存在一个以 $\mu$ 为基的正测度，它 $\ne0$ 并且 $\le\nu$。
+\end{statement}
+\Proof 可以找到一个正数 $t>0$，使 $\nu-t\mu\le0$ 不成立，因若不然，则 $\nu\le t\mu$ 对任意 $t>0$ 成立，这将表明 $\nu\le0$，也就是说 $\nu=0$。对于上述 $t$，根据定理3.3.6，可以作出两个测度 $(\nu-t\mu)^+$ 和 $(\nu-t\mu)^-$ 以及由互余集合 $E^+$ 和 $E^-$ 组成的空间的一个剖分。这就意味着在某种意义下 $\nu>t\mu$ 于 $E^+$ 上，因而促使我们引入 $E^+$ 的特征函数 $\chi$ 并往证 a）$t\chi\mu\le\nu$；b）$t\chi\mu\ne0$，这样就完成了引理的证明。按我们现有的记号，定理3.3.6表明
+\eqn{3.6.1}{\chi(\nu-t\mu)^-=0,\qquad(1-\chi)(\nu-t\mu)^+=0.}
+将等式 $(\nu-t\mu)^+-(\nu-t\mu)^-=\nu-t\mu$ 两端乘以 $\chi$，由 \eref{3.6.1} 于是就得到
+\[0\le\chi(\nu-t\mu)^+=\chi\nu-t\chi\mu\le\nu-t\chi\mu,\]
+所以断言 a）为真。为证 b），我们只要注意：根据假定 $\mu\ge\nu$，所以 \eref{3.6.1} 表明 $\chi\mu\ge\chi\nu\ge\chi(\nu-t\mu)^+=(\nu-t\mu)^+\ne0$。
+\begin{statement}{引理}{3.6.4}
+设 $\mu$ 和 $\nu$ 为正测度。若 $\min(\mu,\nu)\ne0$，亦即若 $\mu$ 和 $\nu$ 不是互为奇异的，则存在一个以 $\mu$ 为基的正测度，它 $\ne0$ 并且 $\le\nu$。
+\end{statement}
+\Proof 令 $\nu_1=\min(\mu,\nu)$，则 $0\ne\nu_1\le\mu$。从而，我们可以代
+\SourcePage{78}
+$\nu$ 以 $\nu_1$ 去应用前面的引理。由于每个 $\le\nu_1$ 的测度同时也 $\le\nu$，故引理成立。
+
+\textbf{定理3.6.1证明的结尾：} 在引理3.6.2之后，我们已经确立：一个正测度 $\nu$ 可以写成 $\nu=g\mu+\nu'$，其中 $\nu'\ge0$，并且不存在以 $\mu$ 为基的非零正测度被 $\nu'$ 所控制。因而，根据引理3.6.4，可知 $\min(\nu',\mu)=0$，亦即 $\mu$ 和 $\nu'$ 是互为奇异的。至此定理证毕。
+\begin{statement}{定理}{3.6.5}[Lebesgue--Radon--Nikodym]
+设 $\mu$ 和 $\nu$ 是两个正测度，则下列条件是等价的：a）$\nu$ 是一个以 $\mu$ 为基的测度；b）每个 $\mu$-零集也是一个 $\nu$-零集。
+\end{statement}
+\Proof 由定理3.5.2知，a）蕴含 b）。为证 b）蕴含 a），我们取 $\nu$ 的 Lebesgue 分解 $\nu=g\mu+\nu'$，其中 $\nu'$ 是和 $\mu$ 互为奇异的。因 $\nu'\le\nu$，故每个 $\nu$-零集也是一个 $\nu'$-零集。现在，$\mu$ 和 $\nu'$ 是互为奇异的假定表明，存在一个由两个互余集组成的空间的剖分，其中之一是 $\nu'$-零集而另一个是 $\mu$-零集。然而，由 b）知每个 $\mu$-零集是一个 $\nu$-零集，从而也是 $\nu'$-零集。由此可知，整个空间为 $\nu'$-零集，这表明 $\nu'=0$。
+\begin{statement}{推论}{3.6.6}
+若 $0\le\nu\le\mu$，则 $\nu$ 是一个以 $\mu$ 为基的测度，并有 $\nu=g\mu$，其中 $0\le g\le1$。
+\end{statement}
+\Proof 由定理3.6.5，第一个论断为真。又若 $\nu=g\mu$，则我们有 $(1-g)\mu\ge0$，故 $(1-g)^-$ 是一个零函数，也就是说 $g\le1$ 几乎处处成立。
+
+注意，推论3.6.6改进了引理3.6.3。
+\Exercise 1. 设 $\mu$ 和 $\nu$ 是两个任意的正测度，试证可以找到一个正测度 $\lambda$，使 $\mu$ 和 $\nu$ 均以 $\lambda$ 为基。推广结果到可数多个给定正测度情形。
+\Exercise 2. 利用练习1去说明：对任意正测度 $\mu$ 和 $\nu$，人们可以定义测度 $(\mu\nu)^{1/2}$ 和 $(\mu^2+\nu^2)^{1/2}$ 等等。（它们可以用来定义一个可求长曲线的弧长，即曲线 $\R\ni t\mapsto x(t)\in\R^d$，其中所有坐标
+\SourcePage{79}
+$x_i(t)$ 为有界变差函数。令 $d\sigma=(\sum_i(dx_i)^2)^{1/2}$，那么 $\int\phi(t)\,d\sigma(t)$ 是函数 $\phi$ 在曲线上关于弧长的积分。）
+
+在通常的 Lebesgue 分解中，人们将定理3.6.1中的测度 $\nu'$ 进一步地分解成一个“不连续的”和一个“连续的”部分。在 Bourbaki 的术语中，这变成下面的
+\begin{statement}{定义}{3.6.7}
+一个测度 $\nu$，若每个点（从而每个可数集）关于 $|\nu|$ 是一个零集，则称之为弥散的。一个测度 $\nu$，若存在一个可数集，其余集关于 $\nu$ 是零集，此时称 $\nu$ 为原子的。
+\end{statement}
+显然地，一个弥散的测度同一个原子的测度总是互为奇异的。
+\begin{statement}{定理}{3.6.8}
+任意一个测度 $\mu$ 均可按唯一的方式写成 $\mu=\mu_1+\mu_2$，其中 $\mu_1$ 是弥散的而 $\mu_2$ 为原子的。
+\end{statement}
+\Proof 唯一性可由两个分量 $\mu_1$ 和 $\mu_2$ 是互为奇异的要求推出（与定理3.6.1中唯一性的证明比较）。为证明存在性，我们可以假定 $\mu\ge0$。使 $\mu(\{t\})\ne0$ 的点 $t$ 的集合是可数的，因若 $\varepsilon>0$，则在每个紧致集中仅仅存在有限多个点 $t$ 使得 $\mu(\{t\})>\varepsilon$。将这些点排成一个序列 $t_n$，并令 $\mu_2(f)=\sum_n\mu(\{t_n\})f(t_n)$，对 $f\in C_0^+$。由于此级数的部分和 $\le\mu(f)$，所以它是收敛的，并且其和显然定义一个测度。我们令 $\mu_1=\mu-\mu_2$。于是 $\mu_1\ge0$，并且每一点关于 $\mu_1$ 为零集，这是由于关于 $\mu$ 为零集的点关于 $\mu_1$ 是一个零集，同时点 $t_n$ 依其定义关于 $\mu_1$ 也是零集。这就证明了 $\mu_1$ 是弥散的。
+
+综合定理3.6.1和定理3.6.8，得如下结论：
+\begin{statement}{定理}{3.6.9}
+设 $\mu$ 为一弥散测度。则每一测度 $\nu$ 可以唯一地表示成 $\nu=g\mu+\nu'+\nu''$，其中 $g$ 是局部 $\mu$-可积的，$\nu'$ 是弥散的且同 $\mu$ 互为奇异，而 $\nu''$ 是原子的（故也同 $\mu$ 互为奇异）。
+\end{statement}
+\section{\texorpdfstring{$L^p$}{Lp} 上的连续线性泛函}
+\SourcePage{80}
+所谓 $L^p$ 上的一个连续线性泛函，是指一个线性函数 $L^p\ni f\mapsto\theta(f)\in\R$，它具有性质：若按 $L^p$ 范数 $f_n\to g$，即 $\|f_n-g\|_p\to0$，则有 $\theta(f_n)\to\theta(g)$。它的线性性质的含义是 $\theta(af+bg)=a\theta(f)+b\theta(g)$；$a,b\in\R$，$f,g\in L^p$。而连续性则等价于：存在一个常数 $C$，使 $|\theta(f)|\le C\|f\|_p$，$f\in L^p$。
+
+这个条件的充分性是显而易见的，同时，留作练习请读者证明连续性的定义本身就蕴含上述不等式。不等式中那个可能的最小常数 $C$ 叫做该线性泛函的范数。
+\begin{statement}{定理}{3.7.1}
+若 $\theta$ 是 $L^p$ 上的一个连续线性泛函数，$1\le p<\infty$，则存在一个函数 $g\in L^q$，其中 $1/p+1/q=1$，使得
+\eqn{3.7.1}{\theta(f)=\int fg\,d\mu,\quad f\in L^p.}
+这个线性泛函的范数就等于 $\|g\|_q$。
+\end{statement}
+\eref{3.7.1} 的右端是 $L^p$ 上的一个以 $\|g\|_q$ 为范数的线性泛函数，这点可由 Hölder 不等式及其逆（在第二章第9节证明过）得以证明。
+
+\textbf{定理的证明：} 两个 $L^p$ 上的连续泛函，若对所有 $f\in C_0$ 是等同的，则由于每个 $f\in L^p$ 可以用 $C_0$ 中函数按 $L^p$ 的范数去逼近，故这两个泛函为恒等。这也就是说，为证定理只需证明：可以找到一个函数 $g$，使 \eref{3.7.1} 对 $f\in C_0$ 成立就足够了。因此，我们考虑 $\theta$ 在 $C_0$ 上的限制并把它记作 $\nu$。由于 $|\nu(f)|\le C\|f\|_p$，$f\in C_0$，所以 $\nu$ 是一个 Radon--Stieltjes 测度，因若取一序列 $f_n$，它在一固定的紧致集外为零并且一致地趋向于零，那么，显然地有 $\|f_n\|_p\to0$。
+\SourcePage{81}
+同时，由 $\nu^+$ 和 $\nu^-$ 的定义，我们得到 $\nu^+(f)\le C\|f\|_p$，$\nu^-(f)\le C\|f\|_p$，$f\in C_0^+$。
+
+根据对称性，在以下的讨论中只要讨论 $\nu^+$ 就够了。我们有
+\[\ustar f\,d\nu^+\le C\left(\ustar f^p\,d\mu\right)^{1/p},\qquad f\ge0.\]
+事实上，已知此不等式对 $f\in C_0^+$ 成立，而这就表明对 $f\in I^+$ 从而对所有 $f\ge0$ 它也成立。因此，任一 $\mu$-零集是 $\nu^+$-零集。从而，由定理3.6.5有 $\nu^+=g^+\mu$ 对某个局部 $\mu$-可积 $g^+$。现在剩下的就是证明 $g^+\in L^q$。为此，我们取一连续的正函数 $h\in L^q$，并令 $g_n=\min(g^+,nh)$，则有 $g_n\in L^q$ 和 $g_n\uparrow g^+$ 当 $n\to\infty$。由于 $g_n\mu\le\nu^+$，故 $\int fg_n\,d\mu\le C\|f\|_p$，$0\le f\in L^p$。根据 Hölder 不等式的逆（定理2.9.2），于是对任意 $n$ 有 $\|g_n\|_q\le C$。令 $n\to\infty$ 得 $g^+\in L^q$，由此定理得证。
+\section{古典情形的 Lebesgue 分解}
+这里，我们将在 $\mu$ 为 Lebesgue 测度的情形下进一步讨论定理3.6.1。也就是说，设 $\nu$ 是任意一个测度并考虑分解 $\nu=g\mu+\nu'$，其中 $\nu'$ 关于 $\mu$ 是互为奇异的。我们来建立这个分解与第二章第10节中所讨论的多重积分的微商之间的联系。
+\begin{statement}{定理}{3.8.1}
+对几乎所有的 $x$，有 $g(x)=\lim_{\mu(S)\to0}(\mu(S))^{-1}\int_S d\nu$，其中 $S$ 代表包含 $x$ 的球。
+\end{statement}
+对于 $\nu$ 的以 $\mu$ 为基的那部分，上述结论是已知的。所以，问题就是要证明一个奇异测度（与 Lebesgue 测度互为奇异的测度）的微商存在，并且几乎处处等于零。
+\SourcePage{82}
+首先注意，若 $\nu$ 是一个任意的正测度，则有和定理2.10.2相当的论断成立，证明不需要任何改变。也就是说，若令 $\widetilde\nu(x)=\sup_{x\in S}(m(S))^{-1}\int_S d\nu$，则有
+\[\mu\{x;\widetilde\nu(x)>s\}\le\frac{4^d}{s}\nu^*(1).\]
+现在假定 $\nu$ 和 $\mu$ 是互为奇异的，则存在 $\R^d$ 的一个由两个互余集合 $E_1$ 和 $E_2$ 组成的剖分，使得 $\mu(E_1)=0$，$\nu(E_2)=0$。若 $O$ 为包含 $E_2$ 的一个开集，并且 $\nu(O)<\infty$，我们令 $\nu_0=\chi_O\nu$，因为 $\nu(E_2)=0$，故可选 $O$，使 $\nu_0(1)=\nu(O)$ 为任意小。现在我们有 $\mu\{x;\widetilde\nu_0(x)>s\}\le\frac{4^d}{s}\nu_0(1)$。
+
+若 $M_s$ 代表所有使 $\limsup_{\mu(S)\to0,\ x\in S}(\mu(S))^{-1}\int_S d\nu>s$ 成立的 $x$ 的集合，则集合 $M_s\cap E_2$ 含于 $O$ 之中，从而在此集合上 $\widetilde\nu_0(x)>s$。由于 $E_1$ 是一个 $\mu$-零集，所以我们有
+\[\mu^*(M_s)=\mu^*(M_s\cap E_2)\le\mu^*\{x;\widetilde\nu_0(x)>s\}\le\frac{4^d}{s}\nu_0(1).\]
+因 $O$ 可以选得使上式右端任意地小，故对任意 $s>0$ 而言 $M_s$ 必定为零集，由此定理3.8.1得证。
+
+特别地，在一维情形定理3.8.1告诉我们（见定理2.10.5）：
+\begin{statement}{定理}{3.8.2}
+若 $\phi$ 为一有界变差函数，则它的微商 $\phi'(x)$ 几乎处处存在，并且它是一个关于 Lebesgue 测度的局部可积函数。
+\end{statement}
+\Exercise 试证
+\[\lim_{\substack{\mu(S)\to0\\x\in S}}(\mu(S))^{-1}\int_S|d\nu-a\,d\mu|=|g(x)-a|\]
+对几乎所有的 $x$ 和任一实数 $a$ 成立。考察 $a=g(x)$ 的情形。
+\Exercise 设 $h\in L^\infty\cap L^1$ 且具有紧致支集。\Corr{27}令 $h_\varepsilon=\varepsilon^{-d}h(x/
+\SourcePage{83}
+\varepsilon)$，$\varepsilon>0$。试证
+\[\lim_{\varepsilon\to0}\int h_\varepsilon(x-y)\,d\nu(y)=g(x)\int h\,dy,\quad\text{对几乎所有 }x,\]
+其中 $\nu$ 和 $g$ 的含义与定理3.8.1中所述相同。
+\Exercise 按第二章第10节结尾中的方法，直接证明 $g(x)=\lim_{\mu(S)\to0,\ x\in S}\mu(S)^{-1}\int_S d\nu$ 几乎处处存在。在 $\mu$ 为 Lebesgue 测度的情形下，这给出定理3.8.1的另外一个推证。
+\section{各种各样的推广}
+至此，我们仅仅讨论了实值函数的积分。但是，把积分的定义推广到在任何一个 Banach 空间 $B$ 中取值的函数并没有任何困难。首先，当 $f$ 属于集合 $C_0(\R^d,B)$，即在 $B$ 中取值的具有紧致支集的连续函数的集合，利用 $f$ 的一致连续性，通过 Riemann 和我们就可以定义 $\int f\,d\mu$。接着可以将 $L^1$ 定义为在 $B$ 中取值的那样一些函数 $f$ 的集合，即对任意 $\varepsilon>0$，存在一函数 $g\in C_0(\R^d,B)$ 使 $\ustar\|f-g\|\,d\mu<\varepsilon$。
+
+容易看出，除了 $\R^d$ 是一个具有可数基的局部紧致拓扑空间（即如此之拓扑空间，其中每个点均有一个紧致邻域，并存在一个可数的开集序列，使得任一开集均可表示成它的一个子序列的并集）之外，$\R^d$ 的其余性质我们都没有用到。实际上，于此我们还完全可以排除拓扑的作用。设 $E$ 是一个集合，$C_0$ 是定义在 $E$ 上的这样一些实值函数 $f$ 的线性集合：若 $f\in C_0$ 则 $|f|\in C_0$。由此推出，若 $f,g\in C_0$ 则 $\max(f,g)$ 和 $\min(f,g)$ 也必定是在 $C_0$ 中。现在，假设 $\mu$ 是 $C_0$ 上的一个正的线性形式，它满足条件 \eref{3.1.3}。如果 $I^+$ 定义为 $C_0^+$ 中所有上升序列的极限。那么，没
+\SourcePage{84}
+有实质性的差别，人们同样地可以定义 $L^1$ 和可测性等等。由于必须依据 $I^+$ 中函数的特性来展开讨论才有意义，所以这里的介绍是极其简短的。
+
+上面指出的情况在概率论教材里是一开始就讲述的。那里，$C_0^+$ 通过公理系统按这种或那种方式给出，从而是各不相同的，如满足一定条件的某族子集合的特征函数的所有有限线性组合就是这些可能的 $C_0^+$ 集合中的一个。

@@ -1,0 +1,66 @@
+[
+  {
+    "file": "assets/ch11_actantiel_original.png",
+    "source_pdf_page": 334,
+    "printed_page": 320,
+    "crop_render_pixels": [
+      348,
+      767,
+      1170,
+      1009
+    ],
+    "render_dimensions": [
+      1500,
+      2180
+    ],
+    "kind": "original scan crop, not redrawn"
+  },
+  {
+    "file": "assets/ch11_square_extended_original.png",
+    "source_pdf_page": 336,
+    "printed_page": 322,
+    "crop_render_pixels": [
+      312,
+      865,
+      1428,
+      1439
+    ],
+    "render_dimensions": [
+      1500,
+      2180
+    ],
+    "kind": "original scan crop, not redrawn"
+  },
+  {
+    "file": "assets/ch11_square_relations_original.png",
+    "source_pdf_page": 337,
+    "printed_page": 323,
+    "crop_render_pixels": [
+      450,
+      1487,
+      1019,
+      1730
+    ],
+    "render_dimensions": [
+      1500,
+      2181
+    ],
+    "kind": "original scan crop, not redrawn"
+  },
+  {
+    "file": "assets/ch11_square_gender_original.png",
+    "source_pdf_page": 338,
+    "printed_page": 324,
+    "crop_render_pixels": [
+      292,
+      1049,
+      1406,
+      1548
+    ],
+    "render_dimensions": [
+      1500,
+      2180
+    ],
+    "kind": "original scan crop, not redrawn"
+  }
+]

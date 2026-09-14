@@ -1,0 +1,72 @@
+﻿editorial_number,source_pdf_page,printed_page,source_line,note_latex
+317,239,225,41,提纲原文 La variantes 应为 Les variantes；第227页 Les emprunt arabes 应为 Les emprunts arabes，Inférence linguistique 疑为 Interférence linguistique，与第260页正文主题相符。此处及下文均保留底本原字。
+318,242,228,140,ceci 与 ceux-ci 并非音系形式相同：通常分别为 \bipa{/səsi/} 与 \bipa{/søsi/}。二者也不只相差连字符；ceux-ci 在通常法语正字法中视为连字符复合代词，不宜不加说明便算作“两词”。例词仍依原书保留。
+319,242,228,144,原注称 Bloomfield 为 « le Saussure français »，与正文所述 américain 及其美国结构主义背景不合，此处 français 疑应为 américain；“被某些人如此称呼”的具体出处未注明，不据此另造引文。本段 qui est étude 和 son objet est étude 均缺冠词 l’。
+320,243,229,151,"pour le remplacer, avons 缺少主语 nous。另，“所有语言学家必须取消 mot”是作者的立场，不是全学科统一术语规范；本章后文实际仍使用 mot。词、词位、词目形式与语素各有分析用途，参见\ecite{49}。"
+321,243,229,158,按原例逐词计数：Le / livre / de / linguistique / est / dans / le / tiroir，共8个词次；忽略句首大小写后为7种词形，并非6与5。certains personnes 应为 certaines personnes。
+322,243,229,162,本例使用的是 grand / grande，说明中的 petit / petite 与例句不符；可相应改为 grand / grande，或把例句中的形容词改为 petit / petite，但正文不作替换。“同一 occurrence 的不同形式”也混淆层级，此处应指同一词位或词汇单位，而非同一次出现。
+323,243,229,166,按印出的例句，Je / lis / le / livre / de / linguistique / que / tu / lisais / hier，共10个词次及10种词形；把 lis 与 lisais 归并为同一词位后为9个单位，不是8、8、7。
+324,243,229,174,两处词类颠倒：Je la vois 中第一个 la 是宾语代词；la maison 中第二个 la 是定冠词。
+325,244,230,190,本段采用的 lemme、lexème 用法不等同于许多形态学及词典学著作的约定：常以 lexème 指抽象词汇单位，lemme 指其词典代表形式，不能一概把 lexème 等同于词根。参见\ecite{49}。所列音标按括号内 schwa 实现与否分别为19或18个音段，计数需说明；其6段切分混合了不同历史层次，不能仅由拼写证明各段在共时分析中均为独立语素。
+326,244,230,192,单语素词仍由一个语素构成，不能说“不由语素构成”；孤立型也不排除复合构词，原段自己的大学例已说明这一点。文字单位“字”与语法单位“语素／词”应分别判断，不能从是否可分解字形直接推出语素结构。
+327,245,231,207,本例的复数拼写 -s 通常不发音，不能把字母 s、音位 /s/ 和复数语素直接等同。可改为“书写上的 -s 标示复数，而其语音实现须另行分析”。peut-être 在此应为 peut être；上文前缀 -in 的连字符位置应为 in-，immangeable 中的拼写变体为 im-。
+328,245,231,210,“词汇化后等于一个不可分语素”与紧接着所引 Martinet 定义不一致：引文明确要求可分析为两个或更多 monèmes。作为一个句法单位运作，不等于内部不再具有语素结构；应区分功能上的整体性与内部可分析性。
+329,246,232,223,incompréhensible 的后缀为 -ible（\bipa{/ibl/}），不能把四例一概记为 /abl/。这些形容词按本章后文的分类属于派生词，不宜与独立词汇单位组合的 composition 混同；本段 syntagmes 与 synthèmes 的用词也需区分。
+330,246,232,229,ont réutilisés 缺少 été，应为 ont été réutilisés。
+331,246,232,235,此处研究的是 mon / ton / leur 以及 professeur / ami 等语法或词汇单位的替换，连续出现的 phonème(s) 应按所分析层级改为 morphème(s) 或 unité(s)，不能把后文所列词当作音位。
+332,247,233,238,Le test permutation 应为 Le test de permutation。以整词或副词在句中的位置变换为例，涉及的是句法分布；不能称置换测试专属于形态学。
+333,247,233,262,“封闭类”不意味着形式永不变化、历史上永不增加；本章随后讨论语法语素的异形态，已与 ne jamais varier 的绝对说法不符。定冠词类也不等于全部限定词类，应将 quatrième déterminant 限定为第四个定冠词成员。
+334,248,234,264,et mais aussi disparitions 应为 mais aussi des disparitions，或 et aussi des disparitions。
+335,249,235,296,辨析：这里混用了句法依附、照应关系和语境指示三个标准。demain 的解释依赖说话时间，不因此便在句法上依附于另一个词；上文“difficile”作为简短回答也依赖问题语境。故语境依赖本身不足以划分所谓自主与依附语素。
+336,250,236,306,末尾 au dessus (circonfixe) 与前项重复，按后文第243页应为 suprafixe，即通过声调、重音等超音段特征实现的词缀；并非又一种环缀。
+337,250,236,307,"两例都不涉及前缀，应将 ici, préfixe 改为 ici, suffixe：-ible 与 -ment 位于词基之后。"
+338,250,236,314,dérivationnel 应为 dérivationnels；派生词缀也并不总改变词类，如本章自己的 recommencer 仍是动词。因此“与派生相反”不能理解为所有派生都改变词类。
+339,251,237,324,puis 的通常音标应为 \bipa{[pɥi]}，底本 [pyi] 将半元音 \bipa{[ɥ]} 写作元音 [y]。其字形依底本保留。
+340,251,237,337,第239页同类例 mangions 明写 /j/，而此处及图中用 /i/。若表示通常语流中 chantions、chantiez 等的表面实现，应为 /j/；若 /i/ 表示底层元音，则须明确其与表层 [j] 的关系。另，第二条的左圆括号缺少相应右括号。图仍按原样保留。
+341,252,238,359,原列 illogique 还显示 il-，所以按所列拼写变体应有4种而非3种。此外“语素异形态”是同一语素的形式变体，不是 signifié 自身具有多种形式；应改为 ce morphème possède…。标题 L’exemple allomorphie 缺 d’。
+342,252,238,369,紧邻上下文均说4种，trois allomorphes 应为 quatre allomorphes。末条方括号内首字底本近似 \bipa{Ɔ}，与上文和 oxen 内部的 ə 不同，应为 [ən]。英语各词的元音还涉及口音及旧式转写，本轮不把底本全套音标静默改为另一口音规范。
+343,253,239,376,woman / women 的重读元音通常为 \bipa{/ʊ/} 与 \bipa{/ɪ/}，不能归入 man / men 的 \bipa{/æ/} 与 /e/ 交替。第一行把两组词套用同一替换式有误。原来用 aj、aw 的转写保留，不作逐字现代化替换。
+344,253,239,377,d’une autre germanique 缺名词 langue，应为 d’une autre langue germanique。
+345,253,239,395,原文用 ø 表示零实现，勿与国际音标的圆唇前元音 [ø] 混同，宜使用 $\varnothing$；/ons/ 又混入拼写，若用音标应为 \bipa{/ɔ̃/}。Nous 开头三行的斜线中仅转写动词而省略主语 /nu/，不能当作整个句子的完整音标。
+346,254,240,408,按本节所举 au = à + le 的分析，共同的 /o/ 形式应称 morph（形素）或融合实现，而非“一个 morphème 同时属于两个 morphèmes”。此处需要区分实现形式与被实现的语法单位；例词保持原样。
+347,255,241,435,commento 应为 comment，为明显赘字。
+348,256,242,476,同属南岛语系不足以推出某语言“中缀很丰富”；具体形式还须区分共时能产中缀、固化词形和借用构词。原书未给出这些印尼语例子的分析来源，本轮保留语料，不将这一因果推断视为已确证。
+349,256,242,479,ge-…-t 只适用于一部分德语第二分词；强变化动词常以 -(e)n 结尾，有些动词没有 ge-，不能概括所有过去分词。此处举例本身可保留，应缩小概括范围。参见\ecite{50}。
+350,257,243,497,两例中的“transfixe”与本小节自己的术语不一致，应作 interfixe（连接成分）。德语 arbeitslos 是形容词“失业的”，并非名词 chômeur 的直接对应；作名词时须用相应的名词化形式。
+351,257,243,507,“le plupart”应作 la plupart。这里三例只显示词汇声调对立，尚不能仅凭例子证明它们是同一词基加上语法性超音段词缀的派生关系；原书把声调与 suprafixe 直接等同，需加此分析限度。
+352,258,244,538,表中项目不全满足上文“两个词缀必须同时加入”的标准。例如 alunissage 可以由同表已有的 alunir 再派生，并不能作为不存在中间形式的例证。正文与表格均照录，不将整表都视为已确证的同步加缀分析。
+353,259,245,557,“eun sculpture”应作 une sculpture。
+354,259,245,564,anthroponyme 专指人名，不是所有 nom propre（专名）的同义词；如本页已经出现的 toponyme 指地名。此处只在专名是人名时才成立。
+355,260,246,573,两个人名有误：Heinrich Herz 应作 Heinrich Hertz；力的单位 newton 得名于 Isaac Newton，不是“Benjamin Newton”。参见\ecite{51}。
+356,261,247,593,“qu’à seul un paradigme”应作 qu’à un seul paradigme。
+357,262,248,624,“deux deux”叠印，应删去一个 deux。
+358,262,248,627,表示“远”的希腊语成分应为 {\BBSixGreek τῆλε}（tēle / têle），此处“teleo”有误。拉丁部分经由 vision 构成，不宜把现代词直接等同于两个未经中介的古语词的拼接。
+359,263,249,672,这里描述的是不同词位的历时词源双式，不是本章此前所定义的“同一语素的不同实现”意义上的共时异形态。“allomorphie”在此被扩大使用，应与词源关系区别；下文“voie populaire / voie savante”比“dérivation populaire / savante”更准确地概括本段自己的说明。
+360,264,250,696,表头“Mots latin”应为 Mots latins。“captivus / captivum”两行的法语结果相同，底本确实重复列出，故不合并。词源表中的拉丁形式与借入年代还需逐项核对，不据此表直接推出每对词的具体传播途径。
+361,264,250,708,“alare”在此作为已确证拉丁词源给出，缺乏依据；aller 的词源涉及拟构与音变分析，不能把未注明拟构性质的 alare 当作无争议实证。本轮保留并标待核，不以猜测词源替换。
+362,265,251,728,本段“basé un autre”缺少 sur，应作 basé sur un autre。incarcérer 与 emprisonner 均可用于实指监禁，不能以“emprisonner 具有比喻义”作为前者产生的充分原因。此处不同来源的相关词与前页同一屈折范式中的补充关系，也应在分析层次上分开。
+363,265,251,729,“et de faire”应作 et faisons，与 Quittons 构成并列祈使句。
+364,265,251,735,“doivent prononcées”应为 doivent être prononcées。前段 Institut…économiques 后遗漏右引号。
+365,266,252,751,名称中的 Général 应作 Générale，与阴性名词 Confédération 配合。这些机构、福利和制度名称在本章作为词汇构造实例保留，不代表本重排版断言其仍全部维持出版时的制度状态。
+366,266,252,758,英语国家名应为 Netherlands，而不是 Netherland；这里保留底本对 Benelux 构成的说明形式。
+367,267,253,781,“des métaplasmes dite”应为 des métaplasmes dits。
+368,268,254,822,“de de métaplasme”叠印，应删去一个 de。
+369,269,255,832,此例的方向疑被倒置：若由 l’Ascension 误切为 la Cension / la Cencion，才符合本段“去掉误认作冠词的词首成分”的定义；正文所述从 la Cencion 到 l’Ascension 并不能示范该过程。原书未给例证出处，本轮只作拟校。
+370,269,255,840,“vient latin”缺少 du。prosthèse 按本段自己的定义是词首增音，不能直接等同于“以 /e/ 替换 /s/”；词首增音与其后 /s/ 的消失是须区别的变化阶段。
+371,269,255,847,“des rares exemple”应为 des rares exemples；“j usques”应合写 jusques。此处书写 s 在元音前连诵实现为 [z]，不可把字母 s 与其具体语音值直接等同。
+372,270,256,863,这些例子混合了倒装形式、词尾元音变化与增音，不宜一概解释为增加新音。“dussé-je”所对应的 devoir 形式是虚拟式未完成过去时 dusse，而非虚拟式现在时（应为 doive）；“puissé-je”才对应现在时 puisse。
+373,270,256,868,“Les locuteurs donc ajouté”缺少 ont；此处 /b/ 是 phonème（音素／音位层面的插入音），不是具有意义或语法功能的 morphème。
+374,271,257,892,“d’une double d’agglutination”中第二个 d’ 多余，应为 d’une double agglutination。
+375,272,258,911,in dem Wagen 是介词 in 与第三格定冠词构成的处所短语，不是德语另有一个名为“inessif”的形态格。原书第五章的相同术语亦应作此区分。
+376,272,258,926,“du premier lexèmes”应为 du premier lexème；“peut parfois n’être parfois”有重复且否定结构不完整，拟作 peut parfois n’être qu’une seule lettre。Bollywood 的拼合位置也不能仅凭字母 o 就完成音节分析。
+377,273,259,952,原书未列证据证明 probably 历史上由 probablely 经叠音省略而来；不能把构词拼写中的去 e 与同音节省略混同。此例保留待核，不据这一拼法推定词源。
+378,274,260,963,此处混淆了两种同形词。西班牙语 abogado（律师）来自拉丁语 advocātus，不来自纳瓦特尔语；水果名称对应的西班牙语词为 aguacate，其词源为 ahuacatl。参见 RAE–ASALE 两词条\ecite{52}。法语水果名称的具体借入中介还须另行核对，不由同形关系直接推定。
+379,274,260,969,"小标题 Inférence 与上文术语不一致，应为 Interférence。11\,825/60\,000 约为19.7\%，但这是所称词典的词条比例，不能直接作为整个法语词汇的无条件比例；原书未说明词典版本、统计口径和年份，数字保留待核。"
+380,275,261,998,这张表混合了阿拉伯语中介借词、语义翻译及词源有争议的项目，不能一概理解为每个词都具有相同的“阿拉伯语词源”。尤其 chemise、bedaine、caramel 等需逐项重核；本轮保留全部45个条目并标明待核，不以现代清单静默替换。
+381,276,262,1008,“日语只允许开音节”的概括过强，还须处理拨音等特殊拍；两词中的补元音现象本身可以保留。这里以 /r/ 代表日语流音是宽式记法，不意味着它与英语 /r/ 的实际发音相同。
+382,276,262,1023,“un autre langue”应为 une autre langue。“一旦借入便不再可作形态分析”不是必然规律。此处还应区别阿拉伯语词根 ṭālib 与借词中的 -ān 复数形式；“taliban 是阿拉伯语复数”的分析需订正：RAE–ASALE 的 talibán 条把 ṭālibān 列为波斯语复数，词干 ṭālib 才进一步追溯到阿拉伯语。不能从词干来源推出整个词形的语法来源，参见\ecite{52}。法语复数书写 -s 也不等于处处发音 /s/。
+383,278,264,1062,“ceci expliquer”应为 ceci explique；“entre le français et anglais”应为 entre le français et l’anglais。具体借词数量、比例与首次见证年代需给出词典、语料和计数口径；未注明口径的“deux tiers”不能作为全语言的精确统计。
+384,278,264,1079,表中的 house / home 都是日耳曼语来源，不能示范“一项日耳曼、一项罗曼”的配对；bookstore 的 store 等成分也使“整词纯属盎格鲁－撒克逊语来源”的说法过于简单。此表又不同于前文“同一词源的双式词”的定义，应区分词源双式与近义词配对。
+385,279,265,1098,本页 bougette 的转写括号不配对，照原样保留。“tunnel 于15世纪借入法语”及“flirt 必然来自 fleureter”两项词源史断言需要词典证据，本轮标为待核，不据相似形式确证借入关系。
+386,281,267,1182,题干“racines greces”应为 racines grecques。
+387,282,268,1230,第13、23项均为 inter-，这是底本的重复，不擅自替换为另一个前缀；表中词缀来源也应逐项研究，不能先验地断定所有项目都只可能源于希腊语或拉丁语。

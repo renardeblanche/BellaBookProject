@@ -1,0 +1,80 @@
+[
+  {
+    "file": "19-The-Euler-Class.tex",
+    "old": "$e_{1}, \\ldots, e_{k} \\in \\Omega^{0}(\\xi)$",
+    "new": "$e_{1}, \\ldots, e_{2k} \\in \\Omega^{0}(\\xi)$",
+    "count": 1
+  },
+  {
+    "file": "19-The-Euler-Class.tex",
+    "old": "$e_{1}(p), \\ldots, e_{k}(p)$",
+    "new": "$e_{1}(p), \\ldots, e_{2k}(p)$",
+    "count": 1
+  },
+  {
+    "file": "19-The-Euler-Class.tex",
+    "old": "transisition",
+    "new": "transition",
+    "count": 1
+  },
+  {
+    "file": "19-The-Euler-Class.tex",
+    "old": "neccesarily",
+    "new": "necessarily",
+    "count": 1
+  },
+  {
+    "file": "19-The-Euler-Class.tex",
+    "old": "(-\\infty \\times 1 / 4)",
+    "new": "(-\\infty, 1 / 4)",
+    "count": 1
+  },
+  {
+    "file": "19-The-Euler-Class.tex",
+    "old": "F \\btd(\\F{e})",
+    "new": "F^\\btd(\\F{e})",
+    "count": 2
+  },
+  {
+    "file": "20-Cohomology-of-Projective-and-Grassmannian-Bundles.tex",
+    "old": "replaced by ${\\pi }^*( U)$",
+    "new": "replaced by ${\\pi }^{-1}( U)$",
+    "count": 1
+  },
+  {
+    "file": "20-Cohomology-of-Projective-and-Grassmannian-Bundles.tex",
+    "old": "$m \\in  H^*( U)$ and $e",
+    "new": "$m \\in  H^*( U_{12})$ and $e",
+    "count": 1
+  },
+  {
+    "file": "20-Cohomology-of-Projective-and-Grassmannian-Bundles.tex",
+    "old": "${\\pi }_{1}^*( \\xi )  = H( \\xi )",
+    "new": "${\\pi }^*( \\xi )  = H( \\xi )",
+    "count": 1
+  },
+  {
+    "file": "20-Cohomology-of-Projective-and-Grassmannian-Bundles.tex",
+    "old": "c( {{\\pi }_{1}^*( \\xi ) })",
+    "new": "c( {{\\pi }^*( \\xi ) })",
+    "count": 1
+  },
+  {
+    "file": "21-Thom-Isomorphism-and-the-General-Gauss-Bonnet-Formula.tex",
+    "old": "Let $\\xi$ be an oriented vector bundle over $M$ with total space",
+    "new": "Let $\\xi$ be an oriented vector bundle over a compact manifold $M$ with total space",
+    "count": 1
+  },
+  {
+    "file": "21-Thom-Isomorphism-and-the-General-Gauss-Bonnet-Formula.tex",
+    "old": "where $m = \\dim \\xi$. Assuming",
+    "new": "where $m = \\dim \\xi$.\\corr{原书第 211 页开头的 $H^q(M)\\cong H_c^{q+m}(E)$ 需要 $M$ 紧致；现补明，与定理 21.3 一致。非紧致底空间的一般形式应同时在底空间使用紧支撑上同调。} Assuming",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "定向异球面的微分同胚类为 27 个。",
+    "new": "定向异球面的微分同胚类为 27 个。参见 Kervaire--Milnor, \\href{https://www.jstor.org/stable/1970128}{Groups of Homotopy Spheres: I} (1963)。",
+    "count": 1
+  }
+]

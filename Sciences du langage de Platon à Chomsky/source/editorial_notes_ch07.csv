@@ -1,0 +1,25 @@
+﻿editorial_note,source_pdf_page,printed_page,source_tex,note_tex
+251,202,188,chapters/07_partie2.tex,原文 sciences langage 如此；应为 sciences du langage，与本页标题一致。
+252,202,188,chapters/07_partie2.tex,原文 ceux Roman Jakobson 如此；应为 ceux de Roman Jakobson，与后面的 et d’André Martinet 对应。
+253,202,188,chapters/07_partie2.tex,原文 Nous répond 如此；现在时应为 Nous répondons；若与前句预告下文的将来时一致，则为 Nous répondrons。
+254,205,191,chapters/07_phonetique.tex,原文 ses caractéristiques 如此；此处所列频率、强度、时长是声音的物理特征，若回指 les sons，应为 leurs caractéristiques。
+255,205,191,chapters/07_phonetique.tex,原文 se poser question 如此；应为 se poser la question。
+256,206,192,chapters/07_phonetique.tex,“n’importe quel son”范围过大。此处描述肺部气流及喉部参与的典型言语发声过程，不是所有声音的必要条件；例如本章后文也说明清擦音不依赖声带振动，且国际音标表另列非肺部气流辅音。见\ecite{41}。
+257,207,193,chapters/07_phonetique.tex,原文 perçus、ce sont voisé 如此；分别应为 perçues 和 ce son est voisé，句意为所感到的振动表明这个音有声。
+258,207,193,chapters/07_phonetique.tex,“在法语中不起任何作用”过强，也与上一段把声门上腔体作为共鸣腔的说明不一致。不能把“不以独立咽辅音为特征”与“咽腔不参与语音产生”混为一谈；咽腔在解剖上仍属喉以上的声道。咽、喉的位置见\ecite{43}。
+259,207,193,chapters/07_phonetique.tex,gutturales 是宽泛的传统称呼，不等同于现代发音部位分类中的 pharyngales。国际音标表分别列软腭、小舌、咽和声门等部位；不能由“喉音”这一名称直接推断列举的辅音均在咽部形成阻碍。见\ecite{41}。
+260,207,193,chapters/07_phonetique.tex,控制口鼻通路的主要结构应表述为软腭／腭帆及腭咽闭合机制，不是单独“小舌黏在咽腔上”。小舌是软腭后缘的悬垂部分；小舌与整个软腭不能等同。下文相同的简化说法亦应据此理解。解剖区分见\ecite{42}、\ecite{43}。
+261,208,194,chapters/07_phonetique.tex,原文 produits 如此；与阴性复数 consonnes 一致时应为 produites。
+262,209,195,chapters/07_phonetique.tex,对法语 \bipa{[l]}，要点是舌尖／舌端在齿龈处形成中央阻碍，气流经一侧或两侧逸出；不能仅用“舌背抬高”界定。国际音标将 \bipa{[l]} 列为齿龈边近音。见\ecite{41}。
+263,209,195,chapters/07_phonetique.tex,原文 et produisant 如此；并列谓语应为 et produisent，或改写为 avec la langue ou la luette produisant des vibrations。
+264,210,196,chapters/07_phonetique.tex,原文用 \bipa{[ʁ]} 表示 vibrante。国际音标中 \bipa{[ʁ]} 是浊小舌擦音，小舌颤音符号为 \bipa{[ʀ]}；字形及发音方式不可混同。此处与下表保留底本的 \bipa{[ʁ]}，不静默改成 \bipa{[ʀ]}。见\ecite{41}。
+265,210,196,chapters/07_phonetique.tex,原表把 \bipa{[l]} 记为 sagittale；与上一页的 latérale 相冲突，应为 latérale。在现代 IPA 方式分类中，\bipa{[l]} 属 lateral approximant，而非中央气流擦音。见\ecite{41}。
+266,212,198,chapters/07_phonetique.tex,原文 la formes 如此；应为 la forme。
+267,213,199,chapters/07_phonetique.tex,原表 Nasales 中前、不圆唇、半开这一格印为无鼻化符号的 \bipa{ɛ}；据本页元音梯形图及下一页完整分类表，应为 \bipa{ɛ̃}。此处保留原格字形，订正在注中列明。
+268,214,200,chapters/07_phonetique.tex,此格原文用大写 Ø。国际音标的前圆唇半闭元音符号为小写 \bipa{ø}，亦与上页梯形图和口元音表一致。见\ecite{41}。
+269,214,200,chapters/07_phonetique.tex,此表三项均称 constrictive，而前文又把 constrictive 等同 fricative。国际音标中 \bipa{[j]}、\bipa{[ɥ]}、\bipa{[w]} 为近音：分别为硬腭、唇硬腭、唇软腭近音，不应据此表误作带摩擦噪声的擦音。见\ecite{41}。
+270,214,200,chapters/07_phonetique.tex,原文 des phonème 如此；应为 des phonèmes。
+271,216,202,chapters/07_phonetique.tex,“某一部位”范围不当；appareil phonatoire 指参与发声的器官系统，不是口、鼻、喉中某个单一部位。本章正文还明确列入肺、气管及相应肌肉。
+272,216,202,chapters/07_phonetique.tex,“气管（喉中）”混淆喉与气管的位置及包含关系。喉是连接咽与气管、位于气管上方的独立结构，内含声带；不能说气管处于喉内。见\ecite{43}，Larynx 与 Trachea 两节。
+273,217,203,chapters/07_phonetique.tex,硬腭的支架为骨，表面覆以黏膜等软组织；不能把其结构与主要由肌肉构成的软腭混同。“由骨和肌肉构成”宜订正为“以骨为支架、表面覆有黏膜的腭前部”。见\ecite{42}。
+274,217,203,chapters/07_phonetique.tex,此释义只近似描述语音学中的一段咽腔，不能作为完整解剖定义：咽分鼻咽、口咽、喉咽，声带位于喉内，不是整个咽的边界。见\ecite{42}、\ecite{43}。

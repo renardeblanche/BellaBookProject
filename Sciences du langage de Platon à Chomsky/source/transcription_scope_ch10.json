@@ -1,0 +1,24 @@
+{
+  "source_pdf_range": [
+    284,
+    317
+  ],
+  "printed_range": [
+    270,
+    303
+  ],
+  "source_pages": 34,
+  "next_pdf_page": 318,
+  "body_language": "French with original Chinese passages and glossary",
+  "transcription_method": "visual reading of scan; no OCR",
+  "original_images_retained": 31,
+  "exercises": {
+    "I": 16,
+    "II": 6,
+    "answers_added": false
+  },
+  "glossary_entries": 7,
+  "new_editorial_notes": 40,
+  "original_notes": 7,
+  "limitations": "Initial collation; references and detailed historical assertions not comprehensively verified. Original diagram text remains raster rather than rekeyed."
+}

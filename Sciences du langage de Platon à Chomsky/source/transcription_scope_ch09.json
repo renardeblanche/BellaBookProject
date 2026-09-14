@@ -1,0 +1,34 @@
+{
+  "new_chapter": 9,
+  "source_pdf_pages": [
+    239,
+    283
+  ],
+  "printed_pages": [
+    "225",
+    "269"
+  ],
+  "source_page_count": 45,
+  "retypeset_chapter_pages": [
+    264,
+    312
+  ],
+  "content": {
+    "outline_source_pages": 3,
+    "exercises": 5,
+    "exercise_I_blends": 21,
+    "exercise_II_sentences": 9,
+    "exercise_III_truncation_items": 75,
+    "exercise_IV_definitions": 15,
+    "exercise_V_prefix_groups": 40,
+    "bibliography_entries": 6,
+    "glossary_entries": 11,
+    "original_figure": 1
+  },
+  "new_editorial_notes": 71,
+  "original_footnotes": 11,
+  "next_source_page": 284,
+  "next_printed_page": "270",
+  "next_chapter_title": "LA SYNTAXE : L’EXPLORATION DE LA PHRASE",
+  "status": "逐页初校转写；非全书事实审定；习题未补答案"
+}

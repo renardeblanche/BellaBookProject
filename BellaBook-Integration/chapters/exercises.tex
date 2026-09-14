@@ -1,0 +1,89 @@
+\chapter*{综合练习}\addcontentsline{toc}{chapter}{综合练习}\markboth{综合练习}{综合练习}
+\newcommand{\ExItem}[1]{\item\hypertarget{ex:#1}{}\label{ex:#1}}
+\begin{enumerate}[label=\textbf{\arabic*.},itemsep=.8em]
+\SourcePage{89}
+\ExItem{1} 设 $f$ 是 $\R^d$ 上的一个函数，它满足 $f(x+l)=f(x)$ 对 $x,l\in\R^d$，这里 $l$ 具有整数坐标。试证：若 $f$ 在
+\[I=\{x;0\le x_j\le1,\ j=1,\ldots,d\}\]
+上为 Riemann 可积，则
+\[\lim_{T\to\infty}\frac1T\uint_0^T f(ta_1,\ldots,ta_d)\,dt
+=\lim_{T\to\infty}\frac1T\lint_0^T f(ta_1,\ldots,ta_d)\,dt=\int_I f\dd,\]
+其中 $a_1,\ldots,a_d$ 在有理数域上是线性无关的，即若 $r_1a_1+\cdots+r_da_d=0$，其中 $r_j$ 为有理数，则必定 $r_1=\cdots=r_d=0$。
+\ExItem{2} 设 $f$ 是一个在开集 $O\subset\R^d$ 上二次连续可微的函数，并令 $f_h(x)=f(x)-\langle x,h\rangle$。试证：对除一个零集外的所有 $h$，矩阵 $(\partial^2 f_h/\partial x_j\partial x_k)$ 在 $O$ 中使 $\partial f_h/\partial x_j=0$，$j=1,\ldots,d$ 的任意一点上是可逆的。
+\ExItem{3} 定义实数轴上的一个函数 $f$：$f(x)=0$ 当 $x$ 为无理数，$f(0)=0$ 和 $f(x)=1/q$ 当 $x=p/q$，这里 $p$ 和 $q$ 互质且 $q>0$。试证 $f$ 是上方半连续的。
+\ExItem{4} 从闭区间 $[0,1]$ 的中央删去一个长度为 $1/p_1$ 的开区间。再从余下各个闭子区间的中央同时删去一个开区间，其长度是那子区间长度的 $1/p_2$。如此重复进行，作到第 $n$ 步得到一个闭集 $F_n$。试证闭集 $\bigcap_1^\infty F_n$ 的测度为 $\prod_1^\infty(1-1/p_n)$。
+\ExItem{5} 试求所有在十进制记数法的表示中不出现数字 $7$ 的实数之集合的测度。
+\ExItem{6} 设 $E$ 为这样一些实数的集合：当其中的数用十进制记数法表示时，任何一个有限的数字序列都在其展开中出现。试证 $E^c$ 为一零集。
+\SourcePage{90}
+\ExItem{7} 设 $E_1,E_2,\ldots$ 是 $\R^d$ 的子集并且 $\sum_i m^*(E_i)<\infty$。试证 $\{x;x\in E_i\text{ 对无限多个 }i\}$ 为零集。
+\ExItem{8} 设 $(a_n)_1^\infty$ 为一实数序列，并知存在一个常数 $K$，使得没有长度为 $1$ 的区间能够包含多于 $K$ 个 $a_n$。试证：若 $f\in L^1(\R)$，则 $\sum_1^\infty f(x+a_n)$ 对几乎所有的 $x$ 收敛。
+\ExItem{9} 试证：若 $f\in L^1(\R)$，则 $\sum_1^\infty f(nx)$ 对几乎所有的 $x$ 绝对收敛。
+\ExItem{10} 设 $(a_n)_1^\infty$ 和 $(b_n)_1^\infty$ 为实数序列且 $b_n\ge0$ 对所有的 $n$。试证级数
+\[\sum_1^\infty b_n|x-a_n|^{-\alpha}\]
+当 $\sum_1^\infty b_n^{1/\alpha}<+\infty$ 和 $\alpha>1$ 时对几乎所有的 $x$ 收敛。
+\ExItem{11} 对于一个实数 $a$，我们令 $E_a$ 为 $\R^d$ 中所有满足下述条件的 $x$ 之集合，即使不等式
+\[|\langle l,x\rangle|=|l_1x_1+\cdots+l_dx_d|\ge\|l\|^{-a}\]
+对除有限个之外的所有的整数向量 $l=(l_1,\ldots,l_d)$ 成立。试证若 $a>d-1$ 则 $E_a$ 的余集是一个零集。\Corr{19}并且证明：对于 $\R^d$ 中每个 $x$ 有
+\[\liminf_{\|l\|\to\infty}\|l\|^{d-1}\,|\langle l,x\rangle|\le C_d\|x\|,\quad\text{当 }d>1.\]
+\ExItem{12} 设 $E$ 为实数轴的一个子集，用 $M$ 表示所有与 $E$ 中无穷多个点模 $1$ 相等的点组成之集合。试证：若 $E$ 可测，则 $M$ 可测，并且当 $E$ 有有限的外测度时，$M$ 是一个零集。
+\ExItem{13} 设 $E$ 为实数轴上的一个零集。试证：存在数 $a$，使得对任何有理数 $r$，$a+r$ 均不属于 $E$。
+\ExItem{14} 设 $(E_k)_1^\infty$ 为 $\R^d$ 中可测集合的一个序列，用 $A_j$ 表示那样一些点 $x$ 的集合，对于每个这样的 $x$ 都恰有 $j$ 个 $k$ 的值使 $x\in E_k$。另记 $A_\infty=\limsup_k E_k$。试证 $A_j$ 为可测并且
+\SourcePage{91}
+\[\sum_k m(E_k)=\sum_{j=1}^\infty j\,m(A_j)+\infty\,m(A_\infty),\quad\infty\cdot0=0.\]\Corr{20}
+\ExItem{15} 设 $E$ 是 $(0,1)$ 中的一个可测集，其测度 $>1/2$。试证可以找到 $x,y\in E$ 使 $x+y=1$。
+\ExItem{16} 试证若在实数轴上 $f\in I^+$，则
+\[\ustar f\dd\le\liminf_{n\to\infty}\frac1n\sum_{k=-n^2}^{n^2}f\left(\frac kn\right).\]
+\ExItem{17} 设 $f\in L^p$ 和 $g\in L^q$，其中 $1\le p,q\le\infty$ 且 $1/p+1/q=1$。试证
+\[\int f(x-y)g(y)\,dy\]
+为 $x$ 的连续函数。
+\ExItem{18} 设 $A,B\subset\R^d$ 为可测集合并假定对每个 $x\in\R^d$，存在一个零集 $N_x$ 使 $A+x\subset B\cup N_x$。试证：若 $A$ 不是一个零集，则 $B^c$ 为一零集。
+\ExItem{19} 假定 $E$ 是一个可测并具正测度的实数集合。试证 $\{x-y;x,y\in E\}$ 包含原点的一个邻域。\Corr{21}
+\ExItem{20} 试证若在实数轴上 $f\in L^1$ 则
+\[\lim_{n\to\infty}\sum_{k=-n^2}^{n^2}\left|\int_{k/n}^{(k+1)/n}f(x)\dd\right|=\int_{-\infty}^{+\infty}|f(x)|\dd.\]
+\ExItem{21} 设 $f\in L^1(\R)$，并设 $g\in L^\infty(\R)$ 是周期为 $T$ 的函数。试证
+\[\lim_{n\to\infty}\int f(x)g(nx)\dd=\left(\int f(x)\dd\right)\left(\frac1T\int_0^Tg(x)\dd\right).\]
+\ExItem{22} 试证若级数 $\sum_1^\infty a_n\sin nx$ 对一个正测度集合中的所有 $x$ 绝对收敛，则 $\sum_1^\infty|a_n|<\infty$。
+\ExItem{23} 试证若 $f\in L^1(\R)$ 则
+\[\lim_{T\to\infty}\int_{-\infty}^{+\infty}\frac1{2T}\left|\int_{-T}^Tf(s+t)\,dt\right|ds=\left|\int_{-\infty}^{+\infty}f(t)\,dt\right|.\]
+\ExItem{24} 设序列 $f_1,f_2,\ldots$ 由区间 $(0,1)$ 上的可测函数所作成，并且
+\SourcePage{92}
+$|f_n(x)|\le1$。试证：若
+\[\int_0^y f_n(x)\dd\to0,\quad\text{当 }n\to\infty\]
+对所有的 $y\in(0,1)$ 成立，则对所有的 $g\in L^1$，
+\[\int_0^1 g(x)f_n(x)\dd\to0,\quad\text{当 }n\to\infty.\]
+\ExItem{25} 设 $f\in L^1$。证明，对可测的 $E$，当 $m(E)\to0$ 时
+\[\int_E f\dd\to0.\]
+\ExItem{26} 设 $0\le f_n\in L^1$。假定对几乎所有的 $x$，$f_n(x)\to f(x)$，并且 $\int f_n\dd\to A$ 当 $n\to\infty$。试证 $f\in L^1$ 并且
+\[\int|f_n-f|\dd\to A-\int f\dd\quad\text{当 }n\to\infty.\]
+\ExItem{27} 设函数 $f,f_1,f_2,\ldots\in L^p$，其中 $1\le p<\infty$，并假定对几乎所有的 $x$，$f_n(x)\to f(x)$ 和 $\|f_n\|_p\to\|f\|_p$ 当 $n\to\infty$。试证 $\|f-f_n\|_p\to0$ 当 $n\to\infty$。
+\ExItem{28} 设 $f\in L^p$，$g_n\in L^q$，$n=1,2,\ldots$，其中 $1<p<\infty$ 且 $1/p+1/q=1$。试证：若 $\|g_n\|_q\le C$，$n=1,2,\ldots$ 和 $g_n(x)\to g(x)$ a.e. 则 $g\in L^q$ 并且
+\[\int fg_n\dd\to\int fg\dd.\]
+\ExItem{29} 设 $f_n\in L^p$，$g_n\in L^q$ 对 $n=1,2,\ldots$；其中 $1<p<\infty$，$1/p+1/q=1$。试证：若 $|f_n|\le F\in L^p$ 对所有 $n$，$\|g_n\|_q\le C$，$f_n(x)\to f(x)$ a.e. 和 $g_n(x)\to g(x)$ a.e. 则有 $f\in L^p$，$g\in L^q$，$\|f-f_n\|_p\to0$ 和
+\[\int f_ng_n\dd\to\int fg\dd.\]
+\ExItem{30} 设 $f_n$ 为一非负可测函数序列，$\int f_n(x)\dd=1$ 对每个 $n$，$f_n(x)\to0$ 对所有 $x$ 当 $n\to\infty$。试问函数 $f=\sup_n f_n$ a) 可测？b) 可积？
+\ExItem{31} 设 $f(x,y)$ 对 $(x,y)\in\R^2$ 有定义。假定 $f(x,y)$ 对任一固定 $y$
+\SourcePage{93}
+是 $x$ 的连续函数，并且对固定的 $x$ 是 $y$ 的可测函数。试证 $f$ 是 $\R^2$ 上的一个可测函数。
+\ExItem{32} 试问 $(0,1)$ 的一个开子集的边界必定是零测集吗？
+\ExItem{33} 设 $E$ 是一个实数集合并满足条件：
+\[m^*(E\cap I)\le k\,m(I),\quad\text{对任意区间 }I,\]
+其中常数 $k<1$ 且不依赖于 $I$。试证 $E$ 为一零集。
+\ExItem{34} 构造一个可测集合 $E\subset\R^d$，使得 $0<m(E\cap O)<m(O)$ 对任一测度为有限值的非空开集 $O$ 成立。
+\ExItem{35} 设 $E$ 是区间 $I\subset\R^d$ 的一个子集，并令 $0<\varepsilon<1$。若 $I_1,\ldots,I_N$ 是区间 $I$ 的一个剖分，我们用 $I'$ 表示所有使 $m^*(I_j\cap E)>\varepsilon m(I_j)$ 成立的 $I_j$ 的并集。试证当剖分的细密度趋于零时
+\[m(I')\to m^*(E).\]
+设 $I''$ 是按同一方法定义的，但是用 $I\setminus E$ 替代 $E$，证明 $E$ 为可测的充分与必要条件是 $m(I'\cap I'')$ 随剖分的细密度趋向于零。
+\ExItem{36} 设 $f_n$ 是一个在 $(-\infty,+\infty)$ 中取值的可测函数序列。试证：若
+\[m(\{x;|f_m(x)-f_n(x)|\ge\varepsilon\})\to0,\quad\text{当 }n,m\to\infty,\]
+则可选出一个子序列，它对几乎所有的 $x$ 收敛。
+\ExItem{37} 设非负可测函数 $f$ 和 $g$ 定义在可测集 $E\subset\R^d$ 上，令 $E_y=\{x\in E;g(x)\ge y\}$ 和 $h(y)=\int_{E_y}f(x)\dd$。试证
+\[\int_E f(x)g(x)\dd=\int_0^\infty h(y)\,dy.\]
+\ExItem{38} 假定 $f$ 在区间 $[0,1]$ 上连续而 $g$ 是 $[0,1]$ 上的可测函数并满足 $0\le g(x)\le1$。试证
+\[\lim_{n\to\infty}\int_0^1 f(g(x)^n)\dd\]
+存在并给出极限值。
+\ExItem{39} 设 $f$ 在实数轴上可积。试证对几乎所有的 $a$，
+\SourcePage{94}
+\[\lim_{n\to\infty}\int_0^1 f(x^n+a)\dd=f(a).\]
+\ExItem{40} 设 $E$ 是 $\R$ 的子集。试证
+\[m^*(E)=\inf_{f\in K}\left\{\lim_{x\to+\infty}(f(x)-f(-x))\right\},\]
+其中 $K$ 是所有于 $E$ 上微商存在并且 $\ge1$ 的增函数的集合。
+\ExItem{41} 设 $f$ 是 $(0,1)$ 上的一个增函数。试证 $\int_0^1 f'(x)\dd$ 最大不超过 $f$ 的值域的测度。
+\end{enumerate}

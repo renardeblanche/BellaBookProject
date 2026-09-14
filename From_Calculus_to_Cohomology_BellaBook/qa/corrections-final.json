@@ -1,0 +1,140 @@
+[
+  {
+    "file": "10-Integration-on-Manifolds.tex",
+    "old": "positive oriented",
+    "new": "positively oriented",
+    "count": 1
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "N^n =\\partial x",
+    "new": "N^n =\\partial X",
+    "count": 1
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "$N_i^n,\\ldots, N_k^n$",
+    "new": "$N_1^n,\\ldots, N_k^n$",
+    "count": 1
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "$f_i = E_{|J\\times Q_i}$",
+    "new": "$f_i = F_{|J\\times Q_i}$",
+    "count": 1
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "I(p) \\{",
+    "new": "I(p) = \\{",
+    "count": 1
+  },
+  {
+    "file": "11-Degree-Linking-Numbers-and-Index-of-Vector-Fields.tex",
+    "old": "{\\|\\alpha(u) - \\beta(v)\\|^3}",
+    "new": "{\\|\\alpha(u) - \\beta(v)\\|^3}\\,\\dd v\\,\\dd u",
+    "count": 1
+  },
+  {
+    "file": "12-The-Poincare-Hopf-Theorem.tex",
+    "old": "point $p\\in M$, \\dd_pf",
+    "new": "point $p\\in M$, $\\dd_pf",
+    "count": 1
+  },
+  {
+    "file": "13-Poincare-Duality.tex",
+    "old": "\\supp_N(\\varphi)\\subseteq N\\cap V_N",
+    "new": "\\supp_N(\\varphi)\\subseteq N\\cap V_M",
+    "count": 1
+  },
+  {
+    "file": "15-Fiber-Bundles-and-Vector-Bundle.tex",
+    "old": "h:U_n\\times F",
+    "new": "h:U_b\\times F",
+    "count": 1
+  },
+  {
+    "file": "16-Operations-on-Vector-Bundles-and-their-Sections.tex",
+    "old": "\\Lambda_R^k =",
+    "new": "\\Lambda_R^k(V) =",
+    "count": 1
+  },
+  {
+    "file": "16-Operations-on-Vector-Bundles-and-their-Sections.tex",
+    "old": "\\overline{\\omega}:\\Lambda_R^k\\to W",
+    "new": "\\overline{\\omega}:\\Lambda_R^k(V)\\to W",
+    "count": 1
+  },
+  {
+    "file": "16-Operations-on-Vector-Bundles-and-their-Sections.tex",
+    "old": "for $f\\in V,",
+    "new": "for $v\\in V,",
+    "count": 1
+  },
+  {
+    "file": "16-Operations-on-Vector-Bundles-and-their-Sections.tex",
+    "old": "\\Lambda^k(V^*)\\otimes \\Lambda^l(V)",
+    "new": "\\Lambda^k(V^*)\\otimes \\Lambda^k(V)",
+    "count": 1
+  },
+  {
+    "file": "17-Connections-and-Curvature.tex",
+    "old": "s^* \\in  \\Omega^0(\\xi)$",
+    "new": "s^* \\in  \\Omega^0(\\xi^*)$",
+    "count": 1
+  },
+  {
+    "file": "17-Connections-and-Curvature.tex",
+    "old": "= \\btd_{\\xi^*}(s)  \\land  t + s \\land  \\btd_{\\xi }(t)",
+    "new": "= \\btd_{\\xi^*}(s)  \\land  t + s \\land  \\btd_{\\eta }(t)",
+    "count": 1
+  },
+  {
+    "file": "17-Connections-and-Curvature.tex",
+    "old": "\\btd_{\\xi^* \\otimes  \\eta }\\R{Im}",
+    "new": "\\btd_{\\xi^* \\otimes  \\eta }",
+    "count": 1
+  },
+  {
+    "file": "17-Connections-and-Curvature.tex",
+    "old": "s^* \\in  \\Omega^{i}( \\xi^*)",
+    "new": "s^* \\in  \\Omega^{j}( \\xi^*)",
+    "count": 1
+  },
+  {
+    "file": "17-Connections-and-Curvature.tex",
+    "old": "\\btd_{\\hom( {\\xi,\\xi^*}) }",
+    "new": "\\btd_{\\hom( {\\xi,\\eta}) }",
+    "count": 1
+  },
+  {
+    "file": "17-Connections-and-Curvature.tex",
+    "old": "{A}^{\\prime } = A( \\mathbf{e})",
+    "new": "{A}^{\\prime } = A( \\mathbf{e}^{\\prime})",
+    "count": 1
+  },
+  {
+    "file": "App-B-Invariant-Polynomials.tex",
+    "old": "calculated formally too.",
+    "new": "calculated formally too.\\corr{原书第 227 页此处求和应从 $i=0$ 开始，指数中应有负号；积分常数由 $\\sigma(0)=1$ 确定。由 $s(-t)=-t\\,\\sigma\\prime(t)/\\sigma(t)$ 可直接核验。本页 $s(t)$ 的常数项为零，前式改从 $k=1$ 起写。}",
+    "count": 1
+  },
+  {
+    "file": "App-C-Proof-of-Lemmas-2.12-and-12.13.tex",
+    "old": "for all $p\\in M$",
+    "new": "for all $p\\in N$",
+    "count": 1
+  },
+  {
+    "file": "App-D-Exercises.tex",
+    "old": "\\R{vol}( {{\\epsilon }_{1},\\ldots,{\\epsilon }_{n}}) = 1$",
+    "new": "\\R{vol}( {{e}_{1},\\ldots,{e}_{n}}) = 1$\\corr{原书第 245 页习题 2.11 中体积形式应作用于基向量 $e_i$，而非对偶基 $\\epsilon_i$。}",
+    "count": 1
+  },
+  {
+    "file": "App-D-Exercises.tex",
+    "old": "$\\rangle {andvolume}$",
+    "new": "$\\rangle$ and volume",
+    "count": 1
+  }
+]

@@ -1,0 +1,238 @@
+{
+  "sa": {
+    "source_pdf_page": 440,
+    "clip_in_1_35x_render": [
+      188,
+      520,
+      581,
+      750
+    ],
+    "file": "assets/v17_sa.png"
+  },
+  "schematic": {
+    "source_pdf_page": 441,
+    "clip_in_1_35x_render": [
+      475,
+      225,
+      719,
+      367
+    ],
+    "file": "assets/v17_schematic.png"
+  },
+  "boytree": {
+    "source_pdf_page": 441,
+    "clip_in_1_35x_render": [
+      199,
+      416,
+      610,
+      573
+    ],
+    "file": "assets/v17_boytree.png"
+  },
+  "hockett1": {
+    "source_pdf_page": 441,
+    "clip_in_1_35x_render": [
+      117,
+      815,
+      715,
+      1021
+    ],
+    "file": "assets/v17_hockett1.png"
+  },
+  "hockett2": {
+    "source_pdf_page": 442,
+    "clip_in_1_35x_render": [
+      130,
+      87,
+      733,
+      215
+    ],
+    "file": "assets/v17_hockett2.png"
+  },
+  "artist": {
+    "source_pdf_page": 445,
+    "clip_in_1_35x_render": [
+      100,
+      69,
+      648,
+      374
+    ],
+    "file": "assets/v17_artist.png"
+  },
+  "standard": {
+    "source_pdf_page": 447,
+    "clip_in_1_35x_render": [
+      167,
+      74,
+      645,
+      316
+    ],
+    "file": "assets/v17_standard.png"
+  },
+  "mantree": {
+    "source_pdf_page": 449,
+    "clip_in_1_35x_render": [
+      194,
+      216,
+      596,
+      435
+    ],
+    "file": "assets/v17_mantree.png"
+  },
+  "boyread": {
+    "source_pdf_page": 449,
+    "clip_in_1_35x_render": [
+      235,
+      551,
+      569,
+      697
+    ],
+    "file": "assets/v17_boyread.png"
+  },
+  "dogtree": {
+    "source_pdf_page": 450,
+    "clip_in_1_35x_render": [
+      161,
+      140,
+      631,
+      324
+    ],
+    "file": "assets/v17_dogtree.png"
+  },
+  "sophietree": {
+    "source_pdf_page": 450,
+    "clip_in_1_35x_render": [
+      150,
+      690,
+      621,
+      908
+    ],
+    "file": "assets/v17_sophietree.png"
+  },
+  "deepsurface": {
+    "source_pdf_page": 451,
+    "clip_in_1_35x_render": [
+      173,
+      822,
+      595,
+      1025
+    ],
+    "file": "assets/v17_deepsurface.png"
+  },
+  "sigma": {
+    "source_pdf_page": 452,
+    "clip_in_1_35x_render": [
+      286,
+      330,
+      511,
+      465
+    ],
+    "file": "assets/v17_sigma.png"
+  },
+  "interrogative": {
+    "source_pdf_page": 452,
+    "clip_in_1_35x_render": [
+      192,
+      733,
+      610,
+      1051
+    ],
+    "file": "assets/v17_interrogative.png"
+  },
+  "passive": {
+    "source_pdf_page": 453,
+    "clip_in_1_35x_render": [
+      175,
+      185,
+      580,
+      483
+    ],
+    "file": "assets/v17_passive.png"
+  },
+  "negative": {
+    "source_pdf_page": 453,
+    "clip_in_1_35x_render": [
+      175,
+      598,
+      583,
+      899
+    ],
+    "file": "assets/v17_negative.png"
+  },
+  "xexamples": {
+    "source_pdf_page": 454,
+    "clip_in_1_35x_render": [
+      135,
+      826,
+      722,
+      963
+    ],
+    "file": "assets/v17_xexamples.png"
+  },
+  "xgeneral": {
+    "source_pdf_page": 455,
+    "clip_in_1_35x_render": [
+      287,
+      116,
+      470,
+      234
+    ],
+    "file": "assets/v17_xgeneral.png"
+  },
+  "pp": {
+    "source_pdf_page": 462,
+    "clip_in_1_35x_render": [
+      170,
+      79,
+      674,
+      277
+    ],
+    "file": "assets/v17_pp.png"
+  },
+  "spellout": {
+    "source_pdf_page": 463,
+    "clip_in_1_35x_render": [
+      296,
+      496,
+      450,
+      682
+    ],
+    "file": "assets/v17_spellout.png"
+  },
+  "colors": {
+    "source_page": 431,
+    "crop_at_1_35x": [
+      77,
+      549,
+      674,
+      618
+    ]
+  },
+  "ambiguity": {
+    "source_page": 444,
+    "crop_at_1_35x": [
+      204,
+      840,
+      568,
+      1032
+    ]
+  },
+  "extended": {
+    "source_page": 456,
+    "crop_at_1_35x": [
+      130,
+      431,
+      608,
+      695
+    ]
+  },
+  "exercises": {
+    "source_page": 467,
+    "crop_at_1_35x": [
+      98,
+      135,
+      650,
+      728
+    ]
+  }
+}

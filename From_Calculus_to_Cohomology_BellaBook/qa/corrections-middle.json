@@ -1,0 +1,806 @@
+[
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\begin{lemma}\n  If $\\omega\\in\\alt^k(V)",
+    "new": "\\begin{lemma}\\label{lemma:2-2}\n  If $\\omega\\in\\alt^k(V)",
+    "count": 1
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\begin{lemma}\\label{lemma:2-2}\n  If $\\omega_1",
+    "new": "\\begin{lemma}\\label{lemma:2-6}\n  If $\\omega_1",
+    "count": 1
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "S(p, q) - (S_{12} - S_{21})",
+    "new": "S(p, q) - (S_{12} \\cup S_{21})",
+    "count": 1
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "when $\\xi_i = \\xi_j$.",
+    "new": "when $\\xi_1 = \\xi_2$.",
+    "count": 1
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "bijecrtion",
+    "new": "bijection",
+    "count": 1
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\xi_{r\\sigma(1)},\\ldots,\\xi_{\\sigma(p)})\\cdot\\omega_2(\\xi_{\\sigma(p+1)},\\ldots\\xi_{\\sigma(p+q)}",
+    "new": "\\xi_{\\tau\\sigma(1)},\\ldots,\\xi_{\\tau\\sigma(p)})\\cdot\\omega_2(\\xi_{\\tau\\sigma(p+1)},\\ldots,\\xi_{\\tau\\sigma(p+q)}",
+    "count": 1
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "while $\\sigma(1) = 2$ and $\\sigma(p+1) = 1$",
+    "new": "while $\\tau\\sigma(1) = 2$ and $\\tau\\sigma(p+1) = 1$",
+    "count": 1
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "$\\sigma(i) = \\sigma(i)$",
+    "new": "$\\tau\\sigma(i) = \\sigma(i)$",
+    "count": 1
+  },
+  {
+    "file": "02-The-Alternating-Algebra.tex",
+    "old": "\\wedge w_{2}",
+    "new": "\\wedge\\omega_{2}",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "0\\xra[] \\im\\dd^{i-1} \\xra[] \\im\\dd^i",
+    "new": "0\\xra[] \\im\\dd^{i-1} \\xra[] A^i \\xra[\\dd^i] \\im\\dd^i",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "A^{i-1}/\\im\\dd^{i-1} {\\cong} A^{i-1}/\\ker\\dd^{i-1} \\xra[\\cong]{\\dd^{i-1}} \\im\\dd^{i-1}",
+    "new": "A^i/\\im\\dd^{i-1} = A^i/\\ker\\dd^i \\xra[\\cong] \\im\\dd^i",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "Furthennore",
+    "new": "Furthermore",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "ofvector",
+    "new": "of vector",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "\\lambda_ic_j",
+    "new": "\\lambda_jc_j",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "$\\alpha\\in A^p$",
+    "new": "$a\\in A^p$",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "C_1\\to C3",
+    "new": "C_1\\to C_3",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "homomor phisms",
+    "new": "homomorphisms",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "is a morphism for every object $C$ of $C$. The concept is best illustrated",
+    "new": "is an identity morphism for every object $C$ of $C$. Composition must be associative and the identity morphisms must act as two-sided identities.\\corr{原书第 27 页的范畴定义未明确写出结合律和单位律；这两条是范畴公理，现补明。} The concept is best illustrated",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "the same as a semigroup, namely the semigroup of morphisms of the object.",
+    "new": "the same as a monoid, namely the monoid of endomorphisms of the object.\\corr{原书第 27 页写作 semigroup；单对象范畴的态射具有恒等态射作为单位元，准确说应是 monoid（幺半群）。}",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "\\hom(\\phi, A):\\hom(C_2, A)\\to \\hom(C_2,A)",
+    "new": "\\hom(\\phi, A):\\hom(C_2, A)\\to \\hom(C_1,A)",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "$F(C) = \\hom(C, A), F(\\phi):\\psi \\to\\phi\\circ\\psi$",
+    "new": "$F(C) = \\hom(A, C), F(\\phi):\\psi \\mapsto\\phi\\circ\\psi$",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "the homology $H^p",
+    "new": "the cohomology $H^p",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "(g^b)^{-1}",
+    "new": "(g^p)^{-1}",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "\\dd^p_B(b) \\in f^{p+1}",
+    "new": "\\dd^p_B(b) \\in\\im f^{p+1}",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "$g^p(b_1)  g^p(b) = c$",
+    "new": "$g^p(b_1) = g^p(b_2) = c$",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "[Long exact homology sequence]",
+    "new": "[Long exact cohomology sequence]",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "is exact.\n\\end{theorem}",
+    "new": "is exact.\\corr{原书第 30 页定理 4.9 的标题误写 homology；此处各项为 $H^p$，连接同态提高次数，应为 cohomology。}\n\\end{theorem}",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "\\partial^*g^p([b])",
+    "new": "\\partial^*([g^p(b)])",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "[(\\!\\dd_B^{p-1}s(a) + s\\dd^p_A(a)]",
+    "new": "[\\dd_B^{p-1}s(a) + s\\dd^p_A(a)]",
+    "count": 1
+  },
+  {
+    "file": "04-Chain-Complexes-and-their-Cohomology.tex",
+    "old": "\\otimes",
+    "new": "\\oplus",
+    "count": 6
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "Here UI and",
+    "new": "Here $U_1$ and",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "$H^*(U_1\\cap\\ldots\\cap U_n)$",
+    "new": "$H^*(U_1\\cup\\ldots\\cup U_n)$",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "$H^*(u_\\alpha)$",
+    "new": "$H^*(U_\\alpha)$",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "where 0: runs",
+    "new": "where $\\alpha$ runs",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "and \n$U_{i_1}\\cap\\ldots\\cap U_{i_r}$",
+    "new": "and \n$U_\\alpha=U_{i_1}\\cap\\ldots\\cap U_{i_r}$",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "\\xra[]\\xra[]0",
+    "new": "\\xra[]0",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "i^*(\\nu)",
+    "new": "i_\\nu^*(\\omega)",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "j^*_2i^*_2(\\omega) - j^*_1i^*_1(\\omega)",
+    "new": "j^*_1i^*_1(\\omega) - j^*_2i^*_2(\\omega)",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "j^*(\\omega) - j^*_1(\\omega)",
+    "new": "j^*(\\omega) - j^*(\\omega)",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "Since $J^p(\\sum h_I\\dd x_I) = (\\omega_1, \\omega_2)$",
+    "new": "If $J^p(\\omega_1,\\omega_2)=0$",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "$h_I:U\\to \\RR^n$",
+    "new": "$h_I:U\\to \\RR$",
+    "count": 2
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "$\\{p-1, p_2\\}$",
+    "new": "$\\{p_1, p_2\\}$",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "i.e., smooth functions $h_I:U\\to \\RR$ by",
+    "new": "i.e., smooth functions",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "p_\\nu: U\\to \\{0, 1\\}",
+    "new": "p_\\nu: U\\to [0, 1]",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "H^p(U)(\\Omega^*(U_1)\\oplus\\Omega^*(U_2))",
+    "new": "H^p(\\Omega^*(U_1)\\oplus\\Omega^*(U_2))",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "$I^*(\\omega)",
+    "new": "$I^*([\\omega])",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "punctured plane $\\RR^n-\\{0\\}$",
+    "new": "punctured plane $\\RR^2-\\{0\\}$",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "\\text{ if } p>0.\n",
+    "new": "\\text{ if } p>0,\\\\\n",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "& \\RR\\oplus\\RR \\text{ if} && p = 0",
+    "new": "& \\RR\\oplus\\RR && \\text{ if } p = 0",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "for $q>0$ according",
+    "new": "for $q>1$ according",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "Since $H^{-1}(U_\\nu) = 0$, $\\partial^*$",
+    "new": "Since $H^1(U_\\nu) = 0$, $\\partial^*$",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "\\RR\\otimes\\RR",
+    "new": "\\RR\\oplus\\RR",
+    "count": 2
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "we must have that $\\im J^0\\cong\\RR$",
+    "new": "we must have that $\\im I^0\\cong\\RR$",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "H^p(\\RR - \\{0\\})",
+    "new": "H^p(\\RR^2 - \\{0\\})",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "\\text{ if } p>2",
+    "new": "\\text{ if } p\\ge 2",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "In the proof above we could alternatively",
+    "new": "\\corr{原书第 36 页的汇总式漏排 $\\RR$ 的上标 2；此处计算的是穿孔平面 $\\RR^2-\\{0\\}$ 的上同调。}\n\nIn the proof above we could alternatively",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "J^0(f_1) = f_{1|U_1\\cap U_2} \\text{ and } J^0(f_2) = f_{2|U_1\\cap U_2}",
+    "new": "J^0(f_1,0) = f_{1|U_1\\cap U_2} \\text{ and } J^0(0,f_2) = -f_{2|U_1\\cap U_2}",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "H^{p-1}(V\\cup U_r)",
+    "new": "H^{p-1}(V\\cap U_r)",
+    "count": 1
+  },
+  {
+    "file": "05-The-Mayer-Vietoris-Sequence.tex",
+    "old": "\\im\\partial^* \\oplus \\ker I^*",
+    "new": "\\im\\partial^* \\oplus \\im I^*",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "$F:U\\times\\RR\\to U$",
+    "new": "$F:U\\times\\RR\\to V$",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "U\\times(-\\infty)\\cup",
+    "new": "U\\times(-\\infty,\\tfrac13)\\cup",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "restiction",
+    "new": "restriction",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "inlclusion",
+    "new": "inclusion",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "\\sum F_I",
+    "new": "\\sum f_I",
+    "count": 2
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "\\hat{S}^*_p",
+    "new": "\\hat{S}_p",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "S_p = \\hat{S}_p\\circ F$",
+    "new": "S_p = \\hat{S}_p\\circ F^*$",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "\\phi_1^*(\\omega) - \\phi_0^*(\\omega)",
+    "new": "\\phi_1^*(F^*\\omega) - \\phi_0^*(F^*\\omega)",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "(F\\circ\\phi_0)^*(\\omega) - (F\\circ\\phi_0)^*(\\omega)",
+    "new": "(F\\circ\\phi_1)^*(\\omega) - (F\\circ\\phi_0)^*(\\omega)",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "Furthermore $\\hat{S}_{p+1}F^*(\\omega)",
+    "new": "Furthermore $\\hat{S}_{p+1}\\dd F^*(\\omega)",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "H^(U)",
+    "new": "H^p(U)",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "$(\\phi\\circ\\psi)^* = \\psi^*\\circ\\phi^*",
+    "new": "$(\\psi\\circ\\phi)^* = \\phi^*\\circ\\psi^*",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "\\Omega^p(\\phi\\circ\\psi)",
+    "new": "\\Omega^p(\\psi\\circ\\phi)",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "$\\phi\\circ\\psi\\sime g\\circ f$",
+    "new": "$\\psi\\circ\\phi\\sime g\\circ f$",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "(\\phi\\circ\\psi)^* = (g\\circ f)^* = f^*\\circ g^* = \\psi^*\\circ\\phi^*",
+    "new": "(\\psi\\circ\\phi)^* = (g\\circ f)^* = f^*\\circ g^* = \\phi^*\\circ\\psi^*",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "If $\\psi:U\\to V$ is a homotopy inverse",
+    "new": "If $\\psi:V\\to U$ is a homotopy inverse",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "$h^*:H^p(U)\\to H^p(V)$",
+    "new": "$h^*:H^p(V)\\to H^p(U)$",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "If $U\\subseteq \\RR$ is",
+    "new": "If $U\\subseteq \\RR^n$ is",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "$A$ of $\\RR$ with",
+    "new": "$A$ of $\\RR^n$ with",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "H^p(\\RR^n - A) &\\cong H^p(\\RR^n - A)",
+    "new": "H^{p+1}(\\RR^{n+1} - A) &\\cong H^p(\\RR^n - A)",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "\\RR_{n+1}",
+    "new": "\\RR^{n+1}",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "\\RR_n",
+    "new": "\\RR^n",
+    "count": 2
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": ") x (-1,1)",
+    "new": ")\\times(-1,1)",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "$\\partial^*(-[R^*_0\\omega]) = [\\partial^*\\tau]$",
+    "new": "$\\partial^*(-[R^*_0\\omega]) = [R^*\\tau]$",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "= -R^*_0\\circ\\partial^*",
+    "new": "= -R^*\\circ\\partial^*",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "\\R{pr}:U_1\\times U_2",
+    "new": "\\R{pr}:U_1\\cap U_2",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "$\\RR^n\\to\\RR$",
+    "new": "$\\RR^n\\to\\RR^n$",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "$f_A = f_B$",
+    "new": "$f_A^* = f_B^*$",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "$\\det_A = \\det_B$",
+    "new": "$\\det A = \\det B$",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "$\\R{diag} (1, \\ldots, 1, \\pm 1)$, where $d",
+    "new": "$\\R{diag} (1, \\ldots, 1, d)$, where $d",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "\\RR\\otimes\\RR",
+    "new": "\\RR\\oplus\\RR",
+    "count": 1
+  },
+  {
+    "file": "06-Homotopy.tex",
+    "old": "H^{p+1}\\dar{A^*}",
+    "new": "H^{p+1}(A^*)\\dar{\\alpha^*}",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "$f:x\\to X$",
+    "new": "$f:X\\to X$",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "ans the half-line",
+    "new": "and the half-line",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "$r:\\RR-\\{0\\}\\to",
+    "new": "$r:\\RR^n-\\{0\\}\\to",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "$\\RR^n-{0}$",
+    "new": "$\\RR^n-\\{0\\}$",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "$w$ on $\\RR^n-\\{0\\}$",
+    "new": "$w$ on $\\RR^{n+1}-\\{0\\}$",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "$f:A\\to\\RR^n$ continuous",
+    "new": "$f:A\\to\\RR^m$ continuous",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "2d(p, A)\\le d(x_0, p)",
+    "new": "2d(p, A)\\le 2d(x_0, p)",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "h(x, 0_m) = (0_m, \\phi(x))",
+    "new": "h(x, 0_m) = (0_n, \\phi(x))",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "h_1(x, 0_m) \n    = h_2^{-1}",
+    "new": "h(x, 0_m) \n    = h_2^{-1}",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "\\RR^{2n} = \\RR^{2n}\\times\\RR^{2n}",
+    "new": "\\RR^{2n} = \\RR^n\\times\\RR^n",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "are homeomorphism, then",
+    "new": "are homeomorphic, then",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "Corollary \\ref{corollary:7-7} we known that $\\RR^n-A$",
+    "new": "Corollary \\ref{corollary:7-7} we know that $\\RR^{2n}-A$",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "H^p(\\RR^n-A)/\\RR\\cdot 1\n      \\simee H^{p+n}(\\RR^{2n}-A) \n      \\simee H^{p+n}(\\RR^{2n}-B)\n      \\simee H^p(\\RR^n-B)/\\RR\\cdot 1",
+    "new": "H^0(\\RR^n-A)/\\RR\\cdot 1 \\simee H^n(\\RR^{2n}-A) \\simee H^n(\\RR^{2n}-B) \\simee H^0(\\RR^n-B)/\\RR\\cdot 1",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "D^n = \\{x\\in \\RR^n \\mid \\|x\\|<1",
+    "new": "\\mathring D^n = \\{x\\in \\RR^n \\mid \\|x\\|<1",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "$\\gamma([a, c_2))\\subseteq U_2$",
+    "new": "$\\gamma((c_2,b])\\subseteq U_2$",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "$t_2\\in[c_2, b)$",
+    "new": "$t_2\\in(c_2, b]$",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "If $A\\subseteq\\RR^n$ is homeomorphic to $D^k$, with $k\\le n $",
+    "new": "If $A\\subseteq\\RR^n$ is homeomorphic to $D^k$, with $k\\le n$ and $n\\ge2$",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "then $\\RR^n-A$ is connected.\n\\end{theorem}",
+    "new": "then $\\RR^n-A$ is connected.\\corr{原书第 53 页定理 7.11 需有 $n\\ge2$；当 $n=k=1$ 时，闭区间的补集有两个连通分支。}\n\\end{theorem}",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "Both Sand $E = f(S)$",
+    "new": "Both $S$ and $\\Sigma = f(S)$",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "disjoint from $E$",
+    "new": "disjoint from $\\Sigma$",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "If $V\\in\\RR^n$",
+    "new": "If $V\\subseteq\\RR^n$",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "$U=\\Sigma - \\RR^3$",
+    "new": "$U=\\RR^3-\\Sigma$",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "$\\RR^2-\\mathring{D}^2$ is diffeomorphic",
+    "new": "$\\RR^2-D^2$ is diffeomorphic",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "$\\RR^2-{0}$",
+    "new": "$\\RR^2-\\{0\\}$",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "$p\\neq \\{0, n-1\\}$",
+    "new": "$p\\notin \\{0, n-1\\}$",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "H^{n-1}(W)\\rar\\urar[<-]",
+    "new": "H^{n-1}(W)\\rar[<-]\\urar[<-]",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "h|_{v_1}",
+    "new": "h|_{U_1}",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "H^l(V)",
+    "new": "H^p(V)",
+    "count": 1
+  },
+  {
+    "file": "07-Applications-of-de-Rham-Cohomology.tex",
+    "old": "The case $n = 1$ follows",
+    "new": "The case $m = 1$ follows",
+    "count": 2
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "\\{\\mrg{D}\\mid",
+    "new": "\\{\\mrg{D}(x;\\epsilon)\\mid",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "Let 1r be",
+    "new": "Let $\\pi$ be",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "$U_i = \\pi_{\\pm i}",
+    "new": "$U_i = \\pi(U_{\\pm i})",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "$\\pi:U_{+i}\\to U_{-i}$",
+    "new": "$\\pi:U_{+i}\\to U_i$",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "$i=1, \\ldots, n$. This gives",
+    "new": "$i=1, \\ldots, n+1$. This gives",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "h_1(f^{-1}(U_2))",
+    "new": "h_1(U_1\\cap f^{-1}(U_2))",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "$M\\to \\phi_p^{-1}(0)$",
+    "new": "$M-\\phi_p^{-1}(0)$",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "\\pi_1:\\RR^{nd+d}\\to\\RR,",
+    "new": "\\pi_1:\\RR^{nd+d}\\to\\RR^n,",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "f(U_)",
+    "new": "f(U_1)",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "$f\\circ g:N\\to\\RR$",
+    "new": "$f\\circ g:N\\to\\RR^n$",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "$f_{|W}$ on $M$",
+    "new": "$f_{|V}$ on $M$",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "In dimension 3, one meets a famous open problem: the Poincare conjecture, which\n  asserts that every compact topological 3-manifold that is homotopy equivalent to\n  53 is homeomorphic to $S^3$.",
+    "new": "In dimension 3, the Poincar\\'e conjecture is now a theorem: every closed topological 3-manifold homotopy equivalent to $S^3$ is homeomorphic to $S^3$.\\now{原书第 64 页称其为未解决问题，反映 1997 年出版时的状态。Григорий Перельман 于 2002--2003 年的 Ricci 流论文完成了证明；参见 \\href{https://arxiv.org/abs/math/0307245}{math/0307245}。}",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "there are exactly 28 oriented diffeomorphism classes of exotic 7-spheres.",
+    "new": "there are exactly 28 oriented diffeomorphism classes of smooth homotopy 7-spheres, including the standard sphere.\\corr{原书第 64 页将 28 类均称为 exotic；$\\Theta_7$ 的 28 个元素包括标准球面类。排除标准类后，定向异球面的微分同胚类为 27 个。}",
+    "count": 1
+  },
+  {
+    "file": "08-Smooth-Manifolds.tex",
+    "old": "`$`\\RR^4$''",
+    "new": "``$\\RR^4$''",
+    "count": 1
+  }
+]
