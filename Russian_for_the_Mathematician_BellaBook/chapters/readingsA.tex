@@ -1,0 +1,690 @@
+% Readings: Preliminary remarks and Section A
+% Page references in vocabulary notes are to the 1972 Springer edition.
+
+\newcommand{\readhead}[3]{%
+  \needspace{7\baselineskip}%
+  \phantomsection\addcontentsline{toc}{section}{#1\quad #3}%
+  \vspace{1.0em}%
+  {\noindent\large\bfseries\color{BellaInk}#1.\quad\ru{#2}\par}%
+  {\noindent\itshape\color{BellaGray}#3\par}%
+  \vspace{0.45em}%
+}
+\newenvironment{rusblock}{\par\begingroup\cyrillicfont\setlength{\parindent}{1.55em}}{\par\endgroup}
+\newcommand{\vocabline}[1]{\begin{sourcebox}\small\cyrillicfont #1\end{sourcebox}}
+\newcommand{\origfig}[2]{%
+  \begin{center}\includegraphics[width=#2\textwidth]{assets_readingsA/figA#1.png}\end{center}%
+}
+
+\section*{Preliminary remarks}
+\addcontentsline{toc}{section}{Preliminary remarks}
+
+In Chapters III, IV and V, the vocabulary of Russian mathematics has been presented systematically, not for memorization but for reference and study, with the Glossary at the end of the book as an index. But these Reading Selections have a different purpose, namely to catch the reader's interest by their actual mathematical content, and to repeat the basic vocabulary often enough that it will be permanently fixed in his mind; here again it is very useful to read some of the sentences aloud. In the elementary Sections A and B there is a definite mathematical development, leading in A to the fundamental theorem of the integral calculus, and in B to the construction of the complex number field. Section A is adapted from several Russian authors; Section B almost entirely from I.V. Proskuryakov ``Numbers and Polynomials'', Moscow 1965. The twelve selections in Section C, on more advanced topics, are adapted from the following books or articles, published in Moscow.
+
+\begin{enumerate}[leftmargin=2.4em]
+\item N. N. Luzin, \emph{Functions of a real variable}, 1948
+\item V. C. Vladimirov, \emph{Functions of several complex variables}, 1964
+\item The (unsigned) article on \emph{Summability} in the \emph{Great Soviet Encyclopedia}
+\item L. D. Kudryavcev, \emph{Mathematical analysis}, 1970
+\item L. Ė. Ėl'sgol'c, \emph{Calculus of variations}, 1958
+\item A. G. Kuroš, \emph{Theory of groups}, 1967
+\item A. A. Buhštab, \emph{Theory of numbers}, 1966
+\item A. A. Markov, \emph{Mathematical Logic}, the \emph{Great Soviet Encyclopedia}
+\item S. L. Sobolev, \emph{Equations of mathematical physics}, 1966
+\item V. I. Smirnov, \emph{A course in higher mathematics}, 1947
+\item P. K. Raševskiĭ, \emph{Differential geometry}, 1956
+\item P. S. Aleksandrov, \emph{Combinatorial topology}, 1947
+\end{enumerate}
+
+In the special vocabularies at the end of each Reading a page-reference is given for each word to the systematic discussion of it in Chapter V (or earlier), and the same page-references are given again in the general Glossary at the end of the book. It should be emphasized that words are not to be learned as single units but rather in groups coming from the same root. For example, the first word in the Readings is \ru{расстояние} \emph{distance}, with the page reference 85. If the reader cannot immediately recall that \ru{рас-} means \emph{apart}, corresponding to the Latin \emph{di-} or \emph{dis-}, and that the root \ru{ста-} corresponds to the \emph{sta-} in the English \emph{stand}, or the Latin \emph{station}, etc., he should turn to that page and reread not only what is said there about \ru{расстояние} but also about other derivatives from the root \ru{ста-}. Only by constantly looking back in this way will he finally master the vocabulary of Chapter V, which will provide an ample foundation for reading Russian mathematics with only occasional use of a dictionary.
+
+\clearpage
+\begin{center}
+{\sffamily\color{BellaBlue}\Large SECTION A\par}
+\vspace{0.8ex}
+{\bfseries\Large EXTRACTS FROM ELEMENTARY ANALYTIC GEOMETRY AND CALCULUS\par}
+\end{center}
+\addcontentsline{toc}{section}{Section A: Elementary analytic geometry and calculus}
+\markright{SECTION A\quad Elementary analytic geometry and calculus}
+
+\readhead{A1}{Расстояние между точками}{Distance between points}
+\begin{rusblock}
+Пусть точки $M_1(x_1,y_1)$ и $M_2(x_2,y_2)$ (рис.~1) имеют координаты
+\[
+OP_1=x_1,\qquad P_1M_1=y_1,\qquad OP_2=x_2,\qquad P_2M_2=y_2.
+\]
+Имеем
+\[
+d^2=(M_1M_2)^2=(M_1Q)^2+(QM_2)^2,
+\]
+где
+\[
+M_1Q=x_2-x_1,\qquad QM_2=y_2-y_1.
+\]
+Поэтому
+\[
+d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}.
+\]
+\end{rusblock}
+\origfig{1}{0.52}
+\vocabline{\textbf{расстояние} 85 \emph{distance} (ста- sta- \emph{stand}); \textbf{между} 52 \emph{between} (межд- \emph{mid}); \textbf{точка} 106 (тык- punct-); \textbf{пусть} 51 \emph{let}; \textbf{и} 50 \emph{and}; \textbf{рис. = рисунок} 107 \emph{diagram}; \textbf{иметь} 78 \emph{to have} (я- \emph{take}); \textbf{где} 50 \emph{where}; \textbf{поэтому} 50 \emph{therefore}.}
+
+\readhead{A2}{Деление отрезка в заданном отношении}{Division of a segment in a preassigned ratio}
+\begin{rusblock}
+Пусть даны точки $M_1(x_1,y_1)$ и $M_2(x_2,y_2)$ (рис.~2). Будем искать точку $M(x,y)$, делящую отрезок $M_1M_2$ так, чтобы отношение $M_1M/MM_2$ было равно заданному числу $\lambda=m/n$. Имеем
+\[
+\frac{m}{n}=\frac{M_1M}{MM_2}=\frac{P_1P}{PP_2}=\frac{x-x_1}{x_2-x}.
+\]
+Поэтому
+\[
+x=\frac{nx_1+mx_2}{n+m},
+\]
+и аналогичным образом
+\[
+y=\frac{ny_1+my_2}{n+m}.
+\]
+\end{rusblock}
+\origfig{2}{0.50}
+\vocabline{\textbf{деление} 37, 95 \emph{division} (дел- \emph{divide}); \textbf{отрезок} 35, 101 \emph{segment} (рез- seg- \emph{cut}); \textbf{в} 52 \emph{in}; \textbf{задать} 95 \emph{preassign} (да- \emph{give}); \textbf{дать} 95 \emph{give} (да- \emph{give}); \textbf{отношение} 75 \emph{relation, ratio} (нос- lat- \emph{carry}); \textbf{будем} 57 \emph{we shall}; \textbf{искать} 97 \emph{seek} (иск- \emph{ask, seek}); \textbf{делить} 95 \emph{divide} (дел- \emph{divide}); \textbf{так} 50 \emph{thus}; \textbf{чтобы} 50 \emph{in order that}; \textbf{было} 58 past tense of \emph{to be}; \textbf{равный} 86 \emph{equal} (рав-); \textbf{число} 103 \emph{number} (чит- \emph{reckon}); \textbf{образ} 101 \emph{fashion, image} (рез- \emph{cut}).}
+
+\readhead{A3}{Полярные координаты}{Polar coordinates}
+\begin{rusblock}
+Положение любой точки $M$ определяется (рис.~3) отрезком $OM=\rho$ и углом $NOM=\theta$. Числа $\rho$ и $\theta$ называются полярными координатами точки $M$. Прямая $ON$ называется полярной осью, точка $O$ --- полюсом системы. Если взять систему координат, начало которой совпадает с полюсом и ось $Ox$ --- с полярной осью, имеем
+\[
+x=\rho\cos\theta,\qquad y=\rho\sin\theta,
+\]
+\[
+\rho=\sqrt{x^2+y^2},\qquad \theta=\arctan\frac{y}{x}.
+\]
+\end{rusblock}
+\origfig{3}{0.48}
+\vocabline{\textbf{положение} 82 \emph{position} (лаг- pos- \emph{lay}); \textbf{любой} 107 \emph{arbitrary}; \textbf{определять} 95 \emph{define, determine} (дел- \emph{divide}); \textbf{угол} 107 \emph{angle}; \textbf{называть} 97 \emph{call} (зыв- \emph{call}); \textbf{прямая} 106 \emph{straight line} (прям- \emph{straight}); \textbf{ось} 107 \emph{axis}; \textbf{если} 50 \emph{if}; \textbf{взять} 79 \emph{take} (я- \emph{take}); \textbf{начало} 107 \emph{origin} (ча- \emph{begin}); \textbf{который} 45 \emph{which}; \textbf{совпадать} 106 \emph{coincide} (со- \emph{together}, пад- cid- \emph{fall}); \textbf{с} 52 \emph{with} (со- before certain double consonants).}
+
+\readhead{A4}{Преобразование координат при параллельном переносе осей}{Transformation of coordinates with parallel translation of axes}
+\begin{rusblock}
+Пусть $Ox$ и $Oy$ --- старые, а $O'x'$ и $O'y'$ --- новые координатные оси (рис.~4), где положение новых осей относительно старой системы определяется старыми координатами $a,b$ нового начала $O'(a,b)$. Тогда точка $M$ имеет относительно старых осей координаты $(x,y)$, а относительно новых осей координаты $(x',y')$.
+
+Если обозначим проекцию точки $O'$ на ось $Ox$ через $O'_x$, а проекции точки $M$ на оси $Ox$ и $O'x'$ --- через $M_x$ и $M_{x'}$, имеем
+\[
+O'M_{x'}=x',\qquad OO'_x=a,\qquad OM_x=x,
+\]
+отсюда
+\[
+x=x'+a,
+\]
+и аналогичным образом
+\[
+y=y'+b.
+\]
+\end{rusblock}
+\origfig{4}{0.50}
+\vocabline{\textbf{преобразование} 101 \emph{transformation} (рез- \emph{cut}); \textbf{при} 53 \emph{in the presence of}; \textbf{перенос} 75 \emph{translation} (нос- lat- \emph{carry}); \textbf{старый} 107 \emph{old}; \textbf{а} 50 \emph{and, but}; \textbf{новый} 106 \emph{new}; \textbf{относительно} 52, 75 \emph{relatively} (нос- lat- \emph{carry}); \textbf{тогда} 50 \emph{then}; \textbf{обозначить} 96 \emph{designate} (знак- \emph{sign}); \textbf{на} 53 \emph{on, onto}; \textbf{через} 52 \emph{through, by}; \textbf{отсюда} 50 \emph{hence}.}
+
+\readhead{A5}{Преобразование координат при повороте осей}{Transformation of coordinates with rotation of the axes}
+\begin{rusblock}
+Пусть $Ox$ и $Oy$ --- старые, а $Ox',Oy'$ --- новые координатные оси (рис.~5). Положение новых осей относительно старой системы определяется углом $\alpha$ поворота. Обозначим через $(\rho,\theta)$ полярные координаты точки $M$, считая полярной осью $Ox$, и через $(\rho,\theta')$ --- полярные координаты той же точки $M$, считая полярной осью $Ox'$. Имеем $\theta=\theta'+\alpha$ и
+\[
+x=\rho\cos\theta,\qquad y=\rho\sin\theta,
+\]
+а аналогично
+\[
+x'=\rho\cos\theta',\qquad y'=\rho\sin\theta'.
+\]
+Таким образом,
+\[
+x=\rho\cos(\theta'+\alpha)=x'\cos\alpha-y'\sin\alpha,
+\]
+\[
+y=\rho\sin(\theta'+\alpha)=x'\sin\alpha+y'\cos\alpha.
+\]
+Это и есть искомые формулы.
+\end{rusblock}
+\origfig{5}{0.54}
+\vocabline{\textbf{поворот} 92 \emph{rotation} (верт- vert- \emph{turn}); \textbf{считать} 103 \emph{consider} (чит- \emph{consider}); \textbf{тот же} 51 \emph{that same, the same}; \textbf{этот} 42 \emph{this}.}
+
+\readhead{A6}{Уравнения прямой}{Equations of the straight line}
+{\noindent\bfseries\ru{a) Уравнение прямой с угловым коэффициентом}\par}
+{\noindent\itshape Equation of the line with angular coefficient (i.e. slope)\par}
+\begin{rusblock}
+Предположим, что данная прямая $(\ell)$, не перпендикулярная оси $Ox$, пересекает ось $Oy$ в точке $B$ (рис.~6). Длину отрезка $OB$ обозначим через $b$. Тангенс угла $\alpha$ называют угловым коэффициентом прямой. Ясно, что
+\[
+\tan\alpha=\frac{y-b}{x},
+\]
+или
+\[
+y=kx+b,\qquad k=\tan\alpha.
+\]
+Это и есть искомое уравнение.
+\end{rusblock}
+\origfig{6}{0.50}
+\vocabline{\textbf{уравнение} 87 \emph{equation} (рав- \emph{equal}); \textbf{предположить} 82 \emph{suppose} (лаг- pos- \emph{lay}); \textbf{что} 50 \emph{that} (pronounced \ru{што}); \textbf{не} 50 \emph{not}; \textbf{пересекать} 102 \emph{intersect} (сек- sec- \emph{cut}); \textbf{длина} 107 \emph{length}; \textbf{ясный} 90 \emph{clear} (яс-); \textbf{или} 50 \emph{or}; \textbf{есть} 56 \emph{is}.}
+
+\readhead{A7}{Уравнение прямой, проходящей через данную точку в заданном направлении}{Equation of a line passing through a given point in a given direction}
+\begin{rusblock}
+Пусть дана точка $A(x_0,y_0)$ и угловой коэффициент $k=\tan\alpha$ (рис.~7), определяющий направление прямой. Как мы знаем, уравнение прямой имеет вид
+\[(1)\qquad y=kx+b,
+\]
+и так как по условию точка $A(x_0,y_0)$ лежит на прямой, то её координаты удовлетворяют уравнению этой прямой
+\[(2)\qquad y_0=kx_0+b.
+\]
+Вычитая из равенства (1) равенство (2), получим искомое уравнение
+\[
+y-y_0=k(x-x_0).
+\]
+\end{rusblock}
+\origfig{7}{0.44}
+\vocabline{\textbf{проходить} 77 \emph{to go through} (ход- \emph{go}); \textbf{направление} 88 \emph{direction} (прав- rect- \emph{right}); \textbf{как} 50 \emph{how, as}; \textbf{мы} 40 \emph{we}; \textbf{знать} 96 \emph{know} (зна-); \textbf{вид} 37 \emph{appearance, form} (вид- \emph{see}); \textbf{так как} 50 \emph{because}; \textbf{по} 52 \emph{according to}; \textbf{условие} 107 \emph{hypothesis, condition}; \textbf{лежать} 82 \emph{lie} (лаг- \emph{lay}); \textbf{то} 51 \emph{therefore, then}; \textbf{он, она, оно} 41 \emph{it}; \textbf{удовлетворять} 94 \emph{satisfy} (вол- \emph{wish}); \textbf{вычитать} 103 \emph{subtract} (чит- \emph{reckon}); \textbf{из} 52 \emph{from}; \textbf{равенство} 87 \emph{equality} (рав- \emph{equal}); \textbf{получить} 65 \emph{obtain}.}
+
+\readhead{A8}{Нормальное уравнение прямой}{Normal equation of the line}
+\begin{rusblock}
+Пусть дана произвольная прямая $(\ell)$. Пусть $OP$ (рис.~8) перпендикуляр к $(\ell)$ от начала координат. Обозначим через $p$ длину отрезка $OP$, а через $\alpha$ --- угол между осью $Ox$ и отрезком $OP$. Пусть $M(x,y)$ произвольная точка на $(\ell)$. Обозначим через $\beta$ угол между отрезками $OP$ и $OM$, а через $r$ и $\varphi$ --- полярные координаты точки $M$.
+
+Тогда $\beta=\varphi-\alpha$, откуда
+\[
+OP=p=r\cos(\varphi-\alpha)=(r\cos\varphi)\cos\alpha+(r\sin\varphi)\sin\alpha.
+\]
+Переходя от полярных координат к декартовым, получаем
+\[
+x\cos\alpha+y\sin\alpha-p=0.
+\]
+\end{rusblock}
+\origfig{8}{0.56}
+\vocabline{\textbf{произвольный} 94 \emph{arbitrary} (вол- vol- \emph{wish}); \textbf{к} 52 \emph{to}; \textbf{от} 52 \emph{from, out of}; \textbf{откуда} 50 \emph{whence}; \textbf{переходить} 76 \emph{to go across to} (ход- \emph{go}).}
+
+\readhead{A9}{Общее линейное уравнение прямой}{General linear equation of the line}
+\begin{rusblock}
+\textbf{Теорема.} Всякое уравнение первой степени относительно $x$ и $y$ есть уравнение прямой.
+
+\textbf{Доказательство.} Пусть уравнение первой степени задано в общем виде
+\[(5)\qquad Ax+By+C=0.
+\]
+Умножим (5) на число $M=\pm(A^2+B^2)^{-1/2}$, где знак $M$ противоположен знаку $C$. Получим
+\[
+(AM)x+(BM)y+CM=0,
+\]
+где $AM$ и $BM$ удовлетворяют условию
+\[
+(AM)^2+(BM)^2=1.
+\]
+Следовательно, можно их считать косинусом и синусом некоторого угла $\alpha$. Положим $AM=\cos\alpha$, $BM=\sin\alpha$ и $CM=-p$. Тогда уравнение принимает вид
+\[
+x\cos\alpha+y\sin\alpha-p=0,
+\]
+и, следовательно, представляет собой прямую.
+\end{rusblock}
+\vocabline{\textbf{общий} 107 \emph{general}; \textbf{всякий} 44 \emph{every}; \textbf{первый} 47 \emph{first}; \textbf{степень} 107 \emph{step, degree}; \textbf{доказательство} 98 \emph{proof} (каз- \emph{show}); \textbf{умножить} 89 \emph{multiply} (мног- mult- \emph{many}); \textbf{знак} 96 \emph{sign} (зна- \emph{know}); \textbf{противоположный} 82 \emph{opposite} (лаг- \emph{lay}); \textbf{следовательно} 103 \emph{consequently} (след- sequ- \emph{follow}); \textbf{можно} 100 \emph{possible} (мог- \emph{be able}); \textbf{их} 41 \emph{them}; \textbf{некоторый} 45 \emph{some}; \textbf{принимать} 79 \emph{take}; \textbf{представлять} 84 \emph{represent} (ста- \emph{set}); \textbf{собой} \emph{by means of itself}.}
+
+\readhead{A10}{Уравнение прямой, проходящей через две данные точки}{Equation of the line passing through two given points}
+\begin{rusblock}
+Пусть уравнение искомой прямой будет
+\[(1)\qquad Ax+By+C=0.
+\]
+Тогда для каждой из данных точек $M_1(x_1,y_1)$ и $M_2(x_2,y_2)$ имеем
+\[(2)\qquad Ax_1+By_1+C=0,\qquad (3)\qquad Ax_2+By_2+C=0.
+\]
+Для того чтобы уравнения (1), (2), (3) имели для $A,B,C$ нетривиальные решения, необходимо, чтобы детерминант, составленный из коэффициентов системы уравнений, был равен нулю, т.е.
+\[
+\begin{vmatrix}
+x&y&1\\
+x_1&y_1&1\\
+x_2&y_2&1
+\end{vmatrix}=0,
+\]
+или
+\[
+\frac{x-x_1}{x_2-x_1}=\frac{y-y_1}{y_2-y_1}.
+\]
+\end{rusblock}
+\vocabline{\textbf{два, две} 47 \emph{two}; \textbf{будет} 57 \emph{will be}; \textbf{для} 52 \emph{for}; \textbf{каждый} 45 \emph{each}; \textbf{решение} 100 \emph{solution} (рез- \emph{cut}); \textbf{необходимый} 76 \emph{unavoidable, necessary} (ход- \emph{go}); \textbf{составлять} 85 \emph{compose} (ста- pos- \emph{set}); \textbf{т.е.} 43 \emph{that is} (то есть, i.e.).}
+
+\readhead{A11}{Уравнение прямой в отрезках на осях}{Equation of the line in segments on the axes (i.e. intercepts)}
+\begin{rusblock}
+Пусть дано уравнение прямой в виде
+\[
+Ax+By=-C.
+\]
+Разделяя на $-C$, получим
+\[
+\frac{x}{C/(-A)}+\frac{y}{C/(-B)}=1,
+\]
+или
+\[
+\frac{x}{a}+\frac{y}{b}=1,
+\qquad a=\frac{C}{-A},\quad b=\frac{C}{-B}.
+\]
+Точка пересечения прямой с осью $Ox$ определяется из уравнения этой прямой $x/a+y/b=1$ при дополнительном условии $y=0$. Отсюда $x=a$ и, таким образом, величина отрезка, отсекаемого на оси $Ox$, равна $a$. Аналогично устанавливается, что отрезок, отсекаемый на оси $Oy$, имеет величину $b$.
+\end{rusblock}
+\vocabline{\textbf{разделить} 95 \emph{divide}; \textbf{пересечение} 102 \emph{intersection} (сек- sec- \emph{cut}); \textbf{дополнительный} 87 \emph{supplementary}; \textbf{такой} 45 \emph{such}; \textbf{величина} 104 \emph{magnitude}; \textbf{отсекать} 102 \emph{cut off, intersect} (сек- sec- \emph{cut}); \textbf{устанавливать} 85 \emph{establish} (ста- sta- \emph{set}).}
+
+\readhead{A12}{Определение вектора}{Definition of a vector}
+\begin{rusblock}
+Вектором называется направленный отрезок $\overrightarrow{AB}$, $\overrightarrow{CD}$, $\overrightarrow{PR}$, $\overrightarrow{PQ},\ldots$ (рис.~9). Векторы называются равными, если они параллельны, имеют одинаковые длины и одинаковые направления. Длина вектора называется его модулем. На рис.~9 $\overrightarrow{AB}$ и $\overrightarrow{CD}$ равны, но $\overrightarrow{PQ}$ и $\overrightarrow{PR}$ не равны.
+\end{rusblock}
+\origfig{9}{0.52}
+\vocabline{\textbf{определение} 95 \emph{definition} (дел- fin- \emph{divide}); \textbf{направлять} 88 \emph{direct} (прав- rect- \emph{right}); \textbf{одинаковый} 90 \emph{uniform, the same} (один- uni- \emph{one}); \textbf{его} 41 \emph{its} (gen. sing. of \ru{он}); \textbf{но} 50 \emph{but}.}
+
+\readhead{A13}{Сумма векторов}{Sum of vectors}
+\begin{rusblock}
+Пусть даны вектора $a$ и $b$. Суммой $a+b$ называется вектор, начало которого совпадает с началом вектора $a$ и конец которого с концом вектора $b$, при условии, что вектор $b$ приложен к концу вектора $a$. Построение суммы $a+b$ изображено на рис.~10.
+\end{rusblock}
+\origfig{10}{0.47}
+\vocabline{\textbf{над} 52 \emph{over, on}; \textbf{конец} 105 \emph{end} (кон- fin- \emph{end}); \textbf{приложить} 82 \emph{apply} (лаг- pos- \emph{lay}); \textbf{построение} 106 \emph{construction} (стро- stru- \emph{construct}); \textbf{изображать} 101 \emph{represent} (рез- \emph{cut}).}
+
+\readhead{A14}{Скалярные произведения}{Scalar products}
+\begin{rusblock}
+Скалярным произведением векторов $a,b$ называется число, равное произведению их модулей, умноженному на косинус угла между ними. Скалярное произведение обозначается символом $(a,b)$.
+
+Обозначим угол между векторами $a,b$ через $\varphi$. Тогда
+\[
+(a,b)=|a|\,|b|\cos\varphi.
+\]
+Следует, что скалярное произведение обращается в нуль тогда и только тогда, когда векторы взаимно перпендикулярны.
+
+Если векторы $a$ и $b$ заданы координатами (т.е. проекциями на оси координат)
+\[
+a=(x_1,y_1,z_1),\qquad b=(x_2,y_2,z_2),
+\]
+то скалярное произведение определяется формулой
+\[
+(a,b)=x_1x_2+y_1y_2+z_1z_2.
+\]
+\textbf{Следствие.} Необходимым и достаточным условием перпендикулярности векторов $a=(x_1,y_1,z_1)$ и $b=(x_2,y_2,z_2)$ является равенство
+\[
+x_1x_2+y_1y_2+z_1z_2=0.
+\]
+\end{rusblock}
+\vocabline{\textbf{произведение} 74 \emph{product} (вод- duc- \emph{lead}); \textbf{следовать} 56, 102 \emph{to follow} (след-); \textbf{обращать} 92 \emph{convert} (верт- \emph{turn}; \ru{обращаться в нуль} \emph{convert itself to zero, vanish}); \textbf{только} 51 \emph{only}; \textbf{когда} 50 \emph{when}; \textbf{взаимно} 79 \emph{mutually}; \textbf{следствие} 103 \emph{consequence, corollary} (след- sequ- \emph{follow}); \textbf{достаточный} 85 \emph{sufficient} (ста- \emph{set up}); \textbf{являться} 90 \emph{show itself as, be}.}
+
+\readhead{A15}{Общее линейное уравнение плоскости в пространстве}{General linear equation of the plane in space}
+\begin{rusblock}
+\textbf{Теорема.} Каждая плоскость $\sigma$ определяется уравнением первой степени.
+
+\textbf{Доказательство.} Пусть $M_0(x_0,y_0,z_0)$ будет точка на плоскости $\sigma$ и $p$ --- вектор, перпендикулярный к плоскости $\sigma$. Проекции вектора на оси координат обозначим через $A,B,C$.
+
+Пусть $M(x,y,z)$ --- любая точка в пространстве. Она лежит на плоскости $\sigma$ в том и только в том случае, когда $\overrightarrow{M_0M}$ перпендикулярен к вектору $p$, где
+\[
+\overrightarrow{M_0M}=(x-x_0,y-y_0,z-z_0),\qquad p=(A,B,C).
+\]
+Как мы знаем, признаком перпендикулярности векторов является равенство нулю их скалярного произведения:
+\[
+A(x-x_0)+B(y-y_0)+C(z-z_0)=0.
+\]
+Итак,
+\[
+Ax+By+Cz+D=0.
+\]
+Мы видим, что плоскость $\sigma$ определяется уравнением первой степени. Теорема доказана.
+\end{rusblock}
+\vocabline{\textbf{плоскость} 106 \emph{plane} (плоск- \emph{flat}); \textbf{пространство} 107 \emph{space}; \textbf{случай} 72 \emph{event} (луч- \emph{admit, obtain}); \textbf{признак} 96 \emph{criterion} (зна- \emph{know}); \textbf{видеть} 94 \emph{see} (вид-).}
+
+\readhead{A16}{Параметрические уравнения прямой в пространстве}{Parametric equations of a line in space}
+\begin{rusblock}
+Пусть $M(x,y,z)$ --- любая точка прямой, проходящей через данную точку $M_0(x_0,y_0,z_0)$ и параллельной данному вектору $a=(l,m,n)$. Так как векторы
+\[
+\overrightarrow{M_0M}=(x-x_0,y-y_0,z-z_0),\qquad a=(l,m,n)
+\]
+параллельны, то их координаты пропорциональны, т.е.
+\[
+\frac{x-x_0}{l}=\frac{y-y_0}{m}=\frac{z-z_0}{n}.
+\]
+Обозначим через $t$ каждое из равных отношений. Тогда
+\[
+x=x_0+lt,\qquad y=y_0+mt,\qquad z=z_0+nt.
+\]
+Это --- параметрические уравнения прямой. В них $t$ рассматривается как произвольно изменяющийся параметр, $x,y,z$ --- как функции от $t$.
+\end{rusblock}
+\vocabline{\textbf{их} 41 \emph{their}; \textbf{них} 41 \emph{them}; \textbf{рассматривать} 106 \emph{examine} (смотр- \emph{look}); \textbf{изменять} 99 \emph{vary} (мен- \emph{change}).}
+
+\readhead{A17}{Введение иррациональных чисел}{Introduction of irrational numbers}
+\begin{rusblock}
+Мы изложим теорию иррациональных чисел, следуя Дедекинду.
+
+Рассмотрим разбиение множества всех рациональных чисел на два подмножества $A,A'$. Мы будем называть такое разбиение сечением, если выполняются условия:
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em]
+\item каждое рациональное число принадлежит одному из множеств $A$ или $A'$;
+\item каждое число $a$ множества $A$ меньше каждого числа $a'$ множества $A'$.
+\end{enumerate}
+Множество $A$ называется нижним классом сечения, множество $A'$ --- верхним классом.
+
+Сечения могут быть трёх видов:
+\begin{enumerate}[label=(\arabic*),leftmargin=2.2em]
+\item в нижнем классе $A$ нет наибольшего числа, а в верхнем классе $A'$ есть наименьшее число $r$;
+\item в нижнем классе $A$ имеется наибольшее число $r$, а в верхнем классе $A'$ нет наименьшего;
+\item ни в нижнем классе нет наибольшего числа, ни в верхнем классе --- наименьшего.
+\end{enumerate}
+В первых двух случаях мы говорим, что сечение производится рациональным числом $r$. В третьем случае мы считаем пару классов $(A,A')$ новым объектом --- иррациональным числом.
+
+Числа рациональные и иррациональные называются действительными числами.
+\end{rusblock}
+\vocabline{\textbf{введение} 74 \emph{introduction} (вод- duc- \emph{lead}); \textbf{изложить} 82 \emph{expose, lay out, explain} (лаг- pos- \emph{lay}); \textbf{разбиение} 104 \emph{decomposition} (би- \emph{beat}); \textbf{множество} 88 \emph{set, aggregate, multiplicity} (мног- mult- \emph{many}); \textbf{весь} 42 \emph{all}; \textbf{подмножество} 89 \emph{subset} (под- 52 \emph{sub-, under}); \textbf{сечение} 102 \emph{cut, section} (сек- sec- \emph{cut}); \textbf{принадлежать} 82 \emph{belong to}; \textbf{один} 43 \emph{one}; \textbf{меньше} 49 \emph{less}; \textbf{нижний} 46 \emph{lower}; \textbf{верхний} 46, 105 \emph{upper} (верх- \emph{top}); \textbf{мочь} 56 \emph{be able to, can} (мог-); \textbf{быть} 57 \emph{to be}; \textbf{трёх} 47 \emph{of three}; \textbf{нет = не есть} 57 \emph{there is not}; \textbf{наибольший} 49 \emph{greatest}; \textbf{наименьший} 49 \emph{least}; \textbf{ни ... ни} 50 \emph{neither ... nor}; \textbf{говорить} \emph{to say}; \textbf{производить} 74 \emph{produce, generate} (вод- duc- \emph{lead}); \textbf{третий} 46, 47 \emph{third}; \textbf{действительный} 107 \emph{real}.}
+
+\readhead{A18}{Непрерывность области действительных чисел}{Continuity of the domain of real numbers}
+\begin{rusblock}
+Рассматривая сечения в области рациональных чисел, мы видели, что иногда для такого сечения в этой области не находилось числа, производящего сечение. Теперь мы будем рассматривать сечения в области всех действительных чисел.
+
+Естественно ставить вопрос, всегда ли для такого сечения существует среди действительных чисел число, производящее это сечение, или и в этой области существуют разрывы? Оказывается, что таких разрывов нет.
+
+\textbf{Фундаментальная теорема Дедекинда.} Для всякого сечения в области действительных чисел существует действительное число $\beta$, которое производит это сечение. Это число $\beta$ будет либо наибольшим в нижнем классе $A$, либо наименьшим в верхнем классе $A'$.
+\end{rusblock}
+\vocabline{\textbf{непрерывность} 106 \emph{continuity} (рыв- \emph{break}); \textbf{область} 105 \emph{domain} (влад- \emph{possess}); \textbf{иногда} 50 \emph{sometimes}; \textbf{находиться} 76 \emph{find itself, be}; \textbf{теперь} 50 \emph{now}; \textbf{естественный} 72 \emph{natural}; \textbf{ставить} 83 \emph{set up} (ста-); \textbf{вопрос} 106 \emph{question} (прос- \emph{ask}); \textbf{всегда} 50 \emph{always}; \textbf{ли} 51 \emph{whether} (note the word order); \textbf{среди} 52 \emph{among}; \textbf{существовать} 72 \emph{exist}; \textbf{разрыв} 106 \emph{discontinuity, break} (рыв-); \textbf{оказываться} 98 \emph{show itself, turn out} (каз- \emph{show}); \textbf{либо ... либо} 50 \emph{either ... or}.}
+
+\readhead{A19}{Точная верхняя и точная нижняя границы}{Least upper and greatest lower bounds}
+\begin{rusblock}
+Представим себе произвольное бесконечное множество $\{x\}$ действительных чисел $x$. Если для рассматриваемого множества $\{x\}$ существует такое число $M$, что все $x\le M$, то будем говорить, что множество ограничено сверху (числом $M$); в этом случае число $M$ есть верхняя граница множества $\{x\}$.
+
+Если множество ограничено сверху, т.е. имеет конечную верхнюю границу $M$, то оно имеет и бесконечное множество верхних границ, так как, например, любое число $>M$ также будет верхней границей. Из всех верхних границ нас интересует наименьшая (если существует), которую мы будем называть точной верхней границей, или \emph{supremum}, или $\sup\{x\}$.
+
+Аналогично определяется точная нижняя граница, или \emph{infimum}.
+\end{rusblock}
+\vocabline{\textbf{точный} 107 \emph{exact} (тык- \emph{pierce}); \textbf{граница} 105 \emph{bound, boundary} (гран- \emph{border}); \textbf{представить} 84 \emph{set before} (ста- \emph{set}); \textbf{бесконечный} 105 \emph{infinite} (кон- fin- \emph{end}; без 52 \emph{without}); \textbf{ограничить} 105 \emph{to bound} (гран- \emph{border}); \textbf{сверху} 105 \emph{from above} (верх- \emph{top}); \textbf{конечный} 105 \emph{finite} (кон- fin- \emph{end}); \textbf{также} 51 \emph{also}; \textbf{например} 50, 99 \emph{for example} (мер- \emph{measure}); \textbf{нас} 40 \emph{us}.}
+
+\readhead{A20}{Фундаментальная теорема о действительных числах}{Fundamental theorem on real numbers}
+\begin{rusblock}
+Всегда ли для ограниченного сверху множества существует точная верхняя граница? Имеем следующую фундаментальную теорему.
+
+\textbf{Теорема.} Если множество $\{x\}$ действительных чисел ограничено сверху, то оно имеет и точную верхнюю границу.
+\end{rusblock}
+\vocabline{\textbf{о (об, обо)} 52 \emph{about}.}
+
+\readhead{A21}{Элементарные функции}{The elementary functions}
+\begin{rusblock}
+Пусть даны две переменные $x$ и $y$ с областями изменения $X$ и $Y$. Тогда переменная $y$ называется функцией от переменной $x$ в области её изменения $X$, если по некоторому правилу каждому значению $x$ из $X$ ставится в соответствие одно определённое значение $y$ из $Y$. Перечислим некоторые классы функций, получивших название элементарных.
+
+\textbf{$1^\circ$. Целая и дробная рациональные функции.} Функция, представляемая многочленом
+\[
+y=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n,
+\]
+где $a_0,a_1,a_2,\ldots$ --- постоянные, называется целой рациональной функцией, а отношение двух таких многочленов называется дробной рациональной функцией.
+
+\textbf{$2^\circ$. Логарифмическая функция,} т.е. функция вида
+\[
+y=\log_a x,
+\]
+где $a$ --- положительное число, отличное от единицы; $x$ принимает только положительные значения.
+
+\textbf{$3^\circ$. Тригонометрические функции:}
+\[
+y=\sin x,\ldots
+\]
+(синус, косинус, тангенс, котангенс, секанс, косеканс).
+
+\textbf{$4^\circ$. Гиперболические функции,} например
+\[
+\sinh x=\frac{e^x-e^{-x}}{2},\ldots
+\]
+
+\textbf{$5^\circ$. Обратные тригонометрические и гиперболические функции,} например
+\[
+y=\arcsin x,\ldots;\qquad y=\operatorname{arsinh}x,\ldots
+\]
+\end{rusblock}
+\vocabline{\textbf{переменная} 99 \emph{variable} (мен- var- \emph{change}); \textbf{изменение} 99 \emph{variation} (мен- var- \emph{change}); \textbf{правило} 88 \emph{rule} (прав- \emph{right}); \textbf{соответствие} 93 \emph{correspondence} (вет- \emph{speech}); \textbf{перечислить} 104 \emph{enumerate} (чит- \emph{reckon}); \textbf{название} 97 \emph{name} (зыв- \emph{call}); \textbf{целый} 107 \emph{entire}; \textbf{дробный} 107 \emph{fractional}; \textbf{многочлен} 89 \emph{polynomial} (мног- \emph{many}; lit. many-term); \textbf{постоянная} 85 \emph{constant} (ста- sta- \emph{stand}); \textbf{положительный} 82 \emph{positive} (лаг- pos- \emph{lay}); \textbf{отличный} 105 \emph{distinct} (лик- \emph{face}); \textbf{единица} 89 \emph{unity} (один- uni- \emph{one}); \textbf{обратный} 92 \emph{inverse} (верт- vert- \emph{turn}).}
+
+\readhead{A22}{Предел функции}{Limit of a function}
+\begin{rusblock}
+Рассмотрим множество чисел $X$. Точка $a$ называется предельной точкой этого множества, если в каждом открытом промежутке $(a-\delta,a+\delta)$ находятся отличные от $a$ значения $x$ из $X$. При этом точка $a$ может принадлежать $X$ или нет.
+
+Пусть в области $X$, для которой $a$ является предельной точкой, задана некоторая функция $f(x)$. Говорят, что функция $f(x)$ имеет пределом число $A$ при $x\to a$, если для каждого числа $\varepsilon>0$ существует такое число $\delta>0$, что
+\[
+|f(x)-A|<\varepsilon\qquad\text{если}\qquad |x-a|<\delta,\quad x\in X,\quad x\ne a.
+\]
+Обозначают этот факт так:
+\[
+\lim_{x\to a}f(x)=A.
+\]
+\end{rusblock}
+\vocabline{\textbf{предел} 95 \emph{limit} (дел- lim- \emph{divide}); \textbf{предельный} 95 \emph{limiting} (дел-); \textbf{открытый} 98 \emph{open}; \textbf{промежуток} 52 \emph{interval}; \textbf{находить} 73 \emph{come upon, find} (ход- \emph{go, come}).}
+
+\readhead{A23}{Непрерывность функции}{Continuity of a function}
+\begin{rusblock}
+Рассмотрим функцию $f(x)$, определённую в некоторой области $X=\{x\}$, для которой $x_0$ является предельной точкой, причём точка $x_0$ принадлежит области определения функции. Говорят, что функция $f(x)$ непрерывна при значении $x=x_0$, если выполняется соотношение
+\[
+\lim_{x\to x_0}f(x)=f(x_0).
+\]
+
+Определение непрерывности функции можно сформулировать в других терминах. Переход от значения $x_0$ к другому значению $x$ можно представить так, что значению $x_0$ придано приращение
+\[
+\Delta x_0=x-x_0.
+\]
+Тогда для приращения функции $y=f(x)=f(x_0+\Delta x_0)$ имеем
+\[
+\Delta y_0=f(x)-f(x_0)=f(x_0+\Delta x_0)-f(x_0).
+\]
+Для того чтобы функция $f(x)$ была непрерывна в точке $x_0$, необходимо и достаточно, чтобы $\Delta y_0\to0$ вместе с приращением $\Delta x_0$ независимой переменной.
+
+На терминологии $\varepsilon$--$\delta$ непрерывность функции $f(x)$ в точке $x_0$ сводится к следующему: для каждого числа $\varepsilon>0$ существует такое число $\delta>0$, что
+\[
+|f(x)-f(x_0)|<\varepsilon\qquad\text{если}\qquad |x-x_0|<\delta.
+\]
+Наконец, на терминологии последовательностей: для каждой последовательности значений $x_1,x_2,\ldots,x_n,\ldots$ из $X$, сходящейся к $x_0$, соответствующая последовательность
+\[
+f(x_1),f(x_2),\ldots,f(x_n),\ldots
+\]
+сходится к $f(x_0)$.
+\end{rusblock}
+\vocabline{\textbf{причём} 50 \emph{where}; \textbf{непрерывный} 106 \emph{continuous} (рыв- \emph{break}); \textbf{соотношение} 75 \emph{relationship} (нос- lat- \emph{carry}); \textbf{другой} 107 \emph{other}; \textbf{переход} 76 \emph{transition} (ход- i- \emph{go}); \textbf{придать} 95 \emph{give to} (да- \emph{give}); \textbf{приращение} 106 \emph{increment} (раст- cre- \emph{grow}); \textbf{вместе} 52, 106 \emph{together with} (мест- \emph{place}); \textbf{независимый} 94 \emph{independent} (вис- pend- \emph{hang}); \textbf{значить} 96 \emph{mean} (зна- \emph{know}); \textbf{тем, что} \emph{by the fact that}; \textbf{отвечать} 93 \emph{answer, correspond} (вет- \emph{speech}); \textbf{сводить} 74 \emph{reduce} (вод- duc- \emph{lead}); \textbf{наконец} 105 \emph{finally} (кон- fin- \emph{end}); \textbf{последовательность} 103 \emph{sequence} (след- sequ- \emph{follow}); \textbf{сходиться} 77 \emph{go together, converge} (ход- \emph{go}).}
+
+\readhead{A24}{Теоремы Гейне--Бореля и Вейерштрасса}{Heine--Borel and Weierstrass theorems}
+\begin{rusblock}
+\textbf{Теорема Гейне--Бореля.} Если замкнутый промежуток $[a,b]$ покрывается бесконечной системой $I=\{\sigma\}$ открытых промежутков, то из неё всегда можно выделить конечную подсистему
+\[
+I^*=\{\sigma_1,\sigma_2,\ldots,\sigma_n\},
+\]
+которая также покрывает весь промежуток $[a,b]$.
+
+\textbf{Теорема Вейерштрасса.} Если функция $f(x)$ определена и непрерывна в замкнутом промежутке $[a,b]$, то она ограничена, т.е. существуют такие конечные числа $m$ и $M$, что
+\[
+m\le f(x)\le M\qquad (a\le x\le b).
+\]
+\end{rusblock}
+\vocabline{\textbf{замкнутый} 106 \emph{closed} (мык- \emph{to close}); \textbf{покрывать} 98 \emph{cover} (кры-); \textbf{выделить} 95 \emph{separate out, extract} (дел- \emph{divide}).}
+
+\readhead{A25}{Производная функции}{Derivative of a function}
+\begin{rusblock}
+Пусть функция $y=f(x)$ определена в промежутке $(a,b)$. Исходя из некоторого значения $x=x_0$ независимой переменной $x$ и любого её приращения $\Delta x$, рассматриваем соответствующее приращение
+\[
+\Delta y=f(x_0+\Delta x)-f(x_0)
+\]
+зависимой переменной $y$. Если существует предел отношения приращения функции $\Delta y$ к приращению аргумента $\Delta x$ при $\Delta x\to0$, т.е. если существует
+\[
+\lim_{\Delta x\to0}\frac{\Delta y}{\Delta x}
+=\lim_{\Delta x\to0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x},
+\]
+то этот предел называется производной функции $y=f(x)$ по независимой переменной $x$ при данном её значении $x=x_0$.
+
+Таким образом, производная при данном значении $x=x_0$, если существует, есть определённое число; если же производная существует во всём промежутке $(a,b)$, то она является функцией от $x$.
+
+Для обозначения производной употребляют различные символы:
+\[
+\frac{dy}{dx}\quad\text{или}\quad \frac{dF(x_0)}{dx}\qquad\text{Лейбниц},
+\]
+\[
+y'\quad\text{или}\quad f'(x_0)\qquad\text{Лагранж},
+\]
+\[
+Dy\quad\text{или}\quad Df(x_0)\qquad\text{Коши}.
+\]
+\end{rusblock}
+\vocabline{\textbf{производная} 74 \emph{derivative} (вод- \emph{lead}); \textbf{исходить} 76 \emph{come out, start from} (ход- \emph{come}); \textbf{зависимый} 94 \emph{dependent} (вис- pend- \emph{hang}); \textbf{если же} 51 \emph{but if}; \textbf{обозначение} 96 \emph{designation} (зна- \emph{know}); \textbf{употреблять} 106 \emph{use} (треб- \emph{demand}); \textbf{различный} 105 \emph{various} (лик- \emph{face}).}
+
+\readhead{A26}{Уравнение касательной к кривой}{Equation of the tangent to a curve}
+\begin{rusblock}
+\textbf{Определение.} Если дана кривая $y=f(x)$, то касательной к этой кривой в точке $M_0(x_0,y_0)$ называют предельное положение секущей $M_0M_1$, проходящей через точки $M_0$ и $M_1$ данной кривой, при условии, что точка $M_1$ неограниченно приближается по кривой к точке $M_0$.
+
+Обозначим координаты $M_1$ через $(x_0+\Delta x,y_0+\Delta y)$ (рис.~11) и угол $\angle NM_0M_1$ через $\alpha$. Тогда угловой коэффициент секущей $M_0M_1$ равен $\tan\alpha$, где
+\[
+\tan\alpha=\frac{NM_1}{M_0N}=\frac{\Delta y}{\Delta x}.
+\]
+Пусть точка $M_1$ приближается по кривой к точке $M_0$. Тогда $\Delta x\to0$ и угол $\alpha$, изменяясь, приближается к углу $\varphi$, образованному касательной $M_0P$ с осью $Ox$. Ввиду непрерывности функции $\tan x$ будет выполняться условие
+\[
+\lim_{\Delta x\to0}\tan\alpha=\tan\varphi.
+\]
+Но из определения производной имеем
+\[
+\lim_{\Delta x\to0}\frac{\Delta y}{\Delta x}=f'(x_0).
+\]
+Значит, уравнение касательной имеет вид
+\[
+y-y_0=f'(x_0)(x-x_0).
+\]
+\end{rusblock}
+\origfig{11}{0.63}
+\vocabline{\textbf{касательная} 105 \emph{tangent} (кас- \emph{touch}); \textbf{кривая} 107 \emph{curve}; \textbf{секущая} 102 \emph{secant} (сек- sec- \emph{cut}); \textbf{приближаться} 91 \emph{approach} (близ- \emph{near}); \textbf{неограниченно} 105 \emph{unboundedly} (гран- \emph{border}); \textbf{образовать} 101 \emph{to form} (рез- \emph{cut}); \textbf{ввиду} 52, 94 \emph{in view of} (вид- \emph{see}); \textbf{выполнять} 87 \emph{fulfil} (пол- \emph{full}).}
+
+\readhead{A27}{Максимум и минимум функции}{Maximum and minimum of a function}
+\begin{rusblock}
+\textbf{Определение.} Точка $x_0$ называется точкой максимума (минимума) непрерывной функции $f(x)$, если существует такая окрестность этой точки, в которой $f(x_0)$ является наибольшим (наименьшим) значением функции $f(x)$, т.е.
+\[
+f(x_0)\ge f(x)\qquad\text{(соответственно, }f(x_0)\le f(x)\text{)}.
+\]
+Для обозначения максимума или минимума существует общий термин --- \emph{экстремум}.
+
+Установим необходимое условие экстремума.
+
+\textbf{Теорема.} Если функция $f(x)$ имеет экстремум в точке $x_0$, то в этой точке её производная, если существует, равна нулю:
+\[
+f'(x_0)=0.
+\]
+Но этот необходимый признак не является достаточным: из равенства нулю производной в некоторой точке не следует, что в этой точке функция обязательно имеет экстремум.
+\end{rusblock}
+\vocabline{\textbf{окрестность} 107 \emph{neighbourhood}; \textbf{установить} 84 \emph{establish} (ста- sta- \emph{set up}).}
+
+\readhead{A28}{Дифференцирование суммы, разности, произведения}{Differentiation of a sum, difference, product}
+{\noindent\bfseries\ru{Производная суммы и разности}\par}
+{\noindent\itshape Derivative of a sum and difference\par}
+\begin{rusblock}
+Пусть дана функция $y=u\pm v$, где $u=u(x)$ и $v=v(x)$ --- функции, имеющие производные в некотором промежутке $(a,b)$. Придавая аргументу $x$ приращение $\Delta x$, имеем
+\[
+\frac{d(u\pm v)}{dx}=\frac{du}{dx}\pm\frac{dv}{dx}.
+\]
+Итак, производная алгебраической суммы функций равна алгебраической сумме производных. Это правило верно и для $n$ слагаемых, $n=3,4,5,\ldots$: если $y=u_1+u_2+\cdots+u_n$, то $y' = u_1' + u_2' + \cdots + u_n'$.
+\end{rusblock}
+
+{\noindent\bfseries\ru{Производная произведения}\par}
+{\noindent\itshape Derivative of a product\par}
+\begin{rusblock}
+Пусть дана функция $y=uv$. Имеем
+\[
+\frac{d(uv)}{dx}=u\frac{dv}{dx}+v\frac{du}{dx}.
+\]
+Производная произведения двух сомножителей равна произведению первого на производную второго плюс произведение второго на производную первого. Правило дифференцирования произведения обобщается; например, если $y=uvw$, то
+\[
+y'=uv\,w'+u\,v'w+u'vw.
+\]
+\end{rusblock}
+\vocabline{\textbf{разность} \emph{difference} (раз- di- \emph{apart}); \textbf{суть} 56, 72 \emph{are} (from \ru{быть} \emph{to be}); \textbf{промежуток} 52 \emph{interval}; \textbf{верный} 92 \emph{true} (вер- \emph{believe}); \textbf{слагаемое} 82 \emph{addend} (лаг- \emph{lay}); \textbf{сомножитель} 88 \emph{multiplier, factor} (мног- mult- \emph{many}); \textbf{второй} 47 \emph{second}; \textbf{обобщать} 90 \emph{generalize}.}
+
+\readhead{A29}{Производная сложной функции}{Derivative of a composite function}
+\begin{rusblock}
+Пусть функция $u=\varphi(x)$ имеет в некоторой точке $x_0$ производную $u'=\varphi'(x_0)$, и пусть функция $y=f(u)$ имеет в соответствующей точке $u_0=\varphi(x_0)$ производную $y'_u=f'(u_0)$. Тогда сложная функция $y=f(\varphi(x))$ в точке $x_0$ также будет иметь производную, равную произведению производных функций $f(u)$ и $\varphi(x)$:
+\[
+y'_x=y'_u\,u'_x.
+\]
+\end{rusblock}
+\vocabline{\textbf{сложный} 82 \emph{composite} (лаг- pos- \emph{lay}); \textbf{соответствовать} 93 \emph{correspond} (вет- \emph{speech}).}
+
+\readhead{A30}{Неопределённый интеграл}{Indefinite integral}
+\begin{rusblock}
+Фундаментальной задачей дифференциального исчисления является отыскание производной от данной функции. Интегральное исчисление ставит перед собой обратную задачу: отыскать функцию по данной её производной.
+
+\textbf{Определение.} Функция $F(x)$ в данном промежутке называется интегралом от функции $f(x)$, если во всём этом промежутке $f(x)$ является производной для функции $F(x)$,
+\[
+F'(x)=f(x),\qquad\text{или}\qquad dF(x)=f(x)\,dx.
+\]
+\textbf{Теорема.} Если в некотором промежутке функция $F(x)$ есть интеграл от функции $f(x)$, то и функция $F(x)+C$, где $C$ --- любая постоянная, также будет интегралом. Обратно, каждую функцию, интеграл от $f(x)$, можно представить в этой форме.
+\end{rusblock}
+\vocabline{\textbf{задача} 95 \emph{problem} (да- \emph{give}); \textbf{исчисление} 104 \emph{calculus} (чит- \emph{reckon}); \textbf{отыскание} 97 \emph{search} (иск- \emph{ask, seek}); \textbf{перед} 52 \emph{before}.}
+
+\readhead{A31}{Интегрирование путём замены переменной}{Integration by change of variable}
+\begin{rusblock}
+Если знаем, что
+\[
+\int f(x)\,dx=F(x)+C
+\]
+(или иначе, что $F'(x)=f(x)$), то справедливо равенство
+\[
+\int f\{\varphi(t)\}\varphi'(t)\,dt=F\{\varphi(t)\}+C,
+\]
+где $\varphi(t)$ --- любая дифференцируемая функция.
+
+Рассмотрим, например, интеграл
+\[
+\int \sin^3x\cos x\,dx.
+\]
+Так как $d(\sin x)=\cos x\,dx$, то, полагая $t=\sin x$, преобразуем подынтегральное выражение к виду
+\[
+\sin^3x\cos x\,dx=\sin^3x\,d(\sin x)=t^3\,dt.
+\]
+Интеграл от этого выражения вычисляется легко:
+\[
+\int t^3\,dt=\frac{t^4}{4}+C,
+\]
+или, представляя $\sin x$ вместо $t$,
+\[
+\int\sin^3x\cos x\,dx=\frac{\sin^4x}{4}+C.
+\]
+\end{rusblock}
+\vocabline{\textbf{путём} 52 \emph{by means of}; \textbf{замена} 98 \emph{change} (мен-); \textbf{иначе} 50 \emph{otherwise}; \textbf{выражение} 101 \emph{expression} (рез- \emph{cut}); \textbf{справедливый} 88 \emph{correct} (прав- rect- \emph{right}); \textbf{рассмотреть} 106 \emph{examine} (смотр- \emph{look}); \textbf{преобразовать} 101 \emph{transform} (рез- \emph{cut}); \textbf{вычислять} 103 \emph{compute} (чит- \emph{reckon}); \textbf{легко} 105 \emph{easily} (лег- \emph{ease}); \textbf{вместо} 52, 106 \emph{in place of} (мест-).}
+
+\readhead{A32}{Интегрирование по частям}{Integration by parts}
+\begin{rusblock}
+Пусть $u=f(x)$ и $v=g(x)$ будут две функции от $x$, имеющие непрерывные производные $u'=f'(x)$ и $v'=g'(x)$. Тогда, по правилу дифференцирования произведения,
+\[
+d(uv)=u\,dv+v\,du,
+\]
+т.е.
+\[
+u\,dv=d(uv)-v\,du.
+\]
+Интегралом от выражения $d(uv)$ будет $uv$; поэтому имеет место формула
+\[(1)\qquad \int u\,dv=uv-\int v\,du.
+\]
+Эта формула выражает правило интегрирования по частям. Оно проводит интегрирование выражения $u\,dv=uv'\,dx$ к интегрированию выражения $v\,du=vu'\,dx$.
+
+Пусть, например, требуется вычислить интеграл $\int x\cos x\,dx$. Положим
+\[
+u=x,\qquad dv=\cos x\,dx,
+\]
+так что $du=dx$, $v=\sin x$, и по формуле (1)
+\[
+\int x\cos x\,dx=\int x\,d(\sin x)=x\sin x-\int\sin x\,dx=x\sin x+\cos x+C.
+\]
+\end{rusblock}
+\vocabline{\textbf{часть} 107 \emph{part} (част-); \textbf{выражать} 101 \emph{express} (рез- \emph{cut}); \textbf{проводить} 74 \emph{produce, reduce} (вод- duc- \emph{lead}); \textbf{требовать} 106 \emph{demand} (треб-); \textbf{положить} 80 \emph{to lay, set} (лаг- \emph{lay}).}
+
+\readhead{A33}{Фундаментальная теорема интегрального исчисления}{Fundamental theorem of the integral calculus}
+\begin{rusblock}
+Пусть дана в промежутке $[a,b]$ непрерывная функция $y=f(x)$. Рассмотрим фигуру $ABCD$ (рис.~12), ограниченную кривой $y=f(x)$ и отрезком оси $x$. Чтобы определить величину площади $P$ этой фигуры, мы изучим поведение площади переменной фигуры $AMND$, лежащей между ординатой $f(a)$ и ординатой $f(x)$, отвечающей произвольному в промежутке $[a,b]$ значению $x$. При изменении $x$ эта площадь будет соответственно изменяться, причём каждому $x$ отвечает определённое её значение, так что площадь фигуры $AMND$ является некоторой функцией от $x$; обозначим её через $P(x)$.
+
+Изучаем производную этой функции. Если $x$ получает некоторое приращение $\Delta x$, то площадь $P(x)$ получит приращение $\Delta P$. Обозначим через $m$ и $M$, соответственно, наименьшее и наибольшее значения функции $f(x)$ в промежутке $[x,x+\Delta x]$. Тогда
+\[
+m\Delta x\le\Delta P\le M\Delta x,
+\]
+откуда
+\[
+m\le\frac{\Delta P}{\Delta x}\le M.
+\]
+Если $\Delta x\to0$, то вследствие непрерывности $m\to f(x)$ и $M\to f(x)$, а тогда
+\[
+P'(x)=\lim_{\Delta x\to0}\frac{\Delta P}{\Delta x}=f(x).
+\]
+Таким образом, мы приходим к теореме: производная от переменной площади $P(x)$ по абсциссе $x$ равна ординате $y=f(x)$.
+
+Следовательно, переменная площадь $P(x)$ представляет собой интеграл от данной функции $y=f(x)$, который обращается в нуль при $x=a$. Поэтому, если имеем первообразную $F(x)$ функции $f(x)$, то
+\[
+P(x)=F(x)+C.
+\]
+Положив $x=a$, получаем
+\[
+0=F(a)+C,\qquad C=-F(a),
+\]
+и потому
+\[
+P(x)=F(x)-F(a).
+\]
+Чтобы получить площадь всей фигуры $ABCD$, положим $x=b$. Поэтому
+\[
+\boxed{P=F(b)-F(a)}.
+\]
+\end{rusblock}
+\origfig{12}{0.58}
+\vocabline{\textbf{площадь} 106 \emph{area} (плоск- \emph{flat}); \textbf{изучить} 107 \emph{study} (ук- \emph{become accustomed to}); \textbf{поведение} 74 \emph{conduct} (вод- duc- \emph{lead}); \textbf{вследствие} 52, 103 \emph{in consequence of} (след- sequ- \emph{follow}); \textbf{приходить} 77 \emph{arrive} (ход- \emph{go, come}); \textbf{здесь} 50 \emph{here}; \textbf{поставить} 83 \emph{set} (ста-).}

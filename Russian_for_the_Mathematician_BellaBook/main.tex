@@ -1,0 +1,190 @@
+\documentclass[11pt,twoside,openright]{ctexbook}
+
+\usepackage[paperwidth=7.5in,paperheight=10in,inner=21mm,outer=17mm,top=20mm,bottom=22mm,headheight=15pt,headsep=7mm,footskip=11mm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{TeXGyreTermes}
+\setsansfont{TeXGyreHeros}
+\setmonofont{TeXGyreCursor}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+\newfontfamily\cyrillicfont{PT Serif}[Script=Cyrillic]
+\newcommand{\ru}[1]{{\cyrillicfont #1}}
+
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs,longtable,array,tabularx,calc}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{emptypage}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{needspace}
+\usepackage{enumitem}
+
+\definecolor{GermanGold}{HTML}{FFCC00}
+\definecolor{GermanGoldDark}{HTML}{A67C00}
+\definecolor{GermanRed}{HTML}{DD0000}
+\definecolor{BellaBlue}{HTML}{FFCC00}
+\definecolor{BellaTeal}{HTML}{DD0000}
+\definecolor{BellaInk}{HTML}{151515}
+\definecolor{BellaPale}{HTML}{FFF8D6}
+\definecolor{BellaGray}{HTML}{5B5B5B}
+
+\hypersetup{
+  unicode=true,
+  colorlinks=true,
+  linkcolor=GermanGoldDark,
+  urlcolor=GermanRed,
+  citecolor=GermanRed,
+  pdftitle={Russian for the Mathematician - BellaBook Edition},
+  pdfauthor={S. H. Gould},
+  pdfsubject={Corrected re-typeset edition},
+  bookmarksopen=true,
+  bookmarksnumbered=true
+}
+
+\setlength{\parindent}{1.55em}
+\setlength{\parskip}{0.16em}
+\setstretch{1.12}
+\emergencystretch=2em
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+\setlist{nosep,leftmargin=2em}
+\renewcommand{\thechapter}{\Roman{chapter}}
+
+% BellaBook chapter / section hierarchy
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\color{BellaInk}}
+  {\filleft\sffamily\color{GermanGoldDark}\fontsize{13}{15}\selectfont CHAPTER\;\thechapter}
+  {0.7ex}
+  {\filleft\fontsize{30}{35}\selectfont}
+  [\vspace{1.0ex}\titlerule\vspace{2.5ex}]
+\titlespacing*{\chapter}{0pt}{-8pt}{18pt}
+
+\titleformat{\section}
+  {\Large\bfseries\color{BellaInk}}
+  {\colorbox{BellaBlue}{\color{BellaInk}\sffamily\bfseries\thesection}}{0.7em}{}
+\titleformat{\subsection}
+  {\large\bfseries\color{GermanGoldDark}}
+  {\thesubsection}{0.6em}{}
+
+\newcommand{\introsection}[2]{%
+  \needspace{4\baselineskip}%
+  \phantomsection\addcontentsline{toc}{section}{#1\quad #2}%
+  \vspace{1.0em}%
+  {\noindent\Large\bfseries\color{BellaInk}%
+   \colorbox{BellaBlue}{\color{BellaInk}\sffamily\bfseries #1}\hspace{0.7em}#2\par}%
+  \vspace{0.5em}%
+}
+
+\newtcolorbox{sourcebox}[1][]{enhanced,breakable,colback=BellaPale,colframe=BellaBlue!55!white,boxrule=0pt,borderline west={2.2pt}{0pt}{BellaBlue},left=3mm,right=3mm,top=2mm,bottom=2mm,arc=1mm,#1}
+\newtcolorbox{keybox}[1][]{enhanced,breakable,colback=BellaPale,colframe=BellaTeal,boxrule=0.6pt,arc=1.5mm,title=#1,fonttitle=\bfseries}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\sffamily\color{BellaGray}\leftmark}
+\fancyhead[RO]{\small\sffamily\color{BellaGray}\rightmark}
+\fancyfoot[LE,RO]{\sffamily\color{GermanGoldDark}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\chaptermark}[1]{\markboth{CHAPTER \thechapter\quad #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad #1}}
+
+\renewcommand{\footnoterule}{\kern-3pt\color{GermanGoldDark!55}\hrule width 0.28\textwidth\kern 2.6pt\color{black}}
+\let\oldfootnote\footnote
+\renewcommand{\footnote}[1]{\oldfootnote{\small #1}}
+\newcommand{\corrnote}[1]{\footnote{{\fontspec{Noto Serif}\textbf{校勘：}#1}}}
+
+\ctexset{contentsname={Contents},appendixname={Appendix}}
+
+\begin{document}
+\frontmatter
+
+% Cover
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[BellaInk] (current page.south west) rectangle (current page.north east);
+  \fill[BellaBlue] (current page.south west) rectangle ([xshift=18mm]current page.north west);
+  \fill[BellaTeal] ([yshift=18mm]current page.south west) rectangle ([yshift=24mm]current page.south east);
+  % Cover text: place each line on the same left axis to avoid any node-box misalignment.
+  \coordinate (coverleft) at ([xshift=60mm,yshift=-16mm]current page.north west);
+  \node[anchor=north west,text=white] at (coverleft)
+    {\sffamily\fontsize{34}{39}\selectfont\bfseries Russian};
+  \node[anchor=north west,text=white] at ([yshift=-20mm]coverleft)
+    {\sffamily\fontsize{34}{39}\selectfont\bfseries for the};
+  \node[anchor=north west,text=white] at ([yshift=-40mm]coverleft)
+    {\sffamily\fontsize{34}{39}\selectfont\bfseries Mathematician};
+  \node[anchor=north west,text=white!88] at ([yshift=-122mm]coverleft)
+    {\sffamily\fontsize{17}{21}\selectfont S. H. Gould};
+  \node[anchor=north west,text=white!68] at ([yshift=-195mm]coverleft)
+    {\sffamily\small BellaBook corrected re-typeset edition};
+\end{tikzpicture}
+\null\clearpage
+
+% Title page
+\thispagestyle{empty}
+\vspace*{28mm}
+\noindent\hspace*{10mm}%
+\begin{minipage}[t]{0.72\textwidth}
+{\sffamily\color{GermanGoldDark}\Large S. H. Gould\par}
+\vspace{14mm}
+{\bfseries\fontsize{34}{39}\selectfont\color{BellaInk}Russian\par}
+{\bfseries\fontsize{34}{39}\selectfont\color{BellaInk}for the\par}
+{\bfseries\fontsize{34}{39}\selectfont\color{BellaInk}Mathematician\par}
+\vspace{12mm}
+{\large With 12 Figures\par}
+\vspace{70mm}
+{\sffamily\color{BellaGray}Springer-Verlag\par}
+{\sffamily\color{BellaGray}Berlin · Heidelberg · New York · 1972\par}
+\end{minipage}
+\clearpage
+
+\chapter*{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+\input{chapters/preface}
+
+\tableofcontents
+\clearpage
+
+\mainmatter
+\setcounter{chapter}{0}
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+\markboth{INTRODUCTION}{}
+\input{chapters/introduction}
+
+\clearpage
+\input{chapters/chapter1}
+\clearpage
+\input{chapters/chapter2}
+\clearpage
+\input{chapters/chapter3}
+\clearpage
+\input{chapters/chapter4}
+\clearpage
+\input{chapters/chapter5}
+
+\clearpage
+\chapter*{Readings}
+\addcontentsline{toc}{chapter}{Readings}
+\markboth{READINGS}{}
+\sloppy
+\setlength{\emergencystretch}{5em}
+\input{chapters/readingsA}
+\input{chapters/readingsB}
+\input{chapters/readingsC}
+\fussy
+
+\input{chapters/backmatter}
+
+\end{document}

@@ -1,0 +1,152 @@
+\contentsline {chapter}{Preface}{iii}{chapter*.1}%
+\contentsline {chapter}{Introduction}{1}{chapter*.3}%
+\contentsline {section}{1\hskip 1em\relax Plan of the book}{1}{section*.4}%
+\contentsline {section}{2\hskip 1em\relax Vocabulary by inheritance, transliteration, and loan-translation}{2}{section*.5}%
+\contentsline {section}{3\hskip 1em\relax Roots and prefixes}{4}{section*.6}%
+\contentsline {section}{4\hskip 1em\relax The Indo-European language and its descendants}{4}{section*.7}%
+\contentsline {section}{5\hskip 1em\relax Vowel gradation}{5}{section*.8}%
+\contentsline {section}{6\hskip 1em\relax Consonant variation}{5}{section*.9}%
+\contentsline {section}{7\hskip 1em\relax The alphabet}{6}{section*.10}%
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}Alphabet}{9}{chapter.1}%
+\contentsline {section}{\numberline {I.1}The Cyrillic alphabet}{9}{section.1.1}%
+\contentsline {section}{\numberline {I.2}Memorizing the alphabet}{10}{section.1.2}%
+\contentsline {section}{\numberline {I.3}History of the Cyrillic consonants}{11}{section.1.3}%
+\contentsline {section}{\numberline {I.4}History of the vowel-symbols; the basic vowel-scheme}{13}{section.1.4}%
+\contentsline {section}{\numberline {I.5}Hard and soft consonants}{14}{section.1.5}%
+\contentsline {section}{\numberline {I.6}The spelling rule}{15}{section.1.6}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}Pronunciation}{19}{chapter.2}%
+\contentsline {section}{\numberline {II.1}Importance of pronunciation}{19}{section.2.1}%
+\contentsline {section}{\numberline {II.2}The six Russian vowel-sounds}{19}{section.2.2}%
+\contentsline {section}{\numberline {II.3}Monosyllables for practice in pronunciation}{20}{section.2.3}%
+\contentsline {section}{\numberline {II.4}Preliminary remarks on hard and soft consonants}{23}{section.2.4}%
+\contentsline {section}{\numberline {II.5}Hard and soft consonants in English and Russian}{23}{section.2.5}%
+\contentsline {section}{\numberline {II.6}A first approximation to Russian pronunciation}{27}{section.2.6}%
+\contentsline {section}{\numberline {II.7}The letter {\cyrillicfont й} when pronounced but not written}{28}{section.2.7}%
+\contentsline {section}{\numberline {II.8}The ``separating'' hard and soft signs}{28}{section.2.8}%
+\contentsline {section}{\numberline {II.9}The letter {\cyrillicfont й} when written}{29}{section.2.9}%
+\contentsline {section}{\numberline {II.10}Assimilation of voiced and voiceless consonants}{30}{section.2.10}%
+\contentsline {section}{\numberline {II.11}Consonant clusters}{31}{section.2.11}%
+\contentsline {section}{\numberline {II.12}Words of more than one syllable; accents}{32}{section.2.12}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}Inflection}{37}{chapter.3}%
+\contentsline {section}{\numberline {III.1}The concept of declension}{37}{section.3.1}%
+\contentsline {section}{\numberline {III.2}The three declensions}{38}{section.3.2}%
+\contentsline {section}{\numberline {III.3}Frequency of occurrence of nouns of the eight types}{40}{section.3.3}%
+\contentsline {section}{\numberline {III.4}Declension in the plural}{41}{section.3.4}%
+\contentsline {section}{\numberline {III.5}Remarks on the exercises}{42}{section.3.5}%
+\contentsline {section}{\numberline {III.6}The concept of grammatical gender}{43}{section.3.6}%
+\contentsline {section}{\numberline {III.7}Declension of pronouns}{43}{section.3.7}%
+\contentsline {section}{\numberline {III.8}Declension of adjectives}{47}{section.3.8}%
+\contentsline {section}{\numberline {III.9}The numerals}{50}{section.3.9}%
+\contentsline {section}{\numberline {III.10}Adjective--noun phrases; italics}{50}{section.3.10}%
+\contentsline {section}{\numberline {III.11}Comparative and superlative of adjectives and adverbs}{52}{section.3.11}%
+\contentsline {section}{\numberline {III.12}The uninflected parts of speech}{53}{section.3.12}%
+\contentsline {section}{\numberline {III.13}The verb; present imperfective and future perfective}{56}{section.3.13}%
+\contentsline {section}{\numberline {III.14}The future imperfective and the past tense}{58}{section.3.14}%
+\contentsline {section}{\numberline {III.15}The four adjectival and two adverbial participles}{60}{section.3.15}%
+\contentsline {paragraph}{Rule 1.}{60}{paragraph*.11}%
+\contentsline {paragraph}{Rule 2.}{60}{paragraph*.12}%
+\contentsline {paragraph}{Rule 3.}{60}{paragraph*.13}%
+\contentsline {paragraph}{Rule 4.}{61}{paragraph*.14}%
+\contentsline {paragraph}{Rule 5.}{61}{paragraph*.15}%
+\contentsline {paragraph}{Rule 6.}{61}{paragraph*.16}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}Aspect}{65}{chapter.4}%
+\contentsline {section}{\numberline {IV.1}Difference in meaning between the two aspects}{65}{section.4.1}%
+\contentsline {section}{\numberline {IV.2}Aspect regarded as a correspondence}{66}{section.4.2}%
+\contentsline {section}{\numberline {IV.3}Perfective partners in contrast to lexical compounds}{67}{section.4.3}%
+\contentsline {section}{\numberline {IV.4}The imperfectivizing suffixes}{68}{section.4.4}%
+\contentsline {section}{\numberline {IV.5}Table of aspectual and lexical compounds of verbs}{68}{section.4.5}%
+\contentsline {section}{\numberline {IV.6}Notes on the Table}{70}{section.4.6}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}Vocabulary}{73}{chapter.5}%
+\contentsline {section}{\numberline {V.1}Plan of the chapter}{73}{section.5.1}%
+\contentsline {section}{\numberline {V.2}The three ``verbs of motion''}{74}{section.5.2}%
+\contentsline {section}{\numberline {V.3}The root {\cyrillicfont бер- (я-)} --- take}{78}{section.5.3}%
+\contentsline {section}{\numberline {V.4}The roots {\cyrillicfont лаг-} --- lay and {\cyrillicfont ста-} --- stand}{80}{section.5.4}%
+\contentsline {section}{\numberline {V.5}Verbs formed from adjectives}{85}{section.5.5}%
+\contentsline {section}{\numberline {V.6}Twenty roots of considerable productivity}{91}{section.5.6}%
+\contentsline {section}{\numberline {V.7}Forty-one roots of moderate productivity}{99}{section.5.7}%
+\contentsline {section}{\numberline {V.8}Other nouns and adjectives}{101}{section.5.8}%
+\contentsline {chapter}{Readings}{103}{chapter*.17}%
+\contentsline {section}{Preliminary remarks}{103}{chapter*.17}%
+\contentsline {section}{Section A: Elementary analytic geometry and calculus}{105}{Item.357}%
+\contentsline {section}{A1\hskip 1em\relax Distance between points}{105}{section*.18}%
+\contentsline {section}{A2\hskip 1em\relax Division of a segment in a preassigned ratio}{106}{section*.19}%
+\contentsline {section}{A3\hskip 1em\relax Polar coordinates}{106}{section*.20}%
+\contentsline {section}{A4\hskip 1em\relax Transformation of coordinates with parallel translation of axes}{107}{section*.21}%
+\contentsline {section}{A5\hskip 1em\relax Transformation of coordinates with rotation of the axes}{108}{section*.22}%
+\contentsline {section}{A6\hskip 1em\relax Equations of the straight line}{109}{section*.23}%
+\contentsline {section}{A7\hskip 1em\relax Equation of a line passing through a given point in a given direction}{110}{section*.24}%
+\contentsline {section}{A8\hskip 1em\relax Normal equation of the line}{111}{section*.25}%
+\contentsline {section}{A9\hskip 1em\relax General linear equation of the line}{112}{section*.26}%
+\contentsline {section}{A10\hskip 1em\relax Equation of the line passing through two given points}{112}{section*.27}%
+\contentsline {section}{A11\hskip 1em\relax Equation of the line in segments on the axes (i.e. intercepts)}{113}{section*.28}%
+\contentsline {section}{A12\hskip 1em\relax Definition of a vector}{114}{section*.29}%
+\contentsline {section}{A13\hskip 1em\relax Sum of vectors}{114}{section*.30}%
+\contentsline {section}{A14\hskip 1em\relax Scalar products}{115}{section*.31}%
+\contentsline {section}{A15\hskip 1em\relax General linear equation of the plane in space}{116}{section*.32}%
+\contentsline {section}{A16\hskip 1em\relax Parametric equations of a line in space}{117}{section*.33}%
+\contentsline {section}{A17\hskip 1em\relax Introduction of irrational numbers}{117}{section*.34}%
+\contentsline {section}{A18\hskip 1em\relax Continuity of the domain of real numbers}{118}{section*.35}%
+\contentsline {section}{A19\hskip 1em\relax Least upper and greatest lower bounds}{119}{section*.36}%
+\contentsline {section}{A20\hskip 1em\relax Fundamental theorem on real numbers}{119}{section*.37}%
+\contentsline {section}{A21\hskip 1em\relax The elementary functions}{119}{section*.38}%
+\contentsline {section}{A22\hskip 1em\relax Limit of a function}{121}{section*.39}%
+\contentsline {section}{A23\hskip 1em\relax Continuity of a function}{121}{section*.40}%
+\contentsline {section}{A24\hskip 1em\relax Heine--Borel and Weierstrass theorems}{122}{section*.41}%
+\contentsline {section}{A25\hskip 1em\relax Derivative of a function}{123}{section*.42}%
+\contentsline {section}{A26\hskip 1em\relax Equation of the tangent to a curve}{124}{section*.43}%
+\contentsline {section}{A27\hskip 1em\relax Maximum and minimum of a function}{125}{section*.44}%
+\contentsline {section}{A28\hskip 1em\relax Differentiation of a sum, difference, product}{126}{section*.45}%
+\contentsline {section}{A29\hskip 1em\relax Derivative of a composite function}{126}{section*.46}%
+\contentsline {section}{A30\hskip 1em\relax Indefinite integral}{127}{section*.47}%
+\contentsline {section}{A31\hskip 1em\relax Integration by change of variable}{128}{section*.48}%
+\contentsline {section}{A32\hskip 1em\relax Integration by parts}{129}{section*.49}%
+\contentsline {section}{A33\hskip 1em\relax Fundamental theorem of the integral calculus}{130}{section*.50}%
+\contentsline {section}{Section B: Elementary algebra and analysis}{132}{section*.50}%
+\contentsline {section}{B1\hskip 1em\relax Operations on sets}{132}{section*.51}%
+\contentsline {section}{B2\hskip 1em\relax Properties of the operations on sets}{132}{section*.52}%
+\contentsline {section}{B3\hskip 1em\relax One-to-one correspondence}{133}{section*.53}%
+\contentsline {section}{B4\hskip 1em\relax Equivalent sets}{133}{section*.54}%
+\contentsline {section}{B5\hskip 1em\relax Ordered sets}{134}{section*.55}%
+\contentsline {section}{B6\hskip 1em\relax Similar sets}{134}{section*.56}%
+\contentsline {section}{B7\hskip 1em\relax Algebraic operations}{134}{section*.57}%
+\contentsline {section}{B8\hskip 1em\relax Rings}{135}{section*.58}%
+\contentsline {section}{B9\hskip 1em\relax Examples of rings}{135}{section*.59}%
+\contentsline {section}{B10\hskip 1em\relax The zero of a ring}{135}{section*.60}%
+\contentsline {section}{B11\hskip 1em\relax Domains of integrity}{136}{section*.61}%
+\contentsline {section}{B12\hskip 1em\relax Fields}{137}{section*.62}%
+\contentsline {section}{B13\hskip 1em\relax Unit element}{137}{section*.63}%
+\contentsline {section}{B14\hskip 1em\relax Division}{138}{section*.64}%
+\contentsline {section}{B15\hskip 1em\relax Characteristic of a field; prime fields}{138}{section*.65}%
+\contentsline {section}{B16\hskip 1em\relax Isomorphism}{139}{section*.66}%
+\contentsline {section}{B17\hskip 1em\relax Ordered rings}{139}{section*.67}%
+\contentsline {section}{B18\hskip 1em\relax Properties of ordered rings}{140}{section*.68}%
+\contentsline {section}{B19\hskip 1em\relax Axiom of Archimedes}{140}{section*.69}%
+\contentsline {section}{B20\hskip 1em\relax The natural numbers}{141}{section*.70}%
+\contentsline {section}{B21\hskip 1em\relax Addition and multiplication of natural numbers}{142}{section*.71}%
+\contentsline {section}{B22\hskip 1em\relax Order of the natural numbers}{142}{section*.72}%
+\contentsline {section}{B23\hskip 1em\relax Subtraction and division of natural numbers}{143}{section*.73}%
+\contentsline {section}{B24\hskip 1em\relax Fundamental theorem of arithmetic}{144}{section*.74}%
+\contentsline {section}{B25\hskip 1em\relax The extension principle in arithmetic and algebra}{145}{section*.75}%
+\contentsline {section}{B26\hskip 1em\relax Performability of operations in an extension}{145}{section*.76}%
+\contentsline {section}{B27\hskip 1em\relax Equivalence classes}{146}{section*.77}%
+\contentsline {section}{B28\hskip 1em\relax The ring of integers up to isomorphism}{146}{section*.78}%
+\contentsline {section}{B29\hskip 1em\relax The ring of integers}{147}{section*.79}%
+\contentsline {section}{B30\hskip 1em\relax The field of rational numbers}{148}{section*.80}%
+\contentsline {section}{B31\hskip 1em\relax Quotient fields}{148}{section*.81}%
+\contentsline {section}{B32\hskip 1em\relax The field of real numbers}{149}{section*.82}%
+\contentsline {section}{B33\hskip 1em\relax The field of complex numbers}{150}{section*.83}%
+\contentsline {section}{Section C: More advanced topics}{151}{section*.83}%
+\contentsline {section}{C1\hskip 1em\relax Theory of functions of a real variable}{151}{section*.84}%
+\contentsline {section}{C2\hskip 1em\relax Theory of functions of several complex variables}{153}{section*.85}%
+\contentsline {section}{C3\hskip 1em\relax Summability theory of divergent series}{155}{section*.86}%
+\contentsline {section}{C4\hskip 1em\relax Generalized functions}{157}{section*.89}%
+\contentsline {section}{C5\hskip 1em\relax Calculus of variations}{161}{section*.90}%
+\contentsline {section}{C6\hskip 1em\relax Theory of groups and generalizations}{164}{section*.92}%
+\contentsline {section}{C7\hskip 1em\relax Theory of numbers}{167}{section*.93}%
+\contentsline {section}{C8\hskip 1em\relax Mathematical logic}{170}{section*.95}%
+\contentsline {section}{C9\hskip 1em\relax Partial differential equations}{173}{section*.96}%
+\contentsline {section}{C10\hskip 1em\relax Hilbert space}{175}{section*.97}%
+\contentsline {section}{C11\hskip 1em\relax Differential geometry}{180}{section*.98}%
+\contentsline {section}{C12\hskip 1em\relax Topology}{184}{section*.99}%
+\contentsline {chapter}{Glossary}{189}{chapter*.100}%
+\contentsline {chapter}{Name and Subject Index}{215}{section*.101}%

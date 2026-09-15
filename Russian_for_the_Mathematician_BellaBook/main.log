@@ -1,0 +1,5294 @@
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian) (preloaded format=xelatex 2026.2.6)  15 SEP 2026 08:59
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/ctexbook.cls
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
+File: ctexbackend.cfg 2022/07/14 v2.5.10 Backend configuration file (CTEX)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2025-01-18 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2024-05-08 L3 backend support: XeTeX
+\g__graphics_track_int=\count192
+\l__pdf_internal_box=\box52
+\g__pdf_backend_annotation_int=\count193
+\g__pdf_backend_link_int=\count194
+))
+Document Class: ctexbook 2022/07/14 v2.5.10 Chinese adapter for class book (CTE
+X)
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/ctexhook.sty
+Package: ctexhook 2022/07/14 v2.5.10 Document and package hooks (CTEX)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/ctexpatch.sty
+Package: ctexpatch 2022/07/14 v2.5.10 Patching commands (CTEX)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+))
+\l__ctex_tmp_int=\count195
+\l__ctex_tmp_box=\box53
+\l__ctex_tmp_dim=\dimen141
+\g__ctex_section_depth_int=\count196
+\g__ctex_font_size_int=\count197
+
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
+File: ctexopts.cfg 2022/07/14 v2.5.10 Option configuration file (CTEX)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo
+File: bk11.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count198
+\c@chapter=\count199
+\c@section=\count266
+\c@subsection=\count267
+\c@subsubsection=\count268
+\c@paragraph=\count269
+\c@subparagraph=\count270
+\c@figure=\count271
+\c@table=\count272
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen142
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def
+File: ctex-engine-xetex.def 2022/07/14 v2.5.10 XeLaTeX adapter (CTEX)
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
+Package: xeCJK 2022/08/05 v3.9.1 Typesetting CJK scripts with XeLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
+Package: xtemplate 2024-08-16 L3 Experimental prototype document functions
+)
+\l__xeCJK_tmp_int=\count273
+\l__xeCJK_tmp_box=\box54
+\l__xeCJK_tmp_dim=\dimen143
+\l__xeCJK_tmp_skip=\skip51
+\g__xeCJK_space_factor_int=\count274
+\l__xeCJK_begin_int=\count275
+\l__xeCJK_end_int=\count276
+\c__xeCJK_CJK_class_int=\XeTeXcharclass1
+\c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
+\c__xeCJK_FullRight_class_int=\XeTeXcharclass3
+\c__xeCJK_HalfLeft_class_int=\XeTeXcharclass4
+\c__xeCJK_HalfRight_class_int=\XeTeXcharclass5
+\c__xeCJK_NormalSpace_class_int=\XeTeXcharclass6
+\c__xeCJK_CM_class_int=\XeTeXcharclass7
+\c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
+\l__xeCJK_last_skip=\skip52
+\c__xeCJK_none_node=\count277
+\g__xeCJK_node_int=\count278
+\c__xeCJK_CJK_node_dim=\dimen144
+\c__xeCJK_CJK-space_node_dim=\dimen145
+\c__xeCJK_default_node_dim=\dimen146
+\c__xeCJK_CJK-widow_node_dim=\dimen147
+\c__xeCJK_normalspace_node_dim=\dimen148
+\c__xeCJK_default-space_node_skip=\skip53
+\l__xeCJK_ccglue_skip=\skip54
+\l__xeCJK_ecglue_skip=\skip55
+\l__xeCJK_punct_kern_skip=\skip56
+\l__xeCJK_indent_box=\box55
+\l__xeCJK_last_penalty_int=\count279
+\l__xeCJK_last_bound_dim=\dimen149
+\l__xeCJK_last_kern_dim=\dimen150
+\l__xeCJK_widow_penalty_int=\count280
+
+LaTeX template Info: Declaring template type 'xeCJK/punctuation' taking 0
+(template)           argument(s) on line 2396.
+
+\l__xeCJK_fixed_punct_width_dim=\dimen151
+\l__xeCJK_mixed_punct_width_dim=\dimen152
+\l__xeCJK_middle_punct_width_dim=\dimen153
+\l__xeCJK_fixed_margin_width_dim=\dimen154
+\l__xeCJK_mixed_margin_width_dim=\dimen155
+\l__xeCJK_middle_margin_width_dim=\dimen156
+\l__xeCJK_bound_punct_width_dim=\dimen157
+\l__xeCJK_bound_margin_width_dim=\dimen158
+\l__xeCJK_margin_minimum_dim=\dimen159
+\l__xeCJK_kerning_total_width_dim=\dimen160
+\l__xeCJK_same_align_margin_dim=\dimen161
+\l__xeCJK_different_align_margin_dim=\dimen162
+\l__xeCJK_kerning_margin_width_dim=\dimen163
+\l__xeCJK_kerning_margin_minimum_dim=\dimen164
+\l__xeCJK_bound_dim=\dimen165
+\l__xeCJK_reverse_bound_dim=\dimen166
+\l__xeCJK_margin_dim=\dimen167
+\l__xeCJK_minimum_bound_dim=\dimen168
+\l__xeCJK_kerning_margin_dim=\dimen169
+\g__xeCJK_family_int=\count281
+\l__xeCJK_fam_int=\count282
+\g__xeCJK_fam_allocation_int=\count283
+\l__xeCJK_verb_case_int=\count284
+\l__xeCJK_verb_exspace_skip=\skip57
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2024-08-16 L3 Experimental document command parser
+)
+Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count285
+\l__fontspec_language_int=\count286
+\l__fontspec_strnum_int=\count287
+\l__fontspec_tmp_int=\count288
+\l__fontspec_tmpa_int=\count289
+\l__fontspec_tmpb_int=\count290
+\l__fontspec_tmpc_int=\count291
+\l__fontspec_em_int=\count292
+\l__fontspec_emdef_int=\count293
+\l__fontspec_strong_int=\count294
+\l__fontspec_strongdef_int=\count295
+\l__fontspec_tmpa_dim=\dimen170
+\l__fontspec_tmpb_dim=\dimen171
+\l__fontspec_tmpc_dim=\dimen172
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
+File: xeCJK.cfg 2022/08/05 v3.9.1 Configuration file for xeCJK package
+))
+\ccwd=\dimen173
+\l__ctex_ccglue_skip=\skip58
+)
+\l__ctex_ziju_dim=\dimen174
+
+(/usr/share/texlive/texmf-dist/tex/latex/zhnumber/zhnumber.sty
+Package: zhnumber 2022/07/14 v3.0 Typesetting numbers with Chinese glyphs
+\l__zhnum_scale_int=\count296
+\l__zhnum_tmp_int=\count297
+
+(/usr/share/texlive/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg
+File: zhnumber-utf8.cfg 2022/07/14 v3.0 Chinese numerals with UTF8 encoding
+))
+\l__ctex_heading_skip=\skip59
+
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-book.d
+ef
+File: ctex-scheme-chinese-book.def 2022/07/14 v2.5.10 Chinese scheme for book (
+CTEX)
+ (/usr/share/texlive/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg
+File: ctex-name-utf8.cfg 2022/07/14 v2.5.10 Caption with encoding UTF-8 (CTEX)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.def
+File: ctex-fontset-fandol.def 2022/07/14 v2.5.10 Fandol fonts definition (CTEX)
+
+
+Package fontspec Info: 
+(fontspec)             Script 'CJK' not explicitly supported within font
+(fontspec)             'FandolSong-Regular'. Check the typeset output, and if
+(fontspec)             it is okay then ignore this warning. Otherwise a
+(fontspec)             different font should be chosen.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'FandolSong-Regular(0)' created for font
+(fontspec)             'FandolSong-Regular' with options
+(fontspec)             [Script={CJK},Extension={.otf},BoldFont={FandolSong-Bold
+},ItalicFont={FandolKai-Regular}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[FandolSong-Regular.otf]/OT:script=hani;language=dfl
+t;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[FandolSong-Bold.otf]/OT:script=hani;language=dflt;"
+
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[FandolKai-Regular.otf]/OT:script=hani;language=dflt
+;"
+
+)) (/usr/share/texlive/texmf-dist/tex/latex/ctex/config/ctex.cfg
+File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count298
+\Gm@cntv=\count299
+\c@Gm@tempcnt=\count300
+\Gm@bindingoffset=\dimen175
+\Gm@wd@mp=\dimen176
+\Gm@odd@mp=\dimen177
+\Gm@even@mp=\dimen178
+\Gm@layoutwidth=\dimen179
+\Gm@layoutheight=\dimen180
+\Gm@layouthoffset=\dimen181
+\Gm@layoutvoffset=\dimen182
+\Gm@dimlist=\toks18
+)
+
+Package fontspec Info: 
+(fontspec)             Font family 'TeXGyreTermes(0)' created for font
+(fontspec)             'TeXGyreTermes' with options [Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"TeXGyreTermes/OT:language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"TeXGyreTermes/B/OT:language=dflt;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"TeXGyreTermes/I/OT:language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"TeXGyreTermes/BI/OT:language=dflt;mapping=tex-text;"
+
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'TeXGyreHeros(0)' created for font
+(fontspec)             'TeXGyreHeros' with options [Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"TeXGyreHeros/OT:language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"TeXGyreHeros/B/OT:language=dflt;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"TeXGyreHeros/I/OT:language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"TeXGyreHeros/BI/OT:language=dflt;mapping=tex-text;"
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'TeXGyreCursor(0)' created for font
+(fontspec)             'TeXGyreCursor' with options
+(fontspec)             [WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=Word
+Space].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"TeXGyreCursor/OT:language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"TeXGyreCursor/B/OT:language=dflt;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"TeXGyreCursor/I/OT:language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"TeXGyreCursor/BI/OT:language=dflt;"
+
+
+
+Package xeCJK Warning: Redefining CJKfamily `\CJKrmdefault'
+(xeCJK)                (FandolSong-Regular(0)).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "Noto Serif CJK SC/I" (it
+(fontspec)             probably doesn't exist).
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'NotoSerifCJKSC(0)' created for font 'Noto
+(fontspec)             Serif CJK SC' with options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Noto Serif CJK
+(fontspec)             SC/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Noto Serif CJK
+(fontspec)             SC/B/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Noto Serif
+(fontspec)             CJK SC/BI/OT:script=hani;language=dflt;"
+
+
+Package xeCJK Warning: Redefining CJKfamily `\CJKsfdefault'
+(xeCJK)                (FandolHei-Regular).
+
+
+Package xeCJK Warning: Redefining CJKfamily `\CJKttdefault'
+(xeCJK)                (FandolFang-Regular).
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'PTSerif(0)' created for font 'PT Serif'
+(fontspec)             with options [Script=Cyrillic].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"PT
+(fontspec)             Serif/OT:script=cyrl;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"PT
+(fontspec)             Serif/B/OT:script=cyrl;language=dflt;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"PT
+(fontspec)             Serif/I/OT:script=cyrl;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"PT
+(fontspec)             Serif/BI/OT:script=cyrl;language=dflt;"
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/11/05 v2.17t AMS math features
+\@mathmargin=\skip60
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen183
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen184
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count301
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count302
+\leftroot@=\count303
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count304
+\DOTSCASE@=\count305
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box56
+\strutbox@=\box57
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen185
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count306
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count307
+\dotsspace@=\muskip17
+\c@parentequation=\count308
+\dspbrk@lvl=\count309
+\tag@help=\toks20
+\row@=\count310
+\column@=\count311
+\maxfields@=\count312
+\andhelp@=\toks21
+\eqnshift@=\dimen186
+\alignsep@=\dimen187
+\tagshift@=\dimen188
+\tagwidth@=\dimen189
+\totwidth@=\dimen190
+\lineht@=\dimen191
+\@envbody=\toks22
+\multlinegap=\skip61
+\multlinetaggap=\skip62
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count313
+\calc@Bcount=\count314
+\calc@Adimen=\dimen192
+\calc@Bdimen=\dimen193
+\calc@Askip=\skip63
+\calc@Bskip=\skip64
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count315
+\calc@Cskip=\skip65
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count316
+\l_MT_multwidth_dim=\dimen194
+\origjot=\skip66
+\l_MT_shortvdotswithinadjustabove_dim=\dimen195
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen196
+\l_MT_above_intertext_sep=\dimen197
+\l_MT_below_intertext_sep=\dimen198
+\l_MT_above_shortintertext_sep=\dimen199
+\l_MT_below_shortintertext_sep=\dimen256
+\xmathstrut@box=\box58
+\xmathstrut@dim=\dimen257
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen258
+\lightrulewidth=\dimen259
+\cmidrulewidth=\dimen260
+\belowrulesep=\dimen261
+\belowbottomsep=\dimen262
+\aboverulesep=\dimen263
+\abovetopsep=\dimen264
+\cmidrulesep=\dimen265
+\cmidrulekern=\dimen266
+\defaultaddspace=\dimen267
+\@cmidla=\count317
+\@cmidlb=\count318
+\@aboverulesep=\dimen268
+\@belowrulesep=\dimen269
+\@thisruleclass=\count319
+\@lastruleclass=\count320
+\@thisrulewidth=\dimen270
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
+\LTleft=\skip67
+\LTright=\skip68
+\LTpre=\skip69
+\LTpost=\skip70
+\LTchunksize=\count321
+\LTcapwidth=\dimen271
+\LT@head=\box59
+\LT@firsthead=\box60
+\LT@foot=\box61
+\LT@lastfoot=\box62
+\LT@gbox=\box63
+\LT@cols=\count322
+\LT@rows=\count323
+\c@LT@tables=\count324
+\c@LT@chunks=\count325
+\LT@p@ftn=\toks24
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen272
+\ar@mcellbox=\box64
+\extrarowheight=\dimen273
+\NC@list=\toks25
+\extratabsurround=\skip71
+\backup@length=\skip72
+\ar@cellbox=\box65
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+\TX@col@width=\dimen274
+\TX@old@table=\dimen275
+\TX@old@col=\dimen276
+\TX@target=\dimen277
+\TX@delta=\dimen278
+\TX@cols=\count326
+\TX@ftn=\toks26
+)
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip73
+\enit@outerparindent=\dimen279
+\enit@toks=\toks27
+\enit@inbox=\box66
+\enit@count@id=\count327
+\enitdp@description=\count328
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 106.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen280
+\Gin@req@width=\dimen281
+)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2025/02/11 v3.2a Micro-typographical refinements (RS)
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count329
+)
+\MT@toks=\toks28
+\MT@tempbox=\box67
+\MT@count=\count330
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1087.
+LaTeX Info: Redefining \leftprotrusion on input line 1088.
+\MT@prot@toks=\toks29
+LaTeX Info: Redefining \rightprotrusion on input line 1107.
+LaTeX Info: Redefining \textls on input line 1449.
+\MT@outer@kern=\dimen282
+LaTeX Info: Redefining \microtypecontext on input line 2053.
+LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
+\MT@listname@count=\count331
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-xetex.def
+File: microtype-xetex.def 2025/02/11 v3.2a Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 443.
+LaTeX Info: Redefining \lslig on input line 451.
+\MT@outer@space=\skip74
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2025/02/11 v3.2a microtype main configuration file (RS)
+)
+LaTeX Info: Redefining \microtypesetup on input line 3065.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2024/10/22 version 6.4.1 text color boxes
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks30
+\pgfutil@tempdima=\dimen283
+\pgfutil@tempdimb=\dimen284
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box68
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks31
+\pgfkeys@temptoks=\toks32
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered
+.code.tex
+\pgfkeys@tmptoks=\toks33
+))
+\pgf@x=\dimen285
+\pgf@y=\dimen286
+\pgf@xa=\dimen287
+\pgf@ya=\dimen288
+\pgf@xb=\dimen289
+\pgf@yb=\dimen290
+\pgf@xc=\dimen291
+\pgf@yc=\dimen292
+\pgf@xd=\dimen293
+\pgf@yd=\dimen294
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count332
+\c@pgf@countb=\count333
+\c@pgf@countc=\count334
+\c@pgf@countd=\count335
+\t@pgf@toka=\toks34
+\t@pgf@tokb=\toks35
+\t@pgf@tokc=\toks36
+\pgf@sys@id@count=\count336
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-xetex.def
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.def
+File: pgfsys-xetex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)
+\pgfsys@objnum=\count337
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count338
+\pgfsyssoftpath@bigbuffer@items=\count339
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 274.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen295
+\pgfmath@count=\count340
+\pgfmath@box=\box69
+\pgfmath@toks=\toks37
+\pgfmath@stack@operand=\toks38
+\pgfmath@stack@operation=\toks39
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count341
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen296
+\pgf@picmaxx=\dimen297
+\pgf@picminy=\dimen298
+\pgf@picmaxy=\dimen299
+\pgf@pathminx=\dimen300
+\pgf@pathmaxx=\dimen301
+\pgf@pathminy=\dimen302
+\pgf@pathmaxy=\dimen303
+\pgf@xx=\dimen304
+\pgf@xy=\dimen305
+\pgf@yx=\dimen306
+\pgf@yy=\dimen307
+\pgf@zx=\dimen308
+\pgf@zy=\dimen309
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen310
+\pgf@path@lasty=\dimen311
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen312
+\pgf@shorten@start@additional=\dimen313
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box70
+\pgf@hbox=\box71
+\pgf@layerbox@main=\box72
+\pgf@picture@serial@count=\count342
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen314
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen315
+\pgf@pt@y=\dimen316
+\pgf@pt@temp=\dimen317
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen318
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen319
+\pgf@sys@shading@range@num=\count343
+\pgf@shadingcount=\count344
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box73
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box74
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen320
+\pgf@nodesepend=\dimen321
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen322
+\pgffor@skip=\dimen323
+\pgffor@stack=\toks40
+\pgffor@toks=\toks41
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count345
+\pgfplotmarksize=\dimen324
+)
+\tikz@lastx=\dimen325
+\tikz@lasty=\dimen326
+\tikz@lastxsaved=\dimen327
+\tikz@lastysaved=\dimen328
+\tikz@lastmovetox=\dimen329
+\tikz@lastmovetoy=\dimen330
+\tikzleveldistance=\dimen331
+\tikzsiblingdistance=\dimen332
+\tikz@figbox=\box75
+\tikz@figbox@bg=\box76
+\tikz@tempbox=\box77
+\tikz@tempbox@bg=\box78
+\tikztreelevel=\count346
+\tikznumberofchildren=\count347
+\tikznumberofcurrentchild=\count348
+\tikz@fig@count=\count349
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count350
+\pgfmatrixcurrentcolumn=\count351
+\pgf@matrix@numberofcolumns=\count352
+)
+\tikz@expandcount=\count353
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks42
+\verbatim@line=\toks43
+\verbatim@in@stream=\read3
+)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box79
+\tcb@upperbox=\box80
+\tcb@lowerbox=\box81
+\tcb@phantombox=\box82
+\c@tcbbreakpart=\count354
+\c@tcblayer=\count355
+\c@tcolorbox@number=\count356
+\l__tcobox_tmpa_box=\box83
+\l__tcobox_tmpa_dim=\dimen333
+\tcb@temp=\box84
+\tcb@temp=\box85
+\tcb@temp=\box86
+\tcb@temp=\box87
+
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.4.1'
+\c@tcbrastercolumn=\count357
+\c@tcbrasterrow=\count358
+\c@tcbrasternum=\count359
+\c@tcbraster=\count360
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.4.1'
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
+Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
+
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty
+Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.te
+x
+File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
+\l__tikzfill_img_box=\box88
+)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.4.1'
+)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.4.1'
+(/usr/share/texlive/texmf-dist/tex/latex/pdfcol/pdfcol.sty
+Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdfcol Info: Interface disabled because of missing PDF mode of pdfTeX.
+)
+Package pdfcol Info: pdfTeX's color stacks are not available.
+\tcb@testbox=\box89
+\tcb@totalupperbox=\box90
+\tcb@totallowerbox=\box91
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.4.1'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.4.1'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.4.1'
+\tcbfitdim=\dimen334
+\tcb@lowerfitdim=\dimen335
+\tcb@upperfitdim=\dimen336
+\tcb@cur@hbadness=\count361
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.4.1'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '6.4.1'
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count362
+\lst@gtempboxa=\box92
+\lst@token=\toks44
+\lst@length=\count363
+\lst@currlwidth=\dimen337
+\lst@column=\count364
+\lst@pos=\count365
+\lst@lostspace=\dimen338
+\lst@width=\dimen339
+\lst@newlines=\count366
+\lst@lineno=\count367
+\lst@maxwidth=\dimen340
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count368
+\lst@skipnumbers=\count369
+\lst@framebox=\box93
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
+Package: xeCJK-listings 2022/08/05 v3.9.1 xeCJK patch file for listings
+\l__xeCJK_listings_max_char_int=\count370
+\l__xeCJK_listings_flag_int=\count371
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.4.1'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.4.1'
+)
+\c@tcblisting=\count372
+))
+Package tcolorbox Info: Library `listingsutf8' is compatible with pdftex only. 
+Library `listings` is loaded instead. on input line 29.
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.4.1'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbmagazine.code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.4.1'
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbvignette.code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.4.1'
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code
+.tex
+File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.4.1'
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box94
+\beforetitleunit=\skip75
+\aftertitleunit=\skip76
+\ttl@plus=\dimen341
+\ttl@minus=\dimen342
+\ttl@toksa=\toks45
+\titlewidth=\dimen343
+\titlewidthlast=\dimen344
+\titlewidthfirst=\dimen345
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip77
+\f@nch@offset@elh=\skip78
+\f@nch@offset@erh=\skip79
+\f@nch@offset@olh=\skip80
+\f@nch@offset@orh=\skip81
+\f@nch@offset@elf=\skip82
+\f@nch@offset@erf=\skip83
+\f@nch@offset@olf=\skip84
+\f@nch@offset@orf=\skip85
+\f@nch@height=\skip86
+\f@nch@footalignment=\skip87
+\f@nch@widthL=\skip88
+\f@nch@widthC=\skip89
+\f@nch@widthR=\skip90
+\@temptokenb=\toks46
+)
+(/usr/share/texlive/texmf-dist/tex/latex/emptypage/emptypage.sty
+Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty 
+pages
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count373
+)
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen346
+\Hy@linkcounter=\count374
+\Hy@pagecounter=\count375
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count376
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4040.
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4424.
+\c@Hy@tempcnt=\count377
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen347
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count378
+\Field@Width=\dimen348
+\Fld@charsize=\dimen349
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count379
+\c@Item=\count380
+\c@Hfootnote=\count381
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2024-11-05 v7.01l Hyperref driver for XeTeX
+\pdfm@box=\box95
+\c@Hy@AnnotLevel=\count382
+\HyField@AnnotCount=\count383
+\Fld@listcount=\count384
+\c@bookmark@seq@number=\count385
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip91
+)
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
+File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
+\BKM@id=\count386
+))
+(/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip92
+\RaggedLeftLeftskip=\skip93
+\RaggedRightLeftskip=\skip94
+\CenteringRightskip=\skip95
+\RaggedLeftRightskip=\skip96
+\RaggedRightRightskip=\skip97
+\CenteringParfillskip=\skip98
+\RaggedLeftParfillskip=\skip99
+\RaggedRightParfillskip=\skip100
+\JustifyingParfillskip=\skip101
+\CenteringParindent=\skip102
+\RaggedLeftParindent=\skip103
+\RaggedRightParindent=\skip104
+\JustifyingParindent=\skip105
+)
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(/usr/share/texlive/texmf-dist/tex/latex/needspace/needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+Package hyperref Info: Option `unicode' set `true' on input line 55.
+Package hyperref Info: Option `colorlinks' set `true' on input line 55.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 55.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 55.
+ (./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+
+Package fontspec Info: 
+(fontspec)             Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup9
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 110.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 110.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 110.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 110.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 110.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 110.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 110.
+LaTeX Font Info:    Redeclaring math accent \check on input line 110.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 110.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 110.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 110.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 110.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 110.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 110.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/TeXGyreTermes(0)/m/n on input line 1
+10.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 110.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/TeXGyreTermes(0)/m/n on input line 
+110.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/TeXGyreTermes(0)/m/n --> TU/TeXGyreTermes(0)/m/n on 
+input line 110.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/TeXGyreTermes(0)/m/it on input line
+ 110.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/TeXGyreTermes(0)/b/n on input line 
+110.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/TeXGyreHeros(0)/m/n on input line 1
+10.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/TeXGyreCursor(0)/m/n on input line 
+110.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/TeXGyreTermes(0)/m/n --> TU/TeXGyreTermes(0)/b/n on 
+input line 110.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/TeXGyreTermes(0)/b/it on input lin
+e 110.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/TeXGyreHeros(0)/b/n on input line 
+110.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/TeXGyreCursor(0)/b/n on input line 
+110.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(59.75078pt, 433.90454pt, 48.36967pt)
+* v-part:(T,H,B)=(56.9055pt, 603.19844pt, 62.59605pt)
+* \paperwidth=542.025pt
+* \paperheight=722.7pt
+* \textwidth=433.90454pt
+* \textheight=603.19844pt
+* \oddsidemargin=-12.51921pt
+* \evensidemargin=-23.90031pt
+* \topmargin=-50.2814pt
+* \headheight=15.0pt
+* \headsep=19.91692pt
+* \topskip=11.0pt
+* \footskip=31.29802pt
+* \marginparwidth=116.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Info: Redefining \microtypecontext on input line 110.
+Package microtype Info: Applying patch `item' on input line 110.
+Package microtype Info: Applying patch `toc' on input line 110.
+Package microtype Info: Applying patch `eqnum' on input line 110.
+
+Package microtype Warning: Unable to apply patch `footnote' on input line 110.
+
+Package microtype Info: Applying patch `verbatim' on input line 110.
+LaTeX Info: Redefining \microtypesetup on input line 110.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `TeXGyreTermes' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+\c@lstlisting=\count387
+Package hyperref Info: Link coloring ON on input line 110.
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "Noto Sans CJK SC/I" (it
+(fontspec)             probably doesn't exist).
+
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `TeXGyreHeros' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Package fontspec Info: 
+(fontspec)             Font family 'NotoSansCJKSC(0)' created for font 'Noto
+(fontspec)             Sans CJK SC' with options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Noto Sans CJK
+(fontspec)             SC/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Noto Sans CJK
+(fontspec)             SC/B/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Noto Sans
+(fontspec)             CJK SC/BI/OT:script=hani;language=dflt;"
+
+
+
+[1
+
+
+]
+
+[2
+
+] (./chapters/preface.tex
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg))
+
+[3
+
+
+]
+
+[4
+
+] (./main.toc
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `PTSerif' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+
+
+[5]
+
+[6]
+
+[7]
+Underfull \vbox (badness 1014) has occurred while \output is active []
+
+
+
+[8])
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+
+
+[9]
+
+[10
+
+
+] (./chapters/introduction.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 6.
+
+
+
+[1
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 16.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[2]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 40.
+
+
+Underfull \vbox (badness 6859) has occurred while \output is active []
+
+
+
+[3]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 52.
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'NotoSerif(0)' created for font 'Noto
+(fontspec)             Serif' with options [].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Noto
+(fontspec)             Serif/OT:script=latn;language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->"Noto
+(fontspec)             Serif/OT:script=latn;language=dflt;+smcp;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Noto
+(fontspec)             Serif/B/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: <->"Noto
+(fontspec)             Serif/B/OT:script=latn;language=dflt;+smcp;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Noto
+(fontspec)             Serif/I/OT:script=latn;language=dflt;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->"Noto Serif/I/OT:script=latn;language=dflt;+smcp;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Noto
+(fontspec)             Serif/BI/OT:script=latn;language=dflt;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->"Noto Serif/BI/OT:script=latn;language=dflt;+smcp;"
+
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `NotoSerif' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/NotoSerif(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/NotoSerif(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/NotoSerif(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/NotoSerif(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/NotoSerif(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/NotoSerif(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Underfull \vbox (badness 3333) has occurred while \output is active []
+
+
+
+[4]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 77.
+
+
+Underfull \vbox (badness 4608) has occurred while \output is active []
+
+
+
+[5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 102.
+
+
+
+[6])
+
+[7] (./chapters/chapter1.tex
+
+[8
+
+
+]
+第一章
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Underfull \hbox (badness 4595) in paragraph at lines 16--16
+[]|\TU/TeXGyreTermes(0)/m/n/10 Suggested name (Math-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+\TU/TeXGyreTermes(0)/m/n/10 ematical Reviews tran-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+[]|\TU/TeXGyreTermes(0)/m/n/10 Corresponding
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+[]|\TU/TeXGyreTermes(0)/m/n/10 Corresponding
+ []
+
+[9]
+
+[10]
+
+[11]
+
+[12]
+
+[13]
+
+[14]
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
+
+
+[15]
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/9'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/9'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/9'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/9'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/9'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/9'.
+(microtype)             Ignoring protrusion settings for this character.
+
+
+[16])
+
+[17] (./chapters/chapter2.tex
+
+[18
+
+
+]
+第二章
+
+
+[19]
+
+[20] [21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[22]
+
+[23]
+
+[24]
+
+[25]
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/12'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/it/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+
+
+[26]
+
+[27]
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/14.4'.
+(microtype)             Ignoring protrusion settings for this character.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cyrillicfont' on input line 286.
+
+
+
+[28]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cyrillicfont' on input line 304.
+
+
+Underfull \vbox (badness 5490) has occurred while \output is active []
+
+
+
+[29]
+
+[30]
+
+[31]
+
+[32]
+
+[33]
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/10'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Underfull \hbox (badness 1888) in paragraph at lines 455--456
+[]\TU/TeXGyreTermes(0)/b/n/10 b) Nouns in \TU/PTSerif(0)/b/n/10 -ция \TU/TeXGyr
+eTermes(0)/b/n/10 “-tion”: \TU/PTSerif(0)/m/n/10 абстра́кция, аксиоматиза́ция, 
+аппроксима́ция, вариа́ция,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
+\TU/PTSerif(0)/m/n/10 девиа́ция, идентифика́ция, инду́кция, информа́ция, итера́
+ция, классифика́ция,
+ []
+
+
+Underfull \hbox (badness 3803) in paragraph at lines 455--456
+\TU/PTSerif(0)/m/n/10 компактифика́ция, конструкция, корреля́ция, линеариза́ция
+, минимиза́ция, опера́ция,
+ []
+
+
+Underfull \hbox (badness 3449) in paragraph at lines 457--458
+[]\TU/TeXGyreTermes(0)/b/n/10 c) Nouns in \TU/PTSerif(0)/b/n/10 -ивность \TU/Te
+XGyreTermes(0)/b/n/10 “-ivity”: \TU/PTSerif(0)/m/n/10 аддити́вность, ассоциати́
+вность, дистрибути́вность,
+ []
+
+
+Underfull \hbox (badness 7851) in paragraph at lines 461--462
+\TU/PTSerif(0)/m/n/10 детермина́нт, диа́метр, дискримина́нт, дифференциа́л, иде
+а́л, изоморфи́зм, и́ндекс,
+ []
+
+
+Underfull \hbox (badness 3769) in paragraph at lines 461--462
+\TU/PTSerif(0)/m/n/10 интегра́л, интерва́л, класс, компоне́нт, конти́нуум, ко́с
+мос, коэффицие́нт, ма́ксимум,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+\TU/PTSerif(0)/m/n/10 сегме́нт, силлоги́зм, си́мплекс, спектр, факт, фа́ктор, ф
+акториа́л, фо́кус, фу́нктор,
+ []
+
+
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
+[]\TU/TeXGyreTermes(0)/b/n/10 f) Adjectives in \TU/PTSerif(0)/b/n/10 -ивный \TU
+/TeXGyreTermes(0)/b/n/10 “-ive”: \TU/PTSerif(0)/m/n/10 аддити́вный, дедукти́вны
+й, конструкти́вный,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
+[]\TU/TeXGyreTermes(0)/b/n/10 h) Adjectives in \TU/PTSerif(0)/b/n/10 -альный\TU
+/TeXGyreTermes(0)/b/n/10 : \TU/PTSerif(0)/m/n/10 вертика́льный, дифференциа́льн
+ый, интегра́льный,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
+\TU/PTSerif(0)/m/n/10 инфинитезима́льный, лока́льный, минима́льный, натура́льны
+й, норма́льный,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
+\TU/PTSerif(0)/m/n/10 пропорциона́льный, рациона́льный, спектра́льный, специа́л
+ьный, тривиа́льный,
+ []
+
+
+Underfull \hbox (badness 5548) in paragraph at lines 469--470
+[]\TU/TeXGyreTermes(0)/b/n/10 i) Other adjectives in \TU/PTSerif(0)/b/n/10 -ный
+\TU/TeXGyreTermes(0)/b/n/10 : \TU/PTSerif(0)/m/n/10 абсолю́тный, аналоги́чный, 
+бина́рный, дискре́тный,
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 471--473
+[]\TU/TeXGyreTermes(0)/b/n/10 j) Adjectives in \TU/PTSerif(0)/b/n/10 -ический \
+TU/TeXGyreTermes(0)/b/n/10 “-ic/-ical”: \TU/PTSerif(0)/m/n/10 алгебраи́ческий, 
+логи́ческий, геометри́ческий,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--473
+\TU/PTSerif(0)/m/n/10 гиперболи́ческий, канони́ческий, класси́ческий, логарифми
+́ческий, математи́ческий,
+ []
+
+[35])
+
+[36] (./chapters/chapter3.tex
+第三章
+
+
+[37
+
+
+]
+Underfull \hbox (badness 1845) in paragraph at lines 51--51
+[]|\TU/TeXGyreTermes(0)/m/n/10 by means of a
+ []
+
+
+Underfull \hbox (badness 1845) in paragraph at lines 51--52
+[]|\TU/TeXGyreTermes(0)/m/n/10 by means of a
+ []
+
+
+
+[38]
+
+[39]
+
+[40] [41]
+
+[42]
+Underfull \vbox (badness 5741) has occurred while \output is active []
+
+
+
+[43]
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
+
+
+[44] [45]
+
+[46]
+
+[47]
+Underfull \hbox (badness 7944) in paragraph at lines 451--452
+\TU/TeXGyreTermes(0)/m/it/10.95 real\TU/TeXGyreTermes(0)/m/n/10.95 , \TU/PTSeri
+f(0)/m/n/10.95 доста́точный \TU/TeXGyreTermes(0)/m/it/10.95 sufficient\TU/TeXGy
+reTermes(0)/m/n/10.95 , \TU/PTSerif(0)/m/n/10.95 еди́нственный \TU/TeXGyreTerme
+s(0)/m/it/10.95 unique\TU/TeXGyreTermes(0)/m/n/10.95 , \TU/PTSerif(0)/m/n/10.95
+ положи́тельный \TU/TeXGyreTermes(0)/m/it/10.95 positive\TU/TeXGyreTermes(0)/m/
+n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
+\TU/PTSerif(0)/m/n/10.95 поля́рный \TU/TeXGyreTermes(0)/m/it/10.95 polar\TU/TeX
+GyreTermes(0)/m/n/10.95 , \TU/PTSerif(0)/m/n/10.95 пропорциона́льный \TU/TeXGyr
+eTermes(0)/m/it/10.95 proportional\TU/TeXGyreTermes(0)/m/n/10.95 , \TU/PTSerif(
+0)/m/n/10.95 симметри́чный \TU/TeXGyreTermes(0)/m/it/10.95 symmetric\TU/TeXGyre
+Termes(0)/m/n/10.95 ,
+ []
+
+
+
+[48]
+
+[49]
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 573--575
+[]\TU/PTSerif(0)/m/it/10 Комбинаторный анализ, биномиальные коэффициенты, комби
+наторные функции,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 576--580
+[]\TU/PTSerif(0)/m/it/10 Коммутативные алгебры, гомологические методы, алгебраи
+ческая геометрия,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 576--580
+\TU/PTSerif(0)/m/it/10 абстрактные дифференцирования, позитивные матрицы, квадр
+атичные формы,
+ []
+
+
+Underfull \hbox (badness 2865) in paragraph at lines 576--580
+\TU/PTSerif(0)/m/it/10 мультилинейная алгебра, ассоциативные алгебры, гомологич
+еская алгебра, абстрактные
+ []
+
+
+Underfull \hbox (badness 3189) in paragraph at lines 584--589
+[]\TU/PTSerif(0)/m/it/10 Элементарные функции, монотонные функции, алгебраическ
+ие функции, модулярные
+ []
+
+
+Underfull \hbox (badness 5607) in paragraph at lines 584--589
+\TU/PTSerif(0)/m/it/10 функции, экстремальные проблемы, супергармонические функ
+ции, специальные функции,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 584--589
+\TU/PTSerif(0)/m/it/10 эллиптические функции, гипергеометрические функции, цили
+ндрические функции,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 594--597
+[]\TU/PTSerif(0)/m/it/10 Специальные геометрии, дифференциальная геометрия, тен
+зорный анализ,
+ []
+
+
+Underfull \hbox (badness 2671) in paragraph at lines 594--597
+\TU/PTSerif(0)/m/it/10 дифференциальные инварианты, локальная теория, геометрич
+еские объекты, глобальная
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--601
+[]\TU/PTSerif(0)/m/it/10 Локальная компактность, топологическая динамика, алгеб
+раическая топология,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--601
+\TU/PTSerif(0)/m/it/10 когомологические операции, геометрическая топология, диф
+ференцируемые структуры,
+ []
+
+
+Underfull \hbox (badness 3536) in paragraph at lines 602--604
+[]\TU/PTSerif(0)/m/it/10 Стохастические процессы, математическая статистика, ас
+имптотическая теория,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 605--609
+[]\TU/PTSerif(0)/m/it/10 Математическое программирование, графические методы, г
+армонический анализ,
+ []
+
+
+Underfull \vbox (badness 4084) has occurred while \output is active []
+
+
+
+[51]
+
+[52]
+Underfull \hbox (badness 2875) in paragraph at lines 642--644
+[]\TU/PTSerif(0)/m/n/10.95 зада́ча сво́дится к тако́му вы́бору фу́нкции, при ко
+то́ром интегра́л име́ет
+ []
+
+
+
+[53]
+Underfull \hbox (badness 1460) in paragraph at lines 674--675
+[]\TU/TeXGyreTermes(0)/m/n/10.95 Examples are: \TU/PTSerif(0)/m/n/10.95 тот же 
+детермина́нт \TU/TeXGyreTermes(0)/m/it/10.95 the same determinant \TU/TeXGyreTe
+rmes(0)/m/n/10.95 (note the derived words
+ []
+
+
+
+[54]
+
+[55]
+
+[56]
+
+[57]
+
+[58]
+
+[59]
+
+[60]
+
+[61]
+
+[62]
+Underfull \hbox (badness 1490) in paragraph at lines 983--985
+[]\TU/PTSerif(0)/m/n/10 мы изло́жим не́которые вопро́сы тео́рии обобщённых фу́н
+кций, постро́енной С. Л.
+ []
+
+
+
+[63])
+
+[64] (./chapters/chapter4.tex
+第四章
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]|\TU/PTSerif(0)/m/n/10.95 бу́дем получа́ть не́которые
+ []
+
+
+
+[65
+
+
+]
+
+[66]
+
+[67]
+
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
+[]|\TU/PTSerif(0)/m/n/9 пользоваться $\OMS/cmsy/m/n/9 ^^X$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
+[]|\TU/PTSerif(0)/m/n/9 регистрировать $\OMS/cmsy/m/n/9 ^^X$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]|\TU/PTSerif(0)/m/n/9 пробовать $\OMS/cmsy/m/n/9 ^^X$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
+[]|\TU/PTSerif(0)/m/n/9 характеризовать $\OMS/cmsy/m/n/9 ^^X$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--105
+[]|\TU/PTSerif(0)/m/n/9 редактировать $\OMS/cmsy/m/n/9 ^^X$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--106
+[]|\TU/PTSerif(0)/m/n/9 пере- (or
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--108
+[]|\TU/PTSerif(0)/m/n/9 готовить $\OMS/cmsy/m/n/9 ^^X$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
+[]|\TU/PTSerif(0)/m/n/9 близиться $\OMS/cmsy/m/n/9 ^^X$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--111
+[]|\TU/PTSerif(0)/m/n/9 диф-ференци́ровать
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--111
+\OMS/cmsy/m/n/9 ^^X$ \TU/PTSerif(0)/m/n/9 про-диф-
+ []
+
+[69]
+Underfull \hbox (badness 1831) in paragraph at lines 125--125
+\TU/TeXGyreTermes(0)/m/n/9 fective verb (perfec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--125
+[]|\TU/TeXGyreTermes(0)/m/n/9 Lexical com-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--129
+[]|\TU/PTSerif(0)/m/n/9 будить
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
+[]|\TU/PTSerif(0)/m/n/9 делить
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+[]|\TU/PTSerif(0)/m/n/9 делить
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--144
+[]|\TU/PTSerif(0)/m/n/9 смотреть
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
+[]|\TU/TeXGyreTermes(0)/m/n/9 bend, in-
+ []
+
+
+
+[70]
+Underfull \hbox (badness 2359) in paragraph at lines 158--159
+[]\TU/TeXGyreTermes(0)/m/n/10.95 Some lexical compounds are loan-translated fro
+m Latin verbs with two prefixes, e.g.
+ []
+
+)
+
+[71] (./chapters/chapter5.tex
+
+[72
+
+
+]
+第五章
+
+
+[73]
+Underfull \hbox (badness 6125) in paragraph at lines 45--46
+\TU/PTSerif(0)/m/n/10.95 введе́ние \TU/TeXGyreTermes(0)/m/n/10.95 introduction;
+ \TU/PTSerif(0)/m/n/10.95 выводи́ть \TU/TeXGyreTermes(0)/m/n/10.95 deduce; \TU/
+PTSerif(0)/m/n/10.95 вы́вод \TU/TeXGyreTermes(0)/m/n/10.95 deduction; \TU/PTSer
+if(0)/m/n/10.95 приводи́ть \TU/TeXGyreTermes(0)/m/n/10.95 reduce to;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+\TU/PTSerif(0)/m/n/10.95 неприводи́мый \TU/TeXGyreTermes(0)/m/n/10.95 irreducib
+le; \TU/PTSerif(0)/m/n/10.95 поведе́ние \TU/TeXGyreTermes(0)/m/n/10.95 conduct,
+ behaviour; \TU/PTSerif(0)/m/n/10.95 производи́ть \TU/TeXGyreTermes(0)/m/n/10.9
+5 produce;
+ []
+
+
+
+[74]
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+\TU/PTSerif(0)/m/n/10.95 носи́тель \TU/TeXGyreTermes(0)/m/n/10.95 carrier; \TU/
+PTSerif(0)/m/n/10.95 относи́ть \TU/TeXGyreTermes(0)/m/n/10.95 relate; \TU/PTSer
+if(0)/m/n/10.95 отноше́ние \TU/TeXGyreTermes(0)/m/n/10.95 relation; \TU/PTSerif
+(0)/m/n/10.95 относи́тельно \TU/TeXGyreTermes(0)/m/n/10.95 relatively;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+\TU/PTSerif(0)/m/n/10.95 относи́тельность \TU/TeXGyreTermes(0)/m/n/10.95 relati
+vity; \TU/PTSerif(0)/m/n/10.95 переноси́ть \TU/TeXGyreTermes(0)/m/n/10.95 trans
+fer; \TU/PTSerif(0)/m/n/10.95 перено́с \TU/TeXGyreTermes(0)/m/n/10.95 transfere
+nce, translation;
+ []
+
+
+
+[75]
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+[]\TU/PTSerif(0)/m/n/10.95 обобще́ние рима́новой геоме́трии применя́ется в о́бщ
+ей тео́рии
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--129
+[]|\TU/PTSerif(0)/m/n/10 превосходить все числа
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+[]|\TU/TeXGyreTermes(0)/m/n/10 necessary (unavoidable)
+ []
+
+
+Underfull \hbox (badness 1132) in paragraph at lines 136--136
+[]|\TU/TeXGyreTermes(0)/m/n/10 go up to, approach;
+ []
+
+
+Underfull \hbox (badness 1803) in paragraph at lines 138--139
+[]|\TU/TeXGyreTermes(0)/m/n/10 a line passing through a
+ []
+
+[76]
+Underfull \hbox (badness 4341) in paragraph at lines 149--150
+\TU/PTSerif(0)/m/n/10.95 входи́ть \TU/TeXGyreTermes(0)/m/n/10.95 enter; \TU/PTS
+erif(0)/m/n/10.95 выходи́ть \TU/TeXGyreTermes(0)/m/n/10.95 issue; \TU/PTSerif(0
+)/m/n/10.95 исходи́ть \TU/TeXGyreTermes(0)/m/n/10.95 start; \TU/PTSerif(0)/m/n/
+10.95 исхо́дный \TU/TeXGyreTermes(0)/m/n/10.95 initial; \TU/PTSerif(0)/m/n/10.9
+5 находи́ть \TU/TeXGyreTermes(0)/m/n/10.95 find;
+ []
+
+
+
+[77]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cyrillicfont' on input line 188.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--216
+[]|\TU/PTSerif(0)/m/n/10 уравнение принимает
+ []
+
+[78]
+
+[79]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cyrillicfont' on input line 255.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cyrillicfont' on input line 255.
+
+
+
+[80]
+Underfull \hbox (badness 10000) in paragraph at lines 279--279
+[]|\TU/TeXGyreTermes(0)/m/n/10 remove brackets;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
+[]|\TU/TeXGyreTermes(0)/m/n/10 applicable/developable
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--285
+[]|\TU/PTSerif(0)/m/n/10 предлагать задачу;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
+[]|\TU/TeXGyreTermes(0)/m/n/10 propose a problem;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 289--289
+[]|\TU/PTSerif(0)/m/n/10 разложение по формуле
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
+[]|\TU/TeXGyreTermes(0)/m/n/10 dispose, order,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--290
+[]|\TU/PTSerif(0)/m/n/10 парабола расположена
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--291
+[]|\TU/PTSerif(0)/m/n/10 слагаемое; сложение
+ []
+
+
+Underfull \hbox (badness 1019) in paragraph at lines 300--301
+\TU/PTSerif(0)/m/n/10.95 вложи́ть \TU/TeXGyreTermes(0)/m/n/10.95 impose, imbed;
+ \TU/PTSerif(0)/m/n/10.95 вложе́ние \TU/TeXGyreTermes(0)/m/n/10.95 imbedding; \
+TU/PTSerif(0)/m/n/10.95 изложи́ть \TU/TeXGyreTermes(0)/m/n/10.95 explain; \TU/P
+TSerif(0)/m/n/10.95 отложи́ть \TU/TeXGyreTermes(0)/m/n/10.95 lay aside,
+ []
+
+
+Underfull \hbox (badness 6125) in paragraph at lines 300--301
+\TU/TeXGyreTermes(0)/m/n/10.95 postpone; \TU/PTSerif(0)/m/n/10.95 положе́ние \T
+U/TeXGyreTermes(0)/m/n/10.95 position; \TU/PTSerif(0)/m/n/10.95 противополо́жны
+й \TU/TeXGyreTermes(0)/m/n/10.95 opposite; \TU/PTSerif(0)/m/n/10.95 положи́тель
+ный \TU/TeXGyreTermes(0)/m/n/10.95 posi-
+ []
+
+
+
+[81]
+Underfull \hbox (badness 7486) in paragraph at lines 315--317
+[]\TU/PTSerif(0)/m/n/10.95 кольцо́ называ́ется упоря́доченным, е́сли для его́ э
+леме́нтов определено́
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[82]
+Underfull \hbox (badness 1062) in paragraph at lines 360--361
+[]|\TU/TeXGyreTermes(0)/m/n/10 it is natural to ask the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--361
+[]|\TU/PTSerif(0)/m/n/10 восстановить
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--367
+[]|\TU/PTSerif(0)/m/n/10 переставить элементы
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--368
+[]|\TU/PTSerif(0)/m/n/10 подставляя формулу в
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--370
+[]|\TU/PTSerif(0)/m/n/10 расстановка точек на
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 371--371
+[]|\TU/PTSerif(0)/m/n/10 детерминант, составленный
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
+[]|\TU/TeXGyreTermes(0)/m/n/10 determinant composed
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--372
+[]|\TU/PTSerif(0)/m/n/10 соответствие сопоставляет
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
+[]|\TU/TeXGyreTermes(0)/m/n/10 correspondence asso-
+ []
+
+
+
+[83]
+Underfull \hbox (badness 4779) in paragraph at lines 385--386
+[]|\TU/PTSerif(0)/m/n/10 вскрывать недостатки ``discover short-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+[]|\TU/PTSerif(0)/m/n/10 восстанавливать $\OMS/cmsy/m/n/10 ^^X$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--389
+[]|\TU/PTSerif(0)/m/n/10 останавливаться $\OMS/cmsy/m/n/10 ^^X$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--390
+[]|\TU/PTSerif(0)/m/n/10 устанавливать $\OMS/cmsy/m/n/10 ^^X$
+ []
+
+
+
+[84]
+Underfull \hbox (badness 5189) in paragraph at lines 423--425
+[]\TU/PTSerif(0)/m/n/10.95 гла́вные криви́зны меня́ют свои́ значе́ния, но их пр
+оизведе́ние остаётся
+ []
+
+
+
+[85]
+Underfull \hbox (badness 3428) in paragraph at lines 449--450
+\TU/PTSerif(0)/m/n/10.95 ра́вный \TU/TeXGyreTermes(0)/m/n/10.95 equal; \TU/PTSe
+rif(0)/m/n/10.95 равня́ться \TU/TeXGyreTermes(0)/m/n/10.95 be equal to; \TU/PTS
+erif(0)/m/n/10.95 раве́нство \TU/TeXGyreTermes(0)/m/n/10.95 equality; \TU/PTSer
+if(0)/m/n/10.95 нера́венство \TU/TeXGyreTermes(0)/m/n/10.95 inequality;
+ []
+
+
+Underfull \vbox (badness 2856) has occurred while \output is active []
+
+
+
+[86]
+Underfull \hbox (badness 1331) in paragraph at lines 506--508
+[]\TU/PTSerif(0)/m/n/10.95 е́сли по не́которому пра́вилу ка́ждому значе́нию $\O
+ML/cmm/m/it/10.95 x$ \TU/PTSerif(0)/m/n/10.95 ста́вится в соотве́тствие
+ []
+
+
+
+[87]
+
+[88]
+Underfull \hbox (badness 1077) in paragraph at lines 555--556
+\TU/PTSerif(0)/m/n/10.95 едини́ца \TU/TeXGyreTermes(0)/m/n/10.95 unity; \TU/PTS
+erif(0)/m/n/10.95 едини́чный \TU/TeXGyreTermes(0)/m/n/10.95 unit; \TU/PTSerif(0
+)/m/n/10.95 еди́нственный \TU/TeXGyreTermes(0)/m/n/10.95 unique; \TU/PTSerif(0)
+/m/n/10.95 еди́нственность \TU/TeXGyreTermes(0)/m/n/10.95 uniqueness;
+ []
+
+
+Underfull \hbox (badness 4505) in paragraph at lines 555--556
+\TU/PTSerif(0)/m/n/10.95 объединя́ть \TU/TeXGyreTermes(0)/m/n/10.95 unite; \TU/
+PTSerif(0)/m/n/10.95 объедине́ние \TU/TeXGyreTermes(0)/m/n/10.95 union; \TU/PTS
+erif(0)/m/n/10.95 одина́ковый \TU/TeXGyreTermes(0)/m/n/10.95 identical/equal; \
+TU/PTSerif(0)/m/n/10.95 однозна́чный
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
+\TU/TeXGyreTermes(0)/m/n/10.95 one-valued; \TU/PTSerif(0)/m/n/10.95 одноро́дный
+ \TU/TeXGyreTermes(0)/m/n/10.95 uniform/homogeneous (\TU/PTSerif(0)/m/n/10.95 н
+еодноро́дный \TU/TeXGyreTermes(0)/m/n/10.95 inhomogeneous);
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 568--570
+[]\TU/PTSerif(0)/m/n/10.95 объедине́нием мно́жеств $\OML/cmm/m/it/10.95 A$ \TU/
+PTSerif(0)/m/n/10.95 и $\OML/cmm/m/it/10.95 B$ \TU/PTSerif(0)/m/n/10.95 называ́
+ется мно́жество элеме́нтов,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 570--572
+[]\TU/PTSerif(0)/m/n/10.95 ве́кторы называ́ются ра́вными, е́сли они́ име́ют оди
+на́ковые дли́ны и
+ []
+
+
+
+[89]
+Underfull \hbox (badness 1320) in paragraph at lines 586--586
+[][]\TU/NotoSerifCJKSC(0)/b/n/10 校 勘：|  \TU/NotoSerifCJKSC(0)/m/n/10 原 文 此 句 写 
+\TU/NotoSerif(0)/m/n/10 ``five adjectives\TU/NotoSerifCJKSC(0)/m/n/10 ，|  但 紧 接
+ 着 实 际 列 出 六 个：| \TU/PTSerif(0)/m/n/10 близкий, долгий, общий,
+ []
+
+
+
+[90]
+
+[91]
+Underfull \hbox (badness 2617) in paragraph at lines 659--660
+[]\TU/PTSerif(0)/m/n/10.95 расстоя́ние ме́жду ордина́тами асимпто́т и соответст
+ву́ющими ордина́тами
+ []
+
+
+
+[92]
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
+[]|\TU/PTSerif(0)/m/n/10 фундаментальная задача
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 695--696
+[]|\TU/PTSerif(0)/m/n/10 придать приращение
+ []
+
+
+
+[93]
+Underfull \hbox (badness 10000) in paragraph at lines 729--730
+[]\TU/PTSerif(0)/m/n/10.95 при́знаком перпендикуля́рности ве́кторов явля́ется р
+аве́нство нулю́ их
+ []
+
+
+Underfull \hbox (badness 1412) in paragraph at lines 734--735
+[]\TU/PTSerif(0)/m/n/10.95 отка́жемся от тре́бования однозна́чности \TU/TeXGyre
+Termes(0)/m/n/10.95 — we discard the requirement of one-
+ []
+
+
+
+[94]
+Underfull \hbox (badness 4726) in paragraph at lines 762--763
+\OMS/cmsy/m/n/10.95 ^^X$ \TU/PTSerif(0)/m/n/10.95 доказа́ть \TU/TeXGyreTermes(0
+)/m/n/10.95 prove (\TU/PTSerif(0)/m/n/10.95 доказа́тельство \TU/TeXGyreTermes(0
+)/m/n/10.95 proof; \TU/PTSerif(0)/m/n/10.95 что и тре́бовалось доказа́ть \TU/Te
+XGyreTermes(0)/m/n/10.95 which in
+ []
+
+
+Underfull \hbox (badness 1616) in paragraph at lines 762--763
+\TU/TeXGyreTermes(0)/m/n/10.95 fact it was required to prove); \TU/PTSerif(0)/m
+/n/10.95 ока́зываться $\OMS/cmsy/m/n/10.95 ^^X$ \TU/PTSerif(0)/m/n/10.95 оказа́
+ться \TU/TeXGyreTermes(0)/m/n/10.95 turn out (\TU/PTSerif(0)/m/n/10.95 ока́зыва
+ется, что
+ []
+
+
+Underfull \hbox (badness 1715) in paragraph at lines 762--763
+\TU/PTSerif(0)/m/n/10.95 от тре́бования\TU/TeXGyreTermes(0)/m/n/10.95 ); \TU/PT
+Serif(0)/m/n/10.95 пока́зывать $\OMS/cmsy/m/n/10.95 ^^X$ \TU/PTSerif(0)/m/n/10.
+95 показа́ть \TU/TeXGyreTermes(0)/m/n/10.95 expound, show (\TU/PTSerif(0)/m/n/1
+0.95 Евкли́д показа́л, что …\TU/TeXGyreTermes(0)/m/n/10.95 ;
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 766--767
+\TU/TeXGyreTermes(0)/m/n/10.95 is \TU/PTSerif(0)/m/n/10.95 открыва́ть $\OMS/cms
+y/m/n/10.95 ^^X$ \TU/PTSerif(0)/m/n/10.95 откры́ть \TU/TeXGyreTermes(0)/m/n/10.
+95 uncover, open; compare \TU/PTSerif(0)/m/n/10.95 откры́тое покры́тие \TU/TeXG
+yreTermes(0)/m/n/10.95 an open cover-
+ []
+
+
+
+[95]
+
+[96]
+
+[97]
+Underfull \hbox (badness 10000) in paragraph at lines 850--851
+[]\TU/TeXGyreTermes(0)/m/n/10.95 Various derived words are \TU/PTSerif(0)/m/n/1
+0.95 сле́довательно \TU/TeXGyreTermes(0)/m/n/10.95 consequently, \TU/PTSerif(0)
+/m/n/10.95 сле́дствие \TU/TeXGyreTermes(0)/m/n/10.95 corollary,
+ []
+
+
+Underfull \hbox (badness 3525) in paragraph at lines 850--851
+\TU/PTSerif(0)/m/n/10.95 после́довательность \TU/TeXGyreTermes(0)/m/n/10.95 seq
+uence, \TU/PTSerif(0)/m/n/10.95 после́довательный \TU/TeXGyreTermes(0)/m/n/10.9
+5 successive, \TU/PTSerif(0)/m/n/10.95 после́довательно \TU/TeXGyreTermes(0)/m/
+n/10.95 suc-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 852--853
+[]\TU/TeXGyreTermes(0)/m/n/10.95 Sentences illustrating a) \TU/PTSerif(0)/m/n/1
+0.95 сле́довать \TU/TeXGyreTermes(0)/m/n/10.95 follow, b) \TU/PTSerif(0)/m/n/10
+.95 сле́дствие \TU/TeXGyreTermes(0)/m/n/10.95 corollary, c)
+ []
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 852--853
+\TU/PTSerif(0)/m/n/10.95 после́довательность \TU/TeXGyreTermes(0)/m/n/10.95 seq
+uence, d) \TU/PTSerif(0)/m/n/10.95 после́дний \TU/TeXGyreTermes(0)/m/n/10.95 la
+st, e) \TU/PTSerif(0)/m/n/10.95 всле́дствие \TU/TeXGyreTermes(0)/m/n/10.95 as a
+ consequence of,
+ []
+
+
+
+[98]
+Underfull \hbox (badness 4872) in paragraph at lines 860--861
+[]\TU/PTSerif(0)/m/n/10.95 мы после́довательно определи́м це́лые, рациона́льные
+, де́йствительные и
+ []
+
+
+Underfull \hbox (badness 7631) in paragraph at lines 896--897
+[]|\TU/PTSerif(0)/m/n/10 ограни́чивать $\OMS/cmsy/m/n/10 ^^X$ \TU/PTSerif(0)/m/
+n/10 ограни́чить\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 грани́ца\TU
+/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 грани́чный\TU/TeXGyreTermes(0)
+/m/n/10 ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 900--901
+[]|\TU/PTSerif(0)/m/n/10 понадо́биться \TU/TeXGyreTermes(0)/m/n/10 be necessary
+; \TU/PTSerif(0)/m/n/10 подо́бие\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/
+n/10 подо́бный\TU/TeXGyreTermes(0)/m/n/10 ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 902--903
+[]|\TU/PTSerif(0)/m/n/10 клони́ть\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m
+/n/10 отклоня́ть $\OMS/cmsy/m/n/10 ^^X$ \TU/PTSerif(0)/m/n/10 отклони́ть\TU/TeX
+GyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 наклоня́ть $\OMS/cmsy/m/n/10 ^^X$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 903--904
+[]|\TU/PTSerif(0)/m/n/10 включа́ть $\OMS/cmsy/m/n/10 ^^X$ \TU/PTSerif(0)/m/n/10
+ включи́ть\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 включе́ние\TU/TeX
+GyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 включи́тельно\TU/TeXGyreTermes(0)/
+m/n/10 ;
+ []
+
+
+Underfull \hbox (badness 3049) in paragraph at lines 903--904
+\TU/PTSerif(0)/m/n/10 заключа́ть $\OMS/cmsy/m/n/10 ^^X$ \TU/PTSerif(0)/m/n/10 з
+аключи́ть\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 заключе́ние\TU/TeX
+GyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 исключа́ть $\OMS/cmsy/m/n/10 ^^X$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 907--908
+[]|\TU/PTSerif(0)/m/n/10 по́льзоваться $\OMS/cmsy/m/n/10 ^^X$ \TU/PTSerif(0)/m/
+n/10 воспо́льзоваться\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 испо́л
+ьзовать\TU/TeXGyreTermes(0)/m/n/10 ;
+ []
+
+
+Underfull \hbox (badness 1946) in paragraph at lines 910--911
+[]|\TU/PTSerif(0)/m/n/10 перемеща́ть $\OMS/cmsy/m/n/10 ^^X$ \TU/PTSerif(0)/m/n/
+10 перемести́ть\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 ме́сто\TU/Te
+XGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 вме́сте\TU/TeXGyreTermes(0)/m/n/1
+0 ; \TU/PTSerif(0)/m/n/10 вме́сто\TU/TeXGyreTermes(0)/m/n/10 ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 911--912
+[]|\TU/PTSerif(0)/m/n/10 замыка́ть $\OMS/cmsy/m/n/10 ^^X$ \TU/PTSerif(0)/m/n/10
+ замкну́ть\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 замыка́ние\TU/TeX
+GyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 за́мкнутый\TU/TeXGyreTermes(0)/m/n
+/10 ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 918--919
+[]|\TU/PTSerif(0)/m/n/10 сопряга́ть $\OMS/cmsy/m/n/10 ^^X$ \TU/PTSerif(0)/m/n/1
+0 сопря́чь\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 сопряжённый опера
+́тор\TU/TeXGyreTermes(0)/m/n/10 ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 919--920
+[]|\TU/PTSerif(0)/m/n/10 спрямля́ть $\OMS/cmsy/m/n/10 ^^X$ \TU/PTSerif(0)/m/n/1
+0 спрями́ть\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 спрямля́ющая пло
+́скость\TU/TeXGyreTermes(0)/m/n/10 ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 922--923
+[]|\TU/PTSerif(0)/m/n/10 порожда́ть $\OMS/cmsy/m/n/10 ^^X$ \TU/PTSerif(0)/m/n/1
+0 породи́ть\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 род\TU/TeXGyreTe
+rmes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 одноро́дный\TU/TeXGyreTermes(0)/m/n/10 ;
+
+ []
+
+
+Underfull \hbox (badness 2564) in paragraph at lines 928--929
+[]|\TU/PTSerif(0)/m/n/10 ты́кать $\OMS/cmsy/m/n/10 ^^X$ \TU/PTSerif(0)/m/n/10 т
+кну́ть\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 то́чка\TU/TeXGyreTerm
+es(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 то́чность\TU/TeXGyreTermes(0)/m/n/10 ; \TU
+/PTSerif(0)/m/n/10 то́чный\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 т
+о́чно\TU/TeXGyreTermes(0)/m/n/10 ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 929--930
+[]|\TU/PTSerif(0)/m/n/10 изуча́ть $\OMS/cmsy/m/n/10 ^^X$ \TU/PTSerif(0)/m/n/10 
+изучи́ть\TU/TeXGyreTermes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 нау́ка\TU/TeXGyreTe
+rmes(0)/m/n/10 ; \TU/PTSerif(0)/m/n/10 обы́чный\TU/TeXGyreTermes(0)/m/n/10 ; \T
+U/PTSerif(0)/m/n/10 обы́чно\TU/TeXGyreTermes(0)/m/n/10 ;
+ []
+
+[99] [100]
+Underfull \hbox (badness 1210) in paragraph at lines 944--945
+\TU/PTSerif(0)/m/n/10.95 о́крестность \TU/TeXGyreTermes(0)/m/n/10.95 neighbourh
+ood; \TU/PTSerif(0)/m/n/10.95 ось \TU/TeXGyreTermes(0)/m/n/10.95 axis; \TU/PTSe
+rif(0)/m/n/10.95 оши́бка \TU/TeXGyreTermes(0)/m/n/10.95 error; \TU/PTSerif(0)/m
+/n/10.95 ско́бка \TU/TeXGyreTermes(0)/m/n/10.95 bracket; \TU/PTSerif(0)/m/n/10.
+95 ско́рость \TU/TeXGyreTermes(0)/m/n/10.95 speed;
+ []
+
+
+Underfull \hbox (badness 1057) in paragraph at lines 947--948
+\TU/PTSerif(0)/m/n/10.95 кольцо́ \TU/TeXGyreTermes(0)/m/n/10.95 ring (\TU/PTSer
+if(0)/m/n/10.95 подкольцо́ \TU/TeXGyreTermes(0)/m/n/10.95 subring); \TU/PTSerif
+(0)/m/n/10.95 по́ле \TU/TeXGyreTermes(0)/m/n/10.95 field (\TU/PTSerif(0)/m/n/10
+.95 подпо́ле \TU/TeXGyreTermes(0)/m/n/10.95 subfield); \TU/PTSerif(0)/m/n/10.95
+ простра́нство \TU/TeXGyreTermes(0)/m/n/10.95 space
+ []
+
+
+
+[101])
+
+[102] (./chapters/readingsA.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[103
+
+
+]
+
+[104]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 49.
+
+File: assets_readingsA/figA1.png Graphic file (type bmp)
+<assets_readingsA/figA1.png>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 71.
+
+
+
+[105
+
+]
+File: assets_readingsA/figA2.png Graphic file (type bmp)
+<assets_readingsA/figA2.png>
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 89.
+
+File: assets_readingsA/figA3.png Graphic file (type bmp)
+<assets_readingsA/figA3.png>
+
+
+[106]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 102.
+
+File: assets_readingsA/figA4.png Graphic file (type bmp)
+<assets_readingsA/figA4.png>
+
+
+[107]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 122.
+
+
+Underfull \hbox (badness 1629) in paragraph at lines 124--125
+[]\TU/PTSerif(0)/m/n/10.95 Пусть $\OML/cmm/m/it/10.95 Ox$ \TU/PTSerif(0)/m/n/10
+.95 и $\OML/cmm/m/it/10.95 Oy$ \TU/PTSerif(0)/m/n/10.95 --- старые, а $\OML/cmm
+/m/it/10.95 Ox[]; Oy[]$ \TU/PTSerif(0)/m/n/10.95 --- новые координатные оси (ри
+с. 5).
+ []
+
+File: assets_readingsA/figA5.png Graphic file (type bmp)
+<assets_readingsA/figA5.png>
+
+
+[108]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 144.
+
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/PTSerif(0)/b/n/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+File: assets_readingsA/figA6.png Graphic file (type bmp)
+<assets_readingsA/figA6.png>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 161.
+
+
+Underfull \hbox (badness 6173) in paragraph at lines 163--164
+[]\TU/PTSerif(0)/m/n/10.95 Пусть дана точка $\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/
+10.95 (\OML/cmm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 )$ \TU/PTSerif(0)/m/n/10.
+95 и угловой коэффициент $\OML/cmm/m/it/10.95 k \OT1/cmr/m/n/10.95 = [] \OML/cm
+m/m/it/10.95 ^^K$ \TU/PTSerif(0)/m/n/10.95 (рис. 7),
+ []
+
+
+Underfull \hbox (badness 5548) in paragraph at lines 165--167
+\TU/PTSerif(0)/m/n/10.95 и так как по условию точка $\OML/cmm/m/it/10.95 A\OT1/
+cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 )$ \TU/PTSerif(0)
+/m/n/10.95 лежит на прямой, то её координаты
+ []
+
+
+
+[109]
+File: assets_readingsA/figA7.png Graphic file (type bmp)
+<assets_readingsA/figA7.png>
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 177.
+
+
+
+[110]
+File: assets_readingsA/figA8.png Graphic file (type bmp)
+<assets_readingsA/figA8.png>
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 193.
+
+
+
+[111]
+Underfull \hbox (badness 2582) in paragraph at lines 214--214
+[]\TU/PTSerif(0)/b/n/10 общий \TU/PTSerif(0)/m/n/10 107 \TU/PTSerif(0)/m/it/10 
+general\TU/PTSerif(0)/m/n/10 ; \TU/PTSerif(0)/b/n/10 всякий \TU/PTSerif(0)/m/n/
+10 44 \TU/PTSerif(0)/m/it/10 every\TU/PTSerif(0)/m/n/10 ; \TU/PTSerif(0)/b/n/10
+ первый \TU/PTSerif(0)/m/n/10 47 \TU/PTSerif(0)/m/it/10 first\TU/PTSerif(0)/m/n
+/10 ; \TU/PTSerif(0)/b/n/10 степень \TU/PTSerif(0)/m/n/10 107 \TU/PTSerif(0)/m/
+it/10 step, degree\TU/PTSerif(0)/m/n/10 ;
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 216.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
+\TU/PTSerif(0)/m/n/10.95 необходимо, чтобы детерминант, составленный из коэффиц
+иентов системы
+ []
+
+
+
+[112]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 239.
+
+
+
+[113]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 258.
+
+
+Underfull \hbox (badness 2245) in paragraph at lines 260--261
+[]\TU/PTSerif(0)/m/n/10.95 Вектором называется направленный отрезок $[]$, $[]$,
+ $[]$, $[]\OML/cmm/m/it/10.95 ; []$ \TU/PTSerif(0)/m/n/10.95 (рис. 9).
+ []
+
+File: assets_readingsA/figA9.png Graphic file (type bmp)
+<assets_readingsA/figA9.png>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 265.
+
+File: assets_readingsA/figA10.png Graphic file (type bmp)
+<assets_readingsA/figA10.png>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 272.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+[]\TU/PTSerif(0)/m/n/10.95 Скалярным произведением векторов $\OML/cmm/m/it/10.9
+5 a; b$ \TU/PTSerif(0)/m/n/10.95 называется число, равное
+ []
+
+
+
+[114]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 297.
+
+
+
+[115]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 319.
+
+
+Underfull \hbox (badness 3088) in paragraph at lines 321--322
+[]\TU/PTSerif(0)/m/n/10.95 Пусть $\OML/cmm/m/it/10.95 M\OT1/cmr/m/n/10.95 (\OML
+/cmm/m/it/10.95 x; y; z\OT1/cmr/m/n/10.95 )$ \TU/PTSerif(0)/m/n/10.95 --- любая
+ точка прямой, проходящей через данную точку
+ []
+
+
+Underfull \hbox (badness 5359) in paragraph at lines 332--334
+\TU/PTSerif(0)/m/n/10.95 Это --- параметрические уравнения прямой. В них $\OML/
+cmm/m/it/10.95 t$ \TU/PTSerif(0)/m/n/10.95 рассматривается как
+ []
+
+
+
+[116]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 337.
+
+
+Underfull \hbox (badness 1694) in paragraph at lines 346--347
+\TU/PTSerif(0)/m/n/10.95 Множество $\OML/cmm/m/it/10.95 A$ \TU/PTSerif(0)/m/n/1
+0.95 называется нижним классом сечения, множество $\OML/cmm/m/it/10.95 A[]$ \TU
+/PTSerif(0)/m/n/10.95 --- верхним
+ []
+
+
+Underfull \hbox (badness 3323) in paragraph at lines 350--351
+[]\TU/PTSerif(0)/m/n/10.95 в нижнем классе $\OML/cmm/m/it/10.95 A$ \TU/PTSerif(
+0)/m/n/10.95 нет наибольшего числа, а в верхнем классе $\OML/cmm/m/it/10.95 A[]
+$ \TU/PTSerif(0)/m/n/10.95 есть
+ []
+
+
+Underfull \hbox (badness 7379) in paragraph at lines 352--353
+[]\TU/PTSerif(0)/m/n/10.95 ни в нижнем классе нет наибольшего числа, ни в верхн
+ем классе ---
+ []
+
+
+Underfull \hbox (badness 1708) in paragraph at lines 354--355
+\TU/PTSerif(0)/m/n/10.95 В первых двух случаях мы говорим, что сечение производ
+ится рациональным
+ []
+
+
+Underfull \vbox (badness 1331) has occurred while \output is active []
+
+
+
+[117]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 360.
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 364--365
+\TU/PTSerif(0)/m/n/10.95 действительных чисел число, производящее это сечение, 
+или и в этой области
+ []
+
+
+Underfull \hbox (badness 3803) in paragraph at lines 366--367
+[]\TU/PTSerif(0)/b/n/10.95 Фундаментальная теорема Дедекинда. \TU/PTSerif(0)/m/
+n/10.95 Для всякого сечения в области
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 370.
+
+
+Underfull \hbox (badness 2285) in paragraph at lines 372--373
+[]\TU/PTSerif(0)/m/n/10.95 Представим себе произвольное бесконечное множество $
+\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 x\OMS/cmsy/m/n/10.95 g$ \TU/PTSerif(0)
+/m/n/10.95 действительных
+ []
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 374--375
+[]\TU/PTSerif(0)/m/n/10.95 Если множество ограничено сверху, т.е. имеет конечну
+ю верхнюю границу
+ []
+
+
+
+[118]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 380.
+
+
+Underfull \hbox (badness 2237) in paragraph at lines 382--383
+[]\TU/PTSerif(0)/m/n/10.95 Всегда ли для ограниченного сверху множества существ
+ует точная верхняя
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 388.
+
+
+Underfull \hbox (badness 1783) in paragraph at lines 390--391
+[]\TU/PTSerif(0)/m/n/10.95 Пусть даны две переменные $\OML/cmm/m/it/10.95 x$ \T
+U/PTSerif(0)/m/n/10.95 и $\OML/cmm/m/it/10.95 y$ \TU/PTSerif(0)/m/n/10.95 с обл
+астями изменения $\OML/cmm/m/it/10.95 X$ \TU/PTSerif(0)/m/n/10.95 и $\OML/cmm/m
+/it/10.95 Y$\TU/PTSerif(0)/m/n/10.95 . Тогда
+ []
+
+
+Underfull \hbox (badness 1132) in paragraph at lines 390--391
+\TU/PTSerif(0)/m/n/10.95 одно определённое значение $\OML/cmm/m/it/10.95 y$ \TU
+/PTSerif(0)/m/n/10.95 из $\OML/cmm/m/it/10.95 Y$\TU/PTSerif(0)/m/n/10.95 . Пере
+числим некоторые классы функций,
+ []
+
+
+Underfull \hbox (badness 2818) in paragraph at lines 395--397
+\TU/PTSerif(0)/m/n/10.95 где $\OML/cmm/m/it/10.95 a[]; a[]; a[]; []$ \TU/PTSeri
+f(0)/m/n/10.95 --- постоянные, называется целой рациональной функцией, а
+ []
+
+
+
+[119]
+Underfull \hbox (badness 4647) in paragraph at lines 401--403
+\TU/PTSerif(0)/m/n/10.95 где $\OML/cmm/m/it/10.95 a$ \TU/PTSerif(0)/m/n/10.95 -
+-- положительное число, отличное от единицы; $\OML/cmm/m/it/10.95 x$ \TU/PTSeri
+f(0)/m/n/10.95 принимает только
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 422.
+
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/6'.
+(microtype)             Ignoring protrusion settings for this character.
+
+
+[120]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 437.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 444--445
+[]\TU/PTSerif(0)/m/n/10.95 Определение непрерывности функции можно сформулирова
+ть в других
+ []
+
+
+Underfull \hbox (badness 2409) in paragraph at lines 454--455
+[]\TU/PTSerif(0)/m/n/10.95 На терминологии $\OML/cmm/m/it/10.95 "$\TU/PTSerif(0
+)/m/n/10.95 --$\OML/cmm/m/it/10.95 ^^N$ \TU/PTSerif(0)/m/n/10.95 непрерывность 
+функции $\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr
+/m/n/10.95 )$ \TU/PTSerif(0)/m/n/10.95 в точке $\OML/cmm/m/it/10.95 x[]$ \TU/PT
+Serif(0)/m/n/10.95 сводится к
+ []
+
+
+
+[121]
+Underfull \hbox (badness 10000) in paragraph at lines 457--459
+\TU/PTSerif(0)/m/n/10.95 значений $\OML/cmm/m/it/10.95 x[]; x[]; [] ; x[]; []$ 
+\TU/PTSerif(0)/m/n/10.95 из $\OML/cmm/m/it/10.95 X$\TU/PTSerif(0)/m/n/10.95 , с
+ходящейся к $\OML/cmm/m/it/10.95 x[]$\TU/PTSerif(0)/m/n/10.95 , соответствующая
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 466.
+
+
+Underfull \hbox (badness 4621) in paragraph at lines 468--469
+[]\TU/PTSerif(0)/b/n/10.95 Теорема Гейне--Бореля. \TU/PTSerif(0)/m/n/10.95 Если
+ замкнутый промежуток $\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 a; b\OT1/cmr/m/n
+/10.95 ]$ \TU/PTSerif(0)/m/n/10.95 покрывается
+ []
+
+
+Underfull \hbox (badness 2922) in paragraph at lines 474--475
+[]\TU/PTSerif(0)/b/n/10.95 Теорема Вейерштрасса. \TU/PTSerif(0)/m/n/10.95 Если 
+функция $\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr
+/m/n/10.95 )$ \TU/PTSerif(0)/m/n/10.95 определена и непрерывна в
+ []
+
+
+
+[122]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 481.
+
+
+Underfull \hbox (badness 2781) in paragraph at lines 483--484
+\TU/PTSerif(0)/m/n/10.95 значения $\OML/cmm/m/it/10.95 x \OT1/cmr/m/n/10.95 = \
+OML/cmm/m/it/10.95 x[]$ \TU/PTSerif(0)/m/n/10.95 независимой переменной $\OML/c
+mm/m/it/10.95 x$ \TU/PTSerif(0)/m/n/10.95 и любого её приращения $\OT1/cmr/m/n/
+10.95 ^^A\OML/cmm/m/it/10.95 x$\TU/PTSerif(0)/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 2376) in paragraph at lines 491--493
+\TU/PTSerif(0)/m/n/10.95 то этот предел называется производной функции $\OML/cm
+m/m/it/10.95 y \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\O
+ML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )$ \TU/PTSerif(0)/m/n/10.95 по независимо
+й
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 509.
+
+
+
+[123]
+File: assets_readingsA/figA11.png Graphic file (type bmp)
+<assets_readingsA/figA11.png>
+
+
+[124]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 533.
+
+
+Underfull \hbox (badness 1688) in paragraph at lines 535--536
+\TU/PTSerif(0)/m/n/10.95 функции $\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML
+/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )$\TU/PTSerif(0)/m/n/10.95 , если существуе
+т такая окрестность этой точки, в которой $\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10
+.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--540
+\TU/PTSerif(0)/m/n/10.95 Для обозначения максимума или минимума существует общи
+й термин ---
+ []
+
+
+Underfull \hbox (badness 2635) in paragraph at lines 546--548
+\TU/PTSerif(0)/m/n/10.95 Но этот необходимый признак не является достаточным: и
+з равенства нулю
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 551.
+
+
+Underfull \vbox (badness 1496) has occurred while \output is active []
+
+
+
+[125]
+Underfull \hbox (badness 6608) in paragraph at lines 568--570
+\TU/PTSerif(0)/m/n/10.95 Производная произведения двух сомножителей равна произ
+ведению первого
+ []
+
+
+Underfull \hbox (badness 1755) in paragraph at lines 568--570
+\TU/PTSerif(0)/m/n/10.95 на производную второго плюс произведение второго на пр
+оизводную первого.
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 576.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[126]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 585.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 597.
+
+
+Underfull \vbox (badness 1953) has occurred while \output is active []
+
+
+
+[127]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 628.
+
+
+
+[128]
+Underfull \hbox (badness 5288) in paragraph at lines 640--642
+\TU/PTSerif(0)/m/n/10.95 Эта формула выражает правило интегрирования по частям.
+ Оно проводит
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 654.
+
+
+Underfull \hbox (badness 2478) in paragraph at lines 656--657
+\TU/PTSerif(0)/m/n/10.95 отвечающей произвольному в промежутке $\OT1/cmr/m/n/10
+.95 [\OML/cmm/m/it/10.95 a; b\OT1/cmr/m/n/10.95 ]$ \TU/PTSerif(0)/m/n/10.95 зна
+чению $\OML/cmm/m/it/10.95 x$\TU/PTSerif(0)/m/n/10.95 . При изменении
+ []
+
+
+Underfull \hbox (badness 2359) in paragraph at lines 656--657
+\OML/cmm/m/it/10.95 x$ \TU/PTSerif(0)/m/n/10.95 эта площадь будет соответственн
+о изменяться, причём каждому $\OML/cmm/m/it/10.95 x$ \TU/PTSerif(0)/m/n/10.95 о
+твечает
+ []
+
+
+
+[129]
+Underfull \hbox (badness 3375) in paragraph at lines 672--673
+[]\TU/PTSerif(0)/m/n/10.95 Следовательно, переменная площадь $\OML/cmm/m/it/10.
+95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )$ \TU/PTSerif(
+0)/m/n/10.95 представляет собой интеграл от
+ []
+
+File: assets_readingsA/figA12.png Graphic file (type bmp)
+<assets_readingsA/figA12.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[130]) (./chapters/readingsB.tex
+
+[131]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 17.
+
+
+Underfull \hbox (badness 3954) in paragraph at lines 19--20
+[]\TU/PTSerif(0)/m/n/10.95 Объединением $\OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10
+.95 _ \OML/cmm/m/it/10.95 B$ \TU/PTSerif(0)/m/n/10.95 множеств $\OML/cmm/m/it/1
+0.95 A$ \TU/PTSerif(0)/m/n/10.95 и $\OML/cmm/m/it/10.95 B$ \TU/PTSerif(0)/m/n/1
+0.95 называется множество элементов,
+ []
+
+
+Underfull \hbox (badness 2205) in paragraph at lines 19--20
+\TU/PTSerif(0)/m/n/10.95 множество элементов, принадлежащих и $\OML/cmm/m/it/10
+.95 A$ \TU/PTSerif(0)/m/n/10.95 и $\OML/cmm/m/it/10.95 B$\TU/PTSerif(0)/m/n/10.
+95 . Разностью $\OML/cmm/m/it/10.95 A\OMS/cmsy/m/n/10.95 n\OML/cmm/m/it/10.95 B
+$ \TU/PTSerif(0)/m/n/10.95 называется
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 23.
+
+
+
+[132
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 42.
+
+
+Underfull \hbox (badness 7012) in paragraph at lines 47--48
+[]\TU/PTSerif(0)/m/n/10.95 различным элементам множества $\OML/cmm/m/it/10.95 X
+$ \TU/PTSerif(0)/m/n/10.95 соответствуют различные элементы
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 55.
+
+
+Underfull \hbox (badness 1337) in paragraph at lines 57--58
+[]\TU/PTSerif(0)/b/n/10.95 Определение. \TU/PTSerif(0)/m/n/10.95 Два множества 
+$\OML/cmm/m/it/10.95 X$ \TU/PTSerif(0)/m/n/10.95 и $\OML/cmm/m/it/10.95 Y$\TU/P
+TSerif(0)/m/n/10.95 , между которыми можно установить
+ []
+
+
+Underfull \hbox (badness 2253) in paragraph at lines 57--58
+\TU/PTSerif(0)/m/n/10.95 символом $\OML/cmm/m/it/10.95 X \OMS/cmsy/m/n/10.95 ^^
+X \OML/cmm/m/it/10.95 Y$\TU/PTSerif(0)/m/n/10.95 . Об эквивалентных множествах 
+говорят, что они имеют
+ []
+
+
+
+[133]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 69.
+
+
+Underfull \hbox (badness 2134) in paragraph at lines 71--72
+[]\TU/PTSerif(0)/b/n/10.95 Определение. \TU/PTSerif(0)/m/n/10.95 Множество $\OM
+L/cmm/m/it/10.95 M$ \TU/PTSerif(0)/m/n/10.95 называется упорядоченным, если меж
+ду его
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 79.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 87.
+
+
+Underfull \hbox (badness 5274) in paragraph at lines 89--90
+[]\TU/PTSerif(0)/b/n/10.95 Определение. \TU/PTSerif(0)/m/n/10.95 Такое соответс
+твие, что каждой упорядоченной паре $\OML/cmm/m/it/10.95 a; b$
+ []
+
+
+Underfull \hbox (badness 2197) in paragraph at lines 91--92
+[]\TU/PTSerif(0)/m/n/10.95 Другими словами, алгебраическая операция, определённ
+ая в множестве $\OML/cmm/m/it/10.95 M$\TU/PTSerif(0)/m/n/10.95 ,
+ []
+
+
+
+[134]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 95.
+
+
+Underfull \hbox (badness 5374) in paragraph at lines 97--98
+[]\TU/PTSerif(0)/m/n/10.95 Непустое множество $\OML/cmm/m/it/10.95 R$ \TU/PTSer
+if(0)/m/n/10.95 называется кольцом, если в нём определены две
+ []
+
+
+Underfull \hbox (badness 4647) in paragraph at lines 97--98
+\TU/PTSerif(0)/m/n/10.95 алгебраические операции: сложение, ставящее в соответс
+твие каждым двум
+ []
+
+
+Underfull \hbox (badness 5667) in paragraph at lines 97--98
+\TU/PTSerif(0)/m/n/10.95 в соответствие каждым двум элементам $\OML/cmm/m/it/10
+.95 a$ \TU/PTSerif(0)/m/n/10.95 и $\OML/cmm/m/it/10.95 b$ \TU/PTSerif(0)/m/n/10
+.95 элемент $\OML/cmm/m/it/10.95 ab$\TU/PTSerif(0)/m/n/10.95 , называемый их
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 120.
+
+
+Underfull \hbox (badness 8038) in paragraph at lines 122--123
+[]\TU/PTSerif(0)/b/n/10.95 Определение. \TU/PTSerif(0)/m/n/10.95 Нулём кольца $
+\OML/cmm/m/it/10.95 R$ \TU/PTSerif(0)/m/n/10.95 называется такой элемент $\OT1/
+cmr/m/n/10.95 0$\TU/PTSerif(0)/m/n/10.95 , который
+ []
+
+
+
+[135]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 132.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 150.
+
+
+Underfull \hbox (badness 2310) in paragraph at lines 160--161
+[]\TU/PTSerif(0)/m/n/10.95 множество комплексных чисел $\OML/cmm/m/it/10.95 a \
+OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 bi$ \TU/PTSerif(0)/m/n/10.95 с любыми р
+ациональными $\OML/cmm/m/it/10.95 a; b$ \TU/PTSerif(0)/m/n/10.95 (так
+ []
+
+
+Underfull \hbox (badness 3019) in paragraph at lines 162--163
+[]\TU/PTSerif(0)/m/n/10.95 множество из двух элементов, которые мы обозначим че
+рез $\OT1/cmr/m/n/10.95 0$ \TU/PTSerif(0)/m/n/10.95 и $\OT1/cmr/m/n/10.95 1$\TU
+/PTSerif(0)/m/n/10.95 , при
+ []
+
+
+
+[136]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 173.
+
+
+
+[137]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 188.
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 190--191
+[]\TU/PTSerif(0)/b/n/10.95 Теорема. \TU/PTSerif(0)/m/n/10.95 Умножение в поле о
+бладает единственной обратной операцией,
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 193.
+
+
+Underfull \hbox (badness 1708) in paragraph at lines 203--204
+[]\TU/PTSerif(0)/m/n/10.95 Примером поля характеристики $\OML/cmm/m/it/10.95 p$
+ \TU/PTSerif(0)/m/n/10.95 (для любого простого $\OML/cmm/m/it/10.95 p$\TU/PTSer
+if(0)/m/n/10.95 ) является кольцо
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 211.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+[]\TU/PTSerif(0)/m/n/10.95 Например, в случае отсутствия отношений определение 
+изоморфизма
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+\TU/PTSerif(0)/m/n/10.95 обращается в определение эквивалентности, а в случае о
+дного отношения
+ []
+
+
+
+[138]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 219.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
+[]\TU/PTSerif(0)/m/n/10.95 С отношением порядка в кольце связаны понятия положи
+тельности,
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 231.
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 233--234
+\TU/PTSerif(0)/m/n/10.95 причём нуль будет меньше всех положительных и больше в
+сех отрицательных
+ []
+
+
+
+[139]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 247.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
+[]\TU/PTSerif(0)/b/n/10.95 Определение. \TU/PTSerif(0)/m/n/10.95 Кольцо (в част
+ности, поле) называется архимедовски
+ []
+
+
+Underfull \hbox (badness 1817) in paragraph at lines 255--256
+[]\TU/PTSerif(0)/b/n/10.95 Пример неархимедовски расположенного кольца. \TU/PTS
+erif(0)/m/n/10.95 Пусть $\OML/cmm/m/it/10.95 R$ \TU/PTSerif(0)/m/n/10.95 есть к
+ольцо
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--260
+\TU/PTSerif(0)/m/n/10.95 с рациональными коэффициентами (при обычных операциях 
+сложения и
+ []
+
+
+Underfull \hbox (badness 7030) in paragraph at lines 258--260
+\TU/PTSerif(0)/m/n/10.95 умножения). Будем считать многочлен положительным, есл
+и его старший
+ []
+
+
+
+[140]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 263.
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 265--266
+\TU/PTSerif(0)/m/n/10.95 непустого множества $\OML/cmm/m/it/10.95 N$\TU/PTSerif
+(0)/m/n/10.95 , в котором для некоторых элементов $\OML/cmm/m/it/10.95 a$ \TU/P
+TSerif(0)/m/n/10.95 и $\OML/cmm/m/it/10.95 b$ \TU/PTSerif(0)/m/n/10.95 существу
+ет
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 280.
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 288--289
+[]\TU/PTSerif(0)/b/n/10.95 Теорема. \TU/PTSerif(0)/m/n/10.95 Сложение натуральн
+ых чисел существует и притом только одно.
+ []
+
+
+Underfull \vbox (badness 1087) has occurred while \output is active []
+
+
+
+[141]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 298.
+
+
+Underfull \hbox (badness 1796) in paragraph at lines 302--303
+[]\TU/PTSerif(0)/b/n/10.95 Теорема. \TU/PTSerif(0)/m/n/10.95 1) Для любых чисел
+ $\OML/cmm/m/it/10.95 a$ \TU/PTSerif(0)/m/n/10.95 и $\OML/cmm/m/it/10.95 b$ \TU
+/PTSerif(0)/m/n/10.95 имеет место одно и только одно из
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+[]\TU/PTSerif(0)/b/n/10.95 Теорема. \TU/PTSerif(0)/m/n/10.95 Любое непустое мно
+жество $\OML/cmm/m/it/10.95 A$ \TU/PTSerif(0)/m/n/10.95 натуральных чисел содер
+жит
+ []
+
+
+
+[142]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 313.
+
+
+Underfull \hbox (badness 1552) in paragraph at lines 317--318
+\TU/PTSerif(0)/m/n/10.95 сложению, т.е. соответствие, которое числам $\OML/cmm/
+m/it/10.95 a$ \TU/PTSerif(0)/m/n/10.95 и $\OML/cmm/m/it/10.95 b$ \TU/PTSerif(0)
+/m/n/10.95 сопоставляет число $\OML/cmm/m/it/10.95 a \OMS/cmsy/m/n/10.95 ^^@ \O
+ML/cmm/m/it/10.95 b$
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 332.
+
+
+Underfull \vbox (badness 1028) has occurred while \output is active []
+
+
+
+[143]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 355.
+
+
+Underfull \hbox (badness 3977) in paragraph at lines 357--358
+\TU/PTSerif(0)/m/n/10.95 а также многочлены и алгебраические дроби, мы последов
+ательно построим
+ []
+
+
+Underfull \hbox (badness 7888) in paragraph at lines 357--358
+\TU/PTSerif(0)/m/n/10.95 ряд расширений множества $\OML/cmm/m/it/10.95 A$ \TU/P
+TSerif(0)/m/n/10.95 (множества натуральных чисел), обладающих
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
+[]\TU/PTSerif(0)/m/n/10.95 интересующие нас операции или отношения элементов мн
+ожества $\OML/cmm/m/it/10.95 A$
+ []
+
+
+Underfull \hbox (badness 2486) in paragraph at lines 360--361
+\TU/PTSerif(0)/m/n/10.95 определены также для элементов множества $\OML/cmm/m/i
+t/10.95 B$\TU/PTSerif(0)/m/n/10.95 , причём их значения для
+ []
+
+
+
+[144]
+Underfull \hbox (badness 7704) in paragraph at lines 362--363
+[]\TU/PTSerif(0)/m/n/10.95 расширение $\OML/cmm/m/it/10.95 B$ \TU/PTSerif(0)/m/
+n/10.95 является минимальным из всех расширений данного $\OML/cmm/m/it/10.95 A$
+\TU/PTSerif(0)/m/n/10.95 ,
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 368.
+
+
+Underfull \hbox (badness 1205) in paragraph at lines 372--373
+\TU/PTSerif(0)/m/n/10.95 оно всегда выполнимо. Для целых чисел не всегда выполн
+имо деление. Для
+ []
+
+
+Underfull \hbox (badness 2837) in paragraph at lines 374--375
+\TU/PTSerif(0)/m/n/10.95 фундаментальной последовательности. Для действительных
+ чисел она всегда
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
+[]\TU/PTSerif(0)/m/n/10.95 Для действительных чисел не всегда выполнима операци
+я вычисления
+ []
+
+
+Underfull \hbox (badness 1968) in paragraph at lines 376--377
+\TU/PTSerif(0)/m/n/10.95 квадратного корня. Для комплексных чисел она всегда вы
+полнима. Тем же
+ []
+
+
+Underfull \hbox (badness 1867) in paragraph at lines 376--377
+\TU/PTSerif(0)/m/n/10.95 принципом в алгебре расширяют одно поле, где данный мн
+огочлен не имеет
+ []
+
+
+
+[145]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 381.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 383--384
+[]\TU/PTSerif(0)/b/n/10.95 Теорема. \TU/PTSerif(0)/m/n/10.95 Если для элементов
+ множества $\OML/cmm/m/it/10.95 M$ \TU/PTSerif(0)/m/n/10.95 определено отношени
+е
+ []
+
+
+Underfull \hbox (badness 6641) in paragraph at lines 392--394
+\TU/PTSerif(0)/m/n/10.95 же подмножества эквивалентны и любые элементы различны
+х подмножеств
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 396.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
+[]\TU/PTSerif(0)/m/n/10.95 За исходный элемент конструкции кольца целых чисел п
+ринимаем
+ []
+
+
+Underfull \hbox (badness 3547) in paragraph at lines 398--399
+\TU/PTSerif(0)/m/n/10.95 упорядоченную пару $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/
+10.95 a; b\OT1/cmr/m/n/10.95 )$ \TU/PTSerif(0)/m/n/10.95 натуральных чисел. Пус
+ть $\OML/cmm/m/it/10.95 M$ \TU/PTSerif(0)/m/n/10.95 --- множество всех
+ []
+
+
+
+[146]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 419.
+
+
+Underfull \hbox (badness 1924) in paragraph at lines 421--422
+\TU/PTSerif(0)/m/n/10.95 что не содержит натуральных чисел: его элементы --- кл
+ассы эквивалентных
+ []
+
+
+Underfull \hbox (badness 1845) in paragraph at lines 425--426
+[]\TU/PTSerif(0)/m/n/10.95 Построим теперь искомое кольцо целых чисел $\OML/cmm
+/m/it/10.95 C$\TU/PTSerif(0)/m/n/10.95 . Пусть $\OML/cmm/m/it/10.95 C$ \TU/PTSe
+rif(0)/m/n/10.95 --- множество,
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 431.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
+[]\TU/PTSerif(0)/m/n/10.95 За исходный элемент построения поля рациональных чис
+ел принимаем
+ []
+
+
+
+[147]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 451.
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 453--454
+[]\TU/PTSerif(0)/m/n/10.95 Включение кольца целых чисел в поле рациональных чис
+ел обобщается до
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[148]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 467.
+
+
+Underfull \hbox (badness 6510) in paragraph at lines 494--495
+[]\TU/PTSerif(0)/m/n/10.95 Пусть $\OT1/cmr/m/n/10.95 ^^@$ \TU/PTSerif(0)/m/n/10
+.95 --- подмножество классов, содержащих последовательности вида
+ []
+
+
+
+[149]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 499.
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 501--502
+[]\TU/PTSerif(0)/m/n/10.95 Пусть $\OML/cmm/m/it/10.95 K[]$ \TU/PTSerif(0)/m/n/1
+0.95 есть множество всех упорядоченных пар вида $\OT1/cmr/m/n/10.95 (\OML/cmm/m
+/it/10.95 a; b\OT1/cmr/m/n/10.95 )$\TU/PTSerif(0)/m/n/10.95 , где $\OML/cmm/m/i
+t/10.95 a$ \TU/PTSerif(0)/m/n/10.95 и $\OML/cmm/m/it/10.95 b$ \TU/PTSerif(0)/m/
+n/10.95 ---
+ []
+
+
+Underfull \hbox (badness 1371) in paragraph at lines 507--509
+\TU/PTSerif(0)/m/n/10.95 Пусть $\OML/cmm/m/it/10.95 D[]$ \TU/PTSerif(0)/m/n/10.
+95 --- множество всех пар множества $\OML/cmm/m/it/10.95 K[]$ \TU/PTSerif(0)/m/
+n/10.95 вида $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a; \OT1/cmr/m/n/10.95 0)$
+ \TU/PTSerif(0)/m/n/10.95 и $\OML/cmm/m/it/10.95 D$ \TU/PTSerif(0)/m/n/10.95 --
+- множество,
+ []
+
+) (./chapters/readingsC.tex
+
+[150]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 18.
+
+
+Underfull \hbox (badness 4366) in paragraph at lines 31--33
+\TU/PTSerif(0)/m/n/10.95 Следующий за ним класс $\OML/cmm/m/it/10.95 K[]$ \TU/P
+TSerif(0)/m/n/10.95 состоит из функций $\OML/cmm/m/it/10.95 f$\TU/PTSerif(0)/m/
+n/10.95 , не принадлежащих ни
+ []
+
+
+Underfull \hbox (badness 1895) in paragraph at lines 31--33
+\TU/PTSerif(0)/m/n/10.95 к $\OML/cmm/m/it/10.95 K[]$\TU/PTSerif(0)/m/n/10.95 , 
+ни к $\OML/cmm/m/it/10.95 K[]$\TU/PTSerif(0)/m/n/10.95 , но которые являются пр
+еделами последовательности функций
+ []
+
+
+Underfull \hbox (badness 3884) in paragraph at lines 31--33
+\OML/cmm/m/it/10.95 f[]; f[]; [] ; f[]; []$\TU/PTSerif(0)/m/n/10.95 , принадлеж
+ащих к классам $\OML/cmm/m/it/10.95 K[]$ \TU/PTSerif(0)/m/n/10.95 и $\OML/cmm/m
+/it/10.95 K[]$\TU/PTSerif(0)/m/n/10.95 . Аналогичным образом
+ []
+
+
+Underfull \hbox (badness 1675) in paragraph at lines 36--37
+[]\TU/PTSerif(0)/b/n/10.95 Точечно разрывная функция. \TU/PTSerif(0)/m/n/10.95 
+Разрывная функция $\OML/cmm/m/it/10.95 f$ \TU/PTSerif(0)/m/n/10.95 называется т
+очечно
+ []
+
+
+Underfull \vbox (badness 1275) has occurred while \output is active []
+
+
+
+[151
+
+]
+Underfull \hbox (badness 7540) in paragraph at lines 45--46
+[]\TU/PTSerif(0)/m/n/10.95 Докажем, что разрывная функция Дирихле $\OML/cmm/m/i
+t/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )$\TU/PTSe
+rif(0)/m/n/10.95 , равная единице для $\OML/cmm/m/it/10.95 x$
+ []
+
+
+Underfull \hbox (badness 1735) in paragraph at lines 45--46
+\TU/PTSerif(0)/m/n/10.95 рационального и равная нулю для $\OML/cmm/m/it/10.95 x
+$ \TU/PTSerif(0)/m/n/10.95 иррационального, есть функция класса $\OT1/cmr/m/n/1
+0.95 2$\TU/PTSerif(0)/m/n/10.95 .
+ []
+
+
+Underfull \hbox (badness 1902) in paragraph at lines 58--60
+\TU/PTSerif(0)/m/n/10.95 но она не может быть изображена одним переходом к пред
+елу перед знаком
+ []
+
+
+Underfull \hbox (badness 5203) in paragraph at lines 61--61
+[]\TU/PTSerif(0)/b/n/10 разрывный \TU/PTSerif(0)/m/n/10 106 \TU/PTSerif(0)/m/it
+/10 discontinuous \TU/PTSerif(0)/m/n/10 (рыв- break); \TU/PTSerif(0)/b/n/10 точ
+ечно \TU/PTSerif(0)/m/n/10 107 \TU/PTSerif(0)/m/it/10 pointwise \TU/PTSerif(0)/
+m/n/10 (тык- pierce);
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 64.
+
+
+
+[152]
+Underfull \hbox (badness 4846) in paragraph at lines 94--95
+\TU/PTSerif(0)/m/n/10.95 переменному $\OML/cmm/m/it/10.95 z[]$ \TU/PTSerif(0)/m
+/n/10.95 в отдельности (при фиксированных остальных) в некоторой
+ []
+
+
+Underfull \hbox (badness 5446) in paragraph at lines 99--100
+[]\TU/PTSerif(0)/b/n/10.95 Определение. \TU/PTSerif(0)/m/n/10.95 Конечная облас
+ть $\OML/cmm/m/it/10.95 G$ \TU/PTSerif(0)/m/n/10.95 называется областью голомор
+фности
+ []
+
+
+
+[153]
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+[]\TU/PTSerif(0)/m/n/10.95 Естественно поставить вопрос: всякая ли область явля
+ется областью
+ []
+
+
+
+[154]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 134.
+
+
+Underfull \hbox (badness 3386) in paragraph at lines 154--156
+\TU/PTSerif(0)/m/n/10.95 фиксированном $\OML/cmm/m/it/10.95 n$ \TU/PTSerif(0)/m
+/n/10.95 предел $\OML/cmm/m/it/10.95 ^^U[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.
+95 t\OT1/cmr/m/n/10.95 )$ \TU/PTSerif(0)/m/n/10.95 при некотором непрерывном ил
+и дискретном
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[155]
+Underfull \hbox (badness 2111) in paragraph at lines 181--183
+\TU/PTSerif(0)/m/n/10.95 возрастает эффективность метода Чезаро, т.е. расширяет
+ся множество рядов,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--183
+\TU/PTSerif(0)/m/n/10.95 суммируемых этим методом. Всякий ряд, суммируемый мето
+дом Чезаро,
+ []
+
+
+Underfull \hbox (badness 1715) in paragraph at lines 200--202
+\TU/PTSerif(0)/m/n/10.95 Методы Чезаро и Абеля--Пуассона применяются к теории т
+ригонометрических
+ []
+
+
+Underfull \hbox (badness 2302) in paragraph at lines 200--202
+\TU/PTSerif(0)/m/n/10.95 рядов для нахождения функции по её ряду Фурье, так как
+ ряд Фурье любой
+ []
+
+
+Underfull \hbox (badness 2894) in paragraph at lines 200--202
+\TU/PTSerif(0)/m/n/10.95 непрерывной функции суммируется к этой функции методом
+ Чезаро первого
+ []
+
+
+Underfull \vbox (badness 1221) has occurred while \output is active []
+
+
+
+[156]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 206.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
+[]\TU/PTSerif(0)/m/n/10.95 Мы изложим некоторые вопросы общей теории обобщённых
+ функций,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
+[]\TU/PTSerif(0)/m/n/10.95 Линейное пространство $\OML/cmm/m/it/10.95 R$ \TU/PT
+Serif(0)/m/n/10.95 (например, гильбертово пространство $\OML/cmm/m/it/10.95 H$ 
+\TU/PTSerif(0)/m/n/10.95 или
+ []
+
+
+Underfull \hbox (badness 1577) in paragraph at lines 222--223
+\TU/PTSerif(0)/m/n/10.95 определено понятие сходимости последовательности его э
+лементов к элементу
+ []
+
+
+Underfull \hbox (badness 7576) in paragraph at lines 227--228
+\TU/PTSerif(0)/m/n/10.95 значения, называются функционалами над этим пространст
+вом. Значение
+ []
+
+
+
+[157]
+Underfull \hbox (badness 6173) in paragraph at lines 232--233
+[]\TU/PTSerif(0)/m/n/10.95 Пусть $\OML/cmm/m/it/10.95 R$ \TU/PTSerif(0)/m/n/10.
+95 --- линейное пространство. Функционал $\OML/cmm/m/it/10.95 f$ \TU/PTSerif(0)
+/m/n/10.95 этого пространства
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 263--264
+[]\TU/PTSerif(0)/m/n/10.95 Последовательность бесконечно дифференцируемых финит
+ных функций $\OML/cmm/m/it/10.95 '[]$\TU/PTSerif(0)/m/n/10.95 ,
+ []
+
+
+
+[158]
+Underfull \hbox (badness 1199) in paragraph at lines 265--266
+[]\TU/PTSerif(0)/m/n/10.95 существует отрезок $\OT1/cmr/m/n/10.95 [\OML/cmm/m/i
+t/10.95 a; b\OT1/cmr/m/n/10.95 ]$\TU/PTSerif(0)/m/n/10.95 , вне которого все фу
+нкции $\OML/cmm/m/it/10.95 '[]$\TU/PTSerif(0)/m/n/10.95 , $\OML/cmm/m/it/10.95 
+n \OT1/cmr/m/n/10.95 = 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it
+/10.95 ; []$\TU/PTSerif(0)/m/n/10.95 , и $\OML/cmm/m/it/10.95 '$
+ []
+
+
+Underfull \hbox (badness 4266) in paragraph at lines 266--267
+[]\TU/PTSerif(0)/m/n/10.95 на этом отрезке $\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/1
+0.95 a; b\OT1/cmr/m/n/10.95 ]$ \TU/PTSerif(0)/m/n/10.95 последовательность функ
+ций $\OML/cmm/m/it/10.95 '[]$\TU/PTSerif(0)/m/n/10.95 , $\OML/cmm/m/it/10.95 n 
+\OT1/cmr/m/n/10.95 = 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/1
+0.95 ; []$\TU/PTSerif(0)/m/n/10.95 , и
+ []
+
+
+Underfull \hbox (badness 2556) in paragraph at lines 268--269
+\TU/PTSerif(0)/m/n/10.95 Пространство бесконечно дифференцируемых финитных функ
+ций с указанной
+ []
+
+
+Underfull \hbox (badness 4792) in paragraph at lines 290--292
+\TU/PTSerif(0)/m/n/10.95 Таким образом, всякой локально интегрируемой функции $
+\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.9
+5 )$ \TU/PTSerif(0)/m/n/10.95 соответствует
+ []
+
+
+
+[159]
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
+[]\TU/PTSerif(0)/m/n/10.95 Как пример сингулярной обобщённой функции рассмотрим
+ функционал,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
+[]\TU/PTSerif(0)/m/n/10.95 Посмотрим, что представляет собой производная обычно
+й непрерывно
+ []
+
+
+Underfull \hbox (badness 2418) in paragraph at lines 317--318
+\TU/PTSerif(0)/m/n/10.95 дифференцируемой функции $\OML/cmm/m/it/10.95 f$\TU/PT
+Serif(0)/m/n/10.95 , рассматриваемой как функционал $\OT1/cmr/m/n/10.95 (\OML/c
+mm/m/it/10.95 f; '\OT1/cmr/m/n/10.95 )$ \TU/PTSerif(0)/m/n/10.95 на $\OML/cmm/m
+/it/10.95 D$\TU/PTSerif(0)/m/n/10.95 .
+ []
+
+
+Underfull \hbox (badness 4229) in paragraph at lines 322--324
+\TU/PTSerif(0)/m/n/10.95 Это делает естественным следующее определение: произво
+дной обобщённой
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[160]
+Underfull \hbox (badness 7133) in paragraph at lines 341--341
+[]\TU/PTSerif(0)/b/n/10 построенный \TU/PTSerif(0)/m/n/10 106 \TU/PTSerif(0)/m/
+it/10 constructed\TU/PTSerif(0)/m/n/10 ; \TU/PTSerif(0)/b/n/10 сходимость \TU/P
+TSerif(0)/m/n/10 77,78 \TU/PTSerif(0)/m/it/10 convergence\TU/PTSerif(0)/m/n/10 
+; \TU/PTSerif(0)/b/n/10 линейный \TU/PTSerif(0)/m/it/10 linear\TU/PTSerif(0)/m/
+n/10 ;
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 344.
+
+
+
+[161]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[162]
+Underfull \hbox (badness 1796) in paragraph at lines 407--409
+\TU/PTSerif(0)/m/n/10.95 так как иначе интеграл имел бы положительное значение 
+для таких функций
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 407--409
+\OML/cmm/m/it/10.95 ^^Q\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10
+.95 )$\TU/PTSerif(0)/m/n/10.95 , которые всюду в промежутке $\OT1/cmr/m/n/10.95
+ (\OML/cmm/m/it/10.95 x[]; x[]\OT1/cmr/m/n/10.95 )$ \TU/PTSerif(0)/m/n/10.95 им
+еют тот же знак, как $\OML/cmm/m/it/10.95 F[] \OMS/cmsy/m/n/10.95 ^^@ []\OML/cm
+m/m/it/10.95 F[]$\TU/PTSerif(0)/m/n/10.95 .
+ []
+
+
+Underfull \hbox (badness 3884) in paragraph at lines 418--420
+\TU/PTSerif(0)/m/n/10.95 Среди линий, соединяющих две данные точки $\OT1/cmr/m/
+n/10.95 (\OML/cmm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 )$ \TU/PTSerif(0)/m/n/1
+0.95 и $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 )$\T
+U/PTSerif(0)/m/n/10.95 , необходимо
+ []
+
+
+
+[163]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 430.
+
+
+Underfull \hbox (badness 3343) in paragraph at lines 438--439
+[]\TU/PTSerif(0)/m/n/10.95 Пусть дано некоторое множество $\OML/cmm/m/it/10.95 
+M$\TU/PTSerif(0)/m/n/10.95 . Мы говорим, что в $\OML/cmm/m/it/10.95 M$ \TU/PTSe
+rif(0)/m/n/10.95 определена
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
+[]\TU/PTSerif(0)/m/n/10.95 Примером алгебраической операции будет умножение под
+становок.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+[]\TU/PTSerif(0)/m/n/10.95 Множество с одной ассоциативной операцией называется
+ полугруппой.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+\TU/PTSerif(0)/m/n/10.95 Ассоциативность операции позволяет говорить однозначны
+м образом о
+ []
+
+
+Underfull \hbox (badness 1117) in paragraph at lines 459--460
+[]\TU/PTSerif(0)/m/n/10.95 Множество $\OML/cmm/m/it/10.95 M$\TU/PTSerif(0)/m/n/
+10.95 , в котором задана алгебраическая операция, обладает иногда
+ []
+
+
+Underfull \hbox (badness 1997) in paragraph at lines 459--460
+\TU/PTSerif(0)/m/n/10.95 единицей, т.е. таким элементом $\OT1/cmr/m/n/10.95 1$\
+TU/PTSerif(0)/m/n/10.95 , что $\OML/cmm/m/it/10.95 a \OMS/cmsy/m/n/10.95 ^^A \O
+T1/cmr/m/n/10.95 1 = 1 \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 a \OT1/cmr/m
+/n/10.95 = \OML/cmm/m/it/10.95 a$ \TU/PTSerif(0)/m/n/10.95 для всех $\OML/cmm/m
+/it/10.95 a$ \TU/PTSerif(0)/m/n/10.95 из
+ []
+
+
+
+[164]
+Underfull \hbox (badness 2626) in paragraph at lines 488--489
+[]\TU/PTSerif(0)/m/n/10.95 Произведение $\OML/cmm/m/it/10.95 n$ \TU/PTSerif(0)/
+m/n/10.95 элементов, равных элементу $\OML/cmm/m/it/10.95 a$ \TU/PTSerif(0)/m/n
+/10.95 группы $\OML/cmm/m/it/10.95 G$\TU/PTSerif(0)/m/n/10.95 , называется $\OM
+L/cmm/m/it/10.95 n$\TU/PTSerif(0)/m/n/10.95 -й
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 490--491
+[]\TU/PTSerif(0)/m/n/10.95 Если все степени элемента $\OML/cmm/m/it/10.95 a$ \T
+U/PTSerif(0)/m/n/10.95 являются различными элементами группы, то
+ []
+
+
+
+[165]
+Underfull \hbox (badness 10000) in paragraph at lines 509--510
+[]\TU/PTSerif(0)/m/n/10.95 Существуют группы, порядок всех элементов которых, к
+роме единицы,
+ []
+
+
+Underfull \hbox (badness 4686) in paragraph at lines 528--529
+[]\TU/PTSerif(0)/m/n/10.95 Все целые числа, положительные и отрицательные, обра
+зуют группу по
+ []
+
+
+
+[166]
+Underfull \hbox (badness 1460) in paragraph at lines 532--532
+[]\TU/PTSerif(0)/b/n/10 обобщение \TU/PTSerif(0)/m/n/10 90 \TU/PTSerif(0)/m/it/
+10 generalization\TU/PTSerif(0)/m/n/10 ; \TU/PTSerif(0)/b/n/10 вполне \TU/PTSer
+if(0)/m/n/10 87 \TU/PTSerif(0)/m/it/10 fully, completely\TU/PTSerif(0)/m/n/10 ;
+ \TU/PTSerif(0)/b/n/10 подстановка \TU/PTSerif(0)/m/n/10 85 \TU/PTSerif(0)/m/it
+/10 substitu-
+ []
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 532--532
+\TU/PTSerif(0)/m/it/10 tion\TU/PTSerif(0)/m/n/10 ; \TU/PTSerif(0)/b/n/10 позвол
+ять \TU/PTSerif(0)/m/n/10 94 \TU/PTSerif(0)/m/it/10 allow\TU/PTSerif(0)/m/n/10 
+; \TU/PTSerif(0)/b/n/10 трёхмерный \TU/PTSerif(0)/m/n/10 99 \TU/PTSerif(0)/m/it
+/10 three-dimensional\TU/PTSerif(0)/m/n/10 ; \TU/PTSerif(0)/b/n/10 кручение \TU
+/PTSerif(0)/m/n/10 105 \TU/PTSerif(0)/m/it/10 torsion\TU/PTSerif(0)/m/n/10 ;
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 535.
+
+
+
+[167]
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
+[]\TU/PTSerif(0)/b/n/10.95 Задача в практике. \TU/PTSerif(0)/m/n/10.95 Применен
+ие иррациональных чисел в практике
+ []
+
+
+Underfull \hbox (badness 2961) in paragraph at lines 553--554
+\TU/PTSerif(0)/m/n/10.95 рациональное число возможно простым, т.е. в виде дроби
+ со сравнительно
+ []
+
+
+Underfull \hbox (badness 2035) in paragraph at lines 573--574
+[]\TU/PTSerif(0)/b/n/10.95 Теорема. \TU/PTSerif(0)/m/n/10.95 Для любого иррацио
+нального числа $\OML/cmm/m/it/10.95 ^^K$ \TU/PTSerif(0)/m/n/10.95 существует ра
+зложение в
+ []
+
+
+
+[168]
+Underfull \hbox (badness 3872) in paragraph at lines 596--598
+\TU/PTSerif(0)/m/n/10.95 с рациональными коэффициентами. В случае $\OML/cmm/m/i
+t/10.95 n \OT1/cmr/m/n/10.95 = 2$ \TU/PTSerif(0)/m/n/10.95 число $\OML/cmm/m/it
+/10.95 ^^K$ \TU/PTSerif(0)/m/n/10.95 называется
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 604--605
+[]\TU/PTSerif(0)/b/n/10.95 Теорема Лиувилля. \TU/PTSerif(0)/m/n/10.95 Для любог
+о алгебраического числа $\OML/cmm/m/it/10.95 ^^K$ \TU/PTSerif(0)/m/n/10.95 степ
+ени $\OML/cmm/m/it/10.95 n$
+ []
+
+
+Underfull \hbox (badness 5787) in paragraph at lines 614--615
+[]\TU/PTSerif(0)/m/n/10.95 Как мы видели, для любой иррациональности $\OML/cmm/
+m/it/10.95 ^^K$ \TU/PTSerif(0)/m/n/10.95 существует бесконечное
+ []
+
+
+Underfull \hbox (badness 1117) in paragraph at lines 617--619
+\TU/PTSerif(0)/m/n/10.95 Следовательно, в результате теоремы Туэ--Зигеля--Рота 
+нельзя заменить $\OT1/cmr/m/n/10.95 1/\OML/cmm/m/it/10.95 b[]$
+ []
+
+
+Underfull \hbox (badness 1629) in paragraph at lines 620--621
+[]\TU/PTSerif(0)/m/n/10.95 Однако не исключена возможность, что для любого алге
+браического $\OML/cmm/m/it/10.95 ^^K$ \TU/PTSerif(0)/m/n/10.95 при
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 626--627
+[]\TU/PTSerif(0)/m/n/10.95 Но некоторые математики считают более вероятным, что
+ это неверно,
+ []
+
+
+Underfull \hbox (badness 2359) in paragraph at lines 626--627
+\TU/PTSerif(0)/m/n/10.95 т.е. предполагают существование алгебраических чисел, 
+у которых элементы
+ []
+
+
+Underfull \hbox (badness 1117) in paragraph at lines 626--627
+\TU/PTSerif(0)/m/n/10.95 разложения в цепную дробь неограниченны. Не исключена 
+возможность того,
+ []
+
+
+Underfull \hbox (badness 2626) in paragraph at lines 626--627
+\TU/PTSerif(0)/m/n/10.95 что, кроме квадратических иррациональностей, не сущест
+вует алгебраических
+ []
+
+
+
+[169]
+Underfull \hbox (badness 2237) in paragraph at lines 628--629
+[]\TU/PTSerif(0)/m/n/10.95 Характер разложения алгебраических чисел степени бол
+ьшей чем $\OT1/cmr/m/n/10.95 2$\TU/PTSerif(0)/m/n/10.95 , таким
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 628--629
+\TU/PTSerif(0)/m/n/10.95 образом, совершенно неясен. Было бы интересно, если бы
+ удалось получить
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 633.
+
+
+
+[170]
+Underfull \hbox (badness 10000) in paragraph at lines 645--646
+\TU/PTSerif(0)/m/n/10.95 Применяется метод формализации доказательств. Простейш
+ими из так
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 645--646
+\TU/PTSerif(0)/m/n/10.95 получающихся логических исчислений являются исчисления
+ высказываний,
+ []
+
+
+Underfull \hbox (badness 7558) in paragraph at lines 647--648
+[]\TU/PTSerif(0)/m/n/10.95 так называемые логические переменные $\OML/cmm/m/it/
+10.95 A; B; C; []$\TU/PTSerif(0)/m/n/10.95 , означающие любые
+ []
+
+
+Underfull \hbox (badness 4096) in paragraph at lines 671--672
+[]\TU/PTSerif(0)/m/n/10.95 В двух исчислениях высказываний --- классическом и к
+онструктивном ---
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 673--674
+[]\TU/PTSerif(0)/b/n/10.95 Правило подстановки. \TU/PTSerif(0)/m/n/10.95 Из фор
+мулы выводится новая формула путём
+ []
+
+
+Underfull \hbox (badness 7851) in paragraph at lines 683--685
+\TU/PTSerif(0)/m/n/10.95 выражающая закон исключённого третьего, не выводима в 
+конструктивном
+ []
+
+
+
+[171]
+Underfull \hbox (badness 1052) in paragraph at lines 689--690
+[]\TU/PTSerif(0)/m/n/10.95 Чтобы вывести в конструктивном исчислении формулу $\
+OMS/cmsy/m/n/10.95 :\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A[]\OMS/cmsy/m/n/10
+.95 :\OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 )$\TU/PTSerif(0)/m/n/10.95 , приме
+ним
+ []
+
+
+Underfull \hbox (badness 1142) in paragraph at lines 689--690
+\TU/PTSerif(0)/m/n/10.95 правило подстановки к аксиомам $\OT1/cmr/m/n/10.95 3$ 
+\TU/PTSerif(0)/m/n/10.95 и $\OT1/cmr/m/n/10.95 4$\TU/PTSerif(0)/m/n/10.95 , под
+ставляя в них формулу $\OMS/cmsy/m/n/10.95 :\OML/cmm/m/it/10.95 A$ \TU/PTSerif(
+0)/m/n/10.95 вместо
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 710--711
+[]\TU/PTSerif(0)/m/n/10.95 В отличие от классического исчисления математические
+ теоремы в
+ []
+
+
+Underfull \hbox (badness 7238) in paragraph at lines 710--711
+\TU/PTSerif(0)/m/n/10.95 конструктивном исчислении связываются с решением конст
+руктивных задач.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 710--711
+\TU/PTSerif(0)/m/n/10.95 Доказательство математической теоремы означает решение
+ конструктивной
+ []
+
+
+
+[172]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 715.
+
+
+Underfull \hbox (badness 6220) in paragraph at lines 723--724
+\TU/PTSerif(0)/m/n/10.95 уравнения при некоторых предельных (начальных или гран
+ичных) условиях,
+ []
+
+
+Underfull \hbox (badness 1024) in paragraph at lines 725--726
+[]\TU/PTSerif(0)/m/n/10.95 Можно указать простые примеры задач, где малая ошибк
+а в данных может
+ []
+
+
+Underfull \hbox (badness 1342) in paragraph at lines 725--726
+\TU/PTSerif(0)/m/n/10.95 вызывать большую ошибку в результате. Исследуя уравнен
+ия математической
+ []
+
+
+Underfull \hbox (badness 3158) in paragraph at lines 725--726
+\TU/PTSerif(0)/m/n/10.95 физики, всегда необходимо рассматривать вопрос о завис
+имости решения от
+ []
+
+
+Underfull \hbox (badness 5050) in paragraph at lines 725--726
+\TU/PTSerif(0)/m/n/10.95 предельных условий. Значит, необходимо подходящим обра
+зом определить
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 725--726
+\TU/PTSerif(0)/m/n/10.95 понятие расстояния между решениями и аналогично рассто
+яния между
+ []
+
+
+Underfull \hbox (badness 5316) in paragraph at lines 727--728
+[]\TU/PTSerif(0)/m/n/10.95 Предположим, что задача математической физики сводит
+ся к отысканию
+ []
+
+
+Underfull \hbox (badness 2134) in paragraph at lines 740--741
+[]\TU/PTSerif(0)/m/n/10.95 Через $\OT1/cmr/m/n/10.95 ^^H$ \TU/PTSerif(0)/m/n/10
+.95 обозначим класс систем функций $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 '[
+]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 S[]\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/1
+0.95 g$ \TU/PTSerif(0)/m/n/10.95 таких, что функции $\OML/cmm/m/it/10.95 '[]$
+ []
+
+
+Underfull \hbox (badness 3088) in paragraph at lines 740--741
+\TU/PTSerif(0)/m/n/10.95 и их частные производные до некоторого порядка $\OML/c
+mm/m/it/10.95 k$ \TU/PTSerif(0)/m/n/10.95 включительно обладают
+ []
+
+
+
+[173]
+Underfull \hbox (badness 1533) in paragraph at lines 742--743
+\TU/PTSerif(0)/m/n/10.95 до порядка $\OML/cmm/m/it/10.95 k$\TU/PTSerif(0)/m/n/1
+0.95 ; квадрат расстояния $\OML/cmm/m/it/10.95 ^^Z[]$ \TU/PTSerif(0)/m/n/10.95 
+между функциями $\OML/cmm/m/it/10.95 u[]$ \TU/PTSerif(0)/m/n/10.95 и $\OML/cmm/
+m/it/10.95 u$ \TU/PTSerif(0)/m/n/10.95 --- как сумму
+ []
+
+
+Underfull \hbox (badness 5008) in paragraph at lines 749--750
+[]\TU/PTSerif(0)/m/n/10.95 Рассматриваем следующий пример, принадлежащий Адамар
+у. Исследуем
+ []
+
+
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+
+
+[174]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 779.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 802--803
+[]\TU/PTSerif(0)/b/n/10.95 Определение. \TU/PTSerif(0)/m/n/10.95 Комплексным ги
+льбертовым пространством называется
+ []
+
+
+Underfull \vbox (badness 1997) has occurred while \output is active []
+
+
+
+[175]
+Underfull \hbox (badness 4341) in paragraph at lines 817--818
+[]\TU/PTSerif(0)/b/n/10.95 Аксиома B. \TU/PTSerif(0)/m/n/10.95 Для любого целог
+о положительного $\OML/cmm/m/it/10.95 n$ \TU/PTSerif(0)/m/n/10.95 существует $\
+OML/cmm/m/it/10.95 n$ \TU/PTSerif(0)/m/n/10.95 линейно
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 819--820
+\TU/PTSerif(0)/m/n/10.95 обозначается символом $\OT1/cmr/m/n/10.95 (\OML/cmm/m/
+it/10.95 x; y\OT1/cmr/m/n/10.95 )$\TU/PTSerif(0)/m/n/10.95 . Это скалярное прои
+зведение удовлетворяет
+ []
+
+
+Underfull \hbox (badness 4792) in paragraph at lines 828--829
+[]\TU/PTSerif(0)/m/n/10.95 Выражение $\OMS/cmsy/m/n/10.95 k\OML/cmm/m/it/10.95 
+y \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 x\OMS/cmsy/m/n/10.95 k$ \TU/PTSer
+if(0)/m/n/10.95 называется расстоянием между элементами $\OML/cmm/m/it/10.95 x$
+ \TU/PTSerif(0)/m/n/10.95 и $\OML/cmm/m/it/10.95 y$ \TU/PTSerif(0)/m/n/10.95 и
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[176]
+Underfull \hbox (badness 10000) in paragraph at lines 866--867
+[]\TU/PTSerif(0)/m/n/10.95 Легко доказать, что если $\OML/cmm/m/it/10.95 H$ \TU
+/PTSerif(0)/m/n/10.95 сепарабельно, то всякая ортогональная,
+ []
+
+
+Underfull \vbox (badness 5519) has occurred while \output is active []
+
+
+
+[177]
+Underfull \hbox (badness 10000) in paragraph at lines 888--889
+[]\TU/PTSerif(0)/m/n/10.95 Фундаментальной задачей в приложениях теории операто
+ров к
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 888--889
+\TU/PTSerif(0)/m/n/10.95 математическому анализу является решение однородного и
+ неоднородного
+ []
+
+
+Underfull \hbox (badness 1655) in paragraph at lines 899--900
+\TU/PTSerif(0)/m/n/10.95 и собственные функции, соответствующие различным собст
+венным значениям,
+ []
+
+
+Underfull \hbox (badness 3861) in paragraph at lines 904--905
+[]\TU/PTSerif(0)/b/n/10.95 Определения. \TU/PTSerif(0)/m/n/10.95 Точка $\OML/cm
+m/m/it/10.95 ^^U$ \TU/PTSerif(0)/m/n/10.95 плоскости комплексного переменного н
+азывается
+ []
+
+
+Underfull \hbox (badness 2401) in paragraph at lines 904--905
+\TU/PTSerif(0)/m/n/10.95 регулярной точкой оператора $\OML/cmm/m/it/10.95 A$\TU
+/PTSerif(0)/m/n/10.95 , если оператор $\OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10.9
+5 ^^@ \OML/cmm/m/it/10.95 ^^UE$ \TU/PTSerif(0)/m/n/10.95 имеет ограниченный
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 906--907
+\TU/PTSerif(0)/m/n/10.95 но нас интересует следующий вопрос: какие самосопряжён
+ные операторы
+ []
+
+
+Underfull \hbox (badness 1762) in paragraph at lines 906--907
+\TU/PTSerif(0)/m/n/10.95 обладают свойством, что система $\OML/cmm/m/it/10.95 x
+[]; x[]; [] ; x[]; []$ \TU/PTSerif(0)/m/n/10.95 их (ортогонализированных и
+ []
+
+
+
+[178]
+Underfull \hbox (badness 10000) in paragraph at lines 908--909
+[]\TU/PTSerif(0)/m/n/10.95 Рассматриваем этот вопрос для так называемых вполне 
+непрерывных
+ []
+
+
+Underfull \hbox (badness 4429) in paragraph at lines 917--918
+[]\TU/PTSerif(0)/b/n/10.95 Теорема. \TU/PTSerif(0)/m/n/10.95 Вполне непрерывный
+ самосопряжённый оператор $\OML/cmm/m/it/10.95 A$ \TU/PTSerif(0)/m/n/10.95 имее
+т по
+ []
+
+
+Underfull \hbox (badness 3118) in paragraph at lines 917--918
+\TU/PTSerif(0)/m/n/10.95 нормированной системе собственных функций, соответству
+ющих собственным
+ []
+
+
+Underfull \hbox (badness 1412) in paragraph at lines 932--932
+\TU/PTSerif(0)/m/it/10 connection \TU/PTSerif(0)/m/n/10 (вяз- knot); \TU/PTSeri
+f(0)/b/n/10 счётный \TU/PTSerif(0)/m/n/10 104 \TU/PTSerif(0)/m/it/10 countable 
+\TU/PTSerif(0)/m/n/10 (чит- count); \TU/PTSerif(0)/b/n/10 решить \TU/PTSerif(0)
+/m/n/10 100 \TU/PTSerif(0)/m/it/10 solve \TU/PTSerif(0)/m/n/10 (рез-
+ []
+
+
+Underfull \hbox (badness 4072) in paragraph at lines 932--932
+\TU/PTSerif(0)/m/n/10 105 \TU/PTSerif(0)/m/it/10 obligatorily, necessarily \TU/
+PTSerif(0)/m/n/10 (вяз- lig- knot); \TU/PTSerif(0)/b/n/10 приложение \TU/PTSeri
+f(0)/m/n/10 82 \TU/PTSerif(0)/m/it/10 application \TU/PTSerif(0)/m/n/10 (лаг- l
+ay);
+ []
+
+
+
+[179]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 935.
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 946--948
+\TU/PTSerif(0)/m/n/10.95 Фиксируем в пространстве некоторую точку $\OML/cmm/m/i
+t/10.95 O$ \TU/PTSerif(0)/m/n/10.95 и будем при всех значениях $\OML/cmm/m/it/1
+0.95 t$
+ []
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 946--948
+\TU/PTSerif(0)/m/n/10.95 откладывать вектор $\OML/cmm/m/it/10.95 r\OT1/cmr/m/n/
+10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )$ \TU/PTSerif(0)/m/n/10.95 из э
+той точки. При каждом значении $\OML/cmm/m/it/10.95 t$ \TU/PTSerif(0)/m/n/10.95
+ мы получаем
+ []
+
+
+Underfull \hbox (badness 4582) in paragraph at lines 952--954
+\TU/PTSerif(0)/m/n/10.95 Плоскость, проходящая через точку касания перпендикуля
+рно к касательной,
+ []
+
+
+Underfull \hbox (badness 4899) in paragraph at lines 955--956
+[]\TU/PTSerif(0)/m/n/10.95 Плоскость в точке $\OML/cmm/m/it/10.95 M$\TU/PTSerif
+(0)/m/n/10.95 , построенная как предельное положение плоскости,
+ []
+
+
+
+[180]
+Underfull \hbox (badness 1117) in paragraph at lines 986--988
+\TU/PTSerif(0)/m/n/10.95 описывает некоторое геометрическое место точек, которо
+е мы будем называть
+ []
+
+
+
+[181]
+Underfull \hbox (badness 3302) in paragraph at lines 1006--1007
+\TU/PTSerif(0)/m/n/10.95 по поверхности все возможные кривые, то касательные к 
+ним в этой точке
+ []
+
+
+Underfull \hbox (badness 7256) in paragraph at lines 1006--1007
+\TU/PTSerif(0)/m/n/10.95 расположатся все в одной плоскости (в плоскости вектор
+ов $\OML/cmm/m/it/10.95 r[]; r[]$\TU/PTSerif(0)/m/n/10.95 ), которая
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 1030--1032
+\TU/PTSerif(0)/m/n/10.95 Выражение в правой части называется первой фундаментал
+ьной квадратичной
+ []
+
+
+Underfull \vbox (badness 2173) has occurred while \output is active []
+
+
+
+[182]
+Underfull \hbox (badness 2875) in paragraph at lines 1033--1034
+[]\TU/PTSerif(0)/m/n/10.95 Интегрируя дифференциал $\OML/cmm/m/it/10.95 ds$ \TU
+/PTSerif(0)/m/n/10.95 в пределах $\OML/cmm/m/it/10.95 t[] \OMS/cmsy/m/n/10.95 ^
+^T \OML/cmm/m/it/10.95 t \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 t[]$\TU/PT
+Serif(0)/m/n/10.95 , получим длину
+ []
+
+
+Underfull \hbox (badness 7740) in paragraph at lines 1042--1043
+\TU/PTSerif(0)/m/n/10.95 В каждой точке $\OML/cmm/m/it/10.95 n$\TU/PTSerif(0)/m
+/n/10.95 -мерного риманова пространства задана фундаментальная
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1049--1051
+\TU/PTSerif(0)/m/n/10.95 и отрицательные значения, то получим обобщение риманов
+ой геометрии,
+ []
+
+
+Underfull \hbox (badness 5316) in paragraph at lines 1055--1056
+[]\TU/PTSerif(0)/m/n/10.95 В трёхмерном евклидовом пространстве мы будем называ
+ть нормальным
+ []
+
+
+Underfull \hbox (badness 2762) in paragraph at lines 1055--1056
+\OML/cmm/m/it/10.95 M$\TU/PTSerif(0)/m/n/10.95 . Таких плоскостей в каждой точк
+е $\OML/cmm/m/it/10.95 M$ \TU/PTSerif(0)/m/n/10.95 бесконечное множество, но вс
+егда
+ []
+
+
+
+[183]
+Underfull \hbox (badness 3471) in paragraph at lines 1063--1064
+[]\TU/PTSerif(0)/m/n/10.95 Таким образом, при таких деформациях поверхность мен
+яет свою форму,
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \hskip 10.95pt
+(hyperref)                replaced by space on input line 1068.
+
+
+Underfull \hbox (badness 6995) in paragraph at lines 1075--1076
+[]\TU/PTSerif(0)/b/n/10.95 Определение. \TU/PTSerif(0)/m/n/10.95 Топологическим
+ пространством называется множество $\OML/cmm/m/it/10.95 R$\TU/PTSerif(0)/m/n/1
+0.95 ,
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 1075--1076
+\OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10.95 ^^R \OML/cmm/m/it/10.95 R$\TU/PTSerif
+(0)/m/n/10.95 , называемые замкнутыми множествами топологического пространства
+ []
+
+
+Underfull \hbox (badness 2205) in paragraph at lines 1075--1076
+\OML/cmm/m/it/10.95 R$\TU/PTSerif(0)/m/n/10.95 ; при этом предполагаются выполн
+енными следующие условия, называемые
+ []
+
+
+
+[184]
+Underfull \hbox (badness 1436) in paragraph at lines 1082--1083
+[]\TU/PTSerif(0)/b/n/10.95 Определение. \TU/PTSerif(0)/m/n/10.95 Пересечение вс
+ех замкнутых множеств, содержащих данное
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 1084--1085
+[]\TU/PTSerif(0)/b/n/10.95 Определение. \TU/PTSerif(0)/m/n/10.95 Окрестностью д
+анной точки $\OML/cmm/m/it/10.95 p$ \TU/PTSerif(0)/m/n/10.95 называется всякое 
+открытое
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1093--1094
+[]\TU/PTSerif(0)/m/n/10.95 для любых трёх точек $\OML/cmm/m/it/10.95 x; y; z$ \
+TU/PTSerif(0)/m/n/10.95 метрического пространства имеет место
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1099--1100
+\TU/PTSerif(0)/m/n/10.95 Неотрицательная функция $\OML/cmm/m/it/10.95 ^^Z\OT1/c
+mr/m/n/10.95 (\OML/cmm/m/it/10.95 x; y\OT1/cmr/m/n/10.95 )$ \TU/PTSerif(0)/m/n/
+10.95 двух переменных точек $\OML/cmm/m/it/10.95 x; y$ \TU/PTSerif(0)/m/n/10.95
+ пространства
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1099--1100
+\OML/cmm/m/it/10.95 R$\TU/PTSerif(0)/m/n/10.95 , удовлетворяющая указанным усло
+виям, называется метрикой данного
+ []
+
+
+Underfull \hbox (badness 3449) in paragraph at lines 1101--1102
+[]\TU/PTSerif(0)/m/n/10.95 Метрика данного метрического пространства определяет
+ в нём топологию
+ []
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 1101--1102
+\TU/PTSerif(0)/m/n/10.95 чисел $\OML/cmm/m/it/10.95 ^^Z\OT1/cmr/m/n/10.95 (\OML
+/cmm/m/it/10.95 p; x\OT1/cmr/m/n/10.95 )$\TU/PTSerif(0)/m/n/10.95 , $\OML/cmm/m
+/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 M$\TU/PTSerif(0)/m/n/10.9
+5 . Называется замыканием множества $\OML/cmm/m/it/10.95 M$ \TU/PTSerif(0)/m/n/
+10.95 в метрическом
+ []
+
+
+Underfull \hbox (badness 1590) in paragraph at lines 1101--1102
+\TU/PTSerif(0)/m/n/10.95 наконец, множество $\OML/cmm/m/it/10.95 M$ \TU/PTSerif
+(0)/m/n/10.95 замкнутым, если оно совпадает со своим замыканием.
+ []
+
+
+Underfull \hbox (badness 2828) in paragraph at lines 1101--1102
+\TU/PTSerif(0)/m/n/10.95 Легко проверить, что эта топология удовлетворяет аксио
+мам топологического
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1108--1109
+[]\TU/PTSerif(0)/b/n/10.95 Определение. \TU/PTSerif(0)/m/n/10.95 Отображение $\
+OML/cmm/m/it/10.95 C$ \TU/PTSerif(0)/m/n/10.95 топологического пространства $\O
+ML/cmm/m/it/10.95 X$ \TU/PTSerif(0)/m/n/10.95 в
+ []
+
+
+Underfull \vbox (badness 4886) has occurred while \output is active []
+
+
+
+[185]
+Underfull \hbox (badness 10000) in paragraph at lines 1110--1111
+[]\TU/PTSerif(0)/m/n/10.95 Пусть непрерывное отображение $\OML/cmm/m/it/10.95 C
+$ \TU/PTSerif(0)/m/n/10.95 топологического пространства $\OML/cmm/m/it/10.95 X$
+ \TU/PTSerif(0)/m/n/10.95 на
+ []
+
+
+Underfull \hbox (badness 2689) in paragraph at lines 1110--1111
+\TU/PTSerif(0)/m/n/10.95 топологическое пространство $\OML/cmm/m/it/10.95 Y$ \T
+U/PTSerif(0)/m/n/10.95 взаимно однозначно. Если отображение $\OML/cmm/m/it/10.9
+5 C[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1110--1111
+\TU/PTSerif(0)/m/n/10.95 пространства $\OML/cmm/m/it/10.95 Y$ \TU/PTSerif(0)/m/
+n/10.95 на $\OML/cmm/m/it/10.95 X$\TU/PTSerif(0)/m/n/10.95 , обратное к взаимно
+ однозначному отображению $\OML/cmm/m/it/10.95 C$\TU/PTSerif(0)/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1110--1111
+\TU/PTSerif(0)/m/n/10.95 непрерывно, то отображение $\OML/cmm/m/it/10.95 C$ \TU
+/PTSerif(0)/m/n/10.95 называется топологическим отображением
+ []
+
+
+Underfull \hbox (badness 4168) in paragraph at lines 1110--1111
+\TU/PTSerif(0)/m/n/10.95 гомеоморфными между собой, если одно из них может быть
+ топологически
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1112--1113
+[]\TU/PTSerif(0)/m/n/10.95 Топологическое пространство, гомеоморфное метрическо
+му, называется
+ []
+
+
+Underfull \hbox (badness 2269) in paragraph at lines 1117--1118
+\TU/PTSerif(0)/m/n/10.95 метрического пространства называется $\OML/cmm/m/it/10
+.95 "$\TU/PTSerif(0)/m/n/10.95 -покрытием, если все элементы этого
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1120
+[]\TU/PTSerif(0)/b/n/10.95 Определения. \TU/PTSerif(0)/m/n/10.95 Топологическое
+ пространство называется хаусдорфовым
+ []
+
+
+Underfull \hbox (badness 6876) in paragraph at lines 1119--1120
+\TU/PTSerif(0)/m/n/10.95 пространством, если для любых двух различных его точек
+ существуют две
+ []
+
+
+Underfull \hbox (badness 1348) in paragraph at lines 1121--1122
+[]\TU/PTSerif(0)/m/n/10.95 Топологическое пространство $\OML/cmm/m/it/10.95 R$ 
+\TU/PTSerif(0)/m/n/10.95 называется бикомпактным, если из всякого
+ []
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 1121--1122
+\TU/PTSerif(0)/m/n/10.95 покрытия пространства $\OML/cmm/m/it/10.95 R$ \TU/PTSe
+rif(0)/m/n/10.95 открытыми множествами можно выделить конечное
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1123--1124
+[]\TU/PTSerif(0)/m/n/10.95 Хаусдорфово бикомпактное пространство называется бик
+омпактом.
+ []
+
+
+
+[186]
+Underfull \hbox (badness 10000) in paragraph at lines 1132--1133
+[]\TU/PTSerif(0)/m/n/10.95 Но при заполнении некоторого трёхмерного объёма дост
+аточно малыми
+ []
+
+) (./chapters/backmatter.tex (./chapters/glossary.tex
+
+[187]
+
+[188
+
+
+]
+
+[189]
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/7.25'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/7.25'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/7.25'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/7.25'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/7.25'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/PTSerif(0)/m/n/7.25'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Calculating math sizes for size <7.25> on input line 50.
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/NotoSerif(0)/m/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textendash ' is missing
+(microtype)             in font `TU/NotoSerif(0)/b/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textemdash ' is missing
+(microtype)             in font `TU/NotoSerif(0)/b/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteleft ' is missing
+(microtype)             in font `TU/NotoSerif(0)/b/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquoteright ' is missing
+(microtype)             in font `TU/NotoSerif(0)/b/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblleft ' is missing
+(microtype)             in font `TU/NotoSerif(0)/b/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+Package microtype Info: Character `textquotedblright ' is missing
+(microtype)             in font `TU/NotoSerif(0)/b/n/8'.
+(microtype)             Ignoring protrusion settings for this character.
+
+
+[190
+
+]
+
+[191
+
+]
+
+[192
+
+]
+
+[193
+
+]
+
+[194
+
+]
+
+[195
+
+]
+
+[196
+
+]
+
+[197
+
+]
+
+[198
+
+]
+
+[199
+
+]
+
+[200
+
+]
+
+[201
+
+]
+
+[202
+
+]
+
+[203
+
+]
+
+[204
+
+]
+
+[205
+
+]
+
+[206
+
+]
+
+[207
+
+]
+
+[208
+
+]
+
+[209
+
+]
+
+[210
+
+]
+
+[211
+
+]
+
+[212
+
+]
+
+[213
+
+])
+
+[214
+
+] (./chapters/index.tex
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "Noto Sans Mono CJK SC/I" (it
+(fontspec)             probably doesn't exist).
+
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `TeXGyreCursor' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Package fontspec Info: 
+(fontspec)             Font family 'NotoSansMonoCJKSC(0)' created for font
+(fontspec)             'Noto Sans Mono CJK SC' with options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Noto Sans Mono
+(fontspec)             CJK SC/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Noto Sans Mono CJK
+(fontspec)             SC/B/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Noto Sans
+(fontspec)             Mono CJK SC/BI/OT:script=hani;language=dflt;"
+
+
+
+[215
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 170--170
+[]|\TU/TeXGyreCursor(0)/m/n/9 contrary-to-fact
+ []
+
+
+
+[216
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 255--255
+[]|\TU/TeXGyreCursor(0)/m/n/9 imperfective-perfective
+ []
+
+
+
+[217
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+[]|\TU/TeXGyreCursor(0)/m/n/9 preposition ending in hard
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+[]|\TU/TeXGyreCursor(0)/m/n/9 present adverbial
+ []
+
+
+
+[218
+
+]
+
+[219
+
+])) (./main.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2022/08/05>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 38346 strings out of 473835
+ 857840 string characters out of 5731947
+ 1336234 words of memory out of 5000000
+ 60602 multiletter control sequences out of 15000+600000
+ 586141 words of font info for 268 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 102i,14n,112p,2160b,1060s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on main.pdf (229 pages).

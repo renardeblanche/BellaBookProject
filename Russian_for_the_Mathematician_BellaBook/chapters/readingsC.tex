@@ -1,0 +1,1136 @@
+% Readings, Section C: More advanced topics
+% Page references in vocabulary notes are to the 1972 Springer edition.
+\newcommand{\ccorrnote}[1]{\footnote{{\fontspec{Noto Serif}\textbf{校勘：}#1}}}
+
+\clearpage
+\begin{center}
+{\sffamily\color{BellaBlue}\Large SECTION C\par}
+\vspace{0.8ex}
+{\bfseries\Large MORE ADVANCED TOPICS\par}
+\end{center}
+\addcontentsline{toc}{section}{Section C: More advanced topics}
+\markright{SECTION C\quad More advanced topics}
+\begingroup
+\sloppy
+\setlength{\emergencystretch}{4em}
+
+% --------------------------------------------------------------------------
+\readhead{C1}{Теория функций действительного переменного}{Theory of functions of a real variable}
+
+\begin{sourcebox}
+\textbf{Classification of Baire.} Baire denoted by $K_0$ the class of functions continuous on $[a,b]$, by $K_1$ the class of functions not in $K_0$ but representable as the pointwise limit of a sequence of such functions, and similarly for $K_2,K_3,\ldots$. Part of the fundamental theorem of Baire states that for a discontinuous function to belong to $K_1$ it is necessary that its points of continuity be everywhere dense. An example of a function in $K_2$ is the Dirichlet discontinuous function, equal to zero at irrational points and to unity at rational points.
+\end{sourcebox}
+
+\subsection*{\ru{Классы Бера} \textit{classes of Baire}}
+\begin{rusblock}
+Пусть $P$ есть замкнутый отрезок $P=[a,b]$ действительной оси. Бер называет непрерывные на $P$ функции $f(x)$ функциями класса $0$ и обозначает этот класс через $K_0$.
+
+Следующий класс $K_1$ состоит из таких разрывных функций $f$, которые являются пределами последовательности непрерывных на $P$ функций
+\[
+f_1,f_2,\ldots,f_n,\ldots,\qquad\text{т.е.}\qquad f=\lim_{n\to\infty}f_n.
+\]
+Следующий за ним класс $K_2$ состоит из функций $f$, не принадлежащих ни к $K_0$, ни к $K_1$, но которые являются пределами последовательности функций $f_1,f_2,\ldots,f_n,\ldots$, принадлежащих к классам $K_0$ и $K_1$. Аналогичным образом определяются $K_3,K_4,K_5,\ldots$.
+
+\textbf{Определение.} Множество точек $E$ называется всюду плотным на интервале $P$, если для каждого подинтервала $Q\subset P$ пересечение $E\cap Q$ непусто.
+
+\textbf{Точечно разрывная функция.} Разрывная функция $f$ называется точечно разрывной на $P$, если точки непрерывности функции $f$ на $P$ образуют множество $E$, всюду плотное на $P$.
+
+\textbf{Фундаментальная теорема Бера.} Для того, чтобы разрывная функция $f$ была функцией класса $1$ на $P$, необходимо, чтобы $f$ была точечно разрывной на $P$.
+\end{rusblock}
+
+\subsection*{\ru{Примеры функций первого и второго класса. Разрывная функция Дирихле} \textit{examples of functions of first and second class; Dirichlet discontinuous function}}
+\begin{rusblock}
+Функция $f$, равная единице в точке $M$ и равная нулю во всех остальных точках, есть, ясно, функция класса $1$.
+
+Докажем, что разрывная функция Дирихле $f(x)$, равная единице для $x$ рационального и равная нулю для $x$ иррационального, есть функция класса $2$. Действительно, $f(x)$ не имеет ни одной точки непрерывности на оси $Ox$ и, поэтому, по фундаментальной теореме Бера не может быть класса $1$. Если мы занумеруем все рациональные точки оси $Ox$, расположив их в виде последовательности
+\[
+r_1,r_2,\ldots,r_n,\ldots,
+\]
+и если обозначаем через $f_n(x)$ функцию, равную единице в первых $n$ рациональных точках $r_1,r_2,\ldots,r_n$ и равную нулю в остальных точках, то ясно, что функция $f_n(x)$ есть класса $1$ и что
+\[
+f(x)=\lim_{n\to\infty}f_n(x).
+\]
+Отсюда и следует, что разрывная функция Дирихле $f(x)$ есть функция класса $2$.
+
+Легко видеть, что функция Дирихле $f(x)$ изобразима формулой
+\[
+f(x)=\lim_{n\to\infty}\lim_{m\to\infty}\bigl(\cos 2\pi n!x\bigr)^{2m},
+\]
+но она не может быть изображена одним переходом к пределу перед знаком непрерывной функции.
+\end{rusblock}
+\vocabline{\textbf{разрывный} 106 \emph{discontinuous} (рыв- break); \textbf{точечно} 107 \emph{pointwise} (тык- pierce); \textbf{нумеровать $\sim$ занумеровать} \emph{enumerate}.}
+
+% --------------------------------------------------------------------------
+\readhead{C2}{Теория функций многих комплексных переменных}{Theory of functions of several complex variables}
+
+\begin{sourcebox}
+For functions of one complex variable every domain is a domain of holomorphy, i.e. a domain $G$ such that some function $f$ is holomorphic in $G$ but not holomorphic in any larger domain containing $G$; but an example shows that for functions of more than one variable this statement is no longer true.
+\end{sourcebox}
+
+\begin{rusblock}
+Комплексные и действительные пространства обозначаем соответственно через $\mathbb C^n$ и $\mathbb R^n$,
+\[
+\mathbb C^n=\mathbb R^n+i\mathbb R^n.
+\]
+Точки пространства $\mathbb R^n$ обозначаем через
+\[
+x=(x_1,x_2,\ldots,x_n),\qquad y=(y_1,y_2,\ldots,y_n),
+\]
+и точки пространства $\mathbb C^n$ через
+\[
+z=(z_1,z_2,\ldots,z_n)=x+iy,\qquad |z|=\bigl(|z_1|^2+\cdots+|z_n|^2\bigr)^{1/2}.
+\]
+\end{rusblock}
+
+\subsection*{\ru{Определение голоморфности} \textit{definition of holomorphy}}
+\begin{rusblock}
+Функция $f(z)$ называется голоморфной в точке $z^0\in\mathbb C^n$, если в некоторой её окрестности $|z^0-z|<\rho$ удовлетворяются условия Коши--Римана
+\[
+\frac{\partial u}{\partial x_j}=\frac{\partial v}{\partial y_j},\qquad
+\frac{\partial u}{\partial y_j}=-\frac{\partial v}{\partial x_j},\qquad j=1,2,\ldots,n,
+\]
+где $f=u+iv$, $z_j=x_j+iy_j$.
+
+Таким образом, функция голоморфна в точке $z^0$, если она голоморфна по каждому переменному $z_j$ в отдельности (при фиксированных остальных) в некоторой окрестности этой точки.
+\end{rusblock}
+
+\subsection*{\ru{Области голоморфности} \textit{domains of holomorphy}}
+\begin{rusblock}
+\textbf{Определение.} Конечная область $G$ называется областью голоморфности функции $f(z)$, если $f(z)$ голоморфна в $G$ и не голоморфна в большей области.
+
+Например, в $\mathbb C^1$ областью голоморфности функции
+\[
+f_0(z)=\sum_{\alpha=0}^{\infty} z^{\alpha!}
+\]
+является единичный круг $|z|<1$.
+
+Действительно, $f_0(z)$ неограничена в точках
+\[
+z=e^{2\pi i p/q},\qquad p,q\in\mathbb Z,
+\]
+и это множество всюду плотно на окружности $|z|=1$.
+
+Естественно поставить вопрос: всякая ли область является областью голоморфности некоторой функции? Ответ на этот вопрос существенно различен для $n=1$ и $n\ge2$.
+
+\textbf{Теорема.} В пространстве $\mathbb C^1$ всякая область есть область голоморфности.
+
+Действительно, для всякой области $G\subset\mathbb C$ существует функция, голоморфная в $G$ и не допускающая голоморфного продолжения ни через одну граничную точку $G$; следовательно, $G$ является областью голоморфности.
+\end{rusblock}
+\ccorrnote{此处原证明把任意区域 $G$ 直接用黎曼映射定理双全纯映到单位圆盘；该定理需有单连通等条件，不能作为任意平面区域情形的证明。正文仅把这一证明替换为正确的存在性表述；定理本身不变。另，级数 $\sum z^{\alpha!}$ 的单位圆边界奇点应取单位根 $e^{2\pi i p/q}$，相位中的 $2\pi$ 已补正。}
+
+\subsection*{\ru{Области голоморфности в пространстве $\mathbb C^n$, $n\ge2$} \textit{domains of holomorphy in the space $\mathbb C^n$, $n\ge2$}}
+\begin{rusblock}
+В отличие от пространства $\mathbb C^1$, в пространстве $\mathbb C^n$, $n\ge2$, не всякая область есть область голоморфности.
+
+Действительно, оказывается (S. Bochner и W. T. Martin, 1948), что в $\mathbb C^2$ всякая функция $f(z)$, голоморфная в области
+\[
+G=\{z=(z_1,z_2):\tfrac12<|z|<1\},
+\]
+имеет голоморфное продолжение в шар $|z|<1$. Этот пример означает, что $G$ не может быть областью голоморфности никакой функции.
+\end{rusblock}
+\vocabline{\textbf{таким образом} 101 \emph{in such a manner, thus}; \textbf{отдельность} 95 \emph{separation} (дел- divide); \textbf{единичный} 89 \emph{unit} (adj.) (один- uni- one); \textbf{круг} 105 \emph{circle}; \textbf{окружность} 105 \emph{circumference}; \textbf{существенно} 72 \emph{essentially}; \textbf{непрерывно} 106 \emph{continuously} (рыв- break); \textbf{отличие} 105 \emph{distinction} (лик- face); \textbf{шар} 107 \emph{ball}; \textbf{никакой} 45 \emph{of any kind at all}.}
+
+% --------------------------------------------------------------------------
+\readhead{C3}{Теория суммируемости расходящихся рядов}{Summability theory of divergent series}
+
+\begin{sourcebox}
+If each of the terms of a divergent series $\sum_{n=0}^{\infty}a_n$ can be multiplied by a factor $\lambda_n(t)$ such that the series $\sum_{n=0}^{\infty}a_n\lambda_n(t)$ is convergent in the usual sense to a sum $\sigma(t)$ for all $t$ in a certain set, and also such that, as $t$ varies in some way over this set, all the factors $\lambda_n(t)$ approach unity and $\sigma(t)$ approaches a limit $\sigma$, then $\sigma$ is said to be the sum of the original series. It is shown how this method subsumes the Abel--Poisson method and the Cesàro method of any order.
+\end{sourcebox}
+
+\begin{rusblock}
+Рассмотрим суммирование расходящихся рядов, т.е. построение обобщённой суммы ряда, не имеющего обычной суммы. Обычно требуется, чтобы из того, что ряд $\sum_{n=0}^{\infty}a_n$ суммируется к $S$, а ряд $\sum_{n=0}^{\infty}b_n$ суммируется к $T$, следовало, что ряд
+\[
+\sum_{n=0}^{\infty}(\lambda a_n+\mu b_n)
+\]
+суммируется к $\lambda S+\mu T$, а ряд $\sum_{n=1}^{\infty}a_n$ суммируется к $S-a_0$. Кроме того, обычно рассматриваются регулярные методы суммирования, т.е. методы, суммирующие каждый сходящийся ряд к его обычной сумме.
+
+В большинстве методов суммирования расходящийся ряд рассматривается как предел сходящегося ряда. Значит, каждый член ряда
+\[
+\tag{1}\sum_{n=0}^{\infty}a_n
+\]
+умножается на некоторый множитель $\lambda_n(t)$ так, чтобы после умножения получился сходящийся ряд
+\[
+\tag{2}\sum_{n=0}^{\infty}a_n\lambda_n(t)
+\]
+со суммой $\sigma(t)$. При этом множители $\lambda_n(t)$ выбираются так, чтобы при каждом фиксированном $n$ предел $\lambda_n(t)$ при некотором непрерывном или дискретном изменении параметра $t$ равнялся $1$. Если при этом $\sigma(t)$ имеет предел, то его называют обобщённой суммой данного ряда, соответствующей данному выбору множителей (данному методу суммирования).
+
+Например, если положить $\lambda_n(t)=1$ при $n\le t$ и $\lambda_n(t)=0$ при $n>t$ и брать $t\to\infty$, то получается обычное понятие суммы ряда; при $\lambda_n(t)=t^n$ для $t<1$ и $t\to1$ получается метод Абеля--Пуассона.
+
+В методе средних арифметических Чезаро полагают
+\[
+S=\lim_{m\to\infty}\sigma_m,
+\qquad
+\sigma_m=\frac{1}{m+1}(S_0+\cdots+S_m),
+\qquad
+S_k=a_0+\cdots+a_k,
+\]
+что соответствует выбору
+\[
+\lambda_n(m)=\frac{m-n+1}{m+1}\quad (n\le m),\qquad \lambda_n(m)=0\quad(n>m).
+\]
+Если положить
+\[
+A_n^0=S_n,\qquad A_n^k=A_0^{k-1}+\cdots+A_n^{k-1},
+\]
+\[
+E_n^0=1,\qquad E_n^k=E_0^{k-1}+\cdots+E_n^{k-1},
+\]
+и существует
+\[
+\lim_{n\to\infty}\frac{A_n^k}{E_n^k}=A,
+\]
+то говорят, что ряд суммируется к $A$ методом Чезаро $k$-го порядка. С ростом $k$ возрастает эффективность метода Чезаро, т.е. расширяется множество рядов, суммируемых этим методом. Всякий ряд, суммируемый методом Чезаро, суммируется и методом Абеля--Пуассона и притом к той же сумме.
+
+Например, ряд
+\[
+1-1+1-\cdots+(-1)^{n-1}+\cdots
+\]
+суммируется методом Абеля--Пуассона к значению $1/2$, так как
+\[
+\sum_{n=0}^{\infty}(-1)^nt^n=\frac{1}{1+t},\qquad
+\lim_{t\to1}\frac{1}{1+t}=\frac12.
+\]
+\ccorrnote{此处底本在从 $n=0$ 开始的幂级数中排作 $(-1)^{n-1}t^n$，与右端 $1/(1+t)$ 的符号不符；应为 $(-1)^n t^n$。}
+Метод Чезаро первого порядка приводит к тому же значению, так как
+\[
+S_{2n}=1,\qquad S_{2n+1}=0,\qquad \sigma_{2n}=\frac{n+1}{2n+1},
+\]
+\[
+\sigma_{2n+1}=\frac12,\qquad \lim_{k\to\infty}\sigma_k=\frac12.
+\]
+Методы Чезаро и Абеля--Пуассона применяются к теории тригонометрических рядов для нахождения функции по её ряду Фурье, так как ряд Фурье любой непрерывной функции суммируется к этой функции методом Чезаро первого порядка, а следовательно и методом Абеля--Пуассона.
+\end{rusblock}
+\vocabline{\textbf{суммируемость} 37 \emph{summability}; \textbf{расходиться} 77 \emph{diverge} (ход- go); \textbf{суммирование} 37 \emph{summation}; \textbf{обычно} 107 \emph{usually}; \textbf{требовать} 106 \emph{to demand}; \textbf{кроме того} \emph{beyond that, also}; \textbf{большинство} 44 \emph{majority}; \textbf{умножать} 88 \emph{multiply}; \textbf{выбирать} 78, 79 \emph{select}; \textbf{равняться} 87 \emph{become equal to}; \textbf{обобщённый} 62 \emph{generalized}; \textbf{данный} 51 \emph{given}; \textbf{выбор} 78 \emph{choice}; \textbf{брать} 78 \emph{to take}; \textbf{понятие} 79 \emph{concept}; \textbf{средний} 46 \emph{average, mean}; \textbf{полагать} 81 \emph{lay, set}; \textbf{порядок} 106 \emph{order}; \textbf{рост} 106 \emph{growth}; \textbf{возрастать} 106 \emph{grow}; \textbf{приводить} 74,75 \emph{reduce to}; \textbf{нахождение} 77 \emph{finding, discovery}.}
+
+% --------------------------------------------------------------------------
+\readhead{C4}{Обобщённые функции}{Generalized functions}
+
+\begin{sourcebox}
+If we wish to generalize the concept of a point-function in such a way that every generalized function will be infinitely often differentiable, we may begin by examining differentiable functions to see which of their properties can be extended to non-differentiable (point-) functions. We note that any integrable function $f(x)$ defined on $[a,b]$, $a<0<b$, may be regarded as a functional which to each integrable function $\varphi(x)$ assigns the numerical value $\int_a^b f\varphi\,dx$ such that if $f$ and $\varphi$ are differentiable and $\varphi$ vanishes at the endpoints, then
+\[
+\int_a^b f'\varphi\,dx=-\int_a^b f\varphi'\,dx.
+\]
+For a non-differentiable function $f$ it is therefore natural to define $f'$ as that functional which to each differentiable $\varphi$ assigns the negative of the value assigned by $f$ to $\varphi'$; and similarly for higher derivatives. So a generalized function can be defined as a functional acting on the set of all infinitely differentiable functions $\varphi$ which (together with all their derivatives) vanish at the endpoints $a,b$. The best known example is the so-called Dirac delta-function, which to each such $\varphi$ assigns the value $\varphi(0)$.
+\end{sourcebox}
+
+\begin{rusblock}
+Мы изложим некоторые вопросы общей теории обобщённых функций, построенной S.~L. Sobolev и L. Schwartz.
+\end{rusblock}
+
+\subsection*{\ru{Пространство со сходимостью} \textit{space with convergence}}
+\begin{rusblock}
+Линейное пространство $R$ (например, гильбертово пространство $H$ или евклидово $\mathbb R^n$) называется линейным пространством со сходимостью, если в нём определено понятие сходимости последовательности его элементов к элементу пространства, такое, что операции сложения элементов пространства и умножения их на число являются непрерывными.
+\end{rusblock}
+
+\subsection*{\ru{Функционал} \textit{functional}}
+\begin{rusblock}
+Функции, определённые на линейном пространстве $R$ и принимающие числовые значения, называются функционалами над этим пространством. Значение функционала $f$ на элементе $x$ линейного пространства $R$ обозначается $(f,x)$, т.е. так же, как скалярное произведение элементов $f$ и $x$ в линейном пространстве со скалярным произведением.
+\end{rusblock}
+
+\subsection*{\ru{Линейный функционал} \textit{linear functional}}
+\begin{rusblock}
+Пусть $R$ --- линейное пространство. Функционал $f$ этого пространства называется линейным, если для любых элементов $x\in R$, $y\in R$ и любых чисел $\lambda,\mu$ выполняется условие
+\[
+(f,\lambda x+\mu y)=\lambda(f,x)+\mu(f,y).
+\]
+\end{rusblock}
+
+\subsection*{\ru{Непрерывный функционал} \textit{continuous functional}}
+\begin{rusblock}
+Функционал $f$, определённый на линейном пространстве $R$ со сходимостью, называется непрерывным, если для любой сходящейся последовательности $x_n\in R$, $\lim x_n=x$, выполняется условие
+\[
+\lim_{n\to\infty}(f,x_n)=(f,x).
+\]
+\end{rusblock}
+
+\subsection*{\ru{Сходимость последовательности функционалов} \textit{convergence of a sequence of functionals}}
+\begin{rusblock}
+Последовательность функционалов $f_n$, $n=1,2,\ldots$, называется сходящейся к функционалу $f$, если последовательность значений функционалов $f_n$ сходится в каждой точке $x\in R$ к значению в ней функционала $f$.
+\end{rusblock}
+
+\subsection*{\ru{Финитная функция} \textit{finitary function}}
+\begin{rusblock}
+Функция $f$, определённая на всей действительной оси, называется финитной, если существует конечный отрезок, вне которого она равна нулю во всех точках.
+\end{rusblock}
+
+\subsection*{\ru{Носитель функции} \textit{carrier of a function}}
+\begin{rusblock}
+Для всякой функции $f$ замыкание множества точек $x$, для которых $f(x)\ne0$, называется её носителем.
+\end{rusblock}
+
+\subsection*{\ru{Фундаментальное пространство} \textit{fundamental (test-)space}}
+\begin{rusblock}
+Последовательность бесконечно дифференцируемых финитных функций $\varphi_n$, $n=1,2,\ldots$, называется сходящейся к бесконечно дифференцируемой финитной функции $\varphi$, если:
+\begin{enumerate}[leftmargin=2.2em]
+\item существует отрезок $[a,b]$, вне которого все функции $\varphi_n$, $n=1,2,\ldots$, и $\varphi$ обращаются в нуль;
+\item на этом отрезке $[a,b]$ последовательность функций $\varphi_n$, $n=1,2,\ldots$, и последовательности всех их производных $\varphi_n^{(k)}$, $n=1,2,\ldots$, равномерно сходятся соответственно к функции $\varphi$ и к её соответствующим производным $\varphi^{(k)}$, $k=1,2,\ldots$.
+\end{enumerate}
+Пространство бесконечно дифференцируемых финитных функций с указанной сходимостью называется фундаментальным пространством $D$. Примером функции пространства $D$ является функция
+\[
+\varphi(x)=
+\begin{cases}
+\exp\!\left(\dfrac{a^2}{x^2-a^2}\right),& |x|<a,\\[1.0ex]
+0,& |x|\ge a.
+\end{cases}
+\]
+\end{rusblock}
+
+\subsection*{\ru{Обобщённая функция} \textit{generalized function}}
+\begin{rusblock}
+Всякий линейный непрерывный функционал $f$, определённый на $D$, называется обобщённой функцией.
+\end{rusblock}
+
+\subsection*{\ru{Регулярные и сингулярные обобщённые функции} \textit{regular and singular generalized functions}}
+\begin{rusblock}
+Функция $f$, определённая на всей действительной оси, называется локально интегрируемой, если она абсолютно интегрируема на любом конечном отрезке.
+
+Если $f$ --- локально интегрируемая функция, а $\varphi\in D$, то произведение $f\varphi$ абсолютно интегрируемо на всей оси и мы можем определить функционал $(f,\varphi)$ на $D$ равенством
+\[
+(f,\varphi)=\int_{-\infty}^{\infty}f(x)\varphi(x)\,dx.
+\]
+Таким образом, всякой локально интегрируемой функции $f(x)$ соответствует обобщённая функция $(f,\varphi)$. Обобщённые функции, представимые в виде
+\[
+\int_{-\infty}^{\infty}f(x)\varphi(x)\,dx,
+\]
+где $f$ --- локально интегрируемая функция, называются регулярными обобщёнными функциями, а все остальные --- сингулярными.
+
+Для обозначения значения сингулярной обобщённой функции $f$ на функции $\varphi=\varphi(x)\in D$, вместе с записью $(f,\varphi)$, употребляется также интегральная запись
+\[
+\int_{-\infty}^{\infty}f(x)\varphi(x)\,dx.
+\]
+\end{rusblock}
+
+\begin{rusblock}
+Как пример сингулярной обобщённой функции рассмотрим функционал, обозначаемый $\delta=\delta(x)$, который определяется формулой
+\[
+(\delta,\varphi)=\varphi(0),\qquad \varphi\in D.
+\]
+Применяя интегральную запись, можно написать
+\[
+\int_{-\infty}^{\infty}\delta(x)\varphi(x)\,dx=\varphi(0),\qquad \varphi\in D.
+\]
+Эта обобщённая функция носит название дельта-функции или функции Дирака.
+\end{rusblock}
+
+\subsection*{\ru{Производная обобщённой функции} \textit{derivative of a generalized function}}
+\begin{rusblock}
+Посмотрим, что представляет собой производная обычной непрерывно дифференцируемой функции $f$, рассматриваемой как функционал $(f,\varphi)$ на $D$. Интегрируя по частям, из финитности функции $\varphi\in D$ получим
+\[
+(f',\varphi)=\int_{-\infty}^{\infty}f'(x)\varphi(x)\,dx
+=-\int_{-\infty}^{\infty}f(x)\varphi'(x)\,dx
+=-(f,\varphi').
+\]
+Это делает естественным следующее определение: производной обобщённой функции $f$ называется функционал на $D$, обозначаемый $f'$, такой, что
+\[
+(f',\varphi)=-(f,\varphi'),\qquad \varphi\in D.
+\]
+По сделанному определению, обобщённые функции имеют производные любых порядков. Например, функция Хевисайда
+\[
+\theta(x)=
+\begin{cases}
+1,&x\ge0,\\
+0,&x<0,
+\end{cases}
+\]
+является локально интегрируемой функцией и поэтому может рассматриваться как обобщённая функция. Вычислим её производную. По определению,
+\[
+(\theta',\varphi)=-(\theta,\varphi')=-\int_0^{\infty}\varphi'(x)\,dx=\varphi(0)=(\delta,\varphi),\qquad \varphi\in D.
+\]
+Итак, $\theta'=\delta$. Значит, производной функции Хевисайда является функция Дирака.
+\end{rusblock}
+\vocabline{\textbf{построенный} 106 \emph{constructed}; \textbf{сходимость} 77,78 \emph{convergence}; \textbf{линейный} \emph{linear}; \textbf{евклидов} 45 \emph{Euclidean}; \textbf{так же} 51 \emph{in the same way}; \textbf{вне} 52 \emph{outside of}; \textbf{носитель} 75 \emph{carrier}; \textbf{замыкание} 106 \emph{closure}; \textbf{равномерно} 87 \emph{uniformly}; \textbf{указанный} 98 \emph{indicated}; \textbf{пример} 99 \emph{example}; \textbf{остальной} 85 \emph{remaining}; \textbf{запись} 68 \emph{manner of writing, notation}; \textbf{носить} 74 \emph{carry}; \textbf{посмотреть} 106 \emph{to look at}; \textbf{делать} 105 \emph{to do, make}; \textbf{сделать} 105 perfective of \textbf{делать}; \textbf{итак} 50 \emph{and so}.}
+
+% --------------------------------------------------------------------------
+\readhead{C5}{Вариационное исчисление}{Calculus of variations}
+
+\subsection*{\ru{Наименьшее время прохождения линии} \textit{shortest time of traversal of a curve}}
+\begin{sourcebox}
+In the simplest case of the calculus of variations the minimum value of a functional
+\[
+J=\int_{x_0}^{x_1}F(x,y,y')\,dx
+\]
+is sought by setting its variational derivative $F_y-\frac{d}{dx}F_{y'}$ equal to zero. In the brachistochrone problem of deciding what should be the shape of a ski-jump if the skier is to slide down it in the shortest time, the solution is found to be an arc of a cycloid.
+\end{sourcebox}
+
+\begin{rusblock}
+Пусть имеется неоднородная изотропная среда, в каждой точке $(x,y,z)$ которой определена скорость $v(x,y,z)$, не зависящая от направления. Рассчитаем время, необходимое для того, чтобы точка описала некоторую линию $\ell$. Для прохождения элемента $ds$ потребуется время $ds/v$, а для всей линии $\ell$ потребуется промежуток времени, выражаемый интегралом
+\[
+T=\int_{\ell}\frac{ds}{v(x,y,z)}.
+\]
+Если меняем линию $\ell$ при фиксированных концах $(x_0,y_0,z_0)$, $(x_1,y_1,z_1)$, то величина $T$ будет меняться в зависимости от $\ell$. При этом говорят, что $T$ есть функционал от линии $\ell$. Одной из задач геометрической оптики является следующая задача: определить $\ell$ так, чтобы функционал $T$ имел наименьшее значение. Принимая $x$ за параметр, можно записать интеграл в виде
+\[
+T=\int_{x_0}^{x_1}\frac{\sqrt{1+y'^2+z'^2}}{v(x,y,z)}\,dx.
+\]
+Задача сводится к разысканию функций $y(x)$ и $z(x)$ таких, чтобы этот интеграл имел наименьшее значение.
+
+В простейшем случае на плоскости функционал будет иметь вид
+\[
+T=\int_{x_0}^{x_1}\frac{\sqrt{1+y'^2}}{v(x,y)}\,dx,
+\]
+и задача сводится к нахождению одной функции $y(x)$, удовлетворяющей предельным условиям
+\[
+y(x_0)=y_0,\qquad y(x_1)=y_1.
+\]
+\end{rusblock}
+
+\subsection*{\ru{Уравнение Эйлера в простейшем случае} \textit{Euler equation in the simplest case}}
+\begin{rusblock}
+Рассмотрим простейший случай в общем виде
+\[
+J=\int_{x_0}^{x_1}F(x,y,y')\,dx,
+\]
+где $F$ --- заданная функция всех трёх аргументов. Положим, что значения функции $y(x)$ на концах промежутка интегрирования заданы:
+\[
+y(x_0)=y_0,\qquad y(x_1)=y_1.
+\]
+Выберем любую функцию $\eta(x)$, равную нулю на концах промежутка интегрирования, и образуем новую функцию $y(x)+\alpha\eta(x)$, где $\alpha$ --- малый численный параметр. Эта новая функция удовлетворяет тем же предельным условиям, что и $y(x)$. Поставив её в функционал $J$, получим, в результате интегрирования, некоторую функцию параметра $\alpha$:
+\[
+J(\alpha)=\int_{x_0}^{x_1}F\bigl(x,y(x)+\alpha\eta(x),y'(x)+\alpha\eta'(x)\bigr)\,dx.
+\]
+Если эта функция $J(\alpha)$ имеет экстремум при значении $\alpha=0$, то её производная обращается в нуль при $\alpha=0$. Дифференцируя под знаком интеграла, будем иметь
+\[
+J'(0)=\int_{x_0}^{x_1}\left[F_y(x,y,y')\eta(x)+F_{y'}(x,y,y')\eta'(x)\right]dx.
+\]
+Производя интегрирование по частям, можно написать
+\[
+\tag{10}
+J'(0)=\bigl[F_{y'}\eta(x)\bigr]_{x_0}^{x_1}
++\int_{x_0}^{x_1}\eta(x)\left[F_y-\frac{d}{dx}F_{y'}\right]dx.
+\]
+Внеинтегральный член равен нулю, так как по условию $\eta(x)$ обращается в нуль на концах промежутка. Следовательно,
+\[
+J'(0)=\int_{x_0}^{x_1}\eta(x)\left[F_y-\frac{d}{dx}F_{y'}\right]dx=0.
+\]
+Значит,
+\[
+F_y-\frac{d}{dx}F_{y'}=0,
+\]
+так как иначе интеграл имел бы положительное значение для таких функций $\eta(x)$, которые всюду в промежутке $(x_0,x_1)$ имеют тот же знак, как $F_y-\frac{d}{dx}F_{y'}$. Следовательно, кривая $y(x)$, соответствующая экстремуму интеграла, удовлетворяет следующему дифференциальному уравнению Эйлера:
+\[
+F_y-\frac{d}{dx}F_{y'}=0.
+\]
+\end{rusblock}
+
+\begin{rusblock}
+\textbf{Пример.} Полагая $v(x,y)=y^{1/2}$ для скорости, мы имеем так называемую задачу о брахистохроне
+\[
+J=\int_{x_0}^{x_1}\frac{\sqrt{1+y'^2}}{\sqrt y}\,dx.
+\]
+Среди линий, соединяющих две данные точки $(x_0,y_0)$ и $(x_1,y_1)$, необходимо вычислить ту, по которой падающая материальная точка описывает всю линию в наименьшее время.
+
+В этом случае подынтегральная функция не содержит $x$, и мы можем написать первый интеграл уравнения Эйлера
+\[
+y'^2=\frac{C-y}{y},
+\]
+откуда следует, что искомая кривая --- циклоида.
+\end{rusblock}
+\vocabline{\textbf{время} 92 \emph{time}; \textbf{прохождение} 77 \emph{transit, passage}; \textbf{скорость} 107 \emph{speed}; \textbf{рассчитать} 103 \emph{calculate}; \textbf{описать} 67,69 \emph{to describe}; \textbf{потребовать} 106 \emph{demand, require}; \textbf{записать} 68 \emph{write over again, write in a different way}; \textbf{разыскание} 97 \emph{search}; \textbf{заданный} 95 \emph{given, prescribed}; \textbf{внеинтегральный} 52 \emph{outside the integral sign}; \textbf{падать} 106 \emph{to fall}; \textbf{вычислить} 103 \emph{compute}.}
+
+% --------------------------------------------------------------------------
+\readhead{C6}{Теория групп и обобщения}{Theory of groups and generalizations}
+
+\begin{sourcebox}
+Definitions are given, with examples, of binary algebraic operation, groupoid, semigroup, isomorphism, homomorphism, and of abelian, cyclic, periodic, torsionless and mixed groups.
+\end{sourcebox}
+
+\subsection*{\ru{Группоид} \textit{groupoid}}
+\begin{rusblock}
+Пусть дано некоторое множество $M$. Мы говорим, что в $M$ определена бинарная алгебраическая операция, если всяким двум (различным или одинаковым) элементам множества $M$, взятым в определённом порядке, по некоторому закону ставится в соответствие вполне определённый третий элемент, принадлежащий к этому же множеству. Множество $M$ с одной бинарной алгебраической операцией называется группоидом.
+\end{rusblock}
+
+\subsection*{\ru{Полугруппа} \textit{semigroup}}
+\begin{rusblock}
+Примером алгебраической операции будет умножение подстановок. Подстановкой $n$-й степени называется взаимно однозначное отображение системы первых $n$ натуральных чисел на себя. Результат последовательного выполнения двух подстановок $n$-й степени будет некоторой подстановкой $n$-й степени, называемой произведением первой из заданных подстановок на вторую. Так, если даны при $n=3$ подстановки
+\[
+a=\begin{pmatrix}1&2&3\\1&3&2\end{pmatrix},\qquad
+b=\begin{pmatrix}1&2&3\\2&3&1\end{pmatrix},
+\]
+то их произведением будет подстановка
+\[
+ab=\begin{pmatrix}1&2&3\\2&1&3\end{pmatrix}.
+\]
+Умножение подстановок является ассоциативным.
+
+Множество с одной ассоциативной операцией называется полугруппой. Ассоциативность операции позволяет говорить однозначным образом о произведении любого конечного числа элементов из $M$.
+\end{rusblock}
+
+\subsection*{\ru{Единица} \textit{unit element}}
+\begin{rusblock}
+Множество $M$, в котором задана алгебраическая операция, обладает иногда единицей, т.е. таким элементом $1$, что $a\cdot1=1\cdot a=a$ для всех $a$ из $M$. Примером множества с алгебраической операцией, не обладающим единицей, является множество векторов трёхмерного евклидова пространства относительно операции векторного умножения.
+\end{rusblock}
+
+\subsection*{\ru{Обратная операция} \textit{inverse operation}}
+\begin{rusblock}
+Рассмотрим, наконец, понятие об обратной операции. Естественно поставить такой вопрос: существуют ли для данных элементов $a$ и $b$ такие элементы $x$ и $y$, что $ax=b$, $ya=b$. Будем говорить, что для операции, заданной в $M$, существует обратная операция, если при любых $a$ и $b$ каждое из этих уравнений обладает решением, притом единственным.
+\end{rusblock}
+
+\subsection*{\ru{Группа} \textit{group}}
+\begin{rusblock}
+Множество $G$ с одной бинарной алгебраической операцией называется группой, если выполняются следующие условия:
+\begin{enumerate}[leftmargin=2.2em]
+\item операция в $G$ ассоциативна;
+\item в $G$ выполнима обратная операция.
+\end{enumerate}
+\end{rusblock}
+
+\subsection*{\ru{Абелева группа} \textit{abelian group}}
+\begin{rusblock}
+Операция в группе $G$ не обязана быть коммутативной. Если же она коммутативна, то группа $G$ называется коммутативной, или абелевой.
+\end{rusblock}
+
+\subsection*{\ru{Конечная группа} \textit{finite group}}
+\begin{rusblock}
+Если группа $G$ состоит из конечного числа элементов, то она называется конечной группой, а число элементов в ней --- порядком группы.
+\end{rusblock}
+
+\subsection*{\ru{Элементы бесконечного и конечного порядка} \textit{elements of infinite and finite order}}
+\begin{rusblock}
+Произведение $n$ элементов, равных элементу $a$ группы $G$, называется $n$-й степенью элемента $a$ и обозначается через $a^n$.
+
+Если все степени элемента $a$ являются различными элементами группы, то $a$ называется элементом бесконечного порядка. Пусть, однако, среди степеней элемента $a$ имеются равные, например $a^k=a^\ell$ при $k\ne\ell$; это, в частности, всегда имеет место в случае конечных групп. Если $k>\ell$, то $a^{k-\ell}=1$, т.е. существуют положительные степени элемента $a$, равные единице. Пусть $a^n$ есть наименьшая положительная степень элемента $a$, равная единице, т.е.
+\[
+a^n=1,\quad n>0,
+\]
+и если $a^k=1$, $k>0$, то $k\ge n$. В этом случае говорят, что $a$ есть элемент конечного порядка $n$.
+\end{rusblock}
+
+\subsection*{\ru{Циклическая группа} \textit{cyclic group}}
+\begin{rusblock}
+Если существует такой элемент $a$ в (конечной или бесконечной) группе $G$, что всякий элемент $x$ из $G$ может быть записан в виде $a^n$, то говорят, что группа $G$ циклическая.
+\end{rusblock}
+
+\subsection*{\ru{Периодическая группа} \textit{periodic group}}
+\begin{rusblock}
+Всякая группа, все элементы которой имеют конечный порядок, называется периодической.
+\end{rusblock}
+
+\subsection*{\ru{Группа без кручения} \textit{group without torsion}}
+\begin{rusblock}
+Существуют группы, порядок всех элементов которых, кроме единицы, бесконечен; такие группы называются группами без кручения.
+\end{rusblock}
+
+\subsection*{\ru{Смешанная группа} \textit{mixed group}}
+\begin{rusblock}
+Наконец, группу естественно назвать смешанной, если она содержит и элементы бесконечного порядка, и отличные от единицы элементы конечных порядков.
+\end{rusblock}
+
+\subsection*{\ru{Примеры групп} \textit{examples of groups}}
+\begin{rusblock}
+\begin{enumerate}[leftmargin=2.2em]
+\item Все комплексные числа, являющиеся корнями из единицы степени $n$, образуют по умножению конечную группу порядка $n$. Так как все корни из единицы степени $n$ являются степенями одного из них, так называемого примитивного корня, следует, что группа циклическая.
+\item Группу по умножению образуют все комплексные числа, являющиеся корнями из единицы; это группа всех корней из единицы. Группа бесконечная, но периодическая.
+\end{enumerate}
+\end{rusblock}
+
+
+\begin{rusblock}
+\begin{enumerate}[leftmargin=2.2em,start=3]
+\item Все целые числа, положительные и отрицательные, образуют группу по операции сложения --- аддитивную группу целых чисел. Все элементы этой группы, кроме нуля, имеют бесконечный порядок. Группа --- без кручения.
+\item Все отличные от нуля рациональные числа образуют группу по умножению --- мультипликативную группу рациональных чисел. Единицей этой группы служит число $1$. Элемент $-1$ имеет порядок $2$, порядок всех остальных отличных от единицы элементов бесконечен. Группа --- смешанная.
+\end{enumerate}
+\end{rusblock}
+\vocabline{\textbf{обобщение} 90 \emph{generalization}; \textbf{вполне} 87 \emph{fully, completely}; \textbf{подстановка} 85 \emph{substitution}; \textbf{позволять} 94 \emph{allow}; \textbf{трёхмерный} 99 \emph{three-dimensional}; \textbf{кручение} 105 \emph{torsion}; \textbf{смешанный} 106 \emph{mixed}; \textbf{входить} 76 \emph{enter}.}
+
+% --------------------------------------------------------------------------
+\readhead{C7}{Теория чисел}{Theory of numbers}
+
+\subsection*{\ru{Приближение действительного числа рациональными дробями} \textit{approximation of a real number by rational fractions}}
+\begin{sourcebox}
+For an irrational number $\alpha$ in the interval $(0,1)$ both its decimal expansion $0.d_1,d_2,\ldots,d_n,\ldots$ and its continued fraction $0,a_1,a_2,\ldots$ consist of an infinite sequence of integers, with $0\le d_n\le9$, and $1\le a_n<\infty$, respectively. Each successive $d_n$ is determined as the largest digit $0,1,\ldots,9$ for which the finite decimal $0.d_1\ldots d_n$ is less than $\alpha$, and each successive $a_n$ is the largest natural number for which the finite continued fraction $0,a_1,a_2,\ldots,a_n$ (called a \emph{convergent} and denoted by $P_n/Q_n$) is less than $\alpha$ for even $i$ and greater than $\alpha$ for odd $i$. Of interest here is the fact that all the (infinitely many) $P_n/Q_n$ satisfy the inequality
+\[
+\left|\alpha-\frac{P_n}{Q_n}\right|<\frac1{Q_n^2},
+\]
+which means that for an algebraic irrationality $\alpha$ they give the best possible approximation by rational fractions in the sense that the inequality
+\[
+\left|\alpha-\frac ab\right|<\frac1{b^{2+\varepsilon}},\qquad a/b\ \hbox{rational},\ \varepsilon>0,
+\]
+has only finitely many solutions (as was proved by Roth in 1955).
+
+For a decimal expansion the approximation is more rapid when the $d_n$ are smaller, and for a convergent fraction when the $a_n$ are larger. Thus Roth's theorem implies that in some sense the $a_n$ of an algebraic number cannot increase too rapidly, just as Liouville showed that its $d_n$ cannot decrease too rapidly, since a number is transcendental if enough of its $d_n$ are zero. But exactly what is implied by Roth's result, e.g. whether or not a number is transcendental if its $a_n$ are unbounded, remains quite unknown. If (and only if) the irrationality is quadratic, are its $a_n$ periodic and therefore bounded, but for an algebraic irrationality of higher degree nothing is known about their behavior, not even for such a simple case as $2^{1/3}$.
+\end{sourcebox}
+
+\begin{rusblock}
+\textbf{Задача в практике.} Применение иррациональных чисел в практике осуществляется заменой данного иррационального числа некоторым рациональным числом, мало отличающимся от этого иррационального числа. При этом выбирают рациональное число возможно простым, т.е. в виде дроби со сравнительно небольшим знаменателем. Цепные дроби являются очень удобным аппаратом для решения задач такого рода.
+\end{rusblock}
+
+\subsection*{\ru{Цепные дроби; подходящие дроби} \textit{continued fractions; convergents}}
+\begin{rusblock}
+\textbf{Определение.} Бесконечной цепной дробью называется выражение вида
+\[
+ a_0+\cfrac1{a_1+\cfrac1{a_2+\cfrac1{\ddots}}},
+\tag{1}
+\]
+где $a_0$ --- целое число, а все остальные $a_n$ --- натуральные числа, $a_n\ge1$ при $n=1,2,3,\ldots$. Будем записывать выражение (1) в виде
+\[
+[a_0;a_1,a_2,\ldots].
+\]
+
+\textbf{Определение.} Подходящей дробью $P_n/Q_n$ называется конечная цепная дробь
+\[
+[a_0;a_1,\ldots,a_n].
+\]
+
+\textbf{Теорема.} Для любого иррационального числа $\alpha$ существует разложение в бесконечную цепную дробь
+\[
+\alpha=[a_0;a_1,a_2,\ldots].
+\]
+
+\textbf{Теорема.} Для любых двух соседних подходящих дробей $P_n/Q_n$ и $P_{n+1}/Q_{n+1}$ к иррациональному числу $\alpha$ имеет место неравенство
+\[
+\left|\alpha-\frac{P_n}{Q_n}\right|
+ <\frac1{Q_nQ_{n+1}}
+ <\frac1{Q_n^2}.
+\]
+Другими словами, для любого действительного иррационального числа $\alpha$ существует бесконечное множество рациональных чисел $a/b$ таких, что
+\[
+\left|\alpha-\frac ab\right|<\frac1{b^2},
+\]
+причём за $a/b$ можно взять любую подходящую дробь к $\alpha$.
+\end{rusblock}
+
+\subsection*{\ru{Алгебраические числа} \textit{algebraic numbers}}
+\begin{rusblock}
+\textbf{Определение.} Число $\alpha$ называется алгебраическим числом $n$-й степени, если оно является корнем некоторого неприводимого многочлена
+\[
+f(x)=b_0x^n+b_1x^{n-1}+\cdots+b_n
+\]
+с рациональными коэффициентами. В случае $n=2$ число $\alpha$ называется квадратической иррациональностью.
+
+\textbf{Теорема.} Число $\alpha$ разлагается в периодическую цепную дробь тогда и только тогда, когда $\alpha$ --- квадратическая иррациональность.
+\end{rusblock}
+
+\subsection*{\ru{Приближение алгебраических чисел} \textit{approximation of algebraic numbers}}
+\begin{rusblock}
+\textbf{Теорема Лиувилля.} Для любого алгебраического числа $\alpha$ степени $n$ можно подобрать положительное $c$, зависящее только от $\alpha$, такое, что для всех рациональных чисел $a/b$ имеет место
+\[
+\left|\alpha-\frac ab\right|>\frac{c}{b^n}.
+\]
+
+\textbf{Теорема (Thue--Siegel--Roth).} Пусть $\alpha$ --- алгебраическое число степени $n\ge2$; тогда при любом $\varepsilon>0$ существует только конечное число рациональных дробей $a/b$ таких, что
+\[
+\left|\alpha-\frac ab\right|<\frac1{b^{2+\varepsilon}}.
+\]
+
+Как мы видели, для любой иррациональности $\alpha$ существует бесконечное множество рациональных чисел $a/b$ таких, что
+\[
+\left|\alpha-\frac ab\right|<\frac1{b^2}.
+\]
+Следовательно, в результате теоремы Туэ--Зигеля--Рота нельзя заменить $1/b^{2+\varepsilon}$ через $1/b^2$.
+
+Однако не исключена возможность, что для любого алгебраического $\alpha$ при достаточно малом $\varepsilon>0$ всегда выполняется неравенство
+\[
+\left|\alpha-\frac ab\right|>\frac{c}{b^2},
+\]
+откуда, как можно доказать, следовала бы ограниченность элементов разложения в цепную дробь любого алгебраического числа.
+
+Но некоторые математики считают более вероятным, что это неверно, т.е. предполагают существование алгебраических чисел, у которых элементы разложения в цепную дробь неограниченны. Не исключена возможность того, что, кроме квадратических иррациональностей, не существует алгебраических иррациональных чисел с ограниченными элементами.
+
+Характер разложения алгебраических чисел степени большей чем $2$, таким образом, совершенно неясен. Было бы интересно, если бы удалось получить разложение в цепную дробь одной из простейших иррациональностей 3-й степени, например $2^{1/3}$, или по меньшей мере выяснить вопрос, ограничены ли элементы этого разложения.
+\end{rusblock}
+\vocabline{\textbf{приближение} 90 \emph{approximation}; \textbf{знаменатель} 96 \emph{denominator}; \textbf{цепной} 107 \emph{continued, chain-like}; \textbf{подходящая дробь} 76 \emph{convergent}; \textbf{соседний} 80 \emph{adjacent}; \textbf{неравенство} 86 \emph{inequality}; \textbf{неприводимый} 74 \emph{irreducible}; \textbf{ограниченность} 105 \emph{boundedness}.}
+
+% --------------------------------------------------------------------------
+\readhead{C8}{Математическая логика}{Mathematical logic}
+
+\begin{sourcebox}
+What is meant by a \emph{calculus of propositions} (or statements) and what is the difference between the \emph{classical calculus} (essentially due to Aristotle (384--322 B.C.)) and the more recent \emph{constructive calculus}?
+
+The only symbols used in these two calculi (except for abbreviations and brackets) are letters $A,B,C,\ldots$, called \emph{logical variables}, to be thought of as taking statements for their values, and four \emph{connectives}, to be thought of as \emph{not}, \emph{and}, \emph{or}, and \emph{implies} (or \emph{if ... then}). A formula is a finite row of symbols constructed from the variables and the connectives, and a finite sequence of formulas (usually written one under another) is a \emph{proof} of the formula at the bottom (which is then called a \emph{theorem}) provided that every formula in the sequence is either an \emph{axiom} (one of a preassigned finite set of formulas) or is constructible from the preceding formulas by applying one of the two rules of inference; namely, the rule of substitution: any formula may be substituted for any variable; and the rule of detachment: to a sequence of formulas containing the formulas $F_1$ and ``$F_1$ implies $F_2$'' we may adjoin, as the next row in the sequence, the formula $F_2$; i.e. $F_2$ may be detached from ``$F_1$ implies $F_2$''.
+
+The classical calculus has eleven axioms, but the constructive calculus omits the eleventh one, the so-called law of the excluded middle (``$A$ or not-$A$''), which in fact cannot be proved on the basis of the other ten. But the law of contradiction (``not both $A$ and not-$A$'') can be so proved, as is shown here in detail. In the constructive calculus there is no difference between a problem and a theorem; to demonstrate the existence of a desired entity has the same meaning as to show how to construct it.
+\end{sourcebox}
+
+\subsection*{\ru{Два исчисления высказываний} \textit{the two calculi of propositions}}
+\begin{rusblock}
+Математическая логика --- наука, изучающая математические доказательства. Применяется метод формализации доказательств. Простейшими из так получающихся логических исчислений являются исчисления высказываний, классическое и конструктивное. В них употребляются следующие знаки:
+\begin{enumerate}[leftmargin=2.2em]
+\item так называемые логические переменные $A,B,C,\ldots$, означающие любые высказывания;
+\item знаки логических связок $\neg,\&,\vee,\supset$, означающие соответственно \emph{не}, \emph{и}, \emph{или}, \emph{если ... то};
+\item скобки, выявляющие строение формул.
+\end{enumerate}
+
+Доказательство теоремы состоит из ряда формул, в котором всякая формула либо выражает аксиому, либо получается из одной или нескольких уже написанных формул по одному из двух правил вывода. Формулами считаются переменные и всякие выражения, получаемые из них путём следующих операций:
+\begin{enumerate}[leftmargin=2.2em]
+\item присоединение знака $\neg$ перед построенным выражением;
+\item написание двух построенных выражений друг за другом со включением одного из знаков $\&,\vee,\supset$ между ними и с заключением всего в скобки.
+\end{enumerate}
+Следующие выражения являются, например, формулами:
+\[
+3.\ ((A\&B)\supset A),\qquad
+4.\ ((A\&B)\supset B),
+\]
+\[
+10.\ ((A\supset B)\supset((A\supset\neg B)\supset\neg A)),
+\qquad
+11.\ (A\vee\neg A).
+\]
+\end{rusblock}
+
+\subsection*{\ru{Два правила вывода} \textit{the two rules of inference}}
+\begin{rusblock}
+В двух исчислениях высказываний --- классическом и конструктивном --- употребляются те же правила вывода.
+
+\textbf{Правило подстановки.} Из формулы выводится новая формула путём подстановки любой формулы всюду вместо логической переменной.
+
+\textbf{Правило вывода заключения} (\textit{rule of detachment}). Из формул $A$ и $(A\supset B)$ выводится формула $B$.
+\end{rusblock}
+
+\subsection*{\ru{Аксиомы} \textit{axioms}}
+\begin{rusblock}
+Различие между двумя исчислениями высказываний проявляется в наборах их аксиом. В классическом исчислении применяются как аксиомы формулы $1$--$11$, в конструктивном --- только $1$--$10$. Формула $11$,
+\[
+A\vee\neg A,
+\]
+выражающая закон исключённого третьего, не выводима в конструктивном исчислении из первых десяти аксиом.
+\end{rusblock}
+
+\subsection*{\ru{Вывод закона противоречия} \textit{deduction of the law of contradiction}}
+\begin{rusblock}
+Чтобы вывести в конструктивном исчислении формулу $\neg(A\&\neg A)$, применим правило подстановки к аксиомам $3$ и $4$, подставляя в них формулу $\neg A$ вместо переменной $B$. Тогда имеем
+\[
+(1)\quad ((A\&\neg A)\supset A),
+\]
+\[
+(2)\quad ((A\&\neg A)\supset\neg A).
+\]
+Подставляя в аксиому (10) формулу $(A\&\neg A)$ вместо $A$ и после этого формулу $A$ вместо переменной $B$, получим
+\[
+(3)\quad ((A\&\neg A)\supset A)\supset
+\bigl(((A\&\neg A)\supset\neg A)\supset\neg(A\&\neg A)\bigr).
+\]
+Из (1) и (3) правилом вывода заключения получаем
+\[
+(4)\quad ((A\&\neg A)\supset\neg A)\supset\neg(A\&\neg A),
+\]
+а из (2) и (4) --- искомую формулу $\neg(A\&\neg A)$.
+\end{rusblock}
+
+\subsection*{\ru{Различие двух исчислений высказываний} \textit{difference between the two calculi of propositions}}
+\begin{rusblock}
+В отличие от классического исчисления математические теоремы в конструктивном исчислении связываются с решением конструктивных задач. Доказательство математической теоремы означает решение конструктивной задачи.
+\end{rusblock}
+\vocabline{\textbf{высказывание} 97 \emph{statement}; \textbf{наука} 107 \emph{science}; \textbf{применять} 99 \emph{apply}; \textbf{связка} 105 \emph{connective}; \textbf{скобка} 107 \emph{bracket}; \textbf{вывод} 74 \emph{deduction, inference}; \textbf{присоединение} 89 \emph{adjunction}; \textbf{закон} 105 \emph{law}; \textbf{противоречие} 106 \emph{contradiction}.}
+
+% --------------------------------------------------------------------------
+\readhead{C9}{Уравнения в частных производных}{Partial differential equations}
+
+\begin{sourcebox}
+A problem in mathematical physics is said to be correctly set if the solution exists, is unique, and depends continuously on the boundary conditions, since otherwise the inevitable small errors in measurement of the boundary conditions may lead to large errors in the solution. How continuity is to be defined in such a context will depend on the nature of the given physical problem.
+\end{sourcebox}
+\ccorrnote{此处底本把“correctly set”只表述为解对边界条件的连续依赖；按 Hadamard 的适定性定义，还应同时要求解存在且唯一。正文仅补入这两个必要条件，其余论述保持不变。}
+
+\begin{rusblock}
+Каждая задача математической физики ставится как задача решения некоторого уравнения при некоторых предельных (начальных или граничных) условиях, которые не могут быть измерены точно. Всегда имеется некоторая малая ошибка в этих условиях, которая будет сказываться и на решении, и не всегда ошибка в решении окажется малой.
+
+Можно указать простые примеры задач, где малая ошибка в данных может вызывать большую ошибку в результате. Исследуя уравнения математической физики, всегда необходимо рассматривать вопрос о зависимости решения от предельных условий. Значит, необходимо подходящим образом определить понятие расстояния между решениями и аналогично расстояния между предельными условиями и исследовать, как первое зависит от второго.
+
+Предположим, что задача математической физики сводится к отысканию функции $u(x,y,z,t)$ четырёх переменных в области $\Omega$, удовлетворяющей в этой области уравнению
+\[
+F\!\left(u,\frac{\partial u}{\partial x_i},\ldots,
+\frac{\partial^m u}{\partial t^m}\right)=0
+\]
+и дополнительным условиям вида
+\[
+\Psi_j\!\left(u,\frac{\partial u}{\partial x_i},\ldots,
+\frac{\partial^{\ell}u}{\partial t^{\ell}}\right)\Big|_{S_j}=\varphi_j(S_j),
+\qquad i=1,2,\ldots,\ell,
+\]
+где $S_j$ --- некоторое многообразие в пространстве $x,y,z,t$, число измерений которого меньше четырёх, а $\varphi_j(S_j)$ --- заданная функция.
+
+Через $\Phi$ обозначим класс систем функций $\{\varphi_j(S_j)\}$ таких, что функции $\varphi_j$ и их частные производные до некоторого порядка $k$ включительно обладают интегрируемыми на $S_j$ квадратами; через $U$ --- класс функций $u(x,y,z,t)$ таких, что $u$ и её частные производные до некоторого порядка $p$ включительно обладают интегрируемыми по области $\Omega$ квадратами.
+
+Квадрат расстояния $\rho_{\varphi}$ между двумя системами граничных функций определим как сумму интегралов по $S_j$ от квадратов разностей функций и всех их производных до порядка $k$; квадрат расстояния $\rho_u$ между функциями $u^*$ и $u$ --- как сумму интегралов по $\Omega$ от квадратов $u^*-u$ и всех производных этой разности до порядка $p$ включительно.
+
+Если решение $u$ задачи непрерывно зависит от предельных условий по этому определению (в этой «топологии»), то будем говорить, что решение зависит от предельных условий непрерывно в среднем порядка $(p,k)$. В случае существования и единственности решения и непрерывной зависимости решения от предельных условий будем говорить, что задача поставлена корректно, а иначе --- некорректно.
+\end{rusblock}
+
+\subsection*{\ru{Пример некорректно поставленной задачи} \textit{example of an incorrectly set problem}}
+\begin{rusblock}
+Рассматриваем следующий пример, принадлежащий Адамару. Исследуем решение уравнения Лапласа
+\[
+\frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}=0,
+\qquad y>0,
+\qquad -\frac{\pi}{2}\le x\le\frac{\pi}{2},
+\]
+удовлетворяющее условиям
+\[
+u\big|_{x=-\pi/2}=u\big|_{x=\pi/2}=u\big|_{y=0}=0,
+\qquad
+\left.\frac{\partial u}{\partial y}\right|_{y=0}=e^{-\sqrt n}\cos nx,
+\]
+где $n$ --- нечётное число.
+
+Легко видеть, что единственное решение имеет вид
+\[
+u_n(x,y)=\frac1n e^{-\sqrt n}\cos(nx)\sinh(ny).
+\]
+Когда $n\to\infty$, функция $e^{-\sqrt n}\cos nx\to0$ равномерно, и притом так же ведут себя все её производные. Однако решение при любом $y$, отличном от нуля, имеет вид косинусоиды с большой амплитудой, так что
+\[
+\int_0^y\int_{-\pi/2}^{\pi/2}
+\left(\frac1n e^{-\sqrt n}\cos nx\,\sinh ny\right)^2\,dx\,dy\longrightarrow\infty
+\]
+при $n\to\infty$, $y>0$.
+
+Итак, рассмотренная задача для уравнения Лапласа поставлена некорректно.
+\end{rusblock}
+\vocabline{\textbf{частный} 107 \emph{partial}; \textbf{начальный} 107 \emph{initial}; \textbf{граничный} 105 \emph{boundary}; \textbf{ошибка} 107 \emph{error}; \textbf{исследовать} 102 \emph{investigate}; \textbf{зависимость} 94 \emph{dependence}; \textbf{многообразие} 89,101 \emph{manifold}; \textbf{измерение} 99 \emph{dimension}; \textbf{непрерывно в среднем} \emph{continuously in the mean}.}
+
+% --------------------------------------------------------------------------
+\readhead{C10}{Пространство Гильберта}{Hilbert space}
+
+\begin{sourcebox}
+The differential problem
+\[
+y''(x)+\lambda y(x)=0,\qquad \text{i.e.}\qquad -D^2y=\lambda y,\qquad y(0)=y(\pi)=0,
+\]
+which arises in the theory of the vibrating string, has nontrivial solutions only for $\lambda=1^2,2^2,3^2,\ldots$ (which are therefore called the \emph{eigenvalues} of the operator $-D^2$) and the corresponding nontrivial \emph{eigensolutions},
+\[
+y=\sin x,\qquad y=\sin2x,\qquad y=\sin3x,\ldots
+\]
+(called \emph{eigenfunctions} of the operator $-D^2$) owe their importance to the fact that they are sufficiently numerous (and behave sufficiently like $n$ mutually orthogonal coordinate vectors in an $n$-dimensional Euclidean space) that almost all functions of practical importance can be expanded in a Fourier series like
+\[
+f(x)=b_1\sin x+b_2\sin2x+\cdots,
+\]
+in the same way as an $n$-dimensional vector can be written as the sum of its components along the coordinate axes.
+
+Mathematical physics gives rise to more general eigenvalue problems $Ay=\lambda y$, where the operator $A$ is such that many important functions can be expanded in a (generalized) Fourier series of the eigenfunctions of $A$. In order to consider these problems from a unified point of view Hilbert introduced a space whose elements are not $n$-dimensional vectors, as in finite-dimensional Euclidean space, but are functions with infinitely many components (namely, the coefficients of the Fourier series in their eigenfunctions) so that Hilbert space is infinite-dimensional.
+
+But then the question arises: exactly which problems can be handled in this way? In other words, which operators provide eigenfunctions suitable for Fourier expansions? The question is discussed here for certain operators of great importance in mathematical physics, namely those that are self-adjoint and completely continuous.
+\end{sourcebox}
+
+\begin{rusblock}
+\textbf{Определение.} Комплексным гильбертовым пространством называется множество $H$ элементов, удовлетворяющее следующим аксиомам.
+
+\textbf{Аксиома A.} Элементы $H$ можно умножить на комплексные числа и складывать, т.е. если $x$ и $y$ суть элементы $H$ и $a$ --- комплексное число, то $ax$ и $x+y$ суть также определённые элементы $H$. Указанные операции удовлетворяют следующим законам:
+\[
+\begin{array}{ll}
+1.\ x+y=y+x; & 2.\ x+(y+z)=(x+y)+z;\\
+3.\ a(x+y)=ax+ay; & 4.\ (a+b)x=ax+bx;\\
+5.\ a(bx)=(ab)x; & 6.\ 1\cdot x=x;\\
+7.\ \text{если }x+y=x+z,\text{ то }y=z.&
+\end{array}
+\]
+\end{rusblock}
+\ccorrnote{此处底本第 2 条排作 $x(y+z)=(x+y)+z$，缺少加号；按加法结合律应为 $x+(y+z)=(x+y)+z$。}
+
+\begin{rusblock}
+\textbf{Аксиома B.} Для любого целого положительного $n$ существует $n$ линейно независимых элементов.
+
+\textbf{Аксиома C.} Каждой паре элементов $x$ и $y$ из $H$ сопоставляется определённое комплексное число, которое называется скалярным произведением $x$ на $y$. Оно обозначается символом $(x,y)$. Это скалярное произведение удовлетворяет следующим законам:
+\[
+\begin{array}{ll}
+8.\ (y,x)=\overline{(x,y)}; & 9.\ (x,x)>0,\quad \text{если }x\ne0;\\
+10.\ (x_1+x_2,y)=(x_1,y)+(x_2,y); & 11.\ (ax,y)=a(x,y).
+\end{array}
+\]
+Выражение $(x,x)^{1/2}$ называется нормой элемента $x$ и обозначается через $\|x\|$.
+
+Выражение $\|y-x\|$ называется расстоянием между элементами $x$ и $y$ и обозначается через $\rho(x,y)$. Если $(x,y)=0$, элементы $x$ и $y$ называются взаимно ортогональными. Элемент $x$ называется пределом $(x_n\Rightarrow x)$ последовательности элементов $\{x_n\}$, если для любого заданного положительного $\varepsilon$ существует такое $N$, что
+\[
+\|x-x_n\|<\varepsilon\qquad\text{при }n>N.
+\]
+
+\textbf{Определение.} Последовательность элементов $x_n$ называется фундаментальной, если для любого заданного положительного $\varepsilon$ существует такое $N$, что
+\[
+\|x_m-x_n\|<\varepsilon\qquad\text{при }m,n>N.
+\]
+
+\textbf{Аксиома D.} Если последовательность $\{x_n\}$ --- фундаментальная, то существует такой элемент $x$ из $H$, что $x_n\Rightarrow x$. Эта аксиома называется обычно аксиомой полноты пространства.
+
+\textbf{Определение.} Мы говорим, что последовательность элементов
+\[
+x_1,x_2,\ldots,x_n,\ldots
+\]
+образует ортогональную, нормированную систему, если
+\[
+(x_p,x_q)=
+\begin{cases}
+0,&p\ne q,\\
+1,&p=q.
+\end{cases}
+\]
+Система $x_1,x_2,\ldots,x_n,\ldots$ называется замкнутой, если для любого элемента $x$ из $H$ имеет место равенство
+\[
+\sum_{k=1}^{\infty}|a_k|^2=\|x\|^2,\qquad a_k=(x,x_k).
+\]
+Числа $a_k=(x,x_k)$ называются коэффициентами Фурье элемента $x$ относительно системы $x_1,x_2,\ldots$, а ряд
+\[
+a_1x_1+a_2x_2+\cdots
+\]
+--- рядом Фурье элемента $x$.
+
+В связи с теорией рядов Фурье естественно поставить вопрос, существует ли в $H$ замкнутая ортогональная и нормированная система, состоящая из счётного числа элементов. Решить этот вопрос с помощью аксиом A--D нельзя; он связан с некоторым другим свойством --- сепарабельностью; пространство $H$ называется сепарабельным, если имеется счётное множество элементов $M$, всюду плотное в $H$.
+
+\textbf{Аксиома E.} Пространство $H$ сепарабельно.
+
+Легко доказать, что если $H$ сепарабельно, то всякая ортогональная, нормированная система содержит конечное или счётное число элементов.
+\end{rusblock}
+
+\subsection*{\ru{Линейные операторы} \textit{linear operators}}
+\begin{rusblock}
+Оператором в $H$ называется всякий определённый закон, по которому любому элементу $x$ из $H$ сопоставляется определённый элемент из $H$.
+
+Дистрибутивность оператора определяется формулой
+\[
+A(c_1x_1+c_2x_2)=c_1Ax_1+c_2Ax_2,
+\]
+и ограниченность --- формулой
+\[
+\|Ax\|\le N\|x\|,
+\]
+где $N$ --- некоторое положительное число.
+
+Дистрибутивный и ограниченный оператор называется линейным оператором. Такой оператор обязательно непрерывен, т.е. если $x_n\Rightarrow x$, то $Ax_n\Rightarrow Ax$. Для дистрибутивного оператора его ограниченность эквивалентна его непрерывности. Мы рассматриваем здесь только такие операторы.
+\end{rusblock}
+
+\subsection*{\ru{Собственные значения и собственные функции} \textit{eigenvalues and eigenfunctions}}
+\begin{rusblock}
+Фундаментальной задачей в приложениях теории операторов к математическому анализу является решение однородного и неоднородного уравнений
+\[
+(A-\lambda E)x=0,\qquad (A-\lambda E)x=y,
+\]
+где $x$ --- искомый элемент, $y$ --- заданный элемент, $\lambda$ --- численный параметр и $E$ --- оператор тождественного преобразования $Ex=x$. Число $\lambda$ называется собственным значением оператора $A$, если однородное уравнение имеет решения, отличные от нулевого элемента; эти решения называются собственными функциями оператора $A$, соответствующими указанному собственному значению. Множество собственных функций, соответствующих данному собственному значению $\lambda$, образует (вместе с нулевым элементом) подпространство, размерность которого называют кратностью собственного значения $\lambda$.
+
+\textbf{Определение.} Оператор $A$ называется самосопряжённым, если
+\[
+(Ax,y)=(x,Ay),\qquad x,y\in H.
+\]
+
+\textbf{Теорема.} Собственные значения самосопряжённого оператора действительны и собственные функции, соответствующие различным собственным значениям, взаимно ортогональны.
+\end{rusblock}
+
+\subsection*{\ru{Резольвента и спектр} \textit{resolvent and spectrum}}
+\begin{rusblock}
+\textbf{Определения.} Точка $\lambda$ плоскости комплексного переменного называется регулярной точкой оператора $A$, если оператор $A-\lambda E$ имеет ограниченный обратный оператор $(A-\lambda E)^{-1}$. Спектром оператора $A$ называется множество точек $\lambda$, не являющихся его регулярными точками.
+
+Ясно, что всякое собственное значение оператора $A$ принадлежит его спектру, но нас интересует следующий вопрос: какие самосопряжённые операторы обладают свойством, что система $x_1,x_2,\ldots,x_n,\ldots$ их (ортогонализированных и нормированных) собственных функций замкнута в пространстве $H$, так что мы можем говорить о рядах Фурье.
+
+Рассматриваем этот вопрос для так называемых вполне непрерывных операторов $A$.
+
+\textbf{Определение.} Говорят, что ограниченная последовательность элементов $x_n$ слабо сходится $(x_n\rightharpoonup x)$ к элементу $x$, если при любом выборе элемента $y$
+\[
+\lim_{n\to\infty}(x_n,y)=(x,y).
+\]
+
+\textbf{Определение.} Линейный оператор $A$ вполне непрерывен, если из $x_n\rightharpoonup x$ следует $Ax_n\Rightarrow Ax$.
+
+\textbf{Теорема.} Вполне непрерывный самосопряжённый оператор $A$ имеет по меньшей мере одно собственное значение, отличное от нуля; собственные значения, отличные от нуля, суть конечной кратности и не имеют предельных точек, отличных от нуля; элемент $Ay$ при любом $y$ из $H$ разлагается в ряд Фурье по ортогональной, нормированной системе собственных функций, соответствующих собственным значениям, отличным от нуля.
+\end{rusblock}
+
+\subsection*{\ru{Интегральные уравнения} \textit{integral equations}}
+\begin{rusblock}
+В приложениях к математической физике эта теорема обычно применяется к так называемым интегральным операторам
+\[
+Ay(x)=\int_a^b K(x,z)y(z)\,dz,
+\]
+где элементом гильбертова пространства $H$ является функция $y(x)$ от одного или любого числа $n$ переменных, и $K(x,z)$ есть функция от $2n$ переменных. При решении предельных задач математической физики находятся уравнения следующего вида (интегральные уравнения Фредгольма второго рода)
+\[
+y(x)=\int_a^b K(x,z)y(z)\,dz+f(x),
+\]
+где $y(x)$ --- искомая функция, а $f(x)$ и $K(x,z)$ --- заданные функции, и функция $K(x,z)$ такая, что оператор $A$ --- вполне непрерывен.
+\end{rusblock}
+\vocabline{\textbf{складывать} 82 \emph{to add} (клад- lay); \textbf{полнота} 87 \emph{completeness} (пол- ple- full); \textbf{связь} 105 \emph{connection} (вяз- knot); \textbf{счётный} 104 \emph{countable} (чит- count); \textbf{решить} 100 \emph{solve} (рез- cut); \textbf{помощь} 100 \emph{help} (моч- be able); \textbf{нельзя} 105 \emph{impossible} (льз- ease); \textbf{обязательно} 105 \emph{obligatorily, necessarily} (вяз- lig- knot); \textbf{приложение} 82 \emph{application} (лаг- lay); \textbf{однородный} 89, 106 \emph{homogeneous} (один- homo- one; род- gen- birth); \textbf{неоднородный} 89, 106 \emph{inhomogeneous}; \textbf{тождественный} 51 \emph{identical}; \textbf{размерность} 99 \emph{dimensionality} (мер- measure); \textbf{кратность} 107 \emph{multiplicity}; \textbf{сопряжённый} 106 \emph{adjoint} (пряг- harness); \textbf{самосопряжённый} 106 \emph{self-adjoint}; \textbf{слабо} 107 \emph{weakly}.}
+
+% --------------------------------------------------------------------------
+\readhead{C11}{Дифференциальная геометрия}{Differential geometry}
+
+\subsection*{\ru{Теория кривизны пространственных кривых} \textit{Theory of curvature of space curves}}
+\begin{sourcebox}
+If a sheet of newspaper, with a picture consisting of curved lines through a given point, is blowing in a high wind, the lengths of the curves will remain constant but there will be a rapid change in their curvatures, in particular, in the maximum and the minimum of the curvatures of those curves that are formed on the surface by planes through its normal at the point. However, by the theorem that Gauss called his \emph{theorema egregium}, his \emph{extraordinary theorem}, the product of the two principal curvatures (the so-called total or Gaussian curvature) will remain constant.
+\end{sourcebox}
+
+\begin{rusblock}
+Пусть нам задана некоторая вектор-функция одного аргумента $t$
+\[
+r=r(t)=x(t)i+y(t)j+z(t)k,\qquad t_0<t<t_1.
+\]
+Фиксируем в пространстве некоторую точку $O$ и будем при всех значениях $t$ откладывать вектор $r(t)$ из этой точки. При каждом значении $t$ мы получаем определённый вектор $\overrightarrow{OM}=r(t)$, начало которого в точке $O$, а конец $M$ зависит от выбора значения $t$. При $t$, меняющемся от $t_0$ до $t_1$, точка $M$ описывает в пространстве некоторое геометрическое место точек, которое мы будем называть параметрически заданной кривой.
+
+Касательную в данной точке кривой $M(t)$ мы можем рассматривать как прямую, проходящую через эту точку по направлению вектора
+\[
+r'(t)=x'(t)i+y'(t)j+z'(t)k.
+\]
+Плоскость, проходящая через точку касания перпендикулярно к касательной, называется нормальной плоскостью.
+
+Плоскость в точке $M$, построенная как предельное положение плоскости, проходящей через три точки $M_1,M_2,M_3$ на кривой, когда эти точки приближаются к $M$, называется соприкасающейся плоскостью данной кривой; это будет плоскость, проходящая через точку $M$ и через отложенные из $M$ векторы $r',r''$; будет плоскость, проходящая через точку $M$ с наивысшим порядком касания с кривой в точке $M$.
+
+Нормаль в данной точке, лежащую в соприкасающейся плоскости, мы будем называть главной нормалью, а нормаль, перпендикулярную к соприкасающейся плоскости, --- бинормалью.
+
+Касательная, главная нормаль и бинормаль, выходящие из одной и той же точки кривой, образуют между собой прямые углы. Составляют, как говорят, переменный триэдр, связанный с кривой.
+
+Вдоль пространственной кривой
+\[
+r=r(s)
+\]
+в каждой точке определяется единичный касательный вектор
+\[
+t=r'(s)
+\]
+как функция от переменной $s$. Скорость вращения этого вектора в данной точке кривой по отношению к длине $s$, проходимой по кривой, мы называем кривизной $k$ кривой в данной точке, а обратную величину $R=1/k$ --- радиусом кривизны; другими словами,
+\[
+k=\lim_{\Delta s\to0}\left|\frac{\Delta\varphi}{\Delta s}\right|,
+\]
+где $\Delta s$ --- элемент, проходимый по кривой, исходя из данной точки, а $\Delta\varphi$ --- угол соответствующего поворота касательной $t$. Имеем
+\[
+k=|t'|=|r''|.
+\]
+
+\textbf{Теорема.} Для того, чтобы линия была прямой, необходимо и достаточно, чтобы её кривизна во всех точках была равна нулю.
+\end{rusblock}
+
+\subsection*{\ru{Криволинейные координаты на поверхности} \textit{Curvilinear coordinates on a surface}}
+\begin{rusblock}
+Пусть нам дана вектор-функция двух скалярных аргументов $u,v$
+\[
+r=r(u,v)=x(u,v)i+y(u,v)j+z(u,v)k.
+\]
+Будем откладывать $r(u,v)$ из начала координат $O$. Когда $u,v$ изменяются, точка $M$ с координатами $x(u,v),y(u,v),z(u,v)$, или, что то же, с радиус-вектором $r(u,v)$, описывает некоторое геометрическое место точек, которое мы будем называть поверхностью в параметрическом представлении.
+\end{rusblock}
+
+\subsection*{\ru{Кривые на поверхности. Касательная плоскость} \textit{Curves on a surface; the tangent plane}}
+\begin{rusblock}
+Рассмотрим на поверхности некоторую кривую, т.е. геометрическое место точек, криволинейные координаты которых определяются уравнениями
+\[
+u=u(t),\qquad v=v(t),
+\]
+где $t$ --- независимое переменное. Пользуясь её представлением в пространстве
+\[
+r=r[u(t),v(t)],
+\]
+находим дифференциал радиус-вектора
+\[
+dr=r_u(u,v)\,du+r_v(u,v)\,dv.
+\]
+Мы видим, что в каждой точке кривой вектор $dr$ (направлен по касательной к кривой) разлагается по векторам $r_u(u,v)$, $r_v(u,v)$, и, следовательно, он компланарен с ними.
+
+Отсюда следует, что если через данную точку поверхности $M(u,v)$ проводим по поверхности все возможные кривые, то касательные к ним в этой точке расположатся все в одной плоскости (в плоскости векторов $r_u,r_v$), которая называется касательной плоскостью.
+\end{rusblock}
+
+\subsection*{\ru{Первая фундаментальная квадратичная форма; внутренняя геометрия на поверхности} \textit{First fundamental quadratic form; intrinsic geometry on a surface}}
+\begin{rusblock}
+Легко вычислить и дифференциал $ds$ нашей кривой. Действительно,
+\[
+|ds|=|dr|=|r_u\,du+r_v\,dv|,
+\]
+или
+\[
+ds^2=dr^2=(r_u\,du+r_v\,dv)^2,
+\]
+т.е.
+\[
+ds^2=r_u^2du^2+2r_ur_v\,du\,dv+r_v^2dv^2.
+\]
+С обозначениями
+\[
+r_ur_u=E(u,v),\qquad r_ur_v=F(u,v),\qquad r_vr_v=G(u,v),
+\]
+имеем
+\[
+ds^2=E(u,v)du^2+2F(u,v)du\,dv+G(u,v)dv^2.
+\]
+Выражение в правой части называется первой фундаментальной квадратичной формой на поверхности. Из определения ясно, что эта форма --- положительная.
+
+Интегрируя дифференциал $ds$ в пределах $t_0\le t\le t_1$, получим длину соответствующего отрезка кривой от точки $M(t_0)$ до точки $M(t_1)$.
+
+Зная первую квадратичную форму на поверхности, можно измерять не только длины, но и углы между кривыми, и площади областей на поверхности.
+
+Те геометрические свойства поверхности, которые можно установить, исходя из задания только первой квадратичной формы (т.е. без знания положения кривой в пространстве), образуют так называемую внутреннюю геометрию поверхности.
+\end{rusblock}
+
+\subsection*{\ru{Риманова геометрия} \textit{Riemannian geometry}}
+\begin{rusblock}
+Риманова геометрия --- многомерное обобщение геометрии на поверхности. В каждой точке $n$-мерного риманова пространства задана фундаментальная (положительная квадратичная) форма
+\[
+\sum_{i,k}g_{ik}\,dx^i dx^k
+\]
+(в двухмерном случае $g_{11}=E$, $g_{12}=g_{21}=F$, $g_{22}=G$, $x^1=u$, $x^2=v$), и длина кривой определена как интеграл от
+\[
+\left(\sum_{i,k}g_{ik}\,dx^i dx^k\right)^{1/2}
+\]
+вдоль этой кривой. Если при этом фундаментальная форма может принимать и отрицательные значения, то получим обобщение римановой геометрии, применяемое в общей теории относительности.
+\end{rusblock}
+
+\subsection*{\ru{Нормальные сечения, главные кривизны, theorema egregium Гаусса} \textit{Normal sections, principal curvatures, the theorema egregium of Gauss}}
+\begin{rusblock}
+В трёхмерном евклидовом пространстве мы будем называть нормальным сечением поверхности в точке $M$ кривую пересечения поверхности с нормальной плоскостью в точке $M$, то есть с плоскостью, проходящей через нормаль в точке $M$. Таких плоскостей в каждой точке $M$ бесконечное множество, но всегда существуют два взаимно перпендикулярные направления, для которых радиусы кривизны $R$ нормального сечения имеют соответственно максимум $R_1$ и минимум $R_2$. Эти радиусы называются главными радиусами кривизны нормальных сечений в рассматриваемой точке; те два направления в касательной плоскости, которым они соответствуют, называются главными направлениями; и выражение
+\[
+K=\frac1{R_1R_2}
+\]
+называется полной (или гауссовой) кривизной поверхности в заданной точке.
+
+Гаусс показал, что можно выразить $K$ только через $E,F,G$ и их производные по $u,v$, откуда следует, что гауссова кривизна $K(u,v)$ поверхности не меняется при таких деформациях поверхности, при которых не меняется её первая квадратичная форма, т.е. не меняются длины кривых (\emph{theorema egregium} Гаусса).
+
+Таким образом, при таких деформациях поверхность меняет свою форму, вследствие чего главные кривизны меняют свои значения, но их произведение --- полная кривизна $K$ --- остаётся постоянным.
+\end{rusblock}
+\vocabline{\textbf{кривизна} 107 \emph{curvature}; \textbf{пространственный} 107 \emph{space (adj.)}; \textbf{откладывать} 81 \emph{lay out} (клад- lay); \textbf{менять} 98 \emph{change} (мен- change); \textbf{касательный} 105 \emph{tangent} (кас- touch); \textbf{касание} 105 \emph{contact, tangency} (кас-); \textbf{соприкасаться} 105 \emph{osculate} (кас-); \textbf{выходить} 76,77 \emph{issue, go out from} (ход- go); \textbf{наивысший} 49 \emph{highest}; \textbf{главный} 107 \emph{principal}; \textbf{вращение} 92 \emph{rotation} (верт- turn); \textbf{поверхность} 105 \emph{surface} (верх- top); \textbf{представление} 85 \emph{representation} (ста- stand); \textbf{находить} 76,77 \emph{come upon, find} (ход- go, come); \textbf{внутренний} 46 \emph{interior, intrinsic}; \textbf{измерить} 99 \emph{measure} (мер- measure); \textbf{знание} 96 \emph{knowledge} (зна- know); \textbf{многомерный} 99 \emph{multidimensional, n-dimensional} (мног- mult- many; мер- measure); \textbf{относительность} 75 \emph{relativity} (нос- lat- carry); \textbf{выразить} 101 \emph{express} (рез- cut).}
+
+% --------------------------------------------------------------------------
+\readhead{C12}{Топология}{Topology}
+
+\begin{sourcebox}
+The \emph{paving theorem} of Lebesgue states that in a metric space a set of points is of dimension $n$ if for every covering by small closed sets at least one point is covered $(n+1)$ times but there exists a covering by such sets in which no point is covered $(n+2)$ times. For example, an ordinary map of the United States is of dimension two because, no matter how we may shift state-boundaries, there will always be points common to three states; but by adding to Utah a thin slice of Arizona, we can obtain a map in which no four states come together.
+\end{sourcebox}
+
+\begin{rusblock}
+\textbf{Определение.} Топологическим пространством называется множество $R$, состоящее из элементов (точек), в котором определены некоторые подмножества $A\subseteq R$, называемые замкнутыми множествами топологического пространства $R$; при этом предполагаются выполненными следующие условия, называемые аксиомами топологического пространства:
+\begin{enumerate}[leftmargin=2.2em]
+\item пересечение любого числа и соединение любого конечного числа замкнутых множеств есть замкнутое множество;
+\item всё множество $R$ и пустое множество суть замкнутые множества.
+\end{enumerate}
+Множества, дополнительные к замкнутым в $R$, то есть множества вида $R\setminus A$, где $A$ замкнуто, называются открытыми множествами.
+
+\textbf{Определение.} Пересечение всех замкнутых множеств, содержащих данное множество $M$, называется замыканием множества $M$ и обозначается через $\overline M$.
+
+\textbf{Определение.} Окрестностью данной точки $p$ называется всякое открытое множество, содержащее точку $p$.
+\end{rusblock}
+
+\subsection*{\ru{Метрические и метризуемые пространства} \textit{Metric and metrizable spaces}}
+\begin{rusblock}
+\textbf{Определение.} Метрическим пространством называется множество элементов, в котором каждым двум элементам $x$ и $y$ поставлено в соответствие неотрицательное число $\rho(x,y)$, называемое расстоянием между $x$ и $y$, так что выполняются следующие условия:
+\begin{enumerate}[leftmargin=2.2em]
+\item тогда и только тогда $\rho(x,y)=0$, когда точки $x$ и $y$ тождественны между собой (аксиома тождества);
+\item $\rho(x,y)=\rho(y,x)$ (аксиома симметрии);
+\item для любых трёх точек $x,y,z$ метрического пространства имеет место неравенство
+\[
+\rho(x,y)+\rho(y,z)\ge\rho(x,z)
+\]
+(аксиома треугольника).
+\end{enumerate}
+Неотрицательная функция $\rho(x,y)$ двух переменных точек $x,y$ пространства $R$, удовлетворяющая указанным условиям, называется метрикой данного метрического пространства.
+
+Метрика данного метрического пространства определяет в нём топологию следующим образом. Называется расстоянием между точкой $p$ и множеством $M$, лежащим в данном метрическом пространстве $R$, нижняя грань неотрицательных чисел $\rho(p,x)$, $x\in M$. Называется замыканием множества $M$ в метрическом пространстве $R$ множество всех точек $p$, для которых $\rho(p,M)=0$. Называется, наконец, множество $M$ замкнутым, если оно совпадает со своим замыканием. Легко проверить, что эта топология удовлетворяет аксиомам топологического пространства.
+
+\textbf{Определение.} Верхняя грань $d\le\infty$ чисел $\rho(x,y)$, $x,y\in R$, называется диаметром метрического пространства $R$.
+\end{rusblock}
+
+\subsection*{\ru{Непрерывные и топологические отображения} \textit{continuous and topological mappings}}
+\begin{rusblock}
+\textbf{Определение.} Отображение $C$ топологического пространства $X$ в топологическое пространство $Y$ называется непрерывным, если прообраз $C^{-1}(B)$ каждого замкнутого в $Y$ множества $B$ замкнут в $X$.
+
+Пусть непрерывное отображение $C$ топологического пространства $X$ на топологическое пространство $Y$ взаимно однозначно. Если отображение $C^{-1}$ пространства $Y$ на $X$, обратное к взаимно однозначному отображению $C$, непрерывно, то отображение $C$ называется топологическим отображением (или гомеоморфизмом) $X$ на $Y$. Два топологических пространства называются гомеоморфными между собой, если одно из них может быть топологически отображено на другое.
+
+Топологическое пространство, гомеоморфное метрическому, называется метризуемым пространством.
+\end{rusblock}
+
+\subsection*{\ru{Покрытия, хаусдорфовость и бикомпактность} \textit{coverings, Hausdorffness and bicompactness}}
+\begin{rusblock}
+Система подмножеств данного множества $R$ называется покрытием множества $R$, если соединение множеств, входящих в эту систему, есть всё множество $R$. Покрытие метрического пространства называется $\varepsilon$-покрытием, если все элементы этого покрытия по диаметру меньше $\varepsilon$. Кратностью данной конечной системы множеств, в частности данного покрытия, называется наибольшее из таких целых чисел $n$, что в данной системе множеств имеется $n$ элементов с непустым пересечением.
+
+\textbf{Определения.} Топологическое пространство называется хаусдорфовым пространством, если для любых двух различных его точек существуют две непересекающиеся их окрестности.
+
+Топологическое пространство $R$ называется бикомпактным, если из всякого покрытия пространства $R$ открытыми множествами можно выделить конечное число элементов, также образующих покрытие пространства $R$.
+
+Хаусдорфово бикомпактное пространство называется бикомпактом. Метризуемое бикомпактное пространство называется компактом.
+\end{rusblock}
+
+\subsection*{\ru{Размерность компакта} \textit{dimension of a compactum}}
+\begin{rusblock}
+Размерность компакта $\Phi$ есть наименьшее из тех целых чисел $n$, для которых при каждом $\varepsilon>0$ существует замкнутое $\varepsilon$-покрытие компакта $\Phi$ кратности $\le n+1$.
+
+При $n=2$ это определение означает, что всякая двухмерная площадь (компакт) может покрыться малыми замкнутыми множествами так, что примыкают не более чем по три, а не так, чтобы были только примыкания по два.
+
+Но при заполнении некоторого трёхмерного объёма достаточно малыми замкнутыми множествами необходимо имеются примыкания по четыре (Лебег).
+\end{rusblock}
+\vocabline{\textbf{проверить} 92 \emph{verify} (вер- believe); \textbf{покрытие} 98 \emph{covering} (кры-); \textbf{примыкать} 98 \emph{adjoin, touch} (мык- close); \textbf{примыкание} 106 \emph{contiguity}; \textbf{заполнение} 87 \emph{filling, packing} (пол- full).}
+
+\endgroup
