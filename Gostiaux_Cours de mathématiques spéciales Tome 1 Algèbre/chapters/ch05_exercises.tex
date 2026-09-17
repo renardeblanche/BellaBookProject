@@ -1,0 +1,391 @@
+
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} EXERCICES}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.1em]
+
+\item On pose
+\[
+F_m=2^{2^m}+1.
+\]
+Montrer que si $m\ne n$, $F_m$ et $F_n$ sont premiers entre eux.
+
+\item Trouver le dernier chiffre de l'écriture décimale de $7^{(7^7)}$.
+
+\item Montrer qu'il existe une infinité de nombres premiers congrus à $-1$ modulo 4.
+
+\item $P$ et $Q$ étant deux points de $\mathbb R^n$, soit $(*)$ la propriété : il n'existe pas de point à coordonnées entières appartenant au segment $[P,Q]$ privé de $P$ et $Q$. Montrer que si $P(a,b)$ et $Q(m,n)$ sont deux points de $\mathbb Z^2$, on a
+\[
+(P\text{ et }Q\text{ vérifient }(*))\Longleftrightarrow\operatorname{p.g.c.d.}(a-m,b-n)=1.
+\]
+
+\item Soit un anneau commutatif $A$. Démontrer l'équivalence entre :
+\begin{enumerate}[label=\alph*),leftmargin=2em]
+\item toute suite croissante d'idéaux est stationnaire,
+\item pour tout idéal $I$ de $A$ il existe un nombre fini, $n$, d'éléments de $I$, notés $a_1,a_2,\ldots,a_n$, tels que
+\[
+I=a_1A+a_2A+\cdots+a_nA.
+\]
+\end{enumerate}
+
+\item Soit un anneau commutatif $A$ tel que toute suite croissante d'idéaux soit stationnaire. Soit $I$ un idéal de $A$ tel qu'il existe $(a,b)\in A^2$, avec $ab\in I$, $a\notin I$, $\forall n\in\mathbb N$, $b^n\notin I$.
+\begin{enumerate}[label=\alph*),leftmargin=2em]
+\item Montrer que pour tout $h$ de $\mathbb N$,
+\[
+I_h=\{x\in A,\ xb^h\in I\}
+\]
+est un idéal. En déduire l'existence de $k$ dans $\mathbb N$ tel que $\forall h\ge k$, $I_h=I_k$.
+\item Soit $I'=I+Ab^k$. Montrer que $I'\ne I$, $I\ne I_1$, $I=I'\cap I_1$.
+\end{enumerate}
+
+\item Soit un anneau $A$ commutatif, $I$ un idéal de $A$. On appelle radical de $I$ l'ensemble
+\[
+\mathcal R(I)=\{x;\ x\in A,\ \exists p\in\mathbb N,\ x^p\in I\}.
+\]
+\begin{enumerate}[label=\alph*),leftmargin=2em]
+\item Montrer que $\mathcal R(I)$ est un idéal.
+\item Trouver le radical de l'idéal $n\mathbb Z$ de l'anneau $\mathbb Z$.
+\end{enumerate}
+
+\item Soit $A$ l'anneau des $z=x+iy$, $(x,y)\in\mathbb Z^2$, sous-anneau du corps $\mathbb C$ des complexes. (C'est l'anneau des entiers de Gauss). Soit $I$ un idéal de $A$.
+\begin{enumerate}[label=\alph*),leftmargin=2em]
+\item Montrer que l'ensemble des modules des éléments de $I-\{0\}$ admet une borne inférieure $p>0$.
+\item En déduire que l'anneau $A$ est principal.
+\end{enumerate}
+
+\item \BellaCorrection{Soient}{Soit} deux entiers $a$ et $b$ premiers entre eux. On pose $n_0=ab-a-b$. Montrer que pour $n\in\mathbb N$, $n>n_0$, $\exists(x,y)\in\mathbb N^2$, $ax+by=n$.
+
+\item
+\begin{enumerate}[label=\arabic*),leftmargin=2em]
+\item Montrer que
+\[
+((a,b,c)\in\mathbb Q^3,\ a+b\sqrt2+c\sqrt3=0)\Rightarrow(a=b=c=0).
+\]
+\item Montrer qu'un cercle de centre $(\sqrt2,\sqrt3)$ dans $\mathbb R^2$, de rayon $r$ a au plus un point de $\mathbb Z^2$.
+\item Montrer que $\forall n\in\mathbb N$, $\exists r\in\mathbb R$, tel que le disque de centre $(\sqrt2,\sqrt3)$ et de rayon $r$ contienne exactement $n$ points de $\mathbb Z^2$.
+\end{enumerate}
+
+\item Dans $E=\mathcal C([0,1],\mathbb C)$, soit $I$ un sous-espace vectoriel strict de $E$ tel que $\forall(f,g)\in I\times E$, $fg\in I$. Montrer qu'il existe $x_0$ dans $[0,1]$ tel que $\forall f\in I$, $f(x_0)=0$.
+
+\item Montrer que $-3$ est un carré modulo $p$, ($p$ premier $\ge5$) si et seulement si $p\equiv1\pmod3$. On pourra étudier les zéros de $X^3-1$.
+
+\item
+\begin{enumerate}[label=\alph*),leftmargin=2em]
+\item Soit $p$ un entier impair somme de deux carrés. Montrer que $p-1$ est divisible par 4. Dans toute la suite, on se donne un entier premier $p$ tel que $p-1$ soit divisible par 4.
+\item Montrer que $\mathbb Z/p\mathbb Z-\{0\}$ contient exactement $\dfrac{p-1}{2}$ carrés.
+\item Montrer l'existence d'un entier $m$ tel que $m^2+1$ soit divisible par $p$.
+\item Montrer l'existence de $(a,b)$ dans $\mathbb Z^2$ tel que
+\[
+\left|\frac{bm}{p}-a\right|\le\frac1{\sqrt p}
+\]
+avec $0<b<\sqrt p$.
+\item Montrer que $p$ est la somme de deux carrés.
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} SOLUTIONS}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.15em]
+
+\item On a $m\ne n$, supposons $m<n$ par exemple. Alors on a
+\[
+F_n=(F_m-1)^{2^{n-m}}+1.
+\]
+Comme $2^{n-m}$ est pair, en développant par la formule du binôme $(F_m-1)^{2^{n-m}}$ on a $(F_m-1)^{2^{n-m}}=1+$ un entier contenant $F_m$ en facteur, on note $1+F_m\cdot a$, $a\in\mathbb N$.
+
+Donc $F_n=2+aF_m$. \BellaCorrection{Tout}{Tuut} diviseur commun de $F_n$ et $F_m$ diviserait 2, or $F_n$ et $F_m$ sont impairs donc non divisibles par 2. On a bien $F_n$ et $F_m$ premiers entre eux.
+
+\item On a $7^0=1\pmod{10}$, $7^1=7\pmod{10}$, $7^2=9\pmod{10}$, $7^3=3\pmod{10}$, $7^4=1\pmod{10}$, d'où par récurrence :
+\[
+\begin{aligned}
+7^{4n}&=1\pmod{10},&\qquad 7^{4n+1}&=7\pmod{10},\\
+7^{4n+2}&=9\pmod{10},& 7^{4n+3}&=3\pmod{10}.
+\end{aligned}
+\]
+Or $7^6=(7^3)^2$ est du type $(2p+1)^2$ donc congru à 1 modulo 4, on a donc $7^7=7\pmod4$ soit encore $=3\pmod4$, d'où
+\[
+7^{(7^7)}=3\pmod{10}.
+\]
+
+\item S'il n'y en a qu'un nombre fini, $n$, soit $p_1,\ldots,p_n$ les nombres premiers congrus à $-1$ modulo 4. Alors
+\[
+N=4p_1p_2\cdots p_n-1
+\]
+est congru à $-1$ modulo 4 et n'est divisible par aucun des $p_i$.
+
+Si donc $N$ se \BellaCorrection{décompose}{décompse} en
+\[
+N=q_1^{\alpha_1}\cdots q_r^{\alpha_r},
+\]
+(les $q_j$ nombres premiers) les $q_j$ sont tous distincts des $p_i$.
+
+Comme $N$ est impair, on a $q_j\ne2$, donc $q_j$ impair est congru à 1 ou $-1$ modulo 4. Si les $q_j$ étaient tous congrus à 1 modulo 4 on aurait $N\equiv1\pmod4$. C'est exclu, donc un $q_j$ est congru à $-1$ modulo 4, c'est donc un $p_i$. Absurde.
+
+\item On va justifier que $(P$ et $Q$ ne vérifient pas $(*)$) équivaut à $a-m$ et $b-n$ non premiers entre eux.
+
+Si $P$ et $Q$ ne vérifient pas $(*)$ il existe $t\in]0,1[$ tel que
+\[
+x=ta+(1-t)m\quad\text{et}\quad y=tb+(1-t)n
+\]
+soient dans $\mathbb Z$, d'où les égalités $t(a-m)=x-m$ et $t(b-n)=y-n$. Comme $P\ne Q$ on a soit $a-m\ne0$ soit $b-n\ne0$ ce qui implique $t\in\mathbb Q$.
+
+En prenant $t$ sous forme irréductible, $p/q$, $t\in]0,1[\Rightarrow q>1$ et on a
+\[
+\left\{
+\begin{aligned}
+p(a-m)&=q(x-m),\\
+p(b-n)&=q(y-n).
+\end{aligned}
+\right.
+\]
+Comme $q$ est premier à $p$, $q$ divise $a-m$ et $b-n$, (th. de Gauss) qui ne sont pas premiers entre eux.
+
+Réciproquement si $(a-m)\wedge(b-n)=r>1$. Posons $a-m=pr$ et $b-n=qr$, $t=1/r$ et soit $x=ta+(1-t)m$ et $y=tb+(1-t)n$.
+
+Le point $M(x,y)\in]P,Q[$ car $1/r\in]0,1[$.
+
+Or
+\[
+x=\frac1r a+\left(1-\frac1r\right)m
+=a+\frac{p-pr}{r}=a+p-pr\in\mathbb Z
+\]
+et on vérifie aussi que $y=b-qr+q\in\mathbb Z$ d'où $P$ et $Q$ ne vérifient pas $(*)$.
+
+\item
+\begin{enumerate}[label=\alph*),leftmargin=2em]
+\item $a)\Rightarrow b)$ Soit $I$ un idéal, $a_1\in I$, $I_1=a_1A$ est un idéal contenu dans $I$.
+
+Si $I_1\subsetneq I$, $\exists a_2\in I\setminus(a_1A)$, et on vérifie que $I_2=a_1A+a_2A$ est un idéal de $A$, avec $I_1\subsetneq I_2$ ; et $I_2\subset I$, ($a_1$ et $a_2$ sont dans l'idéal $I$). Si $I_2\subsetneq I$, avec $a_3\in I\setminus I_2$, on considère l'idéal $I_3=a_1A+a_2A+a_3A$ contenant $I_2$ et inclus dans $I$ et on continue. Si on n'a pas $b)$, on construit une suite strictement croissante d'idéaux, non stationnaire, d'où par contraposée, $a\Rightarrow b$.
+
+\item $b)\Rightarrow a)$ Soit une suite croissante $(I_n)_{n\in\mathbb N}$ d'idéaux, alors
+\[
+I=\bigcup_{n\in\mathbb N}I_n
+\]
+est un idéal car si $x$ et $y$ sont dans $I$, $\exists(n,m)\in\mathbb N^2$, $x\in I_n$, $y\in I_m$ d'où $x$ et $y$ dans $I_{\sup(n,m)}$, idéal donc sous-groupe additif, donc $x-y\in I_{\sup(n,m)}\subset I$, $I$ est non vide car $0\in$ chaque $I_n$, donc $I$ est sous-groupe additif ; et si $x\in I$, $a\in A$ avec $n\in\mathbb N$ tel que $x\in I_n$ on a $ax$ dans $I_n$ donc dans $I$ qui est partie permise.
+
+D'après le $b)$, il existe $a_1,\ldots,a_p$ de $I$ tels que $I=a_1A+\cdots+a_pA$, et avec $n(i)\in\mathbb N$ tel que $a_i\in I_{n(i)}$ (vu la définition de $I$), les $a_i$ pour $i=1,\ldots,p$ sont tous dans $I_q$ avec $q=\sup\{n(i),1\le i\le p\}$, (suite croissante d'idéaux) d'où les $a_iA\subset I_q\Rightarrow I\subset I_q\subset I$, et la suite $I$ stationnaire au rang $q$.
+\end{enumerate}
+
+\item
+\begin{enumerate}[label=\alph*),leftmargin=2em]
+\item Comme $0=0b^h\in I$, $0\in I_h$, puis si $x$ et $y$ sont dans $I_h$, c'est que $xb^h$ et $yb^h$ sont dans $I$, idéal donc sous-groupe additif d'où $(x-y)b^h\in I$ : alors $(x-y)\in I_h$ qui est sous-groupe additif ; si $x\in I_h$ et $z\in A$, $(zx)b^h=z\cdot(xb^h)\in I$ puisque $xb^h\in I$, d'où $zx\in I_h$ : c'est un idéal.
+
+Si $x\in I_h$, comme $xb^h\in I$, $(xb^h)\cdot b\in I$ a fortiori, d'où $x$ dans $I_{h+1}$ : la suite d'idéaux $(I_h)_{h\in\mathbb N}$ est croissante donc stationnaire par hypothèse, d'où l'existence de $k\in\mathbb N$ tel que $\forall h\ge k$, $I_h=I_k$.
+
+\item On a $I\subset I'$ ; et $b^k\in Ab^k$ donc $b^k\in I'$ avec $b^k\notin I$ on a donc $I\subsetneq I'$.
+
+Si $x\in I$, idéal, $xb\in I$ donc $x\in I_1$ d'où l'inclusion $I\subset I_1$. Comme $ab\in I$, c'est que $a\in I_1$, or $a\notin I$ d'où $I\subsetneq I_1$.
+
+On a $I\subset I'\cap I_1$ d'après ce qui précède. Soit $x$ dans $I'\cap I_1$, $x$ s'écrit $x=u+vb^k$ avec $u\in I$, $v\in A$, et $xb\in I$, (traduit $x\in I_1$), soit $ub+vb^{k+1}\in I$ ; or $u\in I\Rightarrow ub\in I$ d'où $vb^{k+1}\in I$ : c'est que $v\in I_{k+1}=I_k$ (vu le a)) donc $vb^k\in I$ et alors $x\in I$ d'où l'égalité voulue, $I=I'\cap I_1$.
+\end{enumerate}
+
+\item
+\begin{enumerate}[label=\alph*),leftmargin=2em]
+\item $\mathcal R(I)$ est sous-groupe additif, non vide car $0\in\mathcal R(I)$, soit $x$ et $y$ dans $\mathcal R(I)$, avec $p$ et $q$ tels que $x^p$ et $y^q$ sont dans $I$, dans l'anneau commutatif $A$,
+\[
+(x-y)^{p+q}=\sum_{k=0}^{p+q}C_{p+q}^k(-1)^k y^k x^{p+q-k}
+\]
+est une somme de termes de $I$, car soit $k\ge q$ et alors $y^k\in I$, soit $p+q-k\ge p$ (et alors $x^{p+q-k}\in I$) d'où $x-y\in\mathcal R(I)$.
+
+$\mathcal R(I)$ est idéal car si $x\in\mathcal R(I)$, et $z\in A$, avec $p$ tel que $x^p\in I$, on a $(xz)^p=x^pz^p$, ($A$ commutatif) donc $x^pz^p\in I\Rightarrow xz\in\mathcal R(I)$.
+
+\item On décompose $n$ en
+\[
+n=n_1^{\alpha_1}n_2^{\alpha_2}\cdots n_q^{\alpha_q},
+\]
+les $n_i$ étant des nombres premiers et les $\alpha_i$ entiers $\ge1$.
+
+Si $x\in\mathcal R(n\mathbb Z)$, $\exists p\in\mathbb N$, $x^p\in n\mathbb Z$ ce qui équivaut à $n$ divise $x^p$. Mais ceci implique que chaque $n_i$ premier divise $x$, et si $x$ est divisible par $n_1,\ldots,n_q$, $x^{\sup(\alpha_i)}$ sera divisible par $n$. Donc
+\[
+\mathcal R(n\mathbb Z)=n_1n_2\cdots n_q\mathbb Z;
+\]
+$n_1,n_2,\ldots,n_q$ facteurs premiers distincts divisant $n$.
+\end{enumerate}
+
+\item Avec $z=x+iy$ non nul, on a $|z|^2=x^2+y^2\ge1$ : la borne inférieure de l'ensemble des $|z|^2$, $\forall z\in I-\{0\}$ est un entier $\ge1$, d'où $p>0$. De plus une borne inférieure d'entiers est atteinte, donc il existe $a$ dans $I$ tel que $|a|^2=p^2$ soit $|a|=p$.
+
+Soit alors $z=x+iy\in I$, on considère
+\[
+Z=\frac za=X+iY.
+\]
+Il existe un seul couple $(u,v)$ de $\mathbb Z^2$ tel que $X=u+X'$, $Y=v+Y'$ avec
+\[
+-\frac12<X'\le\frac12\qquad\text{et}\qquad-\frac12<Y'\le\frac12.
+\]
+On a alors $z=Za$, d'où
+\[
+z=(u+iv)a+(X'+iY')a.
+\]
+Comme $z\in I$, $a\in I$, $(u+iv)\in A$ on a $z-(u+iv)a\in I$, soit $(X'+iY')a\in I$.
+
+Or
+\[
+|(X'+iY')a|=(X'^2+Y'^2)^{1/2}|a|
+\]
+avec $X'^2+Y'^2\le\frac12$, donc $|X'+iY'|<|a|=p$ : c'est que $X'+iY'=0$ ; d'où $z=(u+iv)a$ est dans $Aa$. On a $I\subset Aa$, et $a\in I\Rightarrow Aa\subset I$ : l'idéal $I$ est bien principal.
+
+\item L'ensemble
+\[
+I=\{ax+by;(x,y)\in\mathbb Z^2\}
+\]
+est un idéal de $\mathbb Z$ anneau principal. Il est engendré par le p.g.c.d de $a$ et $b$ donc par 1 : il existe donc $(u,v)$ dans $\mathbb Z^2$ tel que $ua+vb=n$.
+
+Si $(u',v')$ est un autre couple de $\mathbb Z^2$ tel que $u'a+v'b=n$, on a $(u-u')a+(v-v')b=0$ et comme $a$ et $b$ sont premiers entre eux $b$ divise $u-u'$ (et $a$ divise $v-v'$) : il existe $k$ dans $\mathbb Z$ tel que $u-u'=kb$ et $v-v'=-ka$ d'où $u=u'+kb$ et $v=v'-ka$. Mais réciproquement, si $(u',v')$ est solution, pour tout $k$ de $\mathbb Z$, avec $u=u'+kb$ et $v=v'-ka$ il vient $(u'+kb)a+(v'-ka)b=u'a+v'b=n$. On va prouver l'existence de $k$ dans $\mathbb Z$ tel que $u'+kb$ et $v'-ka$ soient dans $\mathbb N$.
+
+Dans $\mathbb Z$ archimédien, il existe un et un seul $k_0\in\mathbb Z$ tel que $u'+k_0b\ge0$ et $u'+(k_0-1)b<0$, soit $u'+(k_0-1)b\le-1$, d'où $k_0b\le-1-u'+b$.
+
+On multiplie par $-a$, strictement négatif, on a :
+\[
+-k_0ab\ge a+u'a-ab,
+\]
+donc
+\[
+v'b-k_0ab\ge v'b+a+u'a-ab,
+\]
+avec $u'a+v'b=n$, soit
+\[
+b(v'-k_0a)\ge n+a-ab>n_0+a-ab=-b.
+\]
+On simplifie par $b$, $(>0)$, d'où $v'-k_0a>-1$ soit $v'-k_0a\ge0$ : finalement $u'+k_0b$ et $v'-k_0a$ sont dans $\mathbb N$.
+
+\item
+\begin{enumerate}[label=\arabic*),leftmargin=2em]
+\item Si $b\sqrt2+c\sqrt3=-a$, en élevant au carré on obtient
+\[
+2bc\sqrt6=a^2-2b^2-3c^2
+\]
+soit $2bc\sqrt6\in\mathbb Q$ et si $bc\ne0$ ceci donne $\sqrt6\in\mathbb Q$ : exclu car $\sqrt6=p/q$ irréductible implique $6q^2=p^2$ donc 2 divise $p$, avec $p=2p'$ on aurait $6q^2=4p'^2$ donc $3q^2=2p'^2$ donc 2 divise $q$ et $p/q$ ne serait pas irréductible. Donc $bc=0$.
+
+Prenons $b=0$, il reste $c\sqrt3=-a$, et là encore $c\ne0\Rightarrow\sqrt3\in\mathbb Q$, exclu par le même raisonnement, d'où $c=0$ et $a=0$.
+
+\item Si un point $(x,y)$ de $\mathbb Z^2$ est sur le cercle $\Gamma_r$ de centre $(\sqrt2,\sqrt3)$ de rayon $r$, on a
+\[
+(x-\sqrt2)^2+(y-\sqrt3)^2=r^2
+\]
+soit
+\[
+x^2+y^2+5-r^2-2\sqrt2x-2\sqrt3y=0.
+\]
+Un autre point $(x',y')$ de $\mathbb Z^2$ sur $\Gamma_r$ conduit à
+\[
+x'^2+y'^2+5-r^2-2\sqrt2x'-2\sqrt3y'=0
+\]
+et par soustraction à
+\[
+(x^2+y^2-x'^2-y'^2)+\sqrt2(2x'-2x)+\sqrt3(2y'-2y)=0.
+\]
+Et comme $x^2+y^2-x'^2-y'^2$, $2(x'-x)$ et $2(y'-y)$ sont dans $\mathbb Z$, d'après le 1), on a en particulier $x'=x$ et $y'=y$ : il y a au plus un point de $\mathbb Z^2$ sur $\Gamma_r$.
+
+\item On note $D_r$ le disque de centre $\Omega=(\sqrt2,\sqrt3)$, de rayon $r$ et on définit $\varphi:[0,+\infty[\longrightarrow\mathbb N$ par $\varphi(r)=\operatorname{card}(\mathbb Z^2\cap D_r)$. On a $\varphi(0)=0$, $\varphi$ est croissante, non bornée, (si on se donne $n$ points de $\mathbb Z^2$, dès que $r$ est supérieur à la distance euclidienne de $\Omega$ et de ces points on aura $\varphi(r)\ge n$). La fonction distance étant continue, la distance de $\Omega$ à $\mathbb Z^2$ est atteinte, (on remplace $\mathbb Z^2$ par $K=\mathbb Z^2\cap B(\Omega,d(\Omega,(1,1)))$ par exemple, $K$ est compact) en un seul point vu le 2), si $w_1$ est ce point et $r_1=d(\Omega,w_1)$ on a bien $D_{r_1}$ contient 1 point ; puis la distance de $\Omega$ à $\mathbb Z^2-\{w_1\}$ est atteinte, (là encore on remplace $\mathbb Z^2-\{w_1\}$ par son intersection avec un fermé borné) en $w_2$, unique, (vu le 2) avec $r_2=d(\Omega,w_2)>r_1$, toujours vu le 2), d'où $D_{r_2}$ contenant 2 points et on itère le raisonnement.
+\end{enumerate}
+
+\item L'ensemble $I$ est un idéal de l'anneau $E$.
+
+Soit $f\in I$. Si $f$ ne s'annule pas, la fonction $g=1/f$ est continue sur $[0,1]$, donc $1/f\in E$, $f\in I\Rightarrow1\in I$ et alors, $\forall g\in E$, $g=1\cdot g\in I$, c'est exclu. Donc chaque $f$ de $I$ s'annule. Soit
+\[
+N(f)=\{x\in[0,1],f(x)=0\}.
+\]
+Soient $f_1,\ldots,f_p$ dans $I$, les fonctions conjuguées $\overline{f_k}$ sont dans $E$ donc les produits $\overline{f_k}f_k=|f_k|^2$ sont dans l'idéal $I$ et les sommes
+\[
+\sum_{k=1}^p|f_k|^2
+\]
+sont dans $I$, donc $\sum_{k=1}^p|f_k|^2$ s'annule mais ceci n'est possible qu'en un $x_0$ zéro commun de $f_1,\ldots,f_p$. Donc, pour toute partie finie de $I$, les fonctions de cette partie ont un zéro commun.
+
+Soit alors
+\[
+A=\bigcap_{f\in I}N(f).
+\]
+Si $A=\varnothing$, on a une intersection de fermés, ($f$ continue), vide, dans $[0,1]$ compact, donc il existe une intersection finie déjà vide, soit une famille finie d'éléments de $I$ sans zéro commun : c'est exclu.
+
+Donc $\bigcap_{f\in I}N(f)\ne\varnothing$ : il y a un zéro commun aux $f$ de $I$.
+
+\item On a
+\[
+X^3-1=(X-1)(X^2+X+1)
+\]
+et le polynôme $X^2+X+1$ s'écrit encore
+\[
+\left(X+\frac12\right)^2+\frac34
+\]
+puisque $p\ne2$. Le polynôme sera donc scindé dans $K[X]$, avec $K=\mathbb Z/p\mathbb Z$ si et seulement si $-3$ est un carré dans $K$.
+
+Donc $(-3$ carré modulo $p)\Longleftrightarrow(X^3-1$ scindé dans $K[X])$. Or tout élément $\lambda$ de $K^*=K-\{0\}$ vérifie l'égalité $\lambda^{p-1}=1$, ($K^*$ groupe multiplicatif de cardinal $p-1$).
+
+Si on a $p\equiv1\pmod3$, $p-1=3h$, et $X^{p-1}-1=X^{3h}-1$ est scindé, les zéros de ce polynôme étant les $p-1$ éléments distincts de $K^*$. Comme on a $X^h-1=(X-1)Q(X)$ avec $Q(X)=X^{h-1}+X^{h-2}+\cdots+1$ dans $K[X]$, on a
+\[
+X^{3h}-1=(X^3-1)Q(X^3),
+\]
+d'où également $X^3-1$ scindé.
+
+Si $p\equiv2\pmod3$, $p-1=3k+1$ et $X^{p-1}-1=X\cdot X^{3k}-1$. S'il existe $a$ dans $K$ tel que $a^3=1$, on aura $a^{p-1}-1=a-1$ donc $a$ ne peut être un zéro de $X^3-1$ que si $a=1$ : le polynôme $X^3-1$ n'est pas scindé.
+
+Comme $p\equiv0\pmod3$ est exclu, ($p$ premier $\ge5$) on a finalement l'équivalence
+\[
+(X^3-1\text{ scindé})\Longleftrightarrow(p\equiv1\pmod3)
+\]
+d'où le résultat.
+
+\item
+\begin{enumerate}[label=\alph*),leftmargin=2em]
+\item Si $p=2k+1=q^2+r^2$ avec $q$ et $r$ non nuls, l'un des deux nombres $q$ ou $r$ est pair, l'autre impair, (sinon $q^2+r^2$ pair). Supposons que $q=2q'$ et $r=2r'+1$, alors on a :
+\[
+p=4(q'^2+r'^2+r')+1
+\]
+donc $p-1$ est divisible par 4.
+
+\item Comme $K^*=\mathbb Z/p\mathbb Z-\{0\}$, (on note $K$ le corps $\mathbb Z/p\mathbb Z$, avec $p$ premier) est un groupe multiplicatif ayant $p-1$ éléments, pour tout $\lambda$ de $K^*$, $\lambda^{p-1}=1$ donc le polynôme $X^{p-1}-1$ est scindé dans $K[X]$. Or, on suppose $p-1$ divisible par 4. Si on pose $p-1=4k$, on a
+\[
+X^{p-1}-1=(X^{2k}-1)(X^{2k}+1)
+\]
+et $X^{2k}-1=X^{(p-1)/2}-1$ est scindé sur $K[X]$, à racines distinctes (comme $X^{p-1}-1$). Comme tout $\lambda$ de $K^*$ vérifie $(\lambda^2)^{(p-1)/2}=1$, les $\lambda^2$ sont racines de $X^{(p-1)/2}-1$ : il y a au plus $(p-1)/2$ carrés (non nuls) dans $K^*$, il y en a $(p-1)/2$ car on peut écrire $K$ sous la forme
+\[
+K=\{-2k,\ldots,-\bar1,0,\bar1,\bar2,\ldots,\overline{2k}\}
+\]
+avec $p=1+4k$ et $(\bar1)^2,\ldots,(\overline{2k})^2$ sont des carrés distincts, car $\bar r^2=\bar s^2$ équivaut à $(r-s)(r+s)\equiv0\pmod p$ et, avec $1\le r\le2k$ et $1\le s\le2k$ soit encore $-2k\le r-s\le2k$ et $2\le r+s\le4k$, et $p$ premier égal à $1+4k$, ce n'est pas possible que si $r=s$.
+
+\item On a de même $X^{2k}+1$ scindé à racines simples sur $K[X]$. Soit $\bar\mu$ dans $K^*$ tel que $(\bar\mu^k)^2+1=0$, si $m$ dans $\mathbb Z$ représente $\bar\mu^k$, on a
+\[
+m^2+1\equiv0\pmod p.
+\]
+(On peut imposer $m\in\mathbb N^*$).
+
+\item Soit $m\in\mathbb N^*$ tel que $m^2+1\equiv0\pmod p$, $N=E(\sqrt p)+1$, (partie entière...), on a $N-1=E(\sqrt p)\le\sqrt p<N$ donc
+\[
+\frac1N<\frac1{\sqrt p}.
+\]
+Soit $k$ entier avec $0\le k<\sqrt p$, et
+\[
+x_k=k\cdot\frac mp-E\left(\frac{km}{p}\right).
+\]
+On a $0\le x_k<1$, comme $k$ prend les valeurs $0,1,2,\ldots,N-1$, il y a $N$ valeurs de $x_k$, réparties entre 0 et 1, avec $x_0=0$. Mais alors, soit il existe $k\ne k'$ tels que $|x_k-x_{k'}|\le1/N$, soit on a $x_1>1/N$, $x_2>2/N$, ..., $x_{N-1}>(N-1)/N$, et comme $x_{N-1}<1$, on peut dire que dans ce cas, il existe $k$ tel que $|1-x_k|\le1/N$, et $k\ne0$.
+
+Premier cas : on a $k\ne k'$ et $|x_k-x_{k'}|\le1/N$, soit encore
+\[
+\left|(k-k')\frac mp-\left(E\left(\frac{km}{p}\right)-E\left(\frac{k'm}{p}\right)\right)\right|\le\frac1N<\frac1{\sqrt p}.
+\]
+Si $k>k'$, on prend $b=k-k'$, $a=E(km/p)-E(k'm/p)$ et si $k<k'$, on prend les opposés d'où un couple $(a,b)$ solution.
+
+Deuxième cas : avec $k$ tel que
+\[
+|x_k-1|=\left|k\frac mp-E\left(\frac{km}{p}\right)-1\right|\le\frac1N,
+\]
+avec $b=k$ et $a=E(km/p)+1$ on a une solution.
+
+\item Soit donc $b$ entier, avec $0<b<\sqrt p$ et $a$ dans $\mathbb Z$ tels que $|bm-ap|<\sqrt p$. On pose $q=bm-ap$, on a $q^2<p$ donc
+\[
+q^2+b^2<p+p=2p.
+\]
+Or
+\[
+b^2+q^2=b^2+(bm-ap)^2=b^2(1+m^2)+a^2p^2-2pabm,
+\]
+et comme $1+m^2$ est divisible par $p$, $b^2+q^2$ est divisible par $p$, avec $0<b^2+q^2<2p$ : c'est que $b^2+q^2=p$. On a donc $p$ somme de deux carrés.
+\end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,404 @@
+
+\noindent\textbf{注1}\quad 这个证明是达布给出的，而通常教本上的证明是柯西给出的，他假设了 $f(x)$ 连续，这样 $f(x)$ 自然可积。为了证明
+\[
+ \int_a^x f(t)\,dt
+\]
+是 $f(x)$ 的原函数，他应用了积分中值定理，而这里用到 $f(x)$ 的连续性。柯西虽然限于讨论连续函数，定理7中两个条件自然都成立，所以柯西可以说当 $f(x)$ 为连续时，微积分的基本定理成立，达布因为要考虑可积的 $f(x)$，所以要规定它适合这两个条件。此外，达布则用了微分中值定理即拉格朗日公式，而这只需要 $F'(x)$ 在 $(A,B)$ 上存在。
+
+\noindent\textbf{注2}\quad 这个证明虽然很简洁，却未解决很多问题。因为既已假设 $f(x)$ 只是可积，则它可能有不连续点。如果我们在一个零测度集上把 $f(x)$ 改变为 $\widetilde f(x)$，则 $f(x)$ 之积分值不变（证明见下一节）：
+\[
+ \int_a^x f(t)\,dt=\int_a^x \widetilde f(t)\,dt.
+\]
+因此如果
+\[
+ \int_a^x f(t)\,dt=F(x)
+\]
+是 $f(x)$ 的原函数，则也应有 $F(x)=\int_a^x\widetilde f(t)\,dt$ 而为 $\widetilde f$ 的原函数。但是因为 $f(x)\ne\widetilde f(x)$ 于一个零测度集上，而在这个集上 $F(x)$ 同时为 $f(x)$ 与 $\widetilde f(x)$ 的原函数，显然这是不可能的。这样看来在可积函数类中，只能考虑几乎处处意义下原函数，即是说：所谓 $F(x)$ 是 $f(x)$ 的原函数，即指几乎处处有 $F'(x)$ 存在，只是几乎处处有 $F'(x)=f(x)$。现在要问，在这样的理解下，定理7是否仍成立。肯定不对，因为有一个著名的反例（我们在第二章就讲过了），这就是著名的赫维赛德函数（只看区间 $[-1,1]$）：
+\[
+ H(x)=\begin{cases}
+ 1,&0\le x\le1,\\
+ 0,&-1\le x<0.
+ \end{cases}
+\]
+很明显 $H'(x)=0$ 几乎处处成立（只差 $x=0$ 一点），但是当 $x>0$ 时
+\[
+ 1=H(x)-H(-1)\ne\int_{-1}^{x}H'(t)\,dt=\int_{-1}^{x}0\,dt=0.
+\]
+当然，读者都会看到，现在的原函数 $H(x)$ 在 $x=0$ 处不连续。那么要问即令设几乎处处意义下的原函数 $F(x)$ 是连续的，定理7对不对？下一节会看到仍然不对。
+
+还有一点要注意，如果 $f(x)$ 仅只是可积，$F(x)=\int_a^x f(t)\,dt$ 当然是 $x$ 的连续函数。我们很容易证明（请读者自己证一下）：若 $x$ 是 $f$ 的连续点，则 $F'(x)=f(x)$。证法与通常教本相近，但是不能用积分中值定理。定理5告诉我们，$f(x)$ 可积的充分必要条件是它几乎处处连续，于是 $F'(x)=f(x)$ 很可能仅仅是几乎处处成立。这样，就可积函数类讨论原函数问题应该只能讨论几乎处处意义下的原函数，而定理7却是在处处有 $F'(x)=f(x)$ 的意义下理解原函数的。因此解决不了问题。
+
+实际上问题很深刻：若 $f(x)$ 可积，它的连续的原函数是否是
+\[
+ \int_a^x f(t)\,dt+C\,?
+\]
+这一点大体上是对的，下一节将就 $f(x)$ 为勒贝格可积（黎曼可积只是它的特例）的情况证明这一点。于是要问，怎样刻画 $f(x)$ 的连续的原函数 $\int_a^x f(t)\,dt+C$？奇怪的是，若 $f(x)$ 是勒贝格可积的，这个问题有明确的答案，但若 $f(x)$ 只是黎曼可积，则我们实在不知其答案。
+
+\medskip
+\noindent\textbf{4. 多重积分}\quad 设有函数 $f(x)=f(x_1,\ldots,x_n)$ 定义于区域 $\Omega\subset\mathbb R^n$ 上，我们可以如同处理一维情况一样地讨论 $f(x)$。设 $f(x)$ 在 $\Omega$ 上有界。正如前面我们是用一串分点 $a=x_0<x_1<\cdots<x_n=b$ 来分划区间 $[a,b]$ 一样，我们也试图用小区间的 $n$ 维类似物闭长方体
+\[
+ I=\{x_i\,;\ a_i\le x_i\le b_i,\ i=1,2,\ldots,n\}
+\]
+来划分 $\Omega$。以下，我们也称 $I$ 为一区间。
+
+一维区间 $[a,b]$ 可以分划为有限多个小区间之并，一般 $n$ 维区域则不能分成有限多个闭长方体之并，所以我们先限制考虑 $\Omega$ 为一区间的情况。对于区间
+\[
+ I=\{x_i\,;\ a_i\le x_i\le b_i,\ i=1,2,\ldots,n\},
+\]
+我们自然知道
+\[
+ \operatorname{vol}(I)=\prod_{i=1}^{n}(b_i-a_i),
+\]
+而若 $I$ 分划为有限个子区间 $I_j$ 之并，$I=\bigcup_{j=1}^{m}I_j$，而且 $\mathring I_j\cap\mathring I_k=\varnothing\ (j\ne k)$，即集合 $\{a_i<x_i<b_i,\ i=1,2,\ldots,n\}$，这个条件指 $I_j$ 与 $I_k$ 只沿长方体的边界相接触。对于每个定义于 $I$ 上的有界函数 $f(x)$，令
+\[
+ m_j=\inf_{I_j}f(x),\qquad M_j=\sup_{I_j}f(x),
+\]
+我们也可以定义 $f(x)$ 在此分划 $P$ 下的上和与下和
+\[
+ S_P=\sum_{j=1}^{m}M_j\,m(I_j),\qquad
+ s_P=\sum_{j=1}^{m}m_j\,m(I_j),
+\]
+这里 $m(I_j)=\operatorname{vol}(I_j)$。易见若分划加细，下和必不减而上和必不增，且对任何两个分划 $P'$ 与 $P''$ 必有
+\[
+ s_{P'}\le S_{P''}.
+\]
+于是可得 $f$ 之下积分与上积分
+\[
+ \underline A=\sup_P s_P,\qquad \overline A=\inf_P S_P,
+\]
+且 $\underline A\le\overline A$，若 $\underline A=\overline A=A$，则称 $f$ 在 $I$ 上黎曼可积，这个公共值 $A$ 称为 $f$ 在 $I$ 上的黎曼积分，记作
+\[
+ A=\int_I f(x)\,dx.
+\]
+关于 $f$ 可积的充分必要条件，本节之引理及定理1--定理5均成立（但推论6则不然，因为多元函数之单调性难于定义，定理7在 $n$ 维情况下也没有简单的类比），此外我们还需要
+
+\noindent\textbf{引理8}\quad 若 $f$ 与 $g$ 均为可积，则 $f\cdot g$ 也可积。
+
+\noindent\textbf{证}\quad 设 $B_f=\{x\in I:f(x)\text{ 在 }x\text{ 点不连续}\}$，$B_g$ 与 $B_{fg}$ 之意义相似，容易看到
+\[
+ B_{fg}\subset B_f\cup B_g.
+\]
+由假设 $B_f$ 与 $B_g$ 均为0测度集，可见其并也是0测度集，$B_{fg}$ 也是这样，所以 $fg$ 在 $I$ 上可积。
+
+利用这个引理就可以在任一有界集合 $C$ 上定义 $f$ 之积分，为此先定义 $C$ 之特征函数
+\begin{equation}
+ \chi_C(x)=\begin{cases}
+ 1,&x\in C,\\
+ 0,&x\notin C.
+ \end{cases}
+ \tag{17}
+\end{equation}
+现在设 $C$ 含于某区间 $A$ 内：$C\subset A$，若 $f(x)$ 在 $A$ 上有界，而且 $(\chi_C\cdot f)(x)$ 在 $A$ 上可积，我们就说 $f(x)$ 在 $C$ 上可积，而且定义
+\begin{equation}
+ \int_C f(x)\,dx=\int_A(\chi_C\cdot f)(x)\,dx.
+ \tag{18}
+\end{equation}
+这里有两点值得注意，首先若是选不同的 $A_1$ 与 $A_2$ 均包含 $C$ 则因 $\chi_C|_{A_1}=\chi_C|_{A_2}=0$，易见
+\[
+ \int_{A_1}(\chi_C\cdot f)(x)\,dx=\int_{A_2}(\chi_C\cdot f)(x)\,dx,
+\]
+所以定义(18)是与 $A$ 的选择无关的。其次，若 $f(x)$ 本来就定义在 $A$ 上且在 $A$ 上可积，则由引理8，只要 $\chi_C(x)$ 在 $A$ 上可积，则 $(\chi_C\cdot f)(x)$ 也在 $A$ 上可积，从而可以用(18)式定义 $\int_C f(x)\,dx$。所以 $A$ 上一个可积函数 $f(x)$ 在 $A$ 的子集 $C$ 上仍可积，只要 $\chi_C(x)$ 可积。这样看来 $\chi_C(x)$ 的积分是特别有意义的。
+
+如果 $C$ 是一个区间：$C=\{x:a_i\le x_i\le b_i,\ i=1,2,\ldots,n\}$，很明显
+\[
+ \int\chi_C(x)\,dx=\prod_{i=1}^{n}(b_i-a_i)=m(C)
+\]
+是此区间的体积，记作 $m(C)$ 就是前面的 $\operatorname{vol}(C)$。如果 $C$ 是有限多个区间之并：$C=\bigcup_{j=1}^{k}C_j$，而且 $\mathring C_j\cap\mathring C_k=\varnothing\ (j\ne k)$，可见
+\[
+ m(C)=\sum_{j=1}^{k}m(C_j),
+\]
+它仍然表示 $C$ 的体积，此式反映了体积的有限可加性。如果 $C$ 是一般区域，$\chi_C(x)$ 是否可积虽不得而知，但上（下）积分是一定有的，上积分是上和 $\sum M_i\,m(\sigma_i)$（$\sigma_i$ 是闭区间，$m(\sigma_i)$ 是其体积）之下确界。若 $\sigma_i\cap C\ne\varnothing$，$M_i=1$；否则 $M_i=0$。所以上和为 $\sum_{\sigma_i\cap C\ne\varnothing}m(\sigma_i)$，就是与 $C$ 相交的闭区间的体积和，这就相当于求圆面积时所用的外切正多边形面积。上积分 $\overline I$ 就是这些“外包多边形”之“面积”的下确界。同样，下积分是下和 $\sum m_i\,m(\sigma_i)$ 的上确界，这里 $m_i=1$，若 $\sigma_i\subset C$；否则 $m_i=0$。所以下和是 $\sum_{\sigma_i\subset C}m(\sigma_i)$，即含于 $C$ 内的闭区间的体积和，相当于“内接多边形”之“面积”。因此求 $\underline I$ 即求下和的上确界就相当于从“圆内”逐渐增加“内含多边形”之边数而“穷竭”一个圆。$\chi_C(x)$ 可积即 $\underline I=\overline I$，亦即不论是“内含”还是“外包”结果都相同，都求出了“面积”。因此，若 $\chi_C(x)$ 可积，就说 $C$ 是有体积的，而体积就是
+\[
+ m(C)=\int\chi_C(x)\,dx.
+\]
+但这个积分是体积的一个推广，因为它可以适用到 $C$ 的构造极复杂的情况，所以我们称 $m(C)$ 为 $C$ 的若尔当测度，$\overline I$ 与 $\underline I$ 也分别称为 $C$ 之外与内若尔当测度，并分别记为 $\overline m(C)$ 与 $\underline m(C)$。并不是任何的 $C$ 都有若尔当测度（或者说 $C$ 为若尔当可测（J可测）），因为并不是 $\chi_C(x)$ 在一切情况下均可积。例如设 $C=\{x:0\le x\le1,\ x\text{ 为有理数}\}$，$C\subset[0,1]$ 是有界的，若用有限多个区间作 $C$ 的覆盖 $\{(a_i,b_i)\}_{i=1,\ldots,N}$，必有
+\[
+ \sum_{i=1}^{N}(b_i-a_i)\ge1,
+\]
+而每一个区间中必含有理数，故若作 $\chi_C(x)$，在任何区间上均有 $M_i=1$，因此上和均 $\ge1$，其下确界就是1。反过来也正因为任一小区间 $(a_i,b_i)$ 中均有无理数，故必有 $m_i=0$，从而一切下和均为0，其上确界也就是0。所以 $\chi_C(x)$ 不可积，也就是说 $C$ 不是若尔当可测的。
+
+我们要注意，现在的 $\chi_C(x)$ 就是由(4)定义的狄利克雷函数（但限制 $0\le x\le1$），所以 $C$ 为若尔当不可测就说明狄利克雷函数(4)在 $[0,1]$ 上不是黎曼可积的。
+
+至此我们要问，有界集 $C$ 为若尔当可测的条件是什么？这里我们有
+
+\noindent\textbf{定理9}\quad 有界集 $C\subset A$ 为若尔当可测的充分必要条件是：$C$ 的边界点集具有测度0。
+
+\noindent\textbf{证}\quad 上面我们已经看到，$C$ 为若尔当可测的充分必要条件是 $\chi_C(x)$ 为黎曼可积，由定理3知，$C$ 为若尔当可测的充分必要条件是 $\chi_C(x)$ 几乎处处连续。任取 $x_0$ 点，若 $x_0=(x_1^0,\ldots,x_n^0)$ 是 $C$ 之内点，则必有以 $x_0$ 为中心的开区间 $\{x:a_i<x_i^0<\beta_i,\ i=1,2,\ldots,n\}$ 含于 $C$ 内，从而 $\chi_C(x)$ 在此开区间中恒为1，从而 $\chi_C(x)$ 在 $x_0$ 连续。若 $x_0$ 为 $C$ 之外点，则必有以 $x_0$ 为中心的开区间全含于 $C$ 之余集内，而在此开区间中 $\chi_C(x)=0$ 在 $x_0$ 仍为连续。若 $x_0$ 是 $C$ 之界点，则在 $x_0$ 之任一邻域中既有 $C$ 中之点亦有 $C$ 外之点，因此 $O(\chi_C,x_0)=1$，因此 $C$ 之界点 $=\{\chi_C(x)\text{ 之不连续点}\}$。反过来的推理也是对的。因此
+\[
+ \{x:x\text{ 为 }C\text{ 之界点}\}=\{x:x\text{ 为 }\chi_C\text{ 之不连续点}\}.
+\]
+再用定理3即得。
+
+以上我们看到了如何用有限多个区间之并来“逼近”一个若尔当可测集，这也决定了若尔当测度的性质，以下我们称有限多个区间之并为简单集。若尔当测度中我们最要关切的是其可加性。这里我们有
+
+\noindent\textbf{定理10（若尔当测度的有限可加性）}\quad 设 $C_1,\ldots,C_m$ 均为若尔当可测集，则 $C=\bigcup_{j=1}^{m}C_j$ 也是，而且
+\begin{equation}
+ m(C)\le\sum_{j=1}^{m}m(C_j).
+ \tag{19}
+\end{equation}
+等号成立的充分必要条件是
+\begin{equation}
+ m(C_i\cap C_j)=0,\quad i\ne j.
+ \tag{20}
+\end{equation}
+
+\noindent\textbf{证}\quad 我们只对 $m=2$ 的情况给出证明，容易证明，当 $C_1,C_2$ 均为简单集（即有限多个两两不相交的闭区间只交于边界上，下同）时定理成立，而且
+\begin{equation}
+ m(C_1\cup C_2)=m(C_1)+m(C_2)-m(C_1\cap C_2).
+ \tag{21}
+\end{equation}
+若 $C_1,C_2$ 是若尔当可测的而不一定是简单集，则对任意 $\varepsilon>0$ 必可找到简单集 $Q_1,Q_2$ 分别包含 $C_1,C_2$ 且
+\[
+ m(Q_i)\le m(C_i)+\frac\varepsilon2,\quad i=1,2.
+\]
+因为 $C_1\cup C_2\subset Q_1\cup Q_2$，对简单集 $Q_1,Q_2$ 应用(21)式有
+\begin{align*}
+ \overline m(C_1\cup C_2)&\le m(Q_1\cup Q_2)\\
+ &=m(Q_1)+m(Q_2)-m(Q_1\cap Q_2)\\
+ &\le m(C_1)+m(C_2)+\varepsilon-\underline m(C_1\cap C_2).
+\end{align*}
+再由 $Q_1\cap Q_2\supset C_1\cap C_2$，知 $m(Q_1\cap Q_2)\ge\underline m(C_1\cap C_2)$，故
+\begin{equation}
+ \overline m(C_1\cup C_2)\le m(C_1)+m(C_2)+\varepsilon-\underline m(C_1\cap C_2).
+ \tag{22}
+\end{equation}
+与此类似，又可作含于 $C_i$ 内的简单集 $Q_i'$, $i=1,2$ 使
+\[
+ m(Q_i')\ge m(C_i)-\frac\varepsilon2,\quad i=1,2.
+\]
+由于 $Q_1'\cup Q_2'\subset C_1\cup C_2$，所以
+\begin{align*}
+ \underline m(C_1\cup C_2)&\ge m(Q_1'\cup Q_2')\\
+ &=m(Q_1')+m(Q_2')-m(Q_1'\cap Q_2')\\
+ &\ge m(C_1)+m(C_2)-\varepsilon-\overline m(C_1\cap C_2).
+\end{align*}
+再由 $Q_1'\cap Q_2'\subset C_1\cap C_2$，知 $m(Q_1'\cap Q_2')\le\overline m(C_1\cap C_2)$，代入上式即有
+\begin{equation}
+ \underline m(C_1\cup C_2)\ge m(C_1)+m(C_2)-\varepsilon-\overline m(C_1\cap C_2).
+ \tag{23}
+\end{equation}
+比较(22)和(23)，注意到 $\underline m(C_1\cap C_2)\le\overline m(C_1\cap C_2)$，$\underline m(C_1\cup C_2)\le\overline m(C_1\cup C_2)$，利用 $\varepsilon$ 的任意性，即有
+\[
+ \underline m(C_1\cup C_2)=\overline m(C_1\cup C_2),
+\]
+\[
+ \underline m(C_1\cap C_2)=\overline m(C_1\cap C_2).
+\]
+即 $C_1\cup C_2$ 与 $C_1\cap C_2$ 均为若尔当可测，而且(21)式成立：
+\[
+ m(C_1\cup C_2)=m(C_1)+m(C_2)-m(C_1\cap C_2).
+\]
+定理证毕。
+
+\noindent\textbf{注}\quad 我们不但证明了 $C_1\cup C_2$ 若尔当可测，而且还证明了 $C_1\cap C_2$ 也若尔当可测。用类似的方法还可证明 $C_1\setminus C_2$ 也是若尔当可测的，而且
+\begin{equation}
+ m(C_1\setminus C_2)=m(C_1)-m(C_1\cap C_2).
+ \tag{24}
+\end{equation}
+(21)与(24)给出了在集合的运算：并、交、差之下，若尔当测度的相应的代数运算结果。
+
+现在我们可以再回来看看高维情况下黎曼积分的定义。上面我们通过采用 $\chi_C(x)$ 把积分区域 $A$ 化为一个区间，而每一次分划都是把 $A$ 分为有限多个小区间。现在有了若尔当测度的概念我们可以更直接地从定义在有界区域 $\Omega$ 上的有界函数 $f(x)$ 着手。这时唯一需要附加规定的是设 $\Omega$ 为若尔当可测。我们把 $\Omega$ 分划为有限多个若尔当可测集 $\Omega_j$, $j=1,2,\ldots,N$，这里我们规定 $\mathring\Omega_i\cap\mathring\Omega_j=\varnothing\ (i\ne j)$，于是可以作达布下、上和：
+\[
+ s_P=\sum_{j=1}^{N}m_j\,m(\Omega_j),\qquad m_j=\inf_{\Omega_j}f(x),
+\]
+\[
+ S_P=\sum_{j=1}^{N}M_j\,m(\Omega_j),\qquad M_j=\sup_{\Omega_j}f(x).
+\]
+然后把分划加细，证明 $\{s_P\}$ 有上确界，即下积分 $\underline I$，$\{S_P\}$ 有下确界即上积分 $\overline I$，唯一需要注意之点是：当分划加细时，$\Omega_j$ 被分划为有限多个“更小”的若尔当可测集之并：$\Omega_j=\bigcup_{k=1}^{L_j}\Omega_{jk}$，于是由若尔当测度的有限可加性，有
+\[
+ m(\Omega_j)=\sum_{k=1}^{L_j}m(\Omega_{jk}).
+\]
+于是
+\[
+ m_j\,m(\Omega_j)=\sum_{k=1}^{L_j}m_j\,m(\Omega_{jk})
+ \le\sum_{k=1}^{L_j}m_{jk}\,m(\Omega_{jk}).
+\]
+然后由此得知在分划加细时下和不减而上和不增。这正是黎曼积分定义中的关键之处，然后即有可积性之定义：$\underline I=\overline I$，而前面讲到的各个定理在此均成立。特别是，若 $f(x)$ 在 $\Omega$ 上可积，则对任一 $\varepsilon>0$ 必有 $\delta>0$ 存在，使当分划 $P$ 中各个 $\Omega_j$ 之直径均小于 $\delta$ 时
+\[
+ \left|\sum_{j=1}^{N}f(\xi_j)m(\Omega_j)-I\right|<\varepsilon,
+\]
+不论 $\xi_j\in\Omega_j$ 如何取法，也不论 $\Omega=\bigcup_{j=1}^{N}\Omega_j$, $\mathring\Omega_i\cap\mathring\Omega_j=\varnothing\ (i\ne j)$ 具体如何分法。重要的是要看到，为了使这个做法有效，必须要求 $\Omega$ 为若尔当可测，以及 $\Omega$ 只能分划为若尔当可测的子集合 $\{\Omega_j\}$，这样就可以利用若尔当测度的有限可加性。以后我们会看到黎曼积分的不足之处正好来自于此。
+
+关于此，关于测度（面积、体积），我们直观地会想到把 $\Omega$ 分为可数多个子集之并：$\Omega=\bigcup_{j=1}^{\infty}\Omega_j$，$\mathring\Omega_i\cap\mathring\Omega_j=\varnothing\ (i\ne j)$，而且希望
+\begin{equation}
+ m(\Omega)=\sum_{j=1}^{\infty}m(\Omega_j).
+ \tag{25}
+\end{equation}
+若一种测度适合(25)式，就说它具有可数可加性。若尔当测度恰好没有这种可数可加性。有例为证：考虑 $[0,1]$ 中的有理数之集 $\Omega$，因为有理数最多有可数多个，所以把 $[0,1]$ 中的有理数可以排列成 $x_1,\ldots,x_N,\ldots$，令 $\Omega_n=\{x_n\}$，很显然 $m_{\Omega_n}=0$。但 $\Omega$ 则不是若尔当可测的，因为 $\Omega$ 没有“内容”，故其内测度必为0：$\underline m(\Omega)=0$，但若用有限多个区间覆盖 $\Omega$，$\Omega\subset\bigcup_{i=1}^{N}[a_i,b_i]$，很容易看到 $\sum_{i=1}^{N}(b_i-a_i)\ge1$，所以 $\overline m(\Omega)\ge1$（但若许可用可数多个区间覆盖 $\Omega$，则结果反而不同，请读者自己想一下）。因此 $m(\Omega)$ 不存在，更不必说(25)式可否成立了。这就说明，黎曼积分本质地与若尔当测度相联系。若问黎曼为什么想不到突破这一点？回答只能是：从古希腊到黎曼的两千多年，求面积（例如圆面积），都是作有限分划（作内接正 $n$ 边形）再求极限。
+
+在进一步讨论黎曼积分的不足之处前，我们还要再看一下重积分怎样化为逐次积分。
+
+如果考虑 $f(x)$ 在区间 $A$ 上的积分（若 $f(x)$ 只定义在 $C\subset A$ 上，则考虑 $\chi_C(x)f(x)$ 在 $A$ 上的积分），用小区间来分划 $A$ 是最自然的方法。以2维情况为例，这时 $f(x)$ 是 $f(x,y)$，$m(\sigma_{ij})=(x_i-x_{i-1})(y_j-y_{j-1})$，而积分和是
+\[
+ \sum_{i,j}f(\xi_i,\eta_j)m(\sigma_{ij})
+ =\sum_{i=1}^{L}\left(\sum_{j=1}^{M}f(\xi_i,\eta_j)(y_j-y_{j-1})\right)(x_i-x_{i-1}),
+\]
+求极限后，即得到大家熟知的二重积分化为逐次积分的公式
+\begin{equation}
+ \iint_A f(x,y)\,dx\,dy=\int_a^b dx\int_c^d f(x,y)\,dy.
+ \tag{26}
+\end{equation}
+这里的极限过程我们不再重复，我们只提醒一点：当 $f(x,y)$ 在 $A$ 上连续时这里的论证不会产生困难，但若 $f(x,y)$ 只是可积，则情况比较复杂。因为这时不知道 $f(x,y)$ 对于固定的 $x$ 是否对 $y$ 可积，但 $\underline{\int}f(x,y)\,dy$ 却都是一定存在的。同时也不知道 $\underline{\int}f(x,y)\,dy$ 作为 $x$ 的函数是否一定可积。下面我们把 $A$ 写成 $A=I\times J$，$I=\{x:a\le x\le b\}$，$J=\{y:c\le y\le d\}$，对 $I$ 和 $J$ 作以下的分划
+\[
+ P_I:\ a=x_0<x_1<\cdots<x_L=b,
+\]
+\[
+ P_J:\ c=y_0<y_1<\cdots<y_M=d.
+\]
+这样构成了 $A$ 的一个分划
+\[
+ A=\bigcup_{i,j}\sigma_{ij},\qquad
+ \sigma_{ij}=\{(x,y):x_{i-1}\le x\le x_i,\ y_{j-1}\le y\le y_j\},
+\]
+\[
+ m(\sigma_{ij})=(x_i-x_{i-1})(y_j-y_{j-1}).
+\]
+现在我们来看 $f(x,y)$ 在 $A$ 上的下和。记 $g_x(y)$ 为 $f(x,y)$ 中固定 $x$ 所得的 $y$ 的函数，显然有
+\[
+ m_{ij}=\inf_{\sigma_{ij}}f(x,y)\le\inf_{y_{j-1}\le y\le y_j}g_x(y)=m_j(g_x(y)),
+\]
+从而
+\[
+ \sum_j m_{ij}(y_j-y_{j-1})\le\sum_{j=1}^{M}m_j(g_x(y))(y_j-y_{j-1})
+ \le\underline{\int_J} g_x(y)\,dy.
+\]
+首先限制 $x_{i-1}\le x\le x_i$，再对右方取下确界，有
+\[
+ \sum_jm_{ij}(y_j-y_{j-1})\le\inf_{x_{i-1}\le x\le x_i}\underline{\int_J}g_x(y)\,dy.
+\]
+双方再乘以 $x_i-x_{i-1}$ 并对 $i$ 求和，即有
+\[
+ \sum_{i,j}m_{ij}(x_i-x_{i-1})(y_j-y_{j-1})
+ \le\sum_i\inf_{x_{i-1}\le x\le x_i}\underline{\int_J}g_x(y)\,dy\,(x_i-x_{i-1}),
+\]
+左方是 $f(x,y)$ 对分划 $P_I\times P_J$ 的下和，右方是 $\underline{\int_J}g_x(y)\,dy$ 对分划 $P_I$ 的下和，求其上确界即有
+\begin{equation}
+ \underline{\iint_A} f(x,y)\,dx\,dy\le
+ \underline{\int_I} dx\,\underline{\int_J}g_x(y)\,dy.
+ \tag{27}
+\end{equation}
+与此相似，可得
+\begin{equation}
+ \overline{\iint_A} f(x,y)\,dx\,dy\ge
+ \overline{\int_I} dx\,\overline{\int_J}g_x(y)\,dy.
+ \tag{28}
+\end{equation}
+合并这两个不等式，注意到我们假设了 $f(x,y)$ 是可积的，即有
+\begin{align*}
+ \underline{\iint_A}f(x,y)\,dx\,dy
+ &\le\underline{\int_I}dx\,\underline{\int_J}g_x(y)\,dy\\
+ &\le\overline{\int_I}dx\,\underline{\int_J}g_x(y)\,dy\\
+ &\le\overline{\int_I}dx\,\overline{\int_J}g_x(y)\,dy\\
+ &\le\overline{\iint_A}f(x,y)\,dx\,dy.
+\end{align*}
+注意，我们在中间插入了一项 $\overline{\int_I}dx\,\underline{\int_J}g_x(y)\,dy$，因为不等式两端的项相同，这就证明了
+\[
+ \underline{\int_I}dx\,\underline{\int_J}g_x(y)\,dy
+ =\overline{\int_I}dx\,\underline{\int_J}g_x(y)\,dy.
+\]
+也就是说，$\underline{\int_J}g_x(y)\,dy$ 作为 $x$ 的函数在 $I$ 上可积，而上式双方均等于\[\underline{\int_I}dx\,\underline{\int_J}g_x(y)\,dy.\]用完全同样的方法也可证明 $\overline{\int_J}g_x(y)\,dy$ 作为 $x$ 的函数在 $I$ 上可积，且
+\[
+ \underline{\int_I}dx\,\overline{\int_J}g_x(y)\,dy
+ =\overline{\int_I}dx\,\overline{\int_J}g_x(y)\,dy.
+\]
+当然我们先可在 $f(x,y)$ 中固定 $y$ 而得 $x$ 的函数 $f(x,y)=h_y(x)$，它对 $x$ 在 $I$ 上的上、下积分必定也都是 $y$ 在 $J$ 上的可积函数。总结起来，我们有
+
+\noindent\textbf{定理11（富比尼（Fubini）定理）}\quad 设 $f(x,y)$ 在区间 $A=I\times J$ 上可积，则 $f(x,y)$ 作为 $y$（或 $x$）的函数 $g_x(y)$（$h_y(x)$）之上、下积分均在 $J$（或 $I$）上可积，而且 $f(x,y)$ 在 $A$ 上的二重积分可以化为逐次积分如下：
+\begin{align}
+ \iint_A f(x,y)\,dx\,dy
+ &=\int_I dx\,\underline{\int_J}g_x(y)\,dy
+ =\int_I dx\,\overline{\int_J}g_x(y)\,dy \notag\\
+ &=\int_J dy\,\underline{\int_I}h_y(x)\,dx
+ =\int_J dy\,\overline{\int_I}h_y(x)\,dx.
+ \tag{29}
+\end{align}
+
+\noindent\textbf{注}\quad 若 $f(x,y)$ 是连续函数，则容易证明 $g_x(y),h_y(x)$ 也都是连续的，从而
+\[
+ \underline{\int_J}g_x(y)\,dy=\overline{\int_J}g_x(y)\,dy=\int_Jg_x(y)\,dy,
+\]
+\[
+ \underline{\int_I}h_y(x)\,dx=\overline{\int_I}h_y(x)\,dx=\int_Ih_y(x)\,dx,
+\]
+这时(29)就成了通常的化二重积分为逐次积分的公式
+\begin{equation}
+ \iint_A f(x,y)\,dx\,dy=\int_I dx\int_Jg_x(y)\,dy
+ =\int_Jdy\int_Ih_y(x)\,dx.
+ \tag{30}
+\end{equation}
+但是对于一般可积函数(30)甚至可以是没有意义的。例如取 $I=J=[0,1]$，令 $R(x)$ 为(5)式定义的黎曼函数，它在 $x$ 为有理数时不连续，但这些不连续点构成一个零测度集，所以 $R(x)$ 在 $[0,1]$ 上可积，读者不妨自己试证 $\int_0^1R(x)\,dx=0$。令 $\chi(y)$ 是(4)式所定义的狄利克雷函数。上面已经说过，它是不可积的，$\int_0^1\chi(y)\,dy$ 这个记号没有意义。今令 $f(x,y)=R(x)\chi(y)$，则它只在 $x$ 为有理数时不连续，它的不连续点的集合是可数多个线段之并：
+\[
+ \{(x,y):x\text{ 为有理数},\ 0\le y\le1\},
+\]
+读者自己可以证明它是一个0测度集，因此
+\[
+ \iint_A R(x)\chi(y)\,dx\,dy
+\]
+是有意义的，而且等于0。但(30)不可能成立，因为 $\int_Jg_x(y)\,dy$ 对有理值 $x$ 没有意义，所以，如果限于黎曼积分，富比尼定理还只能写成定理11那样的形状。读者可能会想到，当我们求一般的区域 $C$ 上的二重积分 $\iint_Cf(x,y)\,dx\,dy$ 时，是取一个较大的区间 $A$，$C\subset A$ 而以
+\[
+ \iint_A\chi_C(x,y)f(x,y)\,dx\,dy
+\]
+代替以上积分。这时例如当 $x=x_0$ 时，被积函数在 $P_1,P_2$ 两点出现不连续点。不过 $\int_{x=x_0}g_x(y)\,dy$ 在 $x=x_0$ 处仍是连续的，所以并不影响(30)式之成立（图4-1-2）。看来，在研究二重积分时我们时常不自觉地以为区域的构造都比较简单，而当区域比较简单时确实不会出什么问题。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=1.25cm,y=1.0cm,bella figure]
+  \draw[->] (-0.2,0)--(5.1,0) node[right] {$x$};
+  \draw[->] (0,-0.2)--(0,4.1);
+  \draw[thick,smooth cycle] plot coordinates {(1.0,0.8) (1.4,2.5) (2.5,3.1) (4.1,2.7) (4.4,1.4) (3.1,0.7)};
+  \draw[dashed] (3.05,0)--(3.05,3.35);
+  \fill (3.05,0.72) circle (1.2pt) node[right=2pt] {$P_1$};
+  \fill (3.05,3.02) circle (1.2pt) node[right=2pt] {$P_2$};
+  \node at (2.15,1.75) {$C$};
+  \node[below] at (3.05,0) {$x_0$};
+  \node[below left] at (0,0) {$O$};
+\end{tikzpicture}
+\caption*{图4-1-2}
+\end{figure}
+
+\medskip
+\noindent\textbf{5. 黎曼积分的缺点}\quad 上面我们详尽地讨论了黎曼积分的可积性问题，而且发现其中隐藏着不少常被忽视的问题，例如若尔当测度只是有限可加。那么，黎曼积分的不足之处究竟何在？如果改进了有限可加性，这些不足之处是否会得到改进？首先看一个重大的不足之处也可能是最重要的。第三章讲的变分问题为例，我们可以找到一个极小化序列 $\{u_n\}$ 使电场能量 $E(u_n)$ 趋向极小：
+\[
+ E(u_n)=\iint_{\Omega}\left[\left(\frac{\partial u_n}{\partial x}\right)^2
+ +\left(\frac{\partial u_n}{\partial y}\right)^2\right]dx\,dy\to\min.
+\]
+黎曼本人就以为这个序列 $\{u_n\}$ 至少有一个子序列确实收敛到某一极限函数 $u$，而且 $E(u)=\min$，于是 $u$ 给出狄利克雷问题之解。魏尔斯特拉斯指出这是不对的。现在 $E(u_n)$ 是积分号下又出现导数的，如果我们能证明 $\{u_n\}$，$\{\partial u_n/\partial x\}$，$\{\partial u_n/\partial y\}$ 均在 $\Omega$ 中一致收敛，则 $\{u_n\}$ 之极限函数 $u$ 确实适合
+\[
+ \frac{\partial u_n}{\partial x}\to\frac{\partial u}{\partial x},\qquad
+ \frac{\partial u_n}{\partial y}\to\frac{\partial u}{\partial y}
+ \quad\text{(在 }\Omega\text{ 中一致成立)},
+\]
+而 $u$ 确实是变分问题之解。但是，由 $E(u_n)\to\min$ 要证明上述三个序列均一致收敛，确实太难，实际上它一般是不可能的。由 $E(u_n)\to\min$ 可以证明 $E(u_n-u_m)\to0$，而且因为现在有边值条件 $u_n|_{\partial\Omega}=0$，还可以证明
+\[
+ \iint_{\Omega}|u_n-u_m|^2\,dx\,dy\le CE(u_n-u_m)\to0
+\]
+（这里要用到一个著名的庞加莱不等式，因为超出我们的能力，所以不证了），但是即令由
+\[
+ \iint_{\Omega}|u_n-u_m|^2\,dx\,dy\to0
+\]
+想证明 $u_n-u_m\to0$ 在 $\Omega$ 内一致成立也是不可能的事了。即令我们退一步问，设 $\{f_n\}$ 是连续函数序列，而且 $\int|f_n-f_m|\,dx\to0$，可否证明 $\{f_n\}$ 一定有某种意义下的极限 $F(x)$ 使 $\int(f_n-F)\,dx=0$？或者把问题再说明白一些，可否在积分号下求极限？有例子说明这是不可能的，而这才是黎曼积分的主要缺点。为了说明这个例子，我们先把序列换成级数，即是设 $f_n(x)$ 是级数 $\sum_{n=1}^{\infty}g_n(x)$ 的 $n$ 项部分和，$g_n(x)$ 在 $[0,1]$ 上连续。有例子表明
+\[
+ \sum_{n=1}^{\infty}\int_0^1g_n(x)\,dx\ne
+ \int_0^1\sum_{n=1}^{\infty}g_n(x)\,dx.
+\]
+实际上 $\sum_{n=1}^{\infty}g_n(x)$ 可能不可积。
+
+但是有一个很有意思的定理：
+
+\noindent\textbf{定理12}\quad 若 $g_n(x)$ 在区间 $A$ 上非负可积，而且 $\sum_{n=1}^{\infty}g_n(x)$ 在 $A$ 上收敛，则有
+\[
+ \int_A\left[\sum_{n=1}^{\infty}g_n(x)\right]dx
+ =\sum_{n=1}^{\infty}\int_A g_n(x)\,dx.
+\]
+\jiaokan{按本节此前的黎曼积分语境，仅假设各 $g_n$ 非负可积且级数逐点收敛，并不能保证和函数仍为黎曼可积；因此左端在黎曼意义下未必有定义。此式在勒贝格积分下是单调收敛定理的典型结论；若仍限于黎曼积分，则需另加和函数黎曼可积等条件。原文紧接着正以此说明应扩充积分定义。}
+这个定理的证明从略，但是定理本身告诉我们，为了克服黎曼积分不能用于级数的逐项积分，应该扩充积分的定义，使对较宽的一类函数，下积分就是积分。为了证明此定理又要用到著名的迪尼（Dini）定理如下：
+
+\noindent\textbf{定理13（迪尼定理）}\quad 设 $g_n(x)$ 在 $A$ 上非负连续而且 $\{g_n(x)\}$ 下降地趋于0，则 $\{g_n(x)\}$ 必在 $A$ 上一致收敛于0，从而
+\[
+ \int_A g_n(x)\,dx\to0.
+\]
+这个定理告诉我们，单调性在积分理论中起了很大的作用，而迄今为止我们没有充分注意到它。但是在下一步改进黎曼积分时却不可避免地要注意于此。
+
+现在我们就可以着手来扩充与改进黎曼积分的理论了。这就是引进勒贝格积分。
+
+\section{勒贝格积分的初步介绍}

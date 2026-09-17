@@ -1,0 +1,677 @@
+\section{泰勒公式、莫尔斯引理、插值公式}
+
+\subsection*{1. 泰勒公式}
+
+在前面两节中我们已经指出，微分学的基本思想就是对一个映射 $f(x)$ 把 $(\Delta_hf)(x)=f(x+h)-f(x)$ 的线性部分分解出来，即给出以下的分解
+\begin{equation}
+ f(x+h)-f(x)=A(x)h+o(h),
+ \tag{1}
+\end{equation}
+这里 $A$ 是一个线性映射。因为对不同点 $x$ 这个映射并不相同，所以它是一个函数（其值是线性映射或称线性算子，所以它是一个算子值函数）。如果这样的分解是可能的，就说 $f$ 在 $x$ 点可微，而 $A(x)$ 称为其微分，它也时常记为 $(T_xf)(x)$ 或 $(df)(x)$。在古典的微积分教本中则说 $Ah$ 才是微分，而且记 $h=dx$，这样就有了古典的微分定义
+\[
+ df=f'(x)dx.
+\]
+用(1)式来作为微分的定义对变量1维，$f$也是1维——即我们常说的一元函数——是适用的；上式就是用于这个情况。因为这时 $A$ 是 $\mathbb R^1$ 到 $\mathbb R^1$ 的映射，因此是1维矩阵即一个数。我们就称为 $f$ 在 $x$ 之导数，记作 $f'(x)$。同时(1)式也适用于 $x$ 是 $m$ 维向量，即 $x=(x_1,\cdots,x_m)\in\Omega\subset\mathbb R^m$，而 $f$ 为 $n$ 维向量的情况。这时 $f:\Omega\to\mathbb R^n$ 在一定坐标系下应表为
+\begin{equation}
+ y_i=f_i(x_1,\cdots,x_m),\qquad i=1,2,\cdots,n.
+ \tag{2}
+\end{equation}
+这时 $A$ 是一个线性映射 $\mathbb R^m\to\mathbb R^n$，不过这个 $\mathbb R^m$ 并不是 $\Omega$ 所在的 $\mathbb R^m$，而是其切空间。后一个 $\mathbb R^n$ 则是靶空间 $\mathbb R^n$ 的切空间。如用上述坐标 $x,y$ 表示，则 $A$ 是下述矩阵
+\begin{equation}
+ A=\frac{\partial(f_1,\cdots,f_n)}{\partial(x_1,\cdots,x_m)}.
+ \tag{3}
+\end{equation}
+(3)称为映射(2)的雅可比矩阵。这个映射现在称为 $f$ 的切映射。总之，我们在上一节的处理是把古典的微积分中一元函数和多元函数的微分统一在一起了。这样做还有一个目的，即将来这一个理论还可以适用于更广泛的领域中，例如 $\mathbb R^m$ 与 $\mathbb R^n$ 将被代以弯曲的空间，或代以无限维空间。
+
+现在这样看待(1)式，由它立刻可见，$f(x)$在 $x$ 点是连续的。当 $\lVert h\rVert\to0$ 时，(1)式左方是无穷小量。所以(1)表示这个无穷小量可以分解成线性部分和高阶部分（对于 $h$ 而言）。我们也说 $(\Delta_hf)(x)$ 的线性部分包含了有关 $f$ 的性态的信息，所以，用 $df$ 代替 $\Delta_hf$ 称为 $f$ 的线性化。我们暂时把如何通过线性化来研究 $f(x)$ 放在§5以后再讲。现在要问，可否把 $o(h)$ 继续分解为 $h$ 的二次式而与 $h^2$ 同阶，再加上 $h$ 的三次式而与 $h^3$ 同阶……的无穷小量？上节结束时讲到高阶微分时已经提到这一点了。现在我们要继续沿这条思路走下去。
+
+在上节讲到 $k$ 阶微分时，我们假设 $f\in C^k$。现在因为所需的微分阶数不定，所以我们假设 $f\in C^\infty$。
+
+先看 $m=n=1$ 的情况。这时，我们有熟知的拉格朗日公式
+\[
+ f(x+h)-f(x)=f'(x+\theta h)h,\qquad 0<\theta<1.
+\]
+其成立的条件只是 $f$ 在开区间 $(x,x+h)$ 中有导数 $f'(x)$ 存在。如果 $f'(x)$ 在 $x$ 点还是连续可微的，则在上式右方对 $f'(x+\theta h)$ 再用一次拉格朗日公式有
+\[
+ f'(x+\theta h)=f'(x)+f''(x)\theta h+o(h).
+\]
+代入前式则有
+\[
+ f(x+h)-f(x)=f'(x)h+f''(x)\theta h^2+o(h^2).
+\]
+我们前面说过，在 $m=n=1$ 时，$f'(x)=A$，所以上式与(1)是一致的，而有
+\[
+ Ah+o(h)=f'(x)h+f''(x)\theta h^2+o(h^2),
+\]
+也就是
+\[
+ o(h)=f''(x)\theta h^2+o(h^2).
+\]
+
+但是它并不是我们需要的进一步的分解，因为其右方的 $\theta$ 并不确定。我们只知道 $\theta$ 依赖于 $h$，但具体的依赖方式并不知道，所以 $\theta h^2$ 并不是 $h$ 的二次式。回忆一下我们在上一节一开始时对于微分 $df$ 作为差分的“主要部分”的说法所作的评论（可以把 $o(h)$ 的一部分也归入 $Ah$ 而不损害它作为“主要部分”，而当 $A=0$ 时，$Ah=0$ 怎样也不能算是 $\Delta_hf$ 的主要部分），就知道我们提出问题时为什么说要把 $o(h)$ 分解成一个 $h$ 的二次式而与 $h^2$ 同阶（其实 $h$ 的二次式不一定必与 $h^2$ 同阶，因为有系数全为0的特例与上述 $A=0$ 相应）。可见要解决 $o(h)$ 的进一步分解还要用其他方法。
+
+仍是为简单起见，下面令 $n=1$，也就是在(2)中把 $f$ 的各个分量分开来讨论，但是却令 $m>1$。只有在这时我们才会看到，由于缺少了拉格朗日公式带来的麻烦。如果我们是想在 $x$ 点附近研究 $f(x)$，则要求 $\Omega$ 是 $x$ 的这样一个邻域：若一点 $\bar x\in\Omega$，则连接 $x$ 与 $\bar x$ 的线段也全在 $\Omega$ 内。这类区域称为对 $x$ 为星形的区域，于是若 $x$ 与 $x+h$ 都在 $\Omega$ 中，则连接这两点的线段即集合
+\begin{equation}
+ \{x+th,\ 0\le t\le1\}
+ \tag{4}
+\end{equation}
+也全在 $\Omega$ 中，$f(x)$ 在此集合上的限制
+\[
+ F(t)=f(x+th)=f(x_1+th_1,\cdots,x_m+th_m)
+\]
+成为 $t$ 的函数，而且因为已设 $f(x)\in C^\infty$，所以 $F(t)\in C^\infty([0,1])$，尤其值得注意的是
+\begin{equation}
+\left\{
+\begin{aligned}
+ F'(t)&=\sum_{i=1}^m\frac{\partial f(x+th)}{\partial x_i}h_i,\\
+ F'(0)&=f'(x)h=(df)(x)h,\\[1mm]
+ &\cdots\\[-1mm]
+ F^{(k)}(t)&=\sum\frac{\partial^k f(x+th)}{\partial x_{i_1}\cdots\partial x_{i_k}}
+              h_{i_1}\cdots h_{i_k},\\
+ F^{(k)}(0)&=\sum\frac{\partial^k f(x)}{\partial x_{i_1}\cdots\partial x_{i_k}}
+              h_{i_1}\cdots h_{i_k},\\
+ &=((d^kf)(x);h,\cdots,h).
+\end{aligned}
+\right.
+\tag{5}
+\end{equation}
+最后一个式子很值得注意，其左方是 $F(t)$ 的古典的 $k$ 阶导数在 $t=0$ 时的值，而右方则是上节最后讲的 $k$ 阶微分所成的 $k$ 次型（不是 $k$ 阶多重线性形式）在 $(h_1,\cdots,h_k)$ 处之值，$((d^kf)(x);h,\cdots,h)$ 是 $k$ 次型的标准记号。
+
+对于这个 $F(t)$，可以应用微积分的基本定理而有
+\begin{equation}
+ \begin{aligned}
+ F(1)-F(0)&=f(x+h)-f(x)=\int_0^1F'(t)dt\\
+ &=\sum_{i=1}^m h_i\int_0^1\frac{\partial f(x+th)}{\partial x_i}dt.
+ \end{aligned}
+ \tag{6}
+\end{equation}
+于是，$(\Delta_hf)(x)$ 的分解就归结为(6)式右方这些积分（$h$ 是其中的参数）对 $h$ 的分解。这一分解可以用分部积分法来实现，于是我们对 $\int_0^1F'(t)dt$ 应用分部积分法，而有
+\begin{align*}
+ \int_0^1F'(t)dt
+ &=- (1-t)F'(t)\big|_0^1+\int_0^1(1-t)F''(t)dt\\
+ &=F'(0)+\int_0^1(1-t)F''(t)dt\\
+ &=\sum_{i=1}^m\frac{\partial f(x)}{\partial x_i}h_i+\int_0^1(1-t)F''(t)dt
+\end{align*}
+所以
+\begin{equation}
+ F(1)-F(0)=((df)(x),h)+\int_0^1(1-t)F''(t)dt.
+ \tag{7}
+\end{equation}
+这里为什么要“积出”一个 $(1-t)$ 而不用
+\[
+ \int_0^1F'(t)dt=tF'(t)\big|_0^1-\int_0^1tF''(t)dt?
+\]
+因为这样一来，右方第一项成为 $F'(1)=\sum_{i=1}^m\dfrac{\partial f(x+h)}{\partial x_i}h_i=((df)(x+h),h)$，这样我们不是将 $f(x+h)$ 用 $f(x),f'(x),\cdots$ 来展开了，而是将 $f(x)$ 用 $f(x+h),f'(x+h),\cdots$ 来展开，而且右方第二项再作下去就会正负相间。总之会得到许多麻烦。又，(7)式右方第一项即线性映射 $(df)(x)$ 作用在向量 $h$ 上之值，本来是记作 $(df)(x)h$ 的，现在写作 $((df)(x),h)$，是为了与下文统一。
+
+(7)式右方第二项是
+\[
+ \int_0^1(1-t)F''(t)dt
+ =\sum_{i,j=1}^m\int_0^1(1-t)\frac{\partial^2f(x+th)}{\partial x_i\partial x_j}h_i h_jdt
+ =\sum_{i,j=1}^m F_{ij}(x,h)h_i h_j,
+\]
+这里
+\[
+ F_{ij}(x,h)=\int_0^1(1-t)\frac{\partial^2f(x+th)}{\partial x_i\partial x_j}dt.
+\]
+确实依赖于 $h$，所以不能说(7)式右方第二项就是 $h$ 的二次式。要想得到所需的分解，应对这一项再作分部积分，于是有
+\begin{align*}
+ \int_0^1(1-t)F''(t)dt
+ &=-\frac12(1-t)^2F''(t)\big|_0^1+\frac12\int_0^1(1-t)^2F^{(3)}(t)dt\\
+ &=\frac12F''(0)+\frac12\int_0^1(1-t)^2F^{(3)}(t)dt\\
+ &=\frac12\sum_{i,j=1}^m\frac{\partial^2f(x)}{\partial x_i\partial x_j}h_i h_j
+ +\frac12\int_0^1(1-t)^2F^{(3)}(t)dt.
+\end{align*}
+现在可以和前面的 $o(h)=f''(x)\theta h^2+o(h^2)$ 来比较了。如果把我们现在的推算用于它（即 $m=n=1$ 的情况），将得到
+\[
+ o(h)=\frac12f''(x)h^2+\frac12\int_0^1(1-t)^2F^{(3)}(t)dt.
+\]
+注意到由(5)式，$F^{(3)}(t)=O(1)h^3$，代入上式立即有
+\[
+ f''(x)\theta h^2+o(h^2)=\frac12f''(x)h^2+O(1)h^3.
+\]
+因此当 $h\to0$ 时，至少在 $f''(x)\ne0$ 处有 $\theta\to\dfrac12$，即是说，拉格朗日公式中的 $\theta$ 确切依赖于 $h$ 的状况虽然还不知道，至少可以得出 $\theta=\dfrac12+o(1)$。
+
+这样的计算当然还可以继续作下去，即对积分项逐次应用分部积分法，有
+\[
+ \frac12\int_0^1(1-t)^2F^{(3)}(t)dt
+ =-\frac1{3!}(1-t)^3F^{(3)}(t)\big|_0^1+\frac1{3!}\int_0^1(1-t)^3F^{(4)}(t)dt=\cdots
+\]
+于是最后可以得到
+\begin{equation}
+ f(x+h)-f(x)=\sum_{k=1}^N\frac1{k!}\,[d^kf(x);h,\cdots,h]
+ +\frac1{N!}\int_0^1(1-t)^N F^{(N+1)}(t)dt.
+ \tag{8}
+\end{equation}
+在 $[(d^kf)(x);h,\cdots,h]$ 中是把 $(d^kf)(x)$ 作为一个 $k$ 线性映射而作用到 $k$ 个 $h$ 上去。
+
+我们再来分析一下这个证明。我们假设了 $\Omega$ 对 $x$ 是星形域，这个假设的作用在于，也仅仅在于它保证了连接 $x$ 与 $x+h$ 的线段全在 $\Omega$ 内，而沿着这样一个线段可以作积分，拉格朗日公式那样的 $\theta$ 也就可以从 $\int_0^1(1-t)^kF^{(k+1)}(t)dt$ 中对 $F^{(k+1)}(t)$ 这个因子应用积分中值定理得出，但这只对 $n=1$ 时可用。（就是应用以下定理：若 $f(x),g(x)$ 均为连续函数，而且 $g(x)\ge0$，则
+\[
+ \int_a^b f(x)g(x)dx=f(c)\int_a^b g(x)dx,\quad a\le c\le b.
+\]
+但当 $n>1$ 时，$F^{(k+1)}(t)$ 是一个 $n$ 维向量，而不是一个函数，所以这个定理不能用。）即令按这样讲，我们现在对 $f$ 的假设仍然多于拉格朗日公式 $f(b)-f(a)=f'(c)(b-a)$。在那里只要求 $f(x)$ 在 $[a,b]$ 上连续，$(a,b)$ 上有导数，至于 $f'(x)$ 是否连续，因此 $\int_a^b f'(x)dx$ 是否有意义尚且不知，更不说它是否等于 $f(b)-f(a)$，更不说能否分部积分了。初学微积分的读者常认为：既然微分与积分互为逆运算，则 $\int_a^b f'(x)dx=f(b)-f(a)$ 自然成立。这样是把问题看得太简单了。我们在第四章将用很大的力量还给不出一个完满的答案！暂时把它放在一边，我们现在加上星形域这个条件，就在一个十分重要的方面与拉格朗日公式所需的假设一致了。如果不同公式中所需要的可微性条件，则这个公式所受到的真正的限制在于：它只能用于一个区域上，而即令是在 $\mathbb R^n$ 中，区域还只是最简单的开集。现在举一个“反例”：令 $I=(0,1)\cup(2,3)$，$I$ 自然是一个开集。今在 $I=[0,1]\cup[2,3]$ 上定义函数 $f(x)$ 如下
+\[
+ f(x)=\begin{cases}
+ 0,&x\in[0,1],\\
+ 1,&x\in[2,3],
+ \end{cases}
+\]
+则 $f(x)$ 该是一个规矩的函数了，可是令 $a=0,b=3$，立刻可见拉格朗日公式不成立，区间与一般开集之区别至少在于区间对其每个内点都是星形的！当然这个“反例”简单得令人好笑。可是到了高维空间，星形假设就不那么好笑了。我们前面证明“当 $(df)(x)=0$ 时，$f(x)=$ 常数”时也遇到这个问题。星形的本质就是 $\Omega$ 可以“缩”为其中一点 $x$，而 $\Omega$ 在收缩、变形过程中没有越出 $\Omega$，$x$ 则可以完全不动。收缩、变形都是数学中极为重要的概念，我们在§2中两次讲到连续拓展法就是与此密切相关的。我们证明§2的定理9时，也就是利用这个方法，引入了一个连续变动的参数 $t$，才得到 $f(x+h)-f(x)-(df)(x)h$ 的精确估计。
+
+现在把这个问题放在一边。我们把 $(\Delta_hf)(x)$ 分解为 $h$ 的各次“幂”，目的是为了在 $x$ 附近研究 $f(x)$。即令 $\Omega$ 对于 $x$ 不是星形区域，$x$ 既是 $\Omega$ 之内点，必有某个以 $x$ 为心，以充分小的正数 $\rho$ 为半径的球 $B_\rho(x)\subset\Omega$。球对于球内的点是星形区域，所以只要以 $B_\rho(x)$ 代替 $\Omega$，总可以证明相应的结果在 $x$ 附近成立。因此，下面我们就不再提星形区域的问题，而所得结果也只说在 $x$ 附近成立。上面用了很大篇幅只是因为这是一个重要方法，而以后我们还会多次使用它。将来还会把它抽象化为某种类型数学模式，不过它已超出本书范围之外了。总结起来，我们有
+
+\noindent\textbf{定理1}\quad 若 $f:\Omega\to\mathbb R^n$ 是 $C^\infty$ 映射，这里 $\Omega\subset\mathbb R^m$ 是一开集，$x\in\Omega$，则对充分小的 $h$ 以及任意正整数 $N$ 必有
+\begin{equation}
+ f(x+h)=f(x)+\sum_{k=1}^N\frac1{k!}\,[d^kf(x);h,\cdots,h]+R_N(x,h),
+ \tag{9}
+\end{equation}
+这里
+\begin{equation}
+ R_N(x,h)=\frac1{N!}\int_0^1(1-t)^N F^{(N+1)}(t)dt,
+ \tag{10}
+\end{equation}
+$F(t)=f(x+th)$。(9)称为 $f(x)$ 在 $x$ 点的 $N$ 阶泰勒公式，$R_N(x,h)$ 称为其余项，而且
+\begin{equation}
+ \lVert R_N(x,h)\rVert=O(1)\lVert h\rVert^{N+1}.
+ \tag{11}
+\end{equation}
+
+\noindent\textbf{证}\quad 除(11)以外都已证明了。(11)也是很容易的。因为
+\[
+ F^{(N+1)}(t)=\sum_{|\alpha|=N+1}(\partial^\alpha f)(x+th)h^\alpha,
+\]
+尽管 $\partial^\alpha f(x+th)$ 中还含有 $h$，它不是 $h$ 的 $N+1$ 次多项式，但是它在 $x$ 的某个闭邻域中（注意 $\lVert h\rVert$ 充分小）为 $C^\infty$ 函数，从而有界，所以 $\lVert F^{(N+1)}(t)\rVert\le M\lVert h\rVert^{N+1}$。代入(10)式即得证明。这里的记号 $\partial^\alpha$ 下面再解释。
+
+\noindent\textbf{注1}\quad 泰勒公式有多种形式的余项，(10)称为积分余项，重要的是估计式(11)。
+
+\noindent\textbf{注2}\quad 我们现在换一个记号，在(9)式中把 $x$ 换成0而把 $h$ 换成 $x$，将有
+\begin{equation}
+ f(x)=f(0)+\sum_{k=1}^N\frac1{k!}\,[(d^kf)(0);x,\cdots,x]+R_N(0,x).
+ \tag{12}
+\end{equation}
+这里 $[(d^kf)(0);x,\cdots,x]$ 既然是 $k$ 线性映射作用在 $k$ 个向量 $(x,\cdots,x)$ 上所得之值，自然是 $x$ 之各个分量 $(x_1,\cdots,x_m)$ 的 $k$ 次齐次多项式。在数学中有一套记号特别适用于表示 $m$ 个变元（例如这里的 $(x_1,\cdots,x_m)$）的运算。首先我们引入重指标 $\alpha=(\alpha_1,\cdots,\alpha_m)$，这里每个 $\alpha_i$ 都是非负整数，$\alpha_i\in\mathbb N$，$\mathbb N$ 是自然数的集合（我们都习惯于称 $1,2,\cdots$ 为自然数，而0不算自然数，但在比较新的数学文献中常把0也算作自然数的，于是 $\mathbb N=\{0,1,2,\cdots\}$，我们现采用这种记号），所以也记作 $\alpha\in\mathbb N^m$。我们记 $|\alpha|=\alpha_1+\cdots+\alpha_m\ge0$，称为 $\alpha$ 之长度。$\alpha\ge0$ 即指每一个 $\alpha_i\ge0$。若有两个重指标 $\alpha=(\alpha_1,\cdots,\alpha_m)$ 与 $\beta=(\beta_1,\cdots,\beta_m)$，$\alpha\pm\beta=(\alpha_1\pm\beta_1,\cdots,\alpha_m\pm\beta_m)$，当然这里应要求 $\alpha_i\pm\beta_i\ge0$，否则重指标 $(\alpha_1\pm\beta_1,\cdots,\alpha_m\pm\beta_m)$ 就没有意义了。$\alpha\ge\beta$ 就表示 $\alpha_i\ge\beta_i,\ i=1,2,\cdots,m$。$\alpha!=\alpha_1!\cdots\alpha_m!$。值得注意的是二项系数的记号也推广到了重指标上：
+\[
+ \binom{\alpha}{\beta}=\frac{\alpha!}{\beta!(\alpha-\beta)!}
+ =\binom{\alpha_1}{\beta_1}\cdots\binom{\alpha_m}{\beta_m}.
+\]
+这当然只在 $\alpha\ge\beta$ 时有意义，若不然必有例如 $\alpha_1<\beta_1$，这时按惯例应定义 $\binom{\alpha_1}{\beta_1}=0$。根据这个惯例，我们也应该规定，若 $\alpha\ge\beta$ 不成立则 $\binom{\alpha}{\beta}=0$。此外对于 $x$ 我们定义 $x^\alpha=x_1^{\alpha_1}\cdots x_m^{\alpha_m}$。我们又定义 $\partial^\alpha=\partial_{x_1}^{\alpha_1}\cdots\partial_{x_m}^{\alpha_m}$。这样的定义仍能保持例如 $x^\alpha x^\beta=x^{\alpha+\beta}$，$\partial_x^\alpha\partial_x^\beta=\partial_x^{\alpha+\beta}$ 等关系式成立。
+
+还是回到(12)式，现在它成为
+\[
+ f(x)=f(0)+\sum_{1\le|\alpha|\le N}A_\alpha x^\alpha+R_N(0,x),
+\]
+而且 $R_N(0,x)=O(1)\lVert x\rVert^{N+1}$。对上式双方求导数，立即有
+\[
+ \partial^\alpha f(0)=\alpha!A_\alpha.
+\]
+因此 $A_\alpha=\dfrac1{\alpha!}\partial^\alpha f(0)$，如果再注意到 $0!=1,\partial^0f=f$，则上式还可以写成
+\begin{equation}
+ f(x)=\sum_{|\alpha|\le N}\frac1{\alpha!}\partial^\alpha f(0)x^\alpha+R_N(0,x).
+ \tag{13}
+\end{equation}
+这样的泰勒公式形式与一元函数的泰勒公式完全相同不过我们要注意，$\sum_{|\alpha|\le N}$ 表示对一切长度不大于 $N$ 的重指标求和。
+
+\noindent\textbf{注3}\quad 由推导出泰勒公式的推理过程，可以得到一个十分有用的结果如下：
+
+\noindent\textbf{引理2（阿达玛（J.~Hadamard）引理）}\quad 设 $f(x)$ 在 $x=0$ 的某个邻域 $\Omega$ 中为 $C^k$ 映射，$\Omega\subset\mathbb R^m$\jiaokan{此处原文印作 $\Omega\subset\mathbb R^n$。本引理中自变量 $x=(x_1,\ldots,x_m)$ 有 $m$ 个分量，式(14)亦对 $i=1,\ldots,m$ 求和，而值域为 $\mathbb R^n$，故定义域应为 $\Omega\subset\mathbb R^m$。}，且 $f(0)=0$，这时必存在 $C^{k-1}$ 映射 $g_1,\cdots,g_m:\Omega\to\mathbb R^n$，使得
+\begin{equation}
+ f(x)=\sum_{i=1}^m x_i g_i(x).
+ \tag{14}
+\end{equation}
+
+\noindent\textbf{证}\quad 利用前面关于星形区域的说明，我们不妨设 $\Omega$ 关于0是星形区域，于是对 $x\in\Omega$，有含于 $\Omega$ 内的线段 $I:\{tx:0\le t\le1\}$ 连接0与 $x$ 两点。考虑到 $f$ 在此直线段 $I$ 上的限制为 $t$ 的函数：
+\[
+ F(t)=f\big|_I=f(tx).
+\]
+显然 $F(t)$ 对 $t$ 是 $k$ 阶连续可微的，而有
+\[
+ F(1)-F(0)=f(x)-f(0)=\int_0^1F'(t)dt
+ =\sum_{i=1}^m x_i\int_0^1\frac{\partial f}{\partial x_i}(tx)dt.
+\]
+因为 $f(0)=F(0)=0$，又有
+\[
+ f(x)=\sum_{i=1}^m x_i\int_0^1\frac{\partial f}{\partial x_i}(tx)dt.
+\]
+令 $g_i(x)=\int_0^1\dfrac{\partial f}{\partial x_i}(tx)dt$，显然 $g_i\in C^{k-1}(\Omega):\Omega\to\mathbb R^n$ 即合于所求。
+
+\subsection*{2. 极值问题}
+
+微分学最重要的应用之一是求极值。不仅是在17世纪费马的时代如此，而且从那时以来几个世纪中极大极小问题都是数学和数学物理中人们注意力的焦点之一。它所采用的方法，所产生的新概念和新思想早已超越了微分学的领域。我们这里只能就古典的情况，就多元函数的局部极值看一下微分学的应用。
+
+在古典的极值问题中我们只考虑函数在某区域的内点取得的极值，而现代的许多极值问题，例如出现在规划问题中的极值，时常是在区域边界上取得的。这一些与我们下面所讨论的很不一样。我们在下面又不打算探究函数光滑性问题，所以我们假设 $f:\Omega\to\mathbb R$ 是一个 $C^2$ 函数，$\Omega$ 是一个开区域，还要注意 $f$ 的靶空间 $\mathbb R^n$ 就是 $\mathbb R$，即 $n=1$，因此 $f$ 就是一个函数，而不是一个高维向量；一个高维向量是谈不上什么极值问题的。
+
+所谓极值是一个局部概念，准确一些说，我们有
+
+\noindent\textbf{定义1}\quad 设 $f(x):\Omega\to\mathbb R$，$x_0\in\Omega$ 是 $f(x)$ 的一个局部极小（或者说 $f(x)$ 在 $x_0$ 达到局部极小），如果存在 $x_0$ 的一个邻域 $U$，使对一切 $x\in U$，都有
+\[
+ f(x)\ge f(x_0).
+\]
+类似地可以定义局部极大，以下简称为极小和极大。
+
+我们处理这种局部极小（或极大）的方法，仍与前面证明泰勒公式的方法一样，不失一般性，取 $\Omega$ 为对 $x_0$ 星形的区域（例如 $B_\rho(x_0)$），则对充分小的 $h$，线段
+\[
+ I=\{x_0+th;0\le t\le1\}
+\]
+全在 $\Omega$ 内，并连接 $x_0$ 与 $x=x_0+h$ 两点，令 $F(t)=f(x_0+th)$，则 $F(t)$ 是 $t\in I$ 的函数。而且若设 $f\in C^2$，则 $F(t)\in C^2(I)$，且 $F(1)=f(x_0+h)=f(x)$，$F(0)=f(x_0)$。因此
+\begin{align*}
+ F(1)-F(0)&=\int_0^1F'(t)dt\\
+ & =-(1-t)F'(t)\big|_0^1+\int_0^1(1-t)F''(t)dt\\
+ &=F'(0)+\int_0^1(1-t)F''(t)dt\\
+ &=\sum_{i=1}^m\frac{\partial f(x_0)}{\partial x_i}h_i
+ +\sum_{i,j=1}^m\int_0^1(1-t)\frac{\partial^2f(x_0+th)}{\partial x_i\partial x_j}h_i h_jdt.
+\end{align*}
+如果必要，可以把 $\Omega$ 向 $x_0$ 缩小一点（例如把 $B_\rho(x_0)$ 的半径缩小一点）而设 $\dfrac{\partial^2f(x_0+th)}{\partial x_i\partial x_j}$ 在 $\Omega$ 上连续。这样做的目的在于保证 $\dfrac{\partial^2f(x_0+th)}{\partial x_i\partial x_j}$ 对于 $t$ 和 $h$ 为一致连续，因此
+\[
+ \frac{\partial^2f(x_0+th)}{\partial x_i\partial x_j}
+ =\frac{\partial^2f(x_0)}{\partial x_i\partial x_j}+r(t,h).
+\]
+这里 $r(t,h)$ 当 $\lVert h\rVert\to0$ 时，对 $(t,h)$ 一致地趋于0，因此，只要 $\lVert h\rVert<\delta(\varepsilon)$，必有 $|r(t,h)|<\varepsilon$。将上式代入前面的积分，就会得到我们所需的基本的估计式
+\begin{equation}
+ f(x)=f(x_0)+\sum_{i=1}^m\frac{\partial f(x_0)}{\partial x_i}h_i
+ +\frac12\sum_{i,j=1}^m\frac{\partial^2f(x_0)}{\partial x_i\partial x_j}h_i h_j+o(1)\lVert h\rVert^2.
+ \tag{15}
+\end{equation}
+现在设 $x_0$ 是局部极小，并一项一项地估计上式。先看 $h$ 的一次项，我们把过 $x_0+h,x_0$ 以及过 $x_0-h,x_0$ 的两个线段合并成一个，后一段不妨写成 $x_0+(-t)h,x_0$，因此合并以后得到一个较长的线段 $[x_0-h,x_0+h]$ 或 $\alpha(t)=\{x_0+th,-1\le t\le1\}$。这样做的目的是使 $x_0$ 相应于 $[-1,1]$ 的内点 $t=0$。于是记 $F(t)=(f\circ\alpha)(t)$，$h$ 的一次项 $\sum_{i=1}^m\dfrac{\partial f(x_0)}{\partial x_i}h_i=dF(0)=df(x_0)\cdot\dot\alpha(0)$。由假设 $f$ 以 $x_0$ 为极小，所以 $F(t)$ 作为 $t$ 的函数，以 $[-1,1]$ 的内点 $t=0$ 为极小。因此，由费马定理有 $F'(0)=0$，即是说
+\[
+ df(x_0)\cdot\dot\alpha(0)=0,\qquad \forall\alpha(t).
+\]
+但是前面已说过，每一条过 $x_0$ 的按接触意义的等价类就是一个向量，我们用直线 $\alpha(t)=\{x_0+th,-1\le t\le1\}$ 作为它的代表元，就可以得到这个向量的坐标表示为 $h=(h_1,\cdots,h_m)$。$df(x_0)$ 作为由 $x_0$ 的切空间 $\mathbb R^m=|h|$ 到靶空间 $\mathbb R^1$ 的切空间（还是 $\mathbb R^1$）的线性映射，既然把所有的向量 $\dot\alpha(0)$ 都映为0，自然是一个零映射：
+\[
+ df(x_0)=0.
+\]
+如果读者感到这样的推理太抽象，不妨按通常的微积分教本中的讲法再讲一次：$f(x)$ 既以 $x_0$ 为极小，记 $x$ 之分量为 $(x_1,\cdots,x_m)$，$x_0$ 之分量为 $(x_1^{(0)},\cdots,x_m^{(0)})$，则在 $f(x)=f(x_1,\cdots,x_m)$ 中，我们可以依次地只让一个分量变化。于是可以考查 $f(x_1,x_2^{(0)},\cdots,x_m^{(0)})$ 作为一个一元函数，应在 $x_1=x_1^{(0)}$ 时达到极小。因此，由费马定理 $\dfrac{\partial f(x_1,x_2^{(0)},\cdots,x_m^{(0)})}{\partial x_1}=0$ 于 $x_1=x_1^{(0)}$ 时，亦即 $\dfrac{\partial f(x_0)}{\partial x_1}=0$。同理 $\dfrac{\partial f(x_0)}{\partial x_i}=0,\ i=2,\cdots,m$。这样，我们就会得到
+\begin{equation}
+ \operatorname{grad}f(x_0)=\left(\frac{\partial f}{\partial x_1},\cdots,\frac{\partial f}{\partial x_m}\right)(x_0)=0.
+ \tag{16}
+\end{equation}
+所谓只让 $x_1$ 变，就是在(15)中令 $h=(h_1,0,\cdots,0)$，所以 $\dfrac{\partial f(x_0)}{\partial x_1}=0$ 也就是
+\[
+ \frac{\partial f(x_0)}{\partial x_1}h_1+\frac{\partial f(x_0)}{\partial x_2}0+\cdots+\frac{\partial f(x_0)}{\partial x_m}0
+ =\sum_{i=1}^m\frac{\partial f(x_0)}{\partial x_i}h_i=0,
+\]
+这正是 $df(x_0)\cdot\dot\alpha(0)=0$。
+
+既然问题如此简单，又何必用与坐标无关的讲法让缺少经验的读者摸不着头脑呢？问题在于，我们会遇到需要在许多坐标系之间作变换的情况。因此，与坐标无关的处理是最方便的。我们正是想多通过一些例子帮助读者逐步熟悉这种处理问题的方法。
+
+现在来看关于 $h$ 的二次项 $\dfrac12\sum_{i,j=1}^m\dfrac{\partial^2f(x_0)}{\partial x_i\partial x_j}h_i h_j$。它是一个二次型，其系数矩阵（除了因子 $\dfrac12$）即 $f$ 之黑塞矩阵，亦即 $(d^2f)(x_0)$。记此矩阵为 $A$，则上节定理8已表明 $A$ 是一个对称矩阵，而这一项就是 $\dfrac12\langle Ah,h\rangle$。这里我们引用了线性代数中 $\mathbb R^m$ 中的内积记号 $\langle\cdot,\cdot\rangle$。线性代数告诉我们，任一个实对称矩阵都有实特征根 $\lambda_1,\cdots,\lambda_m$，不妨设 $\lambda_1\le\lambda_2\le\cdots\le\lambda_m$（现在的函数 $f$ 自然是实值函数，否则谈不上极值）且必可用正交变换化为对角形，即
+\begin{equation}
+ T^{-1}AT=
+ \begin{pmatrix}
+ \lambda_1&&\\
+ &\ddots&\\
+ &&\lambda_m
+ \end{pmatrix}.
+ \tag{17}
+\end{equation}
+$\lambda_i$ 是 $A$ 的特征根，特征根也称为固有值。在 $\langle Ah,h\rangle$ 中令 $h=Tk$，$k$ 仍为 $\mathbb R^m$ 中的向量，则
+\[
+ \langle Ah,h\rangle=\langle ATk,Tk\rangle=\langle T^{-1}ATk,k\rangle.
+\]
+这些特征根有以下几种情况：
+
+1. 所有 $\lambda_i>0$，这时 $A$ 称为正定的（positive definite），而且
+\[
+ \langle Ah,h\rangle=\langle T^{-1}ATk,k\rangle\ge\lambda_1\lVert k\rVert^2=\lambda_1\lVert h\rVert^2.
+\]
+这里我们利用了正交变换不改变向量之长度：$\lVert h\rVert=\lVert Tk\rVert=\lVert k\rVert$。
+
+2. 所有 $\lambda_i\ge0$，这时 $A$ 称正半定（positive semi-definite）或非负定（non-negative definite），而且对一切 $h\ne0$ 有
+\[
+ \langle Ah,h\rangle\ge0.
+\]
+
+3. 所有 $\lambda_i\le0$，这时 $A$ 称为负半定（negative semi-definite）或非正定（non-positive definite）而且对一切 $h\ne0$ 有
+\[
+ \langle Ah,h\rangle\le0.
+\]
+
+4. 所有 $\lambda_i<0$，这时 $A$ 称为负定（negative definite），且
+\[
+ \langle Ah,h\rangle\le-|\lambda_m|\lVert h\rVert^2\;(=\lambda_m\lVert h\rVert^2).
+\]
+注意，因为 $\lambda_m<0$，所以 $\lambda_m=-|\lambda_m|$。
+
+5. 有的 $\lambda_i$ 为正，有的为负，这时 $A$ 称为不定的（indefinite）。$\langle Ah,h\rangle$ 对某些 $h\ne0$ 取正值（不是非负值），对某些 $h\ne0$ 取负值（不是非正值）。
+
+关于 $A$ 的特征根或固有值的符号，只有这几个情况。有了它们，\[\frac12[d^2f(x_0);h,h]=\frac12\langle(d^2f)(x_0)h,h\rangle\]的符号就完全确定了。
+
+(15)的最后一项是余项。对任意 $\varepsilon>0$ 必可找到一个 $\delta(\varepsilon)>0$，使当 $\lVert h\rVert<\delta$ 时，$|o(1)|\lVert h\rVert^2<\varepsilon\lVert h\rVert^2$。但是就是这一项给我们带来麻烦。
+
+所谓极值问题，其实就是当 $\lVert h\rVert$ 相当小时，希望 $f(x_0+h)-f(x_0)$ 的符号能保持不变。首先我们看到 $(df)(x_0)$ 必须为0。因为(15)第二项是 $(df)(x_0)\cdot h$，它其实是向量 $(df)(x_0)$ 与向量 $h$ 的“内积”（$(df)(x_0)$ 与 $h$ 这两个向量有本质上的不同，为什么基本不同后面可能定义其“内积”，将在第七章中讨论）。如果有一个 $h$ 使 $(df)(x_0)h>0$，则采用 $-h$ 必有 $(df)(x_0)(-h)<0$，因此 $f(x_0+h)-f(x_0)$ 与 $f(x_0-h)-f(x_0)$ 必反号（后面 $\lVert h\rVert$ 高次项不会影响于此，读者仿照下文自会证出），因此 $x_0$ 不可能是极值。其实上面我们已经用费马定理证明了这一点。问题是我们在讨论极值问题时，是在讨论一种特别简单的映射：$n=1$，因而 $f$ 就是一个普通的函数，$(df)(x_0)=0$ 就是 $\dfrac{\partial f(x_0)}{\partial x_i}=0, i=1,2,\cdots,m$，或写作 $\operatorname{grad}f(x_0)=0$。在这种点上会出现极值等非常有趣的现象。当 $n>1$ 时，是否要 $f$ 之一切分量之一阶偏导数均在 $x_0$ 处为0，在 $x_0$ 处才出现“奇迹”呢？（我们前面说过，“奇点”就是出现“奇迹”的点。）用不着。注意现在 $(df)(x_0)$ 是一个 $1\times m$ 矩阵，其秩最多是1。$(df)(x_0)=0$ 就是 $(df)(x_0)$ 之秩不是最大的1，而是更小的0！推广这一点到一个一般的映射 $f:\Omega\subset\mathbb R^m\to\mathbb R^n$，我们说，凡 $(df)(x)$ 不能取最大秩的点 $x_0$ 就是奇点。在现在的情况称为临界点（critical point），非临界点称为正则点（regular point）。在§5中会看到，正则点都是规规矩矩的点。若 $y_0$ 是函数在其临界点 $x_0$ 的值：$y_0=f(x_0)$，$y_0$ 就称为临界值（critical value）。不过临界值也可能是 $f$ 在某正则点 $x_1$ 之值：$y_0=f(x_1)$，这是因为临界值的原像可能有许多个，例如这里的 $x_0$ 和 $x_1$，而不一定它们都是临界点。
+
+有了这些根本概念，我们就可以得到下面的
+
+\noindent\textbf{定理3}\quad 若 $f:\Omega\subset\mathbb R^m\to\mathbb R$ 在 $\Omega$ 中为 $C^2$ 映射，$x_0$ 是 $\Omega$ 的内点，则 $f$ 以 $x_0$ 为极小（极大）的必要条件是
+
+1. $(df)(x_0)=0$，
+
+2. $(d^2f)(x_0)$ 为正半定（负半定）。
+
+\noindent\textbf{证}\quad 1. 不需再证。
+
+2. $(d^2f)(x_0)$ 不是正半定（正定也包括在其内）就是有一个负特征根，设为 $\lambda_1$。又设相应的特征向量，又称固有向量（eigenvector）是 $h^{(1)}$，$\lVert h^{(1)}\rVert\ne0$，但其值不定，因为特征向量再乘上一个常数因子仍是特征向量。于是我们考虑 $f(x_0+h^{(1)})-f(x_0)$。因为 $(df)(x_0)=0$，所以(15)之第二项为0。至于第三项，由特征根与特征向量之定义，
+\[
+ (d^2f)(x_0)h^{(1)}=\lambda_1h^{(1)},
+\]
+所以，记 $h^{(1)}=(h_1^{(1)},\cdots,h_m^{(1)})$，有
+\begin{align*}
+ \frac12\sum_{i,j=1}^m\frac{\partial^2f(x_0)}{\partial x_i\partial x_j}h_i^{(1)}h_j^{(1)}
+ &=\frac12[(d^2f)(x_0);h^{(1)},h^{(1)}]\\
+ &=\frac12\langle(d^2f)(x_0)h^{(1)},h^{(1)}\rangle\\
+ &=\frac{\lambda_1}{2}\lVert h^{(1)}\rVert^2.
+\end{align*}
+最后余项中的 $o(1)$ 当 $\lVert h\rVert$ 充分小时可以任意小，因此取 $\lVert h^{(1)}\rVert$ 充分小，使 $|o(1)|<\dfrac{|\lambda_1|}{4}$，或者说 $o(1)<-\dfrac{\lambda_1}{4}$（注意 $\lambda_1<0$）。把这些结果代回(15)即知，当 $\lVert h^{(1)}\rVert$ 充分小时
+\[
+ f(x_0+h^{(1)})-f(x_0)\le\frac{\lambda_1}{4}\lVert h^{(1)}\rVert^2<0.
+\]
+这与 $x_0$ 是 $f(x)$ 之极小显然是矛盾的。
+
+关于 $x_0$ 是极大值的情况证明类似，定理证毕。
+
+\noindent\textbf{定理4}\quad 若 $f:\Omega\subset\mathbb R^m\to\mathbb R$ 在 $\Omega$ 中为 $C^2$ 映射，$x_0$ 是 $\Omega$ 之内点，则 $f$ 以 $x_0$ 为极小（极大）的充分条件是
+
+1. $(df)(x_0)=0$，
+
+2. $(d^2f)(x_0)$ 为正定（负定）。
+
+\noindent\textbf{证}\quad 当1成立时，我们有，对任意 $h\in\mathbb R^m$
+\[
+ f(x_0+h)-f(x_0)=\frac12\sum_{i,j=1}^m\frac{\partial^2f(x_0)}{\partial x_i\partial x_j}h_i h_j+o(1)\lVert h\rVert^2
+ =\frac12\langle(d^2f)(x_0)h,h\rangle+o(1)\lVert h\rVert^2.
+\]
+如果 $(d^2f)(x_0)$ 为正定，则其最小特征根 $\lambda_1>0$，如前面所述，当 $\lVert h\rVert$ 充分小时，余项为 $|o(1)|\lVert h\rVert^2<\dfrac{\lambda_1}{4}\lVert h\rVert^2$，故 $o(1)\lVert h\rVert^2>-\dfrac{\lambda_1}{4}\lVert h\rVert^2$。
+\[
+ f(x_0+h)-f(x_0)\ge\frac{\lambda_1}{2}\lVert h\rVert^2-\frac{\lambda_1}{4}\lVert h\rVert^2
+ =\frac{\lambda_1}{4}\lVert h\rVert^2\ge0.
+\]
+所以 $x_0$ 是极小。
+
+关于极大的情况证明类似。
+
+大家可以看到，必要条件与充分条件之间仍有一些间隙。$(d^2f)(x_0)$ 为正半定表明作为矩阵，它可能有零特征根；一个矩阵有零特征根的充分必要条件是其行列式为0。在这个情况下这个矩阵或这个映射或这个临界点称为蜕化的。在我们的情况下，如果用坐标系来表示，$(d^2f)(x_0)$ 就是黑塞矩阵 $\operatorname{Hess}_x f(x_0)=\left(\dfrac{\partial^2f(x_0)}{\partial x_i\partial x_j}\right)$。当它蜕化时，我们就说映射 $f:\Omega\subset\mathbb R^m\to\mathbb R$ 的临界点 $x_0$ 是蜕化的。因此，$x_0$ 为极小的必要条件与充分条件的间隙就在于：当 $x_0$ 为极小时，$(d^2f)(x_0)$ 可能是正定的，也可能是蜕化的，而得不出 $(d^2f)(x_0)$ 为正定。反之，若设 $(d^2f)(x_0)$ 为正半定，则它可能是正定的（如果我们把正定也算作正半定的话），这时 $x_0$ 确定是极小；但它也可能是蜕化的，这时我们对 $f$ 在 $x_0$ 附近的性态就说不出所以然来了。
+
+于是，余下的就只有 $(d^2f)(x_0)$ 为不定的。这时，它既可能是蜕化的，又可能是非蜕化的。但不论如何，其特征根有正有负，不妨设 $\lambda_1>0,\lambda_2<0$，而相应的特征向量为 $h^{(1)},h^{(2)}$。于是仿照前面的作法很容易看到，当 $\lVert h\rVert$ 充分小时
+\[
+ f(x_0+h^{(1)})-f(x_0)\ge\frac{\lambda_1}{4}\lVert h^{(1)}\rVert^2>0,\quad \text{若 }h\ne0;
+\]
+\[
+ f(x_0+h^{(2)})-f(x_0)\le\frac{\lambda_2}{4}\lVert h^{(2)}\rVert^2<0,\quad \text{若 }h\ne0;
+\]
+就是说，在某些方向上，$f(x_0)$ 很像极小，而在另一些方向上，$f(x_0)$ 又像极大。这样的点称为鞍点（saddle point）。图3-3-1上画的是
+\[
+ z=f(x,y)=x^2-y^2,
+\]
+这时
+\[
+ d^2f(x,0)=2\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
+\]
+它有两个特征根 $\lambda_1,\lambda_2=1,-1$。相应的特征向量是 $h^{(1)}=(1,0)$，$h^{(2)}=(0,1)$。$h^{(1)}$ 是 $x$ 轴方向的向量，沿此方向 $f(x)$ 有极小。$h^{(2)}$ 是 $y$ 轴方向的向量，沿此方向 $f(x)$ 有极大。但整个看来，$(0,0)$ 是一个鞍点。但是 $(0,0)$ 是映射(17)的一个非蜕化的临界点。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.95]
+  \draw[->] (-2.6,0) -- (2.8,0) node[right,fill=white] {$y$};
+  \draw[->] (0,-1.8) -- (0,3.0) node[above,fill=white] {$z$};
+  \draw[->] (1.5,1.0) -- (-2.7,-1.1) node[left,fill=white] {$x$};
+  % stylized saddle cross-sections, labels kept outside line work
+  \draw[thick] (-2.15,-.55) .. controls (-1.2,.4) and (-.55,.65) .. (0,0)
+               .. controls (.7,-.75) and (1.3,-1.15) .. (2.05,-.95);
+  \draw[thick] (-2.0,.95) .. controls (-1.1,.35) and (-.55,.1) .. (0,0)
+               .. controls (.7,.45) and (1.35,1.35) .. (2.0,2.05);
+  \draw[thick] (-1.65,-.95) .. controls (-.8,-.15) and (-.25,.05) .. (0,0)
+               .. controls (.55,.5) and (1.25,.65) .. (2.15,.7);
+  \draw[dashed] (-1.7,1.25) -- (1.9,-.9);
+  \node[anchor=west] at (1.05,-1.42) {$z=x^2-y^2$};
+\end{tikzpicture}
+\caption*{图3-3-1}
+\end{figure}
+
+临界点的研究是现代数学中一个很活跃的分支——奇点理论的根本问题之一。在这里划分临界点为蜕化与非蜕化是极为重要的。蜕化临界点情况太复杂，而非蜕化临界点则情况完全清楚了，因为我们有重要的莫尔斯引理（Morse lemma）。
+
+\subsection*{3. 莫尔斯（Morse）引理}
+
+下面一段的内容稍微离开了极值问题的范围，而且以后也不会用到。介绍它是鉴于它在整个数学中的重要性，因此加在这里作为本章的一个插曲。由它引起的问题就是临界点的拓扑结构问题。由于它与前面讲的极值问题并无直接联系，所以定理的条件也将加强一些。具体说来，考虑一个 $C^\infty$ 映射 $f:\Omega\subset\mathbb R^m\to\mathbb R$，即 $f$ 是一个普通的 $C^\infty$ 函数。当然也可对 $f:\Omega\to\mathbb R^n,n>1$ 考虑类似问题，但是要困难得多。我们设 $0\in\Omega$ 是 $f$ 的一个临界点，即适合 $(df)(0)=0$，我们限制只考虑非蜕化临界点。这里我们有
+
+\noindent\textbf{定义2}\quad 若对上述 $C^\infty$ 映射 $f:\Omega\subset\mathbb R^m\to\mathbb R$，$0\in\Omega$ 是 $f$ 之临界点，即 $(df)(0)=0$，而且 $(d^2f)(0)$ 是非奇异的\jiaokan{此处原文印作 $(d^2f)(x)$；定义讨论的是临界点 $0$ 是否蜕化，且紧接着以 $\operatorname{Hess}_x f(0)$ 的非奇异性作等价表述，故应为 $(d^2f)(0)$。}，如用坐标表示，即设 $f$ 在 $x=0$ 处的黑塞矩阵 $\operatorname{Hess}_x f(0)$ 适合 $\det(\operatorname{Hess}_x f(0))\ne0$，则0称为 $f$ 之非蜕化临界点。
+
+这里我们的基本结果是
+
+\noindent\textbf{定理5（莫尔斯引理）}\quad 若0是上述 $f$ 的非蜕化临界点，则有0的一个充分小的邻域以及在此邻域中的局部坐标 $y$，$x=x(y)$，使 $0=x(0)$，而且 $f$ 可以化为标准形式（或称法式；normal form）：
+\begin{equation}
+ f(x)=f[x(y)]=\Phi(y)=f(0)+\sum_{i=1}^{\lambda}y_i^2-\sum_{j=1}^{m-\lambda}y_{\lambda+j}^2.
+ \tag{18}
+\end{equation}
+
+\noindent\textbf{证}\quad 不失一般性可以设 $f(0)=0$。所谓局部坐标就是一个微分同胚 $x=x(y)$，亦即对应 $y\mapsto x$ 为一一映射，且 $x(y)$ 与其反函数 $y=y(x)$ 在0点附近均属于 $C^\infty$。
+
+这个定理与线性代数中二次型必可用非奇异的线性变换化为标准形式的定理是非常相近的。它有多种证法。下面我们介绍米尔诺（J. Milnor）的一个证明，此证明也十分相近于线性代数中关于二次型的定理的证明。证明引自米尔诺著《莫尔斯理论》一书6--8页（科学出版社，1988）。
+
+由阿达玛引理（即引理2），一定有
+\[
+ f(x)=f(0)+\sum_{i=1}^m x_i g_i(x)=\sum_{i=1}^m x_i g_i(x),
+\]
+而且有
+\[
+ g_i(0)=\frac{\partial f(0)}{\partial x_i}=0.
+\]
+于是再用一次阿达玛引理：
+\[
+ g_i(x)=\sum_{k=1}^m x_k h_{ki}(x),
+\]
+且 $h_{ki}(0)=\dfrac{\partial g_i(0)}{\partial x_k}$。以它代入 $f(x)$ 的表达式即得
+\begin{equation}
+ f(x)=\sum_{k,i=1}^m x_kx_i h_{ki}(x).
+ \tag{19}
+\end{equation}
+我们可以假设
+\[
+ h_{ij}(x)=h_{ji}(x).
+\]
+因为取上式中的两项，并将其和改写为
+\begin{align*}
+ x_kx_i h_{ki}(x)+x_ix_k h_{ik}(x)
+ &=x_kx_i\frac12[h_{ki}(x)+h_{ik}(x)]
+ +x_ix_k\frac12[h_{ik}(x)+h_{ki}(x)]\\
+ &=x_kx_i\bar h_{ki}(x)+x_ix_k\bar h_{ik}(x),
+\end{align*}
+显然 $\bar h_{ki}=\bar h_{ik}$。把这两项代回 $f(x)$ 之表达式，即知可以取 $h_{ki}(x)=h_{ik}(x)$。而且易见\jiaokan{原文此处写作 $h_{ki}(0)=\dfrac{\partial^2f(0)}{\partial x_i\partial x_k}$，并写 $\det(h_{ki}(0))=\det(\operatorname{Hess}_x f(0))$。在将 $h_{ki}$ 对称化之后，应有 $h_{ki}(0)=\tfrac12\dfrac{\partial^2f(0)}{\partial x_i\partial x_k}$，因而 $\det(h_{ki}(0))=2^{-m}\det(\operatorname{Hess}_x f(0))$；不影响其非零性及后续证明。} $h_{ki}(0)=\dfrac12\dfrac{\partial^2f(0)}{\partial x_i\partial x_k}$，所以 $\det(h_{ki}(0))=2^{-m}\det(\operatorname{Hess}_x f(0))\ne0$。
+
+经过必要的线性变量变换后，可以设 $\left(\dfrac{\partial^2f(0)}{\partial x_i\partial x_k}\right)$ 的主对角线上有非0元。\jiaokan{原文写作“主对角线上必有非0元”，这对一般非奇异对称矩阵并不成立，例如 $\begin{psmallmatrix}0&1\\1&0\end{psmallmatrix}$。原文紧接着的论证正是通过 $x_1=y_1+y_2,\ x_2=y_1-y_2$ 的线性变换制造非零对角元，故据此改正。}因为，如果 $h_{11}=0$，则(19)中至少有一个 $h_{1i}\ne0$。否则 $f(x)$ 的表达式中将不出现因子 $x_1x_i\;(\forall i)$，所以 $\dfrac{\partial^2f(0)}{\partial x_1\partial x_i}=0$，而 $\operatorname{Hess}_x f(0)$ 是蜕化的。这样我们就可以设 $h_{11}=0$，但 $h_{12}\ne0$。这时，再令 $x_1=y_1+y_2,x_2=y_1-y_2$，则 $f(x)$ 中将出现
+\[
+ h_{12}x_1x_2+h_{21}x_2x_1=2h_{12}(y_1^2-y_2^2).
+\]
+此外再也不会有含 $y_1^2$ 和 $y_2^2$ 的因子了。所以在作了这样的变量变换以后，$f(x)$ 的表达式中 $y_1^2$ 的系数为 $2h_{12}\ne0$。但这就是在新变量下的 $h_{11}$，所以我们说可设(19)中 $h_{11}\ne0$。
+
+将(19)重写为
+\begin{align*}
+ f(x)
+ &=h_{11}x_1^2+\left(\sum_{i=2}^m h_{1i}x_ix_1+\sum_{i=2}^m h_{i1}x_1x_i\right)+\cdots\\
+ &=h_{11}x_1^2+2\left(\sum_{i=2}^m h_{1i}x_i\right)x_1+\cdots\\
+ &=\pm(\sqrt{|h_{11}|}x_1)^2
+ +2\frac{\sum_{i=2}^m h_{1i}x_i}{\sqrt{|h_{11}|}}(\sqrt{|h_{11}|}x_1)+\cdots,
+\end{align*}
+这里 $\pm$ 表示 $h_{11}$ 之符号，即 $h_{11}=\pm|h_{11}|$，$\cdots$ 中不含因子 $x_1$。经过配方，有
+\[
+ f(x)=\pm\left(\sqrt{|h_{11}|}x_1\pm\sum_{i=2}^m\frac{h_{1i}x_i}{\sqrt{|h_{11}|}}\right)^2
+ +\sum_{i,j>1}\bar R_{ij}(x)x_ix_j.
+\]
+如果作变量变换
+\begin{equation}
+ y_1=\sqrt{|h_{11}|}x_1\pm\sum_{i=2}^m h_{1i}x_i/\sqrt{|h_{11}|},\qquad
+ y_i=x_i,\ i>1,
+ \tag{20}
+\end{equation}
+则
+\begin{equation}
+ f(x)=\pm y_1^2+\sum_{i,j>1}\bar h_{ij}(x)y_i y_j.
+ \tag{21}
+\end{equation}
+问题在于(20)是否微分同胚。将在§5中证明的反函数定理表明，只需(20)的雅可比矩阵在 $x=0$ 处可逆即可。但是这个雅可比矩阵是
+\[
+ \begin{pmatrix}
+ \sqrt{|h_{11}|}+O(x)&*&\cdots&*\\
+ 0&1&&0\\
+ \vdots&&\ddots&\\
+ 0&0&&1
+ \end{pmatrix},
+\]
+其中 $*$ 表示某个在 $x=0$ 处光滑的函数，因此在 $x=0$ 处这个矩阵自然是可逆的。所以在 $x=0$ 的一个充分小邻域中，(20)是一个微分同胚，从而(21)是 $y$ 在 $y=0$ 附近的 $C^\infty$ 函数，而(21)中的 $\bar h_{ij}(x)$ 其实也是 $y$ 的 $C^\infty$ 函数。若记(21)为
+\[
+ f(x)=\pm y_1^2+\bar f(y)=\pm y_1^2+\sum_{i,j=2}^m\bar h_{ij}(x)y_i y_j,
+\]
+在 $\bar f$ 中视 $y_1$ 为参数，很容易证明 $(d\bar f)(0)=0$（这里 $(d\bar f)(0)$ 表示对 $y_2,\cdots,y_{m-1},y_m$ 的微分，而 $y_1$ 作为参数也为0）。我们也容易看到
+\[
+ \operatorname{Hess}_x f(0)=
+ \begin{pmatrix}
+ \pm2&0&\cdots&0\\
+ 0&&&\\
+ \vdots&&\operatorname{Hess}_{y'}\bar f(0)&\\
+ 0&&&
+ \end{pmatrix}.
+\]
+\enlargethispage{1.5\baselineskip}
+$\operatorname{Hess}_{y'}\bar f(0)$ 表示只对 $y_2,\cdots,y_m$ 求导，但在参数 $y_1=0$ 以及 $y_2=\cdots=y_m=0$ 时求值。因为 $\operatorname{Hess}_x f(0)$ 是非奇异的，所以 $\operatorname{Hess}_{y'}\bar f(0)$ 也是非奇异的。这样，可以对 $\bar f(y)$ 重复上面的作法（但以 $y_1$ 为参数），经有限次以后，即是(18)式。定理证毕。
+
+所以(22)就表明 $f(x)$ 与
+\[
+ f(0)+\sum_{1\le |\alpha|\le N}A_\alpha x^\alpha
+ \qquad\left(A_\alpha=\frac1{\alpha!}\partial^\alpha f(0)\right)
+\]
+在 $x=0$ 处 $N$ 阶接触，泰勒公式的这一部分，即这一“段”，称为其 $N$ 阶节（jet）。这是一个 $N$ 次多项式，但是要注意适合 $|\alpha|=k$ 的 $A_\alpha x^\alpha$ 有很多项，这是由于 $\alpha$ 是一个重指标的原故，所谓 $N$ 阶节是指要把所有适合 $|\alpha|\le N$ 的 $A_\alpha x^\alpha$ 都算进去，而不能有遗漏。只有这样才能保证接触的阶数是 $N$。如果我们把所有适合 $|\alpha|\le N-1$ 的项算进去了，而适合 $|\alpha|=N$ 的项漏了一项，则所得并不是 $N$ 阶节，而实质上与 $N-1$ 阶节一样。这就是说 $N$ 阶节的定义还应该表述得更清晰一些，这一点我们就不讲了。所以泰勒公式也可以这样来陈述：即 $f(x)$ 之 $N$ 阶节与 $f(x)$ 有 $N$ 阶接触。当然我们可以证明下面的命题：若有一个 $N$ 次多项式 $P_N(x)$ 与 $f(x)$ 在 $x=0$ 处有 $N$ 阶接触，则 $P_N(x)$ 必是 $f(x)$ 的 $N$ 阶节。即由
+\[
+ f(x)-P_N(x)=o(1)\lVert x\rVert^N,
+\]
+必可证明 $P_N(x)$ 是 $f(x)$ 的 $N$ 阶节，其实证明很容易，令
+\[
+ J_N(x)=f(0)+\sum_{1\le|\alpha|\le N}\frac1{\alpha!}\partial^\alpha f(0)x^\alpha
+\]
+为 $f(x)$ 之 $N$ 阶节，则由 $f(x)-J_N(x)=o(1)\lVert x\rVert^N$ 知
+\[
+ P_N(x)-J_N(x)=[P_N(x)-f(x)]+[f(x)-J_N(x)]=o(1)\lVert x\rVert^N.
+\]
+但是两个 $N$ 次多项式若不恒等，其差最多是 $O(1)\lVert x\rVert^N$，而不是 $o(1)\lVert x\rVert^N$。因此 $P_N(x)=J_N(x)$。
+
+以上说的是 $N$ 阶节与 $f(x)$ 之误差比之 $\lVert x\rVert^N$ 为更高阶的无穷小。但是我们还要进一步问，$f(x)$ 与其 $N$ 阶节是否可能在 $x=0$ 附近从拓扑学角度看来是等价的？所谓“从拓扑学角度看来是等价的”这句话并不明确，现在我们可以这样理解它：如果在 $x=0$ 附近有一个微分同胚 $x=x(y)$ 使 $0=x(0)$，则 $f(x)=f[x(y)]=F(y)$。这时我们就说 $f$ 和 $F$ 从拓扑学角度看来是等价的。
+
+对一般的映射 $f:\Omega\subset\mathbb R^m\to\mathbb R^n$，讨论上述意义下的等价性是很困难的。但是莫尔斯引理告诉我们，若 $n=1$，而 $0\in\Omega$ 是 $f$ 的非蜕化临界点，则在 $x=0$ 附近，$f(x)$ 与一个二次型在拓扑学上是等价的。如果我们换用莫尔斯引理的一个更细微的证明，还可以进一步证明 $f(x)$ 与它的2阶节
+\[
+ f(0)+\frac12\sum_{i,j=1}^m\frac{\partial^2f(0)}{\partial x_i\partial x_j}x_ix_j
+\]
+是等价的。这些都是很深刻的结果。
+
+\subsection*{4. 插值公式}
+
+迄今为止，我们讨论微分学问题时都是遵循下面的路径：先考虑离散的量，例如一段有限长的时间 $\Delta t$，一段有限长的距离 $\Delta x$，然后再考虑它的极限状况：$\Delta t\to0,\Delta x\to0$ 又如何如何。可以说，我们走的都是由离散到连续这样一条路。而且实践告诉我们，这是研究种种物理现象有力的工具。牛顿创立的微积分之所以如此重要，这是根源所在。然而可以进一步提出一个更深入的问题，即表现一个自然现象的“曲线”等等，其本身果然是连续的、光滑的……吗？例如，为了表示一段时间内温度的变化，我们可以用记录仪器自动地画出一条曲线来，而且我们感到有十足的把握说：温度作为时间的函数就是这条曲线。但是，许多记录仪器给我们的曲线，其实只是一些分布很密的点：粗看起来确实是像一条连续的曲线，细看起来更像一条虚线。而且不论是粗看还是细看，都还只是自然现象（通过观测和记录的仪器）作用于我们的感官的结果，而不是自然现象的本身。要想掌握自然现象的本身，除了需要越来越精密的仪器以外，还需要深刻的理论思考。但是我们的感觉，不论用多么好的仪器来加强，用多么深刻的理论来深化，也只可能是对自然现象的近似的描述。所以，上面说的由离散到连续之路，也只是我们的思维所走过的、越来越深刻地通向大自然的本质的道路。但是我们既然接受了从连续的角度来描述自然现象，当然也应该接受从离散的角度来描述自然现象。
+
+回顾一下我们已讲过的内容，就可以看到离散的东西与连续的东西是彼此对立而又互相补充的。微分学的最重要的定理之一的拉格朗日公式，告诉我们，不但 $\Delta f/\Delta x$ 之极限是导数 $f'(x)$，而且其本身也就是导数 $f'(\xi)$，只不过 $\xi$ 这个点的位置不能确定而已。其实泰勒公式也是一样，只不过把函数改变量 $\Delta f(x)$（它是离散的），改用泰勒公式的节（少一项 $f(0)$）来近似，其余项也有不确定处。所以泰勒公式也可以看作是拉格朗日公式的推广。再从泰勒公式的节的几何意义来看更可以看到这一点。从 $m=1,n=1$，即 $f$ 表示一条曲线来看，它的1阶节 $f(0)+f'(0)x$ 表示切线，但我们可以通过曲线上两点 $P,Q:(0,y_0)$ 与 $(h,y_1)$ 作割线
+\[
+ y-f(0)=\frac{y_1-y_0}{h}(x-0),
+\]
+其极限（当 $Q\to P$ 时）就是切线。所以1阶节是某一“离散量”的极限。若通过曲线上三点 $P,Q,R$ 作一条二次曲线 $y=Ax^2+Bx+C$，则当 $Q,R\to P$ 时其极限位置也恰好是二阶节（若过这三点作一个圆，则其极限位置仍是一个圆，称为 $P$ 点处的密切圆（osculating circle）或其曲率圆，其半径为曲率半径，恰好表征曲线在 $P$ 点处的弯曲程度）。仿此，若在此曲线上取 $N+1$ 个点 $(x_i,f(x_i)),i=1,2,\cdots,N+1$，并通过它们作一条 $N$ 次曲线 $y=A_0x^N+\cdots+A_N$，则当这 $N+1$ 个点都趋向一点时，这个 $N$ 次曲线似乎应该趋向于此曲线在该点的 $N$ 阶节，从而保证达到最佳的接触阶数。而这个 $N$ 次多项式应该能很好地描述 $f(x)$ 在该点附近的性态。但是为此首先应该解决如下的问题，即插值问题：设给定 $N+1$ 个离散的点 $(x_i,y_i),i=1,\cdots,N+1$，怎样在一个指定的函数类中找到一个函数 $y=f(x)$ 使得 $y_i=f(x_i)$？或者用物理的语言来陈述它，设在某个实验或观测中发现，对应于某一物理量 $x_1,\cdots,x_{N+1}$，另一物理量的相应值是 $y_1,\cdots,y_{N+1}$，如何在一个指定的函数类中找到一个函数，使其图像通过这 $N+1$ 个点 $(x_i,y_i)$。有了这样一个函数自然十分有利于研究其中的物理规律性。上面我们都是讲的在一个指定的函数类中去找这个 $f(x)$。函数类的限制是十分重要的。这种函数类应该是更容易处理的函数，因为“真正的”（应该说是“更准确的”）函数关系是很难找到或者很难处理的。最简单的情况下可以取多项式，或三角多项式等等。因此最简单的插值问题如下：设在 $x$ 轴上有 $N+1$ 个点，依次排列为 $x_1<x_2<\cdots<x_{N+1}$，找一个 $N$ 次多项式 $P_N(x)$，使 $P_N(x_i)$ 等于 $N+1$ 个指定的值 $P_N(x_i)=y_i$。
+
+这个问题很容易回答，因为拉格朗日插值公式给出的
+\begin{align}
+ P_N(x)={}&y_1\frac{(x-x_2)\cdots(x-x_{N+1})}{(x_1-x_2)\cdots(x_1-x_{N+1})}
+ +y_2\frac{(x-x_1)(x-x_3)\cdots(x-x_{N+1})}{(x_2-x_1)(x_2-x_3)\cdots(x_2-x_{N+1})}\notag\\
+ &+\cdots+y_{N+1}\frac{(x-x_1)\cdots(x-x_N)}{(x_{N+1}-x_1)\cdots(x_{N+1}-x_N)}\notag\\
+ ={}&\sum_{j=1}^{N+1}y_j\prod_{\substack{i=1\\i\ne j}}^{N+1}\frac{x-x_i}{x_j-x_i}
+ \tag{23}
+\end{align}
+就是其解。这里每一项的分子都是一个 $N$ 次多项式，而由 $N$ 个形如 $x-x_i$ 因子的组成；第一项缺少 $x-x_1$，第二项缺少 $x-x_2$，……，第 $N+1$ 项缺少 $x-x_{N+1}$。每一项的分母恰好是把分子中的 $x$ 换成了缺失了的 $x_j$，最后再乘上“系数” $y_j$，条件中 $x_1,x_2,\cdots,x_{N+1}$ 的次序并无关系，但是不允许有 $x_i=x_j$，否则上式会有分母为零的项。这种情况下，拉格朗日公式问题的提法需做相应的修正。
+
+如果 $y_i$ 是某一函数 $f(x)$ 在 $x_i$ 处之值：$y_i=f(x_i)$，则上式给出用一个多项式去逼近 $f(x)$ 的公式。
+
+如果这些给定的 $x_i$（称为结点）是等距的，即令 $x_1=a,x_2=x_1+\Delta x=a+\Delta x,x_3=x_2+\Delta x=a+2\Delta x,\cdots,x_{N+1}=x_N+\Delta x=\cdots=a+N\Delta x$，将得到拉格朗日插值公式的一个特例：牛顿插值公式
+\begin{align}
+ Q_N(x)={}&f(a)+\frac{x-a}{1!}\frac{\Delta f(a)}{\Delta x}
+ +\frac{(x-a)(x-a-\Delta x)}{2!}\frac{\Delta^2f(a)}{\Delta x^2}\notag\\
+ &+\cdots+\frac{(x-a)\cdots[x-a-(N-1)\Delta x]}{N!}\frac{\Delta^Nf(a)}{\Delta x^N}.
+ \tag{24}
+\end{align}
+\jiaokan{原文式(24)末项分子印作 $(x-a)\cdots(x-a-N\Delta x)$，因而该项次数为 $N+1$，与 $Q_N$ 为 $N$ 次多项式及同页后文式(30)均不相容；按牛顿等距结点插值公式应为乘至 $x-a-(N-1)\Delta x$。}
+这里我们应用了差分记号：$\Delta f(a)$ 表示 $f(x)$ 在 $x=a$ 处对于 $x$ 的增量 $\Delta x$ 的相应增量
+\[
+ \Delta f(a)=f(a+\Delta x)-f(a).
+\]
+$\Delta f(a)$ 的增量记为 $\Delta(\Delta f(a))=\Delta^2f(a)$，称为二阶差分，所以
+\[
+ \Delta^2f(a)=\Delta f(a+\Delta x)-\Delta f(a).
+\]
+但是
+\begin{align*}
+ \Delta f(a+\Delta x)&=f[(a+\Delta x)+\Delta x]-f(a+\Delta x)\\
+ &=f(a+2\Delta x)-f(a+\Delta x),
+\end{align*}
+所以
+\begin{align*}
+ \Delta^2f(a)
+ &=[f(a+2\Delta x)-f(a+\Delta x)]-[f(a+\Delta x)-f(a)]\\
+ &=f(a+2\Delta x)-2f(a+\Delta x)+f(a).
+\end{align*}
+仿此有
+\begin{align}
+ \Delta^kf(a)={}&f(a+k\Delta x)-\frac{k}{1!}f[a+(k-1)\Delta x]\notag\\
+ &+\frac{k(k-1)}{2!}f[a+(k-2)\Delta x]+\cdots+(-1)^kf(a)\notag\\
+ ={}&\sum_{l=0}^k(-1)^{k-l}C_k^l f(a+l\Delta x).
+ \tag{25}
+\end{align}
+由此也可以得出
+\begin{align*}
+ f(a+\Delta x)&=f(a)+\Delta f(a),\\
+ f(a+2\Delta x)&=f(a+\Delta x)+\Delta f(a+\Delta x)\\
+ &=f(a)+2\Delta f(a)+\Delta^2f(a),\\
+ f(a+3\Delta x)&=f(a+2\Delta x)+\Delta f(a+2\Delta x)\\
+ &=f(a)+3\Delta f(a)+3\Delta^2f(a)+\Delta^3f(a),\\[-1mm]
+ &\hspace{18mm}\cdots\cdots\cdots\cdots
+ \tag{26}
+\end{align*}
+我们不讲如何由拉格朗日插值公式得出牛顿插值公式，但是很容易验证(24)的正确性。例如以 $x=a$ 代入(24)式后，(24)式就只余下第一项，即 $Q_N(a)=f(a)$。令 $x=a+\Delta x$ 就此余下前两项，从而 $Q_N(a+\Delta x)=f(a)+\Delta f(a)=f(a+\Delta x)$，余类推。
+
+现在的问题是由(23)和(24)去逼近 $f(x)$ 的误差问题。这里首先要注意，既然在结点 $x_1,x_2,\cdots,x_{N+1}$ 上 $P_N(x_i)=Q_N(x_i)$，则 $P_N(x)\equiv Q_N(x)$，这是因为 $P_N(x)-Q_N(x)$ 是一个 $N$ 次多项式，而在 $N+1$ 个结点 $x_1,x_2,\cdots,x_{N+1}$ 上它又为0。除非它恒等于0，是不会有 $N+1$ 个零点的。因此下面我们就来估计 $f(x)-P_N(x)$，解决这个问题的基础是推广的罗尔定理：若 $f(x)$ 在 $[a,b]$ 上为 $N$ 阶可微，而且在 $N+1$ 个点 $a=x_1<x_2<\cdots<x_{N+1}=b$ 上为0，则必可在 $(a,b)$ 中找到一点 $\xi$ 使 $f^{(N)}(\xi)=0$。这个定理的证明很容易，只要对 $F(x_{i+1})=F(x_i)=0$ 应用罗尔定理，即知必有 $\xi_i\in(x_i,x_{i+1})$ 使 $F'(\xi_i)=0$。再对 $F'(x)$ 在 $(\xi_i,\xi_{i+1})$ 上应用罗尔定理，仿此就可证明上述定理。于是令
+\[
+ f(x)=P_N(x)+R_N(x),
+\]
+立即有，在结点 $x_k=a+(k-1)\Delta x$ 上
+\[
+ R_N(x_k)=0,\qquad k=1,2,\cdots,N+1,
+\]
+因此可以把 $R_N(x)$ 写成
+\[
+ R_N(x)=\frac1{(N+1)!}(x-x_1)\cdots(x-x_{N+1})\Psi(x).
+\]
+现令
+\begin{equation}
+ F(z)=f(z)-P_N(z)-\frac1{(N+1)!}(z-x_1)\cdots(z-x_{N+1})\Psi(x),
+ \tag{27}
+\end{equation}
+注意，最后一项中因子 $\Psi(x)$ 的自变量仍写为 $x$，其余的则改写成了 $z$，这样做的好处是，将(27)双方都对 $z$ 求 $N+1$ 阶导数时，有
+\begin{equation}
+ F^{(N+1)}(z)=f^{(N+1)}(z)-\Psi(x).
+ \tag{28}
+\end{equation}
+这里我们利用了以下的事实：$P_N(z)$ 是 $z$ 的 $N$ 次多项式，故对 $z$ 求 $N+1$ 次导数后为0。现在对 $F(z)$ 作为 $z$ 的函数应用推广的罗尔定理。由于 $F(x_i)=f(x_i)-P_N(x_i)=0,i=1,2,\cdots,N+1$，同时在 $z=x$ 处它也为0，所以在 $a$ 与 $x$ 之间一共有 $N+2$ 个零点，所以一定在 $a$ 与 $x$ 中存在一点 $\xi$，使 $F^{(N+1)}(\xi)=0$。以此代入(28)即有
+\[
+ \Psi(x)=f^{(N+1)}(\xi).
+\]
+代回(23)即得含余项的拉格朗日插值公式
+\begin{equation}
+ f(x)=\sum_{j=1}^{N+1}f(x_j)\prod_{\substack{i=1\\i\ne j}}^{N+1}\frac{x-x_i}{x_j-x_i}
+ +\frac{f^{(N+1)}(\xi)}{(N+1)!}\prod_{i=1}^{N+1}(x-x_i).
+ \tag{29}
+\end{equation}
+我们也可对 $Q_N(x)$ 应用上述。因为上述中完全未涉及结点是否等距，于是又可得含余项的牛顿插值公式：
+\begin{align}
+ f(x)={}&f(a)+\frac{x-a}{1!}\frac{\Delta f(a)}{\Delta x}+\cdots\notag\\
+ &+\frac{(x-a)(x-a-\Delta x)\cdots[x-a-(N-1)\Delta x]}{N!}
+   \frac{\Delta^Nf(a)}{\Delta x^N}\notag\\
+ &+\frac1{(N+1)!}(x-a)\cdots(x-a-N\Delta x)f^{(N+1)}(\xi).
+ \tag{30}
+\end{align}
+我们特别要注意(30)。令 $\Delta x\to0$，则对固定的 $N$ 恒可设 $|N\Delta x|<1$，因此 $x_1=a,x_2=a+\Delta x,\cdots,x_{N+1}=a+N\Delta x$ 全在区间 $(a-1,a+1)$ 内，当 $\Delta x\to0$ 时，式左与 $\Delta x$ 无关，极限自然是 $f(x)$，式右的前 $N+1$ 项可以逐项求极限，只余下最后一项的 $\xi$ 之位置是与 $N$ 和 $\Delta x$ 有关的。它一定在 $a$ 与 $x$ 之间内，因此当 $\Delta x\to0$ 时，也一定有一个收敛子序列，其极限仍记为 $\xi$，不过仍在 $a$ 与 $x$ 之间。这样我们又重新回到泰勒公式
+\begin{equation}
+ f(x)=\sum_{k=0}^N\frac{f^{(k)}(a)}{k!}(x-a)^k
+ +\frac{f^{(N+1)}(\xi)}{(N+1)!}(x-a)^{N+1}.
+ \tag{31}
+\end{equation}
+余项的形状与前面讲的积分形式不同，称为拉格朗日形式的余项。但当 $x-a\to0$ 时它仍是比 $(x-a)^N$ 更高阶的无穷小量。
+
+值得注意的是，从历史上看泰勒（B. Taylor, 1685--1731）\jiaokan{原文印作“B. Taylor, 1655--1731”；Brook Taylor 生于1685年，故改正。}在1715年正是用差分方法得出了牛顿插值公式（但没有余项），然后他大胆地令 $\Delta x=0$（应为 $\Delta x\to0$），令 $N=\infty$（应为 $N\to\infty$）而得出了泰勒级数。说他大胆是因为当时人们对无穷级数以及对极限过程都不清楚，也不太了解问题的严重性。但是泰勒就进入了我们将在下一节讨论的新领域。

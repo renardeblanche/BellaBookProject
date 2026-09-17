@@ -1,0 +1,219 @@
+\origpage{417--420}
+
+En ce qui concerne les propriétés liées au signe, certaines sont valables en dimension quelconque, d'autres supposeront de plus $\dim E$ finie ce qui sera précisé.
+
+\medskip
+oindent\textsc{Définition 11.55.} --- \emph{Une forme quadratique $\Phi$ sur $E$ vectoriel réel est dite positive (resp. négative) si, $\forall x\in E$, $\Phi(x)\ge0$, (resp. $\forall x\in E$, $\Phi(x)\le0$).}
+
+Bien sûr, on passe de $\Phi$ positive à une forme négative en prenant $-\Phi$, et réciproquement.
+
+\medskip
+oindent\textsc{Théorème 11.56.} --- \emph{Une forme quadratique réelle $\Phi$ définie est de signe constant.}
+
+Sinon, supposons $\Phi$ définie, et prenant des valeurs de signes contraires.
+
+Soit $x\in E$ avec $\Phi(x)>0$ et $y$ tel que $\Phi(y)<0$.
+
+Pour tout $t$ réel,
+\[
+\Phi(tx+y)=t^2\Phi(x)+2t\varphi(x,y)+\Phi(y),
+\]
+(avec $\varphi$ forme polaire de $\Phi$), est un trinôme en $t$, de discriminant réduit
+\[
+\Delta=(\varphi(x,y))^2-\Phi(x)\Phi(y)>0
+\]
+puisque $\Phi(x)\Phi(y)<0$.
+
+Ce trinôme a deux racines $t_1$ et $t_2$ distinctes, et non nulles car $\Phi(0x+y)=\Phi(y)<0$. Les vecteurs $t_1x+y$ et $t_2x+y$ sont non nuls, sinon $y=-t_1x$ par exemple donne $\Phi(y)=(-t_1)^2\Phi(x)$, soit $\Phi(y)$ et $\Phi(x)$ de même signe.
+
+On aurait donc deux vecteurs $
+e0$ dans le cône isotrope : c'est exclu.
+
+Donc $\Phi$ est de signe constant. \bookend
+
+La \BellaCorrection{réciproque}{réciprque} est fausse. Posons, sur $\mathbb R^2$, $\Phi(X)=x_1^2$, avec $X=(x_1,x_2)$, $\Phi$ est positive et non définie car le cône isotrope est la droite vectorielle $\mathbb R\cdot(0,1)$.
+
+Cette utilisation d'un trinôme de second degré, on va la retrouver pour justifier l'inégalité de \BellaCorrectionNote{Cauchy--Schwarz}{Cauchy--Schwartz}{Le nom usuel est Hermann Amandus Schwarz; l'orthographe «Schwartz» du tirage est corrigée.}, point de départ de l'étude des espaces topologiques préhilbertiens réels.
+
+\medskip
+oindent\textsc{Théorème 11.57.} (Inégalité de Cauchy--Schwarz). --- \emph{Soit $\Phi$ forme quadratique de signe constant sur $E$ vectoriel réel, de forme polaire $\varphi$. On a $\forall(x,y)\in E^2$,}
+\[
+(\varphi(x,y))^2\le\Phi(x)\Phi(y).
+\]
+
+Soient $x$ et $y$ fixés dans $E$, on considère, pour tout $t$ réel, le scalaire
+\[
+\Phi(tx+y)=t^2\Phi(x)+2t\varphi(x,y)+\Phi(y)=\theta(t).
+\]
+
+Si $\Phi(x)
+e0$, $\theta$ est un trinôme en $t$ de signe constant, donc de discriminant $\le0$, (ah, ce signe du trinôme!) d'où
+\[
+(\varphi(x,y))^2-\Phi(x)\Phi(y)\le0
+\]
+ce qui est le résultat.
+
+Si $\Phi(x)=0$ il reste $\theta(t)=2t\varphi(x,y)+\Phi(y)$. C'est une fonction affine en $t$, de signe constant, donc la variable $t$ n'y figure pas, d'où $\varphi(x,y)=0$, et l'inégalité devient $0\le0$, c'est vrai! \bookend
+
+\medskip
+oindent\textsc{Corollaire 11.58.} --- \emph{Soit $\Phi$ quadratique de signe constant le cône isotrope est égal au noyau.}
+
+On a toujours le noyau contenu dans le cône isotrope $C$, (Théorème 11.18). Soit ici $a$ dans le cône isotrope, $\forall y\in E$ on a :
+\[
+(\varphi(a,y))^2\le\Phi(a)\Phi(y)=0
+\]
+d'où $\varphi(a,y)=0$: $a\in E^0$ noyau de $\Phi$. \bookend
+
+\medskip
+oindent\textsc{Corollaire 11.59.} --- \emph{Pour $\Phi$ quadratique réelle, on a}
+\[
+(\Phi\text{ définie positive})\Longleftrightarrow(\Phi\text{ non dégénérée positive}).
+\]
+\emph{(On a le même résultat avec $\Phi$ négative).}
+
+Puisque $\Phi$ est alors de signe constant et
+\[
+(\text{définie})\Longleftrightarrow(\text{cône isotrope})=\{0\}
+\]
+alors que
+\[
+(\text{non dégénérée})\Longleftrightarrow(\text{noyau}=\{0\}).
+\]
+\bookend
+
+\medskip
+oindent\textsc{Corollaire 11.60.} --- \emph{Pour $\Phi$ positive non dégénérée, il y a égalité dans Cauchy--Schwarz $\Longleftrightarrow x$ et $y$ liés.}
+
+Car si $\{x,y\}$ est une famille liée de $E$ muni de $\Phi$ quadratique de signe constant, avec $y=\lambda x$ par exemple,
+\[
+\varphi(x,y)=\lambda\Phi(x)
+\Longrightarrow
+(\varphi(x,y))^2=\lambda^2\Phi(x)\Phi(x)=\Phi(y)\Phi(x)
+\]
+d'où l'égalité dans l'inégalité de Cauchy.
+
+Et si $x$ et $y$ sont tels que $(\varphi(x,y))^2=\Phi(x)\Phi(y)$, si $x
+e0$ on a $\Phi(x)
+e0$ car $\Phi$ est définie car positive non dégénérée, donc il existe une \BellaCorrection{racine double $t_1$}{racines double $t_1$} du trinôme $\Phi(tx+y)=0$. Mais $t_1x+y$ est isotrope, donc nul, d'où $y=-t_1x$, la famille $\{x,y\}$ est bien liée. \bookend
+
+\medskip
+oindent\textsc{Corollaire 11.61.} (Inégalité de Minkowski). --- \emph{Soit $\Phi$ forme quadratique positive sur $E$ vectoriel réel, on a, $\forall(x,y)\in E^2$}
+\[
+\sqrt{\Phi(x+y)}\le\sqrt{\Phi(x)}+\sqrt{\Phi(y)}.
+\]
+
+Comme il s'agit de nombres positifs, cette inégalité équivaut à vérifier que
+\[
+\Phi(x+y)\le\Phi(x)+2\sqrt{\Phi(x)\Phi(y)}+\Phi(y),
+\]
+(on élève au carré), soit, en développant le 1er membre, à vérifier que
+\[
+\Phi(x)+2\varphi(x,y)+\Phi(y)\le\Phi(x)+2\sqrt{\Phi(x)\Phi(y)}+\Phi(y)
+\]
+ou encore que
+\[
+\varphi(x,y)\le\sqrt{\Phi(x)\Phi(y)}.
+\]
+Or
+\[
+\varphi(x,y)\le|\varphi(x,y)|\le\sqrt{\Phi(x)\Phi(y)},
+\]
+par Cauchy--Schwarz, d'où le résultat. \bookend
+
+C'est cette inégalité qui permettra de justifier que, pour $\Phi$ définie positive, $\sqrt\Phi$ est une norme sur $E$, associée à un produit scalaire.
+
+\medskip
+oindent\textsc{Remarque 11.62.} --- Soit $\Phi$ définie positive sur $E$ il y a égalité dans l'inégalité de Minkowski si et seulement si $x$ et $y$ sont positivement liés.
+
+Car si $y=tx$ avec $t\ge0$ on a
+\begin{align*}
+\sqrt{\Phi(x+y)}\footnotemark
+&=\sqrt{\Phi((1+t)x)}
+=\sqrt{(1+t)^2\Phi(x)}
+=|1+t|\sqrt{\Phi(x)}\\
+&=(1+t)\sqrt{\Phi(x)}
+=\sqrt{\Phi(x)}+t\sqrt{\Phi(x)}\\
+&=\sqrt{\Phi(x)}+\sqrt{t^2\Phi(x)}
+=\sqrt{\Phi(x)}+\sqrt{\Phi(y)}.
+\end{align*}
+\footnotetext{\textbf{校勘：}原式左端印为 $\sqrt{\Phi(x+ty)}$，但本段假设 $y=tx$，且下一步立即写成 $\Phi((1+t)x)$；故左端应为 $\sqrt{\Phi(x+y)}$。}
+
+Et s'il y a égalité dans Minkowski, vu sa justification, c'est qu'il y a égalité dans Cauchy--Schwarz, avec de plus $\varphi(x,y)=|\varphi(x,y)|$, soit $\varphi(x,y)\ge0$.
+
+Mais alors $x$ et $y$ sont liés, donc par exemple il existe $t$ réel tel que $y=tx$, et de plus $\varphi(x,y)=t\Phi(x)\ge0$.
+
+Donc soit $\Phi(x)=0$ et alors $x=0$ car $\Phi$ définie, d'où $y=0$ : ces vecteurs sont positivement liés, et si $\Phi(x)
+e0$, on a $\Phi(x)>0\Rightarrow t>0$. \bookend
+
+Dans tout ce qui précède, on a supposé la forme $\Phi$ de signe constant. Mais une forme quadratique réelle peut prendre des valeurs des deux signes. En dimension finie on peut alors préciser le comportement des bases conjuguées.
+
+\medskip
+oindent\textsc{Théorème 11.63.} (dit de Sylvester). --- \emph{Soit $\Phi$ une forme quadratique de rang $r$ sur $E$ vectoriel réel de dimension finie $n$. Alors pour toute base conjuguée $B=(e_1,\ldots,e_n)$, le couple $(p,q)$ avec $p=\operatorname{card}\{i;\Phi(e_i)>0\}$ et $q=\operatorname{card}\{i;\Phi(e_i)<0\}$ est le même.}
+
+\subsection*{11.64.}
+Ce couple $(p,q)$ est la signature de la forme quadratique $\Phi$.
+
+Soient $B=(e_1,\ldots,e_n)$ et $B'=(e'_1,\ldots,e'_n)$ deux bases conjuguées indexées de façon que
+\[
+\Phi(e_1),\ldots,\Phi(e_p)\text{ soient }>0,
+\]
+\[
+\Phi(e_{p+1}),\ldots,\Phi(e_{p+q})\text{ soient }<0,
+\qquad p+q=r,
+\]
+et $\Phi(e_i)=0$, $\forall i>r$;
+
+et de même les $\Phi(e'_i)>0$ pour $i\le p'$, les $\Phi(e'_i)<0$ pour $p'+1\le i\le p'+q'$ avec $p'+q'=r$ et $\Phi(e'_i)=0$ $\forall i>r$.
+
+Soit
+\[
+F=\operatorname{Vect}(e_1,\ldots,e_p;e_{r+1},\ldots,e_n).
+\]
+Pour
+\[
+x=\sum_{i=1}^p x_ie_i+\sum_{i=r+1}^n x_ie_i
+\]
+on a
+\[
+\Phi(x)=\sum_{i=1}^p\Phi(e_i)x_i^2
+\]
+car la matrice $\Omega$ de $\Phi$ dans la base $B$ conjuguée est diagonale, avec $\Phi(e_1),\ldots,\Phi(e_r)$ puis des zéros. Donc $\Phi(x)\ge0$.
+
+De même, soit
+\[
+G=\operatorname{Vect}(e'_{p'+1},\ldots,e'_{p'+q'}),
+\]
+si
+\[
+x=\sum_{i=p'+1}^{p'+q'}x'_ie'_i\in G
+\]
+on a
+\[
+\Phi(x)=\sum_{i=p'+1}^{p'+q'}(x'_i)^2\Phi(e'_i)\le0
+\]
+et $\Phi(x)=0\Longleftrightarrow$ chaque $x'_i=0$.
+
+Donc $F\cap G=\{0\}\Rightarrow F\oplus G$ existe et c'est un sous-espace de $E$: on a $\dim(F\oplus G)\le n$ soit $n-q+q'\le n$, soit $q'\le q$.
+
+En inversant les rôles des bases $B$ et $B'$ on aurait $q\le q'$ d'où en fait $q=q'$ et $p=r-q=p'=r-q'$. \bookend
+
+Si $\Phi$ est quadratique de signature $(p,q)$, dans une base conjuguée $B=(e_1,\ldots,e_n)$ telle que les $\Phi(e_i)$ sont $>0$ pour $i\le p$, $<0$ pour $p+1\le i\le p+q=r$, nuls pour $i>r$, la matrice $\Omega$ de $\Phi$ dans $B$ sera, en posant $\lambda_i=\Phi(e_i)$ pour $i\le p$ et $\lambda_i=-\Phi(e_i)$ pour $p+1\le i\le p+q$,
+\[
+\Omega=\operatorname{diag}(\lambda_1,\ldots,\lambda_p;-\lambda_{p+1},\ldots,-\lambda_{p+q},0,\ldots,0)
+\]
+d'où
+\[
+\Phi(x)=\sum_{i=1}^p\lambda_ix_i^2-\sum_{i=p+1}^{p+q}\lambda_ix_i^2,
+\]
+les $\lambda_i$ étant tous $>0$.
+
+On a alors
+\[
+\begin{array}{rcl}
+\Phi\text{ non dégénérée}&\Longleftrightarrow&p+q=n,\\
+\Phi\text{ positive}&\Longleftrightarrow&q=0,\\
+\Phi\text{ négative}&\Longleftrightarrow&p=0,\\
+\Phi\text{ définie positive}&\Longleftrightarrow&p=n\ (q=0),\\
+\Phi\text{ définie négative}&\Longleftrightarrow&p=0,\ q=n.
+\end{array}
+\]

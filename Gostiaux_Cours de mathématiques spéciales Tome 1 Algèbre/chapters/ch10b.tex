@@ -1,0 +1,1021 @@
+\origpage{359--381}
+
+Si le corps $K$ est algébriquement clos, $\mathbb C$ par exemple, les polynômes caractéristiques sont scindés, et il ne reste que la condition de commutation d'où le
+
+\medskip\noindent\textsc{Corollaire 10.40.} --- \emph{Soient $U$ et $V$ deux matrices carrées complexes d'ordre $n$ qui commutent, il existe $P$ régulière telle que $P^{-1}UP$ et $P^{-1}VP$ soient triangulaires.}
+
+En particulier, il existe une indexation des spectres de $U$ et $V$ qui commutent dans $M_n(\mathbb C)$ telles que
+\BellaCorrectionNote{$\operatorname{Sp}(U)$}{$\operatorname{Sp}(u)$}{Les objets considérés ici sont les matrices $U$ et $V$; les minuscules imprimées sont incompatibles avec la phrase.},
+\BellaCorrectionNote{$\operatorname{Sp}(V)$}{$\operatorname{Sp}(v)$}{Même correction de casse et de notation que dans le membre précédent.} et
+\BellaCorrectionNote{$\operatorname{Sp}(UV)$}{$\operatorname{Sp}(uv)$}{Même correction de notation; le produit considéré est matriciel.}
+\[
+\operatorname{Sp}(U)=(\alpha_1,\ldots,\alpha_n),
+\qquad
+\operatorname{Sp}(V)=(\beta_1,\ldots,\beta_n),
+\]
+\[
+\operatorname{Sp}(UV)=(\alpha_1\beta_1,\ldots,\alpha_n\beta_n).
+\]
+
+\BellaSection{3. Polynômes d'endomorphismes}
+
+Nous avons défini, (voir 10.34), l'endomorphisme $P(u)$ associé à un endomorphisme $u$ de $E$ vectoriel sur $K$, et à un polynôme $P$ de $K[X]$.
+
+Il est facile de vérifier que, pour $u$ fixé l'application $\theta:P\longmapsto P(u)$ de $K[X]$ dans l'espace vectoriel $\operatorname{Hom}(E)$ des endomorphismes de $E$ est linéaire. En effet, soit
+\[
+P(X)=\sum_{n\in\mathbb N}a_nX^n
+\quad\text{et}\quad
+Q(X)=\sum_{n\in\mathbb N}b_nX^n
+\]
+deux polynômes, les suites de coefficients étant finies, c'est-à-dire telles que $a_n=0$, $\forall n>\deg P$ et $b_n=0$, $\forall n>\deg Q$. Soient $\lambda$ et $\mu$ dans $K$ et
+\[
+R(X)=\sum_{n\in\mathbb N}(\lambda a_n+\mu b_n)X^n=\lambda P+\mu Q,
+\]
+on aura
+\[
+\theta(\lambda P+\mu Q)
+=\sum_{n\in\mathbb N}(\lambda a_n+\mu b_n)u^n
+=\lambda\sum_{n\in\mathbb N}a_nu^n
++\mu\sum_{n\in\mathbb N}b_nu^n
+\]
+d'après les règles de calcul dans l'espace vectoriel $\operatorname{Hom}(E)$. On a donc
+\[
+\theta(\lambda P+\mu Q)=\lambda\theta(P)+\mu\theta(Q).
+\]
+
+Cet aspect linéaire de $\theta$ ne nous intéressera pas beaucoup. En fait sur $K[X]$ existe une autre loi, le produit de 2 polynômes, qui munit $K[X]$ d'une structure d'algèbre. En particulier pour les 2 lois addition et multiplication des polynômes, $K[X]$ est un anneau commutatif.
+
+Il se trouve que pour l'addition et le produit de composition, $\operatorname{Hom}(E)$ est aussi un anneau, non commutatif lui. On peut donc se demander si $\theta$ ne serait pas un morphisme d'anneaux. La réponse est... oui.
+
+Avec
+\[
+P=\sum_{n\in\mathbb N}a_nX^n
+\quad\text{et}\quad
+Q=\sum_{n\in\mathbb N}b_nX^n
+\]
+on définit
+\[
+R=\sum_{n\in\mathbb N}c_nX^n
+\]
+avec, $\forall n\in\mathbb N$,
+\[
+c_n=a_0b_n+a_1b_{n-1}+\cdots+a_nb_0
+=\sum_{\substack{k+l=n\\(k,l)\in\mathbb N^2}}a_kb_l.
+\]
+C'est un polynôme car, si $n>\deg P+\deg Q$, on ne peut pas trouver de couple d'entiers $(k,l)$ avec $k\le\deg P$, $l\le\deg Q$ et $k+l=n$, donc la suite des $c_n$ devient nulle si $n>\deg P+\deg Q$.
+
+On a alors
+\[
+\theta(PQ)=\theta(R)=\sum_{n\in\mathbb N}c_nu^n
+=\sum_{n\in\mathbb N}\left(\sum_{\substack{k+l=n\\(k,l)\in\mathbb N^2}}a_kb_lu^{k+l}\right),
+\]
+car $u^k$ étant linéaire et $b_l$ un scalaire, on a
+\[
+u^k\circ(b_lu^l)=b_lu^k\circ u^l=b_lu^n,
+\]
+d'où
+\[
+\theta(R)=\left(\sum_{k\in\mathbb N}a_ku^k\right)
+\circ\left(\sum_{l\in\mathbb N}b_lu^l\right),
+\]
+puisqu'il s'agit d'une somme finie de termes que l'on regroupe, pour l'addition de manière différente, or l'addition des endomorphismes est commutative.
+
+On a donc $\theta(PQ)=\theta(P)\circ\theta(Q)$.
+
+Il convient de remarquer que si l'algèbre $\operatorname{Hom}(E)$ n'est pas commutative, la sous-algèbre $\theta(K[X])$ des $P(u)$ elle, l'est.
+
+Si on se rappelle les propriétés des anneaux, on sait alors que le noyau de $\theta$ est un idéal de $K[X]$, (Théorème 5.18). Et comme l'anneau $K[X]$ est principal, (Théorème 7.20) cet idéal est principal, donc formé des multiples d'un polynôme $P$. On a donc :
+
+\medskip\noindent\textsc{Théorème 10.41.} --- \emph{Soit un endomorphisme $u$ de $E$ vectoriel sur $K$. L'ensemble $I$ des polynômes $P$ de $K[X]$ tels que $P(u)=0$ est un idéal.} \bookend
+
+Il se pourrait que cet idéal soit réduit à $\{0\}$. En fait on va retrouver la différence entre la dimension finie et la dimension infinie.
+
+\medskip\noindent\textsc{Théorème 10.42.} --- \emph{Si l'espace vectoriel $E$ est de dimension finie, l'idéal annulateur de $u$, $I=\{P\in K[X],\ P(u)=0\}$ n'est jamais réduit à $\{0\}$.}
+
+C'est tout bête. Si $\dim E=n$, alors $\dim(\operatorname{Hom}(E))=n^2$, (corollaire 6.79) donc la famille
+\[
+\{\mathrm{id}_E,u,u^2,u^3,\ldots,u^{n^2}\}
+\]
+de $n^2+1$ vecteurs dans un espace de dimension $n^2$, est liée; il existe des scalaires $(a_k)_{0\le k\le n^2}$, non tous nuls, tels que
+\[
+\sum_{k=0}^{n^2}a_ku^k=0.
+\]
+Le polynôme
+\[
+P=\sum_{k=0}^{n^2}a_kX^k
+\]
+est non nul, et il est dans $I$. \bookend
+
+Par contre, si $\dim E$ est infinie, il se peut que pour $u\in\operatorname{Hom}(E)$, l'idéal $I$ soit réduit à $\{0\}$. Prenons $E$ de dimension dénombrable stricte, et $(e_n)_{n\in\mathbb N}$ une base de $E$. On définit $u$ par $e_k\longmapsto e_{k+1}$.
+
+Si
+\[
+P(X)=\sum_{k=0}^{\deg P}a_kX^k
+\]
+est un polynôme non nul de $K[X]$, donc $a_{\deg P}\ne0$, il est facile de vérifier que $P(u)$ envoie $e_0$ sur
+\[
+\sum_{k=0}^{\deg P}a_ke_k
+\]
+(car $u(e_0)=e_1$, $u^2(e_0)=u(e_1)=e_2$, ...), vecteur non nul de $E$ puisque décomposé dans la base de départ, avec $a_{\deg P}\ne0$.
+
+\medskip\noindent\textsc{Définition 10.43.} --- \emph{Soit un endomorphisme $u$ de $E$ vectoriel sur $K$. On appelle polynôme minimal de l'endomorphisme $u$, le polynôme unitaire, s'il existe, qui engendre l'idéal principal des polynômes annulant $u$.}
+
+Donc, en dimension finie, tout endomorphisme a droit à son polynôme minimal, en dimension infinie, ... c'est une faveur; la vie est beaucoup trop injuste quand on est endomorphisme!
+
+Avant d'étudier plus précisément le polynôme minimal, quand il existe, justifions le
+
+\medskip\noindent\textsc{Théorème 10.44. de Cayley-Hamilton.} --- \emph{Soit un endomorphisme, $u$, de $E$ espace vectoriel de dimension finie sur $K$. Son polynôme caractéristique annule $u$.}
+
+Soit $x\in E$, si $x=0$, on a $P(u)(0)=0$, avec ici $P$ polynôme caractéristique de $u$.
+
+Si $x\ne0$, et si $n=\dim E$, $\{x,u(x),\ldots,u^n(x)\}$ est une famille liée et il existe un entier $k\le n-1$, tel que $\{x,u(x),\ldots,u^k(x)\}$ libre et $\{x,u(x),\ldots,u^{k+1}(x)\}$ liée, ($k$ est le sup des $p$ tels que $\{x,u(x),\ldots,u^p(x)\}$ soit libre).
+
+Soit
+\[
+F=\operatorname{Vect}\{x,u(x),\ldots,u^k(x)\},
+\]
+c'est un sous-espace vectoriel de $E$, de dimension $k+1$ puisque $\{x,u(x),\ldots,u^k(x)\}$ en est une famille génératrice, libre.
+
+Soit $G$ un supplémentaire de $F$, éventuellement $G=\{0\}$, et soit $C$ une base de $G$ si $G\ne\{0\}$, alors
+\[
+B=\{x,u(x),\ldots,u^k(x)\}\cup C
+\]
+en est une de $E$.
+
+Dans cette base $B$ on peut chercher la matrice $U$ de $u$. Pour cela on aura besoin de connaître $u$ (chaque $u^j(x)$). Si $j<k$, $u(u^j(x))=u^{j+1}(x)$. Pour $j=k$, comme $\{x,u(x),\ldots,u^k(x);u^{k+1}(x)\}$ est liée on a $u^{k+1}(x)\in\operatorname{Vect}(x,u(x),\ldots,u^k(x))$, donc se décompose sous la forme
+\[
+u^{k+1}(x)=\sum_{i=0}^k\alpha_i u^i(x).
+\]
+La matrice $U$ est donc du type
+\[
+U=\left(
+\begin{array}{cccc|c}
+0&0&\cdots&\alpha_0&\ast\\
+1&0&\cdots&\alpha_1&\ast\\
+0&1&\ddots&\alpha_2&\ast\\
+\vdots&\ddots&\ddots&\vdots&\vdots\\
+0&\cdots&1&\alpha_k&\ast\\ \hline
+0&\cdots&0&0&C
+\end{array}\right),
+\]
+et en notant
+\[
+A=\begin{pmatrix}
+0&0&\cdots&0&\alpha_0\\
+1&0&\cdots&0&\alpha_1\\
+0&1&\ddots&0&\alpha_2\\
+\vdots&\ddots&\ddots&\vdots&\vdots\\
+0&\cdots&0&1&\alpha_k
+\end{pmatrix},
+\]
+matrice de $M_{k+1}(K)$, on obtient
+\[
+\chi_u(\lambda)=\det(A-\lambda I_{k+1})\det(C-\lambda I_{n-k-1}).
+\]
+
+Or un calcul facile, (en développant par rapport à la dernière colonne) donne
+\[
+Q(\lambda)=\det(A-\lambda I_{k+1})
+=(-1)^{k+1}\left(\lambda^{k+1}-\sum_{i=0}^k\alpha_i\lambda^i\right).
+\]
+Mais alors
+\[
+Q(u)(x)=(-1)^{k+1}\left(u^{k+1}(x)-\sum_{i=0}^k\alpha_i u^i(x)\right)=0
+\]
+vu la définition des $\alpha_i$. Comme le polynôme caractéristique $P=\chi_u$ est multiple de $Q$, avec $P=QR=RQ$ on a
+\[
+P(u)(x)=R(u)(Q(u)(x))=0.
+\]
+Ceci étant faisable pour tout $x$ non nul de $E$ on a finalement $P(u)=0$. \bookend
+
+\subsection*{10.45. Calcul de $Q(\lambda)$}
+\[
+Q(\lambda)=
+\begin{vmatrix}
+-\lambda&0&\cdots&0&\alpha_0\\
+1&-\lambda&\ddots&\vdots&\alpha_1\\
+0&1&\ddots&0&\alpha_2\\
+\vdots&\ddots&\ddots&-\lambda&\vdots\\
+0&\cdots&0&1&\alpha_k-\lambda
+\end{vmatrix},
+\]
+on développe par rapport à la dernière colonne donc :
+\[
+Q(\lambda)=(\alpha_k-\lambda)(-\lambda)^k+
+\sum_{i=1}^k(-1)^{i+k+1}\alpha_{i-1}d_i,
+\]
+avec $d_i$ déterminant de la matrice obtenue en supprimant la $i$ème ligne et la dernière colonne, soit sous forme bloc
+\[
+d_i=
+\begin{vmatrix}
+T_{i-1}&0\\
+0&T_{k+1-i}
+\end{vmatrix},
+\qquad
+T_m=
+\begin{pmatrix}
+-\lambda&0&\cdots&0\\
+1&-\lambda&\ddots&\vdots\\
+0&\ddots&\ddots&0\\
+0&\cdots&1&-\lambda
+\end{pmatrix},
+\]
+le premier bloc correspondant aux $i-1$ lignes situées au-dessus de la ligne supprimée, le second aux $k+1-i$ lignes situées au-dessous. Ainsi
+\[
+d_i=(-\lambda)^{i-1}(-\lambda)^{k+1-i}=(-\lambda)^k.
+\]
+Ce qui donne
+\[
+Q(\lambda)=(-1)^{k+1}\lambda^k(\lambda-\alpha_k)
++\sum_{i=1}^k(-1)^{i+k+1}\alpha_{i-1}(-\lambda)^{i-1}.
+\]
+Soit, avec $j=i-1$,
+\[
+Q(\lambda)=(-1)^{k+1}\left(\lambda^{k+1}-\alpha_k\lambda^k-
+\sum_{j=0}^{k-1}\alpha_j\lambda^j\right),
+\]
+c'est bien le résultat indiqué. \bookend
+
+\medskip\noindent\textsc{Corollaire 10.46.} --- \emph{Si $u$ est un automorphisme de $E\simeq K^n$, son inverse est un polynôme en $u$.}
+
+Ce n'est pas à proprement parler, un corollaire de \BellaCorrection{Cayley-Hamilton}{Caley-Hamilton}. En fait, si $P$ est un polynôme tel que $P(0)\ne0$, (coefficient constant non nul) et tel que $P(u)=0$, on en déduit que $u$ est inversible, d'inverse un polynôme en $u$.
+
+Soit en effet
+\[
+P(X)=p_0+p_1X+\cdots+p_kX^k
+\]
+un tel polynôme, avec $p_0\ne0$. En écrivant que $P(u)=0$ on en déduit que
+\[
+-p_0\mathrm{id}_E=p_1u+p_2u^2+\cdots+p_ku^k
+\]
+soit encore
+\[
+\mathrm{id}_E=-\frac1{p_0}(p_1\mathrm{id}_E+p_2u+\cdots+p_ku^{k-1})\circ u,
+\]
+d'où $u$ inversible, d'inverse
+\[
+u^{-1}=-\sum_{i=1}^k\frac{p_i}{p_0}u^{i-1},
+\]
+polynôme en $u$.
+
+Comme dans l'idéal annulateur $I$ de $u$ figure le polynôme caractéristique $\chi_u$ de terme constant $\det u$, on a en particulier pour $u$ inversible, $\det u\ne0$, donc $u^{-1}$ se calcule comme polynôme en $u$, à partir du polynôme caractéristique. Mais on pourrait faire de même à partir du polynôme minimal. \bookend
+
+\medskip\noindent\textsc{Théorème 10.47. dit des noyaux.} --- \emph{Soit $u$ un endomorphisme de $E$ vectoriel sur $K$ et $P$ et $Q$ deux polynômes premiers entre eux. On a
+\[
+\operatorname{Ker}((PQ)(u))=(\operatorname{Ker}P(u))\oplus\operatorname{Ker}Q(u).
+\]}
+
+Quand j'entends premiers entre eux, je pense Bézout, (c'est un réflexe pavlovien). Il existe $R$ et $S$ polynômes tels que $PR+QS=1$ donc
+\[
+\mathrm{id}_E=P(u)\circ R(u)+Q(u)\circ S(u)
+=R(u)\circ P(u)+S(u)\circ Q(u).
+\]
+Soit $x\in\operatorname{Ker}((PQ)(u))$.
+On a
+\[
+x=\mathrm{id}_E(x)=P(u)(R(u)(x))+Q(u)(S(u)(x)).
+\]
+On pose $x_1=P(u)\circ R(u)(x)$ et $x_2=Q(u)\circ S(u)(x)$. On a :
+\[
+Q(u)(x_1)=Q(u)\circ P(u)(R(u)(x))
+=R(u)\circ((PQ)(u)(x))=0
+\]
+car $x$ est dans $\operatorname{Ker}((PQ)(u))$.
+Donc $x_1\in\operatorname{Ker}Q(u)$, de même $x_2\in\operatorname{Ker}P(u)$, et on a bien
+\[
+\operatorname{Ker}((PQ)(u))\subset \operatorname{Ker}P(u)+\operatorname{Ker}Q(u).
+\]
+Si $x\in\operatorname{Ker}Q(u)\cap\operatorname{Ker}P(u)$,
+\[
+x=R(u)(P(u)(x))+S(u)(Q(u)(x))=0
+\]
+donc $\operatorname{Ker}P(u)$ et $\operatorname{Ker}Q(u)$ sont en somme directe, d'où
+\[
+\operatorname{Ker}((PQ)(u))\subset \operatorname{Ker}P(u)\oplus\operatorname{Ker}Q(u).
+\]
+Enfin $\operatorname{Ker}P(u)\subset\operatorname{Ker}(PQ)(u)$ car si $P(u)(x)=0$, on a $((PQ)(u))(x)=Q(u)(P(u)(x))$ nul a fortiori. De même $\operatorname{Ker}Q(u)\subset\operatorname{Ker}(PQ)(u)$ d'où l'inclusion réciproque et finalement l'égalité. \bookend
+
+\medskip\noindent\textsc{Corollaire 10.48.} --- \emph{Si $P\in K[X]$ est décomposé en $P=P_1P_2\cdots P_r$, produit de polynômes premiers deux à deux et si $u\in\operatorname{Hom}(E)$, $E$ vectoriel sur $K$, on a
+\[
+\operatorname{Ker}P(u)=\bigoplus_{i=1}^r\operatorname{Ker}P_i(u).
+\]}
+
+Ceci se justifie par récurrence sur $r$. C'est vrai pour un produit de 2 facteurs. Si c'est vrai pour un produit $r-1$ facteurs, dans le cas de $r$ facteurs on a
+\[
+P=(P_1P_2P_3\cdots P_{r-1})P_r,
+\]
+avec $P_1\cdots P_{r-1}$ et $P_r$ premiers entre eux d'où, d'après le théorème 10.47,
+\[
+\operatorname{Ker}P(u)=\operatorname{Ker}(P_1\cdots P_{r-1})(u)\oplus\operatorname{Ker}P_r(u),
+\]
+(vrai pour 2) et on applique l'hypothèse de récurrence à $\operatorname{Ker}(P_1\cdots P_{r-1})(u)$ pour conclure. \bookend
+
+Ce résultat va être exploité de 2 façons. Dans le cas général, en partant du polynôme minimal, s'il existe, pour donner une condition nécessaire et suffisante de diagonalisation. Puis, dans le cas de la dimension finie, en repartant d'une décomposition du polynôme caractéristique, ce qui dans certains cas, conduira à la jordanisation d'un endomorphisme.
+
+\medskip\noindent\textsc{Théorème 10.49.} --- \emph{Soit $u$ un endomorphisme de $E$ vectoriel sur $K$. Il est diagonalisable si et seulement si il annule un polynôme scindé à racines simples.}
+
+Si $u$ est diagonalisable, en appelant $\lambda_1,\ldots,\lambda_n$ ses valeurs propres, en nombre fini, et $E_1,\ldots,E_n$ les sous-espaces propres associés, avec $E_i=\operatorname{Ker}(u-\lambda_i\mathrm{id}_E)$, pour tout $x_i\in E_i$ on a $(u-\lambda_i\mathrm{id}_E)(x_i)=0$.
+A fortiori
+\[
+\left(\left(\prod_{\substack{j=1\\j\ne i}}^n(u-\lambda_j\mathrm{id}_E)\right)\circ(u-\lambda_i\mathrm{id}_E)\right)(x_i)=0,
+\]
+donc le polynôme scindé à racines simples
+\[
+P=\prod_{k=1}^n(X-\lambda_k)
+\]
+est tel que $P(u)(x_i)=0$, $\forall x_i\in E_i$. Comme $E=\bigoplus_{i=1}^nE_i$ par linéarité, $P(u)$ annule chaque vecteur $x$ de $E$. Donc $u$ annule $P$, polynôme scindé à racines simples.
+
+Réciproquement, s'il existe un polynôme $Q$, scindé sur $K$, à racines simples, tel que $Q(u)=0$, en décomposant $Q$ en
+\[
+Q(X)=\prod_{k=1}^n(X-\lambda_k),
+\]
+les $\lambda_k$ étant distincts les polynômes $X-\lambda_k$ sont premiers deux à deux donc le théorème des noyaux s'applique et donne
+\[
+\operatorname{Ker}(Q(u))=\operatorname{Ker}(0)=E
+=\bigoplus_{i=1}^n\operatorname{Ker}(u-\lambda_i\mathrm{id}_E),
+\]
+et soit $u-\lambda_i\mathrm{id}_E$ injective, donc $\lambda_i$ non valeur propre, mais dans ce cas $\operatorname{Ker}(u-\lambda_i\mathrm{id}_E)=\{0\}$ n'intervient pas dans la somme directe, soit $u-\lambda_i\mathrm{id}_E$ non injective, dans ce cas $\lambda_i$ est valeur propre de $u$ et $\operatorname{Ker}(u-\lambda_i\mathrm{id}_E)$ est bien sous-espace propre associé : on a finalement $E$ somme directe d'un nombre fini de sous-espaces propres. \bookend
+
+\medskip\noindent\textsc{Remarque 10.50.} --- Si $u$ annule un polynôme $Q$ scindé à racines simples, ce polynôme $Q$ est dans l'idéal principal des polynômes annulant $u$. Il est donc multiple du polynôme minimal $P$ qui, a fortiori, est scindé à racines simples. Le \BellaCorrectionNote{théorème 10.49}{théorème 18}{Le renvoi imprimé « 18 » ne correspond à aucun résultat pertinent de ce chapitre; l'énoncé immédiatement précédent est le théorème 10.49.} peut se formuler en :
+
+\medskip\noindent\textsc{Théorème 10.51.} --- \emph{Un endomorphisme $u$ de $E$ vectoriel est diagonalisable si et seulement si il admet un polynôme minimal (non nul) scindé à racines simples.} \bookend
+
+La différence avec l'équivalence du théorème 10.27 c'est qu'ici la dimension de l'espace $E$ est quelconque.
+
+Il faut bien comprendre que si $u$ est diagonalisable, les valeurs propres de $u$ sont exactement les racines du polynôme minimal, scindé, alors que si $Q$ est un polynôme scindé à racines simples annulant $u$, il peut contenir des facteurs superflus ne correspondant pas aux valeurs propres de $u$.
+
+Par exemple, un projecteur $p$ étant caractérisé par la relation $p^2=p$, $p$ annule le polynôme $X^2-X$, scindé à racines simples 1 et 0 donc est diagonalisable.
+
+Les seules valeurs propres possibles sont 1 et 0. On a $E=(\operatorname{Ker}p)\oplus E_1$ avec $E_1=\{x;p(x)=x\}=\operatorname{Im}p$ en fait, (si $x=p(x)$, $x\in\operatorname{Im}p$ et comme $p^2=p$, si $y=p(x)\in\operatorname{Im}p$ on a bien $p(y)=p^2(x)=p(x)=y$).
+
+Mais parmi les projecteurs il y a l'identité, de polynôme minimal $X-1$; mais aussi l'application nulle, de polynôme minimal $X$, (0 est seule valeur propre), et enfin les projecteurs ayant vraiment 1 et 0 pour valeurs propres, de polynôme minimal $X^2-X$.
+
+\medskip\noindent\textbf{Retour à la dimension finie : on va exploiter le polynôme caractéristique}
+
+\medskip\noindent\textsc{Théorème 10.52.} --- \emph{Soit $u$ un endomorphisme de $E$ vectoriel de dimension finie sur $K$ et $P$ le polynôme caractéristique de $u$. Si $P$ se décompose en $P_1P_2$ avec $P_1$ et $P_2$ premiers entre eux on a
+\[
+E=(\operatorname{Ker}P_1(u))\oplus\operatorname{Ker}(P_2(u)),
+\]
+les sous-espaces $\operatorname{Ker}P_1(u)$ et $\operatorname{Ker}P_2(u)$ étant stables par $u$, et les endomorphismes induits par $u$ sur ces noyaux ayant pour polynômes caractéristiques $P_1$ et $P_2$, à un facteur constant, multiplicatif, près.}
+
+Par Cayley-Hamilton, $P(u)=0$ donc, (Théorème des noyaux, 10.47), on a
+\[
+E=\operatorname{Ker}P(u)=\operatorname{Ker}(P_1(u))\oplus\operatorname{Ker}(P_2(u)).
+\]
+Puis $\operatorname{Ker}P_1(u)$, et $\operatorname{Ker}P_2(u)$ sont stables par $u$ car comme $u$ et $P_1(u)$ commutent, si $x\in\operatorname{Ker}P_1(u)$ on a
+\[
+P_1(u)(u(x))=u(P_1(u)(x))=u(0)=0
+\]
+donc $u(x)\in\operatorname{Ker}P_1(u)$.
+
+Soit $u_1$ induit par $u$ sur $\operatorname{Ker}(P_1(u))$, et de même $u_2$ induit par $u$ sur $\operatorname{Ker}(P_2(u))$. Si $B_1$ et $B_2$ sont des bases de ces sous-espaces et si $U_1$ et $U_2$ sont les matrices de $u_1$ et $u_2$ dans ces bases, la matrice $U$ de $u$ dans $B=B_1\cup B_2$ base de $E$ sera la matrice bloc
+\[
+U=\begin{pmatrix}U_1&0\\0&U_2\end{pmatrix}
+\]
+d'où
+\[
+P(X)=\det(U-XI_n)
+=\det(U_1-XI_{n_1})\det(U_2-XI_{n_2})
+\]
+si $n_1$ et $n_2$ sont les dimensions de ces sous-espaces, et $n$ celle de $E$.
+On a donc l'égalité
+\[
+P=P_1P_2=\chi_{u_1}\chi_{u_2}.
+\]
+
+On continue la justification en supposant que $K=\mathbb C$, ou que $K$ est algébriquement clos.
+
+Soit $\lambda$ une racine de $\chi_{u_1}$ : c'est une valeur propre de $u_1$ donc il existe un vecteur $x$ non nul de $E_1=\operatorname{Ker}(P_1(u))$ tel que $u_1(x)=u(x)=\lambda x$.
+
+Le polynôme $P_1(X)-P_1(\lambda)$, nul pour $X=\lambda$, est divisible par $X-\lambda$ : posons
+\[
+P_1(X)-P_1(\lambda)=Q(X)(X-\lambda)
+\]
+on aura
+\[
+(P_1(u)-P_1(\lambda)\mathrm{id}_E)(x)=Q(u)(u(x)-\lambda x)
+\]
+avec $u(x)-\lambda x=0$, donc $P_1(u)(x)-P_1(\lambda)x=0$. Or $x\in\operatorname{Ker}P_1(u)$, il reste $P_1(\lambda)x=0$ avec $x\ne0$, donc $P_1(\lambda)=0$.
+
+Si $\lambda$ est racine d'ordre $\alpha$ de $\chi_{u_1}$, et si elle l'était d'ordre $\beta$ pour $P_1$ avec $\beta<\alpha$, comme $(X-\lambda)^\alpha$ divise $\chi_{u_1}\chi_{u_2}=P=P_1P_2$, $(X-\lambda)^{\alpha-\beta}$ devrait diviser $P_2$ ce qui est absurde car $P_1$ et $P_2$ sont premiers entre eux. Donc $\beta\ge\alpha$. Ceci étant valable pour toute racine de $\chi_{u_1}$ on obtient finalement $\chi_{u_1}$ divise $P_1$, et de même $\chi_{u_2}$ divise $P_2$. En posant
+\[
+P_1=k_1\chi_{u_1}\quad\text{et}\quad P_2=k_2\chi_{u_2}
+\]
+on a
+\[
+P=P_1P_2=k_1k_2\chi_{u_1}\chi_{u_2}=\chi_{u_1}\chi_{u_2}
+\]
+donc $k_1k_2=1$ : $k_1$ et $k_2$ sont des constantes et on a bien $\chi_{u_1}$ est égal à $P_1$ à une constante multiplicative près, et de même pour $\chi_{u_2}$ et $P_2$.
+
+\medskip\noindent\textbf{Retour au cas d'un corps $K$ quelconque}
+
+On fixe une base de $E$, donc $u$ est associé à une matrice $U$. On injecte $K$ dans une clôture algébrique $\widetilde K$ de $K$ et on considère $\widetilde E=\widetilde K^n$ et $\widetilde u$ de matrice $U$ dans la base canonique de $\widetilde E$, le polynôme caractéristique de $\widetilde u$ est encore $P$. On applique ce qui précède à $\widetilde u$ : on a $\widetilde E$ somme directe de $\operatorname{Ker}P_1(\widetilde u)$ et $\operatorname{Ker}P_2(\widetilde u)$ et $\widetilde u_1$ induit par $\widetilde u$ sur $\widetilde E_1=\operatorname{Ker}P_1(\widetilde u)$ aura $P_1$ pour polynôme caractéristique, à une constante multiplicative près.
+
+Or $E$ étant assimilé à $K^n$ par le choix de la base initiale, les vecteurs de $K^n$ sont en particulier dans $\widetilde K^n\simeq\widetilde E$. Si de plus un élément de $K^n$ est dans $\operatorname{Ker}P_1(u)$, il sera dans $\operatorname{Ker}P_1(\widetilde u)$, en tant qu'élément de $\widetilde K^n$, et une base de $\operatorname{Ker}(P_1(u))$ sera en fait une base de $\widetilde E_1=\operatorname{Ker}P_1(\widetilde u)$. Dans une telle base, si on cherche la matrice de $\widetilde u_1$ induit par $\widetilde u$ sur $\widetilde E_1$, ce sera celle de $u_1$ induite par $u$ sur $E_1$, tous les calculs matriciels se faisant en fait dans $K$.
+
+Donc $\chi_{\widetilde u_1}=\chi_{u_1}$ et de même $\chi_{\widetilde u_2}=\chi_{u_2}$. On obtient ainsi le résultat dans le cas général. \bookend
+
+\medskip\noindent\textsc{Corollaire 10.53.} --- \emph{Soit $u$ un endomorphisme sur $E\simeq K^n$, $u$ ayant un polynôme caractéristique scindé,
+\[
+\chi_u(\lambda)=\prod_{i=1}^r(\lambda_i-\lambda)^{\alpha_i}.
+\]
+Alors $E$ est somme directe des sous-espaces
+\[
+C_i=\operatorname{Ker}(u-\lambda_i\mathrm{id})^{\alpha_i},
+\]
+appelés sous-espaces caractéristiques de $u$. Les $C_i$ sont stables, de dimension $\alpha_i$ et $u_i$ induit par $u$ sur $C_i$ a pour polynôme caractéristique $(\lambda_i-\lambda)^{\alpha_i}$.}
+
+D'abord, par récurrence sur le nombre de facteurs, le théorème 10.52 s'étend au cas d'une décomposition en produit de facteurs premiers deux à deux.
+
+Puis ici, les $(X-\lambda_i)^{\alpha_i}$ sont premiers deux à deux, d'où
+\[
+E=\bigoplus_{i=1}^r C_i.
+\]
+De plus $u_i$ induit par $u$ sur $C_i$ ayant pour polynôme caractéristique $(X-\lambda_i)^{\alpha_i}$ à un facteur multiplicatif près, on a $\dim C_i=\deg\chi_{u_i}$ soit $\dim C_i=\alpha_i$. \bookend
+
+Bien sûr ce corollaire s'applique pour tout endomorphisme $u$ de $E\simeq\mathbb C^n$. Remarquons qu'avec $\chi_u$ scindé, si
+\[
+\chi_u(\lambda)=\prod_{i=1}^r(\lambda_i-\lambda)^{\alpha_i},
+\]
+on dispose d'une part des sous-espaces propres $E_i=\operatorname{Ker}(u-\lambda_i)$, d'autre part des sous-espaces caractéristiques
+\[
+C_i=\operatorname{Ker}(u-\lambda_i)^{\alpha_i}.
+\]
+Les inclusions des noyaux des puissances d'un endomorphisme, (voir 6.34) nous disent que la suite des $\operatorname{Ker}(u-\lambda_i)^p$ est croissante avec $p$ et que les inégalités sont d'abord strictes, puis qu'il n'y a que des égalités, (6.37).
+
+Par ailleurs, le polynôme minimal de $u$ est un diviseur de $\chi_u$, car il engendre l'idéal principal contenant $\chi_u$. Comme il a été défini unitaire, il est donc du type
+\BellaCorrectionNote{$P(X)=\displaystyle\prod_{i=1}^r(X-\lambda_i)^{\beta_i}$}{$P(\lambda)=\displaystyle\prod_{i=1}^r(\lambda_i-\lambda)^{\beta_i}$}{La forme imprimée diffère du polynôme unitaire par le facteur $(-1)^{\sum_i\beta_i}$; la définition 10.43 impose ici la forme monique.}
+avec $\beta_i\le\alpha_i$. En fait $\beta_i\ge1$, car si pour un indice $i$, $\beta_i=0$, le polynôme minimal ne contiendrait pas le facteur $X-\lambda_i$, mais $\lambda_i$ étant valeur propre de $u$, avec $x$ vecteur propre $\ne0$ associé, on aurait
+\[
+P(u)(x)=\left(\prod_{\substack{j=1\\j\ne i}}^r(u-\lambda_j\,\mathrm{id})^{\beta_j}\right)(x)
+\]
+et comme $u(x)=\lambda_i x$ il reste
+\[
+P(u)(x)=\left(\prod_{\substack{j=1\\j\ne i}}^r(\lambda_i-\lambda_j)^{\beta_j}\right)x,
+\]
+ceci doit être nul, ($P(u)=0$ car $P$ polynôme minimal), alors que
+\[
+\prod_{\substack{j=1\\j\ne i}}^r(\lambda_i-\lambda_j)^{\beta_j}
+\]
+est un scalaire non nul et que $x$ est non nul.
+
+On a donc $1\le\beta_i\le\alpha_i$. Par ailleurs
+\[
+E=\bigoplus_{i=1}^r\operatorname{Ker}(u-\lambda_i\mathrm{id})^{\beta_i},
+\]
+(corollaire 10.48 pour le polynôme minimal) et aussi
+\[
+E=\bigoplus_{i=1}^rC_i,
+\]
+(sous-espaces caractéristiques), c'est donc que :
+\[
+\operatorname{Ker}(u-\lambda_i\mathrm{id})^{\beta_i}
+=\operatorname{Ker}(u-\lambda_i\mathrm{id})^{\beta_i+1}
+=\cdots=C_i.
+\]
+C'est au cran $\beta_i$ que commencent les égalités, car si on avait
+\[
+\operatorname{Ker}(u-\lambda_i\mathrm{id})^{\beta_i-1}
+=\operatorname{Ker}(u-\lambda_i\mathrm{id})^{\beta_i},
+\]
+$(u-\lambda_i\mathrm{id})^{\beta_i-1}$ annulerait déjà $C_i$ donc le polynôme
+\[
+\frac{P(X)}{X-\lambda_i}
+\]
+annulerait déjà $u$, ce qui contredit $P$ minimal.
+
+Enfin, on voit bien que
+\[
+(u\text{ diagonalisable})\Longleftrightarrow
+(E_i\text{ (sous-espace propre)}=C_i\text{ (sous-espace caractéristique)}),
+\]
+soit
+\[
+\Longleftrightarrow\bigl(E_i=\operatorname{Ker}(u-\lambda_i\mathrm{id}_E)^{\beta_i},\ \text{pour tout }i\bigr).
+\]
+Ceci signifie que les égalités commencent au cran 1, c'est-à-dire que $\beta_i=1$ : on retrouve de fait que le polynôme minimal est scindé à racines simples, (Théorème 10.51).
+
+\medskip\noindent\textit{Que dire de plus si le polynôme caractéristique est scindé sans que ce soit diagonalisable, toujours en dimension fini ?} On va établir l'existence d'une décomposition de $u$ sous une forme facilitant les calculs de $u^p$.
+
+\medskip\noindent\textsc{Théorème 10.54., de Dunford.} --- \emph{Soit $u$ un endomorphisme de $E\simeq K^p$, de polynôme caractéristique scindé. Alors $u$ s'écrit de manière unique
+\[
+u=d+n
+\]
+avec $d$ endomorphisme diagonal, $n$ endomorphisme nilpotent, $d$ et $n$ commutant.}
+
+Il en résultera que $\forall k\in\mathbb N$,
+\[
+u^k=\sum_{r=0}^k C_k^r d^{k-r}n^r
+\]
+sera calculable, avec pour $r$ supérieur à l'ordre de nilpotence de $n$, $n^r=0$.
+
+Soit
+\BellaCorrectionNote{$\chi_u(X)=\displaystyle\prod_{i=1}^q(\lambda_i-X)^{\alpha_i}$}{$\chi_u(X)=\displaystyle\prod_{i=1}^q(X-\lambda_i)^{\alpha_i}$}{Avec la convention fixée en 10.19, $\chi_u(X)=\det(U-XI)$ a pour coefficient dominant $(-1)^p$; la factorisation exacte est donc $\prod_i(\lambda_i-X)^{\alpha_i}$.}
+le polynôme caractéristique de $u$, scindé sur $K$, avec $\alpha_1+\alpha_2+\cdots+\alpha_q=p=\dim(E)$. On a vu, (Corollaire 10.53) que $E$ est somme directe des
+\[
+C_i=\operatorname{Ker}(u-\lambda_i\mathrm{id}_E)^{\alpha_i},
+\]
+sous-espaces caractéristiques de $u$, les $C_i$ étant stables par $u$. Soit $u_i$ l'endomorphisme induit sur $C_i$ par $u$ et
+\[
+v_i=u_i-\lambda_i\mathrm{id}_{C_i}.
+\]
+Si $x_i\in C_i$, on a
+\[
+v_i^{\alpha_i}(x_i)=(u-\lambda_i\mathrm{id}_E)^{\alpha_i}(x_i)=0,
+\]
+vu la stabilité de $C_i$ par $u$.
+
+Pour $x\in E=\bigoplus_{i=1}^qC_i$ décomposé en $x=\sum_{i=1}^q x_i$, avec $x_i\in C_i$, on définit alors
+\[
+d(x)=\sum_{i=1}^q\lambda_i x_i,
+\]
+et
+\[
+n(x)=\sum_{i=1}^qv_i(x_i)=\sum_{i=1}^q(u(x_i)-\lambda_i x_i)
+\]
+en fait.
+Donc
+\[
+u(x)=\sum_{i=1}^q u(x_i)=n(x)+d(x).
+\]
+De plus $d$ est un endomorphisme diagonal car sur chaque $C_i$, $d$ agit comme l'homothétie de rapport $\lambda_i$, et $n$ est nilpotent car, les $v_i(x_i)$ étant dans $C_i$ on a
+\[
+n^2(x)=\sum_{i=1}^qv_i^2(x_i)
+\]
+et plus généralement
+\[
+n^r(x)=\sum_{i=1}^qv_i^r(x_i),
+\]
+mais alors, si $r=\sup(\alpha_i,\ i=1,\ldots,q)$, chaque $v_i^r(x_i)=0$ donc $n^r=0$.
+
+Enfin $n$ et $d$ commutent puisque, les $\lambda_ix_i$ et les $v_i(x_i)$ étant dans $C_i$ on a
+\[
+n(d(x))=\sum_{i=1}^qv_i(\lambda_i x_i)
+\]
+alors que
+\[
+d(n(x))=\sum_{i=1}^q\lambda_iv_i(x_i),
+\]
+ces deux expressions étant égales, vu la linéarité des $v_i$.
+On vient de justifier l'existence d'une telle décomposition $u=d+n$.
+
+Passons à l'unicité. Soit $u=d'+n'$ une autre décomposition.
+On a $ud'=(d'+n')d'=d'^2+n'd'=d'^2+d'n'$, car $d'$ et $n'$ commutent, d'où $ud'=d'u$. On justifie de même que $u$ et $n'$ commutent.
+
+Mais alors $w=(u-\lambda_i\mathrm{id}_E)^{\alpha_i}$ et $d'$ commutent : il en résulte que
+\[
+C_i=\operatorname{Ker}(u-\lambda_i\mathrm{id}_E)^{\alpha_i},
+\]
+qui est le sous-espace propre de $w$ pour la valeur propre 0 est stable par $d'$, (Théorème 10.14).
+
+On a $d'$ diagonalisable et $C_i$ sous-espace stable par $d'$, il résulte donc du théorème 10.10 que $d'_i$ induit par $d'$ sur $C_i$ est diagonalisable.
+
+Soit alors $x$ un vecteur non nul de $C_i$, vecteur propre de $d'_i$, donc de $d'$ puisque $d'_i$ est induit par $d'$ sur $C_i$. Soit $\lambda$ la valeur propre associée.
+On a $d'(x)=\lambda x$ d'où
+\[
+u(x)=d'(x)+n'(x)=\lambda x+n'(x).
+\]
+Si $n'(x)\ne0$, comme $n'$ est nilpotent, il existe un entier $r$ tel que $n'^r(x)\ne0$ et $n'^{r+1}(x)=0$. Si $n'(x)=0$, $r=0$ convient.
+
+Or $u$ et $n'$ commutent donc $u$ et $n'^r$ aussi et
+\[
+u(n'^r(x))=n'^r(u(x))=n'^r(\lambda x+n'(x))
+=\lambda n'^r(x)+n'^{r+1}(x)=\lambda n'^r(x),
+\]
+soit finalement, avec $n'^r(x)\ne0$ on a
+\[
+u(n'^r(x))=\lambda\,n'^r(x)
+\]
+ce qui prouve que $\lambda$ est valeur propre de $u$. De plus, $x$ est dans $C_i$, qui est stable par $u$, et aussi par $d'$. Comme $n'=u-d'$, $C_i$ est stable par $n'$ aussi, donc ce vecteur propre $n'^r(x)$ de $u$ est dans $C_i$. Mais sur
+\[
+C_i=\operatorname{Ker}(u-\lambda_i\mathrm{id}_E)^{\alpha_i}
+\]
+la seule valeur propre possible $\lambda$ de $u$ c'est $\lambda_i$, (si on a $z\in C_i$ tel que $u(z)=\lambda z$ avec $z\ne0\Rightarrow (u-\lambda_i\mathrm{id}_E)^{\alpha_i}(z)=(\lambda-\lambda_i)^{\alpha_i}z=0\Rightarrow\lambda=\lambda_i$).
+
+Comme $d'_i$ induit par $d'$ sur $C_i$ est diagonalisable avec pour seule valeur propre $\lambda_i$, c'est que
+\[
+d'_i=\lambda_i\mathrm{id}_{C_i}=d_i,
+\]
+induit par $d$ sur $C_i$.
+Donc, $\forall x\in E$, décomposé en $x=\sum_{i=1}^q x_i$ on aura
+\[
+d'(x)=\sum_{i=1}^q\lambda_i x_i=d(x)
+\]
+d'où $d'=d$ et $n'=u-d'=u-d=n$ : on a l'unicité voulue. \bookend
+
+\medskip\noindent\textsc{Corollaire 10.55.} --- \emph{Soit $u$ un endomorphisme de $E\simeq\mathbb C^p$, il existe une et une seule décomposition de $u$ sous forme $u=d+n$ avec $d$ endomorphisme diagonal, $n$ endomorphisme nilpotent, $d$ et $n$ commutant.}
+
+C'est parce que, dans $\mathbb C[X]$, tout polynôme est scindé. \bookend
+
+Le paragraphe suivant va nous permettre d'aller un peu plus loin en trouvant des bases « adaptées » pour les endomorphismes nilpotents.
+
+\BellaSection{4. Jordanisation des endomorphismes}
+
+Nous allons commencer par l'étude plus précise d'un endomorphisme nilpotent.
+
+\subsection*{10.56.}
+Soit donc $E$ vectoriel sur $K$, et $v$ un endomorphisme nilpotent d'ordre $k$ c'est-à-dire que $v^k=0$, avec $v^{k-1}\ne0$, $k\in\mathbb N^*$.
+
+Si on pose $N_j=\operatorname{Ker}v^j$ et, par convention, $v^0=\mathrm{id}_E$, l'étude des inclusions des noyaux des puissances d'un endomorphisme, (6.37) nous permet de savoir que
+\[
+\{0\}=N_0=\operatorname{Ker}v^0
+\subsetneq N_1\subsetneq N_2\subsetneq\cdots
+\subsetneq N_{k-1}\subsetneq N_k=E.
+\]
+
+\medskip\noindent\textsc{Lemme 10.57.} --- \emph{Il existe des sous-espaces $M_j$, $j=0,\ldots,k-1$, vérifiant
+\[
+M_j\oplus N_j=N_{j+1}
+\]
+et $v(M_j)\subset M_{j-1}$, ceci pour $j\ge1$.}
+
+L'existence va être justifiée par récurrence descendante sur $j$. La seule condition que doit vérifier $M_{k-1}$ c'est d'être un supplémentaire de $N_{k-1}$ dans $N_k=E$ : on choisit donc pour $M_{k-1}$ un supplémentaire de $N_{k-1}$ dans $N_k$.
+
+Existence de $M_{k-2}$ : ce doit être un supplémentaire de $N_{k-2}$ dans $N_{k-1}$ et il doit contenir $v(M_{k-1})$.
+Les 2 conditions ne sont compatibles que si
+\[
+v(M_{k-1})\subset N_{k-1}
+\quad\text{et}\quad
+v(M_{k-1})\cap N_{k-2}=\{0\}.
+\]
+Or si $y=v(x)\in v(M_{k-1})$, avec $x\in M_{k-1}$, on a bien $y$ dans $N_{k-1}$ noyau de $v^{k-1}$ car
+\[
+v^{k-1}(y)=v^{k-1}(v(x))=v^k(x)
+\]
+et $v^k$ est nul.
+
+Puis, avec les mêmes notations, si
+\[
+y=v(x)\in v(M_{k-1})\cap N_{k-2},
+\]
+on aura $v^{k-2}(y)=v^{k-1}(x)=0$ donc $x\in N_{k-1}$. Comme on a supposé $x$ dans $M_{k-1}$ c'est que $x\in N_{k-1}\cap M_{k-1}=\{0\}$, les 2 sous-espaces sont en somme directe, d'où $x=0$, a fortiori $y=0$.
+
+Mais alors $v(M_{k-1})$ et $N_{k-2}$ sont deux sous-espaces de $N_{k-1}$ en somme directe, puisque d'intersection réduite à $\{0\}$, donc
+\[
+v(M_{k-1})\oplus N_{k-2}
+\]
+est un sous-espace de $N_{k-1}$. Si $H_{k-2}$ en est un supplémentaire dans $N_{k-1}$ on aura
+\[
+H_{k-2}\oplus v(M_{k-1})\oplus N_{k-2}=N_{k-1}
+\]
+et en posant
+\[
+M_{k-2}=H_{k-2}\oplus v(M_{k-1})
+\]
+on aura trouvé l'espace cherché.
+
+Supposons trouvés $M_{k-1},M_{k-2},\ldots,M_{j+1}$ répondant aux conditions du lemme. On cherche alors $M_j$ qui doit être un supplémentaire de $N_j$ dans $N_{j+1}$ et qui doit contenir $v(M_{j+1})$.
+Là encore, ces conditions ne sont compatibles que si $N_j$ et $v(M_{j+1})$ sont deux sous-espaces de $N_{j+1}$ en somme directe.
+
+On a $N_j=\operatorname{Ker}v^j\subset N_{j+1}=\operatorname{Ker}v^{j+1}$.
+Soit $y=v(x)\in v(M_{j+1})$, avec $x$ dans $M_{j+1}$, on a $y\in N_{j+1}$ car
+\[
+v^{j+1}(y)=v^{j+2}(x),
+\]
+or $x\in M_{j+1}\subset N_{j+2}$ puisque $M_{j+1}\oplus N_{j+1}=N_{j+2}$. Donc $v^{j+2}(x)=0$, d'où $v(M_{j+1})\subset N_{j+1}$.
+
+Puis $v(M_{j+1})\cap N_j=\{0\}$ car si $y=v(x)\in N_j$, on a $v^j(y)=0=v^{j+1}(x)$ donc en fait $x\in M_{j+1}\cap N_{j+1}=\{0\}$, (sous-espaces en somme directe), d'où $y$ nul : $v(M_{j+1})$ et $N_j$ sont 2 sous-espaces de $N_{j+1}$ en somme directe. Avec $H_j$ supplémentaire de $v(M_{j+1})\oplus N_j$ dans $N_{j+1}$, on aura
+\[
+H_j\oplus v(M_{j+1})\oplus N_j=N_{j+1},
+\]
+et en posant
+\[
+M_j=H_j\oplus v(M_{j+1})
+\]
+on aura bien trouvé un sous-espace $M_j$ du type voulu. \bookend
+
+Le procédé est récurrent. Comment s'achève-t-il?
+
+Si on a trouvé $M_1$ avec $M_1\oplus N_1=N_2$, et $v(M_2)\subset M_1$, on vérifie encore que $v(M_1)$ est sous-espace de $N_1$ et comme $N_0=\{0\}$, il suffit de prendre pour $H_0$ un supplémentaire de $v(M_1)$ dans $N_1$ on aura
+\[
+M_0=H_0\oplus v(M_1)=N_1
+\]
+en fait, car $M_0\oplus N_0=M_0\oplus\{0\}=M_0$.
+
+Mais alors
+\[
+E=N_k=M_{k-1}\oplus N_{k-1}
+=M_{k-1}\oplus(M_{k-2}\oplus N_{k-2})=\cdots,
+\]
+on itère et finalement on obtient :
+\[
+E=M_{k-1}\oplus M_{k-2}\oplus\cdots\oplus M_1\oplus M_0,
+\]
+avec $M_0=N_1=\operatorname{Ker}v$.
+
+\medskip\noindent\textsc{Lemme 10.58.} --- \emph{Soit un endomorphisme $v$ nilpotent d'ordre $k$ sur $E$ espace vectoriel de dimension finie $p$. Il existe une base de $E$ dans laquelle la matrice $V$ de $v$, de terme général $v_{ij}$ soit telle que, $\forall j\ne i+1$, $v_{ij}=0$; les $v_{i,i+1}$ valant 1 ou 0, le nombre maximum de $v_{i,i+1}$ égaux à 1, consécutifs, étant $k-1$.}
+
+En effet, on utilise la décomposition en somme directe précédemment trouvée, en remarquant que, pour chaque $j\ge1$, la restriction de $v$ à $M_j$ est injective car, si $x\in M_j$ est tel que $v(x)=0$, alors $x\in N_1\subset N_2\subset\cdots\subset N_j$. Donc $x\in M_j\cap N_j=\{0\}$ puisque $M_j$ et $N_j$ sont en somme directe.
+
+Soit alors une base $\{e_1,\ldots,e_{r_1}\}$ de $M_{k-1}$, la famille $v(e_1),\ldots,v(e_{r_1})$ est libre dans $v(M_{k-1})$. Avec les notations du lemme 10.57, comme
+\[
+M_{k-2}=H_{k-2}\oplus v(M_{k-1}),
+\]
+on complète cette famille libre en une base de $M_{k-2}$ du type
+\[
+\{v(e_1),\ldots,v(e_{r_1});e_{r_1+1},\ldots,e_{r_2}\},
+\]
+base de $M_{k-2}$.
+
+On en prend l'image par $v$, injective sur $M_{k-2}$, si $k\ge3$, et on complète en
+\[
+\{v^2(e_1),\ldots,v^2(e_{r_1});v(e_{r_1+1}),\ldots,v(e_{r_2});e_{r_2+1},\ldots,e_{r_3}\}
+\]
+base de $M_{k-3}$, et ainsi de suite jusqu'à l'obtention d'une base de $M_0$ qui sera du type
+\[
+\begin{gathered}
+\{v^{k-1}(e_1),\ldots,v^{k-1}(e_{r_1});
+ v^{k-2}(e_{r_1+1}),\ldots,v^{k-2}(e_{r_2});\ldots;\\
+ v(e_{r_{k-2}+1}),\ldots,v(e_{r_{k-1}});
+ e_{r_{k-1}+1},\ldots,e_{r_k}\}.
+\end{gathered}
+\]
+
+En réunissant tout cela on a une base de $E$. Cette base, on l'indexe de façon à prendre les vecteurs dans l'ordre suivant. On prend d'abord
+\[
+v^{k-1}(e_1);\ v^{k-2}(e_1);\ \ldots;\ v^2(e_1),v(e_1),e_1;
+\]
+puis on passe à
+\[
+v^{k-1}(e_2);\ v^{k-2}(e_2);\ \ldots;\ v^2(e_2),v(e_2),e_2;
+\]
+et ainsi de suite jusqu'à
+\[
+v^{k-1}(e_{r_1});\ v^{k-2}(e_{r_1});\ldots;v^2(e_{r_1}),v(e_{r_1}),e_{r_1}.
+\]
+On a ainsi épuisé la première tranche des $r_1$ vecteurs provenant de $M_{k-1}$; $r_1=\dim N_k-\dim N_{k-1}$ en fait.
+
+On passe alors aux $r_2-r_1$ vecteurs rajoutés dans $M_{k-2}$, pris dans l'ordre
+\[
+v^{k-2}(e_{r_1+1}),\ldots,e_{r_1+1};\qquad
+v^{k-2}(e_{r_1+2}),\ldots,e_{r_1+2};\qquad\ldots
+\]
+où il se peut que $r_2=r_1$, donc que cette tranche n'existe pas, et on continue ainsi jusqu'à l'introduction, pour finir, des vecteurs $e_{r_{k-1}+1},\ldots,e_{r_k}$ qui, étant dans $M_0=N_1$ seront d'image nulle par $v$, ainsi d'ailleurs que $v^{k-1}(e_1),\ldots,v^{k-1}(e_{r_1})$, mais aussi $v^{k-2}(e_{r_1+1}),\ldots,v^{k-2}(e_{r_2})$ ...
+
+Mais alors la matrice de $v$ dans cette base est une matrice bloc diagonale du type
+\[
+V=\operatorname{diag}(N_{s_1},N_{s_2},\ldots,N_{s_m}),
+\qquad
+N_s=\begin{pmatrix}
+0&1&0&\cdots&0\\
+0&0&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&0&1\\
+0&\cdots&\cdots&0&0
+\end{pmatrix},
+\]
+tous les blocs diagonaux sont des matrices carrées d'ordre $k$ au plus où tous les coefficients sont nuls, sauf ceux qui bordent la diagonale principale, immédiatement au dessus, et qui valent 1.
+
+Dans la matrice $V$ une séquence de 1 consécutifs est donc de longueur $k-1$, et deux telles séquences sont séparées par des 0.
+Si $v$ est nilpotent d'ordre $k$, il y a des séquences de longueurs $k-1$, en nombre $r_1=\dim E-\dim(\operatorname{Ker}v^{k-1})$, mais il peut ne pas y avoir de séquences de longueur $k-2$, $k-3$, ..., car dans le lemme 10.57, les sous-espaces introduits notés $H_j$ peuvent être réduits à $\{0\}$. \bookend
+
+Passons au cas d'un endomorphisme quelconque, et donnons quelques indications sur l'utilité de la jordanisation.
+
+Soit $u$ un endomorphisme de $E\simeq K^n$ ayant un polynôme caractéristique scindé, ce qui est vrai si $E\simeq\mathbb C^n$, quelque soit $u$.
+
+Alors $E$ est somme directe des
+\[
+C_i=\operatorname{Ker}(u-\lambda_i\mathrm{id})^{\alpha_i},
+\]
+si les $\lambda_i$ et les $\alpha_i$ sont tels que le polynôme caractéristique de $u$ est
+\[
+\chi_u(\lambda)=\prod_{i=1}^r(\lambda_i-\lambda)^{\alpha_i},
+\]
+les $C_i$ étant les sous-espaces caractéristiques, (Corollaire 10.53).
+
+Sur $C_i$ espaces de dimension $\alpha_i$, sous-espace stable par $u$, l'endomorphisme induit
+\[
+v_i=u_i-\lambda_i\mathrm{id}_{C_i}
+\]
+est nilpotent, ($v_i^{\alpha_i}=0$) d'ordre $\beta_i$ en fait avec $\beta_i$ plus petit entier tel que $v_i^{\beta_i}=0$ et, on l'a vu, $\beta_i$ exposant du facteur $\lambda-\lambda_i$ dans le polynôme minimal de $u$.
+
+En appliquant le lemme 10.58, il existe une base de $C_i$ dans laquelle la matrice $V_i$ de $v_i$ sera matrice bloc diagonale, les blocs diagonaux étant du type
+\[
+\begin{pmatrix}
+0&1&0&\cdots&0\\
+0&0&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&0&1\\
+0&\cdots&\cdots&0&0
+\end{pmatrix},
+\]
+carré d'ordre $\beta_i$ au maximum.
+
+La matrice $U_i$ de $u_i$ induit par $u$ sur $C_i$, sera, une matrice bloc diagonale, les blocs diagonaux étant du type
+\[
+\begin{pmatrix}
+\lambda_i&1&0&\cdots&0\\
+0&\lambda_i&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&\lambda_i&1\\
+0&\cdots&\cdots&0&\lambda_i
+\end{pmatrix},
+\]
+carrés d'ordre $\beta_i$ au maximum, puisque $u_i=v_i+\lambda_i\mathrm{id}_{C_i}$.
+
+\medskip\noindent\textsc{Définition 10.59.} --- \emph{On appelle réduite élémentaire de Jordan toute matrice du type
+\[
+J=\begin{pmatrix}
+\lambda&1&0&\cdots&0\\
+0&\lambda&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&\lambda&1\\
+0&\cdots&\cdots&0&\lambda
+\end{pmatrix}.
+\]}
+
+\medskip\noindent\textsc{Théorème 10.60.} --- \emph{Soit un endomorphisme $u$ de $E\simeq K^n$, de polynôme caractéristique scindé. Il existe des bases de $E$ dans lesquelles la matrice $J$ de $u$ est une matrice bloc diagonale, les blocs diagonaux étant des réduites élémentaires de Jordan.}
+
+C'est ce que nous venons de justifier. \bookend
+
+\subsection*{10.61.}
+Une telle matrice $J$ s'appelle une réduite de Jordan.
+
+\medskip\noindent\textsc{Corollaire 10.62.} --- \emph{Toute matrice carrée $A$ complexe est semblable à une réduite de Jordan.}
+
+Puisque son polynôme caractéristique est scindé. \bookend
+
+\medskip\noindent\textsc{Remarque 10.63.} --- Sur le fait que deux matrices de $M_n(\mathbb C)$ soient semblables ou non.
+
+Si 2 matrices $A$ et $B$ sont semblables, elles traduisent le même endomorphisme $u$ de $E\simeq\mathbb C^n$ dans des bases différentes, en particulier elles auront même polynôme caractéristique $\chi_u(\lambda)$.
+
+On est sur $\mathbb C$,
+\[
+\chi_u(\lambda)=\prod_{i=1}^r(\lambda_i-\lambda)^{\alpha_i}
+\]
+est scindé, et les sous-espaces caractéristiques $C_i$ sont connus. Sur $C_i$, $u$ induit un endomorphisme $u_i=\lambda_i\mathrm{id}_{C_i}+v_i$ avec $v_i$ nilpotent d'ordre $\beta_i\le\alpha_i$.
+
+Si partant de $A$ et $B$ ayant le même polynôme caractéristique, on obtient 2 polynômes minimaux distincts, les matrices ne seront pas semblables car, si pour la valeur propre $\lambda_i$ par exemple, la multiplicité du facteur $\lambda-\lambda_i$ dans le polynôme minimal de $A$ est $\beta_i$ et $\beta'_i$ dans le polynôme minimal de $B$, avec $\beta_i\ne\beta'_i$, les nombres maximaux de 1 consécutifs dans les réduites de Jordan ne seront pas les mêmes pour le sous-espace caractéristique $C_i$ : \BellaCorrectionNote{les matrices ne seront donc pas semblables.}{les matrices $A-\lambda_iI_n$ et $B-\lambda_iI_n$ ne seront pas de même rang, (car des blocs diagonaux ne le seront pas) donc ne seront pas semblables.}{Des exposants différents dans le polynôme minimal suffisent à exclure la similitude. En revanche, des tailles maximales de blocs de Jordan différentes n'impliquent pas, en général, des rangs différents pour $A-\lambda_iI_n$.}
+
+\subsection*{10.64.}
+Donc $A$ et $B$ ont même polynôme caractéristique $\not\Rightarrow A$ et $B$ semblables, d'ailleurs, il est ridicule d'avoir fait tout cela pour aboutir à cette constatation : c'est la montagne qui accouche d'une souris, car
+\[
+A=I_n
+\quad\text{et}\quad
+B=\begin{pmatrix}
+1&1&0&\cdots&0\\
+0&1&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&1&1\\
+0&\cdots&\cdots&0&1
+\end{pmatrix}
+\]
+ne sont pas semblables, puisque toute matrice semblable à $A$ est forcément du type $A'=P^{-1}I_nP=I_n$. Et pourtant $\chi_A(\lambda)=\chi_B(\lambda)=(1-\lambda)^n$. Mais pourquoi faire simple ce qu'on peut faire compliqué!
+
+\subsection*{10.65.}
+\BellaCorrectionNote{}{16.65.}{La numérotation imprimée « 16.65 » rompt la suite 10.64, 10.66 et constitue une coquille évidente.}
+Bien plus, des polynômes minimaux égaux \BellaCorrection{n'impliquent pas}{n'implique pas} $A$ et $B$ semblables car tout projecteur est caractérisé par $X^2-X$ polynôme minimal, si on excepte $\mathrm{id}_E$ et $p=0$, et 2 projecteurs quelconques ne sont pas semblables, n'ayant pas même rang par exemple.
+
+\subsection*{10.66.}
+Enfin, polynômes caractéristiques égaux et polynômes minimaux égaux non plus ne suffisent pas pour avoir $A$ et $B$ semblables.
+
+En effet, soit
+\[
+U=\begin{pmatrix}0&1&0\\0&0&1\\0&0&0\end{pmatrix},
+\qquad \chi_U(\lambda)=(-\lambda)^3.
+\]
+Il est facile de voir que
+\[
+U^2=\begin{pmatrix}0&0&1\\0&0&0\\0&0&0\end{pmatrix}
+\quad\text{et}\quad U^3=0
+\]
+donc le polynôme minimal est $X^3$, car c'est un diviseur de $\chi_U(X)$ et $X$, $X^2$ sont exclus.
+
+Soit $A$ et $B$ les matrices $(6,6)$, blocs diagonales définies par
+\[
+A=\begin{pmatrix}U&0\\0&U\end{pmatrix}
+\quad\text{et}\quad
+B=\begin{pmatrix}U&0\\0&0\end{pmatrix}.
+\]
+Elles sont pour polynôme caractéristique $X^6$ toutes les deux, et $A^2\ne0$, $B^2\ne0$, $A^3=B^3=0$, (calcul par blocs) donc elles sont même polynôme minimal. Et pourtant elles ne sont pas semblables puisque $A$ est de rang 4 et $B$ de rang 2.
+
+\subsection*{10.67.}
+Cependant, pour que $A$ et $B$ \BellaCorrection{soient}{soit} semblables, il est nécessaire qu'elles aient même polynôme caractéristique, et même polynôme minimal.
+
+\medskip\noindent\textit{Avons-nous fait tout cela pour pas grand chose ? Autrement dit, la jordanisation est-elle utile ?}
+
+En fait, elle sert entre autre, à calculer les puissances d'une matrice carrée $A$.
+
+En effet, soit
+\[
+J=\begin{pmatrix}
+\lambda&1&0&\cdots&0\\
+0&\lambda&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&\lambda&1\\
+0&\cdots&\cdots&0&\lambda
+\end{pmatrix}
+\]
+une réduite élémentaire de Jordan, carrée d'ordre $p$. On peut écrire $J=\lambda I_p+N$ avec
+\[
+N=\begin{pmatrix}
+0&1&0&\cdots&0\\
+0&0&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&0&1\\
+0&\cdots&\cdots&0&0
+\end{pmatrix}.
+\]
+On vérifie facilement que $N^2$ a des 1 sur la deuxième surdiagonale, et si $k<p$, $N^k$ a des 1 sur la $k$-ième surdiagonale, alors que $N^p=0$.
+
+Le plus simple est de noter $e_1,\ldots,e_p$ la base canonique de $K^p$ et de remarquer que $N$ est la \BellaCorrectionNote{matrice}{nature}{Le contexte décrit explicitement la matrice de l'endomorphisme $v$; « nature » est une coquille typographique.} de l'endomorphisme nilpotent $v$ défini par $e_1\mapsto0$ et $\forall k=2,\ldots,p$, $e_k\mapsto e_{k-1}$, pour calculer la matrice de $v^k$.
+
+Comme $\lambda I_p$ et $N$ commutent, par la formule du binôme on a, $\forall n\in\mathbb N$
+\[
+J^n=\sum_{k=0}^n\lambda^{n-k}C_n^kN^k,
+\]
+cette somme s'arrêtant à $k=p-1$ si $n\ge p$.
+
+Si donc une matrice $A$ est jordanisée, avec $P$ régulière telle que
+\[
+P^{-1}AP=J=\operatorname{diag}(J_1,J_2,\ldots,J_p),
+\]
+matrice bloc diagonale, les $J_r$ étant des réduites élémentaires de Jordan, on peut facilement calculer $J^n$ d'où $A^n=PJ^nP^{-1}$.
+
+Bien souvent, la connaissance de la forme de $A^n$ permet de justifier des résultats théoriques, sans qu'il soit nécessaire d'achever les calculs.
+
+\medskip\noindent\textsc{Exemple 10.68.} --- Soit $A\in M_p(\mathbb C)$, matrice carrée d'ordre $p$, complexe; la série des $A^n$ converge si et seulement si son rayon spectral $\rho(A)=\sup\{$ module des valeurs propres$\}$ est tel que $\rho(A)<1$.
+
+En effet $A$ est jordanisable, et le calcul précédent montre que le terme général de $J^n$, (c'est-à-dire à la $i$ème ligne, $j$ème colonne) sera nul ou du type
+\[
+u_n=\lambda^{n-k}C_n^k.
+\]
+Or pour $|\lambda|<1$, la série des nombres complexes $u_n=\lambda^{n-k}C_n^k$ est absolument convergente,
+\[
+\left|\frac{u_{n+1}}{u_n}\right|
+=|\lambda|\frac{(n+1)!k!(n-k)!}{k!(n+1-k)!n!}
+=|\lambda|\frac{n+1}{n+1-k}
+\]
+tend vers $|\lambda|$ si $n$ tend vers l'infini, ceci pour $\lambda\ne0$, la convergence étant évidente pour $\lambda=0$).
+
+Réciproquement si la série des $A^n$ converge, avec $\lambda$ valeur propre de $A$ et $J$ réduite de Jordan de $A$, $\lambda^n$ figure sur la diagonale de $J^n$ donc, la série des $J^n$ convergeant, $\lambda^n$ tend vers 0 d'où $|\lambda|<1$.
+
+Enfin, l'étude des espaces vectoriels normés, justifie que, en cas de convergence
+\[
+S=\sum_{n=0}^{\infty}A^n=(I-A)^{-1}
+\]
+car, $\forall q\in\mathbb N$ on a
+\[
+(I-A)\circ\left(\sum_{n=0}^{q}A^n\right)=I-A^{q+1},
+\]
+et si la série des $A^n$ converge, $\lim_{q\to+\infty}A^{q+1}=0$. Or le produit de composition est continu car (on a $\lVert u\circ v\rVert\le\lVert u\rVert\lVert v\rVert$ pour les normes d'applications linéaires continues donc $\circ$ est bilinéaire 1 lipschitzienne pour la norme d'application linéaire continue, or on est en dimension finie donc toutes les normes sont équivalentes). A la limite on a $(I-A)\circ S=I$ et on justifierait de même $S\circ(I-A)=I$.
+
+On retrouvera ce type de calcul de l'inverse d'un opérateur linéaire continu dans le cadre de l'étude du difféomorphisme local.
+
+\begingroup
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
+Quelques remarques sur le calcul de $A^n$, avec $A\in M_q(\mathbb C)$.
+
+\noindent\textbf{10.69.}\quad Si $A$ est diagonalisable, avec $P$ régulière telle que
+\[
+P^{-1}AP=\operatorname{diag}(\lambda_1,\ldots,\lambda_q),
+\]
+il est clair que
+\[
+A^n=P\operatorname{diag}(\lambda_1^n,\lambda_2^n,\ldots,\lambda_q^n)P^{-1}
+\]
+: on diagonalise puis on calcule.
+
+Si $A$ est non diagonalisable, on peut jordaniser... bon courage!
+
+\noindent\textbf{10.70.}\quad On peut aussi se rappeler qu'un polynôme $P$ annulant $A$ peut servir.
+Soit $P$ un polynôme annulant $A$, de racines $\mu_1,\ldots,\mu_k$ de multiplicité respectives $\alpha_1,\ldots,\alpha_k$. On peut par exemple prendre pour $P$ le polynôme caractéristique, mais ce n'est pas obligatoire. Soit $p$ le degré de $P$.
+
+On divise $X^n$ par $P$ : $\exists Q_n,R_n$ dans $\mathbb C[X]$ tel que
+
+\noindent\textbf{10.71.}\quad \[
+X^n=Q_nP+R_n
+\quad\text{avec}\quad \deg R_n\le p-1.
+\]
+On a donc $R_n$ du type
+\[
+R_n=a_0+a_1X+\cdots+a_{p-1}X^{p-1},
+\]
+d'où, comme $P(A)=0$;
+\[
+A^n=a_0I+a_1A+\cdots+a_{p-1}A^{p-1}.
+\]
+On est donc ramené au calcul des $a_j$ et à celui des $A^i$. (Bien sûr les $a_j$ dépendent de $n$).
+
+Pour cela, dans 10.71 on injecte la valeur $X=\mu_r$, ($1\le r\le k$). On a $P(\mu_r)=0$, d'où
+\[
+\mu_r^n=R_n(\mu_r)=a_0+a_1\mu_r+\cdots+a_{p-1}\mu_r^{p-1}.
+\]
+Si $\mu_r$ est racine double, $P(\mu_r)=P'(\mu_r)=0$, en dérivant 10.71 et en calculant en $\mu_r$, il vient
+\[
+n\mu_r^{n-1}=a_1+2a_2\mu_r+\cdots+(p-1)a_{p-1}\mu_r^{p-2}.
+\]
+(Si $\mu_r$ est racine multiple, on dérive encore et encore... ).
+
+Finalement on obtient un système de
+\[
+\sum_{r=1}^k\alpha_r=p
+\]
+équations linéaires à $p$ inconnues qui permet le calcul des $a_j$.
+\enlargethispage{4\baselineskip}
+
+Le fait que ce système linéaire ait une solution unique n'est pas facile à justifier, vu la forme de la matrice des coefficients. Mais l'étude des équations différentielles linéaires à coefficients constants conduit à la même matrice de coefficients, mais en plus on sait dans ce cas là qu'il y a une solution unique grâce au théorème de Cauchy-Lipschitz. On peut ainsi sans calcul, savoir que la matrice est inversible.
+\endgroup

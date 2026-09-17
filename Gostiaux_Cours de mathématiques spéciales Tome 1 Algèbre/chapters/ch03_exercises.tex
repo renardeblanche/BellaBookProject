@@ -1,0 +1,395 @@
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Exercices et solutions}
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} EXERCICES}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.0em]
+\item Soit $n\in\mathbb N^*$, $N$ le nombre de diviseurs de $n$, $P$ le produit de ces diviseurs, donner une relation entre $n$, $N$ et $P$.
+
+\item Soit $p_1,\ldots,p_k,\ldots$ la suite des nombres premiers consécutifs. Montrer que la suite $(p_k)_{k\in\mathbb N}$ est infinie. La suite $u_k=p_k-p_{k-1}$ est-elle bornée ?
+
+\item Si $n$ est entier impair, prouver que $24$ divise $n(n^2-1)$.
+
+\item Trouver, en base 10, le nombre de zéros terminant l'écriture décimale de $1992!$
+
+\item Soit $n$ un entier naturel impair non multiple de 5. Montrer qu'il existe un multiple de $n$, qui s'écrit uniquement avec des 1 en base 10.
+
+\item Soit $p$ premier, $p\ge3$, et $\alpha\in\mathbb N$. Montrer que
+\[
+(1+p)^{p^\alpha}\equiv1+p^{\alpha+1}\pmod{p^{\alpha+2}}.
+\]
+
+\item Soit $A$ un ensemble fini de cardinal $m\ge2$. Soit $U_1,\ldots,U_n$, $n$ parties non vides de $A$, deux à deux distinctes et telles qu'il existe $a\ge0$ vérifiant :
+\[
+\forall(i,j)\in[1,n]^2,\quad i\ne j\Rightarrow\operatorname{card}(U_i\cap U_j)=a.
+\]
+Montrer que $n\le m$.
+
+\item Soit $f$ une application de $\mathbb N^*$ dans $\mathbb R$, strictement croissante et telle que, pour tout couple $(m,n)$ d'entiers non nuls, premiers entre eux,
+\[
+f(mn)=f(m)+f(n).
+\]
+Montrer qu'il existe un réel $c>0$ tel que, $\forall n\in\mathbb N^*$, $f(n)=c\ln n$.
+
+\item Montrer que
+\[
+1+\frac12+\cdots+\frac1n
+\]
+n'est jamais un entier, pour $n\in\mathbb N$, $n\ge2$.
+
+\item Un entier congru à $7$ modulo $8$ peut-il être somme de trois carrés ?
+\end{enumerate}
+
+\clearpage
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} SOLUTIONS}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.2em]
+\item Si $E$ est l'ensemble des diviseurs de $n$, $\forall p\in E$, il existe $q\in E$ tel que $pq=n$, ce $q$ unique, (régularité du produit par des entiers non nuls), donc
+\[
+p\longmapsto\sigma(p)=q=\frac np
+\]
+est une bijection de $E$ sur lui-même.
+
+On a donc
+\[
+\prod_{p\in E}p\,\sigma(p)=n^N=P^2
+\]
+d'où l'égalité $n^N=P^2$.
+
+\item Soit $\mathcal P$ l'ensemble des nombres premiers. S'il est fini, on les indexe en croissant :
+\[
+\mathcal P=\{p_1,p_2,\ldots,p_n\}.
+\]
+
+Soit $N=p_1p_2\cdots p_n+1$. On a $N>p_n$ donc $N$ n'est pas premier, mais alors c'est un produit de nombres premiers qui sont dans $\mathcal P$ donc il existe $p_i\in\mathcal P$ qui divise $N$ d'où $p_i$ divise $1$ : absurde.
+
+Soit ensuite $(n+1)!+2,(n+1)!+3,\ldots,(n+1)!+n+1$. On a $n$ entiers consécutifs non premiers, car pour $2\le i\le n+1$, $(n+1)!+i$ est divisible par $i$ et non égal à $i$.
+
+Si
+\[
+p_k=\sup\{\text{nombres premiers}< (n+1)!+2\}
+\]
+et
+\[
+p_{k+1}=\inf\{\text{nombres premiers}> (n+1)!+(n+1)\},
+\]
+on a $u_{k+1}=p_{k+1}-p_k>n$ : la suite $(u_k)_{k\in\mathbb N}$ est non bornée.
+
+\item On a
+\[
+n(n^2-1)=(n-1)n(n+1)
+\]
+avec $n=2p+1$. Parmi les 3 entiers consécutifs $n-1,n$ et $n+1$ l'un est divisible par 3, puis
+\[
+(n-1)n(n+1)=2p(2p+1)(2p+2)=4p(p+1)(2p+1)
+\]
+et $p(p+1)$ est divisible par 2, d'où $4p(p+1)(2p+1)$ divisible par 8 et finalement $n(n^2-1)$ divisible par $3\times8=24$.
+
+\item Il suffit de connaître l'exposant de 2 et de 5 dans la décomposition en facteurs premiers de $(1992)!$
+
+Soit $p_1$ le plus grand entier tel que $5p_1\le1992$ : on a $1992=398\times5+2$ : donc $p_1=398$. On note de même $p_2$ le plus grand entier tel que $25p_2\le1992$, ..., et $p_k$ le plus grand entier tel que $5^kp_k\le1992$.
+
+On a
+\[
+1992=398\times5+2=79\times25+17=15\times125+117=3\times625+117,
+\]
+donc $p_1=398$, $p_2=79$, $p_3=15$, $p_4=3$, et $p_k=0$ si $k\ge5$.
+
+Il y a donc $p_4$ multiples de 625 inférieurs à 1992, puis $p_3-p_4$ multiples de 125 qui ne sont pas en même temps multiples de 625 ; $p_2-p_3$ multiples de 25 sans être multiples de 125, et $p_1-p_2$ multiples de 5 \BellaCorrection{non multiples de 25}{non multiples de de 25}.
+
+L'exposant de 5 sera donc
+\[
+1(p_1-p_2)+2(p_2-p_3)+3(p_3-p_4)+4p_4=p_1+p_2+p_3+p_4=495.
+\]
+Comme 2 intervient « plus souvent » l'exposant de 10 dans l'écriture décimale de $1992!$ sera 495 : il y a 495 zéros.
+
+\item Si $a=1\ldots1$, (entier ne s'écrivant qu'avec le chiffre 1 en base 10) est multiple de $n$, alors $9a=99\ldots9$ est multiple de $9n$. Mais si $a$ s'écrit avec $q$ chiffres, $9a=10^q-1$. Par ailleurs, comme $9n$ est impair, (comme $n$) il n'est pas divisible par 2, ni par 5, ($n$ non multiple de 5) donc $9n$ et 10 sont premiers entre eux. Par Bézout, il existe $(u,v)\in\mathbb Z^2$ tel que
+\[
+9nu+10v=1,
+\]
+donc $10v\equiv1\pmod{9n}$. Donc $\overline{10}$ admet un inverse dans l'anneau $\mathbb Z/9n\mathbb Z$, et $\overline{10}$ engendre un sous-groupe multiplicatif fini du groupe des éléments inversibles de $\mathbb Z/9n\mathbb Z$ : il existe $q$ entier tel que $\overline{10}^{\,q}=1$ dans $\mathbb Z/9n\mathbb Z$, soit $\exists q\in\mathbb N$, $10^q\equiv1\pmod{9n}$, donc $\exists a\in\mathbb Z$ tel que $10^q=9na+1$, d'où $9na=10^q-1$, soit $9na=99\ldots9$, ($q$ chiffres) et $na=1\ldots1$ : on a \BellaCorrection{un multiple de $n$ ne s'écrivant qu'avec des 1}{un multiple de $na$ ne s'écrivant qu'avec des 1}.
+
+\item On procède par récurrence sur $\alpha$.
+
+Si $\alpha=1$,
+\[
+(1+p)^p=1+p\cdot p+\sum_{k=2}^{p}\binom pk p^k.
+\]
+Comme les
+\[
+\binom pk=\frac{p(p-1)\cdots(p-k+1)}{k!}
+\]
+sont divisibles par $p$ pour $k\ge2$, et $p^k$ par $p^2$, la somme des $\binom pkp^k$, pour $k\ge2$ est divisible par $p^3$ d'où
+\[
+(1+p)^p\equiv1+p^2\pmod{p^3}.
+\]
+
+On suppose le résultat vrai jusqu'à l'ordre $\alpha$ : on a donc
+\[
+(1+p)^{p^\alpha}=1+p^{\alpha+1}+kp^{\alpha+2}\qquad\text{avec }k\in\mathbb N.
+\]
+On en déduit
+\begin{align*}
+(1+p)^{p^{\alpha+1}}
+&=\bigl((1+p)^{p^\alpha}\bigr)^p\\
+&=(1+p^{\alpha+1}+kp^{\alpha+2})^p\\
+&=1+p(p^{\alpha+1}+kp^{\alpha+2})
++\sum_{r=2}^{p}\binom pr(p^{\alpha+1}+kp^{\alpha+2})^r.
+\end{align*}
+Pour $r\ge2$, $\binom pr$ est divisible par $p$, $(p^{\alpha+1}+kp^{\alpha+2})^r$ par $p^{2\alpha+2}$ donc chaque
+\[
+\binom pr(p^{\alpha+1}+kp^{\alpha+2})^r
+\]
+par $p^{2\alpha+3}$, et a fortiori par $p^{\alpha+3}$. On a donc
+\[
+(1+p)^{p^{\alpha+1}}=1+p^{\alpha+2}+kp^{\alpha+3}+\text{multiple de }p^{\alpha+3},
+\]
+d'où
+\[
+(1+p)^{p^{\alpha+1}}\equiv1+p^{\alpha+2}\pmod{p^{\alpha+3}},
+\]
+c'est le résultat à l'ordre $\alpha+1$.
+
+\item Soit $c_i=\operatorname{card}(U_i)$. On note $x_1,\ldots,x_m$ les éléments de $A$ et on introduit la matrice
+\[
+T=(t_{ij})_{\substack{1\le i\le n\\1\le j\le m}}
+\qquad\text{avec }t_{ij}=1\text{ si }x_j\in U_i,\ 0\text{ sinon.}
+\]
+La matrice ${}^tTT$ a pour terme général
+\[
+u_{ij}=\sum_{k=1}^{m}t_{ik}t_{jk}.
+\]
+Or $t_{ik}t_{jk}=1$ si et seulement si $t_{ik}=1$ et $t_{jk}=1$, soit si et seulement si $x_k\in U_i\cap U_j$ ce qui a lieu exactement pour $a$ indices, et ceci pour tout $(i,j)$ avec $i\ne j$. Donc $u_{ij}=a$ pour $i\ne j$.
+
+Par contre, si $i=j$, $(t_{ik})^2=1$ lorsque $x_k\in U_i$, donc pour $c_i$ valeurs de $k$.
+
+La matrice carrée d'ordre $n$, symétrique, $T{}^tT$ est donc
+\[
+T{}^tT=
+\begin{pmatrix}
+c_1 & a & \cdots & a \\
+a & c_2 & \ddots & \vdots \\
+\vdots & \ddots & \ddots & a \\
+a & \cdots & a & c_n
+\end{pmatrix},
+\]
+donc
+\[
+T{}^tT=\operatorname{diag}(c_1-a,c_2-a,\ldots,c_n-a)+a\mathbf 1\mathbf 1^t.
+\]
+Et avec le vecteur colonne $Y$ des $y_i$, $i=1,\ldots,n$, on a
+\[
+{}^tY(T{}^tT)Y=\sum_{i=1}^{n}(c_i-a)y_i^2+a(y_1+y_2+\cdots+y_n)^2.
+\]
+Comme les $c_i-a$ sont $\ge0$, on a ${}^tY(T{}^tT)Y\ge0$ pour tout $Y$.
+
+Si $a=0$, il reste
+\[
+{}^tY(T{}^tT)Y=\sum_{i=1}^{n}c_i y_i^2,
+\]
+si c'est nul c'est que chaque $y_i$ est nul, (on a les $c_i\ge1$). Si $a\ne0$, on ne peut pas avoir $c_i=a=c_j$ pour $i\ne j$ car alors $\operatorname{card}U_i=\operatorname{card}(U_i\cap U_j)=\operatorname{card}U_j$ d'où $U_i=U_j$, ce qui est exclu. Donc
+\[
+{}^tY(T{}^tT)Y=0\Leftrightarrow y_1+y_2+\cdots+y_n=0
+\]
+avec $n-1$ des $y_i$ nuls, ils sont tous nuls.
+
+Mais alors la forme quadratique de matrice symétrique $T{}^tT$ est définie positive, (voir Ch. XI) : la matrice est de rang $n$. Ce rang est aussi $\dim(T({}^tT(\mathbb R^n)))$, car ${}^tT$ est linéaire de $\mathbb R^n$ dans $\mathbb R^m$, donc ${}^tT(\mathbb R^n)$ est de dimension inférieure à $m$, son image par $T$ et a fortiori de dimension inférieure à $m$, donc $n\le m$.
+
+\item Avec $m=n=1$, le pgcd de $m$ et $n$ est 1, donc
+\[
+f(1\cdot1)=2f(1)\quad\text{d'où }f(1)=0.
+\]
+On va prouver que, pour tout couple d'entiers non nuls, on a $f(mn)=f(m)+f(n)$.
+
+Pour cela soit $p$ un nombre premier, $c$ une constante réelle $>0$, et
+\[
+L=\inf\{f(p+x)-f(x);\ x\in\mathbb N,\ x\ge c,\ x\text{ non multiple de }p\}.
+\]
+Comme $f$ est croissante, $L$ existe et on a $L\ge0$. Soit $x\ge c$, $x\in\mathbb N$. Si $p$ ne divise pas $x$, $p$ ne divise pas non plus $x+kp$, pour tout $k\in\mathbb N^*$. On a alors
+\[
+f(x+kp)\ge f(x)+kL,\qquad k\in\mathbb N^*
+\]
+car, si $k=1$, c'est $f(p+x)-f(x)\ge L$ ; et si on suppose la propriété vraie pour $k$, on aura $x+kp\in\mathbb N$, $x+kp\ge c$, d'où $f(x+kp+p)-f(x+kp)\ge L$ puisque $p$ ne divise pas $x+kp$, et comme $f(x+kp)-f(x)\ge kL$, en ajoutant on obtient bien
+\[
+f(x+(k+1)p)\ge f(x)+(k+1)L.
+\]
+
+Soit alors $k$ fixé dans $\mathbb N^*$, on choisit $x$ entier, $x\ge kp$, tel que $x$ et 2 soient premiers entre eux ainsi que $x$ et $p$ c'est possible avec $x=(2p)^n+1$, $n$ assez grand... On a alors $2x\ge x+kp$ d'où :
+\[
+f(2)+f(x)=f(2x)\ge f(x+kp)\ge f(x)+kL
+\]
+d'où $f(2)\ge kL$. Ceci étant possible pour tout $k$, c'est que $L=0$.
+
+Soit alors $p$ premier, $m\in\mathbb N$, on a $f(p^m)=mf(p)$. On justifie par récurrence sur $m$. C'est vrai si $m=0$ ou 1.
+
+Soit $x$ entier non divisible par $p$, comme $px-1<px<px+1$, on a
+\[
+p^{m-1}(px-1)<p^mx<p^{m-1}(px+1),
+\]
+et $px-1$ et $px+1$ étant premiers avec $p^m$, en prenant les images par $f$ croissante strictement, et en appliquant sa propriété on a
+\[
+f(p^{m-1})+f(px-1)<f(p^m)+f(x)<f(p^{m-1})+f(px+1).
+\]
+Donc
+\[
+f(p^m)-f(p^{m-1})<f(px+1)-f(x)<f(px+p^2)-f(x)
+\]
+($f$ croissante), or $px+p^2=p(x+p)$ avec $p$ et $x+p$ premiers entre eux donc
+\[
+f(p^m)-f(p^{m-1})<f(p)+f(p+x)-f(x).
+\]
+Ceci étant vrai pour tout $x$ entier non divisible par $p$, on passe à l'inf, d'où
+\[
+f(p^m)-f(p^{m-1})\le f(p).
+\]
+
+L'autre inégalité donne
+\[
+f(p^m)-f(p^{m-1})\ge f(px-1)-f(x).
+\]
+Si on impose $x\ge c=p+1$, on a $x>p$, donc $px>p^2$ et $px-p^2\in\mathbb N^*$, on peut considérer $f(px-p^2)<f(px-1)$ d'où l'inégalité
+\[
+f(p(x-p))-f(x)<f(p^m)-f(p^{m-1}).
+\]
+Soit, comme $x$ est supposé non divisible par $p$, et $x\ge c$,
+\[
+f(p)+f(x-p)-f(x)<f(p^m)-f(p^{m-1}),
+\]
+ou encore
+\[
+f(p)<f(p+(x-p))-f(x-p)+f(p^m)-f(p^{m-1}).
+\]
+Et ceci pour tout entier $y=x-p$, non divisible par $p$, et supérieur à $c-p=1$ : on passe à l'inf par rapport à ces $y$, d'où
+\[
+f(p)\le f(p^m)-f(p^{m-1}).
+\]
+On a donc
+\[
+f(p^m)=f(p^{m-1})+f(p),
+\]
+et si, par hypothèse de récurrence,
+\[
+f(p^{m-1})=(m-1)f(p),
+\]
+on obtient bien finalement l'égalité
+\[
+f(p^m)=mf(p).
+\]
+
+Si on décompose alors un entier $a$, non nul, en
+\[
+a=p_1^{\alpha_1}\cdots p_k^{\alpha_k},
+\]
+$p_1,\ldots,p_k$ étant premiers, on a facilement
+\[
+f(a)=\sum_{i=1}^{k}f(p_i^{\alpha_i})
+\]
+puisque les $p_i^{\alpha_i}$ sont premiers 2 à 2, puis
+\[
+f(a)=\sum_{i=1}^{k}\alpha_i f(p_i),
+\]
+formule à partir de laquelle il est facile de justifier que, pour $(a,b)\in\mathbb N^{*2}$,
+\[
+f(ab)=f(a)+f(b).
+\]
+
+Soit alors
+\[
+\alpha=\frac{f(2)}{\ln2},
+\]
+si $a\in\mathbb N^*$, et si $m\in\mathbb N^*$ il existe un seul $n$ dans $\mathbb N$ tel que $2^n\le a^m<2^{n+1}$, d'où
+\[
+nf(2)\le mf(a)<(n+1)f(2)
+\]
+soit encore
+\[
+n\alpha\ln2\le mf(a)<(n+1)\alpha\ln2,
+\]
+ou, comme $f(2)>f(1)=0$,
+\[
+\frac nm\le\frac{f(a)}{\alpha\ln2}<\frac{n+1}{m},
+\]
+ceci étant conséquence de l'inégalité
+\[
+n\ln2\le m\ln a<(n+1)\ln2
+\]
+ou encore de
+\[
+\frac nm\le\frac{\ln a}{\ln2}<\frac{n+1}{m}.
+\]
+Mais ces deux encadrements impliquent
+\[
+\left|\frac{f(a)}{\alpha\ln2}-\frac{\ln a}{\ln2}\right|<\frac1m
+\]
+et c'est valable pour tout $m$ de $\mathbb N^*$, d'où finalement, (si $m\to+\infty$)
+\[
+f(a)=\alpha\ln a.
+\]
+
+\item Il existe, pour $n\in\mathbb N^*$ donné, un seul $q$ dans $\mathbb N$ tel que $2^q\le n<2^{q+1}$. Puis, si un entier $j$ est $<2^q$, on peut l'écrire de manière unique $j=A_j2^{\alpha_j}$ avec $A_j$ impair et $\alpha_j\le q-1$ ; puis les $j$ vérifiant $2^q<j\le n$ s'écrivent aussi $j=A_j2^{\alpha_j}$ avec $A_j$ impair et $\alpha_j\le q-1$, car on ne peut pas avoir $\alpha_j\ge q+1$, (sinon $j\ge2^{q+1}>n$), ni $\alpha_j=q$ car alors, si $A_j=1$ on aurait $j=2^q$ : c'est exclu, et si $A_j\ge3$, $j\ge3\cdot2^q=2^{q+1}+2^q>n$ : c'est exclu.
+
+On considère
+\[
+u_n=1+\frac12+\frac13+\cdots+\frac1n
+=\frac1{n!}\sum_{j=1}^{n}\frac{n!}{j}.
+\]
+On écrit chaque $j\le n$ sous la forme $j=A_j2^{\alpha_j}$, $A_j$ impair, et on écrit aussi $n!$ en $n!=A2^p$ avec $A$ impair. On a
+\[
+u_n=\frac1{A2^p}\sum_{j=1}^{n}\frac A{A_j}2^{p-\alpha_j}.
+\]
+Puis, pour $j\le n$, comme $j$ divise $n!$, c'est que $A_j$, impair, divise $A2^p$, donc que $A_j$ divise $A$ ; et pour $j=2^q$, on a $A_{2^q}=1$, (et $\alpha_{2^q}=q$). On isole ce terme, d'où
+\[
+u_n=\frac1{A2^p}
+\left(
+\sum_{\substack{1\le j\le n\\j\ne2^q}}\frac A{A_j}2^{p-\alpha_j}+A2^{p-q}
+\right).
+\]
+On a justifié que, pour $j\le n$, avec $j\ne2^q$, $\alpha_j\le q-1$, donc $p-\alpha_j>p-q$ : on peut « simplifier » par $2^{p-q}$ l'expression de $u_n$ qui devient :
+\[
+u_n=\frac1{A2^q}
+\left(
+\sum_{\substack{1\le j\le n\\j\ne2^q}}\frac A{A_j}2^{q-\alpha_j}+A
+\right).
+\]
+Comme $A/A_j$ est entier, que $q-\alpha_j\ge1$ pour $j\ne2^q$ et que $A$ est impair, l'entier
+\[
+\sum_{\substack{1\le j\le n\\j\ne2^q}}\frac A{A_j}2^{q-\alpha_j}+A
+\]
+est impair, si on le note $2a+1$, on a
+\[
+u_n=\frac{2a+1}{A2^q}
+\]
+avec $q\ge1$ car $n\ge2$, (j'ai bien cru ne pas utiliser cette hypothèse), et $2^q\le n<2^{q+1}$ implique bien $q\ge1$, mais alors $u_n$ n'est pas entier.
+
+\item Soit $n=8p+7$. Si $n=x^2+y^2+z^2$, comme $n$ est impair on a 0 ou 2 nombres pairs parmi $x,y,z$.
+
+1\textsuperscript{er} cas : $x=2q$, $y=2r$, $z=2s+1$.
+
+On aurait
+\[
+8p+7=4q^2+4r^2+4s^2+4s+1,
+\]
+d'où
+\[
+4(2p+2)=4(q^2+r^2+s^2+s)+2
+\]
+d'où 2 divisible par 4 : c'est absurde.
+
+2\textsuperscript{e} cas : $x=2q+1$, $y=2r+1$, $z=2s+1$,
+
+on aurait
+\[
+8p+7=4(q^2+q+r^2+r+s^2+s)+3
+\]
+d'où
+\[
+8p+4=4[q(q+1)+r(r+1)+s(s+1)].
+\]
+Comme $q(q+1)$, $r(r+1)$ et $s(s+1)$ sont pairs, on aurait 4 divisibles par 8 : c'est absurde. Donc $n$ ne s'écrit pas sous la forme $x^2+y^2+z^2$.
+\end{enumerate}

@@ -1,0 +1,810 @@
+\section{复积分}
+
+\noindent\textbf{1. 复变量函数的积分}
+
+在讨论了实变量函数的微分学以后，我们很自然地进入了复域，这时就发现了：在我们面前展现了一片新天地，即解析函数类。现在我们也要把积分学推广到复域中，令我们吃惊的是：我们又一次遇到了\textbf{解析函数类}。这样我们终于认识到，复变量函数的微积分是一个新的领域，它有自己的问题和方法。因此，这一节里我们关心的不再是函数的可积性问题，从而可以限制于黎曼积分的讨论，而把注意力放在由于进入复域而产生的新问题。我们特别关心的将是如何对待、处理一些拓扑学的问题。拓扑学在现代数学的理论和应用中占据特别重要的位置。本书当然不可能介绍拓扑学，但是在讨论复域中的积分时不利用机会介绍一些拓扑学的思想，是令人遗憾的。
+
+正如在实的情况下我们习惯把一个一元函数写成 $y=f(x)$ 一样，在复情况下，自变量常以 $z=x+iy$ 表示，函数值以 $w=u+iv$ 表示，本书中凡见到 $w=f(z)$ 就一定是指复变量的函数。作为复函数，它是一元函数，作为实函数，它是很特殊的二元（实自变量）函数；因为 $z=x+iy$，故 $\bar z=x-iy$，而
+\[
+ x=\frac12(z+\bar z),\qquad y=\frac1{2i}(z-\bar z),
+\]
+所以一个一般的二元实自变量函数 $f(x,y)$ 将写为
+\[
+ f(x,y)=f\!\left[\frac12(z+\bar z),\frac1{2i}(z-\bar z)\right]=F(z,\bar z).
+\]
+这样 $w=f(z)$ 只能是一类特殊的二元实自变量（但可能是复值）函数（即相应的 $F(z,\bar z)$ 不依赖于 $\bar z$ 了）。本章将一直使用这样的记号。
+
+实域中通常的定积分 $\int_a^b f(x)\,dx$ 之积分区域是 $\mathbf R^1$ 的一个区间 $[a,b]$，但是 $\mathbf R^1$ 可以看成是复平面 $\mathbf C^1$ 中的一条曲线。因此，要把它推广到复域中就有两种考虑：一是考虑 $\mathbf C^1$ 中某一曲线 $L$ 上的积分，二是考虑 $\mathbf C^1$（作为 $\mathbf R^2$ 看待）的一个 2 维子区域 $\Omega$ 上的二重积分 $\iint_\Omega f(x,y)\,dx\,dy$。但在两种情况下，都需要对 $L$ 或 $\partial\Omega$ 之边界的光滑性加以限制。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.9]
+  \draw[thick] (-3,-.55) .. controls (-2.1,-.4) and (-1.05,.1) .. (0,.55)
+               .. controls (.9,.95) and (1.75,1.55) .. (2.55,2.3);
+  \fill (-3,-.55) circle (1.3pt) node[below left] {$A$};
+  \fill (-2.55,-.43) circle (1.2pt) node[below] {$z_0$};
+  \fill (-2.05,-.2) circle (1.2pt) node[below] {$z_1$};
+  \fill (.95,1.05) circle (1.2pt);
+  \fill (1.72,1.62) circle (1.2pt) node[right] {$z_N$};
+  \fill (2.05,1.88) circle (1.3pt) node[left] {$B$};
+  \node[right] at (2.55,2.3) {$L$};
+\end{tikzpicture}
+\caption*{图4-7-1}
+\end{figure}
+
+先看曲线 $L$，设其参数方程为
+\begin{equation}
+ x=x(t),\qquad y=y(t).
+ \tag{1}
+\end{equation}
+如果要在 $L$ 上的 $AB$ 弧段上积分，仿照黎曼积分的作法，先选一些分点
+\[
+ A=z_0,z_1,\ldots,z_N=B
+\]
+（图4-7-1），（$z_j$ 的相应参数值为 $t_j$），然后作积分和
+\begin{equation}
+ \sum_{j=0}^{N-1} f(\xi_j)(z_{j+1}-z_j),
+ \tag{2}
+\end{equation}
+再求极限。因为 $\xi_j=x_j+iy_j$，
+\[
+ \Delta z_j=z_{j+1}-z_j=(x_{j+1}-x_j)+i(y_{j+1}-y_j),
+\]
+所以
+\[
+ |x_{j+1}-x_j|,\ |y_{j+1}-y_j|\le |\Delta z_j|
+ =\sqrt{|x_{j+1}-x_j|^2+|y_{j+1}-y_j|^2}.
+\]
+一个便利的方法是设 $x=x(t),y=y(t)\in C^1$，于是
+\begin{equation}
+ |\Delta z_j|\le
+ \max_{t_j\le t\le t_{j+1}}
+ \sqrt{x'(t)^2+y'(t)^2}\,(t_{j+1}-t_j).
+ \tag{3}
+\end{equation}
+这样求积分和的极限就化为对实变量 $t$ 的分割 $t_0<t_1<\cdots<t_N$ 求积分和的极限，即需令
+\[
+ \max_j|t_{j+1}-t_j|\to0
+\]
+并求极限。
+
+当 $x(t),y(t)\in C^1$ 时，曲线弧 $AB$ 可求长：
+\begin{equation}
+ S_{AB}=\int_{t_0}^{t_N}\sqrt{x'(t)^2+y'(t)^2}\,dt.
+ \tag{4}
+\end{equation}
+但是这只是 $AB$ 可求长的一个充分条件。常用的比较更广泛的可求长条件是，相应于上述分割可以得到
+\begin{equation}
+\begin{aligned}
+ V_{Px}(t)&=\sum_{j=0}^{N-1}|x(t_{j+1})-x(t_j)|,\\
+ V_{Py}(t)&=\sum_{j=0}^{N-1}|y(t_{j+1})-y(t_j)|.
+\end{aligned}
+ \tag{5}
+\end{equation}
+如果这两个量对一切可能的分割 $P$ 有有限的上确界
+\begin{equation}
+ V_x(t)=\sup_P V_{Px}(t)<+\infty,\qquad
+ V_y(t)=\sup_P V_{Py}(t)<+\infty,
+ \tag{6}
+\end{equation}
+就可以定义 $AB$ 之长为
+\begin{equation}
+ S_{AB}=V|z(t)|=\sup_P V_P\sqrt{x(t)^2+y(t)^2}.
+ \tag{7}
+\end{equation}
+这时我们就简单地说 $L$ 是可求长曲线。
+
+如果一个函数 $\varphi(t),\ t_0\le t\le t_{N-1}$ 适合(6)那样类型的条件：
+\begin{equation}
+ \sup_P V_P\varphi(t)=
+ \sup_P\sum_{j=0}^{N-1}|\varphi(t_{j+1})-\varphi(t_j)|<+\infty,
+ \tag{8}
+\end{equation}
+就称之为有界变差函数，所以，可求长曲线就是具有某种参数表示(1)，其中 $x(t),y(t)$ 均为有界变差的函数的曲线。关于有界变差函数详见 §3。
+
+但是在以下凡讲到曲线 $L$ 以及 $\Omega$ 的边界为曲线时，总是设它们可分为有限段，而每一段均为 $C^1$ 曲线弧；有时我们会用到封闭曲线，而且假设它是若尔当曲线，或简单曲线，也就是不自交的封闭曲线；也就是其参数表示(1)中的 $x(t),y(t)$ 不会有
+\[
+ (x(t'),y(t'))=(x(t''),y(t''))
+\]
+——除非 $t'=t_0,t''=t_N$——的曲线，这时可以应用著名的若尔当定理：平面上的任一若尔当曲线必将该平面分为两部分（内部和外部），把某一部分的某点 $P$ 与到另一部分的某点 $Q$ 连结起来的连续曲线必定与该若尔当曲线相交。这里虽然是一个著名的应该证明的结果，但我们不再引述其冗长的证明了（图4-7-2）。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.9]
+  \draw[thick] plot[smooth cycle,tension=.75] coordinates{(-3,0)(-2.2,-.7)(-.6,-1.1)(1.2,-.85)(2.5,.2)(2.15,1.35)(.7,1.65)(-.8,1.5)(-2.4,.9)};
+  \fill (-.7,.35) circle (1.2pt) node[above] {$P$};
+  \fill (3,.05) circle (1.2pt) node[right] {$Q$};
+  \draw[thick] (-.7,.35) .. controls (.2,.5) and (1.25,-.7) .. (3,.05);
+  \node at (-.7,0) {内部};
+  \node at (3,-.35) {外部};
+  \node at (1.8,1.35) {$L$（若尔当曲线）};
+\end{tikzpicture}
+\caption*{图4-7-2}
+\end{figure}
+
+复积分的另一个情况是考虑 $f(x,y)$ 在复平面的某一个区域 $\Omega$ 上的二重积分 $\iint_\Omega f(x,y)\,dx\,dy$。由 §1 所述，讨论二重积分时需要假设 $\Omega$ 若尔当可测，为此应要求 $\Omega$ 之边界 $\partial\Omega$ 具有 0 勒贝格测度。若我们已假定了 $\partial\Omega$ 是一个分段（其实是分有限段）$C^1$ 曲线，这个条件是自然会满足的。这是我们约定恒假设 $\partial\Omega$ 为分段 $C^1$ 曲线的原因。我们既然要讨论复积分，最好是使用复记号，上面我们已经说了 $f(x,y)$ 可写为 $F(z,\bar z)$，为简单起见以下我们就直接讨论 $f(z,\bar z)$ 在 $\Omega$ 上的积分。
+
+$dx\,dy$ 也有复记号，我们把它写成 $\dfrac{i}{2}\,dz\wedge d\bar z$。“$\wedge$”称为外积，关于外积及其与 $dx\,dy$ 的关系，本书最后一章要详细讨论，我们目前只要记住：第一，两个向量 $A$ 和 $B$ 的外积，很像通常微积分教本中讲的向量积，其大小即以这两个向量为边的平行四边形面积，所以 $dz\wedge d\bar z$“是”一个面积。这自然十分适合二重积分的需要。第二，外积运算适合分配律和反交换律：
+\[
+ A\wedge(B+C)=A\wedge B+A\wedge C,
+\]
+\[
+ A\wedge B=-B\wedge A,
+\]
+所以 $A\wedge A=0$。我们目前只需把它们当作一种形式规律，而且能“承认”它“很自然”就行了。它很像通常微积分教本中讲的向量积，但是它又比向量积极大地深化了，这一切我们将在第七章中详细讨论。有了这两点“约定”，我们可知
+\begin{equation}
+ dz\wedge d\bar z=(dx+i\,dy)\wedge(dx-i\,dy)=-2i\,dx\wedge dy.
+ \tag{9}
+\end{equation}
+所以凡讲到复的二重积分时，我们总把 $dx\,dy$ 理解为 $dx\wedge dy$，并按上式将它写成 $\dfrac i2\,dz\wedge d\bar z$。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.85]
+  \draw[thick,->] (0:2) arc[start angle=0,end angle=360,radius=2];
+  \node at (0,0) {$|z|<1$};
+  \node at (1.45,1.15) {$|z|=1$};
+\end{tikzpicture}
+\caption*{图4-7-3}
+\end{figure}
+
+最后还有一点要提醒，在讨论某一简单封闭曲线 $L$ 上的积分时，时常要在 $L$ 上规定一个“定向”——通常讲的顺、逆时针方向与左、右手坐标系都是讲的“定向”问题——$L$ 上的定向是相对于 $L$ 所围的区域而言的，因为前面介绍的若尔当定理已指出，$L$ 把整个复平面分成（即“围成”）两个区域，现在指定其中一个，使当一点沿 $L$ 运动时此区域恒在左方，就说此方向对于所指定的区域是正向，例如单位圆周对于单位圆而言逆时针方向就是正向（图4-7-3）。$L$ 上规定了一个正向后就说 $L$ 是有定向的。但有时也要讨论 $L$ 不是简单曲线的情况，这时 $L$ 上的“正向”就纯属一种约定。
+
+现在我们可以讨论复积分了。我们现在讨论第一种情况，即一维的 $L$ 上的曲线积分，即要求一个连续函数 $f(z)=u+iv$ 沿一分段 $C^1$ 曲线 $L$ 由 $A$ 点到 $B$ 点的积分。这里 $L$ 是有定向的，而由 $A$ 到 $B$ 即为正向（将定向倒转为由 $B$ 到 $A$ 为正向的 $L$ 则记作 $-L$）。我们给出
+
+\noindent\textbf{定义1}
+$f(z)$ 沿有向路径 $L$ 由 $A$ 到 $B$ 的积分定义为
+\begin{equation}
+\begin{aligned}
+ \int_L f(z)\,dz
+ &=\int_A^B f(z)\,dz
+ =\int_A^B(u+iv)(dx+i\,dy)\\
+ &=\int_A^B u\,dx-v\,dy+i\int_A^B v\,dx+u\,dy.
+\end{aligned}
+\tag{10}
+\end{equation}
+式右的积分是通常的实曲线积分。
+
+当然我们也可以仿照实积分的方法定义此积分为积分和的极限
+\[
+ \int_A^B f(z)\,dz
+ =\lim\sum_{j=0}^{N-1}f(\xi_j)(\xi_{j+1}-\xi_j).
+\]
+这个定义与上面的定义1显然是一致的。
+
+在我们关于 $L$ 的光滑性和 $f(z)$ 的光滑性的假设下，(10)中的积分显然是存在的，而且就是通常的黎曼积分，所以下面不再讨论可积性问题。
+
+如果 $L$ 有参数式(1)，则图其中的 $x(t),y(t)$ 均为分段 $C^1$ 的，而 $A,B$ 两点分别相应于参数值 $t=a$ 和 $t=b$，若记 $z'(t)=x'(t)+iy'(t)$，由(10)式立即有
+\begin{equation}
+ \int_L f(z)\,dz=\int_a^b f[z(t)]z'(t)\,dt.
+ \tag{11}
+\end{equation}
+现在我们将参数变为 $t=t(\tau)$，而 $a=t(\alpha),b=t(\beta)$，并且也设 $t=t(\tau)$ 为分段 $C^1$ 函数，则由上式右方作变量变换又得
+\[
+\begin{aligned}
+ \int_Lf(z)\,dz
+ &=\int_\alpha^\beta f[z(t(\tau))]z'[t(\tau)]t'(\tau)\,d\tau\\
+ &=\int_\alpha^\beta f[z(t(\tau))]z_\tau'(\tau)\,d\tau.
+\end{aligned}
+\]
+其形式与(11)是一样的。可见积分 $\int_Lf(z)\,dz$ 之值与参数选取的方法无关。我们特别要作一个变换 $t=-\tau$，则参数 $\tau$ 之值在 $-b\le\tau\le-a$ 中，$\tau$ 由小到大变化就相当于 $z$ 沿反向变化，或者说 $z$ 在 $-L$ 上变化。由上所述有
+\[
+ \int_{-L}f(z)\,dz
+ =\int_{-b}^{-a}f[z(-\tau)](-z'(-\tau))\,d\tau.
+\]
+但上式右方是复值函数的实变量积分，所以可以应用实变量积分的变量变换公式，把 $-\tau$ 改写为 $t$ 而有
+\begin{equation}
+ \int_{-L}f(z)\,dz
+ =\int_b^a f[z(t)]z'(t)\,dt
+ =-\int_a^b f[z(t)]z'(t)\,dt
+ =-\int_Lf(z)\,dz.
+ \tag{12}
+\end{equation}
+这是一个很重要的性质，只在 $L$ 上有了定向以后才会有它成立。
+
+积分(10)的许多性质，例如对被积函数的线性性质以及对积分路径的可加性都和实黎曼积分一样。现在我们要讨论关于积分(10)的一个估计。$L$ 的参数式(11)中的参数 $t$ 自然是实的，如果 $L$ 的定向对应于 $t$ 由小变大，则由(11)有
+\[
+ \left|\int_Lf(z)\,dz\right|
+ \le\int_a^b|f(z)|\,|z'(t)|\,dt,\qquad a\le b,
+\]
+但 $|z'(t)|^2=x'(t)^2+y'(t)^2$，从而当 $dt>0$ 时，$|z'(t)|dt=ds=|dz|$。所以我们有
+\[
+ \left|\int_Lf(z)\,dz\right|
+ \le\int_L|f(z)|\,|dz|
+ =\int_a^b|f(z)|\,ds.
+\]
+这里出现了对弧长的积分，这是一种与(10)不同的曲线积分，其定义为
+\[
+ \int_Lf(z)\,ds=\int_Lf(z)|dz|=\int_a^b f[z(t)]|z'(t)|\,dt,
+\]
+而且规定参数 $t$ 由小变大。这种积分与(10)不同之处在于它不区别 $L$ 与 $-L$：
+\begin{equation}
+ \int_{-L}f(z)\,ds
+ =\int_{-L}f(z)|dz|
+ =\int_{a\le t\le b}f[z(t)]|z'(t)|\,dt
+ =\int_Lf(z)\,ds.
+ \tag{13}
+\end{equation}
+不论如何取参数，最后成为通常的定积分时总是由小的参数值积到大的参数值。我们称它是在“不定向”的 $L$ 上的曲线积分。许多常用的微积分教材中则把它称为“第一类曲线积分”而把前面讲的称为第二类曲线积分。其区别在于前者适合(13)式而后者适合(12)式。由于通常的一维定积分是在 $x$ 轴上积分的，$x$ 轴自然是已定向的，而且我们都“默认”其正向是 $x$ 由小变大——向右，所以它是“第二类积分”。但通常的二重积分 $\iint_\Omega f(x,y)\,dx\,dy$ 由于我们也“默认”了 $dx\,dy$ 作为面积单元总是非负的，因而无所谓定向，即无所谓 $-\Omega$ 上的积分。所以是在“不定向”区域上积分，是“第一类积分”。这个区别反映在它们的变量变换公式上，对前者我们有
+\[
+ \int_Lf(z)\,dz=\int_a^b f[z(t)]x'(t)\,dt,\qquad a=x(\alpha),\ b=x(\beta),
+\]
+$x'(t)$ 就相当于(12)式中的 $z'(t)$；对后者则有
+\[
+ \iint_\Omega f(x,y)\,dx\,dy
+ =\iint f[x(s,t),y(s,t)]
+ \left|\det\frac{\partial(x,y)}{\partial(s,t)}\right|\,ds\,dt.
+\]
+$\left|\det\dfrac{\partial(x,y)}{\partial(s,t)}\right|$ 刚相应于 $|z'(t)|$。第二类积分可以化为第一类积分如下
+\[
+ \int_Lf(z)\,dz=\int_a^b f[z(s)](\operatorname{sgn}L)|z'(s)|\,ds,\qquad a\le b,
+\]
+这里出现因子 $\operatorname{sgn}L$：当 $L$ 的正向与 $s$ 由小到大的方向一致时就取为 $+1$，否则就取为 $-1$。当然，这只是形式上的改变，把 $L$ 定向的改变转移到因子 $\operatorname{sgn}L$ 上去了。
+
+但是这究竟是一个很重要的区别，第七章中还要仔细讨论。本节中我们则只限于讨论第二类的积分(10)，由于它的实部和虚部都是形为
+\begin{equation}
+ \int_LP(x,y)\,dx+Q(x,y)\,dy
+ \tag{14}
+\end{equation}
+的积分，我们就从讨论它开始。
+
+\medskip
+\noindent\textbf{2. 柯西定理}
+
+如果 $L=\widehat{AB}$ 的两端一端 $A$ 固定，另一端 $B$ 为 $z$ 可以变动，则积分路径 $L$ 的选择将影响积分(14)之值。宁可说积分(14)是 $L$ 的泛函，而不能说(14)定义了一个 $z$ 的函数。为了使此积分定义 $z$ 的函数就需要它与积分的路径无关。在通常的微积分教材中都介绍了格林公式
+\[
+ \int_{\partial\Omega}P\,dx+Q\,dy
+ =\iint_\Omega\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dx\,dy.
+\]
+这里 $\partial\Omega$ 对于 $\Omega$ 取正向。如果(14)与 $L$ 无关，作两条 $L_1,L_2$ 连接 $A,B$，如果由 $A$ 出发沿 $L_1$ 到 $B$ 再由 $B$ 沿 $-L_2$ 返回到 $A$ 形成一个闭路包围了一个区域 $\Omega$，即 $L_1-L_2=\partial\Omega$（图4-7-4），而若 $P,Q$ 在 $\Omega\cup\partial\Omega=\bar\Omega$ 上相当正规，则积分(14)与 $L$ 无关的充分必要条件是
+\begin{equation}
+ \frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}=0.
+ \tag{15}
+\end{equation}
+上面我们说的“相当正规”是指 $P$ 和 $Q$ 在 $\Omega\cup\partial\Omega=\bar\Omega$ 上属于 $C^1$，其目的是为了使格林公式适用，但这显然是过强的条件。实际上，只要 $P$ 和 $Q$ 在 $\bar\Omega$ 上连续而在 $\Omega$ 上具有一阶连续导数，$\partial\Omega$ 是简单可求长曲线即可，但是证明却十分困难，而对理解事物本质助益不大，所以我们宁取“相当正规”的模糊说法以绕过困难。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.9]
+ \coordinate (A) at (-2.5,-1); \coordinate (B) at (2.3,1.5);
+ \draw[thick,->] (A) .. controls (-1.3,-1.6) and (1.1,-.6) .. (B) node[midway,right] {$L_1$};
+ \draw[thick,<-] (A) .. controls (-1.9,.5) and (.7,2.0) .. (B) node[midway,left] {$L_2$};
+ \node[below left] at (A) {$A$}; \node[above right] at (B) {$B$};
+ \node at (0,.4) {$\Omega$};
+\end{tikzpicture}
+\caption*{图4-7-4}
+\end{figure}
+
+在条件(15)之下积分(14)确实成为 $z=(x,y)$（即 $B$ 点）的函数 $\Phi(x,y)$ 了，当 $\Omega$ 为单连通区域（什么是单连通我们下面再解释）时，$\Phi(x,y)$ 是单值函数。第二章中我们明确指出，凡函数均应为单值的，而对常见的多值函数应如何理解也作了仔细的讨论。下面我们也将对 $\Omega$ 不是单连通，从而 $\Phi(x,y)$ 具有多值性问题作出解释。总之，$P\,dx+Q\,dy$ 将成为 $\Phi(x,y)$ 的全微分，于是
+\[
+ P=\frac{\partial\Phi}{\partial x},\qquad Q=\frac{\partial\Phi}{\partial y}.
+\]
+这样一来就发现条件(15)即
+\[
+ \frac{\partial^2\Phi}{\partial x\partial y}
+ =\frac{\partial^2\Phi}{\partial y\partial x}.
+\]
+这个似乎不引人注目的事在物理上却有很重要的含意。如果设有静电场 $\mathbf E=(E_x,E_y)$，而 $P,Q$ 是 $\mathbf E$ 的两个分量，则积分(14)表示将单位电荷由 $A$ 移到 $B$ 点电场所作的功。这个功的大小（如果固定 $A$ 点）只决定于 $B$ 之位置而与由 $A$ 到 $B$ 的路径选取方法无关。物理学中有许多场都具有这个性质，例如静电场与引力场，这种场称为有势场，函数 $\Phi(x,y)$ 称为势函数（不过在物理学中我们却称 $U(x,y)=-\Phi(x,y)$ 为电位，它与电场强度的关系是 $\mathbf E=-\operatorname{grad}U$。对于引力场，$U$ 称为势能。势能也叫位能，即由位置引起的“蓄势待发”的能）。势函数的存在是一个在数学上和物理上都十分重要的事，本书中将多次在第七章中遇到这个问题。
+
+现在我们就回到复积分的情况。首先我们引入格林公式的复表述方法。现在我们引入两个形式符号，
+\[
+ \frac{\partial}{\partial\bar z}
+ =\frac12\left(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\right),\qquad
+ \frac{\partial}{\partial z}
+ =\frac12\left(\frac{\partial}{\partial x}-i\frac{\partial}{\partial y}\right),
+\]
+称为庞贝（Pompeiu）记号（Pompeiu 是罗马尼亚数学家）而 $f(z)=u+iv$ 为解析的 C-R 条件即
+\[
+ \frac{\partial f}{\partial\bar z}=0.
+\]
+现在我们有
+
+\noindent\textbf{定理1}
+若 $f(z)\in C^1(\Omega)$ 而 $\partial\Omega$ 是分段 $C^1$ 曲线，则
+\begin{equation}
+ \int_{\partial\Omega}f(z)\,dz
+ =-\iint_\Omega df\wedge dz.
+ \tag{16}
+\end{equation}
+这个定理我们不加证明了，因为它就是对(10)中的两个实曲线积分 $\int_{\partial\Omega}u\,dx-v\,dy$ 与 $\int_{\partial\Omega}v\,dx+u\,dy$ 应用实的格林定理的结果。
+
+但若注意到
+\[
+\begin{aligned}
+ df&=\frac{\partial f}{\partial x}dx+\frac{\partial f}{\partial y}dy\\
+ &=\frac12\frac{\partial f}{\partial x}(dz+d\bar z)
+   +\frac1{2i}\frac{\partial f}{\partial y}(dz-d\bar z)\\
+ &=\frac{\partial f}{\partial z}\,dz+
+   \frac{\partial f}{\partial\bar z}\,d\bar z,
+\end{aligned}
+\]
+再利用“外积”的反对称性：$dz\wedge dz=0$，就可以把(16)化为
+\begin{equation}
+ \int_{\partial\Omega}f(z)\,dz
+ =\iint_\Omega\frac{\partial f}{\partial\bar z}\,d\bar z\wedge dz.
+ \tag{17}
+\end{equation}
+请读者决不要对此等闲视之，表面上看这里只是一些简单的形式计算，而实际上却揭示了积分深刻地体现了一种对偶性。上一节我们说积分可以看作作用在被积函数上的泛函，从而得出了广义导数乃至广义函数，这是在被积函数空间的对偶空间（即连续线性泛函之空间）上做文章。现在更进一步看到被积函数与积分区域之间也有一种对偶关系；对 $f$ 的求导运算 $\dfrac{\partial}{\partial\bar z}$（虽然现在只是一个形式记号）与对 $\Omega$ 的一个拓扑操作——取边缘——$\partial$ 相对偶。(17)式只是深刻的斯托克斯定理最简单的情况。斯托克斯定理是第七章的重要内容。
+
+现在回到 $f(z)$ 是 $z$ 在 $\Omega\subset\mathbf C$ 中的解析函数的情况。先设 $\Omega$ 有一个子域 $\Omega_1$，其边缘 $\partial\Omega_1$ 是一个若尔当曲线，其内域即 $\Omega_1$，通常我们设 $\Omega_1$ 为单连通的，单连通的定义下面再给。这时利用格林公式(17)立即可得：
+
+\noindent\textbf{定理2（柯西定理，1875）}
+若 $f(z)$ 在 $\Omega$ 中解析，$\bar\Omega_1\subset\Omega$，$\partial\Omega_1$ 是分段 $C^1$ 的若尔当曲线，而以 $\Omega_1$ 为其内域，则
+\[
+ \int_{\partial\Omega_1}f(z)\,dz=0.
+\]
+
+\noindent\textbf{证明非常简单：}
+直接利用(17)式即可。问题在于定理的陈述，我们没有说 $f(z)$ 在 $\partial\Omega$ 上是否有定义尚且不知，更说不上是否可积了。如果我们将条件改成“$f(z)$ 在 $\bar\Omega$ 上解析”，则由函数解析性的定义可知，它必在 $\bar\Omega$ 的某一个邻域中解析。把这个邻域记为 $\Omega$ 而把原来的 $\bar\Omega$ 改写成 $\Omega_1$ 即得，我们对此定理的陈述还大有改进的余地。例如设 $\partial\Omega$ 是分段 $C^1$ 曲线，$f(z)$ 在 $\Omega$ 中解析，而在 $\bar\Omega$ 上连续又如何？结果是：定理2此时仍是对的。实际上，现在通用的许多关于复分析的书籍中，这个定理的条件都放宽了，因为人们后来把 $f(z)$ 在 $z_0$ 点解析的定义放宽了：$f(z)$ 在 $z_0$ 的某一邻域中可求导，而不要求 $f'(z)$ 的连续性。这样一来就不能再用格林公式了。古尔萨（E. Goursat）在解析性的这个定义下不用格林公式证明了如我们所陈述的定理，所以还有的书上称定理2为柯西—古尔萨定理。最后又经许多人努力才把条件放松到“$\Omega$ 中解析，$\bar\Omega$ 上连续，且 $\partial\Omega$ 是可求长曲线”。证明复杂多了，但对问题的理解好处有限，所以我们采用现在的讲法。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.9]
+ \draw[thick,->] (-3,-1) .. controls (-1.2,-1.3) and (1.4,.1) .. (2.5,1.7);
+ \fill (-3,-1) circle (1pt) node[below] {$A=A_0$};
+ \fill (-1.8,-.8) circle (1pt) node[below] {$A_1$};
+ \fill (-.4,-.2) circle (1pt) node[below] {$A_2$};
+ \fill (1.55,.8) circle (1pt) node[left] {$A_{N-1}$};
+ \fill (2.5,1.7) circle (1pt) node[right] {$B=A_N$};
+ \node at (2.0,1.15) {$L$};
+\end{tikzpicture}
+\caption*{图4-7-5}
+\end{figure}
+
+真正的问题有二：一是积分路径不一定是若尔当曲线，而可以自交，也不一定是某区域的边缘。对这个问题的处理的方法如下：曲线由曲线段构成，而曲线段是闭间 $I=[0,1]\subset\mathbf R^1$ 在某映射 $\varphi:I\to\mathbf C$ 下的像（这里 $\mathbf C$ 指复数域，$I$ 中的变元就是曲线段的参数），$I$ 的两个端点（不妨设为 $t=0,t=1$）的像构成曲线段的边缘，记作 $\partial(AB)$，不过起点加上负号，终点带上正号，以示该曲线段的定向：$\partial(AB)=B-A$。每个曲线段称为一个 1 维单形（simplex），而一条曲线则由有限多个 1 维单形“首尾相连”而成，我们可以形式地写为
+\[
+ L=\widehat{AA_1}+\widehat{A_1A_2}+\cdots+\widehat{A_{N-1}B},\qquad A=A_0,\ B=A_N,
+\]
+\[
+\begin{aligned}
+ \partial L
+ &=\partial(AA_1)+\partial(A_1A_2)+\cdots+\partial(A_{N-1}B)\\
+ &=(B-A_{N-1})+(A_{N-1}-A_{N-2})+\cdots+(A_2-A_1)+(A_1-A)\\
+ &=B-A.
+\end{aligned}
+\]
+其中例如 $A_1$ 出现两次，一次取正号表示它是 $\widehat{AA_1}$ 之尾，另一次取负号表示它是 $\widehat{A_1A_2}$ 之首，这就是“首尾相连”的意思——因首尾相连，故正负相消。于是，一条曲线称为一个 1 维链（chain）；链是单形的代数和。如果一条曲线是封闭的，即上面的 $A$ 与 $B$ 相同而又首尾相连，从而 $\partial L=0$，就称它是一个闭链或循环（cycle）。所以积分区域 $L$ 就是一个闭链。现在我们把 $L$ 这个闭链分解如下：如果 $L$ 有自交点，我们可以把 $L$ 分成几段，使每一段都从一个自交点开始并再回到此点，但此段之中不再有其它自交点，于是每一段都是一个闭链：
+\[
+ L=L_1+L_2+\cdots+L_k,
+\]
+然后就有
+\[
+ \int_L f(z)\,dz=\sum_{j=1}^k\int_{L_j}f(z)\,dz,
+\]
+而每一个 $L_j$ 都是一条封闭的若尔当曲线。
+
+第二个问题是看 $L$ 是否包围一个区域 $\Omega$。为此我们又把 $\Omega$ 分成 $k$ 个小的曲边三角形 $\triangle A_jB_jC_j$（$j=1,2,\ldots,k$），所以我们形式地把它记作
+\[
+ \Omega=\sum_{j=1}^k\triangle A_jB_jC_j
+\]
+并称之为一个 2 维链（图4-7-6）。每个这样的三角形称为一个 2 维单形。对每个三角形 $\triangle A_jB_jC_j$，我们定义其边缘是
+\[
+ \partial(\triangle A_jB_jC_j)
+ =\widehat{B_jC_j}+\widehat{C_jA_j}+\widehat{A_jB_j}.
+\]
+边缘的定向的要求是：其定向必须与 $\partial\Omega$ 原有的定向相容。因为把 $\Omega$ 划分成三角形是利用 $\partial\Omega$ 再加上一些曲线段形成的。在最简单的情况下，后加上的曲线段一定位于两个三角形共同的边缘上，这两个三角形一在其左、一在其右，所以这个加上的曲线一定要走两次且方向相反；第一次保持某一个三角形在其左方从而定义了这一次走的是正向，第二次一定要走反向以保持另一个三角形在左方。这样一来，如果原来的 $\Omega$ 被划分成了 $\Omega_1+\Omega_2+\cdots+\Omega_k$，$\Omega_j=\triangle A_jB_jC_j$，则
+\[
+ \partial\Omega=\sum_{j=1}^k\partial(\triangle A_jB_jC_j).
+\]
+一个区域的边缘一定是一个闭链，因为边缘再没有边缘了！例如一个圆盘的边缘是圆周，但圆周再没有边缘了，或者说其边缘为 0。因此
+\[
+ \partial^2\Omega=\partial L=0.
+\]
+总之，我们有
+\[
+ \partial^2=0.
+\]
+这是一个很深刻的关系式，将来我们会看到，它与微分学的一个基本公式
+\[
+ \frac{\partial^2f}{\partial x\partial y}=\frac{\partial^2f}{\partial y\partial x}
+\]
+是互相对偶的。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.85]
+ \draw[thick] plot[smooth cycle,tension=.8] coordinates{(-2.8,-1.2)(-3,.8)(-1.9,2)(.2,2.25)(2.6,1.45)(3,-.5)(1.7,-1.8)(-.7,-2.1)};
+ \draw[thick] plot[smooth cycle,tension=.8] coordinates{(-1.7,-.2)(-1.45,.7)(-.6,1)(.15,.45)(-.2,-.35)(-1.1,-.7)};
+ \draw[thick] plot[smooth cycle,tension=.8] coordinates{(.7,.3)(1.3,1.05)(2.05,.85)(2.2,.05)(1.55,-.45)};
+ \node at (2.7,1.7) {$\partial\Omega$};
+ \node at (-1.1,.1) {$A_1$};
+ \node at (1.55,.35) {$C_1$};
+ \node at (-2.15,.6) {$B_1$};
+ \node at (-.1,-1.2) {$\partial\Omega$};
+\end{tikzpicture}
+\caption*{图4-7-6}
+\end{figure}
+
+至此为止，我们都是在作一些形式运算，读者会问：边缘为空何不直接说是边缘为一空集合？为什么要说“单形之和”，而不说是一些单形的并集？我们正是有意不用集合的语言，而把几何问题用组合的方法化为一些形式运算。这样就可以用代数学的方法去研究它。这个观点是 19 世纪末由法国大数学家庞加莱首创的，它是代数拓扑学或称组合拓扑学的开始，是现代数学一个重要的支柱，而在积分学中开始介绍它是最自然的办法。
+
+在这样处理了这两个问题之后，我们将得到
+
+\noindent\textbf{定理3（柯西定理的一般形式）}
+设 $f(z)$ 在 $\Omega\subset\mathbf C$ 中解析，$\bar\Omega_1\subset\Omega$ 有分段 $C^1$ 边缘，则
+\[
+ \int_{\partial\Omega_1}f(z)\,dz=0.
+\]
+
+\noindent\textbf{证}
+将 $\Omega_1$ 写成一个 2 维链如前所述。为此只需在 $\Omega_1$ 中另加进有限多条曲线段，于是 $\Omega_1=\sum_{j=1}^k\omega_j$，而每个 $\omega_j$ 都是一个 2 维单形，即一个曲边三角形。对于每一个 $\omega_j$ 都可以应用单连通情况下的柯西定理，即定理2，于是
+\[
+ \int_{\partial\omega_j}f(z)\,dz=0.
+\]
+我们来分析每一个 $\partial\omega_j$。$\omega_j$ 作为一个曲边三角形，其边缘是三个 1 维单形，而且各赋有定向——即使得 $\omega_j$ 在其左侧的定向——这些单形可以分成两类：一类是 $\partial\Omega_1$ 的一部分，另一类是外加的曲线段。关于第一类，容易看到整个 $\partial\Omega_1$ 都被分成若干段，而每一段都在某一个曲边三角形的边缘上，所以第一类 1 维单形加成一个 1 维链 $\partial\Omega_1$，它当然是一个闭链。再看第二类，它们来自外加的曲线，所以每一个都是两个相邻曲边三角形之公共边。这两个三角形分别位于其左右侧，所以任取一个 1 维单形 $\sigma$，它赋有正向后使某一曲边三角形 $\Omega_1$ 在其左侧，这样，与它相邻的曲边三角形 $\Omega_2$ 必使 $-\sigma$ 在其边缘之中。这里一定要写 $-\sigma$，因为这样才能使 $\Omega_2$ 在其左侧。所以第二类 1 维单形必成对出现，一为 $\sigma$，另一为 $-\sigma$，这样就有
+\[
+ \sum_j\partial\omega_j
+ =\sum_{\sigma\in\text{第一类}}\sigma
+ +\sum_{\sigma\in\text{第二类}}(\sigma-\sigma)
+ =\partial\Omega_1.
+\]
+因此我们有
+\[
+ \int_{\partial\Omega_1}f(z)\,dz
+ =\int_{\sum_j\partial\omega_j}f(z)\,dz
+ =\sum_j\int_{\partial\omega_j}f(z)\,dz=0.
+\]
+定理证毕。
+
+定理3包含了多连通区域的柯西定理。那么什么叫做单连通，什么叫多连通呢？如果我们不想多用拓扑学的语言而只来看 $\Omega$ 是有界连通区域的情况，所谓 $\Omega$ 为单连通区域就是说 $\partial\Omega$ 把复平面分成两块，一块包含无穷远点，不妨称为外域，一块则不包含无穷远点，称为内域。如果 $\partial\Omega$ 把平面分成 $n+1$ 块，则说 $\Omega$ 是 $n$ 连通的。这 $n+1$ 块中只有一块含无穷远点，称为外域，其它 $n$ 块就可能是 $n$ 个“洞”。所以，多连通区域就是有洞的区域，每一个“洞”都有自己的边缘 $\Gamma_1,\Gamma_2,\ldots,\Gamma_n$，外域也有边缘记为 $\Gamma_0$。它们都按以前的规定有各自的正向，例如 $\Gamma_0$ 的正向即是把无穷远点置于其右侧的方向，即逆时针方向；$\Gamma_1,\ldots,\Gamma_n$ 的正向则是顺时针方向（图4-7-7）。我们再一次指出，这种表达虽然直观却是不严格的，但是下面的概念却是严格的，而且具有基本的重要性。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.85]
+ \draw[thick] plot[smooth cycle,tension=.8] coordinates{(-3,-1.6)(-3.2,.7)(-1.8,2)(.5,2.2)(2.8,1)(3,-1.1)(1.1,-2.1)(-1.5,-2.2)};
+ \draw[thick] (-1.3,.0) circle (.65);
+ \draw[thick] (1.2,.45) circle (.75);
+ \node at (0,1.55) {$\Omega$};
+ \node at (1.2,.45) {$\Gamma_1$};
+ \node at (-1.3,0) {$\Gamma_2$};
+ \node at (0,2.35) {$\Gamma_0$};
+\end{tikzpicture}
+\caption*{图4-7-7}
+\end{figure}
+
+\noindent\textbf{定义2}
+若 1 维闭链 $\gamma$ 是一个 2 维链 $\Omega$ 之边缘，即 $\gamma=\partial\Omega$，就说 $\gamma$ 同调于 0，记作 $\gamma\sim0$。若两个 1 维闭链 $\gamma_1$ 与 $\gamma_2$ 之差是 $\Omega$ 的边缘：$\gamma_1-\gamma_2=\partial\Omega$，就说 $\gamma_1$ 与 $\gamma_2$ 同调，记作 $\gamma_1\sim\gamma_2$。
+
+“1 维闭链”一语中的“闭”字，似乎是多余的：既然 $\gamma$ 已是边缘，自然有 $\partial\gamma=0$（前面已经说了），再加闭字岂非多余？确实如此，但是在 $\gamma_1\sim\gamma_2$ 中，我们只知 $\gamma_1-\gamma_2$ 是闭链而对 $\gamma_1,\gamma_2$ 分别是否闭链并不清楚，但是同调关系是用来处理闭链的等价分类的，所以若 $\gamma_1\sim\gamma_2$ 本身并非闭链，说 $\gamma_1\sim\gamma_2$ 就只是一种方便说法，所以在定义中必须指出 $\gamma_1,\gamma_2$ 是闭链。
+
+现在回来看看柯西定理。利用上图，我们再引入一些闭链 $\gamma_0,\gamma_1,\ldots,\gamma_k$，这一次 $\gamma_0=\Gamma_0$，即定向也不变，但 $\gamma_j=-\Gamma_j$，$j=1,2,\ldots,k$，即内部的那些闭链也改成以逆时针方向为正向。令 $\gamma=\gamma_1+\cdots+\gamma_k$，则有
+\[
+ \partial\Omega=\gamma_0-\gamma_1-\cdots-\gamma_k=\gamma_0-\gamma.
+\]
+所以 $\gamma_0$ 同调于 $\gamma$，而定理3即成为
+\[
+ \int_{\partial\Omega}f(z)\,dz
+ =\int_{\gamma_0}f(z)\,dz-
+ \int_\gamma f(z)\,dz=0,
+\]
+亦即
+\[
+ \int_{\gamma_0}f(z)\,dz=\int_\gamma f(z)\,dz.
+\]
+一般而言，我们有
+
+\noindent\textbf{定理4（柯西定理的同调论表述）}
+设 $f(z)$ 在 $\Omega$ 中解析，$\gamma_1,\gamma_2$ 为 $\Omega$ 中的两个闭链，若 $\gamma_1\sim\gamma_2$，则
+\[
+ \int_{\gamma_1}f(z)\,dz=\int_{\gamma_2}f(z)\,dz.
+\]
+
+注意，同调关系是一个等价关系，互相等价的闭链形成一个同调类。所以定理4实际上是说，对于固定的 $f(z)\,dz$，积分值决定于积分路径的同调类。下面我们还要指出，被积表达式 $f(z)\,dz$（我们不说被函数 $f(z)$ 而说被积表达式，其中有深意焉，详见本书第七章）也有某种等价关系，称为上同调关系。积分值其实依赖于 $f(z)\,dz$ 的上同调类，这叫做斯托克斯定理，详见第七章。所以定积分实际上表现了同调类与上同调类的对偶关系。
+
+有了柯西定理就可以回答复积分的原函数问题。一个复变量函数 $f(z)$（暂时不问它是否解析函数）的原函数 $F(z)$ 就是适合 $F'(z)=f(z)$ 的函数。对于实变量函数 $f(x)$，如果它连续，则一定有原函数，它的具有可变上限的黎曼积分 $\int_a^x f(t)\,dt$ 就是一个原函数。但对复变量 $z$ 情况就不同了。这时 $\int_a^z f(\zeta)\,d\zeta$（$\zeta$ 也是复的）就不只依赖于 $z$，同时还依赖于由 $a$ 到 $z$ 的路径 $L$，所以它不是 $z$ 的函数。为了讨论 $f(z)$ 的原函数应该使此积分与路径无关。由此我们容易想到，若 $f(z)$ 是 $\Omega$ 中的解析函数，则积分 $\int_a^z f(\zeta)\,d\zeta$ 已经与路径无关（当然这时应规定路径只在 $\Omega$ 中变动），它是否为 $f(z)$ 的原函数？讲到这里应该提到，在复域中研究解析函数有两种观点：局部的和整体的。局部观点如下：首先在一点附近定义 $f(z)$ 的解析性（利用 $f'(z)$ 连续以及 C-R 方程），然后问 $f(z)$ 在 $\Omega$ 这一“点附近”以外是否解析？这时就需要作解析延拓。如果作了“一切可能的”解析延拓，则得到一个整体的解析函数。整体地研究它就发现它可能是多值的，为此就要引入黎曼曲面的概念，具体的解析延拓如何实现？第二章中讲了一些初等的方法如处理 $\sqrt z$ 那样，一般地则可以用幂级数——泰勒级数。现在我们指出，在证明了 $\int_a^z f(\zeta)\,d\zeta$ 是 $f(z)$ 的原函数以后，这个积分实际上正是把原函数沿积分路径作解析延拓的具体方法之一，因此我们先从 $\int_a^z f(\zeta)\,d\zeta$ 已经成为 $z$ 的函数 $F(z)$ 开始。但首先使 $\Omega$ 是一个单连通区域，甚至只是 $|z-a|<r$，它是 $a$ 点的单连通邻域，并在 $\Omega$ 中证明我们的结论。即我们采取局部的观点。至于如何把这些结果解析延拓到整体去，最后会得到一个什么样的多值函数，则是另外一回事了。由此至定理8都这样处理，所以下面不再说这样的话了。今证 $F(z)$ 是 $f(z)$ 的原函数。为此我们来考察
+\[
+ \frac1{\Delta z}[F(z+\Delta z)-F(z)].
+\]
+我们先取一个路径 $L$ 联结 $a$ 与 $z$ 这样得出 $F(z)=\int_Lf(\zeta)\,d\zeta$。在计算 $F(z+\Delta z)$ 时，因为积分与路径无关，我们取一个特殊路径 $L_1=L+[z,z+\Delta z]$，这里 $[z,z+\Delta z]$ 表示连接这两点的直线段（当 $|\Delta z|$ 充分小时，这个直线段总在 $\Omega$ 中）。所以
+\[
+\begin{aligned}
+ \frac1{\Delta z}[F(z+\Delta z)-F(z)]
+ &=\frac1{\Delta z}\int_{[z,z+\Delta z]}f(\zeta)\,d\zeta\\
+ &=f(z)+\frac1{\Delta z}\int_{[z,z+\Delta z]}[f(\zeta)-f(z)]\,d\zeta.
+\end{aligned}
+\]
+在计算第一项时我们利用了 $\int_{[z,z+\Delta z]}d\zeta=\Delta z$，这应该由积分的定义算出，而不能用牛顿—莱布尼茨公式，因为在复域中这个公式是否成立还不得而知。至于第二项，利用 $f(z)$ 之连续性有
+\[
+ \left|\frac1{\Delta z}\int_{[z,z+\Delta z]}[f(\zeta)-f(z)]\,d\zeta\right|
+ \le\frac1{|\Delta z|}\max_{[z,z+\Delta z]}|f(\zeta)-f(z)|
+ \int_{[z,z+\Delta z]}|d\zeta|
+\]
+\[
+ =\max_{[z,z+\Delta z]}|f(\zeta)-f(z)|\to0.
+\]
+由此得到下面的
+
+\noindent\textbf{定理5}
+单连通区域 $\Omega$ 中的解析函数 $f(z)$ 必有原函数
+\[
+ F(z)=\int_a^z f(\zeta)\,d\zeta,
+\]
+其中 $a\in\Omega$，而积分路径全在 $\Omega$ 中。
+
+这里要求 $\Omega$ 是连通的是因为这个积分只能在含 $a$ 的连通分支中定义 $F(z)$。至于单连通问题下面再说。
+
+\noindent\textbf{定理6}
+单连通区域 $\Omega$ 中的解析函数 $f(z)$，若以 $F(z)$ 为其一个原函数，则 $F(z)+C$ 就都是 $f(z)$ 的原函数，而且给出了其全部原函数。
+
+\noindent\textbf{证}
+与实变函数情况一样，我们只需证明若 $F'(z)=0$，则 $F(z)=C$ 即可。但是这里的证法与实的情况不同，因为复的情况下没有拉格朗日公式。这是实的与复的情况的重要区别。现令 $F(z)=u(x,y)+iv(x,y)$，由于 $F'(z)$ 之值应与 $z+h$ 趋向 $z$ 的情况无关。令 $h$ 为实数，即得 $F'(z)=u_x+iv_x$，由 $F'(z)=0$ 即得 $u_x=v_x=0$ 于 $\Omega$ 中。由 C-R 条件又有 $u_y=-v_x=0$，$v_y=u_x=0$，所以 $u,v$ 都是常数，定理证毕。
+
+由此立即可得复情况下的牛顿—莱布尼茨公式。
+
+\noindent\textbf{定理7}
+假设同上，我们有
+\[
+ \int_a^b f(z)\,dz=F(b)-F(a).
+\]
+
+柯西定理的逆定理仍成立，实际上我们有
+
+\noindent\textbf{定理8（莫列拉（Morera）定理）}
+若 $f(z)$ 在 $\Omega$ 中连续，而 $\Omega$ 之每一点 $a$ 都有一个单连通邻域，使在其中 $\int_a^z f(\zeta)\,d\zeta$ 均与积分路径无关（或者说在每一点 $a$ 均有一个单连通邻域，在其中沿闭曲线 $L$ 均有 $\int_Lf(z)\,dz=0$），则 $f(z)$ 必在 $\Omega$ 之每一点 $a$ 的附近为解析的。
+
+\noindent\textbf{证}
+由上所述 $\int_a^z f(\zeta)\,d\zeta$ 是 $a$ 附近的函数 $F(z)$，而且 $F'(z)=f(z)$，所以在 $\Omega$ 之每一点 $a$ 附近 $F(z)$ 均有连续导数，故 $F(z)$ 在 $\Omega$ 中解析。下面我们就要证明，解析函数的导数仍为解析的，故 $f(z)$ 在 $\Omega$ 中解析而定理成立。
+
+涉及原函数的定理5--8中均假设了 $\Omega$ 是单连通区域，这是有深刻的原因的。如果 $\Omega$ 是多连通的（即有洞的）区域，原函数将是多值的。这在物理学上是有根据的，因为原函数的求法与一个场的势的求法是很相近的：若设 $f(z)=u(x,y)+iv(x,y)$ 是解析函数，$F(z)=\Phi+i\Psi$ 是它的原函数：$F'(z)=f(z)$。如果我们让 $z$ 是沿 $x$ 轴变化的，则 $F'(z)=\Phi_x+i\Psi_x$，于是 $\Phi_x=u,\Psi_x=v$。但由 C-R 条件，$\Psi_x=-\Phi_y$，于是有
+\[
+ \Phi_x=u,\qquad \Phi_y=-v.
+\]
+即是说，$\Phi(x,y)$ 是向量 $(u,-v)$（相应于函数 $\bar f(z)=u-iv$）的势函数。势函数成为多值函数，这在物理上有重要的意义。为什么在多连通区域中原函数会出现多值性呢？试利用积分式 $F(z)=\int_0^z f(\zeta)\,d\zeta$ 把 $F(z)$ 最终解析延拓到区域 $\Omega$，直到不能再继续延拓，这时 $\partial\Omega$ 称为 $F(z)$ 的自然边界（natural boundary），而 $\Omega$ 中有若干个洞 $\Omega_1,\ldots,\Omega_n$。我们还设在 $\Omega$ 中可以作一个若尔当曲线 $\Gamma_0$ 包围所有的“洞”，又对每一个洞 $\Omega_j$ 可以作一个若尔当曲线 $\Gamma_j$ 包围它，如图4-7-8。于是对 $a$ 点和 $\Omega$ 中一点 $z$，我们先作一条路径 $\gamma_1$ 由 $a$ 到 $z$。如果再取另一条路径 $\gamma_2$ 由 $a$ 到 $z$，则 $\gamma_2-\gamma_1$ 成为一个闭链。这个闭链的构造可以十分复杂，例如图4-7-8中的 $\gamma_2-\gamma_1$ 实际上绕过 $\Omega_1$ 和 $\Omega_2$ 各两次。总之
+\[
+ \gamma_2-\gamma_1\sim\sum_{j=1}^n c_j\Gamma_j,
+\]
+这里 $c_j$ 是正负整数或 0。而由柯西定理的同调论表述（定理4）有
+\[
+ \int_{\gamma_2-\gamma_1}f(\zeta)\,d\zeta
+ =\int_{\sum_j c_j\Gamma_j}f(\zeta)\,d\zeta
+ =\sum_j c_j\int_{\Gamma_j}f(\zeta)\,d\zeta
+ =\sum_j c_j\theta_j,
+\]
+这里 $\theta_j=\int_{\Gamma_j}f(\zeta)\,d\zeta$，而 $c_j$ 是整数。
+\[
+ \int_{a(\gamma_2)}^z f(\zeta)\,d\zeta
+ =\int_{a(\gamma_1)}^z f(\zeta)\,d\zeta+\sum_j c_j\theta_j.
+\]
+这个式子明确地告诉我们，多值的原函数之任意值一定是它的某一指定值再加上 $\theta_j$ 的“整系数线性组合”$\sum_jc_j\theta_j$。这些 $\theta_j$ 称为“周期”。其实我们在第二章中就已见到
+\[
+ \operatorname{Ln}z=\ln z+k\cdot(2\pi i),
+\]
+这里的 $k$ 就是整系数 $c_j$，$2\pi i$ 就是 $\theta_j$。不过我们看到其实周期是说的对数函数的反函数 $z=e^w$ 有周期 $2\pi i$。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.85]
+ \draw[thick] plot[smooth cycle,tension=.8] coordinates{(-3,-1.8)(-3.3,.5)(-1.8,2.4)(.7,2.5)(3,1)(3.1,-1.4)(.9,-2.5)(-1.8,-2.4)};
+ \draw[thick] (-1.25,-.5) circle (.55); \node at (-1.25,-.5) {$\Omega_1$};
+ \draw[thick] (1.1,.7) circle (.75); \node at (1.1,.7) {$\Omega_2$};
+ \fill (-2.4,-1.6) circle (1.2pt) node[below] {$a$};
+ \fill (-2.5,.5) circle (1.2pt) node[left] {$z$};
+ \draw[thick,->] (-2.4,-1.6) .. controls (-1.9,-.5) and (-2.2,.3) .. (-2.5,.5) node[midway,left] {$\gamma_1$};
+ \draw[thick,->] (-2.4,-1.6) .. controls (-.3,-1.5) and (2.8,-.5) .. (2.0,1.4)
+   .. controls (1.2,2.2) and (-.7,1.7) .. (-2.5,.5) node[pos=.45,right] {$\gamma_2$};
+ \node at (0,2.7) {$\Omega$};
+\end{tikzpicture}
+\caption*{图4-7-8}
+\end{figure}
+
+细心的读者马上就会看到，上面的讨论很不严格，怎样证明 $\gamma_2-\gamma_1$ 和 $\sum_jc_j\Gamma_j$ 同调呢？这就涉及对有洞的区域上的闭链之集合如何刻画的问题。由此引进了同调群这个代数拓扑学中的中心概念。可见，一旦把积分引入复域而考虑解析函数的积分时，这些拓扑学的问题就很自然地浮出水面了。尤其令人吃惊的是，在 20 世纪后半期，发现了它与物理学有十分密切的关系。
+
+\medskip
+\noindent\textbf{3. 柯西积分公式}
+
+我们不但发现了解析函数的积分有如此丰富的性质，进一步还发现了，所有的单值解析函数又一定都可以表示为一种特殊类型的积分。它不但与上面讲的拓扑学问题有关，而且还与上一节讲的 $\delta$ 函数有关。
+
+下面我们介绍解析函数的这种积分表示法——柯西积分公式。它是研究解析函数性质的重要工具，但它的应用范围并不只限于复变量的解析函数，而且对实变量函数的研究也有很大的意义。所以，我们将在实的情况下来讲述其基本定理，然后再把它用于复的情况。但为此，我们先用复记号表示实函数。例如 $\Omega\subset\mathbf C$ 就看成 $\mathbf R^2$ 中一个区域，这时我们用另一个字母 $\omega$ 来表示它。因此，下面凡说到 $C^1(\bar\omega)$ 就指实变量 $(x,y)$ 在 $\bar\omega$ 上的复值 $C^1$ 函数，而非 $z$ 的解析函数，而反之 $C^1(\bar\Omega)$ 则约定表示复变量的连续可微函数，因此一定是解析的。同样，对 $u\in C^1(\bar\omega)$，$\dfrac{\partial u}{\partial\bar z}=\dfrac12\left(\dfrac{\partial u}{\partial x}+i\dfrac{\partial u}{\partial y}\right)$ 只是一个形式记号。
+
+\noindent\textbf{定理9（柯西积分公式）}
+若 $u\in C^1(\bar\omega)$，则对 $z\in\omega$，
+\begin{equation}
+ u(z)=(2\pi i)^{-1}\int_{\partial\omega}\frac{u(\zeta)}{\zeta-z}\,d\zeta
+ +(2\pi i)^{-1}\iint_\omega\frac{\partial u/\partial\bar\zeta}{z-\zeta}\,d\bar\zeta\wedge d\zeta.
+ \tag{18}
+\end{equation}
+
+\noindent\textbf{证}
+记 $\omega_\varepsilon=\{\zeta:\zeta\in\omega,\ |z-\zeta|>\varepsilon\}$，这里 $\varepsilon$ 是充分小的正数。对 $u(\zeta)/(\zeta-z)$ 应用格林公式(17)，注意 $d\bar\zeta$ 虽然是一个形式记号，但莱布尼茨乘积求导公式仍适用于它，这一点读者容易自行验证。又因 $1/(z-\zeta)$ 当 $\zeta\ne z$ 时对 $z$ 是解析的，所以在 $\omega_\varepsilon$ 中
+\[
+ \frac{\partial}{\partial\bar\zeta}\left(\frac1{z-\zeta}\right)=0.
+\]
+这样，由(17)注意到
+\[
+ \partial\omega_\varepsilon=\partial\omega-\{\zeta:|z-\zeta|=\varepsilon\},
+\]
+即得
+\[
+ \iint_{\omega_\varepsilon}\frac{\partial u/\partial\bar\zeta}{z-\zeta}\,d\bar\zeta\wedge d\zeta
+ =\int_{\partial\omega}\frac{u(\zeta)}{z-\zeta}\,d\zeta
+ -i\int_0^{2\pi}u(z+\varepsilon e^{i\theta})\,d\theta.
+\]
+这里我们应用了在 $|z-\zeta|=\varepsilon$ 上 $z-\zeta=\varepsilon e^{i\theta}$，而 $|z-\zeta|=\varepsilon$ 的正向是 $\theta$ 由 0 增加到 $2\pi$。令 $\varepsilon\to0$ 即得(18)式。
+
+(18)式无论对实的情况与复的情况都极重要，而我们现在要把它应用于复情况：特别限于 $u$ 在 $\bar\Omega$ 上解析而且 $\partial\Omega$ 是可求长曲线的情况，这时 $\dfrac{\partial u}{\partial\bar z}=0$，于是有
+
+\noindent\textbf{推论10（复的柯西积分公式）}
+若 $u(z)$ 在 $\bar\Omega$ 上解析，且 $\partial\Omega$ 是一可求长的若尔当曲线，则对 $z\in\Omega$，有
+\begin{equation}
+ u(z)=\frac1{2\pi i}\int_{\partial\Omega}\frac{u(\zeta)}{\zeta-z}\,d\zeta.
+ \tag{19}
+\end{equation}
+当然当 $\partial\Omega$ 为分段 $C^1$ 曲线，而 $u$ 在 $\Omega$ 中解析，在 $\bar\Omega$ 上连续，上式也成立。
+
+在讨论它的种种应用之前，先要注意，当 $\zeta$ 在 $\Omega$ 之外域中时，上式等于 0。这虽然是柯西定理的一个简单的推论，却反映了核 $1/(\zeta-z)$——称为柯西核——重要的拓扑性质，以至于我们要用一个特定概念来刻画它。
+
+\noindent\textbf{定理11}
+若 $L$ 为一分段 $C^1$ 闭曲线，而 $a\notin L$，则
+\begin{equation}
+ n(L,a)=\frac1{2\pi i}\int_L\frac{dz}{z-a}
+ \tag{20}
+\end{equation}
+必为一整数，称为 $L$ 对于 $a$ 的环绕数（winding number）。
+
+\noindent\textbf{证}
+$1/(z-a)$ 作为 $z$ 的函数其原函数为 $\ln(z-a)$，故
+\[
+ n(L,a)=\frac1{2\pi i}\ln|z-a|\Big|_L+
+ \frac1{2\pi}\arg(z-a)\Big|_L.
+\]
+这里 $f(z)|_L$ 表示 $f(z)$ 在 $L$ 上的变幅：任取 $z_0\in L$，$f(z)|_L$ 表示 $f(z)$ 从 $f(z_0)$ 开始，再令 $z$ 沿 $L$ 解析延拓一周回到 $z_0$ 后的终值之增加值。记 $z-a=re^{i\theta}$，前一项为 $\dfrac1{2\pi i}\ln r\big|_L=0$，后一项为 $\theta\big|_L$，即是 $z-a$ 的辐角当 $z$ 依正向绕 $L$ 一周（即 $z$ 沿 $L$ 正向绕 $a$ 回到起点）的增值，所以 $\dfrac1{2\pi}\theta\big|_L$ 即环绕的次数。
+
+这个定理虽然简单，却有丰富的含意。首先，它告诉我们，在前面定理5--8中我们一再强调原函数从局部观点看与从整体观点看是不同的：这里正说明了 $1/(z-a)$ 的原函数 $\ln(z-a)$ 从整体看是多值的。其次，正是这种多值性给我们提供了一个刻画 $L$ 的拓扑性质的重要的不变量——环绕数，它在拓扑学中有重要的地位。本节一开始就介绍了著名的若尔当定理，但未给证明。不证明并不等于说它不重要，而是由于证明太长，而且这定理本身未必能很明确地说明问题。如果路径比图4-7-8还复杂，怎么能确定哪里是内、哪里是外？给了一条闭曲线 $L$ 就把复平面划分为若干块，但不一定是两块，图4-7-9就是三块。这个图形所表示的正是一个复形，它由两部分组成，一是整个最外面的心脏形曲线所包围的 $\mathbf C$ 平面上的区域，可以写成 I+II，另一部分则是内部的曲线所围成的，它也是 II，但却不能与 $\mathbf C$ 平面上的 I+II 混淆，否则按图上所给的正向来分别区域的内、外就会有困难，所以把它看成一个复形 $({\rm I}+{\rm II})+{\rm II}={\rm I}+2{\rm II}$ 最好。还有一块即含无穷远点的无界区域 O。由定理3，仍有 $\int_Lf(z)\,dz=0$。O、I 和 II 三块之中一定有一块即我们这里的 O 包含无穷远点，不妨称为外域（如果 $L$ 本身就通过无穷远点，则要修正我们的讨论，在复分析中怎样讨论无穷远点有一套办法，并在理论上有充分根据，我们不能在这里讲了）。我们马上看出环绕数以下的性质：
+
+(i) 若 $L$ 是不自交的若尔当曲线（图上的 $L$ 是自交的因此不是若尔当曲线），则当 $a$ 在外域中时 $n(L,a)=0$，$a$ 不在外域中（即在内域中）时 $n(L,a)=1$。
+
+(ii) 若 $L$ 是允许自交的闭曲线，则虽然仍有外域，内域是什么就难说了。图4-7-9中的 I、II 哪一个在哪一个之内呢？为了区别各块，我们把 $n(L,a)$ 看成 $a\in\mathbf C\setminus L$ 的函数，容易看到
+\[
+ \frac d{da}n(L,a)=\frac1{2\pi i}\int_L\frac{dz}{(z-a)^2}
+ =-\frac1{2\pi i}\int_L\frac d{dz}\left(\frac1{z-a}\right)dz.
+\]
+这时被积函数又有原函数 $-1/(z-a)$，但它是单值函数，而与 $1/(z-a)$ 的原函数 $\ln(z-a)$ 为多值函数不相同。因此，$\dfrac d{da}n(L,a)=0$，从而 $n(L,a)=\operatorname{const}$，只要 $a$ 在变化中不触及 $L$ 即可。就是说 $n(L,a)$ 是一个分块常值函数。例如在图4-7-9中
+\begin{equation}
+ n(L,a)=
+ \begin{cases}
+ 0,&a\in O,\\
+ 1,&a\in {\rm I},\\
+ 2,&a\in {\rm II}.
+ \end{cases}
+ \tag{21}
+\end{equation}
+当然也可能有这样的 $L$，对于位于不同“块”中的 $a$，$n(L,a)$ 取相同值。但是不论如何，现在用一个可计算的积分来刻画 $L$ 的几何性质，比之若尔当定理，总是更容易理解和捉摸。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.78]
+  \draw[thick,->] plot[smooth cycle,tension=.82] coordinates{(-2.8,-.2)(-2.4,1.8)(-.6,2.4)(1.0,1.4)(2.6,1.9)(3.1,.1)(2.3,-1.9)(.3,-2.1)(-.5,-.7)(-1.2,-1.2)};
+  \draw[thick,->] plot[smooth cycle,tension=.9] coordinates{(-.5,-.7)(.1,.5)(1.2,.75)(1.65,-.15)(.7,-.9)};
+  \node at (-1.5,.4) {I}; \node at (.6,-.1) {II}; \node at (0,2.7) {O};
+  \node at (2.7,-2.0) {$L$};
+\end{tikzpicture}
+\caption*{图4-7-9}
+\end{figure}
+
+现在再回过头来看柯西积分公式(19)。那里我们假设了 $\partial\Omega$ 是一可求长若尔当曲线，因此对何处是其内域，何处是其外域是很清楚的。但是如果考虑
+\[
+ \frac1{2\pi i}\int_L\frac{f(\zeta)\,d\zeta}{\zeta-z},
+\]
+而 $L$ 是一个一般的闭曲线，即可以自交，可以缠绕 $\Omega$ 的某一个洞多次，等等，如图4-7-8那样，柯西公式应如何改写？从(19)看，如果今记 $\partial\Omega$ 为 $L$，则因 $L$ 把平面分成两部分，即 $\Omega$ 与其外域，很容易看到 $L$ 的环绕数是
+\[
+ n(L,z)=
+ \begin{cases}
+ 0,&z\text{ 在 }\Omega\text{ 外},\\
+ 1,&z\text{ 在 }\Omega\text{ 内}.
+ \end{cases}
+\]
+所以，(19)可以写为
+\begin{equation}
+ \frac1{2\pi i}\int_L\frac{f(\zeta)\,d\zeta}{\zeta-z}=n(L,z)f(z).
+ \tag{22}
+\end{equation}
+于是我们会想到，若 $L$ 为区域 $\bar\Omega$ 中之闭链，而且 $L\sim0$，则对在 $\Omega$ 中解析，在 $\Omega\cup L$ 上连续的 $f(z)$（如果 $L\subset\Omega$，则 $f(z)$ 在 $\Omega\cup L$ 中连续的条件自动成立），应有(22)式。它就是一般的柯西积分公式，这当然是要证明的，而为此就得把同调的概念弄仔细清楚，我们这里就略去不讲了。
+
+\noindent\textbf{注1}
+以上的讨论全是以对数函数的多值性为基础的，而对数函数 $\ln(z-a)$ 则是 $1/(z-a)$ 的原函数：
+\[
+ \ln(z-a)=\int_{z_0}^z\frac{dz}{z-a}+C,
+\]
+因此在许多较新的复分析的教材中就直接以 $\int_1^z\dfrac{dz}{z}$ 作为对数函数 $w=\ln z$ 之定义。这样做最大的优点在于立即看出环绕数与对数的关系，但是对数函数的其它性质则不那么清楚。更重要的是这种作法的优点在实变量的情况下看不出来。注意到这个原函数
+\[
+ w=\int_1^x\frac{dx}{x}
+\]
+必定是以下柯西问题之解：
+\[
+ \frac{dw}{dx}=\frac1x,\qquad w(1)=0,
+\]
+我们也可以用上述常微分方程柯西问题之解作为对数函数的定义。尤其是，这个函数的反函数 $z=z(w)$ 是下面的柯西问题之解
+\[
+ \frac{dz}{dw}=z,\qquad z(0)=1,
+\]
+而可以用这个常微分方程柯西问题之解作为指数函数的定义。我们在第二章中就是这样做的。本来，一个函数常有多种不同的定义方式。采用哪一个方式全看我们想要研究的是此函数的哪些性质；用哪一种定义方式又能更快地达到目的，并能更好地对这些性质获得新的洞察，发现新的联系。正是从这一点出发，我们在第二章中对一些最常见的初等函数都采用了微分方程来定义它们。
+
+还要提到一点，在上一节我们指出一个具有第一类间断点的函数，其 $D'$ 导数恰好是 $\delta(x)$，即
+\[
+ H(x)=\int_{-\infty}^x\delta(t)\,dt.
+\]
+现在则有（我们把 $a$ 记作 $x$，尽管它仍是复的）
+\[
+ n(L,x)=\frac1{2\pi i}\int_L\frac{dz}{z-x}.
+\]
+可见 $\dfrac1{2\pi i(z-x)}$ 多少与 $\delta$ 函数有些类似。再说
+\[
+ I(x)=\frac1{2\pi i}\int_L\frac{f(\zeta)}{\zeta-x}\,d\zeta
+ =\begin{cases}
+ f(x),&x\text{ 在 }L\text{ 内},\\
+ 0,&x\text{ 在 }L\text{ 外}.
+ \end{cases}
+\]
+所以 $I(x)$ 之内、外极限之差恰为“密度”函数 $f(x)|_{x\in L}$，这与 $\delta$ 函数之“再生性”（reproducing property）
+\[
+ f(x)=\int_{-\infty}^{\infty}f(\zeta)\delta(\zeta-x)\,d\zeta
+\]
+也十分相似。怎样从广义函数观点去看待柯西积分公式是一个很诱人的问题，而且在理论物理——量子场论的发展中起了作用。
+
+把微积分学引入复域我们在本书中是分成两部分进行的。在第三章中先把微分学引入复域，并且得到了关于解析函数的两个定义，一个定义是所谓的\textbf{解析函数 $f(z)$} 就是在一点的某个邻域中连续可微的函数。由此得到 C-R 方程，而且从几何上看，$w=f(z)$ 是由 $z$ 平面到 $w$ 平面的一个映射，且在 $f'(z)\ne0$ 处，这个映射保持角度不变，因此称为共形映射。这是最早的观点。我们不妨称这样定义的解析函数为 C-R 意义下的解析函数。第二种定义的方式是说所谓 $f(z)$ 在 $z$ 点解析就是在 $a$ 的某个圆形邻域 $|z-a|<r$ 中可以展开为幂级数的函数。用幂级数去研究解析函数是魏尔斯特拉斯的主要方法和贡献。由幂级数的性质知道，在收敛圆内
+\[
+ f(z)=\sum_{n=0}^{\infty}a_n(z-a)^n
+\]
+一定可以无限阶求导（自然也是连续求导），所以这种解析函数必为 C-R 意义下的解析函数。那么，其逆是否成立？好在我们还有第三个途径，若 $f(z)$ 是 C-R 意义下的解析函数，利用格林定理立即可得关于积分的柯西定理（当然也就适用柯西积分公式）。但柯西定理之逆莫列拉定理也成立，所以我们还可以说：适合柯西定理的函数的就是解析函数。这样一来，解析函数就有了三种定义，其关系如下：
+\[
+ \text{幂级数意义（或称魏尔斯特拉斯意义）}
+ \Longrightarrow \text{C-R 意义}
+ \Longrightarrow \text{柯西定理意义}.
+\]
+所以我们只要能再证明：柯西定理意义 $\Rightarrow$ 幂级数意义，即证明：若 $f(z)$ 在 $\Omega$ 中适合柯西定理，则 $f(z)$ 处可以在 $\Omega$ 内任一点 $a$ 的邻域中展开为幂级数，就得知解析函数的这三种定义是等价的。特别是 C-R 意义下的与魏尔斯特拉斯意义下的解析函数是一样的。
+
+当然，上面讲的都是局部意义下的解析函数。
+
+现在我们来证明，若 $f(z)$ 在 $a$ 点附近连续可微（从而满足 C-R 方程，从而是 C-R 意义下的解析函数），必在这点附近任意阶连续可微。实际上，满足 C-R 方程，则亦满足柯西积分公式。在 $a$ 点的这一个“附近”中取开区域 $\Omega$，使 $\partial\Omega$ 为分段 $C^1$ 曲线 $L=\partial\Omega$，则对 $z\in\Omega$ 有
+\begin{equation}
+ f(z)=\frac1{2\pi i}\int_{\partial\Omega}\frac{f(\zeta)}{\zeta-z}\,d\zeta.
+ \tag{23}
+\end{equation}
+因为 $z\in\Omega$ 故 $z\notin\partial\Omega$ 而上式中的分母 $\zeta-z\ne0$。用含参变量 $z$ 的积分对 $z$ 之可微性（$1/(\zeta-z)$ 对 $z$ 之可微性在第三章已证明了），即知由(23)定义的 $f(z)$ 在 $\Omega$ 中连续可微，其导数是
+\[
+ f'(z)=\frac1{2\pi i}\int_{\partial\Omega}\frac{f(\zeta)}{(\zeta-z)^2}\,d\zeta.
+\]
+再用一次含参变量积分的知识知 $f'(z)$ 在 $\Omega$ 中连续可微。（我们也可以分开被积函数的实、虚部再用实黎曼积分的知识，证明 $f'(z)$ 之实、虚部的偏导数适合 C-R 方程，这一切都不再说了。）类似地有
+\begin{equation}
+ f^{(n)}(z)=\frac{n!}{2\pi i}\int_{\partial\Omega}\frac{f(\zeta)}{(\zeta-z)^{n+1}}\,d\zeta.
+ \tag{24}
+\end{equation}
+所以，若 $f(z)$ 在 $\Omega$ 中连续可微，它必在其中任意阶连续可微。
+
+现取 $a\in\Omega$ 而作 $f(z)$ 在 $a$ 点的形式泰勒级数
+\begin{equation}
+ \sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(z-a)^n
+ =\frac1{2\pi i}\sum_{n=0}^{\infty}\int_{\partial\Omega}f(\zeta)
+ \frac{(z-a)^n}{(\zeta-a)^{n+1}}\,d\zeta,
+ \tag{25}
+\end{equation}
+并研究它的收敛性。因为 $a\notin\partial\Omega$，故由 $a$ 到 $\partial\Omega$ 之距离 $r>0$。在圆 $|z-a|\le r_0<r$ 中任取一点 $z$，则
+\[
+ |z-a|\le r_0<r\le|\zeta-a|,\qquad \zeta\in\partial\Omega,
+\]
+所以
+\[
+ \left|\frac{z-a}{\zeta-a}\right|\le\frac{r_0}{r}=\theta<1,
+\]
+从而级数
+\[
+ \sum_{n=0}^\infty\frac{(z-a)^n}{(\zeta-a)^{n+1}}
+ =\frac1{\zeta-a}\sum_{n=0}^\infty\left(\frac{z-a}{\zeta-a}\right)^n
+ =\frac1{\zeta-a}\frac1{1-\dfrac{z-a}{\zeta-a}}
+ =\frac1{\zeta-z}
+\]
+在 $|z-a|\le r_0,\zeta\in\partial\Omega$ 上对于 $\zeta$ 一致收敛。这样可以用逐项积分来求得(25)之值，而有
+\[
+\begin{aligned}
+ \sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(z-a)^n
+ &=\frac1{2\pi i}\int_{\partial\Omega}f(\zeta)
+ \sum_{n=0}^{\infty}\frac{(z-a)^n}{(\zeta-a)^{n+1}}\,d\zeta\\
+ &=\frac1{2\pi i}\int_{\partial\Omega}\frac{f(\zeta)}{\zeta-z}\,d\zeta=f(z).
+\end{aligned}
+\]
+这个式子在 $|z-a|\le r_0$ 中成立。但是我们不能说 $r_0$ 或 $r$ 就是泰勒级数的收敛半径 $R$，后者是
+\[
+ R=\left[\limsup_{n\to\infty}\sqrt[n]{|f^{(n)}(a)|/n!}\right]^{-1},
+\]
+是由 $f(z)$ 在 $a$ 点“附近”的状况决定的。现在我们的 $\Omega$ 选择相当任意，因此上面的 $r_0$ 和 $r$ 也相当任意。但是我们决不可能取一个把 $|z-a|<R$ 包含在内的区域选择 $\Omega$，不然的话，我们将会得出级数(25)在收敛圆 $|z-a|<R$ 外仍收敛的结论，而这与收敛半径的定义是矛盾的。这样我们就看出，任一解析函数在任一点 $a$ 的泰勒级数的收敛圆周上必有其一个“奇点”，要不然的话，就可以取上述更大的 $\Omega$ 了。
+
+至此，我们已经完全明白了，C-R 意义下的解析函数与魏尔斯特拉斯意义下的解析函数是完全一致的。

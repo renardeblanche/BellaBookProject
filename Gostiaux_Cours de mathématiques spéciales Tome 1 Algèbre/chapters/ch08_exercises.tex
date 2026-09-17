@@ -1,0 +1,337 @@
+\origpage{293--299}
+
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} EXERCICES}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.1em]
+
+\item Soit $X\in M_n(\mathbb R)$, nilpotente. On suppose $e^X$ triangulaire supérieure avec des 1 sur la diagonale. Montrer que $X$ est triangulaire supérieure avec des 0 sur la diagonale.
+
+Soit $E$ et $F$ deux sous-espaces de $\mathbb R^n$ tels que $E\subset F$ et $(e^X-I)(F)\subset E$. Montrer que $X(E)\subset E$.
+
+\item Soit $n\in\mathbb N^*$, et $A$ et $B$ dans $M_n(\mathbb R)$, telles que $I_n+BA\in GL_n(\mathbb R)$.
+\begin{enumerate}[label=\alph*),leftmargin=2em]
+\item Montrer que $I_n+AB$ est dans $GL_n(\mathbb R)$ et que son inverse \BellaCorrection{commute}{conmmute} avec $AB$.
+\item Vérifier que
+\[
+(I_n+AB)^{-1}=I_n-A(I_n+BA)^{-1}B.
+\]
+\end{enumerate}
+
+\item Calculer la puissance $n$ième de la matrice
+\[
+M=\begin{pmatrix}
+a+b&0&a\\0&b&0\\a&0&a+b
+\end{pmatrix}.
+\]
+
+\item Soit $A,B$ dans $M_n(\mathbb R)$. Résoudre les équations :
+\begin{enumerate}[label=\alph*),leftmargin=2em]
+\item $X=(\operatorname{tr}X)A+B$.
+\item $X+{}^tX=(\operatorname{tr}X)A$.
+\end{enumerate}
+
+\item Soit $A$ et $B$ dans $M_n(\mathbb C)$, $\operatorname{com}(A)$ et $\operatorname{com}(B)$ leurs comatrices. Montrer que
+\[
+\operatorname{com}(AB)=\operatorname{com}(A)\operatorname{com}(B)
+\]
+puis que, si $A$ et $B$ sont semblables, leurs comatrices le sont. (Voir en 9.40 la définition de comatrice).
+
+\item Deux matrices réelles semblables dans $M_n(\mathbb C)$ le sont-elles dans $M_n(\mathbb R)$?
+
+\item Trouver les matrices de $M_3(\mathbb R)$ qui commutent avec
+\[
+M=\begin{pmatrix}1&0&0\\0&0&a\\0&2&3\end{pmatrix}
+\]
+où $a\in\mathbb R$ est donné.
+
+\item Soit $A\in M_n(\mathbb C)$ la matrice de terme général $a_{ij}$ avec $\forall i$, $a_{ii}=a$; $a_{i,i-1}=a_{i,i+1}=b$; $a_{1n}=a_{n1}=b$ et $a_{ij}=0$ sinon. $A$ est-elle inversible?
+
+\item Soit $C\in M_n(\mathbb C)$. Montrer que l'équation $XY-YX=C$ a des solutions dans $M_n(\mathbb C)$ si et seulement si $\operatorname{trace}(C)=0$.
+
+\item Déterminer les matrices $M$ de $M_3(K)$ telles que $M^2=0$.
+
+\end{enumerate}
+
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} SOLUTIONS}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.2em]
+
+\item \emph{Préambule sur les séries entières.}
+
+On a $\operatorname{Ln}(e^x)=\operatorname{Ln}(1+e^x-1)=x$. Si $z=e^x-1$ est de valeur absolue strictement inférieure à 1, dans le développement en série entière
+\[
+\operatorname{Ln}(1+z)=\sum_{k=1}^{\infty}(-1)^{k-1}\frac{z^k}{k},
+\]
+on peut substituer à $z$ la série entière
+\[
+\sum_{n=1}^{\infty}\frac{x^n}{n!},
+\]
+de valuation 1 (application du théorème d'interversion des limites), et
+\[
+\sum_{k=1}^{\infty}(-1)^{k-1}\frac{\left(\sum_{n=1}^{\infty}x^n/n!\right)^k}{k}
+\]
+est la somme d'une série entière, $\sum_{q=0}^{\infty}b_qx^q$ qui vaut ici $x$, donc $b_1=1$ et $\forall k\ne1$, $b_k=0$.
+
+Avec $X$ nilpotente,
+\[
+e^X-I=\sum_{q\ge1}\frac{X^q}{q!}
+\]
+est aussi nilpotente, et c'est une somme finie, mais alors
+\[
+\sum_{k=1}^{\infty}(-1)^{k-1}\frac{\left(\sum_{q=1}^{\infty}X^q/q!\right)^k}{k}
+\]
+est en fait une somme finie, donc a un sens, et c'est $\sum_{q=0}^{\infty}b_qX^q=X$ puisque les règles de calcul des $b_q$ ne dépendent pas de $x$.
+
+On a donc
+\[
+X=\sum_{k=1}^{\infty}(-1)^{k-1}\frac{(e^X-I)^k}{k},
+\]
+la somme étant finie en fait. Mais alors, si $e^X$ est triangulaire supérieure avec des 1 sur la diagonale, $e^X-I$ est triangulaire supérieure avec des 0 sur la diagonale, il en est de même des puissances successives, (calcul classique) d'où $X$ triangulaire supérieure avec des 0 sur la diagonale.
+
+Puis, $(e^X-I)(F)\subset E\subset F\Rightarrow(e^X-I)^2(F)\subset(e^X-I)(F)\subset E$, et par récurrence, $\forall k\ge1$, $(e^X-I)^k(F)\subset E$, donc $X(F)\subset E$. Comme enfin $E\subset F$, on obtient \emph{a fortiori} $X(E)\subset E$.
+
+\item Si $X$ de $\mathbb R^n$ est tel que $(I_n+AB)X=0$, \emph{a fortiori} $B(I_n+AB)X=0$ soit $(I_n+BA)(BX)=0$, et comme $I_n+BA\in GL_n(\mathbb R)$, on a $BX=0$, mais alors au départ, $X+A(BX)=0$ donne $X=0$, d'où $I_n+AB$ injective, donc régulière.
+
+On peut aussi dire que $I_n+BA$ bijective équivaut à $-1$ non valeur propre de $BA$. Comme $BA$ et $AB$ ont même polynôme caractéristique, c'est aussi $I_n+AB$ bijective.
+
+Le b) se vérifie par calcul en remarquant que $BA$ et $(I_n+BA)^{-1}$ commutent parce que $I_n+BA$ et $(I_n+BA)^{-1}$ commutent, et on en déduit la fin de a).
+
+\item En posant
+\[
+A=\begin{pmatrix}1&0&1\\0&0&0\\1&0&1\end{pmatrix}
+\]
+on constate que $M=bI+aA$. Comme $bI$ et $aA$ commutent la formule du binôme s'applique. On constate que $A^2=2A$ d'où par récurrence $A^k=2^{k-1}A$, ($k\ge1$) et
+\[
+\begin{aligned}
+M^n&=b^nI+\sum_{k=1}^n\binom nk a^kb^{n-k}2^{k-1}A\\
+&=b^nI+\frac12\left(\sum_{k=1}^n\binom nk(2a)^kb^{n-k}\right)A\\
+&=b^nI+\frac12\bigl[(2a+b)^n-b^n\bigr]A\\
+&=(2a+b)^n\frac A2+b^n\left(I-\frac A2\right).
+\end{aligned}
+\]
+
+\item \textbf{Équation a) :} $X=(\operatorname{tr}X)A+B$.
+
+On prend la trace, d'où $(1-\operatorname{tr}(A))\operatorname{tr}(X)=\operatorname{tr}B$.
+
+Si $\operatorname{tr}A=1$ et $\operatorname{tr}B\ne0$ pas de solution.
+
+Si $\operatorname{tr}A=1$ et $\operatorname{tr}B=0$, $X$ doit être du type $\lambda A+B$, or avec cette matrice on a $\operatorname{tr}X=\lambda$, d'où effectivement $X=(\operatorname{tr}X)A+B$.
+
+Si $\operatorname{tr}A\ne1$, on doit avoir $X$ du type $\lambda A+B$ mais avec cette fois la condition
+\[
+\operatorname{tr}X=\frac{\operatorname{tr}B}{1-\operatorname{tr}A},
+\]
+ce qui donne $\lambda\operatorname{tr}A+\operatorname{tr}B=\dfrac{\operatorname{tr}B}{1-\operatorname{tr}A}$ d'où $\lambda=\dfrac{\operatorname{tr}B}{1-\operatorname{tr}A}$, une seule solution
+\[
+X=\frac{\operatorname{tr}B}{1-\operatorname{tr}A}A+B.
+\]
+
+\textbf{Équation b) :} $X+{}^tX=(\operatorname{tr}X)A$.
+
+Le 1er membre est une matrice symétrique.
+
+\emph{1er cas : $A$ non symétrique.} Si $\operatorname{tr}X\ne0$, $(\operatorname{tr}X)A$ non symétrique, donc $X$ non solution, alors que si $\operatorname{tr}X=0$, on peut avoir $X+{}^tX=0$, c'est-à-dire $X$ antisymétrique, et dans ce cas $X+{}^tX=(\operatorname{tr}X)A$ car $\operatorname{tr}X=0$.
+
+Donc $A$ non symétrique $\Rightarrow$ ($X$ solution $\Longleftrightarrow X$ antisymétrique).
+
+\emph{2e cas : $A$ symétrique.} On prend les traces $\Rightarrow(2-\operatorname{tr}A)(\operatorname{tr}X)=0$.
+
+Si $\operatorname{tr}A\ne2$, on doit avoir $\operatorname{tr}X=0$, l'équation devient $X+{}^tX=0$ soit $X$ antisymétrique. C'est effectivement solution.
+
+Si $\operatorname{tr}A=2$, les matrices antisymétriques sont encore solutions. Or l'équation est linéaire en $X$, et une matrice s'écrit de manière unique sous la forme $X=Y+Z$ avec $Y$ symétrique et $Z$ antisymétrique.
+
+Donc $X$ solution $\Longleftrightarrow$ sa partie symétrique l'est $\Longleftrightarrow2Y=(\operatorname{tr}Y)A$. On a $Y$ du type $\lambda A$, d'où $2\lambda A=(\lambda\operatorname{tr}A)A$ et comme $\operatorname{tr}A=2$, tout $\lambda$ convient.
+
+Finalement, si $A$ symétrique et $\operatorname{tr}A=2$ les solutions sont du type $X=\lambda A+Z$ avec $Z$ antisymétrique quelconque. Sinon il n'y a que les $Z$ antisymétriques comme solutions.
+
+\item Si $A$ et $B$ sont inversibles,
+\[
+\begin{aligned}
+\operatorname{com}A\cdot\operatorname{com}B
+&=\det(A)\det(B)\,{}^tA^{-1}\,{}^tB^{-1}\\
+&=\det(AB)\,{}^t(B^{-1}A^{-1})\\
+&=\det(AB)\,{}^t(AB)^{-1}=\operatorname{com}(AB).
+\end{aligned}
+\]
+
+Si $A$ et $B$ sont quelconques, la densité de $GL_n(\mathbb C)$ dans $M_n(\mathbb C)$, jointe au fait que les formules donnant $\operatorname{com}(A)\cdot\operatorname{com}B$ et $\operatorname{com}(AB)$ sont polynomiales par rapport aux coefficients de $A$ et $B$, donc continues, permet d'étendre le résultat au cas général.
+
+Si $A$ et $B$ sont semblables, il existe $P$ régulière telle que $P^{-1}AP=B$, donc
+\[
+\operatorname{com}(B)=\operatorname{com}(P^{-1})\cdot\operatorname{com}(AP)
+=(\operatorname{com}P^{-1})(\operatorname{com}A)(\operatorname{com}P).
+\]
+Or $P^{-1}P=I_n\Rightarrow\operatorname{com}P^{-1}\cdot\operatorname{com}P=\operatorname{com}I=I$, on a donc
+\[
+\operatorname{com}(B)=(\operatorname{com}P)^{-1}\operatorname{com}A(\operatorname{com}P)
+\]
+d'où $\operatorname{com}A$ et $\operatorname{com}(B)$ semblables.
+
+\item Soient $A$ et $B$ dans $M_n(\mathbb R)$ telles qu'il existe $P\in GL_n(\mathbb C)$ telle que $B=P^{-1}AP$ ou encore $PB=AP$. En conjuguant, comme $A$ et $B$ sont réelles on a $\overline P B=A\overline P$, donc avec $U=P+\overline P$ et $V=-i(P-\overline P)$, qui sont des matrices de $M_n(\mathbb R)$, on aura aussi $UB=AU$ et $VB=AV$, d'où aussi, $\forall t\in\mathbb R$, $(U+tV)B=A(U+tV)$. Or $\det(U+tV)$ est un polynôme en $t$ de degré $n$ au plus, non identiquement nul, car en tant que polynôme de $\mathbb C[X]$ il le serait aussi or $\det(U+iV)=\det(2P)\ne0$.
+
+Il existe donc des réels $\lambda$ tels que $Q=U+\lambda V\in GL_n(\mathbb R)$ avec $QB=AQ$ soit encore $B=Q^{-1}AQ$ : $A$ et $B$ sont semblables dans $M_n(\mathbb R)$.
+
+\item On sait que si $u$ et $v$ sont deux endomorphismes qui commutent, $\operatorname{Ker}u$ et $\operatorname{Im}u$ sont stables par $v$.
+
+Puis les matrices qui commutent avec $M$ sont celles qui commutent avec
+\[
+M'=M-I=\begin{pmatrix}0&0&0\\0&-1&a\\0&2&2\end{pmatrix},
+\]
+(qui a pour noyau un sous-espace contenant $\operatorname{Vect}e_1\ldots$ on peut travailler).
+
+Si $a\ne-1$, $\operatorname{Ker}M'=\operatorname{Vect}(e_1)$ et $\operatorname{Im}M'=\operatorname{Vect}(e_2,e_3)$ qui doivent être stables par $X$ commutant avec $M'$. On cherche sous la forme
+\[
+X=\begin{pmatrix}\alpha&0&0\\0&\beta&\delta\\0&\gamma&\varepsilon\end{pmatrix}
+\]
+et un calcul par blocs conduit à
+\[
+\begin{cases}
+a\gamma=2\delta,\\
+a(\beta-\varepsilon)=-3\delta,\\
+2(\beta-\varepsilon)=-3\gamma,
+\end{cases}
+\]
+soit $\gamma$ quelconque, $\beta=\varepsilon-\dfrac32\gamma$ et $\delta=\dfrac a2\gamma$, d'où les solutions
+\[
+X=\begin{pmatrix}
+\alpha&0&0\\
+0&\varepsilon-\frac32\gamma&\frac a2\gamma\\
+0&\gamma&\varepsilon
+\end{pmatrix},\qquad(\alpha,\gamma,\varepsilon)\in\mathbb R^3;
+\]
+on a un espace vectoriel de dimension 3.
+
+Si $a=-1$, $\operatorname{Ker}M'=\operatorname{Vect}(e_1,e_2-e_3)$, $\operatorname{Im}M'=\operatorname{Vect}(-e_2+2e_3)$. Or $M'(-e_2+2e_3)$ va être proportionnel à $-e_2+2e_3$, (et non nul) donc $M'$ est diagonalisable. Avec la matrice de passage
+\[
+P=\begin{pmatrix}1&0&0\\0&1&-1\\0&-1&2\end{pmatrix},
+\]
+on trouve
+\[
+P^{-1}=\begin{pmatrix}1&0&0\\0&2&1\\0&1&1\end{pmatrix}
+\quad\text{et}\quad
+P^{-1}M'P=\begin{pmatrix}0&0&0\\0&0&0\\0&0&1\end{pmatrix}=M''.
+\]
+
+Mais alors $X'$ commute avec $M'$ si et seulement si $P^{-1}X'P=X''$ commute avec $M''$. Les sous-espaces propres de $M''$ doivent donc être stables par $X''$ qui est du type
+\[
+X''=\begin{pmatrix}\alpha&\beta&0\\\gamma&\delta&0\\0&0&\varepsilon\end{pmatrix}
+\]
+et on vérifie que pour ces $X''$ on a bien $X''M''=M''X''$.
+
+Les $X'$ cherchées sont donc les matrices
+\[
+X'=P\begin{pmatrix}\alpha&\beta&0\\\gamma&\delta&0\\0&0&\varepsilon\end{pmatrix}P^{-1}
+\]
+et on trouve les
+\[
+X'=\begin{pmatrix}
+\alpha&2\beta&\beta\\
+\gamma&2\delta-\varepsilon&\delta-\varepsilon\\
+-\gamma&-2\delta+2\varepsilon&-\delta+2\varepsilon
+\end{pmatrix}.
+\]
+On a \BellaCorrectionNote{$(\alpha,\beta,\gamma,\delta,\varepsilon)\in\mathbb R^5$}{$(\alpha,\beta,\gamma,\delta,\varepsilon)\in\mathbb R^2$}{Cinq paramètres réels indépendants apparaissent et la phrase suivante donne bien une dimension égale à 5.}. Cette fois c'est un espace vectoriel de dimension 5.
+
+\item Soit la matrice bloc
+\[
+J=\begin{pmatrix}0&I_{n-1}\\ I_1&0\end{pmatrix}.
+\]
+Pour $1\le k\le n-1$ on vérifie que
+\[
+J^k=\begin{pmatrix}0&I_{n-k}\\ I_k&0\end{pmatrix}
+\]
+et on a $J^n=I_n$.
+
+On a $A=aI_n+b(J+J^{n-1})$.
+
+Comme $J$ annule le polynôme scindé à racines simples, $X^n-1$, $J$ diagonalisable sur $\mathbb C$, (voir chapitre X). Le polynôme caractéristique de $J$ est en fait $(-1)^n(\lambda^n-1)$, (on le calcule), les valeurs propres de $J$ sont les $\lambda_k=e^{2ik\pi/n}$, celles de $A$, polynôme en $J$ sont les $a+b(\lambda_k+\lambda_k^{n-1})$.
+
+Or $\lambda_k^{n-1}=\lambda_k^n\lambda_k^{-1}$ d'où $\lambda_k+\lambda_k^{-1}=2\cos\dfrac{2k\pi}{n}$ et
+\[
+\det A=\prod_{k=1}^n\left(a+2b\cos\frac{2k\pi}{n}\right),
+\]
+(produit des valeurs propres de $A$) d'où
+\[
+(A\text{ inversible})\Longleftrightarrow
+\left(\forall k=1,2,\ldots,n,\ a+2b\cos\frac{2k\pi}{n}\ne0\right).
+\]
+
+\item La trace étant linéaire, et \BellaCorrectionNote{$\operatorname{trace}(XY)=\operatorname{trace}(YX)$}{$\operatorname{trace}(X,Y)=\operatorname{trace}(Y,X)$}{La propriété utilisée est l'invariance cyclique de la trace pour un produit de deux matrices.}, si on a des solutions, $\operatorname{trace}(C)=0$. Réciproquement. Si $\operatorname{trace}(C)=0$, il existe $C'$ semblable à $C$ avec $C'$ n'ayant que des 0 sur la diagonale. Se justifie par récurrence sur $n$. Si $n=1$, $\operatorname{trace}C=0\Rightarrow C=(0)=C'$ en fait. On suppose vrai pour $n-1$. Soit $u$ l'endomorphisme de matrice $C$ dans la base canonique de $\mathbb C^n$.
+
+Si $u=0$, toute matrice de $u$ dans une base de $\mathbb C^n$ convient. Sinon, comme $u\ne\lambda\operatorname{id}_E$, (sinon $\operatorname{trace}u=n\lambda\ne0$), il existe $x$ dans $E$ tel que $\{x,u(x)\}$ libre.
+
+Il existe donc une base de $E$ du type $\{x,u(x),e_3,\ldots,e_n\}$ dans laquelle la matrice de $u$ est de la forme
+\[
+C_1=\begin{pmatrix}
+0&\alpha_2&\cdots&\alpha_n\\
+1&&&\\
+0&&C_2&\\
+\vdots&&&\\
+0&&&
+\end{pmatrix}
+\]
+avec $\operatorname{trace}C_2=\operatorname{trace}C_1=\operatorname{trace}u=0$. Par hypothèse de récurrence, $\exists P_2\in GL_{n-1}(\mathbb C)$ telle que $P_2^{-1}C_2P_2$ ait des 0 sur la diagonale.
+
+Avec
+\[
+P=\begin{pmatrix}1&0\\0&P_2\end{pmatrix}
+\]
+on obtient $P^{-1}C_1P$ du type
+\[
+\begin{pmatrix}0&B\\A&P_2^{-1}C_2P_2\end{pmatrix}=C'
+\]
+avec des 0 sur la diagonale.
+
+Puis $C'$ étant de trace nulle, avec des 0 sur la diagonale, on veut écrire
+\[
+C'=X'Y'-Y'X'.
+\]
+On prend $X'=$ diagonale $(\alpha_1,\ldots,\alpha_n)$ avec des $\alpha_i$ distincts, et on cherche le terme général $y'_{ij}$ de $Y'$. On doit avoir
+\[
+c'_{ij}=\alpha_i y'_{ij}-\alpha_jy'_{ij}=(\alpha_i-\alpha_j)y'_{ij}.
+\]
+Pour $i\ne j$ on a $\alpha_i-\alpha_j\ne0$ d'où l'existence de $y'_{ij}$, et si $i=j$ il reste la condition $0=0y'_{ii}$, vérifiée. Donc $Y'$ existe. Mais alors avec $Q$ régulière telle que $Q^{-1}CQ=C'$, si $X=QX'Q^{-1}$ et $Y=QY'Q^{-1}$, l'égalité $C'=X'Y'-Y'X'$ donne $C=XY-YX$.
+
+\item La matrice nulle convient. Puis la relation $M^2=0$ implique $\operatorname{Im}(M)\subset\operatorname{Ker}M$, (on identifie $M$ à un endomorphisme de $K^3$ dans sa base canonique).
+
+Donc $M$ de rang $\ge2$ implique $\dim(\operatorname{Ker}M)\ge2$ d'où $\dim K^3=3=\operatorname{rang}(M)+\dim\operatorname{Ker}M\ge4$ : c'est exclu.
+
+On doit donc chercher $M$ de rang 1, mais alors les 3 vecteurs colonnes $c_1,c_2,c_3$ forment un système de rang 1 : il existe un vecteur colonne
+\[
+c=\begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix}
+\]
+non nul et 3 scalaires $l_1,l_2,l_3$ non tous nuls tels que la première colonne vaut $l_1c$, la deuxième $l_2c$ et la troisième $l_3c$, d'où
+\[
+M=\begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix}(l_1\ l_2\ l_3)=C\,{}^tL
+\quad\text{si}\quad
+L=\begin{pmatrix}l_1\\l_2\\l_3\end{pmatrix},
+\]
+et $M^2=C\,{}^tLC\,{}^tL$.
+
+Or ${}^tLC=l_1c_1+l_2c_2+l_3c_3$ est un scalaire, donc
+\[
+M^2=\left(\sum_{i=1}^3l_ic_i\right)M
+\]
+sera nulle, pour $M$ de rang 1, si et seulement si
+\[
+\sum_{i=1}^3l_ic_i=0.
+\]
+
+Les solutions sont donc les matrices
+\[
+M=\begin{pmatrix}
+c_1l_1&c_1l_2&c_1l_3\\
+c_2l_1&c_2l_2&c_2l_3\\
+c_3l_1&c_3l_2&c_3l_3
+\end{pmatrix}
+\]
+avec $\operatorname{trace}(M)=c_1l_1+c_2l_2+c_3l_3=0$, et la matrice nulle est aussi de ce type.
+
+\end{enumerate}

@@ -1,0 +1,869 @@
+\section{傅里叶变换}
+
+\noindent\textbf{1. $L^1(\mathbb R^n)$函数的傅里叶变换}\quad
+傅里叶级数出现后不久，就有了傅里叶积分——傅里叶变换。前者把 $[-\pi,\pi]$ 上的周期函数 $f(x)$“写成”
+\[
+ \sum_{k=-\infty}^{\infty}c_ke^{ikx},
+\]
+或者也可以说是把一个函数“变成”一个序列 $\cdots,c_{-2},c_{-1},c_0,c_1,c_2,\cdots$，所以它是函数空间到序列空间的一个映射，也可以说是一个物理过程有了两个不同的“表示”：一是表为 $x$（可以是时间，所以下面改写成 $t$）的函数，一是表为频率 $k$ 的函数，不过时间 $t$ 是取连续值的，而频率是取整数值的（因为我们使用了指数函数表示正弦波，所以这些整数也可以是负的）。但是一个自然现象很少是真正周期的。例如上面我们说 $f(x)$ 是周期函数，其实它原来可以定义在 $\mathbb R$ 上，只不过我们取了它的在 $[-\pi,\pi]$ 上的一段再作周期延拓，这样才得到周期函数的。由上节的例，在有限区间上的 S--L 问题又时常是有离散谱的，这是把周期函数 $f(x)$ 在一个周期内展开为固有函数的级数，或是傅里叶级数——的问题的来源。因此自然要问，如果考虑的是定义在一个无穷区间上的函数，那么会得到什么？事实上当年傅里叶就是从研究一个半无限长的杆上的温度分布得出傅里叶积分的。具体情况下如下：设在杆 $[0,+\infty)$ 上有温度 $u(x,t)$ 分布，由第三章第一节知，$u(x,t)$ 满足热传导方程
+\begin{equation}
+ \frac1{a^2}\frac{\partial u}{\partial t}=\frac{\partial^2u}{\partial x^2}.
+ \tag{1}
+\end{equation}
+我们设杆上初始时刻的温度分布是已知的，而在杆的左端 $x=0$ 处温度又保持在 $u(0,t)=0$，于是除方程(1)以外还有边值条件和初值条件
+\begin{equation}
+ u(0,t)=0,\qquad u(x,0)=\varphi(x)\quad(\text{已知函数}).
+ \tag{2}
+\end{equation}
+可以仿照上一节求解弦振动方程的办法来解它，令 $u(x,t)=X(x)T(t)$ 代入方程(1)，化简后有
+\[
+ \frac{T'(t)}{a^2T(t)}=\frac{X''(x)}{X(x)}=\lambda.
+\]
+于是和前面一样，试由它以及边值条件 $X(0)=0$ 求出 $X(x)$，我们仍设 $\lambda=\mu^2>0$，于是
+\[
+ X(x)=Ae^{\mu x}+Be^{-\mu x}.
+\]
+但是，若 $A\ne0$，则当 $x\to+\infty$ 时会有 $X(x)\to\infty$。这在物理上是说不通的。因此，必须有 $A=0$。再由 $X(0)=0$，又得 $X(0)=Be^0=B=0$，于是又归结为一个平凡解。这样，我们否定了 $\lambda=\mu^2$ 的可能性。这里有一点十分值得注意：物理上合理性的要求限制了函数在无穷远处的性状。而后者又起了边值条件的作用。这种限制可以是例如 $X(x)$ 在 $x\to+\infty$ 时为 $O(1/x^a)$，可以是 $X(x)\in L^1([0,+\infty))$ 或 $X(x)\in L^2([0,+\infty))$ 等等。所以我们看到，限制在某个函数空间的框架内研究某个数学问题不只是有数学上的意义，而且常有物理上的意义。我们暂时只能讲到这里为止。总之，$\lambda=\mu^2$ 已被排除。同样，我们也会排除 $\lambda=0$，而余下的只有 $\lambda=-\mu^2$，从而
+\[
+ X(x)=A\cos\mu x+B\sin\mu x.
+\]
+由 $X(0)=0$ 可得
+\begin{equation}
+ X(x)=\sin\mu x.
+ \tag{3}
+\end{equation}
+我们略去了常数（系数 $B$ 取为1），但是我们不能说一切 $\mu\in\mathbb R$ 都是固有值而(3)为其固有函数。我们只说以下的边值问题
+\begin{equation}
+ \begin{cases}
+ X''(x)-\lambda X(x)=0,&x\in[0,+\infty),\\
+ X(0)=0,&X\text{ 在 }x\to+\infty\text{ 时趋于 }0
+ \end{cases}
+ \tag{4}
+\end{equation}
+（最后一个要求也可以是 $X(x)\in L^1((0,+\infty))$ 等等，现在只是作一个例子来提出问题）的“谱”是 $\lambda=-\mu^2\ (\mu\in\mathbb R)$。什么时候说固有值，什么时候只能说“谱”，这是属于谱论的问题。我们现在只说问题(4)有“连续谱”。相应于 $\lambda=-\mu^2$，有
+\[
+ T'(t)+a^2\mu^2T(t)=0,
+\]
+所以
+\[
+ T(t)=\Phi(\mu)e^{-a^2\mu^2t},\qquad \mu\in\mathbb R,\ t>0,
+\]
+而问题(1),(2)之解现在不是对 $\mu$ 求和，而是对 $\mu$ 求积分：
+\[
+ u(x,t)=\int_{-\infty}^{\infty}\Phi(\mu)e^{-a^2\mu^2t}\sin\mu x\,d\mu.
+\]
+问题就在于如何选择 $\Phi(\mu)$，使当 $t=0$ 时得到
+\begin{equation}
+ \psi(x)=\int_{-\infty}^{\infty}\Phi(\mu)\sin\mu x\,d\mu.
+ \tag{5}
+\end{equation}
+自傅里叶以后，以上形状的积分（还有将正弦改为余弦所得的积分）通称为傅里叶积分。但是我们还要从更广泛的视野来看它。首先我们引入复记号，这样写出一个与(5)相应的式子
+\begin{equation}
+ \varphi(x)=\frac1{2\pi}\int_{-\infty}^{\infty}\Phi(\mu)e^{i\mu x}\,d\mu.
+ \tag{6}
+\end{equation}
+积分号前多了一个因子 $1/(2\pi)$ 自然无关紧要，双方乘以 $e^{-i\xi x}$，并对 $x$ 求积分，如果我们允许任意地交换积分次序将有
+\begin{equation}
+ \int_{-\infty}^{+\infty}\varphi(x)e^{-i\xi x}\,dx
+ =\int_{-\infty}^{\infty}\Phi(\mu)d\mu\,\frac1{2\pi}\int_{-\infty}^{\infty}e^{i(\mu-\xi)x}\,dx.
+ \tag{7}
+\end{equation}
+我们提出：
+\begin{equation}
+ \frac1{2\pi}\int_{-\infty}^{\infty}e^{i(\mu-\xi)x}\,dx=\delta(\mu-\xi).
+ \tag{8}
+\end{equation}
+这个式子看起来令人吃惊，但是很有道理。如果把积分写成和，把 $x$ 变成 $\mathbb R$（由 $-\infty$ 到 $+\infty$）的分点 $x=k$，$k$ 为整数，则上式左方成为
+\begin{equation}
+ \sum_{k=-\infty}^{\infty}\frac1{2\pi}e^{i(\mu-\xi)k}.
+ \tag{9}
+\end{equation}
+但是上一节(17)式中我们讲过 $\delta(x)$ 之傅里叶级数正是
+\begin{equation}
+ \delta(x)=\sum_{k=-\infty}^{\infty}\frac1{2\pi}e^{ikx},
+ \tag{10}
+\end{equation}
+那是离散谱的情况。现在换成了连续谱，级数应该变成积分。在(10)中把 $x$ 写成 $(\mu-\xi)$，注意到 $\Delta x=(k+1)-k=1$，(10)式立即变成(8)式，于是
+\begin{equation}
+ \int_{-\infty}^{\infty}\varphi(x)e^{-i\xi x}\,dx
+ =\int_{-\infty}^{\infty}\Phi(\mu)\delta(\mu-\xi)d\mu
+ =\Phi(\xi).
+ \tag{11}
+\end{equation}
+这样我们得到一对公式(6)和(11)。
+
+上面的证明当然算不得证明，但是它确实是物理学家考虑问题的办法，而且它揭示了十分重要的思想。我们以为(6)和(11)是一对变换和逆变换，(11)式把函数 $\varphi(x)$ 映到 $\Phi(\xi)$，而(6)式就是它的逆。如果我们把 $\varphi(x)$ 看作一个信号，$x$ 表示时间，则(11)表示它是由各种不同频率 $\xi$ 的谐波 $e^{i\xi x}$ 构成的，$\Phi(\xi)$ 就是在谱波构成 $\varphi(x)$ 这个信号时，谐波 $e^{i\xi x}$ 占了多少分量。所以(11)式是一个谱波分析的公式。把它们叠加起来，(6)则是表示这些谐波的合成的公式。但是不论是 $\varphi(x)$ 或 $\Phi(\xi)$ 都表示同一个信号，前者我们称为该信号在时域的表示，后者则是它在频域中的表示。更重要的是在量子力学中它们含意还更深刻。这时 $\varphi(x)$ 是波函数，它是用粒子的位置 $x$ 来表示的。在量子力学中 $\xi$ 则表示粒子的动量，$\Phi(\xi)$ 则是波函数用粒子的动量来表示的。但是它们都是同一个状态的不同表示（物理学中称为“表象”）。前者是 $x$ 表象，后者是 $\xi$ 表象。但是在经典物理学中决定一个粒子的状态应同时了解其位置 $x$ 与动量 $\xi=mv$（所以也就是速度），二者互相独立。现在位置 $x$ 与动量 $\xi$ 之间是“有联系的”：迄今为止，人们可能会有一个错觉，以为两个变量之间的“联系”大概总是一种函数关系。可是在量子力学中却不能说一个粒子的位置与动量间有函数关系，二者之间的关系就是著名的“测不准关系”\footnote{全国自然科学名词审定委员会1988公布的《物理学名词》上，改称“不确定[度]关系”。下文提到的“测不准原理”在《物理学名词》上改称“不确定[性]原理”。}。对前者的测量会影响到后者的测量，反过来也一样，这在经典物理学中是不可想像的。而这种测不准关系正是(6)与(11)这样一对变换与逆变换的必然推论。如此说来，信号的时域与频域表示之间也有(6)与(11)这样的“联系”，那么二者之间是否也有某种测不准关系呢？结论是肯定的。从物理学角度看，“测不准原理”是微观世界的物理学——量子物理与宏观世界的物理学——经典物理的分水岭。但是从数学角度来看则是：某一类函数空间中，只要有(6)和(11)这样的变换关系就一定有测不准关系。不但有量子的测不准关系，也有经典的测不准关系。因此，(6)与(11)这样的变换关系是十分深刻的。我们称(11)是某一函数空间中的 $\varphi(x)$ 到另一函数空间中的 $\Phi(\xi)$ 的傅里叶变换，而(6)则称为其逆傅里叶变换。在下面我们规定采用以下的记号，记 $\Phi(\xi)=\widehat\varphi(\xi)$ 而(6)式的逆变换则记为 $(F^{-1}\Phi)(x)=f(x)$（有的书上则记 $\widehat\varphi(\xi)$ 为 $F(\varphi)(\xi)$）。(6)与(11)形状不太对称，因为(6)式中多了一个因子 $1/(2\pi)$。为了对称起见，许多文献上常把它们写作
+\[
+ \Phi(\xi)=\int_{-\infty}^{\infty}\varphi(x)e^{-2\pi i x\xi}\,dx,
+ \qquad
+ \varphi(x)=\int_{-\infty}^{\infty}\Phi(\xi)e^{2\pi i x\xi}\,d\xi.
+\]
+这相当于把频率换成了圆频率。
+
+我们下面的任务就是讨论这种变换的性质，特别是给它们以严格的证明（由此也就给(8)式以明确的含意）。但是这时首先要问，在什么框架下讨论它们，也就是上面说的“某一函数空间”中的 $\varphi(x)$，究竟是指哪一个函数空间。
+
+首选的空间自然是 $L^1$。因为(6)式中出现了积分，而从傅里叶级数的情况来看黎曼积分是不够用的。下面我们不限于 $L^1(\mathbb R^1)$，而用一般的 $L^1(\mathbb R^n)$，因此我们给出
+
+\noindent\textbf{定义1}\quad 设 $f(x)\in L^1(\mathbb R^n)$，我们称
+\begin{equation}
+ \widehat f(\xi)=\int_{\mathbb R^n}f(x)e^{-ix\xi}\,dx
+ \tag{12}
+\end{equation}
+为其傅里叶变换，这里 $x\xi=\sum_{j=1}^nx_j\xi_j$，时常记作 $x\cdot\xi$、$(x,\xi)$ 或 $\langle x,\xi\rangle$。
+
+但我们暂时还未宣称
+\[
+ f(x)=\frac1{(2\pi)^n}\int_{\mathbb R^n}\widehat f(\xi)e^{ix\xi}\,d\xi
+\]
+为逆傅里叶变换，因为 $f(x)\in L^1(\mathbb R^n)$ 时，$\widehat f(\xi)$ 在什么空间中并不清楚，所以这个积分暂时也没有定义。
+
+给出了这个定义后，我们要讨论它的种种性质，其中最重要的是它关于 $x$ 的线性变换的性质以及关于 $f(x)$ 之代数与分析运算的性质。其中有一个是在上一节已经证明的定理3，即
+
+\noindent\textbf{黎曼--勒贝格引理}\quad 若 $f(x)\in L^1(\mathbb R^n)$，则
+\[
+ \lim_{|\xi|\to\infty}\widehat f(\xi)=0.
+\]
+这个定理下面我们就只直接使用而不再证明了。
+
+但是，从物理学的角度看来，$L^1(\mathbb R^n)$ 是不合用的，因为例如信号处理问题中，$|\widehat f(\xi)|^2d\xi$ 代表频率在 $\xi$ 到 $\xi+d\xi$ 中的谱波成分之功率。因为一个信号的功率总是有限的，所以必须有
+\[
+ \int_{\mathbb R^n}|\widehat f(\xi)|^2d\xi<+\infty.
+\]
+再看量子力学的情况。这时 $\varphi(x)$ 作为波函数其物理解释是：$|\varphi(x)|^2dx$ 是粒子位于 $x$ 到 $x+dx$ 之间的概率。既然是概率，则必有
+\[
+ \int_{\mathbb R^n}|\varphi(x)|^2dx=1.
+\]
+因此，从物理学的角度来看，(6)和(11)应该看成是由 $L^2(\mathbb R^n)$ 到 $L^2(\mathbb R^n)$ 的映射。上一章中我们指出 $L^2(\mathbb R^n)$ 有特别重要的结构，因此这时我们除了要再点明 $L^1(\mathbb R^n)$ 中傅里叶变换的性质外，更要从 $L^2(\mathbb R^n)$ 特有的结构来考察它。
+
+然后，我们又要在广义函数框架下去看傅里叶变换。到这里我们才最后完成(6)与(11)的证明，到那时(8)式的意义也就明确了。我们得到了一个比较完整的理论。其实广义函数理论的出现主要理由之一正是为了傅里叶变换理论的需要。
+
+现在我们在 $L^1(\mathbb R^n)$ 中讨论傅里叶变换。
+
+\noindent\textbf{定理1}\quad 若 $f(x)\in L^1(\mathbb R^n)$，则 $\widehat f(\xi)$ 必在 $\mathbb R^n$ 上有界、一致连续，而且在无穷远处为0。
+
+\noindent\textbf{证}\quad 易见
+\[
+ |\widehat f(\xi)|\le\int_{\mathbb R^n}|f(x)e^{-ix\xi}|dx
+ =\int_{\mathbb R^n}|f(x)|dx=\|f\|_{L^1},
+\]
+所以 $\widehat f(\xi)$ 之有界性自明。又
+\[
+ |\widehat f(\xi+h)-\widehat f(\xi)|
+ \le\int_{\mathbb R^n}|f(x)|\,|e^{-ixh}-1|dx
+ =2\int_{\mathbb R^n}|f(x)|\left|\sin\frac{xh}{2}\right|dx=I_1+I_2.
+\]
+我们将此积分分为两部分，其一是
+\[
+ I_1=2\int_{|x|>R}|f(x)|\left|\sin\frac{xh}{2}\right|dx
+ \le2\int_{|x|>R}|f(x)|dx.
+\]
+故对任意 $\varepsilon>0$，总可找到一个与 $x,h$ 均无关的 $R$，使上面的积分小于 $\varepsilon/2$，由此固定 $R$。再看
+\[
+ I_2=2\int_{|x|<R}|f(x)\sin\frac{xh}{2}|dx.
+\]
+因为
+\[
+ \left|\sin\frac{xh}{2}\right|\le\frac12|xh|\le\frac R2|h|
+\]
+（注意这里 $xh$ 是内积，故 $|xh|\le|x|\,|h|\le R|h|$），而 $\|h\|^2=\sum_{i=1}^nh_i^2$，但以下 $n$ 维向量的长仍常以 $|\cdot|$ 表示，故
+\[
+ |I_2|\le R\int_{|x|<R}|f(x)|dx\cdot|h|<\frac\varepsilon2.
+\]
+只要 $|h|$ 充分小即可（注意现在 $R$ 是固定的）。所以，当 $|\xi|\to\infty$ 时 $\widehat f(\xi)\to0$ 就是黎曼--勒贝格引理。
+
+但是 $\widehat f(\xi)$ 一般并不可积，例如设
+\[
+ f(x)=\begin{cases}1,&|x|<1,\\0,&|x|>1,
+ \end{cases}
+\]
+$f(x)\in L^1(\mathbb R^1)$（我们没有规定 $|x|=1$ 时 $f(x)$ 之定义，但这没有关系，因为 $L^1(\mathbb R^1)$ 函数只要几乎处处有定义即可），但是它的傅里叶变换是
+\begin{equation}
+ \widehat f(\xi)=\int_{-\infty}^{\infty}f(x)e^{-ix\xi}dx
+ =\int_{-1}^{1}e^{-ix\xi}dx
+ =\frac{e^{-i\xi}-e^{i\xi}}{-i\xi}=\frac{2\sin\xi}{\xi}.
+ \tag{13}
+\end{equation}
+它虽然连续，而且当 $|\xi|\to\infty$ 时趋向0，但它并不属于 $L^1(\mathbb R^1)$，因为勒贝格可积一定是指绝对可积，而这个函数却不是绝对可积的。因此，对这个 $f(x)$，(6)式不可能成立。由 $f(x)$ 到 $\widehat f(\xi)$ 的变换称为傅里叶变换，而当 $\widehat f(\xi)\in L^1$ 时，它可以用(11)表示。那么由 $\widehat f(\xi)$ 到 $f(x)$ 就应称为逆傅里叶变换。上面我们用形式的办法“推导”出来它应该写为(6)式，但实际上，既然连 $\widehat f(\xi)\in L^1$ 都不能保证，(6)式又有什么意义呢？上一节讲傅里叶级数时，先给出了 $f(x)\in L^1([ -\pi,\pi])$，然后就可以算出它的傅里叶系数
+\[
+ c_k=\frac1{2\pi}\int_{-\pi}^{\pi}f(x)e^{-ikx}dx.
+\]
+傅里叶系数序列 $\{c_k\}$（看成是定义在整数集 $\mathbb Z$ 上的函数）就相当于 $\widehat f(\xi)$。在上一节，我们开始先说 $f(x)$ 的傅里叶级数 $f(x)\sim\sum_{k=-\infty}^{\infty}c_ke^{ikx}$ 是形式级数，并因此使用了记号 $\sim$。其实现在的逆变换公式(6)也只是一个“形式的”对象。上一节我们用了很大力量去讨论傅里叶级数的收敛问题，其实还只接触到这个重大问题比较浅层的结果，也就是说，$L^1$ 函数 $f(x)$ 之傅里叶级数收敛于 $f(x)$ 即由 $\{c_k\}$ 可以通过 $\sum_{k=-\infty}^{\infty}c_ke^{ikx}$ 恢复 $f(x)$ 的必要充分条件没有找到。也就因此，才产生了诸如费耶求和等各种方法以恢复 $f(x)$ 的问题。现在的问题也是一样。如果我们记 $\mathbb R^n$ 上连续而无穷远处为0的函数之空间为 $C_0(\mathbb R^n)$，则定理1告诉我们用 $F$ 表示傅里叶变换，并看作一个映射为 $F:L^1(\mathbb R^n)\to C_0(\mathbb R^n)$，而且 $F$ 的“像”其实是 $C_0(\mathbb R^n)$ 的一个真子空间，而数学家们迄今未能完全刻画它。所以问题在于，如何找到一个空间 $T$，它要足够宽广，包括 $L^1,L^2$ 等等，在 $T$ 上又可定义傅里叶变换 $F$，使 $F:T\to T$ 是一个双方单值的映射，广义函数理论很大程度上正是为了回答这个问题而出现的。
+
+下面来看当 $f(x)$ 变化时，$\widehat f(\xi)$ 怎样随之改变。一个明显的结果是 $f(x)\mapsto\widehat f(\xi)$ 是线性映射，若 $f_i(x)\in L^1(\mathbb R^n)$，$c_i$ 是复常数，$i=1,2$，则
+\begin{equation}
+ (c_1f_1+c_2f_2)\widehat{\ }(\xi)=c_1\widehat f_1(\xi)+c_2\widehat f_2(\xi).
+ \tag{14}
+\end{equation}
+$L^1(\mathbb R^n)$ 函数的乘积一般不再在 $L^1(\mathbb R^n)$ 中，但是有一种运算称为卷积，其形式的定义是
+\begin{equation}
+ (f*g)(x)=\int_{\mathbb R^n}f(t)g(x-t)dt
+ =\int_{\mathbb R^n}f(x-t)g(t)dt.
+ \tag{15}
+\end{equation}
+首先的问题是，当 $f,g\in L^1(\mathbb R^n)$ 时，上面的积分是否仍是 $L^1(\mathbb R^n)$ 函数。当 $f,g$ 为黎曼可积时，上述积分仍是一个黎曼可积函数，这可以用富比尼定理来证明，对于 $L^1(\mathbb R^n)$ 函数，富比尼定理我们已在第四章中讲到，现在再把结果陈述如下：
+
+\noindent\textbf{定理2（富比尼（Fubini）定理）}\quad 若 $f(x,y)$ 是 $L^1(\mathbb R^n\times\mathbb R^m)$ 函数，则对几乎所有 $x$（或 $y$），$f(x,y)\in L^1(\mathbb R_y^m)$（或 $f(x,y)\in L^1(\mathbb R_x^n)$），而且
+\begin{equation}
+ \iint_{\mathbb R^n\times\mathbb R^m}f(x,y)dxdy
+ =\int_{\mathbb R^n}dx\int_{\mathbb R^m}f(x,y)dy
+ =\int_{\mathbb R^m}dy\int_{\mathbb R^n}f(x,y)dx.
+ \tag{16}
+\end{equation}
+
+\noindent\textbf{托乃利（Tonelli）定理}\quad 若 $f(x,y)\ge0$ 为可测函数，则若(16)式中的三个积分中只要有一个存在，另外两个一定也存在而且(16)式成立。
+
+现在把这个定理用于卷积(15)，为此，我们考虑 $|f(x-t)g(t)|$。显然
+\[
+ \int_{\mathbb R^n}|f(x-t)g(t)|dx
+ =|g(t)|\int_{\mathbb R^n}|f(x-t)|dx
+ =|g(t)|\int_{\mathbb R^n}|f(x)|dx\in L^1(\mathbb R_t^n).
+\]
+因此，
+\[
+ \int_{\mathbb R^n}|g(t)|dt\int_{\mathbb R^n}|f(x-t)|dx<+\infty,
+\]
+由托乃利定理即知
+\[
+ \iint_{\mathbb R^n\times\mathbb R^n}|f(x-t)g(t)|dxdt<+\infty,
+\]
+即 $f(x-t)g(t)\in L^1(\mathbb R_x^n\times\mathbb R_t^n)$，应用托乃利定理，即知(15)所定义的 $(f*g)(x)\in L^1(\mathbb R^n)$，而且重复前证的步骤即有
+\begin{equation}
+ \left|\int_{\mathbb R^n}(f*g)(x)dx\right|
+ \le\int_{\mathbb R^n}|g(t)|dt\int_{\mathbb R^n}|f(x)|dx,
+ \tag{17}
+\end{equation}
+或写作
+\begin{equation}
+ \|f*g\|_{L^1}\le\|f\|_{L^1}\,\|g\|_{L^1}.
+ \tag{17'}
+\end{equation}
+卷积很像是一个乘法。它适合交换律（这一点由定义(15)立即知）、结合律
+\[
+ (f*g)*h=f*(g*h)
+\]
+和分配律
+\[
+ (f_1+f_2)*g=f_1*g+f_2*g.
+\]
+所以 $L^1(\mathbb R^n)$ 不但是一个线性空间，而且其中还有适合以上运算律的“乘法”，这就称为一个“代数”。再考虑到其中的范数适合不等式(17)，就称为一个巴拿赫代数。但是这个乘法又与“普通”的乘法有些不同，例如，其中没有单位元1（即与任一 $L^1$ 函数 $f$ 之卷积均等于 $f$ 本身的 $L^1$ 函数“1”，$f*1=1*f=f$）。$\delta$ 函数适合此式，但 $\delta$ 又不是一个 $L^1$ 函数。又例如有些乘法是没有零因子的，即由 $f\cdot g=0$ 必有 $f=0$ 或 $g=0$。卷积就没有零因子。这就是梯其马希（Titchmarsh）定理：若 $f,g\in L^1(\mathbb R^n)$ 而且 $f*g=0$，则 $f,g$ 中至少有一个几乎处处为0，但这并不容易证明。
+
+卷积是很重要的运算。我们实际上早已见过它了，例如磨光运算就是函数与磨光核的卷积，$\delta$ 序列 $K_n(x)\to\delta(x)$ in $D'$ 就是 $f*K_n\to f$ 对一切 $f\in D$ 成立（由此可以想像到 $\delta$ 函数是卷积的单位元，即上述的“1”），柯西积分 $\frac1{2\pi i}\int\frac{f(\xi)}{\xi-z}d\xi$ 即 $f$ 与 $\frac1{2\pi i}\frac1z$ 的卷积（复的）。不过我们现在最关心的是卷积与傅里叶变换的关系。
+
+\noindent\textbf{定理3}\quad 若 $f,g\in L^1(\mathbb R^n)$，则其卷积 $h(x)=(f*g)(x)$ 之傅里叶变换等于 $f$ 与 $g$ 之傅里叶变换之积：
+\[
+ \widehat h(\xi)=\widehat f(\xi)\widehat g(\xi).
+\]
+
+\noindent\textbf{证}\quad 应用富比尼定理即有
+\[
+ \begin{aligned}
+ \widehat h(\xi)
+ &=\int_{\mathbb R^n}h(x)e^{-ix\xi}dx
+ =\int_{\mathbb R^n}dx\int_{\mathbb R^n}f(t)g(x-t)e^{-ix\xi}dt\\
+ &=\int_{\mathbb R^n}dt\int_{\mathbb R^n}f(t)e^{-it\xi}g(x-t)e^{-i\xi(x-t)}dx\\
+ &=\int_{\mathbb R^n}f(t)e^{-it\xi}dt\int_{\mathbb R^n}g(x)e^{-ix\xi}dx\\
+ &=\widehat f(\xi)\widehat g(\xi).
+ \end{aligned}
+\]
+对于 $\widehat f$ 与 $\widehat g$ 之卷积其傅里叶逆变换也应有类似公式，但是现在连 $\widehat f,\widehat g$ 暂时都无法定义，所以只好在后面用广义函数去讨论。
+
+这个定理不但在数学理论中有重要意义，而且在实际工作中很有用。设有一个信号 $f(t)$（我们使用它的时域表示），我们已经明白，它是由各种不同频率的谐波合成的。所谓滤波就是希望从这些成分中删除某些成分。为了从数学上考查这个过程，我们转到此信号的频域表示，即 $\widehat f(\xi)$，$\xi\in\mathbb R^1$。现在我们要求删除其中的高频成分，例如删除 $|\xi|\ge R_0$ 的一切高频成分，能完成这个任务的设备就叫做低通滤波器。为此，我们考虑一个函数
+\begin{equation}
+ F(\xi)=\begin{cases}1,&|\xi|<R_0,\\0,&|\xi|\ge R_0,
+ \end{cases}
+ \tag{18}
+\end{equation}
+并考虑新的信号 $F(\xi)\widehat f(\xi)$，它就是从原来信号中删除了高频成分的结果，如果 $F(\xi)=\widehat w(\xi)$，则
+\[
+ F(\xi)\widehat f(\xi)=\widehat{w*f}(\xi).
+\]
+因此回到时域即知
+\[
+ (w*f)(t)=\int_{-\infty}^{\infty}f(\tau)w(t-\tau)d\tau.
+\]
+实际上，如果逆变换公式(6)成立的话
+\[
+ \begin{aligned}
+ w(t)&=\frac1{2\pi}\int_{-\infty}^{\infty}F(\xi)e^{it\xi}d\xi
+ =\frac1{2\pi}\int_{-R_0}^{R_0}F(\xi)e^{it\xi}d\xi\\
+ &=\frac{e^{itR_0}-e^{-itR_0}}{2\pi it}
+ =\frac{\sin R_0t}{\pi t},
+ \end{aligned}
+\]
+就是(18)的时域表示，而从数学上看，上述滤波器就是一个完成卷积运算
+\begin{equation}
+ (w*f)(t)=\frac1\pi\int_{-\infty}^{\infty}f(\tau)\frac{\sin R_0(t-\tau)}{t-\tau}d\tau
+ \tag{19}
+\end{equation}
+的装置。所以函数 $\dfrac{\sin R_0t}{\pi t}$ 可以称为这个滤波器的仪器函数。
+
+(19)也称为“窗式傅里叶变换”（window Fourier transform）。
+
+不过我们要注意上面我们并没有规定信号的时域表示 $f(t)\in L^1(\mathbb R_t)$，而 $F(\xi)$ 上面已说过了不一定是 $L^1(\mathbb R_\xi)$ 函数，因此即使逆变换公式(6)对 $L^1(\mathbb R_\xi)$ 函数得到了证明，也不能应用于此。所有这一切都表明了完全有必要在广义函数框架下讨论傅里叶变换。此外，在上一节中我们正是针对“窗口函数”(18)提出了吉卜斯现象。同样，在窗式傅里叶变换(19)中也一定会出现这种情况。正如在傅里叶级数时我们采用费耶核
+\[
+ \left[\frac{\sin(N+\frac12)t}{\sin\frac t2}\right]^2
+\]
+来代替狄利克雷核，而且这是通过将部分和 $S_N$ 改为 $\sigma_N=\sum_{j=-N}^{N}(1-\frac{|j|}{N+1})u_j$ 来实现的。现在也一样，我们只要把窗口函数改为 $F(\xi)(1-|\xi|/R)$，从而把(19)变为 $(\sin R_0t/\pi R_0t)^2*f$ 也能实现同样的目的。
+
+现在回到傅里叶变换最引人注目的性质，即微分运算在傅里叶变换下成为什么。我们先形式地看一下会有什么结果，然后再去证明它。为简单计只看 $\mathbb R^1$ 的情况。由(12)
+\[
+ \widehat f(\xi)=\int_{-\infty}^{\infty}f(x)e^{-ix\xi}dx,
+\]
+双方对 $\xi$ 求导即得
+\begin{equation}
+ \frac d{d\xi}\widehat f(\xi)
+ =\int_{-\infty}^{\infty}(-ix)f(x)e^{-ix\xi}dx
+ =\frac1i\widehat{(xf)}(\xi).
+ \tag{20}
+\end{equation}
+再由(6)
+\[
+ f(x)=\frac1{2\pi}\int_{-\infty}^{\infty}\widehat f(\xi)e^{ix\xi}d\xi,
+\]
+双方对 $x$ 求导，有
+\[
+ f'(x)=\frac1{2\pi}\int_{-\infty}^{\infty}i\xi\widehat f(\xi)e^{ix\xi}d\xi.
+\]
+注意到(6)式实际上就是逆变换的公式，仿此我们可以想像到应有
+\begin{equation}
+ i\xi\widehat f(\xi)=\int_{-\infty}^{\infty}f'(x)e^{-ix\xi}dx.
+ \tag{21}
+\end{equation}
+
+(20)与(21)表示，对原来的函数“乘以自变量”（或对自变量求导），导致对傅里叶变换“对新的自变量求导”（或乘以“自变量”），反过来也一样。（但还应该适当地加上因子 $\pm i$。）这是一种新对偶关系。我们就简单地说，同一物理过程的 $x$ 表象乘以自变量（或求导）就得出该过程的 $\xi$ 表象的求导（或乘以自变量）。更简单地说就说在傅里叶变换下 $\frac1i\partial_x$ 与 $\xi$（乘以 $\xi$）是对偶的，$-\frac1i\partial_\xi$ 与 $x$ 是对偶的。这个论断在量子物理中有极大的意义，因为量子物理与经典物理有一个根本区别，即在经典物理中，物理量用函数来表示，而在量子物理中，物理量用算子来表示（当然究竟是作用在什么空间上的何种算子需要详细说明），而傅里叶变换实现了二者之间的对应。
+
+放下物理的解释来看数学，就发现上面的“推导”确有许多问题，例如它要用到 $f(x)$ 的积分，则应该有 $f(x)\in L^1$。同样还应有 $xf(x)\in L^1$，$\widehat f(\xi)$、$\frac d{d\xi}\widehat f(\xi)\in L^1$ 等等。通常，要求一个函数属于 $L^1$ 可以归结为对它在无穷远处衰减速度的限制。例如，若 $\widehat f(\xi)$ 当 $\xi\to\infty$ 时为 $O(\xi^{-2-\varepsilon})$，则 $f(x)$ 可求导。于是我们又看到对 $\widehat f(\xi)$ 增长速度（即是衰减速度）的限制导致了 $f(x)$ 的某种程度的可微性。同样，$f(x)$ 在无穷远处的增长速度决定了 $\widehat f(\xi)$ 的可微性。这个现象我们已在上一节讲到傅里叶级数的收敛性时强调过其重要性。在广义函数框架下处理傅里叶变换也是以此为基础的。现在我们正式提出和证明相关的定理。
+
+\noindent\textbf{定理4}\quad
+(i)设 $f(x)\in L^1(\mathbb R^n)$，$x_jf(x)\in L^1(\mathbb R^n)$，则 $\widehat f(\xi)$ 对 $\xi_j$ 可求导，而且
+\begin{equation}
+ \widehat{x_jf}(\xi)=i\frac{\partial}{\partial\xi_j}\widehat f(\xi).
+ \tag{22}
+\end{equation}
+(ii)若 $g(x)\in L^1(\mathbb R^n)$ 而它对某一自变量 $x_j$ 的不定积分 $f(x)$ 为 $L^1(\mathbb R^n)$ 函数，则 $f(x)=-\int_{x_j}^{\infty}g(x)\,dx_j$，而且
+\begin{equation}
+ \widehat{\left(\frac1i\frac{\partial f}{\partial x_j}\right)}(\xi)
+ =\xi_j\widehat f(\xi).
+ \tag{23}
+\end{equation}
+
+\noindent\textbf{证}\quad
+(i)记 $h_j$ 为第 $j$ 个分量为 $h$ 而其他分量为0的 $n$ 维向量。我们有
+\[
+ \widehat f(\xi+h_j)=\int_{\mathbb R^n}f(x)e^{-ix\xi}e^{-ix_jh}\,dx,
+\]
+所以
+\[
+ \frac1h[\widehat f(\xi+h_j)-\widehat f(\xi)]
+ =\int_{\mathbb R^n}f(x)e^{-ix\xi}\frac{e^{-ix_jh}-1}{h}\,dx.
+\]
+因为
+\[
+ |e^{-ix_jh}-1|=2\left|\sin\frac{x_jh}{2}\right|\le|x_j|\,|h|,
+\]
+所以积分
+\[
+ \int_{\mathbb R^n}f(x)e^{-ix\xi}\frac{e^{-ix_jh}-1}{h}\,dx
+\]
+之被积函数绝对值不大于 $L^1(\mathbb R^n)$ 函数 $|x_jf(x)|$，于是我们可以应用勒贝格控制收敛定理在积分号下来取极限而(22)得证。
+
+(ii)由假设 $f(x)=\int_{-\infty}^{x_j}g(x)\,dx_j$。现在我们利用 $f(x)\in L^1$ 这一条件来确定积分下限。对任意 $A$ 与 $a$ 有
+\[
+ f(A)-f(a)=\int_a^Ag(x)\,dx_j.
+\]
+因为假设了 $g(x)\in L^1(\mathbb R^n)$，所以当 $A\to\infty$ 时 $f(A)$ 有极限 $M$，$f(A)\to M$，同理当 $a\to-\infty$ 时 $f(a)\to m$。又因为假设了 $f(x)\in L^1(\mathbb R^n)$，所以必有 $M=0,m=0$，而得
+\[
+ f(x)=-\int_{x_j}^{+\infty}g(x)\,dx_j.
+\]
+对于勒贝格积分，我们知道不定积分在几乎处处意义下是原函数，所以 $g(x)=f_{x_j}(x)$ 几乎处处成立。分部积分公式
+\[
+ \int_a^Auv\,dx=uV\Big|_a^A-\int_a^AVu'\,dx
+ \qquad(V\text{ 为 }v\text{ 之不定积分})
+\]
+在勒贝格积分理论中当 $v$ 与 $u'$ 均为可积时是成立的，现在令 $v=g$，从而 $V=-\int_{x_j}^{+\infty}g(x)\,dx_j=f(x)$ 以及 $u=e^{-ix\xi}$，我们有
+\[
+ \begin{aligned}
+ \int_a^Ag(x)e^{-ix\xi}dx_j
+ &=\int_a^Af_{x_j}(x)e^{-ix\xi}dx_j\\
+ &=f(x)e^{-ix\xi}\Big|_a^A+i\xi_j\int_a^Af(x)e^{-ix\xi}dx_j.
+ \end{aligned}
+\]
+令 $a\to-\infty,A\to+\infty$，前面我们已经证明了 $f(a)\to0,f(A)\to0$，所以立即得到
+\[
+ \widehat g(\xi)=\widehat{\left(\frac{\partial f}{\partial x_j}\right)}(\xi)
+ =i\xi_j\widehat f(\xi),
+\]
+从而(23)成立。
+
+\noindent\textbf{注1}\quad 在黎曼积分理论中，我们是在两个条件下证明了 $\int_a^xf(t)dt$ 是 $f(x)$ 的原函数的，其一是 $f(x)$ 黎曼可积，其二是 $f(x)$ 有原函数存在（即处处适合 $F'(x)=f(x)$ 的 $F(x)$）存在。在勒贝格积分中我们也不能说只要 $f(x)\in L^1$，则 $\int_a^xf(t)dt$ 一定是 $f(x)$ 的原函数，而只能得到 $\int_a^xf(t)dt$ 在几乎处处意义下是 $f(x)$ 的原函数。就是说，即令用勒贝格积分理论，也不能完全回答有可变积分限的积分（即不定积分）与原函数这两个概念是否完全一致，因为这里涉及一些比较细微问题，这是在这个定理证明中留下的一个“陷阱”。
+
+\noindent\textbf{注2}\quad 在本定理前，我们说了一句话：“通常，要求一个函数在 $L^1$ 可以归结为它在无穷远处衰减速度的限制。”实际上，事情当然不这么简单。例如我们知道若 $\mathbb R$ 上的连续函数 $f(x)$ 在 $|x|\to\infty$ 时有 $f(x)=O(1/|x|^\lambda)$，$\lambda>1$，则 $f(x)$ 在 $\mathbb R$ 上绝对可积。人们常常不自觉地以为其逆也是对的，完全不然，甚至 $f(x)$ 当 $|x|\to\infty$ 时没有极限，甚至也不有界，仍有 $f(x)$ 在 $\mathbb R$ 上绝对可积。这都可以找到例子。这个定理的证明中，我们是在假设 $f(x)\in L^1$ 同时又是某 $L^1$ 函数 $g(x)$ 的不定积分条件下才得知 $\lim_{A\to\infty}f(A)=0,\lim_{a\to-\infty}f(a)=0$ 的。顺便说一下，从这里还得知，若 $g(x)\in L^1$，则 $\int_{-\infty}^{+\infty}g(x)dx=0$ 时才能得到 $\int_{-\infty}^{x}g(x)dx\in L^1$。在这方面还有一个很有趣的结果（我们只对 $\mathbb R^1$ 的情况来陈述它）：若 $f(x)\in L^1$，$f^{(r)}(x)\in L^1$，$r>1$，则 $f^{(1)}(x),\cdots,f^{(r-1)}(x)$ 都在 $L^1$，但是证明并不容易。
+
+以上我们看到一个基本思想很清楚，而物理上又很重要的结论：求导与乘以自变量是对偶的，而且通过傅里叶变换来实现。但是如果在 $L^1$ 框架下来讨论，会引起多少麻烦事，因为广义函数框架在这方面显得更直观，物理学家和工程师很可能会乐于接受，以为这样就不需任何条件了。但是情况并非如此，见下一节。而且这些毫不能说明 $L^1$ 和 $L^2$ 框架下的傅里叶变换理论只是一烦琐哲学，恰好相反，它是内容十分丰富的。
+
+最后我们再讲几个与自变量的线性变换有关的性质。首先，也是最常用的是“反射”，即将 $x$ 变为 $-x$，或 $\xi$ 变为 $-\xi$，我们用一个专门记号来表示它，我们定义
+\[
+ \widetilde f(x)=f(-x),\qquad \widetilde\varphi(\xi)=\varphi(-\xi).
+\]
+首先讲一下如果 $\widehat f(\xi)$ 仍在 $L^1(\mathbb R^n)$ 中，对它再作一次傅里叶变换又如何？事实上
+\[
+ \begin{aligned}
+ \widehat{\widehat f}(x)
+ &=\int_{\mathbb R^n}\widehat f(\xi)e^{-ix\xi}d\xi\\
+ &=(2\pi)^n\frac1{(2\pi)^n}\int_{\mathbb R^n}\widehat f(\xi)e^{i\xi(-x)}d\xi
+ =(2\pi)^nf(-x)=(2\pi)^n\widetilde f(x).
+ \end{aligned}
+\]
+注意这里自变量记号的变化，所以至少从形式上说，有
+\begin{equation}
+ \widehat{\widehat f}(x)=(2\pi)^n\widetilde f(x).
+ \tag{24}
+\end{equation}
+另一个重要的变换是平移算子。我们定义平移算子 $\tau_h$（$h\in\mathbb R^n$）为
+\[
+ (\tau_hf)(x)=f(x-h).
+\]
+很容易看到，若 $f\in L^1(\mathbb R^n)$，显然 $\tau_hf\in L^1(\mathbb R^n)$，易见
+\[
+ \begin{aligned}
+ \widehat{(\tau_hf)}(\xi)
+ &=\int_{\mathbb R^n}f(x-h)e^{-ix\xi}dx\\
+ &=e^{-ih\xi}\int_{\mathbb R^n}f(x-h)e^{-i\xi(x-h)}dx\\
+ &=e^{-ih\xi}\widehat f(\xi).
+ \end{aligned}
+ \tag{25}
+\]
+我们知道 $e^{-ih\xi}$ 的 $h$ 是相位，所以自变量的平移造成傅里叶变换相位变化。再看若对 $f(x)$ 添加一个因子 $e^{ihx}$，则当 $f\in L^1(\mathbb R^n)$ 时，$e^{ihx}f(x)\in L^1(\mathbb R^n)$，容易看到
+\begin{equation}
+ \widehat{(e^{ihx}f)}(\xi)=\int_{\mathbb R^n}f(x)e^{-ix(\xi-h)}dx
+ =\widehat f(\xi-h)=\tau_h\widehat f(\xi).
+ \tag{26}
+\end{equation}
+
+\noindent\textbf{2. $L^2(\mathbb R^n)$中的傅里叶变换}\quad
+首先遇到的问题是 $L^2(\mathbb R^n)$ 函数不一定可积，因此(6)式中的积分目前无定义。但是 $L^2(\mathbb R^n)$ 是一个“很好”的空间：它有内积以及由内积导出的范数（因为现在讨论的函数是取复值的，如 $e^{-i\xi x}$，所以我们应该讨论复的内积，即埃尔米特内积），它有正交性，因此可以定义其中的 o.n. 系。当我们考虑有限区间例如 $[-\pi,\pi]$ 上的 $L^2$ 空间时，还可以找出可数的完全 o.n. 系如 $\{e^{ikx}/\sqrt{2\pi}\}$，$k$ 为整数，而任一 $L^2([ -\pi,\pi])$ 函数都可以按它展开为傅里叶级数，且在 $L^2([ -\pi,\pi])$ 中收敛。$L^2(\mathbb R^n)$ 空间又是完备的。这样一些性质使它在数学的许多分支和物理学中十分有用。它是所谓希尔伯特空间最常见的代表。因此，我们将着重从希尔伯特空间的角度来研究 $L^2(\mathbb R^n)$ 中的傅里叶变换。我们先从其定义开始，而暂时认为(6)只是一个形式的记法。
+
+我们的作法是先取 $L^2(\mathbb R^n)$ 的一个稠密的子空间，使对于其中之元可以定义傅里叶变换，再应用 $L^2(\mathbb R^n)$ 的完备性把这个定义推广到整个 $L^2(\mathbb R^n)$。现在我们选取 $L^2(\mathbb R)$ 中具有紧支集 $[-A,A]$ 的函数（为方便起见，我们只讨论一个自变量的情况，但是其结果易见可以适用于 $\mathbb R^n$），并认为这些函数都定义在 $\mathbb R$ 上不过在 $[-A,A]$ 之外恒为0。记此空间为 $L^2(\mathbb R_A)$，很明显 $L^2(\mathbb R_A)\subset L^1(\mathbb R)$，所以可以在其上定义傅里叶变换。我们可以作一个相似变换
+\[
+ x=\frac A\pi y=\lambda y,\qquad \lambda=\frac A\pi,
+\]
+使 $[-A,A]$ 中的 $x$ 与 $[-\pi,\pi]$ 中的 $y$ 相对应，而 $f(\lambda y)$ 之傅里叶变换
+\[
+ F[f(\lambda\cdot)](\xi)=\int_{-\infty}^{\infty}f(\lambda y)e^{-i\xi y}dy
+ =\frac1\lambda\int_{-\infty}^{\infty}f(x)e^{-i\xi x/\lambda}dx
+ =\frac1\lambda\widehat f\!\left(\frac\xi\lambda\right).
+\]
+这当然不会影响下面的讨论。我们要注意现在我们是在 $L^2([ -\pi,\pi])$ 中讨论问题。在 $L^2([ -\pi,\pi])$ 中有 o.n. 系
+\[
+ \left\{\frac1{\sqrt{2\pi}}e^{ikx}\right\},\qquad k=0,\pm1,\pm2,\cdots.
+\]
+在第四章就指出，这个 o.n. 系是完全的，但未证明。下面我们将把证明补出来。现在则承认这个结果。于是任意的 $f(x)\in L^2([ -\pi,\pi])$ 均可展开为在 $L^2$ 意义下收敛的傅里叶级数：
+\[
+ f(x)=\sum_{k=-\infty}^{+\infty}a_k\frac1{\sqrt{2\pi}}e^{ikx},
+\]
+这里
+\[
+ a_k=\int_{-\pi}^{\pi}f(x)\frac1{\sqrt{2\pi}}e^{-ikx}dx
+ =\frac1{\sqrt{2\pi}}\int_{-\pi}^{\pi}f(x)e^{-ikx}dx
+ =\frac{C_k}{\sqrt{2\pi}},
+\]
+而且
+\[
+ C_k=\int_{-\pi}^{\pi}f(x)e^{-ikx}dx
+\]
+正是通常说的傅里叶系数。而 $\{e^{ikx}\}$ 之完全性给出了以下的帕塞瓦尔关系式
+\[
+ \|f\|_{L^2}^2=\sum_{k=-\infty}^{+\infty}|a_k|^2
+ =\frac1{2\pi}\sum_{k=-\infty}^{+\infty}\left|\int_{-\pi}^{\pi}f(x)e^{-ikx}dx\right|^2.
+\]
+但右方的积分正是 $|\widehat f(k)|^2$，所以我们有
+\begin{equation}
+ \|f\|_{L^2}^2=\frac1{2\pi}\sum_{k=-\infty}^{+\infty}|\widehat f(k)|^2.
+ \tag{27}
+\end{equation}
+如果我们用 $e^{-i\lambda x}f(x)$，$0\le\lambda\le1$，代替 $f(x)$，则其傅里叶变换成为 $\widehat f(k+\lambda)$。但是 $\|e^{-i\lambda x}f(x)\|_{L^2}^2=\|f(x)\|_{L^2}^2$，因此又有
+\begin{equation}
+ \|f\|_{L^2}^2=\frac1{2\pi}\sum_{k=-\infty}^{+\infty}|\widehat f(k+\lambda)|^2.
+ \tag{28}
+\end{equation}
+这是一个极重要的关系式。双方对 $\lambda$ 由0到1积分，立即知道，对于支集在 $[-\pi,\pi]$ 中的 $L^2$ 函数，有
+\begin{equation}
+ \|f\|_{L^2}^2=\frac1{2\pi}\int_{-\infty}^{\infty}|\widehat f(\xi)|^2d\xi
+ =\frac1{2\pi}\|\widehat f\|_{L^2}^2.
+ \tag{29}
+\end{equation}
+
+利用它，首先我们就可以定义 $L^2(\mathbb R)$ 函数的傅里叶变换。仍令 $n=1$，作
+\[
+ f_N(x)=\begin{cases}f(x),&|x|\le N,\\0,&|x|>N.
+ \end{cases}
+\]
+考虑 $\varphi(x)=f_N(x)-f_{N'}(x)$，不妨设 $N'<N$，于是 $f_N(x)-f_{N'}(x)$ 之支集在 $[-N,N]$ 中。如上所述，作相似变换 $x=(N/\pi)y=\lambda y$，$\varphi(\lambda y)$ 作为 $y$ 的函数，支集在 $[-\pi,\pi]$ 中，其傅里叶变换则成 $\frac1\lambda\widehat\varphi(\xi/\lambda)$。
+\[
+ \begin{aligned}
+ \|f_N(x)-f_{N'}(x)\|_{L^2}^2
+ &=\int_{-N}^{N}|\varphi(x)|^2dx
+ =\lambda\int_{-\pi}^{\pi}|\varphi(\lambda y)|^2dy\\
+ &=\lambda\frac1{2\pi}\int_{-\infty}^{\infty}
+ \left|\frac1\lambda\widehat\varphi\!\left(\frac\xi\lambda\right)\right|^2d\xi
+ =\frac1{2\pi}\int_{-\infty}^{\infty}|\widehat\varphi(\xi)|^2d\xi\\
+ &=\frac1{2\pi}\|\widehat f_N(\xi)-\widehat f_{N'}(\xi)\|_{L^2}^2.
+ \end{aligned}
+\]
+但是 $\{f_N(x)\}$ 是 $L^2(\mathbb R)$ 中的柯西序列，而且其 $L^2$ 极限就是 $f(x)\in L^2$。所以 $\{\widehat f_N(\xi)\}$ 也是 $L^2(\mathbb R)$ 中的柯西序列。我们就以它的极限作为 $f(x)$ 之傅里叶变换，并仍记为 $\widehat f(\xi)$。于是我们得到了
+
+\noindent\textbf{定义2}\quad 设 $f(x)\in L^2(\mathbb R)$，则
+\[
+ \widehat f_N(\xi)=\int_{-N}^{N}f(x)e^{-ix\xi}dx
+\]
+在 $L^2(\mathbb R)$ 中有极限，我们称之为 $f(x)$ 之傅里叶变换，并仍记以 $\widehat f(\xi)$，显然 $\widehat f(\xi)\in L^2(\mathbb R)$：
+\[
+ \widehat f(\xi)=\operatorname{l.i.m.}_{N\to\infty}\int_{-N}^{N}f(x)e^{-ix\xi}dx.
+\]
+这里 l.i.m. 是 limit in mean（平均收敛）的缩写。
+
+用这样的方法需要补足上一章\S4中留下的一个漏洞，即
+\[
+ \left\{\frac1{\sqrt{2\pi}}e^{ikx}\right\}_{k=0,\pm1,\pm2,\ldots}
+\]
+是 $L^2([ -\pi,\pi])$ 中的一个完全 o.n. 系。证明如下：取 $[-A,A]\subset[-\pi,\pi]$，这里 $\pi-A>\delta>0$，而且作一个新的 $L^2([ -\pi,\pi])$ 函数
+\[
+ f_A(x)=\begin{cases}f(x),&x\in[-A,A],\\0,&A\le|x|\le\pi.
+ \end{cases}
+\]
+然后用磨光核
+\[
+ j_\eta(x-y)=\frac1{C\eta}j_1\!\left(\frac{x-y}{\eta}\right)
+\]
+对 $f_A(x)$ 作磨光：
+\[
+ g_\eta(x)=(J_\eta f_A)(x)=\frac1{C\eta}\int_{-\infty}^{\infty}
+ j_1\!\left(\frac{x-y}{\eta}\right)f_A(y)dy.
+\]
+这里 $\eta<\delta$，而 $C$ 的选取使
+\[
+ \frac1C\int_{-\infty}^{\infty}j_1(x)dx=1.
+\]
+于是 $g_\eta(x)\in C_0^\infty$，而且 $g_\eta(x)$ 之支集在 $[-A-\eta,A+\eta]$ 之内，所以 $g_\eta(x)$ 是 $[-\pi,\pi]$ 中的 $C_0^\infty$ 函数，且由前面的说明，$g_\eta(x)$ 在 $L^2$ 中收敛于 $f(x)$，故对任一 $\varepsilon>0$，必有 $\eta$，使
+\[
+ \|g_\eta-f\|_{L^2}<\frac\varepsilon2.
+\]
+现在我们固定 $\eta$。
+
+因为 $g_\eta(x)\in C_0^\infty$，所以 $g_\eta(x)$ 的傅里叶级数一致收敛于 $g_\eta(x)$，于是必存在一个 $N_0$，当 $N>N_0$ 时
+\[
+ \left\|g_\eta(x)-\sum_{k=-N}^{N}\frac{q_k}{\sqrt{2\pi}}e^{ikx}\right\|_{L^2}^2
+ =\int_{-\pi}^{\pi}\left|g_\eta(x)-\sum_{k=-N}^{N}\frac{q_k}{\sqrt{2\pi}}e^{ikx}\right|^2dx
+ <\left(\frac\varepsilon2\right)^2.
+\]
+这里 $q_k$ 是 $g_\eta$ 对 o.n. 系 $\frac1{\sqrt{2\pi}}e^{ikx}$ 的傅里叶系数。
+
+但由贝塞尔不等式，若 $C_k=(f,\frac1{\sqrt{2\pi}}e^{ikx})$ 时，
+\[
+\begin{aligned}
+ \left\|f-\sum_{k=-N}^{N}\frac{C_k}{\sqrt{2\pi}}e^{ikx}\right\|
+ &\le\left\|f-\sum_{k=-N}^{N}\frac{q_k}{\sqrt{2\pi}}e^{ikx}\right\|\\
+ &\le\|f-g_\eta\|+
+ \left\|g_\eta-\sum_{k=-N}^{N}\frac{q_k}{\sqrt{2\pi}}e^{ikx}\right\|<\varepsilon.
+\end{aligned}
+\]
+由 $\varepsilon$ 之任意性，知 $\sum_{k=-\infty}^{\infty}\frac{C_k}{\sqrt{2\pi}}e^{ikx}$ 在 $L^2$ 中收敛于 $f(x)$，这就是说 $\{e^{ikx}/\sqrt{2\pi}\}$ 是一个完全的 o.n. 系。
+
+(28)式的另一个应用是以下极重要的
+
+\noindent\textbf{定理5（普兰舍利（Plancherel）定理）}\quad 设 $f(x)\in L^2(\mathbb R^n)$，则 $\widehat f(\xi)\in L^2(\mathbb R^n)$，而且二者范数“相等”
+\begin{equation}
+ \|f\|_{L^2(\mathbb R^n)}^2=\frac1{(2\pi)^n}\|\widehat f\|_{L^2(\mathbb R^n)}^2.
+ \tag{30}
+\end{equation}
+
+\noindent\textbf{证}\quad 证明极简单。对 $f_N(x)$ 应用(29)式，如上所述会有
+\[
+ \|f_N\|_{L^2}^2=\frac1{2\pi}\int_{-\infty}^{\infty}|\widehat f_N(\xi)|^2d\xi.
+\]
+这就是说，对紧支集的 $L^2$ 函数，普兰舍利定理是成立的。令 $N\to\infty$，即有
+\[
+ \|f\|_{L^2}^2=\frac1{2\pi}\|\widehat f\|_{L^2(\mathbb R)}^2.
+\]
+定理中说二者范数“相等”，实际上相差一个因子 $1/(2\pi)^n$，只要我们改用圆频率 $2\pi\xi$，而有
+\[
+ \widehat f(\xi)=\int_{\mathbb R^n}f(x)e^{-2\pi ix\xi}dx,
+ \qquad
+ f(x)=\int_{\mathbb R^n}\widehat f(\xi)e^{2\pi ix\xi}d\xi,
+\]
+这个因子就消失了，或者在 $\mathbb R_\xi$ 空间中用 $\frac1{(2\pi)^n}d\xi$ 作为其测度亦可。这只是一个习惯问题。但我们宁愿用语上“马虎”一些。例如下面要讲的“等距”变换等等，其实也有时差一个因子 $1/(2\pi)^n$，读者在计算时小心一点就行了。又如上文中我们作积分时有时把 $x$ 作为一维变量，而积分限又写为 $\mathbb R^n$，都是如此。总之，这是一个习惯问题。
+
+普兰舍利定理意义重大，它告诉我们傅里叶变换（我们暂时改用一个记号 $F$：$(Ff)(\xi)=\widehat f(\xi)$）是由 $L^2(\mathbb R_x^n)$ 到 $L^2(\mathbb R_\xi^n)$ 的线性变换，而且使得范数不变（其实差一个因子 $1/(2\pi)^n$）。不仅如此，它还保持内积不变（注意现在用复值函数，所以内积指的是埃尔米特内积，其记号也采用埃尔米特配对）：
+\begin{equation}
+ (f,g)=\frac1{(2\pi)^n}(\widehat f,\widehat g).
+ \tag{31}
+\end{equation}
+由范数不变推导内积不变的办法是标准的，称为极化关系式（polar relations）如下：令 $f,g\in L^2(\mathbb R^n)$ 则
+\[
+ \|f+g\|^2=\|f\|^2+\|g\|^2+(f,g)+(g,f),
+\]
+\[
+ \|f+ig\|^2=\|f\|^2+\|g\|^2-i(f,g)+i(g,f).
+\]
+用 $i$ 乘后式再加到前式，有
+\[
+ 2(f,g)=[\|f+g\|^2-\|f\|^2-\|g\|^2]
+ +i[\|f+ig\|^2-\|f\|^2-\|g\|^2].
+\]
+把 $f,g$ 分别变成 $\widehat f,\widehat g$ 并在双方都加一个因子 $1/(2\pi)^n$，再用(30)即得
+\[
+ (f,g)=\frac1{(2\pi)^n}(\widehat f,\widehat g).
+\]
+
+一个希尔伯特空间（如 $L^2(\mathbb R^n)$）到其自身的线性算子 $T$，如果是此空间的线性同构，且能保持埃尔米特内积不变（在傅里叶变换的情况下要加中一上因子 $1/(2\pi)^n$，如(31)式）：
+\begin{equation}
+ (Tf,Tg)=(f,g),
+ \tag{32}
+\end{equation}
+就称为一个酉算子（unitary operator）。所以，普兰舍利定理启发我们，$L^2(\mathbb R^n)$ 上的傅里叶变换是一个酉算子。其实在线性代数中我们已经看过了什么是酉矩阵：例如，如果 $f,g$ 是 $n$ 维复线性空间中的 $n$ 维向量，$T$ 看成 $n\times n$ 复数元矩阵，则由伴随矩阵 $T^*=(t_{ij})^*=\overline{(t_{ji})}$ 之定义，(32)告诉我们
+\[
+ T^*T=I,\qquad TT^*=I.
+\]
+亦即 $T^*=T^{-1}$，所以在有限维情况下，酉算子一定可逆。现在转到 $L^2(\mathbb R^n)$，它是一个（可数）无限维希尔伯特空间。一个复希尔伯特空间中的酉算子 $T$ 即一个保持范数不变的线性同构。那么，傅里叶变换作为复希尔伯特空间 $L^2(\mathbb R^n)$ 到其自身的线性变换，是否是一个酉算子呢？当然它是一个线性算子，而且普兰舍利定理又保证了它保持范数不变。余下的只有“同构”待考。同构包含了两个意思，一是单射，即只有 $0\in L^2(\mathbb R^n)$ 才被映为 $0\in L^2(\mathbb R_\xi^n)$。这样就不会有两个 $L^2(\mathbb R^n)$ 函数 $f_1(x)$ 和 $f_2(x)$ 被映为同一个 $\widehat f(\xi)$。因为如果 $f_1(x)$ 和 $f_2(x)$ 有相同的 $\widehat f_1(\xi)=\widehat f_2(\xi)$，则 $\varphi(x)=f_1(x)-f_2(x)$ 之傅里叶变换 $\widehat\varphi(\xi)=\widehat f_1(\xi)-\widehat f_2(\xi)=0$。但由定理5，这时
+\[
+ \|\varphi\|_{L^2(\mathbb R^n)}^2=\frac1{(2\pi)^n}\|\widehat\varphi\|_{L^2(\mathbb R_\xi^n)}^2=0,
+\]
+所以 $\varphi=f_1(x)-f_2(x)=0$。其次要证明它是满射，即任一 $L^2(\mathbb R_\xi^n)$ 函数 $\varphi(\xi)$ 必是某一 $L^2(\mathbb R_x^n)$ 函数 $f(x)$ 之傅里叶变换。我们来证明
+\[
+ f(x)=\frac1{(2\pi)^n}\int e^{ix\xi}\varphi(\xi)d\xi
+\]
+恰好合于要求。但是这正是反演公式，我们现在对 $n=1$ 的情况来“证明”它。(31)左方是
+\[
+ \int f(x)\overline{g(x)}dx,
+\]
+而右方为
+\[
+ \begin{aligned}
+ \frac1{(2\pi)^n}\int d\xi
+ \left[\int f(y)e^{-i\xi y}dy\right]
+ \overline{\left[\int g(x)e^{-i\xi x}dx\right]}\\
+ =\frac1{(2\pi)^n}\int d\xi\iint f(y)\overline{g(x)}e^{-i\xi(y-x)}dydx\\
+ =\frac1{(2\pi)^n}\iint\left[\int e^{ix\xi}d\xi\right]
+ f(y)e^{-i\xi y}\overline{g(x)}\,dy\,dx.
+ \end{aligned}
+\]
+比较双方，利用 $g(x)$ 之任意性即有
+\[
+ f(x)=\frac1{(2\pi)^n}\int e^{ix\xi}d\xi\int f(y)e^{-i\xi y}dy.
+\]
+这就证明了(6)确实是(11)的逆变换公式。
+
+这个“证明”是不合法的，因为交换积分次序还需论证，我们将在下一节讨论它。以上我们只是对 $L^2(\mathbb R^n)$ 中的傅里叶变换之定义及其基本性质（它是酉算子，并有普兰舍利定理）作了详细讨论。但还留下了一个漏洞，即逆傅里叶变换公式未严格证明。傅里叶变换的另一些初等的性质，对于 $L^2$ 和 $L^1$ 是一样的，有待证明，但其中有一些我们仍留待下一节用广义函数来处理。
+
+首先来看卷积，若 $f(x),g(x)\in L^2(\mathbb R^n)$，则若视 $x$ 为一参数，$f(t)g(t-x)$ 作为 $t$ 的函数是 $L^1(\mathbb R^n)$ 函数。因此 $\int_{-\infty}^{+\infty}f(t)g(t-x)dt$ 是有意义的，它定义了一个 $x$ 的函数 $h(x)$，但是关于 $h(x)$ 的性质，除了易证它是有界的：
+\[
+\begin{aligned}
+ |h(x)|&\le\int_{-\infty}^{+\infty}|f(t)|\,|g(t-x)|dt\\
+ &\le\left(\int_{-\infty}^{+\infty}|f(t)|^2dt\right)^{1/2}
+ \left(\int_{-\infty}^{+\infty}|g(t-x)|^2dt\right)^{1/2}\\
+ &=\|f\|_{L^2}\|g\|_{L^2}.
+\end{aligned}
+\]
+以外，我们实在所知不多，所以我们不考虑如何定义两个 $L^2(\mathbb R^n)$ 函数的卷积。
+
+其次看一下求导问题。有一些很细致的定理，例如（我们只讲一维情况，$n$ 维的不讲了）：
+
+\noindent\textbf{定理6}\quad 设 $f(x)\in L^2(\mathbb R)$ 是绝对连续的，而且 $f'(x)\in L^2(\mathbb R)$，则
+\[
+ \widehat{f'}(\xi)=i\xi\widehat f(\xi),
+\]
+它自然仍在 $L^2(\mathbb R)$ 中。
+
+\noindent\textbf{定理7}\quad 若 $f(x),g(x)\in L^2(\mathbb R)$，而且 $\widehat g(\xi)=i\xi\widehat f(\xi)$\jiaokan{原文此处印作 $\widehat g(\xi)=\xi\widehat f(\xi)$，漏去因子 $i$。按本页定理6的 $\widehat{f'}(\xi)=i\xi\widehat f(\xi)$ 以及紧接着的结论 $g(x)=f'(x)$，此处必须为 $i\xi\widehat f(\xi)$。}，则 $g(x)$ 为局部绝对连续（即在每一个有限区间上为绝对连续），且
+\[
+ g(x)=f'(x),\qquad f(x)=-\int_x^{+\infty}g(y)dy.
+\]
+这些定理我们都未证明，留待用广义函数来讨论。
+
+\noindent\textbf{3. 傅里叶变换与量子力学}\quad
+现在我们从量子力学角度来看一下普兰舍利定理。首先，我们想关于量子力学稍微说几句。19世纪末的物理学的许多新的实验事实与经典物理学的基本概念相矛盾，使得普朗克在1900年提出能量子假说，即能量不是连续的，而是由一堆极小的离散单位——即能量子——构成的。爱因斯坦在研究光电现象时进一步发展了这个思想，提出光量子——即光子——不但能量 $E$ 是分立的，而且动量 $p$ 也是分立的，而且能量与动量与光作为一种波动的宏观的物理量频率 $\nu$ 及波长 $\lambda$ 有关：
+\[
+ E=h\nu,\qquad p=h/\lambda,\qquad h=6.626\times10^{-34}\ \mathrm{J\cdot s}.
+\]
+这一些都经过了实验的验证。这里的 $h$ 称为普朗克常量，是量子现象中最重要的普适常量。另一个重大问题是原子的构造。人们曾经认可的原子行星模型——中间有核，外层有电子，而且服从开普勒的行星运动规律——是1911年卢瑟福（E. Rutherford）提出的。然而按经典物理的定律，这样的原子是不稳定的，其寿命的数量级只有 $10^{-9}$ 秒。原子辐射的光谱又有明显的明线与暗线，这也与经典物理不相容。玻尔（N. Bohr）对此有解释：外层电子的轨道并不是任意的，而只能处于一系列固定的能级上。当电子在一个轨道上运行时，一切都很正常，也不会辐射能量，但若它从一个轨道跃迁到其它能级的轨道，则将吸收或辐射出一定的能量，等于两轨道能级之差。这时就产生光谱中的明线（发射能量）或暗线（吸收能量）。但是当时物理学家的方法论还是承认经典物理的定律，不过要在某些特定情况下加以修正，所以玻尔称这种理论为“旧量子理论”。
+
+到了20世纪20年代，人们开始认识到微观世界有自己的物理规律。所谓微观世界，人们当然都知道，例如亚原子世界当然是微观世界。但是我们更准确地可以说，量子力学处理的问题即普朗克常量 $h$ 不能忽略的问题。人们把微观世界的规律归结为若干要点，而在20世纪30年代由冯·诺依曼（J. Von Neumann）归结为几个公设作为从数学上处理量子力学的基础。与牛顿时代提出三大定律（牛顿也是把它们当作数学公理看待的）不同，量子力学的公设更具抽象性与某项具体的物理实验距离更远。我们下面就提出几条“公设”而不加“证明”。我们没有用几个基本命题的形式来陈述这些公设，而是就我们所讨论的问题作了一些解释。
+
+1. 量子力学系统的状态可以用状态空间中的波函数 $\Psi(x,t)$ 来刻画。$\Psi$ 取复值而与 $c\Psi$（$c\ne0$ 是一个复数）表示同一个态。在每一时刻 $t$，$\Psi\in L^2(\mathbb R^n)$，所以 $\Psi$ 可以规范化，即适合 $\|\Psi\|_{L^2}=1$。但即令如此，$\Psi$ 仍不能唯一决定：$\Psi$ 与 $e^{i\theta}\Psi$（$\theta$ 为实数）仍表示同一个态。态空间是一个复希尔伯特空间，具体说来即是 $L^2(\mathbb R^n)$。
+
+2. 我们只研究可以观测到的物理量。所以量子力学讲的物理量都称为可观测量（observables）。例如粒子的位置、动量、能量等都是可观测量。但是时间 $t$ 则作为一个参数处理而不算是可观测量。
+
+微观世界的对象如此之小，要观测它们就不能忽略观测（仪器）对于对象的作用。观测的结果一般的是一个随机变量，就是可以取许多值的量，但是它取某个范围中的值的概率是一定的。例如，若波函数为 $\Psi(x,t)$，则粒子位于 $x$ 与 $x+dx$ 之间的概率为 $|\Psi(x,t)|^2dx$。
+
+以上是讲的观测结果。至于可观测量本身，在经典物理中是用实数来表示的，但量子力学中的可观测量则用态空间 $L^2(\mathbb R^n)$ 上的自伴算子来表示。例如粒子的位置在经典物理中用坐标 $x$ 表示，在量子物理中则是乘以 $x$：它作用在波函数 $\varphi(x)\in L^2(\mathbb R^n)$ 上给出 $x\cdot\varphi(x)$。所以 $x$ 很像线性代数中的记号 $xI$，但我们仍习惯地用 $x$ 来表示这个算子。动量算子则为 $\frac1i\partial_x$，我们常用 $p$ 或 $\xi$ 表示。这里就出现一个问题，以算子 $x$ 为例，$\varphi(x)\in L^2(\mathbb R^n)$，但 $x\varphi(x)$ 不一定仍在 $L^2(\mathbb R^n)$ 中。因此，凡讲到算子，其定义域不一定是整个态空间 $L^2(\mathbb R^n)$，从数学上讲，至少我们需要这些算子的定义域在 $L^2(\mathbb R^n)$ 中稠密。至于动量算子更有问题了：$p\varphi(x)=\frac1i\partial_x\varphi(x)$，而 $\varphi(x)$ 不一定可微甚至不一定广义可微，所以 $p$ 的定义域更不可能是整个 $L^2(\mathbb R^n)$。这一点我们在下面讲测不准原理时就会遇到。在那里，我们不去追问例如为什么不要求 $\varphi(x)$ 适合 $x\varphi(x)\in L^2(\mathbb R^n)$？我们假想 $\varphi(x)$ 应在算子 $x$ 的作用之下，就是承认了 $\varphi(x)$ 在 $x$ 的定义域中，亦即承认 $x\varphi(x)\in L^2(\mathbb R^n)$。
+
+所谓自伴算子 $A:L^2(\mathbb R^n)\to L^2(\mathbb R^n)$，简单说就是对于定义域中的 $\varphi(x)$ 与 $\psi(x)$，适合关系式
+\[
+ (A\varphi,\psi)=(\varphi,A\psi),
+\]
+即
+\[
+ \int_{\mathbb R^n}(A\varphi)(x)\overline{\psi(x)}dx
+ =\int_{\mathbb R^n}\varphi(x)\overline{(A\psi)(x)}dx
+\]
+的算子，由此易见 $(A\varphi,\varphi)$ 必定取实值。
+
+3. 前面说了观测的结果是一个随机变量，例如我们要在波函数 $\varphi(x)$ 所表示的状态下问粒子位置 $x$（现在的 $x$ 可不代表算子），则因 $x$ 的值在 $x$ 与 $x+dx$ 之间的概率为 $|\varphi(x)|^2dx$，所以考察一切可能的测量结果，应该有一个平均值。这在数学上称为数学期望值，它应该是
+\[
+ \int x|\varphi(x)|^2dx=(x\varphi,\varphi)
+\]
+（最后一项中的 $x$ 是代表算子了，它作用在波函数 $\varphi(x)$ 上的结果是 $x\cdot\varphi(x)$）。同样，在状态 $\varphi$ 之下，可观测量 $A$ 的平均值即数学期望值 $(A\varphi,\varphi)$ 记作 $a_\varphi$。由上面的自伴算子的性质，$a_\varphi=(A\varphi,\varphi)$ 取实数值。在物理上这是唯一可接受的：观测值必须是实数。
+
+既然观测的结果是随机变量，而又有一个平均值。那么，观测结果与平均值的偏离程度或者说，观测结果分散的程度就应该用方差（或称离差、其平方根称为标准差）来刻画。在上一章讲高斯积分时就讲到，方差应该是每一次观测结果与平均值（即数学期望值）之差的平方之平均值。用在我们的情况，则在状态 $\varphi$ 之下，可观测量 $A$ 之方差 $\delta_\varphi A$ 应该为
+\[
+ \begin{aligned}
+ \delta_\varphi A&=\langle(A-a_\varphi)^2\rangle\text{之平均值}\\
+ &=((A-a_\varphi)^2\varphi,\varphi)=((A-a_\varphi)\varphi,(A-a_\varphi)\varphi)\\
+ &=\|(A-a_\varphi)\varphi\|^2=\|(A-a_\varphi)\varphi\|\cdot\|(A-a_\varphi)\varphi\|.
+ \end{aligned}
+\]
+上式中的 $a_\varphi$ 本来是一个实数，但这里要把它看作一个算子，正如在线性代数中我们若写 $A-\lambda$ 就必须理解为 $A-\lambda I$ 一样。否则 $A$ 是算子，$a_\varphi$ 是数，$A-a_\varphi$ 是没有意义的。现在问在什么条件下 $\delta_\varphi A=0$。很明显，其充分必要条件是
+\[
+ (A-a_\varphi I)\varphi=0,
+\]
+即 $A\varphi=a_\varphi\varphi$。这就是 $a_\varphi$ 为 $A$ 之固有值而 $\varphi$ 为相应的固有向量，由此可见我们又回到了谱的问题。
+
+4. $L^2(\mathbb R^n)$ 上的酉算子 $U$ 即适合 $U^*U=I$ 的线性算子。这时因为 $U^{-1}=U^*$ 作用在 $L^2(\mathbb R^n)$ 上，所以 $U$ 的值域是 $L^2(\mathbb R^n)$ 全空间，同时 $U^{-1}$ 的存在，又说明 $U$ 是1--1的，是一个线性同构。$U$ 算子又保持内积不变：
+\[
+ (U\varphi,U\varphi)=(U^*U\varphi,\varphi)=(\varphi,\varphi).
+\]
+所以，$L^2(\mathbb R^n)$ 在经过 $U$ 的作用后，其线性构造与度量都不改变，因此 $L^2(\mathbb R^n)$ 没有改变。现在看傅里叶变换在 $L^2(\mathbb R^n)$ 上的作用。普兰舍利定理已证明了傅里叶变换保持内积不变。在证明了逆变换定理后（上面我们只是“形式地”推算了一下），又知道傅里叶变换保持 $L^2(\mathbb R^n)$ 的线性构造不变，而且是1--1的从而是一个酉算子。这样，$\varphi(x)$ 是一个波函数而表示一个量子系统的一个状态，则 $\widehat\varphi(\xi)$ 也应该表示同一状态。前者称为该状态的 $x$ 表象，后者称为其 $\xi$ 表象。按波函数的概率解释，$|\widehat\varphi(\xi)|^2$ 应该表示 $\xi$ 的观测值在 $\xi$ 与 $\xi+d\xi$ 之间的概率密度——$|\widehat\varphi(\xi)|^2d\xi$ 表示概率。现在要问，$\xi$ 在物理上表示什么？为此我们来看动量算子 $\frac1i\partial_x$ 在傅里叶变换下表示什么。
+
+至少，形式的计算告诉我们，通过分部积分
+\[
+ \int_{\mathbb R^n}\frac1i\partial_{x_j}\varphi(x)e^{-ix\xi}dx
+ =\xi_j\int_{\mathbb R^n}\varphi(x)e^{-ix\xi}dx
+ =\xi_j\widehat\varphi(\xi),
+\]
+积分号外之项变为0，前面我们已对 $L^1(\mathbb R^n)$ 证明了，若 $\varphi(x)$ 和 $\frac\partial{\partial x_j}\varphi(x)$ 均为可积则当 $|x_j|\to\infty$ 时，$\varphi(x)\to0$。$L^2(\mathbb R^n)$ 的情况下则需另证，所以在这里我们得到的只能算是形式推导，即是说 $\xi$ 表象下的乘以 $\xi_j$，与 $x$ 表象下的动量算子 $\frac1i\partial_{x_j}$ 是一样的。所以 $\xi$ 表象又称动量表象。
+
+5. 在经典力学中粒子的位置和动量（或简单地就说是速度）共同决定了该粒子的状态。量子物理中却只用 $x$（$x$ 表象）或 $\xi$（$\xi$ 表象），这至少是因为，如果 $x$ 与 $\xi$ 共同才决定粒子的状态，则必须要能同时观测 $x$ 与 $\xi$。但是这是不可能的。因为量子力学的基础公设之一就是两个可观测量要能同时观测的充分必要条件是它们所对应的自伴算子 $A$ 与 $B$ 要可交换，即 $AB-BA=0$。这里我们引进一个在数学文献中常用的概念“交换子”（commutator）：两个算子 $A,B$ 的交换子的记号和定义为 $[A,B]=AB-BA$。所以，两个可观测量可同时观测的充分必要条件是 $[A,B]=0$。因为上面我们已经说过，观测的结果是随机变量，要刻画它就必须有一个分布函数，即此量之值在某个区域中的概率，所以要同时观测 $A$ 和 $B$ 就必须有一个联合分布函数，而为此就需要 $[A,B]=0$。
+
+现在把它应用到位置算子 $x_j$ 与动量算子 $\frac\hbar i\frac\partial{\partial x_j}$（现在我们在 $\frac\partial{\partial x_j}$ 前添加了因子 $\hbar=h/(2\pi)=1.05\times10^{-34}\ \mathrm{J\cdot s}$，以突出表明现在考虑的是微观世界的事。前面我们把动量算子写成 $\frac1i\frac\partial{\partial x_j}$ 实际是取了一个新的单位致使 $\hbar=1$。许多数学文献上常这样做，而物理文献上则常突出 $\hbar$，这时，例如傅里叶变换也相应地写为 $\widehat\varphi(\xi)=\int f(x)e^{-i\xi x/\hbar}dx$，并常称为 $\hbar$--傅里叶变换，并在讲完测不准原理后我们仍将回到原有记号，即使得 $\hbar=1$）。我们有
+\[
+ \left[\frac\hbar i\frac\partial{\partial x_j},x_k\right]\varphi(x)
+ =\frac\hbar i\frac\partial{\partial x_j}(x_k\varphi(x))
+ -\frac\hbar i x_k\frac\partial{\partial x_j}\varphi(x)
+ =\delta_{jk}\frac\hbar i\varphi(x).
+\]
+所以，$\frac\hbar i\frac\partial{\partial x_j}$（动量的第 $j$ 个分量）与 $x_j$（位置的第 $j$ 个分量）是不能同时观测的。如果对这两个可观测量同时进行了观察，它必有不可任意减小的误差。下面把这段话准确一些叙述。在状态 $\varphi$ 下观测 $A$ 与 $B$ 的结果有平均值 $a_\varphi$ 和 $b_\varphi$，而观测结果是分散开的。我们用方差 $\delta_\varphi A=\|(A-a_\varphi)\varphi\|^2$ 与 $\delta_\varphi B=\|(B-b_\varphi)\varphi\|^2$ 来度量，我们还引用了标准差 $\Delta_\varphi A=\sqrt{\delta_\varphi A}$、$\Delta_\varphi B=\sqrt{\delta_\varphi B}$，于是我们有
+
+\noindent\textbf{定理8I（测不准原理I）}\quad 在状态 $\varphi$ 之下，我们有
+\begin{equation}
+ \Delta_\varphi A\cdot\Delta_\varphi B
+ \ge\frac12|([A,B]\varphi,\varphi)|.
+ \tag{33}
+\end{equation}
+
+\noindent\textbf{证}\quad 令 $A_1=A-a_\varphi I,B_1=B-b_\varphi I$，很容易验证 $[A,B]=[A_1,B_1]$，因此
+\[
+ \begin{aligned}
+ |([A,B]\varphi,\varphi)|
+ &=|([A_1,B_1]\varphi,\varphi)|\\
+ &=|(A_1B_1\varphi,\varphi)-(B_1A_1\varphi,\varphi)|\\
+ &=|(B_1\varphi,A_1\varphi)-(A_1\varphi,B_1\varphi)|
+ =2|\operatorname{Im}(A_1\varphi,B_1\varphi)|\\
+ &\le2\|A_1\varphi\|\cdot\|B_1\varphi\|
+ =2\|(A-a_\varphi)\varphi\|\cdot\|(B-b_\varphi)\varphi\|\\
+ &=2\Delta_\varphi A\cdot\Delta_\varphi B.
+ \end{aligned}
+\]
+
+这样，两个标准差之积的下限依赖于状态。但有一个情况可以改进这个情况，这就是可观测量 $A,B$ 为典则共轭的情况，就是 $[A,B]=\hbar/i$ 的情况。例如动量算子 $p_j=\frac\hbar i\frac\partial{\partial x_j}$ 与同标号的位置算子 $x_j$，就是这样，这时有
+
+\noindent\textbf{定理8II（测不准原理II）}\quad 若 $A,B$ 为典则共轭的可观测量，则在任意状态 $\varphi(x)$ 下
+\begin{equation}
+ \Delta_\varphi A\cdot\Delta_\varphi B\ge\frac\hbar2.
+ \tag{34}
+\end{equation}
+
+\noindent\textbf{证}\quad (33)的右方现在成为
+\[
+ \frac12\left|\left(\frac\hbar i\varphi,\varphi\right)\right|
+ =\frac\hbar2\|\varphi\|^2=\frac\hbar2,
+\]
+故(34)得证。
+
+特别是动量与位置恰好是典则共轭的，故
+\begin{equation}
+ \Delta_\varphi p_j\cdot\Delta_\varphi x_j\ge\frac\hbar2.
+ \tag{35}
+\end{equation}
+本来我们是在讨论 $L^2(\mathbb R^n)$ 中的傅里叶变换，但现在似乎转成了希尔伯特空间中自伴算子的性质。但是至少在动量与位置的测不准关系上，确实只须用傅里叶变换的性质就够了。其中的要点正是普兰舍利定理。除此以外又需利用傅里叶变换的简单性质。下面再就 $p_j$ 与 $x_j$ 证明一次测不准原理(35)。我们引入 $A_1=A-a_\varphi I$，这等于假设了 $a_\varphi=0$，用于位置算子 $x_jI$ 就相当于说位置的平均值 $x_j^0=0$。其实，即令 $x_j$ 之平均值 $x_j^0\ne0$，我们可以作一个平移 $y_j=x_j-x_j^0$，这时，波函数 $\varphi(x)=\varphi(y_1+x_1^0,\cdots,y_j+x_j^0,\cdots)=\varphi(y+x^0)$，于是其傅里叶变换成为
+\[
+ \int\varphi(y+x^0)e^{-i\xi y}dy
+ =\int\varphi(y+x^0)e^{-i(y+x^0)\xi}e^{ix^0\xi}dy
+ =e^{ix^0\xi}\widehat\varphi(\xi).
+\]
+所以，在动量表象下波函数将多一个因子 $e^{ix^0\xi}$，而 $|e^{ix^0\xi}\widehat\varphi(\xi)|^2=|\widehat\varphi(\xi)|^2$，所以动量的方差不变。
+
+\[
+ \delta_\varphi(\hbar\xi_j)
+ =\frac1{2\pi}\hbar^2\int\xi_j^2|e^{ix^0\xi}\widehat\varphi(\xi)|^2d\xi
+ =\frac{\hbar^2}{2\pi}\int\xi_j^2|\widehat\varphi(\xi)|^2d\xi
+ =\frac{\hbar^2}{2\pi}\int|\partial_j\varphi(x)|^2dx.
+\]
+同样，若动量 $\hbar\xi_j$ 之平均值为 $\hbar\xi_j^0$（$j=1,2,\cdots,n$），在 $\xi$ 空间中作平移 $\xi_j=\xi_j'-\xi_j^0$，波函数将成为 $\widehat\varphi(\xi+\xi^0)$，回到 $x$ 表象后将得到波函数 $e^{-i\xi^0x}\varphi(x)$，这同样不影响到概率密度 $|e^{-i\xi^0x}\varphi(x)|^2=|\varphi(x)|^2$，所以 $\delta_\varphi x$ 也不变：
+\[
+ \delta_\varphi(x_j)=\int x_j^2|\varphi(x)|^2dx.
+\]
+现在我们需要证明的只有
+\[
+ \delta_\varphi(\hbar\xi_j)\cdot\delta_\varphi(x_j)\ge\frac{\hbar^2}{4}.
+\]
+这里的 $\varphi\in L^2(\mathbb R^n)$，而且 $x\varphi(x)\in L^2(\mathbb R^n)$，$\frac\partial{\partial x_j}\varphi(x)\in L^2(\mathbb R^n)$。和前面一样，我们只考虑一维（$n=1$）的情况，而且只对支集在 $-N\le x\le N$ 中的 $\varphi(x)$ 证明上式，然后再取极限即可。为此，考虑积分
+\[
+ I(\lambda)=\int_{-\infty}^{+\infty}|\lambda x\varphi(x)+\varphi'(x)|^2dx
+ =\int_{-\infty}^{+\infty}[\lambda x\varphi(x)+\varphi'(x)]
+ [\lambda x\overline{\varphi(x)}+\overline{\varphi'(x)}]dx.
+\]
+这里 $\lambda$ 是实数，$I(\lambda)$ 显然 $\ge0$，而且是 $\lambda$ 的二次三项式：
+\[
+ I(\lambda)=\lambda^2\int_{-\infty}^{\infty}x^2|\varphi(x)|^2dx
+ +\lambda\int_{-\infty}^{\infty}x(\varphi\overline{\varphi'}+\overline\varphi\varphi')dx
+ +\int_{-\infty}^{\infty}|\varphi'(x)|^2dx.
+\]
+因此其判别式非正。但是 $\varphi\overline{\varphi'}+\overline\varphi\varphi'=(|\varphi|^2)'$，故
+\[
+ \int_{-\infty}^{+\infty}x(\varphi\overline{\varphi'}+\overline\varphi\varphi')dx
+ =x|\varphi|^2\Big|_{-\infty}^{+\infty}-\int_{-\infty}^{\infty}|\varphi(x)|^2dx=-1.
+\]
+注意，我们这里利用了 $\varphi(x)$ 支集在 $-N<x<N$ 中且波函数是规范化了的。于是我们有
+\[
+ \begin{aligned}
+ 0&\ge1-4\int_{-\infty}^{\infty}x^2|\varphi(x)|^2dx\cdot
+ \int_{-\infty}^{\infty}|\varphi'(x)|^2dx\\
+ &=1-4\int_{-\infty}^{\infty}x^2|\varphi(x)|^2dx\cdot
+ \frac1{2\pi}\int_{-\infty}^{\infty}|\xi\widehat\varphi(\xi)|^2d\xi\\
+ &=1-\frac4{\hbar^2}\delta_\varphi(x)\delta_\varphi(\hbar\xi).
+ \end{aligned}
+\]
+所以有
+\[
+ \delta_\varphi(x)\cdot\delta_\varphi(\hbar\xi)\ge\frac{\hbar^2}{4},
+\]
+从而测不准关系(35)得证。
+
+现在要问，何时 $\delta_\varphi(x)\cdot\delta_\varphi(\hbar\xi)$ 达到其最小值 $\hbar^2/4$？显然，当且仅当存在某个 $\lambda$ 使 $I(\lambda)=0$ 时可能，但是 $I(\lambda)=0$ 可以化为存在一个 $\varphi$ 使
+\[
+ \lambda x\varphi+\varphi'(x)=0.
+\]
+把它看作 $\varphi$ 的一阶常微分方程，即有
+\[
+ \varphi=Ce^{-\lambda x^2/2}.
+\]
+
+这里 $C$ 应保证 $\varphi(x)$ 规范化：$\|\varphi(x)\|=1$，故
+\[
+ C=\left(\sqrt{\frac{\lambda}{\pi}}\right)^{1/2}.
+\]
+所以，测不准原理只有当波函数 $\varphi(x)$ 为高斯函数时才有等号成立。
+
+测不准原理既然如此深刻，何以其数学推导如此简单？其实，测不准原理之深刻在于其物理含意：微观世界中物理量不是用数来表示，而是用自伴算子表示。至于数学，其作用在于提供了对种种算子进行研究的基础。例如早就知道矩阵（作为一个算子）的乘法是不可交换的，又例如早就有了普兰舍利定理（这个定理是普兰舍利于1910年证明的，早于量子力学的出现），告诉我们只要采取适当的表象（如动量表象），则物理量用自伴算子表示成了很自然的事，所以例如测不准原理等深刻的物理结论，在数学上是水到渠成的事。
+
+然而既然数学上例如普兰舍利定理等等的发现原是与量子力学独立的，则测不准原理也不应该限于只在量子力学中才有。实际上确实如此。例如信号处理中对一个信号既可在时域中把它看成 $f(t)$，又可在频域中看成 $\widehat f(\omega)$。时间与频率也是典则对偶的，因此也一定有测不准原理：对一个信号，要完全准确地同时确定其旅行时间与其频率是不可能的。这就是经典的（即非量子的）测不准原理。

@@ -1,0 +1,829 @@
+\chapter{Formes quadratiques}
+\origpage{395--416}
+
+L'étude des formes bilinéaires symétriques et des formes quadratiques débouchera, dans le cas réel en dimension finie, sur les espaces euclidiens modélisation mathématique de l'espace dans lequel nous vivons, avec la notion de perpendiculaire dont on peut se demander si elle n'est pas liée à la station verticale des bipèdes que nous sommes. Mais la théorie est plus riche que ne le montre cette simple approche, et c'est en Analyse Fonctionnelle que je la développerai.
+
+\BellaSection{1. Vocabulaire, premières propriétés}
+
+\medskip\noindent\textsc{Définition 11.1.} --- \emph{Soit $E$ un espace vectoriel sur un corps $K$. On appelle \BellaCorrection{forme bilinéaire}{forme bili'téaire} toute application $\varphi$ de $E\times E$ dans $K$ qui est linéaire par rapport à chaque variable.}
+
+Si $\varphi$ associe au couple $(X,Y)$ de $E\times E$ le scalaire $\varphi(X,Y)$, pour $Y$ fixé l'application $X\longmapsto\varphi(X,Y)$ est donc linéaire de $E$ dans $K$ c'est donc un élément du dual $E^*$ de $K$. On note $\delta_\varphi(Y)$ cette application et, la bilinéarité de $\varphi$ permet de vérifier qu'à son tour
+
+\subsection*{11.2.}
+$\delta_\varphi:Y\longmapsto\delta_\varphi(Y)$ est linéaire de $E$ dans $E^*$, car $\forall(Y,Y')\in E^2$, $\forall(\lambda,\lambda')\in K^2$, $\delta_\varphi(\lambda Y+\lambda'Y')$ est l'application de $E$ dans $K$ définie par
+\begin{align*}
+\delta_\varphi(\lambda Y+\lambda'Y')(X)
+ &=\varphi(X,\lambda Y+\lambda'Y')\\
+ &=\lambda\varphi(X,Y)+\lambda'\varphi(X,Y')\text{\footnotemark}
+ \qquad\text{(linéarité par rapport à la 2e variable),}\\
+ &=\lambda\delta_\varphi(Y)(X)+\lambda'\delta_\varphi(Y')(X),\\
+ &=\bigl[\lambda\delta_\varphi(Y)+\lambda'\delta_\varphi(Y')\bigr](X),
+ \qquad\text{(structure vectorielle de $E^*$),}
+\end{align*}
+\footnotetext{\textbf{校勘：}原式第二项印为“$\lambda'\varphi'(X,Y')$”。这里始终是同一个双线性形式 $\varphi$，故应为 $\lambda'\varphi(X,Y')$。}
+et comme c'est vrai pour tout $X$ de $E$ c'est que les formes $\delta_\varphi(\lambda Y+\lambda'Y')$ et $\lambda\delta_\varphi(Y)+\lambda'\delta_\varphi(Y')$ sont égales, d'où la linéarité de $\delta_\varphi$. \bookend
+
+On aurait de même, pour $X$ fixé dans $E$, l'application $\gamma_\varphi(X)$ de $E$ dans $K$ définie par
+\[
+Y\longmapsto\gamma_\varphi(X)(Y)=\varphi(X,Y)
+\]
+est linéaire en $Y$, donc $\gamma_\varphi(X)\in E^*$, et $\gamma_\varphi$ est linéaire de $E$ dans $E^*$. Un mot sur la notation :
+
+$\gamma_\varphi$ quand on fixe la variable à gauche, ($\gamma$ pour g)
+
+$\delta_\varphi$ quand on fixe la variable à droite, ($\delta$ pour d).
+
+\medskip\noindent\textsc{Définition 11.3.} --- \emph{Une forme bilinéaire $\varphi$ est dite symétrique si et seulement si, $\forall(X,Y)\in E^2$, $\varphi(X,Y)=\varphi(Y,X)$.}
+
+Ceci équivaut à $\gamma_\varphi=\delta_\varphi$ car $\varphi(X,Y)=\delta_\varphi(Y)(X)$ et en posant $\varphi(Y,X)=\gamma_\varphi(Y)(X)$, la symétrie de $\varphi$ équivaut à avoir, pour $Y$ fixé dans $E$, $\delta_\varphi(Y)=\gamma_\varphi(Y)$ et ce, $\forall Y\in E$.
+
+\medskip\noindent\textsc{Définition 11.4.} --- \emph{On appelle forme quadratique $\Phi$ associée à la forme bilinéaire symétrique $\varphi$, l'application $X\longmapsto\Phi(X)=\varphi(X,X)$.}
+
+On va essayer de donner une définition des formes quadratiques indépendamment des formes bilinéaires symétriques, et pour cela il nous faut étudier les propriétés de ces formes quadratiques.
+
+Soit $\Phi$ forme quadratique associée à $\varphi$ bilinéaire symétrique, on a
+
+\subsection*{11.5.}
+\[
+\forall(\lambda,X)\in K\times E,\qquad \Phi(\lambda X)=\lambda^2\Phi(X)
+\]
+car
+\[
+\Phi(\lambda X)=\varphi(\lambda X,\lambda X)=\lambda\varphi(X,\lambda X)=\lambda^2\varphi(X,X)=\lambda^2\Phi(X)
+\]
+par linéarité, d'abord par rapport à la première variable, puis par rapport à la deuxième.
+
+De même, si $X$ et $Y$ sont dans $E$ on aura :
+\begin{align*}
+\Phi(X+Y)&=\varphi(X+Y,X+Y)\\
+&=\varphi(X,X+Y)+\varphi(Y,X+Y)\\
+&=\varphi(X,X)+\varphi(X,Y)+\varphi(Y,X)+\varphi(Y,Y).
+\end{align*}
+Or $\varphi(X,Y)=\varphi(Y,X)$ par symétrie de $\varphi$ donc il reste
+\[
+\Phi(X+Y)=\Phi(X)+2\varphi(X,Y)+\Phi(Y),
+\]
+soit encore :
+
+\subsection*{11.6.}
+\[
+2\varphi(X,Y)=\Phi(X+Y)-\Phi(X)-\Phi(Y)
+\]
+formule permettant, si la caractéristique du corps $K$ est différente de 2, le calcul de $\varphi$ en fonction de $\Phi$, et formule qui montre l'unicité de $\varphi$ correspondant à $\Phi$.
+
+On lui préfère une autre formule. En remplaçant $Y$ par $-Y$, on a
+\[
+2\varphi(X,-Y)=\Phi(X-Y)-\Phi(X)-\Phi(-Y)
+\]
+or $\varphi(X,-Y)=-\varphi(X,Y)$, (linéarité de $\varphi$ par rapport à la 2e variable) et $\Phi(-Y)=(-1)^2\Phi(Y)=\Phi(Y)$ donc
+\[
+-2\varphi(X,Y)=\Phi(X-Y)-\Phi(X)-\Phi(Y)
+\]
+d'où, par soustraction :
+
+\subsection*{11.7.}
+\[
+4\varphi(X,Y)=\Phi(X+Y)-\Phi(X-Y).
+\]
+
+On suppose désormais $K$ de caractéristique $\ne2$.
+
+\medskip\noindent\textsc{Théorème 11.8.} --- \emph{Soit $E$ espace vectoriel sur $K$ corps de caractéristique $\ne2$.
+Une application $\Phi:E\longrightarrow K$ est une forme quadratique si et seulement si elle vérifie les 2 conditions suivantes :
+\begin{enumerate}[label=\arabic*)]
+\item $\forall x\in E$, $\forall\lambda\in K$, $\Phi(\lambda X)=\lambda^2\Phi(X)$,
+\item l'application $\varphi:E\times E\longrightarrow K$, définie par
+\[
+\varphi(X,Y)=\frac14\bigl(\Phi(X+Y)-\Phi(X-Y)\bigr)
+\]
+est bilinéaire.
+\end{enumerate}
+Dans ce cas $\varphi$ est la \BellaCorrection{forme bilinéaire symétrique}{forme linéaire symétrique} associée à $\Phi$, on parle encore de forme polaire de $\Phi$.}
+
+Seule la réciproque est à justifier. Or si $\Phi$ vérifie 1) et 2), non seulement $\varphi$ est bilinéaire, ce qui est supposé, mais elle est symétrique car
+\begin{align*}
+\varphi(Y,X)&=\frac14\bigl(\Phi(Y+X)-\Phi(Y-X)\bigr)\\
+&=\frac14\bigl(\Phi(X+Y)-\Phi(-(X-Y))\bigr)\\
+&=\frac14\bigl(\Phi(X+Y)-(-1)^2\Phi(X-Y)\bigr)\\
+&=\frac14\bigl(\Phi(X+Y)-\Phi(X-Y)\bigr),
+\end{align*}
+soit $\varphi(Y,X)=\varphi(X,Y)$.
+
+De plus, à $\varphi$ est bien associée la forme quadratique $\Phi$ car
+\[
+\varphi(X,X)=\frac14\bigl(\Phi(2X)-\Phi(0)\bigr)
+\]
+or
+\[
+\Phi(2X)=2^2\Phi(X)=4\Phi(X)
+\]
+et
+\[
+\Phi(0)=\Phi(0\cdot\ldots)=0^2\Phi(\ldots)=0,
+\]
+donc
+\[
+\varphi(X,X)=\frac14\cdot4\cdot\Phi(X)=\Phi(X). \bookend
+\]
+
+En particulier, il y a bijection entre les formes quadratiques sur $E$ et les formes bilinéaires symétriques qui leur sont associées. Aussi les notions suivantes seront attachées à l'une ou à l'autre, sans précision supplémentaire. Par exemple :
+
+\medskip\noindent\textsc{Définition 11.9.} --- \emph{Soit une forme bilinéaire symétrique $\varphi$ de forme quadratique $\Phi$ associée. Deux vecteurs $X$ et $Y$ de $E$ sont dits conjugués pour $\varphi$ (ou pour $\Phi$) si $\varphi(X,Y)=0$, (soit si $\varphi(Y,X)=0$).}
+
+On a encore $X$ et $Y$ conjugués $\Longleftrightarrow X\in\operatorname{Ker}\delta_\varphi(Y)$.
+
+\medskip\noindent\textsc{Définition 11.10.} --- \emph{Un vecteur $X$ de $E$ est dit isotrope pour $\Phi$, ou pour $\varphi$ forme polaire, si $\Phi(X)=0$.}
+
+\medskip\noindent\textsc{Théorème 11.11.} --- \emph{Soit $\Phi$ une forme quadratique sur $E$. L'ensemble des vecteurs isotropes pour $\Phi$ est un cône, appelé cône isotrope de $\Phi$.}
+
+Rappelons qu'une partie $C$ de $E$ est un cône si et seulement si, $\forall X\in C$, $\forall\lambda\in K$, $\lambda X\in C$, ce qui revient à dire que $C$ est une réunion de droites vectorielles, éventuellement réduite à $\{0\}$.
+
+En effet, si $X$ est isotrope, $\forall\lambda\in K$ on a $\Phi(\lambda X)=\lambda^2\Phi(X)=\lambda^2\cdot0=0$ donc $\lambda X$ est isotrope. \bookend
+
+\medskip\noindent\textsc{Définition 11.12.} --- \emph{Une forme quadratique $\Phi$ ou sa forme polaire $\varphi$, est dite définie si et seulement si son cône est réduit à $\{0\}$.}
+
+C'est la commodité de la transcription qui fait qu'en pratique on parle de vecteur isotrope de la forme quadratique et de vecteurs conjugués pour la forme bilinéaire symétrique.
+
+\medskip\noindent\textsc{Remarque 11.13.} --- Si $E$ vectoriel sur $K$ est muni d'une forme quadratique définie, un moyen de prouver la nullité d'un vecteur, c'est de prouver qu'il est isotrope.
+
+\medskip\noindent\textit{Étude de la conjugaison.} Rappelons que $X$ et $Y$ conjugués pour $\varphi$ équivaut à $\delta_\varphi(Y)(X)=0\Longleftrightarrow X$ et $\delta_\varphi(Y)$ sont orthogonaux au sens de l'orthogonalité dans le dual, voir en 6.93.
+
+\medskip\noindent\textsc{Définition 11.14.} --- \emph{Soit $E$ vectoriel sur $K$ muni de $\varphi$ bilinéaire symétrique. On appelle conjugué d'une partie $A$ de $E$ pour $\varphi$, l'ensemble noté $A^0$ défini par
+\[
+A^0=\{X\in E;\ \forall Y\in A,\ \varphi(X,Y)=0\}.
+\]}
+C'est encore
+\[
+A^0=\bigcap_{Y\in A}\operatorname{Ker}\delta_\varphi(Y)
+\]
+et c'est encore l'orthogonal de la partie $\delta_\varphi(A)$ de $E^*$, au sens défini en 6.98.
+
+\medskip\noindent\textsc{Théorème 11.15.} --- \emph{Le conjugué de $A$, $A^0$ est un \BellaCorrectionNote{sous-espace vectoriel de $E$}{sous-espace vectoriel de $A$}{Le conjugué $A^0$ est défini comme une partie de l'espace ambiant $E$ et l'argument qui suit le montre comme intersection de noyaux dans $E$.}. On a $A\subset B\Rightarrow B^0\subset A^0$; $A^0=(\operatorname{Vect}A)^0$; $A\subset(A^0)^0$ sans égalité en général, même si $A$ est sous-espace vectoriel de $E$.}
+
+Différence donc avec $(S^\perp)^\perp=\operatorname{Vect}S$ du théorème 6.99.
+
+D'abord, $A^0$, intersection de noyaux de formes linéaires est bien un sous-espace vectoriel de $E$.
+
+Si $A\subset B$, et si $X\in B^0$, comme $\forall Y\in B$, $\varphi(X,Y)=0$, la condition d'appartenance de $X$ à $A^0$ est bien vérifiée.
+
+Comme $A\subset\operatorname{Vect}A$, on a $(\operatorname{Vect}A)^0\subset A^0$ et réciproquement si $X\in A^0$, et si $Y\in\operatorname{Vect}A$, $Y$ est une combinaison linéaire d'un nombre fini d'éléments de $A$, du type
+\[
+Y=\sum_{i=1}^n\lambda_iY_i;
+\]
+les $\lambda_i\in K$, les $Y_i\in A$, on aura par linéarité de $\varphi$ par rapport à sa deuxième variable,
+\[
+\varphi(X,Y)=\varphi\left(X,\sum_{i=1}^n\lambda_iY_i\right)=\sum_{i=1}^n\lambda_i\varphi(X,Y_i)=0
+\]
+car chaque $\varphi(X,Y_i)$ est nul puisque $X$ est dans $A^0$ et $Y_i$ dans $A$; d'où $X\in(\operatorname{Vect}A)^0$, on a bien $A^0\subset(\operatorname{Vect}A)^0$ et finalement l'égalité $A^0=(\operatorname{Vect}A)^0$.
+
+Enfin, si $X\in A$ et $Y\in A^0$ on a $\varphi(Y,X)=0$ par définition de $A^0$, d'où, $\varphi$ étant symétrique, $X$ est tel que $\forall Y\in A^0$ on a $\varphi(X,Y)=0$ ce qui justifie l'appartenance de $X$ à $(A^0)^0$ d'où $A\subset(A^0)^0$. \bookend
+
+Inclusion le plus souvent stricte. Soit $E=\mathbb R^3$. Si $X=(x_1,x_2,x_3)$ et $Y=(y_1,y_2,y_3)$ on pose
+\[
+\varphi(X,Y)=x_1y_1+x_2y_2,
+\]
+(expression linéaire en $X$, en $Y$ et symétrique en $X,Y$). En notant $\{e_1,e_2,e_3\}$ la base canonique de $E$, on a
+\[
+\{e_1\}^0=\{X;\varphi(X,e_1)=0\}=\{X;x_1=0\}=\operatorname{Vect}(e_2,e_3).
+\]
+Donc
+\[
+(\{e_1\}^0)^0=\{e_2,e_3\}^0=\{X;\varphi(X,e_2)=0\}\cap\{X;\varphi(X,e_3)=0\}.
+\]
+Or $\varphi(X,e_2)=x_2$ et $\varphi(X,e_3)=0$ quel que soit $X$. Il reste donc
+\[
+(\{e_1\}^0)^0=\{X;x_2=0\}=\operatorname{Vect}(e_1,e_3)\ne\operatorname{Vect}(e_1). \bookend
+\]
+
+Parmi les conjugués des parties il y a le conjugué de l'espace entier, appelé à jouer un rôle important.
+
+\medskip\noindent\textsc{Définition 11.16.} --- \emph{Soit une forme quadratique $\Phi$ de forme polaire $\varphi$ sur $E$ vectoriel sur $K$. On appelle noyau de la forme quadratique le sous-espace vectoriel $E^0$. La forme est dite non dégénérée si et seulement si $E^0=\{0\}$, et dégénérée si $E^0\ne\{0\}$.}
+
+\medskip\noindent\textsc{Théorème 11.17.} --- \emph{Le noyau de $\Phi$ c'est encore le noyau de l'homomorphisme $\delta_\varphi$ de $E$ sur $E^*$, (ou celui de $\gamma_\varphi$).}
+
+Car
+\[
+\operatorname{Ker}\delta_\varphi=\{Y;Y\in E,\delta_\varphi(Y)=0\}.
+\]
+Or $\delta_\varphi(Y)=0\Longleftrightarrow\forall X\in E$, $\varphi(X,Y)=0$.
+
+Donc $Y\in\operatorname{Ker}\delta_\varphi\Longleftrightarrow\forall X\in E$, $\varphi(X,Y)=\varphi(Y,X)=0$ et sous cette forme on retrouve $Y$ conjugué de tout $X$ de $E$ c'est-à-dire $Y\in E^0$.
+
+On procède de même pour $\gamma_\varphi$. \bookend
+
+Il en résulte que
+\[
+(\varphi\text{ non dégénérée})\Longleftrightarrow(\delta_\varphi\text{ injective de }E\text{ sur }E^*).
+\]
+
+\medskip\noindent\textsc{Théorème 11.18.} --- \emph{Soit $\Phi$ une forme quadratique. Son cône isotrope contient le noyau.}
+
+Car si $X\in E^0$, on a $\varphi(X,Y)=0$ pour tout $Y$ de $E$ donc en particulier pour $X$, d'où $\Phi(X)=\varphi(X,X)=0$ : $X$ est dans le cône isotrope. \bookend
+
+La réciproque est fausse en général.
+
+Prenons par exemple $E=\mathbb R^2$ et $\varphi$ définie, pour $X=(x_1,x_2)$ et $Y=(y_1,y_2)$ dans $\mathbb R^2$ par
+\[
+\varphi(X,Y)=x_1y_2+x_2y_1.
+\]
+Alors $X=(x_1,x_2)$ est isotrope si et seulement si $\Phi(X)=2x_1x_2=0$.
+
+En notant $e_1=(1,0)$ et $e_2=(0,1)$ on a le cône isotrope formé des 2 droites $\mathbb Re_1$ et $\mathbb Re_2$.
+
+Par contre le noyau c'est
+\[
+E^0=\{e_1,e_2\}^0=\{X;\varphi(X,e_1)=\varphi(X,e_2)=0\}.
+\]
+Or $\varphi(X,e_1)=x_2$ et $\varphi(X,e_2)=x_1$, donc $X\in E^0\Longleftrightarrow x_1=x_2=0\Longleftrightarrow X=0$ d'où
+\[
+E^0=\{0\}\subset C=(\mathbb Re_1\cup\mathbb Re_2),\qquad E^0\ne C.
+\]
+
+\medskip\noindent\textsc{Corollaire 11.19.} --- \emph{Une forme quadratique définie est non dégénérée.}
+
+Puisque, le cône isotrope étant réduit à $\{0\}$, il en est a fortiori de même du noyau. \bookend
+
+\medskip\noindent\textsc{Remarque 11.20.} --- Sur $E$ vectoriel muni de $\varphi$ bilinéaire symétrique non dégénérée un moyen de prouver la nullité d'un vecteur $X$ c'est de justifier son appartenance au noyau $E^0$.
+
+\medskip\noindent\textsc{Théorème 11.21.} --- \emph{Soit $\varphi$ bilinéaire symétrique sur $E$ vectoriel sur $K$. Elle induit une forme bilinéaire symétrique non dégénérée sur l'espace quotient $E/E^0$.}
+
+Soient $\bar X$ et $\bar Y$ deux éléments de l'espace quotient $E/E^0$, représentés respectivement par $X$ et $X'$ d'une part, $Y$ et $Y'$ d'autre part.
+
+Comme $X-X'\in E^0$, (voir la définition des espaces vectoriels quotients, en 6.40), on a $\varphi(X-X',Y)=0$ soit $\varphi(X,Y)-\varphi(X',Y)=0$ d'où $\varphi(X,Y)=\varphi(X',Y)$. Mais de même $Y-Y'\in E^0$ donc est conjugué de $X'$ d'où $\varphi(X',Y-Y')=0\Rightarrow\varphi(X',Y)=\varphi(X',Y')$ et finalement $\varphi(X,Y)=\varphi(X',Y')$.
+
+\subsection*{11.22.}
+On définit $\bar\varphi$ sur $E/E^0$ par
+\[
+\bar\varphi(\bar X,\bar Y)=\varphi(X,Y),
+\]
+avec $X\in\bar X$ et $Y\in\bar Y$, ceci ayant un sens vu l'indépendance par rapport aux choix des représentants que l'on vient d'établir.
+
+Il est facile de vérifier que $\bar\varphi$ est symétrique, bilinéaire. Elle est non dégénérée car si $\bar X$ est dans le noyau de $E/E^0$ pour $\bar\varphi$, on aura $\bar\varphi(\bar X,\bar Y)=0$ pour tout $\bar Y$ de $E/E^0$. Soit donc $X$ un représentant quelconque de $\bar X$, si $Y\in E$ et si $\bar Y$ est sa classe d'équivalence dans $E/E^0$, on aura $\bar\varphi(\bar X,\bar Y)=\varphi(X,Y)=0$ et ce $\forall Y\in E$, donc $X\in E^0$ et $\bar X$ classe de $X$ est alors $E^0$, élément nul de $E/E^0$. \bookend
+
+On peut établir quelques propriétés de la conjugaison. On a
+
+\medskip\noindent\textsc{Théorème 11.23.} --- \emph{Soit $E$ un espace vectoriel sur $K$ muni de $\varphi$ bilinéaire symétrique. Soient $F$ et $G$ deux sous-espaces de $E$. On a :
+\[
+(F+G)^0=(F\cup G)^0=F^0\cap G^0
+\]
+mais seulement
+\[
+(F\cap G)^0\supset F^0+G^0.
+\]}
+
+Comme $\operatorname{Vect}(F\cup G)=(F+G)$ on a $(F\cup G)^0=(F+G)^0$, (Théorème 11.15).
+
+Puis
+\[
+X\in F^0\cap G^0\Longleftrightarrow(\forall Y\in F\text{ et }\forall Y\in G,\ \varphi(X,Y)=0)
+\]
+\[
+\Longleftrightarrow(\forall Y\in(F\cup G),\ \varphi(X,Y)=0)
+\Longleftrightarrow X\in(F\cup G)^0.
+\]
+
+Puis $(F\cap G)\subset F\Rightarrow F^0\subset(F\cap G)^0$ et $(F\cap G)\subset G\Rightarrow G^0\subset(F\cap G)^0$ d'où $F^0+G^0\subset(F\cap G)^0$. \bookend
+
+Il y a non égalité en général : soit sur $E=\mathbb R^2$ rapporté à la base $B=\{e_1,e_2\}$ la forme bilinéaire symétrique définie par :
+\[
+\varphi(x,y)=x_1y_1,
+\]
+si $x=x_1e_1+x_2e_2$ et $y=y_1e_1+y_2e_2$.
+
+On a $\{\mathbb Re_1\}^0=\{y;y_1=0\}=\mathbb Re_2$ et $(\mathbb R(e_1+e_2))^0$ est aussi $\mathbb Re_2$.
+
+Donc avec $F=\mathbb Re_1$ et $G=\mathbb R(e_1+e_2)$, on a $F\cap G=\{0\}$ d'où
+\[
+(F\cap G)^0=\{0\}^0=E
+\]
+contient strictement $F^0+G^0=\mathbb Re_2$.
+
+Soit alors $E$ muni de $\varphi$ bilinéaire symétrique et $F$ un sous-espace de $E$. On peut considérer $\varphi'$ induite sur $F$, c'est $\varphi'=\varphi|_{F\times F}$. Son noyau est formé des $X$ de $F$ tel que $\forall Y\in F$, $\varphi'(X,Y)=\varphi(X,Y)=0$ : c'est donc $F\cap F^0$, $F^0$ pris dans $E$ pour $\varphi$. Ce qui amène à la
+
+\medskip\noindent\textsc{Définition 11.24.} --- \emph{Un sous-espace $F$ de $E$ est dit non isotrope pour $\varphi$ si $F\cap F^0=\{0\}$, isotrope si $F\cap F^0\ne\{0\}$ et totalement isotrope si $F\cap F^0=F$.}
+
+Donc $F$ est non isotrope si et seulement si $\varphi'$ induite par $\varphi$ sur $F$ est non dégénérée, et totalement isotrope si $\varphi'=0$.
+
+\medskip\noindent\textsc{Théorème 11.25.} --- \emph{Soit $E$ vectoriel sur $K$ muni de $\varphi$ et $F$ un sous-espace vectoriel non isotrope de dimension finie de $E$, on a
+\[
+E=F\oplus F^0.
+\]}
+
+Ce théorème est le point de départ de l'existence des bases conjuguées en dimension finie, étude détaillée au paragraphe suivant.
+
+En effet, on a déjà $F\cap F^0=\{0\}$, par définition de $F$ non isotrope. Par ailleurs $\varphi'=\varphi|_{F\times F}$ est non dégénérée donc $\delta_{\varphi'}:F\longrightarrow F^*$ est injective, (Théorème 11.17) et comme $F$ est de dimension finie, $\dim F^*=\dim F$ d'où en fait $\delta_{\varphi'}$ bijective, (Théorèmes 6.108 et 6.85).
+
+Soit alors $X\in E$, $\delta_\varphi(X)\in E^*$, sa restriction à $F$, notée $\delta_\varphi(X)|_F$ est une forme linéaire de $F$, donc un élément de $F^*=\delta_{\varphi'}(F)$ : il existe un et un seul $Y\in F$ tel que $\delta_\varphi(X)|_F=\delta_{\varphi'}(Y)$, ce qui se traduit par :
+\[
+\forall T\in F,\qquad \delta_\varphi(X)(T)=\delta_{\varphi'}(Y)(T),
+\]
+soit $\varphi(T,X)=\varphi'(T,Y)=\varphi(T,Y)$ vu la définition de $\varphi'$.
+
+Mais alors, on a $\varphi(T,X-Y)=0$, (bilinéarité de $\varphi$) donc à $X\in E$ on associe $Y\in F$ tel que $X-Y\in F^0$, puisque $\forall T\in F$, $\varphi(T,X-Y)=0$.
+
+Mais alors $X=Y+(X-Y)$ est décomposé dans la somme $F+F^0$ d'où le résultat. \bookend
+
+Pour achever ce paragraphe d'introduction sur les formes quadratiques parlons du groupe orthogonal.
+
+\medskip\noindent\textsc{Définition 11.26.} --- \emph{On appelle opérateur orthogonal pour $\Phi$ forme quadratique sur $E$ tout automorphisme $u$ de $E$ vérifiant : $\forall X\in E$, $\Phi(u(x))=\Phi(x)$.}
+
+Ceci équivaut, $u$ étant linéaire, à
+
+\subsection*{11.27.}
+\[
+\forall(X,Y)\in E^2,\qquad \varphi(u(X),u(Y))=\varphi(X,Y),
+\]
+$\varphi$ forme polaire de $\Phi$ car si $\varphi$ est conservée par $u$, avec $X=Y$, on a $\Phi$ conservée par $u$, et si $\Phi$ conservée par $u$, $\forall(X,Y)\in E^2$ on a
+\begin{align*}
+4\varphi(u(X),u(Y))
+&=\Phi(u(X)+u(Y))-\Phi(u(X)-u(Y)),\quad\text{(voir 11.7)}\\
+&=\Phi(u(X+Y))-\Phi(u(X-Y)),\quad\text{(linéarité de $u$)}\\
+&=\Phi(X+Y)-\Phi(X-Y),\quad\text{(conservation de $\Phi$)}\\
+&=4\varphi(X,Y),\quad\text{(voir 11.7)}
+\end{align*}
+d'où $\varphi$ conservée. \bookend
+
+Enfin, le fait qu'on ait imposé $u$ bijective permet de voir que si $u$ et $v$ bijectives conservent $\Phi$, il en est de même pour $u^{-1}$ et $u\circ v$. Comme $\mathrm{id}_E$ est un opérateur orthogonal, on a
+
+\medskip\noindent\textsc{Théorème 11.28.} --- \emph{L'ensemble noté $O_\varphi(E)$ des opérateurs orthogonaux de $E$ pour $\varphi$ est un groupe pour le produit de composition, sous-groupe de $GL(E)$.} \bookend
+
+$O_\varphi(E)$ est encore appelé groupe orthogonal de $E$ pour $\varphi$.
+
+\BellaSection{2. Cas des espaces vectoriels de dimension finie}
+
+Pour l'instant on a considéré des formes bilinéaires symétriques sans vraiment donner d'exemple, mais dans le cadre des espaces vectoriels de dimension finie, on va pouvoir les déterminer à l'aide des bases.
+
+Soit en effet $E$ vectoriel de dimension $n$ sur $K$ et $B=\{e_1,\ldots,e_n\}$ une base de $E$. Si $x$ et $y$ sont deux vecteurs de $E$, on les décompose dans cette base en
+\[
+x=\sum_{i=1}^n x_ie_i\qquad\text{et}\qquad y=\sum_{j=1}^n y_je_j.
+\]
+Si $\varphi$ est bilinéaire, on aura
+\[
+\varphi(x,y)=\varphi\left(\sum_{i=1}^n x_ie_i,y\right)=\sum_{i=1}^nx_i\varphi(e_i,y)
+\]
+avec
+\[
+y=\sum_{j=1}^ny_je_j,
+\]
+(attention à ne pas prendre le même indice), donc
+\[
+\varphi(x,y)=\sum_{i=1}^nx_i\varphi\left(e_i,\sum_{j=1}^ny_je_j\right)
+=\sum_{i=1}^nx_i\left(\sum_{j=1}^ny_j\varphi(e_i,e_j)\right),
+\]
+ou
+
+\subsection*{11.29.}
+\[
+\varphi(x,y)=\sum_{i=1}^n\sum_{j=1}^n x_iy_j\varphi(e_i,e_j)
+\]
+et réciproquement, si on se donne une famille de $n^2$ scalaires $(\omega_{ij})_{1\le i,j\le n}$ et si on définit $\varphi$ par
+\[
+\varphi(x,y)=\sum_{i=1}^n\sum_{j=1}^n\omega_{ij}x_iy_j,
+\]
+$x$ et $y$ étant décomposés dans la base $B$, on vérifie facilement que $\varphi$ est linéaire en $x$ et aussi en $y$.
+
+Donc l'espace vectoriel des formes bilinéaires sur $E$ est isomorphe à celui des matrices carrées $(\omega_{ij})_{1\le i,j\le n}$ d'ordre $n$.
+
+Si de plus $\varphi$ est symétrique, on aura $\forall i$, $\forall j$, $\varphi(e_i,e_j)=\varphi(e_j,e_i)$ et il suffira de se donner les scalaires $\omega_{ii}$, $i=1\ldots n$ et les scalaires $\omega_{ij}$ pour $1\le i<j\le n$ par exemple, pour déterminer $\varphi$, bilinéaire symétrique, telle que
+\[
+\varphi(e_u,e_v)=\omega_{uv},
+\]
+en posant $\omega_{uv}=\omega_{vu}$ si $u>v$.
+
+Autrement dit $\varphi$ sera déterminée, une base $B$ de $E$ étant fixée, par la donnée d'une matrice symétrique, (égale à sa transposée) $\Omega=(\omega_{ij})_{1\le i,j\le n}$, donc par la donnée des $n$ scalaires $\omega_{ii}$ et des $\frac{n^2-n}{2}$ scalaires $\omega_{ij}$ pour $1\le i<j\le n$, soit finalement par la donnée de $\frac{n^2+n}{2}$ scalaires, indépendants les uns des autres. Nous venons de voir que :
+
+\medskip\noindent\textsc{Théorème 11.30.} --- \emph{Les formes bilinéaires symétriques (ou les formes quadratiques) sur $E\simeq K^n$ forment un espace vectoriel de dimension $n(n+1)/2$ isomorphe à celui des matrices carrées d'ordre $n$, symétriques.} \bookend
+
+\medskip\noindent\textit{Écriture matricielle de $\varphi$}
+
+La base $B$ étant fixée, si on pose $\omega_{ij}=\varphi(e_i,e_j)$ l'expression 11.29 s'écrit
+\[
+\varphi(x,y)=\sum_{i=1}^n x_i\left(\sum_{j=1}^n\omega_{ij}y_j\right).
+\]
+Si on considère alors $X$ et $Y$, les matrices colonnes des coordonnées de $x$ et $y$ dans la base $B$, et si on note $\Omega$ la matrice carrée des $\omega_{ij}$, le produit matriciel $\Omega Y$ est une matrice colonne, l'élément de la $i$ème ligne venant du produit
+\[
+(\omega_{i1}\ \omega_{i2}\ \cdots\ \omega_{in})
+\begin{pmatrix}y_1\\y_2\\\vdots\\y_n\end{pmatrix}
+\]
+donc valant $\sum_{j=1}^n\omega_{ij}y_j$ et finalement $\varphi(X,Y)$ devient le produit de la matrice ligne ${}^tX=(x_1\cdots x_n)$ par la colonne $\Omega Y$ d'où l'expression matricielle
+
+\subsection*{11.31.}
+\[
+\varphi(x,y)={}^tX\Omega Y
+\]
+d'une forme bilinéaire symétrique, avec $X$ et $Y$ matrices colonnes des coordonnées de $x$ et $y$ dans la base $B$ et $\Omega$ matrice symétrique des $\omega_{ij}=\varphi(e_i,e_j)$.
+
+La forme quadratique associée vaut alors $\Phi(x)={}^tX\Omega X$ et $\Omega$ est la matrice de $\varphi$ ou de $\Phi$ dans la base $B$.
+
+\medskip\noindent\textsc{Théorème 11.32.} --- \emph{Soit $\varphi$ bilinéaire symétrique sur $E\simeq K^n$ et $\Omega$ sa matrice dans une base $B$ de $E$. Alors $\Omega$ est aussi la matrice de l'homomorphisme $\delta_\varphi$ de $E$ dans $E^*$ par rapport aux bases $B$ de $E$ et $B^*$, base duale de $B$, dans $E^*$.}
+
+Rappelons que $\delta_\varphi:E\longrightarrow E^*$ est définie par : $\delta_\varphi(y)$ est l'application linéaire de $E$ dans $K$ qui à $x$ associe $\delta_\varphi(y)(x)=\varphi(x,y)$.
+
+Si $\{e_1,\ldots,e_n\}=B$, en notant $\{e_1^*,\ldots,e_n^*\}$ la base duale (donc $e_j^*$ est la forme coordonnée qui à $x=\sum_{i=1}^nx_ie_i$ associe $x_j$), la matrice de $\delta_\varphi$ relativement aux bases $B$ et $B^*$ est obtenue en cherchant à décomposer chaque $\delta_\varphi(e_j)$ dans $B^*$, et cela donnera les éléments de la $j$ème colonne de la matrice cherchée.
+
+Or
+\[
+\delta_\varphi(e_j)(x)=\varphi(x,e_j)=\varphi\left(\sum_{i=1}^nx_ie_i,e_j\right)=\sum_{i=1}^nx_i\varphi(e_i,e_j).
+\]
+On a posé $\omega_{ij}=\varphi(e_i,e_j)$ et comme $x_i=e_i^*(x)$ on peut encore écrire
+\[
+\delta_\varphi(e_j)(x)=\left(\sum_{i=1}^n\omega_{ij}e_i^*\right)(x);
+\]
+ceci étant vrai pour tout $x$ de $E$ c'est que
+\[
+\delta_\varphi(e_j)=\sum_{i=1}^n\omega_{ij}e_i^*:
+\]
+la $j$ème colonne est donc
+\[
+\begin{pmatrix}\omega_{1j}\\\omega_{2j}\\\vdots\\\omega_{nj}\end{pmatrix}
+\]
+donc $\Omega$ est bien la matrice de $\delta_\varphi$ dans les bases $B$ et $B^*$. \bookend
+
+Comme le rang des matrices associées au même homomorphisme ne dépend pas des bases choisies en dimension finie, si on part d'une base $B'$ de $E$ on aura une autre matrice $\Omega'$ qui sera de même rang. On peut donc introduire la notion de rang de $\varphi$ bilinéaire symétrique, ou de $\Phi$ quadratique.
+
+\medskip\noindent\textsc{Définition 11.33.} --- \emph{Soit $\Phi$ quadratique sur $E\simeq K^n$, de forme polaire $\varphi$. On appelle rang de $\Phi$, ou de $\varphi$, le rang de l'homomorphisme $\delta_\varphi$ de $E$ sur $E^*$. C'est donc aussi le rang commun de toutes les matrices associées à $\Phi$ dans des bases de $E$.}
+
+Comme $\operatorname{Ker}\delta_\varphi=E^0$, (Théorème 11.17), on a encore
+\[
+\dim E=\operatorname{rang}\Phi+\dim E^0,
+\]
+car c'est la formule $\dim E=\operatorname{rang}(\delta_\varphi)+\dim(\operatorname{Ker}\delta_\varphi)$ valable pour $\delta_\varphi$ homomorphisme de $E$ dans $E^*$, (Théorème 6.85).
+
+\subsection*{11.34.}
+On peut remarquer que, pour $E$ de dimension finie $n$, on a
+\[
+(\Phi\text{ non dégénérée})\Longleftrightarrow(\operatorname{rang}\Phi=n)
+\Longleftrightarrow(\Omega\text{ matrice de }\Phi\text{ dans une base }B\text{ est régulière}).
+\]
+
+Avant de s'inquiéter des effets d'un changement de base, on peut encore exploiter les propriétés de dimension finie.
+
+\medskip\noindent\textsc{Théorème 11.35.} --- \emph{Soit $E$ vectoriel de dimension finie sur un corps $K$, et $\varphi$ bilinéaire symétrique sur $E$. Si $F$ est un sous-espace vectoriel de $E$ on a
+\[
+\dim F+\dim F^0=\dim E+\dim(F\cap E^0).
+\]}
+
+On suppose $F$ sous-espace de dimension $p$ de $E$ de dimension $n$.
+
+Si $q=\dim(F\cap E^0)$, soit $\{e_1,\ldots,e_q\}$ une base de $F\cap E^0$ complétée en $\{e_1,\ldots,e_q;e_{q+1},\ldots,e_p\}$ base de $F$. Si $F\cap E^0=\{0\}$ on part d'une base de $F$ directement.
+
+On a $F^0=\{e_1,\ldots,e_p\}^0$ puisque $\operatorname{Vect}(e_1,\ldots,e_p)=F$, (11.15), donc
+\[
+x\in F^0\Longleftrightarrow\forall j=1,\ldots,p,\ \varphi(x,e_j)=\delta_\varphi(e_j)(x)=0.
+\]
+Or pour $j\le q$, $e_j\in F\cap E^0\subset E^0=\operatorname{Ker}\delta_\varphi$ donc $\delta_\varphi(e_j)=0$.
+
+Il reste
+\[
+x\in F^0\Longleftrightarrow\forall j=q+1,\ldots,p,\ \delta_\varphi(e_j)(x)=0.
+\]
+On a un système de $p-q$ équations linéaires, système homogène.
+
+Par ailleurs ces équations sont indépendantes, car s'il existe des scalaires $\alpha_{q+1},\ldots,\alpha_p$ tels que
+\[
+\sum_{j=q+1}^p\alpha_j\delta_\varphi(e_j)=0,
+\]
+soit
+\[
+\delta_\varphi\left(\sum_{j=q+1}^p\alpha_je_j\right)=0
+\]
+c'est que
+\[
+\sum_{j=q+1}^p\alpha_je_j\in\operatorname{Ker}\delta_\varphi=E^0,
+\]
+et comme les $e_j$ sont dans $F$, c'est qu'en fait
+\[
+\sum_{j=q+1}^p\alpha_je_j\in(F\cap E^0)=\operatorname{Vect}(e_1,\ldots,e_q)
+\]
+ce qui est absurde puisque $(e_1,\ldots,e_q;e_{q+1},\ldots,e_p)$ est une famille libre.
+
+Le système est homogène, de rang $p-q$, à $n$ inconnues : ses solutions formant un espace vectoriel de dimension $n-(p-q)$, (Théorème 9.51), donc
+\[
+\dim F^0=n-p+q=\dim E-\dim F+\dim(F\cap E^0):
+\]
+on a bien
+\[
+\dim F+\dim F^0=\dim E+\dim(F\cap E^0). \bookend
+\]
+
+\medskip\noindent\textsc{Corollaire 11.36.} --- \emph{Si $\Phi$ est non dégénérée sur $E$ de dimension finie, on a, pour tout sous-espace $F$, $\dim F+\dim F^0=\dim E$ et $(F^0)^0=F$.}
+
+Car alors $E^0=\{0\}$, la formule du théorème 11.35 devient bien
+\[
+\dim F+\dim F^0=\dim E.
+\]
+Comme on sait que $F\subset(F^0)^0$, (Théorème 11.15) et que
+\[
+\dim(F^0)^0=\dim E-\dim F^0=\dim E-(\dim E-\dim F)=\dim F,
+\]
+l'inclusion et l'égalité des dimensions, finies, donne bien $F=(F^0)^0$. \bookend
+
+\medskip\noindent\textsc{Corollaire 11.37.} --- \emph{Soit $\varphi$ non dégénérée sur $E$ de dimension finie et $F$ et $G$ deux sous-espaces, on a $(F\cap G)^0=F^0+G^0$.}
+
+Car on a vu que $F^0+G^0\subset(F\cap G)^0$, (Théorème 11.23), et ici encore les 2 espaces sont de même dimension, finie car, avec $n=\dim E$ on a :
+\begin{align*}
+\dim(F^0+G^0)
+ &=\dim F^0+\dim G^0-\dim(F^0\cap G^0),\qquad\text{(corollaire 6.87).}
+\end{align*}
+Or $F^0\cap G^0=(F+G)^0$, (Théorème 11.23), donc
+\begin{align*}
+\dim(F^0+G^0)
+ &=n-\dim F+n-\dim G-\dim((F+G)^0)\\
+ &=2n-\dim F-\dim G-(n-\dim(F+G))\\
+ &=n-\dim F-\dim G+\dim F+\dim G-\dim(F\cap G)\\
+ &=n-\dim(F\cap G)=\dim(F\cap G)^0. \bookend
+\end{align*}
+
+Venons-en aux effets des changements de base.
+
+\medskip\noindent\textsc{Théorème 11.38.} --- \emph{Soit $\Phi$ \BellaCorrection{quadratique}{quadratrique} sur $E$ vectoriel de dimension finie $n$ sur $K$, $B$ et $B'$ deux bases de $E$, $\Omega$ et $\Omega'$ les matrices de $\Phi$ dans ces bases. On a
+\[
+\Omega'={}^tP\Omega P,
+\]
+$P$ étant la matrice de passage de $B$ à $B'$.}
+
+En effet, soient $x$ et $y$ dans $E$, $X$ et $Y$ les matrices colonnes de leurs coordonnées dans la base $B$, $X'$ et $Y'$ celles des coordonnées dans $B'$. On sait, (parfois avec bien du mal!), ou on dit savoir que l'on a les relations
+\[
+X=PX'\qquad\text{et}\qquad Y=PY',
+\]
+$P$ matrice de passage, (voir 8.20).
+
+Par ailleurs on a vu, (11.31) que $\varphi(x,y)={}^tX\Omega Y$ si $\Omega$ est la matrice de $\varphi$ dans la base $B$. On aura de même $\varphi(x,y)={}^tX'\Omega'Y'$.
+
+Or
+\[
+{}^tX\Omega Y={}^t(PX')\Omega(PY')={}^tX'({}^tP\Omega P)Y'
+\]
+et, vu l'unicité de la matrice associée à $\varphi$ dans la base $B'$, c'est que
+\[
+\Omega'={}^tP\Omega P. \bookend
+\]
+
+\medskip\noindent\textsc{Remarque 11.39.} --- Attention à ne pas confondre avec $A'=P^{-1}AP$, formule donnant $A'$, semblable à $A$, pour les endomorphismes. D'ailleurs on a
+
+\medskip\noindent\textsc{Définition 11.40.} --- \emph{Deux matrices $\Omega$ et $\Omega'$, carrées, sont dites congruentes s'il existe $P$ régulière telle que $\Omega'={}^tP\Omega P$.}
+
+Les matrices symétriques congruentes sont donc celles d'une même forme quadratique dans des bases différentes.
+
+\medskip\noindent\textsc{Remarque 11.41.} --- $\Omega$ et $\Omega'={}^tP\Omega P$ avec $P$ régulière, sont en particulier équivalentes donc ont même rang. On retrouve le fait que l'on peut définir le rang de $\Phi$ par le rang commun de toutes les matrices qui lui sont associées dans des bases différentes de $E$.
+
+Pour les déterminants, ils ne sont pas conservés. On a $\det(\Omega')=(\det\Omega)(\det P)^2$ donc c'est la non nullité qui est conservée, et, dans le cas de $\mathbb R$, (ou d'un corps ordonné) le signe du déterminant qui est conservé. D'ailleurs on va retrouver un terme déjà connu :
+
+\medskip\noindent\textsc{Définition 11.42.} --- \emph{On appelle discriminant d'une matrice symétrique $\Omega$ carrée d'ordre $n$ le scalaire $\det(\Omega)$.}
+
+\medskip\noindent\textsc{Remarque 11.43.} --- Les discriminants font penser aux polynômes du second degré.
+
+En fait, une base $B$ de $E$ étant fixée, si $X$ et $Y$ sont les matrices colonnes des composantes de $x$ et $y$ dans $B$, si $\Omega$ est la matrice de $\varphi$ bilinéaire symétrique dans la base $B$, on a
+
+\subsection*{11.44.}
+\[
+\varphi(x,y)=\sum_{i=1}^n\sum_{j=1}^n\omega_{ij}x_iy_j,
+\]
+(avec $\omega_{ij}=\varphi(e_i,e_j)$) et la forme quadratique vaut
+\[
+\Phi(x)=\sum_{i=1}^n\sum_{j=1}^n\omega_{ij}x_ix_j,
+\]
+soit comme $\omega_{ij}=\omega_{ji}$,
+
+\subsection*{11.45.}
+\[
+\Phi(x)=\sum_{i=1}^n\omega_{ii}x_i^2+\sum_{1\le i<j\le n}2\omega_{ij}x_ix_j.
+\]
+
+\subsection*{11.46.}
+Cette expression porte encore le nom de polynôme quadratique en $x_1,\ldots,x_n$. C'est un polynôme homogène de degré 2 en $x_1\ldots x_n$ et c'est souvent sous cette forme que l'on se donne une forme quadratique sur $E$ identifié alors à $K^n$.
+
+Si on part d'un polynôme
+\[
+\sum_{i=1}^na_ix_i^2+\sum_{1\le i<j\le n}a_{ij}x_ix_j=Q(x_1,\ldots,x_n),
+\]
+on retrouve la matrice $\Omega$ en posant
+\[
+\omega_{ii}=a_i\qquad\text{et}\qquad \omega_{ij}=\omega_{ji}=\frac{a_{ij}}2\quad\text{pour }i\ne j.
+\]
+La forme bilinéaire symétrique $\varphi(x_1,\ldots,x_n;y_1,\ldots,y_n)$ associée se retrouve en remplaçant $x_i^2$ par $x_iy_i$ et $x_ix_j$ par $\frac12(x_iy_j+x_jy_i)$.
+
+On peut enfin vérifier, qu'avec $Q$ polynôme quadratique, et $\varphi$ polynôme bilinéaire symétrique associé, on a l'identité d'Euler :
+
+\subsection*{11.47.}
+\[
+2\varphi(x_1,\ldots,x_n;y_1,\ldots,y_n)
+=\sum_{j=1}^n y_j\frac{\partial Q}{\partial x_j}(x_1,\ldots,x_n),
+\]
+car
+\[
+\varphi(x_1,\ldots,x_n;y_1,\ldots,y_n)
+=\sum_{i=1}^nx_i\left(\sum_{j=1}^n\omega_{ij}y_j\right)
+=\sum_{j=1}^n\left(\sum_{i=1}^n\omega_{ij}x_i\right)y_j
+\]
+or
+\[
+\frac{\partial Q}{\partial x_j}(x_1,\ldots,x_n)=2a_jx_j+\sum_{i\ne j}a_{ij}x_i.
+\]
+Comme on a $\omega_{jj}=a_j$ et $a_{ij}=2\omega_{ij}$ on obtient bien
+\[
+\frac{\partial Q}{\partial x_j}(x_1,\ldots,x_n)
+=2\left(\omega_{jj}x_j+\sum_{i\ne j}\omega_{ij}x_i\right)
+=2\sum_{i=1}^n\omega_{ij}x_i
+\]
+d'où l'identité
+\[
+\sum_{j=1}^ny_j\frac{\partial Q}{\partial x_j}(x_1,\ldots,x_n)
+=2\varphi(x_1,\ldots,x_n;y_1,\ldots,y_n).
+\]
+
+Nous arrivons enfin au résultat le plus important concernant les formes quadratiques, ou les formes bilinéaires symétriques, en dimension finie, l'existence de \BellaCorrection{bases $(e_1\ldots e_n)$ conjuguées}{base $(e_1\ldots e_n)$ conjuguées}, c'est-à-dire telles que $\forall i\ne j$, $\varphi(e_i,e_j)=0$.
+
+\medskip\noindent\textsc{Théorème 11.48.} --- \emph{Soit $\Phi$ une forme quadratique sur $E$ vectoriel de dimension finie, de forme polaire $\varphi$. Il existe des bases de $E$ conjuguées pour $\varphi$, c'est-à-dire formées de vecteurs 2 à 2 conjugués.}
+
+Se justifie par récurrence sur $\dim(E)=n$ en remarquant que si $n=1$ toute base convient.
+
+On suppose le résultat vrai pour un espace de dimension $n-1$.
+
+Soit donc $E$ de dimension $n$.
+
+Si $\Phi=0$, comme $\varphi(x,y)=\frac14(\Phi(x+y)-\Phi(x-y))$, $\varphi$ est nulle aussi, donc toute base convient.
+
+Si $\Phi\ne0$, soit $a$ un vecteur de $E$ non isotrope, on a $\Phi(a)\ne0$ donc la droite vectorielle $D=K\cdot a$ est un sous-espace non isotrope, (11.24), car si $x=\lambda a\in D\cap D^0$, $\varphi(x,a)=\varphi(\lambda a,a)=\lambda\Phi(a)=0$ d'où $\lambda=0$, donc $D\cap D^0=\{0\}$. Comme on est en dimension finie on a $E=D\oplus D^0$, (Théorème 11.25). Mais alors $D^0$ est sous-espace de dimension finie $n-1$, $D$ étant de dimension 1. L'hypothèse de récurrence s'applique et si $\{e_2,\ldots,e_n\}$ est une base conjuguée de $D^0$, tous les $e_j$ étant \BellaCorrection{conjugués à $a$}{conjuguée de $a$}, $B=\{a;e_2,\ldots,e_n\}$ est finalement une base conjuguée de $E$ d'où le théorème. \bookend
+
+Si dans $E$ de dimension $n$, $B=\{e_1,\ldots,e_n\}$ est une base conjuguée, $\forall i\ne j$, on aura $\varphi(e_i,e_j)=0$ donc, en prenant $\lambda_i=\Phi(e_i)=\varphi(e_i,e_i)$, la matrice $A$ de la forme $\varphi$ dans la base conjuguée $B$ sera diagonale :
+
+\subsection*{11.49.}
+\[
+A=\operatorname{diag}(\lambda_1,\lambda_2,\ldots,\lambda_n).
+\]
+
+En particulier on a :
+
+\medskip\noindent\textsc{Corollaire 11.50.} --- \emph{Toute matrice symétrique $\Omega$, carrée d'ordre $n$, est congruente à une matrice diagonale.}
+
+Car en introduisant $E=K^n$, $\Omega$ est la matrice d'une forme $\varphi$ bilinéaire symétrique dans une base $B$ de $E$, par exemple la base canonique. Il existe alors des bases de $E$ conjuguées pour $\varphi$. Si $C$ en est une, et si $P$ est la matrice de passage de $B$ à $C$, on a ${}^tP\Omega P=A$ diagonale. \bookend
+
+\medskip\noindent\textsc{Attention 11.51.} --- Congruente, mais pas semblable : on n'a pas diagonalisé $\Omega$.
+
+D'ailleurs si on avait diagonalisé $\Omega$ les $\lambda_i$ seraient uniques à permutation près, alors qu'ici dans une base conjuguée si on multiplie chaque vecteur de la base conjuguée par $\lambda$, les coefficients diagonaux seront tous multipliés par $\lambda^2$.
+
+Précisons encore. Soit $\varphi$ bilinéaire symétrique sur $E$, de matrice $\Omega$ dans une base $B=\{e_1,\ldots,e_n\}$ et $C=\{\hat e_1,\ldots,\hat e_n\}$ une base conjuguée pour $\varphi$. Si $r$ est le rang de $\varphi$, la matrice $A$ de $\varphi$ dans la base $C$ étant la matrice $\operatorname{diag}(\Phi(\hat e_1),\ldots,\Phi(\hat e_n))$, son rang est le nombre d'indices $i$ tels que $\Phi(\hat e_i)\ne0$. On peut supposer l'indexation telle que ce soient les $r$ premiers termes $\Phi(\hat e_1),\ldots,\Phi(\hat e_r)$ qui sont non nuls.
+
+Soit $x\in E$, $(x_1,\ldots,x_n)$ ses coordonnées dans la base $B$ et $x'_1,\ldots,x'_n$ ses coordonnées dans la base $C$. On a $x'_i=\hat e_i^*(x)$ est une forme linéaire en $x_1,\ldots,x_n$ et, avec $\lambda_i=\Phi(\hat e_i)$, on a
+\[
+\Phi(x)=\sum_{i=1}^r\lambda_i(x'_i)^2
+=\left(\sum_{i=1}^r\lambda_i(\hat e_i^*)^2\right)(x)
+\]
+donc $\Phi$, forme quadratique de rang $r$, apparaît comme une combinaison linéaire à coefficients non nuls de $r$ carrés de formes linéaires indépendantes.
+
+Réciproquement, soit $f_1,\ldots,f_r$ des éléments indépendants de $E^*$, et $\Phi$ définie par
+\[
+x\longmapsto\sum_{i=1}^r\lambda_if_i^2(x)
+\]
+avec les $\lambda_i$, $1\le i\le r$, non nuls.
+
+C'est une forme quadratique, de forme polaire
+\[
+\varphi(x,y)=\sum_{i=1}^r\lambda_if_i(x)f_i(y),
+\]
+$\varphi$ étant visiblement linéaire en $x$, en $y$, symétrique, et $\varphi(x,x)=\Phi(x)$.
+
+Elle est de rang $r$ car en complétant la famille libre $(f_1,\ldots,f_r)$ en $(f_1,\ldots,f_r;f_{r+1},\ldots,f_n)$ base de $E^*$, et en introduisant $(\hat e_1,\ldots,\hat e_n)=C$ base de $E$ ayant $(f_1,\ldots,f_n)$ pour base duale, les $f_i(x)$ et les $f_i(y)$ deviennent les coordonnées de $x$ et de $y$, dans $C$, d'où une matrice $A$ associée à $\varphi$ dans $(C)$ valant
+\[
+A=\operatorname{diag}(\lambda_1,\ldots,\lambda_r,0,\ldots,0)
+\]
+donc de rang $r$.
+
+On a donc :
+
+\medskip\noindent\textsc{Corollaire 11.52.} --- \emph{Une application $\Phi$ de $E$ dans $K$ est une forme quadratique de rang $r$ si et seulement si c'est une combinaison linéaire à coefficients non nuls de $r$ carrés de formes linéaires indépendantes.}
+
+Voyons maintenant une méthode pratique de recherche d'une base conjuguée lorsque la forme quadratique $\Phi$ est donnée sous forme de polynôme quadratique.
+
+\subsection*{11.53.}
+C'est la méthode dite de Gauss, de décomposition en carrés.
+
+Soit donc $\Phi(x_1,\ldots,x_n)$ un polynôme quadratique, c'est-à-dire homogène de degré 2 en $x_1,\ldots,x_n$. On procède par récurrence sur $n$.
+
+\emph{1er cas : Il y a des termes carrés.} Par exemple le coefficient de $x_1^2$ est non nul. On ordonne $\Phi$ en $x_1$ :
+\[
+\Phi=ax_1^2+x_1B(x_2,\ldots,x_n)+C(x_2,\ldots,x_n)
+\]
+avec $a\ne0$, $a\in K$, $B$ polynôme homogène de degré 1 en $x_2\ldots x_n$ et $C$ polynôme homogène de degré 2 en $x_2\ldots x_n$.
+
+On a encore
+\[
+\Phi=a\left(x_1^2+x_1\frac Ba\right)+C
+=a\left(x_1+\frac{B}{2a}\right)^2+C-\frac{B^2}{4a}.
+\]
+Si on pose
+\[
+f_1(x_1,\ldots,x_n)=x_1+\frac{B}{2a},
+\]
+\footnotetext{\textbf{校勘：}原文把自变量印为“$(x_1,\ldots,x_2)$”。这里 $B=B(x_2,\ldots,x_n)$，所以 $f_1$ 一般依赖 $x_1,\ldots,x_n$，末指标应为 $n$。}
+c'est une forme linéaire\footnote{\textbf{校勘：}原文为“forme bilinéaire”。表达式 $x_1+B/(2a)$ 是关于 $x_1,\ldots,x_n$ 的线性形式。} en $x_1,x_2,\ldots,x_n$.
+
+Comme $C-\frac{B^2}{4a}$ est un polynôme homogène de degré 2 en $x_2,\ldots,x_n$, il se décomposera en carrés de formes indépendantes et indépendantes de $f_1$ qui elle fait intervenir la variable $x_1$.
+
+\emph{2e cas : Il n'y a pas de carré, mais, $\Phi$ étant non nul, un terme en $x_ix_j$ avec $i\ne j$ a un coefficient non nul.} Par exemple le terme en $x_1x_2$.
+
+On ordonne alors $\Phi$ en $x_1,x_2$
+\[
+\Phi=ax_1x_2+x_1B(x_3,\ldots,x_n)+x_2C(x_3,\ldots,x_n)+D(x_3,\ldots,x_n),
+\]
+avec $a\ne0$, $B$ n'ayant pas de terme en $x_1$, (sinon $\Phi$ contiendrait du $x_1^2$), ni en $x_2$, (le terme en $x_1x_2$ ayant été isolé). De même $C$ n'a pas de terme en $x_1$ ni en $x_2$.
+
+De plus $B$ et $C$ sont polynômes homogènes de degré 1 et $D$ est homogène de degré 2 en $x_3,\ldots,x_n$.
+
+C'est encore
+\[
+\Phi=(ax_1+C)\left(x_2+\frac Ba\right)+D-\frac{BC}{a},
+\]
+avec $D-BC/a$ polynôme quadratique en $x_3,x_4,\ldots,x_n$.
+
+Soit $f_1(x_1,x_2,\ldots,x_n)=ax_1+C$ et $f_2(x_1,x_2,\ldots,x_n)=x_2+B/a$.
+
+Ces formes sont indépendantes, le mineur relatif aux variables $x_1$ et $x_2$ étant
+\[
+\begin{vmatrix}a&0\\0&1\end{vmatrix}=a\ne0.
+\]
+Comme
+\[
+f_1f_2=\frac14(4f_1f_2)=\frac14\bigl((f_1+f_2)^2-(f_1-f_2)^2\bigr),
+\]
+(n'oublions pas que la caractéristique du corps est $\ne2$), on a
+\[
+\Phi=\frac14(f_1+f_2)^2-\frac14(f_1-f_2)^2+D-\frac{BC}{a}.
+\]
+Les formes $f_1+f_2$ et $f_1-f_2$ sont indépendantes, (matrice par rapport à $\{f_1,f_2\}$ inversible), et $D-BC/a$ est un polynôme quadratique en $x_3,x_4,\ldots,x_n$ : sa décomposition en carrés de formes indépendantes fera intervenir des formes ne dépendant pas de $x_1$ et $x_2$, donc indépendantes de $f_1+f_2$ et $f_1-f_2$.
+
+Ce procédé fournit une décomposition en carrés. Attention cependant, on obtient directement les formes linéaires $f_1,\ldots,f_r$, $r=\operatorname{rang}\Phi$, qui représentent les coordonnées d'un vecteur $x$ dans la nouvelle base $B'$ conjuguée pour $\Phi$.
+
+Donc si $B$ est une base initiale, si on complète $f_1,\ldots,f_r$ en $(f_1,\ldots,f_r;f_{r+1},\ldots,f_n)$ base de $E^*$, et si on note $C$ la base conjuguée de $E$ dans laquelle les coordonnées de $x$ seraient $f_1(x),\ldots,f_n(x)$, si $P$ est la matrice de passage, on aura
+\[
+\begin{pmatrix}f_1\\f_2\\\vdots\\f_n\end{pmatrix}
+=P^{-1}
+\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix},
+\]
+c'est-à-dire que les coefficients de $f_1,\ldots,f_r;f_{r+1},\ldots,f_n$ fournissent les lignes de $P^{-1}$ puisqu'on obtient les nouvelles coordonnées en fonction des anciennes.
+
+Voyons enfin un résultat pouvant servir concernant la réduction simultanée de 2 formes.
+
+\medskip\noindent\textsc{Théorème 11.54.} --- \emph{Soient $\Phi_1$ et $\Phi_2$ deux formes quadratiques, de formes polaires associées $\varphi_1$ et $\varphi_2$, sur $E$ vectoriel de dimension finie $n$ sur $K$. On suppose $\Phi_2$ non dégénérée. Alors il existe des bases $B$ conjuguées à la fois pour $\varphi_1$ et $\varphi_2$ si et seulement si $\delta_{\varphi_2}^{-1}\circ\delta_{\varphi_1}$ est diagonalisable.}
+
+Soit $B=\{e_1,\ldots,e_n\}$ conjuguée pour $\varphi_1$ et pour $\varphi_2$.
+
+Considérons $j$ fixé. La forme $\delta_{\varphi_1}(e_j)$ est nulle sur les $e_i$ pour $i\ne j$ car $\delta_{\varphi_1}(e_j)(e_i)=\varphi_1(e_i,e_j)=0$, ainsi que $\delta_{\varphi_2}(e_j)(e_i)=\varphi_2(e_i,e_j)=0$.
+
+Puis, $\delta_{\varphi_2}(e_j)(e_j)=\Phi_2(e_j)\ne0$, sinon, $\delta_{\varphi_2}(e_j)$ serait nulle sur la base $B$, donc cette forme linéaire serait nulle, $e_j$ serait dans le noyau de $\delta_{\varphi_2}$, réduit à 0 car $\Phi_2$ est non dégénérée : c'est absurde.
+
+Mais alors
+\[
+\delta_{\varphi_1}(e_j)(e_j)
+=\frac{\Phi_1(e_j)}{\Phi_2(e_j)}\delta_{\varphi_2}(e_j)(e_j),
+\]
+et les 2 formes $\delta_{\varphi_1}(e_j)$ d'une part et $\frac{\Phi_1(e_j)}{\Phi_2(e_j)}\delta_{\varphi_2}(e_j)$ d'autre part sont égales car elles prennent les mêmes valeurs sur les vecteurs de $B$.
+
+Donc $\exists\lambda_j=\frac{\Phi_1(e_j)}{\Phi_2(e_j)}$ dans le corps $K$ tel que $\delta_{\varphi_1}(e_j)=\lambda_j\delta_{\varphi_2}(e_j)$ ce qui équivaut, $\delta_{\varphi_2}$ étant inversible, à
+\[
+\delta_{\varphi_2}^{-1}\circ\delta_{\varphi_1}(e_j)=\lambda_je_j:
+\]
+la base $B$ est une base de vecteurs propres pour $\delta_{\varphi_2}^{-1}\circ\delta_{\varphi_1}$ qui est bien diagonalisable.
+
+Réciproquement. On suppose $\delta_{\varphi_2}^{-1}\circ\delta_{\varphi_1}$ diagonalisable. Soient $\lambda_1,\ldots,\lambda_k$ ses valeurs propres distinctes et $E_1,\ldots,E_k$ les sous-espaces propres distincts. Comme on est en dimension finie on prend, dans chaque $E_i$, une base $B_i$ déjà conjuguée pour $\varphi_2$. On va vérifier que
+\[
+B=\bigcup_{i=1}^kB_i
+\]
+est alors conjuguée pour $\varphi_2$ et $\varphi_1$.
+
+Soient $e_u$ et $e_v$ dans la même base $B_i$ de $E_i$, ($u\ne v$, si $\dim E_i\ge2$). On a
+\[
+\delta_{\varphi_2}^{-1}\circ\delta_{\varphi_1}(e_u)=\lambda_ie_u
+\Longleftrightarrow\delta_{\varphi_1}(e_u)=\lambda_i\delta_{\varphi_2}(e_u)
+\]
+\[
+\Longrightarrow\delta_{\varphi_1}(e_u)(e_v)=\varphi_1(e_v,e_u)
+=\lambda_i\delta_{\varphi_2}(e_u)(e_v)
+=\lambda_i\varphi_2(e_v,e_u)=0
+\]
+d'où $\varphi_1(e_u,e_v)=0$ : on a $B_i$ conjuguée pour $\varphi_1$ aussi.
+
+Puis, soit $e_u\in B_i$ et $e_v\in B_j$ avec $i\ne j$.
+
+Alors $\delta_{\varphi_2}^{-1}\circ\delta_{\varphi_1}(e_u)=\lambda_ie_u$ alors que $\delta_{\varphi_2}^{-1}\circ\delta_{\varphi_1}(e_v)=\lambda_je_v$ avec $\lambda_i\ne\lambda_j$.
+
+D'où $\delta_{\varphi_1}(e_u)=\lambda_i\delta_{\varphi_2}(e_u)$, on calcule en $e_v$, il vient
+\[
+\varphi_1(e_v,e_u)=\lambda_i\varphi_2(e_v,e_u).
+\]
+De même $\delta_{\varphi_1}(e_v)=\lambda_j\delta_{\varphi_2}(e_v)$, on calcule en $e_u$ donc
+\[
+\varphi_1(e_u,e_v)=\lambda_j\varphi_2(e_u,e_v).
+\]
+La symétrie de $\varphi_1$ et $\varphi_2$, par soustraction, donne
+\[
+(\lambda_i-\lambda_j)\varphi_2(e_u,e_v)=0
+\]
+avec $\lambda_i\ne\lambda_j$, d'où $\varphi_2(e_u,e_v)=0$ et aussi $\varphi_1(e_u,e_v)=0$.
+
+On a bien vérifié que $B=\bigcup_{i=1}^kB_i$ est conjuguée pour $\varphi_1$ et pour $\varphi_2$. \bookend
+
+\BellaSection{3. Propriétés propres au cas réel}
+
+La propriété fondamentale de $\mathbb R$ étant d'être un corps ordonné complet on doit s'attendre à avoir des propriétés supplémentaires liées au signe des valeurs prises par $\Phi$, que nous allons étudier ici, et d'autres liées au fait que l'espace vectoriel de départ est complet ou non pour une topologie adéquate, ce que nous développerons en topologie.

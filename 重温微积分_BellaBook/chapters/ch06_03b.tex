@@ -1,0 +1,389 @@
+
+\noindent\textbf{4. 连通拓扑空间}\quad
+另一个需要认真研究的问题是空间的连通性问题。这是一个与空间的度量没有关系的概念。所以以下面我们只设 $X$ 为一个一般的拓扑空间。
+
+所谓连通性直观上就是一个几何形体是一个整体，用一种直观而不严格的说法，如果把它分成两部分 $A$ 和 $B$，且 $A$ 和 $B$ 互不重叠（即 $A\cap B=\varnothing$），那么 $A$ 和 $B$ 就应该紧靠在一起。如果 $A$ 和 $B$ 之间的界面是 $S$，$S$ 上之点不属于 $B$ 就属于 $A$。现在设这些点属于 $B$ 而且是 $B$ 的边界点，则它们虽然也是 $A$ 的边界点，但却不属于 $A$，否则 $A$ 与 $B$ 就有了公共点而互相重叠。所以，如果取 $\overline A$，把 $S$ 上这些点也包括进去，则这些点成了 $\overline A$ 与 $B$ 的公共点，而有 $\overline A\cap B\ne\varnothing$，连通性的数学定义即由此而来。
+
+\noindent\textbf{定义14}\quad
+设 $X$ 为拓扑空间，若对 $X$ 之任意非空子集 $A,B$，使得 $X=A\cup B$ 者，必有 $\overline A\cap B\ne\varnothing$，或 $A\cap\overline B\ne\varnothing$，则 $X$ 称为连通空间。若 $X$ 之子集 $C$ 在子空间拓扑下是连通空间，就称 $C$ 为 $X$ 之连通集。反之，若 $X$ 有这样的非空子集 $A,B$，使得 $X=A\cup B$，而同时又有 $\overline A\cap B=\varnothing$，$A\cap\overline B=\varnothing$，就说 $X$ 是不连通的（disconnected）。
+
+如果 $X$ 是不连通的，按定义把 $X$ 分解得 $X=A\cup B$，这时不但有 $\overline A\cap B=\varnothing$，而且因为 $A\subset\overline A$，所以还有 $A\cap B=\varnothing$，而且 $A$ 与 $B$ 均非空集，那么 $A$ 和 $B$ 有什么性质呢？首先 $X=A\cup B=\overline A\cup B\subset X$。读者会问 $\overline A$ 不是在 $A$ 上再添加一些元素构成的吗？那么应该有 $\overline A\cup B\supset X$，为什么 $\overline A\cup B\subset X$ 呢？有一个初学者常常忽略的重要问题：当我们考虑一个拓扑空间 $X$ 时，我们认为 $X$ 就是“一切”，就是“宇宙”，根本无所谓 $X$ 外之点，所以 $\overline A\cup B\supset X$ 是“不通”的。用数学语言来说，$A$ 比 $A$ 多出的点必是 $A$ 之导集中之点。但所谓一点 $x\in A'$，首先是指 $x\in X$，然后再断言它还是 $A'$ 中之点。因此 $A'\subset X$，$\overline A\subset X$，$\overline A\cup B\subset X$。在子空间拓扑中看这个问题就很清楚。设
+\[
+ X=\mathbb R^2=\{(x,y)\},\qquad C=\{(x,y):x^2+y^2<1\},
+\]
+则半圆
+\[
+ D^+=\{(x,y):x^2+y^2<1,\ y>0\}\subset C.
+\]
+在 $C$ 的子空间拓扑下，$\overline{D^+}=\{(x,y):x^2+y^2<1,\ y\ge0\}$，而在 $X=\mathbb R^2$ 的拓扑下，$\overline{D^+}=\{(x,y):x^2+y^2\le1,\ y\ge0\}$，二者确实是不相同的。总之，在考虑 $C$ 的子空间拓扑时，不能考虑 $C$ 外之点，例如上例中单位圆周 $x^2+y^2=1$ 上之点就不存在于考虑之列。现在再回到上式，有
+\[
+ \overline A\cup B=\overline A\cup\overline B=X.
+\]
+但因 $\overline A\cap B=\varnothing$，所以 $X\setminus B=A=\overline A$，而 $A$ 既然等于 $\overline A$ 当然为闭，所以 $B$ 作为 $\overline A$ 的余集当然为开。同理，用 $A\cap\overline B=\varnothing$ 又有 $A$ 为开。但这样一来，因为 $A\cup B=X$，故 $B$ 作为开集 $A$ 之余集又应为闭，同理 $A$ 也应为闭。这样看来，一个不连通空间一定可以分成两部分，每一部分都是既开又闭的非空子集。在讲到拓扑空间的定义时，我们就看到 $\varnothing$ 与 $X$ 都是既开又闭的。现在我们又看到，一个不连通空间总可以分成非空的两部分 $A$ 与 $B$（即 $X=A\cup B$ 且 $A\cap B=\varnothing$）使每一部分都是既开又闭的。其实这个命题之逆亦成立：若 $X=A\cup B$，$A,B$ 非空，但 $A\cap B=\varnothing$（即 $A$ 和 $B$ 没有公共点），而且 $A$ 与 $B$ 都是既开又闭的，这时 $X$ 一定是不连通的。因为 $A$ 既为又开又闭，故 $A=\overline A$，而 $A\cap B=\varnothing$，即意味着 $\overline A\cap B=\varnothing$。同理 $A\cap\overline B=\varnothing$。再由 $X=A\cup B$，即知 $X$ 是不连通的。总之，我们可以把既开又闭集的概念与连通性概念联系起来，而把以上所说的归结为一条定理。
+
+\noindent\textbf{定理17}\quad
+设 $X$ 为一拓扑空间，则以下命题是等价的：
+\begin{enumerate}[label=(\roman*)]
+\item $X$ 是不连通空间；
+\item 存在两非空的既开又闭子集 $A$ 与 $B$，使 $X=A\cup B$，但 $A\cap B=\varnothing$；
+\item 存在 $X$ 的一个既开又闭子集 $A$，它既非空集，又非全空间。
+\end{enumerate}
+证明当然略去了。
+
+如果已将 $X$ 分解如上，则可能 $A$ 或 $B$ 还可这样分解，一直到最后，得到 $X=\bigcup_\lambda A_\lambda$（注意 $A_\lambda$ 不一定是有限个甚至不一定是可数多个），而 $A_\lambda\cap A_\mu=\varnothing\ (\lambda\ne\mu)$，$A_\lambda$ 为既开又闭的连通子集。每一个 $A_\lambda$ 称为 $X$ 的一个连通分支，$X$ 为连通空间之充要条件即它只有一个非空连通分支：全空间 $X$。\jiaokan{底本此处写成“只有两个平凡的连通分支：空集 $\varnothing$ 与全空间 $X$”。但按前文把 $X$ 分解为互不相交的连通分支 $A_\lambda$ 的用法，连通分支取非空的极大连通子集；连通空间只有一个连通分支 $X$，空集不作为连通分支。}
+
+连通性是一个拓扑性质，因为我们有
+
+\noindent\textbf{定理18}\quad
+设 $f:X\to Y$ 是由拓扑空间 $X$ 到 $Y$ 的连续映射，若 $X$ 是连通的，则 $f(X)$ 也是连通的。
+
+\noindent\textbf{证}\quad
+我们不妨就设 $Y=f(X)$，否则在 $f(X)$ 上引用子空间拓扑也是一拓扑空间，我们就取它为 $Y$。设 $Y$ 是不连通的，于是 $Y=Y_1\cup Y_2$，这里 $Y_1,Y_2$ 非空且均为开集。由 $f$ 之连续性，令 $X_1=f^{-1}(Y_1),X_2=f^{-1}(Y_2)$，则 $X_1,X_2$ 也是非空开集，而且因为
+\[
+ X=f^{-1}(Y_1\cup Y_2)=f^{-1}(Y_1)\cup f^{-1}(Y_2)=X_1\cup X_2,
+\]
+又
+\[
+ X_1\cap X_2=f^{-1}(Y_1)\cap f^{-1}(Y_2)=f^{-1}(Y_1\cap Y_2)=\varnothing,
+\]
+所以 $X$ 是不连通的，这是矛盾，定理证毕。
+
+既然连通性在连续映射下不变，则在同胚映射下也不变，所以连通性是一个拓扑性质。
+
+现在我们要看一个重要的连通性质，即有关区间的。
+
+\noindent\textbf{定理19}\quad
+$\mathbb R$ 的子空间 $X$ 为连通的必要充分条件是 $X$ 为一区间（包括开、闭、半开……具有无限端点区间在内）。
+
+\noindent\textbf{证}\quad
+我们先要刻画一下什么是区间。它就是具有以下性质的 $\mathbb R$ 的子集 $X$：若 $a,b\in X,a<b$，则 $[a,b]\subset X$。
+
+\textbf{必要性}\quad 设 $X$ 在 $\mathbb R$ 所赋的子空间拓扑下是连通的，今证 $X$ 是一个区间。为此我们使用反证法，设 $a,b\in X$，且 $a<b$，但 $[a,b]\not\subset X$，于是必有一点 $c\in[a,b]$，但 $c\notin X$，当然 $a<c<b$。因为 $a,b$ 都在 $X$ 中，于是令 $X_1=(-\infty,c)\cap X,X_2=(c,+\infty)\cap X$，显然 $X_1,X_2$ 非空，因为 $a\in X_1,b\in X_2$。$X_1\cap X_2=\varnothing$ 是显然的，而且因为 $c\notin X$，故 $X_1=(-\infty,c)\cap X=(-\infty,c]\cap X$，$X_2=(c,+\infty)\cap X=[c,+\infty)\cap X$，而 $X_1\cup X_2=\mathbb R\cap X=X$。$X_1,X_2$ 显然是 $X$ 在子空间拓扑下的开子集，于是 $X=X_1\cup X_2$ 是不连通的，这与假设矛盾。
+
+\textbf{充分性}\quad 设 $X$ 为一区间，今证 $X$ 是连通的，为此设 $X=X_1\cup X_2$，$X_1,X_2$ 非空但 $X_1\cap X_2=\varnothing$，我们来证明 $\overline{X_1}\cap X_2\ne\varnothing$ 或 $X_1\cap\overline{X_2}\ne\varnothing$。由于已设 $X_1,X_2$ 非空，必可取 $a\in X_1,b\in X_2$，不妨设 $a\in X_1$，令 $Y=\{d:d\le b,[a,d]\subset X_1\}$，很明显 $Y$ 非空，因为 $a\in Y$，$Y$ 又是有界集，因为 $b$ 就是 $Y$ 的一个上界。令 $c$ 为 $Y$ 的上确界，于是有两个可能：(i)$c\notin X_1$，这时 $c\in X_2$，同时 $c\in\overline{X_1}$，就是说 $\overline{X_1}\cap X_2\ne\varnothing$；(ii)$c\in X_1$，这时由于 $c$ 是使 $[a,c]\subset X_1$ 的最大 $c$ 值\jiaokan{底本此处写作“$[a,c]\subset X$ 的最大 $c$ 值”。但 $X$ 本身是区间，$a,c\in X$ 时 $[a,c]\subset X$ 自动成立；这里由 $c=\sup Y$ 所需要的条件显然是 $[a,c]\subset X_1$。}，所以必存在一串 $c_n\downarrow c$，使 $c_n\notin X_1$，即 $c_n\in X_2$，于是 $c\in\overline{X_2}$。这样 $\overline{X_2}$ 和 $X_1$ 中有公共元 $c$ 而 $\overline{X_2}\cap X_1\ne\varnothing$，这就证明了 $X$ 为连通的。
+
+一个区间是连通的本是一个十分直观的事，但若对连通性作了准确的数学定义之后，又是一件有待证明的事，而且证明并非那么简单。但是在花了些力气以后，会得到报偿，因为可以看见微积分中关于连续函数的中间值定理，其实就是一个关于连通性的定理，而且证明十分简单。
+
+\noindent\textbf{定理20（中间值定理）}\quad
+设 $f:X\to\mathbb R$ 是一连续映射，$X$ 为连通，则只要 $f(x),x\in X$，可以取 $a,b$ 两值，则对任一 $c:a\le c\le b$，在 $X$ 中至少可以找到一点 $x_0$，使 $f(x_0)=c$。
+
+\noindent\textbf{证}\quad
+由定理18和定理19，$f(X)$ 必为 $\mathbb R$ 之一个区间 $I$，因为 $a=f(x_1),b=f(x_2)$ 均在 $I$ 中，故 $[a,b]\subset I$ 即在 $f$ 之值域中，也就是说 $c$ 在 $f$ 之值域中，所以存在 $x_0\in X$ 使 $f(x_0)=c$。
+
+许多读者有一个错误印象，以为这是定义在有界闭区间 $[a,b]$（即紧子集 $[a,b]$）上的连续函数的性质。这可能是由于通常微积分教本都把这个性质与闭区间上的连续函数的其它几个基本定理放在一起，而定理的陈述也成了“$f(x)$ 必可取 $f(a)$ 与 $f(b)$ 之间的一切值”。如果 $f(x)$ 不是定义在闭区间 $[a,b]$ 上，$f(a),f(b)$ 又有什么意义？\S1 定理8基本上是仿照通常教材的写法，现在则给出它完全用连通性的表述。这时 $X$ 不但不一定是闭区间，甚至连 $\mathbb R^n$ 上的集合也不需要：只要 $X$ 是连通的拓扑空间即可，而定理的叙述也认为 $f$ 可取其任意两值（不一定是闭区间的端点）之间的一切值。与此相似，$f$ 可以取零值的定理也可移到这个情况，只要将定理改为：若 $f:X\to\mathbb R$ 是连续映射，$X$ 为连通，则只要 $f(x)$ 在 $X$ 内可以变号，则 $X$ 中必有 $f(x)$ 之零点。
+
+在讲到连通性的应用之前，我们再补充一些新的连通空间。定理19表明了区间 $I$ 是连通的，考虑由 $I$ 到一拓扑空间 $X$ 之连续映射 $f:I\to X$。由定理18，$f(I)$ 也是连通的。但是 $f(I)$ 就是 $X$ 中的一段弧 $x=x(t),t\in I,x\in X$。它可以是开弧、闭弧或半开半闭的，$I$ 也可以是有界的或无界的区间。如果 $X=\mathbb R^n$，它可以写为
+\[
+ x_i=x_i(t),\qquad i=1,2,\ldots,n,\ t\in I,
+\]
+就是通常的连续空间曲线，于是它们都是连通的。这些曲线时常称为路径，$t$ 称为其参数，不过在数学中讲到曲线时，我们时常是指映射 $f$，而不是 $f$ 的像。曲线是 $X$ 中的连通集，曲面又如何？当然，我们通常的曲面是由 $\mathbb R^2$ 的区域 $\Omega$（其中的参数例如可以是 $(u,v)$）到 $\mathbb R^3$ 的映射：
+\[
+ x=x(u,v),\quad y=y(u,v),\quad z=z(u,v).
+\]
+如果 $\Omega$ 是连通的，则曲面也是 $\mathbb R^3$ 中的连通集。但 $\Omega$ 是否连通？我们甚至可以问，如果 $\Omega$ 是 $\mathbb R^2$ 的矩形，它是否连通？直观上看这不是一个问题，但是如果要证明，则可以利用以下的事实：矩形是两个区间之积，而连通空间的积仍是连通的。这个事实证明起来也还要花一些口舌。
+
+作为中间值定理的应用，我们给出下面的
+
+\noindent\textbf{例}\quad
+奇数次实多项式
+\[
+ p(x)=x^n+a_1x^{n-1}+\cdots+a_n,\qquad a_i\text{ 为实数},
+\]
+至少有一个实零点。
+
+为了证明此定理，只要证明对充分大的 $b>0$，
+\[
+ p(b)p(-b)<0,
+\]
+于是在 $(-b,b)$ 中至少有一点 $x_0$ 使 $p(x_0)=0$。现在令 $|x|\ge\delta>0$，例如取 $\delta=1$，这样
+\[
+ p(x)=x^nq(x)=x^n\left(1+\frac{a_1}{x}+\cdots+\frac{a_n}{x^n}\right),
+\]
+这里
+\[
+ q(x)\ge1-\frac{|a_1|}{|x|}-\cdots-\frac{|a_n|}{|x|^n}
+ \ge1-\frac{|a_1|+\cdots+|a_n|}{|x|}=1-\frac{A}{|x|},
+\]
+其中 $A=|a_1|+\cdots+|a_n|$\jiaokan{底本此处写作 $|A|=|a_1|+\cdots+|a_n|$，而下文直接使用 $R=1+2A$ 及 $1-A/|x|$，故应取 $A$ 为这个非负和。}。于是若
+\[
+ |x|\ge1+2A=R,
+\]
+则不但 $|x|\ge1$ 得到满足，而且
+\[
+ q(x)\ge\frac12.
+\]
+特别是因为 $x\to\infty$ 时 $q(x)\to1$，故知道当 $|x|\ge R$ 时 $q(x)>0$。于是由
+\[
+ p(b)=b^nq(b),\qquad p(-b)=(-1)^nb^nq(-b)
+\]
+知道 $p(b)$ 与 $p(-b)$ 异号，而此定理得证。
+
+由代数学的基本定理，知 $p(x)=0$ 共有 $n$ 个根，但可能是复根。只不过当 $n$ 为奇数时一定至少有一个实根。所以 $n$ 为偶数以及其它复根的情况还要用代数学的基本定理来处理。我们想要提到的是，代数学的基本定理也可以用拓扑学方法去证明。
+
+中间值定理与不动点定理有密切的关系，在 \S2 中我们已经从度量空间的完备化引申出压缩映像有唯一不动点存在。在那里，我们把待解的方程 $g(x)=0$ 化为
+\[
+ x=f(x)=0,
+\]
+即 $f(x)=x-g(x)$，然后 $g(x)=0$ 之解 $x_0$ 即映射 $f$ 下的不动点：$f(x_0)=x_0$。现在要讲的不动点原理却与度量空间的完备性无关，我们假设 $f$ 是拓扑空间 $X$ 的子集 $\Omega$ 上的一个连续映射。我们不要求这个映射是压缩的，但要求 $f$ 把 $\Omega$ 映入 $\Omega$：$f(\Omega)\subset\Omega$。这种映射可称为自映射，我们指出，若 $\Omega$ 具有某些性质，则其一切连续的自映射都有不动点存在。例如我们有
+
+\noindent\textbf{定理21（一维的布劳威尔（Brouwer）不动点定理）}\quad
+设 $I$ 为 $\mathbb R$ 的有界闭区间，$f:I\to I$ 是连续映射，则必有至少一点 $x_0\in I$，使 $f$ 之不动点：
+\[
+ f(x_0)=x_0.
+\]
+
+\noindent\textbf{证}\quad
+考虑 $g(x)=x-f(x)$。若 $I=[a,b]$，由于 $f(I)\subset I$，必有 $a\le f(a)\le b$ 及 $a\le f(b)\le b$，于是
+\[
+ g(a)=a-f(a)\le0,\qquad g(b)=b-f(b)\ge0.
+\]
+若其中一个等号成立，$a$ 或 $b$ 即为所求不动点；否则 $g(a)<0<g(b)$。由中间值定理，必存在 $x_0\in[a,b]$ 使 $g(x_0)=0$，亦即
+\[
+ f(x_0)=x_0.
+\]
+定理证毕。\jiaokan{底本此处先把 $f(I)$ 写成端点为 $\alpha,\beta$ 的区间，继而由 $\alpha=a$ 或 $\beta=b$ 直接推出端点为不动点，并写出 $g(a)=a-\alpha$、$g(b)=b-\beta$。一般并不能由值域端点推出 $f(a)=\alpha$、$f(b)=\beta$。上面的改写直接利用 $f(I)\subset[a,b]$，即得 $g(a)\le0\le g(b)$，从而保持原证明所用的中间值定理思路。}
+
+布劳威尔定理在一个方面不如压缩映像原理，因为它没有给出例如逐步逼近法那样的实际找出不动点的程序。它是一个非构造性的存在定理。同时，它也不会给出唯一性。但是它对映射 $f$ 的要求很少：只要是连续的自映射即可。与此相对比，它对空间 $X$ 的子集 $\Omega$（现在是区间 $I$）的要求很高。这里的 $I$ 是 $\mathbb R$ 的紧集，但是如果 $X=\mathbb R^n$ 是有限维的，紧集并不起重要作用，下面就是一个例子：设 $\Omega$ 是平面上的圆周，不妨就说是 $S^1:x_1^2+x_2^2=1$。如果把此平面看作是复平面，则 $S^1$ 可以写为 $z=e^{i\varphi}$，令 $f$ 为一旋转：$f:S^1\to S^1,e^{i\varphi}\mapsto e^{i(\varphi+\alpha)}$，$\alpha$ 是常数，很明显，$f$ 是一个连续的自映射，但是它明显没有不动点。可见是否存在不动点，与 $\Omega$ 的拓扑性质密切相关。我们将在附录中给出一个一般的布劳威尔定理一个证明：
+
+\noindent\textbf{定理22（布劳威尔定理）}\quad
+设 $D^n\subset\mathbb R^n$ 是 $n$ 维闭球体 $x_1^2+\cdots+x_n^2\le1$，$f:D^n\to D^n$ 是一个连续映射，这时 $f$ 在 $D^n$ 中至少有一个不动点。
+
+还要指出，若将 $D^n$ 换成 $D^n$ 中的凸体，这个定理仍成立。
+
+布劳威尔定理本质上属于另一个领域，这个领域中的问题例如有：某个区域上连续向量场有没有奇点问题，映射度问题等等，它甚至可以推广到无穷维情况，而且与天体力学、流体力学有密切关系。这个事实说明，拓扑学所涉及的决不仅是微积分的基本概念。从历史上来看，它来自物理学的问题，而且现在更是研究物理世界的有力工具，它为这种研究提供很重要的新观点与新方法。从整个数学发展来看，一度显得很抽象，似乎只是为了逻辑的需要的那些数学理论，后来又越来越直接地可以应用于物理世界的研究，微积分的理论基础涉及的拓扑学理论是一个例子。
+
+\clearpage
+\begin{center}
+{\sffamily\bfseries\color{BellaBlue}\fontsize{18}{23}\selectfont 附录\quad 布劳威尔不动点定理的初等证明}
+\end{center}
+\addcontentsline{toc}{subsection}{附录\quad 布劳威尔不动点定理的初等证明}
+\markright{附录\quad 布劳威尔不动点定理的初等证明}
+\vspace{1em}
+
+下述的布劳威尔定理是一个重要的拓扑定理：
+
+\noindent\textbf{布劳威尔定理}\quad
+设 $f:D^n\to D^n$ 是一个映 $n$ 维闭单位球体
+\begin{equation}
+ D^n:\quad x_1^2+\cdots+x_n^2=|x|^2\le1
+ \tag{1}
+\end{equation}
+到其自身的连续映射，则 $f$ 必有至少一个不动点 $\bar x\in D^n$：
+\[
+ f(\bar x)=\bar x.
+\]
+
+这个定理涉及拓扑学中许多重要的概念。下面我们将要给出它的一个解析的证明。比之它的拓扑本性，这个证明可以说是初等的。这个证明是米尔诺（J. Milnor）于1978年给出的，原文是：
+
+\begin{quote}\small
+J. Milnor, Analytic Proofs of the Hairy Ball Theorem and the Brouwer Fixed Point Theorem, Amer. Math. Monthly, vol. 85(1979), 521--524.
+\end{quote}
+
+该文首先证明了另一个更强的定理：偶数维球面上不可能把头发梳顺，即所谓“头发定理”（hairy ball theorem）：
+
+\noindent\textbf{定理1}\quad
+令 $S^{2n}$ 是 $\mathbb R^{2n+1}$ 中的单位球面
+\begin{equation}
+ S^{2n}:\quad x_1^2+\cdots+x_{2n+1}^2=1,
+ \tag{2}
+\end{equation}
+则 $S^{2n}$ 上任一个连续切向量场必有零点。
+
+\noindent\textbf{证明的准备}\quad
+我们只需就 $C^1$ 切向量场证明本定理即可，因为任意连续切向量场均可用 $C^1$ 切向量场去逼近。事实上，若 $\xi:S^{2n}\to\mathbb R^{2n+1}$ 是一个连续切向量场：$\xi=(\xi_1,\ldots,\xi_{2n+1})$，由魏尔斯特拉斯定理，一定可以找到 $C^1$ 向量 $\xi_\varepsilon(x)=(\xi_1^\varepsilon(x),\ldots,\xi_{2n+1}^\varepsilon(x))$，使得在 $S^{2n}$ 上
+\[
+ \|\xi-\xi_\varepsilon\|^2=
+ \sup_{x\in S^{2n}}\sum_{i=1}^{2n+1}|\xi_i(x)-\xi_i^\varepsilon(x)|^2<\varepsilon^2.
+\]
+但是 $\xi_\varepsilon(x)$ 不一定是切向量，所以我们把它投影到 $S^{2n}$ 在 $x$ 点的切平面上，得到一个切向量 $\eta_\varepsilon(x)$，很明显 $\eta_\varepsilon(x)$ 仍为 $C^1$ 切向量场，而且仍有 $\|\xi-\eta_\varepsilon\|<\varepsilon$。如果对 $\eta_\varepsilon$ 可以证明定理1，则必有 $x_\varepsilon\in S^{2n}$ 适合 $\eta_\varepsilon(x_\varepsilon)=0$。因为 $S^{2n}$ 是紧的，故当 $\varepsilon\to0$ 时，可以找到一串 $\varepsilon\to0$（仍用记号 $\varepsilon$）使 $x_\varepsilon$ 有极限 $\bar x\in S^{2n}$，而且
+\[
+ \xi(\bar x)=\lim_{\varepsilon\to0}\eta_\varepsilon(x_\varepsilon)=0.
+\]
+所以下面我们设定理1中的切向量场 $\xi(x)$ 是 $C^1$ 切向量场。
+
+我们用反证法证明定理1。设 $\xi(x)\ne0$，于是可以作出 $S^{2n}$ 上一个 $C^1$ 单位切向量
+\[
+ \nu(x)=\xi(x)|\xi(x)|^{-1}.
+\]
+这里 $|\xi(x)|^2=\sum_{i=1}^{2n+1}\xi_i^2(x)$ 是依赖于 $x$ 的，而与上面的记号\[\|\xi\|=\sup_{x\in S^{2n}}|\xi(x)|\]不同。以后，我们总是用 $|\cdot|$ 表示一个 $m$ 维向量的欧几里得长度，$m=1$ 时自然就是绝对值。有了 $\nu(x)$ 以后我们构造一个单位球面 $S^{2n}$ 的映射
+\begin{equation}
+ \varphi_t(x)=x+t\nu(x),\qquad x\in S^{2n}.
+ \tag{3}
+\end{equation}
+\jiaokan{底本公式(3)末尾印作 $t\in S^{2n}$。这里 $t$ 是实参数，而球面上的变量是 $x$；结合紧随其后的 $|t|$ 充分小以及 $\varphi_t:S^{2n}\to\sqrt{1+t^2}S^{2n}$，应为 $x\in S^{2n}$。}
+因为 $x$ 是单位径向量，$\nu(x)$ 是单位切向量，而与 $x$ 正交，故
+\[
+ |\varphi_t(x)|=\sqrt{1+t^2}.
+\]
+从而(3)中的 $\varphi_t$ 映单位球面 $S^{2n}$ 到半径为 $\sqrt{1+t^2}$ 的球面（记作 $\sqrt{1+t^2}\,S^{2n}$）上，再令
+\begin{equation}
+ f_t=|x|\varphi_t(x/|x|)
+ \tag{4}
+\end{equation}
+则 $f_t$ 在 $\mathbb R_t\times(\mathbb R^{2n+1}\setminus\{0\})$ 中是一个 $C^1$ 映射，它将半径为 $r$ 的球面 $S_r^{2n}$ 映到 $\sqrt{1+t^2}\,S_r^{2n}$ 内。
+
+现在我们考虑 $\varphi_t$ 与 $f_t$ 的性质。
+
+\noindent\textbf{引理2}\quad
+当 $|t|$ 充分小时，$\varphi_t$ 是 $S^{2n}$ 到 $\sqrt{1+t^2}\,S^{2n}$ 上的微分同胚。\jiaokan{底本引理2的目标球面仍印作 $S^{2n}$，但由(3)式有 $|\varphi_t(x)|=\sqrt{1+t^2}$，且下文证明也明确以 $\sqrt{1+t^2}S^{2n}$ 为值域，故补上缩放因子。}
+
+\noindent\textbf{证}\quad
+$\varphi_t$ 显然是 $(t,x)$ 在 $\mathbb R_t\times S^{2n}$ 上的 $C^1$ 映射。但因 $S^{2n}$ 并非欧氏空间，我们只能采取与坐标无关的处理方法。注意到如果限制在 $S^{2n}$ 上考虑，则当 $t=0$ 时，它就是恒等映射，因此其切映射 $d\varphi_0=\mathrm{id}=I$。而当 $|t|$ 充分小时，$d\varphi_t$ 也与 $I$ 充分接近而为非退化的，因此可以应用反函数定理知道 $\varphi_t$ 当 $|t|<\varepsilon$（$\varepsilon$ 是一适当选定的正数）时是局部微分同胚。但是我们的目的是要证明 $\varphi_t:S^{2n}\to\sqrt{1+t^2}\,S^{2n}$ 是整体微分同胚。关于可微性不必证明，现在证明它是一个双射。
+
+先证明它是满射。
+
+设 $P\in\sqrt{1+t^2}\,S^{2n}$ 在 $\varphi_t$ 之像内，则因 $\varphi_t$ 在 $P$ 之某邻域中是微分同胚，所以 $P$ 之某个邻域必全在 $\varphi_t$ 之像中，即是说 $\varphi_t(S^{2n})$ 是一个开集。$\varphi_t(S^{2n})$ 又是一个闭集，因为若 $\{P_k\}\subset\varphi_t(S^{2n})$，$k=1,2,\ldots$，而且 $P_k\to\overline P\in\sqrt{1+t^2}\,S^{2n}$，则必有 $\{Q_k\}\subset S^{2n}$ 使 $P_k=\varphi_t(Q_k)$。因为 $S^{2n}$ 是紧集，由波尔查诺--魏尔斯特拉斯定理知 $\{Q_k\}$ 必有收敛的子序列——不妨设就是 $\{Q_k\}$ 本身，故 $Q_k\to\overline Q$，而由 $\varphi_t$ 在 $S^{2n}$ 上的连续性知 $\varphi_t(\overline Q)=\overline P$，因此 $\overline P$ 也在 $\varphi_t$ 之像内，因此 $\varphi_t(S^{2n})$ 又是 $\sqrt{1+t^2}\,S^{2n}$ 之闭集，总之 $\varphi_t(S^{2n})$ 是连通集 $\sqrt{1+t^2}\,S^{2n}$ 之非空（非空几乎是自明的）又闭又开集，故即为 $\sqrt{1+t^2}\,S^{2n}$。满射证毕。
+
+再证明 $\varphi_t$ 当 $|t|$ 充分小时是单射，这时要用反证法。设结果不成立，则一定有一串 $t_k\to0$，而 $\varphi_{t_k}$ 不是单射，即在 $S^{2n}$ 上存在 $\{Q_k\},\{Q_k^1\}$ 使 $Q_k\ne Q_k^1,\varphi_{t_k}(Q_k)=\varphi_{t_k}(Q_k^1)$。再利用 $S^{2n}$ 之紧性，可以认为 $Q_k\to\overline Q,Q_k^1\to\overline Q^1$，而 $\varphi_0(\overline Q)=\varphi_0(\overline Q^1)$，但是 $\varphi_0=\mathrm{id}$ 是恒等映射，故 $\overline Q=\overline Q^1$。这样当 $k$ 充分大时，$Q_k$ 与 $Q_k^1$ 均在 $\overline Q$ 的一个邻域中，而 $\varphi_{t_k}$ 在此邻域中是微分同胚，故不可能当 $Q_k\ne Q_k^1$ 时 $\varphi_{t_k}(Q_k)=\varphi_{t_k}(Q_k^1)$。故得单射性质。
+
+引理2证毕。
+
+在引理2的证明中我们避免了使用 $\mathbb R^{2n+1}$ 中的坐标，因为在 $S^{2n}$ 上，这 $2n+1$ 个坐标不是互相独立的，但在完成定理1的证明时，却要利用 $\mathbb R^{2n+1}$ 中的坐标了。
+
+\noindent\textbf{定理1证明的完成}\quad
+$S^{2n}$ 是 $D^{2n+1}$ 的表面，现在在 $\mathbb R^{2n+1}$ 中考虑映射(4)，而且就采用 $\mathbb R^{2n+1}$ 中的坐标：\[
+x=(x_1,\ldots,x_{2n+1}),\qquad \nu(x)=(\nu_1,\ldots,\nu_{2n+1}),\qquad f_t=(f_{t,1},\ldots,f_{t,2n+1}).
+\]
+利用(3)有
+\[
+ f_t(x)=x+t|x|\nu(x/|x|),
+\]
+所以
+\begin{equation}
+ \det\left[\frac{\partial f_{t,i}(x)}{\partial x_j}\right]
+ =\det\left(\delta_{ij}+t\frac{\partial}{\partial x_j}\bigl(|x|\nu_i(x/|x|)\bigr)\right).
+ \tag{5}
+\end{equation}
+而且 $t=0$ 时，这个行列式为1，所以当 $|t|$ 充分小时，这个行列式应该为正。
+
+现在计算 $D^{2n+1}$ 在 $f_t$ 下之像的体积。一方面如果把球体看成一层一层的球壳（其厚度为无穷小）组成，而每一个球壳又看成 $S_r^{2n}$，它在 $f_t$ 映射下成为 $S_{r\sqrt{1+t^2}}^{2n}$，所以
+\begin{equation}
+ \operatorname{vol}(f_tD^{2n+1})=(\sqrt{1+t^2})^{2n+1}\operatorname{vol}D^{2n+1}.
+ \tag{6}
+\end{equation}
+另一方面
+\[
+ \operatorname{vol}(f_tD^{2n+1})
+ =\int_{D^{2n+1}}\left|\det\left(\frac{\partial f_t}{\partial x}\right)\right|dx
+ =\int_{D^{2n+1}}\det\left(\frac{\partial f_t}{\partial x}\right)dx.
+\]
+这里利用了 $\det(\partial f_t/\partial x)>0$。右方由(5)式应该是 $t$ 的 $2n+1$ 次多项式，但是 $(\sqrt{1+t^2})^{2n+1}$ 不是多项式，这就是矛盾。这个矛盾来自假设 $S^{2n}$ 有一个切向量场 $\xi(x)\ne0$，所以定理1得证。
+
+下面还需要一个定理，它讨论的不是切向量场，而是一般的连续向量场，和定理1的情况不一样，这个定理的结论与空间的维数奇偶性无关，所以我们设空间维数为 $n$。
+
+\noindent\textbf{定理3}\quad
+设 $\xi(x)$ 是 $D^n$ 上的连续向量场。设在 $D^n$ 的边界 $S^{n-1}$ 上，$\xi(x)$ 指向球体 $D^n$ 之外，即在 $|x|=1$ 处
+\[
+ \langle x,\xi(x)\rangle\ge0.
+\]
+这时 $\xi$ 必在 $D^n$ 中有零点 $\bar x$，即 $|\bar x|\le1$ 且 $\xi(\bar x)=0$。
+
+\noindent\textbf{证}\quad
+分成两种情况。
+
+首先设 $n$ 为偶数。把 $\xi$ 拓展为 $2D^n$（即半径为2的闭球体）上的连续向量场 $\overline\xi$ 如下：
+\begin{equation}
+ \overline\xi(x)=
+ \begin{cases}
+ \xi(x), & |x|\le1,\\
+ (|x|-1)x+(2-|x|)\xi(x/|x|), & 1\le|x|\le2.
+ \end{cases}
+ \tag{7}
+\end{equation}
+很明显 $\overline\xi(x)$ 在 $2D^n$ 上是连续的，且在 $1\le|x|\le2$ 处
+\[
+ \langle\overline\xi(x),x\rangle
+ =(|x|-1)|x|^2+(2-|x|)\left\langle |x|\xi\left(\frac{x}{|x|}\right),\frac{x}{|x|}\right\rangle
+ \ge(|x|-1)|x|^2\ge0.
+\]
+这里我们利用了
+\[
+ \left\langle\xi\left(\frac{x}{|x|}\right),\frac{x}{|x|}\right\rangle\ge0.
+\]
+（注意 $x/|x|$ 是单位向量。）所以 $\overline\xi$ 在 $2D^n\setminus D^n$ 上不为0。在 $2D^n$ 之边缘即球面 $2S^{n-1}$ 上，因 $|x|=2$，有 $\overline\xi(x)=x$ 即是径向向量。
+
+增加一个维数而考虑 $2D^{n+1}$，其边缘是 $2S^n$。现在作一个映射 $\varphi$ 把 $2D^n$ 映到 $2S^n$ 的下半球面上且得其上的切向量场 $\xi$，并使在 $2D^n$ 的表面（映为 $2S^n$ 的赤道）上，如 $A,B,C,D$ 四个向量仍映为与赤道平面正交的向量（如图附--1）。图附--1只是用几何图形说明它，如果要写出 $\varphi$ 来，则可以利用球极投影，为了避免复杂的运算，我们没有把式子写出来。
+
+现在将 $\xi$ 拓展到 $2S^n$ 的北半球面成 $\overline\xi$。如果南半球面上有一点\[P=(x',x_{n+1}),\qquad x'=(x_1,\ldots,x_n),\]则北半球面必有一个对称点 $Q=(x',-x_{n+1})$。我们定义 $\overline\xi(Q)$ 之前 $n$ 个分量与 $\xi(P)$ 之前 $n$ 个分量反号，而第 $n+1$ 个分量则同号，换言之
+\begin{equation}
+ \overline\xi(x',-x_{n+1})=(-\xi_1,\ldots,-\xi_n,\xi_{n+1}).
+ \tag{8}
+\end{equation}
+所以可以说 $\xi$ 与 $\overline\xi$ 是对称的，但因在 $2S^n$ 之赤道上，$\varphi(\xi)$ 与赤道平面正交，故 $\overline\xi(x',0)=(0,\ldots,0,\xi_{n+1}),\xi_{n+1}>0$。由(1)可知 $\overline\xi(x',0)=\xi(x',0)$，这样得到 $2S^n$ 上的一个连续切向量场。现在 $n$ 是偶数，由定理1，拓展后的向量场必有零点，而由对称性在南半球面上至少有一个零点。由图，零向量在 $\varphi$ 下之原像仍为零向量，而知必有 $\bar x\in2D^n$ 使 $\overline\xi(\bar x)=0$，但前已提过 $\overline\xi$ 在 $1<|x|<2$ 处不为0，故 $\bar x$ 必在 $D^n$ 中，定理得证。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=.88,bella figure]
+  % left disk and annulus
+  \draw[thick] (-5.0,0) ellipse (1.65 and .55);
+  \draw[thick] (-5.0,0) ellipse (.85 and .28);
+  \fill (-5,0) circle (1pt) node[below] {$O$};
+  \node[above right] at (-4.25,.1) {$D^n$};
+  \node[above] at (-5,0.62) {$2D^n$};
+  \draw[->,thick] (-6.4,.15)--(-6.4,.75) node[above] {$A$};
+  \draw[->,thick] (-3.6,.15)--(-3.6,.75) node[above] {$C$};
+  \draw[->,thick] (-5,.28)--(-5,.85) node[above] {$D$};
+  \draw[->,thick] (-5,-.28)--(-5,-.85) node[below] {$B$};
+  \draw[->,thick] (-3.7,-1.0).. controls (-2.9,-1.35) and (-2.3,-.95) .. (-1.9,-.55);
+  \node at (-2.75,-1.35) {$\varphi$};
+  % sphere
+  \draw[thick] (1.0,0) circle (2.05);
+  \draw[thick] (-1.05,0) arc[start angle=180,end angle=360,x radius=2.05,y radius=.58];
+  \draw[dashed] (3.05,0) arc[start angle=0,end angle=180,x radius=2.05,y radius=.58];
+  \fill (1,2.05) circle (1pt) node[above] {$N$};
+  \fill (1,-2.05) circle (1pt) node[below] {$S=\varphi(O)$};
+  \fill (1,0) circle (1pt) node[below left] {$O'$};
+  \draw[->,thick] (-1.05,.05)--(-1.05,.75) node[above] {$\varphi(A)$};
+  \draw[->,thick] (3.05,.05)--(3.05,.75) node[above] {$\varphi(C)$};
+  \draw[->,thick] (1,.55)--(1,1.2) node[above] {$\varphi(D)$};
+  \draw[->,thick] (1,-.55)--(1,.05) node[above] {$\varphi(B)$};
+  \node[right] at (2.65,-1.35) {$2S^n$};
+\end{tikzpicture}
+\caption{图附--1}
+\end{figure}
+
+其次看 $n$ 为奇数的情况，仍与前面相似，我们把维数增加1而考虑 $D^{n+1}$，并设法在 $D^{n+1}$ 上作一个 $n+1$ 维向量场 $\overline\xi$ 如下：
+\begin{equation}
+ \overline\xi(x_1,\ldots,x_{n+1})=(\overline\xi(x_1,\ldots,x_n),a x_{n+1}),
+ \tag{9}
+\end{equation}
+$a>0$ 待定。关键在于我们希望拓展后的 $\overline\xi$ 在 $D^{n+1}$ 的边缘 $S^n$ 上仍指向 $D^{n+1}$ 之外，即希望在 $x_1^2+\cdots+x_{n+1}^2=1$ 处，
+\begin{equation}
+\begin{aligned}
+ \sum_{i=1}^{n+1}x_i\overline\xi_i(x_1,\ldots,x_{n+1})
+ &=\sum_{i=1}^{n}x_i\overline\xi_i(x_1,\ldots,x_n)+a x_{n+1}^2\\
+ &=\langle x,\overline\xi\rangle+a\left(1-\sum_{i=1}^{n}x_i^2\right)\ge0.
+\end{aligned}
+ \tag{10}
+\end{equation}
+\jiaokan{底本公式(10)左端求和上限印作 $n-1$，与新定义的 $(n+1)$ 维向量场 $\overline\xi$ 以及紧随其后的展开式均不相容，应为 $n+1$。}
+$a$ 的选法如下。和定理1证明的准备中说的一样，我们可以假设 $\xi(x)$ 一直到 $D^n$ 的边界外稍远处，即在 $|x|\le1+\rho,\rho>0$ 处都是连续可微的，并记 $\sum_{i=1}^n x_i\overline\xi_i(x_1,\ldots,x_n)=F(r,\theta)$，而 $(r,\theta)$ 是球坐标。于是 $F(r,\theta)$ 对 $r$ 在 $0\le r\le1+\rho$ 中属于 $C^1$。因此
+\[
+ \lim_{r\to1-0}\frac{F(r,\theta)-F(1,\theta)}{r-1}=F'(1,\theta)
+\]
+是 $S^{n-1}$ 上的连续函数，所以一定可以找到正常数 $M$ 使
+\[
+ \frac{F(r,\theta)-F(1,\theta)}{r-1}\le M,\qquad M>0.
+\]
+但是 $F(1,\theta)=\left.\sum_{i=1}^n x_i\overline\xi_i(x_1,\ldots,x_n)\right|_{r=1}\ge0$，故由上式双方乘以非负的 $1-r$（注意，我们是从球体 $D^n$ 内接近边界 $S^{n-1}$ 的），有
+\[
+ F(r,\theta)-F(1,\theta)\ge-M(1-r).
+\]
+从而
+\[
+ F(r,\theta)\ge-M(1-r)= -\frac{M}{1+r}(1-r^2)\ge-k(1-r^2).
+\]
+所以只要取 $a\ge k$，即可证明(10)式。总之我们有 $\sum x_i\overline\xi_i(x_1,\ldots,x_{n+1})\ge0$。现在 $n+1$ 是偶数，所以可以对向量场 $\overline\xi$ 应用定理前一部分，而知必有 $\bar x=(\bar x_1,\ldots,\bar x_{n+1})\in D^{n+1}$ 使 $\overline\xi(\bar x)=0$，但
+\[
+ \overline\xi(\bar x)=(\overline\xi(\bar x_1,\ldots,\bar x_n),a\bar x_{n+1}),
+\]
+所以 $\overline\xi(\bar x)=0$ 就意味着 $\bar x_{n+1}=0$，而 $\bar x=(\bar x_1,\ldots,\bar x_n,0)\simeq(\bar x_1,\ldots,\bar x_n)\in D^n$，且 $\overline\xi(\bar x_1,\ldots,\bar x_n)=0$。因 $|\bar x|\le1$ 时 $\overline\xi=\xi$，故 $\xi(\bar x_1,\ldots,\bar x_n)=0$，定理证毕。
+
+\noindent\textbf{布劳威尔定理的证明}\quad
+对定理中讲的映射 $f$，我们作 $\xi=x-f(x),D^n\to\mathbb R^n$，于是 $\xi$ 是 $D^n$ 上的一个向量场，但在 $D^n$ 的边界 $S^{n-1}$ 上，
+\[
+ \langle x,\xi\rangle=|x|^2-\langle x,f(x)\rangle\ge0.
+\]
+这是因为 $f(x),D^n\to D^n$，故 $|f(x)|\le1$，而 $|\langle x,f(x)\rangle|\le|x|\cdot|f(x)|$。在 $D^n$ 的边界上 $|x|=1,|f(x)|\le1$，所以 $\langle x,\xi\rangle\ge1-|f(x)|\ge0$。由定理3即知 $\xi$ 有一个零点 $\bar x$：$\xi(\bar x)=\bar x-f(\bar x)=0$。从而 $f(\bar x)=\bar x$ 而 $\bar x$ 是映射 $f$ 的不动点，证毕。
+
+以上我们是对单位球体证明布劳威尔定理的。但是实际上，把 $D^n$ 改成 $\mathbb R^n$ 中的闭凸体，而对 $f$ 仍要求它是把此凸体映到其自身中的连续映射，定理仍然成立。

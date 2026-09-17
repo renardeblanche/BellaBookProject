@@ -1,0 +1,650 @@
+总体说来影响也不太大。但是若 $f(x)$ 在 $A$ 上剧烈振动（图4-2-1），则在任意小区间上用 $\xi_i$ 来代替 $\xi$ 都会造成积分和很大的变化，使得用积分和之“极限”来作为定积分之定义遭到很大的困难。于是勒贝格提出，不妨在 $y=f(x)$ 的值域上作分划，即把 $[m,M]$ 分成
+\[
+ m=\eta_0<\eta_1<\cdots<\eta_n=M
+\]
+然后看使得 $f(x)$ 之值落在 $(\eta_{i-1},\eta_i)$ 中的 $x$ 之集合
+\begin{equation}
+ E_i=\{x:\eta_{i-1}<f(x)\le \eta_i\}.
+ \tag{1}
+\end{equation}
+之“长度”$m(E_i)$，这样就可以得到 $y=f(x)$ 在 $x\in[0,1]$ 上的一段与 $x$ 轴，$x=0,x=1$ 所包围的面积（即曲边梯形面积。不过我们不说曲边梯形，因为它的“边”太不规则了，不是一个曲子能描述的）的近似值为
+\begin{equation}
+ I\approx\sum_{i=1}^{n}\eta_i m(E_i),
+ \tag{2}
+\end{equation}
+然后再求极限。这样做当然解决了 $f(x)$ 在任一个小区间中剧烈振荡的问题，因为现在每一个 $E_i$ 中 $f(x)$ 的变化限于 $[\eta_{i-1},\eta_i]$ 中，但是当 $f(x)$ 很不规则时，$E_i$ 的构造也变复杂了。如图4-2-1，$E_2$ 由六个小区间组成，于是我们要处理的函数之复杂已非通常图形所能表示。从上一章 §7 讲到佩韩对布朗运动的轨道之评论可以想到这一点。至少我们应该考虑 $E_i$ 由可数多个互相分离的子集拼成的情况：
+\[
+ E_i=\bigcup_{k=1}^{\infty}E_i^{(k)},
+\]
+即令每个 $E_i^{(k)}$ 简单，以至于我们可以定义 $m(E_i^{(k)})$，那么能否规定
+\[
+ m(E_i)=\sum_{k=1}^{\infty}m(E_i^{(k)})\ ?
+\]
+至少，若用若尔当测度为 $m$ 是不行的。因为若尔当测度只有有限可加性。而上式表明，我们所需的测度，必须有可数可加性。所以实现勒贝格的想法的第一步是要推广若尔当测度为更一般的、具有可数可加性的测度。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=1.25cm,y=1.0cm,bella figure]
+  \draw[->] (-0.15,0)--(6.8,0) node[right] {$x$};
+  \draw[->] (0,-0.25)--(0,3.55) node[above] {$y$};
+  \draw[thick,smooth] plot coordinates {
+    (0.15,.30) (.35,.55) (.55,.18) (.78,.82) (1.02,.22) (1.22,.12)
+    (1.45,.68) (1.68,1.75) (1.92,2.60) (2.18,2.05) (2.42,.35)
+    (2.62,.18) (2.82,.60) (3.02,.15) (3.22,.35) (3.42,1.10)
+    (3.67,2.20) (3.92,2.95) (4.14,2.15) (4.38,1.95) (4.62,.45)
+    (4.82,.12) (4.98,.56) (5.12,.10) (5.34,.28) (5.58,1.40)
+    (5.80,2.55) (6.02,2.05) (6.25,.38) (6.42,.15) (6.62,.45)};
+  \draw[dashed] (0,1.48)--(6.45,1.48);
+  \draw[dashed] (0,2.15)--(6.45,2.15);
+  \foreach \x in {1.60,2.32,3.52,4.46,5.65,6.20}{\draw[dashed] (\x,0)--(\x,2.25);}
+  \node[anchor=south west] at (2.05,2.58) {$y=f(x)$};
+  \node[below left] at (0,0) {$O$};
+\end{tikzpicture}
+\caption*{图4-2-1}
+\end{figure}
+
+\medskip
+\noindent\textbf{2. 集合的勒贝格测度}\quad 我们以一维情况为例，并考虑包含于一个有限区间 $[a,b]$ 内的集合 $E$。如果 $E=(a,b)$ 或 $[a,b],[a,b),(a,b]$，则都定义其测度（或准确些称为勒贝格测度或 $L$ 测度）$m(E)=b-a$。这样可见 $L$ 测度是通常的长度的推广。如果 $E\subset[a,b]$ 是一个开集，则它必为至多可数多个区间之并：
+\[
+ E=\bigcup_{i=1}^{\infty}(a_i,b_i),\quad b_i\le a_{i+1},
+\]
+这时各个小区间之长 $b_i-a_i$ 之和必定构成一个收敛级数，因为
+\[
+ \sum_{i=1}^{\infty}(b_i-a_i)\le b-a.
+\]
+因此这时我们定义
+\begin{equation}
+ m(E)=\sum_{i=1}^{\infty}(b_i-a_i).
+ \tag{3}
+\end{equation}
+至此我们已看到，在最简单的情况下，$L$ 测度就是长度（在高维情况下就是体积），而且我们已经预置了可数可加性于其中。现在可以来看 $E\subset[a,b]$ 为一个相当一般的集合的情况，这时我们就要把用外切与内接多边形来求圆面积的思想加以发挥了：作包含 $E$ 的开集 $F$，而 $F$ 是可数多个区间 $I_1,\ldots,I_k,\ldots$ 之并；$F=\bigcup_{k=1}^{\infty}I_k$，而且适合 $\sum m(I_k)<\infty$。令
+\[
+ m_e(E)=\inf\sum_{k=1}^{\infty}m(I_k),
+\]
+并称之为 $E$ 的外测度。很明显，因为 $[a,b]\supset E$，而 $m([a,b])=b-a$，所以
+\begin{equation}
+ 0\le m_e(E)\le b-a.
+ \tag{4}
+\end{equation}
+$E$ 在 $[a,b]$ 中的余集，记为 $E^c$，我们也可以求 $E^c$ 之外测度 $m_e(E^c)\le b-a$，而定义 $E$ 之内测度为
+\begin{equation}
+ m_i(E)=(b-a)-m_e(E^c).
+ \tag{5}
+\end{equation}
+这里我们注意到，$m_i(E)\le m_e(E)$。事实上，由外测度之定义，对任意 $\varepsilon>0$，总可找到如上述的 $F$ 与 $F'$，使
+\[
+ m(F)<m_e(E)+\varepsilon,\qquad m(F')<m_e(E^c)+\varepsilon.
+\]
+$[a,b]$ 中任一点均含于 $F$ 或 $F'$ 之某一开区间内，而由这些开区间中可以选出有限个覆盖 $[a,b]$。记这些区间为 $I_1,\ldots,I_N$，则
+\[
+ \sum_{k=1}^{N}m(I_k)\ge b-a,\qquad \sum_{k=1}^{N}m(I_k)\le m(F)+m(F'),
+\]
+故
+\[
+ b-a\le m_e(E)+m_e(E^c)+2\varepsilon.
+\]
+由 $\varepsilon$ 之任意性有 $b-a\le m_e(E)+m_e(E^c)$，所以 $m_i(E)\le m_e(E)$。
+
+综合上述，我们给出
+
+\noindent\textbf{定义1}\quad 若 $E$ 是包含于一区间 $[a,b]$ 内之任意集合，且其内、外测度相等，则称 $E$ 为勒贝格可测集，而内、外测度之公共值称为 $E$ 之勒贝格测度（简称为 $L$ 测度甚至就说是测度），记为 $m(E)$。
+
+如果我们对 $E^c$ 求其内外测度，应用(5)式，而且注意到 $(E^c)^c=E$，即有
+\begin{equation}
+ m_i(E^c)=(b-a)-m_e(E).
+ \tag{6}
+\end{equation}
+若 $E$ 为可测，$m_e(E)=m_i(E)$，以(5)代入(6)即有 $m_e(E^c)=m_i(E^c)$，因此 $E^c$ 也可测，而且(5)成为
+\begin{equation}
+ m(E)+m(E^c)=b-a.
+ \tag{7}
+\end{equation}
+于是我们得到如下的
+
+\noindent\textbf{定理1}\quad 令 $E$ 是含于区间 $[a,b]$ 中的集合，则 $E$ 与 $E^c=[a,b]\setminus E$ 必同时可测或同时不可测且
+\[
+ m(E)+m(E^c)=b-a.
+\]
+
+在进一步讨论集合的运算与其可测性的关系之前，我们可先提几个明显的结论：
+
+\noindent\textbf{命题1}\quad 闭区间 $[\alpha,\beta]\subset[a,b]$ 与半闭区间 $(\alpha,\beta],[\alpha,\beta)$、开区间 $(\alpha,\beta)$ 同样可测，且测度同为 $\beta-\alpha$。
+
+\noindent\textbf{命题2}\quad $[a,b]$ 内之0测度集均为可测集，而且其测度为0。
+
+\begin{sloppypar}\noindent\textbf{证}\quad 设 $E$ 为0测度集，由定义，对任意 $\varepsilon>0$ 均可找到可数多个开区间 $U_1,\ldots,U_k,\ldots$，使\end{sloppypar}
+\[
+ E\subset\bigcup_{k=1}^{\infty}U_k,\qquad \sum_{k=1}^{\infty}\operatorname{vol}(U_k)<\frac\varepsilon2.
+\]
+例如令 $U_k=[\alpha_k-\delta_k,\alpha_k+\delta_k]$，长度为 $2\delta_k$，作 $I_k=(\alpha_k-2\delta_k,\alpha_k+2\delta_k)$，则 $m(I_k)=4\delta_k=2\operatorname{vol}(U_k)$ 而
+\[
+ \sum_{k=1}^{\infty}m(I_k)=2\sum_{k=1}^{\infty}\operatorname{vol}(U_k)<\varepsilon.
+\]
+然而，$E\subset\bigcup U_k\subset\bigcup I_k$，所以由外测度之定义 $m_e(E)<\varepsilon$，由 $\varepsilon$ 之任意性知 $m_e(E)=0$，但任何集均有非负的内测度 $m_i(E)\ge0$，由 $m_i(E)\le m_e(E)$ 知，$0=m_i(E)=m_e(E)$。证毕。
+
+现在我们来讨论集合运算下测度的运算。首先我们给出具有基本重要性的
+
+\noindent\textbf{定理2（测度的可数可加性）}\quad 设 $E_1,\ldots,E_k,\ldots$ 为有限区间 $[a,b]$ 中的可测集，则
+
+(i) $E=\bigcup_{k=1}^{\infty}E_k$ 也是可测集，而且
+\begin{equation}
+ m(E)\le\sum_{k=1}^{\infty}m(E_k).
+ \tag{8}
+\end{equation}
+
+(ii) 若再规定 $E_i\cap E_j=\varnothing,\ i\ne j$，则有
+\begin{equation}
+ m(E)=\sum_{k=1}^{\infty}m(E_k).
+ \tag{9}
+\end{equation}
+
+这个定理将与以下定理同时证明。
+
+\noindent\textbf{定理3}\quad 设 $E_1,\ldots,E_k,\ldots$ 为有限区间 $[a,b]$ 中的可测集，则 $E=\bigcap_{k=1}^{\infty}E_k$ 也是可测的。
+
+这两个定理的证明较长，分成几步进行。
+
+\noindent\textbf{(A)} 先证若开集 $O=\bigcup_{k=1}^{\infty}O_k$，$O_k$ 均为开集，则
+\begin{equation}
+ m(O)\le\sum_{k=1}^{\infty}m(O_k).
+ \tag{10}
+\end{equation}
+开集为最多可数多个开区间之并，若它们互相分离，由(3)知它为可测。又，我们可设(10)之右方是收敛的，否则(10)式是不足道的。设 $O_k=\bigcup_{m=1}^{\infty}(a_{m,k},b_{m,k})$，$O$ 则由开区间 $(A_i,B_i)$ 并成：
+\[
+ O=\bigcup_{i=1}^{\infty}(A_i,B_i).
+\]
+令 $\varepsilon<\frac12(B_i-A_i)$，则 $[A_i+\varepsilon,B_i-\varepsilon]$ 之每一点为某个 $(a_{m,k},b_{m,k})$ 之内点，所以可以在 $(a_{m,k},b_{m,k})$ 中选出有限多个（记其集为 $S$）来覆盖 $[A_i+\varepsilon,B_i-\varepsilon]$，从而
+\[
+ B_i-A_i-2\varepsilon\le\sum_S(b_{m,k}-a_{m,k}).
+\]
+由 $\varepsilon$ 之任意性，知上式左方的 $\varepsilon$ 可以略去。对 $i$ 求和即有
+\[
+ m(O)=\sum_i(B_i-A_i)\le\sum_k\sum_m(b_{m,k}-a_{m,k})=\sum_km(O_k).
+\]
+故(10)得证。若小区间 $(a_{m,k},b_{m,k})$ 互相均不相交，则 $(A_i,B_i)$ 只是 $(a_{m,k},b_{m,k})$ 以另一次序排列，从而(10)中有等号成立。
+
+\noindent\textbf{(B)} 若开集 $O,O'$ 覆盖 $[a,b]$ 则
+\begin{equation}
+ m(O\cap O')\le m(O)+m(O')-(b-a).
+ \tag{11}
+\end{equation}
+可以从构成 $O$ 的开区间中选用有限多个（记其集为 $Q$），从 $O'$ 中选取 $Q'$ 也由有限多个区间构成，使 $Q\cup Q'\supset[a,b]$，而且
+\[
+ O=Q\cup R,\qquad O'=Q'\cup R',\qquad m(R)<\varepsilon,\quad m(R')<\varepsilon.
+\]
+但是 $O\cap O'\subset(Q\cap Q')\cup R\cup R'$，从而
+\[
+ m(O\cap O')\le m(Q\cap Q')+m(R)+m(R')\le m(Q\cap Q')+2\varepsilon.
+\]
+但因 $Q$ 与 $Q'$ 中都只有有限个区间，从而
+\[
+ m(Q\cap Q')\le m(Q)+m(Q')-(b-a)\le m(O)+m(O')-(b-a).
+\]
+代入上式，由 $\varepsilon$ 之任意性即得(11)式。
+
+\noindent\textbf{(C)} 对外测度证明(10)式。因为 $E=\bigcup_{k=1}^{\infty}E_k$，对每个 $E_k$ 可以找到开集 $O_k$ 包含 $E_k$ 而
+\[
+ m(O_k)<m_e(E_k)+\varepsilon/2^k.
+\]
+记 $O=\bigcup_{k=1}^{\infty}O_k$，则 $O$ 为开集，利用(10)有
+\[
+ m(O)\le\sum_km(O_k)\le\sum_km_e(E_k)+\varepsilon.
+\]
+但 $O\supset E$，故 $m(O)\ge m_e(E)$，代入上式，令 $\varepsilon\to0$ 即得。
+
+\noindent\textbf{(D)} 当 $E_i$ 互不相交时，定理2的证明。先设 $E_1,\ldots,E_n$ 只有有限多个。对于 $E=E_1\cup E_2$，我们已知
+\[
+ m_e(E)\le m(E_1)+m(E_2),
+\]
+下面只需证明 $m_i(E)\ge m(E_1)+m(E_2)$，亦即
+\begin{equation}
+ m_e(E^c)\le m_e(E_1^c)+m_e(E_2^c)-(b-a).
+ \tag{12}
+\end{equation}
+即可。为此分别作包含 $E_1^c$ 与 $E_2^c$ 的开集 $O_1$ 与 $O_2$ 并使
+\[
+ m(O_1)\le m_e(E_1^c)+\varepsilon,\qquad m(O_2)\le m_e(E_2^c)+\varepsilon.
+\]
+因为 $E_1\cap E_2=\varnothing$，所以 $E_1^c\cup E_2^c=[a,b]$，从而(B)中的(11)式给出
+\[
+ m(O_1\cap O_2)\le m(O_1)+m(O_2)-(b-a).
+\]
+但 $O_1\cap O_2\supset E_1^c\cap E_2^c=(E_1\cup E_2)^c=E^c$，所以
+\[
+ m_e(E^c)\le m(O_1\cap O_2)\le m_e(E_1^c)+m_e(E_2^c)-(b-a)+2\varepsilon.
+\]
+令 $\varepsilon\to0$ 即得(12)。因此 $E=E_1\cup E_2$ 为可测且
+\[
+ m(E)=m(E_1)+m(E_2).
+\]
+由此，对有限多个 $E_1,\ldots,E_n$ 也有 $E=\bigcup_{k=1}^{n}E_k$ 为可测，且
+\[
+ m\left(\bigcup_{k=1}^{n}E_k\right)=\sum_{k=1}^{n}m(E_k).
+\]
+余下就要看 $n\to\infty$ 的极限情况。记 $S_n=\bigcup_{k=1}^{n}E_k$，则由上所述已知 $S_n$ 是可测的，且
+\[
+ \sum_{k=1}^{n}m(E_k)=m(S_n)\le b-a,
+\]
+从而 $\sum_{k=1}^{\infty}m(E_k)$ 收敛，其和 $\le b-a$。由于关于外测度的证明(C)可知
+\begin{equation}
+ m_e(E)\le\sum_{k=1}^{\infty}m_e(E_k)=\sum_{k=1}^{\infty}m(E_k)\le b-a,
+ \tag{13}
+\end{equation}
+所以余下的只需证明
+\begin{equation}
+ m_i(E)\ge\sum_{k=1}^{\infty}m(E_k).
+ \tag{14}
+\end{equation}
+即可。证如下：$S_n\subset E$，故 $E^c\subset S_n^c$，但 $S_n$ 作为有限多个可测集 $E_1,\ldots,E_n$ 之并，前已证明为可测的，故其余集亦然。即
+\[
+ m_e(E^c)\le m_e(S_n^c)=m(S_n^c)=(b-a)-\sum_{k=1}^{n}m(E_k).
+\]
+令 $n\to\infty$，由 $\sum_{k=1}^{\infty}m(E_k)$ 收敛即得(14)式。
+
+\noindent\textbf{(E)} 有限多个 $E_k$ 时定理3的证明。因为 $E_1,\ldots,E_n$ 可测等价于 $E_1^c,\ldots,E_n^c$ 可测。但上面的证明已告诉我们，$E_1^c\cup\cdots\cup E_n^c$ 为可测（各项不相交时开集之测度等于各项测度之和这一点虽不成立，我们也未用到），所以
+\[
+ (E_1^c\cup\cdots\cup E_n^c)^c=E_1\cap\cdots\cap E_n
+\]
+也可测。至于无限多个 $E_k$ 之交的情况将在后面给出。目前我们先给出一个
+
+\noindent\textbf{推论4}\quad 若 $E_1$ 与 $E_2$ 均为可测，则 $E_1\setminus E_2$ 与对称差 $E_1\triangle E_2$ 也可测。若 $E_2\subset E_1$，则 $m(E_1\setminus E_2)=m(E_1)-m(E_2)$。
+
+\noindent\textbf{证}\quad $E_1\setminus E_2=E_1\cap E_2^c$，故当 $E_1,E_2$ 为可测时 $E_1\setminus E_2$ 也可测。对称差 $E_1\triangle E_2=(E_1\setminus E_2)\cup(E_2\setminus E_1)$ 是两个不相交的可测集之并，所以是可测的。最后
+\[
+ E_1=(E_1\cap E_2)\cup(E_1\cap E_2^c)=(E_1\cap E_2)\cup(E_1\setminus E_2),
+\]
+当 $E_2\subset E_1$ 时，$E_1\cap E_2=E_2$，再用(D)即得推论。
+
+\noindent\textbf{推论5}\quad 空集 $\varnothing$ 可测而且其测度为0。
+
+\noindent\textbf{证}\quad 任取可测集 $E$，$\varnothing=E\setminus E$。由推论4即得。
+
+\noindent\textbf{(F)} 证明的终结。令
+\[
+ E_1'=E_1,\quad E_2'=E_2\cap E_1^c,\quad\ldots,
+\]
+\[
+ E_n'=E_n\cap(E_1^c\cup E_2^c\cup\cdots\cup E_{n-1}^c),\quad\ldots
+\]
+显然
+\[
+ E=E_1'\cup E_2'\cup\cdots\cup E_n'\cup\cdots,
+\]
+而且 $E_i'\cap E_j'=\varnothing\ (i\ne j)$。所以，应用前面的证明(E)可知 $E$ 是可测的。关于测度的不等式，则可由关于外测度的证明(C)得出。因为这时外测度就是测度，定理2至此证毕。
+
+定理3则可以由关系式
+\[
+ \left(\bigcap_{k=1}^{\infty}E_k\right)^c=\bigcup_{k=1}^{\infty}E_k^c
+\]
+以及定理2直接得出。
+
+上面的证明中我们用到“集合的极限过程”，这在有关测度的问题中是很有用的。为此我们给出
+
+\noindent\textbf{定义2}\quad 若有一串集 $E_1,\ldots,E_n,\ldots$，而且 $E_1\subset E_2\subset\cdots\subset E_n\subset\cdots$（或 $E_1\supset E_2\supset\cdots\supset E_n\supset\cdots$），则
+\[
+ E=\bigcup_{k=1}^{\infty}E_k\quad\left(\text{或 }E=\bigcap_{k=1}^{\infty}E_k\right)
+\]
+称为其外极限（内极限）。
+
+由上面的定理易见可测集序列的内外极限均为可测集，且
+\begin{equation}
+ \lim_{n\to\infty}m(E_n)=m(E).
+ \tag{15}
+\end{equation}
+在数学中有种种不同的测度，例如在第二章 §5 讲到广义函数时，就指出 $\delta$ 函数也是一种测度。在考虑集合 $X$ 的子集时，有一些子集是有测度的——可测集，有一些则没有，我们把 $X$ 之可测的子集作为一类，则可测集的这一类一定要有以下的性质：
+
+(i) $X$ 本身是可测的；
+
+(ii) 若 $E$ 可测，则 $E^c=X\setminus E$ 也可测；
+
+(iii) 若 $E_1,\ldots,E_n,\ldots$ 可测，则 $\bigcup_{n=1}^{\infty}E_n$ 也可测。
+
+我们记这一类子集之集合为 $\mathcal M$，则所谓测度就是 $\mathcal M$ 上的一个可数可加集合函数 $\mu$，即对 $E\in\mathcal M$ 有 $\mu(E)<+\infty$（称为 $E$ 之测度），而且若 $E_1,\ldots,E_n,\ldots\in\mathcal M$ 而且互不相交，则
+\begin{equation}
+ \mu\left(\bigcup_{n=1}^{\infty}E_n\right)=\sum_{n=1}^{\infty}\mu(E_n).
+ \tag{16}
+\end{equation}
+所以，勒贝格测度是适合以上条件的测度。但若尔当测度则不然，因为它没有可数可加性而只有有限可加性（有时也称它为有限可加测度）。
+
+\medskip
+\noindent\textbf{3. 可测函数}\quad 有了勒贝格测度以后就可以进一步定义勒贝格积分了。第一节中我们一再强调黎曼积分本质上是连续函数（关于若尔当测度）的积分。那么现在连续函数应该代以什么样的函数类呢？连续函数是这样一个映射：它使开集的原像仍为开集。于是一个很自然的选择应该是考虑使某个开集的原像为可测集的函数（即可测函数）类。这正是勒贝格的选择。下面给出准确的定义，这里我们限于 $f(x)$ 为有界的情况。
+
+\noindent\textbf{定义3}\quad 若 $f(x)$ 是定义在 $[a,b]$ 上的函数，而且对任一实数 $c$，集合
+\begin{equation}
+ E(f>c)=\{x:x\in[a,b],\ f(x)>c\}
+ \tag{17}
+\end{equation}
+为勒贝格可测集，则称 $f(x)$ 为勒贝格可测函数。
+
+\noindent\textbf{注1}\quad 定义中(17)式也可以改为 $E(f\ge c),E(f<c)$ 或 $E(f\le c)$，因为例如 $E(f\le c)=[E(f>c)]^c$，故与 $E(f>c)$ 同为可测或为不可测。又若 $E(f>c)$ 对一切 $c$ 均为可测，则 $E(f\le c-\frac1n)$ 对一切 $c$ 与正整数 $n$ 均为可测。由于可数多个可测集之并仍为可测，故
+\[
+ \bigcup_{n=1}^{\infty}E\left(f\le c-\frac1n\right)=E(f<c)
+\]
+为可测，其余集 $E(f\ge c)$ 当然也可测。
+
+\noindent\textbf{注2}\quad 若 $f$ 是可测的，则对任意 $a<b$，$E(a<f<b),E(a<f\le b),E(f=a)$ 均为可测。证明很简单，例如
+\[
+ E(a<f<b)=E(f>a)\cap E(f<b)=E(f>a)\cap[E(f\ge b)]^c,
+\]
+\[
+ E(f=a)=E(f\ge a)\setminus E(f>a),
+\]
+当然都是可测的。
+
+可测函数的性质有一些很简单，例如说 $f$ 为可测函数则对任意实数 $h$，$hf$ 也是可测的，这一些我们都不加证明。但有一些涉及不等式应该注意，例如
+
+\noindent\textbf{命题3}\quad 若 $f$ 与 $g$ 均可测则
+\[
+ E(f>g)=\{x:x\in[a,b],\ f(x)>g(x)\}
+\]
+也是可测集。
+
+\noindent\textbf{证}\quad 若在某一点 $x$，$f(x)>g(x)$，则必可找到一个有理数 $r$ 使 $f(x)>r>g(x)$。反之亦然，所以
+\[
+ E(f>g)=\bigcup_{r\in\mathbb Q}E(f>r>g)
+ =\bigcup_{r\in\mathbb Q}E(f>r)\cap E(g<r)
+\]
+是可测的。
+
+\noindent\textbf{命题4}\quad 若 $f$ 与 $g$ 均为可测，则 $f\pm g$ 与 $fg$ 也是可测的。
+
+\noindent\textbf{证}\quad 因为 $g$ 可测，则 $-g$ 也可测，常数 $c$ 与它的和当然也是可测的，但
+\[
+ E(f\pm g>c)=E(f>c\mp g),
+\]
+故由命题3，$f\pm g$ 是可测的。
+
+又若 $f$ 可测，$f^2$ 必可测。实际上
+\[
+ E(f^2>c)=[a,b],\quad\text{若 }c\le0,
+\]
+\[
+ E(f^2>c)=E(f>\sqrt c)\cup E(f<-\sqrt c),\quad\text{若 }c>0.
+\]
+所以 $f^2$ 可测，利用明显的关系式
+\[
+ fg=\frac14\left[(f+g)^2-(f-g)^2\right]
+\]
+以及前证即知 $fg$ 可测。
+
+一个十分重要的性质是关于极限的。设有一个可测函数序列 $\{f_n(x)\}$，在每一点 $x$ 处，它不一定有极限，但一定有上极限 $\overline{\lim}_{n\to\infty}f_n(x)$ 与下极限 $\underline{\lim}_{n\to\infty}f_n(x)$（即所有收敛子序列之极限的上下确界），这时我们有
+
+\begin{sloppypar}\noindent\textbf{定理6}\quad $[a,b]$ 上的可测函数序列 $\{f_n(x)\}$ 之上、下极限 $\overline{\lim}_{n\to\infty}f_n(x)$ 与 $\underline{\lim}_{n\to\infty}f_n(x)$，如果是有限的，必为可测函数。特别是，若 $\lim_{n\to\infty}f_n(x)=f(x)$ 存在，亦必为可测函数。\end{sloppypar}
+
+\noindent\textbf{证}\quad 对任意实数 $c$，定义
+\[
+ E_{m,n}=\bigcup_{k=0}^{\infty}E\left(f_{n+k}>c+\frac1m\right),
+ \qquad
+ E_m=\bigcap_{n=1}^{\infty}E_{m,n}.
+\]
+于是由可测函数的定义以及定理2,3知 $E_{m,n}$ 与 $E_m$ 均为可测集。对于 $x\in E_m$，对任意 $n$ 都可找到一个 $k$ 使 $f_{n+k}(x)>c+\frac1m$，即有充分大的 $\nu$ 使 $f_\nu(x)>c+\frac1m$。所以在 $E_m$ 上，
+\[
+ \overline{\lim}_{n\to\infty}f_n(x)\ge c+\frac1m>c.
+\]
+令 $E=E_1\cup E_2\cup\cdots\cup E_m\cup\cdots$，$E$ 当然是可测集，今证
+\[
+ E=\left\{x:\overline{\lim}_{n\to\infty}f_n(x)>c\right\}.
+\]
+实际上上面已证明，在 $E$ 上，$\overline{\lim}f_n(x)>c$，反之，若有一点 $x$ 使 $\overline{\lim}_{n\to\infty}f_n(x)>c$，则必对充分大整数 $m$，都可以找到充分大的 $\nu$ 使 $f_\nu(x)>c+\frac1m$，所以任取一个 $n$ 都可以找到 $k$ 使 $f_{n+k}(x)>c+\frac1m$。因此这个 $x\in E_{m,n}$，$n=1,2,\ldots$，从而 $x\in E_m\subset E$。即是说，若 $x$ 使 $\overline{\lim}f_n(x)>c$，必有 $x\in E$。所以 $E=E(\overline{\lim}f_n(x)>c)$。但上面已说了 $E$ 是可测集，所以 $\overline{\lim}f_n(x)$ 也可测。$\underline{\lim}f_n(x)$ 与 $f(x)$ 的可测性证明类似。
+
+\noindent\textbf{定理7}\quad 连续函数 $f(x)$ 必为可测。
+
+\noindent\textbf{证}\quad $E(f>c)$ 即值域空间中之开集 $\{f>c\}$ 在定义域 $x$ 的空间 $[a,b]$ 上之原像。因为 $f$ 连续，故这个原像也是开集。开集自然是可测的。
+
+这个定理的重要性在于，我们实际上遇到的函数多是连续函数序列的极限，甚至狄利克雷函数 $\chi(x)$ 也可写成连续函数的序列如下：
+\begin{equation}
+ \chi(x)=\lim_{m\to\infty}\lim_{n\to\infty}[\cos(m!\pi x)]^{2n}
+ \tag{18}
+\end{equation}
+（$m,n$ 取正整数值）。因为若 $x$ 是有理数 $p/q$，则当 $m>q$ 时，$\cos(m!\pi x)=\cos(p\cdot m!/q\cdot\pi)=\pm1$，因此当 $m$ 充分大时，$[\cos(m!\pi x)]^{2n}=1$，而上式之极限也是1。若 $x$ 是无理数，不论怎样取正整数 $m$，$m!\pi x$ 均非 $\pi$ 之整数倍，因而 $|\cos m!\pi x|^2=\theta<1$，固定了 $x$ 和 $m$ 以后，$[\cos(m!\pi x)]^{2n}=\theta^n$，而 $\lim_{n\to\infty}[\cos(m!\pi x)]^{2n}=0$，再对 $m$ 取极限为0。因为 $[\cos(m!\pi x)]^{2n}$ 是连续函数，对 $m,n$ 求逐次极限（先对 $n$ 求极限），得出的极限函数即狄利克雷函数自然是可测的。当然，证明 $\chi(x)$ 可测最好的方法仍然是直接用定义去证明。上面给出(18)式只是录以备考。
+
+关于可测函数序列的收敛性有许多重要的定理。定理6讲的是它的几乎处处收敛性。还有许多其它的收敛性，互相之间都有密切的关系，其中最有用的结果应该是下述的叶果洛夫（D. F. Egorov）定理。
+
+\noindent\textbf{定理8（叶果洛夫定理）}\quad 设可测集 $E$ 上的可测函数序列 $\{f_n(x)\}$ 几乎处处收敛于几乎处处取有限值的函数 $f(x)$，则 $f(x)$ 必为可测函数，而且可找到 $E$ 的可测子集 $S$ 使 $\{f_n(x)\}$ 在 $S$ 上一致收敛于 $f(x)$，并且 $E\setminus S$ 之测度可小于任意指定的正数 $\delta$：$m(E\setminus S)<\delta$。
+
+\noindent\textbf{证}\quad 若 $\{f_n(x)\}$ 处处收敛于 $f(x)$ 则 $f(x)$ 之可测性由定理6即知，现在把处处收敛改为几乎处处收敛，并不会影响结果，这一点看下文即可明白。也由于同样的理由，我们设 $f(x)$ 处处有限。
+
+为了证明此定理我们要详细地研究一下 $\{f_n(x)\}$ 不收敛于 $f(x)$ 的点集的构造，即考虑集
+\begin{equation}
+ Q=\{x:x\in E,\ f_n(x)\not\to f(x)\}.
+ \tag{19}
+\end{equation}
+按定理之要求取定 $\sigma$，并记
+\[
+ E_k(\sigma)=\{x:|f_k-f|\ge\sigma\},
+\]
+\[
+ R_n(\sigma)=\bigcup_{k=n}^{\infty}E_k(\sigma),
+ \qquad
+ M=\bigcap_{n=1}^{\infty}R_n(\sigma).
+\]
+很明显 $R_1(\sigma)\supset\cdots\supset R_n(\sigma)\supset\cdots$，所以 $M$ 是 $R_n(\sigma)$ 的内极限，而有
+\begin{equation}
+ \lim_{n\to\infty}m(R_n(\sigma))=m(M).
+ \tag{20}
+\end{equation}
+可以证明 $M\subset Q$，这是因为，若 $x_0\notin Q$，即 $\lim_{k\to\infty}f_k(x_0)=f(x_0)$，因此，对 $\sigma$ 必有 $N$ 存在，当 $k\ge N$ 时
+\[
+ |f_k(x_0)-f(x_0)|<\sigma.
+\]
+换言之 $x_0\notin E_k$，只要 $k\ge N$。也就是说 $x_0\notin R_N(\sigma)$ 从而 $x_0\notin M$。因为已设 $Q$ 为零测度集，故其子集 $M$ 也是零测度集，而由(20)式有
+\[
+ \lim_{n\to\infty}m(R_n(\sigma))=0.
+\]
+但 $E_n(\sigma)$ 是 $R_n(\sigma)$ 之子集，故对任意 $\sigma$
+\begin{equation}
+ \lim_{n\to\infty}m\big(E(|f_n-f|\ge\sigma)\big)=0.
+ \tag{21}
+\end{equation}
+
+\noindent\textbf{注}\quad 证明到此已经得到了一个重要结果：若一个可测函数序列 $\{f_n(x)\}$ 与一个可测函数 $f(x)$ 对一切 $\sigma>0$ 均有(21)式成立，就说 $\{f_n(x)\}$ 按测度收敛于 $f(x)$。因此至此为止，我们已得到了一个结论：
+
+\noindent\textbf{定理9（勒贝格定理）}\quad 若可测集 $E$ 上的可测函数序列 $\{f_n(x)\}$ 几乎处处收敛于一个几乎处处取有限值的可测函数 $f(x)$，则 $\{f_n(x)\}$ 必在 $E$ 上按测度收敛于它。
+
+这个定理本身就很有用，下面我们继续叶果洛夫定理的证明。现在取一串下降趋于0的正数 $\{\sigma_i\}$，$\sigma_i\to0$，再取一串正数 $\eta_i$ 使
+\[
+ \sum_{i=1}^{\infty}\eta_i<+\infty.
+\]
+于是由于 $m(R_n(\sigma))\to0$ 对一切 $\sigma$ 成立，故令 $\sigma=\sigma_i$ 时，一定可以找到 $n_i$ 使
+\[
+ m(R_{n_i}(\sigma_i))<\eta_i.
+\]
+由于 $\sum_{i=1}^{\infty}\eta_i$ 收敛，所以可以找到 $i_0$ 使
+\[
+ \sum_{i=i_0}^{\infty}\eta_i<\delta.
+\]
+至此令
+\[
+ e=\bigcup_{i=i_0}^{\infty}R_{n_i}(\sigma_i).
+\]
+$e$ 当然是 $E$ 的子集，而
+\[
+ m(e)\le\sum_{i=i_0}^{\infty}m(R_{n_i}(\sigma_i))<\sum_{i=i_0}^{\infty}\eta_i<\delta,
+\]
+记 $E_\delta=E\setminus e$。今证 $E_\delta$ 即适合所求。当然
+\[
+ m(E_\delta)=m(E)-m(e)>m(E)-\delta.
+\]
+在 $E_\delta$ 上 $f_n(x)$ 必一致收敛于 $f(x)$，事实上任给 $\varepsilon>0$ 总可以找到一个 $i\ge i_0$，适合 $\sigma_i<\varepsilon$，对 $E_\delta$ 中的 $x$，因为 $E_\delta=E\setminus e$，故 $x\notin e$，当然 $x\notin R_{n_i}(\sigma_i)$。由 $R_{n_i}(\sigma_i)$ 之定义可知，当 $n\ge n_i$ 时 $x\notin E(|f_n-f|\ge\sigma_i)$，亦即
+\[
+ |f_n(x)-f(x)|<\sigma_i<\varepsilon,\qquad n\ge n_i.
+\]
+因为 $n_i$ 与 $x$ 无关，故定理证毕。
+
+这个定理本身固然重要，它的证法，即分析集合 $\{x:f_n(x)\not\to f(x)\}$ 之构造这个方法更是很重要的。
+
+可测函数在勒贝格积分理论中的地位很像连续函数在黎曼积分理论中的地位。它当然是连续函数的推广，但其实又不相差太远。下面我们给出一个有关可测函数的构造的重要定理，但其证明略去。
+
+\noindent\textbf{定理10（鲁金（N. N. Luzin）定理）}\quad 若 $f(x)$ 是可测集 $E$ 上的可测函数，则对任一 $\delta>0$，必可找到一个在 $E$ 上连续的函数 $\varphi(x)$，使
+\[
+ mE(f\ne\varphi)<\delta,
+\]
+而且若 $|f(x)|\le K$，也有 $|\varphi(x)|\le K$。
+
+\subsection*{4. 勒贝格积分之定义与基本性质}
+
+于是由 $f(x)$ 之可测性的定义，$E_k$ 都是可测集。依照定义黎曼积分的方法，我们定义分划 $P$ 的下和 $s_P$ 与上和 $S_P$
+\[
+s_P=\sum_{k=1}^{n}y_{k-1}m(E_k),\qquad
+S_P=\sum_{k=1}^{n}y_km(E_k). \tag{23}
+\]
+本来，当 $f(x)$ 不连续时，它在一个小区间上的振动可能很剧烈，使这两和不易确定，现在 $f(x)$ 虽然只是可测的，我们却是对值域作分划，避免了振动剧烈带来的困难。但是自变量 $x$ 之相应集合的构造却变得很复杂了。这一点我们用勒贝格测度来代替若尔当测度来加以克服。于是有了勒贝格的上、下和(23)。和达布上、下和一样，易证当分划加细时上和不增而下和不减，且任一下和必不大于任一上和。因此 $\{s_P\}$ 有上确界 $\underline I$，$\{S_P\}$ 有下确界 $\overline I$，它们都是有限数：
+\[
+\underline I\le \overline I<+\infty.
+\]
+$\underline I$ 与 $\overline I$ 分别称为 $f(x)$ 在 $E$ 上的下与上勒贝格积分。
+
+\noindent\textbf{定义4}\quad 对定义在区间 $A$ 上的有界可测函数 $f(x)$，若 $\underline I=\overline I$，就称 $f(x)$ 在 $A$ 上勒贝格可积，$\underline I$ 与 $\overline I$ 之公共值 $I$ 称为 $f(x)$ 在 $A$ 上的勒贝格积分，记作
+\[
+\int_A f(x)\,dx\quad\text{或}\quad (L)\int_A f(x)\,dx.
+\]
+
+\noindent\textbf{定理11}\quad 区间 $A$ 上的有界可测函数必为勒贝格可积。
+
+\noindent\textbf{证}\quad 对某一分划 $P$，
+\[
+S_P-s_P=\sum_{k=1}^{n}(y_k-y_{k-1})m(E_k),
+\]
+当分划足够细使 $|y_k-y_{k-1}|<\varepsilon/m(A)$ 时易得 $|S_P-s_P|<\varepsilon$，$\varepsilon$ 是任意小数。因此 $\underline I=\overline I$。
+
+举一个例子：令 $E\subset A$ 是一个可测集，$\chi_E(x)$ 是其特征函数，容易看到 $E$ 的可测性与 $\chi_E(x)$ 的可测性是等价的，而且由定义即得
+\[
+\int_A\chi_E(x)\,dx=m(E).
+\]
+利用 $\chi_E(x)$ 之可测性与集合 $E$ 之可测性的关系就可以定义可测集 $E$ 上的积分为
+\[
+\int_E f(x)\,dx=\int_A\chi_E(x)f(x)\,dx. \tag{24}
+\]
+
+有了勒贝格积分的定义后，我们立刻由定义可知狄利克雷函数
+\[
+\chi(x)=\begin{cases}1,&x\text{ 为有理数},\\0,&x\text{ 为无理数},\end{cases}
+\]
+是勒贝格可积的，而且
+\[
+(L)\int_0^1\chi(x)\,dx=0.
+\]
+所以，勒贝格积分确实比黎曼积分更广泛一些。
+
+下面进一步考虑非负可测（但不一定有界）函数 $f(x)$ 的勒贝格积分。取 $N$ 为任意大的正整数，并定义
+\[
+[f(x)]_N=\begin{cases}f(x),&0\le f(x)<N,\\N,&N\le f(x).\end{cases}\tag{25}
+\]
+于是 $[f(x)]_N$ 是有界可测的，从而 $(L)\int_A[f(x)]_Ndx$ 有意义。当 $N$ 增加时这一列积分不会下降，因此若上述序列有界，就定义
+\[
+(L)\int_Af(x)dx=\lim_{N\to\infty}\int_A[f(x)]_Ndx, \tag{26}
+\]
+并说 $f(x)$ 是勒贝格可积的；若上述序列无界，有时也说 $(L)\int_Af(x)dx=+\infty$。
+
+最后看一般的可测函数 $f(x)$。定义
+\[
+f_+(x)=\begin{cases}f(x),&f(x)\ge0,\\0,&f(x)<0,\end{cases}\qquad
+f_-(x)=\begin{cases}0,&f(x)\ge0,\\-f(x),&f(x)<0.\end{cases}
+\]
+于是 $f_+(x),f_-(x)$ 都是非负可测的，而且
+\[
+f(x)=f_+(x)-f_-(x),\qquad |f(x)|=f_+(x)+f_-(x).
+\]
+若 $f_+(x)$ 与 $f_-(x)$ 均为 $(L)$ 可积的，则定义 $f(x)$ 为 $L$ 可积，而且
+\[
+(L)\int_Af(x)dx=(L)\int_Af_+(x)dx-(L)\int_Af_-(x)dx. \tag{27}
+\]
+就是说，我们不允许出现 $(+\infty)-(+\infty)$ 的情形。
+
+\noindent\textbf{定理12}\quad 可测函数 $f(x)$ 为可积当且仅当 $|f(x)|$ 为勒贝格可积。
+
+证明由上述定义直接得到。这里要指出黎曼积分与勒贝格积分的另一个重要区别：考虑无界函数的积分即所谓反常积分时，勒贝格积分实际上是用 $[f(x)]_N$ 的积分之极限来处理，不区分 $f_+$ 与 $f_-$ 而是合并处理，因而在出现 $(+\infty)-(+\infty)$ 的情况下不能定义。因此有些反常积分是条件收敛的，而勒贝格积分只允许绝对收敛。
+
+下面讨论勒贝格积分的性质。我们仍只讨论非负可测函数，因为一般的可测函数可以分为两个非负可测函数之差来处理。
+
+\noindent\textbf{(i) 正性}\quad 若 $f(x)$ 在 $E$ 上可积而且 $f(x)\ge0$，则
+\[
+(L)\int_Ef(x)dx\ge0. \tag{28}
+\]
+反之，若上式中的等号对 $f(x)\ge0$ 成立，则 $f(x)=0$（几乎处处）。
+
+同样的方法可以证明，若在 $E$ 上有界可测的函数 $f(x)$ 适合不等式 $\alpha\le f(x)\le\beta$，则有中值定理
+\[
+\alpha m(E)\le(L)\int_Ef(x)dx\le\beta m(E). \tag{29}
+\]
+
+\noindent\textbf{(ii) 可加性}\quad 如果固定 $f(x)$ 为 $A$ 上的可积函数，则对 $A$ 的每个可测子集 $E$，可以定义 $(L)\int_Ef(x)dx$。若 $f(x)$ 在 $E$ 上可积，而且
+\[
+E=\bigcup_{k=1}^{\infty}E_k,\qquad E_i\cap E_j=\varnothing\quad(i\ne j),
+\]
+则有
+\[
+(L)\int_Ef(x)dx=\sum_{k=1}^{\infty}(L)\int_{E_k}f(x)dx. \tag{30}
+\]
+原文先证明有限可加性，再利用截断函数 $[f(x)]_N$ 取极限得到可数可加性。
+
+\noindent\textbf{(iii) 线性性质}\quad 这里包括两个性质：
+\[
+(L)\int_E[f(x)+g(x)]dx=(L)\int_Ef(x)dx+(L)\int_Eg(x)dx, \tag{33}
+\]
+以及对任一可积函数 $f(x)$ 和任意常数 $c$，
+\[
+\int_Ecf(x)dx=c\int_Ef(x)dx. \tag{34}
+\]
+证明分别从非负函数、不同符号区域的分解以及值域分划出发。
+
+\noindent\textbf{(iv) 对积分区域的连续依赖性}\quad 设 $f(x)$ 在 $E$ 上可积，$\{E_k\}$ 是一串含于 $E$ 内的可测集，$E_k\subset E$，而且 $m(E_k)\to0$，则
+\[
+\lim_{k\to\infty}\int_{E_k}f(x)dx=0.
+\]
+证明可先设 $f(x)\ge0$，取充分大的 $N$ 使
+\[
+\int_E\{f(x)-[f(x)]_N\}dx<\varepsilon,
+\]
+再取 $k$ 充分大使 $Nm(E_k)<\varepsilon$，即可得到结论。
+
+\noindent\textbf{(v) 零测度集的作用}\quad 若 $E$ 是零测度集，或 $f(x)$ 几乎处处为0，都有
+\[
+(L)\int_Ef(x)dx=0. \tag{35}
+\]
+这说明在作积分时，积分区域变动一个零测度集或者被积函数在一个零测度集上变动都不会影响积分值。因此，几乎处处相等的函数在积分问题中是等价的。
+
+\noindent\textbf{定义5}\quad 若 $f(x)$ 在 $E$ 上可测，定义 $f(x)$ 在 $E$ 上的本质上界与下界分别为
+\[
+\operatorname*{ess\,sup}f(x)=\inf\{a\in\mathbb R\cup\{+\infty\}:f(x)\le a\text{ 于 }E\setminus E_1\text{ 上},\ m(E_1)=0\},
+\]
+\[
+\operatorname*{ess\,inf}f(x)=\sup\{a\in\mathbb R\cup\{-\infty\}:f(x)\ge a\text{ 于 }E\setminus E_1\text{ 上},\ m(E_1)=0\}.
+\]
+若二者均为有限数，则称 $f(x)$ 为本质有界的。
+
+关于可积函数还有一些简单性质，例如
+\[
+\left|(L)\int_Ef(x)dx\right|\le(L)\int_E|f(x)|dx. \tag{36}
+\]
+
+至此我们要问，这两种积分有何关系？有基本的
+
+\noindent\textbf{定理13}\quad 若可测函数 $f(x)$ 在区间 $A$ 上黎曼可积，则它亦必勒贝格可积，而且
+\[
+(R)\int_Af(x)dx=(L)\int_Af(x)dx. \tag{37}
+\]
+证明利用上一节已证明的黎曼可积函数必几乎处处连续，因此除一个零测度集以外 $f(x)$ 是可测的；加上这个零测度集，$f(x)$ 在 $A$ 上可测。再将 $A$ 分为有限多个子区间，比较勒贝格积分与黎曼上下和即得。
+
+这个定理很重要：当我们只计算 $(L)\int_Af(x)dx$ 时，只要 $f(x)$ 黎曼可积，就可以把它当作黎曼积分来算；当研究由下文诸定理表示的性质时，又可以把它当作勒贝格积分并应用这些强有力的定理。
+
+\noindent\textbf{定理14（勒贝格控制收敛定理）}\quad 设可测函数序列 $f_n(x)$ 在 $A$ 上对 $n$ 一致有界，即 $|f_n(x)|\le M$，又在 $A$ 上几乎处处有 $\lim_{n\to\infty}f_n(x)=f(x)$，则 $f(x)$ 在 $A$ 上也是勒贝格可积的，而且可以在积分号下求极限：
+\[
+\lim_{n\to\infty}\int_Af_n(x)dx=\int_Af(x)dx. \tag{38}
+\]
+\textbf{注1}\quad $|f_n(x)|$ 一致有界可以改成 $|f_n(x)|\le\Phi(x)$ 而 $\Phi(x)$ 勒贝格可积。
+
+\textbf{注2}\quad 令 $E=\{x:\lim f_n(x)\ne f(x)\}$，则 $m(E)=0$。在 $E$ 上把 $f_n(x)$ 与 $f(x)$ 都改成0，不会影响积分而定理条件可改为处处成立。
+
+\noindent\textbf{定理的证明}\quad 可测函数 $f_n(x)$ 之极限函数 $f(x)$ 必可测，又因 $|f(x)|\le M$，故 $f(x)$ 为有界可测从而勒贝格可积。对任意 $\varepsilon$，由叶果洛夫定理必可找到 $A$ 的子集 $E$，使 $E$ 上 $f_n(x)$ 一致收敛于 $f(x)$，而且
+\[
+m(A\setminus E)<\frac{\varepsilon}{4M}.
+\]
+于是
+\[
+\left|\int_A[f_n(x)-f(x)]dx\right|
+\le \int_E|f_n(x)-f(x)|dx+\int_{A\setminus E}|f_n(x)-f(x)|dx.
+\]
+由 $f_n$ 在 $E$ 上一致收敛于 $f$，存在 $N(\varepsilon)$，使 $n>N(\varepsilon)$ 时 $|f_n(x)-f(x)|<\varepsilon/[2m(A)]$，代入上式即知积分之差小于 $\varepsilon$，定理证毕。
+
+这个定理的用处可以从下例得知。微积分里有一个复杂的论题，就是含参变量积分的性质和运算，其中需要讨论积分对参变量的一致收敛性，而这时常又是一个很难问题。有了勒贝格控制收敛定理后，问题时常会变得容易处理。但为此就需要进一步讨论相应于反常积分的勒贝格积分。

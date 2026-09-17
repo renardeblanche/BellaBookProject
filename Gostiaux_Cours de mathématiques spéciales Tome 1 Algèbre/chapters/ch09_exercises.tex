@@ -1,0 +1,645 @@
+\origpage{327--337}
+
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} EXERCICES}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.1em]
+
+\item Inverse de la matrice
+\[
+A=\begin{pmatrix}
+1&2&3&\cdots&n\\
+0&1&2&\cdots&n-1\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+0&0&0&\cdots&2\\
+0&0&0&\cdots&1
+\end{pmatrix}.
+\]
+
+\item Calculer le déterminant
+\[
+\begin{vmatrix}
+1^n&2^n&\cdots&(n+1)^n\\
+2^n&3^n&\cdots&(n+2)^n\\
+\vdots&\vdots&&\vdots\\
+(n+1)^n&(n+2)^n&\cdots&(2n+1)^n
+\end{vmatrix}.
+\]
+
+\item Calculer le déterminant de la matrice $A$ d'ordre $n$, de terme général $a_{ij}$ avec $a_{ii}=a_i+b_i$ et $a_{ij}=b_i$ si $i\ne j$.
+
+\item Soit $A,B$ dans $M_n(\mathbb R)$ et
+\[
+M=\begin{pmatrix}
+A&B&B&\cdots&B&B\\
+B&A&B&\cdots&B&B\\
+\vdots&\vdots&\ddots&&\vdots&\vdots\\
+B&B&B&\cdots&A&B\\
+B&B&B&\cdots&B&A
+\end{pmatrix}\in M_{np}(\mathbb R).
+\]
+Soit $E=\{\lambda,\det(A-\lambda B)=0\}$. Trouver une condition nécessaire et suffisante portant sur $E$ pour que $M$ soit inversible et dans ce cas calculer $M^{-1}$.
+
+\item Calculer le déterminant
+\[
+\begin{vmatrix}
+a+b&b+c&a+c\\
+a^2+b^2&b^2+c^2&a^2+c^2\\
+a^3+b^3&b^3+c^3&a^3+c^3
+\end{vmatrix}.
+\]
+
+\item Calculer le déterminant dit de Van der Monde :
+\[
+V(x_1,x_2,\ldots,x_n)=
+\begin{vmatrix}
+1&1&\cdots&1\\
+x_1&x_2&\cdots&x_n\\
+x_1^2&x_2^2&\cdots&x_n^2\\
+\vdots&\vdots&&\vdots\\
+x_1^{n-1}&x_2^{n-1}&\cdots&x_n^{n-1}
+\end{vmatrix}.
+\]
+
+\item Trouver toutes les matrices $A$ de $M_n(\mathbb R)$ telles que, pour toute matrice $X$ de $M_n(\mathbb R)$ on ait
+\[
+\det(A+X)=\det A+\det X.
+\]
+
+\item Montrer qu'une matrice carrée ayant exactement un élément non nul par ligne et par colonne est inversible.
+
+\item Soit $A_n=(a_{ij})_{1\le i,j\le n}$ avec $a_{ij}=(-1)^{\max(i,j)}$, calculer $\det A_n$.
+
+\item Montrer que $n$ fonctions, $f_1,\ldots,f_n$ de $\mathbb R$ dans $\mathbb C$ sont linéairement indépendantes si, et seulement si, il existe $(x_1,\ldots,x_n)$ dans $\mathbb R^n$ tel que
+\[
+\det((f_i(x_j)))\ne0.
+\]
+
+\item Trouver $(x,y,z)\in\mathbb R^3$ tel que
+\[
+\frac{2x+y}{x+y-z}=\frac{3x+y-z}{z}=\frac{3z}{2x-y}.
+\]
+
+\item Déterminer le polynôme caractéristique de $A\in M_n(\mathbb R)$ avec
+\[
+A=\begin{pmatrix}
+0&0&\cdots&0&1\\
+0&0&\cdots&0&2\\
+\vdots&\vdots&&\vdots&\vdots\\
+0&0&\cdots&0&n-1\\
+1&2&\cdots&n-1&n
+\end{pmatrix}.
+\]
+
+\item Soient $E$ et $F$ deux espaces vectoriels de dimensions respectives $p$ et $q$ sur $\mathbb C$. Soit $f\in L(E)$ et $g\in L(F)$. Calculer le déterminant de
+\[
+\varphi:L(E,F)\longrightarrow L(E,F)
+\]
+définie par $\varphi(h)=g\circ h\circ f$.
+
+\item Soient $A$ et $B$ dans $M_n(\mathbb R)$ qui commutent, et telles que
+\[
+\det(A+B)\ge0.
+\]
+Montrer que pour tout $p$ de $\mathbb N$, $\det(A^p+B^p)\ge0$.
+
+\item Calculer le déterminant $D_n$ de la matrice carrée d'ordre $n$, $A$, de terme général $a_{ij}$, avec $a_{ii}=2\cos\varphi$, $a_{i,i+1}=a_{i,i-1}=1$ et $a_{ij}=0$ sinon.
+
+\end{enumerate}
+
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} SOLUTIONS}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.2em]
+
+\item Comme $\det A=1$, la matrice est inversible. En détaillant le système $Y=AX$ on constate que
+\[
+\begin{cases}
+y_1=x_1+x_2+\cdots+x_n,\\
+y_2=x_2+x_3+\cdots+x_n,\\
+\hfill\vdots\\
+y_{n-1}-y_n=x_{n-1}+x_n,\\
+y_n=x_n,
+\end{cases}
+\]
+d'où l'on tire
+\[
+\begin{cases}
+y_1-y_2-(y_2-y_3)=x_1,\\
+y_2-y_3-(y_3-y_4)=x_2,\\
+\hfill\vdots\\
+y_{n-2}-y_{n-1}-(y_{n-1}-y_n)=x_{n-2},\\
+y_{n-1}-2y_n=x_{n-1},\\
+y_n=x_n,
+\end{cases}
+\]
+d'où
+\[
+A^{-1}=\begin{pmatrix}
+1&-2&1&0&\cdots&0\\
+0&1&-2&1&\cdots&0\\
+\vdots&\ddots&\ddots&\ddots&\ddots&\vdots\\
+0&0&\cdots&1&-2&1\\
+0&0&\cdots&0&1&-2\\
+0&0&\cdots&0&0&1
+\end{pmatrix}.
+\]
+
+\item On note $M$ la matrice générale $m_{ij}=(i+j-1)^n$ pour $1\le i,j\le n+1$.
+
+Pour ne pas faire de jaloux, posons $\alpha_i=i-\dfrac12$, $\beta_j=j-\dfrac12$, on a
+\[
+m_{ij}=(\alpha_i+\beta_j)^n=\sum_{k=0}^n\binom nk\alpha_i^k\beta_j^{n-k}
+=\sum_{r=1}^{n+1}\binom n{r-1}\alpha_i^{r-1}\beta_j^{n+1-r}.
+\]
+Et avec
+\[
+\alpha_{i,r}=\binom n{r-1}\alpha_i^{r-1},\qquad
+\beta_{r,j}=\beta_j^{n+1-r},
+\]
+$m_{ij}=\sum_{r=1}^{n+1}\alpha_{i,r}\beta_{r,j}$ devient le terme général de la matrice produit $AB$, avec $A=(\alpha_{i,r})_{1\le i,r\le n+1}$ et $B=(\beta_{r,j})_{1\le r,j\le n+1}$ d'où $\det(M)=\det A\det B$.
+
+Dans la $r$ième colonne de $A$ on factorise $\binom n{r-1}$, donc
+\[
+\det A=\prod_{r=1}^{n+1}\binom n{r-1}
+\begin{vmatrix}
+\alpha_1^0&\alpha_1^1&\cdots&\alpha_1^n\\
+\alpha_2^0&\alpha_2^1&\cdots&\alpha_2^n\\
+\vdots&\vdots&&\vdots\\
+\alpha_{n+1}^0&\alpha_{n+1}^1&\cdots&\alpha_{n+1}^n
+\end{vmatrix}
+=\prod_{r=1}^{n+1}\binom n{r-1}\prod_{1\le i<j\le n+1}(\alpha_j-\alpha_i),
+\]
+et
+\[
+\det B=
+\begin{vmatrix}
+\beta_1^n&\cdots&\beta_{n+1}^n\\
+\beta_1^{n-1}&\cdots&\beta_{n+1}^{n-1}\\
+\vdots&&\vdots\\
+\beta_1^0&\cdots&\beta_{n+1}^0
+\end{vmatrix}
+=\prod_{1\le i<j\le n+1}(\beta_i-\beta_j).
+\]
+(Voir l'exercice 6 pour le calcul de ces déterminants de Van der Monde.)
+
+Comme $\alpha_j-\alpha_i=j-i$ et $\beta_i-\beta_j=i-j$ on a finalement
+\[
+D=\prod_{k=0}^{n}\binom nk\prod_{1\le i<j\le n+1}-(j-i)^2
+=(-1)^{\frac{n(n+1)}2}\prod_{k=0}^{n}(n-k)^{k+1}\binom nk.
+\]
+
+\item On utilise l'aspect $n$-linéaire alterné du déterminant, fonction des vecteurs lignes. On introduit dans les $n$-uplets $B_i=(b_i,\ldots,b_i)$ et
+\[
+A_i=(0,\ldots,0,a_i,0,\ldots,0),
+\]
+$a_i$ en $i$ième position.
+
+On a $\det A=\det(A_1+B_1,\ldots,A_i+B_i,\ldots,A_n+B_n)$ est \emph{a priori} somme de $2^n$ termes, mais les $B_i$ étant tous proportionnels, il ne reste que les $n+1$ termes où figure un $B_i$ au plus.
+
+\[
+\det A=\det(A_1,\ldots,A_n)+\sum_{i=1}^n\det(A_1,\ldots,A_{i-1},B_i,A_{i+1},\ldots,A_n)
+\]
+d'où
+\[
+\det A=a_1\cdots a_n+\sum_{i=1}^n a_1\cdots a_{i-1}b_i a_{i+1}\cdots a_n.
+\]
+
+\item $M$ sera inversible si et seulement si son déterminant est non nul. En soustrayant à chaque colonne (blocs) la dernière, puis en ajoutant toutes les lignes à la dernière on a :
+\[
+\det M=
+\begin{vmatrix}
+A-B&0&0&\cdots&0&B\\
+0&A-B&0&\cdots&0&B\\
+\vdots&\vdots&\ddots&&\vdots&\vdots\\
+0&0&0&\cdots&A-B&B\\
+B-A&B-A&B-A&\cdots&B-A&A
+\end{vmatrix}
+\]
+\[
+=\begin{vmatrix}
+A-B&0&0&\cdots&0&B\\
+0&A-B&0&\cdots&0&B\\
+\vdots&\vdots&\ddots&&\vdots&\vdots\\
+0&0&0&\cdots&A-B&B\\
+0&0&0&\cdots&0&A+(p-1)B
+\end{vmatrix},
+\]
+d'où
+\[
+\det M=(\det(A-B))^{p-1}\det(A+(p-1)B),
+\]
+sera $\ne0$ si et seulement si $\det(A-B)\ne0$ et $\det(A-(1-p)B)\ne0$ d'où
+\[
+(M\text{ inversible})\Longleftrightarrow(1\text{ et }1-p\text{ ne sont pas dans }E).
+\]
+
+On cherche $M^{-1}$ sous la forme
+\[
+\begin{pmatrix}
+A'&B'&\cdots&B'\\
+B'&A'&\cdots&B'\\
+\vdots&\vdots&\ddots&\vdots\\
+B'&B'&\cdots&A'
+\end{pmatrix}
+\]
+avec $A'$ et $B'$ dans $M_n(\mathbb R)$, ce qui conduit aux relations
+\[
+\begin{cases}
+AA'+(p-1)BB'=I_n,\\
+BA'+AB'+(p-2)BB'=0,
+\end{cases}
+\]
+\[
+\Longleftrightarrow
+\begin{cases}
+AA'-BA'-AB'+BB'=I_n=(A-B)(A'-B'),\\
+AA'+(p-1)(BA'+AB')+[(p-1)(p-2)+p-1]BB'=I_n
+\end{cases}
+\]
+(le $1$er $+(p-1)$ fois le $2$e)
+\[
+\Longleftrightarrow
+\begin{cases}
+(A-B)(A'-B')=I_n,\\
+(A+(p-1)B)(A'+(p-1)B')=I_n,
+\end{cases}
+\]
+\[
+\Longleftrightarrow
+\begin{cases}
+A'-B'=(A-B)^{-1},\\
+A'+(p-1)B'=(A+(p-1)B)^{-1},
+\end{cases}
+\]
+d'où
+\[
+A'=\frac1p\bigl((p-1)(A-B)^{-1}+(A+(p-1)B)^{-1}\bigr)
+\]
+et
+\[
+B'=\frac1p\bigl(-(A-B)^{-1}+(A+(p-1)B)^{-1}\bigr).
+\]
+\mbox{}\footnote{\textbf{校勘：}原式末项印作“$A+(p-1)B^{-1}$”。由上一行 $A'+(p-1)B'=(A+(p-1)B)^{-1}$ 可知，$-1$ 应作用于整个矩阵 $A+(p-1)B$。}
+
+\item On retrouve dans les colonnes les vecteurs
+\[
+A=\begin{pmatrix}a\\a^2\\a^3\end{pmatrix},\qquad
+B=\begin{pmatrix}b\\b^2\\b^3\end{pmatrix},\qquad
+C=\begin{pmatrix}c\\c^2\\c^3\end{pmatrix}
+\]
+de $K^3$. Le déterminant étant fonction 3 linéaire alternée des vecteurs colonnes, on a
+\[
+\begin{aligned}
+D&=\det(A+B,B+C,C+A)\\
+&=\det(A,B,C)+\det(B,C,A)\\
+&=2\det(A,B,C)
+=2abc\begin{vmatrix}1&1&1\\a&b&c\\a^2&b^2&c^2\end{vmatrix}\\
+&=2abc(b-a)(c-a)(c-b),
+\end{aligned}
+\]
+(voir exercice n$^\circ$ 6).
+
+\item C'est un classique qui doit être connu. D'abord, si deux éléments $x_i$ et $x_j$ sont égaux, le déterminant est nul, deux colonnes étant égales.
+
+Si on considère le déterminant développé, c'est un polynôme de degré $n-1$ au plus en chaque variable. Si on considère $x_i$ comme une variable, ce polynôme s'annulera si $x_i=x_j$ pour $j\in\{1,\ldots,n\}\setminus\{i\}$, donc ce polynôme est divisible par chaque $x_i-x_j$ pour $i\ne j$.
+
+Soit alors l'expression
+\[
+\prod_{1\le i<j\le n}(x_j-x_i).
+\]
+C'est un polynôme homogène de degré $\dfrac{n(n-1)}2$, (nombre de facteurs), par rapport à l'ensemble des variables, comme $V(x_1,\ldots,x_n)$ qui est une somme de $n!$ termes tous de degré
+\[
+1+2+3+\cdots+n-1=\frac{n(n-1)}2
+\]
+(il y a un terme de chaque ligne dans un produit du déterminant). Ces deux polynômes sont proportionnels.
+
+Or le terme qui est : de plus haut degré en $x_n$, et parmi ceux-là, de plus haut degré en $x_{n-1}$, puis en $x_{n-2}$, ... est $x_n^{n-1}x_{n-1}^{n-2}\cdots x_2$ dans les 2 polynômes, (à vérifier) d'où
+\[
+V(x_1,x_2,\ldots,x_n)=\prod_{1\le i<j\le n}(x_j-x_i).
+\]
+
+\item Si $n=1$, la relation devient $a+x=a+x$ pour $a$ et $x$ réels elle est toujours vérifiée.
+
+Soit $n\ge2$. Si $A$ vérifie la propriété, $\det(A+A)=2^n\det A=2\det A$ implique $\det A=0$. Puis, $\forall\lambda\in\mathbb R$,
+\[
+\det(A-\lambda I_n)=\det A+(-\lambda)^n=(-\lambda)^n :
+\]
+le polynôme caractéristique de $A$ est scindé, donc $A$ est jordanisable sur $\mathbb R$ (chapitre X, §4). Comme le déterminant est stable par passage à une matrice semblable on remplace $A$ par
+\[
+A'=\begin{pmatrix}
+0&1&0&\cdots&0\\
+0&0&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&0&1\\
+0&\cdots&\cdots&0&0
+\end{pmatrix}
+\]
+ou une matrice du même type par blocs de Jordan.
+
+Si $A'\ne0$, dans $A'$ il y a des 1 au dessus de la diagonale. Soit $X'$ triangulaire inférieure avec des 1 sur la diagonale et avec $x'_{i,i+1}=1-a'_{i,i+1}$ : on a des 0 au dessus de la diagonale donc $\det A'=\det X'=0$, alors que $A'+X'$ est inversible. La relation $\det(A'+X')=\det A'+\det X'$ est exclue.
+
+Donc seule $A'=0$ convient, d'où seule $A=0$ est solution.
+
+\item Soit $i=\sigma(j)$ l'indice de la ligne tel que, pour $j$ fixé, $a_{ij}\ne0$, (il y a un seul terme de la $j$ième colonne non nul). Comme il n'y a aussi qu'un terme non nul par ligne, $j\ne j'\Rightarrow\sigma(j)\ne\sigma(j')$ donc $\sigma$ est une injection de $\{1,\ldots,n\}$ dans lui-même, c'est-à-dire une bijection.
+
+On a alors
+\[
+\det A=\varepsilon_\sigma a_{\sigma(1),1}a_{\sigma(2),2}\cdots a_{\sigma(n),n}\ne0
+\]
+donc $A$ est inversible.
+
+Ou bien $A$ est la matrice de l'isomorphisme envoyant $e_j$ sur $a_{\sigma(j),j}e_{\sigma(j)}$.
+
+\item Si on compare les lignes $L_i$ et $L_{i+1}$ de la matrice, on a
+\[
+L_i=((-1)^i,\ldots,(-1)^i,(-1)^{i+1},\ldots,(-1)^n),
+\]
+le changement de signe ayant lieu en $(i+1)$ième position, et de même
+\[
+L_{i+1}=((-1)^{i+1},\ldots,(-1)^{i+1},(-1)^{i+1},(-1)^{i+2},\ldots,(-1)^n),
+\]
+d'où l'on tire
+\[
+L_i+L_{i+1}=(0,\ldots,0,2(-1)^{i+1},2(-1)^{i+2},\ldots,2(-1)^n).
+\]
+
+Comme
+\[
+\det(L_1,L_2,\ldots,L_n)=\det(L_1,L_1+L_2,L_2+L_3,\ldots,L_{n-1}+L_n),
+\]
+(fonction $n$-linéaire alternée des lignes), et que la nouvelle matrice est triangulaire supérieure, de diagonale $-1,2(-1)^2,2(-1)^3,\ldots,2(-1)^n$ on a
+\[
+\det A_n=2^{n-1}(-1)^{\frac{n(n+1)}2}.
+\]
+
+\item On procède par récurrence sur $n$. Si $n=1$, $(\{f_1\}\text{ libre})\Longleftrightarrow(f_1\ne0)\Longleftrightarrow(\exists x_1,f_1(x_1)\ne0)$.
+
+On suppose le résultat vrai à l'ordre $n-1$. On a :
+\[
+\begin{aligned}
+(\{f_1,\ldots,f_n\}\text{ libre})
+&\Longleftrightarrow(\{f_1,\ldots,f_{n-1}\}\text{ libre et }f_n\notin\operatorname{Vect}\{f_1,\ldots,f_{n-1}\})\\
+&\Longleftrightarrow\bigl(\exists(x_1,\ldots,x_{n-1})\in\mathbb R^{n-1}\text{ tel que }d_{n-1}\ne0\\
+&\qquad\text{ et }f_n\notin\operatorname{Vect}(f_1,\ldots,f_{n-1})\bigr),
+\end{aligned}
+\]
+avec
+\[
+d_{n-1}=\det[(f_i(x_j))_{1\le i,j\le n-1}].
+\]
+
+Soit alors
+\[
+t\longmapsto D(t)=
+\begin{vmatrix}
+f_1(x_1)&\cdots&f_1(x_{n-1})&f_1(t)\\
+\vdots&&\vdots&\vdots\\
+f_{n-1}(x_1)&\cdots&f_{n-1}(x_{n-1})&f_{n-1}(t)\\
+f_n(x_1)&\cdots&f_n(x_{n-1})&f_n(t)
+\end{vmatrix},
+\]
+développé par rapport à la dernière colonne, on a
+\[
+D(t)=d_{n-1}f_n(t)+\sum_{j=1}^{n-1}\alpha_jf_j(t).
+\]
+Si, $\forall t\in\mathbb R$, $D(t)=0$, comme $d_{n-1}\ne0$, c'est que $f_n\in\operatorname{Vect}\{f_1,\ldots,f_{n-1}\}$, ce qui est exclu, donc $\exists x_n$ tel que $D(x_n)\ne0$. On a bien $\{f_1,\ldots,f_n\}$ libre $\Rightarrow\exists(x_1,\ldots,x_n)\in\mathbb R^n$ tel que $\det((f_i(x_j))_{1\le i,j\le n})\ne0$, pour tout $n$.
+
+La réciproque est évidente, si on a $(x_1,\ldots,x_n)$ dans $\mathbb R^n$ tel que le déterminant des $f_i(x_j)$ soit non nul, et si $\{f_1,\ldots,f_n\}$ était liée, l'une des fonctions serait \BellaCorrection{combinaison linéaire}{combinaison linéaires} des autres d'où une ligne de la matrice combinaison linéaire des autres : c'est exclu.
+
+\item On va résoudre l'exercice en convenant que, si un dénominateur est nul, le numérateur associé l'est aussi. Il sera toujours possible d'exclure les solutions donnant des dénominateurs nuls.
+
+On cherche donc $(x,y,z)$ tel que la matrice
+\[
+M=\begin{pmatrix}
+2x+y&3x+y-z&3z\\
+x+y-z&z&2x-y
+\end{pmatrix}
+\]
+soit de rang 1 au plus. Si on note $C_1,C_2,C_3$ les 3 vecteurs colonnes de $M$, la famille $\{C_1,C_2,C_3\}$ est de même rang que $\{C_1+C_2+\frac{C_3}{3},C_2,C_3\}$, (matrice de passage inversible car triangulaire avec des 1 sur la diagonale). Donc $M$ est de même rang que
+\[
+M'=\begin{pmatrix}
+5x+2y&3x+y-z&3z\\
+\frac{5x}{3}+\frac{2y}{3}&z&2x-y
+\end{pmatrix},
+\]
+mais aussi de même rang que
+\[
+M''=\begin{pmatrix}
+5x+2y&3x+y-z&3z\\
+0&-x-\frac y3+\frac{4z}{3}&2x-y-z
+\end{pmatrix},
+\]
+(si $L_1$ et $L_2$ sont les vecteurs lignes de $M'$, le rang de $\{L_1,L_2\}$ est celui de $\{L_1,L_2-\frac{L_1}{3}\}$).
+
+Vu la forme de $M''$, celle-ci est rang inférieur ou égal à 1 si et seulement si
+\[
+\begin{cases}
+5x+2y=0,\\[0.2em]
+\dfrac{3x+y-z}{-x-y/3+4z/3}=\dfrac{3z}{2x-y-z},
+\end{cases}
+\]
+ou
+\[
+\begin{cases}
+5x+2y\ne0,\\
+-x-\dfrac y3+\dfrac{4z}{3}=0,\\
+2x-y-z=0.
+\end{cases}
+\]
+
+Le 1er cas équivaut à : $\exists t\in\mathbb R$, $x=2t$, $y=-5t$, et
+\[
+\frac{t-z}{-t/3+4z/3}=\frac{3z}{9t-z}
+\]
+\[
+\Longleftrightarrow\ \exists t\in\mathbb R,\ x=2t,\ y=-5t,\ z^2+3tz+3t^2=0.
+\]
+Pour $t,z\in\mathbb R$, cette dernière équation \BellaCorrectionNote{n'a que la solution $t=z=0$}{donne $z=\dfrac{-3\pm\sqrt{21}}2t$}{Le discriminant est $9t^2-12t^2=-3t^2$. Sur $\mathbb R$, il n'y a donc de solution que pour $t=0$, puis $z=0$; la formule imprimée avec $\sqrt{21}$ est algébriquement erronée.}, qui donne des dénominateurs nuls et doit être exclue.
+
+Le 2e cas équivaut à :
+\[
+5x+2y\ne0,\qquad
+\begin{cases}3x+y=4z,\\2x-y=z,
+\end{cases}
+\]
+\[
+\Longleftrightarrow\ 5x+2y\ne0,\quad3x+y=4z,\quad5x=5z
+\Longleftrightarrow x=z=y\ne0.
+\]
+
+\item On développe $P_n(X)=\det(A-XI_n)$ suivant la dernière ligne en :
+\[
+\begin{aligned}
+P_n(X)
+&=\sum_{i=1}^{n-1}(-1)^{n+i}i\,(-X)^{i-1}(-1)^{n-i+1}i\,(-X)^{n-i-1}\\
+&\quad +(n-X)(-X)^{n-1}\\
+&=\sum_{i=1}^{n-1}(-1)^{n-1}i^2X^{n-2}+(-1)^{n-1}X^{n-1}(n-X)\\
+&=(-1)^nX^{n-2}\left(X^2-nX-\sum_{i=1}^{n-1}i^2\right).
+\end{aligned}
+\]
+
+\item Soit $\mathcal B=\{e_1,\ldots,e_p\}$ une base de $E$ et $\mathcal C=\{\varepsilon_1,\ldots,\varepsilon_q\}$ une base de $F$. On note $A$ et $B$ les matrices, de termes généraux $a_{ij}$ et $b_{ij}$, de $f$ et $g$ respectivement dans ces bases.
+
+Soit $h_{ij}$ l'application linéaire de $E$ dans $F$ définie par : $h_{ij}(e_i)=\varepsilon_j$ et pour tout $k\ne i$, $h_{ij}(e_k)=0$.
+
+On a
+\[
+\begin{aligned}
+g\circ h_{ij}\circ f(e_k)
+&=g\circ h_{ij}\left(\sum_{u=1}^p a_{uk}e_u\right)
+=g(a_{ik}\varepsilon_j)\\
+&=a_{ik}\sum_{v=1}^q b_{vj}\varepsilon_v.
+\end{aligned}
+\]
+Comme $\varepsilon_v=h_{kv}(e_k)$, on a
+\[
+(g\circ h_{ij}\circ f)(e_k)=\left(\sum_{v=1}^q a_{ik}b_{vj}h_{kv}\right)(e_k).
+\]
+Or, pour tout $l\ne k$, $h_{lv}(e_k)=0$, donc le second membre est encore
+\[
+=\left(\sum_{l=1}^p\sum_{v=1}^q a_{il}b_{vj}h_{lv}\right)(e_k).
+\]
+Cette égalité étant valable pour tout $e_k$ de $\mathcal B$, on a
+\[
+\varphi(h_{ij})=\sum_{l=1}^p\sum_{v=1}^q a_{il}b_{vj}h_{lv}.
+\]
+
+Si on indexe la base canonique de $L(E,F)$ dans l'ordre :
+\[
+h_{11},h_{12},\ldots,h_{1q};\ h_{21},h_{22},\ldots,h_{2q};\ \ldots;\ h_{p1},h_{p2},\ldots,h_{pq},
+\]
+la matrice de $\varphi$ est la matrice bloc $C$ avec
+\[
+C=\begin{pmatrix}
+a_{11}B&a_{21}B&\cdots&a_{p1}B\\
+a_{12}B&a_{22}B&\cdots&a_{p2}B\\
+\vdots&\vdots&&\vdots\\
+a_{1p}B&a_{2p}B&\cdots&a_{pp}B
+\end{pmatrix}.
+\]
+
+En prenant une base $\mathcal B$ de $E$ telle que $A$ soit triangulaire supérieure, la matrice $C$ devient triangulaire par blocs et
+\[
+\det C=\prod_{i=1}^p\det(a_{ii}B).
+\]
+Comme $B$ est carrée d'ordre $q$, $\det(a_{ii}B)=(a_{ii})^q\det B$ et on obtient
+\[
+\det C=\left(\prod_{i=1}^p a_{ii}\right)^q(\det B)^p
+=(\det A)^{\dim F}(\det B)^{\dim E}.
+\]
+Finalement
+\[
+\det\varphi=(\det f)^{\dim F}(\det g)^{\dim E}.
+\]
+
+\item Si $p=2q$ est pair, comme $A$ et $B$ commutent,
+\[
+A^{2q}+B^{2q}=(A^q+iB^q)(A^q-iB^q).
+\]
+Comme $A$ et $B$ sont à coefficients réels, les matrices $A^q+iB^q$ et $A^q-iB^q$ sont complexes conjuguées donc
+\[
+\det(A^{2q}+B^{2q})=|\det(A^q+iB^q)|^2
+\]
+est réel positif.
+
+Si $p=2q+1$ est impair, les $2q+1$ racines de $x^{2q+1}+1=0$ s'écrivent
+\[
+-1,\alpha_1,\ldots,\alpha_q,\overline\alpha_1,\ldots,\overline\alpha_q,
+\]
+et, comme $A$ et $B$ commutent, on a
+\[
+A^{2q+1}+B^{2q+1}=(A+B)\prod_{j=1}^q(A+\alpha_jB)(A+\overline\alpha_jB),
+\]
+donc
+\[
+\det(A^{2q+1}+B^{2q+1})=\det(A+B)\prod_{j=1}^q|\det(A+\alpha_jB)|^2
+\]
+est encore positif puisque $\det(A+B)$ l'est.
+
+\item En développant $D_n$ par rapport à la première ligne on obtient
+\[
+D_n=(2\cos\varphi)D_{n-1}-
+\begin{vmatrix}
+1&1&0&\cdots&0\\
+0&2\cos\varphi&1&\ddots&\vdots\\
+0&1&2\cos\varphi&\ddots&0\\
+\vdots&\ddots&\ddots&\ddots&1\\
+0&\cdots&0&1&2\cos\varphi
+\end{vmatrix},
+\]
+le déterminant étant d'ordre $n-1$, on le développe par rapport à la 1re colonne, et pour $n\ge3$ on obtient
+\[
+D_n=2\cos\varphi\,D_{n-1}-D_{n-2},
+\]
+avec $D_1=2\cos\varphi$ et $D_2=4\cos^2\varphi-1$. On a une suite récurrente linéaire d'ordre 2, d'équation caractéristique (voir le chapitre sur les suites),
+\[
+r^2-2r\cos\varphi+1=0,
+\]
+de zéros $r=e^{i\varphi}$ et $e^{-i\varphi}$. Pour $\varphi\ne0\ (\pi)$ les zéros sont distincts donc il existe deux coefficients $\lambda$ et $\mu$ tels que
+\[
+D_n=\lambda e^{in\varphi}+\mu e^{-in\varphi}.
+\]
+On a en particulier, ($n=1$ et 2)
+\[
+D_1=\lambda e^{i\varphi}+\mu e^{-i\varphi}=2\cos\varphi,
+\]
+et
+\[
+D_2=\lambda e^{2i\varphi}+\mu e^{-2i\varphi}=4\cos^2\varphi-1.
+\]
+On en déduit
+\[
+\begin{cases}
+\mu(1-e^{-2i\varphi})=2\cos\varphi\,e^{i\varphi}-4\cos^2\varphi+1,\\
+\lambda(1-e^{2i\varphi})=2\cos\varphi\,e^{-i\varphi}-4\cos^2\varphi+1,
+\end{cases}
+\]
+soit encore
+\[
+\begin{cases}
+\mu e^{-i\varphi}2i\sin\varphi=1-2\cos^2\varphi+2i\cos\varphi\sin\varphi=-\cos2\varphi+i\sin2\varphi,\\
+\lambda e^{i\varphi}(-2i\sin\varphi)=1-2\cos^2\varphi-2i\sin\varphi\cos\varphi=-\cos2\varphi-i\sin2\varphi,
+\end{cases}
+\]
+soit
+\[
+2i\mu e^{-i\varphi}\sin\varphi=-e^{-2i\varphi}
+\qquad\text{et}\qquad
+-2i\lambda e^{i\varphi}\sin\varphi=-e^{2i\varphi},
+\]
+d'où
+\[
+\mu=\frac{e^{i(\frac\pi2-\varphi)}}{2\sin\varphi}
+\qquad\text{et}\qquad
+\lambda=\frac{e^{i(\varphi-\frac\pi2)}}{2\sin\varphi}
+\]
+donc
+\[
+D_n=\frac1{2\sin\varphi}\left(e^{i((n+1)\varphi-\frac\pi2)}+e^{-i((n+1)\varphi-\frac\pi2)}\right)
+=\frac{\cos((n+1)\varphi-\frac\pi2)}{\sin\varphi},
+\]
+soit encore
+\[
+D_n=\frac{\sin(n+1)\varphi}{\sin\varphi}.
+\]
+Il en résulte, par continuité de $D_n$ en $\varphi$, (expression polynômiale en $\cos\varphi$), que si $\varphi$ tend vers 0, $D_n$ tend vers $(n+1)$ et si $\varphi$ tend vers $\pi$, (modulo $2\pi$), avec $\varphi=\pi+t$,
+\[
+\frac{\sin(n+1)\varphi}{\sin\varphi}
+=\frac{(-1)^{n+1}\sin(n+1)t}{-\sin t}\underset{t\to0}{\longrightarrow}(-1)^n(n+1)
+\]
+et finalement, pour $\varphi\ne0\ (\pi)$,
+\[
+D_n=\frac{\sin(n+1)\varphi}{\sin\varphi},
+\]
+pour $\varphi\equiv0\ (2\pi)$, $D_n=n+1$ et pour $\varphi\equiv\pi\ (2\pi)$,
+\[
+D_n=(-1)^n(n+1).
+\]
+\mbox{}\footnote{\textbf{校勘：}原式末行印作“$D_n(-1)^n(n+1)$”，缺少等号。}
+
+\end{enumerate}

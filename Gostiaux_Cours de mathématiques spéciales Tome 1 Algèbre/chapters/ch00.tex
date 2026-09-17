@@ -1,0 +1,198 @@
+\chapter{\texorpdfstring{Du langage mathématique\\ou des tautologies}{Du langage mathématique ou des tautologies}}
+\origpage{1--7}
+\BellaSection{0. Au commencement était le verbe... (Jean, I, 1)}
+
+À notre époque les mathématiques apparaissent comme un langage, ou un jeu, (selon le degré d'humour...) À partir de symboles auxquels on donne une signification, et de règles d'emploi de ces symboles, on construit tout un édifice.
+
+On part donc d'une liste de \emph{signes fondamentaux}, à partir desquels on forme des assemblages qui, selon leur nature, seront appelés « objets mathématiques », ou « relations ». On se donne aussi une liste de règles d'emploi de ces assemblages. Enfin, on peut à tout moment introduire de nouvelles règles, les \emph{axiomes}, (avec cependant le risque de flanquer tout ou partie de l'édifice par terre).
+
+Voici un aperçu de ces fondements.
+
+\emph{Les deux signes les plus simples} sont $\lor$ et $\neg$ qui vont symboliser les mots du langage courant \emph{ou} (non exclusif) et \emph{non}.
+
+\emph{Leurs règles d'emploi sont les suivantes.}
+
+\emph{Si $R$ et $S$ sont des relations, $R\lor S$ en est une, appelée la disjonction logique des relations $R$ et $S$.}
+
+\emph{Si $R$ est une relation, $\neg R$ en est une, appelée la négation de $R$.}
+
+En fait une relation est destinée à être vraie ou fausse, (principe du tiers exclu), et du point de vue des idées, c'est quand on ne peut pas justifier si un énoncé est vrai ou faux que l'on introduit un axiome pour faire un choix.
+
+Alors, on a $R\lor S$ vraie si l'une au moins des 2 relations $R,S$ est vraie, les deux pouvant l'être, (et c'est en ce sens que le \emph{ou} n'est pas exclusif, donc n'a pas le sens de soit l'un, soit l'autre).
+
+De même $\neg R$ vraie signifie $R$ fausse.
+
+On comprend donc que l'on vient de codifier le sens usuel de « ou » et de « non ».
+
+À partir de ces signes, on peut commencer à élaborer le langage mathématique.
+
+Ainsi le mot usuel « \emph{et} » : si, ayant les 2 relations $R,S$, on veut avoir les deux vraies en même temps, il faut exclure (donc $\neg$) les cas où l'une ou l'autre, (ou les 2...) est fausse, donc exclure $(\neg R)$ ou $(\neg S)$ et on arrive à cette monstruosité :
+\[
+R\ \text{et}\ S \quad\text{désigne l'assemblage}\quad \neg\bigl((\neg R)\lor(\neg S)\bigr),
+\]
+et le mot « et » ainsi défini s'appelle la \emph{conjonction logique} de $R$ et de $S$.
+
+On comprend également que, très rapidement, on va remplacer ces assemblages compliqués par des mots plus simples représentant leurs contenus. (Cette démarche n'est pas sans rappeler celle qui, dans l'écriture égyptienne, fait passer des pictogrammes aux idéogrammes).
+
+On utilise ainsi le symbole $\Rightarrow$ :
+\[
+R\Rightarrow S \quad\text{désigne l'assemblage}\quad S\lor(\neg R).
+\]
+Comme c'est une « règle du jeu », pourquoi pas ? Mais si on veut comprendre ce que signifie ce symbole, appelé « \emph{implication logique} », disons que si on considère les quatre cas de figures suivants :
+\begin{enumerate}[label=\arabic*)]
+\item $R$ vraie et $S$ vraie ;
+\item $R$ vraie et $S$ fausse ;
+\item $R$ fausse et $S$ vraie ;
+\item $R$ fausse et $S$ fausse ;
+\end{enumerate}
+le sens usuel de $R$ implique $S$ c'est d'exclure le 2\textsuperscript{e} cas, c'est donc d'avoir les cas 3) et 4), (donc $(\neg R)$), ou le 1\textsuperscript{er} cas (donc $S$ vraie) d'où cet assemblage $S\lor(\neg R)$. Mais cette explication n'est donnée que par gentillesse, pour montrer qu'on garde les pieds sur terre... En fait on a bien le droit de considérer l'assemblage $S\lor(\neg R)$ et de le représenter par le symbole $R\Rightarrow S$, c'est le pouvoir créateur du verbe.
+
+Pour clore cette présentation, introduisons \emph{l'équivalence logique} qui se note $R\Leftrightarrow S$, qui se lit « $R$ est équivalente à $S$ », qui signifie $[(R\Rightarrow S)\text{ et }(S\Rightarrow R)]$ et qui sera l'assemblage suivant $(S\lor(\neg R))$ et $(R\lor(\neg S))$ où il ne reste qu'à enlever le \emph{et} : on a donc :
+\begin{logicbox}
+\[
+\neg\Bigl(\neg(S\lor\neg R)\lor\neg(R\lor\neg S)\Bigr)\quad\text{se note}\quad R\Leftrightarrow S.
+\]
+\end{logicbox}
+
+Devant de tels assemblages, on comprend la nécessité de simplifications de langage !
+
+\BellaSection{1. Axiomes, théorèmes, tautologies...}
+Les \emph{axiomes} sont des relations énoncées explicitement, une fois pour toutes, ou des règles où interviennent ces relations.
+
+Par exemple, 4 axiomes logiques, (AL), du 2\textsuperscript{e} type servent à justifier les raisonnements logiques. Ceci dans la conception de Bourbaki des mathématiques, mais ce n'est pas la seule.
+
+\begin{axiomlist}
+\item[(AL1)] Si $R$ est une relation, la relation $(R\text{ ou }R)\Rightarrow R$ est vraie.
+\item[(AL2)] Si $R$ et $S$ sont deux relations, la relation $R\Rightarrow(R\text{ ou }S)$ est vraie.
+\item[(AL3)] Si $R$ et $S$ sont des relations, la relation $(R\text{ ou }S)\Rightarrow(S\text{ ou }R)$ est vraie.
+\item[(AL4)] Si $R,S$ et $T$ sont des relations, la relation
+\[
+(R\Rightarrow S)\Rightarrow\bigl((R\text{ ou }T)\Rightarrow(S\text{ ou }T)\bigr)
+\]
+est vraie.
+\end{axiomlist}
+
+On s'aperçoit que ces énoncés sont évidents : en fait ils définissent les règles d'emploi du mot \emph{ou}.
+
+Des axiomes du 1\textsuperscript{er} type, on en rencontrera, (axiome de l'infini dans la théorie des cardinaux, axiome du choix par exemple).
+
+Plus gênante est l'introduction du mot « vraie » dans ce qui précède. On appelle \emph{relation vraie}, ou \emph{théorème} ce que l'on obtient par application répétées des \emph{règles de vérité}, parmi lesquelles on a :
+\begin{axiomlist}
+\item[(RV1)] Toute relation obtenue par application d'un axiome est vraie.
+\item[(RV2)] Étant donnée des relations $R$ et $S$, si la relation $(R\Rightarrow S)$ est vraie, et si $R$ est vraie, alors $S$ est vraie.
+\end{axiomlist}
+
+Une relation est dite \emph{fausse lorsque sa négation est vraie}.
+
+On découvre ici la \emph{différence essentielle entre les mathématiques et les sciences expérimentales} : la véracité d'une relation mathématique vient de ce qu'on la démontre à partir des règles du jeu que l'on s'est données, et non pas parce qu'elle est vérifiée expérimentalement.
+
+Une relation $R$ est dite \emph{indécidable} si elle n'est ni vraie ni fausse, donc s'il n'existe pas de démonstration de sa véracité, ni de la véracité de sa négation. Si une telle situation se présente, on peut alors construire deux théories mathématiques, l'une prenant comme axiome (du 1\textsuperscript{er} type) la véracité de $R$, l'autre la véracité de non$R$.
+
+C'est ainsi que s'est introduite l'\emph{hypothèse du continu} : proposition affirmant qu'il n'existe pas d'ensemble dont le cardinal est compris strictement entre $\operatorname{Card}(\mathbb N)$ et $\operatorname{Card}(\mathbb R)$.
+
+\BellaCorrectionNote{Cantor avait conjecturé la véracité de cette hypothèse. Gödel puis Cohen ont établi son indépendance relativement aux axiomes usuels de la théorie des ensembles : Gödel montra que, si ZFC est cohérent, l'hypothèse du continu ne peut y être réfutée ; Cohen montra ensuite qu'elle ne peut pas non plus y être démontrée.}{Cantor avait conjecturé la véracité de cette hypothèse. En 1963, un mathématicien américain, Cohen a démontré son indécidabilité on peut donc introduire deux théories mathématiques.}{此处原文把“独立性”的全部结论归于 Cohen。更准确地说，Gödel（1940）与 Cohen（1963）的结果合在一起给出 CH 相对于 ZFC 的独立性（在相应一致性假设下）。}
+
+Enfin, \emph{une relation peut être contradictoire}, c'est-à-dire à la fois vraie et fausse : s'il existe une telle relation c'est que les axiomes introduits présentent des incompatibilités logiques : il faudrait donc affaiblir ou abandonner certains d'entre eux.
+
+Une dernière remarque : une fois posées toutes les données, l'édifice entier est construit et contient toutes ses conséquences : les mathématiciens ne font que les découvrir, ils ne les inventent pas.
+
+Revenons sur terre, si l'on peut parler ainsi, à propos des tautologies.
+
+\emph{Les tautologies sont les théorèmes démontrés uniquement à partir des axiomes logiques précédents.} Là encore ce sont des énoncés qui semblent évidents. En voici quelques uns :
+
+\begin{description}[leftmargin=4em,labelwidth=3.4em,labelsep=.6em,font=\itshape]
+\item[(TL1)] Si $R,S,T$ sont des relations, si $(R\Rightarrow S)$ et $(S\Rightarrow T)$ sont vraies alors $(R\Rightarrow T)$ est vraie.
+\end{description}
+En voici la démonstration. Rappelons que $R\Rightarrow S$ c'est l'assemblage $S\lor(\neg R)$.
+
+\emph{En appliquant AL4} aux relations $S,T,(\text{non}R)$ respectivement on a :
+\[
+(S\Rightarrow T)\Rightarrow\bigl((S\text{ ou }\text{non}R)\Rightarrow(T\text{ ou }\text{non}R)\bigr)\quad\text{est vraie},
+\]
+soit encore
+\[
+(S\Rightarrow T)\Rightarrow\bigl((R\Rightarrow S)\Rightarrow(R\Rightarrow T)\bigr)\quad\text{est vraie}.
+\]
+Mais la \emph{règle de vérité RV2} s'applique car, par hypothèse, $S\Rightarrow T$ est vraie, donc $((R\Rightarrow S)\Rightarrow(R\Rightarrow T))$ est vraie.
+
+Enfin, comme $R\Rightarrow S$ est vraie par hypothèse, la \emph{règle de vérité RV2} là encore donne la conclusion $(R\Rightarrow T)$ est vraie.
+
+L'individu normalement constitué doit se demander où il est tombé, et se dire que mieux vaut laisser les spécialistes, (les logiciens) s'exciter sur ces tautologies et partir d'un peu plus loin dans la théorie. C'est ce que nous allons faire en citant cependant les tautologies les plus importantes.
+
+\begin{description}[leftmargin=4em,labelwidth=3.4em,labelsep=.6em,font=\itshape]
+\item[(TL2)] Si $R$ est une relation, la relation $(R\Rightarrow R)$ est vraie.
+\item[(TL3)] Si $R$ est une relation, la relation $(R\Leftrightarrow\text{non}(\text{non}R))$ est vraie.
+\item[(TL4)] Si $R$ et $S$ sont des relations, la relation
+\[
+(R\Rightarrow S)\Leftrightarrow\bigl((\text{non}S)\Rightarrow(\text{non}R)\bigr)
+\]
+est vraie. (C'est le principe du raisonnement par « contraposition ».)
+\item[(TL5)] Si $R$ et $S$ sont des relations, alors les relations $((R\text{ et }S)\Rightarrow R)$ et $((R\text{ et }S)\Rightarrow S)$ sont vraies ; si de plus $R$ et $S$ sont vraies, alors $(R\text{ et }S)$ est vraie.
+
+(C'est heureux ! sinon, que voudrait dire \emph{et}.) Le raisonnement par l'absurde en découle.
+
+\item[(TL6)] Soient $R,S$ et $T$ trois relations, si les 3 relations $(R\text{ ou }S)$, $(R\Rightarrow T)$, $(S\Rightarrow T)$ sont vraies alors $T$ est vraie.
+
+(C'est le raisonnement par disjonction des cas).
+\end{description}
+
+En fait ces tautologies, \emph{qui se démontrent}, mettent en place les mécanismes de raisonnement employés par la suite.
+
+\BellaSection{2. Substitutions, quantificateurs}
+Il faut introduire, dans la « mécanique » des mathématiques un procédé permettant le calcul de valeurs.
+
+Pour cela, si $R$ est une relation, $A$ un objet mathématique, et $x$ une lettre, ou encore un objet mathématique « indéterminé », si dans l'assemblage $R$ on remplace la lettre $x$ par l'assemblage $A$, on obtient quelque chose : on veut que ce quelque chose soit encore une relation mathématique.
+
+Dans les critères de formation des relations, on met donc la condition suivante : en substituant à $x$, indéterminé, l'objet $A$, dans la relation $R$, on obtient une relation.
+
+Bien sûr la relation obtenue peut être vraie ou fausse suivant que la relation $R$ du départ l'est.
+
+En particulier, si $x$ ne figure pas dans $R$, quand on substitue $A$ à $x$ dans $R$ on obtient... $R$, et dire que la relation obtenue en substituant $A$ à $x$ dans $R$ est vraie revient à dire que $R$ est vraie.
+
+Le mécanisme de substitution conduit à la tautologie suivante :
+\begin{description}[leftmargin=4em,labelwidth=3.4em,labelsep=.6em,font=\itshape]
+\item[(TL7)] Soit $R$ une relation, $x$ une lettre, $A$ un objet mathématique. Si la relation $R$ est vraie, il en est de même de la relation obtenue en substituant $A$ à $x$ dans $R$.
+\end{description}
+Cette « règle de bon sens » se démontre. Pour cela on commence par la vérifier sur les relations obtenues par application d'un axiome, et ceci pour tous les axiomes, (que nous n'avons pas écrits..., c'est le travail du logicien).
+
+On a enfin besoin d'un quatrième procédé logique pour former des relations : celui qui exprime le fait qu'étant donné une relation $R$, une lettre $x$, il existe au moins un objet mathématique $A$ qui, substitué à $x$, donnera une relation vraie.
+
+On utilisera le signe $\exists$ pour représenter ce « il existe » avec son sens intuitif, et ce symbole appelé \emph{quantificateur existentiel} va avoir son emploi réglementé par des axiomes logiques.
+
+On va noter $(A\mid x)R$ pour « on substitue $A$ à $x$ dans $R$ ». On a alors
+\begin{description}[leftmargin=4em,labelwidth=3.4em,labelsep=.6em,font=\itshape]
+\item[(AL5)] Soit $R$ une relation, $x$ une lettre, $A$ un objet mathématique. Alors la relation
+\[
+(A\mid x)R\Rightarrow(\exists x)R
+\]
+est vraie.
+\end{description}
+(Bien sûr $(\exists x)R$ signifie qu'il existe un objet mathématique vérifiant $R$, et l'axiome logique 5, dit qu'en pratique, on justifie ce résultat en exhibant l'objet $A$.)
+
+Signalons qu'on obtient alors un symbole abréviation, $\forall$, appelé \emph{quantificateur universel}, (souvent appelé « pour tout ») et qui se « définit » comme suit.
+
+\begin{logicbox}
+On désigne par $\boxed{(\forall x)R}$ la relation $\boxed{\neg\bigl((\exists x)\neg R\bigr)}$.
+\end{logicbox}
+(Avoir $R$, pour tout $x$, c'est ne jamais avoir non$R$, donc n'avoir aucun $x$ vérifiant non$R$ : c'est conforme au langage usuel.)
+
+J'arrête ici ce bavardage sur les fondements d'une théorie mathématique. L'idée à en dégager c'est qu'au départ, on se donne des signes, des règles d'emploi de ces signes, (qui codifient un certain nombre d'idées) et qu'ensuite tout se fait conformément à ces règles.
+
+Mais aussi que la théorie construite n'est pas figée, et qu'on peut, en cours de route, être amené à introduire de nouvelles règles (axiomes) comme nous le verrons avec l'axiome du choix, ou l'axiome de l'infini.
+
+Pour conclure, les mathématiques sont constituées \emph{à partir de signes que l'on assemble suivant certaines règles pour obtenir des relations}.
+
+Parmi ces relations certaines portent le nom d'\emph{objets mathématiques} ou encore \emph{ensembles} (et oui !) : ce ne sont pas toutes les relations possibles. Pour obtenir un ensemble (ou objet mathématique) il faut utiliser des relations d'un type particulier, encore appelées \emph{collectivisantes}.
+
+\emph{Par exemple :}
+\begin{description}[leftmargin=4em,labelwidth=3.4em,labelsep=.6em,font=\itshape]
+\item[OM1] Toute lettre est un objet mathématique.
+\end{description}
+Ceci signifie qu'en plus de signes logiques, il y en a d'autres, ici nous prenons les lettres de l'alphabet.
+
+\begin{description}[leftmargin=4em,labelwidth=3.4em,labelsep=.6em,font=\itshape]
+\item[OM2] Si $A$ et $B$ sont des objets mathématiques $\mathfrak J AB$ est un objet mathématique.
+\end{description}
+C'est l'introduction d'un objet, appelé \emph{couple} formé des objets $A$ et $B$, qui est noté en fait $(A,B)$ et qui symbolise la notion usuelle de couple, attachée à la nature humaine et en fait à la reproduction sexuée. On verra au chapitre suivant les règles d'emploi de ce symbole $\mathfrak J$.
+
+Bien sûr, il y a d'autres règles de formation d'ensembles. On verra au chapitre suivant un exemple de relation non collectivisante.

@@ -1,0 +1,324 @@
+一个特别值得注意的事是，若在某点 $t_0$ 处 $\alpha'(t_0)=0$。这时，切向量失去了方向！可是恰好是在这种点上，出现了种种内容极丰富的概念和方法，这种点现在都称为“奇点”，一看到这个名词，读者会以为出了坏事：什么东西不连续了，变成无穷大了之类，完全是含有贬义，不对！我们的定义中即已规定了 $\alpha(t)$ 的各个分量 $x_i(t),i=1,\cdots,n$，都属于 $C^k$，所谓“奇”就只是切向量失去了方向，因而产生了极为丰富的后果。说句笑话，不妨把“奇点”理解为“出现奇迹的点”。可惜，在这本书里我们完全不可能涉及这些问题了。
+
+如果不涉及奇点，我们想讨论一下什么是两条曲线 $\alpha(t)$ 与 $\beta(t)$ 在 $t=t_0$ 处相切。首先，它们在 $t=t_0$ 时相交：$\alpha(t_0)=\beta(t_0)$（记这个公共点为 $P$），由此我们知道
+\[
+ \lim_{t\to t_0}\lVert\alpha(t)-\beta(t)\rVert=0.
+\]
+现在我们要把 $\lVert\alpha(t)-\beta(t)\rVert$ 与 $|t-t_0|^l$（$l$ 为正整数）两个无穷小量比较，如果
+\[
+ \lVert\alpha(t)-\beta(t)\rVert=o(|t-t_0|^k)
+\]
+（但不能是 $o(|t-t_0|^{k+1})$），这就说，两条曲线在 $P$ 点有 $k$ 阶接触（contact of order $k$）。从直观上很清楚，只要 $k\ge1$，这两条曲线就在 $P$ 点相切，因此有公共的切向量，也就是有公共的方向。但是，仅仅只有通常微积分教材上讲的具有公共方向因而相切，还不能保证有 $k$ 阶接触。一个明显的例子是 $\alpha(t)$ 与 $\lambda\alpha(t)$，这里 $\alpha(0)=0$，$\lambda$ 为实数，$\lambda\ne1$，$\alpha(t)$ 与 $\lambda\alpha(t)$ 在 $t=0$ 点并非 1 阶接触。提出“接触”这个概念的好处在于，上面我们都只在 $\mathbb R^n$ 中讨论曲线，而 $\mathbb R^n$ 中有坐标系和坐标轴，可以借此定义方向。但是我们还要讨论例如曲面上的切线，例如地球表面上有子午线和纬圈，但是没有坐标轴，在曲面上定义平行性极为困难，那么怎样定义方向呢？有了接触概念后问题就很容易解决了。曲线在 $P$ 点相切的关系是一个等价关系，利用这个等价关系把过 $P$ 点的曲线分类，每一个等价类就是一个方向。现在看来，讲这样的话似乎多余，但到了将来，当需要在没有坐标轴的情况下讨论方向时，就会看到这个做法的好处了。能对之进行线性运算的“对象”就是向量，于是这些等价类将可以证明成为向量，而且会形成一个 $n$ 维线性空间。这样一来，我们前面讲的概念和结果都可以大为推广了。这在物理学上极为重要。本书最后一章 §2 将详细讨论这些等价类何以成为一个 $n$ 维线性空间。
+
+以下我们用 $l$ 表示曲线 $\alpha:I\to\mathbb R^m$ 在上述接触关系下的等价类。上面已经说了每一个这样的等价类就定义了一个向量，它既有大小，又有方向（除了零向量之外），于是就可以把古典的微分学中的方向导数概念移植过来：
+
+\noindent\textbf{定义5}\quad 设 $\alpha$ 是 $\mathbb R^m$ 中的一条 $C^1$ 曲线，$f:\mathbb R^m\to\mathbb R^n$ 是可微映射，我们称复合映射 $f\circ\alpha$ 的微分为 $f$ 沿 $\alpha$ 的方向导数：
+\begin{equation}
+ d(f\circ\alpha)=df\circ d\alpha.
+ \tag{28}
+\end{equation}
+现在用坐标形式把它表示出来，设 $\alpha(t)={}^t(x_1(t),\cdots,x_m(t))$，$f={}^t(f_1,\cdots,f_n)$，而 $f_i=f_i(x_1,\cdots,x_m)$。于是
+\[
+ d\alpha={}^t(\dot x_1(t),\cdots,\dot x_m(t)),
+\]
+\[
+ df=
+ \begin{pmatrix}
+ \dfrac{\partial f_1}{\partial x_1}&\cdots&\dfrac{\partial f_1}{\partial x_m}\\
+ \vdots&&\vdots\\
+ \dfrac{\partial f_n}{\partial x_1}&\cdots&\dfrac{\partial f_n}{\partial x_m}
+ \end{pmatrix}.
+\]
+而
+\begin{equation}
+ df\circ d\alpha
+ ={}^t\!\left(
+ \sum_{i=1}^m\frac{\partial f_1}{\partial x_i}\dot x_i(t),\cdots,
+ \sum_{i=1}^m\frac{\partial f_n}{\partial x_i}\dot x_i(t)
+ \right).
+ \tag{29}
+\end{equation}
+前面的上标 $t$ 表示转置，因此上式是一个竖向量。
+
+这样看来，我们说可以证明 $\alpha$ 的等价类表示一个向量。现在就得找到一个将 $\alpha$ 与一个 $m$ 维向量对应起来的方式
+\[
+ \alpha\longrightarrow\bigl(\dot x_1(t),\cdots,\dot x_m(t)\bigr).
+\]
+它的方向固然是由上式决定的，它的大小也是由上式决定的，
+\[
+ \lVert\alpha\rVert=\left[\sum_{i=1}^m\dot x_i^2(t)\right]^{1/2}.
+\]
+现在问，如果用一个与 $\alpha$ 等价于 $t_0$ 点处的曲线 $\beta$ 代替 $\alpha$，结果如何？上面已说了，$\alpha$ 与 $\beta$ 在 $t_0$ 点等价，即二者在 $t_0$ 点有 $k$ 阶接触，$k\ge1$。因此一方面 $\alpha(t_0)=\beta(t_0)$，即通过同一点，另一方面
+\[
+ \lVert\alpha(t)-\beta(t)\rVert=o(|t-t_0|^k),
+\]
+所以 $\dot\alpha(t_0)=\dot\beta(t_0)$，即都可以用 $(\dot x_1(t_0),\cdots,\dot x_m(t_0))$ 表示。由(29)即知 $df\circ d\alpha=df\circ d\beta$（$t=t_0$）。所以定义中的方向导数值其实只依赖于 $\alpha$ 的等价类 $l$，$l$ 作为一个向量，其方向就是 $(\dot x_1(t),\cdots,\dot x_m(t))$ 的方向，其大小则是
+\[
+ \lVert l\rVert=\left[\sum_{i=1}^m\dot x_i^2(t)\right]^{1/2}.
+\]
+以下我们用 $\dfrac{\partial f}{\partial l}(p)$ 来表示在 $P$ 点（即 $t=t_0$ 处）沿 $\alpha$ 之方向导数，而且就说成是“沿 $l$ 方向的”方向导数。
+
+这里的讲法和通常微积分教本中的讲法有些不同。在那里，讲到方向导数时，是用一个单位向量 $u={}^t(u_1,\cdots,u_m)$ 来表示此方向，然后设 $P$ 点坐标是 $(x_1,\cdots,x_m)$，作通过 $P$ 点的以 $u$ 为方向余弦的直线 $\alpha:t\mapsto(x_1+tu_1,\cdots,x_m+tu_m)$，然后在 $t=0$ 处对 $f$ 求 $\dfrac{\partial f}{\partial\alpha}$，利用(29)就有
+\[
+ \frac{\partial f}{\partial\alpha}
+ =\lim_{t\to0}\frac{f(x+tu)-f(x)}{t}.
+\]
+为什么我们不采用通常的讲法？一是因为可能需要作坐标变换，而原来的直线可能变成曲线（如果坐标系总画成直角坐标系的话），而甚至可能根本没有直线，例如在曲面上。而通过重新参数化 $t=t(\tau)$ 以后 $\lVert u\rVert=1$ 的这一条件也可能不成立。这一点其实前面也讲过，如果把参数 $t$ 看成时间，则切向量 $\dot x(t)$ 应理解为速度。这样一来，$\dfrac{\partial f}{\partial\alpha}$ 就成了：当点 $x$ 以速度 $\dot x$ 运动时，$f$ 对时间的变化率 $df\circ d\alpha$ 就是方向导数。$df\circ d\alpha$ 就理解为：首先 $t$ 的变化造成了 $x$ 位置之变化 $d\alpha$（其变率为 $(\dot x_1(t),\cdots,\dot x_m(t))$），位置的变化再造成 $f$ 的变化 $df$（其变化率为 $(\dfrac{\partial f}{\partial x_1},\cdots,\dfrac{\partial f}{\partial x_m})$），二者合成即得 $df\circ d\alpha$。
+
+进一步可以定义向量场。设 $\Omega\subset\mathbb R^m$ 为一开集，而在 $\Omega$ 内之每一点 $x$ 处都定义一个向量
+\[
+ X(x)=\sum_{i=1}^m X_i(x)\frac{\partial}{\partial x_i},
+\]
+我们就说有一个向量场。如果 $X_i(x)\in C^k(\Omega)$，就说 $X(x)$ 是一个 $C^k$ 向量场。常微分方程理论告诉我们，这时经过 $\Omega$ 中任一点 $P$ 均可找到唯一一条曲线 $\alpha(t):I\to\mathbb R^m$，使 $\alpha(t_0)=x_0$ 即为 $P$ 点之坐标，而沿此曲线恒有 $\dot\alpha(t)=X(\alpha(t))$。这条曲线就称为此向量场经过 $P$ 点的积分曲线。以上的讨论中我们要利用 $k\ge1$ 这一事实，才能保证经过任一 $P$ 点均有唯一的积分曲线通过。
+
+既然有了向量场，也就有了一个方向（在现在的问题中，即是 $(X_1,\cdots,X_m)$ 的方向），也就是在此点的 $\dot\alpha(t)$，所以也就可以定义这个方向的方向导数和(28)式。我们约定，把这个方向导数算子记作 $D_{X(x)}$，即是说按下式定义它：
+\begin{equation}
+ D_{X(x)}f(x)=df(x)\circ d\alpha(x).
+ \tag{30}
+\end{equation}
+这里 $d\alpha(x)$ 其实应该写成 $d\alpha(t)$，$t$ 是相应于 $x$ 的参数值。$D_{X(x)}$ 是一个很重要的算子，其特点如下：
+
+上面我们已经说过，可以把接触于某点的曲线所形成的等价类当作一个向量，如果在这个等价类中选一个代表元，即曲线 $\alpha(t)$，则这个向量有一个坐标表示 $\dot\alpha(t)={}^t(\dot\alpha_1(t),\cdots,\dot\alpha_m(t))$，$t$ 是该点 $P$ 的相应的参数值。按同样的方法，方向导数算子 $D_{X(x)}$ 也是一个向量。因为由(29)式，$D_{X(x)}$ 作用于一个 $n$ 维向量 $f(x)\in\mathbb R^n$ 后得出
+\begin{equation}
+ D_{X(x)}f(x)=df(x)\circ d\alpha(x)
+ ={}^t\!\left(
+ \sum_{j=1}^m X_j(x)\frac{\partial f_1}{\partial x_j},\cdots,
+ \sum_{j=1}^m X_j(x)\frac{\partial f_n}{\partial x_j}
+ \right).
+ \tag{31}
+\end{equation}
+所以
+\begin{equation}
+ D_{X(x)}\sim X(x)=\sum_{j=1}^m X_j(x)\frac{\partial}{\partial x_j}.
+ \tag{32}
+\end{equation}
+正如我们可以认为曲线的等价类就是向量一样，也可以认为微分算子 $X(x)=\sum_{j=1}^mX_j(x)\dfrac{\partial}{\partial x_j}$ 是一个向量。反过来也对。正因为这样，$D_{X(x)}$ 也可以写成 $D_{\partial/\partial x_1}$ 等等。但是认真想一下，这样做的“毛病”无非是使我们感到怪怪的。如果说 $D_1=D_{\partial/\partial x_1}$ 表示沿 $x_1$ 方向的方向导数，就是令自变量在 $x_1$ 方向得到一个改变增量 $\Delta x_1$，然后计算函数 $f$ 的相应的改变增量 $\Delta f$，并令 $D_{x_1}=\lim_{\Delta x_1\to0}\dfrac{\Delta f}{\Delta x_1}$，这样的说法谁也不会奇怪。可是现在我们有了 $D_{\partial/\partial x_1}$，$D$ 的下标是 $\dfrac{\partial}{\partial x_1}$，我们怎么能做出它的改变增量 $\Delta(\dfrac{\partial}{\partial x_1})$ 呢？但是再回过来看看(32)式，这些疑问会逐步释然于怀了。我们说，把微分算子 $X(x)=\sum_{j=1}^mX_j(x)\dfrac{\partial}{\partial x_j}$ 就看成向量 $(X_1(x),\cdots,X_m(x))$，这一点大概读者会能接受得了，但是既然承认了这一点，也就应该承认 $\dfrac{\partial}{\partial x_1},\cdots,\dfrac{\partial}{\partial x_m}$ 是基底，因此例如 $\dfrac{\partial}{\partial x_1}$ 也是一个向量，即在 $x_1$ 方向上分量为 1，其他方向上分量为 0 的向量。所以它的坐标表示就是 $\dfrac{\partial}{\partial x_1}=(1,0,\cdots,0)$。这样一来，$D_{\partial/\partial x_1}$ 就表示对于向量 $(1,0,0)$ 求方向导数，也就是 $D_1$！既然 $D_{\partial/\partial x_1}=D_1$，又何必兴师动众用那么复杂的记号呢？
+
+$D_{\sum X_j(x)\partial/\partial x_j}=D_{X(x)}$ 这样的记号有许多重要性质：
+
+（1）首先它要作用于函数上。函数是“被作用者”。这时它有两个性质，一是线性：
+\begin{equation}
+ D_X(C_1f_1+C_2f_2)=C_1D_Xf_1+C_2D_Xf_2,
+ \tag{33}
+\end{equation}
+$C_1,C_2$ 是常数；二是莱布尼茨性质，即
+\begin{equation}
+ D_X(f_1f_2)=f_1D_Xf_2+f_2D_Xf_1.
+ \tag{34}
+\end{equation}
+这一点由(29)式直接验证即知。
+
+（2）其次，它是按 $X(x)$ 的要求作用于函数的。$X(x)$ 可是说是“作用者”，而这些作用者又有线性结构，那么 $D_{X(x)}$ 对这种结构又有什么性质呢？这是十分值得注意的。有
+
+\noindent\textbf{定理6}\quad 设 $g_1(x),g_2(x)$ 是 $\Omega$ 中的 $C^k$ 函数，则对 $\Omega$ 中的 $C^k$ 向量场 $X_1(x),X_2(x)$ 恒有
+\begin{equation}
+ D_{g_1X_1+g_2X_2}f(x)=g_1D_{X_1}(f)(x)+g_2D_{X_2}(f)(x),
+ \tag{35}
+\end{equation}
+$f$ 是 $\Omega$ 上的可微函数。
+
+\noindent\textbf{证}\quad 因为 $D_Xf(x)=df\circ\dot\alpha(x)$，这里 $\dot\alpha(x)$ 即是方向场 $X$ 在 $x$ 之值，所以令 $X_1,X_2$ 相应的积分曲线是 $\alpha_1,\alpha_2$，则 $g_1X_1+g_2X_2$ 在 $x$ 之值应为 $g_1(x)\dot\alpha_1(x)+g_2(x)\dot\alpha_2(x)$：
+\[
+ D_{g_1X_1+g_2X_2}(f)(x)
+ =g_1(x)df\circ\dot\alpha_1(x)+g_2(x)df\circ\dot\alpha_2(x)
+\]
+\[
+ =g_1(x)D_{X_1}(f)(x)+g_2(x)D_{X_2}(f)(x).
+\]
+(35)式得证。这里我们应用了以下事实：$df$ 实际上就以乘以 $n\times m$ 矩阵
+\[
+ \frac{\partial(f_1,\cdots,f_n)}{\partial(x_1,\cdots,x_m)},
+\]
+$\dot\alpha_i(x)$ 也是一个 $m\times1$ 矩阵，$g_i(x)$ 则只是一个标量因子，所以
+\[
+ \frac{\partial(f_1,\cdots,f_n)}{\partial(x_1,\cdots,x_m)}g_1(x)\dot\alpha_1(x)
+ =g_1(x)\frac{\partial(f_1,\cdots,f_n)}{\partial(x_1,\cdots,x_m)}\dot\alpha_1(x).
+\]
+
+总结起来，$D_Xf$ 中其实含有两个“成分”，一是“被作用者”$f$，$D_Xf$ 对于它既是线性的，又适合莱布尼茨法则；二是“作用者”$X$，$D_Xf$ 按定理6其实还不只是线性地依赖于它。因为(35)式只要当 $g_1,g_2$ 取常数时成立，就已经表明 $D_Xf$“线性”依赖于 $X$ 了，可是现在它甚至对 $C^k$ 函数 $g_1(x),g_2(x)$ 也成立，可见这个依赖性还超过“线性”。这是一种新的代数结构，也是有用的。
+
+可是，我们费了这许多口舌都是为了另一件事。现在我们只是对一个函数 $f$（映射 $f:\mathbb R^m\to\mathbb R^n$ 则是 $n$ 个函数）作方向导数，而更严重的问题却是要对更复杂的对象，例如对一个向量场 $Y$ 可作方向导数 $D_XY$，而且不是在 $\mathbb R^m$ 的某一个区域 $\Omega$ 上作，甚至是在一个曲面以至更一般的弯曲的空间上作，而且这在几何和物理学上都十分重要。有鉴于此，尽管本书讲不到这些问题，预为读者计，现在有一个“心理准备”，一旦遇到这类问题会有似曾相识之感，这是会有好处的，值得现在花点力气。
+
+\Needspace{7\baselineskip}
+\noindent\textbf{5. 高阶微分}\quad 本节最后，我们简单讨论一下一个映射 $f:\Omega\subset\mathbb R^m\to\mathbb R^n$ 的高阶微分。作为一个启发我们先看最简单的一元函数 $f(x)$ 的二阶微分。现在 $\Omega$ 将成为 $\mathbb R$ 的一个区间，$\mathbb R^m$ 也成为 $\mathbb R$。首先看一阶微分 $df$，在 $x\in\Omega$ 点，一阶微分 $df(x)$ 就是 $f(x+h)-f(x)=\Delta_hf(x)$ 关于 $h$ 的线性部分：
+\[
+ \Delta_hf(x)=df(x)\cdot h+o(h).
+\]
+于是 $df(x)$ 又是一个由 $x\in\Omega$ 到 $df(x)$ 的映射。不过这里 $df(x)$ 是一个线性映射，它把 $\Omega$ 的切空间，即仍为 $\mathbb R$（前面说过这就是 $h$ 的空间）映为靶空间 $\mathbb R^n$ 的切空间（仍为 $\mathbb R^n$，现在 $n=1$）。也就是 $\mathbb R^1\to\mathbb R^1$ 的线性映射（即一阶矩阵）。$n=1$ 时，一阶矩阵就是一个数，这个数即是古典意义下的导数 $f'(x)$。因为这个数依赖于 $x$，所以是一个函数。但是这个函数不是线性函数。现在再求这个函数的微分，就得到二阶微分。因此，我们又要讨论 $f'(x+h)-f'(x)$。但是有什么理由要求现在的自变量增量 $\Delta x$ 仍旧是 $h$ 呢？因此，现在可以设 $\Delta x=k$ 而 $h$ 和 $k$ 是独立的。由这个思想出发，我们应该这样来讨论 $f:\Omega\subset\mathbb R^m\to\mathbb R^n$ 的二阶微分。
+
+首先假设有一个微分 $df(x)$（有的书上则把微分写成 $T_xf$ 或 $(Tf)(x)$，大概是因为 $df$ 作为一个映射称为 $f$ 的切映射，而 $T$ 正是“切”（tangent）的第一个字母），即有
+\[
+ \Delta_hf(x)=f(x+h)-f(x)=(df)(x)\cdot h+o(h).
+\]
+$(df)(x)$ 是由 $\Omega$ 到 $n\times m$ 实矩阵的空间的映射，即是：有一点 $x\in\Omega$，即有一个这样的矩阵，所以是矩阵值函数，它当然一般是非线性的。$n\times m$ 实矩阵有 $mn$ 个实数元，反过来，凡有 $nm$ 个实数，总可以写成一个 $n\times m$ 实矩阵，所以这类矩阵所成的空间是 $\mathbb R^{nm}$。但是这样来看矩阵空间并不好，因为还得规定一个规矩：哪一个实数放在第 $k$ 行 $l$ 列（但以后我们在讨论正交矩阵空间时确是这样做的，即已隐含地规定好了这样一个规矩），所以我们把每个这样的矩阵都看成由 $\mathbb R^m$ 到 $\mathbb R^n$ 的线性映射，并把这种映射空间记作 $L(\mathbb R^m,\mathbb R^n)$。如果要排除对记号 $L(\mathbb R^m,\mathbb R^n)$ 的生疏感，就把它看成矩阵空间，甚至是赋有某种次序规定的 $\mathbb R^{nm}$。总之，它是一个 $nm$ 维线性空间。
+
+$df:\Omega\to L(\mathbb R^m,\mathbb R^n)$。于是我们可以考虑 $df$ 的微分 $d(df)(x)$，即由 $\Omega$ 之切空间 $\mathbb R^m$ 到 $L(\mathbb R^m,\mathbb R^n)$ 的切空间的线性映射：
+\[
+ (df)(x+k)-(df)(x)=d(df)(x)\cdot k+o(k).
+\]
+但因 $L(\mathbb R^m,\mathbb R^n)$ 是一个线性空间，它的切空间就是其自身，所以 $d(df)(x)$ 对每一点 $x\in\Omega$ 定义了由 $\mathbb R^m$ 到 $L(\mathbb R^m,\mathbb R^n)$ 的线性映射，即
+\[
+ d(df)(x):\mathbb R^m\to L(\mathbb R^m,\mathbb R^n).
+\]
+所以我们有
+
+\noindent\textbf{定义6}\quad 若 $df:\Omega\to L(\mathbb R^m,\mathbb R^n)$ 为连续可微，\jiaokan{此处正文中的映射类型依前文关系整理为 $df:\Omega\to L(\mathbb R^m,\mathbb R^n)$。原文在定义处将 $(df)(x)$ 的定义域写成 $\mathbb R^m$，与紧接此前对 $df$ 为矩阵值函数的说明不相容；对固定 $x$，定义域为 $\mathbb R^m$ 的是 $d(df)(x)$。}则其微分是 $\Omega\to L(\mathbb R^m,L(\mathbb R^m,\mathbb R^n))$ 的线性映射，称为 $f$ 在 $\Omega$ 中的二阶微分，记作 $d^2f(x)$，这种映射称为属于 $C^2(\Omega)$ 类。
+
+我们要证明，$L(\mathbb R^m,L(\mathbb R^m,\mathbb R^n))$ 即双线性映射 $L(\mathbb R^m,\mathbb R^m;\mathbb R^n)$ 的空间。所谓双线性映射即映射 $\mathbb R^m\times\mathbb R^m\to\mathbb R^n$，$(h,k)\mapsto l(h,k)$，而对每个分量 $h$ 与 $k$ 分别为线性的映射：
+\[
+ l(h,c_1k_1+c_2k_2)=c_1l(h,k_1)+c_2l(h,k_2),
+\]
+\[
+ l(c_1h_1+c_2h_2,k)=c_1l(h_1,k)+c_2l(h_2,k).
+\]
+这里 $c_1,c_2$ 是常数。于是有
+
+\noindent\textbf{引理7}\quad 我们有同构关系：
+\[
+ L(\mathbb R^m,L(\mathbb R^m,\mathbb R^n))=L(\mathbb R^m,\mathbb R^m;\mathbb R^n).
+\]
+
+\noindent\textbf{证}\quad 从左方取一个元 $l$，对 $h\in\mathbb R^m$，$l\cdot h\in L(\mathbb R^m,\mathbb R^n)$，$l\cdot h$ 对于 $h$ 是线性的。再从 $\mathbb R^m$ 中取一个 $k$，则 $(l\cdot h)(k)\in\mathbb R^n$，令 $(l\cdot h)\cdot k=g$。此式对于 $k$ 也是线性的。显然，我们是从一对元 $(h,k)\in\mathbb R^m\times\mathbb R^m$ 得出了元 $g\in\mathbb R^n$，而且很容易看出，这个对应是双线性的。所以我们得到右方一个元 $\bar l$，而 $(l\cdot h)\cdot k=\bar l(h,k)$。这里 $h$ 在左右双方都取自靠左的一个 $\mathbb R^m$。反之，设有 $\bar l\in L(\mathbb R^m,\mathbb R^m;\mathbb R^n)$，从右方靠左的 $\mathbb R^m$ 中取一个元 $h$，则将得到 $\bar l(h,\cdot)$，需再从靠右的 $\mathbb R^m$ 中取元 $k$，代入 $\bar l(h,\cdot)$ 中才能得到 $\mathbb R^n$ 中一个元 $g$：$\bar l(h,k)=g$。可见 $\bar l(h,\cdot)$ 是映 $k\in\mathbb R^m$ 为 $g\in\mathbb R^n$ 的线性映射，这个映射的线性容易证明。记它为 $(l\cdot h)(\cdot)$，则 $l\cdot h\in L(\mathbb R^m,\mathbb R^n)$，而 $\bar l(h,g)=(l\cdot h)(g)$。总之我们在 $L(\mathbb R^m,L(\mathbb R^m,\mathbb R^n))$ 与 $L(\mathbb R^m,\mathbb R^m;\mathbb R^n)$ 之间建立了一个一一对应关系，而且易见这个一一对应保持线性结构不变，因此得到引理7的证明。
+
+现在利用坐标表示讨论映射 $f:\Omega\subset\mathbb R^m\to\mathbb R^n$ 为 $C^2$ 映射之条件。为方便起见，我们将分别讨论 $f$ 之每一个分量；$f=(f_1,\cdots,f_n)$。于是设 $\mathbb R^m$ 与 $\mathbb R^n$ 中都已有了坐标 $x=(x_1,\cdots,x_m),y=(y_1,\cdots,y_n)$，而
+\[
+ y_i=f_i(x_1,\cdots,x_m),\qquad i=1,2,\cdots,n.
+\]
+现在我们只讨论 $f_1$，并将它写成 $f$，取 $(h,k)\in\mathbb R^m$。如果记一阶微分映射为 $df$，则
+\[
+ f(x+h)-f(x)=(df)(x)\cdot h+o(h).
+\]
+但是，由定义5，$(df)(x)\cdot h$ 正是 $f$ 沿方向 $h$ 的方向导数，用(30)中的记号把它写成 $(D_hf)(x)$。于是由定义6知，所谓 $f\in C^2$ 就是指对 $\Omega$ 中任意 $x$ 以及任意 $h\in\mathbb R^m$，方向导数 $(D_hf)(x)\in C^1$。再取 $k\in\mathbb R^m$，我们又应有
+\[
+ (D_hf)(x+k)-(D_hf)(x)=d(D_hf)(x)k+o(k).
+\]
+再用一次方向导数记号：$d(D_hf)(x)k=D_k(D_h(f))(x)$，而由 $C^2$ 之定义知此式应为 $\Omega$ 中的连续函数。可见这就是 $f:\Omega\to\mathbb R$ 为 $C^2$ 映射的充分必要条件。于是有
+
+\noindent\textbf{定理8}\quad $f:\Omega\to\mathbb R$ 为 $C^2$ 映射的充分必要条件是在取定任意坐标 $x=(x_1,\cdots,x_m)$ 后，古典的二阶偏导数 $\dfrac{\partial^2f}{\partial x_i\partial x_j}$ 为 $\Omega$ 中的连续函数。
+
+\noindent\textbf{证}\quad 在 $\mathbb R^m$ 中取定坐标 $x=(x_1,\cdots,x_m)$，也是由定理6前面的讨论，$\dfrac{\partial}{\partial x_1},\cdots,\dfrac{\partial}{\partial x_m}$ 成为 $\mathbb R^m$ 的一个基底，而任意 $h,k$ 分别可以写为
+\[
+ h=\sum_{i=1}^m h_i\frac{\partial}{\partial x_i},\qquad
+ k=\sum_{j=1}^m k_j\frac{\partial}{\partial x_j}.
+\]
+而由定理6及(32)式
+\[
+ (d^2f)(x)h\cdot k=D_k(D_hf)(x)
+ =\sum_{i,j=1}^m h_i k_j\left[D_{\partial/\partial x_j}\left(D_{\partial/\partial x_i}f\right)(x)\right].
+\]
+于是 $f\in C^2$ 之充分必要条件就是：对任意 $h,k\in\mathbb R^m$，$(d^2f)(x)hk$ 是 $x\in\Omega$ 的连续函数，但此式是 $h,k$ 的双线性形式，它对 $x\in\Omega$ 为古典的连续函数的充分必要条件就是其系数 $D_{\partial/\partial x_j}(D_{\partial/\partial x_i}f)(x)$ 是 $x$ 的连续函数。但是在定理5前的讨论中已经看到 $D_{\partial/\partial x_j}(D_{\partial/\partial x_i}f)(x)$ 即古典的二阶偏导数 $\dfrac{\partial^2f}{\partial x_i\partial x_j}$，故定理得证。
+
+以上我们是对 $f:\Omega\to\mathbb R^1$ 的情况证明定理8的，但是由前面的说明可知对 $f:\Omega\to\mathbb R^n$ 也有类似的结论。
+
+还有一个重要的说明。对于 $f:\Omega\to\mathbb R^1$ 的情况，$d^2f(x)$ 就是一个双线性形式
+\begin{equation}
+ (d^2f)(x)hk=\sum_{i,j=1}^m h_i k_j\frac{\partial^2f}{\partial x_i\partial x_j}.
+ \tag{36}
+\end{equation}
+一个双线性形式与定义它的矩阵是一一对应的，这个矩阵在我们的情况下称为黑塞矩阵（Hessian, Hesse matrix），
+\begin{equation}
+ \operatorname{Hess}_x f(x)=
+ \begin{pmatrix}
+ \dfrac{\partial^2f}{\partial x_1^2}&\cdots&\dfrac{\partial^2f}{\partial x_1\partial x_m}\\
+ \vdots&&\vdots\\
+ \dfrac{\partial^2f}{\partial x_m\partial x_1}&\cdots&\dfrac{\partial^2f}{\partial x_m^2}
+ \end{pmatrix}.
+ \tag{37}
+\end{equation}
+也有一些文献中称此矩阵的行列式为 Hessian。
+
+这一段一开始我们就提出，没有理由让 $\Delta x$ 两次都取成相同的 $h$。因此，我们第一次取 $\Delta x=h$，第二次取 $\Delta x=k$，而得到了一个双线性形式(36)。如果取 $h=k$，则双线性形式(36)将变成一个二次型
+\[
+ \sum_{i,j=1}^m h_i h_j\frac{\partial^2f}{\partial x_i\partial x_j}.
+\]
+反过来，由二次型变成双线性形式亦非难事，线性代数里面讲过这一点。但是如果考虑更高阶的微分，事情就远非这么简单。这也是为什么我们坚持两个 $\Delta x$ 各不相同，而分别为 $h,k$ 的原因。
+
+关于高阶导数在通常的微积分教材中都会介绍一个重要的定理，即是若 $f(x,y)\in C^2$，必有
+\begin{equation}
+ \frac{\partial^2f}{\partial x\partial y}=\frac{\partial^2f}{\partial y\partial x}.
+ \tag{38}
+\end{equation}
+然后一般会举出一两个反例，说明若 $f(x,y)\in C^2$ 这个条件不成立，则上式也可能不成立。有时，人们就会去想，能否找一个较弱的条件保证上式成立。但忽视了这个等式是否有深远的后果。我们要指出，这个结果虽然证明十分简单，却是一个重要的结果，我们将在最后一章讨论它。若它不成立，将意味着什么也是很有意思的事，这一点本书完全不能涉及了。正因为它如此重要，我们将在本书中一直采用的与坐标无关的框架下去讨论它。
+
+若(38)成立，则黑塞矩阵(37)成为一个对称矩阵，而双线性形式成为一个对称的双线性形式。本来，按线性代数的讲法，一个双线性形式 $\sum_{i,j=1}^m a_{ij}h_i k_j$，当 $a_{ij}=a_{ji}$ 恒成立时就称为对称的双线性形式。由它就可以产生二次型 $\sum_{i,j=1}^m a_{ij}h_i h_j$，所以二次型总要适合上述对称性条件 $a_{ij}=a_{ji}$。而一般说来，双线性形式则不一定是对称的。我们即将证明(38)式。在未证明之前，(36)式虽是一个双线性形式，但不能直接在其中令 $h=k$ 而得二次型 $\sum_{i,j=1}^m h_i h_j\dfrac{\partial^2f}{\partial x_i\partial x_j}$。对这个问题以前我们没有很严格地讨论过，在此再提醒一下。
+
+上面已说了，当 $f\in C^2$ 时，(38)成立，而(36)成为一个对称的双线性形式。现在我们要证明
+
+\noindent\textbf{定理9}\quad 设 $f:\Omega\to\mathbb R^n$ 是 $C^2$ 映射，则 $(d^2f)(x)hk$ 是对称的，即
+\[
+ (d^2f)(x)hk=(d^2f)(x)kh.
+\]
+
+\noindent\textbf{证}\quad 这个定理虽然是在与坐标无关的框架下表达的，但它的内容和证法都与通常的微积分教本中证明(38)式是一样的，就是用差商趋向微商，而对差商则利用拉格朗日公式。所以我们先引入差分
+\[
+ (\Delta_hf)(x)=f(x+h)-f(x).
+\]
+为了求二阶微分，我们再引入差分 $\Delta_k$，$k$ 与 $h$ 无关。
+\begin{align}
+ \Delta_k(\Delta_hf)(x)
+ &=(\Delta_hf)(x+k)-(\Delta_hf)(x)\\
+ &=f(x+h+k)-f(x+k)-f(x+h)+f(x).
+ \tag{39}
+\end{align}
+很明显，(39)对于 $h$ 与 $k$ 是对称的，所以
+\[
+ \Delta_k(\Delta_hf)(x)=\Delta_h(\Delta_kf)(x).
+\]
+由差分转向微分时，在通常的微分教本中是用拉格朗日公式，但我们在讲定理2前就指出，$n>1$ 时是没有拉格朗日公式那样的中值定理的，而我们要用一个不等式来代替它，这个不等式就是定理2，也称为中值定理，其中的 $M$ 可以取为连接 $a,b$ 两点的线段上微分（作为一个映射）范数的上确界。于是在考虑 $f(x+h)-f(x)$ 时，我们可以更精确地来估计它。我们本来想估计 $f(x+h)-f(x)$。现在则更精确一点来估计
+\[
+ \Phi(t)=f[x+th]-(df)(x)th,
+\]
+当 $t$ 在 $[0,1]$ 中变动时 $x+th$ 就沿连接 $x$ 与 $x+h$ 的线段从 $x$ 变到 $x+h$，\jiaokan{此处原文写作 $x+t(y-x)$，但本段没有另行定义 $y$，而上下文及同一行所定义的 $\Phi(t)$ 均以 $x+th$ 参数化连接 $x$ 与 $x+h$ 的线段，故改为 $x+th$。}所以可以应用定理2，这样做的好处在于，
+\[
+ \Phi(1)-\Phi(0)=f(x+h)-f(x)-(df)(x)h,
+\]
+所以我们不仅可以估计到 $f(x+h)-f(x)$，而且估计到了 $f(x+h)-f(x)-(df)(x)h$。注意到我们假设了 $f\in C^2$，所以 $(df)(x)\in C^1$，这样 $\Phi(t)\in C^1$，所以应用定理2是合法的。$\Phi(t)$ 对于 $t$ 的微分是
+\[
+ f'(x+th)h-(df)(x)h,
+\]
+所以定理2中的 $M$ 可以取为
+\[
+ \sup_{0\le t\le1}\lVert f'(x+th)h-(df)(x)h\rVert.
+\]
+用完全同样的方法，在考虑二阶微分时，我们考虑
+\[
+ \Phi(t,s)=f(x+th+sk)-(d^2f)(x)(th,sk),
+\]
+$(d^2f)(x)$ 是一个双线性形式，右方后一项就是它在 $(th,sk)$ 上之值，对 $t$ 和 $s$ 分别应用一次上面的程序，就会得到
+\begin{align*}
+ \bigl\lVert\Delta_k\Delta_hf(x)-(d^2f)(x)(h,k)\bigr\rVert
+ &\le \sup\bigl\lVert(d^2f)(x+th+sk)(h,k)\\
+ &\qquad -(d^2f)(x)(h,k)\bigr\rVert\\
+ &=o(1)(\lVert h\rVert\cdot\lVert k\rVert).
+\end{align*}
+在上式中对换 $h$ 与 $k$，由于 $\Delta_k\Delta_hf(x)=\Delta_h\Delta_kf(x)$ 所以有
+\begin{align*}
+ \bigl\lVert(d^2f)(x)(k,h)-(d^2f)(x)(h,k)\bigr\rVert
+ &=\bigl\lVert\Delta_k\Delta_hf(x)-(d^2f)(x)(h,k)\\
+ &\qquad-\Delta_h\Delta_kf(x)+(d^2f)(x)(k,h)\bigr\rVert\\
+ &=o(1)(\lVert h\rVert\cdot\lVert k\rVert).
+\end{align*}
+但是式左是 $h,k$ 的双线性形式，它不可能是比 $\lVert h\rVert\cdot\lVert k\rVert$ 更高阶的无穷小量，除非恒等于 0。因此对任意 $h,k\in\mathbb R^m$
+\[
+ (d^2f)(x)(k,h)=(d^2f)(x)(h,k).
+\]
+定理证毕。
+
+由此可见，拉格朗日公式是多么好的东西，少了它带给我们多少麻烦！
+
+以上我们讨论了二阶微分，对更高阶的微分可以类似地讨论。我们不再重复，只把主要的结论归结如下：
+
+1. 映射 $f:\Omega\to\mathbb R^n$（$\Omega\subset\mathbb R^m$）为 $C^k$ 类映射之定义是：$f\in C^k$，而且 $df\in C^{k-1}$。
+
+2. 上述 $f$ 的 $k$ 阶微分 $d^kf$ 是由 $\Omega$ 到 $k$ 阶多重线性映射
+\[
+ \Omega\to L(\underbrace{\mathbb R^m,\mathbb R^m,\cdots,\mathbb R^m}_{k\text{ 个因子}};\mathbb R^n)
+\]
+空间的映射。即是说，对每一点 $x\in\Omega$，
+\[
+ (d^kf)(x)\in L(\underbrace{\mathbb R^m,\cdots,\mathbb R^m}_{k\text{ 个因子}};\mathbb R^n).
+\]
+
+3. 在 $\mathbb R^m$ 与 $\mathbb R^n$ 中均给出坐标系 $x$ 与 $y$ 以后，$f\in C^k$ 之充分必要条件是 $f$ 的各个分量均为古典意义下的具有直到 $k$ 阶在内的偏导数的函数。
+
+4. 若 $f\in C^k$，则 $d^kf(x)$ 对任意 $x\in\Omega$ 均为对称的多重线性映射。用坐标来表示就是 $f$ 之各个分量的直到 $k$ 阶在内的偏导数之值，与施行构成这一偏导数之各个一阶偏导数之次序无关。

@@ -1,0 +1,707 @@
+\section{变分法大意}
+
+\subsection*{1. 变分原理}
+
+本章一开始就举了两个古典的例子，它们不但是微分学历史上两个重大例子，确切地体现了微分学的基本思想——舍去高阶无穷小，而且还有更深刻的含意：它们表现了两种不同的方法论。第一个例子是牛顿对面积速度不变原理（即角动量守恒）的证明。牛顿把时间分成一小段一小段，每一个小段结束瞬间的运动状况（即质点的位置和速度），即下一小段时间起始时的初始状况，如此推演下去即可穷尽这个质点运动的历史。我们一向认为这是机械论的决定论的典型表现。当时，科学的发展也只能使人们得到这样的结论。但是实际情况并不如此简单。例如我们在§1中讨论开普勒三定律时，只讨论了一个太阳对一个行星的作用，实际上其它行星、卫星的影响都忽略不计了，开普勒主要是从对火星的观测中得到他的第三个定律。如果他观测的是金星和水星，则比较容易发现天体的实际运动与他所主张的椭圆有不可忽略的差距。拉普拉斯与拉格朗日都知道，理论上的椭圆轨道会受到“微扰”（perturbation），到了19世纪末，庞加莱开始研究：微扰的长期积累的后果会是什么？他的研究汇集成他的名著《天体力学的新方法》，开辟了数学的新篇章，其中后来人们研究得很多的“混沌”现象等等在这里都已出现。在此以前，牛顿力学意味着宇宙的一切从初始时间，即上帝的手作了“第一次推动”（the first blow）以后，就一切都决定了，再无任何变化。所以说“阳光之下没有新事物”（这句话源出圣经），用数学的语言表述，这种“机械论的决定论”其实就是微分方程的初值问题
+\[
+ \frac{dx}{dt}=f(t,x),
+ \qquad x\big|_{t=0}=x_0
+\]
+的解的存在性与唯一性。到了19世纪末，就提出了新问题：这些解确实可以一直到 $t\to+\infty$ 时都存在，还是在某一时刻 $t\to T$ 就会发现“爆破”（blow up）？解当 $t\to+\infty$ 时的渐近状况如何？全局状况如何？“机械论的决定论”一定意味着可以精确地计算解吗？随机性是否以某种方式存在于决定性之中，或者二者以某种方式相联系？总之，现代人们对“机械的决定论”的习惯的理解中，这些问题都没有提出来。但是自牛顿以来的这种方法论今天的内涵自非当年之可比。可惜的是，本书不可能再对此稍作介绍了。
+
+第二个例子却是另一种方法论的典型问题。当费马研究光由 $A$ 到 $B$ 的折射时，他遵循了另一种方法论。当光才离开 $A$ 点后，下一个时刻 $t$ 光的位置在哪里？我们现在知道，光的“位置”一说很不清楚，只能说光的波前是以 $A$ 为心，$ct$ 为半径（$c$ 是光速）的球面。再往后，则光的波前上的每一点都成了次级光源，于是再经过时间 $\tau$，这些次级光源又各产生自己的波前；以次级光源为心，$c\tau$ 为半径的球面，把这些新波前的包络找出来，得到一个以 $A$ 为心，$c(t+\tau)$ 为半径的球面，是为光在时刻 $t+\tau$ 的波前。大家都知道，这就是惠更斯原理。它的出发点是：光是一种波，用这个方法也可以讨论光的直线行进、光的折射反射，但完全是用几何方法，主要是用包络。但是，关于光的本性还有另一种学说即粒子说，它认为光的本性是粒子。牛顿虽然是粒子说的拥护者，但是没有见到谁把牛顿的运动定律用于光的粒子的解说。代替它，费马提出了关于光的传播的最短时间原理（即费马原理）：“光在一切可能的路径中必取耗时最短的路线”。所谓可能的路径即不违背所设问题中的给定约束的路径。在折射问题中即由 $A$ 到折射面上一点 $L$，这一段路径是在某种介质（例如空气）中，而在其中光走直线，然后再由 $L$ 在另一种介质（例如水）中走到 $B$。因此又走另一段直线。现在的问题是怎样从可能的路径中找到实际发生的路径？用费马原理。本章§1中详细解释了这是怎样做到的，介绍了微分学的基本思想是怎样在起作用。
+
+现在回想一下，费马原理实在是一个聪明的办法：我们不必去问，光究竟是不是粒子，质量是多少，受什么力的作用，初始位置与初速（包括方向）是多少？如果要这样做该有多少困难？讲反射还比较好说，不妨把光的反射解释为完全弹性的球在刚性边界上的反弹，折射又如何呢？这必定会涉及介质的界面的作用。现在好了，我们完全不必去管这些事：只要能节省时间就行！作为波动的光有此性质，作为粒子的例如天体是否也适合类似的原理呢？至少牛顿第一定律可作如是观：如果粒子在一均匀介质中运动而不受外力影响，它也一定走耗时最短的路径！因此人们想到，大自然的根本规律是否也是一个变分原理？而且把这归之于例如上帝最节约时间等等。但是17—18世纪终究是科学已开始摆脱玄学和宗教束缚的时代，人们再也不会满足于用抽象的思辨来代替对具体问题的研究了。于是出现了法国人莫培督（Pierre-Louis Moreau de Maupertuis，1698—1759），他在1746年的一篇论文“由形而上学原理导出的若干运动和静止的法则”中提出了一个他认为放诸整个宇宙而皆准的“一般原理”如下：“如果在自然界发生了某一变化，则此变化所需的作用量（action）必为尽可能的小。”他并且认为这个原理正是上帝存在的证据。但是，莫培督生活的年代已是牛顿力学风靡一时的年代，再只用宗教与玄学来回避问题已经不可能了。何况莫培督本人也是科学圈中人，他曾经率队进入北极圈，以实际数据来证实牛顿关于地球在两极比较扁平的论断，他曾任普鲁士科学院主席，是欧拉的顶头上司，而且把欧拉关于变分学的研究成果说是应用了他的最小作用原理，后来又陷入了一场大争论，终于1759年心力交瘁而病逝于约翰二世伯努利家中。（这里附带发一点议论，许多“知识产权”之争现在回想起来确实没有意义。牛顿和莱布尼茨之争是如此，但是又有谁想到，今天我们称为牛顿运动方程的那一组方程其实是欧拉而不是牛顿本人写出来的？这是特鲁斯德尔研究的结论，见《天遇》一书（迪亚库等著、王兰宇译，上海科技教育出版社，2001，230页）；哈密顿系统归之于拉格朗日更加恰当。诸如此类的事在数学历史上比比皆是，我们只能得出这样的结论：重要的是科学，科学家的名声只是第二位的）。
+
+莫培督的最小作用原理真正的缺点是它不能解决很多问题。他定义“作用”是这样的物理量：作用＝质量$\times$速度$\times$距离。试想如果扛着重物——很大的 $M$，很快地——很大的 $V$，走了很长的路——很大的 $L$，其作用自然很大。从量纲来说，其量纲是
+\[
+ [M][L][T]^{-1}[L]=[M]\left[\frac{L}{T}\right]^2[T]
+\]
+因此本质上是动能$\times$时间。如果再考虑作用了多长时间，则作用量
+\[
+ A=\int_{t_0}^{t_1}\frac{m}{2}v^2\,dt.
+\]
+但是无论是按费马原理还是最小作用原理时都会得到错误结论。例如达西（Chevalier d'Arcy）就指出，莫培督的例子中有错。例如有一个球面镜，球心为 $A$。若在球心处置一光源，而让光从球的凹面反射，费马原理或最小作用原理得出的规律应是入射角＝反射角。如此，则由 $A$ 到 $B$ 的反射点应是 $AB$ 联线与球面的交点 $Q$。这样 $QAB$ 三点共线，成一半径的延长线，而光走过的路径是
+\[
+ AQ+QA+AB=2R+AB
+\]
+（图3-6-1上）。但是若在球面上取任一点 $P$，则 $PB\le PA+AB$，因此现在光走的路径是 $PA+PB<2R+AB$。所以，费马原理给出的不但不是耗时最少，反而是耗时最多。但是若 $A$ 在镜外（图3-6-1下），则由入射角＝反射角确实给出耗时最短的路径。于是达西就问道，为什么上帝遇到凹的镜面就浪费时间，而在凸的镜面上就节约时间。这个问题我们今天看来就很清楚，实际上的答案并非极小值而是平稳值。但在当时，这个批驳确实是很有力的。因此，最小作用原理确实需要从其他修改。它的基本思想是如此有力与新奇，所以许多第一流的数学家特别是拉格朗日做了许多工作，在他的名著《解析力学》一书中对最小作用原理有系统的论述。至此，我们看到一个变分原理（即某个量——作用量达到极大或极小）成了一个科学分支——现在是牛顿力学——的基础，这是有重大意义的。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,>=stealth,bella figure]
+  \begin{scope}[shift={(-2.9,1.35)}]
+    \draw[thick] (-1.35,-1.25) arc[start angle=230,end angle=130,radius=1.65];
+    \coordinate (Q) at (-1.62,0); \coordinate (P) at (-1.05,.95); \coordinate (A) at (.10,0); \coordinate (B) at (1.55,0);
+    \draw[->] (Q)--(B); \draw[dashed] (P)--(A); \draw (P)--(B);
+    \fill (Q) circle (1.2pt) node[left=3pt] {$Q$};
+    \fill (P) circle (1.2pt) node[above left=2pt] {$P$};
+    \fill (A) circle (1.2pt) node[above=3pt] {$A$};
+    \fill (B) circle (1.2pt) node[right=3pt] {$B$};
+  \end{scope}
+  \begin{scope}[shift={(-2.9,-1.7)}]
+    \draw[thick] (-1.4,-1.05) arc[start angle=215,end angle=145,radius=1.5];
+    \coordinate (Q) at (-1.45,0); \coordinate (O) at (-2.15,-.95); \coordinate (A) at (-.25,.9); \coordinate (B) at (1.55,0);
+    \draw[->] (O)--(B); \draw (Q)--(A); \draw (Q)--(B);
+    \fill (Q) circle (1.2pt) node[left=3pt] {$Q$};
+    \fill (O) circle (1.2pt) node[below left=2pt] {$O$};
+    \fill (A) circle (1.2pt) node[above right=2pt] {$A$};
+    \fill (B) circle (1.2pt) node[right=3pt] {$B$};
+  \end{scope}
+\end{tikzpicture}
+\caption*{图3-6-1}
+\end{figure}
+
+\subsection*{2. 欧拉-拉格朗日方程}
+
+古典的变分法（或称变分学）讨论的是一类可以写成积分形式的函数之极值（平稳值）问题。下面说的捷线问题（brachistochrone）是其中著名的一个。它有很长的历史，伽利略研究过它，但是答案是错误的。下面讲的是约翰·伯努利一世（上面说到的莫培督病逝于其家中的是约翰二世，是约翰一世的儿子）对这个问题的解决，其方法与费马解决光的折射定律的方法多有相似而对后世很有影响。所谓捷线问题是这样的：设在一铅直平面上有 $A,B$ 两点，但 $B$ 不在 $A$ 之正下方，求一曲线 $L$ 使一质点 $P$ 在重力作用下沿 $L$ 从 $A$ 下降到 $B$ 所需时间最少（这里空气阻力与摩擦力均忽略不计）。伽利略研究这个问题时指出，人们可能以为 $L$ 应该是联结 $A,B$ 两点的弦。他说这是不对的，$L$ 不是弦而是圆弧。伽利略前一句话是对的，后一句却错了。为什么不是弦呢？因为下降过程中在 $y$ 方向有加速度（见图3-6-2），越降越快，如果我们用水平的直线 $y=y_i$，$i=0,1,\ldots,N$，划分平面，则在 $A$ 附近，因为下降速度慢，曲线应该陡一些，以便在较短时间内下降更多的高度；在 $B$ 点附近，质点速度已经很快，$L$ 平一些也可以很快到达终点。总之，$L$ 不是直线。为什么后一句错了？我们应该具体计算来看看结果是什么。设所求曲线之方程为 $y=f(x)$，质点 $P$ 之速度为 $v$，质量为 $m$，则当 $P$ 到达 $L$ 上一点 $(x,f(x))$ 时，动能由 $A$ 点处 $P$ 静止时的0增加到 $\frac12mv^2$，位能则由 $A$ 处的0减少到 $-mgf(x)$，所以
+\[
+ \frac12mv^2=mgf(x),\qquad v=\sqrt{2gf(x)}.
+\]
+伯努利把 $L$ 分成许多小段所成的折线，而折线之顶点为 $(x_i,y_i)=(x_i,f(x_i))$，$i=0,1,\ldots,N$，$i=0$ 和 $N$ 相当于 $A,B$ 两点。第 $i$ 小段之长为
+\[
+ \sqrt{(x_i-x_{i-1})^2+(y_i-y_{i-1})^2}
+ =\sqrt{(x_i-x_{i-1})^2+[f(x_i)-f(x_{i-1})]^2}.
+\]
+不妨设在这一小段中速度不变而为 $\sqrt{2gf(x_i)}$，于是这一小段耗时
+\[
+ \sqrt{(x_i-x_{i-1})^2+[f(x_i)-f(x_{i-1})]^2}/\sqrt{2gf(x_i)},
+\]
+而由 $A$ 到 $B$ 所需的时间是
+\[
+ T=\sum_{i=1}^{N}
+ \frac{\sqrt{(y_i-y_{i-1})^2+(x_i-x_{i-1})^2}}{\sqrt{2gy_i}}.
+\]
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=.95cm,y=.78cm,>=stealth,bella figure]
+  \draw[->] (0,0)--(6.2,0) node[right] {$x$};
+  \draw[->] (0,0)--(0,-6.2) node[below] {$y$};
+  \foreach \yy in {-1,-2,-3,-4.5,-5.5}{\draw[dashed] (0,\yy)--(5.7,\yy);}
+  \coordinate (A) at (0,0); \coordinate (D1) at (.55,-1); \coordinate (D2) at (1.25,-2); \coordinate (D3) at (2.15,-3); \coordinate (DN) at (4.9,-5.5); \coordinate (B) at (5.35,-5.9);
+  \draw[thick] (A)--(D1)--(D2)--(D3)--(2.8,-3.75);
+  \draw[thick] (4.1,-4.5)--(DN)--(B);
+  \node[above left] at (A) {$A$}; \node[right=3pt] at (B) {$B$};
+  \node[left=3pt] at (D1) {$D_1$}; \node[left=3pt] at (D2) {$D_2$}; \node[left=3pt] at (D3) {$D_3$}; \node[left=3pt] at (DN) {$D_{N-1}$};
+  \node[right=5pt] at (.65,-.55) {$\alpha_1$}; \node[right=5pt] at (1.3,-1.5) {$\alpha_2$}; \node[right=5pt] at (2.18,-2.5) {$\alpha_3$}; \node[right=6pt] at (4.95,-5.0) {$\alpha_{N-1}$};
+  \node[below=6pt] at (2.8,-3.75) {$L$};
+\end{tikzpicture}
+\caption*{图3-6-2}
+\end{figure}
+
+因为 $y_i=f(x_i)$，所以 $T$ 是 $(x_1,x_2,\ldots,x_{N-1})$ 的函数，而问题就是求 $f$，使 $T\to\min$。本来是求未知函数 $f(x)$，现在化成了求 $\mathbb R^{N-1}$ 空间中的一个点 $(x_1,x_2,\ldots,x_{N-1})$。令 $N\to\infty$，就知道，我们的问题是求 $\infty$ 维空间的一“点”（即一个函数），使 $T\to\min$。但当 $N\to\infty$ 时
+\[
+ \sqrt{(y_i-y_{i-1})^2+(x_i-x_{i-1})^2}
+ \approx\sqrt{1+[f'(x_i)]^2}\,dx,
+\]
+所以 $T$ 趋向一个“泛函”
+\begin{equation}
+ J=\int_0^{x_B}\frac{\sqrt{1+[f'(x)]^2}}{\sqrt{2gf(x)}}\,dx.
+ \tag{1}
+\end{equation}
+
+伯努利解决了这个问题，指出 $L$ 应该是旋轮线而不是圆弧，所以伽利略的后一句话错了。
+
+伯努利的解法下面再说。现在把它与§1中费马的折射定律比较一下：费马说的是一切可能的曲线即由 $A$ 经过折射面到达 $B$ 的折线，现在则是通过 $A,B$ 两点的曲线 $L$。费马说的是光耗时最短的路径，现在则是使 $J\to\min$ 的曲线。总之，这里有两个要素：一是一个可容许函数集 $M$，二是一个“目标”，现在是一个泛函，而我们的问题应表述为：在 $M$ 中求一个元，使 $J\to$平稳值（不一定是极值），所谓变分学的古典问题是 $J$ 可以表示成一个积分
+\begin{equation}
+ J=\int_a^b F(t,u(t),\dot u(t))\,dt.
+ \tag{2}
+\end{equation}
+这里有一个重要的说明：$u$ 的光滑性与 $F$ 的光滑性极为重要，而且带来了数学分析中极细致的问题。下面我们只讨论这个影响整个数学发展的问题的基本思想，关于其技术细节方面则把条件放得很宽。请注意，读者可能需要从其它文献中找到所需的细微的处理，而这些处理时常是很难的。现在则应把注意力放在基本思想上。
+
+于是设有 $\mathbb R^d$ 中曲线 $u(t)=(u_1(t),\ldots,u_d(t))$。设 $u\in C^3([a,b])$，$F(t,u,p)\in C^2([a,b]\times\mathbb R^d\times\mathbb R^d)$。如果 $p=\dot u(t)=(\dot u_1(t),\ldots,\dot u_d(t))$ 则 $F(t,u(t),\dot u(t))$ 对 $t$ 为二阶连续可微。记
+\[
+ M=\{u(t)=(u_1(t),\ldots,u_d(t))\in C^1([a,b]),\ u(a)=A,\ u(b)=B\},
+\]
+即 $M$ 是经过 $(a,A),(b,B)$ 两点的 $C^1$ 曲线之集合，这里 $a\le t\le b$ 是这些曲线的参数的变化域，$M$ 称为可容许函数集。在 $M$ 上积分(2)是有意义的，所以(2)是 $M$ 上的一个泛函。现在的问题是求 $M$ 中一个元 $u_0$，使 $J(u_0)=\min$（或平稳值），准确些说是要求 $J(u_0)$ 在 $u_0$ 附近（粗略地说，即适合 $|\dot u(t)-\dot u(t_0)|$ 及 $|u(t)-u(t_0)|$ 都对 $t$ 一致地很小的函数 $u(t)$ 之集合）是 $J(u)$ 的极小值，即局部极小值。这就是古典的一维变分问题。一维，这里说一维是指 $M$ 中之元是一维曲线，与上面所说变分问题是无穷维空间中的极值问题并不矛盾。所以也可以考虑 $n$ 维变分问题，这时(2)中 $F=F(x,u,p)$，$x\in\Omega\subset\mathbb R^n$，$u\in\mathbb R^d$，而 $p$ 是一个 $d$ 维向量的各分量之一阶偏导数所成的向量，所以 $p\in\mathbb R^{nd}$，而 $F$ 在 $\Omega\times\mathbb R^d\times\mathbb R^{nd}$ 中具有二阶连续偏导数。
+
+$M$ 中的附加条件
+\begin{equation}
+ u(a)=A,\qquad u(b)=B
+ \tag{3}
+\end{equation}
+是一组边值条件。在 $n$ 维变分问题中，这个条件要代以 $u$ 在 $\partial\Omega$ 上适合的某种条件，例如
+\begin{equation}
+ u|_{\partial\Omega}=g,
+ \tag{4}
+\end{equation}
+$g$ 是定义在 $\partial\Omega$ 上的已知函数。(3)和(4)都是所谓的狄利克雷条件。$M$ 中的边值条件可以是多种多样的。甚至有时对 $M$ 中的元在边界（$t=a,t=b$ 或 $\partial\Omega$）上可以不加任何条件。这就是所谓“自由边值条件”。要注意 $M$ 一般地说并不是线性空间。因为边值条件(3)或(4)一般都是非齐次的，因此 $u$ 中任意二元之和一般不再适合边值条件。但是 $M$ 一定是某线性空间的子集。例如按我们上面的陈述方法，应该取 $M\subset C^1([a,b])$，而对 $u\in C^1([a,b])$，我们通常定义其“大小”为
+\[
+ \|u\|_{C^1}=\max_{a\le t\le b}\|u(t)\|+\max_{a\le t\le b}\|\dot u(t)\|.
+\]
+右方的 $\|u(t)\|$ 是指一个 $d$ 维向量的范数。这个线性空间的选择对变分问题的处理是十分重要的。
+
+当然 $F$ 中也可以含有 $u$ 之高阶偏导数。这对下面的讨论影响不大，所以我们以下只限于讨论最简单的情况。现在 $J$ 是由 $M$ 到 $\mathbb R$ 的映射（我们限于 $t$ 及 $F$ 取实值的情况，因为复数不能比较大小，所以谈不上极值。$u,p$ 等均设为实向量，不然的话就分开它们的实虚部来处理好了）：
+\[
+ J:M\to\mathbb R.
+\]
+正如在微分学中讨论函数的极值时，我们取一阶微分而舍去高阶无穷小量，现在我们也考虑
+\[
+ J(u+\delta u)-J(u).
+\]
+这里的 $\delta u$ 就是以前说过的 $h$，把它写成 $\delta u$ 使人想起 $dx$ 以及随之而来的种种争论。现在很明白了，它就是适合 $\|\delta u\|_{C^1}$ 可以任意小的函数，也就是上文所谓 $u_0$ 的“附近”（还有边值条件的考虑见下文）。在老的书上有不少关于 $\delta u$ 的论述，例如 $d\delta u=\delta du$ 等等，现在看来都毫无必要了。但我们仍然使用这个记号，而且称之为变分（variation）。其实就是在另一个空间例如 $C^1$ 中的 $h$，$\delta u$ 虽然是历史的“遗迹”，但它提醒我们，将来会考虑它趋于0时的情况，而一切有用的结果尽在极限中。实际上，以后我们总是令
+\begin{equation}
+ \delta u=\lambda\varphi,
+ \tag{5}
+\end{equation}
+这里 $\varphi\in C^1$ 而且适合“齐次”边值条件（现在的情况即 $\varphi=\varphi(t)$，$\varphi(a)=\varphi(b)=0$）。以后只需令 $\lambda\to0$ 即可。
+
+在作了限制(5)以后，$J(u+\delta u)$ 就变成了 $\lambda$ 的函数
+\begin{equation}
+ \Psi(\lambda)=J(u+\lambda\varphi)=\int_a^b F(t,u+\lambda\varphi,\dot u+\lambda\dot\varphi)\,dt.
+ \tag{6}
+\end{equation}
+所以 $J(u)\to\min$，就变成简单的微分学问题：$\Psi'(0)=0$。但
+\[
+ \left.\Psi'(\lambda)\right|_{\lambda=0}
+ =\int_a^b\left[F_u(t,u,\dot u)\varphi+F_p(t,u,\dot u)\dot\varphi\right]dt.
+\]
+对后一项作分部积分法，注意到 $\varphi\in C^1$ 且 $\varphi(a)=\varphi(b)=0$，有
+\begin{align}
+ \Psi'(0)
+ &=\int_a^b\left[F_u(t,u,\dot u)-\frac{d}{dt}F_p(t,u,\dot u)\right]\varphi\,dt
+   +F_p(t,u,\dot u)\varphi\Big|_a^b\\
+ &=\int_a^b\left(F_u-\frac{d}{dt}F_p\right)\varphi\,dt=0.
+ \tag{7}
+\end{align}
+
+现在要解释一下为什么对 $F$ 及 $u$ 之光滑性作如上的假设。首先是 $F$ 对其一切变元属于 $C^2$，这样保证了例如 $\frac d{dt}F_p$ 有意义，但是 $\frac d{dt}F_p$ 中含有对 $u$ 的二阶导数，而我们只假设了 $M$ 中之元 $u\in C^1$。为什么不在一开始就规定 $M$ 中的元 $u\in C^2$ 呢？因为这样 $M$ 就太小，而在 $M$ 中找我们需要的解就难多了。所以数学中为了了解解存在性问题，考虑的范围以大一点为宜，而不能搞“武大郎开店”的办法。反过来，要解决唯一性问题时，武大郎的办法就起作用了。症结在于适当选 $M$。这就是为什么本节中的 $M$ 中之元 $u\in C^1$。但这样一来就有矛盾，这个矛盾的解决即所谓正则性问题，下面还要说，这些情况在讲到狄利克雷原理时会看得更清楚。
+
+再往下我们证明一个重要的引理（前面我们说过，数学中似乎有一个“规矩”，大凡重要的结果总是称为“引理”的，这里又是一例）。
+
+\noindent\textbf{引理1（变分学的基本引理，杜·波瓦·雷蒙 Du Bois-Reymond）}\quad
+设 $H(x)$ 是定义于 $[a,b]$ 上的连续 $d$ 维向量值函数：$H:[a,b]\to\mathbb R^d$。若对一切适合 $\varphi(a)=\varphi(b)=0$ 的连续 $d$ 维向量函数 $\varphi(x)$ 均有
+\[
+ \int_a^b H(x)\varphi(x)\,dx=0,
+\]
+则必有 $H(x)\equiv0$ 于 $[a,b]$ 上。
+
+\noindent\textbf{证}\quad 用反证法。设 $H(x)$ 有一个分量 $H_1(x)$ 在 $x_0\in(a,b)$ 处为正，则必可选 $\delta>0$ 充分小，使 $(x_0-\delta,x_0+\delta)\subset[a,b]$，而且 $H_1(x)$ 在 $(x_0-\delta,x_0+\delta)$ 中仍为正。令取 $\varphi(x)=(\varphi_1(x),\ldots,\varphi_d(x))$ 如下：
+\[
+ \varphi_1(x)=
+ \begin{cases}
+ 0,& |x-x_0|\ge\delta,\\
+ \text{正},& |x-x_0|<\delta,
+ \end{cases}
+ \qquad
+ \varphi_i(x)=0,\quad i=2,\ldots,d.
+\]
+于是一方面由假设
+\[
+ \int_a^b H(x)\varphi(x)\,dx=0,
+\]
+另一方面
+\[
+ \int_a^b H(x)\varphi(x)\,dx
+ =\int_{x_0-\delta}^{x_0+\delta}H_1(x)\varphi_1(x)\,dx>0.
+\]
+这个矛盾证明了引理。
+
+把这个引理用于(7)式即有
+
+\noindent\textbf{定理2（极值函数的必要条件）}\quad
+设 $F(t,u,p)$ 及 $M$ 已如上述。若 $u(t)$ 使 $J(u)\to\min$，则必有
+\begin{equation}
+ F_u(t,u,\dot u)-\frac d{dt}F_p(t,u,\dot u)=0.
+ \tag{8}
+\end{equation}
+(8)式是一个二阶常微分方程组，称为上述变分问题的欧拉--拉格朗日方程组（Euler-Lagrange，以下简记为 E-L 方程组）。
+
+上面已经提出了一个问题，即 $M$ 中的元 $u\in C^1$，则它怎么可能满足二阶的 E-L 方程组呢？这里有以下的有关正则性的结果：如果 $F$ 关于其各个变元是 $C^2$ 的，而且适合以下的勒让德（Legendre）条件
+\[
+ \det[\operatorname{Hess}_pF(t,u,p)]\ne0,
+\]
+则若 $u\in M$ 使 $J(u)\to\min$，$u$ 必属于 $C^2$，而且在古典意义下（即按通常微积分教本的意义）满足 E-L 方程组(8)。这个结果并不困难。有的书上把它归功于希尔伯特，而希尔伯特本人则与柯朗联合写的名著《数学物理方法，I》第四章中又将它归功于杜·波瓦·雷蒙，且证法完全相同（R. Courant and D. Hilbert, Methods of Mathematical Physics, Vol.1, p.200），但是只限于一个自变量 $t$。多个自变量时的正则性问题是一个十分严重的问题，下面讲到狄利克雷原理时会稍加介绍。但无论如何，我们不把注意力放在这类问题上，而来看一下捷线问题是怎样解的。
+
+前面已说过，对于捷线问题，由(1)
+\[
+ J=\int_0^{x_B}\left(\frac{1+[f'(x)]^2}{2gf(x)}\right)^{1/2}dx,
+\]
+于是相应的 $F$ 是
+\begin{equation}
+ F(t,u,\dot u)=\frac{\sqrt{1+[f'(x)]^2}}{\sqrt{2gf(x)}}.
+ \tag{9}
+\end{equation}
+不过 $(t,u,\dot u)$ 换成了 $(x,f(x),f'(x))$。
+
+一般说来，求解一个 E-L 方程并非易事，不过在(9)这个特例下 $F$ 不显含自变量 $t$（即现在的 $x$）。这样，我们可以得到
+\[
+ \frac d{dt}(\dot uF_p-F)
+ =\ddot uF_p+\dot u\frac d{dt}F_p-F_u\dot u-F_p\ddot u
+ =\dot u\left(\frac d{dt}F_p-F_u\right)=0.
+\]
+因此
+\begin{equation}
+ F(u,\dot u)-\dot uF_p(u,\dot u)=C.
+ \tag{10}
+\end{equation}
+有一些解常微分方程经验的读者都会知道，我们得出了方程(8)的一个初积分或称首次积分。每一个初积分就是一个守恒律。有了一个初积分就可以把方程降低一阶。例如(10)就表明其左方的函数（这是一个物理量）在 E-L 方程的积分曲线（这是一个轨道 $t\to u(t)$）上守恒。因此，找出一个初积分在物理上与数学上有重大的意义。在§1中我们就指出，开普勒的三定律就是关于太阳和一个行星的牛顿运动方程的解及其性质。其实，求解这组运动方程的方法也是去找它的初积分，其中之一是面积速度（开普勒第二定律），它就是角动量守恒定律（§1.定理2），然后再利用定理4所表述的能量守恒。那么怎样看出有守恒律呢？关键在于 $F$ 在某些变换下有不变性，即对称性。这个例子中 $F$ 中不显含 $t$ 就是一种对称性。发现一个力学系统的守恒律与对称性的联系是德国女数学家爱米·诺特（E. Noether, 1882—1935）的卓越贡献。
+
+再回到(10)。把 $F$ 的表达式代入其中，把 $2g$ 并入常数 $C$，并且改一下记号，我们有（用 $y$ 表 $f(x)$）
+\[
+ \frac{\sqrt{1+y'^2}}{\sqrt y}
+ -\frac{y'^2}{\sqrt y\sqrt{1+y'^2}}
+ =\frac1{\sqrt{C_1}}.
+\]
+化简后有
+\[
+ y'^2=\frac{C_1-y}{y}.
+\]
+作一个变换
+\[
+ y=\frac{C_1}{2}(1-\cos u),
+ \qquad
+ y'=\frac{C_1}{2}u'\sin u,
+\]
+代入上式得
+\[
+ \frac{C_1}{2}(1-\cos u)\,du=\pm dx,
+\]
+对 $u$ 积分后有
+\[
+ x=\frac{C_1}{2}(u-\sin u)+C_2,
+ \qquad
+ y=\frac{C_1}{2}(1-\cos u).
+\]
+我们要求捷线过 $A$（原点）与 $B$。为使它过原点，应有 $C_2=0$，故
+\begin{equation}
+ x=\frac{C_1}{2}(u-\sin u),
+ \qquad
+ y=\frac{C_1}{2}(1-\cos u).
+ \tag{11}
+\end{equation}
+$C_1$ 由 $B$ 之坐标决定。但是(11)正是以 $u$ 为参数的旋轮线（cycloid）方程。
+\jiaokan{原文式(11)的第二式印作 $y=\frac{C_1}{2}(u-\cos u)$，但它与上一行已得的 $y=\frac{C_1}{2}(1-\cos u)$ 不一致，也不满足 $u=0$ 时通过原点。旋轮线的标准参数式及前文推导均要求此处为 $y=\frac{C_1}{2}(1-\cos u)$。正文已据此更正。}
+
+旋轮线是一个非常重要的曲线。在大约与伯努利研究捷线问题差不多的时间，惠更斯也研究过所谓等时曲线（tautochrone）问题，所谓等时曲线 $L$ 是这样一条曲线：任一质点在重力作用下沿 $L$ 下滑，不论起点 $A$ 位置何在，滑到最低点 $B$ 所需的时间总是相同的（图3-6-3）。惠更斯证明了，等时曲线也一定是旋轮线，正是因为这个原因，旋轮线又称摆线。旋轮线还有许多其它的有趣性质。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,>=stealth,bella figure]
+ \draw[->] (-2.5,-1.15)--(3.1,-1.15) node[right] {$x$};
+ \draw[->] (-2.15,-1.45)--(-2.15,2.25) node[above] {$y$};
+ \draw[thick] plot[smooth] coordinates {(-1.7,.55)(-1.25,-.15)(-.45,-.55)(.25,-.72)(1.05,-.35)(1.85,.35)(2.25,.95)};
+ \fill (-1.25,-.15) circle (1.2pt) node[below left=2pt] {$A$};
+ \fill (.25,-.72) circle (1.2pt) node[below=3pt] {$B$};
+ \node[above right=2pt] at (1.85,.35) {$L$};
+\end{tikzpicture}
+\caption*{图3-6-3}
+\end{figure}
+
+\subsection*{3. 最小作用原理}
+
+变分学中有许多很细致的问题，需要作相当艰难的数学处理。下面我们将不涉及这类问题，而介绍它在数学其它分支与数学物理中的一些应用。对每一个应用我们又都只能开一个头，因为深入下去一步就会进入柳暗花明又一村的境地，只有求助于专门著作了。
+
+首先是力学系统的基本规律可以用变分原理来表述。力学系统在我们这里就指一个质点组，这个质点组可以是有限的，例如有 $N$ 个质点，第 $i$ 个质点的质量为 $m_i$，位置为 $(x_i(t),y_i(t),z_i(t))$，速度为 $(\dot x_i(t),\dot y_i(t),\dot z_i(t))$。在每一时刻，这 $N$ 个质点的位置可以用 $\mathbb R^{3N}$ 中的一个点 $(x_1,y_1,z_1;\ldots;x_N,y_N,z_N)$ 来表示，它们的集合称为构形空间（configuration space）。它们的速度也是另一个 $\mathbb R^{3N}$ 空间中的一个点 $(u_1,v_1,w_1;\ldots;u_N,v_N,w_N)$。我们称 $\mathbb R^{3N}\times\mathbb R^{3N}$ 为这个质点组的相空间（phase space）。注意，时间总被认为是一个独立的参数，而不进入相空间中，但是这个质点组可能受一定的约束。力学中的约束是多种多样的。例如考虑一个骰子在碗里的运动，如果把骰子看成一个质点，则其三个坐标不会是独立的而要适合这个碗的曲面方程。所以，一般情况下，一个力学系统的构形空间不一定是 $\mathbb R^{3N}$，而可以是一个维数较低的“曲面”（准确些说是一个微分流形）$M$。它的各点的局部坐标我们写成 $(q_1,\ldots,q_N)$，称为广义坐标，而 $(\dot q_1(t),\ldots,\dot q_N(t))$ 称为广义速度。广义速度之空间（相应于 $\mathbb R^{3N}$）就是 $M$ 的切空间，这些概念我们将在第七章中详细讨论。但不论如何，时间 $t$ 总是在相空间以外的独立参数。需要提醒的只有一件事，在 $\mathbb R^{3N}$ 的情况下，例如 $(x_1,y_1,z_1)$ 都是同一个质点的三个坐标，因而相应于同一个 $m_1$。现在就不一定了。因此，我们就直接写 $m_1,\ldots,m_N$（如果有必要的话），而 $m_i$ 与 $m_j$ 可能代表同一个质点的质量，也可能代表不同质点的质量。
+
+牛顿把整个力学建筑在他的三个定律上。而且，正如他在《原理》一书中所说的，他要尽可能完全地仿照欧几里得的方法论，所以专门在全书之首写了两节，一是“定义”，“定义”了何谓物质的量（即质量）、运动（其实是动量）、惯性、外力……然后第二节是“运动的公理或定律”，把三大定律分别记为定律 I、II、III，即全部公理只有这三条。其它一切，甚至力的平行四边形定律都是“推论”。牛顿说：“迄今为止我叙述的原理已为数学家所接受，也得到大量实验的验证”，因此，其“真理性”应是无可置疑的（其实牛顿并不那么简单从事，他本人对这个体系中的许多问题，如绝对空间、引力的超距作用有很深的怀疑），所以接下来的工作也就如欧几里得一样，用逻辑方法推论出一个又一个定理。从这个意义上说，牛顿的方法论是“先验的”（a priori）。
+
+莫培督的方法是另外一回事。他的出发点之一是，既然光的传播服从某个变分原理（费马原理），则粒子的运动也可能有一个相应的变分原理，即最小作用原理。欧洲大陆上的数学与物理学家对于牛顿的体系是激烈反对的，他们追随的是笛卡儿，而牛顿反对笛卡儿也是十分明确的。尽管牛顿承认自己只不过是站在巨人的肩上，而笛卡儿则是巨人之一。这些争论有深刻的哲学含意，而远非优先权之争，当“知识产权”之争是把“知识”放在“产权”之前时，是会给我们带来丰硕成果的。而放错了地位，甚至只有“产权”而并无“知识”，那就是另一回事了。莫培督说自己的最小作用原理是“由一个形而上学的原理得出的关于运动和静止的法则”。可是这个原理的真理性绝不是用哲学的思辨所能解决的，而需要看它能否解决具体问题。从这个意义上说，变分原理的应用是“后验”（a posteriori）的。
+
+现在给出这个原理一个明确的说法。以下表述引自朗道和栗弗席兹的名著《力学》（中文译本高等教育出版社1959年版，第2页）：“每一力学体系由一定的函数
+\begin{equation}
+ L(q_1,\ldots,q_N;\dot q_1,\ldots,\dot q_N;t)
+ \tag{12}
+\end{equation}
+（或简写为 $L(q,\dot q,t)$）来描述，而体系的运动满足下面的条件：
+
+假定在 $t=t_1$ 和 $t=t_2$ 的时刻，体系占有两个确定的位置，这两个位置分别由两组坐标值 $q^{(1)}$ 和 $q^{(2)}$ 决定。这时，体系在两个位置之间按照使积分
+\begin{equation}
+ S=\int_{t_1}^{t_2}L(q(t),\dot q(t),t)\,dt
+ \tag{13}
+\end{equation}
+有最小可能值的方式运动。函数 $L$ 叫做该体系的拉格朗日函数（Lagrangian），而积分(13)则叫做作用量（action）”。
+
+这里要提醒一下，上文说运动轨道使 $S$ 取最小值，实际上则只使 $S$ 取平稳值。若是 $|t_1-t_2|$ 充分小，则变分学的一般理论可以证明，平稳值一定是局部的极小。
+
+由此可见，求解一个力学系统的运动问题，归结为 $S$ 在边值条件 $q|_{t=t_i}=q^{(i)}$，$i=1,2$ 下的极值问题。由定理2有
+\begin{equation}
+ \frac d{dt}\left(\frac{\partial L}{\partial\dot q_i}\right)
+ -\frac{\partial L}{\partial q_i}=0,
+ \qquad i=1,2,\ldots,N,
+ \qquad q_i(t_j)=q_i^{(j)},\ j=1,2.
+ \tag{14}
+\end{equation}
+(14)称为拉格朗日方程。从数学上说，问题已经完全清楚了，但是从物理上说，拉格朗日函数究竟是什么还完全不清楚，甚至什么是质量，什么是能量也完全没有谈。在拉格朗日改进莫培督的工作时，他从一些特例发现，
+\begin{equation}
+ L=T-V,
+ \tag{15}
+\end{equation}
+$T$ 与 $V$ 分别是动能与位能。而在朗道的著作中则从时间与空间的均匀性以及运动方程在任何惯性系中应该有相同形式出发，首先指出，对于一个自由粒子
+\[
+ L=\alpha v^2=\alpha(\dot x^2+\dot y^2+\dot z^2).
+\]
+于是记 $\alpha=m/2$，并称 $m$ 为质量，$\frac12mv^2$ 为动能。如果是考虑质量组，若一个力学系统由 $A$ 和 $B$ 组成，则 $L$ 不但只是 $L_A+L_B$，还要加一项表示二者之间的相互作用，这个相互作用显然只应与 $A,B$ 之位置相关，这样就会得到
+\begin{equation}
+ L=\sum_{i=1}^{N}\frac{m_i}{2}(\dot x_i^2+\dot y_i^2+\dot z_i^2)-V(x).
+ \tag{16}
+\end{equation}
+而且称 $V(x)$ 为位能。同时也证实了 $m_i$ 作为第 $i$ 个质点的质量的合理性。但是不论怎么说，这些论据都不如牛顿的三个“公理”那么有说服力。所以到最后还是要看看是否与我们已知的结果一致。
+
+以(16)代入(14)，并注意现在 $q_i$ 变成了 $(x_i,y_i,z_i)$ 等等，即得拉格朗日方程
+\begin{equation}
+ \begin{aligned}
+ m_i\ddot x_i&=-\frac{\partial V}{\partial x_i},\\
+ m_i\ddot y_i&=-\frac{\partial V}{\partial y_i},\\
+ m_i\ddot z_i&=-\frac{\partial V}{\partial z_i}.
+ \end{aligned}
+ \tag{17}
+\end{equation}
+这恰好是牛顿的运动方程。到现在，我们前面称之为质量、动能、位能的物理量与牛顿的经典方法给出的是一致的。不过现在的附加条件不是初始条件，而是边值条件。这就后验地证明了最小作用原理的重要性。
+
+读者会问，为什么现在出现的不是总能量 $T+V$ 而是动能位能差 $T-V$？实际上，若转到对偶的表述，将得到另一个极重要的物理量——哈密顿函数（Hamiltonian）
+\[
+ H=T+V.
+\]
+那么，由能量守恒岂非 $H\equiv\mathrm{const.}$ 吗？这是一个误解。所谓能量守恒是指这个力学系在某一轨道上总能量不变，而在不同的轨道上，$H$ 之值并不相同。哈密顿函数并不满足拉格朗日方程，而是满足一组与它对偶的哈密顿方程，这就构成了哈密顿力学。其基础仍是最小作用原理。
+
+由此可见，变分原理把力学从牛顿的经典的研究方法扩展为拉格朗日力学和哈密顿力学。这是现代数学伟大力量的一个范例。我们在这里当然不可能作进一步介绍，但是建议读者去读阿诺尔德的名著《经典力学的数学方法》（V. I. Arnold, Mathematical Methods of Classical Mechanics, 1978，中译本高教出版社，1992年出版）。
+
+可是更重要的是，这个框架适用于许多物理学分支，例如电动力学、量子场论、规范场论等等。这时这种脱离具体感性经验然后再后验地加以论证的方法更加重要。但是我们现在不去讨论这些问题了。用拉格朗日方程代替牛顿的运动方程至少有一个好处，即很容易得到其它坐标系下的运动方程。例如设有一个质点，质量为 $m$，在位能为 $V(x)$ 的力场中运动。这时用极坐标去处理，有 $q=(r,\theta)$，而笛卡儿坐标 $x=r\cos\theta,y=r\sin\theta$。现在
+\[
+ \begin{aligned}
+ T&=\frac m2(\dot x^2+\dot y^2)\\
+ &=\frac m2\left[(\dot r\cos\theta-r\dot\theta\sin\theta)^2
+ +(\dot r\sin\theta+r\dot\theta\cos\theta)^2\right]\\
+ &=\frac m2(\dot r^2+r^2\dot\theta^2).
+ \end{aligned}
+\]
+因此，由(15)式，$L=T-V$，所以 E-L 方程为
+\[
+ \frac d{dt}\frac{\partial L}{\partial\dot r}
+ -\frac{\partial L}{\partial r}
+ =m\ddot r-mr\dot\theta^2+\frac{\partial V}{\partial r}=0,
+\]
+\jiaokan{原文此式及下一页关于 $\theta$ 的对应公式将欧拉--拉格朗日方程中的“$-$”误印为“$+$”。由本节式(14)以及等号右侧的展开可知应为减号。}
+\[
+ \frac d{dt}\frac{\partial L}{\partial\dot\theta}
+ -\frac{\partial L}{\partial\theta}
+ =m\frac d{dt}(r^2\dot\theta)+\frac{\partial V}{\partial\theta}=0.
+\]
+特别重要的是位能 $V$ 不依赖于 $\theta$，这时我们得到有心力场，而上面第二个方程成为 $\frac d{dt}(r^2\dot\theta)=0$ 亦即
+\[
+ r^2\dot\theta=\mathrm{const.}
+\]
+但是这就是面积速度（亦即角动量）守恒，所以我们十分简洁地得到了开普勒第二定律。
+
+我们要介绍一个重要的概念，即定义一个力学系统的广义动量是
+\[
+ p=\left(\frac{\partial L}{\partial\dot q_1},\ldots,
+ \frac{\partial L}{\partial\dot q_N}\right)=\operatorname{grad}_{\dot q}L.
+\]
+这与牛顿力学中动量＝质量$\times$速度不同，广义动量≠质量$\times$广义速度。如果拉格朗日函数 $L=T-V$，而动能 $T$ 是 $\dot q$ 的二次型：
+\[
+ T=\frac12\sum_{i,j=1}^{N}g_{ij}(q)\dot q_i\dot q_j,
+ \qquad g_{ij}=g_{ji},
+ \qquad V=V(q)
+\]
+\jiaokan{原文此处写作 $T=\sum_{i,j}g_{ij}(q)\dot q_i\dot q_j$，漏去因子 $\frac12$。由紧接着的定义 $p_i=\partial L/\partial\dot q_i=\sum_jg_{ij}\dot q_j$，以及后文对角情形 $p_i=m_i\dot q_i$ 可知，此处应有 $\frac12$；正文据此更正。}
+与 $\dot q$ 无关（我们只看 $L$ 不显含 $t$ 的情况），则广义动量 $p=(p_1,\ldots,p_N)$ 现在成为
+\begin{equation}
+ p_i=\sum_j g_{ij}\dot q_j.
+ \tag{18}
+\end{equation}
+考虑到质量已含于 $g_{ij}$ 中，则若记 $(g^{ij})=(g_{ij})^{-1}$，我们会有
+\begin{equation}
+ \dot q_i=\sum_j g^{ij}p_j.
+ \tag{19}
+\end{equation}
+由此可见，仅当 $(g_{ij})$ 是对角矩阵，即 $(g_{ij})=\operatorname{diag}(m_1,\ldots,m_N)$ 时，我们才能得到与
+\[
+ \text{动量＝质量}\times\text{速度，速度}=\frac1{\text{质量}}\times\text{动量}
+\]
+“一样”的关系式
+\begin{equation}
+ p_i=m_i\dot q_i,
+ \qquad
+ \dot q_i=\frac1{m_i}p_i.
+ \tag{20}
+\end{equation}
+否则只能得到矩阵关系式(18)、(19)。实际上，广义动量 $p$ 与广义速度 $\dot q$、广义坐标 $q$ 是性质不同的向量，二者之间有一个对偶关系。我们将在第七章中详细讨论这个区别。这样，要描述一个力学系统应该给出 $q$ 与 $p$ 用 $(p,q)$ 的表达式，这正是哈密顿力学需要解决的问题。现在我们只看到一个事实：上面的例子中 $L$ 中不含 $\theta$，于是相应于 $\theta$ 的广义动量分量 $\partial L/\partial\dot\theta=mr^2\dot\theta$ 守恒，从而得到角动量守恒。一般说来，若拉格朗日函数 $L$ 中不含某一个广义坐标例如 $q_j$，则拉格朗日方程将给出
+\[
+ \frac d{dt}\frac{\partial L}{\partial\dot q_j}=0,
+\]
+从而相应于 $q_j$ 的广义动量必守恒。这种 $L$ 中不显含的坐标称为循环坐标（cyclic coordinates），只要找到了一个循环坐标就会得到一个守恒律 $p_j=\mathrm{const.}$。前面已经说过，找到一个力学系统的守恒律对研究这个力学系统有重大的意义。这样一些在牛顿力学中不易得到的关系，在以最小作用原理为基础的拉格朗日力学与哈密顿力学中却是显而易见的结论。尤其重要的是：这些结果在物理学其它分支中同样很重要。
+
+\subsection*{4. 测地线}
+
+现在提出另一个问题：在曲面 $S$ 上有两点 $A,B$ 怎样找出连接 $A,B$ 两点的最短的曲线？首先的问题是，曲面 $S$ 上如何定义长度？仿照上一节，我们把曲面规定为由源空间 $\mathbb R^m$ 中的开集 $\Omega$ 到靶空间 $\mathbb R^n$ 中的一个光滑的映射，如果用局部坐标来表示，就是
+\begin{equation}
+ \varphi:\ y_\alpha=\varphi_\alpha(x_1,\ldots,x_m),
+ \qquad \alpha=1,2,\ldots,n.
+ \tag{21}
+\end{equation}
+以下我们规定：若用拉丁字母如 $i,j$ 等作下标，总是由1变到 $m$ 而与源空间中的坐标维数一致；若用希腊字母如 $\alpha,\beta$ 等作下标，则由1变到 $n$ 而与靶空间的坐标维数一致。(21)适合最大秩条件。我们还规定这些函数属于 $C^2(\Omega)$，而不去设法减少其光滑性的要求。在靶空间中，弧长
+\[
+ ds^2=\sum_{\alpha=1}^{n}dy_\alpha^2,
+\]
+如果限制在 $S=\varphi(\Omega)$ 上，就给出了其上的弧长为
+\begin{align}
+ ds^2
+ &=\sum_{\alpha=1}^{n}\sum_{i,j=1}^{m}
+ \frac{\partial\varphi_\alpha}{\partial x_i}\,dx_i
+ \frac{\partial\varphi_\alpha}{\partial x_j}\,dx_j\\
+ &=\sum_{i,j=1}^{m}g_{ij}\,dx_i\,dx_j,
+ \tag{22}
+\end{align}
+这里
+\begin{equation}
+ g_{ij}(x)=\sum_{\alpha=1}^{n}
+ \frac{\partial\varphi_\alpha}{\partial x_i}
+ \frac{\partial\varphi_\alpha}{\partial x_j}.
+ \tag{23}
+\end{equation}
+于是 $g_{ij}(x)=g_{ji}(x)$，而且矩阵 $(g_{ij}(x))$ 对任一点 $x\in\Omega$ 都是正定的。这件事并不需要“硬算”，因为 $ds^2\ge0$，而且 $ds^2=0$ 当且仅当一切 $dy_\alpha=0$，但由最大秩假设 $dy_\alpha=0$ 当且仅当一切 $dx_i=0$。所以(22)当且仅当一切 $dx_i=0$ 时为0。即是说，作为 $dx_i$ 的二次型 $ds^2$ 是恒正的，亦即 $(g_{ij}(x))$ 是正定矩阵。这样它就有逆矩阵存在。我们规定把逆矩阵记为 $(g_{ij}(x))^{-1}=(g^{ij}(x))$。
+
+这样我们看到，在 $S$ 上现在有了一个度量(22)，它是由靶空间（即 $S$ 的包含空间）中的欧几里得度量 $ds^2=\sum_{\alpha=1}^{n}dy_\alpha^2$ 诱导而来的。但是从现在起我们可以完全“忘记”诱导它的根源（映射 $\varphi$），而只需要记住两点：1. 它是对称的：$g_{ij}=g_{ji}$；2. $(g_{ij}(x))$ 是正定的。换句话说，设 $S$ 是一个“曲面”（微分流形），其上用(22)式定义一个“度量”，而且 $(g_{ij})$ 适合以上的要求。因为 $S$ 并不一定嵌入或浸入在某一个包含空间 $\mathbb R^n$ 内，所以也就没有一个映射(21)使得(23)式成立。具有适合这两个条件的度量的微分流形称为一个黎曼流形，我们要在 $S$ 上确定如上所述连接 $A,B$ 两点的弧。关于微分流形的准确意义详见第七章，我们现在就只讨论如何用变分学来解决以上问题。
+
+现在再换一个角度来讨论它：从几何上看，连接 $A,B$ 两点的线 $C:x=x(\sigma)$ 的弧长是一个泛函
+\begin{equation}
+ J_{AB}(C)=\int_A^B ds
+ =\int_a^b\sqrt{\sum_{i,j=1}^{m}g_{ij}(x)
+ \frac{dx_i}{d\sigma}\frac{dx_j}{d\sigma}}\,d\sigma.
+ \tag{24}
+\end{equation}
+这里 $\sigma$ 是曲线 $C$ 的参数。如果选 $\sigma$ 为时间 $t$，并设有一个单位质量的自由质点沿 $C$ 运动，则
+\[
+ \frac12\sum_{i,j=1}^{m}g_{ij}(x)\dot x_i\dot x_j\,dt
+ =\frac12\cdot1\cdot\left(\frac{ds}{dt}\right)^2
+ =\frac12mv^2
+\]
+是动能，而
+\begin{equation}
+ J_E(C)=\frac12\int_a^b\sum_{i,j=1}^{m}g_{ij}(x)\dot x_i\dot x_j\,dt,
+ \qquad \dot x_i=\frac{dx_i}{dt},
+ \tag{25}
+\end{equation}
+就是动能对时间的积分 $\int_a^bT\,dt$，也就是莫培督的作用量。上一个例子中说过，所谓位能是一个质点组中各质点相互位置产生的能量，现在既然是讨论一个自由质点的运动，自然就没有位能 $V$ 了，或者说 $V=0$。所以现在拉格朗日函数 $L=T-V=T$，而(25)就是拉格朗日的作用量。现在要问，(24)的极值曲线即使 $J_{AB}(C)\to\min$ 的曲线 $C$ 与(25)的极值曲线有什么关系？若记沿 $C$ 的弧长与能量分别为 $L(C)$ 与 $E(C)$，我们有
+
+\noindent\textbf{引理3}\quad 若 $C$ 是一条 $C^1$ 曲线，则
+\begin{equation}
+ L(C)\le\sqrt{2(b-a)}\sqrt{E(C)}.
+ \tag{26}
+\end{equation}
+这里的等号当且仅当速度
+\[
+ \sqrt{\sum g_{ij}(x)\dot x_i\dot x_j}
+\]
+为常数时成立；若取弧长参数，则该常数为1。
+\jiaokan{原文在引理3后写“等号当且仅当 $\sqrt{\sum g_{ij}(x)\dot x_i\dot x_j}=1$ 时成立”。由施瓦茨不等式的等号条件，准确条件是速度为常数；只有在进一步取弧长参数时该常数才为1。正文据此作最小更正，并相应调整下一句。}
+
+\noindent\textbf{证}\quad 由施瓦茨不等式
+\begin{align*}
+ L(C)
+ &=\int_a^b 1\cdot\sqrt{\sum g_{ij}(x)\dot x_i\dot x_j}\,dt\\
+ &\le\left(2\int_a^b1\,dt\right)^{1/2}
+ \left(\frac12\int_a^b\sum g_{ij}(x)\dot x_i\dot x_j\,dt\right)^{1/2}\\
+ &=\sqrt{2(b-a)}\sqrt{E(C)}.
+\end{align*}
+若进一步取弧长参数，则 $t$ 恰好就是弧长，这时 $L(C)=b-a$，于是(26)给出
+\begin{equation}
+ L(C)=\sqrt{2L(C)}\sqrt{E(C)},
+ \qquad\text{即}\qquad L(C)=2E(C).
+ \tag{27}
+\end{equation}
+
+引理3中我们限制了只讨论 $C^1$ 曲线。前面在讲到可容许函数集时，总是作这样的假设的。
+
+引理3告诉我们，为了求 $L(C)$ 的极值曲线，最好是求 $E(C)$ 的极值曲线，因为在以弧长为参数时，能量的极值即弧长之极值。这样，我们就可以对 $E(C)$ 求其 E-L 方程如下：
+\[
+ \frac{\partial}{\partial\dot x_k}
+ \left(\sum_{i,j=1}^{m}g_{ij}\dot x_i\dot x_j\right)
+ =2\sum_{i=1}^{m}g_{ik}\dot x_i
+ \qquad(\text{注意 }g_{ik}=g_{ki}),
+\]
+\[
+ \frac{\partial}{\partial x_k}
+ \left(\sum_{i,j=1}^{m}g_{ij}\dot x_i\dot x_j\right)
+ =\sum_{i,j=1}^{m}\frac{\partial g_{ij}}{\partial x_k}\dot x_i\dot x_j.
+\]
+注意到 $g_{ij}(x)$ 中不含 $t$，就有
+\[
+ \frac d{dt}\left[
+ \frac{\partial}{\partial\dot x_k}
+ \sum_{i,j=1}^{m}g_{ij}\dot x_i\dot x_j\right]
+ =2\sum_{i,j=1}^{m}\frac{\partial g_{ik}}{\partial x_j}\dot x_i\dot x_j
+ +2\sum_{i=1}^{m}g_{ik}\ddot x_i.
+\]
+和前面一样，用 $(g^{ij})$ 表示 $(g_{ij})^{-1}$，则 E-L 方程成为
+\[
+ 0=\ddot x_l+\frac12\sum_{i,j,k=1}^{m}g^{kl}
+ \left(2\frac{\partial g_{ik}}{\partial x_j}-\frac{\partial g_{ij}}{\partial x_k}\right)
+ \dot x_i\dot x_j,
+\]
+\[
+ =\ddot x_l+\frac12\sum_{i,j,k=1}^{m}g^{kl}
+ \left(\frac{\partial g_{jk}}{\partial x_i}
+ +\frac{\partial g_{ik}}{\partial x_j}
+ -\frac{\partial g_{ij}}{\partial x_k}\right)
+ \dot x_i\dot x_j.
+\]
+引入著名的克里斯托费尔（Christoffel）记号
+\begin{equation}
+ \Gamma_{ij}^{l}=\frac12\sum_{k=1}^{m}g^{kl}
+ \left(\frac{\partial g_{jk}}{\partial x_i}
+ +\frac{\partial g_{ik}}{\partial x_j}
+ -\frac{\partial g_{ij}}{\partial x_k}\right),
+ \tag{28}
+\end{equation}
+则 E-L 方程成为
+\begin{equation}
+ \ddot x_l+\sum_{i,j=1}^{m}\Gamma_{ij}^{l}\dot x_i\dot x_j=0,
+ \qquad l=1,2,\ldots,m.
+ \tag{29}
+\end{equation}
+特别是，若取参数 $t$ 为弧长 $s$，上式成为
+\begin{equation}
+ \frac{d^2x_l}{ds^2}+\sum_{i,j=1}^{m}\Gamma_{ij}^{l}
+ \frac{dx_i}{ds}\frac{dx_j}{ds}=0,
+ \qquad l=1,2,\ldots,m.
+ \tag{30}
+\end{equation}
+它还是 $L(C)$ 的 E-L 方程。我们给出
+
+\noindent\textbf{定义}\quad 以(30)的解称为 $S$ 关于度量 $(g_{ij})$ 的测地线；(29)则称为关于能量的测地线。当 $t$ 即 $s$ 时，这两种测地线是一致的。
+
+\subsection*{5. 狄利克雷原理（Dirichlet principle）}
+
+§4中讲到解析函数时曾提到黎曼的解析函数理论是一个几何理论，而它是与黎曼关于静电场理论的研究密切相关的。如果我们把牛顿关于力学的理论看成是人类对自然规律的认识、特别是物理学的第一次伟大的综合，则麦克斯韦的电磁理论毫无愧色的是物理学的第二次大综合。也正如牛顿力学是一个时代的产物一样，在麦克斯韦之前，许多数学家的物理学家都极为关注电磁现象，其中就包括黎曼。黎曼甚至考虑过电与引力的统一问题。当时，黎曼关心的是静电场问题，这与法拉第—麦克斯韦的电磁理论（其中涉及电场和磁场的动力学问题）是不同的。关于静电场，黎曼时常引述狄利克雷的如下论述：平面区域 $\Omega$ 中的拉普拉斯方程
+\[
+ \frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}=0
+\]
+的适合边值条件 $u|_{\partial\Omega}=g$ 的解，必使
+\[
+ \iint_\Omega\left[\left(\frac{\partial u}{\partial x}\right)^2
+ +\left(\frac{\partial u}{\partial y}\right)^2\right]dxdy\to\min
+\]
+（准确些说是平稳值）。这个积分（现在称为狄利克雷积分）表示静电场的位能，而从物理的观点看来，如果在 $\partial\Omega$ 上放置一些电荷而使电场的电位 $u$ 适合 $u|_{\partial\Omega}=g$，则这些电荷的分布必然是使位能达到极小时才能稳定下来，而一旦电场稳定了以后，它必然适合 $\Delta u=0$。其实在19世纪中叶就已经有许多数学家和物理学家理解到这一点了，狄利克雷并非第一个。狄利克雷原理的称号是黎曼给的。
+
+现在我们来证明狄利克雷积分
+\begin{equation}
+ D(u)=\iint_\Omega\left[\left(\frac{\partial u}{\partial x}\right)^2
+ +\left(\frac{\partial u}{\partial y}\right)^2\right]dxdy
+ \tag{31}
+\end{equation}
+在可容许函数类
+\[
+ M=\{u,\ u\text{ 在 }\bar\Omega\text{ 内适当光滑},\ u|_{\partial\Omega}=g\}
+\]
+中的 E-L 方程正是拉普拉斯方程。和前面一样，考虑
+\[
+ D(u+\lambda\varphi)
+ =\iint_\Omega[(u_x+\lambda\varphi_x)^2+(u_y+\lambda\varphi_y)^2]dxdy,
+\]
+这里 $\varphi|_{\partial\Omega}=0$，从而 $u+\lambda\varphi\in M$。把此式按 $\lambda$ 展开，并且只考虑 $\lambda$ 的线性项，而且令它为0（也和前面一样，这就是略去高阶无穷小），有
+\[
+ \iint_\Omega(u_x\varphi_x+u_y\varphi_y)dxdy=0.
+\]
+应用格林公式，有
+\[
+ \iint_\Omega(u_x\varphi_x+u_y\varphi_y)dxdy
+ =\int_{\partial\Omega}[u_x\cos(n,x)+u_y\cos(n,y)]\varphi\,d\sigma
+ -\iint_\Omega\Delta u\cdot\varphi\,dxdy.
+\]
+但是 $\varphi|_{\partial\Omega}=0$，而 $\partial\Omega$ 上的积分为0，所以对一切适合此条件的 $\varphi$ 均有
+\[
+ \iint_\Omega\Delta u\cdot\varphi\,dxdy=0.
+\]
+用变分法的基本引理（它对高维情况也是成立的）即得
+\begin{equation}
+ \Delta u=0.
+ \tag{32}
+\end{equation}
+所以上述变分问题的解也就给出了(32)的狄利克雷问题（就是再附加边值条件 $u|_{\partial\Omega}=g$）的解。
+
+以上我们对 $M$ 中的函数所应有的光滑性以及 $\partial\Omega$ 的光滑性都有意地模糊了，而其实这正是关键所在。
+
+那么如何去找 $u_0\in M$ 使 $D(u_0)\to\min$ 呢？从(31)看到 $D(u)\ge0$，所以 $\inf_M D(u)$ 必存在。可以找到一个 $u_0\in M$ 使 $D(u_0)=\inf_M D(u)$，则 $u_0$ 即合于所求。这个证明在物理上极为令人信服，而且它使我们不必去求偏微分方程(32)的狄利克雷问题的解，而采用以下的所谓“直接方法”（direct method）。在 $M$ 中找这样一个序列 $\{u_k\}$，使 $D(u_k)\to\inf_M D(u)$，这样的 $\{u_k\}$ 称为极小化序列。然后考虑这个序列的极限。这样一个程序不但有理论上的意义而且在实际计算上十分有用。它有许多变化，以保证计算简单、收敛迅速等等。许多实用的数值方法例如伽辽金方法（Galerkin method），特别是有限元法（finite element method）都属于变分法这个大范畴。
+
+但是狄利克雷原理很快就遭到了魏尔斯特拉斯的批评。上面说可以找到 $u_0\in M$，使 $D(u_0)=\inf_M D(u)$，即 $D(u)$ 在 $M$ 中的下确界是可以达到的，因此下确界就成了最小值。魏尔斯特拉斯就此给出了反例，大体如下：令
+\[
+ I(u)=\int_{-1}^{1} t^2\left(\frac{du}{dt}\right)^2dt,
+\]
+\[
+ M=\{u=u(t),\ u(t)\text{ 在 }[-1,1]\text{ 上连续可微而且 }u(-1)=-1,\ u(1)=1\}.
+\]
+当然 $I(u)\ge0$。今证 $\inf_M I(u)=0$。任取 $\varepsilon>0$ 并令
+\[
+ u(t)=u_\varepsilon(t)
+ =\frac{\arctan(t/\varepsilon)}{\arctan(1/\varepsilon)}.
+\]
+很明显 $u_\varepsilon(t)\in M$，
+\[
+ \frac{du_\varepsilon}{dt}
+ =\frac1{\varepsilon\arctan(1/\varepsilon)}
+ \frac1{1+(t/\varepsilon)^2}
+ =\frac{\varepsilon}{\arctan(1/\varepsilon)}\frac1{t^2+\varepsilon^2}.
+\]
+所以当 $\varepsilon\to0$ 时，
+\begin{align*}
+ I(u_\varepsilon)
+ &<\int_{-1}^{1}(t^2+\varepsilon^2)\left(\frac{du_\varepsilon}{dt}\right)^2dt\\
+ &=\frac{\varepsilon^2}{(\arctan(1/\varepsilon))^2}
+ \int_{-1}^{1}\frac{dt}{t^2+\varepsilon^2}\\
+ &=\frac{2\varepsilon}{\arctan(1/\varepsilon)}\to0.
+\end{align*}
+这就表明 $\inf_M I(u)=0$，但这个下确界是不能达到的。因为若 $I(u_0)=0$，应有
+\[
+ \int_{-1}^{1}t^2\left(\frac{du_0}{dt}\right)^2dt=0.
+\]
+因此 $(du_0/dt)^2=0$ 而 $u_0=\mathrm{const.}$。但是常值函数不可能适合边值条件 $u(\pm1)=\pm1$。
+
+所谓直接方法还有另一个困难，下面是阿达玛举出的例子：设 $\Omega$ 是单位圆 $x^2+y^2<1$。$M$ 中的边值条件是
+\begin{equation}
+ u|_{\partial\Omega}=u(1,\theta)=\sum_{n=1}^{\infty}\frac1{n^2}\cos(n!\,\theta).
+ \tag{33}
+\end{equation}
+上式右方的级数是一致收敛的，因此代表一个连续函数。
+
+这个狄利克雷问题很容易求解，因为(33)右方是
+\[
+ \sum_{n=1}^{\infty}\frac1{n^2}
+ [\cos(n!\,\theta)+i\sin(n!\,\theta)]
+ =\sum_{n=1}^{\infty}\frac1{n^2}e^{in!\theta}
+\]
+之实部，而这个级数又是
+\[
+ \sum_{n=1}^{\infty}\frac1{n^2}z^{n!}
+ =\sum_{n=1}^{\infty}\frac1{n^2}r^{n!}e^{in!\theta}
+\]
+在 $r=1$，即 $\partial\Omega$ 上之边值。这是一个幂级数，它有“许多”系数为0（这类级数称为缺项级数（lacunary series），它们所代表的解析函数有许多有趣的性质），它的收敛圆是 $|z|<1$。记其和为 $f(z)$，其实部
+\[
+ u(r,\theta)=\sum_{n=1}^{\infty}\frac1{n^2}r^{n!}\cos(n!\,\theta)
+\]
+就在 $\Omega$ 内调和，在 $\bar\Omega$ 上连续且适合边值条件(33)，即为阿达玛例子之解。现在我们来计算它的狄利克雷积分。注意到，由 C--R 方程
+\[
+ u_x^2+u_y^2=u_x^2+v_x^2=|u_x+iv_x|^2=f'(z)\overline{f'(z)},
+\]
+所以
+\begin{align*}
+ D(u)
+ &=\iint_{|z|<1}|f'(z)|^2\,dz\\
+ &=\lim_{\rho\to1}\iint_{|z|\le\rho}f'(z)\overline{f'(z)}\,dz\\
+ &=\lim_{\rho\to1}\int_0^\rho\int_0^{2\pi}
+ \left(\sum_{m=1}^{\infty}\frac{(m-1)!}{m}r^{m!-1}e^{i(m!-1)\theta}\right)\\[-.25em]
+ &\qquad\times
+ \left(\sum_{n=1}^{\infty}\frac{(n-1)!}{n}r^{n!-1}e^{-i(n!-1)\theta}\right)
+ r\,d\theta\,dr\\
+ &=\lim_{\rho\to1}2\pi\int_0^\rho
+ \sum_{m=1}^{\infty}\frac{[(m-1)!]^2}{m^2}r^{2m!-2}\,r\,dr\\
+ &=\lim_{\rho\to1}2\pi\sum_{m=1}^{\infty}
+ \frac{[(m-1)!]^2}{2m!\,m^2}\rho^{2m!}\\
+ &=2\pi\sum_{m=1}^{\infty}\frac{m!}{2m^4}=+\infty.
+\end{align*}
+这里在对 $\theta$ 积分时要利用 $e^{ik\theta}$ 之正交性而发现只余下 $m=n$ 的各项，要把 $\lim_{\rho\to1}$ 移到求和号下要一些特别的技巧，我们略去了而只写出结果。
+
+这就是告诉我们，这个解没有有限的 $D(u)$，所以不可能从 $\inf D(u)$ 中找到它。
+
+尽管这个方法有许多缺点，但是它是如此有说服力，所以人们一直努力“挽救”它。到1901年才由希尔伯特完全地证明了狄利克雷原理。为此，他附加了一个条件：$M$ 中一定能找到一个函数 $u$ 适合其边值条件，而且使 $D(u)<+\infty$。这显然是针对阿达玛的例子而来的。这里的过程大体如下：先看极小化序列 $\{u_k\}$，至少要找到一个收敛的子序列，不妨假设就是 $\{u_k\}$，不但使 $\lim u_k=u_0$，而且使得
+\[
+ \lim_{k\to\infty}\frac{\partial u_k}{\partial x}=\frac{\partial u_0}{\partial x},
+ \qquad
+ \lim_{k\to\infty}\frac{\partial u_k}{\partial y}=\frac{\partial u_0}{\partial y},
+\]
+还使得 $\lim_{k\to\infty}D(u_k)=D(u_0)$。这就要求在积分号下和微分号下求极限，我们的经验告诉我们这已经是很困难的事。但这还没有完，$D(u_0)$ 中只出现 $u_0$ 的一阶导数，狄利克雷问题则涉及 $u_0$ 的二阶导数，那么极限函数 $u_0$ 是否有这样高的正则性呢？在最简单的一维变分问题中，我们指出了有希尔伯特的正则性定理。在高维情况下也有这样的结果。但是为了要完满地回答这些问题，我们就要推广导数的理论，推广积分的理论，推广收敛性的理论，可以说是风云际会，在20世纪二三十年代一大批数学家，其中突出的有前苏联的索波列夫（S. L. Sobolev），完成了这个任务。可以说这是现代分析数学突出的一章。附带说一下，索波列夫又把自己最重要的结果称为“引理”，不过一般人却称之为嵌入定理。这里涉及的问题，我们将在以下几章中部分地讨论。正因为如此，我们现在就对 $M$ 中函数的光滑性与 $\partial\Omega$ 的光滑性略去不讲，而有意地模糊了。
+
+以上我们举了三个例子，看见了变分学所开辟的三个广阔的新天地。可惜，每一个例子的参考文献都是篇幅巨大的大著。

@@ -1,0 +1,443 @@
+
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} EXERCICES}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.1em]
+
+\item Soit $E$ et $F$ deux $K$ espaces vectoriels de dimension finie, $f\in\mathcal L(E,F)$, $E'$ (resp. $F'$) un sous-espace vectoriel de $E$ (resp. de $F$) supplémentaire de $\operatorname{Ker} f$ (resp. $\operatorname{Im}f$). Montrer qu'il existe un unique $g$ dans $\mathcal L(F,E)$ tel que $\operatorname{Ker} g=F'$, $\operatorname{Im}g=E'$, $f\circ g\circ f=f$ et $g\circ f\circ g=g$.
+
+\item Soit $E$ un espace vectoriel réel, $p$ et $q$ deux projecteurs de $E$ tels que $\operatorname{Im}p\subset\operatorname{Ker} q$ et soit $r=p+q-p\circ q$. Montrer que $r$ est un projecteur. Trouver son image et son noyau.
+
+\item
+\begin{enumerate}[label=\alph*),leftmargin=2em]
+\item Soit $E$ un espace vectoriel de dimension $n$, deux endomorphismes $f$ et $g$ de $E$ tels que $f+g=\operatorname{id}_E$ et $\operatorname{rg}(f)+\operatorname{rg}(g)\le n$. Montrer que $f$ et $g$ sont des projecteurs.
+\item Si $f_1,\ldots,f_p$, ($p\ge2$) sont des endomorphismes de $E$ tels que
+\[
+f_1+\cdots+f_p=\operatorname{id}_E
+\qquad\text{et}\qquad
+\sum_{i=1}^p\operatorname{rang}(f_i)\le n,
+\]
+montrer que les $f_i$ sont des projecteurs, que pour $i\ne j$ on a $f_i\circ f_j=0$ et que
+\[
+E=\bigoplus_{i=1}^p\operatorname{Im}f_i.
+\]
+\end{enumerate}
+
+\item Soit $n\in\mathbb N^*$, $(f,g)\in(\mathcal L(\mathbb C^n))^2$ avec $f\circ g=0$ et $f+g\in GL_n(\mathbb C)$. Montrer que $\operatorname{rg}(f)+\operatorname{rg}(g)=n$.
+
+\item Soit $E=\mathbb R^n$, $\sigma\in S_n$. On note $T_\sigma$ l'application de $E$ dans $E$ définie par
+\[
+T_\sigma((x_1,\ldots,x_n))=(x_{\sigma(1)},\ldots,x_{\sigma(n)}).
+\]
+Montrer que $T_\sigma\in GL(E)$. Trouver les sous-espaces vectoriels $F$ de $E$ tels que, pour tout $\sigma\in S_n$, $T_\sigma(F)\subset F$.
+
+\item Montrer que la famille d'applications de $\mathbb R^2$ dans $\mathbb R$ définies par
+\[
+f_{\lambda,\mu}(x,y)=\exp(\lambda x+\mu y),\qquad(\lambda,\mu)\in\mathbb R^2
+\]
+est libre.
+
+\item Soit $E$ un $\mathbb C$ espace vectoriel de dimension finie, $u$ et $v$ des endomorphismes de $E$ tels que
+\[
+uv-vu=kv,\qquad k\ne0.
+\]
+Montrer que $v$ est nilpotent.
+
+\item Soit $x_1<x_2<\cdots<x_n$ des réels. On pose $x_0=-\infty$ et $x_{n+1}=+\infty$. On note $E$ l'ensemble des fonctions de $\mathbb R$ dans $\mathbb R$ de classe $C^1$ dont la restriction à chaque $]x_i,x_{i+1}[$ est un polynôme de degré 2 au plus. Montrer que $E$ est un espace vectoriel. En donner la dimension et une base.
+
+\item Soit $f\in\mathcal L(E)$ tel qu'il existe un seul $g$ de $\mathcal L(E)$ vérifiant $f\circ g=\operatorname{id}_E$. Montrer que $f$ est un automorphisme de $E$.
+
+\item Soient $p$ et $q$ deux projecteurs du $K$ espace vectoriel $E$, \BellaCorrectionNote{avec $\operatorname{car}K\ne2$}{sans hypothèse sur la caractéristique de $K$}{La solution imprimée déduit $pq=0$ de $2pq=0$; cette implication exige que $2\ne0$ dans $K$. Sous cette hypothèse, la suite de la solution est correcte.} Condition sur $p$ et $q$ pour que $p+q$ soit projecteur. Caractériser alors son noyau et son image.
+
+\item Soit $E$ et $F$ deux espaces vectoriels, $f\in\mathcal L(E,F)$ et $g\in\mathcal L(E,F)$ tels que $\operatorname{rg}g\le\operatorname{rg}f<+\infty$. Montrer que :
+\[
+(\exists k\in GL(E))(\exists h\in\mathcal L(F)),\qquad g\circ k=h\circ f.
+\]
+
+\end{enumerate}
+
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} SOLUTIONS}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.1em]
+
+\item Comme $\operatorname{Ker} f\oplus E'=E$, $f$ induit un isomorphisme de $E'$ sur $f(E)$. Soit $f'$ cet isomorphisme.
+
+Si $g$ existe, la condition $\operatorname{Ker} g=F'$ et l'égalité $\operatorname{Im}f\oplus F'=F$ montre que $g$ induit un isomorphisme $g'$ de $\operatorname{Im}f$ sur $\operatorname{Im}g=E'$.
+
+De plus, $\forall x\in\operatorname{Im}f$, l'égalité $g(fg(x))=g(x)$, avec $g$ injective sur $\operatorname{Im}f$, implique $f\circ g(x)=x$ sur $\operatorname{Im}f$, soit comme $g(x)\in\operatorname{Im}g=E'$ où $f'$ est bijective :
+\[
+g(x)=f'^{-1}(x)\quad\text{sur }\operatorname{Im}f.
+\]
+
+Comme sur $\operatorname{Ker} g=F'$, on aura $g(x)=0$, on a déterminé des conditions devant être vérifiées par $g$ sur 2 sous-espaces supplémentaires dans $F$ d'où l'unicité de $g$ solution éventuelle.
+
+On définit donc $g$ par $g(x)=0$ sur $F'$, $g=(f')^{-1}$ sur $\operatorname{Im}f$, d'où $g$ connue par linéarité sur $F=\operatorname{Im}f\oplus F'$.
+
+On a bien $\operatorname{Ker} g=F'$, $\operatorname{Im}g=E'$.
+
+Puis,
+\[
+\forall x\in\operatorname{Im}f,\quad g\circ f\circ g(x)=g\circ f'\circ f'^{-1}(x)=g(x)
+\]
+et
+\[
+\forall x\in F',\quad g\circ f\circ g(x)=g(0)=g(x),
+\]
+donc $g\circ f\circ g=g$; et
+\[
+\forall x\in\operatorname{Ker} f,\quad f\circ g\circ f(x)=0=f(x),
+\]
+\[
+\forall x\in E',\quad f\circ g\circ f(x)=f(f'^{-1}\circ f'(x))=f(x)
+\]
+donc $f\circ g\circ f=f$.
+
+\item On a
+\[
+r^2=(p+q-pq)\circ(p+q-pq)
+\]
+se développe en remarquant que $qp=0$ (puisque $\operatorname{Im}p\subset\operatorname{Ker} q$) d'où, comme $p^2=p$ et $q^2=q$,
+\[
+r^2=p+pq-pq+q-pq=p+q-pq=r:
+\]
+on a un projecteur.
+
+Si $x\in\operatorname{Ker} r$, $p(x)+q(x)-pq(x)=0$ soit
+\[
+q(x)=p(q(x)-x)
+\]
+est un élément de $\operatorname{Im}p\cap\operatorname{Im}q\subset\operatorname{Ker} q\cap\operatorname{Im}q=\{0\}$, ($q$ projecteur) d'où $q(x)=0$ et aussi $p(x)=0\Rightarrow\operatorname{Ker} r\subset\operatorname{Ker} p\cap\operatorname{Ker} q$.
+
+L'inclusion réciproque étant évidente on a $\operatorname{Ker} r=\operatorname{Ker} p\cap\operatorname{Ker} q$.
+
+Si $x\in\operatorname{Im}r$, $r(x)=x=p(x)+q(x)-pq(x)$, soit
+\[
+x-p(x)=(\operatorname{id}_E-p)(x)=(\operatorname{id}_E-p)(q(x)).
+\]
+Mais $\operatorname{id}_E-p$ est le projecteur d'image $\operatorname{Ker} p$, de noyau $\operatorname{Im}p$, d'où comme
+\[
+(\operatorname{id}_E-p)(x-q(x))=0,
+\]
+on a $x-q(x)\in\operatorname{Im}p\Rightarrow x\in\operatorname{Im}p+\operatorname{Im}q$.
+
+Si $x\in\operatorname{Im}p$, $r(x)=p(x)+q(x)-pq(x)$ avec $q(x)=0$ d'où $r(x)=x$ : $x\in\operatorname{Im}r$;
+
+si $x\in\operatorname{Im}q$, $r(x)=p(x)+x-p(x)=x$, (puisque $q(x)=x$) d'où $x\in\operatorname{Im}r$.
+
+On en déduit $\operatorname{Im}p+\operatorname{Im}q\subset\operatorname{Im}r$ et l'égalité
+\[
+\operatorname{Im}p\oplus\operatorname{Im}q=\operatorname{Im}r.
+\]
+La somme est directe car $\operatorname{Im}p\cap\operatorname{Im}q\subset\operatorname{Ker} q\cap\operatorname{Im}q=\{0\}$.
+
+\item
+\begin{enumerate}[label=\alph*),leftmargin=2em]
+\item On a, $\forall x\in E$, $f(x)+g(x)=x\Rightarrow E=f(E)+g(E)$.
+
+Si $x\in\operatorname{Ker} f$, il reste $g(x)=x$ d'où $\operatorname{Ker} f\subset g(E)$ et de même $\operatorname{Ker} g\subset f(E)$. On a :
+\[
+\begin{aligned}
+n=\dim E&=\dim(f(E)+g(E))\\
+&=\dim f(E)+\dim g(E)-\dim(f(E)\cap g(E))\\
+&\le\operatorname{rg}(f)+\operatorname{rg}(g)
+\end{aligned}
+\]
+d'où en fait $n=\operatorname{rg}f+\operatorname{rg}g$. Mais alors $\operatorname{Ker} f$ est sous-espace de dimension $n-\operatorname{rg}(f)=\operatorname{rg}(g)$ de $g(E)$, on est en dimension finie d'où $\operatorname{Ker} f=g(E)$ et $\operatorname{Ker} g=f(E)$ pour la même raison.
+
+La relation ci-dessus implique $f(E)\cap g(E)=\{0\}$ d'où $E=f(E)\oplus g(E)$. Si $x\in f(E)=\operatorname{Ker} g$, l'égalité $x=f(x)+g(x)$ donne $x=f(x)$, d'où $f$ est l'identité sur $f(E)$, nulle sur $g(E)=\operatorname{Ker} f\Rightarrow f$ est la projection sur $f(E)$ parallèlement à $g(E)$, (et de même $g$ projection sur $g(E)$ parallèlement à $f(E)$). Enfin $f\circ g=g\circ f=0$.
+
+\item On généralise sans difficulté :
+\[
+\operatorname{id}_E=f_1+\cdots+f_p\Rightarrow E=\sum_i f_i(E);
+\]
+comme
+\[
+n=\dim\left(\sum_i f_i(E)\right)\le\sum_i\operatorname{rg}(f_i)\le n,
+\]
+il y a égalité
+\[
+n=\sum_i\operatorname{rg}(f_i)
+\]
+et aussi
+\[
+E=\bigoplus_i f_i(E).
+\]
+(La réunion de bases des $f_i(E)$ étant une famille de $n$ vecteurs, génératrice de $E$, est base de $E$ par exemple).
+
+Pour relier au a) soit $i$ fixé et
+\[
+g_i=\sum_{\substack{k=1\\k\ne i}}^p f_k.
+\]
+On a
+\[
+g_i(E)\subset\bigoplus_{\substack{k=1\\k\ne i}}^p f_k(E)
+\Rightarrow\operatorname{rg}(g_i)\le n-\operatorname{rg}(f_i).
+\]
+On a donc $f_i+g_i=\operatorname{id}_E$ et $\operatorname{rg}f_i+\operatorname{rg}g_i\le n\Rightarrow f_i$ est projecteur sur $f_i(E)$ parallèlement à $g_i(E)$.
+
+De plus
+\[
+\dim g_i(E)=n-\dim f_i(E)=\dim\left(\bigoplus_{\substack{k=1\\k\ne i}}^p f_k(E)\right)
+\]
+donc
+\[
+g_i(E)=\bigoplus_{\substack{k=1\\k\ne i}}^p f_k(E).
+\]
+Mais alors si $j\ne i$, $f_j(x)\in g_i(E)\Rightarrow f_i(f_j(x))=0$ d'où les relations $f_i\circ f_j=0$.
+\end{enumerate}
+
+\item Comme $f\circ g=0$, on a $\operatorname{Im}g\subset\operatorname{Ker} f$ donc $\operatorname{rg}(g)\le n-\operatorname{rg}(f)$. Puis, comme $(f+g)(E)\subset f(E)+g(E)$, on a, avec $f+g$ bijective, en prenant les dimensions :
+\[
+n\le\dim f(E)+\dim g(E)-\dim(f(E)\cap g(E))
+\]
+d'où \emph{a fortiori} $n\le\operatorname{rg}f+\operatorname{rg}g$ et finalement
+\[
+n=\operatorname{rg}f+\operatorname{rg}g.
+\]
+
+\item Il est clair que $T_\sigma$ agit linéairement sur les vecteurs de $E$, donc $T_\sigma$ est dans le demi-groupe $\mathcal L(E)$, (pour le produit de composition).
+
+Pour $\sigma$ et $\sigma'$ dans le groupe $S_n$ on a
+\[
+T_{\sigma\circ\sigma'}=T_{\sigma'}\circ T_\sigma,
+\]
+car on a
+\[
+T_{\sigma'}(T_\sigma(x_1,\ldots,x_n))=T_{\sigma'}(y_1,\ldots,y_n)=(y_{\sigma'(1)},\ldots,y_{\sigma'(n)})
+\]
+avec
+\[
+(y_1,\ldots,y_n)=T_\sigma(x_1,\ldots,x_n)=(x_{\sigma(1)},\ldots,x_{\sigma(n)})
+\]
+d'où
+\[
+y_i=x_{\sigma(i)}\Rightarrow y_{\sigma'(i)}=x_{\sigma\circ\sigma'(i)}.
+\]
+
+Par transport de structure, l'ensemble des $T_\sigma$ est un groupe dans $\mathcal L(E)$ donc dans $GL(E)$. (En fait $T_{\sigma\circ\sigma^{-1}}=\operatorname{id}_E=T_{\sigma^{-1}}\circ T_\sigma$ d'où $T_\sigma$ bijectif).
+
+Les transpositions engendrent $S_n$, donc $F$ sous-espace stable par tout $T_\sigma$ si et seulement si il l'est pour les $T_\sigma$ associés aux transpositions.
+
+Soit $\tau_{i,j}$ la transposition des entiers $i$ et $j$ et $T_{i,j}$ l'automorphisme associé. Soit $\mathcal B=(e_1,\ldots,e_n)$ la base canonique de $\mathbb R^n$.
+
+On a $T_{i,j}(e_i)=e_j$, $T_{i,j}(e_j)=e_i$ et $\forall k\ne i,\ne j$, $T_{i,j}(e_k)=e_k$. Donc
+\[
+T_{i,j}(e_i+e_j)=e_i+e_j
+\qquad\text{et}\qquad
+T_{i,j}(e_i-e_j)=e_j-e_i.
+\]
+$T_{i,j}$ est diagonalisable avec
+
+$-1$ valeur propre simple, et sous-espace propre associé $\mathbb R(e_i-e_j)$,
+
+$1$ valeur propre d'ordre $n-1$, et sous-espace propre associé $\operatorname{Vect}((e_i+e_j),e_k,k\ne i,k\ne j)$.
+
+Si $F$ est un sous-espace stable par chaque $T_\sigma$, donc par chaque $T_{i,j}$, chaque $T_{i,j}$ induit sur $F$ un endomorphisme diagonalisable, de valeurs propres possibles 1 et $-1$ et si $-1$ est valeur propre, c'est que $e_i-e_j\in F$ pour au moins un couple $(i,j)$ avec $i\ne j$.
+
+\emph{1er cas} Il existe un couple $(i,j)$, $i\ne j$ tel que $e_i-e_j\in F$, alors pour tout $k\notin\{i,j\}$,
+\[
+T_{j,k}(e_i-e_j)=e_i-e_k\in F.
+\]
+Les $n-1$ vecteurs $e_i-e_r$, $r\ne i$ engendrent l'hyperplan $H$ d'équation
+\[
+x_1+\cdots+x_n=0,
+\]
+on a $H\subset F$ d'où en fait $F=E$ ou $F=H$ qui est bien stable, car $x_{\sigma(1)}+\cdots+x_{\sigma(n)}=0$.
+
+\emph{2e cas} $F$ ne contient aucun $e_i-e_j$. Avec $F$ stable pour tout $T_\sigma$, c'est que $F$ est sous-espace de chaque hyperplan
+\[
+H_{ij}=\operatorname{Vect}(e_i+e_j,e_k,k\ne i,k\ne j).
+\]
+En munissant $\mathbb R^n$ de sa structure euclidienne canonique, on constate que
+\[
+H_{ij}=(e_i-e_j)^\perp,
+\]
+c'est l'hyperplan d'équation $x_i-x_j=0$.
+
+Donc dans ce cas les $x=(x_1,\ldots,x_n)$ de $F$ sont tels que $\forall i\ne j$, $x_i=x_j$ : on a
+\[
+F\subset\operatorname{Vect}(1,1,\ldots,1).
+\]
+Cette droite vectorielle est bien stable par $T_\sigma$ d'où dans ce cas $F=\operatorname{Vect}(1,\ldots,1)$, ou $F=\{0\}$.
+
+\item On sait que les fonctions $(\varphi_\lambda)_{\lambda\in\mathbb R}$ avec $\varphi_\lambda(t)=e^{\lambda t}$ sont libres.
+
+Par exemple, écrire une combinaison linéaire
+\[
+\sum_{k=1}^n\alpha_ke^{\lambda_k t}=0,
+\]
+avec les $\lambda_k$ distincts, multiplier par $e^{-\lambda_{k_0}t}$ si $\lambda_{k_0}=\sup\{\lambda_k,k=1,\ldots,n\}$ et faire tendre $t$ vers $+\infty$ : on en déduit $\alpha_{k_0}=0$, et on itère.
+
+Soit une combinaison
+\[
+\sum_{k=1}^n\alpha_k f_{\lambda_k,\mu_k}=0,
+\]
+avec les couples $(\lambda_k,\mu_k)$ distincts.
+
+Il existe alors $b$ réel tel que les réels $\lambda_k+\mu_kb$ soient 2 à 2 distincts, car les conditions du type
+\[
+\lambda_k+b\mu_k=\lambda_j+b\mu_j
+\]
+sont en nombre fini, elles s'écrivent $b(\mu_k-\mu_j)=\lambda_j-\lambda_k$ et si $\mu_j\ne\mu_k$ : on a une seule solution en $b$, alors que si $\mu_j=\mu_k$, les couples étant distincts on a $\lambda_j\ne\lambda_k$ et aucune solution en $b$. Finalement sauf pour un nombre fini de réels $b$, on a $\lambda_k+\mu_kb\ne\lambda_j+\mu_jb$, pour tout $j\ne k$.
+
+Avec un tel choix de $b$,
+\[
+\sum_{k=1}^n\alpha_k f_{\lambda_k,\mu_k}(x,bx)=0
+\]
+conduit à
+\[
+\sum_{k=1}^n\alpha_ke^{(\lambda_k+b\mu_k)x}=0,
+\]
+avec des $\lambda_k+b\mu_k$ 2 à 2 distincts d'où les $\alpha_k$ nuls.
+
+\item Avoir $v$ nilpotent, c'est avoir une puissance de $v$ nulle, d'où l'idée de considérer, par récurrence $uv^n-v^nu$.
+
+On multiplie $uv-vu=kv$ à gauche et à droite par $v$ et on ajoute
+\[
+uv^2-vuv+vuv-v^2u=uv^2-v^2u=2kv^2.
+\]
+Si on suppose que $uv^n-v^nu=nkv^n$, alors
+\[
+\begin{aligned}
+uv^{n+1}-v^{n+1}u
+&=uv\cdot v^n-v^{n+1}u=(vu+kv)v^n-v^{n+1}u\\
+&=v(uv^n)+kv^{n+1}-v^{n+1}u\\
+&=v(v^nu+nkv^n)+kv^{n+1}-v^{n+1}u\\
+&=(n+1)kv^{n+1}.
+\end{aligned}
+\]
+On a donc
+\[
+uv^n-v^nu=knv^n,
+\]
+pour tout $n\ge1$.
+
+Si pour tout $n$, $v^n\ne0$, l'application $\theta:\mathcal L(E)\to\mathcal L(E)$ définie par
+\[
+w\longmapsto\theta(w)=uw-wu
+\]
+est linéaire et admet une infinité de valeurs propres, (les $kn$) pour les vecteurs propres $v^n$. Absurde, (dimension finie) donc $v$ est nilpotent.
+
+On peut aussi prendre la norme de $knv^n$, norme d'application linéaire continue et constater que, pour tout $n$ on a
+\[
+|k|n\,\lVert v^n\rVert\le2\lVert u\rVert\,\lVert v^n\rVert.
+\]
+Si donc $v$ n'est pas nilpotent chaque $\lVert v^n\rVert$ est $\ne0$ et on aurait $n|k|\le2\lVert u\rVert$ pour tout $n\in\mathbb N^*$ : absurde.
+
+\item La fonction nulle est dans $E$, (non vide), et si $f$ et $g$ sont dans $E$, $\forall(\lambda,\mu)$ de $\mathbb R^2$, $\lambda f+\mu g$ est de classe $C^1$ et sa restriction à chaque $]x_i,x_{i+1}[$ est polynômiale de degré 2 au plus, comme $f$ et $g$, d'où $E$ sous-espace vectoriel de $C^1(\mathbb R,\mathbb R)$.
+
+Détermination de $f$ : sur $]-\infty,x_1[$ : $f(x)$ est du type $ax^2+bx+c$, (3 coefficients), sur $]x_1,x_2[$, $f(x)$ est du type $a_1x^2+b_1x+c_1$ et la classe $C^1$ exige les égalités
+\[
+(a-a_1)x_1^2+(b-b_1)x_1+c-c_1=0,
+\]
+\[
+2(a-a_1)x_1+b-b_1=0.
+\]
+C'est un système de 2 équations à 3 inconnues, $(a-a_1,b-b_1,c-c_1)$, homogène de rang 2, (matrice
+\[
+\begin{pmatrix}
+x_1^2&x_1&1\\
+2x_1&1&0
+\end{pmatrix}
+\]
+avec $\left|\begin{smallmatrix}x_1&1\\1&0\end{smallmatrix}\right|=-1$).
+
+Les solutions forment un espace vectoriel de dimension 1. On se donne par exemple $a_1$, et $b_1$ et $c_1$ deviennent fonctions linéaires de $a,b,c,a_1$. On fait de même en chaque $x_i$, d'où un paramètre indépendant de plus et $\dim E=n+3$.
+
+Soit $f_i$ définie par $f_i(x)=(x-x_i)^2$ sur $]-\infty,x_i[$, 0 sur $[x_i,+\infty[$. Les fonctions $1,x,x^2,f_1,f_2,\ldots,f_n$ sont indépendantes, (à vérifier) dans $E$, en nombre $n+3$ : on a une base de $E$.
+
+\item L'existence de $g$ tel que $f\circ g=\operatorname{id}_E$ implique $g$ injective et $f$ surjective. Si $\dim E$ est finie, $f$ surjective linéaire de $E$ dans $E$ est un automorphisme.
+
+Si $\dim E$ infinie, on va montrer que si $f$ est non injective il existe $\widetilde g\ne g$ avec $f\circ\widetilde g=\operatorname{id}_E$. On suppose donc $\operatorname{Ker} f\ne\{0\}$. Soit $u$ non nul dans $\operatorname{Ker} f$, $\mathcal B=(e_i)_{i\in I}$ une base de $E$. On fixe $i_0$ dans $I$, on définit $\widetilde g$ par
+\[
+\widetilde g(e_{i_0})=g(e_{i_0})+u
+\]
+et, $\forall i\ne i_0$, $\widetilde g(e_i)=g(e_i)$. Comme $f(u)=0$, il est clair que $f\circ\widetilde g=f\circ g$ sur la base $\mathcal B$ donc $f\circ\widetilde g=\operatorname{id}_E$. Or $u\ne0\Rightarrow\widetilde g\ne g$. C'est absurde. Donc $f$ injective, on a un automorphisme.
+
+\item L'opérateur $p+q$ sera un projecteur si et seulement si $(p+q)^2=p+q$ soit, compte tenu de $p^2=p$ et $q^2=q$, si et seulement si
+\[
+p\circ q+q\circ p=0.
+\]
+Mais ceci implique
+\[
+p\circ p\circ q+p\circ q\circ p=0
+\]
+soit $p\circ q+p\circ q\circ p=0$ et aussi
+\[
+p\circ q\circ p+q\circ p^2=0
+\]
+soit $p\circ q\circ p+q\circ p=0$, d'où par soustraction $p\circ q-q\circ p=0$, et finalement, puisque $\operatorname{car}K\ne2$,
+\[
+p\circ q=q\circ p=0,
+\]
+(ce qui implique bien $p\circ q+q\circ p=0$). On a donc aussi
+\[
+(p+q\text{ projecteur})\Longleftrightarrow(pq=qp=0).
+\]
+
+Soit alors $x\in\operatorname{Ker}(p+q)$, $p(x)=-q(x)$, d'où l'on tire $p^2(x)=-pq(x)=0$ soit encore $p(x)=0$, donc aussi $q(x)=0$ et $\operatorname{Ker}(p+q)\subset\operatorname{Ker} p\cap\operatorname{Ker} q$. Comme l'autre inclusion est évidente on a
+\[
+\operatorname{Ker}(p+q)=\operatorname{Ker} p\cap\operatorname{Ker} q.
+\]
+
+Par ailleurs, si $y\in\operatorname{Im}(p+q)$, il existe $x\in E$ tel que $y=p(x)+q(x)$ donc $y\in\operatorname{Im}p+\operatorname{Im}q$.
+
+Or si $z\in\operatorname{Im}p\cap\operatorname{Im}q$, on a $p(z)=z$ et $q(z)=z$, comme $pq=0$ on a $pq(z)=z=0$ donc $\operatorname{Im}p$ et $\operatorname{Im}q$ sont en somme directe.
+
+Soit alors $y=u+v\in p(E)\oplus q(E)$. On a $p(u)=u$ et $q(v)=v$ mais aussi $p(v)=0$ et $q(u)=0$ car $pq=0$ implique $q(E)\subset\operatorname{Ker} p$, (et de même $qp=0\Rightarrow p(E)\subset\operatorname{Ker} q$).
+
+Donc
+\[
+(p+q)(y)=(p+q)(u)+(p+q)(v)=u+v=y,
+\]
+donc $y\in\operatorname{Im}(p+q)$ d'où
+\[
+\operatorname{Im}(p+q)=p(E)\oplus q(E).
+\]
+
+\item Posons $p=\operatorname{rang}(g)$, $q=\operatorname{rang}(f)$. Pour tout $x$ de $\operatorname{Ker} f$, on aura $g(k(x))=0$ donc $k$, bijective, doit envoyer $\operatorname{Ker} f$ dans $\operatorname{Ker} g$.
+
+Soient $A$ et $B$ des supplémentaires de $\operatorname{Ker} f$ et $\operatorname{Ker} g$, donc $E=A\oplus\operatorname{Ker} f$ et $E=B\oplus\operatorname{Ker} g$. On a $E/\operatorname{Ker} f\simeq f(E)$ et aussi $E/\operatorname{Ker} f\simeq A$ d'où $\dim A=\operatorname{rang}(f)=q$ et $\dim B=p$.
+
+Soit
+\[
+H=\operatorname{Vect}(u_1,u_2,\ldots,u_{q-p})
+\]
+un sous-espace de dimension $q-p$ de $\operatorname{Ker} g$, et $K$ tel que $\operatorname{Ker} g=H\oplus K$.
+
+Soit $\{e_1,\ldots,e_p,e_{p+1},\ldots,e_q\}$ une base de $A$ et $\{\varepsilon_1,\ldots,\varepsilon_p\}$ une base de $B$. La restriction de $f$ à $A$, supplémentaire de $\operatorname{Ker} f$, est injective donc
+\[
+\{f(e_1),\ldots,f(e_p);f(e_{p+1}),\ldots,f(e_q)\}
+\]
+est une famille libre de $F$, et c'est une base de $f(E)$ qui est de dimension $q$.
+
+On définit $h:F\to F$ par
+\[
+h(f(e_i))=g(\varepsilon_i)\quad\text{si }i\le p,
+\]
+\[
+h(f(e_j))=0\quad\text{pour }p+1\le j\le q,
+\]
+et $h=0$ par exemple sur un supplémentaire de $f(E)$ dans $F$.
+
+Puis on définit $k:E\to E$ par $k(e_i)=\varepsilon_i$ si $i\le p$, $k(e_j)=u_{j-p}$ pour $p+1\le j\le q$; puis, avec
+\[
+E=B\oplus\operatorname{Ker} g=(B\oplus H)\oplus K=A\oplus\operatorname{Ker} f,
+\]
+comme $B\oplus H$ et $A$ sont de dimension $q$, $K$ et $\operatorname{Ker} f$ sont isomorphes : il existe un isomorphisme $\theta$ de $\operatorname{Ker} f$ sur $K$. On a déjà défini $k$ sur $\{e_1,\ldots,e_q\}$ base de $A$, on définit $k$ par $k(x)=\theta(x)$ pour tout $x$ de $\operatorname{Ker} f$, d'où $k$ défini sur $E=A\oplus\operatorname{Ker} f$, bijectivement.
+
+De plus
+\[
+\forall i=1,\ldots,p,\qquad (g\circ k)(e_i)=g(\varepsilon_i)=h(f(e_i));
+\]
+\[
+\forall j=p+1,\ldots,q,\qquad (g\circ k)(e_j)=g(u_{j-p})=0=(h\circ f)(e_j);
+\]
+enfin, $\forall x\in\operatorname{Ker} f$, $g(k(x))=g(\theta(x))=0$ car $\theta(x)\in K$ et $K\subset\operatorname{Ker} g$. Comme alors $(h\circ f)(x)=h(0)=0$, c'est gagné.
+
+\end{enumerate}

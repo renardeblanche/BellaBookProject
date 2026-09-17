@@ -1,0 +1,625 @@
+\chapter{Les ensembles}
+\origpage{9--26}
+
+Les signes $\neg$, $\lor$, $\exists$... du chapitre précédent sont de nature logique et servent à \emph{formuler les modes de raisonnement}.
+
+Pour construire une théorie mathématique, on introduit d'autres signes, de nature mathématique, les signes $=$, $\in$, $\mathfrak J$, (le 3\textsuperscript{e} étant le signe du couple qui disparaîtra très vite).
+
+\subsection*{1.1. L'égalité}
+
+Son emploi est le suivant : \emph{si $a$ et $b$ sont des objets mathématiques $a=b$ est une relation}.
+
+Cela signifie que l'assemblage de signes et de lettres constituant $a$, suivi de $=$, suivi de l'assemblage $b$, fait partie de la théorie. Une autre question est de savoir si cette relation est vraie ou non.
+
+L'emploi de ce signe $=$ obéit aux règles suivantes, écrites sous forme de théorèmes car elles peuvent se déduire d'un axiome, mais que l'on peut considérer comme des axiomes logiques au sens du chapitre 0.
+
+\medskip\noindent\textsc{Théorème 1.2.} --- \emph{On a les propriétés suivantes.}
+\begin{enumerate}[label=\arabic*)]
+\item \emph{La relation $x=x$ est vraie pour tout $x$.}
+\item \emph{Les relations $x=y$ et $y=x$ sont équivalentes quels que soient $x$ et $y$.}
+\item \emph{Quels que soient $x,y,z$ les relations $x=y$ et $y=z$ impliquent $x=z$.}
+\item \emph{Soient $u$ et $v$ des objets tels que $u=v$ et $R$ une relation contenant la lettre $x$ ; alors les relations obtenues en substituant $u$ à $x$ dans $R$ et $v$ à $x$ sont équivalentes.}
+\end{enumerate}
+
+En fait, dans la pratique on utilise sans arrêt les règles de ce théorème sans s'y référer.
+
+\subsection*{1.3. L'appartenance}
+
+C'est le second signe fondamental en mathématique, noté $\in$ et là encore, \emph{si $a$ et $b$ sont des objets mathématiques, $a\in b$ est une relation mathématique}.
+
+L'emploi du signe d'appartenance est gouverné par le théorème (ou axiome logique, suivant le degré d'affinage du système d'axiomes) suivant :
+
+\medskip\noindent\textsc{Théorème 1.4.} --- \emph{Soient $A$ et $B$ deux ensembles, pour que l'on ait $A=B$ il faut et il suffit que les relations $x\in A$ et $x\in B$ soient équivalentes.}
+
+On touche au délire car que sont les ensembles ?
+
+\emph{En fait un ensemble est un objet mathématique.} Diantre, diantre... Alors qu'est-ce qu'un objet mathématique ? Un assemblage, formé à partir des signes de la théorie suivant certaines règles dont je n'ai pas parlé.
+
+On ne peut pas définir un ensemble en quelques phrases élémentaires. La sagesse est donc de considérer un ensemble comme une notion première qu'on comprend intuitivement, et sur laquelle on va travailler et raisonner logiquement, tout en sachant que c'est le résultat de règles qui peuvent s'énoncer logiquement.
+
+\BellaSection{1. Parties d'un ensemble}
+
+Rappelons qu'une relation est un assemblage de signes de la théorie. L'assemblage :
+\[
+(\forall x)\bigl((x\in A)\Rightarrow(x\in B)\bigr)
+\]
+est une relation collectivisante. Vous devez me croire puisqu'on n'a pas explicité les conditions permettant de dire quand une relation est collectivisante !
+
+Cet assemblage va être remplacé par un signe abréviateur, celui de l'inclusion : $A\subset B$, (qui se lit $A$ inclus dans $B$).
+
+On pourrait donc dire que l'on définit le symbole d'inclusion, agissant sur des ensembles, c'est-à-dire des objets de la \BellaCorrection{théorie mathématique}{théorie mathématiques}, par
+\[
+(A\subset B)\Leftrightarrow(\forall x)\bigl((x\in A)\Rightarrow(x\in B)\bigr),
+\]
+et dire que cette relation est collectivisante, ce qui est en fait un axiome de la théorie des ensembles, c'est admettre qu'étant donné un ensemble $B$, il existe un et un seul ensemble dont les éléments seront les « objets de la théorie » contenus, (ou inclus) dans $B$, on dira plus brièvement, les parties de $B$ et on notera $\mathcal P(B)$ \emph{l'ensemble formé des parties de $B$}.
+
+\subsection*{Propriétés de l'inclusion}
+
+\medskip\noindent\textsc{Théorème 1.5.} --- \emph{La relation d'inclusion vérifie :}
+\begin{enumerate}[label=\arabic*)]
+\item $(A\subset B)$ et $(B\subset C)\Rightarrow(A\subset C)$,
+\item $(A=B)\Leftrightarrow((A\subset B)\text{ et }(B\subset A))$.
+\end{enumerate}
+
+Ces implications semblent évidentes, mais il faut les justifier uniquement avec les règles déjà rencontrées.
+
+Le 1) c'est :
+\[
+\bigl[((x\in A)\Rightarrow(x\in B))\text{ et }((x\in B)\Rightarrow(x\in C))\bigr]
+\Rightarrow((x\in A)\Rightarrow(x\in C)).
+\]
+On note $R$ pour $(x\in A)$, $S$ pour $(x\in B)$ et $T$ pour $(x\in C)$ et on veut prouver que $((R\Rightarrow S)\text{ et }(S\Rightarrow T))\Rightarrow(R\Rightarrow T)$ : c'est la tautologie déjà rencontrée, TL1, qui, rappelons-le, se justifie à partir des règles de départ.
+
+Le 2) lui n'est autre qu'une reformulation du théorème 1.4. \bookend
+
+\medskip\noindent\textsc{Théorème 1.6.} --- \emph{Soit $R\{x\}$ une relation où figure la variable $x$. Pour tout ensemble $B$ il existe une et une seule partie $A$ de $B$ caractérisée par
+\[
+(y\in A)\Leftrightarrow(y\in B\text{ et }R\{y\}\text{ vraie}).
+\]}
+
+Autrement dit, $A$ est la partie de $B$ formée des $y$ vérifiant la relation $R$.
+
+Cet énoncé est intuitivement évident. Il se démontre à partir des axiomes de départ.
+
+Il faut comprendre que, si on ne part pas d'un ensemble $B$, la « collection » des éléments de la théorie mathématique vérifiant $R$ n'est pas forcément un ensemble, et c'est en cela qu'on ne peut pas définir un ensemble comme une collection.
+
+\emph{Prenons par exemple la célèbre relation $R(x)$ qui s'écrit $x\notin x$ : elle n'est pas collectivisante.} (Une relation est dite collectivisante, si les objets mathématiques qui la vérifient forment un ensemble). En effet, si elle l'était, soit l'ensemble $A$ des $x$ vérifiant $x\notin x$. L'objet $A$ étant un objet mathématique, on peut voir s'il vérifie ou non la relation $R$.
+
+\begin{description}[leftmargin=6em,labelwidth=5.2em,labelsep=.7em,font=\itshape]
+\item[1\textsuperscript{er} cas] $R(A)$ vraie : donc $A\notin A$, mais alors vu la définition de l'ensemble $A$, $A$ est un élément de $A$ donc $A\in A$ : \emph{absurde}.
+\item[2\textsuperscript{e} cas] $R(A)$ fausse : c'est que l'on a non $(A\notin A)$ soit non(non $A\in A$) et comme on a mis quelque part que $\neg(\neg R)=R$, c'est $A\in A$ ; mais alors $A$ est élément de l'ensemble des objets vérifiant $R$ on aurait $A\notin A$, \emph{absurde}. Donc les $x$ vérifiant $x\notin x$ ne forment pas un ensemble.
+\end{description}
+
+\emph{De même la notion « d'ensemble de tous les ensembles » n'existe pas}, car s'il existait un ensemble $B$ dont les éléments étaient tous les ensembles de la théorie, d'après le théorème 1.6, la relation $R(x):x\notin x$ serait collectivisante, car cette fois elle agirait sur un ensemble au départ.
+
+\medskip\noindent\textsc{Corollaire 1.7.} --- \emph{Soit $X$ un ensemble, $A$ une partie de $X$, la relation $R(x):x\notin A$ définit une partie de $X$ appelée le complémentaire ensembliste de $A$ dans $X$, notée $X-A$ ou $C_X^A$.}
+
+On a
+\[
+(x\in(X-A))\Leftrightarrow((x\in X)\text{ et }(x\notin A)).
+\]
+On peut déjà commencer à « jouer » c'est-à-dire à justifier des énoncés. Par exemple on a :
+
+\medskip\noindent\textsc{Théorème 1.8.} --- \emph{Soient $M$ et $N$ des parties d'un ensemble $X$ ; alors $M\subset N$ et $(X-N)\subset(X-M)$ sont équivalentes. On a aussi $X-(X-M)=M$.}
+
+En effet
+\begin{align*}
+x\in(X-(X-M))
+&\Leftrightarrow (x\in X)\text{ et }x\notin(X-M)\\
+&\Leftrightarrow (x\in X)\text{ et non }(x\in X\text{ et }x\notin M)\\
+&\Leftrightarrow (x\in X)\text{ et on n'a pas }(x\in X\text{ et }x\notin M),\\
+&\qquad\text{comme }x\in X,\text{ c'est que }x\in M,\text{ d'où}\\
+&\Leftrightarrow (x\in X)\text{ et }(x\in M).
+\end{align*}
+Or $M\subset X$ donc il reste finalement :
+\[
+\Leftrightarrow(x\in M).
+\]
+Puis si $M\subset N\subset X$, on a $(x\in(X-N))\Leftrightarrow(x\in X\text{ et }x\notin N)$ mais \emph{a fortiori}, $x\notin M$ qui est inclus dans $N$ donc
+\[
+(x\in(X-N))\Rightarrow(x\in X\text{ et }x\notin M)\quad\text{soit }(x\in X-M);
+\]
+d'où l'implication
+\[
+(M\subset N\subset X)\Rightarrow((X-N)\subset(X-M));
+\]
+puis si $X-N\subset X-M$, l'implication que l'on vient de justifier entraîne $X-(X-M)\subset X-(X-N)$ soit $M\subset N$ vu le résultat déjà établi ; et on a bien l'équivalence de départ. \bookend
+
+\BellaSection{2. Ensemble vide, à un, à deux éléments}
+
+En fait, comme parmi les axiomes constitutifs figure celui qui dit que la relation : \textcircled{1} $(\forall x)((x\in A)\Rightarrow(x\in B))$ est collectivisante, si on part de l'objet mathématique $B$, c'est-à-dire de l'ensemble $B$ on obtient un nouvel ensemble dont les éléments sont les objets mathématiques $A$ vérifiant \textcircled{1}, encore appelées les parties de $B$, et cet ensemble des parties de $B$ est noté $\mathcal P(B)$.
+
+On a donc $A\in\mathcal P(B)\Leftrightarrow A\subset B$, ou encore $\Leftrightarrow R(A)$, si $R$ désigne la relation \textcircled{1} où figure la lettre $A$.
+
+Parmi les $A$ vérifiant \textcircled{1} figure $B$ lui-même car $(x\in B)\Rightarrow(x\in B)$ est vraie : $B$ est une partie de lui-même, mais alors on peut considérer le complémentaire ensembliste de $B$ dans lui-même, $B-B$.
+
+On a
+\[
+B-B=\{x\,;\ x\in B\text{ et }x\notin B\}.
+\]
+Cette notation se lit : « $=$ l'ensemble des $x$ tels que $x\in B$ et $x\notin B$ ».
+
+Comme une relation et sa négation ne sont jamais vérifiées en même temps, il n'y a pas de $x$ vérifiant cela : \emph{on dit que $B-B$ est la partie vide}. A priori, on obtient la partie vide de $B$ et au début de ce siècle, une longue correspondance s'est établie entre mathématiciens, pour savoir si la partie vide de $B$ était la même que celle d'un autre ensemble $C$... Le débat n'avait lieu qu'à cause d'une insuffisance du système d'axiomes. En fait on a :
+
+\medskip\noindent\textsc{Théorème 1.9.} --- \emph{L'ensemble $\varnothing=X-X$ ne dépend pas de l'ensemble $X$.}
+
+On note $\varnothing$ l'ensemble vide.
+
+Soit $\varnothing_X=X-X$ et $\varnothing_Y=Y-Y$, si on applique le théorème 1.4, on a
+\[
+\varnothing_X=\varnothing_Y\Leftrightarrow((t\in\varnothing_X)\Leftrightarrow(t\in\varnothing_Y)).
+\]
+Or $(t\in\varnothing_X)\Leftrightarrow$ il n'y a pas de $t$ vérifiant cela, et on aboutit à la même chose pour $(t\in\varnothing_Y)$.
+
+En fait on n'a rien démontré par cette phrase (« il n'y a pas de $t$... »). Si on désigne par $R$ la relation $x\in X$ et par $S$ la relation $x\in Y$, $\varnothing_X=\{x\,;\ R\text{ et }(\text{non}R)\}$ est le résultat de la relation collectivisante $(R\text{ et }(\text{non}R))$.
+
+De même, $\varnothing_Y$ est l'ensemble des $x$ vérifiant $(S\text{ et }(\text{non}S))$.
+
+Une vraie démonstration consiste à prouver que les relations $(R\text{ et }(\text{non}R))$ et $(S\text{ et }(\text{non}S))$ sont équivalentes.
+
+Or, plus généralement, on a $(R\text{ et }(\text{non}R))\Rightarrow T$ vraie, avec $T$ relation quelconque.
+
+Car en notant $U$ pour $(R\text{ et }(\text{non}R))$, $U\Rightarrow T$ c'est $T$ ou (non$U$), donc $(R\text{ et }(\text{non}R))\Rightarrow T$ c'est $T$ ou non$(R\text{ et non}(R))$, c'est donc $T$ ou non(non(non$R$ ou non(non$R$))), par définition du mot \emph{et}. Les non non se neutralisent, (TL3), il reste donc $T$ ou (non$R$ ou $R$).
+
+Comme (non$R$ ou $R$) signifie $(R\Rightarrow R)$, et que c'est vrai, (tautologie TL2), finalement la \BellaCorrection{disjonction}{conjonction} de $T$ et de (non$R$ ou $R$) est vraie, la deuxième relation étant vraie.
+
+Mais alors, avec $T=(S\text{ et }(\text{non}S))$ on a bien $(R\text{ et }(\text{non}R))\Rightarrow(S\text{ et }(\text{non}S))$ et l'implication réciproque est vraie aussi, par symétrie des rôles joués par $S$ et $R$ d'où l'équivalence.
+
+La démonstration qui vient d'être faite sera désormais remplacée par la phrase « il n'y a pas de $t$ vérifiant $t\in X-X$ »...
+
+De même que l'existence de \emph{l'ensemble des parties d'un ensemble} est axiomatique, on introduit axiomatiquement les ensembles à un ou deux éléments.
+
+\medskip\noindent\textsc{Définition 1.10.} --- \emph{On appelle ensemble à un élément, tout ensemble $X$ vérifiant ($X$ est non vide) et (on a $x=y$ pour tout $x$ de $X$ et tout $y$ de $X$).}
+
+Étant donné $x$ objet mathématique, on admet (axiome) qu'il existe un ensemble, (appelé \emph{singleton}), noté $\{x\}$, formé du seul élément $x$.
+
+De même si $x$ et $y$ sont 2 objets mathématiques, on admet qu'il existe un ensemble noté $\{x,y\}$ dont les seuls éléments sont $x$ et $y$. Un tel ensemble est une \emph{paire}.
+
+En fait on a besoin de ces 2 notions, (de l'unité et de la paire) pour introduire la notion de couple, qui permettra d'introduire celle de fonction, d'indexation, notions qui permettront alors de parler de réunion et d'intersection de parties, de lois de composition...
+
+\BellaSection{3. Couples, fonctions (ou applications)}
+
+Avec les signes $\lor$, $\neg$, $=$, $\in$, $T$, □, (les 2 derniers correspondant à la formalisation de la substitution d'un objet mathématique dans une variable, et le □ à la notion d'inconnue) on utilise un autre signe, $\mathfrak J$, pour formaliser la notion couple, qui sert à former des objets mathématiques.
+
+À l'aide des objets mathématiques $x$ et $y$ énoncés dans cet ordre on forme un nouvel objet mathématique, noté $\mathfrak Jxy$, (dans les mathématiques formalisées), mais également noté $(x,y)$, qui s'appelle le \emph{couple} $(x,y)$.
+
+L'emploi de ce signe est soumis à une seule règle :
+\[
+((x,y)=(u,v))\Leftrightarrow((x=u)\text{ et }(y=v)).
+\]
+La donnée d'un objet « couple », noté $z$, revient à la donnée des objets $x$ et $y$, $x$ étant la première projection de $z$, notée $x=p_1(z)$, et $y$ la deuxième projection de $z$, notée $y=p_2(z)$, si $z$ est le couple $(x,y)$.
+
+Il est à noter que rien n'empêche d'avoir $x=y$ dans le couple $z=(x,y)$ : le couple $(x,x)$ continue à avoir 2 projections, valant la même chose, alors que l'ensemble à 2 éléments $\{x,y\}$, si $x=y$, n'est plus un ensemble à deux éléments. De même, si $x\ne y$, les couples $(x,y)$ et $(y,x)$ sont différents, (ils ne vérifient pas la règle d'égalité), alors que les paires (ensembles à 2 éléments), $\{x,y\}$ et $\{y,x\}$ coïncident. Il ne faut donc pas confondre couple et paire.
+
+Soient alors deux ensembles $X$ et $Y$. On démontre qu'avec les règles de départ, la relation
+\[
+(z\in Z)\Leftrightarrow(\exists x\in X),(\exists y\in Y),(z=(x,y))
+\]
+est collectivisante.
+
+Autrement dit, il existe un ensemble $Z$, appelé \emph{produit cartésien} de $X$ et de $Y$ dont les éléments sont les couples $z=(x,y)$ avec $x$ dans $X$ et $y$ dans $Y$.
+
+On note $Z=X\times Y$ ce produit cartésien.
+
+Nous allons pouvoir aborder la notion de fonction.
+
+Intuitivement, si $X$ et $Y$ sont des ensembles, on appelle fonction définie sur $X$, à valeurs dans $Y$, \emph{toute opération qui à chaque $x$ de $X$ associe un $y$ de $Y$}. On emploie aussi le terme \emph{application}.
+
+L'ennui, c'est qu'on utilise des mots non définis, (opération, associe...). Il faut autre chose.
+
+On formalise alors la définition de fonction comme suit :
+
+\medskip\noindent\textsc{Définition 1.11.} --- \emph{On appelle fonction toute partie $G$ de $X\times Y$ vérifiant la condition : $(\forall x\in X)$, il existe un et un seul $y$ de $Y$ tel que $(x,y)\in G$.}
+
+On dit encore que $G$ est un \emph{graphe}.
+
+Si on pense à la façon classique de procéder, (\emph{exemple} : fonction $f:x\mapsto x^2$ de $\mathbb R$ dans $\mathbb R$, cela revient à remplacer la formulation du procédé qui à $x$ associe son carré, par la donnée globale de l'ensemble des couples $(x,x^2)$ de $\mathbb R\times\mathbb R$) cela revient à définir une fonction par la donnée de sa « courbe représentative », dans ce cas particulier.
+
+Bien sûr, on utilisera la notation : soit $f$ la fonction de $X$ dans $Y$ définie par : $x\mapsto x^2$ par exemple, avec ici $X=Y=\mathbb R$ au lieu de soit $G=\{(x,x^2);x\in\mathbb R\}$.
+
+Si $f:X\to Y$ est une fonction, $X$ est l'ensemble de départ, $Y$ l'ensemble d'arrivée.
+
+À chaque $x$ de $X$ on associe le seul $y$ de $Y$ tel que $(x,y)\in G$, $G$ graphe qui détermine $f$.
+
+\subsection*{1.12.}
+\emph{On parlera aussi d'application $f:X\longrightarrow Y$ au lieu de fonction}, les 2 termes sont synonymes, (c'est l'usage qui fait que les 2 existent, avec parfois une différence de langage, on utilise le terme fonction pour une application qui peut avoir comme ensemble de départ une partie de $X$ seulement, ce qui amène à parler du domaine de définition de la fonction).
+
+\subsection*{1.13. Images directes, images réciproques}
+
+Soient $X$ et $Y$ deux ensembles, $f$ une fonction de $X$ dans $Y$.
+
+Si $A$ est une partie de $X$ on désigne par $f(A)$ l'ensemble des $y$ de $Y$ tels qu'il existe $x$ dans $A$ vérifiant $f(x)=y$.
+
+\emph{C'est incorrect} (mais commode !), puisque $f$ ne devrait agir que sur des éléments de l'ensemble $X$, et que la partie $A$ de $X$ est un élément de l'ensemble des parties de $X$, mais pas de $X$.
+
+On a donc :
+\[
+\text{si }A\subset X,\qquad f(A)=\{y,\ y\in Y,\ \exists x\in A,\ f(x)=y\}
+\]
+ou encore
+\[
+f(A)=\{f(x);\ x\in A\}.
+\]
+De même, si $B$ est une partie de $Y$, on appelle \emph{image réciproque} de $B$ par $f$ l'ensemble des $x$ de $X$ tels que $f(x)\in B$, et on note $f^{-1}(B)$ cet ensemble : on a donc :
+\[
+f^{-1}(B)=\{x,x\in X;\ f(x)\in B\}.
+\]
+Ces notions d'image directe et réciproque d'une partie serviront en algèbre, (étude des structures de groupe, d'anneau, de corps, d'espace vectoriel) \BellaCorrection{mais aussi en topologie}{mais aussi en, topologie}.
+
+\subsection*{1.14. Indexation}
+
+Soit $G$ une fonction de $X$ dans $Y$, (point de vue donnée du graphe $G$), notée $f:x\mapsto y=f(x)$.
+
+Au lieu de noter $f(x)$ l'image de $x$ par la fonction $f$, on peut la noter $y_x$, (se lit « $y$ indice $x$ ») et la donnée de $G$ revient à se donner les éléments $y$ de $Y$, indexés par les $x$ de $X$.
+
+En fait on voudrait sortir de ce cadre, où les éléments $y$ associés aux $x$ de $X$ sont dans un ensemble $Y$ connu à l'avance. On veut donner une existence légale dans la théorie mathématique, au processus suivant : à chaque $i$ élément d'un ensemble $I$, on associe un objet mathématique $x_i$, sans préciser, (parce qu'on ne le peut pas !) l'ensemble où sont pris les $x_i$.
+
+On parlera dans ce cas d'une famille indexée par $I$, et on notera $(x_i)_{i\in I}$ cette famille. Dès que l'ensemble $Y$ où sont pris les $x_i$ est connu, la « famille des $x_i$ » devient une fonction de $I$ dans $Y$.
+
+L'emploi des indexations est soumis à des règles, mais pour continuer, on peut considérer qu'il s'agit d'une autre façon de noter les fonctions.
+
+\BellaSection{4. Vocabulaire sur les applications}
+
+\subsection*{1.15. Application injective}
+Une application $f:X\to Y$ est dite injective si
+\[
+\forall(x',x'')\in X^2,\qquad(f(x')=f(x''))\Rightarrow(x'=x''),
+\]
+ou encore si $(x'\ne x'')\Rightarrow(f(x')\ne f(x''))$.
+
+On parle encore d'injection $f$ de $X$ dans $Y$.
+
+\subsection*{1.16. Application surjective}
+Une application $f:X\to Y$ est dite surjective si
+\[
+\forall y\in Y,\qquad \exists x\in X,\qquad f(x)=y,
+\]
+soit si tout $y$ de $Y$ admet au moins un antécédent. On dit aussi que $f$ est une surjection.
+
+Il est clair que
+\[
+f\text{ surjective}\Leftrightarrow f(X)=Y,
+\]
+(l'image directe de la partie $X$ est l'ensemble $Y$ entier) ; et que
+\[
+f\text{ injective}\Leftrightarrow\forall\text{ singleton }\{y\}\text{ de }Y,\ f^{-1}(\{y\})\text{ est soit vide, soit un singleton}.
+\]
+
+\subsection*{1.17.}
+\emph{On dira que $f$ est bijective si et seulement si elle est injective et surjective.} On parle encore de bijection.
+
+On a donc
+\[
+f:X\longrightarrow Y\text{ bijective}\Leftrightarrow\forall y\in Y,\ \exists!x\in X,\ f(x)=y,
+\]
+où $\exists!$ est l'abréviation pour « il existe un et un seul », le $\exists!$ se décompose en $\exists$ pour traduire la surjection et en $!$ pour traduire l'injection.
+
+\subsection*{1.18. Produit de composition}
+Soient $X,Y,Z$ trois ensembles, (ce qui suppose connue la notion de trois $=3$ ? pas vraiment, en fait on prend deux ensembles $X$ et $Y$, puis deux ensembles $Y$ et $Z$, le $Y$ étant commun dans chaque choix), et $f$ et $g$ deux applications : $f:X\to Y$ et $g:Y\to Z$.
+
+À chaque $x$ de $X$ on peut alors associer le seul $z$ de $Z$ qui est associé par $g$ à « l'élément $y$ associé par $f$ à $x$ ».
+
+Ce procédé qui à $x$ de $X$ associe un seul $z$ de $Z$ définit une application de $X$ dans $Z$, appelée la \emph{composée de $f$ et de $g$}, notée $g\circ f$. Attention au sens dans lequel s'écrivent $f$ et $g$.
+
+En termes de graphes, on se donne $F$, un graphe de $X\times Y$, soit
+\[
+F=\{(x,f(x));x\in X\},
+\]
+et $G$ graphe de $Y\times Z$,
+\[
+G=\{(y,g(y));y\in Y\}.
+\]
+Ce sont des parties $F$ et $G$ de $X\times Y$ et $Y\times Z$ respectivement, vérifiant :
+\[
+(\forall x\in X),(\exists!y\in Y);\ (x,y)\in F,
+\]
+et
+\[
+(\forall y\in Y),(\exists!z\in Z);\ (y,z)\in G.
+\]
+Si on note alors
+\[
+\begin{aligned}
+H=\{(x,z);\;&x\in X,\\[-0.2em]
+&z\text{ étant le seul élément de }Z\text{ associé à l'unique }y\text{ de }Y\text{ associé à }x\},
+\end{aligned}
+\]
+on a bien un graphe de $X\times Z$.
+
+On peut alors établir un certain nombre de propriétés obtenues en cherchant les liens existant entre les notions déjà introduites.
+
+\medskip\noindent\textsc{Théorème 1.19.} --- \emph{Quelles que soient les applications $f:X\to Y$, $g:Y\to Z$ et $h:Z\to T$, on a $h\circ(g\circ f)=(h\circ g)\circ f$.}
+
+On parlera de « l'associativité » du produit de composition.
+
+En effet si $u=g\circ f$ et $v=h\circ g$, en $x\in X$, on a
+\[
+(h\circ(g\circ f))(x)=h(u(x))=h(g(f(x))),
+\]
+alors que
+\[
+(v\circ f)(x)=(h\circ g)(f(x))=h(g(f(x)))
+\]
+c'est le même élément. \bookend
+
+On notera donc $h\circ g\circ f$ ce produit de composition, sans préciser la place des parenthèses.
+
+\medskip\noindent\textsc{Théorème 1.20.} --- \emph{Soient $f:X\to Y$ et $g:Y\to Z$ deux applications. Si $g\circ f$ est injective, alors $f$ est injective ; si $g\circ f$ est surjective, alors $g$ est surjective.}
+
+Résultat bien utile dans certains exercices, et qu'il faut alors rejustifier si c'est le but de l'exercice.
+
+On suppose $g\circ f$ injective, on veut prouver que $f$ est injective.
+
+Soient donc $x'$ et $x''$ de $X$ tels que $f(x')=f(x'')$, on veut prouver qu'alors $x'=x''$, or l'outil c'est l'injectivité de $g\circ f$. On prend les images par $g$, on a :
+\[
+g(f(x'))=g(f(x'')),
+\]
+soit
+\[
+(g\circ f)(x')=(g\circ f)(x''),
+\]
+et comme $g\circ f$ est injective on conclut bien $x'=x''$, d'où $f$ injective.
+
+J'ai essayé de détailler le raisonnement : on formule la conclusion que l'on veut justifier, on voit en quoi les hypothèses peuvent intervenir, pour finalement conclure.
+
+Dans le 2\textsuperscript{e} cas on suppose $g\circ f$ surjective. On veut prouver que $g:Y\to Z$ est surjective, c'est-à-dire, partant de $z\in Z$, trouver un antécédent par $g$, or (intervention de l'hypothèse) on en a un par $g\circ f$, d'où...
+
+Soit $z\in Z$, comme $g\circ f$ est surjective, il existe $x$ dans $X$ tel que $(g\circ f)(x)=z$, soit encore tel que $g(f(x))=z$. En posant $y=f(x)$, on a trouvé $y$ dans $Y$ tel que $g(y)=z$, donc $g$ est surjective. \bookend
+
+Il en résulte que
+\[
+g\circ f\text{ bijective}\Rightarrow
+\begin{cases}
+f\text{ injective (car }g\circ f\text{ injective),}\\
+g\text{ surjective (car }g\circ f\text{ surjective).}
+\end{cases}
+\]
+
+\subsection*{1.21. Application réciproque}
+
+Si $f:X\to Y$ est une bijection, $\forall y\in Y$, $\exists!x\in X$, $f(x)=y$. On a donc un « procédé » qui à chaque $y$ de $Y$ associe un et un seul $x$ de $X$, celui d'image $y$ par $f$.
+
+Ce procédé est donc une fonction de $Y$ dans $X$, notée $f^{-1}:Y\to X$. On comprend alors pourquoi la notation $f^{-1}(B)=\{x;f(x)\in B\}$ introduite pour l'image réciproque d'une partie était dangereuse : elle conduit à utiliser le même symbole pour 2 choses différentes. Malgré cela, on note $f^{-1}$ les 2 « choses différentes » en question, l'ambiguïté étant levée par la considération de la nature des éléments sur lesquels $f^{-1}$ agit. Dans un cas, ($f^{-1}$ application réciproque de la bijection $f$) il s'agit d'éléments de $Y$, dans l'autre cas de parties de $Y$.
+
+\BellaSection{5. Réunion, intersection}
+
+\subsection*{1.22. Réunion d'une famille d'ensembles}
+
+Soit une famille $(A_i)_{i\in I}$ d'ensembles, on appelle réunion des $A_i$ l'ensemble $A$ caractérisé par : $(x\in A)\Leftrightarrow(\exists i\in I),(x\in A_i)$ et on note
+\[
+A=\bigcup_{i\in I}A_i
+\]
+cette réunion.
+
+En fait, dans le cas d'une famille d'ensembles qui ne seraient pas tous contenus dans un « sur ensemble », on est en présence d'un axiome qui dit que cette réunion existe.
+
+\subsection*{1.23. Intersection d'une famille d'ensembles}
+
+Soit une famille non vide $(A_i)_{i\in I}$ d'ensembles on appelle intersection des $A_i$ l'ensemble $B$ caractérisé par : $x\in B\Leftrightarrow(\forall i\in I),(x\in A_i)$, et on note
+\[
+B=\bigcap_{i\in I}A_i
+\]
+cette intersection.
+
+Le non vide signifie que $I$ est non vide, car si on essaye de donner un sens à cette formulation avec $I=\varnothing$, n'importe quel objet $x$ de la théorie vérifie le $(\forall i\in\varnothing\ldots)$ car il n'y a pas de $i$ dans $\varnothing$, donc pas de condition à \BellaCorrection{vérifier}{vérifiée}, et ceci conduirait à parler d'ensemble de tous les ensembles.
+
+Par contre une réunion d'une famille indexée par $\varnothing$ conduit à $\varnothing$. Il nous reste à établir des propriétés pour ces « opérations » de $\cup$, $\cap$, passage au complémentaire, image directe et réciproques...
+
+\medskip\noindent\textsc{Théorème 1.24.} \emph{(Associativité de la réunion)} --- \emph{Soit $(I_\lambda)_{\lambda\in\Lambda}$ une famille d'ensembles, $I=\bigcup_{\lambda\in\Lambda}I_\lambda$ et $(A_i)_{i\in I}$ une famille indexée par $I$ on a}
+\[
+\bigcup_{i\in I}A_i=\bigcup_{\lambda\in\Lambda}\left(\bigcup_{i\in I_\lambda}A_i\right).
+\]
+
+Pour démontrer cette égalité d'ensembles, on peut procéder par « double inclusion », ou directement, si c'est possible, par équivalence. On a :
+\[
+\left(x\in\bigcup_{i\in I}A_i\right)\Leftrightarrow(\exists i\in I),(x\in A_i),\qquad\text{(définition de la réunion).}
+\]
+Or $I=\bigcup_{\lambda\in\Lambda}I_\lambda$, donc le $(\exists i\in I)\Leftrightarrow(\exists\lambda\in\Lambda),(\exists i\in I_\lambda)$ d'où
+\[
+\left(x\in\bigcup_{i\in I}A_i\right)\Leftrightarrow(\exists\lambda\in\Lambda),(\exists i\in I_\lambda),(x\in A_i).
+\]
+Comme l'énoncé $(\exists i\in I_\lambda)(x\in A_i)$ équivaut à $\left(x\in\bigcup_{i\in I_\lambda}A_i\right)$, on a :
+\[
+\left(x\in\bigcup_{i\in I}A_i\right)\Leftrightarrow\exists\lambda\in\Lambda,\ x\in\left(\bigcup_{i\in I_\lambda}A_i\right)
+\]
+d'où l'égalité. \bookend
+
+\medskip\noindent\textsc{Théorème 1.25.} \emph{(Associativité de l'intersection)} --- \emph{Soit $(I_\lambda)_{\lambda\in\Lambda}$ une famille non vide (i.e. $\Lambda\ne\varnothing$) d'ensembles non vides et $I=\bigcup_{\lambda\in\Lambda}I_\lambda$. Soit $(A_i)_{i\in I}$ une famille indexée par $I$, on a}
+\[
+\bigcap_{i\in I}A_i=\bigcap_{\lambda\in\Lambda}\left(\bigcap_{i\in I_\lambda}A_i\right).
+\]
+
+En effet,
+\[
+x\in\bigcap_{i\in I}A_i\Leftrightarrow\forall i\in I,\ x\in A_i,
+\]
+alors que
+\[
+x\in\bigcap_{\lambda\in\Lambda}\left(\bigcap_{i\in I_\lambda}A_i\right)
+\Leftrightarrow\forall\lambda\in\Lambda,\ x\in\bigcap_{i\in I_\lambda}A_i.
+\]
+Or
+\[
+x\in\bigcap_{i\in I_\lambda}A_i\Leftrightarrow\forall i\in I_\lambda,\ x\in A_i,
+\]
+donc
+\[
+x\in\bigcap_{\lambda\in\Lambda}\left(\bigcap_{i\in I_\lambda}A_i\right)
+\Leftrightarrow\forall\lambda\in\Lambda,\forall i\in I_\lambda,\ x\in A_i.
+\]
+Comme $I=\bigcup_{\lambda\in\Lambda}I_\lambda$, le $\forall i\in I$ se traduit par $\forall\lambda\in\Lambda$, $\forall i\in I_\lambda$, d'où l'égalité. \bookend
+
+\subsection*{1.26. Distributivité de l'une par rapport à l'autre}
+
+\medskip\noindent\textsc{Théorème 1.27.} --- \emph{Soit $I$ un ensemble d'indices, $(A_i)_{i\in I}$ une famille indexée par $I$ et $A$ un ensemble. On a}
+\[
+A\cap\left(\bigcup_{i\in I}A_i\right)=\bigcup_{i\in I}(A\cap A_i)
+\]
+\emph{et, si $I$ est non vide,}
+\[
+A\cup\left(\bigcap_{i\in I}A_i\right)=\bigcap_{i\in I}(A\cup A_i).
+\]
+
+En effet,
+\[
+x\in A\cap\left(\bigcup_{i\in I}A_i\right)\Leftrightarrow x\in A\text{ et }(\exists i\in I,\ x\in A_i),
+\]
+ce qui signifie encore : $(\exists i\in I)$, $(x\in A\cap A_i)$, soit
+\[
+x\in A\cap\left(\bigcup_{i\in I}A_i\right)\Leftrightarrow x\in\bigcup_{i\in I}(A\cap A_i).
+\]
+
+Pour la 2\textsuperscript{e} égalité, on a :
+\[
+x\in A\cup\left(\bigcap_{i\in I}A_i\right)\Leftrightarrow x\in A\text{ ou }(\forall i\in I,\ x\in A_i),
+\]
+alors que
+\[
+x\in\bigcap_{i\in I}(A\cup A_i)\Leftrightarrow\forall i\in I,\ x\in(A\cup A_i).
+\]
+Mais alors, soit $x\in A$, soit $x\notin A$ et dans ce cas, comme $\forall i\in I$ on a $x\in A\cup A_i$, c'est que, $\forall i\in I$, $x\in A_i$, soit encore $x\in\bigcap_{i\in I}A_i$.
+
+Finalement :
+\[
+x\in\bigcap_{i\in I}(A\cup A_i)\Leftrightarrow(x\in A)\text{ ou }\left(x\in\bigcap_{i\in I}A_i\right),
+\]
+on a bien l'égalité. \bookend
+
+\medskip\noindent\textsc{Théorème 1.28.} --- \emph{Soit $f:X\to Y$ une application, $(A_i)_{i\in I}$ une famille de parties de $X$. On a}
+\[
+f\left(\bigcup_{i\in I}A_i\right)=\bigcup_{i\in I}f(A_i)
+\]
+\emph{mais on a seulement l'inclusion :}
+\[
+f\left(\bigcap_{i\in I}A_i\right)\subset\bigcap_{i\in I}f(A_i).
+\]
+
+En effet,
+\[
+y\in f\left(\bigcup_{i\in I}A_i\right)\Leftrightarrow\exists x\in\bigcup_{i\in I}A_i,\ f(x)=y,
+\]
+or $\exists x\in\bigcup_{i\in I}A_i$ se traduit par $(\exists i\in I)$, $(\exists x\in A_i)$, donc
+\[
+y\in f\left(\bigcup_{i\in I}A_i\right)\Leftrightarrow(\exists i\in I),(\exists x\in A_i,\ f(x)=y)
+\]
+d'où
+\[
+y\in f\left(\bigcup_{i\in I}A_i\right)\Leftrightarrow\exists i\in I,\ y\in f(A_i),
+\]
+soit encore
+\[
+\Leftrightarrow y\in\bigcup_{i\in I}f(A_i),
+\]
+d'où l'égalité.
+
+\emph{Pour l'inclusion suivante :} si $y\in f\left(\bigcap_{i\in I}A_i\right)$, c'est qu'il existe $x$ dans $\bigcap_{i\in I}A_i$ tel que $y=f(x)$, mais $x$ est alors dans chaque $A_i$, donc $y=f(x)$ est dans chaque $f(A_i)$, donc dans l'intersection :
+\[
+f\left(\bigcap_{i\in I}A_i\right)\subset\bigcap_{i\in I}f(A_i).\qquad\rule{0.55em}{0.55em}
+\]
+
+On n'a pas égalité en général car, si $y\in\bigcap_{i\in I}f(A_i)$, c'est que
+\[
+(\forall i\in I,\ y\in f(A_i))\Leftrightarrow(\forall i\in I,\exists x_i\in A_i,\ y=f(x_i)),
+\]
+mais quand $i$ varie, $x_i$ varie aussi \emph{a priori}, donc il n'y a pas d'antécédent dans $\bigcap_iA_i$ sauf si $f$ est injective car pour $i\ne i'$, avoir $x_i$ et $x_{i'}$ tels que
+\[
+y=f(x_i)=f(x_{i'})\Rightarrow x_i=x_{i'}
+\]
+est constant par rapport à $i$ : cet élément constant, noté $x$, est dans $\bigcap_{i\in I}A_i$ et on a bien alors
+\[
+y=f(x)\in f\left(\bigcap_iA_i\right)
+\]
+d'où l'égalité, si $f$ est injective.
+
+Si on a l'esprit un tant soit peu méthodique, on doit se dire : voyons, voyons... sur les parties on connaît $\cup$, $\cap$, passage au complémentaire alors que dire de l'image d'un complémentaire ? Et que dire des images réciproques ? C'est ce que nous allons voir.
+
+\emph{D'abord pour l'image du complémentaire d'une partie, il n'y a... rien.}
+
+En effet, soit $f:X\to Y$ une application et $A$ une partie de $X$ on peut penser comparer les parties $f(X-A)$ et $Y-f(A)$ de $Y$, or si $y\in Y-f(A)$, comme $y$ peut ne pas être dans l'image de l'ensemble $X$ entier, il n'y a pas forcément un $x$ de $X$ tel que $y=f(x)$, (mais s'il y en a un, il n'est pas dans $A$ sinon $y\in f(A)$ ce qui est exclu).
+
+De même si $y\in f(X-A)$, c'est qu'il y a un $x\in X-A$ tel que $y=f(x)$, mais, si $f$ n'est pas injective, rien n'empêche l'existence d'un $x'$ dans $A$ tel que $f(x')=y$ donc on peut fort bien avoir $y$ dans $f(A)$ : soit $(y\notin Y-f(A))$. On n'a pas $f(X-A)\subset Y-f(A)$.
+
+\BellaCorrection{Quant}{Quand} aux images réciproques... tout baigne ! Et c'est heureux car un riche avenir leur est réservé en topologie.
+
+\medskip\noindent\textsc{Théorème 1.29.} --- \emph{Soit $f:X\to Y$ une application, $(B_i)_{i\in I}$ une famille de parties de $Y$, on a}
+\[
+f^{-1}\left(\bigcup_{i\in I}B_i\right)=\bigcup_{i\in I}f^{-1}(B_i);
+\]
+\emph{si $I$ non vide on a}
+\[
+f^{-1}\left(\bigcap_{i\in I}B_i\right)=\bigcap_{i\in I}f^{-1}(B_i),
+\]
+\emph{enfin, si $B$ est une partie de $Y$ on a}
+\[
+f^{-1}(Y-B)=X-f^{-1}(B).
+\]
+
+En effet,
+\begin{align*}
+x\in f^{-1}\left(\bigcup_{i\in I}B_i\right)
+&\Leftrightarrow f(x)\in\bigcup_{i\in I}B_i\\
+&\Leftrightarrow\exists i\in I,\ f(x)\in B_i\\
+&\Leftrightarrow\exists i\in I,\ x\in f^{-1}(B_i)\\
+&\Leftrightarrow x\in\bigcup_{i\in I}f^{-1}(B_i).
+\end{align*}
+Puis
+\begin{align*}
+x\in f^{-1}\left(\bigcap_{i\in I}B_i\right)
+&\Leftrightarrow f(x)\in\bigcap_{i\in I}B_i\\
+&\Leftrightarrow\forall i\in I,\ f(x)\in B_i\\
+&\Leftrightarrow\forall i\in I,\ x\in f^{-1}(B_i)\\
+&\Leftrightarrow x\in\bigcap_{i\in I}f^{-1}(B_i).
+\end{align*}
+Enfin,
+\begin{align*}
+x\in f^{-1}(Y-B)
+&\Leftrightarrow f(x)\in Y-B\\
+&\Leftrightarrow f(x)\notin B\\
+&\Leftrightarrow x\notin f^{-1}(B)\\
+&\Leftrightarrow x\in X-f^{-1}(B).\qquad\rule{0.55em}{0.55em}
+\end{align*}
+
+(Il faut remarquer que tout au long de la justification, on n'a pas écrit $x\in X$ et..., ce qui aurait été plus correct, mais fastidieux).
+
+Il reste encore une chose utile à voir : les liens entre $\cup$, $\cap$ d'une part et passage au complémentaire. On a :
+
+\medskip\noindent\textsc{Théorème 1.30.} --- \emph{Soit $(A_i)_{i\in I}$ une famille de parties d'un ensemble $X$, on a}
+\[
+X-\left(\bigcup_{i\in I}A_i\right)=\bigcap_{i\in I}(X-A_i)
+\qquad\text{et}\qquad
+X-\left(\bigcap_{i\in I}A_i\right)=\bigcup_{i\in I}(X-A_i),
+\]
+\emph{$I$ étant ici supposé non vide.}\footnote{Comme ici on part de parties de $X$, si $I=\varnothing$, $\bigcap_{i\in\varnothing}A_i=X$, donc la condition $I\ne\varnothing$ ne s'impose pas dans ce cas particulier.}
+
+Autrement dit : le complémentaire d'une réunion est l'intersection des complémentaires, et le complémentaire d'une intersection est la réunion des complémentaires.
+
+En effet
+\[
+x\in X-\left(\bigcup_{i\in I}A_i\right)\Leftrightarrow x\in X\text{ et }x\notin\bigcup_{i\in I}A_i.
+\]
+Comme $x\in\bigcup_{i\in I}A_i$ se traduit par $\exists i\in I$, $x\in A_i$, sa négation $x\notin\bigcup_{i\in I}A_i$ se traduit par $\forall i\in I$, $x\notin A_i$.
+
+Donc
+\begin{align*}
+x\in X-\left(\bigcup_{i\in I}A_i\right)
+&\Leftrightarrow x\in X\text{ et }\forall i\in I,\ x\notin A_i\\
+&\Leftrightarrow\forall i\in I,\ (x\in X\text{ et }x\notin A_i)\\
+&\Leftrightarrow\forall i\in I,\ x\in(X-A_i)\\
+&\Leftrightarrow x\in\bigcap_{i\in I}(X-A_i).
+\end{align*}
+\footnote{\textbf{校勘：}原式最后一行印作 $x\in\bigcap_{i\in I}(x-A_i)$。其中固定全集 $X$ 误排为小写变量 $x$；按前两行及定理陈述应为 $X-A_i$。}
+
+De même
+\[
+x\in X-\left(\bigcap_{i\in I}A_i\right)\Leftrightarrow x\in X\text{ et }\left(x\notin\bigcap_{i\in I}A_i\right).
+\]
+Or
+\[
+x\in\bigcap_iA_i\Leftrightarrow\forall i\in I,\ x\in A_i,
+\]
+sa négation est donc $\exists i\in I$, $x\notin A_i$, donc
+\begin{align*}
+x\in X-\left(\bigcap_{i\in I}A_i\right)
+&\Leftrightarrow\exists i\in I,\ x\in(X-A_i)\\
+&\Leftrightarrow x\in\bigcup_{i\in I}(X-A_i).\qquad\rule{0.55em}{0.55em}
+\end{align*}

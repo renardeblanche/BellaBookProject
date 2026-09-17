@@ -1,0 +1,17 @@
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[BellaLavenderPale] (current page.south west) rectangle (current page.north east);
+  \fill[BellaLavender] ([xshift=0.48in,yshift=-0.48in]current page.north west) rectangle ([xshift=-0.48in,yshift=0.48in]current page.south east);
+  \fill[BellaLavenderDeep] ([xshift=0.48in,yshift=-0.48in]current page.north west) rectangle ([xshift=0.62in,yshift=0.48in]current page.south west);
+  \draw[BellaLavenderMid,line width=0.8pt,opacity=.55] ([xshift=1.05in,yshift=-2.0in]current page.north west) circle (0.78in);
+  \draw[BellaLavenderDeep,line width=0.65pt,opacity=.32] ([xshift=-1.05in,yshift=1.55in]current page.south east) circle (1.10in);
+  \draw[BellaLavenderDeep,line width=0.65pt,opacity=.25] ([xshift=-1.00in,yshift=1.58in]current page.south east) circle (0.72in);
+  \foreach \i in {0,...,5}{
+    \draw[BellaLavenderDeep,opacity=.11,line width=.45pt] ([xshift=0.85in+0.18in*\i,yshift=1.0in]current page.south west) -- ([xshift=2.9in+0.18in*\i,yshift=3.0in]current page.south west);
+  }
+  \node[anchor=north west,text=BellaLavenderDeep,font=\sffamily\bfseries\Large] at ([xshift=1.05in,yshift=-1.0in]current page.north west) {Bernard Gostiaux};
+  \node[anchor=north west,text=BellaInk,text width=5.25in,font=\rmfamily\bfseries\fontsize{28}{31}\selectfont] at ([xshift=1.05in,yshift=-2.02in]current page.north west) {Cours de\\mathématiques\\spéciales};
+  \node[anchor=north west,text=BellaLavenderDeep,font=\rmfamily\itshape\fontsize{19}{22}\selectfont] at ([xshift=1.07in,yshift=-4.62in]current page.north west) {Tome 1 · Algèbre};
+  \node[anchor=south west,text=BellaLavenderDeep,font=\sffamily\bfseries\small] at ([xshift=1.05in,yshift=0.95in]current page.south west) {PRESSES UNIVERSITAIRES DE FRANCE · 1993};
+\end{tikzpicture}
+\null\clearpage

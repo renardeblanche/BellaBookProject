@@ -1,0 +1,666 @@
+\origpage{268--275}
+
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} EXERCICES}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.1em]
+
+\item Soit $P\in\mathbb R[X]$. Existence et unicité de $Q\in\mathbb R[X]$ tel que $Q(0)=0$ et
+\[
+P(X)=Q(X)-Q(X-1).
+\]
+
+\item Calculer
+\[
+\prod_{k=1}^{n-1}\frac1{1-e^{2ik\pi/n}}.
+\]
+
+\item On pose
+\[
+\pi_n(z)=z^n+\frac1{z^n}\qquad\text{et}\qquad R(z)=z+\frac1z.
+\]
+Montrer qu'il existe un unique polynôme $P_n\in\mathbb Z[X]$ tel que, $\forall z\in\mathbb C^*$,
+\[
+\pi_n(z)=P_n(R(z)).
+\]
+Montrer que les racines de $P_n$ sont réelles, dans $[-2,2]$.
+
+\item Trouver les polynômes $P$ de $\mathbb C[X]$ tels que
+\[
+P(X^2)=P(X)P(X+1).
+\]
+
+\item Quels sont les polynômes de $K[X]$ ayant une fonction polynôme associée constante, lorsque $K=\mathbb R$, puis $K=\mathbb Z/2\mathbb Z$.
+
+\item Polynômes $P\in\mathbb R[X]$ tels que $X^6$ divise
+\[
+P(2X)-2(P(X))^2+1.
+\]
+
+\item Trouver les couples $(P,Q)\in(\mathbb R[X])^2$ tels que
+\[
+P^2=1+(X^2-1)Q^2.
+\]
+
+\item Condition sur $(p,q)\in\mathbb C^2$ pour que $X^8+X^4+1$ divise
+\[
+X^{8m}+pX^{4m}+q,
+\]
+$m$ fixé dans $\mathbb N^*$.
+
+\item
+\begin{enumerate}[label=\arabic*),leftmargin=2em]
+\item Soit $P\in\mathbb Q[X]$ irréductible sur $\mathbb Q$. Montrer que ses racines (dans $\mathbb C$) sont simples.
+\item Soit $P\in\mathbb Q[X]$, et $\lambda$ une racine dans $\mathbb C$, de multiplicité
+\[
+m(\lambda)>\frac12d^\circ P.
+\]
+Montrer que $\lambda\in\mathbb Q$.
+\end{enumerate}
+
+\item Soit $P\in\mathbb R[X]$ et $z_0\in\mathbb C$ avec $P(z_0)\ne0$ et $P(z)-P(z_0)$ qui admet $z_0$ comme racine d'ordre $\ge2$. Montrer qu'il existe $\eta>0$, tel que
+\[
+\forall\rho\in]0,\eta[,\quad
+\operatorname{card}\{z\in\mathbb C,\ |z-z_0|=\rho,\ |P(z)|=|P(z_0)|\}\ge4.
+\]
+
+\item Soit $P\in\mathbb R[X]$, scindé de degré $n$,
+\[
+P(X)=\sum_{k=0}^n a_kX^k.
+\]
+Montrer que pour tout $k\in\{1,2,\ldots,n-1\}$,
+\[
+a_{k-1}a_{k+1}\le a_k^2.
+\]
+
+\item Soit une suite réelle $(a_n)_{n\in\mathbb N^*}$, avec $a_1>0$ et $a_p\ge0$ pour $p\ge2$. On lui associe les polynômes $P_n$, pour $n$ dans $\mathbb N^*$, définis par
+\[
+P_n(X)=\sum_{k=1}^n a_kX^k.
+\]
+\begin{enumerate}[label=\arabic*),leftmargin=2em]
+\item Montrer que l'équation $P_n(X)=1$ admet une unique racine positive ou nulle notée $u_n$.
+\item Étude de la suite $(u_n)$.
+\item Dans le cas particulier où, $(\forall n\in\mathbb N^*)$, $(a_n=n)$, déterminer
+\[
+\lim_{n\to+\infty}u_n.
+\]
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} SOLUTIONS}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.1em]
+
+\item C'est un problème où l'inconnue, $Q$ intervient linéairement. On essaie de voir si $P$ est dans l'image d'un endomorphisme.
+
+Soit $n=d^\circ P$, (si $P\ne0$). On vérifie que $Q$ doit être de degré $n+1$.
+
+Soit
+\[
+E=\operatorname{Vect}(1,X,\ldots,X^n)\qquad\text{et}\qquad
+F=\operatorname{Vect}(X,X^2,\ldots,X^{n+1}).
+\]
+Ces 2 espaces sont de dimension $n+1$, et $\theta:F\longrightarrow E$ définie par
+\[
+\theta(Q)(X)=Q(X)-Q(X-1)
+\]
+est injective, ($\theta(Q)=0$ et $Q\ne0\Rightarrow$, si $z$ est un zéro de $Q$, (dans $\mathbb C$), alors $\forall k\in\mathbb Z$, $z+k$ est zéro de $Q$ : absurde). Comme $\dim(E)=\dim(F)$, $\theta$ est bijective, donc pour $P\in E$, il existe une et une seule solution du problème dans $F$.
+
+\item Les $e^{2ik\pi/n}$, $k=1,\ldots,n$, sont les zéros de $X^n-1$, sauf $x=1$, donc les zéros de
+\[
+\frac{X^n-1}{X-1}=1+X+X^2+\cdots+X^{n-1}=Q(X).
+\]
+
+Les $e^{2ik\pi/n}-1$ sont les zéros de $R(X)=Q(X+1)$, donc
+\[
+\prod_{k=1}^{n-1}(e^{2ik\pi/n}-1)
+\]
+est le produit des racines de
+\[
+R(X)=X^{n-1}+\cdots+n;
+\]
+ce produit vaut donc $(-1)^{n-1}n$. On a alors
+\[
+\prod_{k=1}^{n-1}\frac1{1-e^{2ik\pi/n}}=\frac1n.
+\]
+
+\item Le lien entre $z^n+\dfrac1{z^n}$ et $z+\dfrac1z$ vient de ce que
+\[
+\left(z+\frac1z\right)^n
+=z^n+\frac1{z^n}+C_n^1\left(z^{n-2}+\frac1{z^{n-2}}\right)+C_n^2\left(z^{n-4}+\frac1{z^{n-4}}\right)+\cdots
+\]
+avec pour dernier terme
+\[
+\begin{cases}
+C_{2p}^p,& n=2p,\\[2mm]
+C_{2p+1}^p\left(z+\dfrac1z\right),& n=2p+1,
+\end{cases}
+\]
+d'où l'on tire
+\[
+z^n+\frac1{z^n}
+=(R(z))^n-C_n^1\pi_{n-2}(z)-C_n^2\pi_{n-4}(z)-\cdots-
+\begin{cases}
+C_{2p}^p,\\[1mm]
+C_{2p+1}^p\pi_1(z).
+\end{cases}
+\]
+
+Comme $\pi_1(z)=1\cdot R(z)=P_1(R(z))$ avec $P_1(X)=X\in\mathbb Z[X]$, et
+\[
+\pi_2(z)=z^2+\frac1{z^2}=\left(z+\frac1z\right)^2-2=P_2(R(z))
+\]
+avec $P_2(X)=X^2-2\in\mathbb Z[X]$ on justifie par récurrence, l'existence de $P_n(X)\in\mathbb Z[X]$, de degré $n$ tel que $\forall z\in\mathbb C^*$, $\pi_n(z)=P_n(R(z))$. De plus, $P_1$ et $P_2$ étant uniques, la relation de récurrence donne l'unicité de $P_n$, et le fait que $P_n$ soit de degré $n$.
+
+Comme
+\[
+\pi_n(z)=\frac{z^{2n}+1}{z^n}
+\]
+s'annule en
+\[
+z_k=e^{i\pi/(2n)+ik\pi/n},\qquad k=0,1,\ldots,2n-1
+\]
+et que pour $k=0,1,\ldots,n-1$,
+\[
+R(z_k)=z_k+\overline z_k=2\cos\theta_k
+\]
+avec
+\[
+\theta_k=\frac\pi{2n}+\frac{k\pi}{n},
+\]
+$n$ valeurs distinctes de $[0,\pi]$, on a $n$ zéros distincts de $P_n$ de degré $n$ dans $[-2,2]$ : les racines de $P_n$ sont bien réelles et dans $[-2,2]$, ce sont les
+\[
+2\cos\left(\frac\pi{2n}+\frac{k\pi}{n}\right),\qquad k=0,1,\ldots,n-1.
+\]
+
+\item On est sur $\mathbb C[X]$ où les polynômes sont scindés, on peut utiliser les zéros.
+
+Les polynômes constants solutions sont $P=0$ et $P=1$.
+
+Si $P$ non constant est solution, soit $a$ un zéro de $P$, on a $P(a^2)=0$ donc $a^2$ zéro de $P$ et plus généralement, $\forall n\in\mathbb N^*$, $a^{2^n}$ est zéro de $P$. Donc si $a\ne0$ et $|a|\ne1$ on a déjà une infinité de $|a^{2^n}|$ distincts : absurde, d'où $a=0$ ou $|a|=1$.
+
+Mais $x=a-1$ est aussi tel que $P(x^2)=0$, ... d'où $a-1=0$ ou $|a-1|=1$. Les 2 cercles
+\[
+\Gamma_1=\{z,|z|=1\}\qquad\text{et}\qquad\Gamma_2=\{z,|z-1|=1\}
+\]
+se coupent en
+\[
+a=\frac12+\frac{i\sqrt3}{2}\qquad\text{et}\qquad\frac12-\frac{i\sqrt3}{2}.
+\]
+Mais, avec $\varepsilon=1$ ou $-1$ et
+\[
+a=\frac12+\varepsilon\frac{i\sqrt3}{2}
+\]
+on a
+\[
+(a-1)^2=-\frac12-\varepsilon\frac{i\sqrt3}{2}\notin(\Gamma_1\cap\Gamma_2)\cup\{0,1\} :
+\]
+ces valeurs de $a$ sont exclues. Il reste $a\in\{0,1\}$.
+
+Si on prend $P(X)=kX^p(X-1)^q$, la relation $P(X^2)=P(X)P(X+1)$ devient
+\[
+kX^{2p}(X^2-1)^q=k^2X^p(X-1)^q(X+1)^pX^q,
+\]
+vérifiée pour $k=1$ et $p=q$, ($k\ne0$ car on a supposé $P$ non nul).
+
+Les solutions sont donc 1, 0 et les polynômes du type
+\[
+X^p(X-1)^p,\qquad p\in\mathbb N^*.
+\]
+
+\item Si $P$ de $\mathbb R[X]$, non constant, a une fonction polynôme $P$ de valeur constante $k$, le polynôme $P(X)-k$ admet plus de $n=d^\circ P$ zéros.
+
+Soient $a_1,\ldots,a_{n+1}$, $n+1$ éléments distincts de $\mathbb R$, on aurait donc $P$ divisible par
+\[
+\prod_{j=1}^{n+1}(X-a_j),
+\]
+(Théorème 7.38), donc $d^\circ P>d^\circ P$ : absurde.
+
+Seuls les polynômes constants de $\mathbb R[X]$ ont une fonction polynôme constante.
+
+Si $K=\mathbb Z/2\mathbb Z$, les valeurs de la fonction polynôme associée à $P$ sont $P(0)$, $P(1)$ et le couple $(P(0),P(1))$ peut valoir $(0,0)$, $(0,1)$, $(1,0)$, $(1,1)$. Dans les 2 cas extrêmes, la fonction polynôme sera constante.
+
+Or
+\[
+P(0)=P(1)=0\Longleftrightarrow P(X)=Q(X)X(X+1),
+\]
+(Théorème 7.38), et
+\[
+P(1)=P(0)=1\Longleftrightarrow P(X)=Q(X)X(X+1)+1,
+\]
+d'où les solutions du type
+\[
+P=X(X+1)Q+\lambda\qquad\text{avec }\lambda\in K=\mathbb Z/2\mathbb Z.
+\]
+
+\item En posant
+\[
+Q(X)=P(2X)-2(P(X))^2+1
+\]
+on a $X^6$ divise $Q$ si et seulement si
+\[
+Q(0)=Q'(0)=Q''(0)=\cdots=Q^{(5)}(0)=0.
+\]
+
+$Q(0)=P(0)-2(P(0))^2+1=0$ conduit à $P(0)=1$ ou $P(0)=-\dfrac12$. On trouve ensuite
+\[
+Q'(0)=P'(0)(2-4P(0))=0\Rightarrow P'(0)=0
+\]
+dans les 2 cas.
+
+\[
+Q''(X)=4P''(2X)-4P'^2(X)-4P(X)P''(X)
+\]
+conduit à
+\[
+P''(0)(1-P(0))=0.
+\]
+
+Si $P(0)=1\Rightarrow P''(0)=a\in\mathbb R$; $P(0)=-\dfrac12\Rightarrow P''(0)=0$.
+
+\[
+Q^{(3)}(X)=8P^{(3)}(2X)-12P'P''-4PP''',
+\]
+donc
+\[
+Q^{(3)}(0)=0=4P^{(3)}(0)(2-P(0))\Rightarrow P^{(3)}(0)=0.
+\]
+
+\[
+Q^{(4)}(X)=16P^{(4)}(2X)-12(P'')^2-16P'P'''-4PP^{(4)},
+\]
+donc
+\[
+Q^{(4)}(0)=0=4P^{(4)}(0)(4-P(0))-12(P''(0))^2.
+\]
+
+Si $P(0)=1\Rightarrow P^{(4)}(0)=a^2$; si $P(0)=-\dfrac12\Rightarrow P^{(4)}(0)=0$.
+
+Enfin
+\[
+Q^{(5)}(X)=32P^{(5)}(2X)-40P''P'''-20P'P^{(4)}-4PP^{(5)}
+\]
+donne
+\[
+Q^{(5)}(0)=4P^{(5)}(0)(8-P(0))=0\Longleftrightarrow P^{(5)}(0)=0.
+\]
+
+Les polynômes $P$ sont donc du type
+\[
+-\frac12+X^6R(X)
+\]
+ou
+\[
+1+a\frac{X^2}{2}+\frac{a^2X^4}{24}+X^6R(X)
+\]
+avec $R\in\mathbb R[X]$.
+
+\item On a
+\[
+P\cdot P+(1-X^2)Q\cdot Q=1
+\]
+donc, (Bézout), $P$ et $Q$ sont premiers entre eux. Pour considérer les degrés on écarte le cas nul en l'examinant. Si $Q=0$, $P=1$ ou $P=-1$ donne des solutions. Mais $P=0$ ne donne pas de solution. Pour $Q\ne0$, on doit avoir $P\ne0$ et $d^\circ Q=d^\circ P-1$.
+
+On dérive la relation :
+\[
+2PP'=2Q[XQ+(X^2-1)Q'],
+\]
+avec $P$ et $Q$ premiers entre eux donc $Q$ divise $P'$, et comme $d^\circ Q=d^\circ P'$, on a $\lambda$ réel tel que
+\[
+Q=\lambda P'.
+\]
+Alors
+\[
+P^2=1+\lambda^2(X^2-1)P'^2.
+\]
+Si $P$, (non nul) est de degré $n$ et de coefficient directeur $a$ en identifiant les termes de plus haut degré on obtient
+\[
+a^2=\lambda^2n^2a^2
+\]
+d'où
+\[
+\lambda=\pm\frac1n.
+\]
+
+Comme il est clair que si $(P,Q)$ est une solution, $(\varepsilon_1P,\varepsilon_2Q)$ avec $\varepsilon_1$ et $\varepsilon_2$ égaux à 1 ou $-1$ en est une autre, on suppose
+\[
+\lambda=\frac1n\qquad\text{et}\qquad Q=\frac{P'}n.
+\]
+
+On cherche $P$ polynôme de degré $n$, vérifiant
+\[
+P^2=1+(X^2-1)\frac{P'^2}{n^2},
+\]
+ou encore
+\[
+(1-x^2)P'^2-n^2(1-P^2)=0.
+\]
+
+L'équation différentielle
+\[
+\frac{y'}{\sqrt{1-y^2}}=\pm\frac n{\sqrt{1-x^2}}
+\]
+que doit vérifier la restriction, $y$, de $P$ à $]-1,1[$, conduit à
+\[
+\operatorname{Arcsin}y=\pm(n\operatorname{Arcsin}x+k)
+\]
+et à
+\[
+y=\pm\sin(n\operatorname{Arcsin}x+k)
+\]
+soit à
+\[
+y=\pm[\sin(n\operatorname{Arcsin}x)\cos k+\cos(n\operatorname{Arcsin}x)\sin k].
+\]
+
+Un calcul classique conduit à
+\[
+\sin n\theta=C_n^1\cos^{n-1}\theta\sin\theta-C_n^3\cos^{n-3}\theta\sin^3\theta+\cdots
+\]
+et à
+\[
+\cos n\theta=\cos^n\theta-C_n^2\cos^{n-2}\theta\sin^2\theta+\cdots
+\]
+Si $n$ est pair, les $\cos^{n-2k-1}(\operatorname{Arcsin}x)$ contiendront $\sqrt{1-x^2}$ en facteur, ce ne sera pas un polynôme, donc $\cos k$ doit être nul, de même $n$ impair impose $\sin k$ nul et on trouve :
+
+si $n=2p$, $P(X)$ doit être du type $\pm\cos(2p\operatorname{Arcsin}x)$ sur $]-1,1[$
+
+et si $n=2p+1$, $P(X)$ doit être du type $\pm\sin((2p+1)\operatorname{Arcsin}x)$ sur $]-1,1[$.
+
+Il reste à vérifier que ces polynômes vérifient la relation du départ, (car on a dérivé), avec
+\[
+Q=\frac\varepsilon nP',\qquad(\varepsilon\in\{-1,1\}).
+\]
+
+Si par exemple
+\[
+P=\varepsilon_1\cos(2p\operatorname{Arcsin}x),
+\]
+alors
+\[
+Q=-\frac{\varepsilon\varepsilon_1}{2p}\frac{2p\sin(2p\operatorname{Arcsin}x)}{\sqrt{1-x^2}}
+\]
+et
+\[
+P^2+(1-x^2)Q^2=\cos^2(2p\operatorname{Arcsin}x)+\sin^2(2p\operatorname{Arcsin}x)=1.
+\]
+On vérifierait de même que la solution trouvée dans le cas $n=2p+1$ convient.
+
+\item Une condition nécessaire et suffisante est que les racines de $X^8+X^4+1$ soient racines de $X^{8m}+pX^{4m}+q$ avec des multiplicités supérieures ou égales.
+
+Or
+\[
+(1+X^4+X^8)(1-X^4)=1-X^{12} :
+\]
+les zéros cherchés sont simples, ce sont les racines $12^\text{ième}$ de l'unité, non racines $4^\text{ième}$, soit les
+\[
+e^{2ik\pi/12}
+\]
+avec $k=1,2;4,5;7,8;10,11$, on doit donc avoir
+\[
+e^{8m\,2ik\pi/12}+pe^{4m\,2ik\pi/12}+q=0
+\]
+pour ces valeurs de $k$. Avec
+\[
+j=e^{2i\pi/3},
+\]
+comme
+\[
+4m\cdot\frac{2ik\pi}{12}=mk\frac{2i\pi}{3}
+\]
+on doit avoir
+\[
+j^{2mk}+pj^{mk}+q=0
+\]
+pour $k=1,2,4,5,\ldots$
+
+Il reste finalement les conditions
+\[
+j^{2m}+pj^m+q=0,\qquad\text{et}\qquad j^{4m}+pj^{2m}+q=0,
+\]
+car
+\[
+j^{8m}=j^{6m}j^{2m}=(j^3)^{2m}j^{2m}=j^{2m}
+\]
+et
+\[
+j^{4m}=j^{3m}j^m=j^m.
+\]
+
+\item
+\begin{enumerate}[label=\arabic*),leftmargin=2em]
+\item Le polynôme $P$, irréductible sur $\mathbb Q$ n'a pas de diviseurs dans $\mathbb Q[X]$, il est donc premier avec $P'$, (qu'il ne divise pas) donc $\exists U$ et $V$ dans $\mathbb Q[X]$ tels que
+\[
+UP+VP'=1.
+\]
+
+Comme $\mathbb Q[X]$ est plongé dans $\mathbb C[X]$, si $\lambda$ était racine, (dans $\mathbb C$), multiple de $P$, on aurait $P(\lambda)=P'(\lambda)=0$ d'où $1=0$ : exclu. Donc les zéros de $P$, dans $\mathbb C$, sont simples.
+
+\item On suppose cette fois que $P$ admet, dans $\mathbb C$, un zéro $\lambda$ de multiplicité
+\[
+m(\lambda)>\frac12d^\circ P.
+\]
+
+L'idéal
+\[
+I=\{Q;Q\in\mathbb Q[X],Q(\lambda)=0\}
+\]
+est principal, et il contient $P$. Soit $A$ un générateur de $I$, $\lambda$ est racine simple de $A$, sinon $A'(\lambda)=0$, $A'\in\mathbb Q[X]$ et $d^\circ A'<d^\circ A$ avec $A'$ multiple de $A$, c'est absurde.
+
+Avec $P_1\in\mathbb Q[X]$ tel que $P=AP_1$, on a $\lambda$ racine simple de $A$ et d'ordre $m(\lambda)$ de $P$ donc $\lambda$ racine d'ordre $m(\lambda)-1$ de $P_1$. Si $m(\lambda)>1$, alors $P_1\in I$ : il existe $P_2$ tel que $P_1=AP_2$ et $P=A^2P_2$. Si $m(\lambda)>2$, on a $\lambda$ zéro d'ordre $m(\lambda)-2$ de $P_2$ qui est donc multiple de $A$, on itère et finalement il existe un polynôme $P_{m(\lambda)}$ tel que
+\[
+P=A^{m(\lambda)}P_{m(\lambda)}.
+\]
+
+Si $\lambda\notin\mathbb Q$, $A$ ne peut pas être de degré 1, donc $d^\circ A\ge2\Rightarrow d^\circ(A^{m(\lambda)})\ge2m(\lambda)>d^\circ P$, c'est absurde.
+
+Donc $\lambda\in\mathbb Q$.
+\end{enumerate}
+
+\item Si $P(z)-P(z_0)$ admet $z_0$ pour zéro d'ordre $q\ge2$, $P',P'',\ldots,P^{(q-1)}$ sont nuls en $z_0$, d'où par Taylor Young, l'existence d'un développement limité
+\[
+P(z_0+h)=P(z_0)+a_qh^q+o(h^q)
+\]
+avec $a_q\ne0$. On a alors
+\[
+\begin{aligned}
+|P(z_0+h)|^2
+&=(P(z_0)+a_qh^q+o(h^q))(\overline{P(z_0)}+\overline{a_q}\,\overline h^{\,q}+o(h^q))\\
+&=|P(z_0)|^2+h^qa_q\overline{P(z_0)}+\overline h^{\,q}\overline{a_q}P(z_0)+o(h^q).
+\end{aligned}
+\]
+
+Comme $a_q\overline{P(z_0)}\ne0$, posons
+\[
+a_q\overline{P(z_0)}=Ae^{i\alpha}
+\]
+avec $A>0$, et soit $h=\rho e^{i\theta}$, on a
+\[
+|P(z_0+\rho e^{i\theta})|^2=|P(z_0)|^2+\rho^qA\left(e^{i(q\theta+\alpha)}+e^{-i(q\theta+\alpha)}+o(1)\right).
+\]
+
+Avoir $|P(z_0+\rho e^{i\theta})|=|P(z_0)|$ équivaut, (pour $\rho\ne0$) à avoir $\theta$ tel que
+\[
+\rho^qA\left(e^{i(q\theta+\alpha)}+e^{-i(q\theta+\alpha)}+o(1)\right)=0.
+\]
+
+Soit
+\[
+\varphi(\theta)=2\cos(q\theta+\alpha)+o(1),
+\]
+soit $\varepsilon\in]0,1[$ fixé, il existe $\eta>0$ tel que
+\[
+\rho=|h|\in]0,\eta[\Rightarrow |o(1)|<\varepsilon<1.
+\]
+Mais alors comme
+\[
+\cos\left(q\cdot\frac{2k\pi-\alpha}{q}+\alpha\right)=\cos2k\pi=1
+\]
+et
+\[
+\cos\left(q\cdot\frac{2k\pi+\pi-\alpha}{q}+\alpha\right)=\cos(2k+1)\pi=-1,
+\]
+on a
+\[
+\varphi\left(\frac{2k\pi-\alpha}{q}\right)>0
+\]
+et
+\[
+\varphi\left(\frac{2k\pi+\pi-\alpha}{q}\right)<0,
+\]
+la fonction $\varphi$ s'annule sur les intervalles
+\[
+\left]\frac{n\pi-\alpha}{q},\frac{n\pi+\pi-\alpha}{q}\right[,
+\]
+ceci pour $0\le n<2q$ : on a $2q$ intervalles de ce type dans
+\[
+\left[-\frac\alpha q,2\pi-\frac\alpha q\right]
+\]
+d'où $2q\ge4$ éléments $z=z_0+h$ avec $|h|=\rho$ tels que $|P(z)|=|P(z_0)|$ et ce pour tout $\rho\in]0,\eta[$.
+
+\item Comme
+\[
+P(X)=\sum_{k=0}^n\frac{P^{(k)}(0)}{k!}X^k,
+\]
+les $a_k$ sont liés aux $P^{(k)}(0)$. Soit $x_1,\ldots,x_r$ les zéros réels distincts de $P$, de multiplicités $\alpha_1,\ldots,\alpha_r$, indexés en croissant : $x_1<x_2<\cdots<x_r$. On a $\alpha_1+\alpha_2+\cdots+\alpha_r=n$, ($P$ scindé) puis $x_1,\ldots,x_r$ sont zéros d'ordre $\alpha_1-1,\ldots,\alpha_r-1$ de $P'$ et, par Rolle, entre $x_i$ et $x_{i+1}$, $P'$ s'annule, donc on a $y_1,\ldots,y_{r-1}$, soit $r-1$ autres zéros de $P'$ qui admet donc
+\[
+\sum_{i=1}^r(\alpha_i-1)+r-1=n-1
+\]
+zéros. On a $P'$ scindé, et par récurrence chaque polynôme $P^{(j)}$ est scindé.
+
+Puis pour
+\[
+Q=\prod_{i=1}^p(x-z_i),
+\]
+scindé, (les $z_i$ distincts ou non), on a
+\[
+\frac{Q'}Q=\sum_{i=1}^p\frac1{x-z_i}
+\]
+donc, en dérivant,
+\[
+\frac{Q''Q-Q'^2}{Q^2}=-\sum_{i=1}^p\frac1{(x-z_i)^2}
+\]
+donc, pour $x\notin\{z_1,\ldots,z_p\}$ on a
+\[
+Q''Q-Q'^2\le0,
+\]
+résultat vrai aussi pour les $z_i$ par continuité.
+
+On applique ceci pour le polynôme $Q=P^{(j-1)}$, cela donne
+\[
+P^{(j+1)}P^{(j-1)}-(P^{(j)})^2\le0,
+\]
+et en 0 on obtient
+\[
+(j+1)!a_{j+1}(j-1)!a_{j-1}\le(j!)^2(a_j)^2
+\]
+d'où
+\[
+a_{j-1}a_{j+1}\le\frac{(j!)^2}{(j-1)!(j+1)!}a_j^2
+=\frac{j}{j+1}a_j^2\le a_j^2.
+\]
+
+\item On constate que
+\[
+P'_{n+1}(x)=a_1+\sum_{k=2}^{n+1}ka_kx^{k-1},
+\]
+donc $P'_{n+1}(x)\ge a_1>0$ sur $[0,+\infty[$ : la fonction $P_{n+1}$ est strictement croissante sur $[0,+\infty[$, avec $P_{n+1}(0)=0$ et
+\[
+\lim_{x\to+\infty}P_{n+1}(x)=+\infty,
+\]
+il existe donc un et un seul $u_{n+1}$ tel que $P_{n+1}(u_{n+1})=1$, et ce pour tout $n\ge1$. Comme $P_1(x)=a_1x$ est aussi croissant de 0 à $+\infty$, $u_1$ existe de même.
+
+2) On a
+\[
+P_{n+1}(x)=P_n(x)+a_{n+1}x^{n+1}.
+\]
+Donc
+\[
+P_{n+1}(u_n)=P_n(u_n)+a_{n+1}u_n^{n+1}\ge P_n(u_n)=1,
+\]
+vu la croissance de $P_{n+1}$, c'est que $u_{n+1}\le u_n$.
+
+La suite $(u_n)_{n\in\mathbb N}$, décroissante, minorée par 0 est donc convergente.
+
+3) On a
+\[
+P_2(X)=X+2X^2,
+\]
+donc
+\[
+P_2(X)=1\Longleftrightarrow 2X^2+X-1=0
+\Longleftrightarrow X=-1\text{ et }X=\frac12,
+\]
+on veut $u_2>0$, donc $u_2=\dfrac12$, et, par décroissance,
+\[
+\forall n\ge2,\qquad u_n\in\left[0,\frac12\right].
+\]
+
+Les polynômes $P_n$ avec
+\[
+P_n(X)=X+2X^2+3X^3+\cdots+nX^n
+\]
+font penser à la dérivée de la série entière de $\dfrac1{1-X}$.
+
+Pour $|x|<1$ on a
+\[
+\sum_{n=0}^{\infty}x^n=\frac1{1-x}
+\]
+d'où par dérivation terme à terme des séries entières sur l'intervalle ouvert de convergence,
+\[
+\sum_{n=1}^{\infty}nx^{n-1}=\frac1{(1-x)^2}
+\qquad\text{et}\qquad
+\sum_{n=1}^{\infty}nx^n=\frac{x}{(1-x)^2}.
+\]
+
+Si on pose
+\[
+R_n(x)=\sum_{k=n+1}^{\infty}kx^k,
+\]
+on a donc la relation
+\[
+P_n(x)+R_n(x)=\frac{x}{(1-x)^2},
+\]
+et en particulier
+\[
+1+R_n(u_n)=\frac{u_n}{(1-u_n)^2}.
+\]
+
+La suite des fonctions $R_n$ converge uniformément vers 0, sur $\left[0,\dfrac12\right]$, les $u_n$, pour $n\ge2$ sont dans $\left[0,\dfrac12\right]$, donc
+\[
+\lim_{n\to+\infty}\frac{u_n}{(1-u_n)^2}=1
+\]
+et c'est aussi
+\[
+\frac{l}{(1-l)^2}
+\]
+en notant
+\[
+l=\lim_{n\to+\infty}u_n,
+\]
+qui existe, avec $l\in\left[0,\dfrac12\right]$.
+
+L'équation
+\[
+l^2-3l+1=0
+\]
+donne
+\[
+l=\frac{3\pm\sqrt5}{2},
+\]
+mais la seule racine dans $\left[0,\dfrac12\right]$ est
+\[
+l=\frac{3-\sqrt5}{2},
+\]
+donc
+\[
+\lim_{n\to+\infty}u_n=\frac{3-\sqrt5}{2}.
+\]
+
+\end{enumerate}

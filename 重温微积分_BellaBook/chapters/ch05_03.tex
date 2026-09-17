@@ -1,0 +1,691 @@
+\section{急减函数与缓增广义函数}
+
+\noindent\textbf{1. $S(\mathbb R^n)$ 空间}\quad
+上两节中讲到 $L^1$ 与 $L^2$ 上的傅里叶级数与傅里叶变换时，遇到的困难都在于函数的可积性上。由此，例如在傅里叶变换理论中，变换式
+\begin{equation}
+ \widehat f(\xi)=(Ff)(\xi)=\int_{\mathbb R^n}f(x)e^{-i\xi x}\,dx
+ \tag{1}
+\end{equation}
+的逆变换式
+\begin{equation}
+ f(x)=(F^{-1}F)(x)=\frac1{(2\pi)^n}\int_{\mathbb R^n}\widehat f(\xi)e^{i\xi x}\,d\xi
+ \tag{2}
+\end{equation}
+一直无法证明。所以(2)中的 $F^{-1}$ 暂时只是一个形式记号，傅里叶变换的最基本的性质：乘以自变量 $x$ 或 $\xi$ 与对自变量 $\xi$ 或 $x$ 的求导之关系，也显得很不自然。多年来，数学家和物理学家都设法推广这些理论，而得到成功与公认的仍是走广义函数理论这条路来讨论傅里叶变换。上一章中我们已看到广义函数就是试验函数空间的连续线性泛函。它的基本的“窍门”可以说就是把所遇到的困难都“转移”到试验函数空间去。我们选取了 $D(\Omega)$ 作为试验函数空间的目的就在于把求导运算的困难仿照分部积分法转移到试验函数上去，而且使“积分号外”的项都自动消失。为此我们取 $C_0^\infty(\Omega)$ 之元为试验函数，而且为了保证求导运算的“连续性”——即由 $f_n\to f$ 得出 $\partial^\alpha f_n\to\partial^\alpha f$，我们在 $C_0^\infty(\Omega)$ 中引进了一种特别的收敛性，即定义 $f_n\to f$ in $D(\Omega)$ 为：所有 $f_n$ 之支集均位于 $\Omega$ 之同一紧子集中，而且对每个固定的 $\alpha$，$\partial^\alpha f_n$ 一致收敛于 $\partial^\alpha f$。现在问，能不能用同样的方法来讨论 $D(\mathbb R^n)$ 上的傅里叶变换，再通过对偶方式把这种变换转移到 $D'(\mathbb R^n)$ 上去？当然是可以的。但是当我们问对 $f(x)\in D(\mathbb R^n)$ 按(1)作出的 $\widehat f(\xi)$ 究竟在什么空间中？因此例如在作逆变换(2)（它与变换(1)的差别无非是多了一个因子 $1/(2\pi)^n$，并把 $i$ 变成了 $-i$）时，尽管我们下面就要看到这仍是可能的，但终究 $\widehat f(\xi)$ 不再在 $D(\mathbb R^n)$ 中了，如何再利用对偶性也就不清楚了。因此要用广义函数理论来处理傅里叶变换时，首先遇到的问题是找一个合适的试验函数空间。当然，由此带来的问题是：这个新空间与原有的 $D(\mathbb R^n)$ 是什么关系。
+
+怎样选择试验函数要由所需解决的问题性质决定。考虑到乘以自变量与求导两种运算在傅里叶变换下互变，所以试验函数应具有以下性质：它应该无穷次可微，而且不论求导多少次，或乘以 $x$ 的多少次幂，仍然应该是可积的。因此我们给出下面的
+
+\noindent\textbf{定义1}\quad
+$S(\mathbb R^n)$ 空间——以下简记为 $S$——由适合以下条件的 $C^\infty$ 函数 $\varphi(x)$ 构成：对任意重指标 $\alpha$ 与 $\beta$，必存在常数 $C_{\alpha\beta}$ 使
+\begin{equation}
+ \bigl|x^\beta\partial^\alpha\varphi(x)\bigr|\le C_{\alpha\beta}.
+ \tag{3}
+\end{equation}
+$S$ 中的函数序列 $\{\varphi_k(x)\}$，若对任意固定的重指标 $\alpha$ 与 $\beta$，$\{x^\beta\partial^\alpha\varphi_k(x)\}$ 均在 $\mathbb R^n$ 上对 $x$ 一致趋向0（不要要求对 $\alpha$ 与 $\beta$ 有一致性，即对任意 $\varepsilon>0$，均有正整数 $K(\varepsilon,\alpha,\beta)$ 存在，使当 $k>K(\varepsilon,\alpha,\beta)$ 时，$|x^\beta\partial^\alpha\varphi_k(x)|<\varepsilon$，不要要求 $K$ 对任意 $\alpha,\beta$ 均相同），就说 $\varphi_k(x)\to0$ in $S$。
+
+$S$ 函数在无穷远处是急减的，因为由(3)可知不论 $N$ 有多大，恒有
+\begin{equation}
+ \bigl|\partial^\alpha\varphi(x)\bigr|\le\frac{C_{N,\alpha}}{|x|^N}.
+ \tag{4}
+\end{equation}
+即 $\partial^\alpha\varphi(x)$ 之衰减速度高于任意多项式幂之倒数。所以，以后称 $S$ 函数为“急减函数”，一个最常见的例子当然是 $e^{-\pi|x|^2}$。
+
+另一方面，任一 $C_0^\infty(\mathbb R^n)$ 函数均为急减的：
+\[
+ C_0^\infty(\mathbb R^n)\subset S.
+\]
+但是这个包含关系只是就集合论意义而言的。若序列 $\{\varphi_k(x)\}\to0$ in $D$，则因 $\operatorname{supp}\varphi_k$ 都含于一个固定的紧集 $K$ 内，所以其中的 $x$ 必有界。此外，$\partial^\alpha\varphi_k(x)$ 在 $K$ 中一定收敛于0，因此
+\begin{equation}
+ \max_K\bigl|x^\beta\partial^\alpha\varphi_k(x)\bigr|\to0\quad\text{in }K.
+ \tag{5}
+\end{equation}
+再考虑到在 $K$ 外 $x^\beta\partial^\alpha\varphi_k(x)=0$，所以上面的收敛性其实在 $\mathbb R^n$ 上成立，即 $\{x^\beta\partial^\alpha\varphi_k(x)\}$ 在 $\mathbb R^n$ 上一致收敛于0：$\varphi_k(x)\to0$ in $S$。凡有这样的情况，即有两个各具自己的收敛性的空间 $A$ 和 $B$，不但作为集合有 $A\subset B$，而且 $\{\varphi_k\}\subset A$ 在 $A$ 的意义下趋于0必导致 $\{\varphi_k\}$ 在 $B$ 的意义下趋于0，就说 $A$ 连续地嵌入 $B$ 中，并记为 $A\hookrightarrow B$。这样
+\[
+ D(\mathbb R^n)\hookrightarrow S.
+\]
+同样也可以看到
+\[
+ S\hookrightarrow L^p(\mathbb R^n),\qquad 1\le p\le\infty.
+\]
+
+现在考虑 $S$ 函数的傅里叶变换(1)。由于 $S$ 函数极好的光滑性与极快的衰减速度，对积分(1)的处理极为方便：在积分号下求导，使用分部积分法，积分号外各项自动消失等等均不成问题。因此，我们不必证明即可列出 $S$ 中傅里叶变换的性质如下（逆变换式(2)也暂时承认。下面的函数均指 $S$ 函数）：
+
+\noindent(i)\textbf{线性性质}
+\begin{align}
+ F(C_1\varphi_1+C_2\varphi_2)&=C_1F(\varphi_1)+C_2F(\varphi_2),\qquad C_1,C_2\text{ 为复常数},
+ \tag{6a}\\
+ F^{-1}(C_1\varphi_1+C_2\varphi_2)&=C_1F^{-1}(\varphi_1)+C_2F^{-1}(\varphi_2).
+ \tag{6b}
+\end{align}
+
+\noindent(ii)\textbf{平移与放大}
+\begin{align}
+ F(\tau_h\varphi)(\xi)&=\int_{\mathbb R^n}\varphi(x-h)e^{-i\xi x}\,dx
+ =e^{-ih\xi}F(\varphi)(\xi),
+ \tag{7a}\\
+ F^{-1}(\tau_h\varphi)(x)&=\frac1{(2\pi)^n}\int_{\mathbb R^n}\varphi(\xi-h)e^{i\xi x}\,d\xi
+ =e^{ihx}F^{-1}(\varphi)(x),
+ \tag{7b}\\
+ F(\varphi(\lambda\,\cdot))(\xi)&=\int_{\mathbb R^n}\varphi(\lambda x)e^{-i\xi x}\,dx
+ =\frac1{\lambda^n}F(\varphi)\!\left(\frac\xi\lambda\right),
+ \tag{8a}\\
+ F^{-1}(\varphi(\lambda\,\cdot))(x)&=\frac1{(2\pi)^n}\int_{\mathbb R^n}\varphi(\lambda\xi)e^{i\xi x}\,d\xi
+ =\frac1{\lambda^n}F^{-1}(\varphi)\!\left(\frac x\lambda\right).
+ \tag{8b}
+\end{align}
+
+\noindent(iii)\textbf{求导与乘以自变量}
+
+凡使用广义函数为工具的文献中，常考虑 $\frac1i\partial_x$ 以代替 $\partial_x$，并记为 $D_x$，即 $D_x=\frac1i\partial_x$。这样比较方便：于是量子力学中的动量算子现在是 $\hbar D_x$。
+\begin{align}
+ F(D^\alpha\varphi)(\xi)&=\int_{\mathbb R^n}(D^\alpha\varphi)(x)e^{-i\xi x}\,dx
+ =\xi^\alpha F(\varphi)(\xi),
+ \tag{9a}\\
+ F(x^\beta\varphi)(\xi)&=\int_{\mathbb R^n}x^\beta\varphi(x)e^{-i\xi x}\,dx
+ =(-1)^{|\beta|}D_\xi^\beta F(\varphi)(\xi),
+ \tag{9b}\\
+ F^{-1}(D_\xi^\alpha\varphi)(x)&=\frac1{(2\pi)^n}\int_{\mathbb R^n}(D_\xi^\alpha\varphi)(\xi)e^{i\xi x}\,d\xi
+ =(-1)^{|\alpha|}x^\alpha F^{-1}(\varphi)(x),
+ \tag{10a}\\
+ F^{-1}(\xi^\beta\varphi)(x)&=\frac1{(2\pi)^n}\int_{\mathbb R^n}\xi^\beta\varphi(\xi)e^{i\xi x}\,d\xi
+ =D_x^\beta F^{-1}(\varphi)(x).
+ \tag{10b}
+\end{align}
+由这四个式子可见，$S$ 函数的傅里叶变换与逆傅里叶变换仍是 $S$ 函数，即是说，$F,F^{-1}:S\to S$。
+
+不但如此，我们还很容易证明：若 $\{\varphi_k\}\to0$ in $S$，则 $F(\varphi_k)(\xi)\to0$ in $S$。事实上
+\begin{equation}
+ \bigl[\xi^\alpha D_\xi^\beta F(\varphi_k)\bigr](\xi)
+ =(-1)^{|\beta|}\bigl[F(D_x^\alpha x^\beta\varphi_k)\bigr](\xi).
+ \tag{11}
+\end{equation}
+$D_x^\alpha(x^\beta\varphi)(x)$ 自然可以写成 $x^\gamma D_x^\delta\varphi(x)$ 之线性组合，这时 $\gamma\le\beta,\delta\le\alpha$，所以这个线性组合是有限的。现在考虑其中一项。我们有
+\[
+ \begin{aligned}
+ F(x^\gamma D_x^\delta\varphi_k)(\xi)
+ &=\int_{\mathbb R^n}x^\gamma D_x^\delta\varphi_k(x)e^{-i\xi x}\,dx\\
+ &=\int_{\mathbb R^n}\bigl[(1+|x|^2)^Nx^\gamma D_x^\delta\varphi_k(x)\bigr]
+ \frac{e^{-i\xi x}}{(1+|x|^2)^N}\,dx.
+ \end{aligned}
+\]
+取 $N$ 充分大以至 $2N>n$，则 $e^{-i\xi x}/(1+|x|^2)^N\in L^1(\mathbb R^n)$。由于已设 $\{\varphi_k\}\to0$ in $S$，故对任意 $\varepsilon>0$，必可找到 $K(\varepsilon,\gamma,\delta)$，使当 $k>K$ 时，$|(1+|x|^2)^Nx^\gamma D_x^\delta\varphi_k(x)|<\varepsilon$。因此
+\[
+ \begin{aligned}
+ \bigl|F(x^\gamma D_x^\delta\varphi_k)(\xi)\bigr|
+ &\le\int_{\mathbb R^n}\bigl|(1+|x|^2)^Nx^\gamma D_x^\delta\varphi_k(x)\bigr|
+ \frac{|e^{-i\xi x}|}{(1+|x|^2)^N}\,dx\\
+ &\le\varepsilon\int_{\mathbb R^n}\frac{dx}{(1+|x|^2)^N}=I\varepsilon.
+ \end{aligned}
+\]
+所以 $F(x^\gamma D_x^\delta\varphi_k)(\xi)$ 在 $\mathbb R^n$ 上一致趋于0。代入(11)即知 $F(\varphi_k)\to0$ in $S$。所以 $F:S\to S$ 也是连续映射。同理 $F^{-1}:S\to S$ 也是连续映射。但是我们还不能说 $F$ 是线性同构，因为(1)与(2)是否互为逆映射尚未证明，$F^{-1}$ 暂时还只是形式记号。下面我们就来证明(2)确实是(1)的逆变换。
+
+\noindent(iv)\textbf{反演公式}
+
+我们来证明(2)确实是(1)的逆变换。为此我们先来求高斯函数
+\[
+ e^{-|x|^2/2}=\prod_{j=1}^n e^{-x_j^2/2}
+\]
+的傅里叶变换：
+\[
+ \int_{\mathbb R^n}e^{-|x|^2/2}e^{-i\xi x}\,dx
+ =\prod_{j=1}^n\int_{\mathbb R}e^{-x_j^2/2}e^{-i\xi_jx_j}\,dx_j.
+\]
+所以只要计算右方的一个因子
+\[
+ \int_{-\infty}^{\infty}e^{-x^2/2}e^{-i\xi x}\,dx=E(\xi)
+\]
+即可。上面我们已经说了，$e^{-x^2/2}\in S(\mathbb R)$，所以其傅里叶变换 $E(\xi)\in S(\mathbb R)$。但是
+\[
+ D_xe^{-x^2/2}=ixe^{-x^2/2},
+\]
+所以，利用(9a)与(9b)有
+\[
+ \xi E(\xi)=-iD_\xi E(\xi),\qquad\text{或}\qquad -\xi E(\xi)=\frac{dE(\xi)}{d\xi}.
+\]
+此外，
+\[
+ E(0)=\int_{-\infty}^{\infty}e^{-x^2/2}\,dx=\sqrt{2\pi}.
+\]
+由这两个式子即知
+\[
+ E(\xi)=\sqrt{2\pi}\,e^{-\xi^2/2}.
+\]
+这样我们看到高斯函数 $e^{-x^2/2}$ 的傅里叶变换仍是一个高斯函数，不过因子有一些变化。对 $E(\xi)$ 再作逆变换(2)，则 $(F^{-1}E)(x)$ 应适合
+\[
+ \frac d{dx}(F^{-1}E)(x)=-x(F^{-1}E)(x),
+\]
+\[
+ (F^{-1}E)(0)=\frac1{2\pi}\int_{-\infty}^{+\infty}\sqrt{2\pi}\,e^{-\xi^2/2}\,d\xi=1,
+\]
+因此
+\[
+ (F^{-1}E)(x)=e^{-x^2/2}.
+\]
+我们只计算了 $e^{-|x|^2/2}$ 的一个因子，把它的 $n$ 个因子全部算完，即得
+
+\noindent\textbf{引理1}\quad
+高斯函数 $e^{-|x|^2/2}$ 的傅里叶变换是 $(2\pi)^{n/2}e^{-|\xi|^2/2}$，从而
+\[
+ F^{-1}\!\left((2\pi)^{n/2}e^{-|\xi|^2/2}\right)=e^{-|x|^2/2}.
+\]
+我们时常需要考虑 $f(x)=e^{-a|x|^2/2}\ (a>0)$ 的傅里叶变换，我们不妨把 $f(x)$ 写成 $e^{-|\lambda x|^2/2}$，$\lambda=\sqrt a$，再利用(8a)即有
+\begin{equation}
+ F\!\left(e^{-a|x|^2/2}\right)(\xi)=\left(\frac{2\pi}{a}\right)^{n/2}e^{-|\xi|^2/(2a)}.
+ \tag{12}
+\end{equation}
+
+\noindent\textbf{定理2}\quad
+当 $f(x)\in S$ 时，(2)式定义的变换确是(1)之逆变换，且可写为
+\begin{equation}
+ \widehat{\widehat f}(x)=(2\pi)^n\widetilde f(x)=(2\pi)^n f(-x).
+ \tag{13}
+\end{equation}
+
+\noindent\textbf{证}\quad
+回忆一下上节中“证明”$L^2$ 函数之傅里叶变换确是酉变换时，实际上已用到了这里的结论。当时我们就指出，其中变换积分次序是不合法的。现在对 $f(x)\in S$，再重复一下这个形式“证明”，我们有
+\[
+ \begin{aligned}
+ (F^{-1}\circ F)f(x)
+ &=\frac1{(2\pi)^n}\int_{\mathbb R^n_\xi}e^{i\xi x}\,d\xi
+   \int_{\mathbb R^n_y}f(y)e^{-i\xi y}\,dy\\
+ &=\frac1{(2\pi)^n}\int_{\mathbb R^n_y}f(y)\,dy
+   \int_{\mathbb R^n_\xi}e^{i\xi(x-y)}\,d\xi.
+ \end{aligned}
+\]
+如果这个形式证明是合法的，而且又能证到
+\begin{equation}
+ \frac1{(2\pi)^n}\int_{\mathbb R^n_\xi}e^{i\xi(x-y)}\,d\xi=\delta(x-y),
+ \tag{14}
+\end{equation}
+代入上式就有
+\[
+ (F^{-1}\circ F)f(x)=\frac1{(2\pi)^n}\int_{\mathbb R^n_y}f(y)\delta(x-y)\,dy=f(x),
+\]
+而定理得证。这个“证明”之所以仍只是形式证明，在于 $e^{i\xi(x-y)}$ 对于 $\xi$ 是不可积的，更不是绝对可积的，所以不能应用富比尼定理以改变积分次序。对于(14)式，注意到 $F(\delta)(\xi)=1$，而我们想要证明的其实是
+\begin{equation}
+ (F^{-1}\circ F)\delta(x-y)=\delta(x-y),
+ \tag{15}
+\end{equation}
+亦即反演公式对于一个很特殊的广义函数是成立的。这两点其实是一回事：$e^{i\xi(x-y)}$ 是一个急剧振荡的函数（当 $|\xi|\to\infty$ 时），傅里叶级数理论与傅里叶变换理论都在相当大的程度上依赖于这个振荡性质。§1中讲的黎曼--勒贝格引理，以及它在证明许多基本结果（例如傅里叶级数的狄利克雷定理）中所起的作用，都说明了这种急剧振荡性质起了关键的作用。
+
+如何解决上面提出的矛盾呢？正如在§1中当傅里叶级数收敛性难以证明时，我们引入了种种求和法，例如引入了 C--1 求和以及费耶核。但是，引入费耶核相当于引进了一个收敛因子以改进收敛性。如果函数 $f(x)$ 有相当的光滑性（例如适合狄利克雷条件），则这种收敛因子将会加快收敛速度，如果连这样少的光滑性也没有，则这种收敛因子会导致种种可求和性（如相应于费耶核的 C--1 求和性）以推广收敛性。所以我们现在也引入一个收敛因子 $\psi(\varepsilon\xi)$ 并考虑
+\[
+ \frac1{(2\pi)^n}\int_{\mathbb R^n_\xi}d\xi\int_{\mathbb R^n_y}f(y)\psi(\varepsilon\xi)e^{i\xi(x-y)}\,d\xi,
+\]
+这里 $\varepsilon>0$。我们要求看一下，当 $\varepsilon\to0$ 时能否得到极限式 $(F^{-1}\circ F)(f)(x)$。为此，以下两条件是合理的：(i) $\psi(\xi)\in S(\mathbb R^n)$；(ii) $\psi(0)=1$。然后我们有
+\begin{equation}
+ \frac1{(2\pi)^n}\int_{\mathbb R^n_\xi}e^{i\xi x}\,d\xi
+ \int_{\mathbb R^n_y}f(y)e^{-i\xi y}\,dy
+ =\lim_{\varepsilon\to0}\frac1{(2\pi)^n}\int_{\mathbb R^n_\xi}\psi(\varepsilon\xi)e^{i\xi x}\,d\xi
+ \int_{\mathbb R^n_y}f(y)e^{-i\xi y}\,dy.
+ \tag{16}
+\end{equation}
+这时甚至会以为可在积分号下取极限，因为为内层积分是 $\xi$ 的 $S$ 函数而且与 $\varepsilon$ 无关，$\psi(\varepsilon\xi)\to\psi(0)=1$，对每点 $\xi$ 又都成立，然后可以应用勒贝格控制收敛定理。当然，这样求极限是不行的，因为1并非 $\mathbb R^n_\xi$ 上的勒贝格可积函数，不能应用勒贝格控制收敛定理。但是如果注意到对上式右方现在可以自由地应用富比尼定理，即知
+\[
+ \frac1{(2\pi)^n}\int_{\mathbb R^n_\xi}\psi(\varepsilon\xi)\,d\xi
+ \int_{\mathbb R^n_y}f(y)e^{i\xi(x-y)}\,dy
+ =\frac1{(2\pi)^n}\iint_{\mathbb R^n_\xi\times\mathbb R^n_y}
+ \psi(\varepsilon\xi)f(y)e^{i\xi(x-y)}\,dy\,d\xi.
+\]
+令 $\varepsilon\xi=\zeta,\ y-x=\varepsilon z$，上式右方化为
+\[
+ \begin{aligned}
+ &\frac1{(2\pi)^n}\iint_{\mathbb R^n_z\times\mathbb R^n_\zeta}
+ \psi(\zeta)f(x+\varepsilon z)e^{-i\zeta z}\,d\zeta\,dz\\
+ &\qquad=\frac1{(2\pi)^n}\int_{\mathbb R^n_z}f(x+\varepsilon z)\,dz
+ \int_{\mathbb R^n_\zeta}\psi(\zeta)e^{-i\zeta z}\,d\zeta\\
+ &\qquad=\frac1{(2\pi)^n}\int_{\mathbb R^n_z}f(x+\varepsilon z)\widehat\psi(z)\,dz.
+ \end{aligned}
+\]
+现在求极限的过程全转到 $\int$ 中去了，而且 $f\in S$，完全可以转到在积分号下求极限，于是代入(16)有
+\begin{equation}
+ \begin{aligned}
+ \frac1{(2\pi)^n}\int_{\mathbb R^n_\xi}e^{i\xi x}\,d\xi
+ \int_{\mathbb R^n_y}f(y)e^{-i\xi y}\,dy
+ &=\lim_{\varepsilon\to0}\frac1{(2\pi)^n}\int_{\mathbb R^n_z}f(x+\varepsilon z)\widehat\psi(z)\,dz\\
+ &=f(x)\cdot\frac1{(2\pi)^n}\int_{\mathbb R^n_z}\widehat\psi(z)\,dz.
+ \end{aligned}
+ \tag{17}
+\end{equation}
+其实最后一个积分即 $\widehat\psi(z)$ 之逆傅里叶变换
+\[
+ \frac1{(2\pi)^n}\int_{\mathbb R^n_z}\widehat\psi(z)e^{i\eta z}\,dz
+\]
+在 $\eta=0$ 处的值。这里我们要用到 $\widehat\psi(z)\in S(\mathbb R^n)$，而这由 $\psi(\xi)\in S(\mathbb R^n)$ 是自然成立的。所以，只要反演公式对 $\psi(\xi)$ 成立，则上式化为
+\[
+ \frac1{(2\pi)^n}\int_{\mathbb R^n_z}\widehat\psi(z)\,dz=\psi(0)=1,
+\]
+而定理得证。
+
+但是由引理1，当 $\psi(z)=e^{-|z|^2/2}$ 时，反演公式确实是成立，故定理得证。
+
+\noindent\textbf{注}\quad
+上面我们是利用了已知高斯函数的傅里叶变换来证明反演公式的，而一旦反演公式已经得知，则对任意 $\psi(\xi)\in S$ 且适合 $\psi(0)=1$ 者，都有
+\[
+ \frac1{(2\pi)^n}\int_{\mathbb R^n}\widehat\psi(z)\,dz=\psi(0)=1,
+\]
+而可以代入(16)式再得出反演公式。这当然不能算作定理的“新证”，因为在这个过程中已经使用了定理2了，但是它告诉我们，用任意 $\psi(\xi)\in S,\psi(0)=1$ 来作收敛因子都是可以的。而且，若记
+\[
+ K_\varepsilon(x-y)=\frac1{(2\pi)^n}\int_{\mathbb R^n_\xi}\psi(\varepsilon\xi)e^{i\xi(x-y)}\,d\xi,
+\]
+则(16)可以写为
+\[
+ \lim_{\varepsilon\to0}(f(y),K_\varepsilon(x-y))=(f(y),\delta(x-y))=f(x).
+\]
+所以 $K_\varepsilon(x-y)$ 其实是一个 $\delta$ 序列。上一章中我们说，所谓 $\delta$ 序列即一个在 $D'(\mathbb R^n)$ 中收敛于 $\delta(x)\in D'(\mathbb R^n)$ 的序列，而上式中 $f\in S$。但是因为 $D(\mathbb R^n)\subset S(\mathbb R^n)$，所以对 $f\in D(\mathbb R^n)$，上式也是对的。即是说 $K_\varepsilon(x-y)$ 是 $D(\mathbb R^n)$ 中的 $\delta$ 序列。但是我们将引入 $S(\mathbb R^n)$ 的对偶空间 $S'(\mathbb R^n)$，而可以看到 $K_\varepsilon(x-y)$ 也是 $S'(\mathbb R^n)$ 中的 $\delta$ 序列。所以，从广义函数角度来看，证明定理2的过程就是一个构造 $\delta$ 序列的过程，这和傅里叶级数理论的情况是一样的：为了证明傅里叶级数的收敛性以及可求和性，我们实际上证明的是狄利克雷核、费耶核等，
+\[
+ \left\{\frac{\sin(N+\frac12)t}{2\pi\sin\frac t2}\right\},\qquad
+ \left\{\frac{\sin^2\frac{(N+1)t}{2}}{(N+1)\sin^2\frac t2}\right\},\qquad
+ \left\{\frac{\sin(N+\frac12)t}{\pi t}\right\},\ldots
+\]
+都是 $\delta$ 序列。还有许多其它的 $\delta$ 序列，相应于其它求和法，例如泊松求和等等，而在各自的问题中都很有用。
+
+上面说了 $K_\varepsilon(x-y)\to\delta(x-y)$，所以我们时常就写
+\[
+ \delta(x-y)=\frac1{(2\pi)^n}\int e^{i\xi(x-y)}\,d\xi.
+\]
+于是本来没有意义的形式积分现在理解为广义函数的极限，下面还可将把它理解为1的逆傅里叶变换，而且把1看作一个广义函数，这样理解的积分称为“振荡积分”（在许多文献中振荡积分是用其它方法来定义的，但与这里添加收敛因子的定义是等价的）。这个公式还与其它一些数学理论有关，特别是还可以从量子力学的测不准原理来看待它：粗略地说，$\delta(x)$ 在 $x$ 表象中表示一个粒子的位置完全确定，因此，在 $\xi$ 表象中，它应该完全不确定，而可以用各个方向的平面波 $e^{i\xi x}$ 对 $\xi$ 按完全相同的“权”叠加而成，所以我们才有了(14)式（其中令 $y=0$）。这样也就可以理解，为什么 $\delta$ 序列有的并不是如钟型的曲线（正态分布）而有振荡性。现在我们只特别要提醒，在处理含有高频振荡的因子 $e^{i\omega\Phi(x,y)}$（$|\omega|\gg1$）的积分时，即使这个积分并不绝对收敛，我们就不要轻易地把绝对值符号放在积分号下去，那样就会使 $|e^{i\omega\Phi}|=1$ 而丧失了非常有用的关于相位的信息，而宁可“形式”地把它当作绝对收敛积分，“形式”地应用富比尼定理，再用广义函数或其它方法加以解释。我们正是这样做的。
+
+\noindent(v)\textbf{酉性质}\quad
+还有几个性质都与傅里叶变换作为酉算子有关，因而是极重要的，我们称之为酉性质。
+
+\noindent\textbf{定理3}\quad 若 $f,g\in S(\mathbb R^n)$，则
+\begin{align}
+ \text{(i)}\quad&\int \widehat f(\xi)g(\xi)\,d\xi=\int f(x)\widehat g(x)\,dx,
+ \tag{18}\\
+ \text{(ii)}\quad&\int g(x)\overline{f(x)}\,dx=(2\pi)^{-n}\int\widehat f(\xi)\overline{\widehat g(\xi)}\,d\xi,
+ \tag{19}\\
+ \text{(iii)}\quad&\widehat{f*g}(\xi)=\widehat f(\xi)\,\widehat g(\xi),\qquad
+ \frac1{(2\pi)^n}(\widehat f*\widehat g)(\xi)=\widehat{fg}(\xi).
+ \tag{20}
+\end{align}
+
+\noindent\textbf{证}\quad
+由于 $f,g,\widehat f,\widehat g$ 都是 $S$ 函数，利用重积分化为逐次积分立刻就得到这些结果。
+
+\noindent\textbf{注1}\quad
+(18)可以写为
+\[
+ \langle Ff,g\rangle=\langle f,F^{-1}g\rangle.
+\]
+这里用的是欧几里得配对，而非埃尔米特配对。这两种配对的区别在于对于后一变元前者是线性的，后者则是共轭线性的。欧几里得配对是用来定义转置算子 $F'$ 的。
+
+\noindent\textbf{注2}\quad
+(19)可以写为
+\[
+ (f,g)=(2\pi)^{-n}(\widehat f,\widehat g),
+\]
+所以傅里叶变换又是等距的。但通常讲等距算子是对希尔伯特空间而言，现在 $S(\mathbb R^n)$ 并非希尔伯特空间。所以说 $F$ 是等距的，或者是酉算子，都只是方便的说法，而在 $L^2(\mathbb R^n)$ 中它才有精确的意义。借用这种方便的说法，(19)也称为帕塞瓦尔关系式，其实也可称为普兰舍利关系式，不过一般说来，只有当 $f=g$ 时，才称为普兰舍利定理。
+
+\noindent\textbf{注3}\quad
+(20)是卷积公式。当 $f,g\in S$ 时
+\[
+ (f*g)(x)=\int_{\mathbb R^n}f(t)g(x-t)\,dt.
+\]
+显然积分是收敛的，而且因为可以在积分号下求导，所以 $(f*g)(x)\in C^\infty(\mathbb R^n)$ 也是明显的，而且
+\[
+ \partial_x^\alpha(f*g)(x)=\int_{\mathbb R^n}f(t)\partial_x^\alpha g(x-t)\,dt.
+\]
+余下只要考虑 $x^\beta\partial_x^\alpha(f*g)(x)$，因为我们只在 $|x|\gg1$ 处考虑它，不妨用 $(1+|x|)^{|\beta|}$ 来代替 $|x|^{|\beta|}$，于是
+\[
+ \bigl|x^\beta\partial_x^\alpha(f*g)(x)\bigr|
+ \le\int_{\mathbb R^n}(1+|x|)^{|\beta|}|f(t)|\,|\partial_x^\alpha g(x-t)|\,dt.
+\]
+因为 $|x|\le|t|+|x-t|$，而 $|\beta|\ge0$，上式右方可以用多项式定理化为 $|t|^{|\gamma|}|f(t)|\,|x-t|^{|\delta|}|\partial_x^\alpha g(x-t)|$ 之有限线性组合。这里 $|\gamma|+|\delta|\le|\beta|$。由于 $f,g\in S$，即知上式右方是一个绝对收敛积分，其值 $\le C_{\alpha,\beta}$。这样即知 $(f*g)(x)\in S(\mathbb R^n)$，而(20)就容易证明了。
+
+\noindent\textbf{2. $S'(\mathbb R^n)$ 广义函数}\quad
+这就是急减函数空间 $S(\mathbb R^n)$ 的对偶。
+
+\noindent\textbf{定义2}\quad
+$S(\mathbb R^n)$ 上的线性连续泛函称为缓增广义函数，它们构成一个复系数线性空间，记为 $S'(\mathbb R^n)$。
+
+下面我们举一些例子。
+
+\[
+ L^p(\mathbb R^n)\subset S'(\mathbb R^n)\qquad(1\le p\le+\infty),
+\]
+因为若 $f(x)\in L^p(\mathbb R^n)$，对 $\varphi(x)\in S(\mathbb R^n)$，$\int_{\mathbb R^n}f(x)\varphi(x)\,dx$ 显然有定义，而且由赫尔德不等式
+\[
+ \left|\int_{\mathbb R^n}f(x)\varphi(x)\,dx\right|
+ \le\left[\int_{\mathbb R^n}|f(x)|^p\,dx\right]^{1/p}
+ \left[\int_{\mathbb R^n}|\varphi(x)|^q\,dx\right]^{1/q},
+ \qquad \frac1p+\frac1q=1.
+\]
+由此可知若有一串 $\varphi_k(x)\to0$ in $S(\mathbb R^n)$，必有 $\int f(x)\varphi_k(x)\,dx\to0$，所以它是一个连续线性泛函，这样我们得到 $L^p(\mathbb R^n)\subset S'(\mathbb R^n)$。为了证明它是连续嵌入，设有一串 $f_k(x)\in L^p(\mathbb R^n)$，$f_k(x)\to f(x)$ in $L^p(\mathbb R^n)$。仍引用上面的赫尔德不等式，即知 $f_k(x)\to f(x)$ in $S'(\mathbb R^n)$（$S'(\mathbb R^n)$ 中的收敛性定义，下面马上就要介绍），所以这里的嵌入是连续嵌入。
+
+但是 $S'(\mathbb R^n)$ 中的元不一定都是可积函数。实际上，若 $f(x)$ 是可积函数，甚至只是局部可积函数，但在 $\infty$ 附近适合以下的缓增条件：存在正整数 $N$ 以及常数 $C_N$，使得
+\[
+ |f(x)|\le C_N(1+|x|)^N
+\]
+（或者写得更简单一些，写作 $f(x)=O(1+|x|)^N$，即是说 $f(x)$ 之增长速度不超过 $N$ 次多项式的增长速度。）由于 $\varphi(x)\in S(\mathbb R^n)$ 是急减的，因此例如有
+\[
+ |\varphi(x)|\le\frac{A}{(1+|x|)^{N+n+1}}.
+\]
+所以
+\[
+ \left|\int_{\mathbb R^n}f(x)\varphi(x)\,dx\right|
+ \le\int_{\mathbb R^n}\frac{C_NA}{(1+|x|)^{n+1}}\,dx
+\]
+仍是有意义的。
+
+但是我们不要以为 $S'(\mathbb R^n)$ 中的一切函数都必定是缓增的。例如我们知道 $e^{|x|}$ 是指数增长的，它不是缓增的，在 $n=1$ 的情况，$[\cos(e^x)]'=-e^x\sin(e^x)$，也不是缓增的，但是它是 $S'(\mathbb R^1)$ 中的元。因为对于 $\varphi(x)\in S(\mathbb R^1)$，
+\[
+ \left\langle[\cos(e^x)]',\varphi(x)\right\rangle
+ =-\int_{-\infty}^{\infty}[\cos(e^x)]\varphi'(x)\,dx,
+\]
+它显然是 $S(\mathbb R^1)$ 上的连续线性泛函。
+
+另一方面，由 $D(\mathbb R^n)\subset S(\mathbb R^n)$，所以每一个 $S'(\mathbb R^n)$ 广义函数一定是 $D'(\mathbb R^n)$ 广义函数。因此
+\[
+ S'(\mathbb R^n)\subset D'(\mathbb R^n).
+\]
+我们要证明实际上有 $S'(\mathbb R^n)\hookrightarrow D'(\mathbb R^n)$。为此，我们先要讲一下什么是 $S'(\mathbb R^n)$ 中的收敛性。设有 $f_0(x)\in S'(\mathbb R^n)$，而且有一串 $f_k(x)\in S'(\mathbb R^n)$，$f_k(x)\to f_0(x)$ in $S'(\mathbb R^n)$ 是什么意思？为此，我们只需了解 $f_k(x)-f_0(x)\to0$ in $S'(\mathbb R^n)$ 是什么意义即可。为此我们仿照 $D'(\mathbb R^n)$ 中趋于0的定义给出：
+
+\noindent\textbf{定义3}\quad
+$S'(\mathbb R^n)$ 广义函数 $f_k(x)\to0$ in $S'(\mathbb R^n)$ 即指对任意 $\varphi(x)\in S(\mathbb R^n)$，均有
+\[
+ \langle f_k(x),\varphi(x)\rangle\to0.
+\]
+所以 $S'(\mathbb R^n)$ 不但是一个线性空间，而且还有其拓扑结构，不过我们不来讨论这种拓扑结构。
+
+\noindent\textbf{定理4}\quad
+$S'(\mathbb R^n)$ 连续嵌入于 $D'(\mathbb R^n)$ 中。
+
+\noindent\textbf{证}\quad
+作为两个集合，$S'(\mathbb R^n)\subset D'(\mathbb R^n)$ 已如上述。今设一串 $f_k(x)\in S'(\mathbb R^n)$ 在 $S'(\mathbb R^n)$ 中趋于0，则由定义3，对任一 $\varphi(x)\in S(\mathbb R^n)$，有 $\langle f_k,\varphi\rangle\to0$。今取 $\varphi(x)\in D(\mathbb R^n)\subset S(\mathbb R^n)$，上式自然成立，因此 $f_k\to0$ in $D'(\mathbb R^n)$。
+
+由此定理知道，每一个 $S'$ 广义函数也都是 $D'$ 广义函数。其逆显然不真，但 $D'$ 中有一些广义函数特别重要，因此我们要问它们是否也是 $S'$ 广义函数。这里最重要的当然是 $\delta(x)$。它显然是一个 $S'(\mathbb R^n)$ 广义函数，其定义仍然是
+\[
+ \langle\delta,\varphi\rangle=\varphi(0).
+\]
+其实我们可以直接验证它是 $S(\mathbb R^n)$ 上的连续线性泛函。不但是 $\delta(x)$，其实凡 $D'(\mathbb R^n)$ 中有紧支集的元 $f(x)$ 均可定义成 $S'(\mathbb R^n)$ 之元。实际上，设 $\operatorname{supp}f=K$ 是一个紧集，我们作一个 $C_0^\infty(\mathbb R^n)$ 函数 $\chi(x)$，使在 $K$ 附近 $\chi(x)=1$，于是对任一 $\varphi\in S$，$(\chi\varphi)(x)\in D(\mathbb R^n)$，而我们对 $\varphi\in S(\mathbb R^n)$ 定义
+\[
+ \langle f,\varphi\rangle=\langle f,\chi\varphi\rangle.
+\]
+很容易验证，这个定义与 $\chi$ 之选择无关，这样 $D'(\mathbb R^n)$ 中的 $f$ 现在拓展成 $S'(\mathbb R^n)$ 中之元。
+
+特别重要的是，可以证明，$C_0^\infty(\mathbb R^n)$ 在 $D'(\mathbb R^n)$ 中稠密，所以在 $S'(\mathbb R^n)$ 中稠密。即是说，对任意 $f\in S'(\mathbb R^n)$，必可找到一个 $C_0^\infty(\mathbb R^n)$ 序列 $f_k(x)$，使
+\[
+ f_k(x)\to f(x)\quad\text{in }S'(\mathbb R^n).
+\]
+这个定理很重要，还因为它把 $D'$ 广义函数的性质，大都移到 $S'$ 广义函数中来了。我们不来一一列举，只举出其中最重要的几个。以下我们均设 $f\in S'(\mathbb R^n),\varphi(x)\in S(\mathbb R^n)$。
+
+(i)\textbf{平移}\quad $\tau_hf=f(x-h)$ 的定义是
+\begin{equation}
+ \langle\tau_hf,\varphi\rangle=\langle f,\tau_{-h}\varphi\rangle.
+ \tag{21}
+\end{equation}
+
+(ii)\textbf{反射}\quad $\widetilde f(x)=f(-x)$ 的定义是
+\begin{equation}
+ \langle\widetilde f,\varphi\rangle=\langle f,\widetilde\varphi\rangle.
+ \tag{22}
+\end{equation}
+
+(iii)\textbf{求导}\quad 之定义现在成为
+\begin{equation}
+ \langle D^\alpha f,\varphi\rangle=(-1)^{|\alpha|}\langle f,D^\alpha\varphi\rangle.
+ \tag{23}
+\end{equation}
+
+注意，由于我们引入 $S$ 与 $S'$ 是为了傅里叶变换理论的需要，所以必须考虑复值函数，故定义 $S$ 上的线性泛函时需要应用埃尔米特配对 $\langle f,\varphi\rangle$，它对后一“变元”$\varphi$ 是共轭线性的：
+\[
+ \langle\lambda f,\varphi\rangle=\lambda\langle f,\varphi\rangle,
+ \qquad
+ \langle f,\lambda\varphi\rangle=\overline\lambda\langle f,\varphi\rangle.
+\]
+而在讨论 $D(\Omega)$ 与 $D'(\Omega)$ 时，如果限于讨论实值函数，则应该用欧几里得配对 $\langle f,\varphi\rangle$，这时有
+\[
+ \langle\lambda f,\varphi\rangle=\langle f,\lambda\varphi\rangle=\lambda\langle f,\varphi\rangle\qquad(\lambda\text{ 为实数}).
+\]
+仿此，在讨论求导运算时，我们一般都引用 $D=\frac1i\partial$，从而有定义(23)。而在 $D(\Omega)$ 和 $D'(\Omega)$ 中则有
+\[
+ \langle\partial^\alpha f,\varphi\rangle=(-1)^{|\alpha|}\langle f,\partial^\alpha\varphi\rangle.
+\]
+
+但是“乘以函数”的运算在 $D'(\Omega)$ 和 $S'(\mathbb R^n)$ 中是不一样的。对于 $D'(\Omega)$ 的情况，任给 $a(x)\in C^\infty(\Omega)$，我们定义 $a(x)f(x),f(x)\in D'(\Omega)$ 如下
+\[
+ \langle a(x)f(x),\varphi(x)\rangle=\langle f(x),a(x)\varphi(x)\rangle,
+ \qquad \varphi\in D(\Omega).
+\]
+这是因为不论 $a(x)$ 在 $|x|\to+\infty$ 时性态如何，$a(x)\varphi(x)$ 仍具有紧支集。因此，对任意 $f(x)\in D'(\Omega)$，可以定义 $a(x)f(x)$，从而我们称 $a(x)$ 为 $D'(\Omega)$ 乘子。但是对于 $S$ 空间则情况不同：对任意 $a(x)\in C^\infty(\mathbb R^n)$，$a(x)\varphi(x)$ 不一定在 $S(\mathbb R^n)$ 中，所以 $\langle f,a\varphi\rangle$ 没有意义。这就是说，$S'(\mathbb R^n)$ 中的乘子问题要另行处理。
+
+现在进入本节的主题：$S'(\mathbb R^n)$ 上的傅里叶变换。前面我们已经看到 $L^p(\mathbb R^n)\subset S'(\mathbb R^n)$，所以可以希望我们得到的结果将要包括前两节的内容，即我们将首先一般地定义 $S'(\mathbb R^n)$ 上的傅里叶变换，并且证明 $F:S'(\mathbb R^n)\to S'(\mathbb R^n)$ 是一个线性同构；$F$ 与 $F^{-1}$ 都是连续的。然后证明对于 $S'(\mathbb R^n)$ 的子空间 $L^p$，这个定义就是前两节给出的古典的定义，而 $F$ 之同构性性质恰好体现在反演公式上。至于 $S'(\mathbb R^n)$ 上傅里叶变换的一般定义则依靠前面讲的(18)式，其实也就是把一切困难“转移”到试验函数空间 $S$ 上去。
+
+今设 $\varphi\in S(\mathbb R^n)$，于是 $\widehat\varphi$ 也是 $S$ 函数，若 $f\in S'(\mathbb R^n)$，则因傅里叶变换 $F:S(\mathbb R^n)\to S(\mathbb R^n)$ 是线性同构，对任一个给定的 $\widehat\varphi$ 只有一个 $\varphi$ 与之相应，因此 $\langle f,\widehat\varphi\rangle$ 是 $\varphi$ 的线性泛函。又因 $F$ 与 $F^{-1}:S(\mathbb R^n)\to S(\mathbb R^n)$ 都是连续的，故若有一串 $\varphi_k\in S(\mathbb R^n)$，但 $\varphi_k\to0$ in $S(\mathbb R^n)$，则 $\widehat\varphi_k\to0$ in $S(\mathbb R^n)$，因此 $\langle f,\widehat\varphi_k\rangle\to0$，即是说 $\langle f,\widehat\varphi\rangle$ 其实是 $\varphi\in S(\mathbb R^n)$ 上的连续线性泛函，因此必存在唯一的 $S'(\mathbb R^n)$ 之元 $g\in S'(\mathbb R^n)$，使 $\langle f,\widehat\varphi\rangle=\langle g,\varphi\rangle$。因此我们给出
+
+\noindent\textbf{定义4}\quad
+上述 $g\in S'(\mathbb R^n)$ 称为 $f\in S'(\mathbb R^n)$ 之傅里叶变换，并记为 $\widehat f$。因此 $S'(\mathbb R^n)$ 广义函数 $f$ 之傅里叶变换 $\widehat f$ 仍为一 $S'(\mathbb R^n)$ 广义函数而定义如下：
+\begin{equation}
+ \langle f,\widehat\varphi\rangle=\langle\widehat f,\varphi\rangle.
+ \tag{24}
+\end{equation}
+显然，$F:f\mapsto\widehat f$ 是连续映射。
+
+\noindent\textbf{注}\quad
+我们是以欧几里得配对作为定义4的基础的，现在 $f$ 与 $\widehat f$ 均可能为复值函数，故本来应该采用埃尔米特配对，但因埃尔米特配对 $\langle f,\varphi\rangle$ 对后一变元是共轭线性的，故对复常数 $C_1$ 与 $C_2$ 应有
+\[
+ \langle f,C_1\varphi_1+C_2\varphi_2\rangle
+ =\overline{C_1}\langle f,\varphi_1\rangle+\overline{C_2}\langle f,\varphi_2\rangle.
+\]
+这时，定义4需要作一些改动，我们这里就不讲了。
+
+现在回到 $S'(\mathbb R^n)$ 的子空间 $L^p$。先看 $p=1$ 的情况。于是设 $f(x)\in L^1(\mathbb R^n)$，由前所述
+\[
+ \begin{aligned}
+ \langle f,\widehat\varphi\rangle
+ &=\int_{\mathbb R^n}f(x)\widehat\varphi(x)\,dx
+ =\int_{\mathbb R^n}f(x)\,dx\int_{\mathbb R^n}\varphi(\xi)e^{-i\xi x}\,d\xi\\
+ &=\iint_{\mathbb R^n\times\mathbb R^n}f(x)\varphi(\xi)e^{-i\xi x}\,dx\,d\xi\\
+ &=\int_{\mathbb R^n}\varphi(\xi)\,d\xi\int_{\mathbb R^n}f(x)e^{-i\xi x}\,dx,
+ \qquad \varphi\in S(\mathbb R^n).
+ \end{aligned}
+\]
+因为 $f(x)\in L^1(\mathbb R^n),\varphi(\xi)\in S(\mathbb R^n)$，可以应用富比尼定理而得到最后一个等式。这个等式我们这样来看：由 $f\in L^1$ 作为 $S'(\mathbb R^n)$ 之元的傅里叶变换（变换的结果我们仍记为 $\widehat f$）之定义，即由积分 $\int f(x)e^{-i\xi x}\,dx$ 生成的 $S'(\mathbb R^n)$ 之元。因此
+因此
+\[
+ \begin{aligned}
+ &\widehat f\text{ 作为 }S'(\mathbb R^n)\text{ 上之连续线性泛函}\\
+ &\qquad=\int f(x)e^{-i\xi x}\,dx\text{ 所生成的 }S'(\mathbb R^n)\text{ 上的连续线性泛函}.
+ \end{aligned}
+\]
+注意，我们在上一节就已讲过 $\int_{\mathbb R^n}f(x)e^{-i\xi x}\,dx$ 作为一个积分是绝对收敛的，因此 $\int f(x)e^{-i\xi x}\,dx$ 确实是一个古典意义下的函数，不过我们尽管知道它是连续的，在 $|\xi|\to+\infty$ 时为0，却不能断定它仍是 $L^1(\mathbb R^n)$ 函数（且有反例）。当然可以肯定它是局部可积函数，把上面式子中的话讲准确些就是：
+把上面式子中的话讲准确些就是：
+\[
+ \begin{aligned}
+ &f\text{ 作为 }S'(\mathbb R^n)\text{ 之元的傅里叶变换 }\widehat f\\
+ &\qquad=f\text{ 之古典的傅里叶变换 }\widehat f\text{ 所生成的 }S'(\mathbb R^n)\text{ 之元}.
+ \end{aligned}
+\]
+在这个意义下我们说 $S'(\mathbb R^n)$ 傅里叶变换是 $L^1(\mathbb R^n)$ 傅里叶变换的推广，并且不必再多用一个记号 $\widehat f$ 而都记作 $\widehat f$。
+
+其次若 $f\in L^2(\mathbb R^n)$，这时若令
+\[
+ f_N(x)=\begin{cases}
+ f(x),&|x_j|\le N,\quad j=1,2,\ldots,n,\\
+ 0,&\text{其它 }x,
+ \end{cases}
+\]
+于是 $f_N(x)\to f(x)$ in $L^2(\mathbb R^n)$。按古典的傅里叶变换理论，古典的傅里叶变换 $\widehat f_N(\xi)$ 在 $L^2(\mathbb R^n)$ 中有极限，这就是 $\widehat f(\xi)$，它仍是 $L^2(\mathbb R^n)$ 函数。普兰舍利定理告诉我们，古典的傅里叶变换是一个酉算子。
+
+现在转到 $S'(\mathbb R^n)$，首先可见
+\[
+ \langle\widehat f_N,\varphi\rangle=\langle f_N,\widehat\varphi\rangle.
+\]
+于是仍照上面的讲法 $\widehat f_N=\widehat{f_N}$。但当 $N\to\infty$ 时，$f_N\to f$ in $L^2(\mathbb R^n)$，所以 $\widehat f_N\to\widehat f$ in $L^2(\mathbb R^n)$，不过若把 $f_N$ 作为 $S'(\mathbb R^n)$ 之元，$f_N\to f$ 必导致 $\widehat f_N$ 在 $S'(\mathbb R^n)$ 中有极限。由定义容易看出，$\widehat f_N$ 的 $S'(\mathbb R^n)$ 极限即 $f$ 作为 $S'(\mathbb R^n)$ 之元之傅里叶变换，记作 $\widehat f$。于是我们又得到
+于是我们又得到
+\[
+ \begin{aligned}
+ &f\text{（作为 }S'(\mathbb R^n)\text{ 之元）的 }S'(\mathbb R^n)\text{ 傅里叶变换 }\widehat f\\
+ &\qquad=(f\text{ 之古典的傅里叶变换})\text{ 所生成的 }S'(\mathbb R^n)\text{ 之元}.
+ \end{aligned}
+\]
+所以我们也说 $S'(\mathbb R^n)$ 傅里叶变换是 $L^2(\mathbb R^n)$ 的傅里叶变换的推广，而且我们仍使用同一记号。
+
+从这样的讨论中，读者可能会有一个感觉：至少在 $L^1(\mathbb R^n),L^2(\mathbb R^n)$ 情况下，广义函数理论并没有给我们任何新的信息。确实如此，例如对于 $f\in L^1(\mathbb R^n)$ 时的 $\widehat f(\xi)$，除了我们原来就已知道的连续性以及在 $\infty$ 处为0以外，没有任何新结果。那么，这种推广有什么意义呢？我们暂时把这个问题放在一边，先来看一下 $\widehat f$ 的性质。
+
+对于 $S(\mathbb R^n)$ 之傅里叶变换我们有前面讲到的线性、平移与放大、求导与乘以自变量等性质，即前面讲的(6)--(10)诸式，对于 $S'(\mathbb R^n)$ 也是一样，我们可以把它们概括为
+
+\noindent\textbf{定理5}\quad
+$S'(\mathbb R^n)$ 上的傅里叶变换 $F:S'(\mathbb R^n)\to S'(\mathbb R^n)$ 有以下性质：设 $f\in S'(\mathbb R^n)$，则有
+
+(i) 线性性质：傅里叶变换是线性变换；
+
+(ii) 平移与放大：
+\begin{align}
+ \widehat{\tau_hf}(\xi)&=e^{-ih\xi}\widehat f(\xi),
+ \tag{25a}\\
+ \widehat{f(\lambda\,\cdot)}(\xi)&=\frac1{\lambda^n}\widehat f\!\left(\frac\xi\lambda\right);
+ \tag{25b}
+\end{align}
+
+(iii) 求导与乘以自变量：
+\begin{align}
+ \widehat{D^\alpha f}(\xi)&=\xi^\alpha\widehat f(\xi),
+ \tag{26a}\\
+ \widehat{x^\beta f}(\xi)&=(-1)^{|\beta|}D_\xi^\beta\widehat f(\xi).
+ \tag{26b}
+\end{align}
+
+关于逆变换是否也有如上的性质，上面都没有讲，因为下面讲了反演公式以后就清楚了。我们再来看一下逆变换的形式定义(2)。当然，对于 $S'(\mathbb R^n)$ 之元它确实是一个很“规矩”的积分，从形式上看，它与傅里叶变换除了相差一个因子 $1/(2\pi)^n$ 以外，只不过“相位”$i\xi x$ 差了一个符号。因此，只要对 $x$ 再作一个反射 $x\mapsto-x$，(2)就成了(1)（还要加一个因子 $1/(2\pi)^n$），即是说 $f\mapsto\widehat f\mapsto\widehat{\widehat f}\mapsto$ 乘以 $(2\pi)^{-n}\mapsto$ 反射 $\mapsto f$。所以，在 $S(\mathbb R^n)$ 中的反演公式可以写成
+\[
+ \widehat{\widehat f}=(2\pi)^n\widetilde f.
+\]
+现在我们要对 $S'(\mathbb R^n)$ 证明同样的结果：
+
+\noindent\textbf{定理6}\quad
+$F$ 与 $F^{-1}$ 都是 $S'(\mathbb R^n)$ 到 $S'(\mathbb R^n)$ 的连续的线性同构，而且
+\begin{equation}
+ \widehat{\widehat f}=(2\pi)^n\widetilde f,
+ \qquad f\in S'(\mathbb R^n).
+ \tag{27}
+\end{equation}
+
+\noindent\textbf{证}\quad
+$F$ 是连续的线性映射 $S'(\mathbb R^n)\to S'(\mathbb R^n)$ 已经明白。现设 $f\in S'(\mathbb R^n)$，对于任意的 $\varphi\in S(\mathbb R^n)$ 有
+\[
+ \langle\widehat{\widehat f},\varphi\rangle
+ =\langle\widehat f,\widehat\varphi\rangle
+ =\langle f,\widehat{\widehat\varphi}\rangle
+ =\langle f,(2\pi)^n\widetilde\varphi\rangle
+ =\langle(2\pi)^n\widetilde f,\varphi\rangle.
+\]
+于是(27)得证。因此 $F^{-1}$ 是由三个由 $S'(\mathbb R^n)$ 到 $S'(\mathbb R^n)$ 的连续线性映射合成（两次傅里叶变换，再加一次反射），所以自己也是连续线性变换。至于傅里叶变换已经由定理2得知它是连续线性映射。总之，$F,F^{-1}:S'(\mathbb R^n)\to S'(\mathbb R^n)$ 都是连续的线性同构。定理证毕。
+
+\noindent\textbf{推论7}\quad 对于逆傅里叶变换有
+
+(i) 线性性质：自明；
+
+(ii) 平移与放大：
+\begin{align}
+ F^{-1}(\tau_hf)(x)&=e^{ihx}F^{-1}(f)(x),
+ \tag{28a}\\
+ F^{-1}(f(\lambda\,\cdot))(x)&=\frac1{\lambda^n}F^{-1}(f)\!\left(\frac x\lambda\right);
+ \tag{28b}
+\end{align}
+
+(iii) 求导与乘以自变量：
+\begin{align}
+ F^{-1}(D_\xi^\alpha f)(x)&=(-1)^{|\alpha|}x^\alpha F^{-1}(f)(x),
+ \tag{29a}\\
+ F^{-1}(\xi^\beta f)(x)&=D_x^\beta F^{-1}(f)(x).
+ \tag{29b}
+\end{align}
+这些推论我们都不来证明了。
+
+现在要问关于 $S(\mathbb R^n)$ 中的傅里叶变换的定理3，对 $S'(\mathbb R^n)$ 的傅里叶变换有无对应定理？其实(18)式现在就是以欧几里得配对为基础的定义4。也就是如何求 $F$ 的转置算子，(19)式则可以说就是以埃尔米特配对为基础，求 $F$ 的伴算子，(20)比较困难，它涉及如何定义两个广义函数 $f$ 与 $g$ 的卷积。
+
+广义函数的卷积是一个困难的问题，我们这里不打算多讨论它，但想从形式推导着手指出其困难所在。如果 $f(x),g(x)$ 作为 $D'(\mathbb R^n)$ 之元其卷积仍可用
+\[
+ (f*g)(x)=\int f(t)g(x-t)\,dt
+\]
+来定义，则对于 $\varphi(x)\in D(\mathbb R^n)$ 应有
+\[
+ \begin{aligned}
+ \langle f*g,\varphi\rangle
+ &=\iint f(t)g(x-t)\varphi(x)\,dt\,dx\\
+ &=\iint f(t)g(y)\varphi(t+y)\,dy\,dt\\
+ &=\int f(t)\,dt\int g(y)\varphi(t+y)\,dy\\
+ &=\langle f(t),\langle g(y),\varphi(t+y)\rangle\rangle.
+ \end{aligned}
+\]
+现在的问题是：尽管 $\varphi(t+y)$ 作为 $t+y$ 的函数具有紧支集，例如 $|t+y|\le R$，但对任意变动的 $t$，$\varphi(t+y)$ 作为 $y$ 的函数不一定有紧支集。因此 $\langle g(y),\varphi(t+y)\rangle$ 作为 $t$ 的函数不一定在 $D(\mathbb R^n)$ 中，所以上式最后一项不好定义。同样，若 $f,g\in S'(\mathbb R^n),\varphi\in S(\mathbb R^n)$，我们也不一定知道 $\langle g(y),\varphi(t+y)\rangle\in S(\mathbb R^n)$。
+
+再说，如果能够定义 $(f*g)(x)$ 了，而且得出
+\[
+ \widehat{f*g}(\xi)=\widehat f(\xi)\cdot\widehat g(\xi)
+\]
+（本来，定义卷积很重要的目的就是为了证明这个公式），则两个广义函数 $\widehat f(\xi)$ 与 $\widehat g(\xi)$ 的乘积也就可以定义了。我们在第四章中就说了，一般而言是不能定义广义函数的乘积的，因此也就会怀疑，一般而言是不能定义两个广义函数的卷积的。为此应该对 $f$ 与 $g$ 加上一些条件，例如规定二者之一有紧支集。在本书中，关于紧支集广义函数的我们不作专门讨论。这样一来许多问题只好请读者去查广义函数的专门著作了。
+
+最后关于反演公式还要讲几句话，上面我们已讲了，$L^1(\mathbb R^n)\subset S'(\mathbb R^n)$，而且 $L^1$ 函数的傅里叶变换 $\int f(x)e^{-i\xi x}\,dx$，不论按古典意义去讨论还是按 $S'(\mathbb R^n)$ 意义去理解都是一致的。按古典意义去讨论时，我们知道
+\[
+ f(x)=\frac1{(2\pi)^n}\int_{\mathbb R^n}\widehat f(\xi)e^{i\xi x}\,d\xi
+\]
+一般是不成立的，因为 $\widehat f(\xi)$ 不一定可积，所以上式一般而言是不对的。那么 $S'(\mathbb R^n)$ 理论是不是可以给我们什么帮助呢？很遗憾，帮助不大。$S'(\mathbb R^n)$ 理论只能告诉我们 $\widehat f(\xi)\in S'(\mathbb R^n)$，也许我们愿意接受上式作为一个形式积分，正如同我们愿意接受 $\delta(x)=\frac1{(2\pi)^n}\int e^{i\xi x}\,d\xi$ 那样，也许我们还可以把它解释为振荡积分，但是 $L^1$ 函数的傅里叶变换究竟有些什么特性足以刻画它，这个问题是无法回避的。$L^2$ 的情况好一些：当 $f\in L^2$ 时，$\widehat f$ 也是 $L^2$ 函数，即当用 $f_N$ 在 $L^2$ 中去逼近 $f$ 时，$\widehat f_N$ 必有一个 $L^2$ 极限即为 $\widehat f$（不过，$f_N$ 是有紧支集的，$\widehat f_N$ 则一定没有紧支集，它是一类增长性受到严格限制的整函数）。至于 $S'(\mathbb R^n)$ 中的其它元素问题就更多了。有一种错觉，以为有了广义函数理论，傅里叶积分的任何困难都迎刃而解了。事实当然不是如此，有了 $S'(\mathbb R^n)$ 理论，能够给许多出现在量子物理中的奇怪的对象以合理的解释，能算出一些很难算出的傅里叶变换，例如 $\delta(x)=\frac1{(2\pi)^n}\int e^{i\xi x}\,d\xi$ 是什么意思现在就清楚了。它不但在物理学、通讯理论中十分有用，在许多数学分支中也极为重要。但是它也有自己的困难，也有许多技术性的问题。它不能取代古典理论，更不能取代其发展。我们宁可说，大约二百年前傅里叶所开创的数学分支——现在通称为调和分析——一直在蓬勃发展。本章的目的只是为读过微积分的读者提供一个简明的介绍。
+
+我们还是想就 $L^1$ 与 $L^2$ 中傅里叶变换的反演公式说几句话。$L^1$ 与 $L^2$ 函数都是 $S'(\mathbb R^n)$ 之元。因此 $\widehat{\widehat f}=(2\pi)^n\widetilde f$ 都是成立的。当 $f\in L^1$ 时，$\widehat f(\xi)=\int f(x)e^{-i\xi x}\,dx$ 只是一个连续函数，而且 $\xi\to\infty$ 时趋于0。因此虽然仍是一个 $S'(\mathbb R^n)$ 广义函数，其傅里叶变换却不能按古典的勒贝格积分来处理，但若 $\widehat f(\xi)\in L^1(\mathbb R^n_\xi)$，则
+\[
+ \widehat{\widehat f}(x)=\int\widehat f(\xi)e^{-i\xi x}\,d\xi
+ =(2\pi)^n\cdot\frac1{(2\pi)^n}\int\widehat f(\xi)e^{i\xi y}\,dy\Big|_{y=-x}.
+\]
+所以，$\widehat{\widehat f}(x)=(2\pi)^n\widetilde f(x)$ 就意味着
+\[
+ \frac1{(2\pi)^n}\int\widehat f(\xi)e^{i\xi x}\,d\xi=f(x).
+\]
+此式不论在 $S'$ 意义下还是在勒贝格可积函数意义下都对。所以有
+
+\noindent\textbf{推论8}\quad
+若 $f(x)\in L^1(\mathbb R^n)$，且 $\widehat f(\xi)\in L^1(\mathbb R^n)$，则以下的反演公式成立：
+\[
+ f(x)=\frac1{(2\pi)^n}\int\widehat f(\xi)e^{i\xi x}\,d\xi.
+\]
+
+$L^2$ 函数的情况比较简单，若 $f\in L^2$，则 $\widehat f$ 无论按 $S'$ 意义还是按 $L^2$ 意义均为
+\[
+ \widehat f(\xi)=\int f(x)e^{-i\xi x}\,dx
+ =\operatorname*{l.i.m.}_{N\to\infty}\int f_N(x)e^{-i\xi x}\,dx.
+\]
+但 $\widehat f(\xi)$ 一定仍是 $L^2$ 函数，所以一定可以再作傅里叶变换，而且不论是在 $S'$ 意义下还是在 $L^2$ 意义下都相同：
+\[
+ \widehat{\widehat f}(x)
+ =\operatorname*{l.i.m.}_{N\to\infty}\int (\widehat f)_N(\xi)e^{-i\xi x}\,d\xi
+ =\int\widehat f(\xi)e^{-i\xi x}\,d\xi.
+\]
+由于 $\widehat{\widehat f}(x)=(2\pi)^n\widetilde f(x)$，所以
+\[
+ \int\widehat f(\xi)e^{i\xi x}\,d\xi
+ =\widehat{\widehat f}(-x)=(2\pi)^nf(x).
+\]
+于是有
+
+\noindent\textbf{推论9}\quad
+若 $f(x)\in L^2(\mathbb R^n)$，则不论在 $S'$ 意义下还是在 $L^2$ 意义下均有
+\[
+ f(x)=\frac1{(2\pi)^n}\int\widehat f(\xi)e^{i\xi x}\,d\xi.
+\]
+
+最后余下一个问题，即 $S'(\mathbb R^n)$ 乘子问题。我们要问，什么样的 $C^\infty$ 函数 $a(x)$ 与任一个 $S'(\mathbb R^n)$ 广义函数 $f(x)$ 之乘积仍是 $S'(\mathbb R^n)$ 广义函数？这类 $a(x)$ 就称为 $S'$ 乘子。我们知道，$a(x)f(x)$ 应由下式定义：当 $a\in C^\infty(\mathbb R^n),f\in S'(\mathbb R^n),\varphi\in S(\mathbb R^n)$ 时，
+\begin{equation}
+ \langle af,\varphi\rangle=\langle f,a\varphi\rangle.
+ \tag{30}
+\end{equation}
+为使此式有意义，就应要求 $a\varphi\in S(\mathbb R^n)$。因此 $a(x)\in C^\infty$ 是必不可少的条件。但仅此还不够，还需要 $a(x)$ 在 $\infty$ 处增长不能太急，例如 $a(x)=e^{|x|^2}$ 一定不行，因为 $\varphi(x)=e^{-|x|^2/2}$ 显然是 $S(\mathbb R^n)$ 函数，读者自己可以证明，但 $a\varphi=e^{|x|^2/2}$ 显然不在 $S(\mathbb R^n)$ 中，这都是因为 $a(x)$ 是指数增长的原故，于是我们有
+
+\noindent\textbf{定理10}\quad
+设 $a(x)\in C^\infty(\mathbb R^n)$，对任一 $\varphi(x)\in S(\mathbb R^n)$，均有 $a(x)\varphi(x)\in S(\mathbb R^n)$ 的充分必要条件是：对任意重指标 $\alpha$，均存在一个多项式 $P_\alpha(x)$，使
+\begin{equation}
+ |\partial^\alpha a(x)|\le|P_\alpha(x)|.
+ \tag{31}
+\end{equation}
+以下我们记这种 $a(x)$ 所成的空间为 $O_M(\mathbb R^n)$。
+
+于是我们来看 $S'$ 乘子空间：
+\[
+ \left\{a(x)\in C^\infty:\ \text{对一切 }f\in S'(\mathbb R^n),\ a(x)f\in S'(\mathbb R^n)\right\}.
+\]
+我们有
+
+\noindent\textbf{定理11}\quad
+$S'(\mathbb R^n)$ 乘子空间即 $O_M(\mathbb R^n)$。
+
+这里的几个定理我们都不给证明了。

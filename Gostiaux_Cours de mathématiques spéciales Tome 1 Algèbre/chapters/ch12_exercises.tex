@@ -1,0 +1,708 @@
+\origpage{451--463}
+
+\clearpage
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} EXERCICES}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.1em]
+
+\item Soit $A\in M_n(\mathbb R)$ antisymétrique. Montrer que ses valeurs propres sont nulles ou imaginaires pures. Si $n=4$, montrer qu'il existe une matrice $P$ inversible telle que
+\[
+P^{-1}AP=
+\begin{pmatrix}
+0&\alpha&0&0\\
+-\alpha&0&0&0\\
+0&0&0&\beta\\
+0&0&-\beta&0
+\end{pmatrix},
+\]
+avec $\alpha$ et $\beta$ réels.
+
+\item Soit $M\in M_n(\mathbb C)$. Montrer que les valeurs propres de $M^*M$ sont réelles positives. On pose
+\[
+\|M\|=\max\{\sqrt\lambda;\ \lambda\in\operatorname{Sp}(M^*M)\}.
+\]
+Montrer que l'on définit ainsi une norme et que
+\[
+\|M_1M_2\|\le \|M_1\|\,\|M_2\|.
+\]
+
+\item Soit $M\in GL_n(\mathbb C)$. Montrer que pour tout entier $k\ge1$, il existe une unique matrice $A\in GL_n(\mathbb C)$ telle que
+\[
+A(A^*A)^k=M.
+\]
+
+\item Soit $E$ un espace hermitien. Soit $u\in GL(E)$. Montrer que $u$ est hermitien, avec $\|\!|u\|\!|\le1$ si et seulement si il existe $h$ unitaire tel que
+\[
+u=\frac12(h+h^*).
+\]
+Soit $u\in L(E)$, montrer l'existence de $(\lambda_1,\lambda_2,\lambda_3,\lambda_4)\in\mathbb C^4$ et de $h_1,h_2,h_3,h_4$ unitaires tels que
+\[
+u=\sum_{j=1}^4\lambda_jh_j.
+\]
+
+\item Soit $A\in M_n(\mathbb C)$, $A^*={}^t\!\overline A$, montrer que $\det(I_n+A^*A)$ est strictement positif.
+
+\item Soit $\mathbb C^n$ hermitien canonique, et $a$ l'endomorphisme de matrice $A=(a_{ij})$ avec $\forall i$, $a_{ii}=1$, $a_{i,i+1}=-1$, $a_{n,1}=-1$ et $a_{ij}=0$ sinon, (dans la base orthonormée canonique de $\mathbb C^n$).
+
+Exprimer $A$ sous la forme $P(U)$ où $P\in\mathbb C[X]$ et $U$ est une matrice de permutation. Valeurs propres de $U$ et de $A^*A$, calculer $\|\!|A\|\!|$.
+
+\item Soit $A$ une matrice hermitienne définie positive, $B$ une matrice hermitienne. Montrer que $AB$ est diagonalisable.
+
+\item Soit $E$ hermitien et $f\in L(E)$ tel que $f^2=0$. Montrer que
+\[
+((f+f^*)\text{ inversible})\Longleftrightarrow(\operatorname{Ker}f=\operatorname{Im}f).
+\]
+
+\item Soit $E$ hermitien,
+\[
+D=\{u\in L(E);\ \operatorname{id}-u^*u\text{ définie positive}\}
+\]
+et
+\[
+H=\left\{u\in L(E);\ \frac{u-u^*}{2i}\text{ définie positive}\right\}.
+\]
+Montrer que $u\in D\Rightarrow \operatorname{id}-u$ inversible.
+
+Montrer que
+\[
+\varphi:u\longmapsto\varphi(u)=i(\operatorname{id}+u)(\operatorname{id}-u)^{-1}
+\]
+est une bijection de $D$ sur $H$.
+
+\item Soit $A\in M_n(\mathbb C)$. Montrer que $A$ est hermitienne si, et seulement si, pour tout $x$ réel, $e^{ixA}$ est unitaire.
+
+\item Soit $E=\mathbb C^n$, hermitien canonique, $A\in M_n(\mathbb C)$, on pose
+\[
+\|\!|A\|\!|=\sup\{\|Ax\|;\ \|x\|=1\}.
+\]
+Soit $A\in GL_n(\mathbb C)$. Montrer que les valeurs propres de $A^*A$ sont strictement positives.
+
+Si $\lambda_1\ge\lambda_2\ge\cdots\ge\lambda_n$ sont les valeurs propres comptées avec leurs multiplicités, montrer que
+\[
+\|\!|A\|\!|=\sqrt{\lambda_1}
+\qquad\text{et}\qquad
+\|\!|A^{*-1}\|\!|=\frac1{\sqrt{\lambda_n}},
+\]
+puis que
+\[
+\inf\{\|\!|A-M\|\!|;\ \det M=0\}=\sqrt{\lambda_n}.
+\]
+
+\item Soit $E$ hermitien, $f\in L(E)$ tel que $\|\!|f\|\!|\le1$, (norme d'application linéaire continue associée à la norme hermitienne sur $E$). Soit $x\in E$, on pose
+\[
+x_n=\frac1n\bigl(x+f(x)+\cdots+f^{n-1}(x)\bigr).
+\]
+Etude de la suite des $x_n$.
+
+\item Soit $u$ un opérateur normal de $E=\mathbb C^n$ hermitien canonique, $(n\ge1)$.
+
+\begin{enumerate}[label=\alph*),leftmargin=2em,itemsep=0.35em]
+\item Montrer que $E=\operatorname{Ker}u\oplus\operatorname{Im}u$.
+\item Si $u$ et $v$, normaux vérifient $u\circ v=0$, montrer que $v\circ u=0$.
+\item Si $u$ est un opérateur normal, montrer l'existence de $P\in\mathbb C[X]$ tel que $P(u)=u^*$. Réciproque?
+\end{enumerate}
+
+\item Montrer qu'un opérateur $u$ de $E$ hermitien est normal si et seulement si
+\[
+\operatorname{trace}(u^*u)=\sum_{i=1}^n|\lambda_i|^2,
+\]
+les $\lambda_i$ étant les valeurs propres de $u$, distinctes ou non.
+
+\end{enumerate}
+
+\clearpage
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} SOLUTIONS}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.15em]
+
+\item Comme ${}^t\!A=-A$, la matrice $H=iA$ est hermitienne, donc ses valeurs propres sont réelles. Mais alors si le spectre de $H$ est $\{\alpha_1,\ldots,\alpha_n\}$, celui de $A=-iH$ est $\{-i\alpha_1,\ldots,-i\alpha_n\}$ : on a des valeurs propres nulles ou imaginaires pures.
+
+De plus, $A$ étant réelle, si $i\alpha$ est valeur propre de $A$, avec $\alpha\in\mathbb R^*$, $-i\alpha$ est valeur propre avec la même multiplicité. Enfin $H$ étant diagonalisable dans le groupe unitaire, $A=-iH$ est aussi diagonalisable dans $M_n(\mathbb C)$.
+
+On suppose $n=4$. Si 0 est seule valeur propre de $A$, on a alors $A=0$ on a le résultat avec $\alpha=\beta=0$.
+
+Si $i\alpha$ est valeur propre, avec $\alpha\ne0$, $-i\alpha$ est valeur propre de même multiplicité, d'où rang $A=2$ ou 4.
+
+Si rang $A=4$, avec $\{i\alpha,-i\alpha,i\beta,-i\beta\}$ spectre de $A$, (avec $\alpha=\beta$ ou non), il existe $Z_1,\overline Z_1,Z_2,\overline Z_2$, matrices colonnes indépendantes (sur $\mathbb C$), telles que
+\[
+AZ_1=i\alpha Z_1,
+\qquad
+A\overline Z_1=-i\alpha\overline Z_1,
+\qquad
+AZ_2=i\beta Z_2,
+\qquad
+A\overline Z_2=-i\beta\overline Z_2.
+\]
+Si $Z_1=X_1+iY_1$ on a donc $AX_1+iAY_1=-\alpha Y_1+i\alpha X_1$, d'où, avec $X_1$ et $Y_1$ matrices colonnes réelles cette fois, $AX_1=-\alpha Y_1$ et $AY_1=\alpha X_1$.
+
+On fait de même avec $Z_2=X_2+iY_2$. La matrice de passage de $\{X_1,Y_1,X_2,Y_2\}$ à $\{Z_1,\overline Z_1,Z_2,\overline Z_2\}$ étant égale à
+\[
+\begin{pmatrix}
+1&1&0&0\\
+i&-i&0&0\\
+0&0&1&1\\
+0&0&i&-i
+\end{pmatrix}
+\]
+de déterminant $(-2i)^2=-4$, elle est régulière, donc les 4 vecteurs colonnes $X_1,Y_1,X_2,Y_2$ de $\mathbb R^4$, donc de $\mathbb C^4$, sont indépendants sur $\mathbb C$, donc aussi sur $\mathbb R$ : on a bien une base de $\mathbb R^4$ dans laquelle la matrice associée à $A$ est du type voulu. Si rang $A=2$, (par exemple $\beta=0$) on garde les vecteurs $Z_1$ et $\overline Z_1$ et on remplace $\{Z_2,\overline Z_2\}$ par $\{X_2,Y_2\}$ vecteurs propres réels pour 0.
+
+\item Soit $H=M^*M={}^t\!\overline M M$ on a ${}^t\!\overline H=H$, donc $H$ est hermitienne. De plus, $\forall Z\in M_{n,1}(\mathbb C)$,
+\[
+{}^t\!\overline ZHZ={}^t\!\overline Z\,{}^t\!\overline M MZ.
+\]
+Si on pose $Y=MZ$ on a
+\[
+{}^t\!\overline ZHZ={}^t\!\overline YY=\sum_{j=1}^n|y_j|^2\ge0 :
+\]
+$H$ est hermitienne positive, ses valeurs propres sont donc réelles positives.
+
+Sur $\mathbb C^n$ hermitien canonique, $u$ de matrice $H$ dans une base orthonormée est auto-adjoint, donc il existe une base orthonormée de vecteurs propres pour $u$. Si $\{e_1,\ldots,e_n\}$ est cette base, et si $u(e_j)=\lambda_je_j$, on a $\forall z=\sum_{j=1}^nz_je_j$, avec $v$ de matrice $M$ dans la base de départ,
+\[
+\begin{aligned}
+\|v(z)\|^2&=(v(z),v(z))=(z,v^*v(z))=(z,u(z))\\
+&=\sum_{j=1}^n\overline z_j\lambda_jz_j
+\le \sup\{\lambda_k\}\|z\|^2.
+\end{aligned}
+\]
+d'où $\|\!|v\|\!|=\sup\{\|v(z)\|;\ \|z\|\le1\}\le\sup\{\sqrt{\lambda_k}\}$, de plus si $\sup\{\sqrt{\lambda_k},\ k=1,\ldots,n\}=\sqrt{\lambda_{k_0}}$ on a $\|v(e_{k_0})\|^2=\lambda_{k_0}$ d'où en fait, pour la norme d'application linéaire continue,
+\[
+\|\!|v\|\!|=\sup\{\sqrt{\lambda_k}\}.
+\]
+La fin de l'exercice est une propriété des normes d'application linéaire continue.
+
+\item Cet exercice utilise le résultat suivant. Si $M\in M_n(\mathbb C)$, il existe $U$ matrice unitaire et $H$ hermitienne positive telles que $M=UH$, cette décomposition étant unique si $M$ est inversible.
+
+En effet $\operatorname{Ker}M=\operatorname{Ker}M^*M$, car $\operatorname{Ker}M\subset\operatorname{Ker}M^*M$ est évident, et si $x\in\operatorname{Ker}M^*M$ on a $0=(x,M^*Mx)=(Mx,Mx)$ d'où $Mx=0$, soit $x\in\operatorname{Ker}M$.
+
+Puis $M^*M$ étant hermitienne positive, de rang $r=\operatorname{rang}M$, il existe $P$ unitaire telle que
+\[
+P^{-1}(M^*M)P=\operatorname{diag}(\lambda_1,\ldots,\lambda_r;0,\ldots,0)
+\]
+avec des $\lambda_j>0$.
+
+Si $B=\{e_1,\ldots,e_r;e_{r+1},\ldots,e_n\}$ est la base orthonormée de $\mathbb C^n$ de diagonalisation pour $M^*M$ associée à $P$, on a
+\[
+\operatorname{Ker}M=\operatorname{Ker}M^*M=\operatorname{Vect}(e_{r+1},\ldots,e_n).
+\]
+On définit $h$, endomorphisme de matrice $\operatorname{diag}(\sqrt{\lambda_1},\ldots,\sqrt{\lambda_r},0,\ldots,0)$ dans la base orthonormée $B$ : on a $h$ hermitien positif, $\operatorname{Ker}h=\operatorname{Ker}m$, (avec $m$ endomorphisme de matrice $M$ dans la base départ). Mais alors $h$ se factorise dans $m$, (Théorème 6.54) : il existe $u$ linéaire telle que $m=uh$.
+
+Or $(\operatorname{Ker}h)^\perp=\operatorname{Vect}(e_1,\ldots,e_r)=\operatorname{Im}h$, et $\widetilde h$ induit par $h$ sur $\operatorname{Im}h$ est inversible, les $\lambda_j$ étant $>0$. On considère $\widetilde u=m\circ\widetilde h^{-1}=u\circ h\circ\widetilde h^{-1}$. On a pour $1\le i,j\le r$ :
+\[
+\begin{aligned}
+(\widetilde u(e_i),\widetilde u(e_j))
+&=\left(m\!\left(\frac{e_i}{\sqrt{\lambda_i}}\right),m\!\left(\frac{e_j}{\sqrt{\lambda_j}}\right)\right)\\
+&=\frac1{\sqrt{\lambda_i\lambda_j}}(e_i,m^*m(e_j))\\
+&=\frac1{\sqrt{\lambda_i\lambda_j}}(e_i,\lambda_je_j)
+=\sqrt{\frac{\lambda_j}{\lambda_i}}(e_i,e_j).
+\end{aligned}
+\]
+Donc, si $i\ne j$, $(\widetilde u(e_i),\widetilde u(e_j))=0$, et si $i=j$ cela vaut 1 : il en est résulte que $u$ agit sur $\operatorname{Im}h$ comme un opérateur unitaire.
+
+On modifie $u$ sur $\operatorname{Ker}h=(\operatorname{Im}h)^\perp$, (ce qui ne modifiera pas l'égalité $m=uh$) en envoyant une base orthonormée de $\operatorname{Ker}h$ sur une base orthonormée d'un orthogonal de $\operatorname{Im}h$, (par exemple $(e_{r+1},\ldots,e_n)$). On peut donc trouver $u$ unitaire et $h$ hermitien positif tels que $m=uh$. Dans la base orthonormée de départ cela donne une factorisation $M=UH$.
+
+Si $M$ est inversible, l'écriture $M=UH$ conduit à $M^*M=H^*U^*UH=H^2$. Or $M^*M$ étant cette fois hermitienne définie positive, il existe une seule matrice hermitienne définie positive $H$ telle que $H^k=M^*M$, $k\in\mathbb N^*$.
+
+En effet, posons $B=M^*M$, si $H$ existe, $H$ et $B=H^k$ commutent. Soient alors $E_1,\ldots,E_r$ les sous-espaces propres de $B$ associés aux valeurs propres distinctes $\lambda_1,\ldots,\lambda_r$ : chaque $E_j$ est stable par $H$, et $h_j$ induit par l'endomorphisme $h$ de matrice $H$ dans une base de départ, est diagonalisable ($h$ l'est, et $E_j$ stable par $h$). Si $\lambda$ est valeur propre de $h_j$, l'égalité $h^k=B$ implique $\lambda^k=\lambda_j$, avec $\lambda>0$ ceci implique $\lambda=\sqrt[k]{\lambda_j}$, donc $h_j$ est forcément l'homothétie de rapport $\sqrt[k]{\lambda_j}$ sur $E_j$, d'où l'unicité, (et en même temps l'existence) de $h$.
+
+Mais l'unicité de $H$ dans la décomposition $M=UH$ implique celle de $U$.
+
+\emph{Retour à l'exercice.} $M$ étant inversible, il faut que $A$ le soit. On cherche $A$ sous la forme $VL$, ($V$ unitaire, $L$ hermitienne) et on prend $M$ décomposée en $UH$. On doit avoir
+\[
+VL(L^*V^*VL)^k=VL^{2k+1}=UH,
+\]
+or $L^{2k+1}$ est hermitienne positive d'où, (unicité) $V=U$ et $L$ est la seule matrice hermitienne positive telle que $L^{2k+1}=H$.
+
+\item Si $u=\frac12(h+h^*)$, avec $h$ unitaire donc conservant la norme, on aura
+\[
+\|\!|h\|\!|=\sup\{\|h(x)\|;\ \|x\|=1\}=1,
+\]
+ainsi que $\|\!|h^*\|\!|$ d'où $\|\!|u\|\!|\le1$, (inégalité triangulaire). De plus $u^*=u$ donc $u$ est hermitien de norme $\le1$.
+
+Puis, si $u$ est hermitien avec $\|\!|u\|\!|\le1$, soit $B=(e_1,\ldots,e_n)$ une base orthonormée de vecteurs propres pour les valeurs propres $\lambda_1,\ldots,\lambda_n$, réelles, on a $\|u(e_j)\|\le\|e_j\|$ soit $|\lambda_j|\le1$. Mais alors il existe $b_j\in\mathbb R$ tel que
+\[
+\lambda_j^2+b_j^2=1.
+\]
+On définit $h$ par les conditions $h(e_j)=(\lambda_j+ib_j)e_j$. Dans la base orthonormée $B$, la matrice de $h$ est $\operatorname{diag}(\lambda_1+ib_1,\ldots,\lambda_n+ib_n)$, avec $|\lambda_j+ib_j|^2=1$ d'où $(\lambda_j+ib_j)^{-1}=\lambda_j-ib_j$, donc la matrice $h^{-1}$ est transposée de la conjuguée de celle de $h$ : on a $h$ unitaire et $h+h^*$ a pour matrice dans $B$, $\operatorname{diag}(2\lambda_1,\ldots,2\lambda_n)$ d'où $u=\frac12(h+h^*)$. On a bien l'équivalence voulue.
+
+Soit alors $u\in L(E)$, d'adjoint $u^*$, $v=u+u^*$ est hermitien ainsi que $w=i(u-u^*)$ et
+\[
+u=\frac{u+u^*-i(i(u-u^*))}{2}=\frac v2-i\frac w2
+\]
+avec $v$ et $w$ hermitiens.
+
+Puis on peut trouver $t$ réel tel que $\|\!|tv\|\!|\le1$ et $\|\!|tw\|\!|\le1$, ($t\ne0$) d'où $h$ et $k$ unitaires tels que
+\[
+tv=\frac12(h+h^*)
+\qquad\text{et}\qquad
+tw=\frac12(k+k^*)
+\]
+d'où
+\[
+u=\frac12\left(\frac1{2t}(h+h^*)\right)-\frac i2\left(\frac1{2t}(k+k^*)\right)
+\]
+du type $\sum_{j=1}^4\lambda_jh_j$ avec les $\lambda_j$ dans $\mathbb C$ et les $h_j$ unitaires.
+
+\item La matrice $H=A^*A$ est hermitienne positive car pour tout vecteur colonne $Z$ de $M_{n,1}(\mathbb C)$, on a
+\[
+{}^t\!\overline ZHZ={}^t\!\overline Z\,{}^t\!\overline A(AZ)
+\]
+et, avec $Y=AZ$ matrice colonne des $y_j$, c'est
+\[
+{}^t\!\overline ZHZ={}^t\!\overline YY=\sum_{j=1}^n|y_j|^2.
+\]
+Les valeurs propres de $H$ sont donc réelles positives, (voir d'ailleurs exercice n$^\circ$2), celles de $I_n+H$ sont supérieures ou égales à 1 donc leur produit,
+\[
+\det(I_n+A^*A)\ge1.
+\]
+
+\item On a
+\[
+A=\begin{pmatrix}
+1&-1&0&\cdots&0\\
+0&1&-1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&1&-1\\
+-1&0&\cdots&0&1
+\end{pmatrix}=I_n-U
+\]
+avec
+\[
+U=\begin{pmatrix}
+0&1&0&\cdots&0\\
+0&0&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&0&1\\
+1&0&\cdots&0&0
+\end{pmatrix}
+\]
+matrice d'une permutation, donc $A=P(U)$ avec $P$ polynôme défini par $P(X)=1-X$.
+
+Les matrices $I_n,U,U^2,\ldots,U^{n-1}$ sont indépendantes, (si $u$ est l'endomorphisme de matrice $U$, et si $\{e_1,\ldots,e_n\}$ est la base canonique, on a $u(e_1)=e_n$ et $u(e_i)=e_{i-1}$ pour $i\ge2$, d'où $u^2(e_1)=e_{n-1}$, $u^3(e_1)=e_{n-2}$, $\ldots$, $u^{n-1}(e_1)=e_2$, donc si $\alpha_1,\ldots,\alpha_n$ sont des scalaires tels que
+\[
+\alpha_1\operatorname{id}_E+\alpha_2u+\alpha_3u^2+\cdots+\alpha_nu^{n-1}=0,
+\]
+l'image de $e_1$ est
+\[
+0=\alpha_1e_1+\alpha_2e_n+\alpha_3e_{n-1}+\cdots+\alpha_ne_2
+\]
+d'où tous les $\alpha_i$ nuls. Mais alors, pour tout polynôme $Q$ de degré $\le n-1$ on a $Q(U)\ne0$, et comme $U^n=I$, le polynôme minimal est $X^n-1$, le polynôme caractéristique, multiple du polynôme minimal, et de degré $n$ est donc $(-1)^n(X^n-1)$, il est scindé à racines simples : les valeurs propres de $U$ sont les racines $n$ième de l'unité, toutes simples et $U$ est diagonalisable. On vérifie que
+\[
+U^{n-1}={}^t\!\overline U,
+\]
+donc
+\[
+A^*A=(I_n-U^{n-1})(I_n-U)=2I_n-U-U^{n-1}.
+\]
+Comme une base de diagonalisation de $U$ en est une de tout polynôme en $U$, on a une base de diagonalisation de $A^*A$ avec pour valeurs propres les
+\[
+2-\lambda_k-\lambda_k^{n-1}
+\qquad\text{avec}\qquad
+\lambda_k=e^{2ik\pi/n},\quad k=1,\ldots,n.
+\]
+Mais $\lambda_k\overline{\lambda_k}=1$ et $\lambda_k^{n-1}=\overline{\lambda_k}$, donc les valeurs propres de $A^*A$ sont les
+\[
+2-\lambda_k-\overline{\lambda_k}=2-2\cos\frac{2k\pi}{n}=4\sin^2\frac{k\pi}{n},
+\qquad k=1,2,\ldots,n.
+\]
+Enfin $\|\!|A\|\!|^2=\sup\{\|A(x)\|^2,\ \|x\|=1\}$, et $\|A(x)\|^2=(Ax,Ax)$ donc $\|A(x)\|^2=(x,A^*Ax)$. En diagonalisant $A^*A$, hermitien positif, dans une base orthonormée, on constate que
+\[
+\|\!|A\|\!|^2=\sup\{|\mu_k|;\ k=1,\ldots,n\},
+\]
+$\mu_k$ valeurs propres de $A^*A$, (sup encore appelé rayon spectral de $A^*A$).
+
+Donc si $n=2p$, ce rayon spectral est 4 et $\|\!|A\|\!|=2$, alors que si $n=2p+1$, le rayon spectral est
+\[
+4\sin^2\frac{p\pi}{2p+1}
+\qquad\text{et}\qquad
+\|\!|A\|\!|=2\sin\frac{p\pi}{2p+1}.
+\]
+
+\item La matrice $A^{-1}$ est aussi hermitienne, définie positive puisque ses valeurs propres sont les inverses de celles de $A$, donc sont $>0$.
+
+On fixe une base $\mathcal B$ de $E=\mathbb C^n$, soit $\varphi_0$ le produit scalaire hermitien de matrice $A^{-1}$ dans la base $\mathcal B$, et $\varphi$ la forme hermitienne de matrice $B$ dans la même base, ($B$ est aussi hermitienne).
+
+La relation
+\[
+\varphi_0(x,u(y))=\varphi(x,y)
+\]
+définit $u$ linéaire de $E$ dans $E$, (c'est $u=\gamma_{\varphi_0}^{-1}\circ\gamma_\varphi$ avec les notations du cours), de plus $u$ est auto-adjoint pour $\varphi_0$ car
+\[
+\varphi_0(u(x),y)=\overline{\varphi_0(y,u(x))}=\overline{\varphi(y,x)}=\varphi(x,y)=\varphi_0(x,u(y)).
+\]
+Il existe donc $\mathcal B_1=\{e_1,\ldots,e_n\}$ base orthonormée, (pour $\varphi_0$) de vecteurs propres pour $u$, on a donc des $\lambda_j$ réels tels que $u(e_j)=\lambda_je_j$, soit
+\[
+\gamma_{\varphi_0}^{-1}(\gamma_\varphi(e_j))=\lambda_je_j.
+\]
+Comme $\gamma_\varphi$ a pour matrice $\overline B$ par rapport à la base $\mathcal B$ et sa duale, et que $\gamma_{\varphi_0}$ a pour matrice $A^{-1}$ dans les mêmes bases, donc $\gamma_{\varphi_0}^{-1}$ la matrice $A$, et comme $\gamma_{\varphi_0}^{-1}$ est semi-linéaire, l'application linéaire $\gamma_{\varphi_0}^{-1}\circ\gamma_\varphi$ a pour matrice $A\cdot B$ dans la base $\mathcal B$ du départ et on a une base de vecteurs propres de $AB$.
+
+\item Comme $f\circ f=0$ on a $\operatorname{Im}f\subset\operatorname{Ker}f$.
+
+Par ailleurs on a $\operatorname{Ker}f=(\operatorname{Im}f^*)^\perp$ car, si $x\in\operatorname{Ker}f$, $\forall y$ de $f^*(E)$, avec $y=f^*(z)$ on a
+\[
+(x,y)=(x,f^*(z))=(f(x),z)=(0,z)=0,
+\]
+d'où $\operatorname{Ker}f\subset(\operatorname{Im}f^*)^\perp$; or si $p=\operatorname{rang}(f)=\operatorname{rang}(f^*)$, on a $\operatorname{Ker}f$ et $(\operatorname{Im}f^*)^\perp$ tous deux de dimension $n-p$ avec $n=\dim(E)$, donc
+\[
+\operatorname{Ker}f=(\operatorname{Im}f^*)^\perp.
+\]
+Mais alors
+\[
+E=\operatorname{Ker}f\oplus(\operatorname{Ker}f)^\perp
+=\operatorname{Ker}f\oplus\operatorname{Im}f^*.
+\]
+Supposons $\operatorname{Ker}f=\operatorname{Im}f$, on a $f+f^*$ injective car, si $x$ est tel que $f(x)+f^*(x)=0$, on a $f^2(x)+f(f^*(x))=0$, or $f^2=0$, donc $f^*(x)\in\operatorname{Ker}f\cap\operatorname{Im}f^*=\{0\}$, d'où $f^*(x)=0$, mais alors $f(x)=0$ aussi et $x\in\operatorname{Ker}f$; or $\operatorname{Ker}f=\operatorname{Im}f$ : il existe $t$ tel que $x=f(t)$ et $f^*(x)=0\Rightarrow f^*(f(t))=0$ donc $f(t)\in\operatorname{Ker}f^*\cap\operatorname{Im}f$.
+
+Mais $\operatorname{Ker}f^*=(\operatorname{Im}f^{**})^\perp=(\operatorname{Im}f)^\perp$ donc $f(t)\in(\operatorname{Im}f)^\perp\cap\operatorname{Im}f=\{0\}$, d'où $x=0$, et $f+f^*$ est injective. On est en dimension finie donc $f+f^*$ est inversible.
+
+Si $f+f^*$ est inversible, soit $x\in\operatorname{Ker}f$ et $y=(f+f^*)^{-1}(x)$, on a
+\[
+(f+f^*)(y)=x=f(y)+f^*(y).
+\]
+On compose avec $f$, en utilisant $f^2=0$ et $x\in\operatorname{Ker}f$, il reste $f(f^*(y))=0$ donc $f^*(y)\in\operatorname{Ker}f=(\operatorname{Im}f^*)^\perp$ d'où $f^*(y)=0$.
+
+Mais alors $x=f(y)\in\operatorname{Im}f$ : on a $\operatorname{Ker}f\subset\operatorname{Im}f$ d'où l'égalité puisque $\operatorname{Im}f\subset\operatorname{Ker}f$ était vraie, \BellaCorrectionNote{$(f^2=0)$}{$(f^2=f)$}{L'hypothèse de l'exercice est $f^2=0$, et c'est précisément elle qui donne $\operatorname{Im}f\subset\operatorname{Ker}f$.}
+
+\item Si $u\in D$, et si $\operatorname{id}-u$ est non inversible, soit $x$ tel que $(\operatorname{id}-u)(x)=0$, ($x\ne0$), on a, puisque $u(x)=x$,
+\[
+\begin{aligned}
+(x,(\operatorname{id}-u^*u)(x))
+&=(x,x)-(x,u^*u(x))\\
+&=(x,x)-(x,u^*(x))\\
+&=(x,x)-(u(x),x)=0,
+\end{aligned}
+\]
+ce qui contredit $\operatorname{id}-u^*u$ définie positive. Donc $u\in D\Rightarrow\operatorname{id}-u$ inversible.
+
+Soit $u\in D$, on veut voir si $\varphi(u)$ est dans $H$, donc si $\frac{\varphi(u)-\varphi(u)^*}{2i}$ est définie positive donc si, $\forall x\in E$, $x\ne0$,
+\[
+A=\left(\frac{\varphi(u)-\varphi(u)^*}{2i}(x),x\right)>0.
+\]
+On a
+\[
+\begin{aligned}
+A&=-\frac1{2i}(\varphi(u)(x),x)+\frac1{2i}(\varphi(u)^*(x),x)\\
+&=-\frac1{2i}(\varphi(u)(x),x)+\frac1{2i}(x,\varphi(u)(x))\\
+&=-\operatorname{Im}((\varphi(u)(x),x)),
+\end{aligned}
+\]
+qui devrait être $>0$.
+
+Or
+\[
+(\varphi(u)(x),x)=-i((\operatorname{id}+u)(\operatorname{id}-u)^{-1}(x),x).
+\]
+On pose $y=(\operatorname{id}-u)^{-1}(x)$, donc $x=(\operatorname{id}-u)(y)$ et on a
+\[
+\begin{aligned}
+(\varphi(u)(x),x)
+&=-i((\operatorname{id}+u)(y),(\operatorname{id}-u)(y))\\
+&=-i(\|y\|^2-\|u(y)\|^2+2i\operatorname{Im}(u(y),y))
+\end{aligned}
+\]
+donc
+\[
+A=-\operatorname{Im}((\varphi(u)(x),x))=\|y\|^2-\|u(y)\|^2.
+\]
+Comme $\operatorname{id}-u^*u$ est définie positive, pour $y\ne0$, ($x\ne0$ et $\operatorname{id}-u$ bijective), on a
+\[
+(y,y-u^*u(y))>0
+\]
+soit encore
+\[
+\|y\|^2-(y,u^*u(y))=\|y\|^2-(u(y),u(y))=\|y\|^2-\|u(y)\|^2>0,
+\]
+d'où finalement, $u\in D\Rightarrow\varphi(u)\in H$.
+
+Soit alors $v\in H$, essayons de « résoudre » l'équation $v=\varphi(u)$.
+
+Si $u$ est tel que $v=i(\operatorname{id}+u)(\operatorname{id}-u)^{-1}$, on aurait $v(\operatorname{id}-u)=i(\operatorname{id}+u)$ d'où $v-i\operatorname{id}=(v+i\operatorname{id})u$ et si $v+i\operatorname{id}$ est inversible, on aurait
+\[
+u=(v-i\operatorname{id})(v+i\operatorname{id})^{-1}.
+\]
+Or, si $v+i\operatorname{id}$ est non inversible c'est qu'il existe $x$ non nul tel que $v(x)=-ix$ mais alors on a
+\[
+\left(\frac1{2i}(v-v^*)(x),x\right)
+=-\frac1{2i}\bigl((v(x),x)-(v^*(x),x)\bigr)
+=-\|x\|^2,
+\]
+ce qui contredit l'hypothèse $\frac1{2i}(v-v^*)$ définie positive puisque $v\in H$.
+
+Finalement, pour tout $v$ de $H$, il existe un et un seul $u$ de $L(E)$,
+\[
+u=(v-i\operatorname{id})(v+i\operatorname{id})^{-1},
+\]
+tel que $\varphi(u)=v$.
+
+\emph{Si on prouve que ce $u$ est dans $D$, on aura bien $\varphi$ bijection de $D$ sur $H$.}
+
+Soit donc $u=(v-i\operatorname{id})(v+i\operatorname{id})^{-1}$, a-t-on $\operatorname{id}-u^*u$ définie positive, c'est-à-dire, pour tout $x$ non nul de $E$,
+\[
+(x,x-u^*u(x))=\|x\|^2-\|u(x)\|^2>0?
+\]
+On pose $y=(v+i\operatorname{id})^{-1}(x)$, donc $x=(v+i\operatorname{id})(y)$ et il suffit de prouver que, $\forall y\ne0$,
+\[
+\|(v+i\operatorname{id})(y)\|^2-\|(v-i\operatorname{id})(y)\|^2>0,
+\]
+soit
+\[
+(v(y)+iy,v(y)+iy)-(v(y)-iy,v(y)-iy)>0,
+\]
+soit, après développement :
+\[
+-2i(y,v(y))+2i(v(y),y)>0.
+\]
+Cette expression, c'est encore :
+\[
+\begin{aligned}
+B&=2i((y,v^*(y))-(y,v(y)))=2i((y,(v^*-v)(y)))\\
+&=(y,2i(v^*-v)(y))
+=4\left(y,\frac1{2i}(v-v^*)(y)\right),
+\end{aligned}
+\]
+ce qui est bien $>0$ puisque $\frac{v-v^*}{2i}$ est définie positive.
+
+\item Soit
+\[
+e^{ixA}=\lim_{n\to+\infty}\sum_{k=0}^n\frac1{k!}(ix)^kA^k,
+\]
+série absolument convergente dans $M_n(\mathbb C)$ complet car $\simeq\mathbb R^{2n^2}$.
+
+Son adjointe est
+\[
+{}^t\!\overline{(e^{ixA})}
+=\lim_{n\to+\infty}\sum_{k=0}^n\frac1{k!}(-ix)^k({}^t\!\overline A)^k
+=e^{-ix{}^t\!\overline A}.
+\]
+On a donc, si $A$ est hermitienne, ${}^t\!\overline A=A$ donc ${}^t\!\overline{(e^{ixA})}=e^{-ixA}$, d'où
+\[
+(e^{ixA}){}^t\!\overline{(e^{ixA})}=I_n :
+\]
+la matrice $e^{ixA}$ est unitaire. Mais, réciproquement, si $e^{ixA}$ est unitaire, on a
+\[
+e^{ixA}\,{}^t\!\overline{(e^{ixA})}=I_n
+\]
+soit
+\[
+I_n=I_n+ix(A-{}^t\!\overline A)+\sum_{n=2}^{\infty}(ix)^n\left(\sum_{q=0}^n\frac1{q!}\frac{(-1)^{n-q}}{(n-q)!}A^q({}^t\!\overline A)^{n-q}\right)
+\]
+d'où, la série entière en $x$ obtenue en projetant sur chaque vecteur d'une base de $M_n(\mathbb C)$ étant unique, $A-{}^t\!\overline A=0$ (coefficient de $x$ nul) d'où $A$ hermitienne.
+
+\item On identifie les vecteurs de $\mathbb C^n$ et les matrices colonnes de leurs composantes dans la base orthonormée canonique $\mathcal B$.
+
+Si $x\ne0$, est vecteur propre de $A^*A$ pour la valeur propre $\lambda$ on a
+\[
+(x,A^*Ax)=(Ax,Ax)
+\]
+soit $(x,\lambda x)=\lambda\|x\|^2=\|Ax\|^2$. Comme $A$ est inversible et $x$ non nul, $Ax\ne0$ d'où $\lambda>0$. On diagonalise $A^*A$, hermitien, dans une base $\mathcal C=\{e_1,\ldots,e_n\}$, orthonormée, de vecteurs propres pour les valeurs propres $\lambda_1,\ldots,\lambda_n$ avec $\lambda_1\ge\lambda_2\ge\cdots\ge\lambda_n$. Si $x=\sum_{j=1}^n\alpha_je_j$ on aura
+\[
+\begin{aligned}
+\|Ax\|^2&=(Ax,Ax)=(x,A^*Ax)\\
+&=\left(\sum_{j=1}^n\alpha_je_j,\sum_{k=1}^n\alpha_k\lambda_ke_k\right)\\
+&=\sum_{k=1}^n|\alpha_k|^2\lambda_k
+\le\lambda_1\sum_{k=1}^n|\alpha_k|^2,
+\end{aligned}
+\]
+et si $\|x\|=1$, il reste $\|Ax\|\le\sqrt{\lambda_1}$ d'où $\|\!|A\|\!|\le\sqrt{\lambda_1}$ en passant au sup pour $x$ dans la sphère unité. Comme ce sup $\sqrt{\lambda_1}$ est atteint pour $x=e_1$ on a $\|\!|A\|\!|=\sqrt{\lambda_1}$.
+
+La même base étant orthonormée, de vecteurs propres pour $A^{-1}A^{*-1}$ mais avec
+\[
+A^{-1}A^{*-1}(e_j)=\frac1{\lambda_j}e_j,
+\]
+on a
+\[
+\|\!|A^{*-1}\|\!|=\frac1{\sqrt{\lambda_n}}.
+\]
+
+Soit alors $M$ de rang $<n$, il existe $x_0$ sur la sphère unité tel que $M(x_0)=0$, donc
+\[
+\|(A-M)(x_0)\|=\|Ax_0\|\ge\sqrt{\lambda_n}\|x_0\|=\sqrt{\lambda_n},
+\]
+(le calcul précédent, donnait l'encadrement $\lambda_n\|x\|^2\le\|Ax\|^2\le\lambda_1\|x\|^2$).
+
+Mais alors, avec
+\[
+\|\!|A-M\|\!|=\sup\{\|(A-M)(x)\|;\ \|x\|=1\},
+\]
+on a $\|\!|A-M\|\!|\ge\|(A-M)(x_0)\|$, d'où $\|\!|A-M\|\!|\ge\sqrt{\lambda_n}$ et
+\[
+d=\inf\{\|\!|A-M\|\!|;\ \det M=0\}
+\]
+est supérieur à $\sqrt{\lambda_n}$.
+
+Sur la base orthonormée $\mathcal C=\{e_1,\ldots,e_n\}$, de diagonalisation de $A^*A$, on définit $M_0$ par $M_0e_i=Ae_i$ pour $i<n$ et $M_0e_n=0$.
+
+On a $\det M_0=0$, et $\forall i<n$, $(A-M_0)e_i=0$, alors que $(A-M_0)(e_n)=Ae_n$, donc avec $x=\sum_{j=1}^n\alpha_je_j$, on a
+\[
+\begin{aligned}
+\|(A-M_0)(x)\|^2
+&=\left\|\sum_{j=1}^n\alpha_j(A-M_0)e_j\right\|^2
+=|\alpha_nAe_n|^2\\
+&=|\alpha_n|^2(Ae_n,Ae_n)
+=|\alpha_n|^2(e_n,A^*Ae_n)\\
+&=\lambda_n|\alpha_n|^2\le\lambda_n\|x\|^2,
+\end{aligned}
+\]
+d'où, si $\|x\|\le1$, $\|(A-M_0)(x)\|\le\sqrt{\lambda_n}$, et comme $\|(A-M_0)(e_n)\|=\sqrt{\lambda_n}$, on a $\|\!|A-M_0\|\!|=\sqrt{\lambda_n}$.
+
+Finalement
+\[
+\inf\{\|\!|A-M\|\!|;\ \det M=0\}=\sqrt{\lambda_n},
+\]
+et cet inf est atteint.
+
+\item En fait, comme $\|\!|f\|\!|\le1$, on a
+\[
+\operatorname{Im}(f-\operatorname{id}_E)=(\operatorname{Ker}(f-\operatorname{id}_E))^\perp.
+\]
+En effet, soit $x\in\operatorname{Ker}(f-\operatorname{id}_E)$, (donc $f(x)=x$), et $z=f(y)-y$ dans $\operatorname{Im}(f-\operatorname{id}_E)$.
+
+Pour tout $\lambda$ de $\mathbb C$, on a alors
+\[
+\|f(x+\lambda y)\|^2=\|x+\lambda f(y)\|^2\le\|x+\lambda y\|^2
+\]
+puisque $\|\!|f\|\!|\le1$, soit encore, après développement:
+\[
+|\lambda|^2(\|f(y)\|^2-\|y\|^2)
++2\operatorname{Re}(\overline\lambda(x,f(y))-\overline\lambda(x,y))\le0,
+\]
+donc en particulier pour tout $t$ réel, on a
+\[
+t^2(\|f(y)\|^2-\|y\|^2)+2t\operatorname{Re}(x,f(y)-y)\le0,
+\]
+avec $\|f(y)\|^2-\|y\|^2\le0$. Si $\|f(y)\|^2-\|y\|^2=0$, on a une fonction affine en $t$, à valeurs négatives, ce n'est possible que si $\operatorname{Re}(x,f(y)-y)=0$, et si $\|f(y)\|^2-\|y\|^2<0$, le trinôme en $t$ ne peut être à valeurs toujours négatives que si le discriminant réduit $(\operatorname{Re}(x,f(y)-y))^2$ est \BellaCorrectionNote{négatif ou nul}{négatif}{Pour un trinôme de signe constant avec coefficient dominant négatif, le discriminant doit être $\le0$; ici il s'agit en outre du carré d'un réel, donc il est nécessairement nul.}. Dans tous les cas $\operatorname{Re}(x,f(y)-y)=0$.
+
+En prenant ensuite $\lambda=it$, $t$ réel, on obtient cette fois
+\[
+t^2(\|f(y)\|^2-\|y\|^2)-2t\operatorname{Im}(x,f(y)-y)\le0,
+\]
+pour tout $t$ réel, ce qui conduit à $\operatorname{Im}(x,f(y)-y)=0$ et finalement à
+\[
+(x,f(y)-y)=0,
+\]
+$\forall x\in\operatorname{Ker}(f-\operatorname{id}_E)$, $\forall y\in E$, d'où
+\[
+\operatorname{Im}(f-\operatorname{id}_E)\subset(\operatorname{Ker}(f-\operatorname{id}_E))^\perp,
+\]
+et comme on a deux espaces de même dimension finie, on a
+\[
+\operatorname{Im}(f-\operatorname{id}_E)=\operatorname{Ker}(f-\operatorname{id}_E)^\perp
+\]
+donc
+\[
+E=\operatorname{Ker}(f-\operatorname{id}_E)\oplus\operatorname{Im}(f-\operatorname{id}_E),
+\]
+somme directe orthogonale.
+
+Soit alors $x\in\operatorname{Ker}(f-\operatorname{id}_E)$,
+\[
+\frac1n(x+f(x)+\cdots+f^{n-1}(x))=x,
+\]
+converge vers $x$.
+
+Soit $x\in\operatorname{Im}(f-\operatorname{id}_E)$, et $y\in E$ tel que $x=f(y)-y$, on a
+\[
+f^k(x)=f^{k+1}(y)-f^k(y)
+\]
+donc
+\[
+x_n=\frac1n\sum_{k=0}^{n-1}f^k(x)
+=\frac1n(f^n(y)-y).
+\]
+Comme $\|\!|f^n\|\!|\le1$, on a
+\[
+\|x_n\|\le\frac{2\|y\|}{n},
+\]
+donc $\lim_{n\to+\infty}x_n=0$.
+
+En décomposant $x$ quelconque de $E$ en $x=u+v$ avec $u\in\operatorname{Ker}(f-\operatorname{id}_E)$ et $v\in\operatorname{Im}(f-\operatorname{id}_E)$, on en déduit que $x_n$ converge vers $u$, donc
+\[
+\lim_{n\to+\infty}\left(\frac1n(\operatorname{id}+f+\cdots+f^{n-1})(x)\right)=p(x),
+\]
+$p$ projection orthogonale sur $\operatorname{Ker}(f-\operatorname{id}_E)$.
+
+(A rapprocher de l'exercice 26, ch. 6 de topologie).
+
+\item
+\begin{enumerate}[label=\alph*),leftmargin=2em,itemsep=0.5em]
+\item On a $\operatorname{Ker}u^*=(\operatorname{Im}u)^\perp$, (si $x\in\operatorname{Ker}u^*$, $\forall y=u(z)$ de $\operatorname{Im}u$, on a $(y,x)=(u(z),x)=(z,u^*(x))=(z,0)=0$, donc $\operatorname{Ker}u^*\subset(\operatorname{Im}u)^\perp$, et ces espaces sont de même dimension). De même $\operatorname{Im}u^*=(\operatorname{Ker}u)^\perp$.
+
+Soit $x\in\operatorname{Ker}u\cap\operatorname{Im}u$, comme $u(x)=0$, on a $u^*(u(x))=0$ d'où, ($u$ normal), $u(u^*(x))=0$ donc $u^*(x)\in\operatorname{Ker}u$, soit $u^*(x)\in\operatorname{Ker}u\cap\operatorname{Im}u^*=\operatorname{Ker}u\cap(\operatorname{Ker}u)^\perp=\{0\}$, d'où $x\in\operatorname{Ker}u\Rightarrow x\in\operatorname{Ker}u^*$. Mais alors, si $x\in\operatorname{Ker}u\cap\operatorname{Im}u$, on a $x\in\operatorname{Ker}u^*\cap\operatorname{Im}u=(\operatorname{Im}u)^\perp\cap\operatorname{Im}u$ donc $x=0$.
+
+Les sous-espaces $\operatorname{Ker}u$ et $\operatorname{Im}u$ sont en somme directe, vu leurs dimensions on a $E=\operatorname{Ker}u\oplus\operatorname{Im}u$.
+
+\item On a justifié au a) l'inclusion $\operatorname{Ker}u\subset\operatorname{Ker}u^*$, pour $u$ normal, mais $u$ et $u^*$ étant de même rang, la dimension de $\operatorname{Ker}u^*$ est égale à $\dim(\operatorname{Ker}u)$, d'où $\operatorname{Ker}u=\operatorname{Ker}u^*$, mais alors on a:
+\[
+\operatorname{Im}u=(\operatorname{Ker}u^*)^\perp=(\operatorname{Ker}u)^\perp=\operatorname{Im}u^*.
+\]
+On a donc aussi $\operatorname{Im}v=\operatorname{Im}v^*$ et $\operatorname{Ker}v=\operatorname{Ker}v^*$.
+
+Si de plus $u\circ v=0$, c'est que
+\[
+\begin{aligned}
+\operatorname{Im}v&\subset\operatorname{Ker}u\\
+&\Longleftrightarrow \operatorname{Im}v^*\subset\operatorname{Ker}u^*\\
+&\Longleftrightarrow (\operatorname{Ker}u^*)^\perp\subset(\operatorname{Im}v^*)^\perp\\
+&\Longleftrightarrow \operatorname{Im}u\subset\operatorname{Ker}v\\
+&\Longleftrightarrow v\circ u=0.
+\end{aligned}
+\]
+
+\item Comme $u$ est normal, il est diagonalisable dans le groupe unitaire. Soit $\mathcal B=\{e_1,\ldots,e_n\}$ une base orthonormée de vecteurs pour les valeurs propres $\lambda_1,\ldots,\lambda_n$. La matrice de $u$ dans la base $\mathcal B$ est $\operatorname{diag}(\lambda_1,\ldots,\lambda_n)$ donc celle de $u^*$ est $\operatorname{diag}(\overline{\lambda_1},\ldots,\overline{\lambda_n})$. En particulier si $\lambda_i$ est valeur propre d'ordre $p$ de $u$, $\overline{\lambda_i}$ l'est aussi d'ordre $p$ de $u^*$.
+
+On note alors \BellaCorrectionNote{$\mu_1,\ldots,\mu_r$}{$\mu_1,\ldots,\mu_2$}{Les valeurs propres distinctes sont ensuite indexées par $1,\ldots,r$ et leurs multiplicités par $\alpha_1,\ldots,\alpha_r$; le dernier indice doit donc être $r$.} les valeurs propres distinctes de multiplicités respectives $\alpha_1,\ldots,\alpha_r$, pour $u$; celles de $u^*$ sont $\overline{\mu_1},\ldots,\overline{\mu_r}$ avec les mêmes multiplicités.
+
+Si $P\in\mathbb C[X]$ est le polynôme interpolateur de Lagrange tel que, pour $i=1,2,\ldots,r$, \BellaCorrectionNote{$P(\mu_i)=\overline{\mu_i}$}{$P(\lambda_i)=\overline{\lambda_i}$}{L'interpolation doit porter sur les $r$ valeurs propres distinctes introduites immédiatement avant, notées $\mu_i$; les $\lambda_i$ désignent la liste avec multiplicités.}, il est clair que l'on aura $P(u)=u^*$, cette relation étant vérifiée dans la base $\mathcal B$ orthonormée de diagonalisation introduite.
+
+On a donc $P\in\mathbb C[X]$, tel que $P(u)=u^*$. Mais réciproquement, si $u^*$ est du type $P(u)$, il commute avec $u$, donc $u$ est normal.
+\end{enumerate}
+
+\item Soit $u$ normal, $\mathcal B$ une base orthonormée de vecteurs propres pour les valeurs propres $\lambda_1,\ldots,\lambda_n$. On a pour matrice $U$ de $u$ dans la base $\mathcal B$,
+\[
+U=\operatorname{diag}(\lambda_1,\ldots,\lambda_n),
+\]
+donc la matrice $U^*$ de $u^*$ est
+\[
+U^*=\operatorname{diag}(\overline{\lambda_1},\ldots,\overline{\lambda_n}),
+\]
+d'où celle de $u^*u$:
+\[
+U^*U=\operatorname{diag}(|\lambda_1|^2,\ldots,|\lambda_n|^2)
+\]
+et
+\[
+\operatorname{trace}(u^*u)=\sum_{j=1}^n|\lambda_j|^2.
+\]
+
+Réciproquement, on suppose que
+\[
+\operatorname{trace}(u^*u)=\sum_{j=1}^n|\lambda_j|^2.
+\]
+Soit $\mathcal C$ une base de trigonalisation de $u$, on orthonormalise $\mathcal C$ en $\mathcal B$ par le procédé d'orthonormalisation de \BellaCorrectionNote{Schmidt}{Schmitdt}{Le nom usuel du procédé est Schmidt; l'impression contient une lettre supplémentaire.}. En notant $\mathcal C=(e_1,\ldots,e_n)$ et $\mathcal B=(\varepsilon_1,\ldots,\varepsilon_n)$, comme pour tout $k=1,\ldots,n$,
+\[
+F_k=\operatorname{Vect}(e_1,\ldots,e_k)=\operatorname{Vect}(\varepsilon_1,\ldots,\varepsilon_k)
+\]
+et que $u(e_k)\in F_k$, avec $\varepsilon_k=\alpha_1e_1+\cdots+\alpha_ke_k$ on aura
+\[
+u(\varepsilon_k)=\alpha_1u(e_1)+\cdots+\alpha_ku(e_k)\in F_1+F_2+\cdots+F_k=F_k,
+\]
+donc la matrice $T=(t_{ij})$ de $u$ dans la base orthonormée $\mathcal B$ est triangulaire supérieure, celle de $u^*$ est ${}^t\!\overline T$, triangulaire inférieure, et le terme diagonal, ($j$ième ligne, $j$ième colonne) de $u^*u$ est
+\[
+\sum_{k=1}^j\overline{t_{kj}}t_{kj}
+=|t_{jj}|^2+\sum_{k=1}^{j-1}|t_{kj}|^2,
+\]
+avec $t_{11},t_{22},\ldots,t_{nn}$ qui sont les valeurs propres de $u$.
+
+Si donc
+\[
+\operatorname{trace}=\sum_{j=1}^n|\lambda_j|^2
+=\sum_{j=1}^n\left(|\lambda_j|^2+\sum_{k=1}^{j-1}|t_{kj}|^2\right)
+\]
+c'est que, pour tout $k\ne j$, $t_{kj}=0$, mais alors $T$ est diagonale, $T^*$ aussi, donc $T$ et $T^*$ commutent : $u$ est un opérateur normal.
+
+\end{enumerate}

@@ -1,0 +1,933 @@
+\chapter[Formes sesquilinéaires, formes hermitiennes]{Formes sesquilinéaires,\\ formes hermitiennes}
+\origpage{429--451}
+
+Dans ce chapitre on va se trouver en terrain connu, celui des formes quadratiques et des espaces préhilbertiens réels. En fait, on va apporter une modification aux formes quadratiques, de façon que sur des espaces vectoriels complexes on obtienne un objet homogène à un carré et à valeurs positives. On remplacera donc les carrés des scalaires par des $z\overline z$.
+
+La plupart des raisonnements sont la copie conforme de ceux que l'on rencontre au chapitre 14 d'analyse, sur les espaces préhilbertiens réels.
+
+\BellaSection{1. Vocabulaire}
+
+\medskip\noindent\textsc{Définition 12.1.} --- \emph{Soient $E$ et $F$ deux espaces vectoriels complexes. Une application $f$ de $E$ dans $F$ est dite semi-linéaire si et seulement si
+\[
+\forall(x,y)\in E^2,\qquad f(x+y)=f(x)+f(y),
+\]
+et
+\[
+\forall(\lambda,x)\in\mathbb C\times E,\qquad f(\lambda x)=\overline\lambda f(x).
+\]}
+
+Il est facile de vérifier que l'image $f(E)$ est encore un sous-espace vectoriel de $F$, et que si $H$ est sous-espace de $F$, $f^{-1}(H)$ est un sous-espace de $E$. En particulier on peut parler de noyau de $f$ semi-linéaire, de rang de $f$ si on est en dimension finie. Ce qui changerait par contre ce serait les règles de calcul matriciel.
+
+\medskip\noindent\textsc{Définition 12.2.} --- \emph{Soit $E$ un espace vectoriel complexe. On appelle forme sesquilinéaire toute application $\varphi$ de $E\times E$ dans $\mathbb C$ qui est semi-linéaire par rapport à sa première variable, et linéaire par rapport à la deuxième.}
+
+Si on considère l'application $(x,y)\longmapsto\varphi(x,y)$, on a :
+\[
+\forall(\lambda,\lambda')\in\mathbb C^2,\ \forall(x,x')\in E^2,\ \forall y\in E,
+\]
+\[
+\varphi(\lambda x+\lambda'x',y)=\overline\lambda\,\varphi(x,y)+\overline{\lambda'}\,\varphi(x',y),
+\]
+et
+\[
+\forall(\mu,\mu')\in\mathbb C^2,\ \forall x\in E,\ \forall(y,y')\in E^2,
+\]
+\[
+\varphi(x,\mu y+\mu'y')=\mu\varphi(x,y)+\mu'\varphi(x,y').
+\]
+Soit alors $x$ fixé dans $E$, l'application $y\longmapsto\varphi(x,y)$ est linéaire en $y$.
+
+\subsection*{12.3.}
+C'est donc un élément de $E^*$ dual de $E$. On note $\gamma_\varphi(x)$ cette forme linéaire, et on peut vérifier que $\gamma_\varphi$ est semi-linéaire de $E$ dans $E^*$.
+
+Si on note $\delta_\varphi(y)$ l'application $x\longmapsto\varphi(x,y)$ de $E$ dans $\mathbb C$ on obtient cette fois une application semi-linéaire de $E$ dans $\mathbb C$, mais $\delta_\varphi$ serait linéaire de $E$ dans l'espace vectoriel des formes semi-linéaires.
+
+\medskip\noindent\textsc{Définition 12.4.} --- \emph{On appelle forme sesquilinéaire à symétrie hermitienne sur $E$ espace vectoriel complexe, toute forme sesquilinéaire $\varphi$ vérifiant :
+\[
+\forall(x,y)\in E^2,\qquad \varphi(y,x)=\overline{\varphi(x,y)}.
+\]}
+
+\medskip\noindent\textsc{Définition 12.5.} --- \emph{On appelle forme hermitienne sur $E$ vectoriel complexe toute application $\Phi$ de $E$ dans $\mathbb R$ : $x\longmapsto\Phi(x)=\varphi(x,x)$, avec $\varphi$ forme sesquilinéaire à symétrie hermitienne.}
+
+On a bien $\Phi(x)$ réel car en conjuguant $\varphi(x,x)$, c'est-à-dire en changeant $x$ et $x$ de place, le scalaire ne change pas.
+
+\medskip\noindent\textbf{Relation entre $\varphi$ et $\Phi$}
+
+Soit $\Phi$ forme hermitienne associée à $\varphi$ sesquilinéaire à symétrie hermitienne, on a :
+\[
+\Phi(x+y)=\varphi(x+y,x+y)=\Phi(x)+\varphi(x,y)+\varphi(y,x)+\Phi(y).
+\]
+Or \BellaCorrectionNote{$\varphi(x,y)+\varphi(y,x)$}{$\varphi(x+y)+\varphi(y,x)$}{Le premier terme provient du développement de $\varphi(x+y,x+y)$ et doit être $\varphi(x,y)$; l'écriture $\varphi(x+y)$ n'est d'ailleurs pas définie pour une forme à deux variables.} $=\varphi(x,y)+\overline{\varphi(x,y)}=2\operatorname{Re}(\varphi(x,y))$. Donc
+
+\subsection*{12.6.}
+\[
+\Phi(x+y)=\Phi(x)+\Phi(y)+2\operatorname{Re}(\varphi(x,y)).
+\]
+
+Comme $\Phi(\lambda y)=\varphi(\lambda y,\lambda y)=\overline\lambda\lambda\varphi(y,y)=|\lambda|^2\Phi(y)$, et que $\varphi(x,-y)=-\varphi(x,y)$, il vient
+\[
+\Phi(x-y)=\Phi(x)+\Phi(y)-2\operatorname{Re}(\varphi(x,y)).
+\]
+Par soustraction on obtient :
+\[
+4\operatorname{Re}\varphi(x,y)=\Phi(x+y)-\Phi(x-y).
+\]
+Puis, $\varphi(x,iy)=i\varphi(x,y)$ donc $\operatorname{Re}\varphi(x,iy)=-\operatorname{Im}\varphi(x,y)$ d'où l'égalité
+\[
+4\operatorname{Im}\varphi(x,y)=-\Phi(x+iy)+\Phi(x-iy)
+\]
+qui donne
+
+\subsection*{12.7.}
+\[
+\varphi(x,y)=\frac14\bigl[\Phi(x+y)-\Phi(x-y)+i\Phi(x-iy)-i\Phi(x+iy)\bigr],
+\]
+relation reliant une forme hermitienne $\Phi$ et sa forme sesquilinéaire à symétrie hermitienne associée $\varphi$. « Sa », adjectif possessif défini car il n'y en a qu'une vu ce calcul. J'en profite pour remercier mon épouse qui vient de vérifier dans le dictionnaire qu'il s'agit bien d'un adjectif possessif.
+
+\subsection*{12.8.}
+On parlera de forme polaire associée à $\Phi$.
+
+\medskip\noindent\textbf{Des exemples}
+
+\subsection*{12.9.}
+$E\simeq\mathbb C^n$. Si $B=\{e_1,\ldots,e_n\}$ est une base de $E$, et si pour
+\[
+x=\sum_{k=1}^n x_ke_k\qquad\text{et}\qquad y=\sum_{l=1}^n y_le_l
+\]
+on pose
+\[
+\varphi(x,y)=\sum_{k=1}^n\overline{x_k}y_k,
+\]
+on a bien une forme linéaire en $y$ et semi-linéaire en $x$, à symétrie hermitienne.
+
+Il en est de même dans les cas suivants :
+
+\subsection*{12.10.}
+$E=\mathbb C[X]$, et si $P=\sum_{n\in\mathbb N}a_nX^n$, $Q=\sum_{n\in\mathbb N}b_nX^n$, avec les $a_n$ et $b_n$ presque tous nuls, on pose
+\[
+\varphi(P,Q)=\sum_{k\in\mathbb N}\overline{a_k}b_k,\qquad\text{(somme finie en fait).}
+\]
+
+\subsection*{12.11.}
+\[
+E=\ell^2(\mathbb C)=\left\{\text{suites }u=(u_n)_{n\in\mathbb N};\ \sum_{n=0}^{+\infty}|u_n|^2\text{ existe}\right\}.
+\]
+Si $u$ et $v$ sont dans $E$, comme pour tout $n\in\mathbb N$ on a
+\[
+2|u_nv_n|\le|u_n|^2+|v_n|^2,
+\]
+car c'est $(|u_n|-|v_n|)^2\ge0$, on vérifie que $u+v\in E$, d'où $E$ espace vectoriel, et l'expression
+\[
+\varphi(u,v)=\sum_{n\in\mathbb N}\overline{u_n}v_n
+\]
+a un sens et définit une forme sesquilinéaire à symétrie hermitienne.
+
+\subsection*{12.12.}
+Si $E=C^0([a,b],\mathbb C)$, si $p\in C^0([a,b],\mathbb R_+)$, on définit $\varphi$ par
+\[
+\varphi(f,g)=\int_a^b\overline{f(t)}g(t)p(t)\,dt :
+\]
+on a encore une forme sesquilinéaire à symétrie hermitienne.
+
+\medskip\noindent\textbf{Quelques précisions en dimension finie}
+
+Soit $E$ un espace vectoriel de dimension finie, $n$, sur $\mathbb C$ et $B=(e_1,\ldots,e_n)$ une base de $E$. On se donne par ailleurs $\varphi$, forme sesquilinéaire à symétrie hermitienne.
+
+Si on note, pour $u$ et $v$ dans $\{1,\ldots,n\}$, $a_{uv}=\varphi(e_u,e_v)$, la symétrie hermitienne implique que $a_{vu}=\overline{a_{uv}}$, donc la matrice $A=(a_{uv})_{1\le u,v\le n}$ est telle que $A={}^t\!\overline A$.
+
+\medskip\noindent\textsc{Définition 12.13.} --- \emph{On appelle matrice hermitienne toute matrice carrée complexe $A$ vérifiant l'égalité ${}^t\!\overline A=A$.}
+
+Donc, si $\varphi$ est sesquilinéaire à symétrie hermitienne, la matrice des $\varphi(e_u,e_v)$ est une matrice hermitienne. C'est intéressant parce qu'à partir de $A$ matrice hermitienne, on peut calculer $\varphi(x,y)$.
+
+En effet, avec les notations précédentes, soient
+\[
+x=\sum_{u=1}^n x_ue_u\qquad\text{et}\qquad y=\sum_{v=1}^n y_ve_v
+\]
+deux vecteurs de $E$. On veut calculer $\varphi(x,y)$, $\varphi$ devant être une forme sesquilinéaire à symétrie hermitienne avec $\varphi(e_u,e_v)=a_{uv}$, terme général de $A$, matrice hermitienne donnée.
+
+On doit avoir
+\[
+\varphi(x,y)=\varphi\left(\sum_{u=1}^n x_ue_u,\sum_{v=1}^n y_ve_v\right)
+=\sum_{u=1}^n\sum_{v=1}^n\overline{x_u}y_va_{uv},
+\]
+ce qui montre d'abord que l'on calcule $\varphi(x,y)$ de manière unique, et ce qui permet de vérifier qu'effectivement $\varphi$ est linéaire en $y$, (expression homogène du 1er degré par rapport aux $y_v$), semi-linéaire en $x$, (homogène du 1er degré par rapport aux $\overline{x_u}$) et à symétrie hermitienne puisque $\overline{a_{uv}}=a_{vu}$.
+
+On a encore
+\[
+\varphi(x,y)=\sum_{u=1}^n\overline{x_u}\left(\sum_{v=1}^n a_{uv}y_v\right).
+\]
+En notant $X$ et $Y$ les matrices colonnes des composantes $x_u$ et $y_v$ de $x$ et $y$ respectivement, on constate que $\sum_{v=1}^n a_{uv}y_v$ est le terme général de la matrice colonne $AY$.
+
+On a donc
+
+\subsection*{12.14.}
+\[
+\varphi(x,y)={}^t\!\overline X\,AY,
+\]
+expression matricielle de la forme sesquilinéaire $\varphi$, une base de $E\simeq\mathbb C^n$ étant fixée.
+
+\medskip\noindent\textbf{Effet d'un changement de base}
+
+Soit $B'=\{e'_1,\ldots,e'_n\}$ une nouvelle base de $E$, $P$ la matrice de passage de $B$ à $B'$, soit $A'=(\varphi(e'_u,e'_v))_{1\le u,v\le n}$ la matrice de $\varphi$ dans la base $B'$ et $X',Y'$ les matrices colonnes des composantes de $x$ et $y$ dans $B'$.
+
+On a les relations
+\[
+\varphi(x,y)={}^t\!\overline X AY={}^t\!\overline{X'}A'Y'
+\]
+avec en outre $X=PX'$ et $Y=PY'$ d'où
+\[
+{}^t\!\overline X AY={}^t(\overline P\,\overline{X'})APY'
+={}^t\!\overline{X'}({}^t\!\overline P\,AP)Y'.
+\]
+
+\subsection*{12.15.}
+Vu l'unicité de la matrice des $\varphi(e'_u,e'_v)$ associée à $\varphi$ dans la base $B'$, c'est que
+\[
+A'={}^t\!\overline P\,AP.
+\]
+On dit que $A$ et $A'$ sont congruentes.
+
+\medskip\noindent\textsc{Remarque 12.16.} --- En particulier $A$ et $A'$ sont équivalentes, (car $P$ est régulière) donc de même rang : ce sera le rang de la forme hermitienne.
+
+\medskip\noindent\textsc{Remarque 12.17.} --- Contrairement aux applications bilinéaires symétriques qui formaient un espace vectoriel, les formes sesquilinéaires à symétrie hermitienne ne constituent pas un espace vectoriel car si $\varphi$ a la symétrie hermitienne, $\lambda\varphi$ ne l'a pas puisque
+\[
+\overline{\lambda\varphi(x,y)}=\overline\lambda\,\overline{\varphi(x,y)}=\overline\lambda\,\varphi(y,x)\ne\lambda\varphi(y,x).
+\]
+
+\BellaSection{2. Conjugaison}
+
+\medskip\noindent\textsc{Définition 12.18.} --- \emph{Soit $E$ espace vectoriel complexe, muni d'une forme sesquilinéaire à symétrie hermitienne. On dit que $x$ et $y$ sont conjugués pour $\varphi$ si et seulement si $\varphi(x,y)=0$.}
+
+Ce qui équivaut à $\varphi(y,x)=0$ car $\overline0=0$.
+
+De même, si $A$ est une partie de $E$, on appelle conjugué de $A$ l'ensemble
+\[
+A^0=\{y;\ y\in E,\ \forall x\in A,\ \varphi(x,y)=0\}.
+\]
+On a
+\[
+A^0=\bigcap_{x\in A}\operatorname{Ker}(\gamma_\varphi(x)),
+\]
+avec $\gamma_\varphi(x)$ élément du dual de $E$ (voir 12.3). C'est donc un sous-espace vectoriel.
+
+Comme pour les formes bilinéaires symétriques, on justifie facilement le
+
+\medskip\noindent\textsc{Théorème 12.19.} --- \emph{Soient $A$ et $B$ des parties de $E$ espace vectoriel complexe muni d'une forme sesquilinéaire à symétrie hermitienne $\varphi$. On a :
+\[
+(\operatorname{Vect}A)^0=A^0;\qquad A\subset B\Rightarrow B^0\subset A^0;\qquad A\subset A^{00}.
+\]}
+S'inspirer du théorème 11.15 pour la justification. \bookend
+
+On a aussi
+
+\medskip\noindent\textsc{Théorème 12.20.} --- \emph{Soient $F$ et $G$ deux sous-espaces vectoriels de $E$ espace vectoriel complexe muni de $\varphi$ forme sesquilinéaire hermitienne, on a
+\[
+(F+G)^0=F^0\cap G^0\qquad\text{et}\qquad F^0+G^0\subset(F\cap G)^0.
+\]}
+
+Car $F+G=\operatorname{Vect}(F\cup G)$, donc
+\[
+(F+G)^0=(F\cup G)^0=\bigcap_{x\in(F\cup G)}\operatorname{Ker}(\gamma_\varphi(x))
+\]
+soit encore
+\[
+(F+G)^0=\left(\bigcap_{x\in F}\operatorname{Ker}(\gamma_\varphi(x))\right)
+\cap
+\left(\bigcap_{x\in G}\operatorname{Ker}(\gamma_\varphi(x))\right)=F^0\cap G^0.
+\]
+Puis $F\cap G\subset F$ et $F\cap G\subset G\Rightarrow F^0\subset(F\cap G)^0$ et $G^0\subset(F\cap G)^0$ d'où $(F^0\cup G^0)\subset(F\cap G)^0$, et en passant à l'espace vectoriel engendré par $F^0\cup G^0$, $(F^0+G^0)\subset(F\cap G)^0$. L'inclusion peut être stricte. \bookend
+
+\medskip\noindent\textsc{Théorème 12.21.} --- \emph{Soit $E$ un espace vectoriel complexe de dimension finie, si $F$ est un sous-espace de $E$, on a
+\[
+\dim F+\dim F^0=\dim E+\dim(F\cap E^0).
+\]}
+
+Car si $\{e_1,\ldots,e_k\}$ est une base de $F\cap E^0$, complétée en $\{e_1,\ldots,e_k;e_{k+1},\ldots,e_p\}$ base de $F$, on a
+\[
+x\in F^0\Longleftrightarrow \forall i=1,\ldots,p,\ \gamma_\varphi(e_i)(x)=0.
+\]
+Or pour $i=1,\ldots,k$, $\gamma_\varphi(e_i)=0$. Il reste donc
+\[
+x\in F^0\Longleftrightarrow \forall i=k+1,\ldots,p,\ \gamma_\varphi(e_i)(x)=0.
+\]
+Les $p-k$ formes linéaires $\gamma_\varphi(e_i)$ sont indépendantes, car une relation du type
+\[
+\sum_{i=k+1}^p\lambda_i\gamma_\varphi(e_i)
+=\gamma_\varphi\left(\sum_{i=k+1}^p\overline{\lambda_i}e_i\right)=0,
+\]
+(aspect semi-linéaire de $\gamma_\varphi$), conduit à
+\[
+\sum_{i=k+1}^p\overline{\lambda_i}e_i\in(E^0\cap F)=\operatorname{Vect}(e_1,\ldots,e_k),
+\]
+ce qui est absurde puisque $\{e_1,\ldots,e_k;e_{k+1},\ldots,e_p\}$ est libre.
+
+Les $x\in F^0$ sont donc les solutions d'un système de $p-k$ équations à $n$ inconnues ($n=\dim E$) de rang $p-k$ : on a un espace vectoriel de solutions de dimension $n-(p-k)$, (Théorème 9.51).
+
+D'où
+\[
+\dim F+\dim F^0=p+(n-p+k)=n+k=\dim E+\dim(F\cap E^0). \bookend
+\]
+
+On vient de faire jouer un certain rôle au sous-espace $E^0$. On a
+\[
+E^0=\{y;\ y\in E,\ \forall x\in E,\ \varphi(x,y)=0\}.
+\]
+Mais $\varphi(y,x)=\overline{\varphi(x,y)}=0$ aussi, en écrivant
+\[
+E^0=\{y;\ y\in E,\ \forall x\in E,\ \varphi(y,x)=0\}
+\]
+c'est encore
+\[
+E^0=\{y;\ y\in E,\ \gamma_\varphi(y)=0\}=\operatorname{Ker}(\gamma_\varphi),
+\]
+noyau de l'application \BellaCorrectionNote{semi-linéaire}{linéaire}{$\gamma_\varphi$ a été définie en 12.3 comme une application semi-linéaire de $E$ dans $E^*$.} $\gamma_\varphi$.
+
+\medskip\noindent\textsc{Définition 12.22.} --- \emph{Soit $\varphi$ une forme sesquilinéaire à \BellaCorrection{symétrie hermitienne}{système hermitienne} sur $E$ espace vectoriel complexe. On appelle noyau de $\varphi$ le sous-espace $E^0$ et on dit que $\Phi$, (ou $\varphi$) est non dégénérée si et seulement si $E^0=\{0\}$.}
+
+($\Phi$ est évidemment la forme hermitienne de forme polaire $\varphi$.)
+
+\medskip\noindent\textsc{Corollaire 12.23.} --- \emph{Si $\varphi$ est non dégénérée sur $E$ de dimension finie, $n$, si $F$ et $G$ sont sous-espaces de $E$, on a
+\[
+F^0+G^0=(F\cap G)^0.
+\]}
+Car
+\begin{align*}
+\dim(F^0+G^0)
+&=\dim F^0+\dim G^0-\dim(F^0\cap G^0)\\
+&=n-\dim F+n-\dim G-\dim(F+G)^0,\qquad (12.20),\\
+&=2n-\dim F-\dim G-(n-\dim(F+G))\\
+&=n-\dim F-\dim G+\dim F+\dim G-\dim F\cap G\\
+&=n-\dim(F\cap G)=\dim(F\cap G)^0,
+\end{align*}
+tout ceci parce que $E^0=\{0\}$. Comme $F^0+G^0\subset(F\cap G)^0$, on en déduit l'égalité des sous-espaces. (Voir 12.20 pour l'inclusion). \bookend
+
+Comme pour les formes quadratiques, on peut parler de vecteur isotrope.
+
+\medskip\noindent\textsc{Définition 12.24.} --- \emph{Un vecteur $x$ de $E$ espace vectoriel complexe est dit isotrope pour une forme hermitienne $\Phi$, si et seulement si $\Phi(x)=0$. La forme $\Phi$ est dite définie si $0$ est le seul vecteur isotrope.}
+
+Les vecteurs isotropes forment encore un cône dans $E$, car
+\[
+\Phi(\lambda x)=|\lambda|^2\Phi(x).
+\]
+Si $x\in E^0$, on a $\varphi(x,y)=0$ pour tout $y$ de $E$, donc a fortiori pour $y=x$, d'où $x$ isotrope. Mais alors :
+
+\subsection*{12.25.}
+\emph{Si $\Phi$ est une forme hermitienne définie, elle est non dégénérée.}
+
+On peut encore parler de sous-espace non isotrope $F$, lorsque l'on a $F\cap F^0=\{0\}$, et on a :
+
+\medskip\noindent\textsc{Théorème 12.26.} --- \emph{Soit $E$ un espace vectoriel complexe et $\varphi$ une \BellaCorrectionNote{forme sesquilinéaire à symétrie hermitienne}{forme hermitienne à symétrie hermitienne}{Une forme hermitienne est l'application scalaire $\Phi(x)=\varphi(x,x)$; l'objet à deux variables possédant une « symétrie hermitienne » est la forme sesquilinéaire $\varphi$.}. Pour $F$ sous-espace de dimension finie de $E$ il y a équivalence entre
+\begin{enumerate}[label=\alph*)]
+\item $\varphi|_{F\times F}$ est non dégénérée,
+\item $F\cap F^0=\{0\}$,
+\item $E=F\oplus F^0$.
+\end{enumerate}}
+
+Le noyau de $\varphi|_{F\times F}$ étant l'ensemble des $y$ de $F$ tel que, $\forall x\in F$ on ait $\varphi(x,y)=0$, c'est encore $F\cap F^0$ d'où l'équivalence de a) et b), (et ceci indépendamment de la dimension finie de $F$).
+
+\subsection*{12.27.}
+On dit alors que $F$ est un sous-espace non isotrope \BellaCorrection{de $E$}{de $F$}.
+
+On a c) $\Rightarrow$ b) de manière évidente. Justifions b) $\Rightarrow$ c), c'est-à-dire que $E=F+F^0$ puisqu'on a déjà $F\cap F^0=\{0\}$.
+
+Soit $x\in E$, $\gamma_\varphi(x)\in E^*$, donc $\gamma_\varphi(x)|_F\in F^*$. Avec $\varphi'=\varphi|_{F\times F}$, $\gamma_{\varphi'}$ est semi-isomorphisme de $F$ sur $F^*$, (car $\gamma_{\varphi'}$ injective, $\varphi'$ étant non dégénérée, et $\dim F=\dim F^*$), donc il existe un (et un seul) $y$ dans $F$ tel que
+\[
+\gamma_\varphi(x)|_F=\gamma_{\varphi'}(y),
+\]
+ce qui équivaut à
+\[
+\forall z\in F,\qquad \varphi(x,z)=\varphi(y,z)
+\]
+soit à $\varphi(x-y,z)=0$.
+
+On a donc associé à $x$ de $E$, un $y$ de $F$ tel que $x-y\in F^0$, comme $x=(x-y)+y$ on obtient bien $E=F^0+F$. \bookend
+
+Conséquence : on en déduit le
+
+\medskip\noindent\textsc{Théorème 12.28.} --- \emph{Soit $E$ un espace vectoriel complexe muni d'une forme sesquilinéaire à symétrie hermitienne. Si $E$ est de dimension finie, il existe des bases de $E$ conjuguées pour $\varphi$.}
+
+C'est-à-dire des bases $B=\{e_1,\ldots,e_n\}$, ($n=\dim E$) telles que
+\[
+\forall u\ne v,\qquad \varphi(e_u,e_v)=0.
+\]
+On procède par récurrence sur $n$. Si $n=1$, la condition est vérifiée. (Pas de couple $(u,v)$ d'indices $u\ne v$ ... Cela semble une escroquerie mais il n'en est rien. Pour ceux qui ont besoin d'être materné, le passage de $n-1$ à $n$ permettrait de justifier le résultat pour $n=2$).
+
+On suppose le résultat vrai pour un espace $E$ de dimension $n-1$. Soit alors $E$ de dimension $n$.
+
+Si $\Phi=0$, la relation entre $\Phi$ et sa forme polaire $\varphi$, (voir 12.7) montre que $\varphi=0$, donc toute base est conjuguée.
+
+Sinon, soit $a\in E$ tel que $\Phi(a)\ne0$, alors $\mathbb Ca$ est sous-espace non isotrope, (si $\lambda a\in(\mathbb Ca)^0=\{a\}^0$, on a $\varphi(\lambda a,a)=\overline\lambda\Phi(a)=0\Rightarrow\overline\lambda=0$), donc $E=\mathbb Ca\oplus(\mathbb Ca)^0$ et $\varphi_1=\varphi|_{(\mathbb Ca)^0\times(\mathbb Ca)^0}$ admet, d'après l'hypothèse de récurrence, une base $C$ conjuguée pour $\varphi_1$, donc pour $\varphi$. La base $\{a\}\cup C$ convient alors pour $E$. \bookend
+
+\medskip\noindent\textsc{Corollaire 12.29.} --- \emph{Soit $H$ une matrice hermitienne, il existe $P$ matrice régulière telle que
+\[
+{}^t\!\overline P\,HP=A=\operatorname{diag}(\lambda_1,\ldots,\lambda_n),
+\]
+les $\lambda_i$ étant réels.}
+
+C'est la traduction d'un changement de base faisant passer à une base conjuguée. Les $\lambda_i=\Phi(e_i)$ sont réels. Le nombre de $\lambda_i\ne0$ est le rang de la forme $\Phi$, et parmi les $\lambda_i$ non nuls, il y en a des $>0$, et des $<0$ : les nombres de scalaires de chaque signe ne dépendant pas de la base conjuguée. \bookend
+
+\medskip\noindent\textsc{Théorème 12.30.} --- \emph{Soit $\varphi$ forme sesquilinéaire à symétrie hermitienne sur $E$ vectoriel complexe de dimension finie $n$. Si la matrice de $\varphi$ dans une base conjuguée est $\operatorname{diag}(\lambda_1,\ldots,\lambda_n)$ le couple $(p,q)$ avec $p=\operatorname{card}\{\lambda_i,\lambda_i>0\}$ et $q=\operatorname{card}\{\lambda_i,\lambda_i<0\}$ est indépendant de la base conjuguée. C'est la signature de la forme hermitienne $\Phi$, (de forme polaire $\varphi$).}
+
+Comme dans le cas réel si $B$ et $B'$ sont des bases conjuguées, de termes généraux $e_i$ et $e'_i$, on les suppose indexées de façon que $\Phi(e_i)>0$ pour $i=1,\ldots,p$ puis $\Phi(e_i)<0$ pour $i=p+1,\ldots,p+q$ avec $p+q=r$, rang de $\Phi$, et $\Phi(e_i)=0$ si $i>r$; puis $\Phi(e'_i)>0$ si $i=1,\ldots,p'$, $\Phi(e'_i)<0$ pour $i=p'+1,\ldots,p'+q'=r$, enfin $\Phi(e'_i)=0$ si $i>r$.
+
+Soit
+\[
+F=\operatorname{Vect}(e_1,\ldots,e_p,e_{r+1},\ldots,e_n)
+\]
+et
+\[
+G=\operatorname{Vect}(e'_{p'+1},\ldots,e'_{p'+q'}).
+\]
+On constate que $\forall x\in F$, $\Phi(x)\ge0$, et $\forall x\in G$, $\Phi(x)\le0$ avec $\Phi(x)=0\Longleftrightarrow x=0$. On a donc $F\cap G=\{0\}$, (si $x\in F\cap G$, $\Phi(x)=0$, donc $x=0$ car $x\in G$).
+
+Mais alors, $F$ et $G$ sont en somme directe dans $E$ de dimension $n$, donc
+\[
+\dim F+\dim G\le n\qquad\text{soit}\qquad n-q+q'\le n,
+\]
+d'où $q'\le q$. En inversant les rôles des bases on obtient $q\le q'$ d'où $q=q'$ et \BellaCorrectionNote{$p=r-q=r-q'=p'$}{$p=n-q=n-q'=p'$}{La forme peut être dégénérée, donc $r=p+q$ n'est pas nécessairement égal à $n$. La conclusion correcte découle de $p+q=r$ et $p'+q'=r$.}. \bookend
+
+\medskip\noindent\textsc{Remarque 12.31.} --- Avec les notations précédentes, dans une base conjuguée si $\varphi$ est de signature $(p,q)$, avec une indexation convenable on aura
+\[
+\varphi(x,y)=\sum_{j=1}^p\lambda_j\overline{x_j}y_j-
+\sum_{j=p+1}^{p+q}\lambda_j\overline{x_j}y_j,
+\]
+avec des $\lambda_j>0$. En changeant les $e_j$ en $e'_j=e_j/\sqrt{\lambda_j}$ on obtient
+\[
+\varphi(x,y)=\sum_{j=1}^p\overline{x_j}y_j-
+\sum_{j=p+1}^{p+q}\overline{x_j}y_j
+\]
+et
+\[
+\Phi(x)=\sum_{j=1}^p|x_j|^2-
+\sum_{j=p+1}^{p+q}|x_j|^2.
+\]
+
+\BellaSection{3. Espaces préhilbertiens}
+
+Si les formes sesquilinéaires à symétrie hermitienne sont à valeurs complexe, les formes hermitiennes, elles, sont à valeurs réelles et on se doute qu'on va avoir des structures analogues à celles des espaces préhilbertiens réels.
+
+Une forme hermitienne peut être à valeurs toujours positives, (et elle sera dite positive dans ce cas) ou bien à valeurs toujours négatives, ou enfin prendre des valeurs des deux signes. En dimension finie, on sait dans quel cas on se trouve par le simple examen de la signature.
+
+Pour parvenir aux structures préhilbertiennes, il nous faut établir les inégalités de Cauchy--Schwarz et Minkowski :
+
+\medskip\noindent\textsc{Théorème 12.32.} (Inégalité de Cauchy--Schwarz). --- \emph{Soit $\Phi$ une forme hermitienne positive, de forme polaire $\varphi$, sur $E$ vectoriel complexe. Pour tout $(x,y)$ de $E^2$ on a
+\[
+|\varphi(x,y)|^2\le\Phi(x)\Phi(y).
+\]}
+
+Pour tout $\lambda\in\mathbb C$, on a $\Phi(x+\lambda y)\ge0$, soit en développant,
+\[
+|\lambda|^2\Phi(y)+\lambda\varphi(x,y)+\overline\lambda\,\varphi(y,x)+\Phi(x)\ge0.
+\]
+Si $\varphi(x,y)=0$ l'inégalité à justifier est évidente. Sinon $\varphi(x,y)$ admet un module et un argument : si $\varphi(x,y)=\rho e^{i\alpha}$ prenons $\lambda=te^{-i\alpha}$ avec $t$ variable dans $\mathbb R$. On aura $\lambda\varphi(x,y)=t\rho=\overline\lambda\varphi(y,x)$ et $|\lambda|^2=t^2$, d'où, pour tout $t$ réel cette fois, l'inégalité
+\[
+t^2\Phi(y)+2t\rho+\Phi(x)\ge0.
+\]
+Mais alors si $\Phi(y)=0$, on a une fonction affine qui reste positive, ce n'est possible que si $\rho=0$, cas écarté par l'hypothèse $\varphi(x,y)\ne0$.
+
+Donc $\Phi(y)>0$, le trinôme en $t$ étant de signe constant, son discriminant réduit $\rho^2-\Phi(x)\Phi(y)$ est négatif, d'où
+\[
+|\varphi(x,y)|^2\le\Phi(x)\Phi(y). \bookend
+\]
+
+\medskip\noindent\textsc{Corollaire 12.33.} --- \emph{Pour une forme hermitienne positive, ($\Phi$ définie) $\Longleftrightarrow$ ($\Phi$ non dégénérée).}
+
+Car si $\Phi$ est définie, elle est non dégénérée, c'est toujours vrai, (12.25) et si $\Phi$ est positive non dégénérée elle est définie, car si $a$ est isotrope, par \BellaCorrection{Cauchy--Schwarz}{Cauchy Scharwz}, $\forall x\in E$ on a $|\varphi(x,a)|^2\le0$ donc $\varphi(x,a)=0$ soit $a\in E^0=\{0\}$ : $0$ est le seul vecteur isotrope. \bookend
+
+\medskip\noindent\textsc{Théorème 12.34.} --- \emph{Si $\Phi$ hermitienne est définie, elle est de signe constant.}
+
+Car si on dispose de $x$ et $y$ dans $E$ tels que $\Phi(x)\Phi(y)<0$, les vecteurs $x$ et $y$ sont libres, ($x=\lambda y$ impliquerait $\Phi(x)=|\lambda|^2\Phi(y)$ donc $\Phi(x)$ et $\Phi(y)$ de même signe). Dans le plan vectoriel engendré par $x$ et $y$ considérons l'expression $t\longmapsto\Phi(x+ty)$ avec $t$ réel.
+
+C'est
+\[
+t^2\Phi(y)+2t\operatorname{Re}\varphi(x,y)+\Phi(x) :
+\]
+trinôme en $t$, de discriminant réduit $(\operatorname{Re}\varphi(x,y))^2-\Phi(x)\Phi(y)>0$ puisque $\Phi(x)\Phi(y)<0$.
+
+On a donc 2 racines $t_1$ et $t_2$, avec $x+t_1y$ et $x+t_2y$ non nuls ($\{x,y\}$ libre) d'où 2 vecteurs isotropes non nuls : ceci contredit $\Phi$ définie. \bookend
+
+\medskip\noindent\textsc{Théorème 12.35.} (Inégalité de Minkowski). --- \emph{Soit $\Phi$ une forme hermitienne positive. On a, pour tout $(x,y)$ de $E^2$,
+\[
+\sqrt{\Phi(x+y)}\le\sqrt{\Phi(x)}+\sqrt{\Phi(y)}.
+\]}
+
+En élevant au carré, ceci équivaut à
+\[
+\Phi(x+y)\le\Phi(x)+\Phi(y)+2\sqrt{\Phi(x)\Phi(y)},
+\]
+soit en développant le 1er membre et en simplifiant par $\Phi(x)$ et $\Phi(y)$, à
+\[
+2\operatorname{Re}\varphi(x,y)\le2\sqrt{\Phi(x)\Phi(y)}.
+\]
+Or,
+\[
+\operatorname{Re}\varphi(x,y)\le|\operatorname{Re}\varphi(x,y)|\le|\varphi(x,y)|\le\sqrt{\Phi(x)\Phi(y)},
+\]
+(Cauchy--Schwarz). On a bien le résultat. \bookend
+
+\medskip\noindent\textsc{Conséquence 12.36.} --- Si $E$, vectoriel complexe, est muni d'une forme hermitienne définie positive $\Phi$, donc non dégénérée positive, l'application
+\[
+x\longmapsto\sqrt{\Phi(x)}
+\]
+est une norme de $E$, et l'espace vectoriel $E$ ainsi normé est appelé espace préhilbertien.
+
+Il est dit de Hilbert si pour cette norme il est complet, et hermitien s'il est de dimension finie, auquel cas il est complet.
+
+Les exemples donnés au paragraphe 1 sont des espaces préhilbertiens, le premier, $\mathbb C^n$ est hermitien, le deuxième $\mathbb C[X]$ est préhilbertien non complet, quant à $\ell^2(\mathbb C)$ il est de Hilbert, enfin $C^0([a,b],\mathbb C)$ pour
+\[
+\varphi(f,g)=\int_a^b\overline f gp\,dt
+\]
+n'est pas un espace complet.
+
+Comme dans le cas réel on obtient
+
+\medskip\noindent\textsc{Théorème 12.37.} --- \emph{Soit $E$ un espace hermitien de dimension $n$, et $B=(e_1,\ldots,e_n)$ une base. Il existe des bases orthonormées $\{\varepsilon_1,\ldots,\varepsilon_n\}$ telles que $\forall k=1,\ldots,n$;
+\[
+\operatorname{Vect}\{\varepsilon_1,\ldots,\varepsilon_k\}
+=\operatorname{Vect}\{e_1,\ldots,e_k\}.
+\]
+C'est le procédé d'orthonormalisation de Schmidt.}
+
+Rappelons brièvement la justification. On prend
+\[
+\varepsilon_1=u_1\frac{e_1}{\|e_1\|}
+\]
+avec $u_1$ scalaire complexe de module 1.
+
+Si on suppose trouvés $\varepsilon_1,\ldots,\varepsilon_{k-1}$, on cherche $e'_k$ de la forme
+\[
+e'_k=e_k+\sum_{i=1}^{k-1}\lambda_i\varepsilon_i,
+\]
+pour avoir
+\[
+\operatorname{Vect}(e_1,\ldots,e_k)=\operatorname{Vect}(\varepsilon_1,\ldots,\varepsilon_{k-1},e'_k),
+\]
+les $\lambda_i$ étant tels que $(e'_k,\varepsilon_j)=0$ pour $j=1\ldots k-1$, et où $(\ ,\ )$ est le produit scalaire hermitien, notation remplaçant $\varphi$.
+
+Cette équation équivaut à
+\[
+(e_k,\varepsilon_j)+\overline{\lambda_j}=0
+\]
+d'où $\lambda_j$. Puis on remplace $e'_k$ par
+\[
+u_k\frac{e'_k}{\|e'_k\|},
+\]
+(avec $u_k$ complexe de module 1).
+
+Ce procédé est récurrent et donne le résultat. On comprend aussi qu'il s'applique aux espaces préhilbertiens de dimension dénombrable stricte qui ont donc des bases orthonormées. (Voir tome 3, Théorème 14.8) \bookend
+
+Signalons une différence avec le cas réel : on n'a plus le théorème de Pythagore car l'identité
+\[
+\|x+y\|^2=\|x\|^2+\|y\|^2
+\]
+est équivalente à $\operatorname{Re}(x,y)=0$, et non à $(x,y)=0$.
+
+On notera désormais $F^\perp$ au lieu de $F^0$, si $F$ est un sous-espace vectoriel, (ou une partie) de $E$, et on parlera d'orthogonal.
+
+On peut encore étudier les projections orthogonales en s'inspirant de l'étude faite dans le cas réel, voir le chapitre 14 des espaces fonctionnels.
+
+Signalons simplement que, si $F$ est un sous-espace de dimension finie de $E$ préhilbertien, comme $F\cap F^\perp=\{0\}$, (si $a\in F\cap F^\perp$ on aura $\|a\|^2=(a,a)=0$ d'où $a$ isotrope est nul), on sait que $E=F\oplus F^\perp$, (Théorème 12.26), donc on a une projection orthogonale sur $F$.
+
+\subsection*{12.38.}
+De plus, si $\{\varepsilon_1,\ldots,\varepsilon_n\}$ est une base orthonormée de $F$ le projeté orthogonal de $x$ sur $F$ est
+\[
+p(x)=\sum_{k=1}^n(\varepsilon_k,x)\varepsilon_k,
+\qquad\text{ou}\qquad
+p(x)=\sum_{k=1}^n\overline{(x,\varepsilon_k)}\varepsilon_k.
+\]
+Attention à la non symétrie du produit scalaire hermitien !
+
+Ce résultat sera exploité au chapitre 15 d'analyse dans l'étude des séries de Fourier. Justifions-le.
+
+En décomposant $x$ en $x=y+z$ avec $y\in F$ et $z\in F^\perp$, avec
+\[
+y=\sum_{k=1}^n\lambda_k\varepsilon_k,
+\]
+on a $x-y=z\in F^\perp=\{\varepsilon_1,\ldots,\varepsilon_n\}^\perp$ ce qui équivaut à,
+\[
+\left(x-\sum_{k=1}^n\lambda_k\varepsilon_k,\varepsilon_j\right)=0,
+\qquad j=1,2,\ldots,n,
+\]
+soit à $(x,\varepsilon_j)-\overline{\lambda_j}=0$, la famille des $\varepsilon_k$ étant orthonormée. D'où
+\[
+\lambda_j=\overline{(x,\varepsilon_j)}=(\varepsilon_j,x). \bookend
+\]
+
+\BellaSection{4. Espaces hermitiens}
+
+L'essentiel de l'étude va porter sur la notion d'adjointe d'une application linéaire, puis sur le groupe unitaire et les opérateurs normaux, ainsi que les traductions matricielles, comme chaque fois qu'on est en dimension finie.
+
+\medskip\noindent\textbf{a) Adjoint d'un opérateur linéaire}
+
+\medskip\noindent\textsc{Théorème 12.39.} --- \emph{Soit $E$ un espace hermitien et $u\in L(E)$. Il existe un et un seul élément $u^*$ de $L(E)$ vérifiant
+\[
+\forall(x,y)\in E^2,\qquad (u(x),y)=(x,u^*(y)).
+\]}
+
+\subsection*{12.40.}
+Cet opérateur $u^*$ est l'adjoint de $u$.
+
+Si on conjugue la relation qui doit être vérifiée, on doit avoir
+\[
+(y,u(x))=(u^*(y),x)
+\]
+soit encore en notant $\gamma$ l'application semi-linéaire de $E$ dans $E^*$ associée au produit scalaire, (voir 12.3) :
+\[
+\gamma(y)(u(x))=\gamma(u^*(y))(x).
+\]
+Pour $y$ fixé, on doit donc avoir, pour tout $x$ de $E$,
+\[
+\gamma(u^*(y))(x)=(\gamma(y)\circ u)(x)=({}^tu\circ\gamma(y))(x)
+\]
+d'où l'égalité des formes linéaires $\gamma(u^*(y))$ et ${}^tu\circ\gamma(y)$.
+
+Comme $\gamma$ est injective de $E$ dans $E^*$ (le produit scalaire est une forme non dégénérée donc le noyau de $\gamma$ est $E^\perp=\{0\}$) et que $E$ est de dimension finie, $\gamma$ est surjective. Ce résultat, établi pour les applications linéaires s'étend aux applications semi-linéaires, la conjugaison des scalaires ne modifiant pas les dimensions des espaces vectoriels.
+
+On a donc
+\[
+u^*(y)=\gamma^{-1}\circ{}^tu\circ\gamma(y)
+\]
+d'où
+\[
+u^*=\gamma^{-1}\circ{}^tu\circ\gamma,
+\]
+application linéaire car composée d'une linéaire, ${}^tu$, et de deux semi-linéaires, $\gamma$ et $\gamma^{-1}$. \bookend
+
+\medskip\noindent\textsc{Théorème 12.41.} (Propriétés de l'adjoint). --- \emph{Soit $E$ un espace hermitien, $u$ et $v$ dans $L(E)$ et $\lambda\in\mathbb C$. On a les propriétés suivantes :
+\[
+(u+v)^*=u^*+v^*;\qquad (\lambda u)^*=\overline\lambda u^*;\qquad (u^*)^*=u;
+\]
+\[
+(u\circ v)^*=v^*\circ u^*;
+\]
+\[
+(u\in GL(E))\Longleftrightarrow(u^*\in GL(E))
+\qquad\text{et}\qquad
+(u^{-1})^*=(u^*)^{-1}.
+\]}
+
+Les justifications n'offrent aucune difficulté. Elles découlent du : \bookend
+
+\medskip\noindent\textsc{Théorème 12.42.} --- \emph{Si l'endomorphisme $u$ admet $A$ pour matrice dans une base orthonormée $B$ de $E$ espace hermitien, son adjoint $u^*$ a pour matrice ${}^t\!\overline A$ dans cette base.}
+
+Car en notant $X$ et $Y$ les matrices colonnes des composantes de $x$ et $y$ dans la base $B$, et $A'$ la matrice de $u^*$, la relation
+\[
+(u(x),y)=(x,u^*(y))
+\]
+se traduit par
+\[
+{}^t\!\overline{(AX)}Y={}^t\!\overline X A'Y
+\]
+soit encore
+\[
+{}^t\!\overline X\,{}^t\!\overline A\,Y={}^t\!\overline X A'Y.
+\]
+Cette égalité matricielle est en fait une égalité entre 2 polynômes par rapport aux variables $y_1,\ldots,y_n$ et $\overline{x_1},\ldots,\overline{x_n}$. L'égalité des coefficients conduit à ${}^t\!\overline A=A'$. \bookend
+
+\medskip\noindent\textsc{Théorème 12.43.} --- \emph{Soit $E$ préhilbertien et $u\in L(E)$ tel qu'il existe $v\in L(E)$ vérifiant : $\forall(x,y)\in E^2$, $(u(x),y)=(x,v(y))$. Alors $v$ est unique à posséder cette propriété.}
+
+Car si on avait $w$ tel que $\forall(x,y)$, $(u(x),y)=(x,w(y))$, alors pour un $y$ fixé, on aurait, $\forall x\in E$;
+\[
+0=(x,v(y)-w(y))
+\]
+d'où $v(y)-w(y)\in E^\perp$, or $E^\perp=\{0\}$ donc $v=w$. \bookend
+
+Cette unicité est liée au côté injectif de $\gamma$, mais en dimension infinie $\gamma$ n'est pas surjectif donc l'égalité
+\[
+\gamma(u^*(y))={}^tu\circ\gamma(y)
+\]
+ne permet plus le calcul de $u^*(y)$.
+
+On a encore
+
+\medskip\noindent\textsc{Théorème 12.44.} --- \emph{Soit $E$ un espace préhilbertien, $u$ un opérateur ayant un adjoint et $F$ un sous-espace de $E$, stable par $u$. Alors $F^\perp$ est stable par $u^*$.}
+
+Car si $x\in F^\perp$ et $y\in F$, on aura
+\[
+(y,u^*(x))=(u(y),x)
+\]
+avec $u(y)\in F$, (stable par $u$), et $x\in F^\perp$ donc ce produit scalaire est nul, et ce pour tout $y$ de $F$ d'où $u^*(x)\in F^\perp$. \bookend
+
+Ce résultat va être utilisé pour réduire les endomorphismes auto-adjoints, mais avant cela il nous faut parler des opérateurs qui conservent le produit scalaire.
+
+\medskip\noindent\textbf{b) Groupe unitaire}
+
+\medskip\noindent\textsc{Définition 12.45.} --- \emph{Soit $E$ un espace préhilbertien. On appelle isométrie, (ou opérateur unitaire) tout automorphisme de $E$ qui \BellaCorrection{conserve}{concerne} la norme hermitienne.}
+
+Voici une liste de propriétés faciles à justifier, justification laissée au lecteur.
+
+\subsection*{12.46.}
+Si une application linéaire conserve la norme elle conserve le produit scalaire (et elle est injective).
+
+\subsection*{12.47.}
+Si une application conserve le produit scalaire elle est linéaire injective (et elle conserve la norme). (Voir tome 3, Théorème 14.44).
+
+\subsection*{12.48.}
+Les opérateurs unitaires de $E$ préhilbertien forment un sous-groupe de $\operatorname{Aut}(E)$, appelé groupe unitaire de $E$, noté $U(E)$.
+
+\medskip\noindent\textsc{Théorème 12.49.} --- \emph{Soit $E$ un espace préhilbertien. Un endomorphisme de $E$ est unitaire si et seulement si $u$ est inversible et admet $u^{-1}$ pour adjoint.}
+
+Car si $u$ est unitaire, il est bijectif et conserve le produit scalaire donc
+\[
+\forall(x,y)\in E^2,\qquad (u(x),u(y))=(x,y).
+\]
+En posant $u(y)=z$, ($\Longleftrightarrow y=u^{-1}(z)$), on a donc, $z$ parcourant $E$ si $y$ varie dans $E$ :
+\[
+\forall(x,z)\in E^2,\qquad (u(x),z)=(x,u^{-1}(z))
+\]
+d'où $u^*$ existe et c'est $u^{-1}$.
+
+Réciproquement, si $u^*=u^{-1}$ on vérifie que $u$, bijective, conserve le produit scalaire car
+\[
+\forall(x,y)\in E^2,\qquad (u(x),y)=(x,u^{-1}(y)),
+\]
+d'où, avec $z=u^{-1}(y)$,
+\[
+\forall(x,z)\in E^2,\qquad (u(x),u(z))=(x,z). \bookend
+\]
+
+La traduction matricielle, dans une base orthonormée, des isométries, va nous faire aborder les matrices unitaires, (analogues des matrices orthogonales des espaces euclidiens), ceci dans le cadre des espaces hermitiens.
+
+Soit $E$ un espace hermitien de dimension $n$, $B$ une base orthonormée de $E$ et $u$ une isométrie de matrice $U$ dans la base $B$. La matrice de $u^*$ dans la base $B$ est ${}^t\!\overline U$, (Théorème 12.42), et comme $u^*=u^{-1}$, (Théorème 12.49) on a ${}^t\!\overline U=U^{-1}$ ce qui équivaut à l'égalité ${}^t\!\overline U\,U=I_n$ ou à $U{}^t\!\overline U=I_n$.
+
+\medskip\noindent\textsc{Définition 12.50.} --- \emph{On appelle matrice unitaire d'ordre $n$ toute matrice carrée d'ordre $n$ complexe vérifiant l'une des trois conditions équivalentes suivantes :
+\begin{enumerate}[label=\arabic*)]
+\item $U^{-1}={}^t\!\overline U$,
+\item $U{}^t\!\overline U=I_n$,
+\item ${}^t\!\overline U\,U=I_n$.
+\end{enumerate}}
+
+Le terme général de ${}^t\!\overline U\,U$ étant
+\[
+\sum_{k=1}^n\overline{u_{kr}}u_{ks},
+\]
+$r$ième ligne, $s$ième colonne, avec $u_{ij}$ terme général de $U$, on a encore
+
+\subsection*{12.51.}
+$U$ matrice unitaire $\Longleftrightarrow\forall(r,s)\in\{1,\ldots,n\}^2$, on a
+\[
+\sum_{k=1}^n\overline{u_{kr}}u_{ks}=1\text{ si }r=s\text{ et }0\text{ si }r\ne s.
+\]
+
+Ces relations sont aussi équivalentes à dire que les vecteurs colonnes
+\[
+U_r=\begin{pmatrix}u_{1r}\\ \vdots\\ u_{nr}\end{pmatrix}
+\]
+sont orthonormés dans $\mathbb C^n$ hermitien canonique ce qui permet encore d'interpréter les matrices unitaires comme matrices changement de bases orthonormées dans un espace hermitien.
+
+\medskip\noindent\textsc{Remarque 12.52.} --- On peut encore dire qu'une matrice $U$ est unitaire si et seulement si ses « vecteurs lignes » forment une famille orthonormée dans $\mathbb C^n$ hermitien canonique en prenant le terme général de $U{}^t\!\overline U=I_n$.
+
+\medskip\noindent\textsc{Remarque 12.53.} --- L'ensemble, noté $U_n(\mathbb C)$ des matrices unitaires d'ordre $n$ sur $\mathbb C$ est un \BellaCorrectionNote{sous-groupe de $GL_n(\mathbb C)$}{sous-groupe de $M_n(\mathbb C)$}{$M_n(\mathbb C)$ n'est pas un groupe pour la multiplication car toutes ses matrices ne sont pas inversibles; toute matrice unitaire est inversible, et le groupe naturel est $GL_n(\mathbb C)$.}, appelé groupe unitaire d'ordre $n$.
+
+C'est un compact de $M_n(\mathbb C)$, les relations $\theta_{r,s}$ définies par
+\[
+U\longmapsto\sum_{k=1}^n\overline{u_{kr}}u_{ks}
+\]
+étant continues, on a
+\[
+U_n(\mathbb C)=
+\left(\bigcap_{r=1}^n\theta_{rr}^{-1}(\{1\})\right)
+\cap
+\left(\bigcap_{\substack{r\ne s\\1\le r,s\le n}}\theta_{r,s}^{-1}(\{0\})\right)
+\]
+fermé, de plus c'est un borné de $\mathbb C^{n^2}$ puisque
+\[
+\sum_{k=1}^n|u_{kr}|^2=1
+\]
+implique $|u_{kr}|\le1$ pour tout $k$ et tout $r$.
+
+Par contre, le groupe orthogonal d'ordre $n$ sur $\mathbb C$ lui ne serait pas compact, l'égalité
+\[
+\sum_{k=1}^n(u_{kr})^2=1,
+\]
+sur $\mathbb C$, n'impliquant pas que les $u_{kr}$ sont bornés.
+
+Si $U$ est une matrice unitaire, l'égalité ${}^t\!\overline U\,U=I_n$ entraîne
+\[
+\overline{\det U}\det U=|\det U|^2=1,
+\]
+donc $\det U$ est dans le groupe multiplicatif des nombres complexes de modulo 1, et l'application déterminant étant un morphisme de groupe, l'ensemble noté
+
+\subsection*{12.54.}
+$SU_n(\mathbb C)$ des matrices unitaires de déterminant 1 est un sous-groupe distingué de $U_n(\mathbb C)$, le sous-groupe unitaire spécial.
+
+\medskip\noindent\textbf{c) Opérateurs hermitiens}
+
+\medskip\noindent\textsc{Définition 12.55.} --- \emph{On appelle opérateur hermitien, sur $E$ espace hermitien, tout opérateur linéaire $u$ égal à son adjoint.}
+
+On dit encore que $u$ est auto-adjoint, et on peut étendre la définition aux espaces préhilbertiens.
+
+\medskip\noindent\textsc{Remarque 12.56.} --- Sur $E$ hermitien, $u$ opérateur linéaire est hermitien si et seulement si sa matrice dans une base orthonormée est hermitienne.
+
+Puisque, $A$ étant la matrice de $u$ dans une base $B$ orthonormée, celle de $u^*$ est ${}^t\!\overline A$ (Théorème 12.42) et doit être $A$.
+
+\medskip\noindent\textsc{Théorème 12.57.} --- \emph{Soit $E$ préhilbertien et $u$ un endomorphisme de $E$. On a $u$ hermitien si et seulement si, $\forall x\in E$, $(x,u(x))$ réel.}
+
+Si $u$ est hermitien, c'est que $u$ admet $u$ pour adjoint, donc $\forall(x,y)\in E^2$,
+\[
+(u(x),y)=(x,u(y)).
+\]
+A fortiori, $\forall x\in E$,
+\[
+(u(x),x)=(x,u(x))
+\]
+donc c'est encore $\overline{(x,u(x))}=(x,u(x))$ vu la symétrie hermitienne du produit scalaire, soit $(x,u(x))$ réel.
+
+Réciproquement, on suppose $(x,u(x))$ réel pour tout $x$ et on veut aboutir à « $u$ admet $u$ pour adjoint » donc établir une égalité où interviennent 2 vecteurs $x$ et $y$ de $E$. La seule chose raisonnable est de considérer le vecteur $x+y$.
+
+Soit donc $(x,y)\in E^2$, on a $(x+y,u(x+y))$ réel donc égal à son conjugué. On développe
+\[
+(x+y,u(x)+u(y))=(u(x)+u(y),x+y)
+\]
+en remarquant que $(x,u(x))$ réel est égal à $(u(x),x)$ et de même que $(y,u(y))=(u(y),y)$. Il reste
+\[
+(x,u(y))+(y,u(x))=(u(x),y)+(u(y),x)
+\]
+\[
+\Longleftrightarrow (x,u(y))-(u(y),x)=(u(x),y)-(y,u(x))
+\]
+\[
+\Longleftrightarrow (x,u(y))-\overline{(x,u(y))}=(u(x),y)-\overline{(u(x),y)}
+\]
+soit
+\[
+2i\operatorname{Im}((x,u(y)))=2i\operatorname{Im}((u(x),y)).
+\]
+En remplaçant $y$ par $iy$ on a de même, par linéarité :
+\[
+2\operatorname{Im}(i(x,u(y)))=2\operatorname{Im}(i(u(x),y))
+\]
+soit
+\[
+\operatorname{Re}((x,u(y)))=\operatorname{Re}((u(x),y))
+\]
+et finalement l'égalité $(x,u(y))=(u(x),y)$ qui prouve bien que $u$ est son propre adjoint. \bookend
+
+\medskip\noindent\textsc{Théorème 12.58.} --- \emph{Soit $u$ un opérateur hermitien sur $E$ hermitien. Ses valeurs propres sont réelles, les sous-espaces propres associés à des valeurs propres distinctes sont deux à deux orthogonaux et $u$ est diagonalisable.}
+
+Nous sommes en dimension finie donc les valeurs propres, racines du polynôme caractéristique existent dans $\mathbb C$.
+
+Soient $\lambda$ et $\mu$ deux valeurs propres et $x$ et $y$ deux vecteurs propres non nuls associés. On a :
+\begin{align*}
+\overline\lambda(x,y)&=(\lambda x,y)=(u(x),y)=(x,u^*(y))\\
+&=(x,u(y))\text{ car $u$ est auto-adjoint}\\
+&=(x,\mu y)=\mu(x,y),
+\end{align*}
+d'où
+\[
+(\overline\lambda-\mu)(x,y)=0.
+\]
+Avec $\mu=\lambda$ et $y=x$ il vient
+\[
+(\overline\lambda-\lambda)\|x\|^2=0,
+\]
+d'où, ($x\ne0$) $\lambda=\overline\lambda$ : les valeurs propres de $u$ sont réelles.
+
+Puis, si $\lambda$ et $\mu$ sont 2 valeurs propres distinctes, réelles, il vient :
+\[
+\forall x\in\operatorname{Ker}(u-\lambda\operatorname{id}_E),\quad
+\forall y\in\operatorname{Ker}(u-\mu\operatorname{id}_E),\quad
+(\lambda-\mu)(x,y)=0
+\]
+avec $\lambda-\mu\ne0$ donc $(x,y)=0$ : les sous-espaces propres distincts sont deux à deux orthogonaux.
+
+Enfin, si $F$ est la somme directe des sous-espaces propres de $u$, $F$ est stable par $u$, donc $F^\perp$ est stable par $u^*=u$, (Théorème 12.44).
+
+Si $v$ est l'endomorphisme induit par $u$ sur $F^\perp$, on a $v$ auto-adjoint pour la structure hermitienne induite sur $F^\perp$ par celle de $E$, donc si $\dim F^\perp\ge1$, $v$ admet des valeurs propres d'où des vecteurs propres non nuls, de $v$ donc de $u$, et qui sont alors dans $F$ et $F^\perp$, avec $F\cap F^\perp=\{0\}$ : c'est absurde.
+
+D'où $F^\perp=\{0\}$ et $E=F$ : on a bien $u$ diagonalisable. \bookend
+
+Comme dans chaque sous-espace propre de $u$ on peut prendre une base orthonormée, (espace de dimension finie), et que les sous-espaces propres sont orthogonaux entre eux, on peut prendre une base orthonormée de vecteurs propres. D'où le
+
+\medskip\noindent\textsc{Corollaire 12.59.} --- \emph{Soit $u$ un opérateur hermitien sur $E$ hermitien. Il existe des bases orthonormées de vecteurs propres pour $u$.}
+
+\medskip\noindent\textsc{Corollaire 12.60.} --- \emph{Soit $H$ une matrice carrée complexe d'ordre $n$ hermitienne. Il existe $U$ unitaire telle que $U^{-1}HU$ soit diagonale réelle.}
+
+On considère $\mathbb C^n$ hermitien canonique, $B_0$ une base orthonormée de $E$ et $h$ l'endomorphisme de matrice $H$ hermitienne dans la base $B_0$, $h$ est hermitien donc il existe une base $B$ orthonormée de vecteurs propres pour $h$, et si $U$ est la matrice de passage de $B_0$ à $B$, bases orthonormées, on a bien $U$ unitaire telle que $U^{-1}HU$ soit diagonale, réelle puisque les valeurs propres de $h$ le sont. \bookend
+
+\medskip\noindent\textsc{Corollaire 12.61.} --- \emph{Soit $E$ un espace vectoriel complexe de dimension finie $n$ et $\varphi_0$ et $\varphi$ deux formes sesquilinéaires à symétrie hermitienne $\varphi_0$ étant définie positive. Il existe des bases $B$ de $E$ orthonormées pour $\varphi_0$ et conjuguées pour $\varphi$.}
+
+On réduit simultanément deux formes hermitiennes, l'une étant non dégénérée positive.
+
+On note $(x,y)$ le produit scalaire $\varphi_0(x,y)$, $\gamma$ et $\gamma_\varphi$ les applications semi-linéaires de $E$ dans $E^*$ associées à $\varphi_0$ et $\varphi$, (voir 12.3). On sait que $\gamma$ est un isomorphisme, (voir en 12.40 la justification de l'existence de l'adjoint).
+
+On définit $u:E\longrightarrow E$ par la relation :
+\[
+\forall(x,y)\in E^2,\qquad (u(x),y)=\varphi(x,y).
+\]
+L'application $u$ existe et elle est linéaire, car l'égalité précédente équivaut à
+\[
+\gamma(u(x))(y)=\gamma_\varphi(x)(y),
+\]
+d'où, (pour $x$ fixé l'égalité valable pour tout $y$)
+\[
+\gamma(u(x))=\gamma_\varphi(x)
+\]
+ce qui donne
+\[
+u=\gamma^{-1}\circ\gamma_\varphi.
+\]
+Cet opérateur $u$ est hermitien car :
+\[
+(u(x),y)=\varphi(x,y)=\overline{\varphi(y,x)}=\overline{(u(y),x)}=(x,u(y))
+\]
+ce qui prouve que $u$ est son propre adjoint.
+
+Mais alors, si $B$ est une base orthonormée, (pour $\varphi_0$) de vecteurs propres pour $u$, avec $B=\{e_1,\ldots,e_n\}$ et $u(e_j)=\lambda_je_j$, $\lambda_j$ réel, on a si
+\[
+x=\sum_{j=1}^n\xi_je_j\qquad\text{et}\qquad y=\sum_{j=1}^n\eta_je_j,
+\]
+\begin{align*}
+\varphi(x,y)&=(u(x),y)
+=\left(\sum_{j=1}^n\lambda_j\xi_je_j,\sum_k\eta_ke_k\right)\\
+&=\sum_{j=1}^n\lambda_j\overline{\xi_j}\eta_j,
+\end{align*}
+(base orthonormée et les $\lambda_j$ réels) alors que
+\[
+\varphi_0(x,y)=\sum_{j=1}^n\overline{\xi_j}\eta_j. \bookend
+\]
+
+\medskip\noindent\textsc{Remarque 12.62.} --- Comme dans le cas réel, cette réduction simultanée n'est pas une diagonalisation simultanée car si en diagonalisant on obtient la matrice identité, au départ on avait la matrice identité et le résultat serait sans intérêt.
+
+\medskip\noindent\textsc{Remarque 12.63.} --- Les matrices symétriques réelles sont en particulier hermitiennes, donc leurs valeurs propres sont réelles.
+
+\medskip\noindent\textsc{Remarque 12.64.} --- Si sur $E$ préhilbertien, un opérateur $u$ est son propre adjoint on a encore :
+
+--- les valeurs propres de $u$ sont réelles,
+
+--- les sous-espaces propres distincts sont 2 à 2 orthogonaux, mais... rien ne prouve qu'il y ait des sous-espaces propres, ni que leur somme directe, s'ils sont en nombre fini, donne $E$.
+
+\medskip\noindent\textbf{Opérateurs normaux}
+
+\medskip\noindent\textsc{Définition 12.65.} --- \emph{Sur $E$ hermitien on appelle opérateur normal tout opérateur linéaire $u$ qui commute à son adjoint $u^*$.}
+
+C'est le cas des opérateurs hermitiens puisqu'alors $u^*=u$, ou unitaires car $u^*=u^{-1}$ dans ce cas.
+
+\medskip\noindent\textsc{Théorème 12.66.} --- \emph{Si $u$ est un opérateur normal sur $E$ hermitien, il existe des bases orthonormées de vecteurs propres pour $u$.}
+
+Ce résultat va se justifier par récurrence sur $n=\dim(E)$.
+
+C'est vrai si $n=1$, et on suppose le résultat vrai si $\dim(E)\le n-1$.
+
+Soit $u$ normal sur $E$ hermitien de dimension $n$. Soit $\lambda$ une valeur propre de $u$, (existe car on est en dimension finie sur $\mathbb C$), et
+\[
+F=\operatorname{Ker}(u-\lambda\operatorname{id}_E)
+\]
+le sous-espace propre associé.
+
+Si $F=E$, on prend une base orthonormée de $E$ et c'est gagné !
+
+Sinon, on considère $F^\perp$, et on va prouver qu'il est stable par $u$ en justifiant que $F$ l'est par $u^*$.
+
+Soit $x\in F$, comme $u$ et $u^*$ commutent on a
+\[
+u(u^*(x))=u^*(u(x))=u^*(\lambda x)=\lambda u^*(x)
+\]
+donc
+\[
+u^*(x)\in\operatorname{Ker}(u-\lambda\operatorname{id}_E)=F.
+\]
+Mais alors $F$ stable par $u^*\Rightarrow F^\perp$ stable par $u^{**}=u$.
+
+On peut introduire $v$ induit par $u$ sur $F^\perp$. Comme $F$ est stable par $u$, $F^\perp$ l'est par $u^*$ et $u^*$ induit un endomorphisme sur $F^\perp$, qui n'est autre que $v^*$, adjoint de $v$ pour la structure hermitienne de $F^\perp$ induite par celle de $E$.
+
+Mais alors $v$ et $v^*$ commutent, comme $u$ et $u^*$, donc $v$ est normal sur $F^\perp$ de dimension $<n$ : l'hypothèse de récurrence s'applique et donne une base orthonormée de $F^\perp$, formée de vecteurs propres pour $v$, donc pour $u$. En lui adjoignant une base orthonormée de $F$ on conclut. \bookend

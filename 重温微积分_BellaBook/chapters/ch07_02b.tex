@@ -1,0 +1,754 @@
+% R42 continuation: original printed pp. 451--469 (top), §2 completed
+
+甚至可以说，所谓切向量就是这样的等价类。看切线是怎样组成切平面的，就是看这些切向量如何构成一个线性空间，其维数是否与曲面相同。想要这些等价类构成线性空间，就需要定义这些等价类的线性运算。第三章提到了，这些等价类确实构成一个 $n$ 维空间，但未详细解释，现在讨论如下：现在我们没有了包含空间，但是微分流形在其每一点附近，在某一个坐标邻域中都与 $\mathbb R^n$ 同胚，我们就要利用这种同胚性来回答以上问题。下面着手具体讨论它，这时请注意可微性的作用。
+
+设 $c:I\to M$ 为一光滑曲线。这里 $I=(-\varepsilon,\varepsilon)$，$\varepsilon>0$，$c(0)=P\in M$，令 $U$ 为 $P$ 的一个坐标邻域，$\varphi$ 为相应的坐标映射，于是 $\varphi\circ c:I\to\mathbb R^n$ 可以写为 $(x^1(t),\ldots,x^n(t))$，是 $t$ 的光滑向量，而有切向量
+\[
+ \xi(t)=(\varphi\circ c)'(t)=(\xi^1(t),\ldots,\xi^n(t))
+\]
+存在，这里 $\xi^i(t)=\dot x^i(t)$。如果有两条这样的过 $P$ 的曲线 $c_1(t),c_2(t)$ 使得对应的 $\xi_{(i)}(t)$，$i=1,2$，适合 $\xi_{(1)}(0)=\xi_{(2)}(0)$，就说 $c_1(t)$ 与 $c_2(t)$ 在 $t=0$ 处，即在 $P$ 点相切。相切关系是一个等价关系，记作 $\simeq$，$c$ 的等价类记作 $[c]$，于是称 $[c]$ 为 $M$ 在 $P$ 点处的一个切向量，$\xi(0)$ 就是这个切向量之坐标表示。如果 $M$ 在 $P$ 点有另一个局部坐标 $(V,\psi)$，于是 $\varphi\circ c$ 现在变成 $\psi\circ c=(y^1(t),\ldots,y^n(t))$，而 $\xi(t)$ 变成
+\[
+ \eta(t)=(\dot y^1(t),\ldots,\dot y^n(t)),\qquad
+ \eta(0)=(\dot y^1(0),\ldots,\dot y^n(0))
+\]
+是 $M$ 在 $P$ 点处的切向量之另一坐标表示，容易看到相切关系在新坐标下仍得以保持，事实上
+\begin{equation}
+ \left.\frac{d}{dt}(\psi\circ c)\right|_{t=0}
+ =\left.\frac{d}{dt}\bigl[(\psi\circ\varphi^{-1})\circ(\varphi\circ c)\bigr]\right|_{t=0}
+ =\left.\frac{\partial(y^1,\ldots,y^n)}{\partial(x^1,\ldots,x^n)}\right|_P
+ \left.(\varphi\circ c)'\right|_{t=0}.
+ \tag{13}
+\end{equation}
+所以等价类 $[c]$ 并不因采用不同的局部坐标而有所不同，而且因为
+\[
+ \left.\frac{\partial(y^1,\ldots,y^n)}{\partial(x^1,\ldots,x^n)}\right|_P
+ =\left.\frac{\partial y}{\partial x}\right|_P
+\]
+是迁移函数之雅可比矩阵，所以是非奇异的。切向量如果能构成一个线性空间，则不同的坐标表示成为互相同构的线性空间，称为 $M$ 在 $P$ 点处的切空间，记为 $T_PM$，所以我们现在要做的是弄清 $T_PM$ 的线性结构。
+
+为此，设有 $[c_1],[c_2]\in T_PM$，$\lambda_1,\lambda_2\in\mathbb R$。我们要问，如何定义 $\lambda_1[c_1]+\lambda_2[c_2]$，为此取 $[c_1],[c_2]$ 的代表元 $c_1$ 与 $c_2$，而得到 $\mathbb R^n$ 中的两条曲线 $\varphi\circ c_1$ 与 $\varphi\circ c_2$ 以及切向量之坐标表示
+\[
+ \left.\xi_{(1)}\right|_{t=0}=\left.(\varphi\circ c_1)'\right|_{t=0},\qquad
+ \left.\xi_{(2)}\right|_{t=0}=\left.(\varphi\circ c_2)'\right|_{t=0}.
+\]
+因为它们都是 $\mathbb R^n$ 中的向量，所以 $\lambda_1\xi_{(1)}(0)+\lambda_2\xi_{(2)}(0)$ 是有意义的，而且因为有(13)式，所以这里的代数运算的结果不因采用不同的局部坐标而有异。现在我们要证明
+
+\noindent\textbf{定理2}\quad $T_PM$ 是一个 $n$ 维空间。
+
+\noindent\textbf{证}\quad 上面已看到 $T_PM$ 中的元素坐标表示之间确可定义线性运算。如果 $\xi\in\mathbb R^n$，则一定可以找到一条曲线 $c$ 使 $\xi$ 恰好是它 $[c]$ 的坐标表示。事实上，若设 $\varphi:P\mapsto0$（$\mathbb R^n$ 中的原点），则 $x(t)=\xi t$ 是 $\mathbb R^n$ 中过 $P$ 的一条以 $\xi$ 为切向量的直线，$\varphi^{-1}(x(t))$ 则是 $M$ 中过 $P$ 的曲线，而且 $\xi$ 恰好是它的切向量之坐标表示。即是说任给 $\mathbb R^n$ 中一个向量，必可找到 $M$ 中一个过 $P$ 之曲线的等价类，以此向量为切向量。于是我们可以在曲线的等价类中定义线性运算，$\lambda_1[c_1]+\lambda_2[c_2]$ 即以 $\lambda_1\xi_{(1)}+\lambda_2\xi_{(2)}$ 为坐标表示的等价类。这个等价类是一定存在的，因为我们已找出了它的一个代表元：
+\[
+ \varphi^{-1}\bigl((\lambda_1\xi_{(1)}+\lambda_2\xi_{(2)})t\bigr).
+\]
+于是 $T_PM$ 成了一个线性空间，余下的只要证明它的维数为 $n$ 即可。
+
+把上面的证明综合成一句话，就是我们可以通过坐标映射把 $\mathbb R^n$ 中的线性关系移到 $T_PM$ 中来，而且因为有(13)式可知这种线性关系的转移不受局部坐标选择的影响。特别是 $0\in\mathbb R^n$ 所对应的曲线之等价类我们就应该规定为 $T_PM$ 中的零元素。由于这个等价类之重要性，我们要特别看一下，其中包括了什么。当然，其中包含了 $\varphi^{-1}(0\cdot t)$。这里的 $0$ 是零向量而不是数0，即 $0=(0,\ldots,0)$，所以我们写 $0\cdot t$ 而不写 $0t$。$\varphi^{-1}(0\cdot t)$ 是这样的曲线：即对一切 $t$ 值它始终是一个点 $P$，我们不妨称之为驻定曲线。但除此以外，它还包含了 $\mathbb R^n$ 中的适合 $\dot x(0)=0$ 的曲线在 $\varphi$ 下的原像，而且也只包含这种曲线。所以
+\[
+ [c]=\{\varphi^{-1}(x(t));\ \dot x(0)=0\}.
+\]
+但是若一曲线 $x=x(t)$ 适合 $\dot x(0)=0$ 就说它以 $t=0$ 为奇点。因此 $T_PM$ 中的零元素即是以 $P$ 为奇点的曲线之等价类。这一等价类我们记为 $[0]$。有了这些规定后即得
+\begin{equation}
+ \sum_{i=1}^k\lambda_i\xi_{(i)}=0
+ \quad\Longleftrightarrow\quad
+ \sum_{i=1}^k\lambda_i[c_i]=[0].
+ \tag{14}
+\end{equation}
+由此，$\{[c_i]\},i=1,2,\ldots,k$，在 $T_PM$ 中线性相关或线性无关的充分必要条件是 $\{\xi_{(i)}\},i=1,2,\ldots,k$，在 $\mathbb R^n$ 中线性相关或线性无关。但是 $\mathbb R^n$ 中恰好有而且最多也只有 $n$ 个线性无关的向量，所以在 $T_PM$ 中也是这样。由此可知 $T_PM$ 是 $n$ 维空间，证毕。
+
+于是要问，如何找出 $T_PM$ 的一个基底？为了找出一个最有用的基底，我们要再回顾一下切空间的定义。切向量和切空间在 $\mathbb R^n$ 中都是很直观的东西，但是当微分流形 $M$ 并未放置在某包含空间中时，就无法应用这些直观的东西。于是我们利用微分流形局部地与欧氏空间同胚这一事实，并只在一个坐标邻域 $U$ 中考虑切向量与切空间，而且用坐标映射 $\varphi$ 把我们的考察引入 $\varphi(U)\subset\mathbb R^n$。在 $\mathbb R^n$ 中则可以充分应用直观上已经很明确的概念，然后用 $\mathbb R^n$ 的线性同构，作出抽象的 $T_PM$。这样做法还给了我们更大的活动余地：简单地说，只要与 $\varphi(U)\subset\mathbb R^n$ 上的直观的切空间同构的就算是 $M$ 在 $P$ 点的切空间 $T_PM$。上面我们用速度向量来构成线性空间。现在我们使用 $\mathbb R^n$ 上的方向导数来建立切空间理论。先讨论 $M=\mathbb R^n$ 的情况。
+
+首先，$\mathbb R^n$ 中的方向导数是一个求导运算，这是因为，若 $F(x)$ 是定义在某点 $P\in\mathbb R^n$（不妨设 $P$ 就是 $x=0$）附近的光滑函数，则在某一个方向 $\xi$（$\xi\in\mathbb R^n$ 是一个向量）上在 $P$ 点对 $F(x)$ 求导，就是把此函数放在过 $P$ 的直线 $x=\xi t$（$t=0$ 对应于 $P$ 点）上，得到一个 $t$ 的函数 $F(x)=F(\xi t)$，然后对 $t$ 求导，得到
+\begin{equation}
+ X(F)=\frac{d}{dt}F(\xi t)
+ =\sum_{i=1}^n\xi^i\frac{\partial F(\xi t)}{\partial x^i}
+ =(\operatorname{grad}F(\xi t),\xi).
+ \tag{15}
+\end{equation}
+（注意，我们这里写的是 $\xi^i$ 而不是 $\xi_{(i)}$，上面(14)式讲 $\xi$ 与 $[c]$ 的对应关系时则用的是记号 $\xi_{(i)}$。那里是表示的第 $i$ 个向量，现在则表示向量 $\xi$ 的第 $i$ 个分量，分量记号用上标是否指 $\xi$ 为逆变向量？是的，这一点下面再说。）最后令 $t=0$ 得到在 $P$ 点的方向导数值。这里有一个非常关键的事实，如果我们不把 $F$ 放在直线 $x=\xi t$ 上，而且放在该直线所属的等价类 $[c]$ 中任一曲线上，所得结果全是一样的。所以我们所建立的不只是 $X$ 与 $x=\xi t$ 的对应关系，而且是 $X$ 与 $[c]$ 的对应关系。(15)式中的算子 $X$ 有以下的性质：
+
+（1）关于 $F$ 的线性性质，即对光滑函数 $F,G$ 和实数 $\lambda,\mu$ 有
+\begin{equation}
+ X(\lambda F+\mu G)=\lambda X(F)+\mu X(G).
+ \tag{16}
+\end{equation}
+（2）若 $F=\mathrm{const}$，则
+\[
+ X(F)=0.
+\]
+（3）莱布尼茨性质，即
+\begin{equation}
+ X(FG)=F X(G)+G X(F).
+ \tag{17}
+\end{equation}
+特别值得注意的是(17)。事实上，性质(2)可由(16)、(17)导出。凡一线性算子具有以上三个性质的都称为一个导子（derivation），我们以后还会看到并不是只有方向导数才是导子，而例如微分也是导子。方向导数在导子中的特点在于，它以某种方式与一个向量相联系。为了看清这种联系，注意到上面讨论中的 $P$ 本来可以在 $\mathbb R^n$ 中某一区域上变动，现在我们把 $P$ 固定又看 $\xi\in\mathbb R^n$ 变动，则(15)式表示当 $P$ 固定（即是令 $t=0$ 时）有一个由 $\xi\in\mathbb R^n$ 到某一个 $X$ 的映射，这些 $X$ 都可以写为
+\begin{equation}
+ X_P(F)=\sum_{i=1}^n\xi^i\frac{\partial F(0)}{\partial x^i}.
+ \tag{18}
+\end{equation}
+它与(15)之区别在于 $F$ 之导数是在 $P$ 即 $t=0$ 处取值的，所以我们用 $X_P$ 表示，以示与(15)的区别。这个区别似乎是微妙的，但是它是下面将要讨论的切丛概念的基础。
+
+\noindent\textbf{定理3}\quad 由(18)式定义的映射赋予 $\{X_P\}$ 以线性构造，而且使 $\mathbb R^n$ 与 $\{X_P\}$ 同构。
+
+\noindent\textbf{证}\quad $\{X_P\}$ 的线性构造是明显的，因为
+\[
+ \lambda\xi+\mu\eta\longmapsto
+ \sum_{i=1}^n(\lambda\xi^i+\mu\eta^i)\frac{\partial F(0)}{\partial x^i}.
+\]
+这里 $\xi,\eta\in\mathbb R^n$ 是向量，$\xi=(\xi^1,\ldots,\xi^n)$，$\eta=(\eta^1,\ldots,\eta^n)$，而 $\lambda,\mu$ 是实数。从这一个简单的推导就看出为什么要把 $P$ 固定，因为若在计算中令 $P=\xi t$ 而让 $P$ 变动，计算的结果只会得出
+\begin{equation}
+ \sum_{i=1}^n\lambda\xi^i\frac{\partial F(\xi t)}{\partial x^i}
+ +\sum_{i=1}^n\mu\eta^i\frac{\partial F(\eta t)}{\partial x^i},
+ \tag{19}
+\end{equation}
+而无法结合成 $F((\xi+\eta)t)$（即令合成了也会丧失了(18)式对 $\xi,\eta$ 的线性依赖性，(15)式对 $\xi,\eta$ 本来就不是线性的）。
+
+在给出了 $\{X_P\}$ 的线性构造以后，(18)式为一同构就容易证明了。首先它是单射，因为若 $\xi\in\mathbb R^n$ 对应的 $X_P$ 是零算子，则应当有：对任一光滑函数 $F(x)$，
+\[
+ \sum_{i=1}^n\xi^i\frac{\partial F(0)}{\partial x^i}=0,
+\]
+依次令 $F=x^1,x^2,\ldots,x^n$ 就得出 $\xi^1=0,\xi^2=0,\ldots,\xi^n=0$，即 $\xi=0$。
+
+最后证明(18)是满射。为此，先要注意一件事：若 $F(x)$ 在 $x=0$ 附近是光滑的，把它在 $x=0$ 处用泰勒公式展开到二次项：
+\[
+ F(x)=F(0)+\sum_{i=1}^nF_i(0)x^i+\sum_{i,j=1}^nF_{ij}(x)x^ix^j,
+\]
+用 $X_P$ 作用到两边，这里 $F_i(0)=\partial F(0)/\partial x^i$，而 $F_{ij}(x)$ 仍是 $x=0$ 附近的光滑函数。利用 $X$ 之性质(1)--(3)，再在 $P$ 点取值即有
+\[
+ X_P(F)=\sum_{i=1}^nF_i(0)X_P(x^i).
+\]
+现在在 $\mathbb R^n$ 中取向量 $\xi=(\xi^1,\ldots,\xi^n)$，我们只要这样定义算子 $X$，使
+\[
+ \xi=(X_P(x^1),\ldots,X_P(x^n)),
+\]
+即
+\[
+ X=\sum_{i=1}^n\xi^i\frac{\partial}{\partial x^i},
+\]
+代入上式即知对任意 $F(x)$ 有(18)式
+\[
+ X_P(F)=\sum_{i=1}^n\xi^i\frac{\partial F(0)}{\partial x^i}.
+\]
+所以任一个 $X_P$ 都是某一个 $\xi\in\mathbb R^n$ 之像，因此满射得证。
+
+这个定理告诉我们 $T_PM$（现在 $M$ 就是 $\mathbb R^n$）与 $\{X_P\}$ 同构，因此我们可以说 $\{X_P\}$ 就是 $T_PM$，或者说切向量就是导子 $X_P$，而且由(18)可见
+\[
+ \left\{\frac{\partial}{\partial x^1},\ldots,
+ \frac{\partial}{\partial x^n}\right\}
+\]
+是 $T_PM$ 的一个基底，称为由局部坐标 $(x^1,\ldots,x^n)$ 诱导出的基底。
+
+现在我们来看坐标变换下 $X_P$ 的变化。注意到 $\xi$ 是速度向量 $\xi=(\xi^1,\ldots,\xi^n)=(\dot x^1(0),\ldots,\dot x^n(0))$，所以 $\xi$ 与 $x$ 一样是逆变向量；$(\partial F(0)/\partial x^1,\ldots,\partial F(0)/\partial x^n)$ 就是古典的梯度算子，因此是协变向量。所以当坐标由 $x$ 变为 $y$ 时，若 $y$ 坐标系下的速度为 $\eta=(\eta^1,\ldots,\eta^n)$，假设 $x=0$ 变为 $y=0$，则
+\[
+ \xi^i=\frac{\partial x^i}{\partial y^j}(0)\eta^j,
+\]
+\[
+ \frac{\partial F(0)}{\partial x^i}
+ =\frac{\partial y^k}{\partial x^i}(0)
+ \frac{\partial F(0)}{\partial y^k}.
+\]
+把它们代入(18)，即得
+\[
+ \begin{aligned}
+ X_P(F)
+ &=\sum_{i,j,k=1}^n
+ \frac{\partial x^i}{\partial y^j}(0)
+ \frac{\partial y^k}{\partial x^i}(0)
+ \eta^j\frac{\partial F(0)}{\partial y^k}\\
+ &=\sum_{j,k=1}^n\delta_j^k\eta^j\frac{\partial F(0)}{\partial y^k}\\
+ &=\sum_{j=1}^n\eta^j\frac{\partial F(0)}{\partial y^j}.
+ \end{aligned}
+\]
+所以(18)定义的 $X_P$ 其实是与坐标无关的，所以说它是切向量就更有道理了。
+
+以上我们讲的是 $\mathbb R^n$ 的切向量与切空间，现在问题该如何对微分流形 $M$ 上一点 $P$ 定义 $T_PM$。为此取 $P$ 的一个坐标邻域 $U$ 与坐标映射 $\varphi$，并用 $x$ 表示 $\varphi(U)\subset\mathbb R^n$ 中的坐标。注意，直接用(18)式是有困难的，因为 $\partial/\partial x^i$ 中的 $x^i$ 是 $\varphi(U)$ 中的量而不是 $M$ 上的量，所以在 $M$ 上 $\partial/\partial x^i$ 是不能定义的。为此，我们仍按上面讲的基本思想来处理这个问题：把坐标邻域 $\varphi(U)$ 中的结果直接移到 $M$ 上 $P$ 点的邻域中去。这时只要注意一个问题，$P\in M$ 可以有几个不同的坐标邻域，例如 $(U,\varphi)$ 与 $(V,\psi)$，我们只需证明使用 $(U,\varphi)$ 与使用 $(V,\psi)$ 结果是一致的即可。因此我们现在设 $F$ 是 $M$ 上的函数，于是 $F\circ\varphi^{-1}$ 是 $\varphi(U)\subset\mathbb R^n$ 上的光滑函数，亦即为 $x$ 的光滑函数，使得 $\partial(F\circ\varphi^{-1})/\partial x^i$ 有意义。$\xi$ 本来是速度 $\dot x(0)$，也是与局部坐标相联系的，而且如前所述，
+\[
+ \left(\frac{\partial(F\circ\varphi^{-1})}{\partial x^1},\ldots,
+ \frac{\partial(F\circ\varphi^{-1})}{\partial x^n}\right)
+\]
+是 $\mathbb R^n$ 中的协变向量，$\xi\in\mathbb R^n$ 则是逆变向量。我们给出
+
+\noindent\textbf{定义5}\quad 对上述 $M,F$ 与 $P\in M$，我们定义 $P$ 处的导子 $X_P$ 为
+\begin{equation}
+ X_P(F)=\sum_{i=1}^n\xi^i
+ \frac{\partial(F\circ\varphi^{-1})}{\partial x^i}(0).
+ \tag{20}
+\end{equation}
+这里右方的 $0$ 即是 $\varphi(P)$，$X_P$ 称为 $M$ 在 $P$ 点的切向量。
+
+这样定义的 $X_P$ 自然适合导子的三个要求。
+
+这个定义显然与坐标的选取无关。若改用另一个坐标邻域 $(V,\psi)$，而以 $y$ 为新的局部坐标，并设在新坐标 $y$ 下，逆变向量 $\xi$ 的分量变成 $\eta=(\eta^1,\ldots,\eta^n)$，且
+\[
+ \xi^i=\frac{\partial x^i}{\partial y^j}(0)\eta^j,
+\]
+代入(18)式有
+\[
+ \begin{aligned}
+ X_P(F)
+ &=\sum_{j=1}^n\eta^j
+ \sum_{i=1}^n\frac{\partial x^i}{\partial y^j}(0)
+ \frac{\partial(F\circ\varphi^{-1})}{\partial x^i}(0)\\
+ &=\sum_{j=1}^n\eta^j
+ \frac{\partial\bigl[(F\circ\varphi^{-1})\circ(\varphi\circ\psi^{-1})\bigr]}
+ {\partial y^j}(0)\\
+ &=\sum_{j=1}^n\eta^j\frac{\partial(F\circ\psi^{-1})}{\partial y^j}(0).
+ \end{aligned}
+\]
+它的形状仍与(20)相同，由此可见这样定义的对象 $X_P(F)$ 确实仅仅决定于 $M$ 的性质（当然只是局部性质），而与坐标之选取无关。也由此，我们可以把定理3改写为
+
+\noindent\textbf{定理3$'$}\quad 设 $M$ 为一 $n$ 维微分流形，$P\in M$，则由定义5给出的 $X_P$ 之集合具有自然的 $n$ 维线性空间结构，且 $\{X_P\}\cong\mathbb R^n$；$\{X_P\}$ 称为 $M$ 在 $P$ 点的切空间，记作 $T_PM$。
+
+至此，一个微分流形 $M$ 在 $P$ 点附近的“线性化”过程完成了。我们在 $M$ 上 $P$ 点处给 $M$ 添加了一个 $n$ 维线性空间 $T_PM$。我们可以在某种意义下用 $T_PM$ 来代替 $M$ 以研究其性质。这样自然产生许多深刻的问题，例如：可否局部地由 $T_PM$ 恢复 $M$（指数映射）？如果 $M$ 还是一个李群，则群结构在 $T_PM$ 上诱导出什么（李代数）？所有这一切当然都远远超出本书范围，但是有一个问题却是不能回避的。
+
+现在有了 $T_PM$，它是一个线性空间，线性空间上有许多结构，§1讲的向量和张量就是其中十分重要的。有许多结构需要考虑 $P$ 在 $M$ 上的变化（而不是如上面那样把 $P$ 固定，而我们上面一再指出，把 $P$ 固定是很重要的一步），这就导致了向量丛的概念，我们等一会再去讨论它，目前要讨论的是 $T_PM$ 的对偶空间，但在此以前需要讨论什么是切映射。
+
+首先我们要重新看一下什么是一个函数的微分。看一下一元函数这个最简单的例子（图7-2-3）。如果一个光滑函数 $f(x)$ 定义在区间 $(a,b)$ 上，而过 $P$ 点有一条切线，设 $P$ 点的坐标是 $x$（在上文中是取 $x$ 为0）。我们不妨把函数的图形看成一个微分流形 $M$，而视此函数关系为由一维微分流形 $\mathbb R$ 到 $M$ 的映射 $f$，映 $Q\in\mathbb R$ 到 $P\in M$，而且此映射是可微的。$M$ 在 $P$ 点的切空间就是过 $P$ 的切线，而 $\mathbb R$ 在 $Q$ 点的切空间仍是一个1维线性空间 $\mathbb R$，不过原点要放在 $Q$ 点：$T_Q\mathbb R=\mathbb R$。当我们有一个可微映射 $f:(a,b)\subset\mathbb R\to M$，$x\mapsto f(x)$ 时，在切空间 $T_Q\mathbb R$ 与 $T_PM$ 之间也有一个映射 $A$，映 $T_Q\mathbb R$ 中的 $h$ 为 $Ah=f'(x)h$，不过我们并没有把它画在 $T_PM$ 上，而是画在与 $y$ 轴平行的方向上，因为这是我们习惯的。通常的微积分教本把 $Ah$ 这个量称为微分，而把 $A$ 看成一个数即曲线 $M$ 在 $P$ 点的斜率，而正如我们在第三章中讲的，我们则把 $A$ 看成一个线性算子，它可以表示为一个一阶矩阵 $f'(x)$，而且就直接称此算子为微分，$h$ 则是切空间 $T_Q\mathbb R$ 中的向量。$Ah$ 则是微分这个线性算子作用到 $h$ 上以后得到的结果，它也是一向量。不过，不论是通常的微积分教本还是本书，共同之处在于，$A$ 具有下述最根本的性质：
+\begin{equation}
+ f(x+h)-f(x)=Ah+o(h).
+ \tag{21}
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.9,>=stealth]
+  \draw[->] (-3.7,0)--(4.4,0) node[right] {$\mathbb R$};
+  \draw[->] (0,-.5)--(0,4.1);
+  \draw[smooth] plot coordinates {(-3.1,.65)(-2.3,.85)(-1.5,1.15)(-.8,1.55)(0,2.05)(.9,2.65)(1.8,3.3)(2.5,3.75)};
+  \draw[thick] (-2.5,.65)--(3.0,3.95);
+  \coordinate (P) at (-.8,1.55);
+  \fill (P) circle (1.4pt) node[above left] {$P$};
+  \draw[dashed] (-.8,0)--(P);
+  \node[below] at (-.8,0) {$x$};
+  \coordinate (R) at (2.2,3.47);
+  \draw[dashed] (2.2,0)--(R);
+  \node[below] at (2.2,0) {$x+h$};
+  \draw[<->] (2.5,1.55)--(2.5,3.47) node[midway,right] {$Ah$};
+  \node[left] at (-3.0,.5) {$M$};
+  \node[below] at (-2.8,0) {$a$};
+  \node[below] at (3.5,0) {$b$};
+  \node at (3.0,3.85) {$y=f(x)$};
+  \node at (-2.0,-.45) {$T_Q\mathbb R$};
+  \node at (-2.0,1.65) {$T_PM$};
+  \fill (-.8,0) circle (1.1pt) node[below left] {$Q$};
+\end{tikzpicture}
+\caption*{图7-2-3}
+\end{figure}
+
+现在我们怎样把它推广到两个微分流形 $M(\dim M=m)$ 到 $N(\dim N=n)$ 之间的可微映射？
+\[
+ f:M\to N,
+ \qquad P\in M\longmapsto Q\in N.
+\]
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.82,>=stealth]
+  \draw (-4.8,2.3) .. controls (-4.0,3.1) and (-2.5,3.0) .. (-1.5,2.4)
+        .. controls (-2.4,1.65) and (-4.1,1.65) .. cycle;
+  \node at (-4.9,1.55) {$M$};
+  \draw (-4.35,2.2) rectangle (-2.4,2.75); \node at (-2.55,2.35) {$U$};
+  \fill (-3.45,2.45) circle (1.2pt) node[above] {$P$};
+  \draw[->] (-3.45,2.25)--(-3.45,.55) node[midway,left] {$\varphi$};
+  \draw (-4.55,.25)--(-2.25,.25)--(-2.6,-.2)--(-4.85,-.2)--cycle;
+  \node at (-4.8,-.45) {$\mathbb R^m$}; \node at (-3.45,.02) {$O$};
+
+  \draw (1.4,2.3) .. controls (2.1,3.1) and (3.7,3.0) .. (4.8,2.4)
+        .. controls (3.8,1.7) and (2.1,1.7) .. cycle;
+  \node at (1.25,1.55) {$N$};
+  \draw (2.0,2.15) rectangle (4.05,2.75); \node at (3.9,2.35) {$V$};
+  \fill (3.0,2.45) circle (1.2pt) node[above] {$Q$};
+  \draw[->] (3.0,2.25)--(3.0,.55) node[midway,right] {$\psi$};
+  \draw (1.9,.25)--(4.25,.25)--(3.95,-.2)--(1.6,-.2)--cycle;
+  \node at (4.25,-.45) {$\mathbb R^n$}; \node at (3.0,.02) {$O$};
+
+  \draw[->] (-1.4,2.4)--(1.25,2.4) node[midway,above] {$f$};
+  \draw[->] (-2.15,.02)--(1.5,.02) node[midway,below] {$\psi\circ f\circ\varphi^{-1}$};
+  \draw[->] (-.2,-.65)--(.65,-.65) node[midway,below] {$f_*$};
+\end{tikzpicture}
+\caption*{图7-2-4}
+\end{figure}
+
+为了直观起见，我们仍设 $M$ 和 $N$ 各有一个维数充分高的 $\mathbb R^k$ 作为包含空间，并作出图7-2-4：图上画出了 $M$ 和 $N$ 上两点的坐标邻域 $U$ 和 $V$ 以及坐标映射 $\varphi$ 和 $\psi$，并设 $\varphi(U)$ 和 $\psi(V)$ 中的局部坐标是 $x$ 与 $y$，而且 $P,Q$ 两点都映射到原点 $O$。这与图7-2-3不同，那里 $P$ 点是映到 $x$ 处，不过我们认为 $x$ 是固定的。图上在 $M$ 与 $N$ 的下方还画了 $\mathbb R^m$ 和 $\mathbb R^n$。不过，它们中的每一个都起双重作用：一是作为微分流形与之同胚的那个空间：$\varphi(U)\subset\mathbb R^m$，$\psi(V)\subset\mathbb R^n$，它们是与 $U,V$ 同胚的；二是上面我们已经说过，微分流形在每点上都有切空间而同构于 $\mathbb R^m$ 或 $\mathbb R^n$，这里的 $\mathbb R^m$ 和 $\mathbb R^n$ 就是 $T_PM$ 和 $T_QN$ 的同构像，它们与 $T_PM,T_QN$ 不仅是同胚而且线性同构。$\mathbb R^m$ 和 $\mathbb R^n$ 的这种双重作用的区别极为重要。作为 $\varphi(U)$ 与 $\psi(V)$ 来看，对应于由 $M$ 到 $N$ 的映射 $f$，有一个映射 $\psi\circ f\circ\varphi^{-1}$，即 $f$ 的局部坐标表示。$\psi\circ f\circ\varphi^{-1}$ 是光滑的，其实这就是 $f$ 为光滑映射的定义。作为 $T_PM$ 与 $T_QN$ 来看，其元素是 $M$ 在 $P$ 点和 $N$ 在 $Q$ 点的切向量 $\xi$ 与 $\eta$，而当由 $M$ 到 $N$ 有映射 $f$（其坐标表示为 $\psi\circ f\circ\varphi^{-1}$）时，在 $\xi$ 与 $\eta$ 之间也应该有一个线性映射。这就是图7-2-3中的 $A$ 的推广称为切映射。正如图7-1-3中的 $A$ 称为 $f(x)$ 的微分，并在通常的微积分教本中记作 $df$；$A=df$（但实际上通常的微积分教本中的微分是 $Ah$）一样，这个我们认为应该存在的线性映射称为 $f$ 在 $P$ 点的切映射，也应该称为 $f$ 在 $P$ 点的微分，并记作 $df_P$（是图7-2-4上的 $f_*$，这个记号将在下文中解释），同时也应该有与(21)的对应公式存在。
+
+现在我们就来寻找这个 $df$ 的相应的公式。为此我们再回到切向量的定义。上文中我们用两个方法来定义切向量，其一是用光滑曲线 $c$ 的等价类 $[c]$，这里的“要求当 $t=0$ 时经过 $P$ 点，等价关系则由同一等价类的两条曲线 $c_1$ 与 $c_2$ 必在 $P$ 点相切来定义。但是我们所熟悉的相切性是欧氏空间 $\mathbb R^m$（我们先看 $T_PM,T_QN$ 的情况与此相仿）中的概念，所以 $c_1$ 与 $c_2$ 的相切需要先用坐标映射 $\varphi$ 将它们映到 $\varphi(U)\subset\mathbb R^m$ 中去，得到 $\mathbb R^m$ 中两条曲线
+\[
+ \varphi\circ c_i:t\mapsto(x_{(i)}^1(t),\ldots,x_{(i)}^m(t)),\qquad i=1,2,
+\]
+再按通常微积分教本的方法对 $t$ 在 $t=0$ 处求导得出
+\[
+ \xi_{(i)}=(\xi_{(i)}^1,\ldots,\xi_{(i)}^m)
+ =(\dot x_{(i)}^1(0),\ldots,\dot x_{(i)}^m(0)),\qquad i=1,2,
+\]
+是为切向量。如果 $\xi_{(1)}=\xi_{(2)}$（这一点下文还有说明），就说 $c_1$ 与 $c_2$ 在 $P$ 点相切，这时 $\xi_{(i)}$ 的公共值 $\xi\in\mathbb R^m$ 就称为 $P$ 处的一个切向量，它是 $[c]$ 的坐标表示。有了这一切再看什么是切映射就容易了，$f\circ c_1$ 与 $f\circ c_2$ 是 $N$ 上的两条光滑曲线，在坐标邻域中它们相应于 $\psi\circ f\circ c_i=(\psi\circ f\circ\varphi^{-1})\circ\varphi\circ c_i:t\mapsto(y_{(i)}^1(t),\ldots,y_{(i)}^n(t))$，而其对 $t$ 在 $t=0$ 处的导数是 $(\eta_{(i)}^1,\ldots,\eta_{(i)}^n)=(\dot y_{(i)}^1(0),\ldots,\dot y_{(i)}^n(0))$，这里 $\psi\circ f\circ\varphi^{-1}$ 是 $\varphi(U)$ 到 $\psi(V)$ 的映射
+\[
+ y^k=y^k(x^1,\ldots,x^m),\qquad k=1,2,\ldots,n,
+\]
+而
+\[
+ \dot y_{(i)}^k(0)=\frac{\partial y^k}{\partial x^j}(0)\dot x_{(i)}^j(0).
+\]
+（请读者注意：一个重复出现的指标代表对该指标在适当范围中求和，所以这里出现的两个 $j$ 因为是 $x$ 的指标，而 $x\in\mathbb R^m$，所以应从1到 $m$ 求和；如果是对 $y\in\mathbb R^n$ 的指标求和，则要从1到 $n$ 求和。）如果用向量来表示则得
+\[
+ \eta_{(i)}=A\xi_{(i)},\qquad i=1,2.
+\]
+这里 $A$ 是雅可比矩阵 $\dfrac{\partial(y^1,\ldots,y^n)}{\partial(x^1,\ldots,x^m)}(0)$。它确实是 $n\times m$ 矩阵而不是方阵，所以没有相应的行列式：
+\begin{equation}
+ A=
+ \begin{pmatrix}
+ \dfrac{\partial y^1}{\partial x^1}(0)&\cdots&\dfrac{\partial y^1}{\partial x^m}(0)\\
+ \vdots&&\vdots\\
+ \dfrac{\partial y^n}{\partial x^1}(0)&\cdots&\dfrac{\partial y^n}{\partial x^m}(0)
+ \end{pmatrix}.
+ \tag{22}
+\end{equation}
+因为 $\xi_1=\xi_2=\xi$，所以 $\eta_1=\eta_2$，从而 $f\circ c_1\simeq f\circ c_2$，其等价类为 $[f\circ c]$，其坐标表示则是 $\eta_1$ 与 $\eta_2$ 的公共值 $\eta$，而上式成为 $\eta=A\xi$。在讲切空间的定义时我们已经说了，我们要把 $\xi\in\mathbb R^m$ 的线性构造移到 $[c]$ 上去，使得 $[c]$ 之集合也成一个线性空间，所以由于 $A$ 是 $\xi\in\mathbb R^m$（注意现在的 $\mathbb R^m$ 是 $T_PM$ 而不是 $\varphi(U)$ 的包含空间）到 $\eta\in\mathbb R^n$ 的线性映射，所以由 $[c]$ 到 $[f\circ c]$ 之间有一线性映射，称为映射 $f$ 在 $P$ 点的切映射，或称为 $f$ 在 $P$ 之微分 $df_P$。$df_P$ 的坐标表示则是雅可比矩阵 $A$（(22)式）。这是我们用切空间的第一种解释得到的切映射之定义的说明。
+
+上文说，关于 $\xi_{(1)}=\xi_{(2)}$ 还有说明，这指的是，在通常微积分教本中，讲到两曲线相切时只需要其切线有相同斜率即可，所以只要 $\xi_{(1)}=C\xi_{(2)}$，$C$ 是一个非零实数，就应该说它们定义相同的切向量，或者说，不需要 $\xi_{(1)}=\xi_{(2)}$，只需要 $\xi_{(1)}\parallel\xi_{(2)}$。而我们这里 $\xi=\dot x(0)$，其实是由速度的概念而来，所以，我们现在讲的切向量，其实是力学的速度向量，而不是几何向量。
+
+我们现在来寻找公式(21)的类似物。在第三章中我们就说过，微分公式(21)中的 $x$ 与 $h$ 性质不同：前者是底空间之元，后者则是切空间之元，二者本来无法相加。(21)中写出 $x+h$ 只是因为现在底空间是 $\mathbb R^n$ 的一个区域，切空间则是整个 $\mathbb R^n$，它们很偶然地可以相加。同样，$f(x+h)-f(x)$ 也只对这种特殊情况有意义。在 $f$ 表示微分流形 $M$ 到另一微分流形 $N$ 的可微映射时，应怎样寻找(21)的类似物呢？为此，我们要用 $f$ 的局部坐标表示，即 $\psi\circ f\circ\varphi^{-1}$ 并将它和前面一样写成
+\begin{equation}
+ y=y(x),\qquad y^i=y^i(x^1,\ldots,x^m),\quad i=1,2,\ldots,n.
+ \tag{23}
+\end{equation}
+我们还设 $P$ 和 $Q$ 分别即是 $x=0$ 与 $y=0$，于是在 $x=0$ 处把(23)用泰勒公式写成
+\[
+ y^i=\frac{\partial y^i(0)}{\partial x^j}x^j+\text{高阶项},
+\]
+并取它的线性部分（注意，我们不再说“略去高阶项”的话了，第三章第二节作了详细说明）：
+\[
+ \eta=A\xi,
+ \qquad
+ A=\frac{\partial(y^1,\ldots,y^n)}{\partial(x^1,\ldots,x^m)}(0).
+\]
+这里我们用 $\eta$ 和 $\xi$ 取代了 $x$ 和 $y$。事实上，$x$ 与 $y$ 是底空间中之元的局部坐标，$f$ 本来就是底空间之间的映射；$\eta$ 和 $\xi$ 则是切向量——切空间之元的局部坐标，而切映射正是切空间之间的线性映射。至此我们更看到切映射概念确是函数的微分的概念之推广，而且用局部坐标表示后更表明它们的确是一回事。我们不说略去了 $o(h)$，而说成是取泰勒公式的1-节（1-jet）来代替 $f$，而1-节的形状是与局部坐标的选取无关的（此即一阶微分的形式不变性）。“略去高阶无穷小”现在代之以“只考察1-节”，这样绕过了无法定义 $f(x+h)-f(x)$ 的困难。总之，切映射就是微分概念的推广，所以我们采用了同样的记号 $df$。
+
+但是，切向量还可以用一阶微分算子作定义。按这种定义切映射又应该如何理解呢？它能告诉我们什么新的联系、新的概念吗？为此，我们暂时把有待我们去探讨的切映射记作 $\bar d f$，并且打算说明它就是 $df$。于是设有 $X_P=\xi^i\dfrac{\partial}{\partial x^i}\in T_PM$，这里 $(\xi^1,\ldots,\xi^m)=(\dot x^1(0),\ldots,\dot x^m(0))$ 是它的局部坐标表示。于是 $\bar d f\cdot X_P$ 应是 $N$ 在 $Q$ 点的切向量，也不妨设它在 $N$ 上的局部坐标表示为 $Y_Q=\eta^k\dfrac{\partial}{\partial y^k}$，$k=1,2,\ldots,n$。于是我们问，应该怎样决定 $\eta=(\eta^1,\ldots,\eta^n)$？一个微分算子是通过它在函数上的作用来表现的，所以对任意的定义在 $f(M)\subset N$ 上的函数 $F$（不妨用局部坐标 $F(y)$ 表示），$Y_QF=\eta^k\dfrac{\partial F}{\partial y^k}$ 是有定义的。但是 $F$ 也可以认为是定义在 $M$ 上的，即先把 $M$ 上之点（$x$ 是它的局部坐标）通过映射 $f$ 映到 $N$ 上，而原来在 $N$ 上的函数 $F(y)$ 现在变成 $F(y(x))$，被拉回到 $M$ 上。一个十分自然的想法是这样来定义 $\bar d f\cdot X_P=Y_Q$：使 $X_P$ 作用到 $F(y(x))$ 上恰好就是 $Y_Q$ 作用到 $F(y)$ 上。亦即在 $x=0$ 及其像 $y=0$ 处
+\[
+ \left.\eta^k\frac{\partial F(y)}{\partial y^k}\right|_{y=0}
+ =\left.\left(\xi^i\frac{\partial}{\partial x^i}\right)F(y(x))\right|_{x=0}
+ =\left.\xi^i\frac{\partial F}{\partial y^k}\frac{\partial y^k}{\partial x^i}\right|_{y=y(x),\,x=0}.
+\]
+因为此式应该对任意函数 $F(y)$ 成立，依次令 $y=y^1,\ldots,y^n$，即有
+\[
+ \eta^k=\xi^i\frac{\partial y^k(0)}{\partial x^i}.
+\]
+但是这正是用第一种方法得出的 $df$ 的局部坐标表示 $\eta=A\xi$。所以，切映射的这两种定义是完全一致的。我们也就没有必要再用另一个记号 $\bar d f$，而都用 $df$。第二种讲法实际上引入了一种对偶性，因为 $df_P$ 把 $M$ 上的切向量 $X_P$ 推前到 $N$ 上，成为 $N$ 上的切向量，而 $F(y(x))$ 或记为 $F\circ f$ 则把定义在 $N$ 上的函数 $F$ 拉回到 $M$ 上成为 $F\circ f$。第二种定义就是说：或者把 $X_P$ 推前，或者把 $F$ 拉回，二者相同。这是一种深刻的对偶性，见后文。
+
+以上讲的既是切映射的定义及其解释，也证明了它的一些性质。为明确起见，我们把它归结为下面的
+
+\noindent\textbf{定义和定理4}\quad 设 $M$ 和 $N$ 分别是 $m$ 维与 $n$ 维微分流形，$f:M\to N$，$P\mapsto Q$ 是一个可微映射，则
+
+（1）$M$ 中经过 $P$ 的光滑曲线 $c$ 之集合中可定义二等价类 $[c]$ 如上，必有线性映射 $df_P:T_PM\to T_QN$ 映 $[c]$ 为 $T_QN$ 中的元，$df_P$ 称为 $f$ 在 $P$ 之切映射，也称为 $f$ 在 $P$ 之微分。
+
+（2）$df_P$ 是映射 $f$ 的线性部分，而且其局部坐标表示是
+\begin{equation}
+ \eta=df_P\,\xi=A\xi,
+ \qquad \xi\in T_PM,\ \eta\in T_QN,
+ \tag{24}
+\end{equation}
+$A$ 是雅可比矩阵
+\[
+ A=\left(\frac{\partial y^j(0)}{\partial x^i}\right),
+\]
+$df_P\cdot\xi$ 是 $y=y(x)$ 在 $x=0$ 处的泰勒展开式的1-节。
+
+（3）若用一阶微分算子 $X_P$ 表示 $T_PM$ 中之元，则 $df_P\cdot X_P$ 是 $T_QN$ 中的下述微分算子：
+\begin{equation}
+ (df_P\cdot X_P)(F)=X_P(F\circ f).
+ \tag{25}
+\end{equation}
+
+\noindent\textbf{定理5}\quad 切映射 $df$ 具有以下性质：
+
+（1）链式法则。若 $f_1:M_1\to M_2$，$P_1\mapsto P_2$，$f_2:M_2\to M_3$，$P_2\mapsto P_3$ 是两个可微映射，则
+\[
+ d(f_2\circ f_1)(P_1)=df_2(P_2)\cdot df_1(P_1).
+\]
+（2）莱布尼茨性质。若 $F,G$ 是 $Q\in N$ 附近的光滑函数，$f:M\to N$ 是一可微映射，$f(P)=Q$，则
+\[
+ (df_P\cdot X_P)(FG)(Q)
+ =F(Q)(df_P\cdot X_P)G(Q)+G(Q)(df_P\cdot X_P)F(Q).
+\]
+这些性质由 $df$ 之定义都容易直接证明，所以这里都省略了。
+
+现在回到古典的微分概念。一个定义在微分流形 $M$ 上的可微函数可以看作是可微映射 $f:M\to\mathbb R^1$，即 $N=\mathbb R^1$ 的特例。这时 $n=\dim N=1$，且 $T_QN=\mathbb R$。于是设有 $M$ 上的切向量 $X_P$，$df_P\cdot X_P$ 应该是 $N=\mathbb R^1$ 上的切向量。由于 $T\mathbb R^1=\mathbb R$，其上有一个独立参数 $t$，所以 $T\mathbb R^1=\{\lambda\,d/dt\}$，$\lambda$ 是实数，于是必存在一个实数 $\lambda$ 使
+\[
+ df_P\cdot X_P=\lambda\frac{d}{dt}.
+\]
+我们选一个定义在 $N$ 上的函数 $F\equiv t$，用上面的微分算子作用于它，有
+\[
+ (df_P\cdot X_P)(t)=\lambda.
+\]
+但由定义，$t$“拉回”到 $M$ 上，就成为 $f$。因此有
+\[
+ (df_P\cdot X_P)(t)=X_P(f).
+\]
+上面我们说了，切向量可以有两个方法定义，一是作为一个微分算子 $X_P=\xi^i\dfrac{\partial}{\partial x^i}$，二是定义为它的系数所成的向量 $\xi=(\xi^1,\ldots,\xi^m)=\dot x$。在我们这里，前者是 $\lambda\,d/dt$，后者则是 $\lambda$，可以认为它们都是一样的。在这个意义下，我们有
+
+\noindent\textbf{定理6}\quad 若 $f$ 是 $M$ 上的光滑函数，$P\in U\subset M$，则对一切 $X_P\in T_PM$，
+\begin{equation}
+ df_P\cdot X_P=X_P(f).
+ \tag{26}
+\end{equation}
+尽管从表面上看上式左方是一个算子，右方则是一个实数，二者怎能相等？有了这样的说明后，即有
+
+\noindent\textbf{推论7}\quad 假设同上，有
+\begin{equation}
+ df_P=\frac{\partial f(0)}{\partial x^i}\,dx_P^i.
+ \tag{27}
+\end{equation}
+
+\noindent\textbf{证}\quad 在(26)中令 $f$ 为第 $j$ 个坐标函数 $x^j$，$X=\dfrac{\partial}{\partial x^i}$，即有
+\begin{equation}
+ dx^j\left(\frac{\partial}{\partial x^i}\right)=\delta_i^j.
+ \tag{28}
+\end{equation}
+对任意的 $X_P=\xi^i\dfrac{\partial}{\partial x^i}$，设 $P$ 即 $x=0$，
+\[
+ \begin{aligned}
+ df_P\cdot X_P
+ &=X_P(f)=\xi^i\frac{\partial f(0)}{\partial x^i}
+ =\delta_j^i\xi^j\frac{\partial f(0)}{\partial x^i}\\
+ &=\frac{\partial f(0)}{\partial x^i}dx_P^i\,
+   \xi^j\frac{\partial}{\partial x^j}
+ =\frac{\partial f(0)}{\partial x^i}dx_P^i\cdot X_P.
+ \end{aligned}
+\]
+此即(27)式。
+
+这样一方面我们得到了与古典的微分公式形状完全相同的结果；另一方面又大大发展了第三章所讲的微分学的基本思想，即“略去高阶无穷小”。但是我们所得又远不止于此。我们把切向量变成了一个一阶微分算子，而切映射作为函数微分的推广并不只是把 $X_P$ 映为另一个微分算子例如 $Y_Q$，而且如定理6指出的那样，在经过了一定的解释以后，对任意的 $X_P\in T_PM$ 给出一个实数值 $X_P(f)$，这就是(26)式的含意。$X_P(f)$ 对 $X_P$ 当然是线性的：
+\[
+ [c_1X_P^{(1)}+c_2X_P^{(2)}](f)
+ =(df_P)(c_1X_P^{(1)}+c_2X_P^{(2)})
+ =c_1X_P^{(1)}(f)+c_2X_P^{(2)}(f),
+\]
+所以 $df$ 是 $T_PM$ 上的线性泛函，而且因为 $\dim T_PM=\dim M=m$ 是有限的，所以还是 $T_PM$ 上的连续线性泛函。这样，$df_P$ 就成了 $T_PM$ 的对偶空间 $T_P^*M$ 中的元。上面我们说切映射的研究导致了一种深刻的对偶性的出现就是指此。
+
+$T_P^*M$ 之元称为余切向量，其空间 $T_P^*M$ 称为余切空间。余切空间作为 $T_PM$ 之对偶空间其维数与 $T_PM$ 相同，即同为 $\dim M=m$。现在要问，$df_P$ 是否已概括了全部余切向量？或者说，余切向量是否全由某个光滑函数 $f$ 之微分生成？当然不是如此，这是一个很深刻的问题，我们将在§4中讨论它。在目前我们只需指出一点，我们现在讨论余切向量是限制固定一个 $P$ 点的，而当 $P$ 在 $M$ 上变时，这个余切向量也会变动，这时是否所有这些余切向量都是由同一个函数之微分生成是很不确定的。在古典的微积分教本中我们已见到这种问题。例如，设有 $xdy-ydx$，这里 $(x,y)\ne(0,0)$，当 $(x,y)$ 变动时能不能找到一个函数 $\varphi(x,y)$ 使 $xdy-ydx=d\varphi$？当然不行，因为如果有这样的光滑函数 $\varphi$ 存在，当有 $x=\partial\varphi/\partial y$，$-y=\partial\varphi/\partial x$，而 $\partial^2\varphi/\partial y\partial x=-1$，$\partial^2\varphi/\partial x\partial y=1$，二者不相等。但是若用 $1/(x^2+y^2)$ 去乘此式，得到
+\[
+ \frac{x\,dy-y\,dx}{x^2+y^2}=d\left(\arctan\frac{y}{x}\right),
+\]
+前面要求 $(x,y)$ 不是原点原因在此。我们不去讨论当 $P$ 变动时怎样求出各点的余切空间中的全部元素，而要问，当 $P$ 固定时，怎样求 $T_P^*M$ 的基底。由于 $T_P^*M$ 维数为 $m$，所以我们想去求出 $T_P^*M$ 的 $m$ 个线性无关的元。(27)告诉我们 $df_P$ 是 $\{dx_P^i\},i=1,2,\ldots,m$ 的线性组合，所以只要得证 $\{dx_P^i\}$ 是线性无关的则它们必是 $T_P^*M$ 的一个基底。
+
+因此，设有实数 $\lambda_1,\ldots,\lambda_m$ 使
+\[
+ \lambda_i\,dx_P^i=0,
+\]
+把双方作用到 $\partial/\partial x^j$ 上，由(28)即得
+\[
+ \lambda_i=0,\qquad i=1,2,\ldots,m.
+\]
+因此 $\{dx_P^i\},i=1,2,\ldots,m$，是 $T_P^*M$ 之基底，概括以上所述，我们有
+
+\noindent\textbf{定义与定理8}\quad $T_PM$ 之对偶空间 $T_P^*M$ 称为 $M$ 在 $P$ 点的余切空间，若在 $M$ 上某个坐标邻域中取局部坐标 $\{x^i\},i=1,2,\ldots,m$，则 $\{dx_P^i\}$ 是 $T_P^*M$ 的一个基底，从而 $T_P^*M$ 之一切元，即 $M$ 在 $P$ 点的一切余切向量必可写为
+\begin{equation}
+ \omega_P=\lambda_i(P)\,dx_P^i.
+ \tag{29}
+\end{equation}
+
+\noindent\textbf{注1}\quad 当 $P$ 变动时 $\omega_P$ 不一定是某个函数之微分，即若不附加其它条件，$\lambda_i(P)$ 不会是某个光滑函数 $\varphi$ 之全部偏导数，所以(29)称为微分形式而不是微分。
+
+\noindent\textbf{注2}\quad 在局部坐标 $x$ 中，$\{\partial/\partial x^i\}$ 与 $\{dx^i\}$ 是 $T_PM$ 与 $T_P^*M$ 之一对对偶基底。
+
+\noindent\textbf{注3}\quad 至此我们应该提一下切（余切）向量究竟是协变的还是逆变的？$T_PM$ 的一个基底是 $\{\partial/\partial x^1,\ldots,\partial/\partial x^m\}$，按我们前面的讲法是说 $\partial/\partial x^i$ 是协变的。但是前面讲的是 $\partial f/\partial x^i$，它是梯度向量 $\operatorname{grad}f$ 的分量，即以 $\{e_1,\ldots,e_m\}$ 为基底时的坐标。现在的 $\partial/\partial x^i$ 本身就是一个向量，它是标架 $\{\partial/\partial x^1,\ldots,\partial/\partial x^m\}$ 的第 $i$ 个元。它不是某一个向量的坐标，它自己却有坐标，例如 $\partial/\partial x^i\cong(1,0,\ldots,0)$。$T_PM$ 的任一元 $X_P=\xi^i\partial/\partial x^i$，$\xi$ 才是其相对于标架 $\{\partial/\partial x^1,\ldots,\partial/\partial x^m\}$ 的坐标，$\partial/\partial x^i$ 是协变的，其坐标则一定是逆变的。这样，$X_P$ 才是与坐标无关的，无所谓协变与逆变。同样，$T_P^*M$ 中的任一元 $\omega=\lambda_i dx^i$，$\{dx^1,\ldots,dx^m\}$ 是标架，每一个 $dx^i$ 都是一个向量，而且是逆变的。这样，为了使 $\omega$ 成为与坐标无关的，$\omega$ 对于上述基底的坐标 $\{\lambda_1,\ldots,\lambda_m\}$ 又一定是协变的。
+
+最后引入一个记号，我们记 $df_P$ 为 $f_*$，记 $F\circ f=f^*F$，$f_*$ 是一个“推前”（push forward），因为 $f$ 把 $M$ 映成 $N$，$f_*$ 则把 $T_PM$ 映成 $T_QN$，“方向”是一致的；$f^*$ 则是一个“拉回”（pull back），因为若 $F$ 定义在 $N$ 上，则 $F\circ f$ 定义在 $M$ 上，所以 $f^*F$ 把原来定义于 $N$ 上的“对象”（现在是一个函数）拉回到 $M$ 上来了。这样一来(25)式就可以写成
+\[
+ \langle f_*X_P,F\rangle=\langle X_P,f^*F\rangle.
+\]
+它是说，或者把 $M$ 上的切向量 $X_P$ 推前到 $N$ 上成为 $f_*X_P\in T_QN$，然后把它作用到定义在 $N$ 上的函数 $F$ 上去；或者向量 $X_P$ 不动而把定义在 $N$ 上的 $F$ 用 $f^*$ 拉回到 $M$ 上，再与 $X_P$ 作用，(25)表明，这两种方法结果是一致的。
+
+用现在的记号就发现 $f_*$ 与 $f^*$ 的关系恰好是互相对偶的。我们又时常把 $f_*$ 写成 $T_Pf$，于是切映射就有了几种记法：$df(P),f_*(P)$ 或 $T_Pf$ 或 $(Tf)(P)$。
+
+\noindent\textbf{3. 切丛与余切丛}\quad
+我们多次讲过，在函数的微分的定义中出现的 $f(x+h)$，$x$ 与 $h$ 必须从概念上加以区别。现在可以解释为什么要这样做了。设有微分流形 $M$，其维数为 $n$，令 $U\subset M$ 是其上的一个区域，对于每一点 $P\in U$ 都可以作其切空间 $T_PM$。把它们并起来，并记所得为
+\[
+ T_UM=\bigcup_{P\in U}T_PM,
+\]
+称为 $U$ 上的切丛（特别当 $U=M$ 时，我们就记之为 $TM$）。这个集合在物理、力学和几何学中是很有用的，它的元素即“点”为 $(x,v)$，其中 $x\in U,v\in T_xM$，如果用局部坐标表示即为 $(x^1,\ldots,x^n;v^1,\ldots,v^n)$，这里 $x$ 和 $v$ 就是分开来的。在古典的微分学中所讲的 $f(x+h)$，$x$ 与这里讲的 $U$ 中之点相应，$h$ 则与这里讲的 $v$ 相应。只是因为在古典的微分学中，$x\in U=(a,b)$，$h\in\mathbb R$（这里 $\mathbb R$ 作为一个集合即前面的实数域，作为一个线性空间即 $\mathbb R^1$，下面对它们不作区别都记为 $\mathbb R$）而确实可以作加法。这样 $x+h$ 其实是表示以 $x$ 点为原点作向量 $h$，亦即在 $x$ 点附加上曲线 $y=f(x)$ 过 $(x,f(x))$ 的切线，这样就得到曲线 $y=f(x)$ 之切丛。在讲微分概念时，要固定 $x$ 是因为限于在某点的切空间中讨论问题，用不到切丛。现在有了微分流形的切丛概念以后才发现 $(x,v)$ 中 $x$ 与 $v$ 本来就是泾渭分明的：$x\in M$，对它可以作微分流形理论所允许的各种操作，但就是不能作加法，因为 $M$ 一般没有线性结构；反之，$v\in T_xM\cong\mathbb R^n$，在同一点 $x$ 的各个不同 $v$ 之间则允许作线性运算，但对不同点的 $v$ 例如对 $(x_1,v_1)$ 和 $(x_2,v_2)$，当 $x_1\ne x_2$ 时 $v_1+v_2$ 就是没有意义的，更不说 $x+v$ 了。以上的做法就是在 $M$ 的每一点上附上一个线性空间 $T_PM$；当然也可以附加 $T_P^*M$ 而得到余切丛 $\bigcup T_P^*M$ 或 $T^*M$；甚至可以附上其它的什么，例如附上一条直线得到线丛，附上一个球得到球丛，诸如此类都是一般所谓纤维丛之特例。这在物理学与几何学中是极大的进步，但已远远超出了本书所可能涉及的范围。我们只能简单地提一下。这类几何对象已经远远地超过我们的直觉。当然有一些极简单的情况，例如一条空间曲线 $M$（注意 $M$ 是在 $\mathbb R^3$ 中扭曲的，不是平放在纸面上的平面曲线），其在 $P$ 点的切线一部分在纸面上方，另一部分在纸面下侧，本是看不见的，合起来成为了一个如镰刀刃口那样的曲面，这个2维曲面就是切丛 $TM$。图7-2-5上用虚线画的是切线被曲面前一叶遮住而看不见的部分。$M$ 称为这个曲面的脊线（edge of regression）。这种几何图形在微分几何的曲线理论中会出现，在奇点理论中也会出现，是切丛几何形象的一个好例子。但除此以外还有什么“看得见摸得着”的例子？至于余切丛，因为余切空间就已经没法用几何表示了，更不必说余切丛了。然而几何直观又确实是很有用的，所以我们不妨把这些切空间都画成竖直的直线，于是如图7-2-5的下方，$TM$ 反而成了一个“柱面”$M\times\mathbb R$，这当然“很不像”了，但却比“看得见摸得着”的图形更准确，因为例如 $S^1$ 的切丛，如果真要画出来，就是 $\mathbb R^2$ 上挖出了单位圆盘，但却是由两叶合成的，因为经过圆外一点可以向此圆作两条切线，所以这一点既在 $T_{P_1}S^1$ 上，又在 $T_{P_2}S^1$ 上。反而圆周上的点只在一条切线上，所以 $TS^1$ 好像是把那个镰刀刃口压平了的平面区域。就 $TS^1$ 应为2维流形这点来说，这个图形倒很真实，但是说它与柱面 $S^1\times\mathbb R$ 同构（这是真的），却是看不出来。画成图7-2-5的下图读者可能会感到，$T_PM$ 与 $M$ 相切于 $P$ 点没有画出来，但是再一想，把微分流形画在 $\mathbb R^2$ 或 $\mathbb R^3$ 中本来就不一定办得到，有图7-2-5下图反倒很有利。所以一般书上讲切丛、余切丛乃至一般的纤维丛总是用它以示意。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.78]
+  % upper: tangent developable sketch
+  \begin{scope}[yshift=3.2cm]
+    \draw[thick] (-4,-.2) .. controls (-2.8,1.6) and (-1.2,1.0) .. (0,0.2)
+                  .. controls (1.2,-.5) and (2.6,.15) .. (4,1.5) node[right] {$M$};
+    \foreach \x/\a in {-3.4/42,-2.6/28,-1.8/15,-1/2,0/-8,1/-13,2/-5,3/15}{
+      \draw[thin] (\x,-.4) -- ++({2.0*cos(\a)},{2.0*sin(\a)});
+    }
+    \fill (0,.2) circle (1.2pt) node[below] {$P$};
+    \node at (3.1,2.0) {$T_PM$};
+  \end{scope}
+  % lower: trivialized vertical fibers
+  \draw[thick] (-4,-1.1) .. controls (-2.5,-1.6) and (-1,-1.5) .. (0,-1.3)
+                .. controls (1.5,-1.1) and (2.8,-.5) .. (4,.1) node[right] {$M$};
+  \foreach \x in {-3.6,-3,-2.4,-1.8,-1.2,-.6,0,.6,1.2,1.8,2.4,3,3.6}{
+    \draw (\x,-2.6)--(\x,.4);
+  }
+  \fill (0,-1.3) circle (1.2pt) node[below] {$P$};
+  \node at (.4,.25) {$T_PM$};
+\end{tikzpicture}
+\caption*{图7-2-5}
+\end{figure}
+
+上面我们说到切丛与余切丛的概念在力学上是很有用的，实际上可以说正是力学和物理学问题启发了这些概念。例如讨论一个自由度为 $n$ 的力学系，为了刻画它的状况，我们需要知道这系统在时刻 $t$ 的位置，这是由它的 $n$ 个广义坐标 $(q^1(t),\ldots,q^n(t))$ 来刻画的。这个集合通常是一个 $n$ 维流形 $M$ 而不一定是 $\mathbb R^n$ 的某个区域。这是因为这个力学系统会受到某些约束，例如被限制在某一曲面上运动。为了刻画这个系统，还需要了解它的广义速度 $((\dot q^1(t),\ldots,\dot q^n(t)))$。如果固定一点 $q$，则一切可能的速度成为 $T_qM$，而如果 $q$ 变化，则应该用一个 $2n$ 维空间中的点 $(q^1,\ldots,q^n,\dot q^1,\ldots,\dot q^n)$ 来刻画它。这些点显然在 $M$ 的切丛 $TM$ 内（但不一定是整个 $TM$，因为速度也可能受到某些约束，例如某些守恒律的限制）。$M$ 称为这个力学系统的构形空间（configuration space）。第一节中我们还说过，描述一个力学系统有时应该用广义动量 $(p_1(t),\ldots,p_n(t))$。广义动量是一个协变向量而广义速度 $(\dot q^1(t),\ldots,\dot q^n(t))$ 是一个逆变向量。协变向量与逆变向量的内积是一个标量。因此 $p(t)$ 成为 $T_PM$ 上的线性泛函。所以，广义动量是一个余切向量，而 $(q^1,\ldots,q^n;p_1,\ldots,p_n)\in T^*M$。所以，如果我们利用广义动量来讨论力学系统，余切丛就成了合适的框架。这时，$M$ 仍称为构形空间，余切丛 $T^*M$ 则称为相空间（phase space）。（切丛一般不应称为相空间。）经典力学是这样，量子力学也是这样，不过它一般需要无限维空间而更加复杂了。
+
+可见，研究切丛与余切丛的几何结构，不只在数学上而且在物理和力学上都有重要的意义。下面我们的目标是证明，它们都是一类很特殊的微分流形。由于余切丛的讨论与切丛的讨论是平行的，所以我们只讨论切丛。
+
+首先，切丛（余切丛）是切空间（余切空间）之并：
+\begin{equation}
+ TM=\bigcup_{P\in M}T_PM,
+ \qquad
+ T^*M=\bigcup_{P\in M}T_P^*M.
+ \tag{30}
+\end{equation}
+我们称 $TM$（$T^*M$）为全空间 $E$，$M$ 为底空间（base space）。这些丛都有一个投影算子 $\pi$：
+\[
+ \pi:E\to M,
+ \qquad (x,v)\in T_PM\mapsto x\in M.
+\]
+而底空间 $M$ 上一点 $P$ 在投影算子下的原像 $\pi^{-1}(P)=T_PM$（$T_P^*M$）必同构于 $\mathbb R^n$，称为 $E$ 在 $P$ 点处的纤维（fiber）。为了证明 $E$ 是微分流形，就应构造出它的坐标邻域 $V_\alpha$，这个坐标邻域中的坐标映射 $\Psi_\alpha$，以及证明迁移函数 $\Psi_\beta\circ\Psi_\alpha^{-1}$ 是一个微分同胚。所有这一切我们都将从 $M$ 的坐标邻域 $U_\alpha$、坐标映射 $\varphi_\alpha$ 以及迁移函数 $\varphi_\beta\circ\varphi_\alpha^{-1}$ 出发来完成。
+
+我们定义 $E$ 的坐标邻域 $V_\alpha$ 与坐标映射 $\Psi_\alpha$ 如下：
+
+（1）$V_\alpha=\pi^{-1}(U_\alpha)$。$E$ 上的拓扑应该这样定义，使得 $\pi:E\to M$ 是连续映射。这样 $V_\alpha$ 作为 $M$ 中开集 $U_\alpha$ 在连续映射下的原像成为 $E$ 中的开集，且
+\begin{equation}
+ \bigcup_\alpha V_\alpha=E.
+ \tag{31}
+\end{equation}
+（2）我们要求 $V_\alpha$ 与 $U_\alpha\times\mathbb R^n$ 为同胚。因此存在坐标映射
+\[
+ \Psi_\alpha:V_\alpha\to\varphi_\alpha(U_\alpha)\times\mathbb R^n
+ \subset\mathbb R^n\times\mathbb R^n\cong\mathbb R^{2n},
+\]
+而 $V_\alpha$ 中之一点 $Q$ 有局部坐标 $(x^1,\ldots,x^n;\xi^1,\ldots,\xi^n)$。实际上，由于 $E=\bigcup_PT_PM$，故 $Q=(x,X)$，$x$ 是 $M$ 中某一点，其在 $\varphi_\alpha$ 中之局部坐标为 $(x^1,\ldots,x^n)$，而 $X$ 是 $x$ 点处的一个切向量
+\[
+ X=\xi^i\frac{\partial}{\partial x^i}.
+\]
+（3）$V_\alpha\cap V_\beta$ 中的迁移函数 $\Psi_{\beta\alpha}=\Psi_\beta\circ\Psi_\alpha^{-1}$ 是这样定义的：对于 $V_\alpha\cap V_\beta$ 中同一点，有两个不同的局部坐标 $(x_\alpha,\xi_\alpha)$ 与 $(x_\beta,\xi_\beta)$。设这一点在底空间 $M$ 上之投影为 $P$，则 $x_\alpha$ 与 $x_\beta$ 分别是 $P$ 在 $(U_\alpha,\varphi_\alpha)$ 与 $(U_\beta,\varphi_\beta)$ 下的局部坐标，而
+\[
+ x_\beta=\varphi_\beta\circ\varphi_\alpha^{-1}(x_\alpha),
+ \qquad
+ \xi_\alpha=d\varphi_\alpha(P)X_P,
+ \qquad
+ \xi_\beta=d\varphi_\beta(P)X_P,
+\]
+所以
+\[
+ \xi_\beta=(d\varphi_\beta\circ d\varphi_\alpha^{-1})(P)\xi_\alpha
+ =d\varphi_{\beta\alpha}(P)\xi_\alpha.
+\]
+$P$ 当变动时显然对 $x\in U_\alpha\cap U_\beta$ 是 $C^\infty$ 的。于是我们得知
+\[
+ \Psi_{\beta\alpha}=(\varphi_{\beta\alpha},d\varphi_{\beta\alpha})
+\]
+是 $V_\alpha$ 到 $V_\beta$ 中的 $C^\infty$ 映射，在底空间上它就是 $M$ 的迁移函数，在纤维上则是一个 $C^\infty$ 依赖于 $x$ 的线性同构。
+
+\noindent\textbf{定义与定理9}\quad 设 $M$ 为一个微分流形，维数为 $n$，则 $\bigcup_PT_PM$（$\bigcup_PT_P^*M$）有如上的微分流形构造，维数为 $2n$，称为 $M$ 之切丛（余切丛）。
+
+以上构造 $TM$ 与 $T^*M$ 时的第二点：$\Psi_\alpha:V_\alpha\to\varphi_\alpha(U_\alpha)\times\mathbb R^n$ 最值得注意。当然，在每点 $P$ 处都有切空间 $T_PM$（余切空间 $T_P^*M$）与 $\mathbb R^n$ 同构，故当 $P$ 点变化，各点的 $T_PM$ 互相亦同构，因而若给出一个固定的 $\mathbb R^n$，这些 $T_PM\cong\mathbb R^n$，而且这个同构关系在局部坐标中可以用一非奇异矩阵 $A(x)$ 表示，切丛的定义要求 $A(x)$ 之元是 $x$ 之光滑函数，否则就看不出迁移函数之纤维部分是光滑的 $d\varphi_{\beta\alpha}$。这样，$\mathbb R^n$ 适用于 $P\in U_\alpha$ 时的所有纤维 $T_PM$ 均与 $\mathbb R^n$ 同构而与 $x$ 无关，这样 $\varphi_\alpha(U_\alpha)\times\mathbb R^n$ 才有乘积形式。这个情况习惯地说是，切丛必是局部平凡的（trivial locally）。那么可以问，一个微分流形 $M$ 的切丛可否是整体平凡的（trivial globally），即整体地同胚于 $M\times\mathbb R^n$（整体平凡的又称为可平行化（parallelizable）的）？不可能，下面是一个简单而重要的例子。
+
+$S^1$ 的切丛，上面我们说了，直观地可以认为是压平了的镰刀曲面。但是若将 $S^1$ 之每一点的切线（不妨规定按反时针方向取），都向上竖起 $\pi/2$，我们把这个操作称为“竖起变换”，很容易看到它是同胚，因而 $S^1$ 的切丛必然同胚于“竖起变换”的结果，即一个圆柱；$TS^1\cong S^1\times\mathbb R$，因此 $TS^1$ 是整体平凡的。但是如果稍作一点变动就发现情况大相径庭了。我们在 $S^1$ 上取一点 $P$，作一个竖起的切线（见图7-2-5下图），为简单起见在其上取一个有限长线段且以 $P$ 为中心，现在让 $P$ 依反时针方向绕 $S^1$ 运动而且一面运动一面向外侧倾倒，运动到角度为 $\theta$ 时，要求向外倾倒 $\theta/2$（其实在舞蹈表演中常看见这样的动作）。这样当 $P$ 点回到原处后，这个线段（这个演员）就会恰好翻过来了，头朝地脚朝天，成为一个默比乌斯带。所以默比乌斯带可以看成一个线丛。但是它决不可能与 $TS^1$ 同胚，因此不会是整体平凡的。例如，$TS^1$“拦腰切断”将会成为两个分离的圆柱，而把默比乌斯带沿 $S^1$ 剪开——也就是“拦腰切断”——将成为两个套在一起的默比乌斯带。读者自己可以试一下，可是，这样的区别不是一个小游戏，在物理问题中它可能反映一些根本的性质上的区别。由此可见，切丛和余切丛内容非常丰富。
+
+最后我们再介绍一个向量丛（包括切丛与余切丛）的光滑切口（cross-section）的概念。这就是由 $M$ 到 $E$ 中的一个光滑映射 $\sigma$，而且 $\pi\circ\sigma=\mathrm{id}:M\to M$。对于切丛，例如在一个坐标邻域 $U$ 内，其光滑切口必可表示为
+\[
+ X(x)=\xi^i(x)\frac{\partial}{\partial x^i},
+\]
+这里 $\xi^i(x)$ 是 $U$ 上的 $C^\infty$ 函数。这个切口称为 $U$ 上的一个向量场。同样 $T^*M$ 的切口是 $\omega(x)=\lambda_i(x)dx^i$，$\lambda_i(x)$ 是光滑的，它称为 $U$ 上的一个微分形式。注意，它们都是局部切口。一个向量丛是否有整体切口存在，是一个问题。又，有时我们把底空间 $M$ 看成是 $E$ 的零切口。
+
+\noindent\textbf{4. 浸入、嵌入、浸没和子流形}\quad
+微分流形的子流形当然是一个重要概念。其实，所有的微分流形都可以看成是某一个高维欧氏空间 $\mathbb R^N$ 中的子流形，只不过因为这样做等于对每个微分流形都规定要放在一个包含空间中去研究，而包含空间的概念是不必要的。而且，一旦把微分流形 $M$ 放在 $\mathbb R^N$ 中去，$\mathbb R^N$ 自己就有一个标准的微分结构，这个微分结构又与 $M$ 的微分结构有什么关系呢？但不论如何，子流形的概念总是极其重要的，而且其关键问题就在于如上所述的两种微分结构的关系，所以我们应该从一个明确无误的定义开始。
+
+\noindent\textbf{定义6}\quad 设 $M$ 是一 $n$ 维微分流形，$N\subset M$ 称为 $M$ 的一个 $k$（$k\le n$）维子流形，是指对每一点 $P\in N$ 都有一个在 $M$ 中的坐标邻域 $(U,\varphi)$ 使得
+
+（1）$\varphi(N\cap U)=\mathbb R^k\cap\varphi(U)$；
+
+（2）$(N\cap U,\varphi|_{N\cap U})$ 是 $P$ 在 $N$ 中的坐标邻域和坐标映射。
+
+\noindent\textbf{注1}\quad 很容易证明，$\{N\cap U,\varphi|_{N\cap U}\}$ 是 $N$ 的一个图册，所以 $N$ 本身也成为一个微分流形，而其微分结构是由 $M$ 的微分结构诱导来的。
+
+\noindent\textbf{注2}\quad 我们又时常定义一个映射——包含映射（inclusion）$i:N\to M$，$P(\in N)\mapsto P(\in M)$，于是子流形 $N$ 又可看成是包含映射的像：$N=i(N)$。于是子流形的定义又可以这样来看：首先我们已有了一个 $k$ 维微分流形 $N$，作为一个集合，它是 $M$ 的子集，因此可以认为 $i(N)=N$。如果 $i(N)$ 是如定义中说的 $M$ 的子流形，则 $M$ 在 $i(N)$ 上诱导出一个微分结构，所以，一方面 $N$ 与 $i(N)$ 是一一对应的，但是二者的关系又不止于此，$N$ 和 $i(N)$ 还有相同的微分结构：$N$ 本身自己已有一个微分结构，$i(N)$ 则从 $M$ 中继承了一个诱导的微分结构，二者应该相同。所以，$N$ 与 $i(N)$ 是微分同胚的（当然也是同胚的）。这样把 $N$ 与 $i(N)$ 分开的好处在于下面我们将不必限制于 $i$ 而对某一可微映射 $f$ 把 $N$ 与 $f(N)$ 比照起来研究。
+
+上述关于子流形的定义虽然在几何上是十分清楚自然的，用起来并不方便，因为它要求去寻找适当的坐标邻域和坐标映射 $(U,\varphi)$。解决这个困难的基本工具是反函数定理。第三章§5中我们讲了局部的反函数定理，即其中的定理1，我们把它重新叙述于下：
+
+设 $U\subset\mathbb R^n$ 是一开集，$f:U\to\mathbb R^n$ 是一个光滑映射，且 $0\in U,f(0)=0$，若 $(Tf)(0)$ 是非退化的，则 $f$ 必是 $x=0$ 在 $U$ 中的某个邻域到 $f(0)$ 在 $\mathbb R^n$ 中的某个邻域的微分同胚。
+
+我们先把它用于微分流形的情况，于是把 $U$ 改成某个 $n$ 维微分流形 $M$，可微映射 $f:M\to N$，$P\in M,f(P)=Q\in N$，$N$ 是另一个同维数的微分流形，而 $T_Pf$ 是非退化的。这时很容易证明，$f$ 在 $P$ 附近是局部的微分同胚。这个证明是很容易的：只需取 $M$ 与 $N$ 在 $P$ 与 $Q$ 附近的坐标邻域 $(U,\varphi)$ 与 $(V,\psi)$，并用 $f$ 之坐标表示 $\psi\circ f\circ\varphi^{-1}$ 作为反函数定理中的 $f$，用 $\varphi(U)\subset\mathbb R^n$ 作为其中的 $U$，并以 $\psi(Q)=0$ 的邻域 $\mathbb R^n$ 作为其中的 $f(0)$ 之邻域即可，$(Tf)(0)$ 之非退化性现在就是 $\psi\circ f\circ\varphi^{-1}$ 在 $Q$ 处的雅可比行列式不为0。
+
+这个定理对于 $M$ 与 $N$ 之维数不相同：$\dim M=m,\dim N=n$（$m\ne n$）的情况也有推广，这就是第三章§5的定理2与定理3。我们很容易把它们用于微分流形的情况，并分别称之为浸入（immersion）定理与浸没（submersion）定理。下面我们直接对微分流形 $M$ 与 $N$ 的可微映射 $f$ 写出它们而不加证明。先给出两个定义，其中用到 $M,N,P,Q$ 等等都已如上述。
+
+\noindent\textbf{定义7}\quad 当 $m\le n$ 时，若 $T_Pf:T_PM\to T_QN$ 是一个单射，就说 $f$ 在 $P$ 点附近是一个浸入。若 $f$ 在 $M$ 之每一点附近均为浸入，就说 $f:M\to N$ 是一个浸入。
+
+在通常的书上，常用条件 $m<n$，其实当 $m=n$ 时，由于 $T_Pf$ 是一个方阵，而一个方阵是单射与它是一个一一映射是一样的。但有一点要说明：按第三章§5的定理2的说法，定义7应改为“$T_Pf$ 当 $P$ 在某点附近时为单射”，为什么这里只说在 $P$ 点为单射？用局部坐标表示最容易说明这一点。现在 $T_Pf$ 是一个 $n\times m$ 矩阵，而单射条件，即此矩阵之秩为 $m$，于是有一个 $m$ 阶子行列式不为0。但是这个矩阵之元为光滑函数，所以其子行列式为连续函数，只要在 $P$ 点不为0，则在 $P$ 点附近也不为0。又由于现在 $m$ 是最大秩，此矩阵之秩不会大于 $m$，所以一旦有一个 $m$ 阶子行列式在 $P$ 点不为0，则它在 $P$ 附近之秩均为 $m$。这就是在定义中只说 $T_Pf$ 在 $P$ 点为单射的理由。下面讲满射时也有相类似的情况，在那里我们就不再提醒这一点了。
+
+\noindent\textbf{定理10（局部浸入定理）}\quad 设 $f:M\to N$ 在 $P\in M$ 处是一单射，这里 $m=\dim M<n=\dim N$，则必存在 $P$ 与 $f(P)=Q$ 的邻域中的局部坐标 $x$ 与 $y$，使 $f$ 可以表示为
+\begin{equation}
+ f(x^1,\ldots,x^m)=(x^1,\ldots,x^m;0,\ldots,0).
+ \tag{32}
+\end{equation}
+(32)右方有时称为一个典则浸入（canonical immersion）；它把 $\mathbb R^m$ 浸入在 $\mathbb R^n$（$n>m$）时，而把 $\mathbb R^m$ 中一点 $(x^1,\ldots,x^m)$ 变成 $\mathbb R^n$ 中 $(x^1,\ldots,x^m;0,\ldots,0)$，正如把 $\mathbb R^1$ 看成 $(x,y)$ 平面 $\mathbb R^2$ 中的 $x$ 轴那样。
+
+浸入必然是 $M$ 与 $f(M)$ 的局部的微分同胚。这使我们设想，$M$ 在 $N$ 中的浸入像 $f(M)\subset N$ 应该局部地是 $N$ 的子流形。一个特别明显的例子是曲线。若 $y=f(x)$ 是一条光滑曲线，它必可看作是由 $\mathbb R^1$ 到 $\mathbb R^2$ 的浸入像，这个浸入可以写为
+\[
+ x=t,\qquad y=f(t),\qquad t\in(a,b).
+\]
+$M$ 是 $\mathbb R$ 上的开区间 $(a,b)$，$N$ 则是 $\mathbb R^2$。这个映射的切映射是
+\[
+ t\longmapsto(x'(t),f'(t)).
+\]
+它自然是单射，因为 $x'(t)=1$。稍加推广可以类似地讨论更高维的几何图形如曲面等等。但是，浸入像并不一定整体是子流形。首先，$f(M)$ 可能是自交的。例如图7-2-6所示确实是一个浸入，因为局部地看来，$(A_1,B_1)$ 被映入曲线上的上行弧段 $AB$，而把 $P_1$ 映到 $Q$，这是一个微分同胚，同样 $(C_1,D_1)$ 与下行弧段 $CD$ 也可以互相微分同胚。但是 $f(\mathbb R)$ 显然不是 $\mathbb R^2$ 的子流形。即令 $f(M)$ 不自交而与 $M$ 可以是一对一的，它也不一定是子流形。$y=\sin(1/x)$，映 $M=(0,+\infty)$ 到 $\mathbb R^2$ 就是一个例子。如果考虑曲面和其它更高维的情况就更复杂了。但是因为至少局部地看来，浸入像是子流形，所以有时也称 $f(M)$ 为浸入子流形（immersed submanifold）。为了使 $f(M)$ 成为如定义6那样的子流形，就需要对 $f$ 再加限制，例如要求 $f$ 是嵌入映射（embedding）：
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.9,>=stealth]
+  \begin{scope}
+    \draw[->] (-4.8,-1.2)--(-1.8,-1.2);
+    \fill (-4.35,-1.2) circle (1pt) node[below] {$A_1$};
+    \fill (-3.85,-1.2) circle (1pt) node[below] {$P_1$};
+    \fill (-3.25,-1.2) circle (1pt) node[below] {$B_1$};
+    \fill (-2.65,-1.2) circle (1pt) node[below] {$C_1$};
+    \fill (-2.15,-1.2) circle (1pt) node[below] {$D_1$};
+    \draw[->] (-3.3,-.6)--(-1.15,.15) node[midway,above] {$f$};
+  \end{scope}
+  \begin{scope}[xshift=1.2cm,yshift=.35cm]
+    \draw[thick] (-.8,-.2) .. controls (.1,.2) and (.8,1.0) .. (1.3,1.7)
+                 .. controls (1.8,2.2) and (2.2,1.6) .. (2.0,.9)
+                 .. controls (1.7,.3) and (.8,-.25) .. (0,-.9)
+                 .. controls (-.4,-1.2) and (-.2,-.3) .. (.3,.4)
+                 .. controls (.8,1.0) and (1.4,.9) .. (2.0,.65);
+    \fill (.55,.68) circle (1.2pt) node[left] {$Q$};
+    \node at (.2,.15) {$A$}; \node at (1.25,1.0) {$B$};
+    \node at (0,-.6) {$C$}; \node at (1.4,.45) {$D$};
+    \node at (2.3,1.8) {$N$};
+  \end{scope}
+\end{tikzpicture}
+\caption*{图7-2-6}
+\end{figure}
+
+\noindent\textbf{定义8}\quad 若 $M,N$ 是两个微分流形而 $\dim M=m<\dim N=n$，$f:M\to N$ 是可微映射，如果
+
+（1）$f$ 在 $M$ 之各点上均为浸入；
+
+（2）$M$ 和 $f(M)$ 之间有一一对应关系；
+
+（3）$M$ 与赋有 $N$ 之诱导微分结构的 $f(M)$ 微分同胚；
+
+则 $f$ 称为一个嵌入。
+
+嵌入像当然是一个子流形。这类子流形称为嵌入子流形（embedded submanifold）。
+
+本书中一再提到一个抽象的 $k$ 维微分流形不一定能在 $\mathbb R^{k+1}$ 中实现，例如黎曼曲面就是这样。实际上，惠特尼（H.~Whitney）证明了下面的定理：
+
+\noindent\textbf{惠特尼嵌入和浸入定理}\quad $k$ 维微分流形必可嵌入在 $\mathbb R^{2k+1}$ 中而成为其嵌入子流形；或者浸入在 $\mathbb R^{2k}$ 中而成为其浸入子流形。
+
+读者会问，一个浸入在什么条件下成为嵌入？对这一类问题我们不说了。
+
+上面我们讲了一种定义子流形的方法，即用一个低维流形向高维流形作映射，并且看映射的像是否子流形。但是还有另一个方法，即考虑一个高维流形向低维流形的映射，并且考虑低维流形的某一点在此映射下的原像，看它是否是高维流形的子流形。前一个方法以浸入概念为基础，后一个方法则以浸没（submersion）概念为基础，所以我们首先给出浸没概念的定义。
+
+\noindent\textbf{定义9}\quad 设 $f:M\to N$ 是两个微分流形之间的可微映射，$\dim M=m>\dim N=n$，$P\in M$，$f(P)=Q\in N$，若 $T_Pf$ 为一满射就说 $f$ 在 $P$ 点为一个浸没（submersion），若 $f$ 在 $M$ 上每一点均为浸没就说 $f$ 在 $M$ 上为一浸没。
+
+这里我们有
+
+\noindent\textbf{定理11（局部浸没定理）}\quad 设上述 $f:M\to N$ 为一浸没，$f(P)=Q$，则必存在 $P$ 的邻域 $U$ 中的局部坐标 $(x^1,\ldots,x^m)$ 以及 $Q$ 在 $N$ 中的邻域 $V$ 中的局部坐标 $(y^1,\ldots,y^n)$，使在此坐标系下，映射 $f$ 可写为
+\begin{equation}
+ y=f(x)=\pi(x^1,\ldots,x^m)=(x^1,\ldots,x^n).
+ \tag{33}
+\end{equation}
+这里 $\pi:\mathbb R^m\cong\mathbb R^n\times\mathbb R^{m-n}\to\mathbb R^n$ 是除 $\mathbb R^m$ 为坐标的前 $n$ 个分量 $(x^1,\ldots,x^n)\in\mathbb R^n$ 的投影映射。这个投影映射也称为一个典则浸没（canonical submersion）。
+
+这个定理就是第三章§5的定理3投影定理，利用它可以得到子流形的一个判据，但在这以前我们先引进一个概念。
+
+\noindent\textbf{定义10}\quad 设 $f:M\to N$ 是微分流形 $M$ 到 $N$ 的可微映射，$\dim M=m,\dim N=n$，$P\in M,Q\in N$。
+
+（1）如果 $T_Pf$ 之秩小于 $n$，则称 $P$ 为 $f$ 之临界点（或称奇点），反之称 $P$ 为 $f$ 之正则点。
+
+（2）若 $P$ 为 $f$ 之临界点，则称 $f(P)$ 为 $f$ 的临界值，若 $f^{-1}(Q)$ 中一切点均为正则点，则称 $Q$ 为 $f$ 之正则值。
+
+这样，若对一切 $P\in f^{-1}(Q)$，$T_Pf$ 是浸没，则 $Q$ 是正则值。有了这样一个概念，我们要把隐函数定理（第三章§5定理4）稍微改动一下：
+
+对 $f,M,N$ 仍作如上的解释。
+
+\noindent\textbf{隐函数存在定理}\quad 令 $m>n$，若 $Q\in f(M)$ 是 $f$ 的正则值，则 $f^{-1}(Q)$ 是一个微分流形，其微分结构是由 $M$ 的微分结构诱导而来，而且 $\dim f^{-1}(Q)=m-n$，或者说 $n$ 是 $f^{-1}(Q)$ 的余维数。
+
+其实证明是很简单的。我们不妨设 $P,Q$ 在某局部坐标中均为原点。第三章的定理是说 $f^{-1}(Q)$ 中有某一点 $P$（也设它为原点），使 $T_Pf$ 之秩为 $m$（但设源空间的维数为 $m+n$，所以自然有 $m+n>m$）\footnote{校勘：此段临时沿用第三章隐函数定理的记号，源空间维数为 $m+n$，目标空间维数为 $m$，故满秩应为 $m$，并有 $m+n>m$；下文 $f_j=x^j\ (j=1,\ldots,m)$ 以及 $f^{-1}(0)\cong\mathbb R^n$ 与此一致。}，这时 $T_Pf$ 自然是满射，而在 $P$ 附近，按局部浸没定理，$f$ 可以写为
+\[
+ f_j(x^1,\ldots,x^m,x^{m+1},\ldots,x^{m+n})=x^j,
+ \qquad j=1,2,\ldots,m.
+\]
+如果我们再取一个新的局部坐标
+\[
+ z^j=f_j(x)-x^j,
+ \qquad j=1,2,\ldots,m,
+\]
+\[
+ z^{m+j}=x^{m+j},
+ \qquad j=1,2,\ldots,n,
+\]
+则 $f^{-1}(0)$ 在 $P$ 附近就成为 $\mathbb R^n$：
+\[
+ \mathbb R^n:\quad z^j=0,
+ \qquad j=1,2,\ldots,m.
+\]
+现在 $M$ 中的微分结构是 $\mathbb R^{m+n}$，而 $f^{-1}(0)$ 在 $P$ 附近的微分结构是 $\mathbb R^n$，它自然是由 $\mathbb R^{m+n}$ 诱导而来。所以是子流形结构。所以，第三章中的隐函数定理适用于 $f^{-1}(Q)$ 之一点附近。用现在的提法，使用正则值的概念，这个证明适用于 $f^{-1}(Q)$ 中的一切点。又因 $f^{-1}(Q)\subset M$，令 $i$ 为包含映射，$i[f^{-1}(Q)]=f^{-1}(Q)$，所以子流形的一切要求 $f^{-1}(Q)$ 均可适合。这样就有关于子流形的一个最常用的判据：
+
+\noindent\textbf{定理12（原像定理）}\quad 若 $Q$ 为 $f:M\to N$ 之正则值，则 $f^{-1}(Q)$ 为一个维数为 $m-n$ 的子流形。
+
+这个定理与我们所熟悉的称子流形为以下方程组之解
+\[
+ f^j(x^1,\ldots,x^m)=0,
+ \qquad j=1,2,\ldots,n<m
+\]
+相一致。这里要求这些方程是“独立的”，即雅可比矩阵
+\[
+ \frac{\partial(f^1,\ldots,f^n)}{\partial(x^1,\ldots,x^m)}
+\]
+在这个方程组的轨迹上有最大秩 $n$。
+
+现在把这个定理用于上面一个没有解决的问题：$O(n)$ 是不是一个微分流形？设 $A$ 为一 $n$ 阶方阵，所谓 $A\in O(n)$ 即 $A$ 应适合 ${}^tA\cdot A=I$，${}^tA$ 是 $A$ 的转置矩阵。但不论 $A$ 是否正交矩阵，${}^tA\cdot A$ 总是对称方阵，记一切 $n$ 阶对称方阵之集为 $S(n)$，我们已说过，一个 $n$ 阶方阵可以看成 $\mathbb R^{n^2}$ 中的一个点，其各元素即为此点之坐标，$S(n)$ 于是也可看成 $\mathbb R^{\frac12n(n+1)}$。于是 $O(n)$ 就是以下方程在 $\mathbb R^{n^2}$ 中的解集合：
+\begin{equation}
+ f(A)={}^tA\cdot A=I.
+ \tag{34}
+\end{equation}
+我们视 $f$ 为 $\mathbb R^{n^2}$ 到 $S(n)\cong\mathbb R^{\frac12n(n+1)}$ 的映射，或者
+\[
+ O(n)=f^{-1}(I).
+\]
+现在以 $\mathbb R^{n^2}$ 为 $M$，$S(n)$ 为 $N$，我们需要证明的就只是 $I$ 为 $f$ 的正则值。注意到 $\mathbb R^{n^2}$ 与 $S(n)$ 都是 $\mathbb R^k$ 形的微分流形，所以 $T_A\mathbb R^{n^2}\cong\mathbb R^{n^2}$，$T_QS(n)=S(n)$，所以只要证明 $f$ 之切映射在 $f^{-1}(I)$ 为满射即可。但由切映射之局部坐标形式，并且注意到一个矩阵的元素即是其各个坐标分量，我们通过计算 $f(x+h)-f(x)$ 来求出 $df$，这里 $x=A$，不过 $h$ 与 $x$ 同维数，所以我们令 $x=A,h=B$ 都是 $n$ 阶方阵，计算 $df$ 时应略去阶数为1以上的量，现在则略去含 $B$ 之元素平方的量，这样得到
+\[
+ f(A+B)-f(A)=({}^tA+{}^tB)(A+B)-{}^tA\cdot A
+ ={}^tA\cdot B+{}^tB\cdot A+{}^tB B.
+\]
+略去最后一项即得
+\begin{equation}
+ d_Af\cdot B={}^tA\cdot B+{}^tB\cdot A.
+ \tag{35}
+\end{equation}
+所以为了证明 $d_Af:\mathbb R^{n^2}(\cong T_A\mathbb R^{n^2})\to S(n)(\cong T_{f(A)}S(n))$ 为满射，只需证明对任意 $D\in S(n)$，一定可以找到 $B\in\mathbb R^{n^2}$ 使
+\begin{equation}
+ {}^tA\cdot B+{}^tB\cdot A=D.
+ \tag{36}
+\end{equation}
+因为 $D\in S(n)$，$D={}^tD$，所以上式右方可写为 $D/2+{}^tD/2$ 而我们来解
+\[
+ {}^tA\cdot B=\frac12D.
+\]
+因为 $A$ 适合 ${}^tA\cdot A=I$ 所以 ${}^tA$ 非奇异，故由上式
+\begin{equation}
+ B=\frac12({}^tA)^{-1}D.
+ \tag{37}
+\end{equation}
+但这个 $B$ 必适合
+\[
+ {}^tB=\frac12{}^tD\,A^{-1},
+\]
+故
+\[
+ {}^tB\cdot A=\frac12{}^tD=\frac D2.
+\]
+而(37)给出的 $B$ 即适合(36)，所以 $d_Af$ 在 $f^{-1}(I)$ 上是满射。应用原像定理即知 $O(n)$ 是一个
+\[
+ n^2-\frac12n(n+1)=\frac12n(n-1)
+\]
+维微分流形。
+
+这个微分流形由两个连通分支组成，其中一个是 $SO(n)$，另一个之元行列式为 $-1$。

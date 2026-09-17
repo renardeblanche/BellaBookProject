@@ -1,0 +1,795 @@
+\chapter{Les polynômes : construction de $\mathbb C$}
+\origpage{235--255}
+
+La structure de l'ensemble des polynômes sur un corps $K$ est une structure très riche, (combien d'œufs au kilo?), par ses lois qui en font une algèbre, mais aussi parce que l'anneau des polynômes sera euclidien, parce qu'on fera intervenir les notions de racines, de factorisation... Enfin, si $K$ est un corps valué la topologie s'en mêlera; si $K=\mathbb R$, les signes interviendront, Stone Weierstrass viendra à la rescousse ce qui permettra à Bessel de transformer son inégalité en égalité par exemple.
+
+Autant dire qu'il y a du pain sur la planche!
+
+\BellaSection{1. Polynômes sur un corps $K$ commutatif}
+
+\medskip\noindent\textsc{Définition 7.1.} --- \emph{Soit un corps commutatif $K$. On appelle polynôme sur $K$ toute suite finie $(u_n)_{n\in\mathbb N}$ d'éléments de $K$, finie c'est-à-dire telle que $\{n,u_n\ne0\}$ soit finie.}
+
+Soit $A=(a_n)_{n\in\mathbb N}$ un polynôme sur $K$. L'ensemble des $n$, entiers naturels tels que $a_n$ soit non nul, étant fini on a deux cas. Soit cet ensemble est vide, $A$ est donc la suite nulle, notée 0, soit cet ensemble est non vide fini dans $\mathbb N$ donc il admet un plus grand élément (corollaire 3.45), $n_0$, appelé degré de $A$, et noté $d^\circ A$.
+
+\medskip\noindent\textsc{Définition 7.2.} --- \emph{Soit $A=(a_n)_{n\in\mathbb N}$ un polynôme non nul sur $K$. On appelle degré du polynôme $A$ le plus grand entier $n$ tel que $a_n\ne0$, et valuation de $A$ le plus petit entier $n$ tel que $a_n\ne0$.}
+
+Donc si $A$ non nul est un polynôme de valuation $p$ et de degré $q$ on a : $p\le q$ et $\forall n<p$, $a_n=0$ ainsi que $\forall n>q$, $a_n=0$. On peut encore représenter $A$ sous la forme
+\[
+A=(0,\ldots,0,a_p,a_{p+1},\ldots,a_q,0,0,\ldots)
+\]
+avec $a_p$ et $a_q\ne0$.
+
+\subsection*{Addition de 2 polynômes, produit par un scalaire}
+
+$K$ étant un espace vectoriel sur lui-même, l'ensemble $K^{\mathbb N}$ des applications de $\mathbb N$ dans $K$, c'est-à-dire des suites d'éléments de $K$ est lui-même espace vectoriel pour les 2 lois :
+\[
+A+B=C\qquad\text{avec, }\forall n,\ c_n=a_n+b_n,
+\]
+\[
+\lambda\cdot A=C\qquad\text{avec, }\forall n,\ c_n=\lambda a_n,
+\]
+$A,B,C$ étant les suites de termes généraux respectifs $a_n,b_n,c_n$, et $\lambda$ étant un scalaire dans $K$, (exemple 6.5).
+
+Il est licite de se demander si l'ensemble des polynômes n'est pas sous-espace vectoriel de $K^{\mathbb N}$.
+
+Or si $A$ et $B$ sont des polynômes et si $\forall n>n_A$ on a $a_n=0$, ainsi que $b_n=0$, $\forall n>n_B$, ($A$ et $B$ sont des suites finies), il est clair que $\forall n>n_A$, $\lambda a_n=0$ donc $\lambda A$ est un polynôme, et que $\forall n>\sup(n_A,n_B)$, $a_n+b_n=0$ donc $A+B$ est un polynôme. On a donc :
+
+\medskip\noindent\textsc{Théorème 7.3.} --- \emph{L'ensemble noté $K[X]$ des polynômes sur un corps $K$ est un espace vectoriel pour les lois :
+\[
+A+B=C\text{ avec }\forall n\in\mathbb N,\ c_n=a_n+b_n,
+\]
+\[
+\lambda\cdot A=C\text{ avec }\forall n\in\mathbb N,\ c_n=\lambda a_n.
+\]} \bookend
+
+La notation $K[X]$ est pour l'instant mystérieuse, mais elle va s'éclaircir par l'introduction de la deuxième loi sur $K[X]$.
+
+\subsection*{Produit de deux polynômes}
+
+\medskip\noindent\textsc{Définition 7.4.} --- \emph{Soit $A=(a_n)_{n\in\mathbb N}$ et $B=(b_n)_{n\in\mathbb N}$ deux polynômes sur le corps $K$. On appelle polynôme produit $C=AB$, le polynôme de terme général
+\[
+c_n=a_0b_n+a_1b_{n-1}+a_2b_{n-2}+\cdots+a_nb_0.
+\]
+Ou encore
+\[
+c_n=\sum_{p=0}^n a_pb_{n-p}.
+\]}
+
+Cette définition a un sens parce que la suite $(c_n)_{n\in\mathbb N}$ est finie lorsque les 2 suites $A$ et $B$ le sont.
+
+En effet, il existe $n_A$ et $n_B$ entiers tels que $\forall n>n_A$, $a_n=0$ et $\forall n>n_B$, $b_n=0$.
+
+Soit alors $n>n_A+n_B$. Dans
+\[
+c_n=\sum_{k=0}^n a_kb_{n-k},
+\]
+dès que $k>n_A$, $a_k=0\Rightarrow a_kb_{n-k}=0$; et si $k\le n_A$, $n-k>(n_A+n_B)-k$ soit $n-k>n_B+(n_A-k)\ge n_B$, donc $b_{n-k}=0\Rightarrow a_kb_{n-k}=0$; et finalement $\forall n>n_A+n_B$, $c_n=0$: on a bien un polynôme.
+
+\medskip\noindent\textsc{Remarque 7.5.} --- \emph{Si $A$ et $B$ sont deux polynômes non nuls, ils ont des degrés $d_A$ et $d_B$, et le produit $C=AB$ est non nul de degré $d_C=d_A+d_B$.}
+
+Car avec $a_{d_A}\ne0$ et $b_{d_B}\ne0$, on a $c_{d_A+d_B}=a_{d_A}b_{d_B}\ne0$ dans le corps $K$, et, $\forall n>d_A+d_B$, $c_n=0$ vu le calcul précédent. \bookend
+
+De même on vérifierait que la valuation de $AB$ est la somme des valuations de $A$ et $B$.
+
+\subsection*{7.6. Une convention}
+
+Le polynôme nul est dit de degré $-\infty$ et de valuation $+\infty$.
+
+C'est choquant, puisque dans ce cas la valuation est supérieure au degré. Mais ceci permet de donner un sens aux formules
+\[
+d^\circ(A+B)\le \operatorname{Max}(d^\circ A,d^\circ B),
+\]
+\[
+\operatorname{valuation}(A+B)\ge \operatorname{Min}(\operatorname{val}(A),\operatorname{val}(B)),
+\]
+même lorsque $A=-B$.
+
+\subsection*{7.7.}
+
+On vérifie facilement que l'ensemble $K[X]$ pour l'addition et le produit des polynômes est un anneau, commutatif, ($K$ l'étant), unitaire, intègre.
+
+Par exemple, l'associativité $A(BC)=(AB)C$ du produit de polynômes vient de ce que le terme général de $A(BC)$ est $d_n$ avec
+\[
+\begin{aligned}
+d_n&=\sum_{i=0}^n a_i\left(\sum_{k=0}^{n-i}b_kc_{n-i-k}\right)\\
+&=\sum_{i=0}^n\sum_{k=0}^{n-i}a_i(b_kc_{n-i-k}).
+\end{aligned}
+\]
+Dans le corps $K$, $a_i(b_kc_{n-i-k})=(a_ib_k)c_{n-i-k}$.
+
+D'autre part, on peut sommer en factorisant les $c_j$. Pour cela on peut remarquer que $j=n-i-k$ varie en fait de 0, (si $k=n-i$), à $n-i$ qui lui-même varie de 0 à $n$. Finalement $j$ varie de 0 à $n$.
+
+Pour $n-i-k=j$ fixé, on a $i+k=n-j$, c'est donc que $i$ varie de 0 à $n-j$ et que $k=n-j-i$. On a donc
+\[
+d_n=\sum_{j=0}^n\left(\sum_{i=0}^{n-j}a_i b_{(n-j)-i}\right)c_j :\quad\text{terme de }d^\circ n\text{ de }(AB)C.
+\]
+
+On justifierait facilement la distributivité... Le polynôme constant, 1, est élément neutre pour le produit. Enfin l'anneau est intègre car on a vu que si $A$ et $B$ sont des polynômes non nuls, $AB$ est aussi non nul, (7.5). On a :
+
+\medskip\noindent\textsc{Théorème 7.8.} --- \emph{L'ensemble $K[X]$ des polynômes sur le corps commutatif $K$ est un anneau commutatif, unitaire intègre, pour la somme et le produit de polynômes, donc une algèbre commutative unitaire si on adjoint le produit par un scalaire.} \bookend
+
+Et la notation $K[X]$ dans tout cela? J'y viens!
+
+Soit $A=(a_n)_{n\in\mathbb N}$ un polynôme et $n_A$ tel que $\forall n>n_A$, $a_n=0$.
+
+Si on note $\bar a_n$ le polynôme dont tous les coefficients sont nuls et dont le coefficient d'indice $n$ vaut $a_n$, ce qui ne lui interdit pas d'être nul, on a
+\[
+A=\sum_{p=0}^{n_A}\bar a_p,
+\]
+(facile à vérifier).
+
+Or $\bar a_p=(0,\ldots,0,a_p,0,\ldots)=a_p(0,\ldots,1,0,\ldots,0)$, (seul le terme d'indice $p$ peut être non nul).
+
+Notons alors $X$ le polynôme $P=(0,1,0,0,\ldots)$, donc la suite finie où tous les coefficients sont nuls sauf celui d'indice 1, $p_1=1$. Le terme général de $X^2$ est
+\[
+c_n=\sum_{i+j=n}p_ip_j.
+\]
+Or seul $p_1$ est $\ne0$ donc seul le produit $p_1p_1$ est $\ne0$, d'où $c_2=p_1p_1=1$ et $\forall n\ne2$, $c_n=0$.
+
+On a $X^2=(0,0,1,0,\ldots,0,\ldots)$ et on vérifie par récurrence (laissée au lecteur), que $\forall n\in\mathbb N^*$,
+\[
+X^n=(0,0,\ldots,0,1,0,\ldots),
+\]
+1 étant au rang $n+1$.
+
+Si, par convention, on note $X^0=(1,0,0,\ldots)$ le polynôme élément neutre pour le produit dans $K[X]$, on obtient finalement
+\[
+A=(a_n)=\sum_{p=0}^{n_A}a_pX^p,
+\]
+et on retrouve la notation polynômiale connue depuis longtemps. Simplement, quand on introduit cette notation en parlant de l'inconnue $x$ variant dans $K$, la notion de polynôme est en fait celle de fonction polynôme :
+\[
+x\longmapsto\sum_{p=0}^{n_A}a_px^p,
+\]
+de $K$ dans $K$ attachée à la suite finie des coefficients, alors qu'ici $X$ n'est pas une indéterminée, ni une inconnue, mais un polynôme particulier.
+
+On retrouvera par la suite la notion de fonction polynôme associée à un polynôme, et on verra que la nature du corps intervient alors.
+
+\subsection*{7.9.}
+
+On notera désormais
+\[
+A=\sum_{n\in\mathbb N}a_nX^n\qquad\text{ou}\qquad A=\sum_{n=0}^{d^\circ A}a_nX^n
+\]
+un polynôme avec les conventions suivantes :
+\begin{enumerate}[label=\arabic*),leftmargin=2.1em]
+\item dans la somme indexée par $\mathbb N$, les $a_n$ sont presque tous nuls,
+\item dans la deuxième écriture qui n'a pas de sens si $A=0$ car $d^\circ A=-\infty$ et $n$ ne peut pas croître de 0 à $d^\circ A$, on convient que l'expression est alors nulle.
+\end{enumerate}
+
+\medskip\noindent\textsc{Théorème 7.10.} --- \emph{L'espace vectoriel $K[X]$ est de dimension dénombrable sur $K$, la famille des monômes $(X^n)_{n\in\mathbb N}$ en formant une base.}
+
+L'aspect générateur de cette famille a été justifié en 7.9.
+
+Cette famille est libre : si pour des entiers distincts, donc que l'on peut ordonner, $n_1<n_2<\cdots<n_k$ on a une combinaison linéaire
+\[
+\sum_{i=1}^k\lambda_iX^{n_i}
+\]
+nulle, c'est que la suite finie associée est nulle or son terme \BellaCorrectionNote{d'indice $n_i$}{d'indice $n_i+1$}{Le coefficient de $X^{n_i}$ est le terme d'indice $n_i$ de la suite $(a_n)_{n\in\mathbb N}$; $n_i+1$ est son rang si l'on compte les positions à partir de 1.} est $\lambda_i$ d'où chaque $\lambda_i$ nul. \bookend
+
+\medskip\noindent\textsc{Théorème 7.11.} --- \emph{Toute famille $(P_n)_{n\in\mathbb N}$ de polynômes de degrés échelonnés est une base de $K[X]$.}
+
+Degrés échelonnés signifie que, pour tout $n\in\mathbb N$, $P_n$ est de degré $n$. En particulier aucun $P_n$ n'est nul.
+
+D'abord une telle famille est libre : soient $n_1,\ldots,n_k$ des indices distincts, supposés ordonnés en croissant, et $(\lambda_i)_{1\le i\le k}$ des scalaires tels que
+\[
+\sum_{i=1}^k\lambda_iP_{n_i}=0.
+\]
+Comme $n_1<n_2<\cdots<n_k$, le coefficient de $X^{n_k}$ vient de $\lambda_kP_{n_k}$ et vaut $\lambda_k\cdot($coefficient de $X^{n_k}$ dans $P_{n_k})$. Le produit est nul, avec le coefficient en question $\ne0$, ($P_{n_k}$ de degré $n_k$) donc $\lambda_k=0$. De proche en proche chaque $\lambda_i=0$.
+
+La famille est génératrice.
+
+Soit $P$ un polynôme non nul. Il a un degré $n$.
+
+Notons $K_n[X]=\operatorname{Vect}(1,X,X^2,\ldots,X^n)$ le sous-espace vectoriel des polynômes de degré $\le n$ (tiens, heureusement que $d^\circ0=-\infty$), $P\in K_n[X]$ espace vectoriel de dimension $n+1$ puisque la partie libre $\{1,X,\ldots,X^n\}$ de cardinal $n+1$, est aussi génératrice, donc en est une base.
+
+Mais alors $(P_0,P_1,\ldots,P_n)$ partie libre (début de la justification) dans $K_n[X]$ de dimension $n+1$ en est aussi une base (corollaire 6.67) et $P\in\operatorname{Vect}(P_0,P_1,\ldots,P_n)$ : c'est une combinaison linéaire finie des $(P_i)_{i\in\mathbb N}$. La famille $(P_i)_{i\in\mathbb N}$ est bien génératrice de $K[X]$. \bookend
+
+\medskip\noindent\textsc{Remarque 7.12.} --- \emph{Soit dans $K$, $n$ éléments distincts, $a_1,\ldots,a_n$. Alors il existe une famille de $n$ polynômes, chacun de degré $n-1$ s'annulant pour $n-1$ des $a_j$, valant 1 pour le $a_k$ restant. Ce sont les polynômes interpolateurs de Lagrange.}
+
+Considérons les polynômes
+\[
+Q_k=\prod_{\substack{i=1\\ i\ne k}}^n(X-a_i).
+\]
+Chaque $Q_k$ est de degré $n-1$, (produit de $n-1$ polynômes de degré 1), et, $\forall i\ne k$, $Q_k(a_i)=0$.
+
+Soit une combinaison linéaire
+\[
+\sum_{k=1}^n\lambda_kQ_k=0.
+\]
+La valeur prise par cette combinaison linéaire en chaque $a_k$ est donc nulle. On va en déduire la nullité des $\lambda_k$, mais avant, une précision.
+
+On appelle valeur prise par le polynôme
+\[
+P(X)=\sum_{n=0}^{d^\circ P}u_nX^n,
+\]
+en $a\in K$, le scalaire
+\[
+P(a)=\sum_{n=0}^{d^\circ P}u_na^n.
+\]
+Il est bien clair que si les $u_n$ sont tous nuls, $P(a)=0$, la réciproque n'étant pas forcément vraie, lorsque le corps $K$ est quelconque. Par exemple si $K=\mathbb Z/p\mathbb Z$, $p$ premier, le théorème de Fermat nous dit que $x^p-x=0$ pour tout $x\in K$, donc le polynôme $X^p-X$, non nul, est associé à une fonction polynôme nulle d'où l'intérêt de dissocier les notions de polynôme et de fonction polynôme.
+
+\subsection*{7.13.}
+
+Très brièvement justifions Fermat : $K^*$ est groupe multiplicatif de cardinal $p-1$ donc $\forall x\in K^*$, $x^{p-1}=1$, d'où $x^p=x$, relation vérifiée aussi par $x=0$.
+
+Retour aux $Q_k$ : il reste $\lambda_kQ_k(a_k)=0$, chaque \BellaCorrectionNote{$Q_i(a_k)$, $i\ne k$, étant nul}{$Q_i(a_k)$ étant nul}{Pour $i=k$, $Q_k(a_k)=\prod_{j\ne k}(a_k-a_j)\ne0$; seuls les termes $i\ne k$ s'annulent.}
+
+Or
+\[
+Q_k(a_k)=\prod_{\substack{i=1\\ i\ne k}}^n(a_k-a_i)\ne0,
+\]
+on a donc $\lambda_k=0$.
+
+La famille $(Q_1,\ldots,Q_n)$ de $n$ vecteurs de $K_{n-1}[X]$ est libre, en dimension $n$ : c'est une base (corollaire 6.67).
+
+En fait, on pose
+\[
+P_k(X)=\prod_{\substack{i=1\\ i\ne k}}^n\frac{X-a_i}{a_k-a_i} :
+\]
+les $P_k$ sont tous de degré $n-1$, nuls en tous les $a_i$ sauf un, où la valeur prise est 1. Ce sont les $P_k$ qui sont les polynômes interpolateurs de Lagrange. \bookend
+
+\medskip\noindent\textsc{Définition 7.14.} --- \emph{Soit $P$ un polynôme de degré $n$. On appelle coefficient directeur de $P$ le coefficient de $X^n$ dans $P$.}
+
+C'est donc le coefficient d'indice le plus élevé, non nul.
+
+\medskip\noindent\textsc{Définition 7.15.} --- \emph{Un polynôme $P$ est dit unitaire s'il est non nul, de coefficient directeur égal à 1, élément neutre du corps $K$.}
+
+Les polynômes interpolateurs de Lagrange permettent de comprendre le point suivant.
+
+\subsection*{7.16.}
+
+Dans un espace vectoriel $E$ tous les vecteurs d'un sous-espace $F$ de $E$ peuvent être des combinaisons linéaires des vecteurs d'une famille $\mathcal F$ de $E$ sans qu'aucun vecteur de $\mathcal F$ ne soit dans $F$.
+
+Attention au caractère défini ou non des articles.
+
+Par exemple soit $E=K_{50}[X]$. On prend 51 valeurs distinctes de $K$ ($K=\mathbb R$ par exemple), $a_1,\ldots,a_{51}$. Les 51 polynômes interpolateurs de Lagrange $(P_k)_{1\le k\le51}$ sont tous de degré 50 et forment une base de $E$.
+
+Soit $F=K_{25}[X]$, comme c'est un sous-espace de $E$, tous les vecteurs de $F$ sont des combinaisons des $P_k$ bien qu'aucun $P_k$ ne soit dans $F$. Bien sûr, si toutes les combinaisons des $P_k$ étaient dans $F$, en particulier chaque $P_k$ serait dans $F$ et $E=\operatorname{Vect}(P_k)$ serait dans $F$ d'où $E=F$ dans ce cas.
+
+\medskip\noindent\textsc{Remarque 7.17.} --- Toujours avec $(a_1,\ldots,a_n)$ éléments distincts de $K$ et $E=K_{n-1}[X]$, les formes linéaires $\varphi_{a_i}:E\to K$ qui à $P$ associent $\varphi_{a_i}(P)=P(a_i)$ forment une base de $E^*$, duale de la base des polynômes interpolateurs de Lagrange. Car on a $n$ formes linéaires dans $E^*$ de dimension $n$, comme $E$, et $\varphi_{a_i}(P_k)=P_k(a_i)=1$ si $i=k$ et 0 sinon. On retrouve bien la définition de la base duale, (voir 6.108).
+
+\BellaSection{2. Division des polynômes}
+
+Soient $A$ et $B$ deux polynômes à une indéterminée, c'est le nom des éléments de $K[X]$, «une» car il y a aussi les polynômes à plusieurs indéterminées, dont je ne parle pas, mon propos étant de construire $\mathbb C$.
+
+On dit que
+
+\subsection*{7.18.}
+
+$B$ divise $A$ s'il existe $C\in K[X]$ tel que $A=BC$.
+
+Il est clair que si $A=0$, avec $C=0$ on aura $0=B0$ quel que soit $B$. Si on écarte ce cas, $A$ étant supposé non nul, $B$ et $C$ ne peuvent pas être nuls non plus, (on ne divise pas par 0 : des années de scolarité ont du faire acquérir ce réflexe), et l'égalité $A=BC$ implique $d^\circ A=d^\circ B+d^\circ C$ d'où $d^\circ B\le d^\circ A$ si $A$ est divisible par $B$.
+
+Mais cette condition nécessaire n'est pas suffisante. On dispose toutefois d'une division dite euclidienne sur l'anneau $K[X]$.
+
+\medskip\noindent\textsc{Théorème 7.19.} (de la division \BellaCorrection{euclidienne}{euclienne}). --- \emph{Soient $A$ et $B$ deux polynômes sur le corps commutatif $K$, $B$ étant non nul. Il existe un et un seul couple $(Q,R)$ de polynômes vérifiant les conditions
+\[
+A=BQ+R\qquad\text{et}\qquad d^\circ R<d^\circ B.
+\]}
+
+On formule parfois en disant $R=0$ ou $d^\circ R<d^\circ B$. Mais en ayant pris la convention $d^\circ0=-\infty$, la formulation $d^\circ R<d^\circ B$ suffit.
+
+$Q$ s'appelle le quotient et $R$ le reste de la division de $A$ par $B$ suivant les puissances décroissantes, expression liée à la démarche pratique.
+
+Justifions d'abord l'unicité. Si on a deux solutions
+\[
+A=BQ+R=BQ'+R'
+\]
+avec $d^\circ R<d^\circ B$ et $d^\circ R'<d^\circ B$, il vient
+\[
+B(Q-Q')=R'-R.
+\]
+Si $Q-Q'\ne0$, $Q-Q'$ a un degré, entier naturel, donc $\ge0$ et alors $d^\circ(B(Q-Q'))\ge d^\circ B$ alors que $R'-R$ est de degré strictement inférieur à $d^\circ B$ : c'est absurde. Donc $Q-Q'=0$ et alors $R-R'=0$ aussi.
+
+Passons à l'existence. Considérons l'ensemble $\mathcal N$ des degrés des polynômes $A-BQ$ lorsque $Q$ varie dans $K[X]$. Ou bien cet ensemble contient $-\infty$ donc il existe $Q_1$ tel que $A-BQ_1=0$ soit, $A=BQ_1+0$, le couple $(Q_1,0)$ est solution; soit cet ensemble $\mathcal N$ est une partie de $\mathbb N$, non vide car des polynômes $Q$ il y en a. Elle admet alors un plus petit élément $r$ et soit $Q$ un polynôme tel que
+\[
+d^\circ(A-BQ)=r=\text{plus petit élément de }\mathcal N.
+\]
+On pose $A-BQ=R$ et il reste à justifier que $r=d^\circ R<d^\circ B$.
+
+Si $d^\circ R\ge d^\circ B$, on a $R$ non nul, comme $B$, soient alors $u$ le coefficient directeur de $R$, $v$ celui de $B$, et $p=d^\circ B$. Si on considère
+\[
+R-\frac uv X^{r-p}B=R_1 :
+\]
+c'est un polynôme de degré $r$ au plus, ($r=d^\circ R=d^\circ(\frac uvX^{r-p}B)$), or le terme en $X^r$ a pour coefficient $u-\frac uvv=0$ donc en fait $r_1=d^\circ R_1<r$, inégalité valable même si $R_1=0$ auquel cas $r_1=-\infty$.
+
+Mais alors on avait
+\[
+A-BQ-\frac uvX^{r-p}B=A-B\left(Q+\frac uvX^{r-p}\right)=R_1
+\]
+avec $d^\circ R_1=r_1<r$ et \BellaCorrectionNote{si $R_1=0$, on retombe sur le premier cas; sinon $r_1\in\mathcal N$, ce qui contredit la minimalité de $r$}{aussi $r_1\in\mathcal N$ de borne inférieur $r$ : c'est exclu}{Dans le cas $R_1=0$, on a $d^\circ R_1=-\infty$, donc $r_1$ n'appartient pas à la partie $\mathcal N\subset\mathbb N$ considérée ici; il faut séparer ce cas, qui donne directement une division exacte.}. On a donc le résultat. Mais en même temps on a amorcé le procédé pour trouver $Q$ et $R$ : par des éliminations successives du terme de plus haut degré, on fait diminuer le degré de $A-BQ_k$, les $Q_k$ désignant des quotients successifs.
+
+Si au départ $d^\circ A<d^\circ B$ on a directement $A=0\cdot B+A$. Sinon, soit
+\[
+aX^n\quad\text{le terme de plus haut degré de }A
+\]
+et
+\[
+bX^p\quad\text{celui de }B\text{ avec }n\ge p,
+\]
+alors
+\[
+A_1=A-\frac abX^{n-p}B
+\]
+est degré $n_1<n$ et on a
+\[
+A=\frac abX^{n-p}B+A_1.
+\]
+On pose $Q_1=\frac abX^{n-p}$.
+
+Si $d^\circ A_1<d^\circ B$ c'est fini : la solution est $Q=Q_1$, $R=A_1$.
+
+Si $d^\circ A_1=n_1\ge d^\circ B$, on fait subir à $A_1$ ce qu'on a fait à $A$. Avec $a_1$ coefficient directeur de $A_1$ on aura
+\[
+A_1=\frac{a_1}{b}X^{n_1-p}B+A_2
+\]
+d'où
+\[
+A=\left(\frac abX^{n-p}+\frac{a_1}{b}X^{n_1-p}\right)B+A_2.
+\]
+On pose
+\[
+Q_2=\frac abX^{n-p}+\frac{a_1}{b}X^{n_1-p}.
+\]
+Si $d^\circ A_2<d^\circ B$, on a la solution $Q=Q_2$, $R=A_2$,
+
+si $d^\circ A_2=n_2\ge d^\circ B$, on fait subir à $A_2$ ce qu'on a fait pour $A$, $A_1$, ... et, au bout d'un nombre fini d'opérations, on obtient le quotient et le reste puisque les degrés des $A_j$ diminuent strictement. \bookend
+
+Les conséquences de cette division euclidienne vont être très importantes, car, comme on l'a vu lors de l'étude des anneaux, l'anneau $K[X]$ est euclidien, donc principal. (voir 5.27 et 5.28). C'est tellement important que je le justifie encore ici :
+
+\medskip\noindent\textsc{Théorème 7.20.} --- \emph{L'anneau $K[X]$ des polynômes sur un corps $K$ est principal, c'est-à-dire que tout idéal est principal.}
+
+On a d'abord $K[X]$ anneau commutatif, unitaire, intègre, (Théorème 7.8). Soit $I$ un idéal de $K[X]$. S'il est réduit à 0, $I$ est formé des multiples de 0. Sinon l'ensemble des degrés des éléments non nuls de $I$ est un ensemble noté $\mathcal N$, non vide dans $\mathbb N$. Donc il admet un plus petit élément $n_0$ et soit $B$ dans $I$ de degré $n_0$. Soit $A\in I$, on divise $A$ par $B$, avec $Q$ et $R$ tels que $A=BQ+R$ et $d^\circ R<d^\circ B$, comme $R=A-BQ$ est dans l'idéal $I$, ($I$ contient $B$ donc contient $BQ$, il contient $A$ et c'est aussi un sous-groupe), c'est que $R=0$, (sinon $d^\circ R\in\mathcal N$ avec $d^\circ R<\inf(\mathcal N)$). Donc $I\subset(B)$ idéal des multiples de $B$. Comme $B\in I$, l'inclusion $(B)\subset I$ est évidente donc $I$ est bien l'idéal principal engendré par $B$. \bookend
+
+Le fait que tout idéal de $K[X]$ soit principal servira à définir par exemple, la notion de polynôme minimal pour les opérateurs linéaires, pas pour tous, il y a du favoritisme dans l'air! (voir la définition 10.43). Ici nous allons l'exploiter pour dégager les notions de plus grand commun diviseur, (p.g.c.d), et de plus petit commun multiple, (p.p.c.m).
+
+\medskip\noindent\textsc{Définition 7.21.} --- \emph{Un élément $p$ d'un anneau commutatif unitaire $A$ est dit premier, ou irréductible, ou extrémal, s'il n'est pas inversible et si ses seuls diviseurs sont les éléments $u$ inversibles de $A$, ou les $pu$ avec $u$ inversible.}
+
+Il est clair que si $u$ est inversible, d'inverse $u^{-1}$, pour tout $x$ de $A$ on a : $x=(xu^{-1})u$ donc $u$ est diviseur de $x$, et $x=(xu)u^{-1}$ montre aussi que $xu$ divise $x$. La définition 7.21 dit en somme que $p$ premier $\Longleftrightarrow p$ n'a pas d'autres diviseurs que ses diviseurs «évidents», à savoir les $pu$ et $u$ avec $u$ inversible dans l'anneau.
+
+Comme notre étude est ici centrée sur l'anneau $A=K[X]$, il serait bon de connaître les éléments inversibles de cet anneau.
+
+\medskip\noindent\textsc{Théorème 7.22.} --- \emph{Les éléments inversibles de l'anneau $K[X]$ sont les éléments non nuls de $K$, c'est-à-dire les polynômes constants non nuls.}
+
+Car si $P$ est inversible, il existe $P^{-1}\in K[X]$ tel que $PP^{-1}=1$. En particulier $P$ et $P^{-1}$, non nuls, ont un degré et $d^\circ1=0=d^\circ P+d^\circ P^{-1}$. Les degrés étant dans $\mathbb N$ on a $d^\circ P=d^\circ P^{-1}=0$ donc $P$ est un scalaire $\lambda\in K^*$. Réciproquement, si $\lambda\in K^*$, le polynôme constant $\lambda^{-1}$, (inverse de $\lambda$ dans le corps $K$) est inverse de $\lambda$ dans $K[X]$. \bookend
+
+\medskip\noindent\textsc{Théorème 7.23.} --- \emph{Dans un anneau principal $A$, tout élément non nul et non inversible est produit d'un élément inversible par des éléments irréductibles.}
+
+On raisonne par l'absurde en supposant qu'il existe des $x\ne0$, et non inversibles et qui ne s'écrivent pas sous la forme du produit d'un élément inversible et d'éléments extrémaux. Soit $\mathcal X$ l'ensemble non vide de ces $x$.
+
+La famille $\mathcal F$ des idéaux principaux $(x)$ engendrés par les $x$ de $\mathcal X$ est non vide : elle admet alors un élément maximal pour l'inclusion. En effet, si c'était faux, soit $I_1\in\mathcal F$, il n'est pas maximal, donc $\exists I_2\in\mathcal F$ avec $I_1\subsetneq I_2$. À son tour $I_2$ n'est pas maximal, on continue et on peut construire une suite d'idéaux de $\mathcal F$ avec
+\[
+I_1\subsetneq I_2\subsetneq\cdots\subsetneq I_n\subsetneq\cdots
+\]
+
+Soit
+\[
+I=\bigcup_{n\in\mathbb N}I_n,
+\]
+c'est un idéal, sous-groupe car $0\in\bigcup_{n\in\mathbb N}I_n$, et si $x$ et $y$ sont dans $I$, il existe $n_x$ et $n_y$ avec $x\in I_{n_x}$, $y\in I_{n_y}$ or la famille des idéaux est ordonnée $\Rightarrow x$ et $y$ sont dans $I_{\sup(n_x,n_y)}$ sous-groupe additif, d'où $x-y\in I_{\sup(n_x,n_y)}\subset I$; puis $I$ est permis pour le produit car si $x\in A$ et $y\in I$, $\exists n_y\in\mathbb N$, $y\in I_{n_y}$ d'où $xy\in I_{n_y}$, idéal, a fortiori $xy\in I$.
+
+L'anneau étant principal, $I$ est principal : il existe $a$ dans $A$ tel que
+\[
+I=\bigcup_{n\in\mathbb N}I_n=(a)
+\]
+idéal principal engendré par $a$. Mais alors $\exists p\in\mathbb N$ tel que $a\in I_p$. Comme $I_p$ est un idéal on a les inclusions $(a)\subset I_p\subset I=(a)$ d'où en fait $I_p=(a)$, mais aussi, $\forall n\ge p$, $I_p=(a)\subset I_n\subset I=(a)$. La suite strictement croissante des $I_n$ devient stationnaire : c'est absurde.
+
+Revenons donc à un idéal $M$ maximal dans la famille $\mathcal F$, avec $M=(m)$ idéal principal engendré par $m$, $m$ supposé non inversible, mais aussi non produit d'un inversible par des éléments extrémaux. En particulier $m$ n'est pas extrémal, sinon $m=1\cdot m$ est produit de 1 inversible par $m$ extrémal, donc $m$ peut s'écrire sous la forme $m=bc$ avec $b$ et $c$ qui ne sont pas tous les deux inversibles ou du type $ux$ avec $u$ inversible et $x$ produit d'éléments extrémaux.
+
+Tout multiple de $m$ étant multiple de $b$ (et de $c$) on a les inclusions d'idéaux $(m)\subset(b)$ et $(m)\subset(c)$, inclusions strictes, (sinon $(m)=(b)\Rightarrow b\in(m)$, il existerait $v\in A$ tel que $b=mv$ d'où $b=mv=bcv\Rightarrow b(1-cv)=0$, or $m\ne0$, (les $x$ de $\mathcal X$ sont non nuls), donc $b\ne0$, l'anneau $A$ étant intègre, on a $1-cv=0$ donc $c$ inversible : exclu). Mais vu le caractère maximal de $(m)$ dans $\mathcal F$, c'est que $(b)$ et $(c)$ ne sont pas dans $\mathcal F$, donc $b$ et $c$ non dans $\mathcal X$.
+
+Alors $b$ et $c$ qui sont non nuls sont soit inversibles (exclu) soit chacun du type $b=ux$ et $c=vy$ avec $u$ et $v$ inversibles et $x$ et $y$ produits d'éléments extrémaux. Mais alors $m=bc=(uv)xy$ serait du même type ce qui est absurde puisque $m\in\mathcal X$.
+
+C'est que finalement $\mathcal X=\varnothing$ et on a bien le résultat. \bookend
+
+Il serait alors intéressant de savoir en quelle mesure une telle décomposition est unique. Pour cela on a besoin de caractériser les éléments premiers (ou extrémaux).
+
+\medskip\noindent\textsc{Théorème 7.24.} --- \emph{Soit $p$ non nul et non inversible dans l'anneau principal $A$. Il y a équivalence entre :
+\begin{enumerate}[label=\arabic*),leftmargin=2.1em]
+\item $p$ est premier,
+\item tout diviseur de $p$ est soit inversible, soit du type $pu$ avec $u$ inversible,
+\item $(p)$ est idéal maximal, (pour l'inclusion),
+\item pour tout produit $bc$ divisible par $p$, $p$ divise au moins l'un des facteurs.
+\end{enumerate}}
+
+$1)\Longleftrightarrow2)$ puisque c'est la définition de $p$ premier, (voir 7.21).
+
+$1)\Rightarrow3)$ On suppose $p$ premier. Soit $I$ un idéal contenant l'idéal $(p)$. Comme $A$ est principal, il existe $a\in A$ tel que $I=(a)$ et $(p)\subset(a)\Rightarrow p\in(a)$ donc il existe $b\in A$ tel que $p=ab$, d'où $a$ divise $p$.
+
+Mais alors soit $a$ inversible, si $a^{-1}$ est son inverse $aa^{-1}=1\in(a)$ d'où, $\forall x\in A$, $x=1\cdot x\in(a)$ on a $(a)=A$; soit $a=pu$ avec $u$ inversible, et alors $(a)\subset(p)$ d'où $(a)=(p)$.
+
+Finalement si $I$ est un idéal contenant $(p)$ on a $I=A$ ou $(p)$. C'est que $(p)$ est maximal dans l'ensemble des idéaux, partiellement ordonné par inclusion.
+
+$3)\Rightarrow1)$ Car soit $a$ un diviseur de $p$. Il existe $b\in A$ tel que $p=ab$ donc $p\in(a)$, a fortiori l'idéal principal engendré par $p$ est contenu dans $(a)$ : $(p)\subset(a)$. Comme on suppose $(p)$ maximal, on a soit $(a)=A$ et alors $1\in(a)\Rightarrow\exists a^{-1}$ dans $A$ tel que $aa^{-1}=a^{-1}a=1$ : $a$ est inversible; soit $(a)=(p)$, alors $a\in(p)$, il existe $c$ tel que $a=pc$ d'où
+\[
+a=pc=(ab)c=a(bc)\Rightarrow a(1-bc)=0
+\]
+avec $a\ne0$ et $A$ intègre on a $1=bc$ donc $b$ et $c$ inversibles et $a=pc$ avec $c$ inversible. Les seuls diviseurs de $p$ sont inversibles ou du type $pu$ avec $u$ inversible donc $p$ est premier.
+
+$1)\Rightarrow4)$ Soit $p$ premier qui divise le produit $bc$. En fait on considère l'idéal engendré par $p$ et $b$ : c'est l'intersection de tous les idéaux contenant $p$ et $b$, c'est aussi, $A$ étant commutatif,
+\[
+I=\{up+vb:(u,v)\in A^2\}
+\]
+car on vérifie facilement que $I$ est un idéal contenant $p$ et $b$, et que c'est le plus petit, pour l'inclusion, à contenir $p$ et $b$.
+
+On a $(p)\subset I$ et $(p)$ maximal $\Rightarrow$
+\begin{itemize}[leftmargin=2.0em]
+\item soit $I=(p)$, mais alors $b\in(p)$, donc $b$ est multiple de $p$, ou encore, $p$ divise $b$;
+\item soit $I=A$, donc $1\in I$, $\exists u,v$ dans $A$ tels que $1=up+vb$ d'où $c=upc+vbc$. Mais comme $p$ divise $bc$ par hypothèse et $upc$ de manière évidente, on a $p$ divise $c$.
+\end{itemize}
+
+$4)\Rightarrow1)$ Si $p$ non nul et non inversible vérifie (4), en utilisant le Théorème 7.23 on peut écrire $p=up_1p_2\cdots p_n$ avec $u$ inversible et les $p_j$ irréductibles.
+
+En fait $p'_1=up_1$ est aussi irréductible puisque $(p_1)=(up_1)$ est maximal, ($1)\Longleftrightarrow3)$, donc on peut écrire, en remplaçant $p_1$ par $p'_1$,
+\[
+p=p'_1p_2\cdots p_n
+\]
+avec les $p_j$ irréductibles. Comme $p$ divise $p$, le $4)\Rightarrow p$ divise $p'_1$ ou $p_2\cdots p_n$. Dans le 2e cas il divise $p_2$ ou $(p_3\cdots p_n)$. En itérant on arrive à $p$ divise l'un des $p_j$ irréductible.
+
+Donc $p$ est soit inversible (exclu par hypothèse) soit du type $p=u_jp_j$ avec $u_j$ inversible. Mais alors $(p)=(p_j)$ est maximal donc $p$ est bien irréductible, (on utilise l'équivalence de 1 et 3). \bookend
+
+\medskip\noindent\textsc{Remarque 7.25.} --- \emph{En cours de démonstration, on a vu en fait que le $4^e$ pouvait se formuler sous la forme :
+\[
+p\text{ premier}\Longleftrightarrow\text{dans tout produit divisible par }p,\ p\text{ divise l'un des facteurs}.
+\]}
+
+On a aussi rencontré Bézout en route. Ceci demande des éclaircissements.
+
+\medskip\noindent\textsc{Définition 7.26.} --- \emph{Soit un anneau principal $A$. On appelle plus grand commun diviseur (ou pgcd) de $n$ éléments $a_1,\ldots,a_n$ de $A$ tout générateur $d$ de l'idéal principal engendré par $a_1,\ldots,a_n$.}
+
+Soit
+\[
+I=\{u_1a_1+\cdots+u_na_n;\ u_j\in A,\ j=1,\ldots,n\}
+\]
+c'est un idéal, (sous-groupe et permis par produit), contenant chaque $a_j$, donc il est contenu dans chaque idéal contenant tous les $a_j$.
+
+L'anneau étant principal, il existe $d\in A$ tel que $I=(d)$. Tout générateur $d$ de $I$ est un pgcd de $a_1,\ldots,a_n$.
+
+Si $d'$ en est un autre, on aura $d'\in(d)$ et $d\in(d')$ donc
+\[
+\exists u\in A\text{ tel que }d'=ud
+\]
+et
+\[
+\exists v\in A\text{ tel que }d=vd'.
+\]
+Mais alors $d'=uvd'$ d'où $(1-uv)d'=0$.
+
+Si tous les $a_i$ sont nuls, en fait $I=(0)\Rightarrow d=d'=0$. Sinon $I\ne(0)$ donc $d'\ne0$, dans $A$ intègre, d'où $uv=1$ et alors $d$ est unique à multiplication près par un élément inversible.
+
+Dans le cas des polynômes ($A=K[X]$) ceci nous donne le pgcd unique à multiplication près par une constante non nulle.
+
+\subsection*{7.27.}
+
+La terminologie vient de ce que $m$ divise $a_1,\ldots,a_n$ si et seulement si $m$ divise «leur» pgcd. Donc les diviseurs communs aux éléments $a_1,\ldots,a_n$ sont ceux de leur pgcd. En effet, avec $u_1,\ldots,u_n$ dans $A$ tels que le p.g.c.d. soit $d=u_1a_1+\cdots+u_na_n$, si $m$ divise chaque $a_i$, $\exists v_i\in A$ tel que $a_i=v_im$, $\Rightarrow d=m(u_1v_1+\cdots+u_nv_n)$ donc $m$ divise $d$; puis si $m$ divise $d$, comme chaque $a_i\in I=(d)$ il existe $b_i$ tel que $a_i=b_id$ avec $d$ multiple de $m$. A fortiori $a_i$ multiple de $m$. \bookend
+
+\medskip\noindent\textsc{Définition 7.28.} --- \emph{Des éléments $a_1,\ldots,a_n$ de $A$ anneau principal sont dits premiers entre eux si et seulement si 1 est leur pgcd.}
+
+\medskip\noindent\textsc{Théorème 7.29.} --- \emph{Soient $a_1,\ldots,a_n$ des éléments de $A$ principal. Il y a équivalence entre :
+\begin{enumerate}[label=\arabic*),leftmargin=2.1em]
+\item $a_1\ldots a_n$ sont premiers entre eux,
+\item les seuls diviseurs communs des $a_i$ sont les éléments inversibles de $A$,
+\item $\exists(u_1,\ldots,u_n)\in A^n$, $u_1a_1+\cdots+u_na_n=1$.
+\end{enumerate}}
+
+Avoir $(a_1,a_2,\ldots,a_n)$ premiers entre eux équivaut (définition 7.28) à \BellaCorrection{pgcd}{pcgd}$(a_1,\ldots,a_n)=1$, donc ceci équivaut à dire que les diviseurs communs de $a_1,\ldots,a_n$ sont les diviseurs de 1 donc les inversibles $u'\in A$ avec $uu'=1$ : ce sont les éléments inversibles : d'où $1)\Rightarrow2)$; mais aussi $2)\Rightarrow1)$ puisque le pgcd de $a_1\ldots a_n$ divise chaque $a_i$, ce pgcd est inversible, donc l'idéal engendré par les $a_i$ est $A=(1)$ : les $a_i$ sont premiers entre eux.
+
+Dans ce cas, 1 engendre l'idéal des $a_i$ donc $\exists(u_1,\ldots,u_n)\in A^n$ tel que $1=u_1a_1+\cdots+u_na_n$ d'où $1)\Rightarrow3)$.
+
+Réciproquement, si on a $3)$, $1\in I$ idéal engendré par les $a_i$, qui est donc $A$ d'où\[\operatorname{pgcd}(a_1,\ldots,a_n)=1.\]On a des éléments premiers entre eux. \bookend
+
+\subsection*{7.30.}
+
+La relation
+\[
+((a_1,\ldots,a_n)\text{ premiers entre eux})\Longleftrightarrow(\exists(u_1,\ldots,u_n)\in A^n\text{ tels que }u_1a_1+\cdots+u_na_n=1)
+\]
+est l'identité de Bézout.
+
+Dans le cas d'éléments non premiers entre eux, on a seulement, si $d=\operatorname{pgcd}(a_1,\ldots,a_n)$, alors $\exists(u_1,\ldots,u_n)\in A^n$ avec
+\[
+d=\sum_{i=1}^n u_ia_i
+\]
+mais pas de réciproque, car tout élément de $(d)$ est aussi de ce type. C'est la valeur particulière $d=1$ qui donne la réciproque dans l'identité de Bézout.
+
+\medskip\noindent\textsc{Corollaire 7.31.} --- \emph{Soit $a,b$ dans l'anneau principal $A$. Si $x$, premier avec $a$, divise $ab$, alors $x$ divise $b$.}
+
+En effet, $\exists(u,v)\in A^2$ tel que $1=ux+va$ d'où $b=uxb+vab$. Comme $x$ divise $ab$, $x$ divise $uxb+vab$ donc $x$ divise $b$. L'identité de Bézout est l'instrument choc lié à la situation premiers entre eux.
+
+Maintenant que nous disposons de la notion d'éléments premiers et d'éléments premiers entre eux dans $A$ anneau principal nous allons pouvoir préciser la factorisation des éléments de $A$, et l'utiliser pour exprimer le pgcd et introduire le ppcm.
+
+\medskip\noindent\textsc{Définition 7.32.} --- \emph{Deux éléments extrémaux $p$ et $p'$ sont dits associés s'il existe $u$ inversible dans $A$ tel que $p=up'$.}
+
+Comme alors $p'=u^{-1}p$ avec $u^{-1}$ inversible, cette relation est symétrique. Il est clair qu'elle est réflexive et \BellaCorrection{transitive}{transtive}, donc on a une équivalence $R$ entre éléments extrémaux. La classe d'équivalence de $p$ c'est l'ensemble des $p'=up$ avec $u$ inversible, c'est donc l'ensemble des générateurs de l'idéal maximal $(p)$.
+
+\medskip\noindent\textsc{Théorème 7.33.} --- \emph{Soit $x$ un élément non nul et non inversible de $A$ principal, et
+\[
+p'_1\cdots p'_{n'}=p''_1\cdots p''_{n''}
+\]
+deux décompositions de $x$ en produit d'éléments irréductibles. On a $n'=n''$ et il existe une bijection $\sigma\in S_{n'}$, telle que $p''_{\sigma(i)}$ et $p'_i$, pour $i=1,\ldots,n'$, soient associés.}
+
+On peut remarquer que $x$ se décompose ainsi, (Théorème 7.23) puisqu'un facteur inversible éventuel peut être incorporé à un facteur extrémal.
+
+On a $p'_1$ divise $p''_1\cdots p''_{n''}$, et $p'_1$ extrémal, donc (Théorème 7.24), $p'_1$ divise l'un des $p''_j$. On choisit un indice $j$, noté $j=\sigma(1)$, tel que $p'_1$ divise $p''_j$.
+
+Or $p''_j$ est extrémal aussi, c'est que $p''_j$, non inversible, s'écrit $p''_j=u''_jp'_1$ avec $u''_j$ inversible. On a
+\[
+p'_1p'_2\cdots p'_{n'}=p''_1\cdots u''_jp'_1\cdots p''_{n''}.
+\]
+On simplifie par $p'_1$ car, dans l'anneau intègre $A$, tout élément non nul est régulier pour le produit.
+
+On a donc $p'_1$ et $p''_{\sigma(1)}$ associés et l'égalité
+\[
+p'_2\cdots p'_{n'}=u''_j\prod_{\substack{k=1\\k\ne\sigma(1)}}^{n''}p''_k.
+\]
+On peut remplacer l'un des $p''_k$ par l'élément $u''_jp''_k$ qui lui est associé et que l'on note encore $p''_k$, et on se retrouve avec une égalité du même type. On a donc de même $p'_2$ associé à un $p''_k$, $k\ne\sigma(1)$. On choisit un tel indice noté $\sigma(2)$... et on poursuit. Comme on a choisi de simplifier successivement par $p'_1,p'_2,\ldots,p'_{n'}$, on a finalement $n''\ge n'$ et une relation du type
+\[
+1=\prod_{k\notin\{\sigma(1),\ldots,\sigma(n')\}}p''_k
+\]
+($\sigma$ injection de $\{1,\ldots,n'\}$ dans $\{1,\ldots,n''\}$). Mais $n''>n'$ conduirait à l'existence d'un $p''_k$ extrémal et inversible : c'est exclu par définition des éléments extrémaux, donc $n''=n'$ et $\sigma$ bijective. \bookend
+
+Conséquence : Si on choisit un ensemble $\mathcal P$ de représentants des classes d'équivalence des éléments extrémaux, (pour $pRp'\Longleftrightarrow p$ et $p'$ associés), chaque $x$ non nul et non inversible de $A$ s'écrira $x=up_1\cdots p_n$ avec les $p_j$ dans $\mathcal P$ et $u$ inversible, car une écriture $x=p'_1\cdots p'_n$ conduit à des $u_i$ inversibles tels que $p'_i=u_ip_i$, d'où avec
+\[
+u=\prod_{i=1}^n u_i,
+\]
+inversible, l'écriture donnée.
+
+Des $p_i$ peuvent être répétés. Si on les regroupe, on arrive à une écriture du type
+\[
+x=u\prod_{p\in\mathcal P}p^{\alpha_p},
+\]
+avec $\alpha_p\in\mathbb N$, les $\alpha_p$ étant presque tous nuls.
+
+Et sous cette forme l'écriture est unique.
+
+\subsection*{7.34.}
+
+L'entier $\alpha_p$ est la valuation de $p$ dans la décomposition de $x$ en produits de facteurs premiers. On note $v_p(x)$ cet $\alpha_p$.
+
+On retrouve les décompositions en produit de nombres premiers de l'arithmétique.
+
+\subsection*{7.35.}
+
+Il est alors facile de voir que si on a
+\[
+x=u\prod_{p\in\mathcal P}p^{v_p(x)}\qquad\text{et}\qquad y=v\prod_{p\in\mathcal P}p^{v_p(y)},
+\]
+alors
+\[
+\operatorname{pgcd}(x,y)=\prod_{p\in\mathcal P}p^{\inf(v_p(x),v_p(y))},
+\]
+car $z$ non nul de $A$ divisera $x$ si et seulement si pour tout $p\in\mathcal P$ système de représentants des éléments extrémaux, on a $v_p(z)\le v_p(x)$, la vérification, facile, est laissée au lecteur.
+
+On peut alors introduire la notion de plus petit commun multiple (ppcm).
+
+Soient $(a_1,\ldots,a_n)$ des éléments non nuls de l'anneau principal $A$.
+
+Les multiples de $a_i$ sont les éléments de l'idéal principal $(a_i)$. Donc les multiples de $a_1,a_2,\ldots,a_n$ sont exactement les éléments de
+\[
+I=\bigcap_{i=1}^n(a_i).
+\]
+Mais $I$ est un idéal, principal, donc si $m$ est un générateur, les multiples communs aux $a_i$ sont les multiples de $m$ : on appelle $m$ un plus petit commun multiple des $a_i$.
+
+Si $m'$ en est un autre, $m$ et $m'$ engendrent le même idéal donc avec $m=um'$ et $m'=vm$ on a $m=uvm$, avec $m\ne0$ d'où $uv=1$ : $m$ et $m'$ sont égaux à un facteur multiplicatif inversible près.
+
+On vérifie encore, avec les décompositions précédentes, que
+
+\subsection*{7.36.}
+\[
+\operatorname{ppcm}(x,y)=\prod_{p\in\mathcal P}p^{\sup(v_p(x),v_p(y))}.
+\]
+
+\BellaSection{3. Racines d'un polynôme}
+
+\medskip\noindent\textsc{Définition 7.37.} --- \emph{Soit $P$ un polynôme de $K[X]$. On dit que l'élément $a$ de $K$ est un zéro de $P$, ou une racine de $P$, si $P(a)=0$.}
+
+\medskip\noindent\textsc{Théorème 7.38.} --- \emph{Soit $P\in K[X]$. L'élément $a$ de $K$ est zéro de $P$ si et seulement si $P$ est divisible par $X-a$.}
+
+En effet, si $P$ est divisible par $X-a$, il existe $Q\in K[X]$ tel que
+\[
+P(X)=(X-a)Q(X)
+\]
+donc $P(a)=0\cdot Q(a)=0$.
+
+Réciproquement on effectue la division euclidienne de $P$ par $X-a$, il existe deux polynômes $Q$ et $R$ avec $d^\circ R<1$, ($d^\circ(X-a)=1$ ici), tels que
+\[
+P(X)=(X-a)Q(X)+R(X)
+\]
+(Théorème 7.19).
+
+Le polynôme $R$, de degré 0 au plus est une constante $r$ et l'identité de la division calculée en $a$ donnera $P(a)=r$.
+
+Donc $a$ zéro de $P$ implique
+\[
+P(X)=(X-a)Q(X)
+\]
+et on a fait l'équivalence. \bookend
+
+\subsection*{Racines multiples}
+
+Soit $P$ un polynôme de $K[X]$ ayant $a\in K$ pour racine. Il est divisible par $X-a$ donc $P(X)=(X-a)Q(X)$.
+
+Il se peut qu'à son tour $Q$ admette $a$ pour racine, on aura donc un polynôme $Q_1$ tel que $Q(X)=(X-a)Q_1(X)$ d'où $P(X)=(X-a)^2Q_1(X)$ et on peut éventuellement continuer ainsi tant que $a$ est racine du polynôme quotient obtenu.
+
+\medskip\noindent\textsc{Définition 7.39.} --- \emph{Soit $P\in K[X]$. Un élément $a$ de $K$ est dit zéro d'ordre $k$ ($k\in\mathbb N^*$) de $P$ si et seulement si il existe $Q\in K[X]$ tel que
+\[
+P(X)=(X-a)^kQ(X)\qquad\text{et}\qquad Q(a)\ne0.
+\]
+On dit encore que $a$ est zéro de multiplicité $k$.}
+
+\medskip\noindent\textsc{Théorème 7.40.} --- \emph{On a
+\[
+a\text{ zéro d'ordre }k\text{ de }P\Longleftrightarrow P\text{ divisible par }(X-a)^k\text{ et non divisible par }(X-a)^{k+1}.
+\]}
+
+Si $a$ est zéro d'ordre $k$ :
+\[
+P(X)=(X-a)^kQ(X)
+\]
+est déjà divisible par $(X-a)^k$.
+
+On divise $Q$ par $X-a$ :
+\[
+Q(X)=(X-a)Q_1(X)+Q(a),
+\]
+car on a vu que le reste de la division d'un polynôme par $X-a$ est la valeur en $a$ du polynôme d'où
+\[
+P=(X-a)^{k+1}Q_1+Q(a)(X-a)^k,
+\]
+avec $d^\circ(Q(a)(X-a)^k)<k+1$ : on a $Q(a)(X-a)^k$ reste de la division de $P$ par $(X-a)^{k+1}$, donc
+\[
+Q(a)\ne0\Rightarrow P\text{ non divisible par }(X-a)^{k+1}.
+\]
+
+Réciproquement : $P$ divisible par $(X-a)^k$, non par $(X-a)^{k+1}\Rightarrow\exists Q$ tel que
+\[
+P=(X-a)^kQ=(X-a)^{k+1}Q_1+Q(a)(X-a)^k
+\]
+avec les notations précédentes, et avec ici $Q(a)(X-a)^k\ne0$ donc $Q(a)\ne0$. \bookend
+
+\medskip\noindent\textsc{Corollaire 7.41.} --- \emph{Un zéro $a$ d'un polynôme $P$ non nul de $K[X]$ a donc un ordre de multiplicité, (et un seul), $k\le d^\circ P$.}
+
+Car
+\[
+k=\sup\{r;(X-a)^r\text{ divise }P\}
+\]
+cet ensemble étant non vide si $a$ est zéro de $P$, et majoré par $n=d^\circ P$. \bookend
+
+L'utilisation des polynômes dérivés permet de donner une autre caractérisation de ce résultat.
+
+\medskip\noindent\textsc{Définition 7.42.} --- \emph{Soit
+\[
+P=\sum_{n=0}^{d^\circ P}a_nX^n\in K[X].
+\]
+On appelle polynôme dérivée le polynôme
+\[
+P'=\sum_{n=1}^{d^\circ P}na_nX^{n-1}.
+\]}
+
+Si $d^\circ P=0$, cette somme $\sum_{n=1}^{0}\cdots$ est nulle par convention.
+
+On pourrait aussi dire que la dérivation $d$ est l'application qui à
+\[
+P=(a_0,a_1,\ldots,a_n,\ldots)
+\]
+associe la suite $d(P)=(b_n)$ avec, $\forall n\in\mathbb N$,
+\[
+b_n=(n+1)a_{n+1}.
+\]
+Il est bien clair que la suite $(a_n)$ étant à support fini, il en est de même de celle des $b_n$.
+
+On vérifie facilement que la dérivation $d$ est une application linéaire de $K[X]$ dans $K[X]$. \BellaCorrectionNote{Si $K$ est de caractéristique nulle, son noyau est l'ensemble des polynômes constants et elle est surjective.}{On vérifie facilement que la dérivation $d$ est une application linéaire, de $K[X]$ dans $K[X]$, de noyau $\operatorname{Ker}d=\{\text{polynômes constants}\}$, surjective.}{L'assertion sur le noyau et la surjectivité est fausse en caractéristique positive $p$: par exemple $d(X^p)=0$, et $X^{p-1}$ n'a pas de primitive polynomiale. Elle devient correcte en caractéristique nulle.}
+
+\medskip\noindent\textsc{Théorème 7.43.} --- \emph{Pour tout couple $(P,Q)$ de polynômes, on a
+\[
+(PQ)'=P'Q+PQ'.
+\]}
+
+La dérivation étant linéaire, pour $P$ fixé, il suffit par linéarité par rapport à $Q$ de vérifier cette formule pour les monômes $X^q$.
+
+Mais alors, la linéarité par rapport à $P$ montre qu'il suffit de le vérifier pour $Q=X^q$ et $P$ décrivant les $X^p$.
+
+Or
+\[
+(X^pX^q)'=(X^{p+q})'=(p+q)X^{p+q-1},
+\]
+alors que
+\[
+(X^p)'X^q+X^p(X^q)'=pX^{p+q-1}+qX^{p+q-1}
+\]
+d'où l'égalité. \bookend
+
+\subsection*{Dérivées successives}
+
+L'endomorphisme $d$ de dérivation peut se composer avec lui même et on notera, $\forall k\in\mathbb N^*$,
+\[
+P^{(k)}=d^k(P),
+\]
+et $P^{(0)}=d^0(P)=P$ par convention.
+
+\medskip\noindent\textsc{Théorème 7.44.} (Formule de Taylor) --- \emph{Soit $P\in K[X]$ et $a$ un élément de $K$. Si le corps $K$ est de caractéristique nulle on a l'identité
+\[
+P(X)=\sum_{n\in\mathbb N}\frac{P^{(n)}(a)}{n!}(X-a)^n,
+\]
+dite formule de Taylor.}
+
+D'abord, remarquons que si $P=0$, les deux membres sont nuls, et si $P$ non nul est de degré $p$, pour tout $k>p$, le polynôme dérivée d'ordre $k$ de $P$ est nul, donc la somme du second membre est une somme finie.
+
+Les polynômes $((X-a)^n)_{n\in\mathbb N}$ formant une famille de polynômes de degrés échelonnés, ils constituent une base de $K[X]$, (Théorème 7.11). On décompose $P$ dans cette base en
+\[
+P(X)=\sum_{k=0}^p\alpha_k(X-a)^k
+\]
+avec $p=d^\circ P$ et les $\alpha_k$ dans $K$. La dérivation étant linéaire, $P^{(n)}(X)$ sera connue si on connaît les dérivées $n^\text{ième}$ des $(X-a)^k$.
+
+Or si $n>k$, $d^n[(X-a)^k]=0$, ($\operatorname{Ker}d^n=\{\text{polynôme de degré}<n\}$), et pour $n\le k$, on peut vérifier par récurrence sur $n$ que
+\[
+d^n[(X-a)^k]=k(k-1)\cdots(k-n+1)(X-a)^{k-n},
+\]
+(laissé au lecteur).
+
+On a donc ici :
+\[
+P^{(n)}(X)=\sum_{\substack{k\ge n\\k\le p}}k(k-1)\cdots(k-n+1)\alpha_k(X-a)^{k-n}
+\]
+et, si $n\le p$, on aura
+\[
+P^{(n)}(a)=n(n-1)\cdots1\,\alpha_n
+\]
+car seul le terme pour $k=n$ sera non nul en $a$, alors que si $n>p$, on a $P^{(n)}(a)=0$.
+
+On a donc
+\[
+\alpha_n=\frac{P^{(n)}(a)}{n!}
+\]
+d'où la formule de Taylor, la division par $n!$ étant possible dans $K$ de caractéristique nulle. \bookend
+
+\medskip\noindent\textsc{Corollaire 7.45.} --- \emph{Soit un corps $K$ de caractéristique nulle. Alors $a\in K$ est zéro d'ordre $k$ de $P\in K[X]$ si et seulement si
+\[
+P(a)=P'(a)=\cdots=P^{(k-1)}(a)=0\qquad\text{et}\qquad P^{(k)}(a)\ne0.
+\]}
+
+Puisque la formule de Taylor permet d'écrire $P=(X-a)^kQ+R$ avec
+\[
+P(X)=(X-a)^k\left(\sum_{n\ge k}\frac{P^{(n)}(a)}{n!}(X-a)^{n-k}\right)
++\sum_{n=0}^{k-1}(X-a)^n\frac{P^{(n)}(a)}{n!}
+\]
+on a l'identité de la division de $P$ par $(X-a)^k$. Donc $a$ zéro d'ordre $k$ de $P$ équivaut (7.40) à $R=0$ et $P^{(k)}(a)\ne0$, (sinon $(X-a)^{k+1}$ divise $P$). L'écriture de $R$ dans la famille libre des $(X-a)^n$ donne alors
+\[
+R=0\Longleftrightarrow P(a)=P'(a)=\cdots=P^{(k-1)}(a)=0
+\]
+d'où le résultat. \bookend
+
+Revenons aux zéros d'un polynôme sur un corps $K$ pas forcément de caractéristique nulle.
+
+\medskip\noindent\textsc{Théorème 7.46.} --- \emph{Soit $P\in K[X]$. Soient $a_1,\ldots,a_r$ des éléments distincts de $K$ et $k_1,\ldots,k_r$ des entiers non nuls. Alors $P$ admet les $a_j$ pour zéro d'ordre $k_j$ au moins si et seulement si $P$ est divisible par
+\[
+\prod_{j=1}^r(X-a_j)^{k_j}.
+\]}
+
+Il est clair que $P$ divisible par $\prod_{j=1}^r(X-a_j)^{k_j}$ l'est alors par chaque $(X-a_j)^{k_j}$ donc admet chaque $a_j$ pour zéro d'ordre $k_j$ au moins, (7.40).
+
+Réciproquement si $P$ admet chaque $a_j$ pour zéro d'ordre $k_j$ au moins il est divisible par chaque $(X-a_j)^{k_j}$. Or chaque polynôme $X-a_j$ est irréductible, et pour $a_j\ne a_i$ les polynômes $X-a_j$ et $X-a_i$ sont non associés, (définition 7.32) car avoir $X-a_i=u(X-a_j)$ avec $u$ inversible impose $u=1$ d'où $a_i=a_j$. Les $(X-a_j)^{k_j}$ sont donc premiers entre eux, tout facteur premier du pgcd devant diviser chaque $X-a_j$, irréductible. Le plus petit commun multiple des $(X-a_j)^{k_j}$, qui est donc leur produit, divise $P$. \bookend
+
+\medskip\noindent\textsc{Corollaire 7.47.} --- \emph{Si $P\ne0$ admet $a_1\ldots a_r$ distincts comme zéros d'ordres $k_1,\ldots,k_r$ au moins, il est de degré $\ge k_1+k_2+\cdots+k_r$.}
+
+Car $P$ est multiple de
+\[
+\prod_{j=1}^r(X-a_j)^{k_j},
+\]
+de degré \BellaCorrectionNote{$k_1+\cdots+k_r$}{$k_1+\cdots+k_2$}{Le degré du produit est la somme des $r$ exposants.}, et $P$ non nul a un degré entier naturel. \bookend
+
+\medskip\noindent\textsc{Corollaire 7.48.} --- \emph{Si $P\in K[X]$ de degré $\deg(P)\le n$ admet $a_1,\ldots,a_r$ comme zéros distincts d'ordre $k_1,\ldots,k_r$ au moins, avec $k_1+\cdots+k_r>n$ il est nul.}
+
+Sinon $\deg(P)\in\mathbb N$ et on aurait
+\[
+\deg(P)\le n<k_1+\cdots+k_r\le\deg(P)
+\]
+ce qui est absurde. \bookend
+
+\medskip\noindent\textsc{Corollaire 7.49.} --- \emph{Si $P\in K[X]$ de degré $n$ au plus admet au moins $n+1$ racines distinctes, il est nul.}
+
+Si deux polynômes $P_1$ et $P_2$ de degrés $n$ au plus sont tels que les fonctions $x\longmapsto P_1(x)$ et $x\longmapsto P_2(x)$, de $K$ dans $K$ prennent au moins $n+1$ fois la même valeur $P_1=P_2$.
+
+Puisque, dans ce cas, $P_2-P_1$ va être de degré $n$ au plus et s'annuler $n+1$ fois au moins. \bookend
+
+Nous avons vu que pour $a\ne b$, les polynômes irréductibles $X-a$ et $X-b$ sont non associés. En fait, peut-il y avoir des polynômes irréductibles de degré différent de 1? C'est l'étude de ce problème qui va nous conduire à la construction de $\mathbb C$ à partir de $\mathbb R$.

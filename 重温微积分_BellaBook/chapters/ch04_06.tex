@@ -1,0 +1,936 @@
+\section{分部积分法、广义函数、索伯列夫（Sobolev）空间}
+
+\noindent\textbf{1. 分部积分法与对偶性}
+
+黎曼积分中起十分重要作用的分部积分法在勒贝格积分理论中是否适用？答案是肯定的，但是对函数的可微性、可积性要有更细致的规定。分部积分法之重要在于，它体现了一个非常重要的数学概念——对偶性——所以我们宁可暂时不问是哪一类积分，也不把导数看成是 $\dfrac{\Delta f}{\Delta x}$ 的极限而对它加以推广，以便突出分部积分法的主要思想。为此先按我们“常见的”形式看一下分部积分公式，但是是在 $n$ 维空间的一个开集 $\Omega$ 上去考察它。先设 $\partial\Omega$ 是 $x_i=0$，则
+\[
+ \int_\Omega\frac{\partial f}{\partial x_i}(x)\varphi(x)\,dx
+ =\int_{\partial\Omega}\left.\varphi f\right|_{x_i=0}\,dx'
+ -\int_\Omega f(x)\frac{\partial\varphi}{\partial x_i}(x)\,dx,
+\]
+$x'=(x_1,\ldots,\widehat{x_i},\ldots,x_n)$，$x_i$ 上面加了一个 $\widehat{\ }$，表示从 $x$ 的坐标中把 $x_i$ 删去。我们希望 $\partial\Omega$ 上的积分不出现，而这就需要例如假设
+\[
+ \varphi|_{\partial\Omega}=0.
+\]
+但是仔细想一下，问题并不那么简单，因为上式是 $n$ 重积分，我们又用了富比尼积分把它化为逐次积分……等等。为此，对 $\Omega$ 的边缘 $\partial\Omega$ 的光滑性就要有所限制。一维情况则简单多了，因为 $\mathbf R^1$ 中的开集最多是可数多个区间的并，所以不妨设 $\Omega$ 就是区间 $(a,b)$，而 $\partial\Omega$ 就是两个点 $a$ 和 $b$。为了回避这个问题，我们设 $\varphi(x)\in C_0^1(\Omega)$，下标 0 表示 $\varphi(x)$ 的支集是 $\Omega$ 的紧子集。紧集就是有界闭集，而因 $\varphi(x)$ 只定义于 $\Omega$ 上而不是 $\overline\Omega$ 上，所以 $\operatorname{supp}\varphi$ 是 $\Omega$ 的一个紧子集，见图4-6-1，由它到 $\partial\Omega$ 一定有一个正的距离，所以 $\varphi(x)$ 在 $\partial\Omega$ 附近为 0（图4-6-1）。
+
+所以若补充定义 $\varphi(x)$ 在 $\Omega$ 外为 0，则其光滑性不变，即有 $\varphi(x)\in C_0^1(\mathbf R^n)$，而 $\partial\Omega$ 可以放在 $\operatorname{supp}\varphi$ 外任何位置，可以任意变形而不影响积分，于是我们有
+\begin{equation}
+ \int_\Omega\frac{\partial f}{\partial x_i}(x)\varphi(x)\,dx
+ =-\int_\Omega f(x)\frac{\partial\varphi(x)}{\partial x_i}\,dx.
+ \tag{1}
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,bella figure]
+  \draw[thick] (0,0) ellipse (3.0 and 1.75);
+  \draw[thick] (0,0) ellipse (2.05 and 1.05);
+  \node at (0,0) {$\operatorname{supp}\varphi$};
+  \node[right] at (2.55,1.15) {$\partial\Omega$};
+\end{tikzpicture}
+\caption*{图4-6-1}
+\end{figure}
+
+如果固定 $f(x)$，而令 $\varphi(x)\in C_0^1$ 变动，则上式双方都是 $\varphi(x)$ 的线性泛函，$f(x)$ 与 $\varphi(x)$ 处于互相对偶的地位：左方是对 $f$ 求导，转到右方则变成了对 $\varphi$ 求导。$f$ 是生成泛函之元，$\varphi$ 是泛函作用于其上之元；(1)式指出，对前者施以 $\dfrac{\partial}{\partial x_i}$ 就对应于对后者施以 $-\dfrac{\partial}{\partial x_i}$，$f$ 与 $\varphi$ 是对偶的，$\dfrac{\partial}{\partial x_i}$ 与 $-\dfrac{\partial}{\partial x_i}$ 也是对偶的。分部积分法就建立了这样一个对偶关系。这就是我们所说的“对偶性”的一个侧面。
+
+现在的问题是，即令 $f(x)$ 不可求导，但若能够找到另一个 $g_i(x)$ 适合
+\[
+ \int_\Omega g_i(x)\varphi(x)\,dx
+ =-\int_\Omega f(x)\frac{\partial\varphi(x)}{\partial x_i}\,dx,
+\]
+则 $g_i(x)$ 起了 $\dfrac{\partial f}{\partial x_i}$ 的作用，因此可以把它看作 $f$ 的某种广义的导数。尽管它与 $\dfrac{\Delta f}{\Delta x_i}$ 有何关系并不清楚，$f(x),g_i(x)$ 要求某种可积性，不过也很清楚不需要它们在 $\Omega$ 上可积，因为实际上积分是在 $\Omega$ 的紧子集 $\operatorname{supp}\varphi$ 上进行的。而因当 $\varphi$ 变动时 $\operatorname{supp}\varphi$ 也在变，所以指定 $f(x),g_i(x)$ 在 $\Omega$ 的某个固定紧子集上可积也不行，所以我们给出
+
+\noindent\textbf{定义1}
+若 $f(x)$ 在 $\Omega$ 之任一紧子集上属于 $L^p$，就说 $f(x)$ 局部 $p$ 次可积（局部 $L^p$），记作
+\[
+ f\in L^p_{\mathrm{loc}}(\Omega),\qquad 1\le p\le+\infty.
+\]
+
+\noindent\textbf{定义2}
+设 $f(x)\in L^1_{\mathrm{loc}}(\Omega)$，若存在 $g_i(x)\in L^1_{\mathrm{loc}}(\Omega)$ 使对每一个 $\varphi(x)\in C_0^1(\Omega)$ 均有
+\begin{equation}
+ \int_\Omega g_i(x)\varphi(x)\,dx
+ =-\int_\Omega f(x)\frac{\partial\varphi(x)}{\partial x_i}\,dx,
+ \tag{2}
+\end{equation}
+则称 $g_i(x)$ 为 $f(x)$ 对 $x_i$ 的（弱）广义导数，仍记为
+\[
+ g_i(x)=\frac{\partial f}{\partial x_i}(x).
+\]
+
+我们可以仿此定义高阶（$m$ 阶）广义导数，为此，需设 $\varphi(x)\in C_0^m(\Omega)$，而有
+
+\noindent\textbf{定义2}
+设 $f(x)$ 与 $g_\alpha(x)\in L^1_{\mathrm{loc}}(\Omega)$，若对一切 $\varphi(x)\in C_0^m(\Omega)$ 均有
+\begin{equation}
+ \int_\Omega g_\alpha(x)\varphi(x)\,dx
+ =(-1)^{|\alpha|}\int_\Omega f(x)\frac{\partial^{|\alpha|}\varphi(x)}{\partial x^\alpha}\,dx,
+ \tag{3}
+\end{equation}
+则称 $g_\alpha(x)$ 为 $f(x)$ 之 $m$ 阶广义导数（弱导数），记作
+\[
+ g_\alpha(x)=\frac{\partial^m f}{\partial x^\alpha}.
+\]
+以上 $\alpha=(\alpha_1,\ldots,\alpha_n)$ 为重指标，且 $|\alpha|=\alpha_1+\cdots+\alpha_n=m$。
+
+若对适合 $|\alpha|\le m$ 的一切 $\alpha$，$f(x)$ 都具有弱广义导数 $\dfrac{\partial^{|\alpha|}f}{\partial x^\alpha}$，则称 $f(x)$ 为 $m$ 阶广义可微（弱可微）。
+
+由于 $L^1_{\mathrm{loc}}(\Omega)$ 函数都是几乎处处定义的，（弱）广义导数也都只是几乎处处定义的。
+
+下面举一些例子，这里均设 $\Omega=(-1,1)\subset\mathbf R^1$。
+
+\noindent\textbf{例1}
+令 $f(x)=|x|$。很明显，按古典定义 $f(x)$ 除在 $x=0$ 处以外均有导数，这里我们利用了 $\varphi\in C_0^1(\Omega)$ 所以 $\varphi(1)=\varphi(-1)=0$。
+\[
+ \frac{df}{dx}=
+ \begin{cases}
+ 1,&0<x<1,\\
+ -1,&-1<x<0
+ \end{cases}
+\]
+也是 $f$ 的广义导数。事实上，若取 $\varphi(x)\in C_0^1(\Omega)$ 则
+\[
+\begin{aligned}
+ \int_{-1}^1\frac{df}{dx}\varphi(x)\,dx
+ &=-\int_{-1}^0\varphi(x)\,dx+\int_0^1\varphi(x)\,dx\\
+ &=-x\varphi(x)\Big|_{-1}^0+\int_{-1}^0x\varphi'(x)\,dx
+ +x\varphi(x)\Big|_0^1-\int_0^1x\varphi'(x)\,dx\\
+ &=-\int_{-1}^1|x|\varphi'(x)\,dx.
+\end{aligned}
+\]
+所以 $\dfrac{df}{dx}$ 也是 $|x|$ 的（弱）广义导数。
+
+\noindent\textbf{例2}
+令 $H(x)$ 为赫维赛德函数：
+\[
+ H(x)=
+ \begin{cases}
+ 1,&x\ge0,\\
+ 0,&x<0.
+ \end{cases}
+\]
+它不会有（弱）广义导数。实际上，若 $g(x)\in L^1_{\mathrm{loc}}(\mathbf R)$ 是 $H(x)$ 的广义导数，对 $x_0>0$ 取 $\varphi(x)$ 使其支集在 $(x_0-h,x_0+h)\subset(0,1)$ 中，应有
+\[
+ \int_{x_0-h}^{x_0+h}H(x)\varphi'(x)\,dx
+ =-\int_{x_0-h}^{x_0+h}g(x)\varphi(x)\,dx,
+\]
+但式左显然为 0，所以式右对适合以上条件的 $\varphi(x)$ 必为 0。用后面讲的磨光方法即可证明 $g(x)=0$ 在 $x>0$ 处几乎处处成立。同样可知 $g(x)=0$ 在 $x<0$ 处几乎处处成立。总之，若 $H(x)$ 有一个局部可积函数 $g(x)$ 为其（弱）广义导数，则 $g(x)=0$ 几乎处处成立。于是由广义导数的定义，对任意 $\varphi(x)\in C_0^1(-1,1)$，\jiaokan{扫描本此处漏排下标 $0$。若不要求试验函数在端点附近为零，则下一式 $-\int_0^1\varphi'(x)\,dx=\varphi(0)$ 一般不成立；依本节定义应为 $C_0^1(-1,1)$。}
+\[
+ 0=\int_{-1}^1g(x)\varphi(x)\,dx
+ =-\int_{-1}^1H(x)\varphi'(x)\,dx
+ =-\int_0^1\varphi'(x)\,dx=\varphi(0).
+\]
+所以就会得出结论：任意 $\varphi(x)\in C_0^1((-1,1))$ 都在 $x=0$ 处为 0。这个错误结论说明赫维赛德函数没有（弱）广义导数。它在广义函数意义下却有导数：广义函数 $\delta(x)$。
+
+\noindent\textbf{例3}
+把例1、例2联合起来看，我们发现
+\[
+ \frac d{dx}(|x|)=2H(x)-1.
+\]
+所以 $\dfrac{d^2}{dx^2}(|x|)$ 不能是定义2中讲的广义导数，这就告诉我们，沿着对偶性的思想走下去，必然会越出至今我们讨论过的领域。第二章 §4 已经指出，古典的函数定义在刻画物理世界上是不够用的，例2中的 $H(x)$ 之“导数”应该是 $\delta$ 函数，而它在物理上是十分自然而又有用的。它甚至超出了广义导数的范围，对此我们将在下面详述。
+
+从这几个例子看到，（弱）广义导数确实超越了古典的导数概念，那么自然会问，$f(x)$ 的古典意义的导数是否一定是它的（弱）广义导数呢？不一定，因为（弱）广义导数是由分部积分法衍生出来的，如果 $f(x)$ 的古典意义下的导数能满足分部积分法的要求，则它自然就是（弱）广义导数，否则就不一定了。分部积分法的要求其实就是关于一个函数的可积性与其原函数的关系问题。在 §1 中我们已看到，在黎曼积分理论中，这不是一个简单问题，在勒贝格积分理论中二者的关系如何实际上也非常复杂，所以我们现在走的是另外一条路。我们不去考虑例如（弱）广义导数是否与古典意义导数几乎处处相等；$\dfrac{\Delta f}{\Delta x}$ 是否几乎处处收敛于（弱）广义导数；……我们现在考虑的是如何沿着对偶性的路走下去。
+
+为此，我们首先注意到 $\varphi(x)$ 的选取。我们要求 $\varphi(x)\in C_0^1(\Omega)$，因此，$\varphi(x)$ 在 $\partial\Omega$ 的附近恒为 0，而不仅只在 $\partial\Omega$ 上为 0。这样做其实有两个原因，其一我们已经讲过了，即避免了分部积分法中必然会遇到的 $\partial\Omega$ 之光滑性问题。另一方面是以后我们常要考虑函数序列收敛的问题。如果 $C_0^k(\Omega)$ 中的序列 $\{\varphi_i(x)\}$ 在 $\overline\Omega$ 上一致收敛，其极限函数当然在 $\partial\Omega$ 上为 0，但不一定在 $\partial\Omega$ 某个邻域中为 0；如果 $\{\varphi_i(x)\}$ 在 $L^p$ 中收敛，则极限函数是否在 $\partial\Omega$ 上为 0 也不得而知。再者我们要注意 $k$ 的选取，如果我们只需讨论一阶导数，则 $k=1$ 即足够应用，但如果求导阶数不确定，则最明智的选取是令 $k=\infty$，而考虑 $\varphi(x)\in C_0^\infty(\Omega)$。但这里又产生了一个新问题，例如对一阶导数 $\dfrac{\partial f}{\partial x_i}$，我们希望某个式子对 $\varphi\in C_0^1(\Omega)$ 成立，此式当然对 $\varphi\in C_0^\infty(\Omega)\subset C_0^1(\Omega)$ 也成立。但若我们只知道上式对 $\varphi\in C_0^\infty(\Omega)$ 成立，怎样保证它对 $\varphi\in C_0^1(\Omega)$ 也成立呢？办法在于我们可以用一串 $\varphi_m(x)\in C_0^\infty(\Omega)$ 逼近 $\varphi(x)\in C_0^1(\Omega)$，使得 $\dfrac{\partial\varphi_m}{\partial x_i}$ 在 $\overline\Omega$ 上一致收敛于 $\dfrac{\partial\varphi}{\partial x_i}$。上式当 $\varphi=\varphi_m$ 时是成立的，令 $m\to\infty$ 即知它对任意 $C_0^1(\Omega)$ 函数 $\varphi(x)$ 也成立。$\{\varphi_m\}$ 的作法下面讲磨光算子时会看到。所以，下面我们讲的 $\varphi(x)$ 都选自 $C_0^\infty(\Omega)$，对它们还要规定一个很特殊的收敛性。$C_0^\infty(\Omega)$ 在赋以这种收敛性后称为试验函数空间，$\varphi(x)$ 称为试验函数。不过要注意，我们会需要许多种不同的试验函数空间。上述的 $C_0^\infty(\Omega)$ 是最常见的一种，我们以后直记为 $D(\Omega)$。
+
+现在要详细讨论 $D(\Omega)$。$D(\Omega)$ 的元素有很好的性质：它们可以任意求导（但是正如第三章中讲的，它们决非解析函数）；它们有很多用处，第三章 §4 中讲到如何利用它们来作“单位分解”——这是一个用于化整体问题为局部问题的有力工具，还讲到磨光算子。现在我们就来详细讨论磨光算子，仍然采用第三章 §4 的记号。令 $x,y\in\mathbf R^n$，而
+\begin{equation}
+ j_\delta(x-y)=
+ \begin{cases}
+ \displaystyle\exp\!\left\{\left(\frac{|x-y|^2}{\delta^2}-1\right)^{-1}\right\},&|x-y|<\delta,\\[8pt]
+ 0,&|x-y|\ge\delta.
+ \end{cases}
+ \tag{4}
+\end{equation}
+\jiaokan{扫描本把两种情形写成 $|x-y|\le\delta$ 与 $|x-y|>\delta$；在 $|x-y|=\delta$ 时第一行指数中的分母为零，表达式无定义。标准磨光核应在 $|x-y|<\delta$ 时取指数式，在 $|x-y|\ge\delta$ 时定义为 $0$，正文据此改正。}
+很明显 $j_1(x)$ 是一个支集在球 $|x|\le1$ 中的 $C_0^\infty(\mathbf R^n)$ 函数，而 $j_\delta(x-y)=j_1\!\left(\dfrac{x-y}{\delta}\right)$。令
+\[
+ L=\int_{\mathbf R^n}j_1(x)\,dx,
+\]
+则 $0<L<+\infty$，而且
+\[
+ \int_{\mathbf R^n}j_\delta(x-y)\,dx=L\delta^n.
+\]
+我们称(4)为一个磨光核，而称以下的算子为磨光算子：
+\begin{equation}
+ M_\delta(f)(x)=\frac1{L\delta^n}\int_{\mathbf R^n}f(y)j_\delta(x-y)\,dy.
+ \tag{5}
+\end{equation}
+可以很容易地证明
+
+\noindent\textbf{定理1}
+设 $f\in L^1_{\mathrm{loc}}(\mathbf R^n)$，则
+
+\noindent (i) $M_\delta(f)(x)\in C^\infty(\mathbf R^n)$。
+
+\noindent (ii) 若进一步设 $\operatorname{supp}f=K\Subset\mathbf R^n$（“$\Subset$”表示左方为右方之紧子集，这个记号也称“紧包含”），则 $M_\delta(f)$ 也有紧支集于 $K$ 之 $\delta$ 邻域
+\[
+ K_\delta=\bigcup_{x\in K}B_\delta(x)
+\]
+（$B_\delta(x)$ 表示以 $\delta$ 为半径的 $n$ 维球体）内。
+
+\noindent (iii) 若 $f$ 在 $\Omega$ 中连续，则 $M_\delta(f)$ 在 $\Omega$ 之任一紧子集中一致收敛于 $f$（$\delta\to0$）。
+
+\noindent (iv) 若 $f\in L^p(\mathbf R^n),1\le p<+\infty$，则在 $L^p(\mathbf R^n)$ 内有 $M_\delta(f)\to f$（$\delta\to0$）。
+
+\noindent\textbf{证}
+(i) 就是经典的在积分号下求导的定理。
+
+(ii) 令 $x$ 在 $K_\delta$ 之外，则对任意 $y\in K$，$x\notin B_\delta(y)$ 而有 $|x-y|\ge\delta$，(5)式实际上是在 $K$ 上的积分，而有 $j_\delta(x-y)=0$（$x$ 在 $K_\delta$ 之外），因而 $M_\delta(f)(x)=0$。
+
+(iii) 因为 $\dfrac1{L\delta^n}\int_{\mathbf R^n}j_\delta(x-y)\,dy=1$，可见
+\[
+ |M_\delta(f)(x)-f(x)|
+ \le\frac1{L\delta^n}\int_{\mathbf R^n}|f(y)-f(x)|j_\delta(x-y)\,dy.
+\]
+这里我们用到了 $j_\delta(x-y)\ge0$。令 $x-y=z$，上式右方为
+\[
+ \frac1{L\delta^n}\int_{\mathbf R^n}|f(x-z)-f(x)|j_\delta(z)\,dz.
+\]
+这里的积分区域实际上是 $|z|\le\delta$。当 $x$ 在 $\Omega$ 之任一个紧子集 $K$ 内时，若 $\delta$ 充分小，$x-z\in K_\delta\Subset\Omega$。因为 $f$ 在 $\Omega$ 中连续，故必在 $K_\delta$ 上一致连续，从而当 $|z|\le\delta$ 充分小时 $|f(x-z)-f(x)|<\varepsilon$，$\varepsilon$ 是任意小正数，由此命题得证。
+
+(iv) 因为 $f\in L^p(\mathbf R^n)$，而每一个 $L^p(\mathbf R^n)$ 函数都可以用一个具有紧支集的连续函数（$C_0(\mathbf R^n)$ 函数）在 $L^p$ 意义下任意逼近（这个结论证明较细致，要用到本章第二节的鲁金定理，所以我们略去）。另一方面
+\[
+\begin{aligned}
+ \|M_\delta(f)(x)\|_{L^p}
+ &=\left(\int_{\mathbf R^n}|M_\delta(f)(x)|^p\,dx\right)^{1/p}\\
+ &=\frac1{L\delta^n}\left\{\int_{\mathbf R^n}
+ \left|\int_{\mathbf R^n}f(x-y)j_\delta(y)\,dy\right|^pdx\right\}^{1/p}.
+\end{aligned}
+\]
+注意到
+\[
+ |f(x-y)|j_\delta(y)
+ =|f(x-y)|\bigl(j_\delta(y)\bigr)^{1/p}\bigl(j_\delta(y)\bigr)^{1/q},
+\]
+对内层积分应用赫尔德不等式知
+\[
+ \|M_\delta(f)(x)\|_{L^p}
+ \le\frac1{L\delta^n}
+ \left\{\int_{\mathbf R^n}dx\left[\int_{\mathbf R^n}j_\delta(y)\,dy\right]^{p/q}
+ \left[\int_{\mathbf R^n}|f(x-y)|^p j_\delta(y)\,dy\right]\right\}^{1/p}.
+\]
+因为 $\int_{\mathbf R^n}j_\delta(y)\,dy=L\delta^n$，代入上式有
+\[
+\begin{aligned}
+ \|M_\delta(f)(x)\|_{L^p}
+ &\le\left(\frac1{L\delta^n}\right)^{1/p}
+ \left\{\int_{\mathbf R^n}dx\int_{\mathbf R^n}|f(x-y)|^p j_\delta(y)\,dy\right\}^{1/p}\\
+ &=\left(\frac1{L\delta^n}\right)^{1/p}
+ \left\{\int_{\mathbf R^n}j_\delta(y)\,dy\int_{\mathbf R^n}|f(x-y)|^p\,dx\right\}^{1/p}\\
+ &=\|f\|_{L^p}.
+\end{aligned}
+\]
+这里应用了富比尼定理。这就是说，磨光算子将 $L^p(\mathbf R^n)$ 映入 $L^p(\mathbf R^n)$ 而且范数不增。因此，若 $f(x)\in L^p(\mathbf R^n)$，先作 $g(x)\in C_0(\mathbf R^n)$，使 $\|f-g\|_{L^p}<\varepsilon/3$，于是我们有
+\[
+ \|M_\delta(f)-f\|_{L^p}
+ \le\|M_\delta(f)-M_\delta(g)\|_{L^p}
+ +\|M_\delta(g)-g\|_{L^p}
+ +\|g-f\|_{L^p}.
+\]
+第一项与第三项均小于 $\varepsilon/3$，对于第二项，因为 $g(x)\in C_0(\mathbf R^n)$，利用(iii)即知，当 $\delta$ 充分小时也小于 $\varepsilon/3$，定理证毕。
+
+我们附带提到，若 $f\in L^p_{\mathrm{loc}}(\mathbf R^n)$，以上讨论仍成立。
+
+不过，上面的讨论当 $p=+\infty$ 时失效。
+
+现在回到例2，在那里我们说，若 $g(x)\in L^1_{\mathrm{loc}}(-1,1)$，且对任意\linebreak[1] $\varphi(x)\in C_0^1(-1,1)$ 有
+\[
+ \int_{x_0-h}^{x_0+h}g(x)\varphi(x)\,dx=0,
+\]
+则必在 $(x_0-h,x_0+h)$ 中，有 $g(x)=0$ 几乎处处成立。现在补一个证明，因为我们限于在 $(x_0-h,x_0+h)$ 中讨论，不妨认为 $g(x)\in L^1$，$\operatorname{supp}g\subset[x_0-h,x_0+h]$，且
+\[
+ \int_{\mathbf R^1}g(x)\varphi(x)\,dx=0.
+\]
+把自变量写成 $y$，并取 $\varphi(x)=\dfrac1{L\delta}j_\delta(x-y)$，这个条件就是 $M_\delta(g)(x)=0$，但 $\|g-M_\delta(g)\|_{L^1}\to0$，所以 $g=0$ 在 $(x_0-h,x_0+h)$ 中几乎处处成立。我们在这里还附带回答一个问题：一个函数古典意义下的导数，作为 $\dfrac{\Delta f}{\Delta x_i}$ 之极限自然是唯一的（至少在几乎处处相等的意义下），而其广义导数之唯一性实有待证明。事实上，设 $f(x)$ 有两个（弱）广义函数 $\left(\dfrac{\partial f}{\partial x_i}\right)^{(1)}$，$\left(\dfrac{\partial f}{\partial x_i}\right)^{(2)}$，记
+\[
+ g(x)=\left(\frac{\partial f}{\partial x_i}\right)^{(1)}-
+ \left(\frac{\partial f}{\partial x_i}\right)^{(2)},
+\]
+则由定义可见
+\[
+ 0=\int_\Omega g(x)\varphi(x)\,dx
+\]
+对一切 $\varphi(x)\in C_0^\infty(\Omega)$ 成立，于是由上面证明的方法可见 $g(x)=0$ 几乎处处成立。
+
+以上凡讲到广义导数，都加上了“（弱）”这样的限制词，这是因为我们用(2)式定义 $g_i(x)$ 为 $\dfrac{\partial f}{\partial x_i}$ 时，是把(2)式左方作为一个作用在 $C_0^\infty(\Omega)$ 上的线性泛函来定义的。凡用线性泛函来处理一个数学问题时，我们常用“弱”这个限制词。与此相对，若用范数来讨论问题时则常用“强”字。因此我们自然会问，有没有强广义导数的概念？有，而且这个概念有很深刻的物理背景。第三章变分法一节的最后，我们讲到从黎曼的时代，人们就知道用能量积分
+\[
+ I(u)=\iint_\Omega\left[\left(\frac{\partial u}{\partial x}\right)^2+
+ \left(\frac{\partial u}{\partial y}\right)^2\right]dx\,dy
+\]
+来刻画静电场，而且指出“真正的”静电场必使上述能量积分达到最小值。由此就提出了“极小化”序列 $\{u_n\}$，即 $u_n\in C^1(\overline\Omega)$，而 $I(u_n)\to\min$ 这个思想。但是如果限制在黎曼积分框架下，$\{u_n\}$ 以及 $\left\{\dfrac{\partial u_n}{\partial x_i}\right\}$ 都不一定有极限存在，正是因此，我们才看到勒贝格积分理论何以优于黎曼积分理论：至少我们可以设想 $\{u_n\}$ 与 $\left\{\dfrac{\partial u_n}{\partial x}\right\}$ 在 $L^2$ 意义下有极限 $u$ 与 $v$，因此有理由把 $v$ 看作 $u$ 在某种意义下的导数，这样我们就引出了
+
+\noindent\textbf{定义3}
+设 $f(x)\in L^p(\Omega)$，若存在一个 $C^1(\Omega)$ 函数序列 $\{f_k(x)\}$ 使得 $\|f_k-f\|_{L^p}\to0$，而且 $\dfrac{\partial f_k}{\partial x_i}\in L^p(\Omega)$ 有 $L^p$ 意义下的极限 $g_i(x)\in L^p(\Omega)$：
+\[
+ \left\|\frac{\partial f_k}{\partial x_i}-g_i\right\|_{L^p}\to0,
+\]
+则称 $g_i$ 为 $f$ 对于 $x_i$ 的（强）广义导数并仍记以
+\[
+ \frac{\partial f}{\partial x_i}=g_i.
+\]
+仿此，可以定义高阶的（强）广义导数。
+
+于是产生一个问题，强弱广义导数是否一致？答案是肯定的，这是一个重要的结论。
+
+\noindent\textbf{定理2}
+设 $f(x)\in L^p_{\mathrm{loc}}(\Omega)$ 而且具有强广义导数 $\dfrac{\partial f}{\partial x_i}=g_i(x)\in L^p_{\mathrm{loc}}(\Omega)$，则 $g_i(x)$ 也是 $f(x)$ 之弱广义导数。若将强弱二字对调，结论仍成立。以上 $1\le p<+\infty$。
+
+\noindent\textbf{证}
+前面讲弱广义导数定义时恒取 $p=1$，实际上，取 $1\le p<+\infty$ 也可以，这一点下面不再赘言。
+
+（强）$\Rightarrow$（弱）。任取 $\varphi(x)\in C_0^1(\Omega)$，则由强广义导数定义，先对 $f_k(x)$ 使用分部积分法（这是许可的，因为 $f_k(x)\in C^1(\Omega)$）然后再在积分号下求极限（这里可以应用赫尔德不等式），于是有
+\[
+ \int_\Omega f_k(x)\frac{\partial\varphi(x)}{\partial x_i}\,dx
+ =-\int_\Omega\frac{\partial f_k(x)}{\partial x_i}\varphi(x)\,dx,
+\]
+\[
+ \int_\Omega f(x)\frac{\partial\varphi(x)}{\partial x_i}\,dx
+ =-\int_\Omega g_i(x)\varphi(x)\,dx.
+\]
+所以 $g_i(x)$ 也是 $f(x)$ 的弱广义导数。上面要注意，因为 $\varphi(x)\in C_0^1(\Omega)$ 而在 $\partial\Omega$ 附近恒为 0，故 $f(x),g_i(x)$ 等仅仅是局部可积也不影响计算。
+
+（弱）$\Rightarrow$（强）。因为 $g_i(x)$ 是 $f(x)$ 之弱广义导数，故若令(2)中的 $\varphi(y)$ 为 $\dfrac1{L\delta^n}j_\delta(x-y)$（$x$ 当作参数）即有
+\[
+ M_\delta(g_i)(x)=\int_\Omega g_i(y)\varphi(x-y)\,dy,
+\]
+\[
+ \frac{\partial}{\partial x_i}M_\delta(f)(x)
+ =\int_\Omega f(y)\frac{\partial\varphi(x-y)}{\partial x_i}\,dy
+ =-\int_\Omega f(y)\frac{\partial\varphi(x-y)}{\partial y_i}\,dy,
+\]
+且
+\[
+ \frac{\partial}{\partial x_i}M_\delta(f)(x)=M_\delta(g_i)(x).
+\]
+由前面讲的 $L^p_{\mathrm{loc}}(\Omega)$ 如何用磨光算子逼近，记
+\[
+ M_\delta(f)(x)=f_\delta(x)\in L^p_{\mathrm{loc}}(\Omega),\qquad
+ M_\delta(g_i)(x)=g_{i\delta}(x)\in L^p_{\mathrm{loc}}(\Omega),
+\]
+即有
+\[
+ \|f_\delta-f\|_{L^p(K)}\to0,\qquad
+ \|g_{i\delta}-g_i\|_{L^p(K)}\to0
+ \quad(K\Subset\Omega\text{ 是任意紧子集}),
+\]
+$\dfrac{\partial f_\delta}{\partial x_i}=g_{i\delta}$，所以 $f$ 之强广义导数 $\dfrac{\partial f}{\partial x_i}$ 即 $g_i(x)$，证毕。
+
+这两部分证明的难度显然有区别，前一部分我们将在以后看到，仅只使用了泛函的连续性，而这是一个很普遍的性质；后一部分则用了磨光技巧，这并不是处处都能使用的。因此在许多数学问题中，一个概念常有强、弱两种推广，证明二者相同是不容易的事。
+
+以下我们就只说广义导数而不再区分强弱。
+
+\noindent\textbf{定义4}
+定义
+\begin{equation}
+ W^{k,p}(\Omega)=\{f(x)\in L^p(\Omega),\ \text{且其广义导数 }D^\alpha f\in L^p(\Omega),\ |\alpha|\le k\},
+ \tag{6}
+\end{equation}
+并称它为 Sobolev 空间，我们也常用记号 $H^{k,p}(\Omega)$。
+
+从强弱广义导数一致性的证明中我们看到 $W^{k,p}(\Omega)$ 之元必可通过磨光得到的 $C^\infty(\Omega)$ 函数在范数
+\begin{equation}
+ \|f\|_{H^{k,p}}=
+ \left(\int_\Omega\sum_{|\alpha|\le k}|D^\alpha f|^p\,dx\right)^{1/p}
+ \tag{7}
+\end{equation}
+下求极限而得，强广义导数定义中的 $f_k\in C^1(\Omega)$ 改成 $C^\infty(\Omega)$ 也是可以的（例如用 $f$ 之磨光 $M_{1/k}(f)(x)=f_k$ 代替 $f_k$ 即可）。所以我们说 Sobolev 空间是 $C^\infty(\Omega)$ 经(7)完备化而得。现在问，如果取一串 $f_m\in W^{k,p}$ 再作一次完备化，会不会得到更多新的东西？结论是否定的，因为在 $\|f_m\|_{H^{k,p}}$ 中取 $\alpha=0$ 的一项可见 $\|f_m-f_l\|_{L^p}\le\|f_m-f_l\|_{H^{k,p}}\to0$，所以一定存在一个函数 $f\in L^p$ 使 $\|f_m-f\|_{L^p}\to0$。同理取 $\left|\dfrac{\partial f_m}{\partial x_i}\right|$ 又有
+\[
+ \left\|\frac{\partial f_m}{\partial x_i}-\frac{\partial f_l}{\partial x_i}\right\|_{L^p}
+ \le\|f_m-f_l\|_{H^{k,p}}\to0,
+\]
+所以 $\dfrac{\partial f_m}{\partial x_i}$ 必有极限 $g_i\in L^p$。由广义导数定义易知 $g_i=\dfrac{\partial f}{\partial x_i}$。仿此类推可知 $\{f_m\}$ 必有极限 $f\in W^{k,p}$，这就是说
+
+\noindent\textbf{定理3}
+$W^{k,p}(\Omega)=H^{k,p}(\Omega)$ 是一个完备空间。
+
+如果用 $C_0^\infty(\Omega)$ 来作完备化，我们将记所得空间为 $H_0^{k,p}(\Omega)$ 或 $W_0^{k,p}(\Omega)$，它也是完备的。但是其中之元并非具有紧支集的函数。若 $k\ge1$，可以证明 $H_0^{k,p}(\Omega)$ 中之元在 $\partial\Omega$ 上按一定意义为 0。以上用到的完备空间与完备化的概念，将在第六章详细讨论。
+
+\noindent\textbf{注1}
+在许多文献中，只在 $p=2$ 时才用记号 $H^{k,2}(\Omega)$ 或 $H_0^{k,2}(\Omega)$，但通常都将上标 2 略去。
+
+\noindent\textbf{注2}
+我们也时常要用到 $W^{k,p}_{\mathrm{loc}}(\Omega)$ 或 $H^{k,p}_{\mathrm{loc}}(\Omega)$。
+
+\medskip
+\noindent\textbf{2. 广义函数之定义}
+
+以上我们看到利用勒贝格积分理论得出了一系列空间，但与当代分析数学与数学物理的需要比较，我们所得到的虽是很基本的，却还有更大的范围有待探索。这些 $L^p$ 空间之元都是函数，但在第二章 §4 中我们就指出，为了描述自然界，这还是不够用的，并且举出了著名的狄拉克的 $\delta$ 函数。这种对象称为广义函数，当代对广义函数的处理最常用的方法是利用对偶性。下面我们就以此为线索讨论它。
+
+第二章 §4 中已经指出，广义函数就是试验函数空间——例如上面讲的 $D(\Omega)$——上的连续线性泛函（但那里没有在“连续”二字上做文章）。有许多种不同的试验函数空间，为简单起见，我们就考虑 $D(\Omega)$ 好了。所谓泛函，就是一个线性映射：$l:D(\Omega)\to$ 常数（这个数可以是实数，可以是复数，我们暂定为实数，于是泛函 $l$ 也就用欧氏配对 $\langle l,\varphi\rangle$ 表示；在第五章中会看见此常数取为复数的情况，于是记号 $l(\varphi)$ 这时就表示埃尔米特配对 $\langle l,\varphi\rangle$。有的文献上用 $(\varphi,l)$，这不会造成大的困难）。所谓线性泛函，即对 $\varphi_1,\varphi_2\in D(\Omega)$，以及常数 $C_1,C_2$ 恒有
+\[
+ l(C_1\varphi_1+C_2\varphi_2)=C_1l(\varphi_1)+C_2l(\varphi_2).
+\]
+所谓连续泛函，如果细讲就要涉及试验函数空间的拓扑结构问题，我们将在第六章中作初步讨论，现在就只粗略地说：如果取一串试验函数 $\{\varphi_k(x)\}$，而且设此序列在此试验函数空间中趋于 0，则要求 $l(\varphi_k)\to0$。这里有两个问题：一是什么叫在试验函数空间中趋于 0？我们要指出，这正是广义函数理论之所以有强大力量的关键所在，我们马上就要来讨论它。二是一个数学对象的连续性是否可以用序列来刻画？这是拓扑学中的一个一般问题，我们将在第六章中稍微涉及。
+
+\noindent\textbf{定义5}
+$D(\Omega)$ 中试验函数序列 $\varphi_k(x)$ 在 $D(\Omega)$ 中趋于 0（我们引入一个记号：$\varphi_k\to0$ in $D(\Omega)$）即指存在一共同的紧子集 $K\Subset\Omega$ 使所有 $\varphi_k(x)$ 均适合 $\operatorname{supp}\varphi_k\subset K$，而且对任意固定的重指标 $\alpha$，$\partial^\alpha\varphi_k(x)$ 在 $\Omega$ 上对 $x$（而不必对 $\alpha$）一致趋于 0。
+
+$\operatorname{supp}\varphi_k\subset K$ 这个条件是重要的。因为若不如此，可能 $\varphi_k$ 之极限函数并不是在 $\Omega$ 内有紧支集的函数，因而 $l(\varphi)$ 可能没有意义。例如取(4)式定义的 $j_1(x)$ 为 $\varphi(x)$，则 $\varphi_k(x)=\dfrac1k\varphi\!\left(\dfrac{x}{k}\right)\to0$ in $C(\mathbf R^n)$，但 $\dfrac1k\varphi\!\left(\dfrac{x}{k}\right)$ 则不是在 $D(\mathbf R^n)$ 中趋于 0，因为 $\operatorname{supp}\varphi\!\left(\dfrac{x}{k}\right)=\{x:|x|\le k\}$ 不含于共同的紧子集中。
+
+\noindent\textbf{定义6}
+$D(\Omega)$ 上的连续线性泛函 $l$ 称为 $D'(\Omega)$ 广义函数（在不发生误解时就简称为广义函数），其集合记为 $D'(\Omega)$。
+
+所谓连续性就指：当 $\varphi_k\to0$ in $D(\Omega)$ 时，$l(\varphi_k)\to0$。
+
+下面看一些广义函数的例子。
+
+\noindent\textbf{例4}
+设 $f(x)\in L^1_{\mathrm{loc}}(\Omega)$，则对 $\varphi(x)\in D(\Omega)$，
+\begin{equation}
+ l(\varphi)=\int_\Omega f(x)\varphi(x)\,dx
+ =\int_{\mathbf R^n}f(x)\varphi(x)\,dx
+ \tag{8}
+\end{equation}
+是有意义的。它自然是线性泛函。又若 $\varphi_k(x)\to0$ in $D(\Omega)$，则 $\varphi_k(x)$ 在 $\Omega$ 上对 $x$ 一致地趋于 0。利用勒贝格控制收敛定理有 $l(\varphi_k)\to0$，所以(8)定义了一个 $D'(\Omega)$ 广义函数。粗略地说，一个局部可积函数就是一个广义函数，而且称为正则广义函数。但还有不能由局部可积函数定义的广义函数，称为奇异广义函数，其中最著名的是狄拉克的 $\delta$ 函数。
+
+\noindent\textbf{例5}
+设 $0\in\Omega$，对于 $\varphi\in D(\Omega)$，我们定义
+\begin{equation}
+ \langle\delta,\varphi\rangle=\varphi(0).
+ \tag{9}
+\end{equation}
+它也是线性连续泛函，称为 $\delta$ 函数。上面例2讲赫维赛德函数时就证明了它不可能是一个局部可积函数。那里尽管是对 $\Omega\subset\mathbf R^1$ 的情况来证明的，其实对高维的 $\mathbf R^n$ 也是成立的。第二章 §4 中讲了，$\delta$ 函数其实是一个测度。这不是偶然的。由(9)我们可以看到
+\[
+ |\langle\delta,\varphi\rangle|=|\varphi(0)|\le \sup_{\operatorname{supp}\varphi}|\varphi(x)|.
+\]
+$\delta$ 函数可以拓展到更大的空间 $C_0(\Omega)\supset D(\Omega)$ 上去。\par
+在 $C_0(\Omega)$ 上我们用 $\sup|\varphi_k(x)|\to0$ 以及 $\operatorname{supp}\varphi_k\subset K$ 来定义 $\varphi_k(x)\to0$ in $C_0(\Omega)$。\linebreak[1] 凡是适合这种不等式的 $D'(\Omega)$ 广义函数都是一种测度，称为 Radon 测度。勒贝格测度也是一种 Radon 测度，这些我们都不能细讲了。但我们看到了广义函数中不仅包含局部可积函数，而且还有很大一类测度。但是还有更多的东西，例如
+
+\noindent\textbf{例6}
+$f(x)=\dfrac1x$，$x\in\mathbf R^1$ 不是局部可积的，$\displaystyle\int_{-\infty}^{+\infty}\dfrac1x\varphi(x)\,dx$，当 $\varphi(x)\in C_0^\infty(\mathbf R^1)$ 时，一般而言是没有意义的。但是我们可以定义这个积分的柯西主值：
+\begin{equation}
+ \operatorname{v.p.}\!\int_{-\infty}^{+\infty}\frac{\varphi(x)}x\,dx
+ =\lim_{\varepsilon\to0}\left[
+ \int_{-\infty}^{-\varepsilon}+\int_{\varepsilon}^{+\infty}
+ \right]\frac{\varphi(x)}x\,dx.
+ \tag{10}
+\end{equation}
+注意到 $\varphi(x)\in C_0^\infty(\mathbf R^1)$，利用在 $x=0$ 处的泰勒公式
+\begin{equation}
+ \varphi(x)=\varphi(0)+x\psi(x)
+ \tag{11}
+\end{equation}
+代入上式，并令 $\operatorname{supp}\varphi\subset[-A,A]$，有
+\[
+\begin{aligned}
+ \left[\int_{-\infty}^{-\varepsilon}+\int_{\varepsilon}^{+\infty}\right]\frac{\varphi(x)}x\,dx
+ &=\left[\int_{-A}^{-\varepsilon}+\int_{\varepsilon}^{A}\right]\frac{\varphi(0)}x\,dx
+ +\int_{A\ge|x|\ge\varepsilon}\psi(x)\,dx\\
+ &=\int_{A\ge|x|\ge\varepsilon}\psi(x)\,dx.
+\end{aligned}
+\]
+这里我们用到了 $\dfrac{\varphi(0)}x$ 对 $x$ 为奇函数因而第一项为 0。代入(10)求极限，有
+\begin{equation}
+ \operatorname{v.p.}\!\int_{-\infty}^{+\infty}\frac{\varphi(x)}x\,dx
+ =\int_{-A}^{A}\psi(x)\,dx.
+ \tag{12}
+\end{equation}
+它是线性泛函是明显的，利用拉格朗日公式可知 $\psi(x)=\varphi'(\theta x)$，$0\le\theta\le1$，$x\in\operatorname{supp}\varphi$。因此，当 $\varphi_k(x)\to0$ in $D(\mathbf R^1)$ 时，$\psi(x)$ 在 $\operatorname{supp}\varphi$ 上一致收敛于 0，因而(12)趋向 0。这样，由(10)所定义的线性泛函也是一个 $D'(\Omega)$ 广义函数，以下我们记作 $\operatorname{v.p.}\dfrac1x$。很容易想象到，它不是一个 Radon 测度，因为在证明其连续性时我们用到了试验函数的一阶导数。但是下面我们要证明 $\operatorname{v.p.}\dfrac1x=(\ln|x|)'$。这里导数的意义将在下面解释。
+
+在物理学特别是在量子力学中会遇到许多“奇异的”对象而时常都可以用广义函数去解释。在数学中也有许多结果在用广义函数解释后更加明确。本书后面经常要这样做，所以现在我们再讲一些广义函数的性质。
+
+首先提到，广义函数由于只是泛函而不是本来意义下的函数，所以问它在某一点的值是多少是没有意义的。我们时常也把例如 $\delta$ 函数写成 $\delta(x)$，这并不是说它当 $x$ 取何值时应取何值，尽管如第二章 §4 说的那样，在最早人们是这样理解过 $\delta(x)$，广义函数 $f(x)$ 作用在 $\varphi(x)$ 上也常写作积分：
+\[
+ \langle f,\varphi\rangle=\int_{\mathbf R^n}f(x)\varphi(x)\,dx,
+\]
+只不过是为了提醒一下，它的来源之一是局部可积函数乘上 $\varphi(x)$ 后再积分。但是这并不是说广义函数没有局部性质。例如 0 泛函作为一个广义函数 $f(x)$，其定义就是 $f(x)$ 作用在一切试验函数 $\varphi(x)$ 上之值为 0，所以若 $\langle f,\varphi\rangle=0$ 对一切 $\varphi\in D(\Omega)$ 成立，就说 $f=0$ in $\Omega$，这是 $f=0$ 的整体定义。它还有局部定义：我们说 $f$ 在 $x_0\in\Omega$ 之某个邻域 $U$ 中为 0，即指若 $\varphi\in D(\Omega)$ 之支集在 $U$ 中：$\operatorname{supp}\varphi\subset U$，均有 $\langle f,\varphi\rangle=0$。现在证明
+
+\noindent\textbf{定理4}
+若 $f(x)$ 在 $\Omega$ 之每一点的某邻域中均为 0，则 $f(x)$ 整体为 0，其逆亦真。
+
+\noindent\textbf{证}
+对每一点 $x\in\Omega$，如上所述都可以找到一个邻域 $U_x\subset\Omega$。对任一 $\varphi(x)\in D$，任取一点 $x\in\operatorname{supp}\varphi$，必有其相应的邻域 $U_x$，很明显这些邻域构成 $\operatorname{supp}\varphi$ 的开覆盖，而由有限覆盖定理，它必有一个有限子覆盖：$\{U_1,\ldots,U_N\}$。作为属于它的单位分解
+\[
+ 1=\sum_{i=1}^N\chi_i(x),\qquad
+ \chi_i(x)\in C_0^\infty(\Omega),\quad \operatorname{supp}\chi_i\subset U_i,
+\]
+于是令 $\varphi_i(x)=\chi_i(x)\varphi(x)$，其支集在 $\chi_i$ 的邻域 $U_i$ 中，但由假设，$f$ 在 $U_i$ 上为 0，故
+\[
+ \langle f,\varphi\rangle=\sum_{i=1}^N\langle f,\varphi_i\rangle=0,
+\]
+即 $f(x)$ 整体为 0。
+
+逆定理就不必证明了。
+
+\noindent\textbf{定义7}
+广义函数 $f(x)$ 之支集 $\operatorname{supp}f$ 定义为
+\[
+ \operatorname{supp}f=\{x:\ x\text{ 的任一邻域上 }f\text{ 均不恒为 }0\}.
+\]
+\jiaokan{扫描本此处写作“$x$ 有一个邻域使在其上 $f\ne0$”，这并非广义函数支集的正确刻画，也不能推出下一句“$\operatorname{supp}f$ 显然是闭集”。支集应为广义函数不在任何邻域恒等于 $0$ 的点之集合，正文据定义改正。}
+$\operatorname{supp}f$ 显然是闭集。
+
+与此类似还可以考虑广义函数的光滑性。显然光滑函数都是局部可积的。若在 $x\in\Omega$ 之某一邻域 $U$ 中，广义函数 $f(x)$ 与某一 $C^\infty(U)$ 函数 $g(x)$ 相等：即 $f(x)-g(x)$ 作为广义函数局部为 0，我们就说 $f(x)$ 在 $x$ 附近为 $C^\infty$。若 $f(x)$ 在某点附近不是 $C^\infty$ 的，就说 $x$ 点是 $f(x)$ 之奇点。
+
+\noindent\textbf{定义8}
+$f(x)\in D'(\Omega)$ 之奇支集即其奇点之集合：
+\[
+ \operatorname{sing\,supp}f=\{x:\ f(x)\text{ 在其任一邻域中均不为 }C^\infty\}.
+\]
+奇支集 $\operatorname{sing\,supp}f$ 显然也是闭集。
+
+\medskip
+\noindent\textbf{3. 广义函数的代数性质}
+
+广义函数之空间 $D'(\Omega)$ 是线性空间这是显然的。现在要问，若“自变量”$x$（上面已经说了，$x$ 其实是试验函数的自变量）经过线性变换，$D'(\Omega)$ 之元相应应如何变化？由于广义函数作为试验函数空间上的连续线性泛函最简单的形式是积分，所以这里讲的自变量的变换应该推广积分中的积分变量的线性变换（一般的变量变换涉及很困难的问题），先不妨设 $f(x)$ 是正则广义函数，$\varphi(x)\in D(\Omega)$，则若 $A:\mathbf R^n\to\mathbf R^n$ 是一个非奇异线性变换，或者说 $A$ 是一个 $n\times n$ 矩阵且 $\det A\ne0$，$a\in\mathbf R^n$，则对 $y\in\mathbf R^n$
+\[
+ \langle f(Ay-a),\varphi(y)\rangle
+ =\int_{\mathbf R^n}f(Ay-a)\varphi(y)\,dy.
+\]
+令 $x=Ay-a$，或 $y=A^{-1}(x+a)$，代入上式有
+\begin{equation}
+\begin{aligned}
+ \langle f(Ay-a),\varphi(y)\rangle
+ &=\frac1{|\det A|}\int_{\mathbf R^n}f(x)\varphi(A^{-1}(x+a))\,dx\\
+ &=\frac1{|\det A|}\langle f(x),\varphi(A^{-1}(x+a))\rangle.
+\end{aligned}
+\tag{13}
+\end{equation}
+这里自然仍有 $\varphi(A^{-1}(x+a))=\psi(x)\in D(\Omega_x)$，$\Omega_x$ 是 $\mathbf R^n$ 中的 $\Omega$ 在映射 $x=Ay-a$ 下的像。这里我们要注意开集与紧集在非奇异线性变换下仍变为开集与紧集，这样才知道 $\operatorname{supp}\psi(x)$ 是开集 $\Omega_x$ 的紧子集。
+
+对于一般的奇异的广义函数 $f(x)$，(13)式中间一项积分没有意义了，但两端两项仍有意义，于是我们给出
+
+\noindent\textbf{定义和定理9}
+设 $f(x)\in D'(\Omega_x)$，$A:\mathbf R^n\to\mathbf R^n$ 是非奇异线性变换，$a\in\mathbf R^n$，则定义 $f$ 在变换 $x=Ay-a$ 下的像 $f(Ay-a)\in D'(\Omega_y)$ 为
+\begin{equation}
+ \langle f(Ay-a),\varphi(y)\rangle
+ =\frac1{|\det A|}\langle f(x),\varphi(A^{-1}(x+a))\rangle.
+ \tag{14}
+\end{equation}
+我们用“定义和定理”这个说法是因为 $f(Ay-a)\in D'(\Omega_y)$ 有待证明，但是上式右方已经是一个连续线性泛函，这一点很容易看出，所以我们已经证明了这一点。
+
+现在看定义和定理9的一些特例。
+
+如果 $A=I$，就得到平移 $x=y-a$。就是说 $y$ 坐标系是由 $x$ 坐标系向左移动 $a$ 而来，这时，$\det A=1$，故(14)成为
+\[
+ \langle f(y-a),\varphi(y)\rangle=\langle f(x),\varphi(x+a)\rangle.
+\]
+$\varphi(x+a)$ 的图像可由 $\varphi(x)$ 的图像向左移动 $a$ 而得，所以，如果想把 $f(x)$ 向右移一个 $a$ 而得新的泛函 $f(y-a)$，只需将被它作用于其上的试验函数 $\varphi(x)$ 图像向左移动 $a$ 就行了。例如
+\[
+ \langle\delta(y-a),\varphi(y)\rangle
+ =\langle\delta(x),\varphi(x+a)\rangle=\varphi(a).
+\]
+从所附的图4-6-2可以形象地看到这件事，而且也可以形象地理解“对偶”是什么意思。
+
+其次若 $A=cI$，$a=0$，这里 $c>0$，即线性变换是沿向量 $x$ 方向放大或缩小 $c$ 倍，这时 $\det A=c^n$，于是(14)给出
+\begin{equation}
+ \langle f(cy),\varphi(y)\rangle
+ =c^{-n}\langle f(x),\varphi(x/c)\rangle.
+ \tag{15}
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,bella figure]
+  % top row: delta and shifted delta
+  \draw (-4.4,3.8)--(-1.8,3.8);
+  \draw[thick] (-3.1,3.8)..controls(-2.95,4.7)and(-2.75,4.9)..(-2.55,3.8);
+  \fill (-3.1,3.8) circle (1.2pt); \node[below] at (-3.1,3.8) {$x=0$};
+  \draw (0.0,3.8)--(4.2,3.8);
+  \draw[thick] (0.75,3.8)..controls(.95,4.55)and(1.2,4.65)..(1.45,3.8);
+  \draw[thick] (2.55,3.8)..controls(2.8,4.55)and(3.05,4.65)..(3.35,3.8);
+  \fill (1.05,3.8) circle (1.2pt); \node[below] at (1.05,3.8) {$y=0$};
+  \fill (3.0,3.8) circle (1.2pt); \node[below] at (3.0,3.8) {$y=a$};
+  \node[right] at (3.15,3.55) {即 $x=0$};
+  % middle row: phi and shifted phi
+  \draw (-4.4,1.8)--(-1.8,1.8);
+  \draw[thick] (-4.25,1.9)..controls(-3.8,2.15)and(-3.55,2.9)..(-2.2,3.0);
+  \draw[dashed] (-3.1,1.8)--(-3.1,2.55); \node[right] at (-2.35,2.9) {$\varphi(x)$};
+  \draw (0.0,1.8)--(4.2,1.8);
+  \draw[thick] (0.1,1.9)..controls(.55,2.1)and(.8,2.8)..(2.25,2.95);
+  \draw[thick] (1.75,1.9)..controls(2.1,2.15)and(2.45,2.85)..(3.95,2.95);
+  \draw[dashed] (1.05,1.8)--(1.05,2.6);
+  \node[right] at (3.55,2.9) {$\varphi(y)$};
+  \node[right] at (3.35,2.55) {$\varphi(y-a)$};
+  \node[below] at (1.05,1.8) {$y=0$};
+  % bottom row: picked values
+  \draw (-4.4,-.2)--(-1.8,-.2);
+  \draw[thick] (-4.25,-.1)..controls(-3.8,.15)and(-3.55,.9)..(-2.2,1.0);
+  \draw[thick] (-3.1,-.2)--(-3.1,.55);
+  \node[below] at (-3.1,-.2) {$x=0$};
+  \node at (-2.25,.15) {取出了 $\varphi(0)$};
+  \draw (0.0,-.2)--(4.2,-.2);
+  \draw[thick] (0.1,-.1)..controls(.55,.1)and(.8,.8)..(2.25,.95);
+  \draw[thick] (3.0,-.2)--(3.0,.75);
+  \node[below] at (3.0,-.2) {$y=a$};
+  \node at (2.2,.15) {取出了 $\varphi(a)$};
+\end{tikzpicture}
+\caption*{图4-6-2}
+\end{figure}
+
+研究函数性质时，齐性函数是十分有趣——且特别有用的。$\lambda$ 次齐性函数即适合关系式
+\begin{equation}
+ f(cx)=c^\lambda f(x),\qquad c>0
+ \tag{16}
+\end{equation}
+的函数。这里与通常微积分教本不同在于我们限制了 $c>0$。这是因为上式从几何上讲的是如果自变量在 $Ox$ 半射线方向放大 $c$ 倍，函数值 $y=f(x)$ 将在半射线 $Oy$ 方向上放大 $c^\lambda$ 倍；若 $c<0$ 则自变量将在 $Ox$ 的反方向上放大 $c$ 倍，$y$ 放大的倍数 $c^\lambda$ 可能是复数。更重要的是，我们常要在 $x$ 空间以原点为顶点的锥内讨论一个数学或物理问题，沿 $Ox$ 的反方向放大则会超出锥外，这时常在物理上很难理解。若附加上 $c>0$ 的条件，齐性函数也时常称为正齐性函数，但这并不是说齐性函数限于取正值。
+
+若一个 $D'(\Omega)$ 广义函数 $f(x)$ 适合(16)式，这里 $c>0$，我们也说它是一个 $\lambda$ 次正齐性 $D'(\Omega)$ 广义函数。这时，我们有，对于 $\varphi\in D(\Omega)$
+\begin{equation}
+ \langle f(cy),\varphi(y)\rangle
+ =c^{-n}\langle f(x),\varphi(x/c)\rangle
+ =c^\lambda\langle f(y),\varphi(y)\rangle.
+ \tag{17}
+\end{equation}
+因此
+\begin{equation}
+ \langle f,\varphi\rangle
+ =c^{-(\lambda+n)}\langle f(x),\varphi(x/c)\rangle.
+ \tag{18}
+\end{equation}
+特别是，若 $f(y)=\delta(y)$，由(17)有
+\[
+ \langle\delta(cy),\varphi(y)\rangle
+ =c^{-n}\langle\delta(x),\varphi(x/c)\rangle
+ =c^{-n}\varphi(0)=c^{-n}\langle\delta,\varphi\rangle,
+\]
+因此
+\[
+ \delta(cy)=c^{-n}\delta(y),
+\]
+即是说 $\delta$ 函数是 $-n$ 次正齐性 $D'(\Omega)$ 广义函数。
+
+我们知道，对 $\lambda$ 次正齐性可微函数 $f(x)$，有欧拉公式成立：
+\begin{equation}
+ \sum_{i=1}^n x_i\frac{\partial f}{\partial x_i}(x)=\lambda f(x).
+ \tag{19}
+\end{equation}
+对 $\lambda$ 次正齐性广义函数它也是对的。这与(18)相比较有一点怪：在(18)中齐性指数是 $c^{\lambda+n}$，$n$ 的来源自然是“积分的变量变换”，可是到了(19)式，这个 $n$——积分区域的维数——又不见了，其原因下面讲到广义函数的求导时就自然明白了。
+
+若 $f(x)\in D'(\Omega)$ 在线性变换下不变，就称之为此变换下不变的广义函数。例如若 $f(x)\in D'(\Omega)$ 相对于某个固定的平移 $a$ 是不变的，就称之为以 $a$ 为周期的广义函数：
+\begin{equation}
+ \langle f(x-a),\varphi(x)\rangle
+ =\langle f(y),\varphi(y+a)\rangle
+ =\langle f(y),\varphi(y)\rangle.
+ \tag{20}
+\end{equation}
+当然表面上看这似乎意味着 $\varphi(y+a)=\varphi(y)$，但其实不是。因为(20)中的 $\varphi\in D(\Omega)$ 应该是任意试验函数而不一定有周期（再说，一个周期函数除非恒等于 0，一定不会是紧支集的）。所以问题出在 $f(x)$，我们可以举一个周期广义函数之例：$f(x)=e^{i\omega x}$，它不是可积的，但是局部可积的（$f(x)=1$ 相应于 $\omega=0$ 也只是局部可积的），它以 $a=2\pi n/\omega$，$n=0,\pm1,\pm2,\ldots$ 为周期（或者说以 $2\pi/\omega$ 为周期）。这是一个很有用的广义函数。
+
+若 $A=-I$，$a=0$，则线性变换为 $x=Ay-a=-y$，即一个反射。在反射下不变的广义函数
+\[
+ f(-y)=f(y)
+\]
+称为偶广义函数；若 $f(-y)=-f(y)$ 则称为奇广义函数。
+
+\medskip
+\noindent\textbf{4. 广义函数的分析运算}
+
+因为广义函数建立后最直接的应用是在线性偏微分方程上，所以我们首先要考察一个线性偏微分算子
+\[
+ P(x,\partial_x)=\sum_{|\alpha|\le m}a_\alpha(x)\partial_x^\alpha
+\]
+如何作用于一个广义函数上。这里包括了两个运算，一是乘以系数，它们是函数 $a_\alpha(x)$；二是求导，我们依次来讨论。
+
+首先讨论函数 $a(x)$ 与 $f(x)\in D'(\Omega)$ 之乘积，仿照 $f(x)$ 局部可积时广义函数的定义
+\[
+ \int[a(x)f(x)]\varphi(x)\,dx=\int f(x)[a(x)\varphi(x)]\,dx,
+\]
+我们应定义 $a(x)f(x)$ 如下：
+\begin{equation}
+ \langle a(x)f(x),\varphi(x)\rangle
+ =\langle f(x),a(x)\varphi(x)\rangle.
+ \tag{21}
+\end{equation}
+但为此就需要 $a(x)\varphi(x)\in D(\Omega)$。这就需要 $a(x)\in C^\infty(\Omega)$，还需要当 $\varphi_k(x)\to0$ in $D(\Omega)$ 时 $a(x)\varphi_k(x)\to0$ in $D(\Omega)$。这也是容易的，因为 $\operatorname{supp}\varphi_k$ 均含于 $\Omega$ 之一共同紧子集 $K$ 中，所以 $\operatorname{supp}a(x)\varphi_k(x)\subset K$；又因 $\varphi_k$ 的任一固定阶导数一致收敛于 0，$a\varphi_k$ 的同一阶导数当然也一致收敛于 0，总之 $a(x)\varphi_k(x)\to0$ in $D(\Omega)$，因此
+\[
+ \lim_{k\to\infty}\langle a(x)f(x),\varphi_k(x)\rangle
+ =\lim_{k\to\infty}\langle f(x),a(x)\varphi_k(x)\rangle=0.
+\]
+所以 $af\in D'(\Omega)$。总之我们看到，不是任意函数都可以与 $f\in D'(\Omega)$ 相乘，我们需要 $a(x):D'(\Omega)\to D'(\Omega)$（下面还要证明这是一个连续映射）。适合这种要求的函数称为 $D'(\Omega)$ 乘子。上面我们看到 $C^\infty(\Omega)$ 函数都是 $D'(\Omega)$ 乘子，也易见，若 $a(x)\notin C^\infty(\Omega)$，$af$ 就可能不属于 $D'(\Omega)$。\jiaokan{扫描本此处排作“$af$ 就可能不属于 $D(\Omega)$”。此处讨论的是乘法能否把广义函数仍映为广义函数，且前文明确要求 $a(x):D'(\Omega)\to D'(\Omega)$，故应为 $D'(\Omega)$。}
+
+读者自然会想到：两个广义函数可否相乘？一般说来这是不可能的。问题在于我们不能随心所欲地胡乱定义某个数学概念。我们想要定义的广义函数之乘积既是通常函数乘积之推广，则它自然应该具备通常函数乘积的某些基本性质。这里我们希望能保持的是乘法的一些基本运算律，而我们会发现恰好是乘法的结合律 $(AB)C=A(BC)$ 现在不可能保持。
+
+如果乘法要有意义，我们当然希望 $1\cdot f(x)=f(x)$，$f\in D'(\Omega)$，因为 1 是 $D'(\Omega)$ 乘子；也希望 $0\cdot f(x)=0$，因为 0 也是 $D'(\Omega)$ 乘子。同时注意 $x\delta(x)=0$（$x\in\mathbf R^1$），这是因为 $x$ 也是 $D'(\mathbf R^1)$ 乘子，故对 $\varphi(x)\in D(\mathbf R^1)$ 应有
+\[
+ \langle x\delta(x),\varphi(x)\rangle
+ =\langle\delta(x),x\varphi(x)\rangle
+ =[x\varphi(x)]_{x=0}=0.
+\]
+但这样一来，$\left(\dfrac1x\cdot x\right)\delta(x)=1\cdot\delta(x)=\delta(x)$，但 $\dfrac1x\cdot(x\delta(x))=0$（上面 $\dfrac1x$ 指 $\operatorname{v.p.}\dfrac1x$；$\dfrac1x\cdot x=1$ 应该证明，但很容易证明，故略去）。这样一来，如果我们勉强去定义广义函数之乘积，则连乘子运算也不能包括在内。近来的研究表明，广义函数相乘的“障碍”在于它的奇性，时常有人想取 $\delta(x)$ 的“平方”，按现在的知识水平，还没有一种公认的处理方法。
+
+其次要考虑广义函数的导数，这时我们仍然从分部积分法面给出如下的定义和定理
+
+\noindent\textbf{定义和定理10}
+设 $f(x)\in D'(\Omega)$，我们定义 $\dfrac{\partial f}{\partial x_i}\in D'(\Omega)$ 如下：对一切 $\varphi(x)\in D(\Omega)$，有
+\begin{equation}
+ \left\langle\frac{\partial f}{\partial x_i},\varphi\right\rangle
+ =(-1)\left\langle f,\frac{\partial\varphi}{\partial x_i}\right\rangle.
+ \tag{22}
+\end{equation}
+与此类似，对一切重指标 $\alpha=(\alpha_1,\ldots,\alpha_n)$
+\begin{equation}
+ \langle\partial_x^\alpha f,\varphi\rangle
+ =(-1)^{|\alpha|}\langle f,\partial_x^\alpha\varphi\rangle.
+ \tag{23}
+\end{equation}
+当然这里要证明(23)式以及(23)左方确实是 $D(\Omega)$ 上的连续线性泛函。线性泛函是容易看到的，为了证明其连续性，我们只限于(23)式，并以 $\varphi_k\in D(\Omega)$ 代替其中的 $\varphi$，而来证明当 $\varphi_k\to0$ in $D(\Omega)$ 时，(23)左方之式也趋于 0。这是很容易的。记 $\psi_k^\alpha=\partial_x^\alpha\varphi_k$，则易见 $\psi_k^\alpha\in D(\Omega)$，而且 $\operatorname{supp}\psi_k^\alpha\subset\operatorname{supp}\varphi_k\subset K$（$\Omega$ 的一个公共的紧子集），$\psi_k^\alpha$ 的某一固定阶导数 $\partial^\beta\psi_k^\alpha=\partial^{\alpha+\beta}\varphi_k$ 也是 $\varphi_k$ 的某个固定阶导数，故当 $k\to\infty$ 时对 $x$ 一致趋于 0，因此(23)的右方由于 $f\in D'(\Omega)$ 应趋于 0，从而式左亦然，这还告诉了我们，$D'(\Omega)$ 广义函数可以求任意阶导数。
+
+下面讲一些有关导数的性质，有些很简单的就不证明了。首先讨论原函数问题。为此，我们限令 $\Omega\subset\mathbf R^1$。若 $f\in D'(\Omega)$，$g\in D'(\Omega)$，而且 $\dfrac{df}{dx}=g$ 就说 $f$ 是 $g$ 的原函数（其实只是广义函数）。对于古典意义的函数，并非一切 $g(x)$ 均有原函数，甚至黎曼可积函数也不一定有原函数。所以 §1 的达布定理只说，当 $g(x)$ 既是黎曼可积又有原函数存在（若 $g(x)$ 连续，则两个条件都满足），牛顿--莱布尼茨公式才成立，但是广义函数给了我们一个惊喜，因为我们有
+
+\noindent\textbf{定理5}
+每一个 $D'(\mathbf R^1)$ 广义函数均有无穷多个原函数存在，且任意两个原函数只相差一个常值函数；反之由任一原函数加上常值函数即可得出全部原函数。
+
+\noindent\textbf{证}
+证明分两部分。首先设 $g(x)\in D'(\mathbf R^1)$ 确有原函数 $f(x)\in D'(\mathbf R^1)$ 存在：$\dfrac{df}{dx}=g$，我们要求出 $f(x)$ 的表达式。其次再证明这个表达式确实定义了一个 $D'(\mathbf R^1)$ 广义函数，而且确是 $g(x)$ 的原函数。由此，原函数是存在的。
+
+先看第一部分，要找 $D'(\mathbf R^1)$ 中一个 $f(x)$，只需知道它作用在任意 $\varphi(x)\in D(\mathbf R^1)$ 上之值即可。若 $\varphi(x)$ 有原函数 $\psi(x)$（这是不成问题的）在 $D(\mathbf R^1)$ 中（这一点却不一定）。$\varphi(x)=\dfrac{d\psi}{dx}$，$\psi\in D(\mathbf R^1)$，则 $\langle f,\varphi\rangle=\langle f,\psi'\rangle=-\langle f',\psi\rangle=-\langle g,\psi\rangle$。所以，$f(x)$ 作用在这种 $\varphi(x)$ 上所得的值是清楚的。那么，什么样的 $\varphi(x)$ 才有 $D(\mathbf R^1)$ 原函数呢？这种原函数如果存在必是 $\psi(x)=\int_{-\infty}^{x}\varphi(t)\,dt$。因为已设 $\operatorname{supp}\varphi\subset[-M,M]$，至少当 $x\le-M$ 时 $\psi(x)=0$，但我们还需要当 $x$ 充分大时 $\psi(x)=0$，所以应要求 $\int_{-\infty}^{+\infty}\varphi(t)\,dt=0$。说来也巧，如果 $\varphi(x)$ 适合这个条件，则当 $x>M$ 时，$\psi(x)=\int_{-\infty}^{x}\varphi(t)\,dt=\int_{-\infty}^{x}\varphi(t)\,dt+\int_x^{+\infty}\varphi(t)\,dt=\int_{-\infty}^{+\infty}\varphi(t)\,dt=0$。这就是我们要求于 $\varphi(x)$ 的性质。因此，我们记
+\begin{equation}
+ H=\left\{\varphi(x)\in D(\mathbf R^1),\ \int_{-\infty}^{+\infty}\varphi(x)\,dx=0\right\}.
+ \tag{24}
+\end{equation}
+$H$ 当然只是 $D(\mathbf R^1)$ 真子空间，问题在于这个 $\varphi(x)$ 是否在 $H$ 中。$\varphi\in C^\infty$ 不成问题，但是 $D(\mathbf R^1)$ 中的元必可分为两项之和，一项在 $H$ 中，另一项是 $\varphi_0(x)$ 的倍数，这里的 $\varphi_0(x)\in D(\mathbf R^1)$，而 $\int_{-\infty}^{+\infty}\varphi_0(t)\,dt=1$。例如令
+\[
+ \varphi_0(x)=
+ \begin{cases}
+ a\exp\!\left[\dfrac1{x^2-1}\right],&|x|<1,\\[6pt]
+ 0,&|x|\ge1,
+ \end{cases}
+\]
+\jiaokan{扫描本此处分段条件排成“$x\le1$”与“$x\ge1$”，两段在 $x=1$ 重叠且第一段在 $x<-1$ 时并无紧支集，不能满足正文所要求的 $\varphi_0\in D(\mathbf R^1)$。这里按标准紧支集磨光函数改为 $|x|<1$ 与 $|x|\ge1$。}
+而 $a$ 适当选取即得。事实上，若 $\varphi(x)\in D(\mathbf R^1)$，令 $A=\int_{-\infty}^{+\infty}\varphi(t)\,dt$，则显然
+\[
+ \varphi_H(x)=\varphi(x)-A\varphi_0(x)\in H,
+\]
+或者说，$D(\mathbf R^1)$ 中任一元均可分解如下：
+\begin{equation}
+ \varphi(x)=\varphi_H(x)+A\varphi_0(x).
+ \tag{25}
+\end{equation}
+$\varphi_H(x)$ 之 $D(\mathbf R^1)$ 原函数是
+\begin{equation}
+ \psi(x)=\int_{-\infty}^{x}\varphi_H(t)\,dt
+ =\int_{-\infty}^{x}\varphi(t)\,dt-A\int_{-\infty}^{x}\varphi_0(t)\,dt.
+ \tag{26}
+\end{equation}
+现在用 $f(x)$ 作用于(25)两端得到
+\begin{equation}
+\begin{aligned}
+ \langle f,\varphi\rangle
+ &=\left\langle f,\frac{d\psi}{dx}\right\rangle+A\langle f,\varphi_0\rangle\\
+ &=-\langle g,\psi\rangle+C\int_{-\infty}^{+\infty}\varphi(t)\,dt.
+\end{aligned}
+\tag{27}
+\end{equation}
+第一部分证毕。再看第二部分，就用(27)式来定义 $f$，它是线性泛函是显然的，为了看它的连续性，取一串 $\varphi_k(x)\to0$ in $D(\mathbf R^1)$，$\operatorname{supp}\varphi_k\subset[-M,M]$，用 $\varphi_k$ 代替(26)和(27)中的 $\varphi$，于是 $\psi$ 也变成相应的 $\psi_k(x)$。由(26)第一个等号易见：$\operatorname{supp}\psi_k\subset[-M_1,M_1]$，这里 $M_1=\max(M,1)$，而且当 $k\to+\infty$ 时其各阶导数均对 $x\in\mathbf R^1$ 一致收敛于 0，即是说 $\psi_k(x)\to0$ in $D(\mathbf R^1)$。由(27)即知 $\langle f,\varphi_k\rangle\to0$。
+
+所以，(27)确实定义了一个 $D'(\mathbf R^1)$ 广义函数。我们只需证明 $\dfrac{df}{dx}=g$ 即可。为此，用 $\varphi'(x)$ 代替(26)中的 $\varphi$，则 $A=\int_{-\infty}^{+\infty}\varphi'(t)\,dt=\varphi(x)\big|_{-\infty}^{+\infty}=0$，而(26)给出 $\psi(x)=\int_{-\infty}^{x}\varphi'(t)\,dt=\varphi(x)$，因此
+\[
+ \langle f,\varphi'\rangle=-\langle g,\varphi\rangle,
+\]
+而 $f$ 确是 $g$ 的原函数。证毕。
+
+\noindent\textbf{推论6}
+若 $f(x)\in D'(\mathbf R^1)$ 且 $\dfrac{df}{dx}=0$，则 $f(x)\equiv\mathrm{const}$。
+
+\noindent\textbf{注}
+我们是对 $D'(\mathbf R^1)$ 证明了这个定理的。但实际上它对 $D'(\Omega)$ 也成立，这里 $\Omega\subset\mathbf R^n$ 是一开集，但定理的结论中“只相差一个常值函数”要改成“只相差一个局部常值函数”，即在 $\Omega$ 的不同连通分支中可能取不同的常数值的函数。这里强调一下连通分支是必要的，例如我们在第二章 §4 中就已看到 $\dfrac{dH(x)}{dx}=\delta(x)$，$H(x)$ 是赫维赛德函数
+\[
+ H(x)=
+ \begin{cases}
+ 1,&x\ge0,\\
+ 0,&x<0.
+ \end{cases}
+\]
+于是 $H(x)$ 是 $\delta(x)$ 的一个原函数，而其所有的原函数即 $H(x)+C$，$C$ 是任意常数。但是这是把 $H(x)$ 与 $\delta(x)$ 均看作 $D'(\mathbf R^1)$ 中元时的结论，若把它们为 $D'(\Omega)$ 之元，而
+\[
+ \Omega=\{x:x>0\}\cup\{x:x<0\},
+\]
+情况就不同了，$\Omega$ 现在有两个连通分支 $x>0$ 与 $x<0$（它们不是在 $x=0$ 处连接起来了吗？为什么算两个连通分支呢？第六章中会解释它）。在其中之一 $x>0$ 处，$\delta(x)=0$（上面我们说了不能讲广义函数在某一点等于什么，但是可以讲它在一点附近等于 0），所以由推论6，$\delta(x)$ 在 $x>0$ 处的原函数是 $f(x)=C_+$；同理，它在 $x<0$ 处的原函数是 $f(x)=C_-$。没有理由说 $C_+=C_-$。如果把这两个连通分支合起来，这时得到 $\Omega=\mathbf R^1\setminus\{0\}$，在 $D'(\Omega)$ 中仍有 $\dfrac{df}{dx}=0$；若进一步把同一分段常值函数看作整个 $\mathbf R^1$ 上的广义函数，则有
+\[
+ \frac{df}{dx}=(C_+-C_-)\delta(x).
+\]
+\jiaokan{扫描本在写出 $\Omega=\mathbf R^1\setminus\{0\}$ 后直接给出 $df/dx=(C_+-C_-)\delta(x)$。但 $\delta_0$ 的支集为 $\{0\}$，限制到不含 $0$ 的开集 $\Omega$ 后就是零广义函数；该含 $\delta$ 的导数公式只有把分段函数作为整个 $\mathbf R^1$ 上的广义函数时才成立。正文据此区分两个定义域。}
+$C_+-C_-$ 正是这个分段函数 $f(x)$ 在 $x=0$ 处的跃度。
+
+这件事绝非偶然，在许多物理问题中，例如在量子力学的散射问题中，我们常会遇到在两个不同区域中研究某一个物理量，而在两个区域的连接处给出一定的“边值条件”把它们连接起来。在每个区域中我们实际上并不在 $D'(\Omega)$ 中考虑问题而是在通常的比较光滑的函数之空间中考虑问题，例如在古典意义下取导数。如果不把这两个区域分开考虑，而从整体上的 $\mathbf R^1$ 上来看问题，我们应把这些函数都看作 $D'(\mathbf R^1)$ 之元，而在广义函数意义下求导数，这样就会出现 $\delta(x)$。因此，问题的实质在于我们究竟采取哪一种观点：$D'(\mathbf R^1)$ 还是 $x\ne0$ 处的光滑函数以及连接二者的边值条件，两者实质是相通的。由此也就提出了一个问题：设有 $\mathbf R^1$ 上的函数 $f(x)$，它在 $x>0$ 和 $x<0$ 处均有一阶连续导数（这是古典意义的导数，我们记作 $f_{\mathrm{cl}}'$），$f(x)$ 在 $x=0$ 处又有第一类间断点，记其跃度为 $[f]_0=f(0+)-f(0-)$，我们仍记 $f$ 之广义函数导数为 $f'$，现问 $f'$、$[f]_0$ 与 $f'_{\mathrm{cl}}$ 三者关系如何？有
+
+\noindent\textbf{定理7}
+对上述 $f(x)$，我们有
+\begin{equation}
+ f'(x)=f'_{\mathrm{cl}}(x)+[f]_0\delta(x).
+ \tag{28}
+\end{equation}
+
+\noindent\textbf{证}
+考虑函数
+\[
+ F(x)=f(x)-[f]_0H(x).
+\]
+显然 $F(x)\in C^1(\mathbf R^1\setminus\{0\})$，因而其古典意义下的导数与广义函数导数一致，但当 $x\ne0$ 时，$F'_{\mathrm{cl}}=f'_{\mathrm{cl}}$，所以
+\[
+ F'(x)=f'(x)-[f]_0\delta(x),\qquad F'_{\mathrm{cl}}(x)=f'_{\mathrm{cl}}(x).
+\]
+因此当 $x\ne0$ 时
+\[
+ f'_{\mathrm{cl}}(x)=f'(x)-[f]_0\delta(x),
+\]
+此即(28)式。不过这里的 $f'_{\mathrm{cl}}(x)$ 理解为古典意义下的导数所定义的广义函数，所以我们不加注 $x\ne0$。再则，$\delta(x)$ 在某点之值是没有意义的，而应看作一个整体，所以也没有必要再注明 $x\ne0$。
+
+这是一个非常有用的结论，因为它把“集中分布”（以 $\delta(x)$ 为代表）与“边值条件”连接起来了。我们只在一维情况下讨论了它，其实在高维情况下也有类似结论。
+
+古典意义下导数的性质有许多在 $D'(\Omega)$ 理论中仍成立，例如
+
+（1）莱布尼茨公式。设 $a(x)$ 为 $D'(\Omega)$ 乘子，$f(x)\in D'(\Omega)$ 则
+\[
+ \partial[a(x)f(x)]=a(x)\partial f(x)+[\partial a(x)]f(x).
+\]
+证明略。
+
+（2）
+\[
+ \frac{\partial^2f}{\partial x_1\partial x_2}
+ =\frac{\partial^2f}{\partial x_2\partial x_1}.
+\]
+证明也略去。在通常微积分教本中会介绍一些函数 $f$ 使 $\dfrac{\partial^2f(0)}{\partial x_1\partial x_2}\ne\dfrac{\partial^2f(0)}{\partial x_2\partial x_1}$，但时常只在个别点或个别曲线、曲面上如此。在广义函数中，则局部偏导数作为一个广义函数整体与求导次序无关。
+
+（3）齐性广义函数的欧拉公式。设 $f(x)\in D'(\mathbf R^n)$ 为 $\lambda$ 次正齐性广义函数，则以下的欧拉公式成立
+\begin{equation}
+ \sum_{i=1}^n x_i\frac{\partial f(x)}{\partial x_i}=\lambda f(x).
+ \tag{29}
+\end{equation}
+事实上，任取一个 $\varphi(x)\in D(\mathbf R^n)$，我们有
+\[
+ \left\langle\sum_{i=1}^n x_i\frac{\partial f}{\partial x_i},\varphi\right\rangle
+ =-\sum_{i=1}^n\left\langle f,\frac{\partial(x_i\varphi)}{\partial x_i}\right\rangle
+ =-n\langle f,\varphi\rangle-\sum_{i=1}^n\left\langle f,x_i\frac{\partial\varphi}{\partial x_i}\right\rangle.
+\tag{*}
+\]
+另一方面，由 $\lambda$ 次正齐性广义函数之定义
+\[
+ \langle f,\varphi\rangle
+ =c^{-(\lambda+n)}\left\langle f(x),\varphi\!\left(\frac{x}{c}\right)\right\rangle,
+ \qquad c>0.
+\]
+双方对 $c$ 求导，再令 $c=1$，有
+\[
+ 0=-(\lambda+n)\langle f,\varphi\rangle
+ -\sum_{i=1}^n\left\langle f,x_i\frac{\partial\varphi}{\partial x_i}\right\rangle,
+\]
+即
+\[
+ -n\langle f,\varphi\rangle
+ -\sum_{i=1}^n\left\langle f,x_i\frac{\partial\varphi}{\partial x_i}\right\rangle
+ =\lambda\langle f,\varphi\rangle.
+\]
+代入(*)式即得(29)式，我们现在看到，由“积分的变量变换”而多出来的 $n$ 是怎样消除了的。
+
+\medskip
+\noindent\textbf{5. 广义函数序列的收敛}
+
+第二章 §4 末尾，曾引用了狄拉克的话说 $\delta$ 函数不是通常意义的函数，而是它们的极限，并且引用了一个例子，用这种思想证明了数学分析的一个重要结论：魏尔斯特拉斯定理。下面我们引入
+
+\noindent\textbf{定义11}
+设 $\{f_k\}\subset D'(\Omega)$，$f\in D'(\Omega)$，使得对于一切 $\varphi(x)\in D(\Omega)$ 均有
+\begin{equation}
+ \lim_{k\to\infty}\langle f_k,\varphi\rangle=\langle f,\varphi\rangle,
+ \tag{30}
+\end{equation}
+就说 $f_k\to f$ in $D'(\Omega)$。
+
+注意，这个定义不只是说 $\lim_{k\to\infty}\langle f_k,\varphi\rangle$ 存在，还要求极限是 $D(\Omega)$ 上一个连续线性泛函。因为我们暂时无法肯定这个极限也自动地定义 $D(\Omega)$ 上的一个连续线性泛函，所以在定义中事先明确规定了 $f\in D'(\Omega)$，我们可以证明这个极限确实自动定义了一个 $D'(\Omega)$ 广义函数，但是我们不去证明这一点，因为这涉及了 $D'(\Omega)$ 作为 $D(\Omega)$ 的对偶空间有什么样的拓扑结构的问题。由于它过于专门，我们只好略去不论，而把极限为一连续线性泛函这一事实归入定义11中。我们只说一下，在文献中这个定义中的收敛简称为弱收敛。它是非常广泛的。例如：设 $\{f_k(x)\}$ 是正则广义函数，即每个 $f_k(x)$ 都是 $\Omega$ 上局部可积函数，若此序列在 $\Omega$ 的每个紧子集 $K\Subset\Omega$ 均一致收敛于 $f(x)$，$f(x)$ 也一定是 $\Omega$ 上的局部可积函数，而且易证 $\lim_{k\to\infty}f_k(x)=f(x)$ in $D'(\Omega)$。然而它有许多古典的一致收敛性所没有的性质，例如
+
+\noindent\textbf{定理8}
+若 $\lim_{k\to\infty}f_k=f$ in $D'(\Omega)$，则对任意重指标 $\alpha$，有 $\lim_{k\to\infty}\partial^\alpha f_k=\partial^\alpha f$。
+
+请读者自行证明。
+
+这个收敛性之所以重要在于每个 $D'(\Omega)$ 广义函数都可以表示成为“很好的”函数（甚至 $D(\Omega)$ 函数）之 $D'(\Omega)$ 极限。在物理学上特别重要的是 $\delta$ 函数可以这样表示，实际上，物理学家正是这样来认识 $\delta$ 函数的，狄拉克的话相应应该这样理解，尤其重要的是 $\delta$ 函数有多种表示法。如果 $D'(\mathbf R^1)$ 函数 $f_k(x)\to\delta(x)$ in $D'(\mathbf R^1)$，我们就称 $\{f_k(x)\}$ 为一个 $\delta$ 序列。第二章 §4 实际上证明了
+\begin{equation}
+ f_k(x)=
+ \begin{cases}
+ I_k(1-x^2)^k,&|x|\le1,\\
+ 0,&|x|>1,
+ \end{cases}
+ \tag{31}
+\end{equation}
+\[
+ I_k=\left[\int_{-1}^1(1-x^2)^k\,dx\right]^{-1},
+\]
+是一个 $\delta$ 序列，而且我们常称之为朗道序列（这里的朗道是指德国数学家 E. Landau，而不是前苏联物理学家 L. Landau）。上一节中我们又指出正态分布的高斯核
+\[
+ \frac1{2\sqrt{\pi Dt}}\exp\!\left[-\frac{x^2}{4Dt}\right],\qquad t>0
+\]
+也是一个 $\delta$ 序列。不过这里没有指标 $k$，而以连续变化的 $1/t$（$t\to0+$ 时 $1/t\to+\infty$）来代替 $k$。现在我们来证明
+
+\noindent\textbf{定理9（高斯序列）}
+当 $t\to0+$ 时，
+\[
+ q(x,t)=\frac1{2\sqrt{\pi Dt}}\exp\!\left[-\frac{x^2}{4Dt}\right]\to\delta(x)
+ \quad\text{in }D'(\mathbf R^1).
+\]
+
+\noindent\textbf{证}
+任给 $\varphi(x)\in D(\mathbf R^1)$，很明显，因为
+\[
+ \frac1{2\sqrt{\pi Dt}}\int_{-\infty}^{+\infty}\exp\!\left[-\frac{x^2}{4Dt}\right]dx=1,
+\]
+所以
+\[
+ \varphi(0)=\frac1{2\sqrt{\pi Dt}}\int_{-\infty}^{+\infty}\varphi(0)\exp\!\left[-\frac{x^2}{4Dt}\right]dx.
+\]
+于是我们有
+\[
+\begin{aligned}
+ \langle q(x,t),\varphi(x)\rangle-\varphi(0)
+ &=\frac1{2\sqrt{\pi Dt}}\int_{-\infty}^{+\infty}
+ [\varphi(x)-\varphi(0)]\exp\!\left[-\frac{x^2}{4Dt}\right]dx.
+\end{aligned}
+\]
+把积分分为两部分，一部分在 $[-\delta,\delta]$ 上记作 $I_1$，其余的是在 $\mathbf R^1\setminus[-\delta,\delta]$ 上的积分记作 $I_2$。任给一个 $\varepsilon>0$，因为 $\varphi(x)$ 在 $[-\delta,\delta]$ 中是一致连续的，故当 $\delta$ 充分小时有 $|\varphi(x)-\varphi(0)|<\varepsilon/2$，$|x|\le\delta$。因此
+\[
+\begin{aligned}
+ |I_1|&\le\frac1{2\sqrt{\pi Dt}}\int_{-\delta}^{\delta}
+ |\varphi(x)-\varphi(0)|\exp\!\left[-\frac{x^2}{4Dt}\right]dx\\
+ &\le\frac\varepsilon2\cdot\frac1{2\sqrt{\pi Dt}}
+ \int_{-\infty}^{+\infty}\exp\!\left[-\frac{x^2}{4Dt}\right]dx
+ =\frac\varepsilon2.
+\end{aligned}
+\]
+现在固定 $\delta$ 并令 $t\to0$。因为 $\varphi(x)\in D(\mathbf R^1)$，故有最大值 $M$，而在 $I_2$ 中 $|\varphi(x)-\varphi(0)|\le2M$。在 $I_2$ 中 $|x|\ge\delta$，从而
+\[
+ \exp\!\left[-\frac{x^2}{4Dt}\right]
+ \le \exp\!\left[-\frac{\delta^2}{8Dt}\right]
+ \exp\!\left[-\frac{x^2}{8Dt}\right],
+\]
+因此
+\[
+ |I_2|\le\frac{\exp[-\delta^2/(8Dt)]}{2\sqrt{\pi Dt}}
+ \int_{|x|\ge\delta}2M\exp\!\left[-\frac{x^2}{8Dt}\right]dx
+ \le C\exp\!\left[-\frac{\delta^2}{8Dt}\right].
+\]
+这里我们利用了积分的收敛性，而有
+\[
+ \frac1{2\sqrt{\pi Dt}}
+ \int_{|x|\ge\delta}2M\exp\!\left[-\frac{x^2}{8Dt}\right]dx
+ \le\frac C{\sqrt\pi}\int_{-\infty}^{+\infty}e^{-y^2}\,dy=C,
+\]
+于是可以找到 $t_0>0$，使当 $0<t<t_0$ 时 $|I_2|<\varepsilon/2$。前面对 $I_1$ 的估计是对一切 $t$ 都成立的，所以当 $0<t<t_0$ 时
+\[
+ |\langle q(x,t),\varphi(x)\rangle-\varphi(0)|\le I_1+I_2<\varepsilon,
+\]
+而定理证毕。
+
+上一节中我们说过 $q(x,t)$ 是扩散方程
+\[
+ \frac1D\frac{\partial u}{\partial t}=\frac{\partial^2u}{\partial x^2},
+ \qquad -\infty<x<+\infty,\quad t>0
+\]
+的基本解，这就是说，当 $t>0$ 时 $q(x,t)$ 适合上面的偏微分方程（这一点读者很容易自己证），而当 $t\to0$ 时，$q(x,t)\to\delta(x)$ in $D'(\Omega)$，这就是我们上面证明的事实。基本解是偏微分方程理论的基本工具。有了广义函数理论就能给出系统的基本解理论，这是广义函数理论之所以重要的一个很大的理由。
+
+我们不妨把这里的证明与第二章 §4 关于魏尔斯特拉斯定理的证明比较一下，立刻可以见到它们是十分相似的。实际上，我们常用的 $\delta$ 序列都是这种光滑函数序列 $\{K_n(x)\}$：
+
+(i) $K_n(x)\ge0$；
+
+(ii) $\displaystyle\int_{-\infty}^{+\infty}K_n(x)\,dx=1$；
+
+(iii) 不论如何取 $\delta>0$，$\displaystyle\int_{|x|\ge\delta}K_n(x)\,dx\to0$（$n\to\infty$），而 $\displaystyle\int_{|x|<\delta}K_n(x)\,dx\to1$。
+
+即是说这个积分之值“集中”在 $x=0$ 处，这在物理上与第二章 §4 讲的质量分布是一致的。但这会给人一种印象，即 $\delta(x)$ 的几何图形总是“钟形曲线”。然而这是不对的。下一章就会看到，例如还有极重要的费耶（Fejér，匈牙利数学家）核
+\[
+ K_n(x)=\frac1n\left[\frac{\sin(n\pi x)}{\sin\pi x}\right]^2,
+\]
+它在傅里叶级数理论中极为重要。我们将在下一章解释何以会有这种类型的 $\delta$ 序列。到那时就可以进一步体会到广义函数理论的深刻性。
+
+适合以上 (i)、(ii)、(iii) 的 $\delta$ 序列时常称为正型序列。

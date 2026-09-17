@@ -1,0 +1,181 @@
+积分区域 $E$ 为有限测度的可测集而 $f(x)$ 在 $E$ 上不一定有界的情况前已讨论过了。我们用
+\[
+ \int_E [f(x)]_N\,dx
+\]
+之极限作为 $\int_E f(x)\,dx$ 之定义，这一作法其实与黎曼积分情况是一致的；而另一类“反常积分”即 $E$ 不一定具有有限测度的集合的处理方法也类似。我们还是先设 $f(x)\ge0$，因为一般情况下可以把 $f(x)$ 写成
+\[
+ f(x)=f_+(x)-f_-(x),
+\]
+并分别讨论 $\int_E f_+(x)\,dx$ 与 $\int_E f_-(x)\,dx$。当二者均有定义（即均收敛）时，我们定义
+\[
+ \int_E f(x)\,dx=\int_E f_+(x)\,dx-\int_E f_-(x)\,dx.
+\]
+这样做即知
+\[
+ \int_E |f(x)|\,dx=\int_E f_+(x)\,dx+\int_E f_-(x)\,dx
+\]
+也有定义（即也收敛）。所以，和 $E$ 为有限测度可测集的情况一样，勒贝格可积函数一定是绝对可积的。
+
+我们现在限制讨论这样的 $E$：令 $\{\Omega_k\}$ 是有界闭域（即紧区域）的“穷竭的上升”序列。这句话的意思是，首先，$\{\Omega_k\}$ 是上升序列，$\Omega_1\subset\Omega_2\subset\cdots$；其次 $E$ 的任一紧子集必包含在某一 $\Omega_{k_0}$ 中，所以
+\[
+ \bigcup_{k=1}^{\infty}\Omega_k=E;
+\]
+其次 $E_k=E\cap\Omega_k$ 具有有限测度，而
+\[
+ E=\lim_{k\to\infty}E_k=\bigcup_{k=1}^{\infty}E_k,
+\]
+即为 $\{E_k\}$ 之外极限。（当然，我们可以利用区间 $I_k$——其中心在 $x=0$，边长为 $k$——来作 $E_k$，也可以用 $k$ 为半径，而球心在 $x=0$ 的球 $B_k$ 来作 $E_k$；对下面的结果不会有影响。）如果 $f(x)$ 在 $E_k$ 上可积，而且
+\[
+ \lim_{k\to\infty}\int_{E_k}f(x)\,dx
+\]
+存在（因为已设 $f(x)\ge0$，所以这个极限若不存在，必有 $\int_{E_k}f(x)\,dx\to+\infty$），就说 $f(x)$ 在 $E$ 上勒贝格可积，而且定义
+\[
+ (L)\int_E f(x)\,dx=\lim_{k\to\infty}(L)\int_{E_k}f(x)\,dx.
+\]
+（我们再提一下，如果不用 $I_k$ 而用 $B_k$ 来作 $E_k$，则关于 $f(x)$ 之可积性与积分值只会得到相同结果。）勒贝格积分一定是绝对可积的，这是一个重要性质，例如
+\[
+ \int_{-\infty}^{\infty}\frac{\sin x}{x}\,dx
+\]
+作为黎曼积分是存在的——条件收敛，但作为勒贝格积分则是不存在的。
+
+前面讲的关于勒贝格积分的性质大部分在此仍成立，当然也有例外，如中值定理
+\[
+ \alpha m(E)\le\int_E f(x)\,dx\le\beta m(E),
+\]
+因为现在 $m(E)=+\infty$，这一切读者都容易判断。重要的是要指出，勒贝格控制收敛定理仍成立，但 $|f(x)|\le M$ 这个条件要代以 $|f(x)|\le\Phi(x)$，这里 $\Phi(x)$ 在 $E$ 上可积。
+
+现在我们开始讨论含参变量的积分。设有函数 $f(x,t)$，这里 $x=(x_1,\ldots,x_n)\in\mathbb R^n$，$t$ 是参数：$t=(t_1,\ldots,t_m)\in U\subset\mathbb R^m$，$f(x,t)$ 可以取 $\pm\infty$ 为值。于是我们有
+
+\noindent\textbf{定理15}\quad
+(i) 设对任一固定的 $t\in U$，$f(x,t)$ 对 $x$ 在 $\mathbb R^n$ 上可积。
+
+(ii) 对几乎所有 $x\in\mathbb R^n$，$f(x,t)$ 作为 $t$ 的函数在 $t_0\in U$ 处连续。
+
+(iii) 存在一个 $\mathbb R^n$ 上可积的函数 $\Phi(x)$，使对一切 $t\in U$，对于 $x$ 几乎处处有
+\[
+ |f(x,t)|\le\Phi(x),
+\]
+则
+\[
+ g(t)=\int_{\mathbb R^n}f(x,t)\,dx
+\]
+在 $t_0$ 处连续。
+
+\noindent\textbf{证}\quad 我们只要证明对任一串 $t_n\to t_0$，$g(t_n)\to g(t_0)$ 即可。为此，我们令
+\[
+ f_n(x)=f(x,t_n),\qquad f_0(x)=f(x,t_0).
+\]
+于是由(i)知 $f_n(x)$ 与 $f_0(x)$ 均在 $\mathbb R^n$ 上勒贝格可积；由(ii)知，对于几乎所有 $x$，
+\[
+ \lim_{n\to\infty}f_n(x)=f_0(x),
+\]
+由(iii)知 $|f_n(x)|\le\Phi(x)$，所以由勒贝格控制收敛定理
+\[
+ \lim_{n\to\infty}g(t_n)=\lim_{n\to\infty}\int_{\mathbb R^n}f(x,t_n)\,dx
+ =\int_{\mathbb R^n}f(x,t_0)\,dx=g(t_0).
+\]
+定理证毕。
+
+\noindent\textbf{注}\quad 定理中 $x\in\mathbb R^n$ 可以改为 $x\in E$，而 $E$ 具有上面讲的性质，为此只需将 $f(x,t)$ 改为 $\chi_E(x)f(x,t)$ 即可。
+
+\noindent\textbf{定理16}\quad
+(i) 仍设 $f(x,t)$ 对固定的 $t\in U$ 为可积，但现在设 $U\subset\mathbb R^m$ 是一个开集。
+
+(ii) 对几乎所有 $x$，$f(x,t)$ 作为 $t$ 的函数是 $U$ 中的可微函数。
+
+(iii) 存在一个 $\mathbb R^n$ 上可积的函数 $\Phi(x)$，使对所有的 $t=(t_1,\ldots,t_m)\in U$，
+\[
+ \left|\frac{\partial f(x,t)}{\partial t_i}\right|\le\Phi(x)
+ \qquad (i=1,2,\ldots,m)
+\]
+对几乎所有 $x\in\mathbb R^n$ 成立。
+
+则
+\[
+ g(t)=\int_{\mathbb R^n}f(x,t)\,dx
+\]
+对 $t$ 在 $U$ 中可微，而且
+\[
+ \frac{\partial g(t)}{\partial t_i}
+ =\int_{\mathbb R^n}\frac{\partial f(x,t)}{\partial t_i}\,dx,
+ \qquad i=1,2,\ldots,m.
+\]
+
+\noindent\textbf{证}\quad 我们只需证明对任一个 $t_i$，$\partial g(t)/\partial t_i$ 为连续且可以在积分号下求导。所以，不失一般性不妨设 $U$ 是一维空间中一个开区间 $(t_0-h,t_0+h)$，而证明 $g(t)$ 在 $t_0$ 处连续可微。令 $h_k$ 为一个趋于0的实数列，$h_k\ne0$，而记
+\[
+ f_k(x)=\frac{f(x,t_0+h_k)-f(x,t_0)}{h_k},
+ \qquad
+ f_0(x)=\frac{\partial f(x,t_0)}{\partial t}.
+\]
+于是由拉格朗日定理
+\[
+ f_k=f'(x,t_0+\theta_kh_k),\qquad 0<\theta_k<1.
+\]
+仿照定理15的证法令 $k\to\infty$ 立即可得如上的结果。
+
+定理15与定理16比之黎曼积分中的相应定理显然更简单好用。读者可能认为，$|f_n(x)|\le\Phi(x)$ 这个条件很像黎曼积分中的 $M$ 判别法，但实际不然，因为我们并未得出 $|f_n(x)|$ 的一致收敛性。在我们的证明中，叶果洛夫定理起了基本作用，它指出除了一个测度可以任意小的集合——但我们不知道其位置何在——$|f_n(x)|$ 是一致收敛的，而 $\Phi(x)$ 恰好在这个破坏了一致收敛性的集上，控制了 $f_n(x)$ 的积分，而不管这个“坏”集合的位置何在。这是黎曼积分理论所做不到的。在勒贝格积分理论中，证明这一类黎曼积分理论中不成立的定理时常有多种方法，但仔细分析这些方法就会发现我们利用了一些在勒贝格积分理论中起基本作用，而在黎曼积分理论中没有的思想与方法，例如在证明叶果洛夫定理中分析不一致收敛点的集合之构造的作法，在黎曼积分理论中就见不到。这些思想与方法正是勒贝格积分理论与黎曼积分理论本质的区别。下面我们要讲的单调性问题也是其中之一，它反映了勒贝格积分的“正性”起了何等重要的作用，我们先证明
+
+\noindent\textbf{定理17（法图（Fatou）引理）}\quad 设 $E$ 是有限测度集，而可测函数 $f_n(x)\ge0$ 于 $E$ 上，而且几乎处处有 $f_n(x)\to f(x)$，则
+\begin{equation}
+ \int_E f(x)\,dx\le\liminf_{n\to\infty}\int_E f_n(x)\,dx.
+ \tag{39}
+\end{equation}
+
+\noindent\textbf{证}\quad 很容易证明，在 $E$ 上几乎处处有
+\[
+ \lim_{n\to\infty}[f_n(x)]_N=[f(x)]_N\le N.
+\]
+故由勒贝格控制收敛定理
+\begin{equation}
+ \lim_{n\to\infty}\int_E[f_n(x)]_N\,dx=\int_E[f(x)]_N\,dx,
+ \tag{40}
+\end{equation}
+但对左方的积分有
+\[
+ \int_E[f_n(x)]_N\,dx\le\int_Ef_n(x)\,dx.
+\]
+左方有极限存在，右方则不一定，但右方的下极限一定存在，故
+\[
+ \int_E[f(x)]_N\,dx\le\liminf_{n\to\infty}\int_Ef_n(x)\,dx.
+\]
+代入(40)有再令 $N\to\infty$ 即得(39)式。
+
+对这个定理的理解中要注意，若(39)之右方是有限数，则知 $f(x)$ 在 $E$ 可积。反过来，$f(x)$ 总是非负可测的（定理8），若它不可积，有 $\int_Ef(x)\,dx=+\infty$，这时必有
+\[
+ \liminf_{n\to\infty}\int_Ef_n(x)\,dx=+\infty,
+\]
+因此我们仍认为(39)成立，且其中有等号。
+
+利用法图引理就可以证明重要的
+
+\noindent\textbf{定理18（勒维（Beppo Levi）定理）}\quad 令 $\{f_n(x)\}$ 为 $E$ 上的可积函数的上升序列，而且 $\lim_{n\to\infty}f_n(x)=f(x)$，则在以下意义下可以在积分号下取极限
+\begin{equation}
+ \lim_{n\to\infty}\int_Ef_n(x)\,dx
+ =\int_E\lim_{n\to\infty}f_n(x)\,dx
+ =\int_Ef(x)\,dx:
+ \tag{41}
+\end{equation}
+
+(i) 若式左方有限，则 $f(x)$ 几乎处处有限而且为可积，且等号成立；若式左方 $+\infty$，则 $f(x)$ 不可积，但(41)仍成立。
+
+(ii) 若极限函数 $f(x)$ 可积，则上式两侧均为有限且相等；若极限函数 $f(x)$ 不可积而式左成为 $+\infty$，而(41)式仍成立。
+
+\noindent\textbf{证}\quad (i) 不妨考虑 $f_n(x)-f_1(x)$，于是可以设 $f_n(x)\ge0$。由法图引理知，若式左方有限，$f(x)$ 在 $E$ 上可积，由勒贝格控制收敛定理（注意 $|f_n(x)|=f_n(x)\le f(x)$），知(41)成立。式左为 $+\infty$ 时，也由法图引理可知式右也是 $+\infty$，故(41)仍成立。
+
+(ii) 若 $f(x)$ 可积，由 $|f_n(x)|=f_n(x)\le f(x)$ 用勒贝格控制收敛定理仍可得(41)式，若 $f(x)$ 不可积，因 $f(x)\ge0$，故 $\int_Ef(x)\,dx=+\infty$。由法图引理知 $\lim\int_Ef_n(x)\,dx=+\infty$，从而
+\[
+ \lim_{n\to\infty}\int_Ef_n(x)\,dx=+\infty
+\]
+而(41)式仍成立。
+
+这个定理对于下降函数序列也是对的，因为 $\{-f_n(x)\}$ 这时是上升序列。
+
+对于 $E$ 不一定具有有限测度的情况，仿照上面的方法仍可证明这两个定理。
+
+勒维定理常用于正项级数的情况，即将 $f_n(x)$ 表为 $\sum_{k=1}^{n}g_k(x)$ 的部分和，$f_1(x)=g_1(x)$，$f_n(x)-f_{n-1}(x)=g_n(x)$，这时我们有：若 $g_n(x)\ge0$ 为可积函数，则
+\begin{equation}
+ \int_E\sum_{n=1}^{\infty}g_n(x)\,dx
+ =\sum_{n=1}^{\infty}\int_Eg_n(x)\,dx.
+ \tag{42}
+\end{equation}
+把它与上节关于黎曼积分的定理12比较一下，对于非负黎曼可积的 $g_n(x)$，要把(42)式左方的积分改为下积分才行，尽管我们这时有看来很强的迪尼定理（即上节定理13），它指出若 $f_n(x)\ge0$ 为连续，且在有界闭区间上下隆趋于0，则它必一致趋于0。问题在于由连续函数列可测函数是一个复杂的过程，上面我们仅举出一个鲁金定理，在以下各章我们还有机会讲到进一步的结果。

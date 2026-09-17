@@ -1,0 +1,1618 @@
+\chapter{Groupes, construction de $\mathbb Z$}
+\origpage{87--130}
+
+\BellaSection{1. Définitions}
+
+\medskip\noindent\textsc{Définition 4.1.} --- \emph{On appelle groupe tout couple $(G,*)$ où $G$ est un ensemble muni d'une loi de composition interne, notée $*$, telle que
+\begin{itemize}[leftmargin=2em]
+\item $*$ est associative,
+\item $*$ admet un élément neutre,
+\item tout élément admet un inverse pour la loi $*$.
+\end{itemize}}
+
+Quelques conséquences de la définition. D'abord on parle le plus souvent du groupe $G$, muni de la loi $*$, sans garder la terminologie de couple.
+
+Un groupe n'est jamais vide, car il existe dans $G$ au moins l'élément neutre pour la loi $*$. De plus un singleton $\{e\}$ muni de la loi \BellaCorrection{définie}{défini} par $e*e=e$ est un groupe. \bookend
+
+Si $e$ est élément neutre dans un groupe $G$, il est unique, car si $e'$ en est un autre on a
+\[
+e*e'=e' \quad\text{puisque $e$ est neutre,}
+\]
+mais aussi
+\[
+e*e'=e \quad\text{puisque $e'$ est neutre.}
+\]
+Donc $e=e'$. \bookend
+
+Dans un groupe, l'équation $x*a=b$, où $a$ et $b$ sont des éléments du groupe, $x$ un élément cherché dans le groupe, a une solution unique, ainsi que l'équation $a*x=b$.
+
+Car, si $a'$ est l'inverse de $a$, alors
+\[
+x*a=b\Rightarrow (x*a)*a'=b*a',
+\]
+soit, par associativité,
+\[
+x*(a*a')=x*e=x=b*a',
+\]
+d'où l'existence d'une solution $b*a'$, et si $y$ en est une autre, l'égalité $x*a=y*a$ implique, en composant à droite par $a'$ inverse de $a$ que
+\[
+(x*a)*a'=(y*a)*a',
+\]
+soit, (associativité de $*$),
+\[
+x*(a*a')=y*(a*a'),
+\]
+soit $x*e=y*e$ ou encore $x=y$. \bookend
+
+De manière analogue, $a*x=b\Leftrightarrow x=a'*b$, avec $a'$ inverse de $a$. Il faut remarquer qu'en général $b*a'\ne a'*b$ car la loi n'est pas forcément commutative.
+
+Dans un groupe tout élément $m$ est régulier (à droite et à gauche) pour la loi de composition, car $x*m=y*m$ implique, en multipliant à droite par $m'$ inverse de $m$, que
+\[
+(x*m)*m'=(y*m)*m',
+\]
+d'où, par associativité,
+\[
+x*(m*m')=y*(m*m'),
+\]
+soit $x*e=y*e$, donc $x=y$. \bookend
+
+On procède de manière analogue si $m*x=m*y$ en composant à gauche par $m'$. On dit en fait que l'on simplifie par $m$.
+
+\subsection*{4.2. Un exemple important de groupe : le groupe produit}
+\BellaCorrection{Soient}{Soit} deux groupes $G_1$ et $G_2$ notés multiplicativement. On vérifie que le produit cartésien $H=G_1\times G_2$ est muni d'une structure de groupe par la loi $*$ définie par
+\[
+(x_1,x_2)*(y_1,y_2)=(x_1y_1,x_2y_2).
+\]
+L'élément neutre de $H$ est $(e_1,e_2)$ et l'inverse de $(x_1,x_2)$ est $(x_1^{-1},x_2^{-1})$, avec $x_1^{-1}$ et $x_2^{-1}$ inverses de $x_1$ et $x_2$ dans $G_1$ et $G_2$.
+
+\medskip\noindent\textsc{Définition 4.3.} --- \emph{Un groupe est dit commutatif (ou abélien) si et seulement si la loi est commutative.}
+
+\medskip\noindent\textsc{Définition 4.4.} --- \emph{On appelle sous-groupe d'un groupe $G$ toute partie $S$ de $G$ qui est stable pour la loi $*$, et qui est munie par la restriction de $*$ à $S$, d'une structure de groupe.}
+
+C'est donc une partie $S$ de $G$ telle que :
+\begin{enumerate}[label=\arabic*),leftmargin=2.1em]
+\item $\forall(x,y)\in S^2$, $x*y\in S$ ;
+\item $e\in S$ ;
+\item $\forall x\in S$, $x^{-1}\in S$.
+\end{enumerate}
+Pour la loi $*$ restreinte à $S$ on a bien alors : associativité, existence d'un élément neutre $e$ dans $S$ et existence dans $S$ d'un inverse de chaque $x$ de $S$.
+
+\subsection*{4.5. Critère pratique}
+Une partie $S$ d'un groupe $G$ est un sous-groupe de $G$ si et seulement si $S\ne\varnothing$ et, $\forall(x,y)\in S^2$, $x*y^{-1}\in S$.
+
+On note $y^{-1}$ l'inverse de $y$ pour la loi $*$.
+
+En effet, si $S$ est un sous-groupe, comme $e\in S$, $S$ est non vide, puis si $x$ et $y$ sont dans $S$, $y^{-1}$ est aussi dans $S$, donc le produit $x*y^{-1}$ aussi.
+
+Réciproquement : si $S$ vérifie les 2 conditions, comme $S\ne\varnothing$, soit $a\in S$, alors $a*a^{-1}=e\in S$ ; et $\forall x\in S$, comme $(e,x)\in S^2$, $e*x^{-1}=x^{-1}\in S$ ; enfin $S$ est stable car, $\forall(x,y)\in S^2$, $(x,y^{-1})\in S^2$ aussi donc $x*(y^{-1})^{-1}=x*y\in S$. \bookend
+
+\medskip\noindent\textsc{Théorème 4.6.} --- \emph{Une intersection de sous-groupes d'un groupe $G$ est un sous-groupe de $G$.}
+
+Soit $(S_i)_{i\in I}$ une famille de sous-groupes de $G$, $(I\ne\varnothing)$, et
+\[
+S=\bigcap_{i\in I}S_i.
+\]
+On a $S\ne\varnothing$ car $e$, élément neutre de $G$, est dans chaque $S_i$ donc dans $S$, et $\forall(x,y)\in S^2$, on a, $\forall i\in I$, $(x,y)\in S_i^2$ avec $S_i$ sous-groupe de $G$, donc $xy^{-1}\in S_i$ ; vrai pour tout $i$, cela donne $xy^{-1}\in S$. Le critère 4.5 est vérifié. \bookend
+
+Il est à noter que le symbole $*$ de la loi de composition a disparu : on adopte la notation usuelle d'une loi multiplicative, ce que l'on fera désormais.
+
+On n'a rien d'analogue pour les réunions.
+
+\medskip\noindent\textsc{Théorème 4.7.} --- \emph{Un groupe $G$ n'est jamais réunion de deux sous-groupes propres, c'est-à-dire différents de $G$ et de $\{e\}$.}
+
+Ce théorème suppose donc qu'on l'applique à $G$ non réduit à son seul élément neutre.
+
+En effet, supposons que $G=A\cup B$ avec $A$ et $B$ sous-groupes de $G$ différents de $\{e\}$ et de $G$. On a $A\subsetneq G$, donc il existe $x\notin A$, et comme $G=A\cup B$, on a $x\in B$. Puis $B\subsetneq G$, donc il existe $y\notin B$, donc $y\in A$.
+
+Le produit $xy\in G=A\cup B$, par exemple $xy\in A$, mais alors, comme $y\in A$, qui est sous-groupe, $y^{-1}\in A$ aussi, et $A$ stable pour le produit, $(xy)y^{-1}=x\in A$ : absurde car $x\notin A$ par hypothèse. Si on avait $xy\in B$, comme $x\in B$, $x^{-1}(xy)=y\in B$ ce qui est absurde aussi.
+
+L'hypothèse faite conduit à une absurdité, d'où le théorème. \bookend
+
+\medskip\noindent\textsc{Remarque 4.8.} --- Il en résulte qu'une réunion de 2 sous-groupes propres $A$ et $B$ de $G$, distincts, ne peut pas être un sous-groupe $H$ de $G$, sinon le théorème appliqué à $H$ serait faux.
+
+Par contre, on verra qu'un groupe peut être réunion de plus de 2 sous-groupes propres : la situation n'est pas simple.
+
+Le fait que la notion de sous-groupe soit
+\begin{enumerate}[label=\arabic*),leftmargin=2.1em]
+\item stable par intersection,
+\item vérifiée par le groupe lui-même,
+\end{enumerate}
+va conduire à la notion de sous-groupe engendré par une partie.
+
+\medskip\noindent\textsc{Définition 4.9.} --- \emph{Soit une partie $X$ d'un groupe $G$. On appelle sous-groupe engendré par $X$ le plus petit sous-groupe de $G$ contenant $X$, plus petit pour la relation d'ordre « inclusion ».}
+
+Cette définition n'aura de sens que si ce plus petit sous-groupe existe, ce que nous allons justifier.
+
+D'abord, il est clair que $G$ étant un ensemble, $\mathcal P(G)$, ensemble des \BellaCorrection{parties}{partie} de $G$, est ordonné par la relation d'inclusion car c'est
+
+\emph{réflexif :} $Y\subset Y$, $\forall Y\in\mathcal P(G)$,
+
+\emph{antisymétrique :} si $Y\subset Z$ et $Z\subset Y$ on a $Y=Z$,
+
+\emph{transitif :} $X\subset Y$ et $Y\subset Z\Rightarrow X\subset Z$.
+
+C'est un ordre partiel, 2 parties ne sont pas forcément comparables pour l'inclusion.
+
+Soit donc maintenant $X$ une partie du groupe $G$. On considère la famille $\mathcal F$ des parties $S$ de $G$ telles que :
+\begin{enumerate}[label=\arabic*),leftmargin=2.1em]
+\item $S$ est un sous-groupe de $G$,
+\item $X\subset S$.
+\end{enumerate}
+D'abord $\mathcal F$ n'est pas vide car $G$ est un sous-groupe de $G$, qui contient $X$. Puis on considère l'intersection de tous les éléments $S$ de $\mathcal F$ :
+\[
+\overline X=\bigcap_{S\in\mathcal F}S.
+\]
+En tant qu'intersection de sous-groupes, $\overline X$ est un sous-groupe de $G$ (théorème 4.6) ; comme $X\subset S$ pour chaque $S\in\mathcal F$, on a $X\subset\overline X$ ; enfin, si $B_0$ est un sous-groupe contenant $X$, $B_0\in\mathcal F$, donc $\overline X\subset B_0$. Il en résulte que $\overline X$ est bien le plus petit sous-groupe de $G$ contenant $X$.
+
+\medskip\noindent\textsc{Théorème 4.10.} --- \emph{Soit \BellaCorrection{un groupe}{une groupe} $G$. Pour toute partie $X$ de $G$, il existe un et un seul sous-groupe, noté $\overline X$, contenant $X$, et plus petit sous-groupe contenant $X$.}
+
+On vient d'établir une caractérisation globale de $\overline X$, il serait pratique d'en avoir une caractérisation élément par élément.
+
+\medskip\noindent\textsc{Théorème 4.11.} --- \emph{Soit $X$ une partie non vide d'un groupe $G$, noté multiplicativement. Le sous-groupe engendré par $X$ est l'ensemble des éléments qui s'écrivent
+\[
+x_1^{\alpha_1}x_2^{\alpha_2}\cdots x_n^{\alpha_n},
+\]
+avec $n\in\mathbb N^*$, les $x_i\in X$, les $\alpha_i\in\mathbb Z$.}
+
+Des notations : si $x\in G$ on note, pour $p\in\mathbb N^*$, $x^p$ le produit
+\[
+\underbrace{x\cdot x\cdots x}_{p\text{ fois}};
+\]
+$x^{-1}$ l'inverse de $x$ et
+\[
+x^{-p}=\underbrace{x^{-1}\cdot x^{-1}\cdots x^{-1}}_{p\text{ fois}}.
+\]
+On peut remarquer que $x^{-p}$ est l'inverse de $x^p$, (car
+\[
+x^p\cdot x^{-p}
+=\underbrace{x\cdot x\cdots x}_{p\text{ fois}}\cdot
+\underbrace{x^{-1}\cdot x^{-1}\cdots x^{-1}}_{p\text{ fois}}
+=\underbrace{x\cdot x\cdots x}_{p-1\text{ fois}}\cdot(e)\cdot
+\underbrace{x^{-1}\cdot x^{-1}\cdots x^{-1}}_{p-1\text{ fois}}
+\]
+par associativité, or $xx^{-1}=e$ disparaît, (élément neutre). On est ramené à $x^{p-1}\cdot x^{-(p-1)}$, d'où, par récurrence, $=x\cdot x^{-1}=e$.
+
+Par convention $x^0=e$, et alors on peut vérifier que pour tout couple $(p,q)$ de $\mathbb Z^2$ on a $x^px^q=x^{p+q}$.
+
+Revenons au Théorème 4.11. On va prouver que l'ensemble $\widetilde X$ des produits du type $x_1^{\alpha_1}\cdots x_n^{\alpha_n}$ est un sous-groupe, contenant $X$, donc $\widetilde X$ contiendra $\overline X$, plus petit sous-groupe contenant $X$ ; puis on justifiera l'inclusion $\widetilde X\subset\overline X$.
+
+Pour arriver à cela on utilisera le résultat suivant.
+
+\medskip\noindent\textsc{Lemme 4.12.} --- \emph{Soient $a$ et $b$ dans un groupe multiplicatif $G$. On a $(ab)^{-1}=b^{-1}a^{-1}$.}
+
+En effet
+\[
+(ab)(b^{-1}a^{-1})=a(bb^{-1})a^{-1}=a(e)a^{-1}=aa^{-1}=e,
+\]
+il en résulte que $b^{-1}a^{-1}$ est l'inverse de $ab$. \bookend
+
+On considère alors l'ensemble $\widetilde X$ formé de tous les produits possibles du type $x_1^{\alpha_1}\cdots x_n^{\alpha_n}$ ; $n$ variant dans $\mathbb N^*$ et, pour $1\le i\le n$, les $x_i$ étant dans $X$ et les $\alpha_i$ dans $\mathbb Z$.
+
+On a $\widetilde X$ non vide, car en particulier, chaque $x$ de $X$ est du type $x^1$ : c'est un produit du type voulu pour $n=1$, donc $X\subset\widetilde X$ avec $\widetilde X\ne\varnothing$. Puis si $y\in\widetilde X$, $y$ est du type $x_1^{\alpha_1}\cdots x_n^{\alpha_n}$, son inverse sera
+\[
+y^{-1}=(x_n^{\alpha_n})^{-1}\cdots(x_1^{\alpha_1})^{-1}
+=x_n^{-\alpha_n}\cdots x_1^{-\alpha_1},
+\]
+du type voulu car les $x_j\in X$ et les $-\alpha_j\in\mathbb Z$ ; a fortiori, si $x=x_1^{\alpha_1}\cdots x_n^{\alpha_n}$ est aussi dans $\widetilde X$, on aura $xy^{-1}$ encore du type voulu, soit $xy^{-1}\in\widetilde X$.
+
+On a $\widetilde X$ non vide ; si $x$ et $y$ sont dans $\widetilde X$ alors $xy^{-1}$ est dans $\widetilde X$, ce qui prouve que $\widetilde X$ est un sous-groupe de $G$, (critère 4.5).
+
+On a justifié en cours de démonstration que $X\subset\widetilde X$, donc $\widetilde X$ est dans la famille des sous-groupes contenant $X$ : \emph{a fortiori} $\overline X\subset\widetilde X$.
+
+Puis $\overline X$ est un sous-groupe contenant $X$, mais alors, si $x_i\in X$ pour tout $\alpha_i\in\mathbb Z$, $x_i^{\alpha_i}\in\overline X$, (stable par produit et passage à l'inverse), \emph{a fortiori} $x_1^{\alpha_1}\cdots x_n^{\alpha_n}\in\overline X$, (stabilité pour le produit), d'où $\widetilde X\subset\overline X$ et finalement $\widetilde X=\overline X$, ce qui achève la justification du Théorème 4.11. \bookend
+
+Il convient de noter que dans un produit du type $x_1^{\alpha_1}\cdots x_n^{\alpha_n}$ le même élément $x$ de $X$ peut figurer à des places différentes.
+
+On rencontrera souvent en mathématique cette notion de « partie engendrée par $X$, ayant une propriété voulue » avec les deux points de vue, global et élément par élément. Par exemple : sous-anneau, sous-corps, sous-espace vectoriel ; fermeture d'une partie dans les espaces topologiques, exemples que nous rencontrerons.
+
+\medskip\noindent\textsc{Définition 4.13.} --- \emph{Un groupe $G$ est dit monogène s'il est engendré par un seul élément ; il est dit cyclique s'il est monogène et de cardinal fini.}
+
+On verra au paragraphe suivant que l'on sait parfaitement caractériser les groupes monogènes.
+
+\BellaSection{2. Morphismes de groupes}
+
+\medskip\noindent\textsc{Définition 4.14.} --- \emph{Soient $G$ et $G'$ deux groupes multiplicatifs. On appelle morphisme de $G$ dans $G'$ toute application $\varphi$ de $G$ dans $G'$ vérifiant :
+\[
+\forall(x,y)\in G^2,\qquad \varphi(x\cdot y)=\varphi(x)\cdot\varphi(y).
+\]}
+
+Il en résulte que, si $e$ est l'élément neutre de $G$, on a, $\forall x\in G$,
+\[
+\varphi(x\cdot e)=\varphi(x)\varphi(e)
+\]
+mais c'est aussi $\varphi(x)$ car $x\cdot e=x$, or dans le groupe $G'$ l'égalité $\varphi(x)=\varphi(x)\varphi(e)$ implique $e'=\varphi(e)$ si $e'$ est élément neutre de $G'$, ceci en multipliant à gauche par l'inverse de $\varphi(x)$.
+
+De même $e\cdot x=x$ donne $\varphi(e\cdot x)=\varphi(e)\varphi(x)=\varphi(x)$ d'où $\varphi(e)=e'$ en simplifiant à droite par $\varphi(x)$, c'est-à-dire en multipliant à droite par $(\varphi(x))^{-1}$.
+
+\subsection*{4.15.}
+Si $\varphi$ est un morphisme de groupe, on a $\varphi(e)=e'$, $e$ et $e'$ éléments neutres des groupes. De même
+\[
+\varphi(x^{-1})=(\varphi(x))^{-1}.
+\]
+En effet, pour $x$ dans $G$, on a $xx^{-1}=x^{-1}x=e$, d'où
+\[
+\varphi(x)\varphi(x^{-1})=\varphi(xx^{-1})=\varphi(e)=e',
+\]
+donc $\varphi(x^{-1})$ est inverse de $\varphi(x)$ dans $G'$.
+
+\medskip\noindent\textsc{Théorème 4.16.} --- \emph{Soit $\varphi$ un morphisme du groupe $G$ dans le groupe $G'$. Alors l'image $\varphi(H)$ d'un sous-groupe $H$ de $G$ \BellaCorrection{est}{et} un sous-groupe de $G'$ et l'image réciproque $\varphi^{-1}(H')$ d'un sous-groupe $H'$ de $G'$ en est un de $G$.}
+
+On va utiliser le critère 4.5.
+
+Soit $H$ sous-groupe de $G$, il contient $e$, donc $\varphi(H)$ contient $e'=\varphi(e)$ d'où $\varphi(H)$ non vide ; puis si $x'$ et $y'$ sont dans l'image $\varphi(H)$, ils ont des antécédents $x$ et $y$ dans $H$, sous-groupe, donc $xy^{-1}\in H$ et alors
+\[
+\varphi(xy^{-1})=\varphi(x)\varphi(y^{-1})
+=\varphi(x)(\varphi(y))^{-1}=x'(y')^{-1}
+\]
+est bien dans $\varphi(H)$ : on a
+\[
+\forall(x',y')\in\varphi(H)\times\varphi(H),\qquad x'(y')^{-1}\in\varphi(H).
+\]
+Le critère 4.5 est vérifié.
+
+Soit de même $H'$ sous-groupe de $G'$, et
+\[
+\varphi^{-1}(H')=\{x\in G;\ \varphi(x)\in H'\}.
+\]
+On a $\varphi(e)=e'\in H'$ donc $e\in\varphi^{-1}(H')$ qui est non vide ; puis si $x$ et $y$ sont dans $\varphi^{-1}(H')$, on aura
+\[
+\varphi(xy^{-1})=\varphi(x)(\varphi(y))^{-1}
+\]
+avec $\varphi(x)$ et $\varphi(y)$ dans $H'$ sous-groupe, donc $\varphi(x)(\varphi(y))^{-1}\in H'$, d'où $xy^{-1}\in\varphi^{-1}(H')$ puisque
+\[
+\varphi(x)\varphi(y)^{-1}=\varphi(x)\varphi(y^{-1})=\varphi(xy^{-1}),
+\]
+(voir 4.15). \bookend
+
+\medskip\noindent\textsc{Définition 4.17.} --- \emph{Soit un morphisme $\varphi$ de $G$ dans $G'$, on appelle noyau de $\varphi$ le sous-groupe $\varphi^{-1}(\{e'\})$, encore noté $\ker\varphi$.}
+
+Ker, abréviation de \emph{Kernel}, noyau en anglais.
+
+Si on veut décomposer canoniquement l'application $\varphi$, (voir 2.40), on introduit l'équivalence d'application $\mathcal R$ définie par
+\[
+x\mathcal R y\Longleftrightarrow\varphi(x)=\varphi(y).
+\]
+Il est facile de vérifier que c'est une équivalence (voir 2.39).
+
+On peut encore écrire
+\[
+\varphi(x)=\varphi(y)
+\Longleftrightarrow\varphi(x)(\varphi(y))^{-1}=e'
+\]
+(neutre de $G'$) soit
+\[
+\varphi(xy^{-1})=e'\Longleftrightarrow xy^{-1}\in\ker\varphi ;
+\]
+mais c'est aussi :
+\begin{align*}
+\varphi(x)=\varphi(y)
+&\Longleftrightarrow\varphi(y)=\varphi(x)\\
+&\Longleftrightarrow e'=(\varphi(y))^{-1}\varphi(x)=\varphi(y^{-1}x)\\
+&\Longleftrightarrow y^{-1}x\in\ker\varphi.
+\end{align*}
+On a :
+\begin{align*}
+xy^{-1}\in\ker\varphi
+&\Longleftrightarrow\exists h\in\ker\varphi,\ xy^{-1}=h\\
+&\Longleftrightarrow\exists h\in\ker\varphi,\ x=h\cdot y ;
+\end{align*}
+et
+\begin{align*}
+y^{-1}x\in\ker\varphi
+&\Longleftrightarrow\exists h'\in\ker\varphi,\ y^{-1}x=h'\\
+&\Longleftrightarrow x=yh'.
+\end{align*}
+On note
+\[
+y\cdot\ker\varphi=\{yh;\ h\in\ker\varphi\}
+\quad\text{et}\quad
+\ker\varphi\cdot y=\{hy;\ h\in\ker\varphi\}.
+\]
+Avec cette notation, on a ici $x$ équivalent à $y$, soit $x$ dans la classe d'équivalence de $y$
+\[
+\Longleftrightarrow x\in y\cdot\ker\varphi
+\Longleftrightarrow x\in(\ker\varphi)\cdot y,
+\]
+ce qui implique que $y\cdot\ker\varphi$ et $\ker\varphi\cdot y$ sont des parties de $G$ égales.
+
+Si le groupe $G$ n'est pas commutatif, cette égalité n'est pas évidente et conduit à la définition suivante :
+
+\medskip\noindent\textsc{Définition 4.18.} --- \emph{Un sous-groupe $H$ de $G$ est dit distingué si et seulement si, pour tout $x$ de $G$, on a $xH=Hx$.}
+
+On note $H\triangleleft G$ pour $H$ sous-groupe distingué de $G$.
+
+\medskip\noindent\textsc{Théorème 4.19.} --- \emph{Le noyau d'un morphisme de groupes est sous-groupe distingué.}
+
+Vient d'être vu.
+
+\medskip\noindent\textsc{Théorème 4.20.} --- \emph{On a $H$ sous-groupe distingué de $G$ équivaut à l'une des conditions équivalentes suivantes :
+\begin{enumerate}[label=\arabic*),leftmargin=2.1em]
+\item $\forall x\in G$, $xH\subset Hx$ ;
+\item $\forall x\in G$, $xHx^{-1}\subset H$ ;
+\item $\forall x\in G$, $xHx^{-1}=H$.
+\end{enumerate}}
+
+En notant (0), $H\triangleleft G$ c'est-à-dire $\forall x\in G$, $xH=Hx$, on a évidemment (0)$\Rightarrow$(1).
+
+Puis (1)$\Rightarrow$(2) car si, $\forall x\in G$, $\forall h\in H$, $xh\in Hx$ c'est qu'il existe $h'\in H$ tel que $xh=h'x$ mais alors $xhx^{-1}=h'\in H$, donc on a $\forall x\in G$, $\forall h\in H$, $xhx^{-1}\in H$ soit $xHx^{-1}\subset H$.
+
+On a (2)$\Rightarrow$(3) car soit $x$ fixé dans $G$, on a déjà $xHx^{-1}\subset H$, mais aussi, ($x$ quelconque dans (2) : on prend $x^{-1}$), $x^{-1}Hx\subset H$, soit alors $h\in H$, $\exists h'\in H$ tel que $x^{-1}hx=h'\Rightarrow h=xh'x^{-1}$ d'où $h\in xHx^{-1}$ : on obtient l'inclusion $H\subset xHx^{-1}$ puisque $h$ était quelconque dans $H$. D'où (3).
+
+Enfin (3)$\Rightarrow$(0) : si $xHx^{-1}=H$, $\forall h\in H$, $\exists h'\in H$ tel que $h=xh'x^{-1}$, soit $hx=xh'$, d'où $hx$, élément générique de $Hx$ contenu dans $xH$, on a $Hx\subset xH$ ; mais soit maintenant $xh\in xH$, comme dans (3) on peut prendre $x^{-1}$, on a $x^{-1}Hx=H$, donc partant de $h\in H$, $\exists h'\in H$ avec $x^{-1}h'x=h\Rightarrow xh=h'x\in Hx$, donc $xH\subset Hx$ et l'égalité $xH=Hx$ ce qui est la définition de $H$ sous-groupe distingué de $G$. \bookend
+
+On va voir en fait que les sous-groupes distingués sont les noyaux des morphismes de groupe.
+
+On a déjà, (Théorème 4.19) : un noyau est sous-groupe distingué.
+
+Soit alors $H$ sous-groupe distingué de $G$, on définit la relation binaire $\mathcal R$ par
+\[
+x\mathcal R x'
+\Longleftrightarrow xx'^{-1}\in H
+\Longleftrightarrow x\in Hx'
+\Longleftrightarrow x\in x'H\quad\text{car $H$ distingué},
+\Longleftrightarrow x'^{-1}x\in H.
+\]
+
+$\mathcal R$ est réflexive : si $x\in G$, $xx^{-1}=e\in H$ donc $x\mathcal R x$.
+
+$\mathcal R$ est symétrique : si $x\mathcal R x'$, on a $xx'^{-1}\in H$ sous-groupe donc $(xx'^{-1})^{-1}=x'x^{-1}\in H$, soit $x'\mathcal R x$.
+
+$\mathcal R$ est transitive : si $x\mathcal R x'$ et $x'\mathcal R x''$ on a $xx'^{-1}\in H$ et $x'x''^{-1}\in H$. Mais $H$ est stable pour le produit, donc on a
+\[
+(xx'^{-1})(x'x''^{-1})=x(x'^{-1}x')x''^{-1}\in H,
+\]
+soit $xx''^{-1}\in H$, c'est-à-dire $x\mathcal R x''$. Nous avons donc justifié que $\mathcal R$ est une relation d'équivalence.
+
+Il faut remarquer que l'hypothèse sous-groupe distingué n'a pas servi, c'est pour mettre une structure de groupe sur l'ensemble quotient que l'on va s'en servir.
+
+Les classes d'équivalence sont les parties distinctes du type $Hx$ car
+\[
+x'\mathcal R x\Longleftrightarrow x'x^{-1}\in H\Longleftrightarrow x'\in Hx :
+\]
+la classe d'équivalence de $x$ est $Hx=\{hx;h\in H\}$.
+
+\subsection*{4.21.}
+Soit $G/\mathcal R$ l'ensemble de ces classes d'équivalence. On va pouvoir le munir d'une structure de groupe car l'équivalence $\mathcal R$ est compatible avec la loi de $G$, du fait que $H$ est sous-groupe distingué.
+
+Soient $X$ et $Y$ deux éléments de $G/\mathcal R$. Si $x\in X$, et $y\in Y$ c'est que $X=Hx$ et $Y=Hy$. Soient alors $x'$ et $y'$ d'autres éléments de $X$ et $Y$ respectivement : $xy$ et $x'y'$ sont équivalents car :
+\[
+\exists h\in H\text{ tel que }x'=hx
+\]
+et
+\[
+\exists k\in H\text{ tel que }y'=ky,
+\]
+donc
+\[
+x'y'=(hx)(ky)=h(xk)y.
+\]
+Or $xk\in xH=Hx$ car $H$ est distingué : donc
+\[
+\exists\ell\in H\text{ tel que }xk=\ell x
+\]
+et
+\[
+x'y'=h(\ell x)y=(h\ell)(xy)
+\]
+par associativité, avec $h\ell\in H$, (sous-groupe donc stable par produit). Mais alors $xy$ et $x'y'$ sont équivalents pour $\mathcal R$ : ils ont même classe d'équivalence.
+
+On pose alors
+\[
+X\cdot Y=\text{classe de }(xy),\qquad x\in X,\ y\in Y.
+\]
+L'ensemble $G/\mathcal R$ est ainsi muni d'une structure de groupe et l'application $\varphi:x\mapsto\varphi(x)=X$ classe de $x$, est un morphisme de groupe de noyau le sous-groupe $H$.
+
+La loi est associative : soient 3 éléments de $G/\mathcal R$, $X$, $Y$ et $Z$ de représentants $x$, $y$, $z$, la classe $X\cdot Y$ est celle de $(xy)$ donc l'élément $(X\cdot Y)\cdot Z$ est la classe d'équivalence de $(xy)z$.
+
+Mais $(Y\cdot Z)$ est représentée par $yz$, donc $X\cdot(Y\cdot Z)$ est la classe de $x\cdot(yz)$. Comme dans $G$ la loi est associative, on a $(xy)z=x(yz)$ d'où finalement l'égalité
+\[
+(X\cdot Y)\cdot Z=X\cdot(Y\cdot Z)
+\]
+dans $G/\mathcal R$.
+
+L'élément $H$ de $G/\mathcal R$ est élément neutre.
+
+Si on prend $e$ élément neutre de $G$, sa classe d'équivalence est formée des $x$ de $G$ tels que $x\in He=\{he;h\in H\}=\{h;h\in H\}=H$.
+
+Si $X$ est l'élément générique de $G/\mathcal R$, de représentant $x$, on aura
+\[
+X\cdot H=\text{classe de }xe=\text{classe de }x=X,
+\]
+et aussi
+\[
+H\cdot X=\text{classe de }ex=\text{classe de }x=X,
+\]
+d'où $X\cdot H=H\cdot X=X$ : $H$ est élément neutre.
+
+Enfin, $X$ classe de $x$ admet la classe de $x^{-1}$ pour inverse, car en notant $\overline{x^{-1}}$ cette classe, on a
+\[
+X\cdot\overline{x^{-1}}=\text{classe de }(xx^{-1})=\text{classe de }e=H
+\]
+et aussi
+\[
+\overline{x^{-1}}\cdot X=\text{classe de }x^{-1}x=\text{classe de }e=H.
+\]
+
+Soit alors $\varphi$ la projection canonique de $G$ sur le groupe $G/\mathcal R$, définie par $x\mapsto\varphi(x)$, classe d'équivalence de $x$, on a
+\[
+\forall(x,y)\in G^2,\qquad
+\varphi(xy)=\text{classe de }(xy)=(\text{classe de }x)\cdot(\text{classe de }y)
+\]
+par définition du produit dans $G/\mathcal R$, soit encore
+\[
+\varphi(xy)=\varphi(x)\cdot\varphi(y) :
+\]
+$\varphi$ est un morphisme.
+
+Enfin
+\[
+\ker\varphi=\{x;\varphi(x)=H\}=\{x;\ x\text{ dans la classe de }e\}=H.
+\]
+Nous venons de justifier le :
+
+\medskip\noindent\textsc{Théorème 4.22.} --- \emph{$H$ est sous-groupe distingué de $G$ si et seulement si $H$ est le noyau d'un morphisme de groupe de $G$ dans un groupe $G'$.}
+
+Une notation : si $H$ est sous-groupe distingué de $G$, on notera $G/H$ l'ensemble quotient $G/\mathcal R$ introduit en 4.21.
+
+En particulier, si $H$ est le noyau d'un morphisme $\varphi$ de groupe, de $G$ dans $G'$, on note $G/\ker\varphi$ le groupe quotient correspondant à la décomposition canonique de l'application $\varphi$. On a alors :
+
+\medskip\noindent\textsc{Théorème 4.23.} --- \emph{(Premier théorème d'isomorphisme). Soit $\varphi$ un morphisme de groupe de $G$ dans $G'$, on a $G/\ker\varphi$ isomorphe à l'image $\varphi(G)$.}
+
+En effet, soit $\theta$ l'application qui à $X$ classe de $x$ dans le groupe $G/\ker\varphi$, associe $\varphi(x)$. D'abord $\theta$ a un sens : si $x'\in X$ aussi on a $\varphi(x)=\varphi(x')$, (voir en 4.17), donc la définition de $\theta$ ne dépend pas du choix de $x$ dans $X$.
+
+Puis $\theta$ est un morphisme : si $X$ et $Y$ de $G/\ker\varphi$ contiennent $x$ et $y$ respectivement, $X\cdot Y$ contient $xy$ donc on a
+\[
+\theta(XY)=\varphi(xy)=\varphi(x)\varphi(y)
+\]
+car $\varphi$ morphisme. Comme $\varphi(x)=\theta(X)$ et $\varphi(y)=\theta(Y)$ on a bien
+\[
+\theta(XY)=\theta(X)\theta(Y).
+\]
+
+Enfin $\theta$ est bijective de $G/\ker\varphi$ sur $\varphi(G)$, car si $y$ est dans l'image $\varphi(G)$, il existe $x$ dans $G$ tel que $\varphi(x)=y$, donc par définition de $\theta$, on aura
+\[
+\theta(\text{classe de }x)=y,
+\]
+d'où $\theta$ surjective, et si $X$ et $Y$, de représentants $x$ et $y$, sont tels que $\theta(X)=\theta(Y)$ c'est que $\varphi(x)=\varphi(y)$ vu la définition de $\theta$, ou encore avec $e'$ neutre dans $G'$,
+\[
+\varphi(x)(\varphi(y))^{-1}=e'=\varphi(x)\varphi(y^{-1})=\varphi(xy^{-1}),
+\]
+c'est donc que $xy^{-1}\in\ker\varphi$, donc que $x\in(\ker\varphi)y$, classe d'équivalence de $y$ dans $G/\ker\varphi$, donc que $X=Y$, d'où $\theta$ injective. \bookend
+
+\subsection*{4.24. Une remarque très utile}
+Pour vérifier qu'un morphisme $\varphi$ d'un groupe $G$ dans un groupe $G'$ est injectif il suffit de vérifier que son noyau est réduit à l'élément neutre de $G$.
+
+Car si $\ker\varphi=\{e\}$, et si $\varphi(x)=\varphi(y)$, c'est que
+\[
+\varphi(x)(\varphi(y))^{-1}=e',
+\]
+(neutre de $G'$), soit
+\begin{align*}
+\varphi(x)\varphi(y^{-1})=\varphi(xy^{-1})=e'
+&\Longleftrightarrow xy^{-1}\in\ker\varphi=\{e\}\\
+&\Longleftrightarrow xy^{-1}=e\\
+&\Longleftrightarrow(xy^{-1})y=y\\
+&\Longleftrightarrow x=y.
+\end{align*}
+On a donc $\varphi(x)=\varphi(y)\Rightarrow x=y$, soit $\varphi$ injective.
+
+Bien sûr, $\varphi$ injective $\Rightarrow\ker\varphi=\{e\}$ car si $x\in\ker\varphi$ on a $\varphi(x)=e'=\varphi(e)$ d'où $x=e$ par injectivité, et finalement on a
+
+\medskip\noindent\textsc{Théorème 4.25.} --- \emph{Soit deux groupes $G$ et $G'$ et un morphisme $\varphi$ de $G$ dans $G'$, on a
+\[
+\varphi\text{ injective}\Longleftrightarrow\ker\varphi=\{e\},
+\]
+$e$ neutre dans $G$.}
+
+En 4.13 on a introduit la notion de groupe monogène, en 4.14 celle de morphisme. En fait, on va voir qu'un groupe monogène est soit isomorphe au groupe additif $\mathbb Z$ des entiers relatifs, soit fini, et alors isomorphe au groupe $\mathbb Z/p\mathbb Z$ des entiers modulo $p$.
+
+Mais avant d'établir ce résultat, il nous faut construire $\mathbb Z$, c'est le but du paragraphe suivant.
+
+
+\BellaSection{3. Demi-groupe, symétrisation d'un demi-groupe abélien}
+
+\medskip\noindent\textsc{Définition 4.26.} --- \emph{On appelle demi-groupe $D$ tout ensemble, encore noté $D$, muni d'une loi de composition interne, associative.}
+
+Le demi-groupe est dit abélien (ou commutatif) si la loi est commutative.
+
+On dit qu'il vérifie la règle de simplification à droite si on a :
+
+\subsection*{4.27.}
+\[
+\forall(a,b,x)\in D^3,\qquad ax=bx\Rightarrow a=b.
+\]
+On parlerait de simplification à gauche si on avait, $\forall(a,b,x)\in D^3$,
+\[
+xa=xb\Rightarrow a=b.
+\]
+Dans le cas d'un demi-groupe abélien on parlera de règle de simplification sans préciser le côté.
+
+\medskip\noindent\textsc{Théorème 4.28.} --- \emph{Soit un demi-groupe $D\ne\varnothing$, abélien, vérifiant la règle de simplification. Il existe un groupe $G$, abélien, contenant un demi-groupe $\widetilde D$ isomorphe à $D$. De plus tout groupe $G'$ vérifiant cette propriété contient un sous-groupe $G''$ isomorphe à $G$.}
+
+En quelque sorte, $G$ est le plus petit groupe contenant un demi-groupe isomorphe à $D$, on parlera du symétrisé de $D$. La justification va se dérouler en plusieurs étapes.
+
+Soit $\mathcal E=D\times D$, on le munit de la loi
+\[
+(a,b)\cdot(a',b')=(aa',bb').
+\]
+Il est facile de voir que $\mathcal E$ est aussi un demi-groupe abélien.
+
+\subsection*{4.29.}
+On définit sur $\mathcal E$ une équivalence $\mathcal R$ par
+\[
+(a,b)\mathcal R(a_1,b_1)\Longleftrightarrow ab_1=ba_1.
+\]
+
+$\mathcal R$ est une équivalence :
+
+c'est réflexif car $(a,b)\mathcal R(a,b)$ puisque $ab=ba$, la loi de $D$ étant commutative ;
+
+c'est symétrique : si $(a,b)\mathcal R(a_1,b_1)$ on a $ab_1=ba_1$ donc aussi
+\[
+a_1b=ba_1=ab_1=b_1a,
+\]
+(toujours $D$ abélien) soit $(a_1,b_1)\mathcal R(a,b)$ ;
+
+c'est transitif : si $(a,b)\mathcal R(a_1,b_1)$ et $(a_1,b_1)\mathcal R(a_2,b_2)$ on a les égalités
+\[
+ab_1=ba_1\qquad\text{et}\qquad a_1b_2=b_1a_2.
+\]
+Il en résulte que
+\[
+ab_1b_2=ba_1b_2=b(b_1a_2)=(bb_1)a_2,
+\]
+soit encore, par commutativité,
+\[
+b_1(ab_2)=b_1(a_2b),
+\]
+et, $D$ vérifiant la règle de simplification, on a
+\[
+ab_2=a_2b=ba_2,
+\]
+soit $(a,b)\mathcal R(a_2,b_2)$. \bookend
+
+Soit l'ensemble quotient $G=\mathcal E/\mathcal R$. Il est muni d'une loi de composition interne car l'équivalence $\mathcal R$ est compatible avec la loi $\cdot$ sur $\mathcal E$.
+
+En effet, si $(a,b)\mathcal R(a_1,b_1)$ et $(a',b')\mathcal R(a'_1,b'_1)$ c'est que l'on a
+\[
+ab_1=ba_1\qquad\text{et}\qquad a'b'_1=b'a'_1,
+\]
+(définition de $\mathcal R$), mais alors $(a,b)\cdot(a',b')$ et $(a_1,b_1)\cdot(a'_1,b'_1)$, qui sont les couples $(aa',bb')$ et $(a_1a'_1,b_1b'_1)$ sont équivalents aussi car en utilisant la commutativité et l'associativité de la loi de composition, on a :
+\begin{align*}
+aa'b_1b'_1
+&=(ab_1)(a'b'_1)\\
+&=(ba_1)(b'a'_1)\\
+&=(bb')(a_1a'_1),
+\end{align*}
+ce qui traduit
+\[
+(aa',bb')\mathcal R(a_1a'_1,b_1b'_1).
+\]
+
+Soient donc $X$ et $X'$ deux classes d'équivalence de $G=\mathcal E/\mathcal R$, représentées respectivement par $(a,b)$ et $(a',b')$, on peut définir
+
+\subsection*{4.30.}
+\[
+X\cdot X'=\text{classe d'équivalence de }(aa',bb')
+\]
+puisque c'est indépendant du choix des représentants.
+
+\subsection*{4.31.}
+Pour cette loi, $G$ est un groupe abélien.
+
+La loi est commutative car $aa'=a'a$ et $bb'=b'b$ donc si $(a,b)\in X$ et $(a',b')\in X'$ on a
+\[
+X'X=\text{classe de }(a'a,b'b)
+=\text{classe de }(aa',bb')=XX'.
+\]
+
+La loi est associative, si $X$, $X'$ et $X''$ de $\mathcal E/\mathcal R$ sont représentés respectivement par les couples $(a,b)$, $(a',b')$ et $(a'',b'')$ on a
+\begin{align*}
+(XX')X''
+&=(\text{classe de }(aa',bb'))\cdot X''\\
+&=\text{classe de }((aa')a'',(bb')b'')\\
+&=\text{classe de }(a(a'a''),b(b'b''))\quad\text{par associativité dans $D$}\\
+&=X\cdot\text{classe de }(a'a'',b'b'')=X\cdot(X'X'').
+\end{align*}
+
+Comme $D$ non vide, si $m_0\in D$, l'élément
+\[
+1=\text{classe de }(m_0,m_0)
+\]
+est élément neutre dans $G$, car si $X$ est représenté par $(a,b)$, on a
+\[
+X\cdot1=\text{classe}(am_0,bm_0)
+\]
+et on a
+\[
+(am_0,bm_0)\mathcal R(a,b)
+\]
+car $ab=ba$ dans $D$ abélien donc $abm_0=bam_0$, soit encore $(am_0)b=(bm_0)a$.
+
+Donc $X\cdot1=\text{classe}(a,b)=X$, on a $1$ élément neutre. Tout élément $X$ de $G$ admet un inverse $X^{-1}$ dans $G$ : si $X$ est représenté par $(a,b)$, soit $X^{-1}$ représenté par $(b,a)$ on aura
+\[
+XX^{-1}=X^{-1}X=\text{classe}(ab,ba)=\text{classe}(ab,ab)
+\]
+or
+\[
+(ab,ab)\mathcal R(m_0,m_0),
+\]
+($\Longleftrightarrow abm_0=m_0ab$ ce qui est vrai) donc
+\[
+XX^{-1}=X^{-1}X=1.
+\]
+On a justifié le fait que $G$ est un groupe abélien. \bookend
+
+\subsection*{4.32.}
+Il existe une injection $\varphi$ de $D$ dans $G$ qui soit un morphisme pour les lois de $D$ et $G$.
+
+Soit $a\in D$, $\forall m\in D$, les couples $(am,m)$ sont équivalents, car
+\[
+(am,m)\mathcal R(an,n)\Longleftrightarrow(am)n=m(an)
+\]
+ce qui est vrai compte tenu de l'associativité et de la commutativité.
+
+On pose $\varphi(a)=$ classe d'équivalence des $(am,m)$, $m\in D$. $\varphi$ est injective car $\varphi(a)=\varphi(b)$ se traduit, avec $m$ et $n$ dans $D$, par : les couples $(am,m)$ et $(bn,n)$ sont équivalents, soit encore par :
+\[
+(am)n=m(bn)\Longleftrightarrow a(mn)=b(mn)
+\]
+d'où $a=b$ par la règle de simplification (mais oui, tout arrive, il faut que cette hypothèse là serve aussi).
+
+$\varphi$ est un morphisme car
+\[
+\varphi(ab)=\text{classe}(abm_0,m_0)
+\]
+alors que
+\begin{align*}
+\varphi(a)\varphi(b)
+&=\text{classe}(am,m)\cdot\text{classe}(bn,n)\\
+&=\text{classe}(ambn,mn)\\
+&=\text{classe}(abmn,mn)\\
+&=\text{classe}(abm_0,m_0)
+\end{align*}
+car $abmnm_0=mnabm_0$, la loi étant commutative.
+
+Si on pose $\widetilde D=\varphi(D)$, $\varphi$ réalise alors un isomorphisme de $D$ sur le demi-groupe $\widetilde D$, partie du groupe abélien $G$. \bookend
+
+Pour achever la démonstration du Théorème 4.28, il faut justifier que, si $G'$ est un groupe abélien contenant un demi-groupe $\Delta$ isomorphe à $D$, il existe un sous-groupe $G''$ de $G'$, isomorphe à $G$.
+
+On a le schéma suivant :
+\[
+\begin{array}{ccc}
+D & \xrightarrow{\ \varphi\ } & \widetilde D\subset G\\
+\mathop{\big\downarrow}\limits^{\theta} & & \\
+\Delta\subset G' & &
+\end{array}
+\]
+
+On a construit le groupe $G$ qui contient une partie $\widetilde D$, demi-groupe, image de $D$ par l'isomorphisme $\varphi$.
+
+On suppose que $G'$ est un autre groupe, abélien comme $G$, contenant un demi-groupe $\Delta$ image de $D$ par un isomorphisme $\theta$.
+
+Soit
+\[
+G''=\{\theta(a)(\theta(b))^{-1};\ (a,b)\in D^2\}.
+\]
+On a $\theta(b)\in\Delta\subset G'$, groupe, donc $(\theta(b))^{-1}$ est l'inverse de $\theta(b)$ dans $G'$. On va vérifier que $G''$ est le groupe isomorphe à $G$, cherché.
+
+$G''$ est sous-groupe (abélien) de $G'$ car $D\ne\varnothing\Rightarrow\exists a\in D$, donc
+\[
+\theta(a)\theta(a)^{-1}=e'
+\]
+élément neutre de $G'$ est dans $G''$ qui est non vide ; puis si $u\in G''$, c'est qu'il existe $(a,b)\in D^2$ tel que
+\[
+u=\theta(a)(\theta(b))^{-1},
+\]
+donc $u^{-1}$, (inverse dans $G'$) est tel que
+\[
+u^{-1}=\theta(b)(\theta(a))^{-1},
+\]
+(lemme 4.12 pour l'inverse d'un produit), donc $u^{-1}\in G''$ ; puis si
+\[
+u=\theta(a)(\theta(b))^{-1}
+\quad\text{et}\quad
+v=\theta(c)(\theta(d))^{-1}
+\]
+sont dans $G''$, on aura, en utilisant la commutativité et l'associativité :
+\begin{align*}
+uv
+&=\theta(a)(\theta(b))^{-1}\theta(c)(\theta(d))^{-1}\\
+&=\theta(a)\theta(c)(\theta(d)\theta(b))^{-1}\\
+&=\theta(ac)(\theta(db))^{-1},
+\end{align*}
+$\theta$ morphisme de demi-groupe. Comme $ac\in D$ et $db\in D$, on a $uv\in G''$.
+
+On a donc $G''$ non vide, stable par passage à l'inverse et par produit : c'est un sous-groupe de $G'$ ; de plus $\Delta\subset G''$ car $\forall a\in D$,
+\[
+\theta(a)=\theta(a^2)(\theta(a))^{-1}\in G''.
+\]
+
+Il existe un isomorphisme de $G$ sur $G''$.
+
+En effet, soit $X$ un élément de $G$, classe d'équivalence représentée par $(a,b)$, ou par $(a',b')$ avec $(a,b)\mathcal R(a',b')$ : on a $ab'=ba'$.
+
+On a alors
+\[
+\theta(ab')=\theta(a)\theta(b')=\theta(ba')=\theta(b)\theta(a')
+\]
+d'où, en utilisant la commutativité dans $G'$,
+\[
+\theta(a)(\theta(b))^{-1}=\theta(a')(\theta(b'))^{-1}.
+\]
+
+On pose :
+\[
+\Psi(X)=\theta(a)(\theta(b))^{-1}
+\]
+si $(a,b)\in X$, ce qui est licite puisqu'indépendant du choix du représentant $(a,b)$ de $X$.
+
+$\Psi$ est un isomorphisme de $G$ sur $G''$.
+
+On a d'abord $\Psi$ morphisme car soient $X$ et $X'$ de $G$, avec $(a,b)\in X$ et $(a',b')\in X'$. Comme $XX'=$ classe $(aa',bb')$, on a
+\begin{align*}
+\Psi(XX')
+&=\theta(aa')(\theta(bb'))^{-1}\\
+&=\theta(a)\theta(a')(\theta(b)\theta(b'))^{-1}
+\end{align*}
+car $\theta$ morphisme de demi-groupe, soit, compte tenu de la commutativité du produit dans $G'$,
+\[
+\Psi(XX')=\Psi(X)\Psi(X').
+\]
+
+$\Psi$ surjectif : si $u\in G''$, $\exists(a,b)\in D^2$ tel que $u=\theta(a)(\theta(b))^{-1}$ d'où en fait
+\[
+u=\Psi(\text{classe de }(a,b)\text{ dans }\mathcal E/\mathcal R),
+\]
+et si $X$ est la classe de $(a,b)$ dans $G$, on a $X$ tel que $u=\Psi(X)$.
+
+$\Psi$ injectif car si $\Psi(X)=e'$ neutre de $G'$, avec $(a,b)\in X$ on a
+\[
+\theta(a)(\theta(b))^{-1}=e'
+\]
+soit $\theta(a)=\theta(b)$ et comme $\theta$ est une bijection de $D$ sur $\Delta$, c'est que $a=b$, donc $X=$ classe $(a,a)$ est l'élément neutre du groupe construit $G$, c'est-à-dire $X=1$ : on a bien $\Psi$ injective d'après le Théorème 4.25. \bookend
+
+On peut donc dire que tout groupe abélien $G'$ contenant un demi-groupe isomorphe à $D$ contient aussi un sous-groupe isomorphe au groupe symétrisé de $D$ qui a été construit. C'est en ce sens que $G$ est le plus petit groupe abélien contenant un demi-groupe isomorphe à $D$.
+
+Ceci achève la justification du Théorème 4.28, théorème que nous allons appliquer pour construire $\mathbb Z$ à partir de $\mathbb N$.
+
+
+\BellaSection{4. Construction de $\mathbb Z$}
+
+La première étape, c'est de remplacer la notation multiplicative employée jusqu'à présent par la notation additive car on symétrise le demi-groupe $(\mathbb N,+)$. Les entiers étant réguliers pour l'addition (proposition 3.41), si $a+n=b+n$, alors $a=b$, donc on a la règle de simplification.
+
+\subsection*{4.33.}
+On considère donc $\mathcal E=\mathbb N\times\mathbb N$, et l'équivalence $\mathcal R$ \BellaCorrection{définie}{défini} sur $\mathcal E$ par
+\[
+(a,b)\mathcal R(a',b')\Longleftrightarrow a+b'=b+a',
+\]
+($+$ remplace $\cdot$ dans 4.29).
+
+Cette équivalence est compatible avec la loi $+$ définie sur $\mathcal E$ par
+\[
+(a,b)+(a',b')=(a+a',b+b'),
+\]
+donc sur $\mathbb Z=(\mathbb N\times\mathbb N)/\mathcal R$, ensemble quotient on définit une loi, encore notée $+$, en posant :
+
+\subsection*{4.34.}
+\[
+\overline{(a,b)}+\overline{(a',b')}=\overline{(a+a',b+b')}
+\]
+(où la notation $\overline{(a,b)}$ désigne la classe de $(a,b)$), et on obtient un groupe additif commutatif par application du Théorème 4.28.
+
+Un mot d'explication sur les notations d'ensemble quotient. Pour bien comprendre le mécanisme qui, partant d'une classe $X$, fait prendre un représentant $x$ de la classe, définir quelque chose à partir de $x$, et vérifier la validité de ce que l'on fait en établissant l'indépendance par rapport au représentant, il est préférable d'adopter ce type de notation : $X$ représenté par $x$ ou $x'$. Mais c'est lourd. Aussi, quand on est familiarisé avec ce mécanisme on peut adopter la présentation plus rapide : soit $\bar x$ la classe de $x$, ce qui ne dispense pas de vérifier l'indépendance de ce que l'on fait par rapport au représentant.
+
+Retour à l'ensemble $\mathbb Z$ des entiers relatifs.
+
+Du fait que dans $\mathbb N$ il y a un élément neutre pour $+$, on va pouvoir écrire plus facilement les éléments de $\mathbb Z$. En effet, soit $\overline{(a,b)}\in\mathbb Z$. On a
+\[
+z=\overline{(a,b)}=\overline{(a+0,0+b)}=\overline{(a,0)}+\overline{(0,b)}.
+\]
+
+Or $a\mapsto\overline{(a,0)}=\overline{(a+m,m)}$, ceci quel que soit $m$ de $\mathbb N$, est l'injection $\varphi$ de $\mathbb N$ dans $\mathbb Z$ définie en 4.32.
+
+On convient de noter encore $a$ l'entier relatif (classe de $(a,0)$), et c'est en ce sens que l'on a $\mathbb N\subset\mathbb Z$, ce qui, mathématiquement est faux.
+
+Puis, comme dans le groupe additif $\mathbb Z$ on a
+\[
+\overline{(b,0)}+\overline{(0,b)}=\overline{(b,b)}=\overline{(0,0)}=0
+\]
+élément nul de $\mathbb Z$, qui est donc confondu avec $0$ de $\mathbb N$, l'élément $\overline{(0,b)}$ de $\mathbb Z$ est l'opposé de la classe $\overline{(b,0)}$, comme cette dernière est notée $b$, il est logique de noter $\overline{(0,b)}$ sous la forme $-b$, c'est l'opposé de $b$ dans $\mathbb Z$, et alors
+\[
+z=\overline{(a,b)}=a+(-b)
+\]
+que l'on écrit en fait $a-b$. Dans le groupe $\mathbb Z$, le signe opératoire est $+$, le signe $-$ n'a pas de signification, on vient de lui en donner une :
+
+\begin{center}
+retrancher $b$ c'est ajouter l'opposé de $b$.
+\end{center}
+
+\subsection*{4.35.}
+On peut alors étendre la relation d'ordre de $\mathbb N$ en une relation d'ordre sur $\mathbb Z$.
+
+En effet, soit $z=\overline{(a,b)}$ un élément quelconque de $\mathbb Z$, avec $a$ et $b$ dans $\mathbb N$.
+
+Comme $\mathbb N$ est totalement ordonné, on a soit $a\ge b$, et alors il existe $c\in\mathbb N$ tel que $a=b+c$, ou $a+0=b+c$, dans ce cas $(a,b)\mathcal R(c,0)$ donc
+\[
+z=\overline{(c,0)}=c
+\]
+est identifié à un élément de $\mathbb N$, (on utilise la proposition 3.27) ; soit $a<b$, dans ce cas il existe $c\in\mathbb N^*$ tel que $b=a+c$, ou $a+c=b+0$ d'où $(a,b)\mathcal R(0,c)$, donc
+\[
+z=\overline{(0,c)}=-c.
+\]
+
+On vérifie facilement qu'un autre couple $(a',b')$ représentant $z$ conduit au même $c$. Donc un entier relatif, (élément $z$ de $\mathbb Z$) est
+\begin{itemize}[leftmargin=2.2em]
+\item soit du type $z=c\in\mathbb N$, il est alors dit positif, on note $z\ge0$ ;
+\item soit du type $z=-c$, $c\in\mathbb N$, il est alors dit négatif, on note $z\le0$.
+\end{itemize}
+
+\subsection*{4.36.}
+On définit une relation notée $\le$ sur $\mathbb Z$ par
+\[
+z_1\le z_2\Longleftrightarrow z_2-z_1\text{ est positif},
+\]
+c'est-à-dire identifié à un élément de $\mathbb N$. Cette relation est une relation d'ordre total sur $\mathbb Z$, qui prolonge l'ordre sur $\mathbb N$.
+
+\subsection*{4.37.}
+Avant de le vérifier, il convient de remarquer que le seul entier relatif à la fois positif et négatif est $0$, car si $z$ est identifié à la fois à $c$ et à $-d$ avec $c\in\mathbb N$, $d\in\mathbb N$, on a
+\[
+z=-d\Rightarrow -z=d
+\]
+donc
+\[
+0=z-z=c+d
+\]
+avec $c$ et $d$ qui sont des cardinaux : ceci implique $c=d=0$, (proposition 3.11), d'où $z=0$.
+
+Il est alors facile de voir que $\le$ est un ordre sur $\mathbb Z$ :
+
+\emph{réflexif} : $z-z=0$ est identifié à $0$ de $\mathbb N$, donc est positif, d'où $z\le z$ ;
+
+\emph{antisymétrique} : si $z_1\le z_2$ et $z_2\le z_1$ on a $z_2-z_1$ positif, mais aussi $z_1-z_2$ positif, donc de type $d$ avec $d\in\mathbb N$, d'où
+\[
+z_2-z_1=\operatorname{opposé}(z_1-z_2)=\operatorname{opposé}(d)=-d,
+\]
+donc $z_2-z_1$ est à la fois positif et négatif, il est nul d'où $z_1=z_2$, (d'après 4.37) ;
+
+\emph{transitif} : si $z_1\le z_2$ et $z_2\le z_3$ on a $z_2-z_1$ et $z_3-z_2$ dans $\mathbb N$, stable pour $+$, donc
+\[
+z_3-z_1=(z_3-z_2)+(z_2-z_1)
+\]
+est positif d'où $z_1\le z_3$.
+
+Cet ordre prolonge celui de $\mathbb N$ : si $a$ et $b$ de $\mathbb N$ sont tels que $a\le b$, c'est qu'il existe un entier de $\mathbb N$, $c$ tel que $b=a+c$ ou encore $b-a\in\mathbb N$ : on a bien $b-a$ positif, soit $a\le b$ dans l'ordre sur $\mathbb Z$.
+
+On a ainsi ordonné $\mathbb Z$. \bookend
+
+\subsection*{4.38.}
+C'est un ordre total : si $z_1$ et $z_2$ sont dans $\mathbb Z$, $z_1-z_2$ élément de $\mathbb Z$ est
+\begin{itemize}[leftmargin=2.2em]
+\item soit positif, alors $z_1\ge z_2$ ;
+\item soit négatif, mais alors $z_2-z_1$ est positif donc $z_2\ge z_1$.
+\end{itemize}
+
+Il nous reste à étendre à $\mathbb Z$ la multiplication définie sur $\mathbb N$ pour avoir construit l'ensemble des entiers relatifs, connu depuis longtemps.
+
+Sur $\mathbb N$ on dispose d'un produit, associatif, commutatif, ayant $1$ pour élément neutre, distributif pour l'addition, (proposition 3.14) et c'est cet ensemble de propriétés que l'on veut retrouver.
+
+Comme $z=\overline{(a,b)}$, élément de $\mathbb Z$, avec $a$ et $b$ dans $\mathbb N$, s'écrit encore $z=a-b$, si $z'=\overline{(a',b')}=a'-b'$, on veut retrouver la règle
+\begin{align*}
+z\cdot z'&=(a-b)(a'-b')\\
+&=aa'+bb'-(ab'+ba')\\
+&=\text{classe de }(aa'+bb',ab'+ba').
+\end{align*}
+
+\subsection*{4.39.}
+Ceci amène en fait, à définir un produit sur $\mathcal E=\mathbb N\times\mathbb N$ par la loi
+\[
+(a,b)\cdot(a',b')=(aa'+bb',ab'+ba').
+\]
+Cette loi est compatible avec l'équivalence $\mathcal R$.
+
+On suppose que $(a,b)\mathcal R(a_1,b_1)$ et $(a',b')\mathcal R(a'_1,b'_1)$ : c'est que l'on a
+\begin{align*}
+\text{\textcircled{1}}\quad &a+b_1=b+a_1,\\
+\text{\textcircled{2}}\quad &a'+b'_1=b'+a'_1.
+\end{align*}
+On veut prouver que
+\[
+(aa'+bb',ab'+ba')\mathcal R(a_1a'_1+b_1b'_1,a_1b'_1+b_1a'_1)
+\]
+donc que
+\[
+aa'+bb'+a_1b'_1+b_1a'_1
+=a'b+ab'+a_1a'_1+b_1b'_1.
+\]
+
+Pour récupérer le 1\textsuperscript{er} membre, on multiplie \textcircled{1} par $a'$, (d'où $aa'$), et aussi par $b'$ pour avoir $bb'$, puis \textcircled{2} par $a_1$ et $b_1$, on ajoute ; il vient :
+\begin{align*}
+&(aa'+b_1a')+(bb'+a_1b')+(a_1a'+a_1b'_1)+(b_1b'+b_1a'_1)\\
+&\qquad=(a'b+a'a_1)+(ab'+b'b_1)+(a_1b'+a_1a'_1)+(b_1a'+b_1b'_1)
+\end{align*}
+soit (régularité de l'addition dans $\mathbb N$), après simplification
+\[
+aa'+bb'+a_1b'_1+b_1a'_1=a'b+ab'+a_1a'_1+b_1b'_1,
+\]
+ce que l'on voulait. \bookend
+
+\subsection*{4.40.}
+Mais alors, sur l'ensemble quotient \BellaCorrectionNote{$\mathbb Z=\mathcal E/\mathcal R$}{$\mathbb Z=(\mathcal E\times\mathcal E)/\mathcal R$}{Depuis 4.33, $\mathcal E=\mathbb N\times\mathbb N$ et $\mathbb Z=\mathcal E/\mathcal R$ ; le facteur cartésien supplémentaire est une coquille.}, on définit un produit par la loi :
+\[
+\overline{(a,b)}\cdot\overline{(a',b')}
+=\overline{(aa'+bb',ab'+ba')},
+\]
+où rappelons-le, la notation $\overline{(u,v)}$ désigne la classe de $(u,v)$.
+
+Cette définition a un sens, car c'est indépendant du choix des représentants, et on peut vérifier que cette loi est associative, commutative, distributive pour la loi $+$, et que $1=\overline{(1,0)}$ est élément neutre pour le produit.
+
+\emph{Par exemple la distributivité} : soient $z_1$, $z$ et $z'$ trois entiers relatifs, avec $z_1=\overline{(a_1,b_1)}$ ; $z=\overline{(a,b)}$ et $z'=\overline{(a',b')}$, on a
+\begin{align*}
+z_1\cdot(z+z')
+&=\overline{(a_1,b_1)}\cdot\overline{(a+a',b+b')}\\
+&=\overline{(a_1(a+a')+b_1(b+b'),\ a_1(b+b')+b_1(a+a'))},
+\end{align*}
+soit par distributivité dans $\mathbb N$ :
+\begin{align*}
+&=\overline{(a_1a+a_1a'+b_1b+b_1b',\ a_1b+a_1b'+b_1a+b_1a')}\\
+&=\overline{((a_1a+b_1b)+(a_1a'+b_1b'),\ (a_1b+b_1a)+(a_1b'+b_1a'))}\\
+&=\overline{(a_1a+b_1b,a_1b+b_1a)}+\overline{(a_1a'+b_1b',a_1b'+b_1a')}\\
+&=z_1z+z_1z' :
+\end{align*}
+on a bien la distributivité.
+
+\emph{Plus intéressante est la remarque pratique suivante} :
+
+si $z=\overline{(a,0)}$ est confondu avec $a$ et $z'=\overline{(a',0)}$ avec $a'$, on a
+\[
+zz'=\overline{(aa'+0,0a+0a')}=\overline{(aa',0)}=aa' :
+\]
+le produit défini sur $\mathbb Z$ prolonge celui de $\mathbb N$ ; puis si $z=\overline{(a,0)}$ est positif et $z'=\overline{(0,b)}$ est négatif,
+\[
+zz'=\overline{(a0+0b,ab+0)}=\overline{(0,ab)}
+\]
+est négatif, alors que si $z=\overline{(0,b)}$ et $z'=\overline{(0,b')}$ sont tous deux négatifs, on aura
+\[
+zz'=\overline{(0+bb',0b'+0b)}=\overline{(bb',0)}
+\]
+est positif. On vient d'établir \emph{la règle des signes}, d'où l'on déduit la stabilité de l'ordre par produit des entiers positifs :
+
+\subsection*{4.41.}
+\[
+\forall(z_1,z_2)\in\mathbb Z^2,\ \forall p\in\mathbb Z,
+\quad ((z_1\le z_2)\text{ et }p\ge0)\Rightarrow(pz_1\le pz_2).
+\]
+
+\subsection*{Sous-groupes de $\mathbb Z$}
+
+\medskip\noindent\textsc{Théorème 4.42.} --- \emph{Les sous-groupes de $\mathbb Z$ sont exactement les parties du type $p\mathbb Z=\{px;x\in\mathbb Z\}$ avec $p$ dans $\mathbb N$.}
+
+D'abord, si $p$ est fixé dans $\mathbb N$, $p\mathbb Z$ est bien un sous-groupe additif de $\mathbb Z$ car non-vide, ($0=p\cdot0\in p\mathbb Z$), et si $y_1=px_1$ et $y_2=px_2$ sont dans $p\mathbb Z$,
+\begin{align*}
+y_1-y_2&=px_1-px_2=p\cdot x_1+p(-x_2)\\
+&=p(x_1-x_2),\qquad(\text{par distributivité})
+\end{align*}
+est bien dans $p\mathbb Z$ qui est donc un sous-groupe, le critère 4.5, (sous forme additive), étant vérifié.
+
+Soit alors $G$ un sous-groupe additif de $\mathbb Z$. Si $G=\{0\}$, c'est encore $0\cdot\mathbb Z$, donc du type voulu. Sinon, $\exists x\ne0$ dans $G$ et on a soit $x>0$, soit $x<0$, mais alors $x$ est du type $-n$ avec $n\in\mathbb N$, et $-x=n$ est dans $G$, avec $n>0$. Il y a donc des éléments strictement positifs dans $G$ : soit $G^+$ leur ensemble. On a $G^+$ partie non vide de $\mathbb N$, or on a vu (propriété 3.24) que la relation d'ordre entre cardinaux avait les propriétés d'un bon ordre : en particulier $G^+$ admet un plus petit élément $p$.
+
+Soit alors $x\in G$, on effectue la division euclidienne de $x$ par $p$, (voir 4.43 ci-après) : il existe un seul $q$ dans $\mathbb Z$ tel que
+\[
+x=qp+r\qquad\text{avec}\qquad0\le r<p.
+\]
+Mais $x\in G$, $p\in G$ donc si $q\ge0$,
+\[
+qp=\underbrace{p+p+\cdots+p}_{q\text{ fois}}\in G,
+\]
+(si $q<0$,
+\[
+qp=\underbrace{(-p-p\cdots-p)}_{-q\text{ fois}}
+\]
+est encore dans $G$), donc $x-qp=r\in G$, mais si $r>0$, on aurait $r\in G^+$ avec $r<p$ et $p$ plus petit élément de $G^+$ : c'est absurde. Donc $r=0$ et $x=qp\in p\mathbb Z$ : on a bien $G\subset p\mathbb Z$, alors que $p\in G\Rightarrow p\mathbb Z\subset G$ de manière évidente. On a bien tout sous-groupe additif de $\mathbb Z$ de la forme $p\mathbb Z$. \bookend
+
+\subsection*{4.43. Un mot de la division euclidienne dans $\mathbb Z$}
+Soit $p>0$ dans $\mathbb Z$, donc $p\in\mathbb N^*$ en fait, où $\mathbb N^*$ désigne $\mathbb N-\{0\}$. Soit d'abord $x\ge0$, on considère l'ensemble
+\[
+A=\{n;n\in\mathbb N,np>x\}.
+\]
+Cet ensemble n'est pas vide car $p\ge1\Rightarrow x\cdot p\ge x\cdot1=x$, (voir 4.41), donc $(x+1)p>x$ puisque $p>0$.
+
+On a $x+1$ dans $A$ qui est non vide, donc $A$ admet un plus petit élément, $n_0$. Si on pose $q=n_0-1$, $q\notin A$, mais $q+1\in A$ et comme $q\in\mathbb N$, (car $n_0=0$ est exclu car on n'a pas $0p>x$), c'est donc que
+\[
+q\cdot p\le x<q\cdot p+p.
+\]
+Si on pose $x=qp+r$ la double inégalité $qp\le qp+r<qp+p$ équivaut à $0\le r<p$ et, pour $x\ge0$, on a trouvé un couple $(q,r)$ de $\mathbb Z^2$ tel que
+\[
+x=qp+r\qquad\text{avec}\qquad0\le r<p.
+\]
+
+Si $x<0$, $y=-x$ est $>0$, on cherche $q$ et $r$ tels que $0\le r<p$ et $x=-y=qp+r$. Or on applique ce qui précède à $y>0$ : il existe $q'\in\mathbb Z$, $r'$ avec $0\le r'<p$ et $y=q'p+r'$ d'où $-y=-q'p-r'$.
+
+Si $r'=0$, on pose $q=-q'$, $r=-r'=0$, on a alors
+\[
+x=qp+r\qquad\text{avec}\qquad0\le r<p.
+\]
+
+Si $0<r'<p$, alors
+\[
+-y=-q'p-p+p-r'=-(q'+1)\cdot p+r
+\]
+avec $r=p-r'$ qui est $>0$ car $r'<p$ et qui est $<p$ car $r'>0$.
+
+Là encore on a trouvé $q=-(q'+1)$ et $r=p-r'$ tels que
+\[
+x=qp+r\qquad\text{avec}\qquad0\le r<p.
+\]
+
+Enfin, un tel couple est unique, pour $x$ et $p$ donnés, car si on avait
+\[
+x=qp+r\quad\text{avec }0\le r<p
+\]
+et
+\[
+x=q'p+r'\quad\text{avec }0\le r'<p,
+\]
+l'égalité $qp+r=q'p+r'$, avec $q\ne q'$, par exemple $q>q'$, conduit à
+\[
+(q-q')p=r'-r
+\]
+mais, $q-q'\ge1\Rightarrow(q-q')p\ge p$, (on a $p>0$ et on applique 4.41) alors que $r'-r\le r'<p$ : c'est absurde donc $q=q'$ et alors $r=r'$.
+
+On vient ainsi de justifier la division euclidienne dans $\mathbb Z$ :
+
+\medskip\noindent\textsc{Théorème 4.44.} --- \emph{Soit $p\in\mathbb N^*$ fixé. Pour tout $x$ de $\mathbb Z$, il existe un et un seul couple $(q,r)$ dans $\mathbb Z\times\mathbb N$ vérifiant $x=qp+r$ et $0\le r<p$.}
+
+Comme $\mathbb Z$ est abélien, $p\mathbb Z$ est sous-groupe distingué dans $\mathbb Z$, donc l'ensemble quotient $\mathbb Z/p\mathbb Z$ est un groupe additif, (voir la définition 4.18 et le théorème 4.22 avec la notation additive) : c'est le groupe des entiers modulo $p$. Dans ce groupe, on a
+\[
+p\cdot\overline1=\underbrace{\overline1+\overline1+\cdots+\overline1}_{p\text{ fois}},
+\]
+qui est nul si $\overline1$ est la classe de $1$, car $p\cdot\overline1$ est représenté par $1+1+\cdots+1=p\in p\mathbb Z$ : cet élément du quotient est donc la partie $p\mathbb Z$, élément nul, $\overline0$, du groupe quotient.
+
+Plus généralement, si $X$ est un élément de $\mathbb Z/p\mathbb Z$ représenté par $x$, on aura
+\[
+p\cdot X=\underbrace{X+\cdots+X}_{p\text{ fois}},
+\]
+représenté par $p\cdot x$ qui est dans $p\mathbb Z$, donc $p\cdot X=0$.
+
+Le groupe $\mathbb Z/p\mathbb Z$ admet exactement $p$ éléments, les classes des entiers $0,1,2,\ldots,p-1$ qui sont les différents restes possibles de la division euclidienne de $x$ quelconque de $\mathbb Z$ par $p$, donc $X=\bar x$ est classe d'un de ces restes d'où $\operatorname{card}(\mathbb Z/p\mathbb Z)\le p$, et ce cardinal est $p$ car 2 entiers distincts compris entre $0$ et $p-1$ ne sont pas équivalents.
+
+Considérons alors un groupe monogène $G$, noté multiplicativement. On a
+\[
+G=\{a^n;n\in\mathbb Z\},
+\]
+s'il est engendré par $a$, car ses éléments sont les puissances de $a$, mais aussi de $a^{-1}$, et $a^0=e$, élément neutre de $G$.
+
+L'application
+\[
+\varphi:\mathbb Z\longrightarrow G,\qquad n\longmapsto a^n
+\]
+est un morphisme de groupes de $(\mathbb Z,+)$ dans $(G,\cdot)$, son noyau est
+\[
+\ker\varphi=\{n;a^n=e\}
+\]
+et le premier théorème d'isomorphisme (4.23), nous dit que
+\[
+\varphi(\mathbb Z)\simeq\mathbb Z/\ker\varphi.
+\]
+
+Or $G$ étant monogène, tout $g$ de $G$ est du type $a^n$ pour un $n$ de $\mathbb Z$ donc $\varphi$ est surjective, et comme $\ker\varphi$ sous-groupe de $\mathbb Z$ est du type $p\mathbb Z$ on a
+\[
+G\simeq\mathbb Z/p\mathbb Z.
+\]
+On a alors
+\begin{itemize}[leftmargin=2.2em]
+\item soit $p=0$, ($\Longleftrightarrow\ker\varphi=\{0\}\Longleftrightarrow\varphi$ injective $\Longleftrightarrow\varphi$ bijective car on vient de voir que $\varphi$ est surjective) ;
+\item soit $p>0$ et alors $G\simeq\mathbb Z/p\mathbb Z$ admet $p$ éléments distincts.
+\end{itemize}
+On a le
+
+\medskip\noindent\textsc{Théorème 4.45.} --- \emph{Un groupe monogène $G$ est soit de cardinal infini, et alors $G\simeq\mathbb Z$, soit fini, et alors $G\simeq\mathbb Z/p\mathbb Z$.}
+
+
+\BellaSection{5. Groupe symétrique}
+
+Soit un ensemble $E$ de cardinal $n$, entier naturel. Il y a une bijection de $E$ sur $\{1,2,\ldots,n\}$ qui permet de « numéroter » les éléments de $E$ ou encore de les indexer en
+\[
+E=\{x_1,x_2,\ldots,x_n\}.
+\]
+
+Moyennant cette indexation, définir une bijection de $E$ sur $E$ revient à définir une bijection de $\{1,\ldots,n\}$ sur lui-même.
+
+\medskip\noindent\textsc{Définition 4.46.} --- \emph{On appelle groupe symétrique d'ordre $n$, noté $S_n$ ou $\mathfrak S_n$, le groupe des permutations de $\{1,\ldots,n\}$, c'est-à-dire des bijections de $\{1,\ldots,n\}$ sur lui-même. $\mathfrak S$ est la lettre sigma.}
+
+C'est un groupe pour le produit de composition des applications car $\mathfrak S_n\ne\varnothing$, (l'identité $e:i\mapsto i$, est une bijection, élément neutre); si $\sigma\in\mathfrak S_n$, c'est une bijection donc $\sigma^{-1}$ est aussi une bijection, telle que $\sigma\circ\sigma^{-1}=\sigma^{-1}\circ\sigma=e$, donc $\sigma\in\mathfrak S_n\Rightarrow\sigma^{-1}\in\mathfrak S_n$; enfin $\mathfrak S_n$ est stable par produit de composition, la composée de 2 bijections en est une; et ce produit est associatif.
+
+\medskip\noindent\textsc{Théorème 4.47.} --- \emph{Le groupe symétrique $\mathfrak S_n$ est de cardinal $n!$. Il est non commutatif si $n\ge3$.}
+
+De cardinal $n!$ car un élément $\sigma$ de $\mathfrak S_n$ est parfaitement connu dès qu'on se donne :
+
+l'image de $1$, $\sigma(1)\in\{1,\ldots,n\}$ il y a $n$ choix;
+
+puis l'image de $2$, $\sigma(2)\in\{1,\ldots,n\}-\{\sigma(1)\}$ il y a $(n-1)$ choix;
+
+d'où $n(n-1)$ choix des images de 1 et 2; à chacun de ces choix correspond $n-2$ choix pour $\sigma(3)$, puis $n-3$ pour $\sigma(4)$, et finalement il n'y a plus qu'un élément quand on cherche $\sigma(n)$ d'où $n(n-1)(n-2)\ldots(3)(2)1=n!$ éléments distincts dans $\mathfrak S_n$. La non commutativité est du domaine d'un exemple.
+
+On note
+\[
+\begin{pmatrix}
+1&2&3&\cdots&n\\
+\sigma(1)&\sigma(2)&\sigma(3)&\cdots&\sigma(n)
+\end{pmatrix}
+\]
+une permutation.
+
+Soient alors, si $n=3$ les permutations
+\[
+\sigma=\begin{pmatrix}1&2&3\\1&3&2\end{pmatrix}
+\quad\text{et}\quad
+\sigma'=\begin{pmatrix}1&2&3\\2&1&3\end{pmatrix}.
+\]
+On a
+\[
+\sigma\circ\sigma'=\begin{pmatrix}1&2&3\\3&1&2\end{pmatrix},
+\]
+car $1\mathrel{\mathop{\longmapsto}\limits^{\sigma'}}2\mathrel{\mathop{\longmapsto}\limits^{\sigma}}3$ donc $1\mathrel{\mathop{\longmapsto}\limits^{\sigma\circ\sigma'}}3,\ldots$
+
+et
+\[
+\sigma'\circ\sigma=\begin{pmatrix}1&2&3\\2&3&1\end{pmatrix}
+\]
+donc $\sigma\circ\sigma'\ne\sigma'\circ\sigma$.
+
+Pour $n>3$, on peut définir
+\[
+\sigma=\begin{pmatrix}1&2&3&4&\cdots&n\\1&3&2&4&\cdots&n\end{pmatrix}
+\quad\text{et}\quad
+\sigma'=\begin{pmatrix}1&2&3&4&\cdots&n\\2&1&3&4&\cdots&n\end{pmatrix},
+\]
+on aura encore $\sigma\circ\sigma'\ne\sigma'\circ\sigma$.
+Donc pour $n\ge3$, $\mathfrak S_n$ n'est jamais commutatif. \bookend
+
+Pour $n=2$, $S_2$ a $2!=2$ éléments
+\[
+e=\begin{pmatrix}1&2\\1&2\end{pmatrix}
+\quad\text{et}\quad
+\tau=\begin{pmatrix}1&2\\2&1\end{pmatrix}
+\]
+avec la loi $S_2$ lui est commutatif.
+
+Le groupe symétrique d'ordre $n$ s'étudie pour 2 raisons. D'abord il est à la base de l'algèbre multilinéaire alternée, de l'étude des déterminants, et aussi parce que tout groupe fini de $n$ éléments sera isomorphe à un sous-groupe du groupe symétrique d'ordre $n$; résultat que nous allons justifier.
+
+Pour cela, il nous faut connaître la structure de $S_n$.
+
+\medskip\noindent\textsc{Définition 4.48.} --- \emph{On appelle transposition toute permutation qui échange deux éléments.}
+
+Soient $i\ne j$ deux éléments de $\{1,\ldots,n\}$, la transposition $\tau_{i,j}$ est définie par $i\mapsto j$, $j\mapsto i$ et $k\mapsto k$ pour tout $k$ dans $\{1,2,\ldots,n\}-\{i,j\}$. Il est clair que $\tau_{i,j}=\tau_{j,i}$ et que $\tau_{i,j}\circ\tau_{i,j}=e$ identité.
+
+En fait, il y a $\binom n2$ transpositions distinctes, associées aux $\binom n2$ parties à 2 éléments dans l'ensemble $\{1,2,\ldots,n\}$ ayant $n$ éléments.
+
+\medskip\noindent\textsc{Théorème 4.49.} --- \emph{Les transpositions constituent un système générateur de $S_n$.}
+
+Ce résultat se justifie par récurrence.
+
+Pour $n=2$, on a vu que $S_2=\{e,\tau\}$ avec $\tau=\begin{pmatrix}1&2\\2&1\end{pmatrix}$ transposition, donc $\{\tau\}$ est système générateur de $S_2$ puisque $\tau^2=e$.
+
+On suppose obtenu le résultat pour $n-1$.
+
+Soit $\sigma\in S_n$. \textsc{Premier cas} si $\sigma(n)=n$, $\sigma'$ induite par $\sigma$ sur $\{1,\ldots,n-1\}$ est une permutation de $\{1,\ldots,n-1\}$, donc, par hypothèse de récurrence, $\sigma'$ est un produit de transpositions $\tau'$ de l'ensemble $\{1,\ldots,n-1\}$. Mais chacune de ces transpositions se prolonge en une transposition $\tau$ de $\{1,\ldots,n\}$ obtenue en posant : si $k\le n-1$, $\tau(k)=\tau'(k)$ et $\tau(n)=n$, et il est clair que le produit qui donnait $\sigma'$ se prolonge en un produit de transpositions de $\{1,\ldots,n\}$ qui donne $\sigma$.
+
+\textsc{Deuxième cas} si $\sigma(n)=m<n$, soit $\tau_{m,n}$ qui échange $n$ et $m$, et $\beta=\tau_{n,m}\circ\sigma$, $\beta\in S_n$ et l'image de $n$ par $\beta$ est $n$.
+
+D'après le premier cas, $\beta$ est un produit de transpositions, et comme $\tau_{n,m}^{2}=e$, $\sigma=\tau_{n,m}\circ\beta$ est un produit de transpositions. \bookend
+
+\medskip\noindent\textsc{Théorème 4.50.} --- \emph{Les $n-1$ transpositions $\tau_{1,2}$; $\tau_{2,3}$; $\ldots$; $\tau_{n-1,n}$ constituent un système générateur irréductible de $S_n$.}
+
+Irréductible signifiant qu'on ne peut rien retirer.
+
+On va d'abord prouver que toute transposition $\tau$ est un produit des $n-1$ transpositions précédentes.
+
+Soit $\tau=\tau_{i,j}$ avec $i<j$ une transposition quelconque. Pour échanger $i$ et $j$ on échange $i$ et $i+1$, $i+1$ et $i+2$, $\ldots$, $j-1$ et $j$, mais ce produit $\tau_{j-1,j}\circ\tau_{j-2,j-1}\circ\cdots\circ\tau_{i,i+1}$ a bien envoyé $i$ sur $j$ mais a décalé d'un cran $i+1$ en $i$, $i+2$ en $i+1$, $\ldots$, $j$ en $j-1$, il faut remettre ces éléments à leur place. On vérifie que
+\[
+\tau_{i,j}=
+\tau_{i,i+1}\circ\tau_{i+1,i+2}\circ\cdots\circ\tau_{j-2,j-1}\circ\tau_{j-1,j}
+\circ\tau_{j-2,j-1}\circ\cdots\circ\tau_{i+1,i+2}\circ\tau_{i,i+1}
+\]
+car si $k<i$ ou $k>j$, $k$ est inchangé;
+
+$i\mapsto i+1\mapsto i+2\mapsto\cdots\mapsto j-1\mapsto j$ et c'est inchangé ensuite; $j$ est d'abord inchangé jusqu'à son image par $\tau_{j-2,j-1}$ puis, par $\tau_{j-1,j}$ et les transpositions suivantes, $j\mapsto j-1\mapsto j-2\mapsto\cdots\mapsto i+1\mapsto i$; et un $k$ avec $i<k<j$, (s'il y en a) donne d'abord $k-1$ (par exemple $i+1$ donne $i$ puis ne change plus jusqu'au dernier $\tau_{i,i+1}$ où $i$ donne $i+1$), puis ne change plus jusqu'à ce que $k-1$ redonne $k$ par la même transposition en position symétrique par rapport au $\tau_{j-1,j}$ central.
+
+Ce système est irréductible : si on supprime $\tau_{i,i+1}$ par exemple les $\tau_{k,k+1}$ restant laisseront stables les parties $\{1,\ldots,i\}$ et $\{i+1,\ldots,n\}$ donc une bijection envoyant un $k\le i$ sur un $l\ge i+1$ ne pourra pas s'obtenir comme produit des $\tau_{r,r+1}$ pour $r\ne i$. \bookend
+
+\medskip\noindent\textsc{Théorème 4.51.} --- \emph{Le groupe symétrique $\mathfrak S_n$ admet un système générateur formé de $\tau_{1,2}$ et de la permutation circulaire
+\[
+\gamma=\begin{pmatrix}1&2&3&\cdots&n-1&n\\2&3&4&\cdots&n&1\end{pmatrix}.
+\]}
+
+En effet
+\[
+\gamma^k=
+\begin{pmatrix}
+1&2&\cdots&n-k&n-k+1&\cdots&n\\
+k+1&k+2&\cdots&n&1&\cdots&k
+\end{pmatrix},
+\]
+donc l'inverse est
+\[
+\gamma^{-k}=
+\begin{pmatrix}
+1&2&\cdots&k&k+1&k+2&\cdots&n\\
+n-k+1&n-k+2&\cdots&n&1&2&\cdots&n-k
+\end{pmatrix},
+\]
+d'où $\gamma^k\tau_{1,2}\gamma^{-k}=\tau_{k+1,k+2}$ car, si on note $\alpha=\gamma^k\tau_{1,2}\gamma^{-k}$, pour $i\ne k+1$ et $i\ne k+2$, $\gamma^{-k}(i)\ne1$ et $\ne2$, donc c'est inchangé par $\tau_{1,2}$ c'est-à-dire $\tau_{1,2}\gamma^{-k}(i)=\gamma^{-k}(i)\Rightarrow\alpha(i)=\gamma^k\circ\gamma^{-k}(i)=i$.
+
+Puis
+\[
+k+1\mathrel{\mathop{\longmapsto}\limits^{\gamma^{-k}}}1
+\mathrel{\mathop{\longmapsto}\limits^{\tau_{1,2}}}2
+\mathrel{\mathop{\longmapsto}\limits^{\gamma^k}}k+2
+\]
+et
+\[
+k+2\mathrel{\mathop{\longmapsto}\limits^{\gamma^{-k}}}2
+\mathrel{\mathop{\longmapsto}\limits^{\tau_{1,2}}}1
+\mathrel{\mathop{\longmapsto}\limits^{\gamma^k}}k+1,
+\]
+finalement, $\gamma^k\circ\tau_{1,2}\circ\gamma^{-k}$ est bien la transposition $\tau_{k+1,k+2}$. Comme tout élément de $\mathfrak S_n$ est un produit calculé à partir des $\tau_{i,i+1}$, c'en est un calculé avec $\gamma$ et $\tau_{1,2}$.
+
+Il est clair que, si $n>2$, il n'y a pas unicité d'un système générateur irréductible de $\mathfrak S_n$, ni même unicité du nombre d'éléments d'un tel système.
+
+Pour l'étude des déterminants on a encore besoin d'une autre notion.
+
+\medskip\noindent\textsc{Définition 4.52.} --- \emph{On appelle signature d'une permutation $\sigma$, le nombre $\varepsilon_\sigma$ défini par
+\[
+\varepsilon_\sigma=\prod_{1\le i<j\le n}\frac{\sigma(i)-\sigma(j)}{i-j}.
+\]}
+
+En fait, c'est un entier égal à $1$ ou $-1$ car, l'ordre des facteurs importe peu, (produit commutatif), donc on a encore
+\[
+\varepsilon_\sigma=
+\prod_{\{i,j\}\in\{\text{paires de 2 éléments de }\{1,\ldots,n\}\}}
+\frac{\sigma(i)-\sigma(j)}{i-j}.
+\]
+Comme $\sigma$ est une permutation de $\{1,2,\ldots,n\}$ les paires $\{\sigma(i),\sigma(j)\}$ redonnent les paires de $\{1,\ldots,n\}$. Mais en gardant l'indexation $1\le i<j\le n$, si $\sigma(i)<\sigma(j)$, la différence $\sigma(i)-\sigma(j)$ figure au dénominateur, sinon c'est $-(\sigma(i)-\sigma(j))$. Donc les facteurs $\sigma(i)-\sigma(j)$ figurent, au signe près, au dénominateur.
+
+En fait on a $\varepsilon_\sigma=(-1)^{n_\sigma}$ où $n_\sigma$ est le nombre de paires $\{i,j\}$ distinctes telles que $i<j$ et $\sigma(i)>\sigma(j)$.
+
+On dit encore que 2 entiers $u$ et $v$ de $\{1,\ldots,n\}$ présentent une inversion si et seulement si
+\[
+\frac{\sigma(u)-\sigma(v)}{u-v}<0
+\]
+et dans ce cas, en posant $i=\inf\{u,v\}$ et $j=\sup\{u,v\}$ on aura $i<j$ et $\sigma(i)>\sigma(j)$ donc la signature $\varepsilon_\sigma$ est encore $(-1)^{n_\sigma}$ où $n_\sigma$ est le nombre d'inversions de la permutation.
+
+\medskip\noindent\textsc{Théorème 4.53.} --- \emph{L'application $\sigma\mapsto\varepsilon_\sigma$ est un morphisme de groupe de $S_n$ dans $\{-1,1\}$ multiplicatif.}
+
+D'abord, pour la loi associée à la table
+\[
+\begin{array}{c|cc}
+\times&1&-1\\\hline
+1&1&-1\\
+-1&-1&1
+\end{array}
+\]
+l'ensemble $\{-1,1\}$ est un groupe.
+
+Puis
+\[
+\varepsilon_{\sigma\circ\beta}
+=\prod_{1\le i<j\le n}
+\frac{\sigma(\beta(i))-\sigma(\beta(j))}{i-j}.
+\]
+Pour $i\ne j$, on a $\beta(i)\ne\beta(j)$, donc
+\[
+\frac{\sigma(\beta(i))-\sigma(\beta(j))}{i-j}
+=
+\frac{\sigma(\beta(i))-\sigma(\beta(j))}{\beta(i)-\beta(j)}
+\frac{\beta(i)-\beta(j)}{i-j}
+\]
+d'où
+\[
+\varepsilon_{\sigma\circ\beta}
+=\left(\prod_{1\le i<j\le n}
+\frac{\sigma(\beta(i))-\sigma(\beta(j))}{\beta(i)-\beta(j)}\right)
+\left(\prod_{1\le i<j\le n}
+\frac{\beta(i)-\beta(j)}{i-j}\right).
+\]
+Le deuxième produit vaut $\varepsilon_\beta$ (définition 4.52), mais le premier est égal à la signature $\varepsilon_\sigma$ de $\sigma$, car $\beta$ étant une permutation de $\{1,\ldots,n\}$, les paires $\{\beta(i),\beta(j)\}$ pour toutes les paires $\{i,j\}$ de $\{1,\ldots,n\}$ redonnent exactement toutes ces paires dans un autre ordre.
+
+On a donc $\varepsilon_{\sigma\circ\beta}=\varepsilon_\sigma\varepsilon_\beta$, soit encore l'application $\sigma\mapsto\varepsilon_\sigma$ est un morphisme de $S_n$ dans $\{-1,1\}$. \bookend
+
+\medskip\noindent\textsc{Corollaire 4.54.} --- \emph{La signature $\varepsilon_\sigma$ est encore égale à $(-1)^{p_\sigma}$ où $p_\sigma$ est le nombre de transpositions intervenant dans une décomposition de $\sigma$.}
+
+Soit $\tau$ la transposition de $u$ et $v$, avec $u<v$. On va chercher, pour les paires $\{i,j\}$ avec $1\le i<j\le n$, le nombre de rapports
+\[
+\frac{\tau(i)-\tau(j)}{i-j}
+\]
+négatifs.
+
+Si $i$ et $j$ sont tous deux différents de $u$ et de $v$ : $\dfrac{\tau(i)-\tau(j)}{i-j}=1$ en fait.
+
+Si $i=u$, comme $j>i$ on a
+
+--- soit $j<v$, alors $(u,j)\mapsto(v,j)$, il y aura une inversion, et ceci pour $j=u+1,u+2,\ldots,v-1$ soit $v-u-1$ fois;
+
+--- soit $j=v$, alors $(i,j)=(u,v)\mapsto(v,u)$ encore une inversion;
+
+--- soit $j>v$, alors $(i,j)=(u,j)$ donne $(v,j)$ mais ici $u<j$ et $v<j$ : il n'y a pas d'inversion.
+
+Si $j=u$, comme $i<j$, $i\ne u$ et $i\ne v$ donc $(i,j)=(i,u)\mapsto(i,v)$ pas d'inversion.
+
+Si $i=v$, comme $j>v$ dans ce cas $(i,j)=(v,j)\mapsto(u,j)$ : pas d'inversion.
+
+Si $j=v$ et $i<v$, le cas $i=u$ a été déjà compté, il reste soit $i<u$ : le couple $(i,j)=(i,u)$ donne $(i,v)$ avec $i-v$ et $i-u$ de même signe : pas d'inversion; soit $u<i<j=v$ : le couple $(i,v)$ donne $(i,u)$ : il y a une inversion et comme précédemment, ceci se présente $v-u-1$ fois.
+
+Finalement, il y a $2(v-u-1)+1$ inversions d'où $\varepsilon_\tau=-1$ pour une transposition $\tau$.
+
+On a vu, (Théorème 4.49), que les transpositions forment un système générateur de $\mathfrak S_n$ donc si $\sigma$ est un produit de $p_\sigma$ transpositions, on aura $\varepsilon_\sigma=(-1)^{p_\sigma}$. Il faut remarquer que $p_\sigma$ n'est pas le même pour d'autres décompositions de la même permutation $\sigma$, mais la parité est la même. \bookend
+
+\medskip\noindent\textsc{Corollaire 4.55.} --- \emph{L'ensemble $A_n$ des permutations de $\{1,\ldots,n\}$ paires, c'est-à-dire de signature 1, est un sous-groupe distingué de $\mathfrak S_n$. On l'appelle groupe alterné d'ordre $n$.}
+
+En effet $A_n$ est le noyau du morphisme $\varphi:\sigma\mapsto\varphi(\sigma)=\varepsilon_\sigma$ de $\mathfrak S_n$ dans $\{-1,1\}$ multiplicatif, et on applique le théorème 4.19. \bookend
+
+\medskip\noindent\textsc{Remarque 4.55 bis.} --- $A_n$ admet $\dfrac{n!}{2}$ éléments, (si $n\ge2$) car d'après le théorème 4.23, on a $\{-1,1\}$ isomorphe au groupe quotient $\mathfrak S_n/A_n$, donc $\mathfrak S_n/A_n$ admet 2 éléments, ou encore 2 classes d'équivalence, qui sont, en tant que parties de $\mathfrak S_n$, $A_n$ d'une part et $\tau\cdot A_n$, avec $\tau$ transposition.
+
+Or l'application $\theta:h\mapsto\tau\cdot h$ de $A_n$ sur $\tau\cdot A_n$ est une bijection car si $x\in\tau\cdot A_n$, $\exists h\in A_n$ tel que $x=\tau h=\theta(h)$, c'est $h=\tau^{-1}x$; et si on a $\tau h_1=\tau h_2$, en simplifiant par $\tau$ on a $h_1=h_2$, d'où $\theta$ bijective. Donc $\operatorname{card}(A_n)=\operatorname{card}(\tau\cdot A_n)$, et comme $A_n$ et $\tau\cdot A_n$ forment une partition de l'ensemble $\mathfrak S_n$, on a
+\[
+n!=\operatorname{card}\mathfrak S_n=2\,\operatorname{card}A_n.
+\]
+\bookend
+
+\medskip\noindent\textsc{Théorème 4.56.} --- \emph{Tout groupe fini $G$ ayant $n$ éléments est isomorphe à un sous-groupe de $S_n$.}
+
+Donc à un isomorphisme près, les sous-groupes de tous les $S_n$ donnent tous les types de groupes finis.
+
+Soit $G$ de cardinal $n$, il existe une bijection de $G$ sur $\{1,\ldots,n\}$ d'où une indexation $G=\{g_1,\ldots,g_n\}$.
+
+\subsection*{4.57.}
+Soit $x\in G$, la translation à droite $\delta_x:g\mapsto gx$ est une bijection de $G$ sur lui-même, car $\forall g'\in G$, $\exists!g=g'x^{-1}$ tel que $g\cdot x=g'$. Donc, si l'élément indexé $g_i$ a pour image $g_{(\text{quelque chose})}$ le « quelque chose » est fonction de $i$, on le note $\varphi(x)(i)$ car ceci dépend de $x$ et l'application $i\mapsto\varphi(x)(i)$, entier tel que
+\[
+g_{\varphi(x)(i)}=g_i\cdot x,
+\]
+est une permutation de $\{1,\ldots,n\}$.
+
+Pour $\forall i\in\{1,\ldots,n\}$, $\varphi(xy)(i)$ est l'entier $k$ tel que $g_i\cdot(xy)=g_k$.
+
+Or $g_i\cdot(xy)=(g_i\cdot x)y$ et $\varphi(x)(i)$ est l'entier $j$ tel que $g_i x=g_j$ puis $\varphi(y)(j)$ est l'entier $l$ tel que $g_j\cdot y=g_l$ soit $(g_ix)\cdot y=g_l=g_i xy$ c'est que $l=k$, soit encore
+\[
+\varphi(y)(\varphi(x)(i))=\varphi(xy)(i),\qquad \forall i=1,2,\ldots,n.
+\]
+On a donc,
+\[
+\forall(x,y)\in G^2,\qquad \varphi(x\cdot y)=\varphi(y)\circ\varphi(x).
+\]
+Attention, l'ordre est renversé, mais ceci ne modifie pas les notions d'image, de noyau.
+
+$\varphi$ est injective car si $\varphi(x)$ est l'application identique, c'est que $g_i\cdot x=g_i$, $\forall i=1,\ldots,n$, donc que $x$ est neutre à droite dans $G$.
+
+Mais comme $e$, élément neutre de $G$ est neutre à gauche, on a $x=e$, (théorème 2.30).
+
+Pour conclure par un morphisme sans modifier cette construction, on pose
+\[
+\psi(x)=\varphi(x^{-1}).
+\]
+Alors
+\[
+\psi(xy)=\varphi((xy)^{-1})=\varphi(y^{-1}x^{-1})
+=\varphi(x^{-1})\circ\varphi(y^{-1})=\psi(x)\circ\psi(y),
+\]
+donc $\psi$ est un morphisme de $G$ dans $S_n$; il est injectif puisque $\varphi$ l'est. On a alors, (Théorème 4.23), $G/\ker\psi=G\simeq\psi(G)$ qui est sous-groupe de $S_n$.\footnote{\textbf{校勘：}le texte imprimé appelle directement $\varphi$ « morphisme » après avoir établi $\varphi(xy)=\varphi(y)\circ\varphi(x)$, c'est-à-dire un anti-homomorphisme, puis applique le premier théorème d'isomorphisme. La correction minimale ci-dessus conserve intégralement la construction par translations à droite et compose seulement avec l'inversion pour obtenir le morphisme $\psi(x)=\varphi(x^{-1})$.}
+\bookend
+
+\medskip\noindent\textsc{Définition 4.58.} --- \emph{On appelle ordre d'un groupe fini, son cardinal.}
+
+On a alors un résultat important :
+
+\medskip\noindent\textsc{Théorème 4.59.} --- \emph{Soit $G$ un groupe fini, $H$ un sous-groupe de $G$. On a l'ordre de $H$ divise l'ordre de $G$.}
+
+En effet, soit $\mathcal R_H$ l'équivalence définie sur $G$ par
+\[
+x\mathcal R_H y\Longleftrightarrow xy^{-1}\in H.
+\]
+C'est une équivalence car $xx^{-1}=e$ élément neutre de $G$, est dans $H$ sous-groupe, donc $x\mathcal R_H x$ : il y a réflexivité.
+
+Puis $\mathcal R_H$ est symétrique car si $x\mathcal R_H y$, $xy^{-1}\in H$, avec $H$ stable par passage à l'inverse, or $(xy^{-1})^{-1}=yx^{-1}$ d'où $yx^{-1}\in H$ soit $y\mathcal R_H x$.
+
+Enfin $\mathcal R_H$ est transitive car si $x\mathcal R_H y$ et $y\mathcal R_H z$ on a $xy^{-1}$ et $yz^{-1}$ qui sont deux éléments de $H$, stable par produit, donc $xy^{-1}\cdot yz^{-1}=xz^{-1}\in H$ d'où $x\mathcal R_H z$.
+
+La classe d'équivalence de $y$ est l'ensemble $Y$ des $x$ tel que
+\[
+xy^{-1}\in H\Longleftrightarrow \exists h\in H,\ xy^{-1}=h
+\Longleftrightarrow \exists h\in H,\ x=hy
+\Longleftrightarrow x\in H\cdot y.
+\]
+Or $h\mapsto h\cdot y$ est une bijection de $H$ sur $Y=H\cdot y$, comme on l'a justifié en 4.57.
+
+En fait, $\delta_y$ est la translation à droite par $y$ dans le groupe $G$.
+
+On a donc ordre$(H)=\operatorname{card}H=\operatorname{card}Y$, ceci quelle que soit la classe d'équivalence de l'ensemble quotient $G/\mathcal R_H$.
+
+Comme les classes d'équivalence forment une partition de $G$, on a finalement
+\[
+\operatorname{card}G=(\text{nombre de classes})\times\operatorname{card}H
+\]
+d'où card$(H)$ divise card$(G)$. \bookend
+
+\medskip\noindent\textsc{Définition 4.60.} --- \emph{On appelle indice du sous-groupe $H$ de $G$, le cardinal de l'ensemble quotient $G/\mathcal R_H$, lorsqu'il est fini.}
+
+\medskip\noindent\textsc{Remarque 4.61.} --- L'ensemble quotient $G/\mathcal R_H$ n'est pas un groupe en général car $H$ n'est pas forcément distingué.
+
+\medskip\noindent\textsc{Remarque 4.62.} --- Si $G$ est cyclique, (monogène d'ordre fini) engendré par $a$, $G=\{a,a^2,\ldots,a^n\}$ avec $n=$ le plus petit entier tel que $a^n=$ élément neutre, $n=\operatorname{card}(G)$ est encore appelé l'ordre de $a$.
+
+\BellaSection{6. Groupe opérant sur un ensemble}
+
+\medskip\noindent\textsc{Définition 4.63.} --- \emph{Soit un ensemble $E$ et un groupe $G$, multiplicatif. On dit que $G$ opère sur $E$ si et seulement s'il existe une loi de composition externe sur $E$, à domaine d'opérateurs $G$, notée $(a,x)\mapsto a\cdot x$ telle que
+\[
+\forall(a,b,x)\in G\times G\times E,\qquad a\cdot(b\cdot x)=(ab)\cdot x,
+\]
+\[
+\forall x\in E,\qquad e\cdot x=x,
+\]
+avec $e$ neutre de $G$.}
+
+\medskip\noindent\textsc{Conséquence 4.64.} --- Pour $a$ fixé dans $G$, l'application $x\mapsto a\cdot x$ est une bijection, notée $f_a$ de $E$ dans $E$, car avec $a^{-1}$ inverse de $a$, on a
+\[
+(f_{a^{-1}}\circ f_a)(x)=(a^{-1}a)\cdot x=e\cdot x=x
+\]
+et
+\[
+(f_a\circ f_{a^{-1}})(x)=(aa^{-1})\cdot x=e\cdot x=x,
+\]
+donc $f_{a^{-1}}\circ f_a=f_a\circ f_{a^{-1}}=\operatorname{id}_E$ d'où $f_a$ injective et surjective, (théorème 1.20). \bookend
+
+De plus l'application $a\mapsto f_a$ est un morphisme de $G$ dans le groupe $\mathfrak S(E)$ des bijections de $E$, (vérification facile).
+
+Réciproquement, soit $G$ un groupe et $\varphi$ un morphisme de $G$ dans $\mathfrak S(E)$, le groupe $G$ opère sur $E$ si on pose $\forall(a,x)\in G\times E$, $a\cdot x=\varphi(a)(x)$. (Simple vérification).
+
+\medskip\noindent\textsc{Définition 4.65.} --- \emph{Soit un groupe $G$ opérant sur l'ensemble $E$. On appelle orbite de $x$ dans $E$ l'ensemble des $a\cdot x$, pour tout $a$ de $G$.}
+
+On parle aussi de trajectoire.
+
+\subsection*{4.66.}
+La relation $\mathcal R$ définie dans $E$ par
+\[
+x\mathcal R y\Longleftrightarrow \exists a\in G,\ y=a\cdot x
+\]
+est une équivalence. En effet, elle est :
+
+réflexive : puisque $x=e\cdot x$, d'où $x\mathcal R x$;
+
+symétrique : si on a $x\mathcal R y$, avec $a$ dans $G$ tel que $y=a\cdot x$ on aura
+\[
+a^{-1}\cdot y=a^{-1}\cdot(a\cdot x)=(a^{-1}a)\cdot x=e\cdot x=x
+\]
+d'où $y\mathcal R x$;
+
+transitive : si on a $x\mathcal R y$ et $y\mathcal R z$, avec $a$ et $b$ dans $G$ tels que $y=a\cdot x$ et $z=b\cdot y$ on aura
+\[
+z=b\cdot(a\cdot x)=(ba)\cdot x
+\]
+d'où $x\mathcal R z$.
+
+La classe de $x$ modulo $\mathcal R$ étant l'ensemble des $a\cdot x$, pour tout $a$ de $G$, c'est l'orbite de $x$, donc les orbites forment une partition de $E$.
+
+\medskip\noindent\textsc{Définition 4.67.} --- \emph{On dit que $G$ opère transitivement sur $E$ si on a :
+\[
+\forall(x,y)\in E^2,\quad \exists a\in G,\ y=a\cdot x.
+\]}
+Ceci revient à dire qu'il n'y a qu'une orbite dans $E$.
+
+\medskip\noindent\textsc{Définition 4.68.} --- \emph{On dit que $G$ opère simplement transitivement sur $E$ si on a :
+\[
+\forall(x,y)\in E^2,\quad \exists!a\in G,\ y=a\cdot x.
+\]}
+
+\subsection*{Quelques exemples}
+
+\subsection*{4.69.}
+$G$ est un groupe, on prend $E=G$ et $\forall(a,x)\in G\times G$ on pose $a\cdot x=ax$ (produit dans $G$) on obtient $G$ qui opère sur lui-même par translation à gauche. Dans ce cas $G$ opère simplement transitivement car
+\[
+y=a\cdot x\Longleftrightarrow a=yx^{-1}.
+\]
+On peut faire agir $G$ sur lui-même par translations à droite en posant $a\cdot x=xa$.
+
+\subsection*{4.70.}
+$G$ est un groupe et $E=G$, $\forall(a,x)\in G\times G$ on pose $a\cdot x=axa^{-1}$.
+On dit que $G$ opère sur $G$ par automorphismes intérieurs, mais ici il peut y avoir plusieurs orbites. Par exemple si $x$ est dans le centre de $G$, (4.71), $\forall a\in G$, $ax=xa$ donc $axa^{-1}=x$ : l'orbite de $x$ est réduite à $x$. Si $G$ est commutatif de cardinal $\ne1$ il y a card $G$ orbites qui sont des singletons.
+
+\subsection*{4.71.}
+On appelle centre de $G$, l'ensemble $Z(G)$ des $a$ de $G$ qui commutent avec tous les $x$ de $G$.
+
+\subsection*{4.72.}
+Soit un corps $K$, et $E=M_n(K)$ espace vectoriel des matrices carrées d'ordre $n$ sur $K$. Si $G=GL_n(K)$ est le groupe des matrices carrées inversibles, en posant, pour $(P,A)\in G\times E$,
+\[
+P\cdot A=P^{-1}AP,
+\]
+$G$ agit sur $E$ et la trajectoire de $A$ est formée de toutes les matrices traduisant le même endomorphisme de $E_n$ quand on change de base, (voir chapitre VIII).
+
+Si $F$ \BellaCorrection{est}{et} le sous-espace vectoriel des matrices symétriques, et si pour $(P,A)$ dans $G\times F$ on pose
+\[
+P\cdot A={}^{t}PAP
+\]
+on obtient cette fois les trajectoires associées aux formes quadratiques sur $K^n$, (voir ch. XI).
+
+Enfin tout ce qui précède s'applique dans le cadre des espaces affines.
+
+On s'est occupé, quand $x$ est fixé et $a$ varie dans $G$, des éléments $a\cdot x$. On peut cette fois s'intéresser aux éléments laissant fixe un point de $E$.
+
+\medskip\noindent\textsc{Théorème 4.73.} --- \emph{Soit un groupe $G$ opérant sur un ensemble $E$. Pour $x$ fixé dans $E$, l'ensemble $G_x$ des $a$ de $G$ laissant $x$ fixe forme un sous-groupe de $G$, appelé groupe d'isotropie de $x$ suivant $G$.}
+
+En effet $e\in G_x$, qui est non-vide, et si $a\cdot x=x$, on aura
+\[
+a^{-1}\cdot x=a^{-1}\cdot(a\cdot x)=(a^{-1}a)\cdot x=e\cdot x=x
+\]
+donc $a\in G_x\Rightarrow a^{-1}\in G_x$; enfin si $a$ et $b$ laissent $x$ fixe, on aura
+\[
+ab\cdot x=a\cdot(b\cdot x)=a\cdot x=x
+\]
+d'où $ab\in G_x$, qui est stable par produit et passage à l'inverse. \bookend
+
+Dans le cas d'un groupe opérant sur lui-même par automorphismes intérieurs, (on dit encore par conjugaison, exemple 4.70), on parle de stabilisateur de $x$ au lieu de groupe d'isotropie.
+
+\medskip\noindent\textsc{Théorème 4.74.} --- \emph{Soit $G$ opérant sur $E$. Pour tout $x$ de $E$ et tout $y=a\cdot x$, ($a\in G$), de sa trajectoire, on a $G_y=aG_xa^{-1}$. On dit que les groupes d'isotropie sont conjugués.}
+
+En particulier, ils sont équipotents.
+
+Car $G_y=\{b;\ b\in G,\ b\cdot y=y\}$.
+\begin{align*}
+b\cdot y=y
+&\Longleftrightarrow b\cdot(a\cdot x)=a\cdot x\quad\text{soit }ba\cdot x=a\cdot x\\
+&\Longleftrightarrow a^{-1}\cdot(ba\cdot x)=a^{-1}\cdot(a\cdot x)\\
+&\Longleftrightarrow (a^{-1}ba)\cdot x=(a^{-1}a)\cdot x=e\cdot x=x.
+\end{align*}
+D'où
+\[
+(b\in G_y)\Longleftrightarrow a^{-1}ba\in G_x\Longleftrightarrow b\in aG_xa^{-1}.
+\]
+\bookend
+
+Soit alors $G$ opérant sur $E$ et $x$ fixé dans $E$. On vérifie facilement que la relation $\mathcal R$ définie sur $G$ par
+\[
+a\mathcal R b\Longleftrightarrow a\cdot x=b\cdot x
+\]
+est une équivalence. Si $f$ est l'application de $G$ dans $E$ définie par $a\mapsto f(a)=a\cdot x$, ($x$ fixé), $\mathcal R$ est l'équivalence d'application associée à $f$ (voir 2.39) donc l'image $f(G)$ est équipotente à l'ensemble quotient $G/\mathcal R$.
+
+Or cette équivalence $\mathcal R$ est compatible à gauche, car si $a\mathcal R b$, c'est que $a\cdot x=b\cdot x$ d'où, pour tout $c$ de $G$,
+\[
+c\cdot(a\cdot x)=c\cdot(b\cdot x)
+\]
+soit encore $(ca)\cdot x=(cb)\cdot x$, donc $ca\mathcal R cb$, d'où $(ca)\mathcal R(cb)$.
+
+Si $H$ est la classe de $e$,
+\[
+H=\{a;\ a\in G,\ a\cdot x=e\cdot x=x\}
+\]
+est le groupe d'isotropie de $x$, noté $G_x$ en fait, et la classe de $a$ est l'ensemble des $b$ de $G$ tels que $a\cdot x=b\cdot x$ soit $a^{-1}b\cdot x=x$, d'où
+\[
+a\mathcal R b\Longleftrightarrow a^{-1}b\in G_x\Longleftrightarrow b\in aG_x.
+\]
+
+On retrouve une situation analogue à celle du théorème 4.59, les classes d'équivalence étant les $aG_x$ distincts.
+
+On a alors la trajectoire de $x$, soit $f(G)$, équipotente à l'ensemble quotient $G/\mathcal R$ donc elle sera de cardinal fini si et seulement si le sous-groupe $G_x$ est d'indice fini dans $G$.
+
+On a défini en 4.60 l'indice d'un sous-groupe d'un groupe. On note $G:G_x$ cet indice.
+
+\medskip\noindent\textsc{Théorème 4.75.} --- \emph{(Équation aux classes) Soit un groupe $G$ opérant sur un ensemble fini $E$ de cardinal $n$, si $\{x_1,\ldots,x_q\}$ est un système de représentants des $q$ orbites distinctes, on a
+\[
+n=\operatorname{card}E=\sum_{i=1}^{q}(G:G_{x_i}),
+\]
+avec $G_{x_i}$ groupe d'isotropie de $x_i$.}
+
+Puisque les orbites forment une partition, et que pour $x_i$ choisi dans une orbite on a card(orbite)$=G:G_{x_i}$, le résultat a été justifié ci-dessus. \bookend
+
+Exemple d'application de ce résultat.
+
+\medskip\noindent\textsc{Théorème 4.76.} --- \emph{Tout groupe $G$ de cardinal $p^n$ avec $p$ premier a un centre non réduit à $\{e\}$.}
+
+On fait agir $G$ sur lui-même par automorphismes intérieurs. On a vu en 4.70 que les éléments du centre $Z(G)$ sont exactement ceux d'orbite de cardinal 1. Si $O_1,\ldots,O_q$ sont les autres orbites, représentées par $x_1,\ldots,x_q$, l'équation aux classes donne
+\[
+\operatorname{card}G=p^n=\operatorname{card}(Z(G))+\sum_{i=1}^{q}(G:G_{x_i}).
+\]
+Comme $G_{x_i}$ est sous-groupe de $G$, son cardinal divise $p^n$ donc est du type $p^{n_i}$, d'où d'indice
+\[
+G:G_{x_i}=p^{n-n_i},
+\]
+avec $n_i<n$ puisque l'orbite $O_i$ n'est plus de cardinal 1.
+
+Donc $\sum_{i=1}^{q}(G:G_{x_i})$ est divisible par $p$, ainsi que $p^n$, et comme $Z(G)$ est de cardinal non nul, ($e\in Z(G)$) on a card$(Z(G))$ divisible par $p$ : le centre n'est pas réduit à $e$. \bookend
+
+\input{chapters/ch04_exercises}

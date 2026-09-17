@@ -1,0 +1,829 @@
+\chapter{Construction des entiers naturels}
+\origpage{51--86}
+
+Il semblerait que le fait de compter soit apparu avant l'écriture, à Sumer, vers 3500 av. J.-C. C'est dire s'il s'agit d'une action « vieille comme le monde ». Dès le départ, compter c'était mettre en correspondance les objets à compter des éléments de référence : doigts, entailles sur des bâtons, jetons en terre cuite à Sumer, ... puis de façon plus abstraite, avec des signes gravés sur des tablettes d'argile.
+
+C'est ce cheminement que nous allons formaliser.
+
+\BellaSection{1. Nombres cardinaux}
+
+\medskip\noindent\textsc{Définition 3.1.} --- \emph{On dit que deux ensembles $X$ et $Y$ sont équipotents s'il existe une bijection $f$ de $X$ sur $Y$.}
+
+On note $X\mathrel{\mathrm{Éq}}Y$ ce lien entre ensembles. Il s'agit d'un lien qui est :
+\begin{itemize}[leftmargin=2em]
+\item réflexif, l'identité $I_X:x\mapsto x$ de $X$ sur $X$ est une bijection ;
+\item symétrique, si $X\mathrel{\mathrm{Éq}}Y$, il existe $f$ bijection de $X$ sur $Y$, donc la bijection réciproque $f^{-1}$ existe, de $Y$ sur $X$, d'où $Y\mathrel{\mathrm{Éq}}X$ ;
+\item transitif, si on a $X\mathrel{\mathrm{Éq}}Y$ et $Y\mathrel{\mathrm{Éq}}Z$, avec $f$ bijection de $X$ sur $Y$ et $g$ bijection de $Y$ sur $Z$ on vérifie facilement que $g\circ f$ est une bijection de $X$ sur $Z$.
+\end{itemize}
+
+On s'attend donc à enclencher le mécanisme de... relation d'équivalence, passage au quotient... mais il n'existe pas d'ensemble dont les éléments seraient tous les ensembles. Aussi faut-il procéder différemment, par axiome. On introduit :
+
+\subsection*{3.2. Axiome des Cardinaux}
+
+À chaque ensemble $X$, on associe un ensemble noté $\operatorname{card}(X)$ vérifiant les deux conditions suivantes :
+\begin{description}[leftmargin=4.0em,labelwidth=3.2em,labelsep=.6em]
+\item[(C$_1$)] Pour tout ensemble $X$, les ensembles $X$ et $\operatorname{card}(X)$ sont équipotents.
+\item[(C$_2$)] Pour tout couple d'ensembles équipotents $(X,Y)$, on a $\operatorname{card}(X)=\operatorname{card}(Y)$.
+\end{description}
+
+En somme on affirme, par voie d'axiome l'existence d'un élément de référence, $\operatorname{card}(X)$, pour chaque ensemble, les ensembles équipotents étant associés au même élément de référence.
+
+Il faut comprendre que l'axiome du choix auquel on pourrait penser, ne s'applique pas non plus car il part d'un ensemble, (voir 2.45).
+
+\subsection*{\BellaCorrection{Propriétés des cardinaux}{Popriétés des cardinaux}}
+
+\medskip\noindent\textsc{Proposition 3.3.} --- \emph{Les relations $X\mathrel{\mathrm{Éq}}Y$ et $\operatorname{card}(X)=\operatorname{card}(Y)$ sont équivalentes.}
+
+Car si $X\mathrel{\mathrm{Éq}}Y$, la condition (C$_2$) donne $\operatorname{card}(X)=\operatorname{card}(Y)$ ; et d'après (C$_1$) on a $X\mathrel{\mathrm{Éq}}\operatorname{card}(X)$ et $\operatorname{card}(Y)\mathrel{\mathrm{Éq}}Y$. Si donc $\operatorname{card}(X)=\operatorname{card}(Y)$, par transitivité de l'équipotence on a bien $X\mathrel{\mathrm{Éq}}Y$. \bookend
+
+\medskip\noindent\textsc{Proposition 3.4.} --- \emph{Pour tout ensemble $X$, on a $\operatorname{card}(\operatorname{card}(X))=\operatorname{card}(X)$.}
+
+Car d'après (C$_1$), $X\mathrel{\mathrm{Éq}}\operatorname{card}(X)$, on applique la proposition 3.3, il en résulte que
+\[
+\operatorname{card}(X)=\operatorname{card}(\operatorname{card}(X)).
+\]
+\bookend
+
+\subsection*{Exemple de cardinaux}
+
+On a la notion intuitive d'unité, que l'on traduit par un axiome.
+
+\medskip\noindent\textsc{Axiome d'existence.} --- \emph{Quel que soit l'objet $x$ de la théorie mathématique il existe un ensemble $A$ vérifiant $(y\in A)\Leftrightarrow y=x$. On le note $\{x\}$.}
+
+Si on a des ensembles de ce type, $A=\{a\}$ caractérisé par $y\in A\Leftrightarrow y=a$ et $B=\{b\}$, il est clair que l'application $f:a\mapsto b$ est une bijection. Ces ensembles sont équipotents, on note $1$ le cardinal des ensembles de ce genre.
+
+En particulier $\mathcal P(\varnothing)$, ensemble des parties de l'ensemble vide, est de ce type car la seule partie de $\varnothing$ est $\varnothing$ elle-même, donc $\mathcal P(\varnothing)=\{\varnothing\}$ d'où
+\[
+1=\operatorname{card}(\mathcal P(\varnothing)).
+\]
+\footnote{\textbf{校勘：}原文此式缺少最外层右括号，排作 $1=\operatorname{card}(\mathcal P(\varnothing)$。此处补全括号。}
+
+\subsection*{3.5.}
+On peut remarquer qu'on a donné une existence axiomatique à la notion d'unité, que chaque être humain possède du fait de sa propre existence.
+
+Il n'existe pas de bijection de $\varnothing$ sur un ensemble à 1 élément, car comment associer une image dans $\varnothing$, donc
+\[
+\operatorname{card}(\varnothing)\ne\operatorname{card}(\mathcal P(\varnothing)).
+\]
+
+On note $0$, (zéro) le cardinal de $\varnothing$ et on va voir qu'il est neutre pour l'addition que nous allons définir.
+
+\BellaSection{2. Opérations sur les cardinaux}
+
+\subsection*{Addition}
+Intuitivement ajouter, c'est compter les éléments d'un ensemble, puis ceux d'un autre, donc on les suppose disjoints. Si on part d'ensembles quelconques, ils peuvent ne pas être disjoints. Aussi va-t-on les remplacer par des ensembles équipotents, disjoints.
+
+Les objets mathématiques $0$ et $1$ ont une existence dans la théorie construite et ils sont différents, \BellaCorrection{ce sont même des ensembles}{ce sont même)des ensembles}, car des cardinaux. On pose
+
+\medskip\noindent\textsc{Définition 3.6.} --- \emph{On appelle somme de deux cardinaux $a$ et $b$ le cardinal de l'ensemble $(a\times\{0\})\cup(b\times\{1\})$. On note $a+b$ ce cardinal.}
+
+\medskip\noindent\textsc{Proposition 3.7.} --- \emph{Si $A$ et $B$ sont des ensembles disjoints, on a $\operatorname{card}(A)+\operatorname{card}(B)=\operatorname{card}(A\cup B)$.}
+
+Donc notre définition de l'addition coïncide avec la notion intuitive qu'on en avait.
+
+Soit $a=\operatorname{card}(A)$ et $b=\operatorname{card}(B)$, $a$ et $A$ sont équipotents donc il existe une bijection $f$ de $A$ sur $a$, de même il existe une bijection $g$ de $B$ sur $b$.
+
+On définit $h:A\cup B\longrightarrow(a\times\{0\})\cup(b\times\{1\})$ comme suit.
+
+Si $x\in A\cup B$, avec $A$ et $B$ disjoints, c'est que :
+\begin{itemize}[leftmargin=2em]
+\item soit $x\in A$, (et alors $x\notin B$), on pose $h(x)=(f(x),0)$ ;
+\item soit $x\in B$, (et alors $x\notin A$), on pose $h(x)=(g(x),1)$.
+\end{itemize}
+Il reste à vérifier que $h$ est bijective. Injective car si $h(x)=h(x')$, la deuxième composante des couples est la même, par exemple $0$, c'est donc que $x$ et $x'$ sont dans le même ensemble, ici $A$, et que $f(x)=f(x')$ avec $f$ bijective d'où $x=x'$.
+
+Puis $h$ surjective, car un élément $(u,v)\in(a\times\{0\})\cup(b\times\{1\})$ est dans l'un et l'un seulement des 2 ensembles disjoints $a\times\{0\}$ et $b\times\{1\}$ (disjoints car $0\ne1$). On suppose par exemple que $(u,v)\in a\times\{0\}$.
+
+Avec $x=f^{-1}(u)$, on a $h(x)=(f(f^{-1}(u)),0)=(u,0)=(u,v)$.
+
+Donc $A\cup B$ et $(a\times\{0\})\cup(b\times\{1\})$ étant équipotents ont même cardinal, d'où $\operatorname{card}(A\cup B)=a+b=(\operatorname{card}A)+(\operatorname{card}B)$ dans le cas $A\cap B=\varnothing$. \bookend
+
+\medskip\noindent\textsc{Proposition 3.8.} --- \emph{L'addition des cardinaux est commutative, associative et admet $0=\operatorname{card}(\varnothing)$ pour élément neutre.}
+
+Le dernier point est évident, car pour tout cardinal $a$, il faut remarquer que $0$ étant un ensemble équipotent à $\varnothing$, c'est $\varnothing$ lui-même, donc $0\times\{1\}=\varnothing$, d'où
+\[
+(a\times\{0\})\cup(0\times\{1\})=(a\times\{0\})\cup\varnothing=a\times\{0\}
+\]
+est équipotent à $a$ donc $a+0=\operatorname{card}(a\times\{0\})=\operatorname{card}(a)=a$.
+
+\emph{Commutativité :} soient $a$ et $b$ deux cardinaux, $A$ et $B$ deux ensembles disjoints qui leur sont équipotents, ($a\times\{0\}$ et $b\times\{1\}$ par exemple) la proposition 3.7 donne $a+b=\operatorname{card}(A\cup B)$ or $A\cup B=B\cup A$, donc
+\[
+a+b=\operatorname{card}(B\cup A)=\operatorname{card}(B)+\operatorname{card}(A)=b+a.
+\]
+
+\emph{Associativité :} soient $a,b,c$ trois, (on aurait donc la notion de trois ?...) cardinaux, et $A,B,C$ des ensembles disjoints qui leur sont équipotents (par exemple $a\times\{0\}$, $b\times\{1\}$ etc. $\times\{(0,1)\}$ : au passage la notion de trois est obtenue comme suit : un couple c'est à partir de 2 objets, un autre objet, différent des 2 autres, un troisième objet...). En utilisant encore la propriété 3.7 on a :
+\[
+a+(b+c)=\operatorname{card}A+\operatorname{card}(B\cup C)=\operatorname{card}(A\cup(B\cup C))
+\]
+car $A$ et $B\cup C$ sont disjoints, or $A\cup(B\cup C)=(A\cup B)\cup C$, (théorème 1.24), donc
+\[
+a+(b+c)=\operatorname{card}(A\cup B)+\operatorname{card}C=(a+b)+c.
+\]
+\bookend
+
+\medskip\noindent\textsc{Proposition 3.9.} --- \emph{Le cardinal $1$ est régulier pour l'addition.}
+
+C'est-à-dire que si $a+1=b+1$, avec $a$ et $b$ cardinaux, on obtient $a=b$.
+
+Soient $a$ et $b$ deux cardinaux tels que $a+1=b+1$, et $A$ et $B$ deux ensembles équipotents à $a$ et $b$, disjoints, puis $X=\{x\}$ et $Y=\{y\}$ deux ensembles à un élément, qui ne sont pas dans $A$ et $B$ respectivement. Par exemple $X=\{A\}$ et $Y=\{B\}$. Soient $A'=A\cup X$ et $B'=B\cup Y$ on a $\operatorname{card}(A')=\operatorname{card}(A)+\operatorname{card}(X)$, (ensembles disjoints), soit $\operatorname{card}(A')=a+1$ et $\operatorname{card}(B')=b+1$.
+
+Donc $A'$ et $B'$ sont équipotents. Soit $f$ une bijection de $A'$ sur $B'$. On a 2 choix pour l'image de $x$, c'est-à-dire soit $f(x)\in Y=\{y\}$, soit $f(x)\in B$.
+
+Dans le 1\textsuperscript{er} cas, la restriction de $f$ à $A$ définit une bijection de $A$ sur $B$, (se vérifie facilement car $f:A\cup\{x\}\longrightarrow B\cup\{y\}$ est bijective, avec $f(x)=y$), donc $A\mathrel{\mathrm{Éq}}B$ d'où $a=b$.
+
+Dans le 2\textsuperscript{e} cas, si $f(x)=y'\in B$, soit $x'=f^{-1}(y)$, ($x'$ existe car $f$ bijective, et $y\notin B$ donc $x'\ne x$). Soit $A''=A-\{x'\}$ et $B''=B-\{y'\}$, on a $A'=A''\cup\{x,x'\}$ et $B'=B''\cup\{y,y'\}$ avec $f(x)=y'$ et $f(x')=y$, donc $f$ induit une bijection notée $g$ de $A''$ sur $B''$.
+
+On définit $h$ de $A$ sur $B$ en posant : $\forall z\in A''$, $h(z)=g(z)$ et, comme $A=A''\cup\{x'\}$ et $B=B''\cup\{y'\}$ avec $h(A'')=g(A'')=B''$, on pose $h(x')=y'$. Il est clair que $h$ est une bijection de $A$ sur $B$ d'où $a=\operatorname{card}(A)=\operatorname{card}(B)=b$. \bookend
+
+\medskip\noindent\textsc{Remarque 3.10.} --- Tous les cardinaux ne sont pas réguliers : ce sera la distinction entre les cardinaux dits finis et ceux dits infinis.
+
+Cependant on a :
+
+\medskip\noindent\textsc{Proposition 3.11.} --- \emph{Si deux cardinaux $a$ et $b$ vérifient $a+b=0$ on a forcément $a=0$ et $b=0$.}
+
+Car avec $A$ et $B$ disjoints de cardinaux $a$ et $b$, $a+b=0$ est le cardinal de $A\cup B$ qui est donc $0$, d'où $A$ et $B$ vides, donc $a=0$ et $b=0$. \bookend
+
+\subsection*{Multiplication}
+
+\medskip\noindent\textsc{Définition 3.12.} --- \emph{Le produit de deux cardinaux $a$ et $b$ est le cardinal du produit cartésien $a\times b$. Il est noté $a\cdot b$ ou $ab$.}
+
+Il convient de ne pas oublier que les cardinaux sont des ensembles. De plus si $A$ et $B$ sont deux ensembles de cardinaux $a$ et $b$, $A\times B$ et $a\times b$ sont équipotents car, si $f:A\longrightarrow a$ et $g:B\longrightarrow b$ sont des bijections,
+\[
+h:A\times B\longrightarrow a\times b,
+\qquad (x,y)\longmapsto h(x,y)=(f(x),g(y))
+\]
+est une bijection. En effet, $\forall(u,v)\in a\times b$, soit $x=f^{-1}(u)$ dans $A$ et $y=g^{-1}(v)$ dans $B$, on a $(x,y)\in A\times B$ tel que $h((x,y))=(u,v)$ d'où la \BellaCorrection{surjectivité}{subjectivité} de $h$. Et si $h((x,y))=h((x',y'))$, on aura $f(x)=f(x')$ et $g(y)=g(y')$, donc $x=x'$ et $y=y'$ puisque $f$ et $g$ sont bijectives. On a donc :
+
+\subsection*{3.13.}
+Si $\operatorname{card}(A)=a$ et $\operatorname{card}(B)=b$, alors $\operatorname{card}(A\times B)=ab$.
+
+\medskip\noindent\textsc{Proposition 3.14.} --- \emph{La multiplication des cardinaux est une opération commutative, associative, distributive par rapport à l'addition, ayant $1$ pour élément neutre.}
+
+Il est clair que $(x,y)\mapsto(y,x)$ est une bijection de $A\times B$ sur $B\times A$. Ces ensembles sont équipotents, donc ont mêmes cardinaux, d'où $ab=ba$, si $a$ et $b$ sont les cardinaux de $A$ et $B$ respectivement.
+
+De même étant donnés les cardinaux $a,b,c$, et des ensembles $A,B,C$ les ayant pour cardinaux, (ce qui est ridicule, car on peut prendre $a=A$, $b=B$ et $c=C$), l'application de $A\times(B\times C)$ sur $(A\times B)\times C$ définie par $(x,(y,z))\mapsto((x,y),z)$ est une bijection d'où $a\cdot\operatorname{card}(B\times C)=\operatorname{card}(A\times B)\cdot c$, soit encore $a(bc)=(ab)c$ et l'associativité.
+
+Puis, on a $(A\cup B)\times C=(A\times C)\cup(B\times C)$. En effet
+\begin{align*}
+(x,y)\in(A\cup B)\times C
+&\Leftrightarrow x\in(A\cup B)\text{ et }y\in C,\\
+&\Leftrightarrow (x\in A\text{ ou }x\in B)\text{ et }(y\in C),\\
+&\Leftrightarrow (x\in A\text{ et }y\in C)\text{ ou }(x\in B\text{ et }y\in C),\\
+&\Leftrightarrow ((x,y)\in A\times C)\text{ ou }((x,y)\in B\times C),\\
+&\Leftrightarrow (x,y)\in(A\times C)\cup(B\times C).
+\end{align*}
+
+Soient $a,b,c$ trois cardinaux, $A,B,C$ des ensembles qui leur sont équipotents avec $A$ et $B$ disjoints, on aura
+\begin{align*}
+(a+b)c&=\operatorname{card}(A\cup B)\cdot\operatorname{card}C
+=\operatorname{card}((A\cup B)\times C)\\
+&=\operatorname{card}((A\times C)\cup(B\times C))\\
+&=\operatorname{card}(A\times C)+\operatorname{card}(B\times C)=ac+bc,
+\end{align*}
+puisque $A\times C$ et $B\times C$ sont disjoints, $A$ et $B$ l'étant. C'est la distributivité.
+
+Enfin, soit $A$ de cardinal $a$, $B$ de cardinal $1$, donc $B=\{b\}$ est un singleton, l'application $(x,b)\mapsto x$ est une bijection de $A\times\{b\}$ sur $A$, d'où
+\[
+a\cdot1=\operatorname{card}(A\times\{b\})=\operatorname{card}A=a,
+\]
+vu la commutativité on a bien $1$ neutre pour le produit. \bookend
+
+\medskip\noindent\textsc{Proposition 3.15.} --- \emph{Si un produit de deux cardinaux est nul, l'un ou l'autre est nul.}
+
+Car si $A$ et $B$ sont deux ensembles de cardinaux respectifs $a$ et $b$, et si $ab=\operatorname{card}(A\times B)=0=\operatorname{card}(\varnothing)$, $A$ ou $B$ est vide sinon, avec $x\in A$ et $y\in B$, le couple $(x,y)$ serait dans $A\times B$ qui serait non vide, ce qui contredit $A\times B$ équipotent à l'ensemble vide. On a donc $a$ ou $b$ nul. \bookend
+
+\BellaSection{3. Comparaison des cardinaux}
+
+On va avoir besoin de préciser les propriétés des relations d'ordre.
+
+Rappelons qu'un ensemble $E$ est dit bien ordonné s'il est muni d'une relation d'ordre telle que toute partie non vide admet un plus petit élément, et on a vu (2.44), l'énoncé de l'axiome de Zermelo : tout ensemble non vide peut être bien ordonné.
+
+\medskip\noindent\textsc{Définition 3.16.} --- \emph{On appelle segment d'un ensemble bien ordonné $E$, toute partie $S$ de $E$ vérifiant : $(x\in S\text{ et }y\in E\text{ avec }y\le x)\Rightarrow(y\in S)$.}
+
+Attention : ne pas penser à la définition usuelle des segments sur $\mathbb R$, qui n'est pas bien ordonné, par l'ordre usuel, car quel est le plus petit élément de l'intervalle ouvert $]0,1[$ par exemple.
+
+Dans un ensemble bien ordonné, si $S$ est un segment non vide il aura un plus petit élément.
+
+\medskip\noindent\textsc{Proposition 3.17.} --- \emph{Dans un ensemble bien ordonné $E$, tout segment de $E$, distinct de $E$, est formé des $x\in E$ tels que $x<a$, pour un $a\in E$. On note $S_a$ ce segment :}
+\[
+S_a=\{x;\ x\in E,\ x<a\}.
+\]
+
+D'abord $E$ est un segment : la définition 3.16 étant vérifiée par $E$. Puis si $S$ est un segment de $E$, distinct de $E$, $E-S$ est non vide. Soit $a$ son plus petit élément, (existe car $E$ bien ordonné), alors, si $x<a$, $x\in E-S$ est exclu car $a$ est le plus petit élément de cet ensemble : donc $x\in S$, et si $x\in S$, si de plus $x\ge a$, on aurait $a\in S$, (définition d'un segment) ce qui contredit $a\in E-S$. On a bien $S=\{x;x\in E,x<a\}$. \bookend
+
+\subsection*{3.18.}
+On note $S_a$ ce segment et $a$ s'appelle l'extrémité du segment.
+
+Il n'y en a qu'une, car $E$ lui-même ayant un plus petit élément, $\omega$, cet $\omega$ serait « borne inférieure » de chaque segment, il est inutile de le préciser. Remarquons que $\varnothing$ est le segment $S_\omega$, et qu'avec notre notation, $a\notin S_a$.
+
+\medskip\noindent\textsc{Proposition 3.19.} --- \emph{L'ensemble $\mathcal S$ des segments d'un ensemble bien ordonné $E$, est lui-même bien ordonné par inclusion et l'application $x\mapsto S_x$ est un isomorphisme de $E$ sur $\mathcal S$ privé du segment $E$.}
+
+La définition de morphisme et d'isomorphisme est introduite en 2.21 et 2.22.
+
+Soient $a$ et $b$ dans $E$ bien ordonné, donc totalement ordonné (voir 2.43). Si $a\le b$, $S_a=\{x;x<a\}$ est bien contenu dans $S_b=\{y;y<b\}$ car $x<a\le b\Rightarrow x<b$ ; d'où $\theta:x\mapsto S_x$ est morphisme de $E$ dans $\mathcal S$ privé du segment $E$ lui-même ; $\theta$ est bijective car $a\ne b$ dans $E$ totalement ordonné donne par exemple $a<b$, c'est-à-dire $a\le b$ et $a\ne b$, mais alors $S_a\subset S_b$ et $a\in S_b$, mais $a\notin S_a$ donc $S_a\ne S_b$ ; on a $\theta$ injective.
+
+La proposition 3.17 justifie le côté surjectif de $\theta$ donc c'est un isomorphisme de $E$ sur $\mathcal S-\{E\}$.
+
+Mais alors toute partie $B$ non vide de $\mathcal S-\{E\}$ admet pour plus petit élément le segment associé au plus petit élément de $\theta^{-1}(B)$ donc $\mathcal S-\{E\}$ est bien ordonné par inclusion. Comme $\mathcal S$ s'obtient en adjoignant $E$ supérieur pour l'inclusion, à tous les autres éléments, $\mathcal S$ est bien ordonné. \bookend
+
+\medskip\noindent\textsc{Proposition 3.20.} --- \emph{Soient $E$ et $F$ deux ensembles bien ordonnés. L'une au moins des deux propositions suivantes est vraie :}
+\begin{enumerate}[label=\arabic*)]
+\item \emph{il existe un isomorphisme et un seul de $E$ sur un segment de $F$ ;}
+\item \emph{il existe un isomorphisme et un seul de $F$ sur un segment de $E$.}
+\end{enumerate}
+
+Soit $\mathcal H$ l'ensemble des applications $f$ d'un segment $S$ de $E$ dans $F$, d'image un segment $f(S)$ de $F$, telles que $f$ soit un isomorphisme de $S$ sur $f(S)$.
+
+C'est-à-dire que, si $S$ est un segment de $E$, $f$ est une injection de $S$ dans $F$, et $\forall(x,y)\in S^2$, si $x<y$ on a $f(x)<f(y)$ donc $f$ est un morphisme pour les relations d'ordre. Comme $f$ est alors bijective de $S$ sur son image, on a un isomorphisme de $S$ sur son image, qui est supposée être un segment de $F$.
+
+$\mathcal H$ n'est pas vide : car $E$ bien ordonné admet un plus petit élément, $u$, et de même $F$ admet un plus petit élément, $v$. Mais alors $\{u\}$ est un segment de $E$ (la définition est vérifiée) et $f:u\mapsto v$ est bien un isomorphisme du segment $\{u\}$ sur son image $\{v\}$, qui est bien un segment de $F$.
+
+On ordonne $\mathcal H$ par la relation : $(f\le g)\Leftrightarrow(g\text{ prolonge }f)$, ou encore, avec $f$ définie sur le segment $S$ et $g$ sur le segment $T$, on a $S\subset T$ et $\forall x\in S$, $g(x)=f(x)$. C'est une relation d'ordre car elle est :
+\begin{itemize}[leftmargin=2em]
+\item réflexive : $f\le f$ car $S=S$ et $\forall x\in S$, $f(x)=f(x)$ ;
+\item antisymétrique : si $f\le g$ et $g\le f$, avec $f$ définie sur $S$ et $g$ sur $T$ on a $S\subset T$ et $T\subset S$ d'où $S=T$ et $\forall x\in S$, $f(x)=g(x)$ d'où $f=g$ ;
+\item transitive : si $f\le g$ et $g\le h$ avec $f,g,h$ définies respectivement sur les segments $S,T,U$ ; on a $S\subset T$ et $T\subset U$ d'où $S\subset U$ et $\forall x\in S$, $g(x)=f(x)$ ; or $\forall x\in T$, $h(x)=g(x)$, comme $x\in S$ est aussi dans $T$, on a bien la succession d'égalités $f(x)=g(x)=h(x)$ d'où finalement « $h$ prolonge $f$ », c'est-à-dire $f\le h$.
+\end{itemize}
+
+Cet ensemble $\mathcal H$ est inductif, (voir 2.41).
+
+En effet, si $\mathcal C$ est une partie de $\mathcal H$ totalement ordonnée, en notant $(S_i,f_i)_{i\in I}$ les éléments de $\mathcal C$, sous forme de couples avec $S_i$ segment de $E$, $f_i$ isomorphisme (pour les ordres) de $S_i$ sur son image, il est clair que
+\[
+S=\bigcup_{i\in I}S_i
+\]
+est un segment de $E$, car si $x\in S$ et si $y$ de $E$ vérifie $y\le x$, comme $\exists i_0\in I$ avec $x\in S_{i_0}$ segment, on a $y\in S_{i_0}\subset S$, donc $y\in S$ : on a vérifié la définition de segment.
+
+De plus, si $x\in S$ est tel que $x\in S_i$ et $x\in S_{i'}$ avec $i$ et $i'$ dans $I$, comme $\mathcal C$ est totalement ordonnée on a par exemple $S_i\subset S_{i'}$ et $f_{i'}$ prolonge $f_i$ mais alors, pour $x$ dans $S_i$, avec $S_i\subset S_{i'}$, on a $f_i(x)=f_{i'}(x)$ puisque $f_{i'}$ coïncide avec $f_i$ sur $S_i$. En posant $f(x)=f_i(x)$ si $x$ de $S$ est dans $S_i$ on a une définition indépendante de l'indice $i$ tel que $x\in S_i$.
+
+Le couple $(S,f)\in\mathcal H$ car $f$ est un morphisme injectif et $f(S)$ est un segment de $F$. En effet, soient $x$ et $x'$ dans $S$, et des indices $i$ et $i'$ de $I$ tels que $x\in S_i$ et $x'\in S_{i'}$. Comme $\mathcal C$ est totalement ordonnée, on a soit $S_i\subset S_{i'}$ soit l'autre inclusion.
+
+Par exemple on a $S_{i'}\subset S_i$, donc $x$ et $x'$ sont dans $S_i$. Si alors $x'\le x$, comme $f$ coïncide sur $S_i$ avec le morphisme injectif $f_i$, on a
+\[
+f(x')=f_i(x')\le f_i(x)=f(x)
+\]
+d'où $f$ morphisme, de plus
+\[
+f(x)=f(x')\Leftrightarrow f_i(x)=f_i(x')\Leftrightarrow x=x'
+\]
+car $f_i$ injectif.
+
+Enfin $f(S)$ segment de $F$. Soit $y=f(x)$ dans $f(S)$, si $z$ de $F$ est tel que $z\le f(x)$, comme $\exists i\in I$ avec $x\in S_i$, $y=f(x)=f_i(x)\in f_i(S_i)$ ; or on sait que $f_i(S_i)$ est un segment de $F$ par hypothèse, donc $z\in f_i(S_i)\subset f(S)$.
+
+Il est alors clair que, $\forall i\in I$, on a $(S,f)$ qui majore $(S_i,f_i)$ : on a bien justifié l'existence dans $\mathcal H$ d'un majorant de la partie totalement ordonnée $\mathcal C$, c'est-à-dire justifié que $\mathcal H$ est inductif.
+
+Mais alors, l'axiome de Zorn, (2.42) implique l'existence d'un élément maximal $(\Sigma,u)$, avec $\Sigma$ segment où est défini l'isomorphisme $u$, et $u(\Sigma)$ segment de $F$.
+
+Si $\Sigma=E$ on aura un isomorphisme de $E$ sur un segment de $F$, alors que si $u(\Sigma)=F$, $u^{-1}$ établira un isomorphisme de $F$ sur $\Sigma$. Aussi va-t-on prouver que l'hypothèse $(\Sigma\ne E)$ et $(u(\Sigma)\ne F)$ conduit à une absurdité.
+
+Si on y parvient on aura l'existence, énoncée dans la proposition 3.20, et il restera à justifier l'unicité de l'isomorphisme considéré.
+
+Supposons donc $\Sigma\ne E$ et $u(\Sigma)\ne F$ : vu la forme des segments, (proposition 3.17) il existe $a$ dans $E$ et $b$ dans $F$ tels que $\Sigma=S_a=\{x;x\in E,x<a\}$ et $u(\Sigma)=S_b=\{y;y\in F,y<b\}$.
+
+On prolonge $u$ en $u_1$ sur $S=S_a\cup\{a\}$ par $u_1(a)=b$, et $\forall x\in S_a$ on a $u_1(x)=u(x)$. On définit ainsi un morphisme injectif de $S$ sur $T=S_b\cup\{b\}$. Or, $S=\{x;x\in E,x\le a\}$ et $T=\{y;y\in F,y\le b\}$ sont des segments. Vérifions-le pour $S$ : si $x\in S$ et si $t$ de $E$ est tel que $t\le x$, comme $x\le a$, on a bien $t\le a$, donc $t\in S$.
+
+Mais alors, $(S,u_1)$ serait dans $\mathcal H$, et strictement supérieur à l'élément maximal $(\Sigma,u)$ : c'est absurde.
+
+Il reste, pour achever la justification de la proposition 3.20 à montrer l'unicité. Ceci sera une conséquence du lemme suivant.
+
+\medskip\noindent\textsc{Lemme 3.21.} --- \emph{Soient $E$ et $F$ deux ensembles bien ordonnés, $f$ et $g$ deux applications croissantes de $E$ dans $F$ telles que $f(E)$ soit un segment et que $g$ soit strictement croissante. On a alors $f(x)\le g(x)$ pour tout $x$ de $E$.}
+
+Vérifions d'abord qu'avec le lemme on conclura.
+
+Si on a donc 2 isomorphismes $f$ et $g$ de $E$ par exemple sur des segments $f(E)$ et $g(E)$ respectivement, de $F$ on aura à la fois : $f$ croissante, $f(E)$ segment, $g$ strictement croissante d'où $f(x)\le g(x)$ et $g$ croissante, $g(E)$ segment, $f$ strictement croissante d'où $g(x)\le f(x)$ donc finalement $f=g$, et l'unicité dans la proposition 3.20.
+
+Justifions le lemme par l'absurde. Supposons que l'ensemble $A$ des $x$ de $E$ tels que $f(x)>g(x)$ soit non vide, $E$ étant bien ordonné, $A$ admet un plus petit élément $a$, et pour $x<a$, (s'il y a de tels $x$), $x\notin A$ donc $f(x)\le g(x)$, or $g$ strictement croissante, donc $g(x)<g(a)$ et $a\in A$ donc $g(a)<f(a)$.
+
+Mais par hypothèse, $f(E)$ est un segment, qui contient $f(a)$ donc aussi $g(a)$ inférieur à $f(a)$, par définition des segments. Mais avoir $g(a)$ dans l'image $f(E)$ c'est avoir un $z$ de $E$ tel que $g(a)=f(z)$. Comme $g(a)=f(z)<f(a)$ et que $f$ croissante, l'hypothèse $z\ge a$ est exclue car alors $f(z)\ge f(a)$, d'où $z<a$. Donc $z\notin A$, ($a$ plus petit élément de $A$), d'où $f(z)\le g(z)$ vu la définition de $A$, et on a, $g$ étant strictement croissante,
+\[
+f(z)\le g(z)<g(a)=f(z),
+\]
+ce qui est absurde. \bookend
+
+\medskip\noindent\textsc{Corollaire 3.22.} --- \emph{Tout sous-ensemble $A$ d'un ensemble bien ordonné $E$ est isomorphe à un segment de $E$.}
+
+Un point d'explication : pour l'instant on est censé ignorer $\mathbb N$ mais... on le connaît, et c'est un ensemble bien ordonné par l'ordre usuel. Le corollaire dit en quelque sorte que dans $A$ on peut renuméroter en croissant les éléments. Par exemple, $A=\{3,7,5,9\}$ est isomorphe à $[0,1,2,3]$ qui est un segment, par l'isomorphisme envoyant $3,5,7,9$ sur $0,1,2,3$ respectivement.
+
+Justifions le corollaire.
+
+D'abord $A=\varnothing$ est isomorphe au segment de $\varnothing$, (c'en est un car la définition 3.16 est vérifiée par $\varnothing$), et $A=E$ est isomorphe à $E$, (segment) par l'identité.
+
+Soit donc $A$ une partie de $E$, non vide et différente de $E$. Si on montre qu'il n'y a pas d'isomorphisme de $E$ sur un segment de $A$, d'après la proposition 3.20, c'est qu'il y en aura un de $A$ sur un segment de $E$.
+
+Or si $g$ est un isomorphisme de $E$ sur un segment de $A$, si ce segment est $A$, alors $g^{-1}$ est un isomorphisme de $A$ sur $E$, qui est segment de $E$, et dans ce cas on a le corollaire. Par contre si l'image $g(E)=S$ est strictement dans $A$, il existe $a\in A-S$ tel que $S=\{x;x\in A,x<a\}$, (proposition 3.17), mais $a\in E$ donc $g(a)\in S$, donc $g(a)<a$.
+
+Mais on a alors : $E$ bien ordonné, $F=E$ bien ordonné aussi, l'application $f=\operatorname{id}_E$ est croissante de $E$ dans $E$, d'image $E$ un segment de $E$, et $g$ est strictement croissante de $E$ dans $E$ puisqu'un isomorphisme respecte l'ordre tout en étant injectif. Alors le lemme 3.21 implique que, $\forall x\in E$, $f(x)=x\le g(x)$, alors que nous avons trouvé $a$ avec $g(a)<a$ : c'est absurde. \bookend
+
+Ce corollaire 3.22 va nous permettre de parler d'ordre entre cardinaux.
+
+Soient $X$ et $Y$ deux ensembles, tels que $X$ soit équipotent à une partie $Y'$ de $Y$. Si $f$ est la bijection de $X$ sur $Y'$, on peut considérer l'application $i:X\longrightarrow Y$ définie par, $\forall x\in X$, $i(x)=f(x)$. On parle d'application induite par $f$. Du point de vue des valeurs prises c'est $f$, mais l'ensemble d'arrivée est $Y$. Cette application $i$ est injective. Par ailleurs, si $i$ est une injection de $X$ dans $Y$, avec $Y'=i(X)$, image de $X$, l'application $f:X\longrightarrow Y'$ définie par $\forall x\in X$, $f(x)=i(x)$ devient cette fois une bijection de $X$ sur une partie $Y'$, de $Y$, donc $X$ est équipotent à une partie de $Y$.
+
+\subsection*{3.23.}
+On définit le lien suivant entre cardinaux : on dira que le cardinal de $X$ est inférieur à celui de $Y$ et on note
+\[
+\operatorname{card}(X)\,\mathrm{Inf}\,\operatorname{card}(Y),
+\]
+si $X$ est équipotent à une partie de $Y$, ou encore s'il existe une injection de $X$ dans $Y$.
+
+Cette définition a un sens car remplacer $X$, (ou $Y$) par $X'$ équipotent à $X$, (ou $Y'$ équipotent à $Y$) revient à introduire des bijections qui composées avec une injection donnent encore une injection.
+
+\medskip\noindent\textsc{Proposition 3.24.} --- \emph{La relation $\mathrm{Inf}$ entre cardinaux a les propriétés d'une relation de bon ordre.}
+
+La formulation est bizarre. On ne dit pas est une relation de bon ordre, car... les cardinaux ne forment pas un ensemble. Mais on peut quand même justifier la réflexivité, l'antisymétrie et la transitivité de ce lien $\mathrm{Inf}$ entre cardinaux, puis établir que si $E$ est un ensemble de cardinaux, alors sur $E$, $\mathrm{Inf}$ est un bon ordre.
+
+Réflexivité : $\operatorname{card}(X)\,\mathrm{Inf}\,\operatorname{card}(X)$ car $\operatorname{id}_X:x\mapsto x$ est une injection de $X$ dans $X$.
+
+Pour obtenir le reste, on va partir d'un ensemble $E$ de cardinaux et justifier que $\mathrm{Inf}$ induit un bon ordre sur $E$. On aura ainsi le résultat car, pour la transitivité par exemple, ayant trois ensembles, ils sont indexés par un ensemble à 3 éléments, (on ne sait pas compter mais... $\varnothing$, $\mathcal P(\varnothing)$, $(\varnothing,\mathcal P(\varnothing))$ sont 3 éléments différents) et dans les axiomes de départ de la théorie, des objets mathématiques dont on sait qu'ils sont indexés par un ensemble, forment un ensemble.
+
+Donc nos 3 cardinaux peuvent être éléments d'un ensemble $E$ de cardinaux sur lequel on aura transitivité puisque $\mathrm{Inf}$ sera alors un bon ordre.
+
+On procéderait de même pour l'antisymétrie.
+
+Soit donc $E$ un ensemble de cardinaux, les $x\in E$, peuvent être à la fois des indices, (d'eux-mêmes) et comme ce sont des ensembles, on peut considérer l'ensemble
+\[
+A=\bigcup_{x\in E}x.
+\]
+C'est une réunion d'ensembles indexés par les éléments d'un ensemble. Par l'axiome de Zermelo, (2.44), l'ensemble $A$ peut être muni d'un bon ordre noté $\le$ et alors, toute partie de $A$ est isomorphe à un segment pour ce bon ordre (corollaire 3.22). \BellaCorrectionNote{Chaque cardinal $x$ de $E$ étant une partie de $A$ est donc isomorphe à un segment de $A$.}{Chaque cardinal $x$ de $E$ étant une partie de $A$ est donc un segment de $A$.}{Le corollaire 3.22 affirme qu'une partie d'un ensemble bien ordonné est \emph{isomorphe} à un segment ; elle n'est pas, en général, elle-même un segment.}
+
+Soit $x\in E$, on considère l'ensemble $\mathcal X$ des segments de $A$, qui sont équipotents à $x$. Cet ensemble est non vide, (il contient un segment équipotent à $x$), c'est une partie de l'ensemble $\mathcal S$ des segments de $A$, bien ordonné, donc (proposition 3.19), $\mathcal S$ lui-même étant bien ordonné par inclusion, cette partie non vide $\mathcal X$ de $\mathcal S$ admet un plus petit élément, noté $f(x)$.
+
+La relation induite par $\mathrm{Inf}$ sur $E$, encore notée $\mathrm{Inf}$, se formule comme suit :
+\[
+(x\,\mathrm{Inf}\,y)\Leftrightarrow(x\text{ et }y\text{ sont dans }E\text{ et }x\text{ est équipotent à une partie de }y).
+\]
+Nous allons voir que ceci équivaut à $(x\text{ et }y\text{ sont dans }E\text{ et }f(x)\subset f(y))$.
+
+D'abord, si $f(x)\subset f(y)$, $x$ est en bijection avec $f(x)$, on peut injecter $f(x)$ dans $f(y)$, vu l'inclusion, et $f(y)$ et $y$ sont en bijection : il y a bien une injection de $x$ dans $y$, donc $x$ est équipotent à une partie de $y$.
+
+Si $x$ est équipotent à une partie de $y$, il est équipotent à une partie de $f(y)$ qui est en bijection avec $y$. Mais $f(x)$ et $f(y)$ étant des éléments de $\mathcal S$ bien ordonné par l'inclusion, sont comparables. Si on avait $f(y)\subsetneq f(x)$, si $z$ est la partie de $f(y)$ qui est équipotente à $x$, le corollaire 3.22 nous dit que $z$ est isomorphe à un segment $z'$ de l'ensemble bien ordonné $f(y)$, (bien ordonné car contenu dans $A$ qui l'est).
+
+Or $f(y)$ est lui-même segment de $A$, donc $z'$ est segment de $A$, (si $u\in z'$, si $v\in A$ avec $v\le u$, comme $u\in f(y)$ segment de $A$, dans un premier temps $v\in f(y)$, puis $z'$ segment de $f(y)$ donne $v\in z'$).
+
+Mais alors $x$ est équipotent à $z'$ segment de $A$, donc $z'\in\mathcal X$ ensemble des segments équipotents à $x$, de plus petit élément, pour l'inclusion, $f(x)$, c'est que $f(x)\subset z'$. On aurait $z'\subset f(y)\subsetneq f(x)\subset z'$ c'est absurde vu l'inclusion stricte. On ne peut donc pas supposer $f(y)\subsetneq f(x)$.
+
+On a bien $f(x)\subset f(y)$, donc sur $E$, $x\,\mathrm{Inf}\,y\Leftrightarrow f(x)\subset f(y)$, ce qui permet de vérifier que $E$ est bien ordonné.
+
+On vérifie d'abord que $E$ est ordonné par la relation $\mathrm{Inf}$.
+
+\emph{Réflexivité :} $f(x)\subset f(x)$ d'où $x\,\mathrm{Inf}\,x$.
+
+\emph{Transitivité :} si $x\,\mathrm{Inf}\,y$ et $y\,\mathrm{Inf}\,z$ c'est que $f(x)\subset f(y)$ et $f(y)\subset f(z)$ d'où évidemment $f(x)\subset f(z)$ soit $x\,\mathrm{Inf}\,z$.
+
+\emph{Antisymétrie :} si $x\,\mathrm{Inf}\,y$ et $y\,\mathrm{Inf}\,x$, c'est que $f(x)\subset f(y)$ et $f(y)\subset f(x)$ d'où $f(x)=f(y)$.
+
+Mais alors $x$ est équipotent à $f(x)$, $y$ aussi car il est équipotent à $f(y)=f(x)$, donc les cardinaux $x$ et $y$ étant équipotents sont égaux par définition même des cardinaux.
+
+C'est un bon ordre : soit $B$ une partie non vide de $E$, les $f(b)$ pour $b\in B$ forment une partie non vide $f(B)$ de l'ensemble $\mathcal S$ bien ordonné par inclusion, des segments de $A$, soit $m$ le plus petit élément de $f(B)$, il existe $b_0$ dans $B$ tel que $m=f(b_0)$, (définition d'une image), et alors, $\forall b\in B$, comme $f(b_0)\subset f(b)$ on a bien $b_0\,\mathrm{Inf}\,b$ : on a trouvé un plus petit élément $b_0$ de $B$. \bookend
+
+La propriété 3.24 est établie. Il en résulte, comme deux cardinaux quelconques peuvent être mis dans un ensemble $E$ de cardinaux qui sera « bien ordonné » par $\mathrm{Inf}$, que ces deux cardinaux seront comparables d'où :
+
+\medskip\noindent\textsc{Corollaire 3.25.} --- \emph{Étant donné deux ensembles, l'un est équipotent à une partie de l'autre.}
+
+\medskip\noindent\textsc{Corollaire 3.26.} --- \emph{Soient deux ensembles $E$ et $F$ tels qu'il existe une injection de $E$ dans $F$ et une de $F$ dans $E$ alors $E$ et $F$ sont équipotents.}
+
+Car alors $\operatorname{card}(E)\,\mathrm{Inf}\,\operatorname{card}(F)$ et $\operatorname{card}(F)\,\mathrm{Inf}\,\operatorname{card}(E)$ d'où $\operatorname{card}(E)=\operatorname{card}(F)$.
+
+\medskip\noindent\textsc{Proposition 3.27.} --- \emph{Soient $a$ et $b$ deux cardinaux, la relation $a\,\mathrm{Inf}\,b$, désormais notée $a\le b$ équivaut à : il existe un cardinal $c$ tel que $b=a+c$. Ce cardinal $c$ est appelé la différence de $b$ et $a$ et sera noté $b-a$.}
+
+Si $a\le b$, et si $j$ est une injection de $a$ dans $b$, $b-j(a)$ est un ensemble, qui a donc un cardinal, soit $c=\operatorname{card}(b-j(a))$. Comme les ensembles $j(a)$ et $b-j(a)$ sont disjoints, de réunion $b$, on a (proposition 3.7),
+\[
+\operatorname{card}(b)=b=\operatorname{card}(b-j(a))+\operatorname{card}(j(a))=c+a
+\]
+puisque $a$ et $j(a)$ sont équipotents, ($j$ injective, et bien sûr surjective sur son image).
+
+Donc $a\le b\Rightarrow\exists c$, cardinal, avec $b=a+c$.
+
+Réciproquement : soit un cardinal $c$ tel que $b=a+c$, $a\times\{0\}$ et $c\times\{1\}$ sont deux ensembles disjoints de cardinaux respectifs $a$ et $c$ donc, (toujours proposition 3.7),
+\[
+b=a+c=\operatorname{card}(a\times\{0\})+\operatorname{card}(c\times\{1\})
+=\operatorname{card}((a\times\{0\})\cup(c\times\{1\})).
+\]
+Il y a donc une bijection $f$ de $(a\times\{0\})\cup(c\times\{1\})$ sur $b$, l'application $\tilde f:a\times\{0\}\longrightarrow b$ définie par $(x,0)\mapsto f((x,0))$, si $x\in a$ est donc injective, or $x\mapsto(x,0)$ est bijective de $a$ sur $a\times\{0\}$ : finalement $x\mapsto f((x,0))$ est une injection de $a$ dans $b$. \bookend
+
+\medskip\noindent\textsc{Proposition 3.28.} --- \emph{Soit $I$ un ensemble d'indices, $(a_i)_{i\in I}$ une famille de cardinaux indexée par $I$, il existe un cardinal et un seul, $b$, qui majore chaque $a_i$ et tel que tout cardinal majorant les $a_i$ majore aussi $b$.}
+
+Les $a_i$ sont des ensembles, $I$ en est un, donc $\bigcup_{i\in I}a_i=E$ est aussi un ensemble, (voir 1.22). Or chaque $a_i\subset E$ donc chaque $a_i$ est équipotent à une partie de $E$, ($a_i$ elle-même) d'où
+\[
+a_i=\operatorname{card}(a_i)\le a=\operatorname{card}(E).
+\]
+
+\subsection*{3.29.}
+Mais la relation $x$ est un cardinal et $x\le a$ est collectivisante en $x$, autrement dit, les cardinaux $x\le a$ forment un ensemble, car ($x$ est un cardinal $\le a$) est équivalent à ($x$ est en bijection avec une partie $X$ de $a$) donc ces cardinaux sont indexables par des \BellaCorrectionNote{parties de $a$, donc par les éléments d'une partie de $\mathcal P(a)$}{parties de $X$, donc par les éléments d'une partie de $\mathcal P(X)$}{La lettre $X$ désigne ici une partie variable de $a$ ; l'ensemble d'indexation naturel est donc $\mathcal P(a)$.}, et les éléments indexables par un ensemble constituent un ensemble.
+
+Soit donc $F$ l'ensemble des cardinaux inférieurs à $a$, il est bien ordonné (proposition 3.24), et contient les $a_i$. Mais alors les éléments de $F$ qui majorent les $a_i$ forment une partie $G$ non vide de $F$ car elle contient $a$, et $G$ admet un plus petit élément, $b$. On va voir que c'est le cardinal cherché.
+
+D'abord $b\in G$, (il en est le plus petit élément), donc, $\forall i\in I$, $a_i\le b$.
+
+Puis soit $c$ un majorant des $a_i$, $c$ et $a$ sont comparables, (propriété 3.24), donc on a :
+\[
+\begin{cases}
+ c\ge a\ge b &: c\text{ majore }b,\\
+ c<b\le a &: c\le a\Rightarrow c\in F.
+\end{cases}
+\]
+Mais comme $c$ majore les $a_i$, $c$ est dans $G$, et $b$ étant le plus petit élément de $G$, on a $b\le c$. Le deuxième cas est exclu.
+
+Finalement tout autre majorant des $a_i$ majore $b$ qui est bien unique à vérifier cela car si un autre $b'$ convient, on aura $b'\le b$ et $b\le b'$ d'où $b=b'$ par antisymétrie. \bookend
+
+\BellaSection{4. Cardinaux finis, ou entiers naturels}
+
+\medskip\noindent\textsc{Définition 3.30.} --- \emph{On dit qu'un cardinal $a$ est fini si $a\ne a+1$. On dit encore que $a$ est un entier naturel, ou plus brièvement, entier. Un cardinal $a$ sera dit infini si $a=a+1$.}
+
+On a $0+1=\operatorname{card}((0\times\{0\})\cup(1\times\{1\}))$, avec $0=\varnothing$ donc $0\times\{0\}$ est vide et $1$ étant un ensemble à « un élément » au sens intuitif du terme le produit cartésien $1\times\{1\}$ ne comporte qu'un couple, donc $0\times\{0\}\cup1\times\{1\}$ est un ensemble à « un élément », de cardinal $1$ d'où le résultat formidable : $0+1=1$, avec $0\ne1$, car il n'y a pas de bijection entre $\varnothing$ et un ensemble à « un élément ». Donc $0$ est un cardinal fini, ou entier naturel.
+
+\medskip\noindent\textsc{Proposition 3.31.} --- \emph{Pour qu'un cardinal $a$ soit fini il faut et il suffit que $a+1$ soit fini.}
+
+Car on a vu (proposition 3.9), que $1$ est régulier pour l'addition, c'est-à-dire que $(a+1=b+1)\Rightarrow(a=b)$ comme l'implication $(a=b)\Rightarrow(a+1=b+1)$ est évidente, cette proposition 3.9 revient à dire que $(a=b)\Leftrightarrow(a+1=b+1)$ donc par contraposition $a\ne b\Leftrightarrow a+1\ne b+1$.
+
+On applique ceci avec les cardinaux $a$ et $a+1$ et on a
+\[
+a\text{ entier naturel}
+\Leftrightarrow a\ne a+1
+\Leftrightarrow a+1\ne(a+1)+1
+\Leftrightarrow a+1\text{ entier naturel}.
+\]
+\bookend
+
+\medskip\noindent\textsc{Proposition 3.32.} --- \emph{Soit $n$ un entier naturel. Tout cardinal $a$ inférieur à $n$ est un entier. Si $n$ est un entier non nul, il existe un entier et un seul $m$ tel que $n=m+1$ et la relation $(a\le m)\Leftrightarrow(a<n)$.}
+
+On a vu, (proposition 3.27) que si $a\le n$, il existe un cardinal $b$ tel que $n=a+b$, d'où $n+1=(a+b)+1=a+(b+1)$ par associativité de l'addition, mais c'est aussi $a+(1+b)=(a+1)+b$ en utilisant la commutativité de l'addition.
+
+Si $a$ non entier, on aurait $a=a+1$ d'où $a+b=(a+1)+b$ soit $n=n+1$ ce qui contredit $n$ entier. Donc $a$ est un entier.
+
+Si $n\ne0$, l'ensemble $n$ est non vide, (n'oublions pas que formellement un entier est un cardinal, donc un ensemble). On peut choisir un élément de $n$ et l'injecter dans $n$ : comme il y a une injection d'un ensemble à un « élément » dans $n$ on a $1\le n$, il existe donc (proposition 3.27) un cardinal $m$ tel que $1+m=n$. Mais $1+m$ entier $\Rightarrow m$ entier, (proposition 3.31), et l'unicité de $m$ vient de la régularité de $1$ pour l'addition : si on avait $n=1+m=1+m'$ la proposition 3.9 donnerait $m=m'$.
+
+Il reste à justifier l'équivalence des relations $(a\le m)$ et $(a<n)$.
+
+Si $a<n$, $a$ est un entier et il existe $b$ cardinal tel que $n=a+b$, et $b$ est un entier car par définition de $+$ il existe une injection de $b$ dans $n=\operatorname{card}((a\times\{0\})\cup(b\times\{1\}))$, donc $b\le n$.
+
+De plus $b\ne0$, sinon $n=a$, contredit $a<n$, mais alors $b$ est un entier non nul : il existe un entier $c$ tel que $b=c+1$ et aussi un entier $m$ tel que $n=m+1$ d'où :
+\[
+n=m+1=a+b=(a+c)+1.
+\]
+Comme $1$ est régulier pour l'addition (proposition 3.9) on a $m=a+c$ d'où $a\le m$, (proposition 3.27).
+
+On a justifié $(a<n)\Rightarrow(a\le m)$.
+
+Réciproquement, si $a\le m$, comme $m+1=n$ on a $m\le n$ d'où par transitivité de « l'ordre entre cardinaux », $a\le n$. L'égalité $a=n=m+1$ est exclue puisqu'elle impliquerait $a\ge m$, d'où $a=m$, (antisymétrie), mais $m=m+1$ est exclu puisque $m$ est un entier.
+
+Donc on a bien $a<n$ et l'équivalence $(a<n)\Leftrightarrow(a\le n-1)$. \bookend
+
+\subsection*{3.33. Remarque}
+Il résulte de ce qui précède qu'entre $n$ et $n-1$ il n'y a pas de cardinaux.
+
+\medskip\noindent\textsc{Définition 3.34.} --- \emph{On appelle ensemble fini tout ensemble de cardinal un entier naturel.}
+
+\medskip\noindent\textsc{Corollaire 3.35.} --- \emph{Toute partie d'un ensemble fini est finie.}
+
+Car si $X$ est fini, de cardinal $a$, et si $Y\subset X$, il y a une injection de $Y$ dans $X$, $y\mapsto y$ tout simplement et $b=\operatorname{card}(Y)\le a=\operatorname{card}(X)$ d'où $b$ entier naturel. \bookend
+
+\medskip\noindent\textsc{Corollaire 3.36.} --- \emph{Si $X$ est une partie finie d'un ensemble fini $E$, avec $X\ne E$, on a $\operatorname{card}(X)<\operatorname{card}(E)$.}
+
+Ce ne sera pas le cas des ensembles « infinis », $2\cdot\mathbb N$ est équipotent à $\mathbb N$ avec $2\cdot\mathbb N\subsetneq\mathbb N$, voir en 3.43 l'introduction de $\mathbb N$.
+
+Soit $a\in E-X$, non vide car $X\subsetneq E$, et $X'=E-\{a\}$. On a $X\subset X'$ et $E=X'\cup\{a\}$, avec $X'\cap\{a\}=\varnothing$ d'où $\operatorname{card}(E)=\operatorname{card}(X')+1$, (proposition 3.7), donc $\operatorname{card}(X')<\operatorname{card}(E)$, d'après la proposition 3.32 appliquée avec $a=m=\operatorname{card}(X')$, $n=m+1=\operatorname{card}(E)$ et $m\le m\Leftrightarrow m<n$. Comme $X\subset X'$, on a donc
+\[
+\operatorname{card}(X)\le\operatorname{card}(X')<\operatorname{card}(E)
+\]
+d'où $\operatorname{card}(X)<\operatorname{card}(E)$. \bookend
+
+\subsection*{3.37. La récurrence}
+
+\medskip\noindent\textsc{Proposition 3.38.} --- \emph{Supposons qu'une propriété $P$, dépendant de $n$, entier soit telle que : $P(0)$ vraie et $(P(n)\text{ vraie}\Rightarrow P(n+1)\text{ vraie})$. Alors $P(k)$ est vraie pour tout entier $k$.}
+
+En effet, dans le cas contraire, il existe des entiers $n_1$ tels que $P(n_1)$ soit faux.
+
+Les entiers $n\le n_1$ forment un ensemble, comme on l'a vu en 3.29. Donc les $n\le n_1$, tels que $P(n)$ soit fausse forment un ensemble $E$, de cardinaux ; $E$ est non vide totalement ordonné, (proposition 3.24), donc il admet un plus petit élément, $n_0$ et $n_0\ne0$ puisque $P(0)$ vraie, et $n_0\in E$ donc $P(n_0)$ est fausse.
+
+Mais alors, (proposition 3.32) il existe un unique $n'_0$ tel que $n_0=n'_0+1$, on a $n'_0<n_0$ et pourtant $P(n'_0)$ fausse sinon $P(n'_0+1)$ serait vraie d'après l'hypothèse de récurrence. On aurait donc $n'_0\in E$ et $n'_0<n_0$ avec $n_0$ plus petit élément de $E$ : c'est absurde. Donc il n'existe pas d'entier $n_1$ tel que $P(n_1)$ soit fausse, autrement dit, pour tout entier $n$, $P(n)$ est vraie. \bookend
+
+On utilise souvent sous le nom de « principe de récurrence » divers critères qui se déduisent du précédent.
+
+\medskip\noindent\textsc{Critère 3.39.} --- Soit une propriété $P$ dépendant de l'entier $n$, telle que $P(0)$ est vraie et si pour tout entier $k\le n$, $P(k)$ est vraie alors $P(n+1)$ est vraie. On conclut que $P(k)$ est vraie pour tout entier $k$.
+
+Il suffit d'introduire la propriété $R$ définie par :
+\[
+(R(n)\text{ vraie})\Leftrightarrow(\forall\text{ entier }k,\ k\le n,\ P(k)\text{ est vraie}).
+\]
+On a bien $R(0)$ vraie, et si $R(n)$ vraie, alors $R(n+1)$ vraie d'après l'hypothèse. Donc (proposition 3.38), $R(k)$ est vraie, pour tout entier $k$, donc $P(k)$ aussi. \bookend
+
+\medskip\noindent\textsc{Critère 3.40.} --- Récurrence à partir de l'entier $k$.
+
+Supposons qu'une propriété $P$ dépendant d'un entier $n$ soit telle que : $P(k)$ vraie et $\forall n\ge k$, $P(n)$ vraie $\Rightarrow P(n+1)$ vraie. Alors $P(n)$ est vraie pour tout entier $n\ge k$.
+
+On définit $R$ par
+\[
+R(n)\text{ vraie}\Leftrightarrow((n\text{ entier }\ge k)\Rightarrow P(n)\text{ vraie}).
+\]
+On a $R(0)$ vraie car soit $k=0$, et alors $0\ge0$ et $P(0)$ vraie ; soit $k>0$ et comme $0$ n'est pas un entier $\ge k$ on n'a rien à vérifier, c'est vérifié.
+
+Puis $R(n)$ vraie $\Rightarrow R(n+1)$ vraie car, soit $n+1<k$ et il n'y a rien à vérifier ; soit $n+1=k$ et $P(k)$ est vraie, soit ici $P(n+1)$ vraie ; enfin si $n+1>k$, alors $n\ge k$, (proposition 3.32), et c'est l'hypothèse de récurrence qui donne $P(n)$ vraie et $n\ge k$ d'où $P(n+1)$ vraie.
+
+La proposition 3.38 s'applique à $R$ qui est vraie pour tout $n$ : c'est bien dire que $\forall n\ge k$, $P(n)$ est vraie. \bookend
+
+\medskip\noindent\textsc{Proposition 3.41.} --- \emph{Un cardinal $n$ est un entier si et seulement s'il est régulier pour l'addition.}
+
+On considère la relation $R$ : $R(n)$ vraie signifie $n$ régulier pour l'addition. On suppose ici que les $n$ sont des entiers, mais l'addition est prise pour les cardinaux.
+
+On a $R(0)$ vraie, car $a+0=a$, (proposition 3.8), donc $a+0=b+0$ équivaut à $a=b$.
+
+Si $R(n)$ est vraie et si $a$ et $b$ sont des cardinaux tels que $a+(n+1)=b+(n+1)$, c'est encore $(a+n)+1=(b+n)+1$, (associativité de $+$ entre cardinaux, vue proposition 3.8). Or $1$ aussi est régulier (proposition 3.9), donc $a+n=b+n$, et $R(n)$ vraie $\Rightarrow a=b$ d'où finalement $R(n+1)$ vraie. Par récurrence on a donc justifié que tous les entiers sont réguliers pour l'addition.
+
+Ce sont les seuls cardinaux réguliers car $a$ non entier par définition vérifie $a=a+1$ soit $a+0=a+1$ : si $a$ était régulier on aurait $0=1$ ce qui est faux. \bookend
+
+\emph{Remarque.} On ne sait pas pour l'instant s'il y a des cardinaux non entiers : leur existence est du domaine de l'axiome.
+
+\subsection*{3.42. Axiome de l'infini. Il existe des ensembles infinis.}
+
+C'est-à-dire il existe des ensembles $X$ tels que $\operatorname{card}(X)$ soit non entier. Il est à présumer que cet axiome est indépendant des autres déjà introduits dans la théorie, mais ce n'est pas prouvé.
+
+\medskip\noindent\textsc{Proposition 3.42 bis.} --- \emph{La proposition : « les entiers naturels forment un ensemble » est équivalente à « il existe un ensemble infini ».}
+
+En effet soit $a$ un cardinal infini, dont on suppose l'existence, et $n$ un entier naturel. On sait que les cardinaux sont comparables, (propriété 3.24), mais $a\le n$ est exclu, sinon $a$ serait un entier, (propriété 3.32). On a donc $n<a$ pour tout entier $n$ : les entiers $n$ étant mis en bijection avec des parties de l'ensemble $a$ constituent un ensemble, en bijection avec un sous-ensemble de $\mathcal P(a)$, ensemble des parties de $a$.
+
+Inversement, si les entiers naturels forment un ensemble $E$, cet ensemble est infini car, nous allons voir en 3.44 que pour tout entier naturel $n$, le segment $[0,n]=\{x;x\text{ entier},0\le x\le n\}$ est de cardinal $n+1$. On a donc
+\[
+\operatorname{card}(E)\ge\operatorname{card}([0,n])=n+1>n
+\]
+donc $\operatorname{card}(E)$ n'est pas entier car si on avait $\operatorname{card}(E)=n_0$ entier, comment concilier avec $\operatorname{card}(E)>n_0$ ?
+
+\subsection*{3.43.}
+On désigne par $\mathbb N$ l'ensemble des entiers, dont l'existence est axiomatique, on note $\aleph_0$, (aleph zéro) son cardinal.
+
+Justifions le résultat introduit, ou, plus généralement le résultat suivant :
+
+\medskip\noindent\textsc{Proposition 3.44.} ---\par\noindent
+\emph{Si $a$ et $b$ sont deux entiers naturels tels que $a\le b$, le segment
+\[
+[a,b]=\{n;\ n\text{ entier naturel};\ a\le n\le b\}
+\]
+est un ensemble fini de cardinal $(b-a)+1$.}
+
+Rappelons que $a\le b\Leftrightarrow\exists c$ cardinal tel que $b=a+c$, (proposition 3.27). Si de plus $a$ et $b$ sont des entiers, $c$ est unique car $b=a+c=a+d$ avec $a$ entier donc régulier pour l'addition donne $c=d$ ; et $c$ est entier, car à son tour $c\le b$ : il est majoré par $b$ entier, $c$ est un entier d'après la proposition 3.32. Enfin on a vu en 3.27 que $c$ est noté $b-a$.
+
+\subsection*{Justification par récurrence à partir de $a$, de la proposition 3.44}
+
+On introduit donc la propriété $P(n)$ suivante : « $n$ est un entier supérieur ou égal à $a$ et $[a,n]$ est de cardinal $(n-a)+1$. »
+
+Pour $n=a$, $[a,a]=\{x\text{ entier},a\le x\le a\}=\{a\}$ par antisymétrie de l'ordre entre entiers, or $a-a=0$, (le seul entier $c$ tel que $a=a+c$ est $0$ car les entiers sont réguliers pour l'addition et on a $a+0=a+c\Rightarrow0=c$), donc $a-a+1=1$ : $P(a)$ vraie.
+
+On suppose $P(n)$ vraie, et on considère $P(n+1)$. On a $n\ge a$, donc comme $n+1>n$, on a $n+1\ge a$. Puis, pour $x$ entier, soit $x\in[a,n+1]$, on a $a\le x\le n+1$. Mais alors on a soit $x=n+1$, soit $x<n+1$, ce qui équivaut à $x\le n$ (proposition 3.32). D'où
+\[
+[a,n+1]=[a,n]\cup\{n+1\}
+\]
+d'où, comme ces deux ensembles sont disjoints, (ensembles car l'un est un singleton et l'autre une partie de l'ensemble des cardinaux $\le n$, n'oublions pas que la relation $x\le b$ est collectivisante en $x$, si $b$ est un cardinal), on a
+\[
+\operatorname{card}([a,n+1])=\operatorname{card}([a,n])+1=((n-a)+1)+1.
+\]
+Par ailleurs, $(n+1)-a$ est l'unique cardinal $d$ tel que $n+1=a+d$ et $n-a$ est l'unique cardinal $c$ tel que $n=a+c$. Il en résulte que
+\[
+n+1=(a+c)+1=a+(c+1)
+\]
+d'où $d=c+1$. Mais alors,
+\[
+(n-a)+1=c+1=d=(n+1)-a
+\]
+et
+\[
+\operatorname{card}([a,n+1])=((n+1)-a)+1,
+\]
+la propriété $P(n+1)$ est vraie. \bookend
+
+Attention, à ce stade du jeu, les propriétés de la soustraction ne sont pas connues.
+
+\medskip\noindent\textsc{Corollaire 3.45.} --- \emph{Toute partie non vide, majorée, de $\mathbb N$, admet un plus grand élément.}
+
+Soient en effet $A$ non vide, formée d'entiers, et majorée par l'entier $n$. On a $A\subset[0,n]$, segment ayant un nombre fini d'éléments, ($n+1$). De plus $A$ est totalement ordonné, par l'ordre entre cardinaux qui est un bon ordre, donc total. Les éléments de $A$, en nombre fini, étant comparables, l'un est supérieur à tous les autres.
+
+\medskip\noindent\textsc{Proposition 3.46.} --- \emph{Soit $I$ un ensemble fini d'indices et $(a_i)_{i\in I}$ une famille d'entiers indexée par $I$. Les cardinaux $\sum_{i\in I}a_i$ et $\prod_{i\in I}a_i$ sont entiers.}
+
+Les opérations somme et produit de cardinaux ont été définies, et on a justifié l'associativité de ces opérations, ce qui permet, par « récurrence sur $n=\operatorname{card}I$ » de définir $\sum_{i\in I}a_i$ et $\prod_{i\in I}a_i$.
+
+On justifie cette proposition par récurrence sur $n=\operatorname{card}I$, à partir de 2.
+
+\emph{Cas de la somme.} On note $S(n)$ la propriété : « si $\operatorname{card}I=n$, la somme des entiers $(a_i)_{i\in I}$ est un entier. »
+
+On a $S(2)$ vraie. Il faut prouver que si $a$ et $b$ sont entiers, $a+b$ en est un. Pour cela, on introduit la propriété $R(n)$ suivante : « pour tout entier $a$, $a+n$ est un entier ».
+
+$R(0)$ est vraie car, $\forall$ entier $a$, $a+0=a$ est bien entier.
+
+Si $R(n)$ vraie, soit $a$ entier quelconque $a+n$ est donc un entier, la proposition 3.31 implique alors que $(a+n)+1$ est aussi un entier (ou cardinal fini) soit, (associativité de $+$), $a+(n+1)$ est entier : on a $R(n+1)$ vraie.
+
+Par récurrence, $R(n)$ est vraie pour tout entier $n$, d'où $S(2)$ vraie.
+
+On suppose $S(n)$ vraie avec $n\ge2$. Soit $I$ un ensemble d'indices de cardinal $n+1$, $I$ est non vide, si $k\in I$, $J=I-\{k\}$ est de cardinal $n$. On a alors, (associativité et commutativité de l'addition) :
+\[
+\sum_{i\in I}a_i=\left(\sum_{i\in J}a_i\right)+a_k
+\]
+est entier comme somme de 2 entiers, car $S(2)$ vraie et $\sum_{i\in J}a_i$ entier d'après l'hypothèse de récurrence.
+
+Finalement $S(n)$ est vraie pour tout $n$, puisqu'on vient de justifier $S(n+1)$ vraie.
+
+Pour le produit on note $P(n)$ : « le produit des $(a_i)_{i\in I}$ avec $\operatorname{card}I=n$, les $a_i$ entiers, est un entier. »
+
+On justifie $P(2)$ vraie. Il faut montrer que $a$ et $b$ entier $\Rightarrow ab$ entier. On procède par récurrence sur $b$ en introduisant la propriété $S(n)$ : « pour tout entier $a$, $an$ est un entier. »
+
+Si $b=0$, $a0=0$ est entier donc $S(0)$ vraie.
+
+Si $S(n)$ vraie, comme pour tout cardinal $a$,
+\[
+a(n+1)=an+a1,
+\]
+(distributivité, proposition 3.14) avec $1$ élément neutre pour le produit (proposition 3.14 également), il vient $a(n+1)=an+a$.
+
+Donc si $a$ est entier, la somme $an+a$ est un entier, ($an$ entier par hypothèse de récurrence). D'où, $\forall a$ entier, $a(n+1)$ entier, soit $S(n+1)$ vraie.
+
+On a donc $P(2)$ vraie.
+
+On suppose $P(n)$ vraie pour $n\ge2$. Si $I$ est un ensemble d'indices de cardinal $n+1$, $I$ est non vide, si $k\in I$, $J=I-\{k\}$ est de cardinal $n$. On a, comme précédemment,
+\[
+\prod_{i\in I}a_i=\left(\prod_{i\in J}a_i\right)a_k
+\]
+qui est entier comme produit de 2 entiers car $P(2)$ est vraie et $\prod_{i\in J}a_i$ est entier par hypothèse de récurrence. D'où $P(n+1)$ vraie.
+
+On a bien prouvé que les entiers naturels s'additionnent et se multiplient entre eux : leur ensemble $\mathbb N$ est stable par $+$ et $\times$. \bookend
+
+On verra au chapitre suivant que $(\mathbb N,+)$ est un demi-groupe dont le symétrisé sera le groupe $\mathbb Z$ des entiers relatifs ; et qu'à partir de $\mathbb Z$, par un procédé analogue, on construira le corps $\mathbb Q$ des rationnels.
+
+\BellaSection{5. Une infinité d'infinis !}
+
+En fait, on a admis (axiome de l'infini) l'existence de $\mathbb N$, de cardinal infini, ($\aleph_0$) mais de ce fait, on en a... beaucoup d'autres.
+
+\medskip\noindent\textsc{Proposition 3.47.} --- \emph{Soit $X$ un ensemble, on a toujours $\operatorname{card}(\mathcal P(X))>\operatorname{card}(X)$.}
+
+Si $X=\varnothing$, c'est $1>0$, ou plutôt, pas de bijection de $\varnothing$ sur $\mathcal P(\varnothing)$ qui a un élément.
+
+Sinon, si $X$ est non vide, $x\mapsto\{x\}$ est une injection de $X$ dans $\mathcal P(X)$, d'où $\operatorname{card}\mathcal P(X)\ge\operatorname{card}(X)$, et on va justifier qu'il n'existe pas de surjection de $X$ sur $\mathcal P(X)$, donc pas de bijection a fortiori, d'où $\operatorname{card}(X)\ne\operatorname{card}(\mathcal P(X))$ et comme les cardinaux sont comparables, (propriété 3.24), on aura l'inégalité stricte. Soit donc $f$ une application de $X$ dans $\mathcal P(X)$, on va prouver que $f$ n'est pas surjective.
+
+Soit $A=\{a;a\in X; a\notin f(a)\}$. Si $x\in A$, vu la définition de $A$, $x\notin f(x)$, donc $f(x)\ne A$ ; mais si $x\notin A$, la définition de l'appartenance à $A$ n'étant pas vérifiée, $x\in f(x)$, et là encore $f(x)\ne A$ car $x\notin A$. Dans les 2 cas $f(x)\ne A$, donc la partie $A$ de $X$ n'a pas d'antécédent par $f$ : il n'existe pas de surjection de $X$ sur $\mathcal P(X)$. \bookend
+
+\medskip\noindent\textsc{Conséquence.} --- $\operatorname{card}(\mathcal P(\mathbb N))>\operatorname{card}(\mathbb N)$. L'ensemble $\mathcal P(\mathbb N)$ a donc un cardinal infini strictement supérieur à celui de $\mathbb N$. \BellaCorrectionNote{Ce cardinal, le cardinal du continu, se note $2^{\aleph_0}$ ; c'est le cardinal de $\mathbb R$, corps des réels, ce qui ne peut être justifié qu'après la construction des réels.}{Ce cardinal, noté $\aleph_1$ est le cardinal de $\mathbb R$, corps des réels, ce qui ne peut être justifié qu'après la construction des réels.}{Sans supposer l'hypothèse du continu, $\operatorname{card}(\mathcal P(\mathbb N))=2^{\aleph_0}$ n'est pas nécessairement $\aleph_1$.}
+
+\BellaCorrectionNote{L'hypothèse du continu, c'est la proposition affirmant : « il n'existe pas d'ensemble de cardinal strictement compris entre $\aleph_0$ et $2^{\aleph_0}$ ». Cantor (1845--1918) qui a beaucoup travaillé sur les cardinaux avait conjecturé que cette affirmation est vraie. Gödel puis Cohen ont établi son indépendance relativement à ZFC : sous l'hypothèse de cohérence de ZFC, elle n'est ni démontrable ni réfutable.}{L'hypothèse du contenu, c'est la proposition affirmant : « il n'existe pas d'ensemble de cardinal strictement compris entre $\aleph_0$ et $\aleph_1$ ». Cantor (1845--1918) qui a beaucoup travaillé sur les cardinaux avait conjecturé que cette affirmation est vraie. Cohen, mathématicien américain, a démontré en 1963 son indécidabilité compte tenu des axiomes de la théorie des ensembles.}{Il s'agit de l'« hypothèse du continu ». Le résultat d'indépendance combine les travaux de Gödel (1940) et Cohen (1963) ; la formulation correcte compare $\aleph_0$ au cardinal du continu $2^{\aleph_0}$.}
+
+L'hypothèse du continu généralisée, c'est celle qui affirme qu'il n'existe pas d'ensemble de cardinal strictement compris entre $\operatorname{card}(X)$ et $\operatorname{card}(\mathcal P(X))$ si $X$ est un ensemble infini, et là... mystère. À vous lecteur de vous mettre au travail...
+
+\medskip\noindent\textsc{Propriété 3.48.} --- \emph{L'ensemble $\mathbb N\times\mathbb N$ est équipotent à $\mathbb N$.}
+
+Un schéma vaut un long discours :
+\[
+\begin{array}{c|ccccc}
+\mathbb N\backslash\mathbb N & 0 & 1 & 2 & \cdots & n \\ \hline
+0 & (0,0) & (0,1) & (0,2) & \cdots & (0,n) \\[2pt]
+1 & (1,0) & (1,1) & & & (1,n-1) \\[2pt]
+2 & (2,0) & & & & (2,n-2) \\[2pt]
+\vdots & & & \ddots & & \\[2pt]
+n-2 & & & (n-2,2) & & \\[2pt]
+n-1 & & (n-1,1) & & & \\[2pt]
+n & (n,0) & & & &
+\end{array}
+\]
+il y a 1 couple $(u,v)$ avec $u+v=0$ : c'est $(0,0)$ ;
+
+il y a 2 couples $(u,v)$ avec $u+v=1$, $((0,1)$ et $(1,0))$ ;
+
+il y a $n$ couples $(u,v)$ avec $u+v=n-1$, obtenus pour $u=0,1,\ldots,n-1$.
+
+Si on les numérote, en faisant un groupement par tranche avec $u+v=n$, $n$ croissant, et $u$ croissant dans chaque tranche, on pose $\varphi((0,0))=0$, $\varphi((0,1))=1$, $\varphi((1,0))=2$ ; quand on passe à la tranche $u+v=n$, il y a déjà
+\[
+1+2+\cdots+n=\frac{n(n+1)}2
+\]
+couples, le dernier ayant le numéro $\frac{n(n+1)}2-1$, donc en posant
+\[
+\varphi((k,n-k))=\frac{n(n+1)}2+k,\qquad k=0,1,\ldots,n,
+\]
+on définit une injection de $\mathbb N\times\mathbb N$ dans $\mathbb N$, car si $(u,v)$ et $(u',v')$ sont 2 couples avec $u+v=u'+v'=n$, s'ils sont distincts, $u\ne u'$, par exemple $u<u'$ et
+\[
+\varphi((u,n-u))=\frac{n(n+1)}2+u<\frac{n(n+1)}2+u'=\varphi((u',n-u'));
+\]
+alors que si $n=(u+v)\ne n'=(u'+v')$, ($n<n'$ par exemple), on a
+\[
+\varphi((u,v))\le\frac{(n+1)(n+2)}2-1<\frac{(n+1)(n+2)}2
+\le\frac{n'(n'+1)}2,
+\]
+car $n+1\le n'$, et
+\[
+\varphi((u',v'))\ge\frac{n'(n'+1)}2.
+\]
+On a bien $\varphi((u,v))<\varphi((u',v'))$. On a donc $\operatorname{card}(\mathbb N\times\mathbb N)\le\operatorname{card}(\mathbb N)$ ; or $n\mapsto(n,0)$ est une injection de $\mathbb N$ dans $\mathbb N^2$, donc $\operatorname{card}(\mathbb N)\le\operatorname{card}(\mathbb N\times\mathbb N)$ et finalement on a bien $\operatorname{card}(\mathbb N)=\operatorname{card}(\mathbb N\times\mathbb N)$. \bookend
+
+\medskip\noindent\textsc{Proposition 3.49.} --- \emph{Tout ensemble infini $E$ contient un ensemble équipotent à $\mathbb N$.}
+
+Soit $E$ infini. On peut le munir d'un bon ordre, (axiome de Zermelo, voir 2.44). Un segment de $\mathbb N$, distinct de $\mathbb N$ est de la forme $S_a=\{x,x\in\mathbb N,x<a\}$, (proposition 3.17), mais $x<a\Leftrightarrow x\le a-1$ et $S_a=[0,a-1]$ est de cardinal $a$, d'après 3.32 et 3.44. Il en résulte qu'un segment de $\mathbb N$, distinct de $\mathbb N$ est de cardinal fini.
+
+Or $E$ et $\mathbb N$ étant bien ordonnés, on a (d'après 3.20) soit un isomorphisme de $E$ sur un segment de $\mathbb N$, soit un de $\mathbb N$ sur un segment de $E$. Dans le 1\textsuperscript{er} cas, le segment de $\mathbb N$ en bijection avec $E$ est de cardinal infini comme $E$, ce n'est pas un segment distinct de $\mathbb N$, c'est donc $\mathbb N$ qui est alors en bijection avec $E$ ; dans le 2\textsuperscript{e} cas l'isomorphisme de $\mathbb N$ sur un segment de $E$ est une bijection de $\mathbb N$ sur une partie de $E$ dans les deux cas on a une bijection de $\mathbb N$ sur une partie de $E$.
+
+Donc $\aleph_0=\operatorname{card}(\mathbb N)\le\operatorname{card}(E)$ pour tout ensemble $E$ de cardinal infini : $\aleph_0$ est le « plus petit infini ». \bookend
+
+\medskip\noindent\textsc{Proposition 3.50.} --- \emph{Soit $a$ un cardinal infini, on a $a^2=a$, ou encore si $E$ est un ensemble de cardinal $a$, on a $E\times E$ équipotent à $E$.}
+
+Comme $a\ne0$, (n'oublions pas qu'un cardinal est un ensemble), soit $x_0$ dans $a$, l'application $x\mapsto(x,x_0)$ est une injection de $a$ dans $a\times a$ donc $a=\operatorname{card}(a)\le\operatorname{card}(a\times a)$ d'après la définition de « l'ordre » et du produit de cardinaux, (voir 3.23 et 3.12).
+
+Soit $E$ un ensemble équipotent à $a$. D'après la proposition 3.49, il existe $D$ partie de $E$ équipotente à $\mathbb N$, puis une bijection $\Psi_0$ de $D$ sur $D\times D$ (propriété 3.48).
+
+On considère l'ensemble $\mathcal M$ des couples $(X,\Psi)$ où $X$ est une partie de $E$ contenant $D$ et $\Psi$ une bijection de $X$ sur $X\times X$ prolongeant $\Psi_0$, c'est-à-dire telle que, $\forall d\in D\subset X$, $\Psi(d)=\Psi_0(d)$.
+
+L'idée est de démontrer que dans $\mathcal M$ existe un couple associé à un ensemble équipotent à $E$. Intuitivement on le veut le plus grand possible d'où un recours à Zorn.
+
+D'abord $\mathcal M$ est bien un ensemble, associé à des parties de $E$, donc des éléments d'un ensemble, et des bijections, elles-mêmes élément d'un ensemble. Il est non vide car $(D,\Psi_0)\in\mathcal M$.
+
+On ordonne $\mathcal M$ par :
+\[
+((X,\Psi)\le(X',\Psi'))\Leftrightarrow((X\subset X')\text{ et }(\Psi'\text{ prolonge }\Psi)).
+\]
+Il est facile de vérifier que l'on a une relation d'ordre (i.e. réflexive, \BellaCorrection{antisymétrique}{antisymétique} et transitive). $\mathcal M$ est inductif pour cet ordre, (voir 2.41).
+
+Nous devons justifier que, si $\mathcal C$ est une partie de $\mathcal M$ totalement ordonnée (ou chaîne), il existe dans $\mathcal M$, un majorant de cette partie.
+
+Notons, par commodité, $\mathcal C=(X_i,\Psi_i)_{i\in I}$ cette chaîne de $\mathcal M$. On pose
+\[
+X=\bigcup_{i\in I}X_i
+\]
+et on veut définir une bijection de $X$ sur $X\times X$.
+
+Soit donc $x\in X$, si $i$ et $i'$ de $I$ sont tels que $x\in X_i$ et $x\in X_{i'}$, comme les couples $(X_i,\Psi_i)$ et $(X_{i'},\Psi_{i'})$ sont comparables, par exemple $(X_{i'},\Psi_{i'})\le(X_i,\Psi_i)$ mais alors $\Psi_{i'}(x)=\Psi_i(x)$.
+
+On posera donc $\Psi(x)=$ la valeur commune de $\Psi_i(x)$, pour $i\in I$ tel que $x\in X_i$.
+
+$\Psi$ est injective : si $x$ et $x'$ de $X$ sont tels que $\Psi(x)=\Psi(x')$, avec $i$ et $i'$ de $I$ tels que $x\in X_i$ et $x'\in X_{i'}$ et par le raisonnement précédent, si par exemple $(X_i,\Psi_i)\le(X_{i'},\Psi_{i'})$, $x$ et $x'$ sont tous deux dans $X_{i'}$, et on aura $\Psi(x)=\Psi_{i'}(x)$ et $\Psi(x')=\Psi_{i'}(x')$. Comme $\Psi_{i'}$ est injective il en résulte que $x=x'$.
+
+$\Psi$ est surjective : cette fois on part de $(x,x')\in X\times X$, de $i,i'$ de $I$ tels que $x\in X_i$ et $x'\in X_{i'}$. Toujours par un raisonnement analogue, on a par exemple $x$ et $x'$ dans $X_i$, mais alors $(x,x')\in X_i\times X_i=\Psi_i(X_i)$ car $\Psi_i$ est bijective, donc il existe $y\in X_i$ tel que $\Psi_i(y)=(x,x')=\Psi(y)$ par définition de $\Psi$.
+
+Enfin, on a bien, $\forall i\in I$ : $X_i\subset X$ et $\Psi$ prolonge $\Psi_i$ par construction de $\Psi$.
+
+Donc $(X,\Psi)$ est un élément de $\mathcal M$ qui majore la chaîne $\mathcal C$. Mais alors, $\mathcal M$ étant inductif, par l'axiome de Zorn il existe dans $\mathcal M$ un élément maximal $(F,f)$. On va prouver que $\operatorname{card}(F)=a$ alors $F\times F$, en bijection avec $F$ par $f$, sera de cardinal $a\times a=a$.
+
+Posons $b=\operatorname{card}F$, comme $(F,f)\in\mathcal M$, par définition de $\mathcal M$, $f$ est une bijection de $F$ sur $F\times F$, donc les cardinaux de $F$ et $F\times F$ sont égaux : on a déjà $b=b^2$. Puis $F$ contient $D$ équipotent à $\mathbb N$, (voir définition de $\mathcal M$) donc $b$ est infini.
+
+Pour tout cardinal $x$, on a $x\le x+x$, (si $x=0$, c'est $0=0$, sinon, $x$ étant un ensemble, l'application $t\mapsto(t,0)$ est une injection de $x$ dans $(x\times\{0\})\cup(x\times\{1\})$, d'où, en passant aux cardinaux, et d'après la définition de l'addition, $x\le x+x$).
+
+À son tour $x+x\le x+x+x$ d'où en fait $x\le2x\le3x$, car on peut remarquer que $(x\times\{0\})\cup(x\times\{1\})=x\times\{0,1\}$ de cardinal $x\cdot2$ ou $2\cdot x$, d'après la définition du produit des cardinaux.
+
+De même, il y a une injection de l'ensemble à 3 éléments $\{0,1,(0,1)\}$ par exemple, ou de $\{0,1,2\}$ dans $\mathbb N$ et une de $\mathbb N$ dans $b$ d'où une injection de $\{0,1,2\}\times b$ dans $\mathbb N\times b$ et une de $\mathbb N\times b$ dans $b\times b$ ce qui justifie les inégalités
+\[
+b\le2b\le3b\le\aleph_0b\le b^2\quad\text{avec }b^2=b,
+\]
+on a donc :
+
+\subsection*{3.51.}
+$b=2b=3b$, avec $b$ cardinal infini.
+
+On suppose $b<a$, si on avait $\operatorname{card}(E-F)\le b$, on aurait une injection de $F$ dans $b\times\{0\}$, notée $x\mapsto j(x)$, une de $E-F$ dans $b\times\{1\}$, notée $y\mapsto k(y)$, donc en posant pour $x\in E$, $l(x)=j(x)$ si $x\in F$, $l(x)=k(x)$ si $x\in E-F$, on définirait une injection de $E$ dans $b\times\{0\}\cup b\times\{1\}$ d'où
+\[
+a=\operatorname{card}(E)\le b+b=2b=b,
+\]
+ce qui contredit l'hypothèse $b<a$. Donc $\operatorname{card}(E-F)>b$ : il existe une partie $Y$ telle que $Y\subset(E-F)$ et $\operatorname{card}(Y)=b=\operatorname{card}F$, soit $Y$ et $F$ équipotents.
+
+Soit $Z=F\cup Y$, on va construire une bijection $g$ de $Z$ sur $Z\times Z$ qui prolongera $f$ : alors dans $\mathcal M$, on aura $(Z,g)$ qui majorera strictement l'élément maximal $(F,f)$ : ce sera absurde. Donc l'hypothèse $b<a$ sera fausse.
+
+On aura $b\ge a$, avec $F\subset E$ d'où $b=\operatorname{card}F\le a=\operatorname{card}E$ et finalement $a=b$.
+
+\emph{Construction de $g$ :} comme $F$ et $Y$ sont disjointes on a
+\[
+Z\times Z=(F\times F)\cup(F\times Y)\cup(Y\times F)\cup(Y\times Y),
+\]
+union de 4 ensembles disjoints, tous équipotents à $F\times F$ de cardinal $b^2=b$. En particulier on a :
+\[
+\operatorname{card}[(F\times Y)\cup(Y\times F)\cup(Y\times Y)]=3b=b
+\]
+donc il y a une bijection $f_1$ de $Y$ sur $(F\times Y)\cup(Y\times F)\cup(Y\times Y)$, ces 2 ensembles, de cardinal $b$, étant équipotents.
+
+\BellaCorrectionNote{Puis on définit $g:Z\longrightarrow Z\times Z$, avec $Z=F\cup Y$, par $g(x)=f_1(x)$ si $x\in Y$ et $g(x)=f(x)$ si $x\in F$ ; il est facile de vérifier que l'on a une bijection $g$ de $Z$ sur $Z\times Z$ prolongeant bien $f$.}{Puis $F$ et $F\times F$ aussi sont de cardinal $b$, donc il y a une bijection $f_2$ de $F$ sur $F\times F$. En définissant $g:Z\to Z\times Z$, avec $Z=F\cup Y$, par $g(x)=f_1(x)$ si $x\in Y$ et $g(x)=f_2(x)$ si $x\in F$, il est facile de vérifier que l'on a une bijection $g$ de $Z$ sur $Z\times Z$.}{Pour contredire la maximalité de $(F,f)$, il faut que $g$ prolonge précisément $f$. Une bijection arbitraire $f_2:F\to F\times F$ ne suffit pas ; on doit prendre $f_2=f$.} \bookend
+
+En conclusion, on a justifié l'égalité $b=a=\operatorname{card}(F)$. Comme $F$ est en bijection avec $F\times F$, (car $(F,f)\in\mathcal M$), c'est finalement l'égalité $a=a^2$ qui est obtenue.
+
+On peut en déduire :
+
+\medskip\noindent\textsc{Proposition 3.52.} --- \emph{Soient $a$ et $b$ deux cardinaux non nuls, l'un au moins étant infini. On a $a+b=ab=\sup(a,b)$.}
+
+Ce résultat servira, au chapitre 6, pour justifier que les bases d'un espace vectoriel sont équipotentes.
+
+Supposons $b\le a$, (les cardinaux sont comparables), donc $\sup(a,b)=a$, avec $a$ infini.
+
+Il existe donc une injection, $j$, de $b$ dans $a$. On en construit une, notée $g$, de $b\times\{0\}\cup a\times\{1\}$ dans $a\times\{0\}\cup a\times\{1\}$ en posant :
+\[
+\forall(x,0)\in b\times\{0\},\quad g((x,0))=(j(x),0),
+\]
+\[
+\forall(x,1)\in a\times\{1\},\quad g((x,1))=(x,1).
+\]
+On vérifie facilement l'injectivité de $g$ d'où l'inégalité
+\[
+b+a\le a+a=2a=a,
+\]
+(formule 3.51).
+
+Comme $x\mapsto(x,0)$ est une injection de $a$ dans $a\times\{0\}\cup b\times\{1\}$ on a aussi $a\le b+a$, d'où l'égalité $a+b=a=\sup(a,b)$.
+
+Pour le produit, toujours avec $j$ injection de $b$ dans $a$, l'application $h$ de $b\times a$ dans $a\times a$ définie par $h(x,y)=(j(x),y)$ est une injection, d'où, en passant aux cardinaux
+\[
+ba\le a\cdot a=a^2=a,
+\]
+(proposition 3.50).
+
+Comme $b$ est non vide, en fixant $y_0$ dans $b$, l'application
+\[
+x\longmapsto(y_0,x)
+\]
+de $a$ dans $b\times a$ est une injection d'où $a\le ba$. On obtient bien l'égalité des cardinaux $ba=a=\sup(a,b)$. \bookend
+
+\input{chapters/ch03_exercises}

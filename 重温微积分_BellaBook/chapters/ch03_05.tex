@@ -1,0 +1,1074 @@
+\section{反函数定理和隐函数定理}
+
+\subsection*{1. 温习线性代数}
+
+前两节中我们讨论了映射 $f:\Omega\subset\mathbb R^m\to\mathbb R^n$ 所生成的无穷小量 $f(x+h)-f(x)$ 按 $h$ 之幂分解的问题，并由此引出了分析函数与 $C^\infty$ 函数的区别的详细讨论。现在再回到 $f(x+h)-f(x)$ 之线性部分即一阶微分的讨论。我们在前面一再强调线性部分的研究可以提供有关这个映射的局部的（即在 $x$ 点附近，以下我们限于在原点附近）性态的信息。现在再回到这个主题并讨论一个极重要的问题即如何求解
+\begin{equation}
+ f(x)=y.
+ \tag{1}
+\end{equation}
+这个问题把我们引导到一个更广泛的问题，即讨论 $y=f(x)$ 的逆映射 $f^{-1}$。更准确一些说是讨论 $y\in\mathbb R^n$ 是否在映射 $f$ 下有原像，因为只有在这个原像是存在而且唯一的条件下，才能说有逆映射 $f^{-1}$。
+
+现在在 $x=0$ 附近把 $f(x)$ 线性化，即令
+\[
+ f(x)=f(0)+Ah+o(h)
+\]
+并用 $f(0)+Ah$ 取代 $f(x)$。这里的 $A$ 是由 $\Omega$ 的切空间 $T\Omega=\mathbb R^m$ 到 $\mathbb R^n$ 的切空间（仍为 $\mathbb R^n$）的线性映射，如果用坐标表示，则有
+\[
+ A=\frac{\partial(f_1,\ldots,f_n)}{\partial(x_1,\ldots,x_m)}(0).
+\]
+以下为方便起见，恒设 $f(0)=0$。于是映射 $y=f(x)$ 将被线性映射
+\[
+ k=Ah,
+ \qquad k\in\mathbb R^n,\ h\in\mathbb R^m
+ \tag{2}
+\]
+取代。研究(2)是线性代数学的主要问题之一。因为我们在前几节中一再强调用一种与坐标无关的方式来研究映射(1)，所以现在我们也希望用一种与坐标无关的方式来研究(2)。下面我们限于讨论 $A$ 的核空间与像空间。
+
+研究方程(2)对于某一个 $k$ 是否有解 $h$ 存在，也就是研究 $k$ 是否在 $A$ 的像空间中，即问是否有 $k\in\operatorname{im}A$：
+\begin{equation}
+ \operatorname{im}A=\{k\in\mathbb R^n;\ \exists h\in\mathbb R^m\text{ 使 }k=Ah\}.
+ \tag{3}
+\end{equation}
+$\operatorname{im}A$ 是一个线性空间，它并不一定就是整个靶空间 $\mathbb R^n$ 而可能只是它的一个真子空间。$\operatorname{im}A$ 与 $\mathbb R^n$ 之差别可以用它们的维数来刻画，$\dim\mathbb R^n=n$ 是固定的，而 $\dim\operatorname{im}A$ 称为 $A$ 之秩（rank），记为 $\operatorname{rank}A$。秩有一个重要作用，即用它来判断(2)的可解性最方便。事实上，(2)对一切 $k\in\mathbb R^n$ 均有解，即(2)为可解（solvable）之充分必要条件当然就是靶空间与像空间相同，亦即它们有相同维数，所以 $n=\operatorname{rank}A$ 是(2)对一切 $k$ 可解的充分必要条件。这时 $A$ 把源空间 $\mathbb R^m$ 映到整个靶空间上，所以 $A$ 称为满射（surjection）。更简单的说法就是说这是 $A$ 是一个 onto。因为在一般情况下 $A$ 把源空间映到靶空间内，所以是一个 into。另一个重要的子空间是源空间中一切被 $A$ 映到靶空间中的0的向量所成，它称为 $A$ 之核（kernel）空间或简单就是核。记作
+\[
+ \ker A=\{h\in\mathbb R^m;\ Ah=0\}.
+\]
+如果 $\dim\ker A=0$ 即是说 $\ker A$ 中只有一个零向量0，则方程(2)若有解也只能是唯一的。因为若 $h_1,h_2$ 都是(2)的解，当有 $A(h_1-h_2)=k-k=0$，所以 $h_1=h_2$，而(2)之解是唯一的。反过来，若(2)之解为唯一的则 $\ker A=\{0\}$。实际上，若有 $0\ne h_0\in\ker A$，则对(2)之每一个解 $h$，$h+Ch_0$（$C$ 为任意常数）也是(2)之解，这与(2)之解的唯一性矛盾。总之，(2)有唯一解当且仅当 $\ker A=\{0\}$。这时我们称 $A$ 为单射（injection）。如果 $A$ 既是单射又是满射，就称为一一映射（bijection），也称双射；一一映射就是 $A$ 实现了源空间 onto 靶空间的同构。这时 $A^{-1}$ 才存在，而且也是同构。
+
+以上我们是把 $\operatorname{rank}A$ 与靶空间 $\mathbb R^n$（以下记为 $F$）的维数联系起来看的。由秩之定义，自然有 $\operatorname{rank}A\le\dim F$。但还有一个重要公式，把 $\operatorname{rank}A$ 与 $\dim($源空间$)$ 联系起来。源空间现在就是 $\mathbb R^m$，我们也不妨记为 $E$。我们知道，由于 $\ker A$ 中可能有非零元，所以 $A:E\to\operatorname{im}A$ 虽然是 onto，但不一定是一对一的，即非单射。但是通常的线性代数教本讲到商空间时，一定会讲到一个结论：$A$ 在商空间 $E/\ker A$ 与 $\operatorname{im}A$ 之间诱导出一个同构（仍记为 $A$）。所以它们的维数相同，但是
+\[
+ \dim(E/\ker A)=\dim E-\dim\ker A,
+\]
+所以有
+\begin{equation}
+ \dim E-\dim\ker A=\dim\operatorname{im}A.
+ \tag{4}
+\end{equation}
+由于下面常用这个结果，所以我们把它写成一个
+
+\noindent\textbf{引理1}\quad 设 $A:\mathbb R^m\to\mathbb R^n$ 是一个线性映射，则
+\begin{equation}
+ \dim\ker A+\operatorname{rank}A=m.
+ \tag{5}
+\end{equation}
+
+\noindent\textbf{证}\quad 现在源空间 $E=\mathbb R^m$，故 $\dim E=m$，$\dim\operatorname{im}A$ 按定义即 $A$ 之秩 $\operatorname{rank}A$，代入(4)即得。
+
+由此立即有 $\operatorname{rank}A\le m$，但由定义 $\operatorname{rank}A\le n$，所以
+\begin{equation}
+ \operatorname{rank}A\le\min(m,n).
+ \tag{6}
+\end{equation}
+当我们对线性映射 $A$ 之核空间与像空间作了如上的讨论以后，就可以再来看方程(2)的求解问题。最好的情况显然是 $A:\mathbb R^m\to\mathbb R^n$ 为同构的情况。这时 $A$ 首先是一个满射，所以 $\operatorname{rank}A=n$。另一方面又是单射，所以 $\dim\ker A=0$，而由(5)式 $\operatorname{rank}A=m$，所以 $A$ 为同构必导致
+\begin{equation}
+ m=n=\operatorname{rank}A.
+ \tag{7}
+\end{equation}
+反过来由(7)，一方面 $\operatorname{rank}A=\dim\operatorname{im}A=n$，故 $A$ 为满射；另一方面 $\dim\ker A=m-\operatorname{rank}A=0$，故 $A$ 为单射。总之 $A$ 为同构。这样可以看到(7)是 $A$ 为同构的充分必要条件。
+
+由(7)看到，若 $m\ne n$，则 $A$ 不可能是同构。下面就分别来讨论 $m<n$ 与 $m>n$ 的情况。但不论如何，(7)是一种秩已达到最大的可能的允许值的情况，所以下面我们在每一种情况下都只讨论 $\operatorname{rank}A$ 达到最大可能的允许值的情况。由(6)可知，这就是 $m<n$ 而 $\operatorname{rank}A=m$，以及 $m>n$ 而 $\operatorname{rank}A=n$。
+
+先看 $m<n$，$\operatorname{rank}A=m$。这时，$A$ 把源空间 $\mathbb R^m$ 映为靶空间的 $m$ 维子空间，而且由(5)知 $\dim\ker A=0$，所以 $A$ 是一个单射，图3-5-1上一行画出了这个映射。然而我们可以在靶空间中作了一个坐标变换 $T$ 使得 $A\mathbb R^m$ 成为一个“坐标平面”，图3-5-1右侧一列画出了 $T$，这样我们就可以想象到，在这样的坐标系下，$A$ 应该有特别简单的表示。下面我们引用坐标表示，并且设在源空间与靶空间中都已选好了坐标系——即基底，从而 $h$ 和 $k$ 都表示为列（竖）向量：
+\[
+ h={}^{t}(h_1,\ldots,h_m),\qquad
+ k={}^{t}(k_1,\ldots,k_n),
+\]
+（上角的 $t$ 表示转置。）而 $A$ 表示为
+\[
+ A=(a_{ij}),\quad i=1,2,\ldots,n,\ j=1,2,\ldots,m.
+\]
+如果在靶空间 $\mathbb R^n$ 中作一个坐标变换，而把 $k$ 变成 $l$
+\[
+ l={}^{t}(l_1,\ldots,l_n),
+\]
+应当有
+\[
+ l=Tk=(T\cdot A)h,
+\]
+$T=(t_{ij})$ 是一个 $n\times n$ 非异矩阵（$n$ 阶非异方阵所成的空间在数学中极为重要，这个空间按习惯记为 $GL(n,\mathbb R)$，$n$ 表示方阵阶数，$\mathbb R$ 表示其元为实数）。原来的 $\mathbb R^m=\{(h_1,\ldots,h_m)\}$，而现在的 $(T\cdot A)\mathbb R^m=\{(l_1,\ldots,l_m,0,\ldots,0)\}$。因此经过坐标的选择，映射 $A$ 就成了
+\begin{equation}
+ l_i=h_i,\quad i=1,2,\ldots,m,
+ \qquad
+ l_{m+j}=0,\quad j=1,\ldots,n-m.
+ \tag{8}
+\end{equation}
+如果用矩阵来表示(8)，它就是
+\begin{equation}
+ \binom{I}{O}.
+ \tag{9}
+\end{equation}
+这是一个 $n\times m$ 矩阵，而它的子矩阵 $I$ 则是 $m\times m$ 的单位矩阵。从几何上看，这就是把源空间“浸入”或“嵌入”在靶空间中。但是在数学中，浸入（immersion）与嵌入（embedding）这两个名词，虽然是描述的这种映射，但都有确切的定义，而且二者又有比较细微但十分重要的区别。它们属于微分拓扑学研究的范围，本书只能在第七章中稍为涉及。所以现在不用这些名词，而只说它是“单射”线性映射。所以(8)就是单射线性映射的标准形式。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=.92cm,y=.92cm,>=stealth,every node/.style={font=\small,fill=white,fill opacity=.96,text opacity=1,inner sep=1.5pt,outer sep=2pt}]
+  \begin{scope}[shift={(-4.2,1.55)}]
+    \draw[->] (-.2,0)--(2.1,0); \draw[->] (0,-1.6)--(0,1.8);
+    \node[above] at (0,1.55) {$\mathbb R^m$}; \node[below left] at (0,0) {$O$};
+  \end{scope}
+  \node at (-1.55,1.55) {$\xrightarrow{\ A\ }$};
+  \begin{scope}[shift={(1.4,1.55)}]
+    \draw[->] (-2.3,0)--(2.3,0); \draw[->] (0,-1.6)--(0,1.8);
+    \draw[thick] (-1.8,-.9)--(1.55,1.05); \draw[thick] (-1.45,.95)--(1.9,-.75);
+    \node[above] at (0,1.55) {$\mathbb R^n$}; \node[right=3pt] at (1.55,-.55) {$A\mathbb R^m$};
+    \node[below left] at (0,0) {$O$};
+  \end{scope}
+  \node at (1.4,-.05) {$\downarrow\ T$};
+  \begin{scope}[shift={(1.4,-2.0)}]
+    \draw[->] (-2.3,0)--(2.3,0); \draw[->] (0,-1.5)--(0,1.7);
+    \draw[thick] (-1.85,-.1)--(1.85,-.1); \draw[thick] (-1.6,.65)--(1.5,-.7);
+    \node[above] at (0,1.45) {$\mathbb R^n$}; \node[below left] at (0,0) {$O$};
+  \end{scope}
+  \node[rotate=-25] at (-2.8,-1.05) {$T\!\cdot\!A$};
+\end{tikzpicture}
+\caption*{图3-5-1}
+\end{figure}
+
+其次看 $m>n$，而 $\operatorname{rank}A=n$ 的情况。这是由一个高维空间向低维空间的映射。图3-5-2上画的是3维空间向2维空间的映射。为了简化它，我们在把 $\mathbb R^m$ 中的坐标系作一个倾斜成为下面用虚线画出的坐标系，使得 $\mathbb R^n$（现在是图右半部的平面）恰好成为虚线坐标系的“坐标平面”。我们把倾斜映射记为 $T^{-1}$，于是方程(2)现在成为
+\begin{equation}
+ k=Ah=(A\cdot T)\cdot(T^{-1}h)=(A\cdot T)l.
+ \tag{10}
+\end{equation}
+如果记 $l={}^{t}(l_1,\ldots,l_{m-n};l_{m-n+1},\ldots,l_m)$，它一共有 $m$ 个分量而 $\mathbb R^n$ 上之向量一共只有 $n$ 个分量。从图上看，恰好是 $l$ 的后 $n$ 个分量。因此，$A\cdot T$ 如果用坐标来写就是
+\begin{equation}
+ h_i=l_{m-n+i},\qquad i=1,2,\ldots,n.
+ \tag{11}
+\end{equation}
+如果用矩阵来表示它，这个矩阵就是 $n\times m$ 矩阵
+\[
+ (O\ \ I),
+\]
+其中的 $I$ 是一个 $n\times n$ 的单位矩阵。那么要问什么样的向量被 $A$ 映为零向量？即问 $\ker A=A^{-1}(0)$ 是什么样的空间？由(11)易见一个向量\[\displaystyle l=(l_1,\ldots,l_{m-n},l_{m-n+1},\ldots,l_m)\in\ker A,\]当且仅当其后面的 $n$ 个分量为0。即是说 $\ker A$ 是由形如
+\[
+ (l_1,\ldots,l_{m-n},0,\ldots,0)
+\]
+的向量所张成的 $m-n$ 维子空间。
+
+用直观的语言来说，这就是：从倾斜的坐标系来看，就好像是把斜着向上的 $m-n$ 个坐标被“压”掉了，$\ker A$ 是这 $m-n$ 个坐标向量张成的，而 $A$ 把像空间 $\mathbb R^n$“罩”起来了，所以它称为“外罩”（submersion，这译“浸没”，指靶空间沉没在 $A$ 的像中去了，但“浸没”一词反而用得多一些）。第七章都是用的浸没，这和上面一样，由于外罩是一个有特定含意的数学名词，我们就不去使用它，而说这是一个“投影”（projection）线性映射，准确些说，是“沿”着 $\ker A$ 向 $\operatorname{im}A$ 投影。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=.92cm,y=.92cm,>=stealth,every node/.style={font=\small,fill=white,fill opacity=.96,text opacity=1,inner sep=1.5pt,outer sep=2pt}]
+  \begin{scope}[shift={(-3.3,1.3)}]
+    \draw[->] (-1.9,0)--(1.9,0); \draw[->] (0,-1.45)--(0,1.65);
+    \draw[thick] (-1.65,-.8)--(1.5,.9); \draw[thick] (-1.45,.8)--(1.7,-.65);
+    \node[above] at (0,1.4) {$\mathbb R^m$}; \node[below left] at (0,0) {$O$};
+  \end{scope}
+  \node at (-.55,1.3) {$\xrightarrow{\ A\ }$};
+  \begin{scope}[shift={(2.6,1.3)}]
+    \draw[->] (-1.9,0)--(1.9,0); \draw[->] (0,-1.45)--(0,1.65);
+    \draw[thick] (-1.55,-.65)--(1.55,.65); \draw[thick] (-1.4,.65)--(1.55,-.55);
+    \node[above] at (0,1.4) {$\mathbb R^n$}; \node[right=3pt] at (1.3,-.4) {$A\mathbb R^m$};
+    \node[below left] at (0,0) {$O$};
+  \end{scope}
+  \begin{scope}[shift={(-3.3,-2.15)}]
+    \draw[->] (-1.9,0)--(1.9,0); \draw[->] (0,-1.45)--(0,1.65);
+    \draw[dashed,thick] (-1.45,-.9)--(1.55,.8); \draw[dashed,thick] (-1.4,.75)--(1.55,-.6);
+    \node[above] at (0,1.4) {$\mathbb R^m$}; \node[below left] at (0,0) {$O$};
+  \end{scope}
+  \node at (-3.3,-.05) {$\downarrow\ T^{-1}$};
+  \node[rotate=28] at (-.95,-1.2) {$A\!\cdot\!T$};
+\end{tikzpicture}
+\caption*{图3-5-2}
+\end{figure}
+
+以上所说的是 $m>n$ 与 $m<n$ 的情况，但我们也可以把 $m=n$ 集起来，它既是单射，又是投影，因此它相应的矩阵就是 $I$。
+
+总之，$\operatorname{rank}A$ 取可能最大值的线性映射分成三种：
+
+1. $m=n$，这时 $A$ 就是同构，而在适当坐标系中其矩阵即是 $I$。
+
+2. $m<n$，这时 $A$ 是单射映射(8)，而在适当坐标系中，它的矩阵是 $\binom{I}{O}$。
+
+3. $m>n$，这时 $A$ 是投影映射(11)，而在适当坐标系中它的矩阵是 $(O\ \ I)$。
+
+本节的主要内容就是证明：可微映射在秩取最大可能的值时，局部地正是这三种情况。
+
+\subsection*{2. 反函数定理}
+
+现在我们要证明下面的基本定理。
+
+\noindent\textbf{定理2（反函数存在定理）}\quad 设 $\Omega\subset\mathbb R^n$ 是一开集，$f:\Omega\to\mathbb R^n$ 是一个光滑映射，$0\in\Omega$ 且 $f(0)=0$。若 $(df)(0)$ 是非退化的，则 $f$ 必是 $0\in\Omega$ 的某邻域到 $f(0)\in\mathbb R^n$ 的某邻域中的微分同胚。
+
+在给出证明之前，先对定理的含意作一些注解。首先要注意，这个定理是局部的，它所给出的微分同胚也只是局部微分同胚。微分同胚的概念已见于本章§2定义3。引理4后的注1就提出了一个映射为微分同胚的充分必要条件问题。从那里就已经看到，若用局部坐标来表示，则
+\[
+ (df)(0)=\frac{\partial(y_1,\ldots,y_n)}{\partial(x_1,\ldots,x_n)}(0),
+\]
+$(df)(0)$ 之非退化性就表示为雅可比矩阵非退化，亦即其行列式不为0。但那里即已指出，这并非充分条件，而只局部地才是充分必要条件。本定理就给出这个论断的证明。如果把本定理中的映射 $f$ 用局部坐标写为
+\begin{equation}
+ y_i=f_i(x_1,\ldots,x_n),\quad 0=f_i(0,\ldots,0),\quad i=1,2,\ldots,n,
+ \tag{12}
+\end{equation}
+局部微分同胚就表明，$x_i$ 也是 $(y_1,\ldots,y_n)$ 的光滑函数
+\begin{equation}
+ x_i=\varphi_i(y_1,\ldots,y_n),\quad 0=\varphi_i(0,\ldots,0),\quad i=1,2,\ldots,n,
+ \tag{13}
+\end{equation}
+而以(13)代入(12)或以(12)代入(13)均有
+\[
+ y_i\equiv f_i[\varphi_1(y),\ldots,\varphi_n(y)],\quad i=1,2,\ldots,n,
+\]
+或
+\[
+ x_i\equiv\varphi_i[f_1(x),\ldots,f_n(x)],\quad i=1,2,\ldots,n.
+\]
+这就是说，(12)与(13)互为反函数。因此这个定理是反函数存在定理。
+
+以上我们一再说坐标。现在也应该把坐标的定义说明白。对于线性空间 $\mathbb R^n$，所谓坐标是指有了一个基底 $e_1,\ldots,e_n$ 以后，任一点亦即任一向量 $x$ 均可写为 $x=x_1e_1+\cdots+x_ne_n$，$(x_1,\ldots,x_n)$ 即此向量 $x$（或记为此点 $x$）的坐标。现在我们讨论的 $\Omega$ 虽然是 $\mathbb R^n$ 的一个开子集，却不是线性空间，这时所谓坐标即指 $\Omega$ 中任一点均有一个邻域与 $\mathbb R^n$ 同胚（即双方一对一且双方连续）。设 $P$ 对应于 $\mathbb R^n$ 中一点 $x=(x_1,\ldots,x_n)$，就说 $x$ 或 $(x_1,\ldots,x_n)$ 是 $P$ 的局部坐标。因为这种同胚有许许多多，$P$ 就有许多不同的局部坐标，例如 $x=(x_1,\ldots,x_n)$，$y=(y_1,\ldots,y_n)$，而 $y=y(x)$ 或 $x=x(y)$。我们限于考虑 $y=y(x)$ 或 $x=x(y)$ 为光滑的微分同胚的情况。这样，这些坐标可以说是光滑的局部坐标。
+
+定理中只泛泛地说 $f$ 是光滑映射，其实是指，如果 $f\in C^k$，$k\ge1$，或 $C^\infty$，则 $f$ 作为微分同胚也具有相同的光滑性，即逆映射也是 $C^k$，$k\ge1$，或 $C^\infty$ 的。
+
+定理的证明是利用著名的压缩映像原理。因为0在 $\mathbb R^n$ 中之任一邻域中必包含一个球 $B_r(0)$（$B_r(P)$ 表示 $P$ 为心，$r$ 为半径的开球体，$S_r(P)$ 则表示这个球的球面）。以下我们恒设所说的邻域是一个球体，球体是一个凸集，即对球内任意两点 $x_1,x_2$，连接它们的线段 $\{tx_1+(1-t)x_2,0\le t\le1\}$ 也全在球内。这就是说，球不但对于球心是星形区域，而且对其中任意点都是星形区域，因此任一可微函数都变成 $t$ 的函数，而可以应用中值定理。
+
+由假设 $(df)(0)$ 是非退化的，于是在一定坐标系下它是一个非奇异矩阵 $A$，即映射 $f$ 的雅可比矩阵。预用 $A^{-1}$ 左乘 $f$，而用 $A^{-1}f$ 在 $x=0$ 的微分为 $I$。求解 $f(x)=y$ 与求解 $(A^{-1}\circ f)(x)=A^{-1}y$ 是等价的，而 $d(A^{-1}f)(0)=I$，因此不失一般性，以下我们都设映射 $f$ 适合条件 $(df)(0)=I$。
+
+我们下面不考虑映射 $f$，而考虑映射
+\begin{equation}
+ g:\Omega\subset\mathbb R^n\to\mathbb R^n,
+ \qquad x\longmapsto f(x)-x\quad\text{(即 }g(x)=f(x)-x\text{)}.
+ \tag{14}
+\end{equation}
+它仍然适合 $g(0)=0$，而且
+\begin{equation}
+ (dg)(0)=(df)(0)-I=0.
+ \tag{15}
+\end{equation}
+因此，当 $x\in\overline{B_\rho(0)}$ 且 $\rho$ 充分小时，必有 $\|(dg)(x)\|<\eta$，$\eta$ 是任意小的正数。
+
+现在我们用迭代法去解方程
+\begin{equation}
+ x=y-g(x).
+ \tag{16}
+\end{equation}
+但是这个方程的解就是映射 $y-g(\cdot):x\mapsto x$ 的不动点：$y-g(\cdot):x\mapsto x$。因为这个 $x$ 必适合
+\[
+ x=y-g(x)=y+x-f(x),
+\]
+或 $f(x)=y$。
+
+求解(16)可以使用古典的逐次逼近法。即对0附近的 $y$，任取 $x_0\in B_\rho(0)$ 作为零次近似，以 $x_0$ 代入(16)右方，并记所得为 $x_1$：
+\[
+ x_1=y-g(x_0)=y+x_0-f(x_0),
+\]
+然后逐次地做下去，即令
+\begin{equation}
+ x_{i+1}=y-g(x_i),\ldots
+ \tag{17}
+\end{equation}
+这样得到一个序列 $\{x_i\}$。我们希望 $\{x_i\}$ 有极限 $\bar x$，而且 $\bar x$ 即是(16)的不动点。
+
+这样做要解决两个问题：一是要保证每次得到的 $x_i$ 都在 $g(x)$ 之定义域（亦即 $f$ 之定义域）中。例如适合 $x_i\in B_\rho(0)$，然后再证 $\{x_i\}$ 收敛。为了做到这两点，首先是取 $y\in B_{\rho/2}(0)$，$\rho$ 待定。然后证明映射 $g$ 在 $B_\rho(0)$ 中适合
+\begin{equation}
+ \|g(x^*)-g(x^{**})\|\le\frac12\|x^*-x^{**}\|.
+ \tag{18}
+\end{equation}
+这个式子的证明见后。
+
+于是对于固定的 $y$，如果已作出了 $x_i$，则对于 $x_{i+1}=y-g(x_i)$，因为 $g(0)=0$，故有
+\[
+ \|x_{i+1}\|\le\|y\|+\|g(x_i)-g(0)\|<\frac\rho2+\frac12\|x_i-0\|
+ \le\frac\rho2+\frac\rho2=\rho.
+\]
+即是说，只要 $\|x_i\|<\rho$，必有 $\|x_{i+1}\|<\rho$。但 $x_0$ 是取在 $B_\rho(0)$ 中的，所以一切 $x_i$ 都在此球中，从而也在 $f(x)$ 与 $g(x)$ 之定义域中。
+
+其次由(18)式
+\[
+ \|x_{i+1}-x_i\|=\|g(x_i)-g(x_{i-1})\|\le\frac12\|x_i-x_{i-1}\|.
+\]
+即是说每经一次映射 $g$，$x_{i+1}$ 与 $x_i$ 之距离比 $x_i$ 与 $x_{i-1}$ 之距离至少减半——所谓压缩映像即指此。而反复应用它，有
+\[
+ \|x_{i+k}-x_i\|\le\left(\frac12\right)^i\|x_k-x_0\|.
+\]
+所以 $\{x_i\}$ 是 $\mathbb R^n$ 中的柯西序列，而必有极限 $\bar x\in B_\rho(0)$。在(17)中求极限，即得
+\[
+ \bar x=y-g(\bar x)=y+\bar x-f(\bar x),
+\]
+亦即
+\[
+ y=f(\bar x).
+\]
+从而 $\bar x$ 是方程 $y=f(x)$ 对固定于 $B_{\rho/2}(0)$ 中的 $y$ 的解。
+
+再证这个解是唯一的。设有 $\widetilde x$ 也是 $y=f(x)$ 之解，则 $f(\widetilde x)=f(\bar x)$，于是 $g(\widetilde x)-g(\bar x)=\widetilde x-\bar x$。但由此有
+\[
+ \|\widetilde x-\bar x\|=\|g(\widetilde x)-g(\bar x)\|\le\frac12\|\widetilde x-\bar x\|.
+\]
+所以 $\widetilde x=\bar x$。
+
+余下的只是证明(18)式了。在 $B_\rho(0)$ 中作直线段 $\{tx^*+(1-t)x^{**},0\le t\le1\}$ 连接 $x^*$ 与 $x^{**}$ 两点。在这个直线段上 $g$ 成为 $t$ 的光滑函数，从而
+\[
+\begin{aligned}
+ g(x^*)-g(x^{**})
+ &=\int_0^1\frac d{dt}g(tx^*+(1-t)x^{**})\,dt\\
+ &=\int_0^1(x^*-x^{**})(dg)(tx^*+(1-t)x^{**})\,dt.
+\end{aligned}
+\]
+由于在 $B_\rho(0)$ 中 $\|dg\|<\eta$，$\eta$ 是任意小数，故当 $\rho$ 充分小时
+\[
+ \|g(x^*)-g(x^{**})\|\le\frac12\|x^*-x^{**}\|,
+\]
+这就是(18)式。
+
+现在证明 $f^{-1}$ 也是可微的。事实上，由 $f$ 为连续可微，可设 $x=x_1+h$ 应有
+\begin{equation}
+ f(x)=f(x_1)+(df)(x_1)h+o(h).
+ \tag{19}
+\end{equation}
+这里 $(df)(x_1)$ 当 $x_1$ 在0附近时，由假设是非退化的。用 $A(x_1)$ 表示 $(df)(x_1)$，则 $A^{-1}(x_1)$ 是存在的。用 $A^{-1}(x_1)$ 作用于上式两侧有
+\[
+ A^{-1}(x_1)[f(x)-f(x_1)]
+ =x-x_1+A^{-1}(x_1)o(x-x_1).
+\]
+若记 $y=f(x)$，$y_1=f(x_1)$，则 $x_1=f^{-1}(y_1)$，(19)式可以写为
+\begin{equation}
+ f^{-1}(y)=f^{-1}(y_1)+A^{-1}(x_1)(y-y_1)-A^{-1}(x_1)o(x-x_1).
+ \tag{20}
+\end{equation}
+不过由前面的假设（即已用 $A^{-1}(0)$ 遍乘一方程 $y=f(x)$ 双方），可以设 $A(0)=I$。所以当 $x,x_1\in B_\rho(0)$ 从而 $y,y_1\in B_{\rho/2}(0)$（$\rho$ 已设为充分小），有两个正常数 $\lambda$ 与 $\Lambda$ 存在使
+\[
+ 0<\lambda\le\frac{\|x-x_1\|}{\|y-y_1\|}\le\Lambda.
+\]
+这样知道 $o(x-x_1)$ 即 $o(y-y_1)$。代入(20)，注意到 $\|A^{-1}(x_1)\|\le M$（$M$ 是一个适当正数），我们有（记 $y-y_1=k$）
+\begin{equation}
+ f^{-1}(y)=f^{-1}(y_1)+A^{-1}(x_1)k+o(k).
+ \tag{21}
+\end{equation}
+这就是说 $f^{-1}(y)$ 在 $y_1$ 处连续可微。但是 $y_1=f(x_1)$ 可以选为 $B_{\rho/2}(0)$ 中任一点，所以 $f^{-1}$ 在 $y=0$ 附近连续可微。
+
+定理中是说逆映射 $f^{-1}$ 与 $f$ 有相同的光滑程度，但这只要利用泰勒公式即可得到。证明的大意如下，如果 $f(x)$ 在 $x=0$ 附近属于 $C^l$，则在 $B_\rho(0)$（$\rho$ 充分小）中任取一点 $x_1$，并记 $x=x_1+h$，这里 $h=(h_1,\ldots,h_n)$ 是一个 $n$ 维向量，我们应有
+\[
+ f(x)=f(x_1)+A(x_1)(x-x_1)+\sum_{|\alpha|=2}^{l}A_\alpha(x_1)h^\alpha+o(h^{l+1}),
+\]
+这里 $h=x-x_1=f^{-1}(y)-f^{-1}(y_1)$。令
+\begin{equation}
+ x-x_1=B(y_1)(y-y_1)+\sum_{|\beta|=2}^{l}B_\beta(y_1)(y-y_1)^\beta+O(\|y-y_1\|^{l+1}).
+ \tag{22}
+\end{equation}
+以它代入上式。注意到我们已经得出 $B(y_1)=A^{-1}(x_1)$。现用待定系数法计算 $B_\beta(y_1)$，注意到为此只需利用 $A^{-1}(x_1)$ 即可，而不必考虑其余的 $A_\alpha(x_1)$ 是否为退化，于是即可得到(22)式而知道逆映射 $x=f^{-1}(y)$ 在 $y=0$ 附近，至少在 $B_{\rho/2}(0)$ 中是 $C^l$ 可微的。
+
+以上我们全是对实变量 $x,y$ 来证明反函数定理的。但是这个证明过程对复的自变量仍然适用。这一点读者容易看到。所以若定理中的 $f$ 是 $n$ 个复变量 $z=(z_1,\ldots,z_n)$ 到其他 $n$ 个复变量 $w=(w_1,\ldots,w_n)$ 的映射，$f(0)=0$，而且 $f(z)$ 在 $z=0$ 的邻域内对 $z$ 是解析的（上节中已说了，对复变量的连续可微性就是解析性，这一点对多个复变量也成立，而且所谓对 $z=(z_1,\ldots,z_n)$ 为解析就是对每一个 $z_i$ 分别为解析），则只要 $(df)(0)$ 是非退化的，$w=f(z)$ 一定有唯一解析的逆映射 $z=f^{-1}(w)$ 存在。这里一切都是在 $z=0$ 与 $w=0$ 的邻域中来讲的。
+
+
+\subsection*{3. 单射定理与投影定理}
+
+下面我们讨论 $m$ 与 $n$ 不相等的情况。我们将得出这样的结论。前面关于线性映射的结论，当 $\operatorname{rank}A$ 取最大可能的值时，局部地都适用于一般的映射 $f:\Omega\subset\mathbb R^m\to\mathbb R^n$，这里 $f$ 是适合 $f(0)=0$ 的光滑映射，而 $\Omega$ 是 $0$ 的充分小邻域。上面关于映射光滑性的说明完全适用于此，而且 $\Omega$ 是充分小邻域这句话我们也不再重复了。
+
+首先看 $m<n$ 的情况。直观地看，$f$ 是把 $\mathbb R^m$ 中的 $\Omega$ 映为 $\mathbb R^n$ 中过 $0$ 的“曲面” $f(\Omega)$。如果 $(df)(0)$ 是非退化的，则其秩是 $m$，“曲面” $f(\Omega)$ 在 $f(0)=0$ 附近可否看成一个“平面”，即可否用它在 $x=0$ 处的切平面代替它？到现在为止我们的经验告诉我们应该是可以的，因为 $(df)(0)$ 具有最大的可能的秩。在 $m=1$ 时情况（这时 $f(\Omega)$ 是曲线）$x(t)=(x_1,\ldots,x_n)$，最大可能秩为 $m=1$ 就相当于 $\dot x(t)\ne0$，亦即曲线 $x=x(t)$ 上没有奇点。因此现在我们可以设想，$(df)(0)$ 具有最大可能秩 $m$，也就意味着“曲面” $f(\Omega)$ 上没有奇点（没有临界点）。但是我们还要再提醒一下，这里奇点并不是某一坐标或某某阶导数变成无穷之类，而这也是不会有的，因为我们已经假设了 $f$ 是光滑的。读者可以回想一下莫尔斯引理，那里是讲的一个函数（但是它是 $m>1$ 而 $n=1$ 的情况，与此不同），化成
+\[
+ f=\sum_{i=1}^{n}x_i^2-\sum_{j=1}^{m-1}x_{n+j}^4,
+\]
+后，说 $x=0$ 是一个奇点——临界点，即指该函数的所有的一阶偏导数在 $x=0$ 时均为 $0$。因此有许多事就不能用 $f$ 来作。例如不可以作一个坐标变换，使 $f=0$ 变成“坐标平面”，比如 $y_1=0$。这是因为上面我们已经说了，所谓坐标变换必须是至少局部地是微分同胚，因此其雅可比行列式不能为 $0$。但若以 $y_1=f$，则雅可比行列式有一行在 $x=0$ 处全为 $0$：
+\[
+ \left(\frac{\partial y_1}{\partial x_1},\ldots,
+       \frac{\partial y_1}{\partial x_m}\right)_{x=0}
+ =\left(\frac{\partial f_1}{\partial x_1},\ldots,
+        \frac{\partial f_1}{\partial x_m}\right)_{x=0}=0.
+\]
+而我们现在正是想作一个坐标变换 $g$，把曲面 $f(\Omega)$ 在原点附近“拉平”成为“坐标平面”（见图3-5-3右列）。如果做到了这一步，从几何上看，也就与图3-5-1完全一样了。可见现在的坐标变换 $g$ 就起了一个“拉平”、“拉直”的作用。那么这个 $g$ 与原来的 $f$ 究竟是何关系呢？为了弄清这一点，我们把源空间“添上”一个 $\mathbb R^{n-m}$ 维子空间（用线性代数语言来说就是求“直和”）成为一个扩大的源空间 $\mathbb R^n$ 而与靶空间同维数。图3-5-3左用虚线描述了这个过程，这时，原来的映射也“扩大”成为 $F$。于是整个过程就是：通过 $F$ 把 $\Omega$“变曲”为靶空间中的 $f(\Omega)$，再在靶空间中作坐标变换 $g$ 把 $f(\Omega)$ 拉平。总之，顺着图3-5-3的斜线看，我们有一个由扩大的源空间 $\mathbb R^n$ 到作为靶空间的 $\mathbb R^n$ 的映射，它是由 $g\circ F$ 实现的。如果 $g\circ F=id$，则 $g$ 必适合所求，所以 $g$ 是 $F$ 的逆映射。这样一来，我们会得到一个什么样的定理，又如何去证明它也就十分清楚了。定理3的记号与前面讲的一样。
+
+\begin{center}
+\begin{tikzpicture}[x=.9cm,y=.9cm,>=stealth,bella figure]
+  \begin{scope}[shift={(-4.7,1.8)}]
+    \draw[->] (-1.9,0)--(1.9,0) node[right] {$\mathbb R^m$};
+    \draw[->] (0,-1.2)--(0,1.8) node[above] {$\mathbb R^{n-m}$};
+    \draw[thick] (-1.45,-.45) .. controls (-.7,.55) and (.2,.75) .. (1.45,.5);
+    \node[above right] at (.85,.55) {$\Omega$};
+    \node[below left] at (0,0) {$O$};
+    \node[below] at (0,-1.25) {（源空间）};
+  \end{scope}
+  \begin{scope}[shift={(1.0,1.8)}]
+    \draw[->] (-2.0,0)--(2.0,0);
+    \draw[->] (0,-1.4)--(0,1.8) node[above] {$\mathbb R^n$};
+    \draw[thick] (-1.7,-.65) .. controls (-.8,.9) and (.45,-.1) .. (1.7,.62);
+    \draw[thick] (-1.45,-.15) .. controls (-.7,.45) and (.6,.2) .. (1.45,.85);
+    \node[above right] at (1.12,.74) {$f(\Omega)$};
+  \end{scope}
+  \draw[->] (-2.55,1.8)--(-.9,1.8) node[midway,above] {$F$};
+  \begin{scope}[shift={(1.0,-1.7)}]
+    \draw[->] (-2.0,0)--(2.0,0);
+    \draw[->] (0,-1.25)--(0,1.55) node[above] {$\mathbb R^n$};
+    \draw[thick] (-1.55,-.35)--(1.55,.35);
+    \draw[thick] (-1.25,.35)--(1.45,-.28);
+    \node[right] at (1.45,-.28) {拉平的 $f(\Omega)$};
+    \node[below] at (0,-1.32) {（靶空间）};
+  \end{scope}
+  \draw[->] (1.0,.25)--(1.0,-.75) node[midway,right] {$g$};
+  \draw[->] (-3.6,.6)--(-.1,-1.15) node[midway,below left] {$g\circ F$};
+\end{tikzpicture}
+\par\smallskip
+{\small 图3-5-3}
+\end{center}
+
+\noindent\textbf{定理3（单射定理）}\quad 设 $m\le n$，$f:\Omega\subset\mathbb R^m\to\mathbb R^n$ 是一个光滑映射，且 $f(0)=0$。若 $(df)(x)$ 在 $x=0$ 附近恒取最大可能秩，则必有由 $0\in\mathbb R^n$ 的某个充分小邻域到 $0$ 的另一个邻域的微分同胚 $g$，使得 $g(0)=0$，而且
+\begin{equation}
+ (g\circ f)(x_1,\ldots,x_m)
+ ={}^t(x_1,\ldots,x_m,0,\ldots,0)
+ \qquad(\text{后 }n-m\text{ 个元为 }0).
+ \tag{23}
+\end{equation}
+
+\noindent\textbf{证}\quad 不妨设 $f$ 的雅可比矩阵的左上角子矩阵
+\[
+ J_1=\left(\frac{\partial f_i}{\partial x_j}\right)_{1\le i,j\le m}
+\]
+在 $x=0$ 附近是非退化的。“扩大”源空间，即引入新的 $\mathbb R^{n-m}$，令其中之点的坐标是 $(x_{m+1},\ldots,x_n)$，并定义新的映射
+\begin{equation}
+ F(x_1,\ldots,x_n)
+ ={}^t\bigl(f_1(x_1,\ldots,x_m),\ldots,f_m(x_1,\ldots,x_m),x_{m+1},\ldots,x_n\bigr):
+ \mathbb R^n\to\mathbb R^n.
+ \tag{24}
+\end{equation}
+显然 $F(0)=0$，而且它在 $x=0$ 处的雅可比矩阵是
+\[
+ J(0)=
+ \begin{pmatrix}
+  J_1(0)&0\\
+  *&I
+ \end{pmatrix}.
+\]
+由于已设 $\det J_1(0)\ne0$，所以 $\det J(0)\ne0$，而由反函数定理，$F$ 必有局部逆 $F^{-1}=g$，$g(0)=0$，而 $g\circ F=id:\mathbb R^n\to\mathbb R^n$。$\mathbb R^n$ 既是扩大的源空间，又是靶空间，把 $g$ 用局部坐标写成 $g_i=g_i(y_1,\ldots,y_n)$，$1\le i\le n$，则 $g\circ F=id$，即
+\begin{equation}
+ g_1(F(x_1,\ldots,x_n))=x_1,
+ \qquad\ldots\ldots\ldots,
+ \qquad
+ g_n(F(x_1,\ldots,x_n))=x_n.
+ \tag{25}
+\end{equation}
+再由扩大的源空间回到原来的源空间，即令 $x_{m+1}=\cdots=x_n=0$。由(24)知这时 $F$ 变成 $f$，而(25)即成为(23)。定理证毕。
+
+\noindent\textbf{注}\quad 我们不说 $(df)(x)$ 在 $x=0$ 处之秩为 $m$，却说 $(df)(x)$ 在 $x=0$ 附近的秩均为 $m$，这是因为秩是一个可以突然变化的量。例如二阶矩阵
+\[
+ \begin{pmatrix}x&0\\0&1\end{pmatrix}
+\]
+在 $x\ne0$ 处的秩是2，而在 $x=0$ 时却突然变为1。这个情况正是我们想要避免的。本来，假设了 $f$ 光滑，至少 $f\in C^1$，则 $\operatorname{rank}(df)(x)$ 是 $x$ 的连续函数。若 $\operatorname{rank}(df)(0)=m$，则在 $x=0$ 附近均有 $\operatorname{rank}(df)(x)=m$，而上面的情况不会发生。（但若 $\operatorname{rank}A$ 在某点小于最大可能值 $m$，在其附近则不一定不发生突变了。这种情况我们的说法是：非退化性是稳定的，而退化性则是不稳定的。）我们对定理的陈述在“$x=0$”后面画蛇添足地加了“附近”二字，无非是提醒读者注意这件事。
+
+下面我们再来看 $m>n$ 的情况。我们仍从几何说明开始，现在情况就简单多了。在映射 $f$ 下，靶空间中的原点 $0$ 之原像 $f^{-1}(0)$ 是源空间中过 $x=0$ 的一个“曲面”，其维数是 $m-n$。图3-5-4中画的是一条曲线，这是因为更高维数的几何图形画不出来。问题在于它会不会有奇点？在讲单射定理时，我们以 $m=1$ 的特例（这时映射 $f$ 成了一条曲线），比照着曲线上有没有临界点的情况，说 $f(\Omega)$ 是 $\mathbb R^n$ 中的曲面。现在不妨也看一个特例，设 $n=2$，于是映射 $f$ 成为
+\begin{equation}
+ y_1=f_1(x_1,x_2,\ldots,x_m),
+ \qquad
+ y_2=f_2(x_1,x_2,\ldots,x_m).
+ \tag{26}
+\end{equation}
+而 $f^{-1}(0)$ 就是将上式左方的 $y_1,y_2$ 换成 $0$，并求其全部解而得。例如设可以从 $f_1=0,f_2=0$ 中解出 $x_1,x_2$：
+\begin{equation}
+ x_1=\varphi_1(x_3,x_4,\ldots,x_m),
+ \qquad
+ x_2=\varphi_2(x_3,x_4,\ldots,x_m).
+ \tag{27}
+\end{equation}
+（下面我们会看到，当“最大秩”假设 $\operatorname{rank}df(0)=n$ 成立时这总是可以作到的。）由此可见 $f^{-1}(0)$ 是一个 $m-n$ 维“曲面”，它是没有“奇点”的，而(27)是它的参数表示。到了这一步，下面就应考虑如何把 $f^{-1}$“拉平”。办法仍是作坐标变换。不过现在要在源空间中作变换了，这就是图3-5-4左侧，由下到上是 $h$，$h$ 当然不会是线性的，否则它不会把弯曲的 $f^{-1}(0)$ 拉直。但是再加上一个向右的非线性的 $f$，却成为由直的源空间 $\mathbb R^m$ 到直的靶空间 $\mathbb R^n$ 的 $f\circ h$。我们想到是否可以通过“扩大”靶空间，把两个非线性映射复合成一个线性的投影映射 $\pi:\mathbb R^m\to\mathbb R^n$？办法和上面是一样的：“扩大”靶空间为 $\mathbb R^m$，同时“扩大”映射为 $F$，使 $F$ 成为一个微分同胚，再作其逆 $h$，然后再限制 $F$ 为 $f$ 即可。
+
+\noindent\textbf{定理4（投影定理）}\quad 设 $f:\Omega\subset\mathbb R^m\to\mathbb R^n$ 是一光滑映射，$\Omega$ 是 $0$ 的一个充分小邻域，$f(0)=0$，$m\ge n$。若 $(df)(x)$ 在 $x$ 附近恒取最大可能秩 $n$，则必有由 $\Omega$ 到 $0$ 在 $\mathbb R^m$ 中的另一邻域的微分同胚 $h$，$h(0)=0$，使得
+\begin{equation}
+ (f\circ h)(x_1,\ldots,x_m)
+ =\pi(x_1,\ldots,x_{m-n};x_{m-n+1},\ldots,x_m)
+ =(x_{m-n+1},\ldots,x_m).
+ \tag{28}
+\end{equation}
+它将 $f^{-1}(0)=\{(x_1,\ldots,x_{m-n};0,\ldots,0)\}$ 零化。
+
+\begin{center}
+\begin{tikzpicture}[x=.92cm,y=.92cm,>=stealth,bella figure]
+  \begin{scope}[shift={(-3.8,1.8)}]
+    \draw[->] (-1.8,0)--(1.8,0);
+    \draw[->] (0,-1.45)--(0,1.6) node[above] {$\mathbb R^m$};
+    \draw[thick] (-1.25,1.15) .. controls (-.7,.25) and (-.35,-.55) .. (.1,-.95);
+    \node[left] at (-1.15,1.0) {$f^{-1}(0)$};
+    \node[below] at (0,-1.55) {源空间};
+    \node[below left] at (0,0) {$O$};
+  \end{scope}
+  \draw[->] (-1.55,1.8)--(.05,1.8) node[midway,above] {$f$};
+  \begin{scope}[shift={(2.3,1.8)}]
+    \draw[->] (-1.7,0)--(1.7,0);
+    \draw[->] (0,-1.0)--(0,1.4) node[above] {$\mathbb R^n$};
+    \draw[thick] (-1.3,-.45)--(1.3,-.45)--(1.65,.15)--(-.95,.15)--cycle;
+    \node[above right] at (.55,.15) {$0$};
+    \node[below] at (0,-1.18) {靶空间};
+  \end{scope}
+  \draw[->] (-3.8,.2)--(-3.8,-.9) node[midway,left] {$h^{-1}$};
+  \begin{scope}[shift={(-3.8,-2.0)}]
+    \draw[->] (-1.8,0)--(1.8,0);
+    \draw[->] (0,-1.35)--(0,1.45) node[above] {$\mathbb R^m$};
+    \draw[thick] (-1.25,-.55)--(1.25,.75);
+    \node[above left] at (-.95,-.42) {拉直了的 $f^{-1}(0)$};
+    \node[below left] at (0,0) {$O$};
+  \end{scope}
+  \draw[->] (-1.55,-2.0)--(.05,-2.0) node[midway,above] {$f\circ h=\pi$};
+  \begin{scope}[shift={(2.3,-2.0)}]
+    \draw[->] (-1.7,0)--(1.7,0);
+    \draw[->] (0,-1.0)--(0,1.4) node[above] {$\mathbb R^n$};
+  \end{scope}
+\end{tikzpicture}
+\par\smallskip
+{\small 图3-5-4}
+\end{center}
+
+\noindent\textbf{证}\quad $(df)(x)$ 是一个 $n\times m$ 矩阵，
+\[
+ J=
+ \begin{pmatrix}
+  \dfrac{\partial f_1}{\partial x_1}&\cdots&\dfrac{\partial f_1}{\partial x_m}\\
+  \vdots&&\vdots\\
+  \dfrac{\partial f_n}{\partial x_1}&\cdots&\dfrac{\partial f_n}{\partial x_m}
+ \end{pmatrix},
+\]
+设它的后 $n$ 列所成的子矩阵\jiaokan{原文作“后 $m-n$ 列”。但紧接着的 $J_1$ 由第 $m-n+1$ 列至第 $m$ 列组成，共 $n$ 列；且在最大秩为 $n$ 的假设下应取一个 $n\times n$ 的非退化子矩阵。}
+\[
+ J_1=
+ \begin{pmatrix}
+  \dfrac{\partial f_1}{\partial x_{m-n+1}}&\cdots&\dfrac{\partial f_1}{\partial x_m}\\
+  \vdots&&\vdots\\
+  \dfrac{\partial f_n}{\partial x_{m-n+1}}&\cdots&\dfrac{\partial f_n}{\partial x_m}
+ \end{pmatrix}
+\]
+非退化。现在把靶空间扩大为 $m$ 维空间（在每个向量前面加 $m-n$ 个坐标 $(y_1,\ldots,y_{m-n})$），同时把 $f$ 扩大为
+\[
+ F(x_1,\ldots,x_m)
+ ={}^t\bigl(x_1,\ldots,x_{m-n},f_1(x),\ldots,f_n(x)\bigr),
+\]
+即成为
+\[
+ y_i=F_i(x)=x_i,\quad 1\le i\le m-n,
+\]
+\[
+ y_j=F_j(x)=f_j(x),\quad m-n+1\le j\le m.
+\]
+容易看到 $F$ 对 $x$ 之雅可比矩阵是
+\[
+ \begin{pmatrix}I&0\\ *&J_1\end{pmatrix}.
+\]
+它在 $x=0$ 附近是非退化的，而由反函数定理知 $F$ 在 $0$ 附近有局部逆 $h$。令 $\pi$ 是由 $\mathbb R^m$ 到 $\mathbb R^n$ 的投影线性映射，
+\[
+ \pi:\mathbb R^m\to\mathbb R^n,
+ \qquad
+ (x_1,\ldots,x_{m-n},x_{m-n+1},\ldots,x_m)
+ \longmapsto(x_{m-n+1},\ldots,x_m),
+\]
+则 $f=\pi\circ F$。从而
+\[
+ (f\circ h)(x_1,\ldots,x_m)
+ =(\pi\circ F\circ h)(x_1,\ldots,x_m)
+ =\pi(x_1,\ldots,x_m)
+ =(x_{m-n+1},\ldots,x_m).
+\]
+定理证毕。
+
+由于定理2,3,4极为重要，我们要多花一些功夫加以解释。定理3,4都涉及“曲面”，但是什么是曲面我们除了在古典的微积分教本中有不甚明确的描述以外，还没有认真讨论过。这要等到第七章才知道，它们都是某个欧氏空间中的子流形。但现在我们就已看到，确定一个子流形有两个方法：其一是 $\mathbb R^n$ 中的 $m$ 维子流形（$m<n$），局部地都是 $\mathbb R^m$ 中某点的邻域 $\Omega$ 的像，所以可以局部地表示为
+\begin{equation}
+ y_i=f_i(x_1,\ldots,x_m),\quad i=1,2,\ldots,n,
+ \qquad m<n,
+ \tag{29}
+\end{equation}
+这里 $f_i$ 是光滑函数。而对于 $f_i$ 所构成的映射 $f:\Omega\subset\mathbb R^m\to\mathbb R^n$，要求局部地适合最大秩条件，即 $\operatorname{rank}(df)(x)=m$。但是 $(df)(x)$ 即上述映射的雅可比矩阵，所以，最大秩条件现在是：存在某一个不为 $0$ 的子行列式
+\begin{equation}
+ \det
+ \begin{pmatrix}
+  \dfrac{\partial f_{i_1}}{\partial x_1}&\cdots&\dfrac{\partial f_{i_1}}{\partial x_m}\\
+  \vdots&&\vdots\\
+  \dfrac{\partial f_{i_m}}{\partial x_1}&\cdots&\dfrac{\partial f_{i_m}}{\partial x_m}
+ \end{pmatrix}\ne0.
+ \tag{30}
+\end{equation}
+(30)表示(29)中有 $m$ 个函数 $f_{i_1},\ldots,f_{i_m}$ 是互相独立的，即不会有例如
+\[
+ f_{i_1}=\Phi(f_{i_2},\ldots,f_{i_m})
+\]
+的情况。否则，(29)式形式上是 $n$ 个函数实际上独立的会少于 $m$ 个。(29)式就是通常微积分教本中讲的曲面的参数表示，源空间其实就是参数 $(x_1,\ldots,x_m)$ 所成的空间。
+
+表示曲面的另一个方法是给出定义它的方程
+\begin{equation}
+ f_i(x_1,\ldots,x_m)=0,
+ \qquad i=1,2,\ldots,n.
+ \tag{31}
+\end{equation}
+但是这一组方程的左方函数又定义了一个映射 $f=(f_1,\ldots,f_n):\Omega\subset\mathbb R^m\to\mathbb R^n$，$m>n$，
+\[
+ y_i=f_i(x_1,\ldots,x_m).
+\]
+所以这个曲面就是上述映射下 $0\in\mathbb R^n$ 的原像 $f^{-1}(0)$。这时最大秩条件\[\operatorname{rank}(df)(x)=n\]又是不可少的。否则(31)中实际上独立的个数少于 $n$。当(31)中独立方程个数为 $n$ 时，它们局部地定义一个 $m-n$ 维曲面。若独立方程个数小于 $n$，则它定义一个更高维的对象。
+
+作为曲面，不论用什么方法去确定它都不应该影响它的性质，那么曲面的性质是什么呢？这两个定理告诉我们：就是局部地可以“拉平”，也就是微分同胚于一个线性空间的开集。前一个情况下是同胚于源空间 $\mathbb R^m$ 中 $0$ 的邻域 $\Omega$，后一个情况我们没有说，实际上是同胚于 $\mathbb R^{m-n}$ 中 $0$ 的某个邻域 $\Omega$。我们前面多次说这个曲面是无奇点的。那么，什么是无奇点呢？现在可以明确了，无奇点就是微分同胚于某个 $\mathbb R^m$ 或 $\mathbb R^{m-n}$ 中的开集，最大秩条件才能保证无奇点。
+
+定理2,3,4都把几何问题化成了代数问题。试以定理3为例，那里证明是通过构造 $f$（其实是 $F$）之左逆 $g$ 来实现的。不过要注意，这里不能写为 $f\circ g$，因为 $g:\mathbb R^n\to\mathbb R^n$ 是扩大的源空间中的微分同胚，$g$ 的像在 $\mathbb R^n$ 中，而 $f$ 只定义在 $\mathbb R^m$ 中，所以 $f\circ g$ 是没有意义的。因此，定理3是说 $f$ 有左逆 $g$：$g\circ f=id$。（不过这个记号不准确，因为 $g\circ f:\mathbb R^m\to\mathbb R^n$ 而恒等算子 $id$ 不会作用于不同空间中。）用链式法则有
+\[
+ dg\circ df=\binom{I}{0}.
+\]
+这里 $df$ 是 $n\times m$ 矩阵，其左逆 $dg$ 是 $m\times n$ 矩阵，这样上式才有意义。类似地，定理4是说 $f$ 有右逆 $h$：$f\circ h=id$，故
+\[
+ df\circ dh=(0\ \ I).
+\]
+$dh$ 是 $m\times n$ 矩阵。现在我们再回到线性代数的问题，设有 $n\times m$ 矩阵 $A$，问
+\begin{equation}
+ Ax=b,
+ \qquad b\in\mathbb R^n,
+ \quad x\in\mathbb R^m
+ \tag{32}
+\end{equation}
+何时有解？何时解为唯一的？现在很清楚，若 $A$ 有左逆 $A_l^{-1}$，则(32)若有解必是唯一的：
+\[
+ x=A_l^{-1}b.
+\]
+这时 $A$ 必为单射。类似地，若 $A$ 有右逆 $A_r^{-1}$，则(32)必可解，因为 $x=A_r^{-1}b$ 就是(32)的解。这时 $A$ 必为满射，也就是投影线性变换。总之我们可以列表如下：
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{25mm}|X|X|X}
+ & $m<n$ & $m=n$ & $m>n$\\ \hline
+最大秩条件 & $\operatorname{rank}(df)(x)=m$ & $\operatorname{rank}(df)(x)=m=n$ & $\operatorname{rank}(df)=n$\\
+逆算子情况 & $(df)(x)$有左逆 & $(df)(x)$可逆 & $(df)(x)$有右逆\\
+映射的特点 & $(df)(x)$为单射 & $(df)(x)$为一一映射 & $(df)(x)$为满射\\
+几何特性 & $f$为“浸入” & $f$为微分同胚 & $f$为“外罩”\\
+子流形 & $f(\Omega)$为$m$维子流形 & $f(\Omega)$为$m=n$维子流形，即$0$之另一邻域 & $f^{-1}(0)$为$m-n$维子流形\\
+结论 & 定理3 & 定理2 & 定理4
+\end{tabularx}
+\end{center}
+
+我们前面已说过 $df$ 即相应于 $f$ 的切映射，它是线性空间之间的映射，而这些线性空间是相应流形（$m<n$ 时的 $f(\Omega)$；$m=n$ 时的 $\Omega$；$m>n$ 时的 $f^{-1}(0)$）的切空间。所以，如果用一句话来概括以上所说，那就是：在最大秩条件下，切空间之间的切映射，很好地局部表现了原空间之间的映射的几何特性。
+
+我们不妨再从一本名著 L.~Hörmander, \textit{The Analysis of Linear Partial Differential Operators, I} 中抄录一段（文字稍有修改）看一下该书中这些定理总结成什么：
+
+\noindent\textbf{定理}\quad 设 $\Omega\subset\mathbb R^m$，$f:\Omega\to\mathbb R^n$ 为 $C^1$ 映射，$0\in\Omega$，且 $f(0)=0$。存在由 $0=f(0)$ 在 $\mathbb R^n$ 中的一个邻域 $\omega$ 到 $\mathbb R^m$ 的 $C^1$ 映射 $g:\omega\to\mathbb R^m$，使得
+
+\noindent a) $f\circ g=id$ 于 $f(0)$ 附近，即 $g$ 为 $f$ 之局部右逆；
+
+\noindent b) $g\circ f=id$ 于 $0$ 附近，即 $g$ 为 $f$ 之局部左逆；
+
+\noindent c) $g\circ f=id$ 于 $0$ 附近，且 $f\circ g=id$ 于 $f(0)$ 附近，即 $g$ 为 $f$ 之局部逆。
+
+其充要条件是存在一个线性映射 $A:\mathbb R^n\to\mathbb R^m$，使得
+
+\noindent a$'$) $(df)(0)A=id_{\mathbb R^n}$；
+
+\noindent b$'$) $A(df)(0)=id_{\mathbb R^m}$；
+
+\noindent c$'$) $(df)(0)A=id_{\mathbb R^n}$ 同时 $A(df)(0)=id_{\mathbb R^m}$。
+
+a$'$) 等价于 $(df)(0)$ 为满射；b$'$) 等价于 $(df)(0)$ 为单射；c$'$) 等价于 $(df)(0)$ 为一一映射，且 $g$ 在 $f(0)=0$ 附近是唯一的。
+
+\noindent\textbf{证}\quad a$'$)、b$'$)与c$'$)之必要性均可由链式法则直接得出，所以下面只证明它们的充分性。c)中 $g$ 的唯一性可以从以下事实看到：若 $g_1$ 与 $g_2$ 是存在的，$f\circ g_1=id$，$g_2\circ f=id$ 已经得证，则 $g_1=g_2\circ f\circ g_1=g_2\circ(f\circ g_1)=g_2\circ id=g_2$。故所有左逆 $g_2$ 均等于某一指定的右逆 $g_1$，从而左逆唯一。同理右逆也唯一。因此，定理归结为由 a$'$)、b$'$)证明 $g_1,g_2$ 存在。这可由逐步逼近法完成。今设 a$'$)或 b$'$)成立，若必要时用 $(df)(0)$ 去左乘或者右乘 $A$，可以假设 $(df)(0)=I$。取 $\delta>0$ 充分小可以设当 $\|x\|<\delta$ 时
+\[
+ \|df(x)-I\|<\frac12.
+\]
+因此，若 $x_1,x_2$ 均在 $B_\delta(0)$ 内，由 $f$ 之可微性，令 $h=x_1-x_2$，有
+\begin{equation}
+ \|f(x_1)-f(x_2)-I(x_1-x_2)\|
+ \le\frac12\|x_1-x_2\|.
+ \tag{33}
+\end{equation}
+故若 $f(x_1)=f(x_2)$，则上式成为 $\|x_1-x_2\|\le\frac12\|x_1-x_2\|$，而当 $x_1\ne x_2$ 时这就是矛盾。因此，若 a$'$)、b$'$)成立，则 a)、b)中的 $g$ 若存在必为唯一的。现在只需证明对任一个 $y\in B_{\delta/2}(0)$，一定在 $B_\delta(0)$ 中能找到一个 $x$ 使 $f(x)=y$。这样一来，$B_{\delta/2}(0)$ 中任一点 $y$ 必对应于 $B_\delta(0)$ 中唯一一点 $x$ 使 $f(x)=y$，令 $x=g(y)$ 即知局部的左逆或右逆 $g$ 是存在的。从而 a)、b)中的结论，除 $g\in C^1$ 以外均得证明。所以现证适合 $f(x)=y$ 的 $x$ 在 $B_\delta(0)$ 中存在。作一串 $\{x_k\}$ 使
+\begin{equation}
+ x_k=x_{k-1}+y-f(x_{k-1}),\qquad k=1,2,\ldots,
+ \tag{34}
+\end{equation}
+其中 $x_0=0$。于是
+\[
+ \|x_1-x_0\|=\|x_1\|=\|y\|<\frac\delta2.
+\]
+如果已证得 $\|x_j\|<\delta$，$j=0,1,\ldots,k-1$，则
+\[
+\begin{aligned}
+ \|x_k-x_{k-1}\|
+ &=\|x_{k-1}-f(x_{k-1})-x_{k-2}+f(x_{k-2})\|\\
+ &\le\frac12\|x_{k-1}-x_{k-2}\|\\
+ &\le\cdots\le\frac1{2^{k-1}}\|x_1\|<\frac\delta{2^k}.
+\end{aligned}
+\]
+因此一方面有
+\[
+\begin{aligned}
+ \|x_k\|&\le\|x_k-x_{k-1}\|+\|x_{k-1}-x_{k-2}\|+\cdots\\
+ &\qquad+\|x_1-x_0\|<\delta.
+\end{aligned}
+\]
+一方面又有 $\{x_k\}$ 是一个柯西序列，所以有极限 $x\in\overline B_\delta(0)\subset B_\delta(0)$。在(34)中求极限即知 $f(x)=y$。
+
+余下只需证明 $g\in C^1$。现在 $g(y)$ 已定义于 $B_{\delta/2}(0)$ 中，令
+\[
+ g(y)=x,\qquad g(y+k)=x+h,
+\]
+则
+\[
+ k=f(x+h)-f(x)=(df)(x)h+o(\|h\|).
+\]
+但由(33)，$\|k-h\|<\|h\|/2$，所以 $\|h\|/2\le\|k\|<2\|h\|$，而由上式可得，当 $k=0$ 时必有 $h=0$，
+\[
+ \|(df)(x)h\|=\|k-o(\|h\|)\|>\left(\frac12-\eta\right)\|h\|,
+\]
+这里 $\eta$ 是任意小正数，因此 $(df)(x)$ 可逆，其逆适合不等式 $\|[(df)(x)]^{-1}\|<3$。所以
+\[
+ h=[(df)(x)]^{-1}k+o(k),
+\]
+而知 $g$ 是 $C^1$ 的：
+\[
+ (dg)(y)=[(df)(x)]^{-1},\qquad y=f(x).
+\]
+以上的证明录自原书第二版，9页，定理1.1.7。
+
+至此我们看到微分学的基本思想——略去高阶无穷小量而只留下 $\Delta f$ 的线性部分 $df$，亦即线性化，经过很长时间的发展，吸收了许多新的数学思想和新方法、新概念，例如逐步逼近法、切空间、切映射等许多线性代数的知识凝成几个定理，其内容何等丰富。然后经大手笔，短短一两页又都写清楚了。这个总结性的定理我们花了十几页篇幅才讲清楚，原来只是如此。再仔细一看这个证明没有哪一部分不是我们已经讲过的。整个数学科学就是这样发展的，我们学好一门数学分支也得这样反复消化。读者可能会感到难，把多少年的数学发展结晶为这样简洁的证明自非易事。但是从另一方面看，在“$h$ 是不是无穷小量？”这类云遮雾掩的问题里转，到一两百年才换来今日的满目清明，岂非更难？
+
+\subsection*{4. 隐函数定理}
+
+隐函数问题在整个数学中具有特殊的重要性。在非线性分析中它起特别重要的作用。我们现在要利用反函数定理解决在有限维线性空间中的隐函数问题，它将为更一般的情况提供一个最简单的模型。这就是说有 $\mathbb R^m$ 和 $\mathbb R^n$，$x=(x_1,\ldots,x_m)\in\mathbb R^m$，$y=(y_1,\ldots,y_n)\in\mathbb R^n$。设在 $U\times V$（$U\subset\mathbb R^m,V\subset\mathbb R^n$）中给出 $n$ 个方程
+\begin{equation}
+ f_i(x_1,\ldots,x_m;y_1,\ldots,y_n)=0,
+ \qquad i=1,2,\ldots,n,
+ \tag{35}
+\end{equation}
+而且设 $0\in U,0\in V$ 使得 $f_i(0,0)=0$。问能否从(35)中决定 $y_1,\ldots,y_n$ 为 $x$ 的函数：$y_i=y_i(x_1,\ldots,x_m)$，而且适合 $0=y_i(0)$？如果简单地看，这 $n$ 个 $f_i$ 决定了一个映射
+\[
+ f=(f_1,\ldots,f_n)(x,y),
+\]
+它映 $U\times V\to\mathbb R^n$。如果用 $w=(w_1,\ldots,w_n)$ 记靶空间 $\mathbb R^n$ 中的点，则求解(35)就变成了研究原像 $f^{-1}(0)$。但是简单地应用反函数定理是不行的，因为我们要解决的问题是把 $x$ 与 $y$ 分开，它要求在 $f^{-1}(0)$ 上给定了一个 $x$ 恰好有一个 $y=y(x)$，即 $f^{-1}(0)$ 是某个函数的图，而且要求此函数有一定的光滑性。所以我们只要把反函数存在定理的应用稍加修改，而有
+
+\noindent\textbf{定理5（隐函数存在定理）}\quad 设 $U\subset\mathbb R^m$，$V\subset\mathbb R^n$ 是两个开集，其中之点的坐标分别是 $x=(x_1,\ldots,x_m)$，$y=(y_1,\ldots,y_n)$，而且 $0\in U,0\in V$。若 $f:U\times V\subset\mathbb R^m\times\mathbb R^n\to\mathbb R^n$ 是一个光滑映射，$f(0,0)=0$，而且 $(d_yf)(0,0)$ 是 $\mathbb R^n\to\mathbb R^n$ 的线性同构（即有逆映射存在，这里视 $x$ 为参数值），则必存在 $0\in U$ 的一个连通邻域 $\Omega$，以及唯一的光滑映射 $g:\Omega\to V$，使 $g(0)=0$，而且
+\begin{equation}
+ f(x,g(x))=0,
+ \qquad x\in\Omega.
+ \tag{36}
+\end{equation}
+
+\noindent\textbf{证}\quad 考虑一个新映射
+\[
+ \varphi:U\times V\to\mathbb R^m\times\mathbb R^n,
+ \qquad
+ (x,y)\longmapsto(x,f(x,y)).
+\]
+它在 $(0,0)$ 处的雅可比矩阵是
+\[
+ J=
+ \begin{pmatrix}
+  I&0\\
+  *&(d_yf)(0,0)
+ \end{pmatrix}.
+\]
+它自然是非退化的。于是由反函数存在定理知道 $\varphi^{-1}$ 在 $(0,0)$ 附近存在：\[\varphi^{-1}[(x,f(x,y))]=(x,y).\]由 $f(0,0)=0$，可知 $\varphi(0,0)=(0,0)$。今证 $\varphi^{-1}(x,0)$ 就是隐函数 $y=g(x)$ 的图（graph）。一个函数 $y=g(x)$，$x\in U,y\in V$ 的图就是 $U\times V$ 的一个子集 $\{(x,y)\}\subset U\times V$，而其中不会含有两个形如 $(x,y_1),(x,y_2)$ 的元（$y_1\ne y_2$），即是说同一个 $x$ 不会对应于两个不同的 $y_1$ 和 $y_2$。这正是函数定义之所以必须的。$\varphi^{-1}\{(x,0)\}$ 是隐函数图的证明如下：$\varphi^{-1}(x,0)$ 是一个 $m+n$ 维向量，它的前 $m$ 个分量就是 $(x,0)$ 的前 $m$ 个分量 $x$，若记后 $n$ 个分量为 $y$，则 $\varphi^{-1}(x,0)=(x,y)$。因此 $(x,y)$ 中 $x$ 单值地决定，从而 $y$ 由 $x$ 单值地决定，不会发生同一个 $x$ 对应于不同的 $y_1\ne y_2$ 的情况。所以 $y$ 是 $x$ 的某个函数 $g(x)$ 之值：$y=g(x)$。今证这就是方程(36)决定的隐函数。事实上，由 $\varphi(x,y)=(x,0)$ 而 $\varphi$ 之定义给出 $\varphi(x,y)=(x,f(x,y))$。所以
+\[
+ (x,0)=\varphi(x,y)=\varphi(x,g(x))=(x,f(x,g(x))),
+\]
+即是说 $g(x)$ 适合(36)式，而且由 $\varphi$ 把 $(0,0)$ 一对一地映为 $(0,0)$ 知 $\varphi(0,g(0))=(0,0)$，即 $g(0)=0$。总之我们有 $\varphi^{-1}(x,0)\subset\{\text{隐函数 }g(x)\text{ 之图}\}$。
+
+反过来还要证明隐函数 $g(x)$ 之图 $\subset\{\varphi^{-1}(x,0)\}$。事实上，若由(36)定义的隐函数存在，记为 $g(x)$，这里 $g(0)=0$，则由 $f(x,g(x))=0$ 有 $\varphi(x,g)=(x,f(x,g))=(x,0)$。所以 $(x,g)\in\{\varphi^{-1}(x,0)\}$，而上述包含关系得证。
+
+总结以上所述可知由 $\varphi$ 之逆映射 $\varphi^{-1}$ 存在且为唯一即知(36)决定的且适合 $g(0)=0$ 的隐函数是存在与唯一的。现在由 $\varphi$ 及 $\varphi^{-1}$ 之可微性证明 $g(x)$ 在 $x=0$ 附近可微。由 $\varphi^{-1}$ 在 $(0,0)$ 附近可微即知
+\[
+ (x+h,g(x+h))-(x,g(x))
+ =\varphi^{-1}(x+h,0)-\varphi^{-1}(x,0)
+ =(d\varphi^{-1})(x,0)h+o(\|h\|).
+\]
+它们后 $n$ 个分量就给出
+\[
+ g(x+h)-g(x)=(d_{\pi_2\circ\varphi^{-1}})(x,0)h+o(\|h\|),
+\]
+\jiaokan{原文此处把导数的取值点写成 $0$，但上一式展开的是 $\varphi^{-1}(x+h,0)-\varphi^{-1}(x,0)$，故应在 $(x,0)$ 处取导数；原文随后也说明该矩阵取自 $(d\varphi^{-1})(x,0)$ 的后 $n$ 行。}
+这里 $(d_{\pi_2\circ\varphi^{-1}})(x,0)$ 表示由 $(d\varphi^{-1})(x,0)$ 之后 $n$ 行所成的矩阵所代表的线性映射。因此 $g$ 是可微的。
+
+与定理2一样，当 $f\in C^k$ 或为复解析时，$g(x)$ 也是 $C^k$ 光滑或复解析的。
+
+\subsection*{5. 牛顿方法}
+
+上面我们提到了反函数问题与隐函数问题都涉及方程 $f(x)=y$ 或 $f(x,y)=0$ 的求解问题。定理2证明了一个基本存在定理，其基础是逐步逼近法。实际上，我们首先是把求解方程 $f(x)=y$ 的问题化为求映射 $x\mapsto y-g(x)$（$g(x)=f(x)-x$）的不动点，然后给出了一个迭代程序
+\begin{equation}
+ \left\{
+ \begin{aligned}
+ &\text{自 }B_{\delta/2}(0)\text{ 中的任意 }x_0\text{ 开始},\\
+ &x_{k+1}=y-g(x_k).
+ \end{aligned}
+ \right.
+ \tag{37}
+\end{equation}
+为了证明 $\{x_k\}$ 的收敛性，我们看到 $dg(0)=0$ 从而 $\|(dg)(x)\|$ 在 $B_{\delta/2}(0)$ 中可以任意小（这里用的是 $\|g(x^*)-g(x^{**})\|\le\frac12\|x^*-x^{**}\|$），在这里起了决定作用。适合这种条件的映射称为压缩映射，所以我们实际上证明了压缩映射有不动点存在。但是不动点问题是数学中的一个重大问题。压缩映射有不动点存在只是其最简单的一例。一个比较著名而且十分有用的是布劳威尔不动点定理：若 $f$ 是映 $\mathbb R^m$ 中的一个球到其自身的连续映射（不需要压缩性），则 $f$ 必有至少一个不动点。但是由于它的本质与压缩映射定理完全不同，后者涉及度量空间的完备性，而前者则与连续映射的拓扑度有关，所以我们只把它作为第六章的一个附录来讲。
+
+除此以外，压缩映射定理讲的是一个迭代程序(37)，而迭代程序有许多种，相应于求某一方程 $F(x)=0$ 的近似解的不同迭代方法。现在以一个自变量 $x$ 的一个函数 $F(x)=0$ 之解为例。设 $F(x)$ 是定义在 $[a,b]$ 上的连续函数，$F(a)\cdot F(b)<0$。微积分教科书中常讲到用割线法去求解 $F(x)=0$。我们可以取 $x_0=a$（若恰好 $F(x_0)=0$，则是一件很偶然的事），然后连接 $(a,F(a))$，$(b,F(b))$，它必与 $y=0$ 有一个交点。设它是 $y=0$ 上之 $x_1$ 点，然后作 $(x_1,F(x_1))$ 又与 $(b,F(b))$ 相连，并设割线与 $y=0$ 交于 $x_2$ 点，仿此进行，得到一串近似的 $\{x_k\}$，$\{x_k\}$ 的极限 $\bar x$ 即是 $F(x)=0$ 之解（图3-5-5）。
+
+用公式写，过 $(a,F(a)),(b,F(b))$ 之割线为
+\[
+ y-F(a)=\frac{F(b)-F(a)}{b-a}(x-a).
+\]
+所以
+\[
+ x_1=x_0-\frac{b-x_0}{F(b)-F(x_0)}F(x_0),
+\]
+而一般的迭代式是
+\begin{equation}
+ x_{k+1}=x_k-\frac{b-x_k}{F(b)-F(x_k)}F(x_k).
+ \tag{38}
+\end{equation}
+
+\begin{center}
+\begin{tikzpicture}[x=1.1cm,y=.9cm,>=stealth,bella figure]
+  \draw[->] (-.3,0)--(6.5,0);
+  \draw[->] (0,-1.7)--(0,3.4);
+  \draw[thick,domain=0:5.6,smooth,variable=\x] plot ({\x},{.15*(\x-3.1)^2-1.15});
+  \coordinate (A) at (.6,-.2);
+  \coordinate (B) at (5.6,2.0);
+  \draw[dashed] (.6,0)--(.6,-.2);
+  \draw[dashed] (5.6,0)--(5.6,2.0);
+  \draw[thick] (A)--(B);
+  \node[below] at (.6,0) {$a$};
+  \node[below] at (5.6,0) {$b$};
+  \node[above right] at (5.6,2.0) {$(b,F(b))$};
+  \node[below left] at (.6,-.2) {$(a,F(a))$};
+  \coordinate (X1) at (3.0,0);
+  \draw[thick] (X1)--(5.6,2.0);
+  \draw[dashed] (3.0,0)--(3.0,-1.15);
+  \coordinate (X2) at (3.55,0);
+  \draw[thick] (X2)--(5.6,2.0);
+  \draw[dashed] (3.55,0)--(3.55,-1.12);
+  \node[below=2pt] at (3.0,0) {$x_1$};
+  \node[below=2pt] at (3.55,0) {$x_2$};
+  \node[below=2pt] at (4.15,0) {$\bar x$};
+\end{tikzpicture}
+\par\smallskip
+{\small 图3-5-5}
+\end{center}
+
+然后我们来证明 $\{x_k\}$ 有极限 $\bar x$ 存在，而 $\bar x$ 就是 $F(x)=0$ 的解。我们这里不来证明 $\bar x$ 的存在性，只是指出这个迭代程序的收敛速度是很慢的。注意，这个迭代与证明反函数存在时所用的迭代(37)是不一样的，而且也没有利用微分学的基本思想（(37)中也没有利用微分，而只是在证明这个映射是压缩映射时才用到了它），所以我们会问如何把微分学的基本思想用上去？注意到
+\[
+ \frac{F(b)-F(x_k)}{b-x_k}\sim F'(\cdot)
+\]
+（略去高阶无穷小量），可否把这个式子代入(38)以得到一种新的迭代？问题是 $F'(\cdot)$ 中的“$\cdot$”是什么？一个方法是假设 $F'(\cdot)=F'(b)$，另一种是假设它为 $F'(x_k)$，这样就得到两种迭代程序。一种是最简单的：
+\begin{equation}
+ \left\{
+ \begin{aligned}
+ &\text{从 }x_0=b\text{ 开始},\\
+ &x_{k+1}=x_k+[F'(x_0)]^{-1}(y-F(x_k)),\qquad (y=0),
+ \end{aligned}
+ \right.
+ \tag{39}
+\end{equation}
+另一种即是著名的牛顿方法（Newton's method）：
+\begin{equation}
+ \left\{
+ \begin{aligned}
+ &\text{从 }x_0=b\text{ 开始},\\
+ &x_{k+1}=x_k+[F'(x_k)]^{-1}(y-F(x_k)),\qquad (y=0).
+ \end{aligned}
+ \right.
+ \tag{40}
+\end{equation}
+(39)则称为简化的牛顿方法。图3-5-6上说明了这两种迭代的几何意义，所以牛顿方法称为切线法。图上画的是函数
+\[
+ F(x)=\frac14(x^3-1)
+\]
+\jiaokan{原文作 $F(x)=\frac14(x^2-1)$。但随后给出的牛顿迭代数值（如 $x_0=2$ 时 $x_1=1.416\,666\,67$、$x_2=1.110\,534\,41$）与 $\frac14(x^3-1)$ 完全相符，而与 $\frac14(x^2-1)$ 不符；图示也以 $x=1$ 为简单根。因此正文据数值序列更正指数为 $3$。}
+的图形。$F(x)=0$ 的解是 $x=1$。如果用这两种迭代程序，而且都从 $x_0=2$ 开始，我们会得到
+
+\begin{center}
+\begin{tabular}{c@{\qquad\qquad}c}
+\textbf{简化牛顿方法}&\textbf{牛顿方法}\\[4pt]
+$x_0=2$&$x_0=2$\\
+$x_1=1.416\,666\,7$&$x_1=1.416\,666\,67$\\
+$x_2=1.263\,069\,1$&$x_2=1.110\,534\,41$\\
+$x_3=1.178\,483\,4$&$x_3=1.010\,636\,768$\\
+$x_4=1.042\,091\,4$&$x_4=1.000\,111\,557$\\
+$x_5=1.018\,702\,9$&$x_5=1.000\,000\,012$
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[x=1.55cm,y=1.15cm,>=stealth,bella figure]
+  \begin{scope}[shift={(-2.45,0)}]
+    \draw[->] (-.08,0)--(2.28,0);
+    \draw[->] (0,-.35)--(0,2.0);
+    \draw[thick,domain=0:2.08,samples=100] plot (\x,{.25*(\x*\x*\x-1)});
+    \draw[dashed] (2,0)--(2,1.75);
+    % simplified Newton: fixed slope F'(2)=3
+    \draw[thick] (1.4166667,0)--(2,1.75);
+    \draw[dashed] (1.4166667,0)--(1.4166667,{.25*(1.4166667^3-1)});
+    \draw[thick] (1.2630691,0)--(1.4166667,{.25*(1.4166667^3-1)});
+    \node[above left] at (1,0) {$1$};
+    \node[below=2pt] at (1.4166667,0) {$x_1$};
+    \node[below=2pt] at (1.2630691,0) {$x_2$};
+    \node[below=2pt] at (2,0) {$x_0=2$};
+    \node[below=18pt] at (1.15,-.1) {简化牛顿方法};
+  \end{scope}
+  \begin{scope}[shift={(2.45,0)}]
+    \draw[->] (-.08,0)--(2.28,0);
+    \draw[->] (0,-.35)--(0,2.0);
+    \draw[thick,domain=0:2.08,samples=100] plot (\x,{.25*(\x*\x*\x-1)});
+    \draw[dashed] (2,0)--(2,1.75);
+    \draw[thick] (1.41666667,0)--(2,1.75);
+    \draw[dashed] (1.41666667,0)--(1.41666667,{.25*(1.41666667^3-1)});
+    \draw[thick] (1.11053441,0)--(1.41666667,{.25*(1.41666667^3-1)});
+    \node[above left] at (1,0) {$1$};
+    \node[below=2pt] at (1.41666667,0) {$x_1$};
+    \node[below=2pt] at (1.11053441,0) {$x_2$};
+    \node[below=2pt] at (2,0) {$x_0=2$};
+    \node[below=18pt] at (1.15,-.1) {牛顿方法};
+  \end{scope}
+\end{tikzpicture}
+\par\smallskip
+{\small 图3-5-6}
+\end{center}
+
+显然两种方法都收敛于1。但是很明显，牛顿方法收敛得快多了。我们不来证明这里的结果，只指出：对于简化的牛顿方法我们有
+\[
+ |x_k-\bar x|\le C\lambda^k,\qquad 0<\lambda<1.
+\]
+而对于牛顿方法则有
+\[
+ |x_{k+1}-x_k|
+ \le \delta^{2^k-1}|x_1-x_0|^{2^k},
+ \qquad 0<\delta,
+\]
+$\delta$ 是一个适当的常数。因此，若 $|x_1-x_0|$ 相当小，则 $\{x_k\}$ 的收敛要快得多。
+
+牛顿方法不但是一个数值计算方法，而且在讨论许多重要的自然界现象——例如太阳系的稳定性——时会给我们提供极重要的信息。整个说来，迭代方法引向了数学中一些广阔的领域——混沌、分形等等，这些当然都出了本书范围。
+
+\subsection*{6. 拉格朗日乘子法}
+
+极值问题一直是微分学的重要问题，我们在前面即已讲过局部极值与最大最小值是有区别的：后者实际上是一个整体性的概念，但即令是局部概念，在最简单的光滑函数情况下，我们实际上是研究函数的临界点的问题。如果 $x_0$ 是 $f(x)$ 的临界点，$f(x)$ 在 $x_0$ 并不一定达到极值，所以有时我们称 $f(x)$ 在临界点处的值为平稳值（stationary value）而与极值（extremum）相区别。
+
+现在我们要考虑这样一个极值问题。设在 $x_0$ 的某邻域 $\Omega\subset\mathbb R^m$ 中定义一个函数 $f(x)$，可是我们并不是在 $x_0$ 的邻域中求 $f(x)$ 之极值或平稳值，而是在一些补充条件
+\begin{equation}
+ \varphi_i(x)=0,\qquad i=1,2,\ldots,k
+ \tag{41}
+\end{equation}
+下求 $f(x)$ 之极值或平稳值。当然我们设 $x_0$ 适合条件(41)，这在物理上是很自然的，条件(41)称为约束条件（constraints）。如果 $k=1$，则条件(41)下求 $f(x)$ 之极值就是求 $f(x)$ 在曲面 $\varphi_1(x)=0$ 上的极值，这种极值问题称为条件极值问题。$\mathbb R^m$ 中的 $(m-1)$ 维曲面称为一个超曲面。如果 $k>1$ 则(41)定义一个 $(m-k)$ 维曲面（或者准确一些说是 $\mathbb R^m$ 的一个 $(m-k)$ 维子流形）。当然，(41)中的 $k$ 个条件应该是独立的。曲面、子流形等概念是以放在光滑函数的框架下处理最为方便，因为我们有完整的微分学的理论作为工具，因此，以下我们的目标函数 $f(x)$ 以及约束中的函数均设为光滑函数（$C^k$ 甚至 $C^\infty$，这一点前面已经说过，但是现在不能讨论复值函数问题，因为复数不能比较大小，也就无所谓极值）。上面说的“独立性”也是不清楚的。模仿前面关于单射定理与投影定理的讨论，我们把它定义为雅可比矩阵
+\[
+ \frac{\partial(\varphi_1,\ldots,\varphi_k)}
+ {\partial(x_1,\ldots,x_m)}
+\]
+在 $x_0$ 附近有最大可能的秩 $k$，这时自然会有 $k<m$，不可能 $k>m$，一方面是因为
+\[
+ \operatorname{rank}\frac{\partial(\varphi_1,\ldots,\varphi_k)}
+ {\partial(x_1,\ldots,x_m)}\le \min(m,k),
+\]
+同时，一个点 $x_0$ 只有 $m$ 个坐标，所以不可能满足多于 $m$ 个独立的方程；$k=m$ 也是没有意义的，因为在 $x_0$ 附近满足(41)中的 $m$ 个方程的点只有一个 $x_0$，这是反函数存在定理的简单推论。有了这样的约定后，我们就可以把(41)中的 $k$ 个函数看成一个映射
+\begin{equation}
+ \Phi:\Omega\subset\mathbb R^m\longrightarrow\mathbb R^k,
+ \qquad (x_1,\ldots,x_m)\longmapsto(\varphi_1,\ldots,\varphi_k),
+ \tag{42}
+\end{equation}
+于是适合(41)之点的集合就是 $\Phi^{-1}(0)$。在最大可能秩的条件下，它是 $\mathbb R^m$ 的一个 $(m-k)$ 维子流形 $M_{m-k}$。且 $x_0\in M_{m-k}$。而所谓条件极值问题就是在 $(m-k)$ 维子流形 $M_{m-k}$ 上之 $x_0$ 附近求 $f(x)$ 之极值或平稳值。
+
+一个自然的想法是，既然映射(42)在 $x_0$ 附近有最大可能秩 $k$，我们可以假设雅可比矩阵的 $k$ 阶子矩阵
+\[
+ J=
+ \begin{pmatrix}
+ \dfrac{\partial\varphi_1}{\partial x_1}&\cdots&\dfrac{\partial\varphi_1}{\partial x_k}\\
+ \vdots&&\vdots\\
+ \dfrac{\partial\varphi_k}{\partial x_1}&\cdots&\dfrac{\partial\varphi_k}{\partial x_k}
+ \end{pmatrix}
+\]
+在 $x_0$ 处非退化，从而由隐函数定理，由(41)可以解出
+\begin{equation}
+ x_i=\Psi_i(x_{k+1},\ldots,x_m),
+ \qquad i=1,2,\ldots,k,
+ \tag{43}
+\end{equation}
+适合
+\[
+ x_i^0=\Psi_i(x_{k+1}^0,\ldots,x_m^0).
+\]
+$(x_1^0,\ldots,x_m^0)$ 是 $x_0$ 的 $m$ 个坐标。以(43)代入目标函数，并把 $x'=(x_{k+1},\ldots,x_m)\in\mathbb R^{m-k}$，我们会得到定义于 $x'=x_0'\in\mathbb R^{m-k}$ 附近的新目标函数
+\begin{equation}
+ F(x')=f[\Psi_1(x'),\ldots,\Psi_k(x'),x'].
+ \tag{44}
+\end{equation}
+于是条件极值问题就化成了通常的极值问题。
+
+但是我们总是想避免应用隐函数定理，因为把 $(x_1,\ldots,x_k)$ 解出成为 $x'$ 的函数(43)是太困难了。好在我们有
+
+\noindent\textbf{定理6}\quad 设 $\Omega\subset\mathbb R^m$ 是 $0$ 的一个充分小的邻域，$f$ 在 $\Omega$ 中光滑，又设有(42)式定义的由 $\Omega$ 到 $\mathbb R^k$ 的光滑映射 $\Phi$，$\Phi(0)=0$，且在 $\Omega$ 中适合最大秩条件。若 $f$ 在约束 $\varphi_i=0$ 下在 $x=0$ 处取局部极值（平稳值），则必存在 $k$ 个常数 $(\lambda_1,\ldots,\lambda_k)$，使得
+\begin{equation}
+ d\left[f-\sum_{i=1}^{k}\lambda_i\varphi_i\right](0)=0.
+ \tag{45}
+\end{equation}
+$(\lambda_1,\ldots,\lambda_k)$ 称为拉格朗日乘子（Lagrange multipliers）。
+
+\noindent\textbf{证}\quad 为计算简单起见，令 $m=2,k=1$。于是目标函数 $f=f(x,y)$，约束条件只有一个 $\varphi(x,y)=0$。最大秩条件是 $(\varphi_x,\varphi_y)\ne0$。我们不妨设 $\varphi_x(x,y)\ne0$ 于 $(0,0)$ 附近。于是由约束条件可以解出 $x=\psi(y)$，$0=\psi(0)$，而 $x'=y$。目标函数变成
+\[
+ F(y)=f[\psi(y),y].
+\]
+现在 $y=0$ 变成了 $F(y)$ 的极值点，所以
+\begin{equation}
+ F'(0)=\frac{\partial f}{\partial y}(0,0)
+ +\frac{\partial f}{\partial x}(0,0)\psi'(0)=0.
+ \tag{46}
+\end{equation}
+但由约束条件，在 $y=0$ 附近
+\[
+ \varphi[\psi(y),y]=0,
+\]
+从而
+\[
+ \varphi_y(0,0)+\varphi_x(0,0)\psi'(0)=0.
+\]
+最大秩条件告诉我们
+\[
+ \psi'(0)=-\varphi_y(0,0)/\varphi_x(0,0).
+\]
+代入(46)，并令
+\begin{equation}
+ \lambda=f_x(0,0)/\varphi_x(0,0),
+ \tag{47}
+\end{equation}
+即得
+\[
+ f_y(0,0)-\lambda\varphi_y(0,0)=0.
+\]
+(47)本身就是
+\[
+ f_x(0,0)-\lambda\varphi_x(0,0)=0.
+\]
+两式合在一起即(45)式。定理证毕。
+
+拉格朗日乘子之所以重要不仅在于它使我们不必去构造隐函数 \(\Psi_1(x'),\ldots,\allowbreak\Psi_k(x')\)，而只需要从(45)（其中共有 $m$ 个方程）以及约束条件 $\varphi_i(x)=0$（其中 $i=1,2,\ldots,k$）求出 $m+k$ 个未知数 \(x_1^0,\ldots,\allowbreak x_m^0;\lambda_1,\ldots,\allowbreak\lambda_k\)（这些数同样不容易求）；而在于拉格朗日乘子时常有重要的物理和几何意义。下面看一个重要例子：关于二次曲面的极值性质——这些性质在物理上是很有用的。
+
+设有 $\mathbb R^m$ 中的有心二次曲面
+\begin{equation}
+ Q:\ \sum_{i,j=1}^{m}a_{ij}x_ix_j=1,
+ \qquad a_{ij}=a_{ji}.
+ \tag{48}
+\end{equation}
+所谓“有心”，即 $\det[a_{ij}]\ne0$，这样把有抛物性质的退化情况全排除在外了。(48)又可用内积形式写成
+\begin{equation}
+ Q:\langle Ax,x\rangle=1,\qquad A=(a_{ij}).
+ \tag{48'}
+\end{equation}
+现在在 $Q$ 上求一点使
+\[
+ \|x\|^2=\langle x,x\rangle=\sum_{i=1}^{m}x_i^2
+\]
+取平稳值例如极大。这就是一个条件极值问题，目标函数是 $f(x)=\|x\|^2$，(48)就是约束条件，所以 $k=1$。如果直接应用拉格朗日乘子方法，就应考虑
+\[
+ F(x)=\|x\|^2-\lambda\langle Ax,x\rangle.
+\]
+为了说明拉格朗日乘子的意义我们可以把它化为一个对偶问题。为此令
+\[
+ G(x)=\frac{\langle Ax,x\rangle}{\|x\|^2},
+\]
+而原来的问题：在 $\langle Ax,x\rangle=1$ 上求一点 $x_0$ 使 $\|x\|^2\to$极大，现在变成设法去找 $x_0$ 使
+\[
+ G(x_0)\to\min.
+\]
+如果记 $y=x/\|x\|$，则必有 $\|y\|^2=1$，而 $G(x)$ 变成
+\[
+ H(y)=\langle Ay,y\rangle.
+\]
+易见 $H(y)=G(x)$，求 $G(x)$ 之极小值，就化为在约束条件 $\|y\|^2=1$ 下，求 $H(y)$ 的极小值。关于 $H$ 的极值问题称为原问题的对偶问题，于是我们对
+\[
+ \bar F(y)=\langle Ay,y\rangle-\mu\|y\|^2
+\]
+应用拉格朗日乘子法，而有
+\[
+ \frac{\partial\bar F}{\partial y_i}=0,
+ \qquad
+ \sum_{j=1}^{m}a_{ij}y_j-\mu y_i=0,
+ \quad i=1,2,\ldots,m.
+\]
+用矩阵表示，即
+\begin{equation}
+ (A-\mu I)y=0.
+ \tag{49}
+\end{equation}
+然后再求 $m+1$ 个未知数 $(y_1,\ldots,y_m,\mu)$。由线性代数知识可见，上式之解中 $\mu$ 是 $A$ 的特征根，$y$ 是相应的范数为1的特征向量。回到 $F$，则拉格朗日乘子 $\lambda$ 相当于 $1/\mu$，而 $x$ 仍表示同一个特征向量，不过 $\|x\|^2$ 不再是1。现在 $A$ 是对称矩阵，它一定有 $m$ 个实特征根，依大小排列为
+\[
+ \mu_1\le\mu_2\le\cdots\le\mu_m.
+\]
+我们用以上方法求出的拉格朗日乘子就是这些 $\mu$ 和相应的 $\lambda$。如果已求出拉格朗日乘子 $\lambda_1=1/\mu_1$，相应的 $x$ 和 $y$ 记为 $x^{(1)}$ 和 $y^{(1)}$，约束条件成为 $\langle Ax^{(1)},x^{(1)}\rangle=1$ 和 $\|y^{(1)}\|^2=1$。$x^{(1)}$ 和 $y^{(1)}$ 是相应于相同特征根的特征向量。$x^{(1)}$ 适合 $\langle Ax^{(1)},x^{(1)}\rangle=1$ 就是说向量 $x^{(1)}$ 的两个端点一个在0，另一端在二次曲面 $\langle Ax,x\rangle=1$ 上。这样一来，原来的条件极值问题就成为在此二次曲面上求一点，使由原点（即二次曲面的中心）到此点之距离为极大。以上所得的结果就是：所求的 $x$ 是一个特征向量，而利用 $G(x_0)\to\min$ 知这个距离的平方即特征根的倒数，这样求出的特征向量称为二次曲面的主半轴，但是有一些特征根为负，就表示有一些主半轴之长的平方为负，这种主半轴就称为虚轴。
+
+以上我们只求出了一个主轴，但实际上有 $m$ 个主轴。其它主轴可化为再附加另一些约束条件的条件极值问题，我们就不在这里讨论了。

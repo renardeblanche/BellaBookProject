@@ -1,0 +1,819 @@
+\chapter{微分流形上的微积分}
+
+我们生活于其中的宇宙——时间与空间——是什么样？这是从远古以来的哲学家就十分关注的问题。而自从古希腊时代有了作为一门演绎科学的几何学以后，空间就成了几何学研究的对象。哥白尼的日心说固然在解放人类思想上起了无可估量的作用，为后来的伽利略、开普勒开辟了道路，这以后才有了牛顿力学，但是从对空间的了解而言，只不过是把作为线性空间的欧氏空间换成了一个仿射空间（affine space）。什么是仿射空间，我们不来叙述其数学定义而只概略地说明一下。任意定一个起点 $P$（我们不说是原点，仿射空间没有原点），如果再给出一点 $Q$ 作为终点，则联结 $PQ$ 两点可以得一向量 $a=\overrightarrow{PQ}$。现在再以 $Q$ 为 $\mathbb R^n$ 的原点，则空间的任一点 $T$ 都可以写成 $a+(\mathbb R^n\text{ 的某点})$ 的形状，即首先在以 $Q$ 为原点的空间中用一个向量 $\overrightarrow{QT}=v$ 来表示 $T$，则 $T$ 相对于 $P$ 点可以表示成为
+\[
+\overrightarrow{PT}=\overrightarrow{PQ}+\overrightarrow{QT}=a+v,
+\]
+这样的集合 $a+\mathbb R^n$ 就是一个仿射空间。仿射空间的向量是 $a+v$，它不能作加法：若有两点 $T_1$ 和 $T_2$ 分别对应于 $a+v_1,a+v_2$，它们不能相加，因为形式地相加成
+\[
+(a+v_1)+(a+v_2)=2a+(v_1+v_2),
+\]
+$2a$ 是什么无法解释。但是可以作减法
+\[
+(a+v_1)-(a+v_2)=v_1-v_2,
+\]
+其实就是 $T_1$ 对 $T_2$ 的相对位置。从数学来看，托勒密和哥白尼的区别就在于托勒密认为原点应该放在 $P$（地球）处，而哥白尼则认为应该放在 $Q$（太阳）处，其实空间的性质没有发生变化：它是三维的、均匀的（在宇宙的任何地方，不论是在比萨斜塔上或在猎户座大星云里，物理规律是相同的）、各向同性的（不论是头朝天顶面向东方还是头下脚上做实验，结果都是一样的）。我们说空间是 $\mathbb R^3$，除了指定一个原点位置以外，就是这样的意思。至于时间更是与空间无关的一维的、均匀的。如果我们确定了一个时间原点，则时间是 $\mathbb R^1$。总之，时空就是 $\mathbb R_x^3\times\mathbb R_t^1$，这里我们完全没有涉及时间的不可逆性，那是整个物理学的另一大篇章。总之，时空是一个空空洞洞的框架，它是被动的，没有物理内容的，这就是牛顿的时空观。几何学就是研究这个框架的学问。我们在中学学的初等几何和后来学的解析几何学就是这门学问的大概。
+
+到了18世纪末，情况开始有变化。首先应该提到的是高斯，随着人们枉费心机地想去证明平行线公设（或者证明与此等价的三角形三内角之和为 $\pi$），高斯开始怀疑我们生于斯长于斯的空间究竟是不是欧氏空间。他真的选了三个小山头，想用实际测量看一下三角形三内角和是否确实为 $\pi$，虽然可惜在他的实验条件下得不出任何结论，却标志着对牛顿的时空观的一次冲击。高斯的一个极重要的贡献就在于提出，不要只把一个曲面看成 $\mathbb R^3$ 中弯曲的一部分，应该把曲面就看成是一个空间。在这个空间里，没有毕达哥拉斯定理，而有
+\[
+ ds^2=E\,du^2+2F\,du\,dv+G\,dv^2,
+\]
+这里 $(u,v)$ 是曲面上的点的“坐标”，$E,F,G$ 是 $(u,v)$ 的函数。这些函数决定了这个曲面的性质，特别是曲面的曲率。而且曲面上的三角形（其三边为测地线）之三角之和与 $\pi$ 之差恰好由曲率决定。黎曼进一步发展了高斯的思想。他指出空间不一定是三维的，而可以是 $n$ 维的，在这样的空间里，毕达哥拉斯定理自然是不对的，而有
+\[
+ ds^2=\sum g_{ij}\,dx^i dx^j,
+\]
+$(g_{ij}(x))$ 完全决定了空间的性质。其实黎曼研究空间的性质是为了说明物理学的问题，可是这个工作不是由黎曼完成的。尽管当时就有人提出，黎曼的空间是弯曲的，造成这种弯曲是由于物质的分布，可是到了爱因斯坦才说明了引力与 $(g_{ij}(x))$ 的关系。这样一来，物理学和几何学就融合起来了。爱因斯坦提出这个理论——广义相对论——大约是1915年。当时由于实验观测结果不多，广义相对论对人类的思想影响远不如现今之广泛深刻。因此，弯曲的空间、高维空间常常成为科幻作品或艺术创作的题材。但是到了现在，大爆炸、黑洞……一连串重大的科学进展使得空间是弯曲的、空间是高维的这样的思想日渐深入人心，面向21世纪可以肯定在这些方面会取得更大的发展。
+
+这与我们学微积分有什么关系呢？是否可以说微积分某些理论、某些章节已经陈腐了，应该随着知识的“大爆炸”，“炸”到九霄云外去呢？是否可以用物理学来代替它呢？看来都不行。空间虽然是弯曲的，从局部来看却仍然是通常的 $\mathbb R^n$（连仿射概念也用不着），所以微积分的基本理论和方法仍然适用。但是在下面我们将特别注意一些通常教材上注意不到的方法，所以我们假设读者都掌握了初步的线性代数知识——其实在第三章中已经开始这样做了，目的是使读者在将来有机会接触到这类最深刻的数学和物理问题时会少一些生疏感。这些材料的中心是微分流形问题，但还牵涉到一些其它很有用而时常被忽略的问题。
+
+\section{向量和张量}
+
+\noindent\textbf{1. 逆变向量与协变向量}\quad
+“向量就是一个有方向有长度的对象”，这种说法很模糊，但是在力学中我们遇到了许多的向量，其共同特点是能按平行四边形法则作加法与倍乘。而且，例如速度、力等等大家都认为是向量的物理量，都有分速度、分力等等，并且可以按平行四边形法则合成这个向量。把这些概念代数化，就得到线性空间的概念，它的运算规则就是平行四边形法则。但是我们还要回到几何直观。说一个向量有方向、有长度，必须有一个参考。对于 $\mathbb R^n$，就是要找 $n$ 个线性无关的向量 $e_1,\ldots,e_n$ 作参考，而按平行四边形法则，每个向量都可写为
+\begin{equation}
+ x=x_1e_1+\cdots+x_ne_n.
+ \tag{1}
+\end{equation}
+$(x_1,\ldots,x_n)$ 是 $x$ 的 $n$ 个坐标，$x_i$ 称为第 $i$ 个分量（有时也就说 $x_i$ 是第 $i$ 个分量，下面我们一般不加区别）。$(e_1,\ldots,e_n)$ 称为标架（frame），或者称为线性空间的一个基底（basis），在物理学中则称为参考系。如果一个向量代表某个物理实体或物理量，则在换了一个标架后，该物理量的性质不应该变化，但是标志这个向量的这组分量 $(x_1,\ldots,x_n)$ 却会改变。因此重要的是了解，当标架变化时分量或坐标如何改变。首先要看标架作了线性变换后，它们如何改变。具体说，设我们换了一个新标架 $(f_1,\ldots,f_n)$，坐标随之变为 $(y_1,\ldots,y_n)$，从物理上看，必须有
+\begin{equation}
+ x=x_1e_1+\cdots+x_ne_n=y_1f_1+\cdots+y_nf_n.
+ \tag{2}
+\end{equation}
+规定(2)式成立是一个重要的原则，因为一个向量无论它是代表一个物理量或者就简单地是一个几何量，它的性质应该与标架的选取无关。$(x_1,\ldots,x_n)$ 或 $(y_1,\ldots,y_n)$ 只是同一个向量在不同标架下的表示，各个分量的值可以随标架而变化，但必须有(2)这样的关系式才能断言它们确实表示一个几何或物理实体，这个重要的原则在下面讨论物理定律的表示时将一再遇到。
+
+因为我们现在讨论的是均匀的空间，所以标架的变化应该是线性变换，所以我们令
+\begin{equation}
+ f_i=\sum_{j=1}^n\lambda_{ij}e_j,\qquad i=1,2,\ldots,n.
+ \tag{3}
+\end{equation}
+这里 $\lambda_{ij}$ 是实数（如果讨论复空间时，则不妨规定 $\lambda_{ij}$ 是复数），而且我们设矩阵
+\begin{equation}
+ \Lambda=(\lambda_{ij})
+ \tag{4}
+\end{equation}
+是非奇异的：$\det\Lambda\ne0$，因为这时也仅在这时才能从(3)把 $e_j$ 解出写为 $f_i$ 的线性组合。我们不妨引进两个“形式向量”
+\[
+ F={}^{t}(f_1,\ldots,f_n),\qquad E={}^{t}(e_1,\ldots,e_n),
+\]
+而把(3)形式地写成
+\begin{equation}
+ F=\Lambda E,
+ \qquad (\text{新标架})=\Lambda(\text{老标架}).
+ \tag{5}
+\end{equation}
+说是“形式向量”是因为真正的向量的分量应该是实数或复数，而不是向量 $e_i$ 或 $f_i$，我们这里只是借用矩阵的形式运算法则而已。以(3)代入(2)即有
+\[
+ x_1e_1+\cdots+x_ne_n
+ =y_1(\lambda_{11}e_1+\cdots+\lambda_{1n}e_n)+\cdots+y_n(\lambda_{n1}e_1+\cdots+\lambda_{nn}e_n),
+\]
+因为 $e_1,\ldots,e_n$ 是线性无关的，所以有
+\begin{equation}
+ x_j=\sum_{i=1}^n\lambda_{ij}y_i,\qquad j=1,\ldots,n.
+ \tag{6}
+\end{equation}
+如果引入坐标的向量记法（这一次是真向量了）：$x={}^{t}(x_1,\ldots,x_n),y={}^{t}(y_1,\ldots,y_n)$，则(6)可写成
+\begin{equation}
+ x={}^{t}\!\Lambda y,
+ \qquad y={}^{t}\!\Lambda^{-1}x,
+ \qquad (\text{新坐标})={}^{t}\!\Lambda^{-1}(\text{老坐标}).
+ \tag{7}
+\end{equation}
+以上，左上角的 ${}^{t}$ 都表示转置。
+
+(5)与(7)形成重要的对比。两个由 $\mathbb R^n$ 到 $\mathbb R^n$ 的线性变换，若其矩阵互为转置逆，则说这两个线性变换互为逆步的（contragredient）。所以标架的变换(5)与坐标的变换(7)互为逆步。因此，向量 $x$ 的上述坐标 $(x_1,\ldots,x_n)$ 或 $(y_1,\ldots,y_n)$ 称为逆变坐标（contravariant coordinates）。所谓逆变是相当于标架而言的，因为标架的变换式是(5)，而坐标的变换为
+\begin{equation}
+ y=Ax,\qquad A={}^{t}\!\Lambda^{-1}.
+ \tag{8}
+\end{equation}
+它是与(5)逆步的变换，所以 $x$ 和 $y$ 称为逆变坐标。
+
+在数学中有一个重要的规定，若一个向量（还有以后要讲的张量）等等，只要含有若干个指标，例如 $i,j,a,l,\ldots$，其变化范围为例如 $1,2,\ldots,n$，或 $0,1,\ldots,n-1$（视空间的维数而定），而当此空间的坐标作变化(7)时，某个指标是逆变的（即与(7)相同而与(5)逆步），这种指标都写在上角，称为逆变指标；若此指标与(7)逆步、与(5)相同，这个指标一定写在下角，称为协变指标。若在一个式子中同一个字母作为指标出现两次，一次是逆变的，一次是协变的，即一下一上，则规定要对此指标求和，而略去求和号 $\sum$，其变化范围视空间中坐标记号的规定而定。这叫作爱因斯坦求和约定。所以(1),(3),(6),……应写作
+\[
+ x=x^ie_i,\qquad f_i=\lambda_i{}^je_j,\qquad x^j=\lambda_i{}^j y^i,
+\]
+等等。为什么 $\lambda$ 的两个指标要一上一下，后面要讲。我们在整个第七章中都使用这样的记号。
+
+既然讲到逆变坐标，当然会问有没有协变坐标（covariant coordinates），它的几何意义是什么？逆变坐标的几何意义前面已经讲得很清楚了，就是把一个向量按平行四边形法则分解在 $n$ 个线性无关的向量（即基底）上。在构成基底的每个向量上应该取一个单位，但这决不等于说在空间中已经引入了长度，因为在度量空间中我们已说过什么是长度。至少任意两点 $x,y$ 间都要定义其距离 $\rho(x,y)\ge0$，而现在我们至多也只能在该向量的方向即该坐标轴上定义“长度”。其所以还要加上引号是因为坐标轴上给了两个点 $x$ 和 $y$，$\rho(x,y)=x-y$ 可正可负，表明在 $x$ 和 $y$ 之间要区分出起点与终点，这个概念在度量空间中是没有的。在坐标轴上按给定的单位测“长度”，实质上是比例线段问题。欧几里得的《几何原本》就把这一点说得很明白。我们就此停下不再追究，只是说明一点：给定逆变坐标只需要在空间中能作向量运算（加法和正负倍数的放大即前面说的倍乘）就够了。
+
+现在我们在 $\mathbb R^n$ 中引入欧几里得度量。在 $\mathbb R^n$ 中取一个标架，这时又会有一个误解，以为这个标架一定是正交的，这是由于我们太习惯了在 $\mathbb R^2$ 与 $\mathbb R^3$ 的坐标系 $Oxy$ 与 $Oxyz$，而忘记了标架只需线性无关即可，所以人们忘记了在用到 $Oxy,Oxyz$ 时应该加上一句：正交坐标系 $Oxy$ 等等（这当然有点多余）。反而在不必加什么说明的地方偏要说在 $\mathbb R^n$ 上取一个“斜交坐标系”，坐标系本来就无所谓斜正，引入欧氏度量后才得到作为特例的正交标架。不过倒要提醒一下，每个坐标轴上的单位长度都要选用同样的1，否则连等边三角形的概念都会出毛病。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=.9,bella figure,>=stealth]
+  \coordinate (O) at (0,0);
+  \draw[->] (O)--(5,0) node[right] {$x^1$};
+  \draw[->] (O)--(2.8,3.8) node[above] {$x^2$};
+  \draw[->,thick] (O)--(3.7,2.2) node[right] {$P(\xi_1,\xi_2)$};
+  \coordinate (Q) at (3.7,0);
+  \fill (Q) circle (1pt) node[below] {$Q(x^1,x^2)$};
+  \draw[dashed] (3.7,2.2)--(3.7,0);
+  \draw[dashed] (3.7,2.2)--({3.7-1.15},{2.2-1.56});
+  \node at (3.15,.22) {$\xi_1$};
+  \node[rotate=54] at (1.65,2.25) {$\xi_2$};
+  \node[below left] at (O) {$O$};
+\end{tikzpicture}
+\caption*{图7-1-1}
+\end{figure}
+
+图7-1-1上我们只画了 $\mathbb R^2$，我们考虑一个向量 $\overrightarrow{OP}$ 以及它在两个坐标轴 $Ox^1,Ox^2$ 上的投影长 $\xi_1$ 与 $\xi_2$。于是 $\overrightarrow{OP}$ 完全决定了 $(\xi_1,\xi_2)$，反之 $(\xi_1,\xi_2)$ 也完全定义了 $\overrightarrow{OP}$，所以 $(\xi_1,\xi_2)$ 也是 $P$ 的一种坐标，下面我们证明这就是 $P$ 的一个协变坐标。
+
+为了证明这一点，考虑一个运算：记向量 $A$ 在逆变向量 $B$ 上的投影为 $\langle A,B\rangle$，于是 $\xi_i=\langle\overrightarrow{OP},e_i\rangle$，这个运算对 $A$ 与 $B$ 分别均为线性的，于是任取一个逆变向量 $\overrightarrow{OQ}=(x^1,x^2)$，我们有
+\begin{equation}
+ \langle\overrightarrow{OP},\overrightarrow{OQ}\rangle
+ =\xi_1x^1+\xi_2x^2=\xi_i x^i.
+ \tag{9}
+\end{equation}
+此式对 $n$ 维向量也是成立的。但是(9)式左方的量显然与坐标的选取无关，所以右方亦然。于是我们换一个标架，使 $\overrightarrow{OP}$ 的投影为 $(\eta_1,\eta_2)$，$\overrightarrow{OQ}$ 的逆变坐标为 $(y^1,y^2)$，应有
+\begin{equation}
+ \xi_i x^i=\eta_i y^i.
+ \tag{10}
+\end{equation}
+但是新坐标 $y$ 与旧坐标 $x$ 之间有关系式(8)，令其中 $A$ 的元素为 $(a^i{}_j)$，$i$ 是第一个指标，表示横行，$j$ 是第二个指标表示竖列。为什么一个写在逆变位置，一个写在协变位置，是因为这样一来，则(8)可以写为
+\begin{equation}
+ y^i=a^i{}_j x^j.
+ \tag{11}
+\end{equation}
+至少可以看到这样写法与 $y^i$ 为逆变坐标相符合。以此代入(10)立即有
+\[
+ \xi_i x^i=\eta_i a^i{}_j x^j,
+\]
+由把上式右方的 $j$ 改写成 $i$，$i$ 改写成 $k$，有
+\[
+ (\xi_i-\eta_k a^k{}_i)x^i=0.
+\]
+此式应该对任意 $x^i$ 成立，故其系数为0，即有
+\begin{equation}
+ \xi_i=a^k{}_i\eta_k.
+ \tag{12}
+\end{equation}
+注意现在是对横行的指标求和，而(11)中是对竖列的指标求和，所以(12)右方为 ${}^{t}\!A\eta$，而有
+\begin{equation}
+ \eta={}^{t}\!A^{-1}\xi.
+ \tag{13}
+\end{equation}
+所以 $\xi_i$ 是协变坐标。
+
+定义逆变坐标时我们只需要 $\mathbb R^n$ 的线性结构，也就是只需要平行四边形法则。与逆变坐标不同，在定义协变坐标时，我们则增加了 $\mathbb R^n$ 中的欧氏结构——度量，这样才有了投影等等。但是我们想要问，是不是非此不可？不然，我们在上面把投影写成 $\langle A,B\rangle$，读者立刻会想到这是内积，而且就此就联想到欧氏空间的度量。其实我们并没有用到度量的任何特殊性质，如果用 $\langle\xi,x\rangle,\langle\eta,y\rangle$ 来表示上面的“内积”，我们所用到的只有以下几件事：
+\begin{enumerate}[label=\arabic*.,leftmargin=2.8em]
+\item $\langle\xi,x\rangle=\langle\eta,y\rangle$；
+\item $y=Ax$；
+\item $\langle\xi,x\rangle=\langle\eta,Ax\rangle=\langle{}^{t}\!A\eta,x\rangle$；
+\item 由 $\langle\xi-{}^{t}\!A\eta,x\rangle=0$ 对一切 $x$ 成立得出 $\xi={}^t\!A\eta$ 或 $\eta={}^t\!A^{-1}\xi$。
+\end{enumerate}
+第一点是说应该有一个量，此量是内蕴的即与坐标无关的，我们这里则是 $x\in\mathbb R^n$ 的一个线性泛函。无限维线性空间的线性泛函之定义中应该加上连续性（即有界性）的要求。我们在讲希尔伯特空间与广义函数时都强调了这一点。但有限维线性空间上的线性泛函则一定是连续的。第四点是要求 $\langle\cdot,\cdot\rangle$ 是非退化的，即若对一切 $x\in\mathbb R^n$ 均有 $\langle\xi,x\rangle=0$，则必致 $\xi=0$。在 $\mathbb R^n$ 上这总是成立的。至于另外两点就简单地是矩阵的初步知识。
+
+在线性代数中我们记 $\mathbb R^n$ 上的线性泛函之集合为 $(\mathbb R^n)^*$，并且证明了它也是一个 $n$ 维线性空间（当 $\mathbb R^n$ 换成 $\mathbb C^n$ 时，$(\mathbb C^n)^*$ 也是一个 $n$ 维复线性空间），称为 $\mathbb R^n$ 之对偶空间。若 $\xi\in(\mathbb R^n)^*,x\in\mathbb R^n$，则 $\xi$ 作用在 $x$ 上之值 $\xi(x)$ 也常借用内积记号，记作 $\xi(x)=\langle\xi,x\rangle$，甚至也称为“内积”。于是我们可以把以上所说的归结为一个定理。
+
+\noindent\textbf{定理1}\quad
+$\mathbb R^n$ 的向量与其对偶空间 $(\mathbb R^n)^*$ 中之向量是互为逆步的。因此，$\mathbb R^n$ 中的向量称为逆变向量，$(\mathbb R^n)^*$ 中之向量称为协变向量。
+
+前面所讲的就是此定理的证明。我们只想提出一点：当我们给出 $\mathbb R^n$ 及其对偶空间时，本来都没有给定基底——标架——坐标，所以当我们说 $\xi\in(\mathbb R^n)^*$ 在 $x\in\mathbb R^n$ 上的值 $\xi(x)$ 或 $\langle\xi,x\rangle$ 时，本来就意味着此值与坐标的选择无关。
+
+现在在 $\mathbb R^n$ 中取一个基底 $e_i,i=1,2,\ldots,n$，注意我们是把指标写在下面的，因为现在我们有了一个标架，而不是向量的坐标——坐标是把向量用 $e_i$ 作线性表达时的系数。当基底作线性变换(3)或(5)时，坐标的变化与之逆步，而这些坐标是用上指标——逆变坐标来表示的，所以标架应该用下指标来表示。前面就是这样做的。与此相同，在 $(\mathbb R^n)^*$ 中的标架则应用上指标表示：在 $(\mathbb R^n)^*$ 中找一组向量 $(e^j)^*,j=1,2,\ldots,n$，使
+\begin{equation}
+ \langle(e^j)^*,e_i\rangle=\delta_i^j.
+ \tag{14}
+\end{equation}
+这样的 $(e^j)^*$ 是存在的，它就是用上式定义的 $\mathbb R^n$ 上之线性泛函，很容易看到 $(e^1)^*,\ldots,(e^n)^*$ 是线性无关的，因此构成 $(\mathbb R^n)^*$ 的一个基底，称为 $\{e_1,\ldots,e_n\}$ 的对偶基底。
+
+为什么一般的微积分教科书没有区分逆变与协变向量？因为一般书上都只在正交的笛卡儿坐标系中讨论向量，而两个正交笛卡儿坐标系之间的线性变换又都是正交变换：${}^{t}\!A^{-1}=A$，所以(8)和(13)都是一样的，而逆变坐标与协变坐标就没有区别了。我们知道，所有的 $n$ 维实线性空间都是同构的，$(\mathbb R^n)^*$ 自然也就同构于 $\mathbb R^n$。在丧失了协变与逆变之别后，就更没有理由视它们为不同的空间。如果把 $(\mathbb R^n)^*$ 就写成 $\mathbb R^n$，把 $(e^i)^*$ 就写成 $e^i$，则对偶基底就成了 o.n. 系。向量 $\xi\in(\mathbb R^n)^*(=\mathbb R^n)$ 作用在向量 $x\in\mathbb R^n$ 上之值，如果用这个 o.n. 系表示就成了
+\[
+ \langle\xi,x\rangle=\langle\xi_i e^i,x^j e_j\rangle
+ =\xi_i x^j\delta_j^i=\xi_i x^i=\sum_{i=1}^n\xi_i x_i.
+\]
+也就是内积，即是说，$\mathbb R^n$ 的线性泛函，如果选定了一个 o.n. 基底，都可表示成为内积。
+
+$\mathbb R^n$ 的一切正交变换均用正交矩阵表示，它构成一个群，记作 $O(n)$。特别重要的是行列式为1的正交矩阵群，是它的一个特别重要的子群 $SO(n)$——特殊正交群。在复空间 $\mathbb C^n$ 则有酉群 $U(n)$（物理学家喜欢称为幺正群）和特殊酉群 $SU(n)$。这些都是特别重要的李群（“李”是人名，即 Sophus Lie, 1842--1899，挪威大数学家），可以说是现代的理论物理学的最主要的框架。在正交群下，逆变与协变的区别就不起作用了。
+
+但是并不是一切情况下都可以把 $\mathbb R^n$ 与 $(\mathbb R^n)^*$ 视为相同的。下面我们讲一个极重要的“例子”——$\mathbb R^n$ 中的牛顿第二定律。如果我们在 $\mathbb R^n$ 与 $(\mathbb R^n)^*$ 中采用了互相对偶的基底，而将其中的向量分别写成
+\[
+ x=(x^1,\ldots,x^n)=x^i e_i,
+ \qquad
+ \xi=(\xi_1,\ldots,\xi_n)=\xi_i(e^i)^*,
+\]
+设它们都是时间 $t$ 的光滑函数，于是 $\dot x=(\dot x^1,\ldots,\dot x^n)=\dot x^i e_i$。按我们的习惯，动能是
+\[
+ T=\sum_{i=1}^n\frac{m_i}{2}\dot x^i\dot x^i.
+\]
+但是动能是一个物理量，它应该是与坐标的选取无关的。如果换一个坐标系 $y^i=y^i(t)$，则因 $y^i=\lambda^i{}_j x^j$，有 $\dot y^i=\lambda^i{}_j\dot x^j$，而第 $i$ 个质点之质量 $m_i$ 更是与坐标无关的，所以在 $y$ 坐标中计算的动能是
+\begin{equation}
+ \sum_{i=1}^n\frac{m_i}{2}\dot y^i\dot y^i
+ =\sum_{i=1}^n\frac{m_i}{2}\lambda^i{}_j\lambda^i{}_k\dot x^j\dot x^k.
+ \tag{15}
+\end{equation}
+右方一般说来当然不会是 $T=\sum_{i=1}^n\frac{m_i}{2}\dot x^i\dot x^i$。但是有一个情况是可以的，即是我们所描述的乃是 $N$ 个质点所成的质点组在 $\mathbb R^3$ 中的无约束的运动。这个质点组有 $3N$ 个自由度，例如第一个质点的位置就由 $x_1=X_1,x_2=Y_1,x_3=Z_1$ 描述，而且 $m_1=m_2=m_3=M_1$，即第一个质点的质量。这时 $n=3N$ 而且
+\[
+ T=\sum_{i=1}^N\frac{M_i}{2}(\dot X_i^2+\dot Y_i^2+\dot Z_i^2).
+\]
+如果作 $\mathbb R^3$（注意，不是 $\mathbb R^n$）中的正交变换，把
+$(X_i,Y_i,Z_i)$ 变成 $(U_i,V_i,W_i)$。这时确实容易计算出
+\[
+ \frac{M_i}{2}(\dot X_i^2+\dot Y_i^2+\dot Z_i^2)
+ =\frac{M_i}{2}(\dot U_i^2+\dot V_i^2+\dot W_i^2),
+\]
+而 $T$ 确实与坐标的选取无关，大多数力学书中都只讨论这个情况。严重的问题在于，作用在这个质点组上的力是保守力，即是有位势为 $F(x)$ 的力，位势就是负位能 $F(x)=-V(x)$，而作用在质点上的力是 $\operatorname{grad}F=-\operatorname{grad}V$。于是牛顿运动方程成为
+\begin{equation}
+ m_i\ddot x^i=\frac{\partial F}{\partial x^i},\qquad i=1,\ldots,n
+ \quad(\text{不对 }i\text{ 求和}).
+ \tag{16}
+\end{equation}
+如果要考虑坐标变换，立即看出了问题：式左是逆变向量 $\ddot x^i$ 对时间的二阶导数，在经典力学中时间是一个均匀流动的参数，它与空间完全无关，所以本章一开始就说了牛顿时空是 $\mathbb R_x^3\times\mathbb R_t^1$ 而不说是 $\mathbb R^4_{(x,t)}$。这样，$x^i$ 对 $t$ 求导后仍是逆变向量。但是右侧不然，如果引入新坐标
+\[
+ y^i=\lambda^i{}_j x^j\quad\text{或}\quad y=\Lambda x,\qquad
+ x^i=\mu^i{}_j y^j\quad\text{或}\quad x=\Lambda^{-1}y,
+\]
+则
+\[
+ \frac{\partial F}{\partial y^j}
+ =\frac{\partial F}{\partial x^i}\frac{\partial x^i}{\partial y^j}
+ =\mu^i{}_j\frac{\partial F}{\partial x^i},
+\]
+\[
+ \frac{\partial F}{\partial x^i}
+ =\frac{\partial F}{\partial y^j}\frac{\partial y^j}{\partial x^i}
+ =\lambda^j{}_i\frac{\partial F}{\partial y^j}.
+\]
+（注意，分母中的上指标算是下指标。）于是(16)的左右双方分别是一逆变与协变向量的分量，而此式只有在不区分逆变与协变向量的坐标系中才有意义。例如上面说的 $N$ 个质点而每个质点均在一个 $\mathbb R^3$ 中运动，且每一个 $\mathbb R^3$ 中各取 o.n. 标架，就属于这个情况。
+
+怎样克服这里的矛盾？关键在使动能 $T$ 成为与坐标无关的标量。方法是在各个坐标系中分别引入一个矩阵——即 $n^2$ 个量 $(g_{ij})$，并把 $T$ 修改为
+\begin{equation}
+ T=\frac12 g_{ij}\dot x^i\dot x^j,\qquad g_{ij}=g_{ji}.
+ \tag{17}
+\end{equation}
+这里的 $(g_{ij})$ 的选法应该是使在我们原来用以表述牛顿第二定律所用的 $x$ 坐标中
+\[
+ T=\sum_{i=1}^n\frac{m_i}{2}\dot x^i\dot x^i,
+\]
+而在另一个坐标 $y=Ax,A=(a^i{}_j)$ 时应把 $g_{ij}$ 改成 $\widetilde g_{ij}$，使得
+\begin{equation}
+ \widetilde g_{kl}=g_{ij}a^i{}_k a^j{}_l,
+ \qquad
+ g_{ij}=\widetilde g_{kl}\alpha^k{}_i\alpha^l{}_j,
+ \tag{18}
+\end{equation}
+这里 $(\alpha^i{}_j)$ 是 $(a^i{}_j)$ 的逆矩阵。注意，我们已经把质量放在 $g_{ij}$ 中去了。由(17)和(18)立即有
+\[
+ T=\frac12 g_{ij}\dot x^i\dot x^j
+ =\frac12\widetilde g_{ij}\dot y^i\dot y^j.
+\]
+但是 $T$ 既然在 $x$ 坐标系中代表动能，当然在 $y$ 坐标系中也代表动能——动能是一个标量，它的值不受坐标变换的影响。
+
+解决了这个问题，立即就知道，牛顿第二定律的正确表达应该是
+\begin{equation}
+ \frac{d}{dt}(g_{ij}\dot x^j)=\frac{\partial F}{\partial x^i},
+ \qquad i=1,2,\ldots,n.
+ \tag{19}
+\end{equation}
+因为 $\dot x^i=\dot y^j\frac{\partial x^i}{\partial y^j}=\alpha^i{}_j\dot y^j$，而 $\frac{\partial F}{\partial y^j}=\frac{\partial F}{\partial x^i}\alpha^i{}_j$，故将上式双方乘以 $\alpha^i{}_k$，再对 $i$ 求和即得
+\begin{equation}
+ \frac{d}{dt}(\widetilde g_{kj}\dot y^j)=\frac{\partial F}{\partial y^k}.
+ \tag{20}
+\end{equation}
+比较(19)和(20)说明牛顿第二定律在任何坐标系中都是成立的，而且可以用简单的形式推导出各个坐标系下这个定律的形状——现在(19)和(20)形状是一样的——这就叫做这个定律的协变性。一切物理定律都应该具有这种协变性，否则就不能断定它确有物理意义。上面我们是用 $g_{ij}\dot x^j$ 代替了速度 $\dot x^i$，由于质量已放在 $g_{ij}$ 中，所以 $g_{ij}\dot x^j$ 就是动量。但是与速度不同，动量现在是协变向量。因为(19)右方是协变向量，我们用 $\alpha^i{}_k$ 去乘它再对 $i$ 求和就自然会得到 $\partial F/\partial y^k$，也就是证明了用 $\alpha^i{}_k$ 去乘 $g_{ij}\dot x^j$ 仍是一个协变向量。这样我们看到，牛顿第二定律是以协变向量形式来表示的。其所以如此做是因为外力是保守力 $\operatorname{grad}F$，而这是一个协变向量。总之，一个有物理意义或几何意义的等式双方必须是同种类型的向量或同为标量，否则就要认真讨论为什么会产生这种不一致。
+
+我们上面的讨论与本章一开始就提到的黎曼的思想
+\[
+ ds^2=g_{ij}\,dx^i dx^j
+\]
+有密切关系。$ds^2$ 既是距离平方，双方除以 $dt^2$ 即得速度平方
+\[
+ \left(\frac{ds}{dt}\right)^2=g_{ij}\dot x^i\dot x^j,
+\]
+再考虑到可以把质量也吸收到 $g_{ij}$ 中去，则
+\[
+ \frac12\left(\frac{ds}{dt}\right)^2
+\]
+其实是动能。所以，黎曼的思想有深厚的物理背景。至此，读者会问，$(g_{ij})$ 究竟是什么？这是 $n^2$ 个数或函数组成一组（考虑到对称性，实有 $\frac12n(n+1)$ 个数），而在坐标变换下，它按(18)式变化。它还有一个奇怪的性质：即当它与一个逆变向量 $x^j$ 相乘，并对 $j$ 求和，从而使指标 $j$ 在最后的结果中不再出现（这个运算叫“缩并”（contraction）），这时一定出现一个协变向量——动量，我们记作 $p_i=g_{ij}\dot x^j$。一个数学对象如果有这些奇妙的性质，其本质必然值得认真讨论。如 $(g_{ij})$ 这样的对象就称为一个张量。黎曼就是发现了度量张量 $(g_{ij})$，由此建立了黎曼几何学，对整个数学和物理学起了极大的推动作用，我们将在下面再细说。
+
+最后我们要提出一点，上面我们讲向量都是以空间某一定点为原点建立一个线性空间 $\mathbb R^n$，所有的向量都是 $\mathbb R^n$ 或 $(\mathbb R^n)^*$ 之元，这些空间中的坐标变换也都是常系数的线性变换。但是在实际的物理问题中，并不只讨论一个定点上的问题，而要考虑某一区域 $\Omega$ 中的向量函数、标量函数。这个 $\Omega$ 是 $\mathbb R^n$ 的一个区域，但这里的 $\mathbb R^n$ 与向量所在的 $\mathbb R^n$ 或 $(\mathbb R^n)^*$ 是两回事，正如我们的第三章中讲什么是微分时，讲到 $x+h$ 时说的，$x\in\Omega\subset\mathbb R^n$ 与 $h$ 所在的 $\mathbb R^n$ 是不同的，后者叫切空间，前者叫底空间。这在下一节讨论切丛、余切丛时会再讨论。现在我们讲坐标变换时就要考虑 $\Omega$ 中的 $x$ 变动，而不只是 $\mathbb R^n$ 中的向量按 $y=Ax$ 或 $y={}^t\!A^{-1}x$ 的变换，而是现在的非线性变换 $x=x(y)$ 的线性部分，亦即下面要讲的切变换，确实是以底空间中的 $x$ 点或相应的 $y$ 点（均作为定点考虑）为原点的切空间 $\mathbb R^n$ 中的线性变换，这个线性变换的矩阵就是雅可比矩阵 $\left(\frac{\partial x^i}{\partial y^j}\right)$。这样，我们就可以给出
+
+\noindent\textbf{定义1}\quad
+设在 $n$ 维区域 $\Omega$ 中作任意坐标变换，即微分同胚 $x=x(y)$ 或 $y=y(x)$。若在 $\Omega$ 上的 $n^0$ 个光滑函数 $f(x)$，在 $y$ 坐标中相应也有 $n^0$ 个光滑函数 $F(y)$，使
+\begin{equation}
+ f(x)=F(y),\qquad x=x(y),
+ \tag{21}
+\end{equation}
+就称 $f(x)$ 为一标量。若在 $\Omega$ 中对每个坐标系有 $n^1$ 个光滑函数所成的一组
+\[
+ (f_1(x),\ldots,f_n(x)),
+\]
+而在另一坐标系 $y$ 下相应有一组
+\[
+ (F_1(y),\ldots,F_n(y)),
+\]
+两组之间有关系式
+\begin{equation}
+ F_i(y)=f_j(x)\frac{\partial x^j}{\partial y^i},
+ \tag{22}
+\end{equation}
+则称它为一协变向量，这时规定将指标写在下面而有
+\[
+ F_i(y)=f_j(x)\frac{\partial x^j}{\partial y^i}.
+\]
+若 $f$ 与 $F$ 间的关系式为
+\[
+ F^i(y)=f^j(x)\frac{\partial y^i}{\partial x^j},
+\]
+这时规定指标写在上面，则称之为逆变向量。
+
+例如，$\Omega$ 中某一函数 $\varphi(x)$ 之梯度 $\operatorname{grad}\varphi$ 就是协变向量。$\Omega$ 中某一曲线 $x^i=x^i(t)$ 之“导数”或“速度”
+\[
+ \left(\frac{dx^1}{dt},\ldots,\frac{dx^n}{dt}\right)
+\]
+以及沿此曲线的微分 $(dx^1,\ldots,dx^n)$ 都是逆变向量。可以说，它们是最重要的协变和逆变向量。
+
+\medskip
+\noindent\textbf{2. 旋转和反射}\quad
+上一节中除了最后一段是讨论的非线性坐标变换以外，我们都是讨论的线性变换。在物理学中具有特殊重要性的是一些特殊的线性变换例如 $SO(n),U(n)$ 还有作为相对论基础的洛伦兹变换（Lorentz transformation）等等。这就涉及了群论的问题，是一个浩瀚的数学海洋。即使是从微积分的角度来看，也确有一些变换特别重要，例如有平移、旋转和反射。我们在这里不去讨论平移，因为它虽然简单，却不属于线性变换，而是仿射变换。下面我们讨论旋转。至于反射，则其性质又与旋转很不相同。不过，这里有两个相联系的问题。前面我们是固定了一个向量，即一个点，然后让基底——即坐标轴——改变并且看此点的坐标如何变化。另一个情况是固定基底，并让此向量，即一个点，变成另一个向量，而且这个变换对于被变换的向量是线性的。这两种问题虽然不同，却互有联系，甚至可以看成一种“相对运动”：把一个平面向量绕原点旋转角度 $\varphi$ 与将坐标轴旋转一个角 $-\varphi$，所得的公式是一样的，所以下面我们只看向量的变化。
+
+先看平面上的旋转，先看由 $(x,y)$ 点（现在没有必要区分协变与逆变向量，因为我们用的是正交笛卡儿坐标）到 $(x',y')$ 的旋转，其旋转中心为原点，旋转角为 $\varphi$。最好有的方法是用复数记号，于是令 $z=x+iy,z'=x'+iy'$，则
+\begin{equation}
+ z'=e^{i\varphi}z,
+ \tag{23}
+\end{equation}
+\[
+ (x'+iy')=(x\cos\varphi-y\sin\varphi)+i(x\sin\varphi+y\cos\varphi),
+\]
+分开实虚部，并用矩阵表示，即得
+\begin{equation}
+ \binom{x'}{y'}=
+ \begin{pmatrix}
+ \cos\varphi&-\sin\varphi\\
+ \sin\varphi&\cos\varphi
+ \end{pmatrix}
+ \binom{x}{y}.
+ \tag{24}
+\end{equation}
+这是点的变换。如果坐标轴旋转一个角度 $\varphi$ 则得
+\begin{equation}
+ \binom{x'}{y'}=
+ \begin{pmatrix}
+ \cos\varphi&\sin\varphi\\
+ -\sin\varphi&\cos\varphi
+ \end{pmatrix}
+ \binom{x}{y}.
+ \tag{24'}
+\end{equation}
+不论是哪一个问题，变换矩阵都是正交矩阵。
+
+上面我们还看到，平面旋转可以用两个观点来看：一是看成实的正交变换，一是看成复变换 $z'=e^{i\varphi}z$，$e^{i\varphi}$ 可以看成一个一阶矩阵，它仍是酉矩阵，因此记为 $(e^{i\varphi})$。这个情况在三维时照样成立。
+
+其实(24)或(24')也可以看成一个三维的点变换或坐标变换。例如(24')是 $x,y$ 平面绕 $z$ 轴旋转了角度 $\varphi$。因为 $z$ 轴是旋转轴，所以 $z$ 坐标不变 $z'=z$。这样，例如(24')就成为
+\begin{equation}
+ \begin{pmatrix}x'\\y'\\z'\end{pmatrix}
+ =\begin{pmatrix}
+ \cos\varphi&\sin\varphi&0\\
+ -\sin\varphi&\cos\varphi&0\\
+ 0&0&1
+ \end{pmatrix}
+ \begin{pmatrix}x\\y\\z\end{pmatrix}.
+ \tag{25}
+\end{equation}
+变换矩阵仍是一个正交矩阵，不过阶数为3。我们要证明 $\mathbb R^3$ 中一般的旋转都可以这样处理。现在设原有一个坐标系 $Oxyz$，经旋转成为 $Ox'y'z'$。我们要想办法把一个一般的旋转分解为若干个(25)那种类型的旋转的乘积。为此，我们令 $OL$ 为 $Oxy$ 平面和 $Ox'y'$ 平面之交线，$Oz$ 和 $Oz'$ 之交角是 $\theta$，由 $Ox$ 到 $OL$（均在平面 $Oxy$ 上）之角度为 $\varphi$，在 $Ox'y'$ 上由 $Ox'$ 到 $OL$ 之角度为 $\psi$（图7-1-2）。由 $Oxyz$ 坐标系变到 $Ox'y'z'$ 分成三步实现。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=.9,bella figure,>=stealth]
+  \coordinate (O) at (0,0);
+  \draw[->] (O)--(4.7,0) node[right] {$y$};
+  \draw[->] (O)--(0,4) node[above] {$z$};
+  \draw[->] (O)--(-3.1,-2.5) node[below left] {$x$};
+  \draw[->,thick] (O)--(-3.7,1.0) node[left] {$x'$};
+  \draw[->,thick] (O)--(.7,-3.5) node[below] {$y'$};
+  \draw[->,thick] (O)--(1.1,3.3) node[above] {$z'$};
+  \draw[->,thick] (O)--(-3.1,-.8) node[left] {$L$};
+  \draw (0,.9) arc[start angle=90,end angle=72,radius=.9] node[midway,right] {$\theta$};
+  \draw (-.8,-.2) arc[start angle=194,end angle=218,radius=1.2] node[midway,left] {$\varphi$};
+  \draw (-1.1,.1) arc[start angle=168,end angle=194,radius=1.45] node[midway,left] {$\psi$};
+  \node[below right] at (O) {$O$};
+\end{tikzpicture}
+\caption*{图7-1-2}
+\end{figure}
+
+1. 以 $Oz$ 为轴，在 $Oxy$ 平面上将 $Ox$ 旋转 $\varphi$ 成为 $OL$，令新坐标系为 $(x_1,y_1,z_1)$，则 $Ox_1$ 即 $OL$，$Oz_1$ 即 $Oz$，而由(25)有
+\begin{equation}
+ \begin{pmatrix}x_1\\y_1\\z_1\end{pmatrix}
+ =\begin{pmatrix}
+ \cos\varphi&\sin\varphi&0\\
+ -\sin\varphi&\cos\varphi&0\\
+ 0&0&1
+ \end{pmatrix}
+ \begin{pmatrix}x\\y\\z\end{pmatrix}.
+ \tag{26}
+\end{equation}
+
+2. 现在 $Ox_1$ 即 $OL$，它既在 $Ox_1y_1$ 平面上，又在 $Ox'y'$ 平面上，所以一方面它与 $Oz_1$ 正交，一方面又与 $Oz'$ 正交。以 $Ox_1$ 为轴在 $Oz_1z'$ 面上旋转一个角度 $\theta$，于是得到新坐标系 $Ox_2y_2z_2$，这里 $Ox_2$ 即 $Ox_1$，$Oz_2$ 即 $Oz'$，而由(25)式有
+\begin{equation}
+ \begin{pmatrix}x_2\\y_2\\z_2\end{pmatrix}
+ =\begin{pmatrix}
+ 1&0&0\\
+ 0&\cos\theta&\sin\theta\\
+ 0&-\sin\theta&\cos\theta
+ \end{pmatrix}
+ \begin{pmatrix}x_1\\y_1\\z_1\end{pmatrix}.
+ \tag{27}
+\end{equation}
+
+3. 现在绕 $Oz_2$ 作最后一次旋转，因为 $Oz_2$ 即 $Oz'$，所以旋转是在 $Ox_2y_2$ 平面上实现的，旋转的角度为 $\psi$，于是 $Ox_2$ 即 $OL$ 变成 $Ox'$。$Oz_2$ 是旋转轴所以不变，$Oy_2$ 即 $Oy'$（条件是 $Ox'y'z'$ 与 $Oxyz$ 同为右手或左手坐标系），于是最后有
+\begin{equation}
+ \begin{pmatrix}x'\\y'\\z'\end{pmatrix}
+ =\begin{pmatrix}
+ \cos\psi&\sin\psi&0\\
+ -\sin\psi&\cos\psi&0\\
+ 0&0&1
+ \end{pmatrix}
+ \begin{pmatrix}x_2\\y_2\\z_2\end{pmatrix}.
+ \tag{28}
+\end{equation}
+合并(26),(27),(28)即得最后的结果
+\begin{equation}
+ \begin{pmatrix}x'\\y'\\z'\end{pmatrix}
+ =A\begin{pmatrix}x\\y\\z\end{pmatrix},
+ \tag{29}
+\end{equation}
+其中
+\[
+\resizebox{0.96\linewidth}{!}{$
+A=\begin{pmatrix}
+\cos\varphi\cos\psi-\cos\theta\sin\varphi\sin\psi&
+\sin\varphi\cos\psi+\cos\theta\cos\varphi\sin\psi&
+\sin\theta\sin\psi\\
+-\cos\varphi\sin\psi-\cos\theta\sin\varphi\cos\psi&
+-\sin\varphi\sin\psi+\cos\theta\cos\varphi\cos\psi&
+\sin\theta\cos\psi\\
+\sin\varphi\sin\theta&-\cos\varphi\sin\theta&\cos\theta
+\end{pmatrix}.
+$}
+\]
+很容易证明，$A$ 是一个正交矩阵，而且 $\det A=1$。但是要注意，这是由于我们假设了 $Ox'y'z'$ 与 $Oxyz$ 同为右手或左手系，即有相同“手征”（chirality），否则下面我们会看到，$A$ 仍为正交矩阵，但是 $\det A=-1$，这种情况将在下面讨论。所有这种适合 $\det A=1$ 的正交矩阵成为一个群，记作 $SO(3)$，$(\theta,\varphi,\psi)$ 是它们的三个参数，称为欧拉角，它是欧拉在研究刚体绕固定点的旋转时提出的。固定点即选为原点 $O$，刚体原来的位置通过附着于其上的以 $O$ 为原点的一个正交标架 $Oxyz$ 来刻画，而其转动后的位置则通过 $Ox'y'z'$ 来刻画。
+
+我们把这些结果归结成为
+
+\noindent\textbf{定理2}\quad
+绕固定 $O$ 点的正交坐标系的旋转成为行列式为1的正交矩阵集合 $SO(3)$。它是一个群，称为三维特殊正交群，它含有三个连续参数 $(\theta,\varphi,\psi)$（称为欧拉角），这里 $0\le\theta<\pi,0\le\varphi<2\pi,0\le\psi<2\pi$。
+
+上面关于参数变化范围的规定是很明显的。此外，我们还应证明 $SO(3)$ 之任一元一定刻画正交标架的一个旋转，这是很容易证明的，因为正交变换下长度不变，所以角度也不变，这样正交标架仍变为正交标架，行列式为1表明标架的手征不会改变。
+
+重要的是，如果我们把 $n\times n$ 矩阵的 $n^2$ 个元看成 $\mathbb R^{n^2}$ 中一点的坐标，于是每个 $n\times n$ 矩阵 $A$ 就成了 $\mathbb R^{n^2}$ 中的一点。矩阵为非奇异的，即 $\mathbb R^{n^2}$ 中不适合代数方程 $\det A=0$ 的点之集合。这是一个开集，这类矩阵也成了一个群，称为 $n$ 维一般线性群，记作 $GL(n)$（有时写作 $GL(n,\mathbb R)$ 以与复矩阵群 $GL(n,\mathbb C)$ 区别）。$SO(3)$ 是 $GL(3)$ 的一个子群，而由正交条件（共6个方程）来刻画，所以这是一个3维曲面。这个曲面是光滑的，具有微分流形结构。每一个点因为代表一个矩阵又可以对它进行群运算。这是一大类极为重要的数学结构，称为李群，我们在这里当然不能再讲了。
+
+上面我们提到，二维平面上的旋转可以用一个复数 $e^{i\varphi}$ 来表示。它也是一个一阶酉矩阵，所以 $SO(2)$ 也就是 $U(1)$；同样 $\mathbb R^3$ 中的旋转 $SO(3)$ 也可以用 $SU(2)$ 表示，这里我们就不来证明了。\jiaokan{底本此处印作“$SO(2)$也就是$SU(1)$”。但 $SU(1)=\{1\}$ 为平凡群；平面旋转群 $SO(2)$ 与一维酉群 $U(1)=\{e^{i\varphi}\}$ 同构，故正文改为 $U(1)$。}
+
+需要提到的是行列式为1的条件，但实际上，若 $A$ 为正交矩阵，则 ${}^{t}\!A=A^{-1}$，所以 ${}^{t}\!A A=I$，从而
+\[
+ \det({}^{t}\!A)\det(A)=|\det A|^2=1,
+\]
+而 $A$ 之行列式之值可以是 $\pm1$。上面我们讲了 $A\in SO(3)$ 必得 $\det A=1$，现在要问，$\det A=-1$ 是什么样的标架变换即坐标变换？这是一个有深刻物理意义的问题，因为有两种坐标系，如图7-1-3中 $\mathbb R^2$ 的两个正交标架就不可能用旋转与平移使之重合，而其中之一在镜子（虚线）中的像就是另一个。这两个互为镜像的坐标系称为具有不同手征：右方的一个称为“右手坐标系”，左方的一个称为“左手坐标系”，二者的关系是
+\begin{equation}
+ \binom{x'}{y'}=
+ \begin{pmatrix}-1&0\\0&1\end{pmatrix}
+ \binom{x}{y}.
+ \tag{30}
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=.85,bella figure,>=stealth]
+  \draw[dashed] (0,-2.2)--(0,2.2) node[above] {镜子};
+  \coordinate (OL) at (-2.2,0); \coordinate (OR) at (2.2,0);
+  \draw[->] (OL)--(-4,0) node[left] {$x'$};
+  \draw[->] (OL)--(-2.2,2) node[above] {$y'$};
+  \draw[->] (OR)--(4,0) node[right] {$x$};
+  \draw[->] (OR)--(2.2,2) node[above] {$y$};
+  \node[below] at (OL) {$O'$}; \node[below] at (OR) {$O$};
+\end{tikzpicture}
+\hspace{2em}
+\begin{tikzpicture}[scale=.78,bella figure,>=stealth]
+  \coordinate (O1) at (0,0); \coordinate (O2) at (5,0);
+  \draw[->] (O1)--(2.2,0) node[right] {$y'$};
+  \draw[->] (O1)--(0,2.2) node[above] {$z'$};
+  \draw[->] (O1)--(-1.2,-1.4) node[below left] {$x'$};
+  \draw[->] (O2)--(7.2,0) node[right] {$y$};
+  \draw[->] (O2)--(5,2.2) node[above] {$z$};
+  \draw[->] (O2)--(3.8,-1.4) node[below left] {$x$};
+  \node[below] at (O1) {$O'$}; \node[below] at (O2) {$O$};
+\end{tikzpicture}
+\caption*{图7-1-3\hspace{9em}图7-1-4}
+\end{figure}
+
+对于 $\mathbb R^3$ 也是一样，图7-1-4给出了左、右手坐标系，其关系也是
+\begin{equation}
+ \begin{pmatrix}x'\\y'\\z'\end{pmatrix}
+ =\begin{pmatrix}-1&0&0\\0&1&0\\0&0&1\end{pmatrix}
+ \begin{pmatrix}x\\y\\z\end{pmatrix}.
+ \tag{31}
+\end{equation}
+(30)和(31)这样的线性变换称为 $x$ 方向的反射（reflection）。如果对所有坐标轴均作反射，则称为反演（inversion）（物理学家常称为宇称（parity）变换）。反射与旋转不同，它不形成群。例如在 $\mathbb R^2$ 上作对 $x$ 与 $y$ 轴两次反射，如图7-1-3的 $O'x'y'$，等于绕 $O$ 点旋转 $\pi$，而不再是反射。
+
+坐标系的手征是一个重要问题。在 $\mathbb R^3$ 中选取一个 o.n. 标架时，即使原点位置相同，三个轴都与对应的轴平行，却可以有手征的不同。这会影响到对物理量的表述和刻画。因为物理量和几何量与参考系——坐标系的手征的关系是非常重要的问题。即以“向量”而言，我们前面指出，所谓的向量原来只是指线性空间之元素，因此适用平行四边形法则，从而也有坐标，而且坐标的变换与标架的变换是逆步的，因而是逆变坐标；有了对偶空间以后又有了协变坐标。不过这一段讨论又限制坐标变换只是正交变换，因此协变、逆变之区别又消失了。但在这时又出现了新问题，即正交变换是否保持手征不变：从算术上看即此变换的行列式是 $+1$ 还是 $-1$；从几何上看则是此变换中是否除了旋转以外还包含了反射。于是，从作为线性空间的元素的向量中又可分为两个子类：一类是在一般的正交变换，即在 $O(3)$ 之下，亦即容许手征改变时，适合坐标变换的规则，我们甚至说它们在手征变换下不变（或者比较准确一些说它协变），这类向量称为真向量（proper vector）或极向量（polar vector）；另一类在 $SO(3)$ 下按坐标变换的规则处理，而若手征改变（例如 $x'=-x$ 之类）时，则整个向量变号，亦即在 $\det A=-1,A\in O(3)$ 时，正交变换 $A$ 将写成 $A=PA_1$，$P$ 为手征变换，$Pu=-u$，$A_1\in SO(3)$ 按通常的向量变换规则作用于一向量 $u$，于是 $Au=PA_1u=Pv=-v=-A_1u$。这一类向量称为赝向量（pseudo-vector）或轴向量（axial vector）。
+
+上面讲的话可能令读者感到太抽象，但看一下实例就知道这个区别实际上是很本质的。在 $\mathbb R^3$ 中最重要的真向量当然是位置向量 $(x,y,z)$ 以及它对时间的导数，即速度 $v$ 与加速度 $a$。由牛顿第二定律得出的力 $F=ma$，还有动量 $mv$（注意，现在我们不区别协变与逆变向量），当然也都是真向量。$\mathbb R^3$ 中最常见的赝向量是两个真向量 $A=(a_1,a_2,a_3)$ 与 $B=(b_1,b_2,b_3)$ 的向量积 $A\times B$。请读者回忆一下向量积的定义。在通常的教本中的说法，例如：$A\times B$ 是一个向量，其大小是 $|A||B|\sin\varphi$（$\varphi$ 是 $A$ 与 $B$ 之间的劣角，所以 $0\le\varphi\le\pi$），其方向与 $A,B$ 所定义的平面垂直，而且 $A,B,A\times B$ 成一个右手系，这里有一个隐含的假设即 $Oxyz$ 是一个右手系。如果想丢掉这个假设，则上面加了着重号的一句话应改为“而且 $A,B,A\times B$ 成一个与原来坐标系手征相同的坐标系”。向量积在物理学中极为重要。例如设一质点之位置向量与速度向量是 $r$ 和 $v$，则其角速度 $\omega=r\times v$ 就是向量积。因此，$\omega$ 是赝向量或轴向量。同样还有角动量 $r\times mv$ 和力矩 $r\times mF$ 都是。可是更有趣的是转到电磁理论。我们都知道有电场 $E$ 和磁场 $B$。上面我们已经看见了，$E$ 是真向量，可是由安培定律，如果有电流经过导线 $d\ell$（电流即运动的电荷），设电流值为 $i$，则它在 $D$ 点产生的磁场是
+\[
+ dB=i\,d\ell\times r/r^3.
+\]
+（图7-1-5）由此立刻看到 $B$ 其实是一个赝向量。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=.9,bella figure,>=stealth]
+  \draw[thick,->] (-3,-1.4)--(2.7,2.2) node[right] {导线};
+  \draw[->,very thick] (-1.5,-.45)--(-.55,.16) node[midway,above] {$d\ell$};
+  \fill (2,-1.2) circle (1.2pt) node[below] {$D$};
+  \draw[->] (2,-1.2)--(.5,.75) node[midway,right] {$r$};
+  \draw[->,very thick] (2,-1.2)--(2,1.0) node[right] {$dB$};
+\end{tikzpicture}
+\caption*{图7-1-5}
+\end{figure}
+
+不仅如此，我们来看以速度 $v$ 运动着的电荷 $q$ 在电磁场 $E$ 和 $B$ 中所受的力——称为洛伦兹力（Lorentz force）（注意，库仑定律只适用于静电荷）：
+\[
+ F=q\left(E+\frac1c v\times B\right),\qquad c=\text{光速}.
+\]
+它是真向量还是赝向量？第一项当然是真向量。第二项当手征改变时，一方面作为向量积会变一次符号，另一方面 $B$ 作为赝向量又会变一次符号，最终是不变。所以洛伦兹力和牛顿力一样都是真向量。
+
+但是看来电磁场中却存两个性质完全不同的成分：真向量 $E$ 与赝向量 $B$，两个不同性质的东西怎能共处在一起？其实还有一件“怪事”值得在此提一下：细心的读者一定会注意到，我们只讨论三维空间中的向量积，这是为什么？试看上面给的 $A=(a_1,a_2,a_3),B=(b_1,b_2,b_3)$，则 $A\times B$ 的三个分量恰好是 $2\times3$ 矩阵
+\begin{equation}
+ \begin{pmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\end{pmatrix}
+ \tag{32}
+\end{equation}
+的三个二阶子行列式（附以适当的正负号）。于是要问，对于 $n$ 维向量 $A=(a_1,a_2,\ldots,a_n),B=(b_1,b_2,\ldots,b_n)$ 可否取 $2\times n$ 矩阵
+\begin{equation}
+ \begin{pmatrix}a_1&a_2&\cdots&a_n\\b_1&b_2&\cdots&b_n\end{pmatrix}
+ \tag{33}
+\end{equation}
+的二阶子行列式附以适当符号来构成一个新向量呢？但是现在二阶子行列式的个数是 $\binom n2=\frac12n(n-1)$。如果想构成一个 $n$ 维向量，其充分必要条件是 $\frac12n(n-1)=n$，即 $n=3$。所以三维向量的“向量积” $A\times B$ 是一个三维向量，其实是一件“偶然”的事，它一定还另有实质。同样，磁场 $B$ 由安培定律也是一个“向量积”，所以它的“实质”是什么需要深入讨论。到了那时才能对麦克斯韦的电磁理论有一个确切的理解。
+
+向量有真赝之分，标量当然也有。真赝标量之别在于手征变化后变号或不变符号。许多物理量例如质点的质量、光速等等都是真标量。但是例如磁场 $B$ 与位置向量 $r$ 的标量积 $r\cdot B$ 却是一个赝标量。
+
+那么 $B$ 的本质是什么呢？$B$ 和 $E$ 在一起构成一个二阶张量。
+
+\medskip
+\noindent\textbf{3. 张量}\quad
+数学中要研究的量，除了标量、向量（以及标量值、向量值函数）以外，还有许多。把张量也纳入数学研究的对象是一大进步，因为这就大大扩大了数学的视野。人们发现许多在物理学和几何学中极重要的量都是张量。这里我们只从几个例子出发，用有坐标的便于计算的方式引入张量的概念和它们的基本运算规则，其比较系统的不依赖于坐标的讨论则放在第3节中与外形式运算一起来讲。
+
+我们已看到，$n$ 维空间中若赋予了坐标，其向量就是一组 $n$ 个数（本节之中我们限于讨论实的线性空间）$(a_1,\ldots,a_n)$ 并要求它们在坐标变换下按一定规则变化，并视其所遵循的规则称为逆变与协变向量。$k$ 阶张量，有了坐标以后，则是一组 $n^k$ 个数，而在坐标变换下也要求它们按一定规则变化。一个例子是黎曼引进的度量。黎曼的思想是，对一般的非平直的空间，其无限接近的两点之间的距离（这里又涉及无穷小的问题，但读者们不会再有困难）不再是由毕达哥拉斯定理得出的 $ds^2=dx^2+dy^2$（这与我们在欧氏空间中引入曲线坐标如极坐标、球坐标还不一样，因为现在的空间中根本不一定有 $\mathbb R^n$ 中的直角坐标系存在），而是
+\begin{equation}
+ ds^2=g_{ij}(x)\,dx^i dx^j,\qquad g_{ij}(x)=g_{ji}(x),
+ \tag{34}
+\end{equation}
+这里矩阵 $(g_{ij}(x))$ 规定为正定的。
+
+如果我们作一个坐标变换
+\begin{equation}
+ y=y(x),
+ \tag{35}
+\end{equation}
+这里 $x(y)$ 是光滑的，而且上式是局部微分同胚，所以雅可比行列式
+\[
+ \frac{\partial(y_1,\ldots,y_n)}{\partial(x_1,\ldots,x_n)}\ne0.
+\]
+本节开始时我们讲的都是线性变换 $y=Ax$，现在则因所讨论的空间不是 $\mathbb R^n$，其中的坐标变换当然不一定是线性变换了。不过在下一节介绍了微分流形及其切空间概念后将会知道，这里没有什么本质区别。我们现在只说(35)式在某定点（不妨设为 $x=0,y(0)=0$）附近的线性部分就是 $y=Ax$，这里
+\[
+ A=\left.\frac{\partial(y_1,\ldots,y_n)}{\partial(x_1,\ldots,x_n)}\right|_{x=0}.
+\]
+知道了这一点以后，下面我们就只讨论变换(35)了。
+
+$ds^2$ 的定义怎样能做到与坐标无关？为了从几何上研究空间的性质而不把坐标系的特点掺进去，这是完全必要的，为此就要求 $(g_{ij}(x))$ 服从一定的要求。这要求就是，若在坐标系 $y$ 之下，$g_{ij}(x)$ 变成了 $\widetilde g_{kl}(y)$，我们应该有
+\[
+ ds^2=\widetilde g_{kl}(y)\,dy^kdy^l=g_{ij}(x)\,dx^i dx^j.
+\]
+以(35)式代入中间一项即得
+\[
+ ds^2=\widetilde g_{kl}(y)\frac{\partial y^k}{\partial x^i}dx^i
+ \frac{\partial y^l}{\partial x^j}dx^j
+ =\left(\widetilde g_{kl}(y)\frac{\partial y^k}{\partial x^i}
+ \frac{\partial y^l}{\partial x^j}\right)dx^i dx^j
+ =g_{ij}(x)dx^i dx^j.
+\]
+由 $dx^i$ 的任意性即得
+\begin{equation}
+ \widetilde g_{kl}(y)\frac{\partial y^k}{\partial x^i}
+ \frac{\partial y^l}{\partial x^j}=g_{ij}(x).
+ \tag{36}
+\end{equation}
+注意到 $\frac{\partial x^i}{\partial y^k}\frac{\partial y^k}{\partial x^j}=\delta^i_j$，也可得出
+\begin{equation}
+ \widetilde g_{kl}(y)=g_{ij}(x)\frac{\partial x^i}{\partial y^k}
+ \frac{\partial x^j}{\partial y^l}.
+ \tag{37}
+\end{equation}
+注意，(36),(37)和前面的(12),(13)是很相似的，例如(36)中的 $\left(\frac{\partial y^k}{\partial x^i}\right)=A$（注意(36)中是对 $k,l$ 求和的，而(37)中的 $\left(\frac{\partial x^i}{\partial y^k}\right)$ 是 $A^{-1}$，(37)中是对 $i,j$ 求和的）。
+
+我们再来看一个例子即 $A\times B$。如果用 $\mathbb R^3$ 中的 o.n. 标架 $(e_1,e_2,e_3)$，注意到从 $e_j$ 到 $e_k$ 所得的平行四边形面积为 $+1$（只要 $i,j,k$ 可由 $1,2,3$ 用轮换排列而得），于是
+\begin{align}
+ A\times B={}&a^1b^2 e_1\times e_2+a^2b^3e_2\times e_3+a^3b^1e_3\times e_1\notag\\
+ &+a^2b^1e_2\times e_1+a^1b^3e_1\times e_3+a^3b^2e_3\times e_2\notag\\
+ ={}&(a^1b^2-a^2b^1)e_1\times e_2+(a^2b^3-a^3b^2)e_2\times e_3
+ +(a^3b^1-a^1b^3)e_3\times e_1.
+ \tag{38}
+\end{align}
+注意到 $e_2\times e_3$ 是 $yz$ 平面上由 $y$ 轴的单位向量转到 $z$ 轴的单位向量所成的平行四边形（其实是正方形）的有符号的面积，则我们可以把(38)式看成一个平面有向面积向三个坐标平面上的分解，也就不妨把这个有向面积看成一种向量的类似物。它有十分类似于平行四边形法则的分解（可惜我们这里采用了 o.n. 标架，而它是与欧几里得度量有关的，平行四边形法则却是与度量无关的。这个问题我们在讲到外形式时还要讲），最好是令例如 $a^1b^2-a^2b^1=2T^{12}$，则(38)可写为
+\begin{equation}
+ A\times B=T^{jk}e_j\times e_k,
+ \tag{39}
+\end{equation}
+这里 $j,k$ 可以由1到3任意取值，而不必如(38)那样一定要求 $(i,j,k)$ 成为轮换对称。这样自动地有
+\begin{equation}
+ T^{jk}=-T^{kj},\qquad T^{ii}=0.
+ \tag{40}
+\end{equation}
+$T^{jk}$ 称为 $A\times B$ 的分量。
+
+现在作一个坐标变换 $y=Ax$，使原来的基底成为新基底 $f_i=\lambda_i{}^j e_j$，于是 $e_i=\lambda^j{}_i f_j$，而 $A$ 和 $B$ 分别成为
+\[
+ A=a^ie_i=a^i\lambda^j{}_i f_j=\alpha^j f_j,
+ \qquad \alpha^j=\lambda^j{}_i a^i,
+\]
+\[
+ B=b^ie_i=b^i\lambda^j{}_i f_j=\beta^j f_j,
+ \qquad \beta^j=\lambda^j{}_i b^i.
+\]
+于是在新坐标系下
+\[
+ A\times B=(\alpha^2\beta^3-\alpha^3\beta^2)f_2\times f_3
+ +(\alpha^3\beta^1-\alpha^1\beta^3)f_3\times f_1
+ +(\alpha^1\beta^2-\alpha^2\beta^1)f_1\times f_2.
+\]
+现在新的分量是例如 $\alpha^2\beta^3$ 等等，而有 $\alpha^2\beta^3=\lambda^2{}_i\lambda^3{}_j a^i b^j$，等等。这个式子显然与逆变向量坐标的变换公式很相近。$g_{ij}(x)$ 和 $A\times B$ 都是我们要讲的张量。它们是二阶张量，因为它们的分量或坐标都依赖于两个指标。前者是协变张量，后者是逆变张量，其理由自明。前者是对称张量，因为 $g_{ij}(x)=g_{ji}(x)$，后者是反对称张量，因为(40)告诉我们 $T^{jk}=-T^{kj}$。
+
+按这里所讲的，我们可以给出一般的 $k$ 阶张量的定义，我们先令 $k=p+q,p,q$ 为非负整数。我们要构造出一个 $p$ 次逆变、$q$ 次协变的张量。这种张量称为 $(p,q)$ 型张量。于是有
+
+\noindent\textbf{定义2}\quad
+设有 $n^k$ 个光滑函数
+\[
+ T^{i_1\cdots i_p}{}_{j_1\cdots j_q}(x),
+\]
+这里 $i_1,\ldots,i_p$ 与 $j_1,\ldots,j_q$ 均互相独立地从1到 $n$ 取值。若作一个局部微分同胚(35)，使得在新坐标系下有 $n^{p+q}$ 个函数 $\widetilde T^{k_1\cdots k_p}{}_{l_1\cdots l_q}(y)$，而与原来的函数组之间有以下关系式
+\begin{equation}
+ \widetilde T^{k_1\cdots k_p}{}_{l_1\cdots l_q}(y)
+ =\frac{\partial y^{k_1}}{\partial x^{i_1}}\cdots
+ \frac{\partial y^{k_p}}{\partial x^{i_p}}
+ \frac{\partial x^{j_1}}{\partial y^{l_1}}\cdots
+ \frac{\partial x^{j_q}}{\partial y^{l_q}}
+ T^{i_1\cdots i_p}{}_{j_1\cdots j_q}(x),
+ \tag{41}
+\end{equation}
+就说 $T^{i_1\cdots i_p}{}_{j_1\cdots j_q}(x)$ 是一个 $k$ 阶 $(p,q)$ 型张量，更确切地说是一个 $p$ 阶逆变、$q$ 阶协变张量，$i_1,\ldots,i_p$ 和 $j_1,\ldots,j_q$ 分别称为逆变和协变指标。
+
+很清楚，向量就是一阶张量。逆变与协变向量分别是 $(1,0)$ 型与 $(0,1)$ 型张量。标量则是0阶张量，或者说是 $(0,0)$ 型张量。
+
+有一个特别重要的 $(1,1)$ 型张量 $\delta^i_j$，称为克罗内克（Kronecker）张量，它的特点在于其不变性：若它在 $y$ 坐标下的分量是 $\widetilde\delta^k_l$，则
+\[
+ \widetilde\delta^k_l=\delta^k_l.
+\]
+事实上
+\[
+ \widetilde\delta^k_l
+ =\frac{\partial y^k}{\partial x^i}\frac{\partial x^j}{\partial y^l}\delta^i_j
+ =\frac{\partial y^k}{\partial x^i}\frac{\partial x^i}{\partial y^l}
+ =\delta^k_l.
+\]
+我们说它是一个不变张量。
+
+另一个重要的张量是 $n$ 维空间中的 $(0,n)$ 型张量——列维--齐维塔（Levi--Civita）张量，它在 $\mathbb R^n$ 的一个正交坐标系下的分量是
+\begin{equation}
+ \varepsilon_{i_1\cdots i_n}=
+ \begin{cases}
+ 1,&\begin{pmatrix}1,\ldots,n\\i_1,\ldots,i_n\end{pmatrix}\text{ 是偶置换},\\[3pt]
+ -1,&\begin{pmatrix}1,\ldots,n\\i_1,\ldots,i_n\end{pmatrix}\text{ 是奇置换},\\[3pt]
+ 0,&\text{若 }i_1,\ldots,i_n\text{ 中有相等者}.
+ \end{cases}
+ \tag{42}
+\end{equation}
+它只在正交变换下有不变性：考虑 $\mathbb R^n$ 上的一个旋转变换 $y=Ax$，这里 $A\in SO(n)$。令
+\[
+ A=(a_{ij}),\qquad \frac{\partial y^j}{\partial x^i}=a_{ji},\qquad \det A=1,
+\]
+另一方面若记 $\varepsilon_{i_1\cdots i_n}$ 在 $y$ 坐标系下的分量为 $\widetilde\varepsilon_{j_1\cdots j_n}$，则
+\[
+ \widetilde\varepsilon_{j_1\cdots j_n}
+ =\sum\varepsilon_{i_1\cdots i_n}
+ \frac{\partial y^{j_1}}{\partial x^{i_1}}\cdots
+ \frac{\partial y^{j_n}}{\partial x^{i_n}}.
+\]
+这里我们没有区分协变与逆变坐标，因为在正交变换下二者没有区别。由行列式的定义
+\[
+ \sum\varepsilon_{i_1\cdots i_n}a_{j_1i_1}\cdots a_{j_ni_n}
+ =\det(a_{j_ri_s})_{r,s=1}^n.
+\]
+所以若 $(j_1,\ldots,j_n)$ 是偶置换，此行列式等于 $\det A=1$；若为奇置换，此行列式等于 $-\det A=-1$；若 $j_1,\ldots,j_n$ 中有二者相等，此行列式有两行相同，因而为0。在一般坐标变换下，列维--齐维塔张量没有不变性。
+
+下面讨论张量的代数运算。为了书写方便，我们不写出关于一般 $(p,q)$ 型张量的公式而只写出对某特定类型张量的相应公式。一般公式自然容易得出。首先是加法，设有两个同型的张量 $A^{i_1i_2}{}_{j_1}$ 与 $B^{i_1i_2}{}_{j_1}$，则二者可以求和，其和也是同型张量，而其分量是
+\begin{equation}
+ C^{i_1i_2}{}_{j_1}=A^{i_1i_2}{}_{j_1}+B^{i_1i_2}{}_{j_1}.
+ \tag{43}
+\end{equation}
+其次是张量积，仍设有两个张量 $A^{i_1i_2}{}_{j_1}$ 与 $B^{i_3}{}_{j_2j_3}$，分别是 $(2,1)$ 型与 $(1,2)$ 型的，则定义其张量积为一个 $(2+1,1+2)$ 型张量
+\begin{equation}
+ C^{i_1i_2i_3}{}_{j_1j_2j_3}
+ =A^{i_1i_2}{}_{j_1}\,B^{i_3}{}_{j_2j_3}.
+ \tag{44}
+\end{equation}
+有时我们又会把它写成 $A^{i_1i_2}{}_{j_1}\otimes B^{i_3}{}_{j_2j_3}$。应该注意，一般说来 $A\otimes B\ne B\otimes A$。即以(44)为例，如果把(44)中的 $C$ 理解为 $A\otimes B$，则例如有
+\[
+ C^{123}{}_{123}=A^{12}{}_1\,B^3{}_{23},
+\]
+但若将 $C$ 理解为 $B\otimes A$，则相应有
+\[
+ C^{123}{}_{123}=B^1{}_{12}\,A^{23}{}_3,
+\]
+二者确实是不相同的。
+
+张量积有一个特例，即标量 $\lambda$ 可以看成0阶张量，这样对任一张量 $A$（其分量为 $A^{i_1i_2}{}_{j_1}$）就可以定义 $\lambda\otimes A$（其分量为 $\lambda A^{i_1i_2}{}_{j_1}$）仍为同型张量。由上所述，同型的张量对于例如实数域中的 $\lambda$，形成一个线性空间。我们记之为 $T^p_q$；不同型的张量对于直和形成一个非交换的代数，并以 $\otimes$ 为其中的乘法，这个代数称为张量代数 $T$。关于张量代数与张量空间的代数结构，我们将在第三节去讨论。
+
+但是有两个常用的记号应该在此提到。我们知道，一个向量（不论是协变的还是逆变的）都可以看成一个一阶张量。例如，$A=\sum_{i=1}^n a_i e_i,B=\sum_{j=1}^n b_j e_j$，求二者的张量积，则可得到一个二阶张量
+\[
+ A\otimes B=\sum_{i,j=1}^n a_i b_j\,e_i\otimes e_j.
+\]
+如果我们把 $e_i\otimes e_j$ 看成这个二阶张量空间的基底（后面我们也将证明它），则 $A\otimes B$ 可以看成与 $\{a_i b_j\}$ 一一对应，或者就与下面的 $n\times n$ 矩阵一一对应。因此，我们就简单地写作
+\begin{equation}
+ A\otimes B=
+ \begin{pmatrix}
+ a_1b_1&\cdots&a_1b_n\\
+ \vdots&&\vdots\\
+ a_nb_1&\cdots&a_nb_n
+ \end{pmatrix}.
+ \tag{45}
+\end{equation}
+前面我们讲到黎曼的度量张量时，也曾把它写成以下几种形式之一
+\[
+ ds^2=g_{ij}(x)\,dx^i dx^j,
+ \qquad |g_{ij}(x)|,
+ \qquad (g_{ij}(x)),
+\]
+甚至可以写成
+\[
+ ds^2=g_{ij}(x)\,dx^i\otimes dx^j.
+\]
+这纯粹是一个记号问题，不过它在物理学和力学中常会见到这种情况，并且把(45)这样的二阶张量称为并矢（dyad）。
+
+另一点应该提到的是在泛函分析特别在广义函数论中，张量积这个词又有另一个用法。如果 $u(x)$ 与 $v(x)$ 都是定义在 $\Omega$ 中的函数，我们定义其张量积为
+\[
+ (u\otimes v)(x_1,x_2)=u(x_1)v(x_2).
+\]
+这样做的理由在于，$A$ 与 $B$ 本来属于同一个线性空间 $E$，其基底本来是同样的 $\{e_1,\ldots,e_n\}$。但在考虑张量积时，我们认为 $A$ 和 $B$ 各在自己的 $E$ 中，而这两个 $E$ 是互相独立的。因此，我们构造了另一个线性空间 $E\otimes E$，它是 $n^2$ 维的，而以 $\{e_i\otimes e_j;i,j=1,\ldots,n\}$ 为基底。把这个思想用于函数，$u(x)$ 与 $v(x)$ 可能属于同一空间，例如 $C_0^\infty(\Omega)$，但我们要求二者独立变化互不相涉。这样做最简单的方法自然是对 $u$ 和 $v$ 的自变量采用不同的记法，分别把它们写成 $u(x_1)$ 和 $v(x_2)$，并把通常的乘积 $u(x_1)v(x_2)$ 写成张量积 $(u\otimes v)(x_1,x_2)$。这样做，在代数结构上会得到一些好处，我们就不再去讲了。同样，在量子力学中，两个函数之并矢，亦即 $u\otimes v$，有时写成
+\[
+ (u\otimes v)(x_1,x_2)=|u\rangle\langle v|,
+\]
+这是狄拉克（Dirac）的记号，它时常是很方便的。
+
+张量所特有的，也是十分重要的代数运算是它的“缩并”（contraction）。它的意思是说在一个张量积，甚至在一个张量（视为该张量与1的张量积）中，若令一个协变指标与另一个逆变指标相等并对之求和，则将由原来的 $(p,q)$ 型张量得出一个 $(p-1,q-1)$ 型张量。因此，该张量的阶将下降2阶。例如在 $A^iB_j$ 中，令 $j=k$ 而且对 $j$ 相加，用求和规定将得到
+\[
+ A^iB_j=C^i,
+\]
+则 $C^i$ 是一个 $(1,0)$ 型张量。这个证明是很容易的。因为若记这些量在 $y$ 坐标系下的表示为 $\widetilde A^i,\widetilde B_k$ 和 $\widetilde C^i$，则
+\[
+ \widetilde C^i=\widetilde A^i\widetilde B_j
+ =\frac{\partial y^i}{\partial x^k}\frac{\partial x^m}{\partial y^j}A^kB_m
+ =\frac{\partial y^i}{\partial x^k}\delta^m_k A^kB_m
+ =\frac{\partial y^i}{\partial x^k}C^k.
+\]
+所以 $C^i$ 是一个 $(1,0)$ 型张量。
+
+其实缩并是我们已经见到过的。例如一个 $(1,1)$ 型张量 $A^i{}_j$，前面我们已说过，可以表示为一个矩阵
+\[
+ A=\begin{pmatrix}
+ a^1{}_1&\cdots&a^1{}_n\\
+ \vdots&&\vdots\\
+ a^n{}_1&\cdots&a^n{}_n
+ \end{pmatrix},
+\]
+则其缩并就是
+\[
+ a^i{}_i=a^1{}_1+\cdots+a^n{}_n.
+\]
+它恰好就是矩阵 $A$ 之迹（trace）$\operatorname{tr}A$：
+\[
+ \operatorname{tr}A=a^i{}_i.
+\]
+缩并的另一个表现就是内积。一个逆变向量 $A=(A^1,\ldots,A^n)$ 与一个协变向量 $B=(B_1,\ldots,B_n)$（视向量为一阶张量）之内积，其实就是对 $A\otimes B$ 作缩并的结果：
+\[
+ A\cdot B=\sum_i A^iB_i.
+\]
+
+利用缩并还可以得到一个决定某一组量是否张量的方法。设有 $n^2$ 个量，它们在 $x$ 坐标下的表示为 $A_{ik}$，若对此坐标系下的任意逆变向量 $X^k$，均可证明 $A_{ik}X^k$ 是一个 $(0,1)$ 型张量，则 $A_{ik}$ 必为一个 $(0,2)$ 型张量。实际上若换到 $y$ 坐标系而 $A_{ik}$ 与 $X^k$ 分别成了 $\widetilde A_{ik}$ 与 $\widetilde X^k$，则
+\[
+ \widetilde A_{ik}\widetilde X^k
+ =\frac{\partial x^j}{\partial y^i}A_{jm}X^m,
+\]
+但是
+\[
+ \widetilde X^k=\frac{\partial y^k}{\partial x^m}X^m.
+\]
+代入上式有
+\[
+ \left(\widetilde A_{ik}\frac{\partial y^k}{\partial x^m}
+ -\frac{\partial x^j}{\partial y^i}A_{jm}\right)X^m=0.
+\]
+因为此式对任意逆变向量 $X^m$ 均成立，故有
+\[
+ \widetilde A_{ik}\frac{\partial y^k}{\partial x^m}
+ =A_{jm}\frac{\partial x^j}{\partial y^i}.
+\]
+双方乘以 $\frac{\partial x^m}{\partial y^p}$ 并对 $m$ 求和，利用 $\frac{\partial y^k}{\partial x^m}\frac{\partial x^m}{\partial y^p}=\delta^k_p$，有
+\[
+ \widetilde A_{ip}
+ =A_{jm}\frac{\partial x^j}{\partial y^i}\frac{\partial x^m}{\partial y^p}.
+\]
+所以 $A_{ik}$ 是一个 $(0,2)$ 型张量。
+
+作为本节之结束，我们来回答为什么坐标变换不写成(6)而要写成 $x^i=a^i{}_j y^j$？这不但为了应用爱因斯坦求和规定，而且要保证在变换前后有相同的协变与逆变性质。

@@ -1,0 +1,2038 @@
+\chapter{Series Expansions of Arbitrary Functions}
+Many of the relations discussed in Chapter I are closely analogous to theorems in which functions of one or more variables, defined in some given fundamental domain $G$, take the place of vectors in $n$-dimensional space. The problem of expressing a vector in $n$-dimensional space as a linear combination of $n$ independent but otherwise arbitrary vectors is analogous to the problem of representing a more or less arbitrary function in the domain $G$ as a linear combination of members of some given set of functions. (It will become obvious that the number of functions in this set must be infinite.) This is known as the \emph{problem of series expansion of an arbitrary function in terms of a given set of functions}. In the present chapter this problem, which appears in various forms throughout mathematical physics, will be treated from a general point of view.
+
+We shall restrict ourselves to \emph{piecewise continuous functions}; i.e. we consider functions for which the fundamental domain $G$ may be subdivided into a finite number of domains that, in the interior of each domain, the function is continuous and approaches a finite limit as a point on the boundary of one of these domains is approached from its interior. To simplify notation we shall at first consider functions of one variable $x$, whose fundamental domain $G$ is a finite interval on the $x$-axis. If we are concerned with several variables, say the two variables $x$ and $y$, we shall assume that the boundary of the fundamental domain $G$ is formed by a finite number of segments of curves with continuously turning tangents. If we consider the points on the boundary as belonging to the fundamental domain we shall speak of a ``closed domain.''
+
+Furthermore we shall in many cases assume that the functions considered are \emph{piecewise smooth}, i.e. that they are piecewise continuous and possess piecewise continuous first derivatives. Unless the contrary is specified explicitly we shall assume that our functions have real values.
+
+\section{Orthogonal Systems of Functions}
+\subsection{Definitions}
+The integral\footnote{If no misunderstanding is possible, limits of integration will be omitted.}
+\begin{equation}(f,g)=\int fg\,dx\tag{1}\end{equation}
+taken over the (finite) fundamental domain is called the \emph{inner product} $(f,g)$ or $(fg)$ of two functions $f(x)$ and $g(x)$. It satisfies the Schwarz inequality
+\begin{equation}(f,g)^2\le(f,f)(g,g),\tag{2}\end{equation}
+where the equality holds if and only if $f$ and $g$ are proportional. As in the case of vectors, this follows either from the positive definite character of the function $\int(f+\lambda g)^2dx$ of the variable $\lambda$, or directly from the identity
+\[(f,g)^2=(f,f)(g,g)-\frac12\iint[f(x)g(\xi)-f(\xi)g(x)]^2dx\,d\xi.\]
+Two functions $f(x)$ and $g(x)$ for which $(f,g)$ vanishes will be termed \emph{orthogonal}. The inner product of a function $f(x)$ with itself is called the \emph{norm} of this function and is denoted by $Nf$:
+\begin{equation}Nf=(f,f)=\int f^2dx.\tag{3}\end{equation}
+A function whose norm is unity is said to be \emph{normalized}. A system of normalized functions $\varphi_1(x),\varphi_2(x),\ldots$ any two different members of which are orthogonal is called an \emph{orthonormal system} and the relations
+\[(\varphi_\nu,\varphi_\mu)=\delta_{\nu\mu}\qquad(\delta_{\nu\nu}=1,\quad\delta_{\nu\mu}=0\text{ for }\nu\ne\mu)\]
+expressing this property are the \emph{orthogonality relations}.
+
+An example of an orthonormal system of functions in the interval $0\le x\le2\pi$, or more generally in any interval of length $2\pi$, is given by the functions
+\[\frac1{\sqrt{2\pi}},\quad\frac{\cos x}{\sqrt\pi},\quad\frac{\sin x}{\sqrt\pi},\quad\frac{\cos2x}{\sqrt\pi},\quad\frac{\sin2x}{\sqrt\pi},\quad\ldots.\]
+For functions of a real variable which take on complex values it is convenient to extend the concept of orthogonality in the following way: Two complex functions $f(x)$ and $g(x)$ are said to be orthogonal if the relations
+\[(\bar f,g)=(f,\bar g)=0\]
+hold, where $\bar f$ and $\bar g$ denote the complex conjugate functions to $f$ and $g$, respectively. The function $f(x)$ is said to be normalized if $Nf=\int|f|^2dx=1$. The simplest example of a complex orthonormal system is given by the exponential functions
+\[\frac1{\sqrt{2\pi}},\quad\frac{e^{ix}}{\sqrt{2\pi}},\quad\frac{e^{2ix}}{\sqrt{2\pi}},\quad\ldots\]
+in the interval $0\le x\le2\pi$, as is seen immediately from the ``orthogonality relations''
+\begin{equation}\frac1{2\pi}\int_0^{2\pi}e^{i(\mu-\nu)x}dx=\delta_{\mu\nu}.\tag{4}\end{equation}
+We say that $r$ functions $f_1,f_2,\ldots,f_r$ are \emph{linearly dependent} if a homogeneous linear relation $\sum_{\nu=1}^r c_\nu f_\nu=0$ with constant coefficients $c_\nu$, not all equal to zero, holds for all $x$. Otherwise the functions are said to be \emph{linearly independent}. It is worth noting that the functions in an orthogonal system are always linearly independent. For, if an identity
+\[c_1\varphi_1+c_2\varphi_2+\cdots+c_n\varphi_n=0\]
+holds, we may multiply by $\varphi_p$ and integrate, obtaining the result $c_p=0$.
+
+\subsection{Orthogonalization of Functions}
+From a given system of infinitely many functions $v_1,v_2,\ldots$, any $r$ of which are linearly independent for arbitrary $r$, an orthonormal system $\varphi_1,\varphi_2,\ldots$ may be obtained by taking $\varphi_n$ as a suitable linear combination of $v_1,\ldots,v_n$. The orthogonalization procedure is exactly analogous to the procedure used for obtaining an orthogonal system of vectors from a set of linearly independent vectors (cf. Chapter I). We start by choosing $\varphi_1=v_1/\sqrt{Nv_1}$. Next we find a number $c_1'$ in such a way that the function $v_2-c_1'\varphi_1$ is orthogonal to $\varphi_1$, i.e. we set $c_1'=(\varphi_1,v_2)$. This function cannot vanish identically and can, therefore, be normalized; we divide it by the square root of its norm and obtain the normalized function $\varphi_2$. Continuing this procedure indefinitely we arrive at the desired orthogonal system of functions.
+
+In speaking of orthogonalization, we shall, in general, mean the procedure just described in which functions are both normalized and orthogonalized.
+
+\subsection{Bessel's Inequality. Completeness Relation. Approximation in the Mean}
+Let $\varphi_1,\varphi_2,\ldots$ be an orthonormal system and let $f$ be any function. The numbers
+\begin{equation}c_\nu=(f,\varphi_\nu)\qquad(\nu=1,2,\ldots)\tag{5}\end{equation}
+are called the \emph{expansion coefficients} or \emph{components} of $f$ with respect to the given orthonormal system.\footnote{The term ``Fourier coefficient'' is also used since the expansion considered is a generalization of the Fourier series expansion.}
+From the obvious relation
+\begin{equation}\int\left(f-\sum_{\nu=1}^n c_\nu\varphi_\nu\right)^2dx\ge0\tag{6}\end{equation}
+we obtain, by writing out the square and integrating term by term,
+\[0\le\int f^2dx-2\sum_{\nu=1}^n c_\nu\int f\varphi_\nu dx+\sum_{\nu=1}^n c_\nu^2=Nf-\sum_{\nu=1}^n c_\nu^2,\]
+and hence
+\begin{equation}\sum_{\nu=1}^n c_\nu^2\le Nf.\tag{7}\end{equation}
+Since the number on the right is independent of $n$, it follows that
+\begin{equation}\sum_{\nu=1}^{\infty}c_\nu^2\le Nf.\tag{8}\end{equation}
+This fundamental inequality, known as ``Bessel's inequality,'' is true for every orthonormal system. It proves that the sum of the squares of the expansion coefficients always converges.
+For systems of functions with complex values the corresponding relation
+\begin{equation}\sum_{\nu=1}^{\infty}|c_\nu|^2\le Nf=(f,\bar f)\tag{8'}\end{equation}
+holds, where $c_\nu$ is the expansion coefficient. The significance of the integral in (6) is that it occurs in the problem of approximating the given function $f(x)$ by a linear combination $\sum_{\nu=1}^n\gamma_\nu\varphi_\nu$ with constant coefficients $\gamma_\nu$ and fixed $n$, in such a way that the ``mean square error''
+\[M=\int\left(f-\sum_{\nu=1}^n\gamma_\nu\varphi_\nu\right)^2dx\]
+is as small as possible. For, by simple manipulations of the integral, we obtain the identity
+\[M=\int f^2dx+\sum_{\nu=1}^n(\gamma_\nu-c_\nu)^2-\sum_{\nu=1}^n c_\nu^2,\]
+from which it follows immediately that $M$ takes on its least value for $\gamma_\nu=c_\nu$.
+
+An approximation of this type is known as an approximation by the method of least squares, or an \emph{approximation ``in the mean.''}
+
+If, for a given orthonormal system $\varphi_1,\varphi_2,\ldots$, any piecewise continuous function $f$ can be approximated in the mean to any desired degree of accuracy by choosing $n$ large enough, then the system is said to be ``complete.'' For a complete orthonormal system of functions Bessel's inequality becomes an equality for every function $f$:
+\begin{equation}\sum_{\nu=1}^{\infty}c_\nu^2=Nf.\tag{9}\end{equation}
+This relation is known as the ``completeness relation.'' It may be written in the more general form
+\begin{equation}\sum_{\nu=1}^{\infty}c_\nu d_\nu=(f,g),\qquad c_\nu=(f,\varphi_\nu),\quad d_\nu=(g,\varphi_\nu).\tag{9'}\end{equation}
+
+As can be seen by applying (9) to the function $f+g$:
+\[
+N(f+g)=Nf+Ng+2(f,g)=\sum_{\nu=1}^{\infty}(c_\nu+d_\nu)^2
+=\sum_{\nu=1}^{\infty}(c_\nu^2+d_\nu^2+2c_\nu d_\nu),
+\]
+and then subtracting the corresponding equations for $f$ and $g$.
+
+Incidentally, a sufficient condition for the completeness of a system of functions $\varphi_1,\varphi_2,\ldots$ is that the completeness relation (9) be satisfied for all continuous functions $f$. For, any piecewise continuous function $g$ may be approximated by a continuous function $f$ in such a way that the integral $\int(f-g)^2dx$ is arbitrarily small. Let the points of discontinuity of $g$ be denoted by $x_\nu$. An approximating continuous function $f$ is obtained if in each interval $x_\nu-\delta\le x\le x_\nu+\delta$ we replace the graph of $g$ by the straight line-segment that joins the points $(x_\nu-\delta,g(x_\nu-\delta))$ and $(x_\nu+\delta,g(x_\nu+\delta))$.\footnote{If $M$ is an upper bound of $|g(x)|$ and $q$ the number of discontinuities of $g$ in the interval of integration, the mean square error is
+\[
+\int(f-g)^2dx\le 8M^2q\delta,
+\]
+which can be made arbitrarily small by choosing $\delta$ small enough.}
+
+If $n$ is sufficiently large, the mean square error integral $\int(f-\sum_{\nu=1}^n c_\nu\varphi_\nu)^2dx$, where $c_1,c_2,\ldots$ are the expansion coefficients of $f$, will be arbitrarily small. This implies that the integral
+\[
+M'=\int\left(g-\sum_{\nu=1}^n c_\nu\varphi_\nu\right)^2dx
+=\int\left[(g-f)+\left(f-\sum_{\nu=1}^n c_\nu\varphi_\nu\right)\right]^2dx
+\]
+may be made arbitrarily close to $N(g-f)$ by a suitable choice of $n$. From the Schwarz inequality we have, in fact,
+\[
+\begin{aligned}
+M'={}&N(g-f)+N\left(f-\sum_{\nu=1}^n c_\nu\varphi_\nu\right)
++2\left(g-f,f-\sum_{\nu=1}^n c_\nu\varphi_\nu\right)\\
+\le{}&N(g-f)+N\left(f-\sum_{\nu=1}^n c_\nu\varphi_\nu\right)
++2\sqrt{N(g-f)\,N\left(f-\sum_{\nu=1}^n c_\nu\varphi_\nu\right)}.
+\end{aligned}
+\]
+Moreover,
+\[
+M=\int\left(g-\sum_{\nu=1}^n a_\nu\varphi_\nu\right)^2dx\le M',
+\]
+where the $a_\nu$ are the expansion coefficients for $g$, since these coefficients yield the least mean square error for $g$. Thus the completeness relation holds for $g$ if it holds for $f$.
+
+It is important to bear in mind that the completeness of an orthonormal system $\varphi_1,\varphi_2,\ldots$, expressed by the equation
+\[
+\lim_{n\to\infty}\int\left(f-\sum_{\nu=1}^n c_\nu\varphi_\nu\right)^2dx=0,
+\]
+does not necessarily imply that $f=\sum_{\nu=1}^{\infty}c_\nu\varphi_\nu$, i.e. that $f$ can be expanded in a series in the functions $\varphi_\nu$. \emph{The expansion is, however, valid if the series $\sum_{\nu=1}^{\infty}c_\nu\varphi_\nu$ converges uniformly; the passage to the limit may then be carried out under the integral sign.} The completeness of the system $\varphi_1,\varphi_2,\ldots$ is, of course, a necessary condition for the validity of the expansion in general; for example, if we take $f$ to be one function of a complete system, then all its components with respect to the incomplete system (consisting of all the functions $\varphi_\nu$ except $f$) will vanish. But, even for a complete system $\varphi_1,\varphi_2,\ldots$, this question of the convergence of the series for an arbitrary function requires a more detailed investigation, which will be carried out subsequently (Chapters V and VI).
+
+If the above limit equation is satisfied we say that \emph{the functions $\sum_{\nu=1}^n c_\nu\varphi_\nu$ converge to the function $f$ in the mean}.
+
+Another important theorem is that \emph{a piecewise continuous function is uniquely determined by its expansion coefficients with respect to a given complete orthonormal system}. That is, if two piecewise continuous functions have the same expansion coefficients they are identical. For, the difference of two functions with equal coefficients has the coefficients zero; according to the completeness relation its norm is therefore zero, and this difference vanishes identically. Thus a function is uniquely determined by its expansion in terms of a complete orthonormal system even if this expansion converges only in the mean. In fact, convergence in the mean will be all that is needed for many theorems of mathematical physics.
+
+The concept of completeness of a system of functions retains its meaning even if the system is not orthonormal. \emph{In general, we call a system of functions complete if every piecewise continuous function can be approximated in the mean arbitrarily closely by a linear combination of functions of the system.} The completeness of such a system is preserved under the process of orthogonalization.
+
+\subsection{Orthogonal and Unitary Transformations with Infinitely Many Variables}
+There are many analogies between orthonormal systems of functions and orthonormal systems of vectors in $n$-dimensional space. It is often useful to regard the functions $\varphi_1,\varphi_2,\ldots$ as ``coordinate vectors'' or ``coordinate functions'' in a space of infinitely many dimensions (often called a ``Hilbert space''). An arbitrary function $f$ is a vector in this space and its expansion coefficients $c_\nu=(f,\varphi_\nu)$ are the components of this vector in terms of the system of coordinates defined by $\varphi_1,\varphi_2,\ldots$.
+
+If $\psi_1,\psi_2,\ldots$ is a second orthonormal system of functions with respect to which the components of $f$ are $d_i=(f,\psi_i)$, and if both systems are complete, then the $c_i$ and $d_i$ are related by the system of infinitely many equations
+\begin{equation}
+c_i=\sum_{k=1}^{\infty}a_{ik}d_k,\qquad a_{ik}=(\varphi_i,\psi_k)\qquad(i=1,2,\ldots).
+\tag{10}
+\end{equation}
+This is seen by applying the completeness relation (9') to the expansion coefficients of the functions $f$ and $\varphi_i$ with respect to the system $\psi_1,\psi_2,\ldots$. In the same way we obtain the inverse set of equations
+\begin{equation}
+d_i=\sum_{k=1}^{\infty}a_{ki}c_k,\qquad a_{ki}=(\psi_i,\varphi_k)\qquad(i=1,2,\ldots).
+\tag{10'}
+\end{equation}
+The coefficients obey the conditions
+\begin{equation}
+\sum_{k=1}^{\infty}a_{ik}a_{jk}=(\varphi_i,\varphi_j)=\delta_{ij},
+\tag{11}
+\end{equation}
+\begin{equation}
+\sum_{k=1}^{\infty}a_{ki}a_{kj}=(\psi_i,\psi_j)=\delta_{ij},
+\tag{11'}
+\end{equation}
+which are simply orthogonality conditions in $n$-dimensional space (Ch. I, \S1) generalized to the space of infinitely many dimensions. We therefore call a transformation (10) which fulfills conditions (11) and (11') an \emph{orthogonal transformation of infinitely many variables} or an orthogonal transformation in Hilbert space.
+
+Analogously, the expansion coefficients of a function with respect to two different complex orthogonal systems are related by a \emph{unitary transformation of infinitely many variables}.
+
+\subsection{Validity of the Results for Several Independent Variables. More General Assumptions}
+None of our concepts or results is changed if, instead of functions of a single variable, we consider functions of several variables, say $x$ and $y$. The variables are assumed to lie within a finite domain $G$, the volume element of which we denote by $dG$. We define the inner product $(fg)$ of two functions $f(x,y)$ and $g(x,y)$ in the region $G$ as the integral $(fg)=\int_G fg\,dG$. Then essentially nothing need be changed in the notations and proofs of this section.
+
+Furthermore, all our concepts and results remain valid if the fundamental domain is infinite, provided we assume that the squares of all functions occurring in the treatment are integrable over the entire fundamental domain.
+
+Finally, we remark that our methods are applicable even if the function $f$ becomes infinite in the fundamental domain, provided that $f$ and its square are integrable over the fundamental domain.
+
+\subsection{Construction of Complete Systems of Functions of Several Variables}
+If complete systems of functions of one variable are known, it is possible to construct complete systems of functions of two or more variables by the following theorem:
+
+Let
+\[
+\varphi_1(s),\varphi_2(s),\ldots
+\]
+be a complete orthonormal system of functions in the interval $a\le s\le b$, and suppose for each $i$ $(i=1,2,\ldots)$, that
+\[
+\psi_{1i}(t),\psi_{2i}(t),\ldots
+\]
+is a similar system in the interval $c\le t\le d$. Then the functions
+\[
+\omega_{ik}(s,t)=\varphi_i(s)\psi_{ki}(t)
+\]
+form a complete orthonormal system of functions in $s$ and $t$ in the rectangle $a\le s\le b$, $c\le t\le d$. (In particular, the system of functions $\varphi_i(s)\varphi_k(t)$ is orthonormal and complete in the square $a\le s\le b$, $a\le t\le b$.) Specifically, if $f(s,t)$ is a continuous function in this rectangle, the completeness relation
+\[
+\iint f^2(s,t)\,ds\,dt
+=\sum_{i,k=1}^{\infty}\left(\iint f(s,t)\omega_{ik}(s,t)\,ds\,dt\right)^2
+\]
+is satisfied.
+
+To prove this theorem, we note that
+\[
+\int f^2(s,t)\,ds=\sum_{i=1}^{\infty}g_i^2(t),
+\]
+where $g_i(t)=\int f(s,t)\varphi_i(s)\,ds$. This is simply an expression of the completeness of the system $\varphi_i$. Since the series on the right converges uniformly,\footnote{This follows from Dini's theorem: If a series of positive continuous functions $\sum_{\nu=1}^{\infty}f_\nu(t)$ converges to a continuous function $S(t)$ in a closed domain $G$, its convergence is uniform. A brief sketch of the proof follows: Let us write $S_n(t)=\sum_{\nu=1}^n f_\nu(t)$; $S(t)=S_n(t)+R_n(t)$. If our assertion were false there would exist a positive number $\alpha$, a set of numbers $n_1,n_2,\ldots$ tending to infinity, and associated values $t_1,t_2,\ldots$ in $G$ such that $R_{n_i}(t_i)\ge\alpha$, i.e. $S_{n_i}(t_i)\le S(t_i)-\alpha$. We may assume that the values $t_i$ converge to a limit $t$ which is in $G$. Now let $N$ be a fixed integer; then, for $n_i\ge N$, we have $S_N(t_i)\le S_{n_i}(t_i)$ and thus $S_N(t_i)\le S(t_i)-\alpha$. We now let $i$ increase beyond all bounds and obtain, because of the assumed continuity of all functions, $S_N(t)\le S(t)-\alpha$, which is impossible for sufficiently large $N$.} we may integrate term by term with respect to $t$, obtaining
+\[
+\iint f^2(s,t)\,ds\,dt=\sum_{i=1}^{\infty}\int g_i^2(t)\,dt.
+\]
+Now to the $i$-th term on the right we apply the completeness relation for the system of functions $\psi_{ki}(t)$ $(k=1,2,\ldots)$ and immediately obtain the desired completeness relation.
+
+\section{The Accumulation Principle for Functions}
+\subsection{Convergence in Function Space}
+The analogy between functions and vectors in $n$-dimensional space breaks down in many ways if infinite sets of functions and vectors are considered. It follows from an elementary theorem of analysis (Weierstrass theorem on points of accumulation) that one can select a convergent sequence out of any infinite set of vectors $\vv{v}$ with bounded absolute values $|\vv{v}|$ or bounded norms $\vv{v}^2=N\vv{v}$. Moreover, if for a sequence of vectors $\vv{v}_1,\vv{v}_2,\ldots$ the relation $\lim_{n,m\to\infty}N(\vv{v}_n-\vv{v}_m)=0$ holds, then a limit vector $\vv{v}=\lim_{n\to\infty}\vv{v}_n$ exists; finally, $\lim_{n\to\infty}N\vv{v}_n=0$ implies $\lim_{n\to\infty}\vv{v}_n=0$. These statements are not, however, generally valid in function space, i.e. in a space of infinitely many dimensions. Thus it is not possible to select a convergent sequence of functions from every infinite set of continuous functions $f(x)$ with bounded norm, and from the relation $\lim_{n\to\infty}Nf_n=0$ for a sequence of continuous functions it does not follow that $\lim_{n\to\infty}f_n=0$. Consider, for example, the functions
+\[
+f_n(x)=1-n^2x^2\quad\text{for }x^2\le\frac1{n^2},
+\qquad
+f_n(x)=0\quad\text{for }x^2\ge\frac1{n^2}
+\]
+in the interval $-1\le x\le+1$. Every subset of this set converges to the function
+\[
+f(x)=0\quad\text{for }x\ne0,
+\qquad
+f(x)=1\quad\text{for }x=0,
+\]
+which is discontinuous at $x=0$, even though $\lim_{n\to\infty}Nf_n=0$.
+
+Nevertheless, to carry through the analogy between vectors and functions, i.e. to preserve, in function space, both Weierstrass's principle of accumulation and the above convergence theorems, is a task that is essential for many purposes, especially for proofs of convergence and existence. There are two ways to approach this problem: First, the set of admissible functions may be widened by changing the concepts of integral and convergence; this method is used in the theory of Lebesgue but is not necessary for this book and will not be employed here.\footnote{See, however, \S10, 11, of this chapter.} The other approach, which we shall adopt, is to restrict the admissible functions to a set for which the principle of convergence is valid. The restriction we shall impose, beyond the requirement that each admissible function be continuous, is that the set of all admissible functions be \emph{equicontinuous}.
+
+Suppose we are dealing with functions of one independent variable $x$. The requirement of equicontinuity means that, for every positive $\varepsilon$, there exists a positive number $\delta=\delta(\varepsilon)$, depending only on $\varepsilon$ and not on the particular function $f(x)$ of the set, such that, if $|x_1-x_2|<\delta(\varepsilon)$, then $|f(x_1)-f(x_2)|<\varepsilon$, provided $x_1$ and $x_2$ are within the postulated range of the independent variable. For example, all functions $f(x)$ for which
+\[
+\int_a^b f'^2(x)\,dx\le M,
+\]
+where $M$ is a fixed constant, form an equicontinuous set of functions in the interval $a\le x\le b$. Indeed, for any two values $x_1$ and $x_2$ in this interval,
+\[
+f(x_2)-f(x_1)=\int_{x_1}^{x_2}f'(x)\,dx;
+\]
+
+
+% --- RESTART_R10: faithful continuation, printed pp. 59--66 ---
+Therefore, by the Schwarz inequality,
+\[
+|f(x_2)-f(x_1)|^2\le |x_2-x_1|\int_{x_1}^{x_2}f'^2(x)\,dx\le |x_2-x_1|M.
+\]
+From this inequality we see that the condition for equicontinuity is satisfied for $\delta(\varepsilon)=\varepsilon^2/M$.
+
+For equicontinuous sets of functions the \emph{principle of accumulation} is valid: \emph{From any set of functions which are uniformly bounded and equicontinuous in the fundamental domain $G$, it is possible to select a sequence $q_1(x),q_2(x),\ldots$ which converges uniformly to a continuous limit function in the domain $G$.}\footnote{It is actually sufficient to assume uniform boundedness for a single point of $G$; because of the equicontinuity, the functions would then be uniformly bounded over the entire domain $G$.} This theorem (Theorem of Arzela) for sets of continuous functions is analogous to Weierstrass's theorem on bounded point sets; it therefore fulfills our requirement.
+
+To prove the theorem we consider a denumerable set of points $x_1,x_2,\ldots$, which is everywhere dense in the interval, for example the set obtained by successive bisections of the interval and the resulting subintervals. The set of values of the functions at $x_1$ contains as a subset a convergent sequence; this follows from Weierstrass's theorem. Therefore it is possible to select from the given set of functions an infinite sequence of functions $a_1(x),a_2(x),\ldots$ whose values at the point $x_1$ form a convergent sequence. In the same way we can select from this sequence a subsequence $b_1(x),b_2(x),\ldots$ which converges at $x_2$, and so on. We now consider the ``diagonal sequence'' $a_1(x)=q_1(x), b_2(x)=q_2(x),\ldots$ and assert that it converges uniformly in the entire interval.
+
+To show this we select an arbitrarily small positive number $\varepsilon$ and a number $M$ so large that for every point $x$ of the interval there exists a point $x_h$ with $h\le M$ for which $|x-x_h|\le\delta(\varepsilon)$, $\delta(\varepsilon)$ being the number defined above in the definition of equicontinuity. We now choose a number $N=N(\varepsilon)$, depending only on $\varepsilon$, so great that, for $m>N$, $n>N$,
+\[
+|q_m(x_h)-q_n(x_h)|<\varepsilon\qquad(h=1,2,\ldots,M).
+\]
+Because of the equicontinuity of the functions we now have, for some particular value of $h\le M$,
+\[
+|q_m(x)-q_m(x_h)|<\varepsilon,
+\qquad
+|q_n(x)-q_n(x_h)|<\varepsilon;
+\]
+therefore, for $m>N$, $n>N$,
+\[
+|q_m(x)-q_n(x)|<3\varepsilon.
+\]
+This proves the uniform convergence of the sequence of functions $q_1(x),q_2(x),\ldots$ for all $x$ in the interval $a\le x\le b$. The continuity of the limit function $q(x)$ follows immediately from the uniformity of the convergence. It may be remarked incidentally that these considerations also show that \emph{every convergent subsequence converges uniformly}.
+
+A set of equicontinuous functions possesses, moreover, the following properties: \emph{If the sequence of functions $f_1(x),f_2(x),\ldots$ belongs to an equicontinuous set and if $\lim_{n\to\infty}Nf_n=0$, then $\lim_{n\to\infty}f_n=0$. Furthermore, if $f_n$ is bounded and if $\lim_{n,m\to\infty}N(f_n-f_m)=0$, there exists a continuous function $f(x)$ such that $\lim_{n\to\infty}f_n(x)=f(x)$. In both cases the convergence to the limit is uniform.}
+
+To prove the first assertion we assume that $\lim_{n\to\infty}f_n(x_0)\ne0$ for some $x_0$. Then there exist arbitrarily large values of $n$ such that $f_n^2(x_0)>2\alpha^2$, where $2\alpha^2$ is some positive bound. Because of the equicontinuity of the functions $f_n(x)$ there must then exist a fixed interval of width $\delta$, containing the point $x_0$, such that, within this interval, $f_n^2>\alpha^2$ for the above values of $n$. Therefore $Nf_n>\delta\alpha^2$, in contradiction to the premise that $\lim_{n\to\infty}Nf_n=0$. The proof of the second part of our assertion is similar; it may be carried out by the reader.
+
+Another property of an equicontinuous set of functions with bounded norms is the following, which will be termed the smoothness\footnote{This concept, which relates to sets of functions, is not to be confused with the concept of a ``smooth function'' introduced at the beginning of this chapter.} of the set: \emph{Let $r$ be a positive integer, and let $c_1,c_2,\ldots,c_r$ be arbitrary numbers whose absolute values lie below a fixed bound, say 1. Then there exists a number $\delta(\varepsilon)$ depending only on $r$ and the positive number $\varepsilon$ and tending to zero with $\varepsilon$, such that the relation
+\[
+|c_1f_1+c_2f_2+\cdots+c_rf_r|<\delta
+\]
+follows from the relation
+\[
+N(c_1f_1+c_2f_2+\cdots+c_rf_r)<\varepsilon,
+\]
+if $f_1,f_2,\ldots,f_r$ are any $r$ functions of the set.}
+
+This follows from the theorems just proved if we note that the functions of our set remain equicontinuous when the set is extended by including all linear combinations $c_1f_1+c_2f_2+\cdots+c_rf_r$ with fixed $r$ and bounded $|c_i|$.
+
+The smoothness of the sequence of functions $f_1,f_2,\ldots$ may also be expressed in the following way: The sequence has the property that from each subsequence a uniformly convergent subsequence can be selected.
+
+The following somewhat more general theorem may easily be derived from the principle of accumulation: Let
+\[
+\begin{array}{cccc}
+p_{11}(x),&p_{12}(x),&\ldots,&p_{1r}(x),\\
+p_{21}(x),&p_{22}(x),&\ldots,&p_{2r}(x),\\
+\multicolumn{4}{c}{\cdots\cdots\cdots\cdots\cdots}
+\end{array}
+\]
+\emph{be a sequence of sets $G_1,G_2,\ldots$ of $r$ functions each, such that all of the functions are equicontinuous and uniformly bounded in the interval $a\le x\le b$. Then a subsequence $G_{n_1},G_{n_2},\ldots$ may be selected such that the functions $p_{n_i,k}(x)$ $(k=1,2,\ldots,r)$ converge uniformly to $r$ continuous functions $p_1(x),p_2(x),\ldots,p_r(x)$ as $i$ increases.}
+
+Selecting a suitable subsequence, the desired convergence may indeed be obtained for the functions of the first column; from this subsequence a new subsequence can be selected such that the second column also converges. This process is then repeated $r-2$ more times.
+
+\section{Measure of Independence and Dimension Number}
+\subsection{Measure of Independence}
+A simple criterion for the linear dependence or independence of $r$ functions $f_1,f_2,\ldots,f_r$ follows by a procedure analogous to that employed for vectors in $n$-dimensional space. We begin by considering the quadratic form in $r$ real variables $t_1,t_2,\ldots,t_r$
+\begin{equation}
+K(t,t)=N(t_1f_1+\cdots+t_rf_r)=\int(t_1f_1+\cdots+t_rf_r)^2\,dx
+=\sum_{i,k=1}^{r}(f_if_k)t_it_k.
+\tag{12}
+\end{equation}
+Since $K(t,t)$ is positive semidefinite,\ctnote{The text says ``positive definite.'' Since the functions $f_1,\ldots,f_r$ are not assumed linearly independent at this point and the next sentences explicitly allow the lowest eigenvalue to be zero, the quadratic form can in general only be positive semidefinite.} its lowest eigenvalue $m$ (i.e. the minimum value of $K$ when the $t_i$ are varied subject to the restriction $\sum_{i=1}^{r}t_i^2=1$) is certainly not negative. We call this number the ``measure of independence'' of the functions $f_1,f_2,\ldots,f_r$. The functions $f_1,f_2,\ldots,f_r$ are evidently linearly dependent if and only if the measure of independence $m$ is equal to zero. In the case of linear independence $m$ indicates the ``degree of independence.''
+
+The vanishing of the Gram determinant
+\begin{equation}
+\Gamma(f_1,\ldots,f_r)=
+\begin{vmatrix}
+(f_1f_1)&\cdots&(f_1f_r)\\
+\vdots&&\vdots\\
+(f_rf_1)&\cdots&(f_rf_r)
+\end{vmatrix}
+\tag{13}
+\end{equation}
+of the system of functions $f_1,f_2,\ldots,f_r$ is equivalent to the vanishing of its measure of independence. This follows from the fact that the Gram determinant is the product of all the eigenvalues of $K$. Since, moreover, the eigenvalues are non-negative, we know that $m^r\le\Gamma\le mM^{r-1}$, where $M$ is the greatest eigenvalue of $K$, and $\Gamma\ge0$.\footnote{The latter inequality is a generalization of the Schwarz inequality; in fact it is the Schwarz inequality if $r=2$.} Thus, the vanishing of the Gram determinant is a necessary and sufficient condition for the linear dependence of the functions $f_1,f_2,\ldots,f_r$.
+
+If we form a linear combination $f=\sum_{i=1}^{r}u_if_i$ of $r$ linearly independent functions $f_1,f_2,\ldots,f_r$, and if, moreover, $f$ is normalized, we find that none of the coefficients $u_i$ can exceed in absolute value the bound $1/\sqrt m$, which depends only on the measure of independence. For, if we write
+\[
+v_i=\frac{u_i}{\sqrt{\sum_{i=1}^{r}u_i^2}},
+\]
+we evidently have from the definition of $m$
+\[
+m\le\int\left(\sum_{i=1}^{r}v_if_i\right)^2dx
+=\frac{Nf}{\sum_{i=1}^{r}u_i^2}
+=\frac1{\sum_{i=1}^{r}u_i^2};
+\]
+therefore $\sum_{i=1}^{r}u_i^2\le1/m$. \emph{If a system of $r$ functions whose measure of independence lies above the positive bound $\mu$ is orthogonalized, i.e. if the functions of the set are replaced by suitable normalized linear combinations of the functions, no coefficients with absolute values in excess of $1/\sqrt\mu$ can occur.}
+
+\subsection{Asymptotic Dimension of a Sequence of Functions}
+The sequence of normalized functions (or, more generally, functions of bounded norm) $f_1,f_2,\ldots$ is said to be exactly $r$-dimensional if any $r+1$ functions of the sequence are linearly dependent, and at the same time there exists at least one set of $r$ functions of the sequence which are linearly independent. In this case every function of the sequence may be written as a linear combination $t_1g_1+t_2g_2+\cdots+t_rg_r$ with constant coefficients $t_1,t_2,\ldots,t_r$ of $r$ basis functions $g_1,g_2,\ldots,g_r$; the entire sequence of functions is composed of members of the ``linear space'' (or ``linear family'') $t_1g_1+t_2g_2+\cdots+t_rg_r$.
+
+If the sequence of functions $f_1,f_2,\ldots$ is not of finite dimension, two possibilities exist: 1) For every arbitrarily large positive integer $s$ there exist sets of $s$ functions $f_{n_1},f_{n_2},\ldots,f_{n_s}$ with arbitrarily large indices $n_1,n_2,\ldots,n_s$ such that the measure of independence of these functions lies above a fixed bound, independent of the indices $n_i$ but possibly depending on $s$. In this case we ascribe the asymptotic dimension $\infty$ to the sequence of functions.\footnote{The simplest example of a sequence with infinite dimension is a sequence of orthonormal functions for which the measure of independence of every finite subset has the value 1.} 2) For sufficiently large $s$ the measure of independence of $f_{n_1},\ldots,f_{n_s}$ converges to zero if all the indices $n_1,n_2,\ldots,n_s$ increase beyond all bounds. Here the smallest integer $r$ for which the measure of independence tends to zero for $s>r$ is said to be the \emph{asymptotic dimension} of the sequence. In particular, $r=0$ if $Nf_n$ tends to zero with increasing $n$. If the asymptotic dimension of a sequence is $r$ and if sufficiently many functions at the beginning of the sequence are omitted, then any $r+1$ of the remaining functions are ``almost'' linearly dependent.
+
+This terminology, suggested by the analogy to vectors in $n$-dimensional space, would be meaningful if the functions sufficiently far out in a sequence of asymptotic dimension $r$ could be approximated with prescribed accuracy by the functions of a linear space formed from $r$ basis functions. In general, however, this is not true unless the concepts of function and of integral are extended according to the theory of Lebesgue. Since we wish to remain in the realm of our more elementary theory, we shall prove the above assertion by making certain restrictive assumptions as discussed in \S2. In fact, we shall simply assume that the sequence of functions is \emph{smooth}.
+
+In this case, the following theorem holds: \emph{If $f_1,f_2,\ldots$ is a smooth sequence of functions with asymptotic dimension $r$, then there exist $r$ linearly independent functions (which may be taken to be orthonormal) $g_1,g_2,\ldots,g_r$ such that, for sufficiently large $n$, each function $f_n$ differs from a function of the linear space $t_1g_1+t_2g_2+\cdots+t_rg_r$ by less than an arbitrarily small positive quantity $\varepsilon$, while no space with fewer than $r$ basis functions has this property.}
+
+This linear space may also be characterized in the following way: Let $G_1,G_2,\ldots,G_m,\ldots$ be sets of $r$ functions $f_{m_1},f_{m_2},\ldots,f_{m_r}$ of the sequence, such that the measure of independence of each set lies above a fixed positive bound $\mu$ and the indices $m_i$ $(i=1,\ldots,r)$ increase beyond all bounds with increasing $m$. Then the linear spaces of functions $S_m$ whose basis functions are the functions of $G_m$ converge, with increasing $m$, uniformly to a limiting space $T$, defined by $r$ linearly independent functions $g_1,g_2,\ldots,g_r$. By ``converge'' we mean here that, for sufficiently large $m$, every normalized function of $S_m$ differs arbitrarily little from a function of $T$.
+
+To formulate the proof conveniently, we introduce the concept of distance between a function and a space. We say that the distance between a function $f$ and the linear space of functions $S$ is less than the positive quantity $d$, if there is a function of $S$ such that the absolute value of the difference between this function and $f$ is everywhere less than $d$. Similarly we ascribe a distance less than $d$ to two linear spaces of functions $S$ and $S^*$ if every normalized function of one space differs by an amount whose absolute value is less than $d$ from some normalized function of the other space.
+
+It now follows immediately that, for sufficiently large $m$ and $n$, the distance between the function $f_n$ and the space $S_m$ is arbitrarily small. For, the measure of independence of $f_n,f_{m_1},\ldots,f_{m_r}$ is certainly arbitrarily small for sufficiently large $m$ and $n$. Since our sequence of functions is smooth, there exist $r+1$ numbers $u_0,u_1,\ldots,u_r$, $\sum_{i=0}^{r}u_i^2=1$, for which $|u_0f_n+u_1f_{m_1}+\cdots+u_rf_{m_r}|$ is arbitrarily small. Note that the absolute value of $u_0$ cannot become arbitrarily small with increasing $m$ and $n$, since otherwise the measure of independence of $f_{m_1},f_{m_2},\ldots,f_{m_r}$ would become arbitrarily small, in contradiction to our assumption that the measure of independence lies above the bound $\mu$. We may therefore divide $u_0f_n+u_1f_{m_1}+\cdots+u_rf_{m_r}$ by $u_0$, putting $u_i/u_0=-t_i$, and conclude that, for sufficiently large $n$ and $m$, the function $f_n$ differs arbitrarily little from a suitable function $t_1f_{m_1}+t_2f_{m_2}+\cdots+t_rf_{m_r}$ of the linear space $S_m$. Thus, for sufficiently large $m$ and $n$, the distance between the spaces $S_n$ and $S_m$ is also arbitrarily small.
+
+Now, let $\varepsilon$ be a positive number, later to be taken sufficiently small, and let $\varepsilon_1,\varepsilon_2,\ldots$ be a sequence of positive numbers with $\sum_{i=1}^{\infty}\varepsilon_i=\varepsilon$. Furthermore, let $m_i$ be a positive integer such that, for $n>m_i$ and $m>m_i$, the distance between $S_n$ and $S_m$ is less than $\varepsilon_i$. Let us now take any $r$ normalized functions $h_{11},h_{12},\ldots,h_{1r}$ of the space $S_{m_1}$ and determine the normalized functions $h_{21},h_{22},\ldots,h_{2r}$ of the space $S_{m_2}$ $(m_2>m_1)$ such that $|h_{2i}-h_{1i}|<\varepsilon_1$ (this is possible because the distance between $S_{m_1}$ and $S_{m_2}$ is less than $\varepsilon_1$). In the same way we determine a set of normalized functions $h_{31},h_{32},\ldots,h_{3r}$ of the space $S_{m_3}$ $(m_3>m_2)$ such that $|h_{3i}-h_{2i}|<\varepsilon_2$, and so forth. Since $|h_{pi}-h_{qi}|<\varepsilon_p+\cdots+\varepsilon_{q-1}$ $(p<q)$ the sequence of functions $h_{ni}$ $(i=1,\ldots,r)$ with any fixed $i$ converges uniformly to a limit function $g_i$, and $|g_i-h_{1i}|<\varepsilon$. If $\varepsilon$ is chosen sufficiently small, the functions $g_1,g_2,\ldots,g_r$ will have a nonvanishing measure of independence if the functions $h_{11},h_{12},\ldots,h_{1r}$ do; thus the $g_i$ are linearly independent. These functions $g_1,g_2,\ldots,g_r$ evidently fulfill all our requirements.
+
+\section{Weierstrass's Approximation Theorem. Completeness of Powers and of Trigonometric Functions}
+\subsection{Weierstrass's Approximation Theorem}
+The most elementary example of a complete system of functions is given by the powers
+\[
+1,x,x^2,x^3,\ldots.
+\]
+They form a complete system of functions in every closed interval $a\le x\le b$; in fact, the following approximation theorem of Weierstrass\footnote{K. T. W. Weierstrass, \emph{Über die analytische Darstellbarkeit sogenannter willkürlicher Funktionen reeller Argumente}, Sitzungsber. K. Akad. Wiss. Berlin, 1885, pp. 633--639, 789--805; Werke, Vol. 3, pp. 1--37, Berlin, 1903.} holds: \emph{Any function which is continuous in the interval $a\le x\le b$ may be approximated uniformly by polynomials in this interval.}
+
+This theorem asserts more than completeness; it asserts the possibility of uniform convergence rather than just convergence in the mean.
+
+To prove this, we assume that the interval $a\le x\le b$ lies wholly in the interior of the interval $0<x<1$; thus, two numbers $\alpha$ and $\beta$ may be found with $0<\alpha<a<b<\beta<1$. We may suppose that the function $f(x)$, which is by assumption continuous in the interval $a\le x\le b$, has been extended continuously to the entire interval $\alpha\le x\le\beta$.
+
+Let us now consider the integral
+\[
+J_n=\int_0^1(1-v^2)^n\,dv.
+\]
+We see immediately that $J_n$ converges to zero with increasing $n$. Now, if $\delta$ is a fixed number in the interval $0<\delta<1$, and if we set
+\[
+J_n^*=\int_\delta^1(1-v^2)^n\,dv,
+\]
+we assert that
+\[
+\lim_{n\to\infty}\frac{J_n^*}{J_n}=0,
+\]
+which means that, for sufficiently large $n$, the integral from $0$ to $\delta$ forms the dominant part of the whole integral from $0$ to $1$. In fact, for $n\ge1$,
+\[
+J_n>\int_0^1(1-v)^n\,dv=\frac1{n+1},
+\]
+\[
+J_n^*=\int_\delta^1(1-v^2)^n\,dv<(1-\delta^2)^n(1-\delta)<(1-\delta^2)^n,
+\]
+\[
+\frac{J_n^*}{J_n}<(n+1)(1-\delta^2)^n,
+\]
+and hence
+\[
+\lim_{n\to\infty}\frac{J_n^*}{J_n}=0.
+\]
+
+We now assume $a\le x\le b$ and form the expressions
+\[
+P_n(x)=\frac{\displaystyle\int_\alpha^\beta f(u)[1-(u-x)^2]^n\,du}{\displaystyle\int_{-1}^{1}(1-u^2)^n\,du}
+\qquad(n=1,2,\ldots),
+\]
+
+% --- RESTART_R11: faithful continuation, printed pp. 67--74 ---
+which are polynomials in $x$ of degree $2n$ whose coefficients are quotients of definite integrals. We shall show that they afford the desired approximation.
+
+By making the substitution $u=v+x$ we find for the numerator
+\[
+\int_{\alpha}^{\beta} f(u)[1-(u-x)^2]^n\,du
+ =\int_{\alpha-x}^{\beta-x} f(v+x)(1-v^2)^n\,dv
+\]
+\[
+ =\int_{\alpha-x}^{-\delta}+\int_{-\delta}^{\delta}+\int_{\delta}^{\beta-x}
+ = I_1+I_2+I_3,
+\]
+where the positive number $\delta$ in the interval $0<\delta<1$ will be suitably fixed later. The integral $I_2$ may be transformed to
+\[
+I_2=f(x)\int_{-\delta}^{\delta}(1-v^2)^n\,dv
+ +\int_{-\delta}^{\delta}[f(v+x)-f(x)](1-v^2)^n\,dv
+\]
+\[
+=2f(x)(J_n-J_n^*)
+ +\int_{-\delta}^{\delta}[f(v+x)-f(x)](1-v^2)^n\,dv.
+\]
+Because of the uniform continuity of $f(x)$ in the interval $\alpha\le x\le\beta$ it is possible, for arbitrarily small $\varepsilon>0$, to choose a $\delta=\delta(\varepsilon)$ in the interval $0<\delta<1$, depending only on $\varepsilon$, such that, for $|v|\le\delta$ and $a\le x\le b$, $|f(v+x)-f(x)|\le\varepsilon$. It then follows that
+\[
+\left|\int_{-\delta}^{\delta}[f(v+x)-f(x)](1-v^2)^n\,dv\right|
+\le \varepsilon\int_{-\delta}^{\delta}(1-v^2)^n\,dv
+<\varepsilon\int_{-1}^{1}(1-v^2)^n\,dv
+=2\varepsilon J_n.
+\]
+Furthermore, if $M$ is the maximum of $|f(x)|$ for $\alpha\le x\le\beta$ we obtain
+\[
+|I_1|<M\int_{-1}^{-\delta}(1-v^2)^n\,dv=MJ_n^*,
+\]
+\[
+|I_3|<M\int_{\delta}^{1}(1-v^2)^n\,dv=MJ_n^*.
+\]
+Therefore, since the denominator in $P_n(x)$ is equal to $2J_n$,
+\[
+|P_n(x)-f(x)|<2M\frac{J_n^*}{J_n}+\varepsilon.
+\]
+Since $\lim_{n\to\infty}(J_n^*/J_n)=0$, the right side may be made less than $2\varepsilon$ by a suitable choice of $n$; thus $f(x)$ is indeed approximated by $P_n(x)$ uniformly in the interval $a\le x\le b$.
+
+\subsection{Extension to Functions of Several Variables}
+It may be shown in exactly the same manner that a function $f$ of $m$ variables $x_1,x_2,\ldots,x_m$, which is continuous for $a_i\le x_i\le b_i$ $(i=1,2,\ldots,m;\ 0<\alpha_i<a_i<b_i<\beta_i<1)$, may be approximated uniformly by the polynomials
+\[
+\resizebox{0.98\textwidth}{!}{$
+P_n(x_1,\ldots,x_m)=
+\frac{\displaystyle
+\int_{\alpha_1}^{\beta_1}\!\cdots\!\int_{\alpha_m}^{\beta_m}
+ f(u_1,\ldots,u_m)
+ [1-(u_1-x_1)^2]^n\cdots[1-(u_m-x_m)^2]^n
+ \,du_1\cdots du_m}
+{\displaystyle\left[\int_{-1}^{1}(1-u^2)^n\,du\right]^m}
+$}.
+\]
+
+\subsection{Simultaneous Approximation of Derivatives}
+A similar argument leads to the following general result: A function $f(x_1,x_2,\ldots,x_m)$ which, along with its derivatives up to the $k$-th order, is continuous in the closed region $a_i\le x_i\le b_i$, may be uniformly approximated by polynomials $P(x_1,x_2,\ldots,x_m)$ in such a way that the derivatives of $f$ up to the $k$-th order are also approximated uniformly by the corresponding derivatives of the polynomials.
+
+To prove this, we again assume that $0<a_i<b_i<1$ and that the function and its derivatives are extended continuously into a larger rectangular region $\alpha_i\le x_i<\beta_i$ $(0<\alpha_i<a_i<b_i<\beta_i<1)$ in such a way that the function and its derivatives up to the $(k-1)$-st order vanish on the boundary of the larger region. Then the polynomials $P_n(x_1,x_2,\ldots,x_m)$ defined in the previous subsection yield the desired approximation. This may be shown very simply by differentiating with respect to $x_i$ under the integral sign, replacing this differentiation by the equivalent differentiation with respect to $u_i$, and finally transforming the integral by integration by parts, making use of the assumed boundary conditions.
+
+\subsection{Completeness of the Trigonometric Functions}
+From \S4, 1 we can deduce the important fact that the orthonormal system of trigonometric functions
+\begin{equation}
+\frac{1}{\sqrt{2\pi}},\qquad
+\frac{\cos x}{\sqrt{\pi}},\qquad
+\frac{\sin x}{\sqrt{\pi}},\qquad
+\frac{\cos 2x}{\sqrt{\pi}},\qquad
+\frac{\sin 2x}{\sqrt{\pi}},\qquad\ldots
+\tag{14}
+\end{equation}
+is complete in the interval $-\pi\le x\le\pi$. The following more inclusive theorem can also be proved: \emph{Every function $f(x)$ which is continuous in the interval $-\pi\le x\le\pi$ and for which $f(-\pi)=f(\pi)$ may be approximated uniformly by trigonometric polynomials}
+\[
+\frac{\alpha_0}{2}+\sum_{\nu=1}^{n}(\alpha_\nu\cos\nu x+\beta_\nu\sin\nu x)
+\]
+\emph{where $\alpha_\nu$ and $\beta_\nu$ are constants.}
+
+To prove this, we write $\theta$ instead of $x$ and consider a $\xi,\eta$-plane with the polar coordinates $\rho$ and $\theta$ $(\xi=\rho\cos\theta,\ \eta=\rho\sin\theta)$. The function
+\[
+\varphi(\xi,\eta)=\rho f(\theta)
+\]
+is then continuous in the entire $\xi,\eta$-plane and coincides with the given function $f(\theta)$ on the unit circle $\xi^2+\eta^2=1$. According to Weierstrass's approximation theorem it may be approximated uniformly by polynomials in $\xi$ and $\eta$ in a square containing the unit circle. If we then set $\rho=1$, we see that $f(\theta)$ may be approximated uniformly by polynomials in $\cos\theta$ and $\sin\theta$. But, by well-known formulas of trigonometry, every such polynomial may also be written in the above form
+\[
+\frac{\alpha_0}{2}+\sum_{\nu=1}^{n}(\alpha_\nu\cos\nu x+\beta_\nu\sin\nu x).
+\]
+A continuous function $f(x)$ which does not satisfy the periodicity condition $f(-\pi)=f(\pi)$ may be replaced by a continuous function $g(x)$ satisfying this condition, in such a way that the integral
+\[
+\int_{-\pi}^{\pi}(f(x)-g(x))^2\,dx
+\]
+is arbitrarily small. From this it follows that every continuous function can be approximated in the mean by trigonometric polynomials, and therefore that the trigonometric functions form a complete set.
+
+\section{Fourier Series}
+\subsection{Proof of the Fundamental Theorem}
+It follows from the considerations of \S1 and from the orthogonality of the trigonometric functions that the best approximation in the mean of degree $n$ is obtained by the so-called \emph{Fourier polynomial}
+\[
+s_n(x)=\frac12a_0+\sum_{\nu=1}^{n}(a_\nu\cos\nu x+b_\nu\sin\nu x),
+\]
+with
+\begin{equation}
+\begin{aligned}
+a_\nu&=\frac1\pi\int_{-\pi}^{\pi}f(x)\cos\nu x\,dx &&(\nu=1,2,\ldots,n),\\
+b_\nu&=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin\nu x\,dx &&(\nu=1,2,\ldots,n),\\
+a_0&=\frac1\pi\int_{-\pi}^{\pi}f(x)\,dx.
+\end{aligned}
+\tag{15}
+\end{equation}
+This polynomial may also be written in the more concise form
+\[
+s_n(x)=\sum_{\nu=-n}^{n}\alpha_\nu e^{i\nu x},\qquad
+\begin{cases}
+2\alpha_\nu=a_\nu-i b_\nu,&\nu>0,\\
+2\alpha_0=a_0,&\\
+2\alpha_\nu=a_\nu+i b_\nu,&\nu<0,
+\end{cases}
+\]
+\begin{equation}
+\alpha_\nu=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(t)e^{-i\nu t}\,dt
+\qquad(\nu=0,\pm1,\pm2,\ldots)
+\tag{15'}
+\end{equation}
+in virtue of the relation $\cos\nu x+i\sin\nu x=e^{i\nu x}$.
+
+It is not a priori certain that these polynomials, which yield the best approximation in the mean, also yield a uniform approximation to the function---i.e. it is not certain that the infinite series $\lim_{n\to\infty}s_n(x)$ converges uniformly and represents the function $f(x)$. This question is the central problem of the theory of Fourier series.
+
+For the sake of convenience we shall suppose that the function $f(x)$ is initially defined only in the interval $-\pi<x<\pi$, and then continued periodically beyond this interval by the functional equation $f(x+2\pi)=f(x)$. Furthermore, at each jump discontinuity, we require $f(x)$ to be equal to the arithmetic mean of the ``right-hand'' and ``left-hand'' limits, $f(x+0)=\lim_{h\to0}f(x+h)$ and $f(x-0)=\lim_{h\to0}f(x-h)$ $(h>0)$, respectively; i.e. we set $f(x)=\tfrac12[f(x+0)+f(x-0)]$.
+
+The following theorem then holds: \emph{Every function which is piecewise smooth in the interval $-\pi\le x\le\pi$ and periodic with the period $2\pi$ may be expanded in a Fourier series;} that is, the Fourier polynomials
+\[
+s_n(x)=\frac12a_0+\sum_{\nu=1}^{n}(a_\nu\cos\nu x+b_\nu\sin\nu x)
+\]
+converge to $f(x)$ with increasing $n$. Moreover, we shall prove: \emph{The convergence of the Fourier series is uniform in every closed interval in which the function is continuous.}
+
+We shall first give the proof for the case of continuous $f(x)$ in which discontinuities occur only in the derivative $f'(x)$. If the expansion coefficients of $f'(x)$ are denoted by $\alpha_\nu$ and $\beta_\nu$, we have
+\[
+\alpha_\nu=\frac1\pi\int_{-\pi}^{\pi}f'(x)\cos\nu x\,dx
+=\frac{\nu}{\pi}\int_{-\pi}^{\pi}f(x)\sin\nu x\,dx
+=\nu b_\nu,
+\]
+\[
+\beta_\nu=\frac1\pi\int_{-\pi}^{\pi}f'(x)\sin\nu x\,dx
+=-\frac{\nu}{\pi}\int_{-\pi}^{\pi}f(x)\cos\nu x\,dx
+=-\nu a_\nu,
+\]
+\[
+\alpha_0=0.
+\]
+Since $f'(x)$ is piecewise continuous, we have the completeness relation
+\[
+\frac1\pi\int_{-\pi}^{\pi}f'^2(x)\,dx
+=\sum_{\nu=1}^{\infty}(\alpha_\nu^2+\beta_\nu^2)
+=\sum_{\nu=1}^{\infty}\nu^2(a_\nu^2+b_\nu^2).
+\]
+Thus
+\[
+\left|\sum_{\nu=n}^{m}(a_\nu\cos\nu x+b_\nu\sin\nu x)\right|
+=\left|\sum_{\nu=n}^{m}\frac1\nu(\nu a_\nu\cos\nu x+\nu b_\nu\sin\nu x)\right|
+\]
+\[
+\le\sqrt{\sum_{\nu=n}^{m}\nu^2(a_\nu^2+b_\nu^2)}\,
+\sqrt{\sum_{\nu=n}^{m}\frac1{\nu^2}}
+\le\sqrt{\frac1\pi\int_{-\pi}^{\pi}f'^2\,dx}\,
+\sqrt{\sum_{\nu=n}^{m}\frac1{\nu^2}}.
+\]
+This immediately establishes the absolute and uniform convergence of the infinite series
+\[
+\lim_{n\to\infty}s_n(x)=\frac12a_0+\sum_{\nu=1}^{\infty}(a_\nu\cos\nu x+b_\nu\sin\nu x),
+\]
+which represents the function $f(x)$, because of the completeness of the trigonometric functions.
+
+To verify that the Fourier series expansion is also valid for functions which are discontinuous but piecewise smooth, we start by considering a particular function of this type, defined by
+\[
+h(x)=\frac12(\pi-x),\qquad 0<x<2\pi,
+\]
+\[
+h(0)=0,
+\]
+\[
+h(x+2\pi)=h(x).
+\]
+This function jumps by $\pi$ at the points $x=\pm2k\pi$ $(k=0,1,\ldots)$. Its Fourier coefficients are
+\[
+a_0=0,\qquad a_\nu=0,\qquad b_\nu=\frac1\nu\qquad(\nu=1,2,\ldots).
+\]
+If the Fourier expansion is valid for piecewise continuous functions we have
+\[
+h(x)=\sum_{\nu=1}^{\infty}\frac{\sin\nu x}{\nu}.
+\]
+To justify this equation we first form the function
+\[
+g(x)=h(x)(1-\cos x)=2h(x)\sin^2\frac{x}{2},
+\]
+which is everywhere continuous and piecewise smooth. By the above reasoning, the Fourier series $\sum_{\nu=1}^{\infty}\beta_\nu\sin\nu x$ of this function converges uniformly and is equal to $g(x)$. The coefficients $\beta_\nu$ are related to the $b_\nu$ by the equations
+\[
+\beta_\nu=b_\nu-\frac12(b_{\nu-1}+b_{\nu+1})\qquad(\nu=2,3,\ldots),
+\]
+\[
+\beta_1=b_1-\frac12b_2.
+\]
+If we set $\sum_{\nu=1}^{n}b_\nu\sin\nu x=s_n(x)$ and $\sum_{\nu=1}^{n}\beta_\nu\sin\nu x=\sigma_n(x)$ we have
+\[
+(1-\cos x)s_n(x)=\sigma_n(x)-\frac12b_n\sin(n+1)x+\frac12b_{n+1}\sin nx.
+\]
+With increasing $n$, $b_n$ converges to zero and the sum $\sigma_n(x)$ converges uniformly to $g(x)$. It follows that $(1-\cos x)s_n(x)$ also converges uniformly to $g(x)$ in the interval $-\pi\le x\le\pi$, and therefore that $s_n(x)$ itself converges uniformly to $h(x)$ in every closed subinterval not including the point $x=0$.
+
+At this excluded point $x=0$ all partial sums $s_n$ vanish, so that $\lim_{n\to\infty}s_n(0)=0$. Thus the value of the series at the point of discontinuity is also equal to the value of $h(x)$, namely to the arithmetic mean of the right-hand and left-hand limits $+\pi/2$ and $-\pi/2$.
+
+As the function $h(x)$ jumps by $\pi$ at $x=0$, the function $h(x-\xi)$ jumps by $\pi$ at $x=\xi$ and is otherwise continuous in the basic interval. Now, if $f(x)$ is a piecewise continuous function which jumps by $s(\xi_i)=f(\xi_i+0)-f(\xi_i-0)$ at the points $x=\xi_i$ $(i=1,\ldots,r)$ of the interval $0\le x<2\pi$, then
+\[
+F(x)=f(x)-\sum_{i=1}^{r}\frac{s(\xi_i)}{\pi}h(x-\xi_i)
+\]
+is a function which is everywhere continuous and which, along with $f(x)$, has a piecewise continuous first derivative. Therefore, $F(x)$ may be expanded in a Fourier series which converges absolutely and uniformly. But the function
+\[
+\sum_{i=1}^{r}\frac{s(\xi_i)}{\pi}h(x-\xi_i)
+\]
+may also be expanded in a Fourier series, the convergence of which is uniform in every interval not containing any of the points of discontinuity. Thus the theorem formulated at the beginning of this section is proved completely.
+
+\subsection{Multiple Fourier Series}
+The trigonometric functions can be used to construct orthogonal systems over ``cubes'' in higher dimensional spaces. For simplicity we consider only the ``plane'' case (two dimensions). All our arguments will, however, be valid for any number of dimensions.
+
+The functions
+\[
+\cos\mu s\cos\nu t\qquad(\mu=0,1,\ldots;\ \nu=0,1,\ldots),
+\]
+\[
+\sin\mu s\cos\nu t\qquad(\mu=1,2,\ldots;\ \nu=0,1,\ldots),
+\]
+\[
+\cos\mu s\sin\nu t\qquad(\mu=0,1,\ldots;\ \nu=1,2,\ldots),
+\]
+\[
+\sin\mu s\sin\nu t\qquad(\mu=1,2,\ldots;\ \nu=1,2,\ldots)
+\]
+form an orthogonal system in the square $0\le s\le2\pi$, $0\le t\le2\pi$. The expansion formulas may be written most simply in terms of complex exponentials. If $F(s,t)$ can be expanded in a uniformly convergent double Fourier series, the series is
+\[
+F(s,t)=\sum_{\mu=-\infty}^{\infty}\sum_{\nu=-\infty}^{\infty}a_{\mu\nu}e^{i(\mu s+\nu t)},
+\]
+with
+\[
+a_{\mu\nu}=\frac1{4\pi^2}\int_{0}^{2\pi}\!ds\int_{0}^{2\pi}\!dt\,F(s,t)e^{-i(\mu s+\nu t)}.
+\]
+The completeness of the system of functions and, thus, the completeness relation
+\[
+\sum_{\mu,\nu=-\infty}^{\infty}|a_{\mu\nu}|^2
+=\int_{0}^{2\pi}\int_{0}^{2\pi}|F(s,t)|^2\,ds\,dt
+\]
+follow by our general theorem on the construction of complete systems in several variables from complete systems in one variable (see page 56).
+
+Furthermore, the Fourier series for $F(s,t)$ converges absolutely and uniformly if\newline $\partial^2F(s,t)/\partial s\,\partial t$ exists and is piecewise continuous, (cf. subsection 1).
+
+\subsection{Order of Magnitude of Fourier Coefficients}
+If a periodic function $f(x)$ is continuous and has continuous derivatives up to the $(h-1)$-st order, if its $h$-th derivative is piecewise continuous, and if the Fourier expansion of $f(x)$ is $f(x)=\sum_{\nu=-\infty}^{\infty}\alpha_\nu e^{i\nu x}$, then the coefficients $\alpha_\nu$, for $|\nu|\ge1$, can be estimated by
+\[
+2|\alpha_\nu|=\sqrt{a_\nu^2+b_\nu^2}\le\frac{c}{\nu^h},
+\]
+where $c$ is a constant. Thus, the smoother the function, the more rapidly the coefficients of the series tend to zero.
+
+The above relation may be obtained immediately if expression (15') for the coefficients is integrated by parts $h$ times.
+
+\subsection{Change in Length of Basic Interval}
+If the function $f(x)$ is periodic with period $2l$ it may be expanded in the series
+\[
+f(x)=\frac12a_0+\sum_{\nu=1}^{\infty}\left(a_\nu\cos\nu\frac{\pi}{l}x+b_\nu\sin\nu\frac{\pi}{l}x\right)
+\]
+with
+\[
+a_\nu=\frac1l\int_{0}^{2l}f(t)\cos\nu\frac{\pi}{l}t\,dt,
+\]
+\[
+b_\nu=\frac1l\int_{0}^{2l}f(t)\sin\nu\frac{\pi}{l}t\,dt,
+\]
+which may also be written in the form
+\[
+f(x)=\sum_{\nu=-\infty}^{\infty}a_\nu e^{i\nu(\pi/l)x},
+\]
+\[
+a_\nu=\frac1{2l}\int_{0}^{2l}f(t)e^{-i\nu(\pi/l)t}\,dt.
+\]
+
+\subsection{Examples}
+For simple examples of the application of the theory of Fourier series the reader is referred to elementary texts.\footnote{For example R. Courant, \emph{Differential and Integral Calculus}, Vol. 1, pp. 440--446, Blackie and Son, Ltd., London and Glasgow, 1934; 2nd ed. rev., Interscience Publishers, Inc., New York, 1937.}
+
+% --- Original printed page 75 ---
+Here we shall employ the Fourier series expansion to derive the functional equation of the theta function and a general formula by Poisson.
+
+The 
+\emph{functional equation of the theta function}
+\[
+\theta(x)=\sum_{\mu=-\infty}^{\infty}e^{-\pi\mu^2x}\qquad(x>0)
+\]
+is
+\[
+\theta(x)=\frac{1}{\sqrt{x}}\,\theta\!\left(\frac1x\right).
+\]
+To prove this relation, we set
+\[
+\varphi(y)=\sum_{\mu=-\infty}^{\infty}e^{-\pi(\mu+y)^2x};
+\]
+$\varphi(y)$ is evidently a periodic function of $y$ with the period 1, which possesses all derivatives with respect to $y$ and which may therefore be expanded in the Fourier series
+\[
+\varphi(y)=\sum_{\nu=-\infty}^{\infty}\alpha_\nu e^{2\pi i\nu y}
+\]
+with
+\[
+\alpha_\nu=\int_0^1\varphi(t)e^{-2\pi i\nu t}\,dt
+=\int_0^1\sum_{\mu=-\infty}^{\infty}e^{-\pi(\mu+t)^2x-2\pi i\nu t}\,dt.
+\]
+Since the orders of summation and integration may be interchanged for all $x>0$, we obtain for the coefficients $\alpha_\nu$:
+\[
+\begin{aligned}
+\alpha_\nu
+&=\sum_{\mu=-\infty}^{\infty}\int_0^1
+ e^{-\pi(\mu+t)^2x-2\pi i\nu(\mu+t)}\,dt\\
+&=\sum_{\mu=-\infty}^{\infty}\int_\mu^{\mu+1}
+ e^{-\pi t^2x-2\pi i\nu t}\,dt\\
+&=\int_{-\infty}^{\infty}e^{-\pi t^2x-2\pi i\nu t}\,dt\\
+&=e^{-\pi\nu^2/x}\int_{-\infty}^{\infty}
+ e^{-\pi x(t+i\nu/x)^2}\,dt
+=\frac{e^{-\pi\nu^2/x}}{\sqrt{x}};
+\end{aligned}
+\]
+for, $\int_{-\infty}^{\infty}e^{-z^2}\,dz$ has the same value $\sqrt{\pi}$ along a line $\Im t=\nu/x$ parallel to the real axis as along the real axis itself. (If the Cauchy theorem is applied to the function $e^{-z^2}$ and to the rectangle with vertices at $-T,+T,+T+i\nu/x,-T+i\nu/x$, and if $T$ is then made to tend to infinity, the integrals over the vertical sides of the rectangle converge to zero; for, the integrand converges uniformly to zero, while the length of the path of integration is constant, equal to $\nu/x$.) Thus we have
+\[
+\varphi(y)=\frac{1}{\sqrt{x}}\sum_{\nu=-\infty}^{\infty}
+ e^{-\pi\nu^2/x}e^{2\pi i\nu y}
+\]
+and in particular, for $y=0$,
+\[
+\theta(x)=\sum_{\mu=-\infty}^{\infty}e^{-\pi\mu^2x}
+=\varphi(0)=\frac{1}{\sqrt{x}}\sum_{\nu=-\infty}^{\infty}e^{-\pi\nu^2/x}
+=\frac{1}{\sqrt{x}}\theta\!\left(\frac1x\right).
+\]
+
+Here the Fourier expansion has been applied to the transformation of infinite series in one special case. The method thus exemplified has recently proved very useful in the treatment of certain analytic functions arising in number theory.
+
+This method is based on a very important transformation formula for infinite series, known as \emph{Poisson's summation formula}. Let
+$\sum_{n=-\infty}^{\infty}\varphi(2\pi n)$ be an infinite series in which $\varphi(x)$ is a continuous and continuously differentiable function of $x$ such that the series $\sum_{n=-\infty}^{\infty}\varphi(2\pi n+t)$ and $\sum_{n=-\infty}^{\infty}\varphi'(2\pi n+t)$ converge absolutely and uniformly for all $t$ in the interval $0\le t<2\pi$. The second series is then the derivative of the first, which may therefore be expanded in a convergent Fourier series in the interval $0\le t<2\pi$:
+\[
+\begin{aligned}
+\sum_{n=-\infty}^{\infty}\varphi(2\pi n+t)
+&=\frac1{2\pi}\sum_{\nu=-\infty}^{\infty}e^{i\nu t}
+ \int_0^{2\pi}e^{-i\nu\tau}
+ \sum_{n=-\infty}^{\infty}\varphi(2\pi n+\tau)\,d\tau\\
+&=\frac1{2\pi}\sum_{\nu=-\infty}^{\infty}e^{i\nu t}
+ \sum_{n=-\infty}^{\infty}\int_0^{2\pi}
+ \varphi(2\pi n+\tau)e^{-i\nu\tau}\,d\tau.
+\end{aligned}
+\]
+The sum over $n$ in the last expression may be transformed as follows:
+\[
+\begin{aligned}
+\sum_{n=-\infty}^{\infty}\int_0^{2\pi}
+ \varphi(2\pi n+\tau)e^{-i\nu\tau}\,d\tau
+&=\sum_{n=-\infty}^{\infty}\int_{2\pi n}^{2\pi(n+1)}
+ \varphi(\tau)e^{-i\nu\tau}\,d\tau\\
+&=\int_{-\infty}^{\infty}\varphi(\tau)e^{-i\nu\tau}\,d\tau.
+\end{aligned}
+\]
+Therefore
+\[
+\sum_{n=-\infty}^{\infty}\varphi(2\pi n+t)
+=\frac1{2\pi}\sum_{\nu=-\infty}^{\infty}e^{i\nu t}
+ \int_{-\infty}^{\infty}\varphi(\tau)e^{-i\nu\tau}\,d\tau.
+\]
+If, finally, we set $t=0$, we obtain
+\[
+\sum_{n=-\infty}^{\infty}\varphi(2\pi n)
+=\frac1{2\pi}\sum_{\nu=-\infty}^{\infty}
+ \int_{-\infty}^{\infty}\varphi(\tau)e^{-i\nu\tau}\,d\tau.
+\]
+This is Poisson's formula. Clearly it is valid if all the integrals occurring in the formula exist, if $\sum_{n=-\infty}^{\infty}\varphi(2\pi n+t)$ converges uniformly in $t$ for $0\le t<2\pi$, and if this series represents a function which can be expanded in a Fourier series.
+
+% --- Original printed page 77 ---
+\section{The Fourier Integral}
+\subsection{The Fundamental Theorem}
+Consider a function $f(x)$ which is represented by a Fourier series
+\[
+f(x)=\sum_{\nu=-\infty}^{\infty}\alpha_\nu e^{i\nu(\pi/l)x},
+\qquad
+\alpha_\nu=\frac1{2l}\int_{-l}^{l}f(t)e^{-i\nu(\pi/l)t}\,dt
+\]
+in the interval $-l<x<l$. It seems desirable to let $l$ go to $\infty$, since then it is no longer necessary to require that $f$ be continued periodically; thus one may hope to obtain a representation for a nonperiodic function defined for all real $x$. We shall continue to assume that $f(x)$ is piecewise smooth in every finite interval and that, at the discontinuities, the value of the function is the arithmetic mean of the right-hand and left-hand limits. We now add the further assumption that the integral $\int_{-\infty}^{\infty}|f(x)|\,dx$ exists.
+
+If we set $\pi/l=\delta$, we obtain
+\[
+f(x)=\frac1{2\pi}\sum_{\nu=-\infty}^{\infty}\delta
+\int_{-l}^{l}f(t)e^{-i\nu\delta(t-x)}\,dt.
+\]
+Letting $l\to\infty$ and therefore $\delta\to0$, we find that the formula
+\begin{equation}
+f(x)=\frac1{2\pi}\int_{-\infty}^{\infty}du
+\int_{-\infty}^{\infty}f(t)e^{-iu(t-x)}\,dt
+\tag{16}
+\end{equation}
+appears plausible; it is correct if the passage to the limit can be justified. For real functions $f(x)$ this may also be written in the form
+\begin{equation}
+f(x)=\frac1\pi\int_0^{\infty}du
+\int_{-\infty}^{\infty}f(t)\cos u(t-x)\,dt.
+\tag{17}
+\end{equation}
+A strict proof of the validity of this ``Fourier integral formula'' is more easily obtained by a direct verification of equation (16) or (17) than by a justification of the passage to the limit.
+
+We start with the integral formula
+\[
+\lim_{v\to\infty}\frac1\pi\int_{-a}^{a}f(x+t)\frac{\sin vt}{t}\,dt
+=\frac12\{f(x+0)+f(x-0)\}=f(x),
+\]
+where $a$ is an arbitrary positive number. This formula, which is valid for every piecewise smooth function, is due to Dirichlet.\footnote{This formula is usually employed as the foundation of the theory of Fourier series as well. For a proof see textbooks on the calculus, e.g. Courant, \emph{Differential and Integral Calculus}, Vol. 1, p. 450.}
+From this formula it follows that
+\[
+\begin{aligned}
+\pi f(x)
+&=\lim_{v\to\infty}\int_{-a}^{a}f(x+t)\,dt\int_0^v\cos ut\,du\\
+&=\lim_{v\to\infty}\int_0^v du\int_{-a}^{a}f(x+t)\cos ut\,dt\\
+&=\int_0^{\infty}du\int_{-a}^{a}f(x+t)\cos ut\,dt.
+\end{aligned}
+\]
+We assert that the integration over $t$ may be extended from $-\infty$ to $\infty$. For, if $A>a$, we have
+\[
+\int_0^v\int_{-A}^{A}-\int_0^v\int_{-a}^{a}
+=\int_0^v\int_{-A}^{-a}+\int_0^v\int_a^A
+=\int_{-A}^{-a}\int_0^v+\int_a^A\int_0^v,
+\]
+whence, since $\int_{-\infty}^{\infty}|f(x)|\,dx=C$ exists by hypothesis,
+\[
+\begin{aligned}
+\left|\int_0^v\int_{-A}^{A}-\int_0^v\int_{-a}^{a}\right|
+&\le\left|\int_{-A}^{-a}f(x+t)\frac{\sin vt}{t}\,dt\right|
+ +\left|\int_a^A f(x+t)\frac{\sin vt}{t}\,dt\right|\\
+&\le\frac1a\left(\int_{-A}^{-a}|f(x+t)|\,dt+\int_a^A|f(x+t)|\,dt\right)\\
+&\le\frac1a\int_{-\infty}^{\infty}|f(x+t)|\,dt=\frac Ca.
+\end{aligned}
+\]
+If we now keep $v$ fixed and let $A$ tend to infinity, it follows that
+\[
+\left|\int_0^v\int_{-\infty}^{\infty}-\int_0^v\int_{-a}^{a}\right|\le\frac Ca
+\]
+and, passing to the limit $v\to\infty$, we obtain
+\[
+\left|\lim_{v\to\infty}\int_0^v\int_{-\infty}^{\infty}-\pi f(x)\right|\le\frac Ca.
+\]
+The right-hand side may be made arbitrarily small by a suitable choice of $a$, and thus the desired formula (17) is proved.
+
+Since $\int_{-\infty}^{\infty}f(t)\cos u(t-x)\,dt$ is an even function of $u$, the above equation may also be written in the form
+\[
+\pi f(x)=\frac12\int_{-\infty}^{\infty}du
+\int_{-\infty}^{\infty}f(t)\cos u(t-x)\,dt.
+\]
+On the other hand, $\int_{-\infty}^{\infty}f(t)\sin u(t-x)\,dt$ is an odd function of $u$; therefore
+\[
+0=\frac{i}{2}\int_{-\infty}^{\infty}du
+\int_{-\infty}^{\infty}f(t)\sin u(t-x)\,dt
+\]
+provided the integral converges.\footnote{This is the case for those values of $x$ for which $f(x)$ is continuous. The integral diverges at points of discontinuity, as may easily be seen from the function
+\[
+f(x)=1\text{ for }|x|\le1,\qquad f(x)=0\text{ for }|x|>1.
+\]}
+By subtracting the last equation from the previous one we obtain formula (16), valid wherever $f(x)$ is continuous.
+
+\subsection{Extension of the Result to Several Variables}
+By repeated application of formula (16) \emph{analogous formulas are obtained for piecewise smooth functions of several variables; these formulas are valid wherever the functions are continuous}. Thus
+\[
+4\pi^2F(x_1,x_2)=\iiiint F(t_1,t_2)
+ e^{-i\{u_1(t_1-x_1)+u_2(t_2-x_2)\}}\,dt_1\,du_1\,dt_2\,du_2,
+\]
+under the assumption that the integrals
+\[
+\int_{-\infty}^{\infty}|F(t_1,x_2)|\,dt_1
+\qquad\text{and}\qquad
+\int_{-\infty}^{\infty}|F(x_1,t_2)|\,dt_2
+\]
+exist. In general, for $n$ variables, we have
+\[
+\begin{aligned}
+(2\pi)^nF(x_1,\ldots,x_n)
+={}&\int_{-\infty}^{\infty}\!\cdots\!\int_{-\infty}^{\infty}
+F(t_1,\ldots,t_n)\\
+&\qquad\times e^{-i\{u_1(t_1-x_1)+\cdots+u_n(t_n-x_n)\}}
+\,dt_1\,du_1\cdots dt_n\,du_n,
+\end{aligned}
+\]
+under analogous assumptions. The integrations are to be performed in the order in which the differentials are written in this formula.
+
+\subsection{Reciprocity Formulas}
+The Fourier integral theorem (16) takes on an especially elegant form if one sets
+\[
+g(u)=\frac1{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-iut}\,dt;
+\]
+for, it then states that the equations
+\[
+g(u)=\frac1{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)e^{-iut}\,dt,
+\qquad
+f(t)=\frac1{\sqrt{2\pi}}\int_{-\infty}^{\infty}g(u)e^{iut}\,du
+\]
+follow from each other. If the left-hand sides are assumed to be known, these equations form a pair of so-called integral equations each of which is the solution of the other and which are mutually reciprocal. For even and odd functions we have the sets of real equations
+\[
+g(u)=\sqrt{\frac2\pi}\int_0^{\infty}f(t)\cos ut\,dt,
+\qquad
+f(t)=\sqrt{\frac2\pi}\int_0^{\infty}g(u)\cos ut\,du
+\]
+and
+\[
+g(u)=\sqrt{\frac2\pi}\int_0^{\infty}f(t)\sin ut\,dt,
+\qquad
+f(t)=\sqrt{\frac2\pi}\int_0^{\infty}g(u)\sin ut\,du,
+\]
+respectively.
+
+The corresponding reciprocity formulas for functions of several variables are
+\[
+f(x_1,\ldots,x_n)
+=\frac1{(\sqrt{2\pi})^n}\int\cdots\int
+ g(\xi_1,\ldots,\xi_n)e^{i(\xi_1x_1+\cdots+\xi_nx_n)}
+\,d\xi_1\cdots d\xi_n,
+\]
+\[
+g(\xi_1,\ldots,\xi_n)
+=\frac1{(\sqrt{2\pi})^n}\int\cdots\int
+ f(x_1,\ldots,x_n)e^{-i(\xi_1x_1+\cdots+\xi_nx_n)}
+\,dx_1\cdots dx_n,
+\]
+and are certainly valid if $f$ and $g$ have derivatives up to the $(n+1)$-st order in the entire space.
+
+% --- Original printed pages 81-82 ---
+\section{Examples of Fourier Integrals}
+\subsection{The Fourier integral formula (17)}
+The Fourier integral formula (17)
+\[
+f(x)=\frac1\pi\int_0^{\infty}du\int_{-\infty}^{\infty}f(t)\cos u(t-x)\,dt
+\]
+\[
+=\frac1\pi\int_0^{\infty}\cos ux\,du\int_{-\infty}^{\infty}f(t)\cos ut\,dt
++\frac1\pi\int_0^{\infty}\sin ux\,du\int_{-\infty}^{\infty}f(t)\sin ut\,dt
+\]
+reduces to
+\[
+f(x)=\frac2\pi\int_0^{\infty}\cos ux\,du\int_0^{\infty}f(t)\cos ut\,dt,
+\]
+if $f(x)$ is an even function, and to
+\[
+f(x)=\frac2\pi\int_0^{\infty}\sin ux\,du\int_0^{\infty}f(t)\sin ut\,dt
+\]
+if $f(x)$ is odd.
+
+\subsection{Dirichlet's discontinuous factor}
+We now consider \emph{Dirichlet's discontinuous factor}: Let the even function $f(x)$ be defined by
+\[
+f(x)=1\quad\text{for }|x|<1,
+\qquad
+f(x)=\frac12\quad\text{for }|x|=1,
+\qquad
+f(x)=0\quad\text{for }|x|>1;
+\]
+we may express it as the Fourier integral
+\[
+f(x)=\frac2\pi\int_0^{\infty}\cos ux\,du\int_0^1\cos ut\,dt
+=\frac2\pi\int_0^{\infty}\frac{\sin u\cos ux}{u}\,du.
+\]
+The term on the right, called ``Dirichlet's discontinuous factor,'' is useful in many problems.
+
+\subsection{}
+If, for $x>0$, we take
+\[
+f(x)=e^{-\beta x}\qquad(\beta>0)
+\]
+we have either
+\[
+\begin{aligned}
+f(x)
+&=\frac2\pi\int_0^{\infty}\cos ux\,du\int_0^{\infty}e^{-\beta t}\cos ut\,dt\\
+&=\frac2\pi\int_0^{\infty}\frac{\beta\cos ux}{\beta^2+u^2}\,du
+\end{aligned}
+\]
+or
+\[
+\begin{aligned}
+f(x)
+&=\frac2\pi\int_0^{\infty}\sin ux\,du\int_0^{\infty}e^{-\beta t}\sin ut\,dt\\
+&=\frac2\pi\int_0^{\infty}\frac{u\sin ux}{\beta^2+u^2}\,du;
+\end{aligned}
+\]
+the former is obtained if, for negative values of $x$, $f(x)$ is continued as an even function, the latter if it is continued as an odd function. In the second case we must put $f(0)=0$. The integral
+\[
+\int_0^{\infty}\frac{\cos ux}{\beta^2+u^2}\,du
+=\frac\pi2\frac{e^{-\beta|x|}}{\beta}\qquad(\beta>0)
+\]
+is sometimes called the Laplace integral.
+
+\subsection{}
+The function
+\[
+f(x)=e^{-x^2/2}
+\]
+provides a particularly instructive example. In this case, the mutually reciprocal integral equations
+\[
+g(u)=\sqrt{\frac2\pi}\int_0^{\infty}f(t)\cos ut\,dt
+=\sqrt{\frac2\pi}\int_0^{\infty}e^{-t^2/2}\cos ut\,dt=e^{-u^2/2}
+\]
+and
+\[
+f(t)=\sqrt{\frac2\pi}\int_0^{\infty}g(u)\cos ut\,du
+=\sqrt{\frac2\pi}\int_0^{\infty}e^{-u^2/2}\cos ut\,du=e^{-t^2/2}
+\]
+are actually identical.
+
+% --- Original printed pages 82-84 ---
+\section{Legendre Polynomials}
+\subsection{Construction of the Legendre Polynomials by Orthogonalization of the Powers $1,x,x^2,\ldots$}
+If the powers $1,x,x^2,\ldots$ are orthogonalized in a given basic interval, say $-1\le x\le1$, (see \S1) we obtain a complete orthonormal system of functions which is in many ways even simpler than the system of trigonometric functions. This procedure yields a sequence of orthonormal polynomials which are uniquely determined to within a factor $\pm1$. They become unique if we require that the coefficient of the highest power of $x$ in each polynomial be positive.
+
+We assert that these polynomials are, except for constant factors (depending on $n$ but not on $x$), identical with the polynomials
+\[
+P_0(x)=1,\qquad
+P_n(x)=\frac1{2^n n!}\frac{d^n(x^2-1)^n}{dx^n}
+\qquad(n=1,2,\ldots),
+\]
+which are known as the \emph{Legendre polynomials}.\footnote{A. M. Legendre, Recherches sur l'attraction des sph\'ero\"ides homog\`enes, M\'em. math. phys. pr\'es. a l'Acad. sc. par divers sav., Vol. 10, 1785, pp. 411--434; Recherches sur la figure des plan\`etes, M\'em. math. phys., Reg. de l'Acad. sc., 1784, 1787, pp. 370--389.}
+Since it is easily seen that there can exist, apart from constant factors, only \emph{one} set of orthogonal polynomials in which every degree is represented, it suffices to prove that $P_n$ is a polynomial of the $n$-th degree and that the system of the polynomials $P_n(x)$ is indeed orthogonal. Now $P_n(x)$ is evidently a polynomial of the $n$-th degree; explicitly,
+\[
+P_n(x)=\frac1{2^n n!}\sum_{\nu=0}^{n}(-1)^{n-\nu}
+\binom n\nu\frac{(2\nu)!}{(2\nu-n)!}x^{2\nu-n}
+\]
+\[
+=\sum_{\nu=0}^{n}(-1)^{n-\nu}
+\frac{1\cdot3\cdot5\cdots(2\nu-1)}{(n-\nu)!(2\nu-n)!\,2^{n-\nu}}
+ x^{2\nu-n}.
+\]
+The terms in negative powers are to be omitted; this comes about automatically if we put $(-r)!=\infty$ for all positive integers $r$. For even $n$, the first term is thus
+\[
+(-1)^{n/2}\frac{1\cdot3\cdot5\cdots(n-1)}{2\cdot4\cdot6\cdots n};
+\]
+for odd $n$ it is
+\[
+(-1)^{(n-1)/2}\frac{1\cdot3\cdot5\cdots n}{2\cdot4\cdot6\cdots(n-1)}x.
+\]
+The first few Legendre polynomials are
+\[
+P_0(x)=1,\qquad P_1(x)=x,\qquad P_2(x)=\frac32x^2-\frac12,
+\]
+\[
+P_3(x)=\frac52x^3-\frac32x,\qquad
+P_4(x)=\frac{35}{8}x^4-\frac{15}{4}x^2+\frac38.
+\]
+
+To prove that the $P_n(x)$ form an orthogonal system, we shall denote $(x^2-1)^n$ by $u_n(x)$. We then have, for every non-negative integer $m<n$,
+\[
+\int_{-1}^{1}P_n(x)x^m\,dx
+=\frac1{2^n n!}\int_{-1}^{1}u_n^{(n)}(x)x^m\,dx=0.
+\]
+This may be demonstrated if we remove the factor $x^m$ by repeated partial integration and note that all derivatives of $u_n(x)$ up to the $(n-1)$-st vanish at the limits of the interval of integration. It follows that
+\[
+\int_{-1}^{1}P_n(x)P_m(x)\,dx=0\qquad(m<n),
+\]
+and thus that any two different Legendre polynomials are in fact orthogonal. In order to obtain the necessary normalization factors we now compute $\int_{-1}^{1}[u_n^{(n)}(x)]^2\,dx$ by repeated partial integration:
+\[
+\begin{aligned}
+\int_{-1}^{1}u_n^{(n)}u_n^{(n)}\,dx
+&=-\int_{-1}^{1}u_n^{(n-1)}u_n^{(n+1)}\,dx
+=\int_{-1}^{1}u_n^{(n-2)}u_n^{(n+2)}\,dx=\cdots\\
+&=(-1)^n\int_{-1}^{1}u_nu_n^{(2n)}\,dx
+=(2n)!\int_{-1}^{1}(1-x)^n(1+x)^n\,dx.
+\end{aligned}
+\]
+Now
+\[
+\begin{aligned}
+\int_{-1}^{1}(1-x)^n(1+x)^n\,dx
+&=\frac{n}{n+1}\int_{-1}^{1}(1-x)^{n-1}(1+x)^{n+1}\,dx=\cdots\\
+&=\frac{n(n-1)\cdots1}{(n+1)(n+2)\cdots(2n)}\int_{-1}^{1}(1+x)^{2n}\,dx\\
+&=\frac{(n!)^2}{(2n)!(2n+1)}2^{2n+1},
+\end{aligned}
+\]
+and therefore
+\[
+\int_{-1}^{1}P_n^2(x)\,dx=\frac{2}{2n+1}.
+\]
+
+% --- Original printed pages 85-94 ---
+The desired normalized polynomials are therefore
+\[
+\varphi_n(x)=\sqrt{\frac{2n+1}{2}}\,P_n(x)
+=\sqrt{\frac{2n+1}{2}}\,\frac{1}{2^n n!}\frac{d^n(x^2-1)^n}{dx^n}
+\qquad(n=0,1,2,\ldots).
+\]
+The Legendre polynomials $P_n(x)$ have the property that
+\[
+P_n(1)=1;
+\]
+this is seen immediately if the $n$-th derivative of $(x-1)^n(x+1)^n$ is evaluated according to the product rule and $x$ is set equal to 1 in the resulting expression.
+
+\subsection{The Generating Function}
+The Legendre polynomials are particularly important in potential theory, where they occur as the expansion coefficients of a ``generating function.'' Consider two points in a plane, one at a unit distance from the origin and the other at a distance $u<1$ from the origin, and suppose that the angle between their radius vectors is $\cos^{-1}x$. The distance between the two points is then $\sqrt{1-2ux+u^2}$. If we now expand the reciprocal of this distance in powers of $u$ we find, by the binomial theorem,
+\begin{equation}
+\frac{1}{\sqrt{1-2ux+u^2}}=\sum_{n=0}^{\infty}Q_n(x)u^n.
+\tag{18}
+\end{equation}
+where $Q_n(x)$ is a polynomial of the $n$-th degree in $x$. The function on the left is said to ``generate'' the expansion coefficients $Q_n(x)$. We may show that $Q_n(x)$ is identical with the Legendre polynomial $P_n(x)$ either by evaluating $Q_n(x)$ explicitly by the binomial theorem or by demonstrating that the polynomials $Q_n(x)$ obey the same orthogonality relations as the $P_n(x)$. We choose the latter procedure.
+
+From the definition (18) we immediately obtain
+\[
+\frac{1}{\sqrt{1-2xu+u^2}}\frac{1}{\sqrt{1-2xv+v^2}}
+=\sum_{n,m=0}^{\infty}Q_n(x)Q_m(x)u^nv^m.
+\]
+Integrating the left-hand side with respect to $x$ from $-1$ to $+1$ we obtain, by an elementary calculation,
+\[
+\frac{1}{\sqrt{uv}}\log\frac{1+\sqrt{uv}}{1-\sqrt{uv}}
+=\sum_{n=0}^{\infty}\frac{2}{2n+1}u^nv^n.
+\]
+Integrating the right-hand side term by term and equating the coefficients of $u^nv^m$ to those in the expression for the left-hand side we find
+\[
+\int_{-1}^{1}Q_n(x)Q_m(x)\,dx=
+\begin{cases}
+0,& n\ne m,\\[2mm]
+\dfrac{2}{2n+1},& n=m.
+\end{cases}
+\]
+By setting $x=1$ in equation (18) we find $Q_n(1)=1$. This completes the proof of the identity of $Q_n(x)$ with $P_n(x)$.
+
+\subsection{Other Properties of the Legendre Polynomials}
+\textit{(a) Recursion Formula.} Differentiating the generating function with respect to $u$ we immediately obtain the following recursion formula connecting three successive Legendre polynomials:
+\begin{equation}
+(n+1)P_{n+1}(x)-(2n+1)xP_n(x)+nP_{n-1}(x)=0.
+\tag{19}
+\end{equation}
+
+\textit{(b) Differential Equation.} The $n$-th Legendre polynomial
+\[
+y(x)=\frac{1}{2^n n!}\frac{d^n}{dx^n}(x^2-1)^n
+\]
+satisfies the linear homogeneous second order differential equation
+\begin{equation}
+(x^2-1)y''+2xy'-n(n+1)y=0
+\tag{20}
+\end{equation}
+or
+\begin{equation}
+[(x^2-1)y']'-n(n+1)y=0.
+\tag{20'}
+\end{equation}
+This may be proved by $(n+1)$-fold differentiation of the equation
+\[
+(x^2-1)u'-2nxu=0,
+\]
+with $u=(x^2-1)^n$ and $u^{(n)}=2^n n!y$.
+
+\textit{(c) Minimum Property.} If the Legendre polynomial $P_n(x)$ is multiplied by the reciprocal $C$ of the coefficient of $x^n$,\footnote{From this differential equation it follows that the zeros of $P_n(x)$ (all of which by Rolle's theorem are real and lie in the interval $-1<x<1$) are all simple, since the second and all higher derivatives of $P_n(x)$ would vanish at any multiple zero.} so that the coefficient of $x^n$ in $CP_n(x)$ is equal to 1, we obtain polynomials characterized by the following minimum property: they have the smallest distance in the mean from zero of all polynomials of the $n$-th degree with the leading coefficient 1. To prove this we note that, in the integral
+\[
+\int_{-1}^{1}(x^n+a_{n-1}x^{n-1}+\cdots+a_0)^2\,dx,
+\]
+the integrand may be written in the form
+\[
+(CP_n(x)+c_{n-1}P_{n-1}(x)+\cdots+c_0)^2.
+\]
+The integral is therefore equal to
+\[
+\frac{2C^2}{2n+1}+2\sum_{\nu=1}^{n-1}\frac{c_\nu^2}{2\nu+1},
+\]
+and this expression takes on its least value for
+\[
+c_0=c_1=\cdots=c_{n-1}=0.
+\]
+
+\section{Examples of Other Orthogonal Systems}
+\subsection{Generalization of the Problem Leading to Legendre Polynomials}
+We shall now generalize the problem which led to the definition of Legendre polynomials.
+
+Let a non-negative ``weight function'' $p(x)$ be given in the interval $a\le x\le b$. The problem is to study the system of functions obtained by orthogonalizing
+\[
+\sqrt{p(x)},\quad x\sqrt{p(x)},\quad x^2\sqrt{p(x)},\quad\ldots
+\]
+in the interval $a\le x\le b$.
+
+These functions are, of course, linearly independent, as are the powers $1,x,x^2,\ldots$. In the orthogonal system the factors of $\sqrt{p(x)}$ are polynomials $Q_0(x),Q_1(x),\ldots$ of degree $0,1,\ldots$, which may be determined uniquely by normalizing conditions and which are termed ``orthogonal polynomials belonging to the weight function $p(x)$.''\footnote{The polynomials $Q_0(x),Q_1(x),\ldots$, when multiplied by suitable factors $C$, possess a minimum property similar to that of the Legendre polynomials: the integral
+\[
+\int p(x)(x^n+a_{n-1}x^{n-1}+\cdots+a_0)^2\,dx
+\]
+takes on its least value when the polynomial in the integrand is $CQ_n(x)$. The polynomial in the integrand may again be written as a linear combination of the $Q_i(x)$, in the form $(CQ_n(x)+c_{n-1}Q_{n-1}(x)+\cdots+c_0)$. Since the functions $\sqrt{p(x)}Q_i(x)$ are orthogonal, and, in fact, orthonormal if the $Q_i(x)$ are appropriately defined, the integral is equal to $C^2+\sum_{\nu=0}^{n-1}c_\nu^2$, which assumes its minimum at $c_0=c_1=\cdots=c_{n-1}=0$.}
+
+For example, for
+\[
+a=-1,\qquad b=1,\qquad p(x)=1
+\]
+we obtain the Legendre polynomials $P_n(x)$; for
+\[
+a=-1,\qquad b=1,\qquad p(x)=\frac{1}{\sqrt{1-x^2}},
+\]
+the Tchebycheff polynomials
+\[
+T_n(x)=\frac{1}{2^{n-1}}\cos(n\cos^{-1}x);
+\]
+for
+\[
+a=-1,\qquad b=1,\qquad p(x)=\sqrt{1-x^2},
+\]
+the polynomials
+\[
+Q_n(x)=\frac{\sin[(n+1)\cos^{-1}x]}{\sqrt{1-x^2}};
+\]
+for
+\[
+a=0,\qquad b=1,\qquad p(x)=x^{q-1}(1-x)^{p-q}\qquad(q>0,\ p-q>-1),
+\]
+the Jacobi or hypergeometric polynomials; for
+\[
+a=-\infty,\qquad b=\infty,\qquad p(x)=e^{-x^2},
+\]
+the Hermite polynomials; for
+\[
+a=0,\qquad b=\infty,\qquad p(x)=e^{-x},
+\]
+the Laguerre polynomials.
+
+We shall now study the Tchebycheff, Jacobi, Hermite, and Laguerre polynomials in more detail.
+
+\subsection{Tchebycheff Polynomials}
+The Tchebycheff polynomials\footnote{P. L. Tchebycheff, Sur les questions de minima, qui se rattachent \`a la repr\'esentation approximative des fonctions, M\'em. Acad. sc. P\'etersb., Ser. 6, Vol. 7, 1859, pp. 199--291; Oeuvres, Vol. 1, pp. 271--378, esp. pp. 295--301, St. Petersburg, 1899.}
+\[
+T_0(x)=1,\qquad T_n(x)=\frac{1}{2^{n-1}}\cos(n\cos^{-1}x)\qquad(n\ge1)
+\]
+form an orthogonal system of polynomials\footnote{These functions are indeed polynomials, since $\cos n\theta$ is a polynomial in $\cos\theta$:
+\[
+\cos n\theta=\cos^n\theta-\binom n2\cos^{n-2}\theta\sin^2\theta+\binom n4\cos^{n-4}\theta\sin^4\theta-\cdots.
+\]} with the weight function $p(x)=1/\sqrt{1-x^2}$ in the interval $-1\le x\le1$, since
+\[
+\int_{-1}^{1}T_n(x)T_m(x)\frac{dx}{\sqrt{1-x^2}}
+=\frac{1}{2^{n+m-2}}\int_0^\pi\cos n\theta\cos m\theta\,d\theta=0
+\qquad\text{for }n\ne m.
+\]
+
+$T_n(x)$ is the polynomial of $n$-th degree with leading coefficient 1 whose maximum absolute value is smallest in the interval $-1\le x\le1$; i.e. it deviates least from zero. (The coefficient of $x^n$ in $T_n$ is equal to 1, as is easily seen.)
+
+Proof: Let $\cos^{-1}x=\theta$, and consider the points $x_k=\cos(k\pi/n)$ $(k=0,1,\ldots,n)$, for which $T_n(x)$ attains its greatest deviation from zero. Clearly, for
+\[
+\theta=0,\quad \frac\pi n,\quad\frac{2\pi}{n},\quad\ldots,\quad\pi,
+\]
+we have
+\[
+T_n(x)=\frac{1}{2^{n-1}},\quad -\frac{1}{2^{n-1}},\quad
+\frac{1}{2^{n-1}},\quad\ldots,\quad\frac{(-1)^n}{2^{n-1}},
+\]
+and, in general,
+\[
+T_n(x_k)=\frac{(-1)^k}{2^{n-1}}.
+\]
+Suppose the deviation from zero of a polynomial $R_n(x)=x^n+a_{n-1}x^{n-1}+\cdots$ in the interval $-1\le x\le1$ were less than that of $T_n(x)$. Then we would have
+\[
+T_n(x_0)-R_n(x_0)>0,\qquad T_n(x_1)-R_n(x_1)<0,
+\]
+\[
+T_n(x_2)-R_n(x_2)>0,\quad\ldots;
+\]
+i.e., the entire rational function $T_n(x)-R_n(x)$ would be alternately positive and negative at successive points $x_k$. This function would therefore have to have at least $n$ roots; but this is impossible, since it is a polynomial of at most the $(n-1)$-st degree.
+
+The polynomials $T_n(x)$ may be normalized if we divide by
+\[
+\sqrt{\int_{-1}^{1}T_n^2\frac{dx}{\sqrt{1-x^2}}}
+=\sqrt{\frac{\pi}{2^{2n-1}}}.
+\]
+The Tchebycheff polynomials also occur as the expansion coefficients of the generating function
+\begin{equation}
+\psi(x,t)=\frac{1-t^2}{1-2tx+t^2}=\sum_{n=0}^{\infty}T_n(x)(2t)^n.
+\tag{21}
+\end{equation}
+Three successive Tchebycheff polynomials are connected by the recursion formula, valid for $n\ge2$,
+\begin{equation}
+T_{n+1}(x)-xT_n(x)+\frac14T_{n-1}(x)=0.
+\tag{22}
+\end{equation}
+For $n<2$ the recursion formula takes a slightly different form:
+\[
+T_2-xT_1+\frac14T_0=-\frac14,
+\qquad
+T_1-xT_0=0.
+\]
+The Tchebycheff polynomials satisfy the linear homogeneous second order differential equation
+\begin{equation}
+(1-x^2)y''-xy'+n^2y=0.
+\tag{23}
+\end{equation}
+
+\subsection{Jacobi Polynomials}
+The Jacobi polynomials $G_n(p,q,x)$\footnote{C. G. J. Jacobi, Untersuchungen \"uber die Differentialgleichung der hypergeometrischen Reihe, Journ. f. d. reine u. angew. Math., Vol. 56, 1859, pp. 149--165; Werke, Vol. 6, pp. 184--202, Berlin, 1891.} are obtained for $a=0$, $b=1$ and the weight function
+\[
+p(x)=x^{q-1}(1-x)^{p-q}\qquad\text{with }q>0,\quad p-q>-1.
+\]
+They may also be obtained from the hypergeometric series
+\begin{equation}
+F(\alpha,\beta,\gamma,x)=1+\frac{\alpha\beta}{1\,\gamma}x
++\frac{\alpha(\alpha+1)\beta(\beta+1)}{1\cdot2\,\gamma(\gamma+1)}x^2+\cdots
+\tag{24}
+\end{equation}
+by replacing $\beta$ by the negative integer $-n$, $\alpha$ by $p+n$, and $\gamma$ by $q$. Therefore they satisfy the hypergeometric differential equation
+\begin{equation}
+x(1-x)y''+[\gamma-(\alpha+\beta+1)x]y'-\alpha\beta y=0
+\tag{25}
+\end{equation}
+or
+\begin{equation}
+x(1-x)G_n''(x)+[q-(p+1)x]G_n'(x)+(p+n)nG_n(x)=0.
+\tag{25'}
+\end{equation}
+They represent the sole entire rational solutions of this equation. The first few of these polynomials are
+\[
+G_0(p,q,x)=1,
+\]
+\[
+G_1(p,q,x)=1-\binom11\frac{p+1}{q}x,
+\]
+\[
+G_2(p,q,x)=1-\binom21\frac{p+2}{q}x
++\binom22\frac{(p+2)(p+3)}{q(q+1)}x^2,
+\]
+\[
+G_3(p,q,x)=1-\binom31\frac{p+3}{q}x
++\binom32\frac{(p+3)(p+4)}{q(q+1)}x^2
+-\binom33\frac{(p+3)(p+4)(p+5)}{q(q+1)(q+2)}x^3.
+\]
+or, in general,
+\[
+G_n(p,q,x)=\frac{x^{1-q}(1-x)^{q-p}}{q(q+1)\cdots(q+n-1)}
+\frac{d^n}{dx^n}\left[x^{q+n-1}(1-x)^{p+n-q}\right].
+\]
+From this expression it can be seen that the Jacobi polynomials may also be defined in terms of a generating function by the relation
+\[
+\begin{aligned}
+&\frac{(1-x)^{1-q}(1+x)^{q-p}}
+{t^{p-1}\sqrt{1-2tx+t^2}}
+(t-1+\sqrt{1-2tx+t^2})^{q-1}\\
+&\qquad\times(t+1-\sqrt{1-2tx+t^2})^{p-q}\\
+&\hspace{18mm}=\sum_{n=0}^{\infty}\binom{q+n-1}{n}
+G_n\!\left(p,q,\frac{1-x}{2}\right)t^n.
+\end{aligned}
+\]
+For $p=q=1$ they reduce to the Legendre polynomials
+\begin{equation}
+P_n(x)=G_n\!\left(1,1,\frac{1-x}{2}\right)
+=F\!\left(n+1,-n,1,\frac{1-x}{2}\right);
+\tag{26}
+\end{equation}
+for $p=0$, $q=\tfrac12$ we obtain, essentially, the Tchebycheff polynomials
+\begin{equation}
+T_n(x)=\frac{1}{2^{n-1}}G_n\!\left(0,\frac12,\frac{1-x}{2}\right)
+=\frac{1}{2^{n-1}}F\!\left(n,-n,\frac12,\frac{1-x}{2}\right).
+\tag{27}
+\end{equation}
+
+\subsection{Hermite Polynomials}
+The Hermite polynomials $H_n(x)$\footnote{C. Hermite, Sur un nouveau d\'eveloppement en s\'erie de fonctions, C. R. Acad. sc. Paris, Vol. 58, 1864, pp. 93--100, 266--273; Oeuvres, Vol. 2, pp. 293--312, Paris, 1908; Sur quelques d\'eveloppements en s\'erie de fonctions de plusieurs variables, C. R., Vol. 60, 1865, pp. 370--377, 432--440, 461--466, 512--518; Oeuvres, pp. 319--346.} are the orthogonal polynomials in the interval $-\infty<x<\infty$ with the weight function $p(x)=e^{-x^2}$. They are most conveniently defined by means of a generating function $\psi(x,t)$:
+\begin{equation}
+\psi(x,t)=e^{-t^2+2tx}=e^{x^2}e^{-(t-x)^2}
+=\sum_{n=0}^{\infty}\frac{H_n(x)}{n!}t^n.
+\tag{28}
+\end{equation}
+From this equation it follows immediately that
+\begin{equation}
+H_n(x)=\left(\frac{d^n\psi(x,t)}{dt^n}\right)_{t=0}
+=(-1)^ne^{x^2}\frac{d^ne^{-x^2}}{dx^n}.
+\tag{29}
+\end{equation}
+The $n$-th Hermite polynomial $H_n(x)$ is thus $(-1)^ne^{x^2}$ times the $n$-th derivative of the function $e^{-x^2}$. From the relation $\partial\psi(x,t)/\partial x=2t\psi(x,t)$ it follows that
+\begin{equation}
+H_n'(x)=2nH_{n-1}(x)\qquad(n\ge1);
+\tag{30}
+\end{equation}
+from $\partial\psi(x,t)/\partial t+2(t-x)\psi(x,t)=0$ we obtain
+\begin{equation}
+H_{n+1}(x)-2xH_n(x)+2nH_{n-1}(x)=0\qquad(n\ge1).
+\tag{31}
+\end{equation}
+By combining (30) and (31) we obtain a linear homogeneous second order differential equation for $H_n(x)$:
+\begin{equation}
+H_n''(x)-2xH_n'(x)+2nH_n(x)=0\qquad(n\ge0).
+\tag{32}
+\end{equation}
+The first few Hermite polynomials are
+\[
+H_0(x)=1,\qquad H_1(x)=2x,
+\]
+\[
+H_2(x)=4x^2-2,\qquad H_3(x)=8x^3-12x,
+\]
+\[
+H_4(x)=16x^4-48x^2+12.
+\]
+In general, the $n$-th Hermite polynomial is
+\[
+H_n(x)=(2x)^n-\frac{n(n-1)}{1!}(2x)^{n-2}
++\frac{n(n-1)(n-2)(n-3)}{2!}(2x)^{n-4}-\cdots.
+\]
+The last term is
+\[
+(-1)^{n/2}\frac{n!}{(n/2)!}
+\]
+for even $n$ and
+\[
+(-1)^{(n-1)/2}\frac{n!}{((n-1)/2)!}\,2x
+\]
+for odd $n$.
+
+The orthogonality of the Hermite polynomials may be obtained\footnote{The orthogonality relations may also be obtained with the help of the generating function.} from
+\[
+\int_{-\infty}^{\infty}H_m(x)H_n(x)e^{-x^2}\,dx
+=(-1)^n\int_{-\infty}^{\infty}H_m(x)\frac{d^ne^{-x^2}}{dx^n}\,dx
+\]
+for $n>m$ by repeated partial integration, keeping in mind formula (30) and the fact that $e^{-x^2}$ and all its derivatives vanish for infinite $x$:
+\[
+\begin{aligned}
+\int_{-\infty}^{\infty}H_m(x)H_n(x)e^{-x^2}\,dx
+&=(-1)^{n-1}2m\int_{-\infty}^{\infty}H_{m-1}(x)\frac{d^{n-1}e^{-x^2}}{dx^{n-1}}\,dx=\cdots\\
+&=(-1)^{n-m}2^m m!\int_{-\infty}^{\infty}H_0(x)\frac{d^{n-m}e^{-x^2}}{dx^{n-m}}\,dx=0.
+\end{aligned}
+\]
+To obtain the normalization we set $n=m$ and have
+\[
+\int_{-\infty}^{\infty}H_n^2(x)e^{-x^2}\,dx
+=2^n n!\int_{-\infty}^{\infty}H_0(x)e^{-x^2}\,dx
+=2^n n!\sqrt\pi.
+\]
+Thus the functions of the orthonormal system are
+\[
+\varphi_\nu(x)=\frac{H_\nu(x)e^{-x^2/2}}{\sqrt{2^\nu\nu!\sqrt\pi}}
+\qquad(\nu=0,1,2,\ldots).
+\]
+
+\subsection{Laguerre Polynomials}
+The Laguerre polynomial $L_n(x)$\footnote{E. Laguerre, Sur l'int\'egrale $\int_x^\infty e^{-x}/x\,dx$, Bull. Soc. math. France, Vol. 7, 1879, pp. 72--81; Oeuvres, Vol. 1, pp. 428--437, Paris, 1898.} $(a=0$, $b=+\infty$, $p(x)=e^{-x})$ occurs as the factor of $e^{-x}$ in the $n$-th derivative of the function $x^ne^{-x}$:
+\[
+\begin{aligned}
+L_n(x)
+&=e^x\frac{d^n}{dx^n}(x^ne^{-x})\\
+&=\sum_{k=0}^n(-1)^k\binom nk n(n-1)\cdots(k+1)x^k\\
+&=\sum_{k=0}^n(-1)^{n-k}\binom nk n(n-1)\cdots(n-k+1)x^{n-k}\\
+&=\sum_{k=0}^n(-1)^{n-k}\frac{[n(n-1)\cdots(n-k+1)]^2}{k!}x^{n-k}\\
+&=(-1)^n\left(x^n-\frac{n^2}{1!}x^{n-1}
++\frac{n^2(n-1)^2}{2!}x^{n-2}-\cdots+(-1)^n n!\right);
+\end{aligned}
+\]
+thus, for example,
+\[
+L_0(x)=1,\qquad L_1(x)=-x+1,
+\]
+\[
+L_2(x)=x^2-4x+2,\qquad L_3(x)=-x^3+9x^2-18x+6,
+\]
+\[
+L_4(x)=x^4-16x^3+72x^2-96x+24.
+\]
+In virtue of the relations
+\[
+\begin{aligned}
+\sum_{n=0}^{\infty}\frac{L_n(x)}{n!}t^n
+&=\sum_{n=0}^{\infty}\sum_{k=0}^n(-1)^k\binom nk\frac{1}{k!}x^kt^n\\
+&=\sum_{k=0}^{\infty}\frac{(-1)^kx^k}{k!}\sum_{n=k}^{\infty}\binom nk t^n\\
+&=\sum_{k=0}^{\infty}\frac{(-1)^kx^k}{k!}\frac{t^k}{(1-t)^{k+1}}
+=\frac{e^{-xt/(1-t)}}{1-t},
+\end{aligned}
+\]
+the Laguerre polynomials possess a simple generating function, namely
+\[
+\psi(x,t)=\frac{e^{-xt/(1-t)}}{1-t}.
+\]
+The relation
+\[
+(1-t)^2\frac{\partial\psi(x,t)}{\partial t}=(1-t-x)\psi(x,t)
+\]
+leads to the recursion formula
+\begin{equation}
+L_{n+1}(x)-(2n+1-x)L_n(x)+n^2L_{n-1}(x)=0\qquad(n\ge1).
+\tag{33}
+\end{equation}
+This, together with relation
+\begin{equation}
+L_n'(x)-nL_{n-1}'(x)=-nL_{n-1}(x)\qquad(n\ge1),
+\tag{34}
+\end{equation}
+which follows from the relation
+\[
+(1-t)\frac{\partial\psi(x,t)}{\partial x}=-t\psi(x,t),
+\]
+leads to the formula
+\begin{equation}
+xL_n'(x)=nL_n(x)-n^2L_{n-1}(x)\qquad(n\ge1)
+\tag{35}
+\end{equation}
+and thus to the linear homogeneous second order differential equation
+\begin{equation}
+xy''+(1-x)y'+ny=0
+\tag{36}
+\end{equation}
+satisfied by the Laguerre polynomial $L_n(x)$.
+
+The orthogonality relation
+\[
+\int_0^{\infty}e^{-x}L_n(x)L_m(x)\,dx=0\qquad(n>m)
+\]
+follows from the equation
+\[
+\begin{aligned}
+\int_0^{\infty}e^{-x}x^kL_n(x)\,dx
+&=\int_0^{\infty}x^k\frac{d^n}{dx^n}(x^ne^{-x})\,dx\\
+&=-k\int_0^{\infty}x^{k-1}\frac{d^{n-1}}{dx^{n-1}}(x^ne^{-x})\,dx\\
+&=k(k-1)\int_0^{\infty}x^{k-2}\frac{d^{n-2}}{dx^{n-2}}(x^ne^{-x})\,dx=\cdots\\
+&=(-1)^kk!\int_0^{\infty}\frac{d^{n-k}}{dx^{n-k}}(x^ne^{-x})\,dx=0\qquad\text{for }n>k.
+\end{aligned}
+\]
+
+and the normalization is given by
+\[
+\begin{aligned}
+\int_0^\infty e^{-x}L_n^2(x)\,dx
+&=\int_0^\infty (-1)^n x^n\frac{d^n}{dx^n}(x^ne^{-x})\,dx\\
+&=n!\int_0^\infty x^ne^{-x}\,dx=(n!)^2;
+\end{aligned}
+\]
+therefore the functions
+\[
+\varphi_\nu(x)=\frac{e^{-x/2}L_\nu(x)}{\nu!}
+\qquad(\nu=0,1,2,\ldots)
+\]
+constitute the orthonormal system.\footnote{Once again the orthogonality relation could be obtained with the aid of the generating function.}
+
+\subsection{Completeness of the Laguerre and Hermite Functions}
+The completeness of the Laguerre and Hermite functions remains to be investigated, since completeness has thus far been proved only for finite intervals. We call a system of functions in the interval $0\le x<\infty$ complete if every piecewise continuous function $f(x)$ for which the integral
+\[
+\int_0^\infty f^2(x)\,dx
+\]
+exists can be approximated arbitrarily well in the mean by a linear combination of the functions.
+
+To demonstrate the completeness of the Laguerre functions\footnote{This proof was suggested in conversation by J. von Neumann.} we multiply both sides of the identity
+\[
+\psi(x,t)=\frac{1}{1-t}e^{-tx/(1-t)}
+=\sum_{n=0}^{\infty}\frac{t^n}{n!}L_n(x)
+\]
+by $e^{-x/2}$, thus obtaining the corresponding identity
+\[
+g(x,t)=\frac{1}{1-t}e^{-\frac12[(1+t)/(1-t)]x}
+=\sum_{n=0}^{\infty}t^n\varphi_n(x)
+\]
+for the orthonormal Laguerre functions
+\[
+\varphi_n(x)=e^{-x/2}\frac{L_n(x)}{n!}.
+\]
+Now the infinite series $\sum_{n=0}^{\infty}t^n\varphi_n(x)$ converges in the mean to the generating function $g(x,t)$ for $|t|<1$. This may easily be seen from the estimate
+\[
+\int_0^\infty\left(g(x,t)-\sum_{n=0}^{N}t^n\varphi_n(x)\right)^2dx
+=\frac{1}{1-t^2}-\sum_{n=0}^{N}t^{2n},
+\]
+obtained by means of the relations
+\[
+\int_0^\infty g^2(x,t)\,dx=\frac{1}{1-t^2},
+\]
+and
+\[
+\int_0^\infty g(x,t)\varphi_n(x)\,dx=t^n.
+\]
+
+Since the quantity
+\[
+\alpha=\frac12\frac{1+t}{1-t}
+\]
+assumes all values from $0$ to $\infty$ as $t$ runs from $-1$ to $+1$, it follows that all functions of the form $e^{-\alpha x}$ can be approximated arbitrarily well in the mean by combinations of the Laguerre functions in the interval $0\le x<\infty$.
+
+Suppose that the function $f(x)$ is piecewise continuous and square-integrable in this interval. If we set $e^{-x}=\xi$, $f(x)$ goes over into a function $k(\xi)$ which is piecewise continuous in the interval $0<\xi\le1$. The function $k(\xi)/\sqrt{\xi}$ is, moreover, square-integrable and can therefore be approximated in the mean by a function $G(\xi)$ which is piecewise continuous in the closed interval $0\le\xi\le1$.\ctnote{原文此处及紧随其后的括号中将区间变量排作 $x$；上下文中函数均写作 $G(\xi)$、$k(\xi)$，且刚由 $e^{-x}=\xi$ 将问题变换到 $\xi\in(0,1]$，故此处应为 $0\le\xi\le1$。} (For example, $G(\xi)$ can be taken identically equal to zero in a sufficiently small neighborhood of the origin and equal to $k(\xi)/\sqrt{\xi}$ elsewhere in the interval $0\le\xi\le1$.) The function $G(\xi)$ and, hence, $k(\xi)/\sqrt{\xi}$ can be approximated in the mean by polynomials
+\[
+h_n(\xi)=a_0+a_1\xi+a_2\xi^2+\cdots+a_n\xi^n.
+\]
+It follows that $f(x)$ can be approximated in the mean in the interval $0\le x<\infty$ by expressions of the form
+\[
+\sqrt{\xi}\,h_n(\xi)
+=e^{-x/2}\left(a_0+a_1e^{-x}+a_2e^{-2x}+\cdots+a_ne^{-nx}\right)
+\]
+and therefore by a combination of Laguerre functions. This fact is equivalent to the validity of the completeness relation
+\[
+\sum_{\nu=0}^{\infty}c_\nu^2=\int_0^\infty f^2(x)\,dx,
+\]
+where $c_\nu$ denotes the expansion coefficient
+\[
+c_\nu=\int_0^\infty f(x)\varphi_\nu(x)\,dx.
+\]
+
+The completeness of the Hermite polynomials can be proved on the basis of the completeness of the polynomials of Laguerre. Any square-integrable function $f(x)$ is the sum $f_1(x)+f_2(x)$ of an even function $f_1$ and an odd function $f_2$. For each of these functions the completeness relation can be easily reduced to the completeness relation for Laguerre functions by substituting $x=u^2$. Details of the proof are omitted.
+
+\section{Supplement and Problems}
+
+\subsection{Hurwitz's Solution of the Isoperimetric Problem}
+The ``isoperimetric problem'' is the problem of finding the simple closed plane curve of given perimeter with maximum area. Its solution is known to be the circle. We confine ourselves to piecewise smooth curves. This problem is solved by Hurwitz\footnote{A. Hurwitz, Sur quelques applications g\'eom\'etriques des s\'eries de Fourier, Ann. \'Ec. Norm., Ser. 3, Vol. 19, 1902, pp. 357--408, esp. pp. 392--397.} in the following way:
+
+Let
+\[
+x=x(s),\qquad y=y(s),\qquad 0\le s<L
+\]
+be the parametric representation of a continuous piecewise smooth closed curve of perimeter $L$ and area $F$. The parameter $s$ is the arc length. We introduce instead the new parameter $t=2\pi s/L$, which goes from $0$ to $2\pi$ as $s$ goes from $0$ to $L$, and denote the Fourier coefficients of $x$ and $y$ by $a_\nu,b_\nu$ and $c_\nu,d_\nu$, respectively; the Fourier coefficients of $dx/dt$, $dy/dt$ are then $\nu b_\nu,-\nu a_\nu$ and $\nu d_\nu,-\nu c_\nu$. The relations
+\[
+\left(\frac{dx}{ds}\right)^2+\left(\frac{dy}{ds}\right)^2=1,
+\qquad
+\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2=\left(\frac{L}{2\pi}\right)^2,
+\]
+\[
+F=\int_0^{2\pi}x\frac{dy}{dt}\,dt
+\]
+and the completeness relations (9) and (9') then lead to
+\[
+2\left(\frac{L}{2\pi}\right)^2
+=\frac{1}{\pi}\int_0^{2\pi}\left\{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2\right\}dt
+=\sum_{\nu=1}^{\infty}\nu^2(a_\nu^2+b_\nu^2+c_\nu^2+d_\nu^2),
+\]
+\[
+\frac{F}{\pi}
+=\frac{1}{\pi}\int_0^{2\pi}x\frac{dy}{dt}\,dt
+=\sum_{\nu=1}^{\infty}\nu(a_\nu d_\nu-b_\nu c_\nu).
+\]
+It follows that
+\[
+L^2-4\pi F
+=2\pi^2\sum_{\nu=1}^{\infty}\left[(\nu a_\nu-d_\nu)^2+(\nu b_\nu+c_\nu)^2+(\nu^2-1)(c_\nu^2+d_\nu^2)\right]\ge0.
+\]
+Evidently the equality can hold only if
+\[
+b_1+c_1=0,\qquad a_1-d_1=0,
+\]
+\[
+a_\nu=b_\nu=c_\nu=d_\nu=0\qquad\text{for }\nu=2,3,\ldots,
+\]
+i.e. if
+\[
+x=\frac12a_0+a_1\cos t+b_1\sin t,
+\]
+\[
+y=\frac12b_0-b_1\cos t+a_1\sin t.
+\]
+These are the equations of a circle. Thus all continuous piecewise smooth closed curves satisfy the ``isoperimetric inequality''
+\begin{equation}
+L^2-4\pi F\ge0,
+\tag{37}
+\end{equation}
+where $L$ is the perimeter and $F$ the area. The equality holds if and only if the curve is a circle. This proves the isoperimetric character of the circle.
+
+\subsection{Reciprocity Formulas}
+Prove the equivalence of the two formulas\footnote{Compare Hilbert, Integralgleichungen, p. 75.}
+\[
+f(t)=\int_0^1g(u)\cot\pi(t-u)\,du
+\]
+\[
+-g(u)=\int_0^1f(t)\cot\pi(u-t)\,dt,
+\]
+assuming that
+\[
+\int_0^1g(u)\,du=0,\qquad \int_0^1f(t)\,dt=0,
+\]
+and
+\[
+g(u+1)=g(u),\qquad f(t+1)=f(t).
+\]
+The integrals are to be taken as the ``Cauchy principal values.'' The proof may be carried out by using either the theory of Fourier series or the Cauchy integral theorem.
+
+\subsection{The Fourier Integral and Convergence in the Mean}
+The theory of the Fourier integral may be developed in the same way as the theory of Fourier series in \S5; again we use the concepts of convergence in the mean and completeness.
+
+Let the real or complex function $f(x)$ be piecewise continuous in every finite interval, and assume that the integrals
+\[
+\int_{-\infty}^{\infty}|f(x)|\,dx,
+\qquad
+\int_{-\infty}^{\infty}|f(x)|^2\,dx
+\]
+exist. We attempt to find the best approximation in the mean of the function $f(x)$ by integrals of the form
+\[
+\int_{-T}^{T}\varphi(t)e^{ixt}\,dt;
+\]
+i.e. we attempt to make the integral
+\[
+\int_{-\infty}^{\infty}\left|f(x)-\int_{-T}^{T}\varphi(t)e^{ixt}\,dt\right|^2dx
+\]
+as small as possible for a fixed value of $T$. It is not difficult to prove that
+\[
+\begin{aligned}
+\int_{-\infty}^{\infty}\left|f(x)-\int_{-T}^{T}\varphi(t)e^{ixt}\,dt\right|^2dx
+&=\int_{-\infty}^{\infty}|f(x)|^2dx
++2\pi\int_{-T}^{T}|\varphi(x)-g(x)|^2dx\\
+&\qquad-2\pi\int_{-T}^{T}|g(x)|^2dx
+\end{aligned}
+\]
+with
+\[
+g(x)=\frac{1}{2\pi}\int_{-\infty}^{\infty}f(\xi)e^{-ix\xi}\,d\xi.
+\]
+Therefore our integral assumes its least value for
+\[
+\varphi(t)=g(t).
+\]
+Furthermore, the passage to the limit $T\to\infty$ yields the completeness relation
+\[
+\int_{-\infty}^{\infty}|g(x)|^2dx
+=\frac{1}{2\pi}\int_{-\infty}^{\infty}|f(x)|^2dx.
+\]
+This fact will not be proved here, nor shall we state the further considerations leading to the Fourier integral theorem itself.
+
+\subsection{Spectral Decomposition by Fourier Series and Integrals}
+Fourier series and Fourier integrals occur wherever one has occasion to represent a given phenomenon or function as a superposition of periodic phenomena or functions. This representation is known as the \emph{spectral decomposition} of the given function. If the Fourier series for the function $f(x)$ in the interval $-l\le x<l$ is $\sum_{\nu=-\infty}^{\infty}\alpha_\nu e^{i\pi\nu x/l}$, the function $f(x)$ is said to be ``decomposed'' into periodic functions with the ``discrete frequencies'' $\nu\pi/l$ $(\nu=0,1,\ldots)$ and the ``amplitudes''
+\[
+|\alpha_\nu|
+=\left|\frac{1}{2l}\int_{-l}^{l}f(x)e^{-i\pi\nu x/l}\,dx\right|.
+\]
+If, on the other hand, the infinite interval $-\infty<x<\infty$ is considered, the function $f(x)$ is said to be decomposed into a ``continuous spectrum,'' with the ``spectral density''
+\[
+g(u)=\int_{-\infty}^{\infty}f(x)e^{-iux}\,dx
+\]
+at the frequency $u$.
+
+An example of great interest in physics is given by the function\footnote{This example is significant in optics; for, a sinusoidal wave train of finite length corresponds not to a sharp spectral line but to a spectrum of finite width which becomes sharper and more intense as the wave train becomes longer.}
+\[
+f(x)=e^{i\omega x}\qquad\text{for }|x|<l,
+\]
+\[
+f(x)=0\qquad\text{for }|x|>l,
+\]
+which corresponds to a finite train of sinusoidal waves consisting of $n=l\omega/\pi$ waves. Its spectral density is given by
+\[
+g(u)=\int_{-l}^{l}e^{i(\omega-u)x}\,dx
+=\frac{2\sin(\omega-u)l}{\omega-u}.
+\]
+The function $|g(u)|$ has a maximum at $u=\omega$, which becomes more pronounced as the number $n$ of waves in the train becomes greater. Outside the arbitrarily small interval $\omega-\delta\le u\le\omega+\delta$, the spectral density becomes, in comparison with its maximum, arbitrarily small for large $n$.
+
+\subsection{Dense Systems of Functions}
+A system of functions will be called dense\footnote{Here we follow the definition of H. M\"untz.} if it has the property that every function $f(x)$ which can be approximated arbitrarily well in the mean by a finite number of functions of the system can also be approximated in the mean by functions taken from any infinite subset of the original system of functions. The remarkable fact that nontrivial systems of this kind exist---a trivial system is, for example, one in which all the functions are equal---may be illustrated most easily on the basis of the following theorem:\footnote{G. Szeg\H{o}, \"Uber dichte Funktionenfamilien, Berichte der s\"achs. Akad. d. Wiss. zu Leipzig, Vol. 78, 1926, pp. 373--380.} \emph{If $\lambda_1,\lambda_2,\ldots,\lambda_n,\ldots$ are positive numbers which tend to $\infty$ with increasing $n$, then the functions}
+\[
+\frac{1}{x+\lambda_1},\quad \frac{1}{x+\lambda_2},\quad\ldots,\quad\frac{1}{x+\lambda_n},\quad\ldots
+\]
+\emph{form a complete system in every finite positive interval.}
+
+From this theorem it follows immediately that the system is dense, since every partial sequence of the $\lambda_n$ also meets the specified requirements.
+
+Because of the Weierstrass approximation theorem it suffices to show that every power $x^m$ may be approximated uniformly by the functions $1/(x+\lambda_n)$. The rational function
+\[
+x^m\frac{\lambda_p\lambda_{p+1}\cdots\lambda_q}
+{(x+\lambda_p)(x+\lambda_{p+1})\cdots(x+\lambda_q)}
+\]
+converges to $x^m$ with increasing $p$ and $q$ $(q\ge p)$, and the convergence is uniform in every finite positive interval. If we always take $q-p\ge m$, this rational function may always be decomposed into partial fractions and written in the form
+\[
+\frac{A_p}{x+\lambda_p}+\frac{A_{p+1}}{x+\lambda_{p+1}}+\cdots+\frac{A_q}{x+\lambda_q},
+\]
+where $A_p,A_{p+1},\ldots,A_q$ are constants, since all the numbers $\lambda_n$ may be assumed to be different from each other. But this is a linear combination of the functions of the system under consideration.
+
+Other examples of dense systems of functions have been given by H. M\"untz.\footnote{H. M\"untz, Umkehrung bestimmter Integrale und absolute Approximation, Ch. II, Dichte Funktionensysteme, Math. Zeitschr., Vol. 21, 1924, pp. 104--110.}
+
+\subsection{A Theorem of H. M\"untz on the Completeness of Powers}
+M\"untz\footnote{H. M\"untz, \"Uber den Approximationssatz von Weierstrass, Festschr. H. A. Schwarz, p. 303, Julius Springer, Berlin, 1914; O. Sz\'asz, \"Uber die Approximation stetiger Funktionen durch lineare Aggregate von Potenzen, Math. Ann., Vol. 77, 1916, pp. 482--496.} has proved the following interesting theorem: The infinite sequence of powers $1,x^{\lambda_1},x^{\lambda_2},\ldots$ with positive exponents which approach infinity is complete in the interval $0\le x\le1$ if and only if $\sum_{n=1}^{\infty}1/\lambda_n$ diverges.
+
+\subsection{Fej\'er's Summation Theorem}
+From Weierstrass's approximation theorem we concluded that every continuous periodic function can be approximated uniformly by trigonometric polynomials. Such approximating polynomials may easily be constructed on the basis of the following theorem, which was discovered by Fej\'er.\footnote{L. Fej\'er, Untersuchungen \"uber Fouriersche Reihen, Math. Ann., Vol. 58, 1904, pp. 51--69.} \emph{If $f(x)$ is a continuous periodic function and if $s_n(x)$ is the $n$-th partial sum of its Fourier series, then the sequence of arithmetic means}
+\[
+S_n(x)=\frac{s_1(x)+s_2(x)+\cdots+s_n(x)}{n}
+\]
+\[
+=\frac{2}{\pi n}\int_{-\pi}^{\pi}f(x+t)
+\left(\frac{\sin(nt/2)}{2\sin(t/2)}\right)^2dt
+\]
+\emph{converges uniformly to $f(x)$.}
+
+An analogous theorem holds for the Fourier integral: Let $f(x)$ be continuous in every finite interval, and suppose that
+\[
+\int_{-\infty}^{\infty}|f(x)|\,dx
+\]
+exists. Let us write
+\[
+g(x)=\frac{1}{2\pi}\int_{-\infty}^{\infty}f(\xi)e^{-ix\xi}\,d\xi
+\]
+and
+\[
+s_T(x)=\int_{-T}^{T}g(t)e^{ixt}\,dt.
+\]
+Then the sequence of arithmetic means
+\[
+S_T(x)=\frac{1}{T}\int_0^T s_T(x)\,dT
+=\frac{2}{\pi T}\int_{-\infty}^{\infty}f(x+t)
+\left(\frac{\sin(Tt/2)}{t}\right)^2dt
+\]
+converges uniformly to $f(x)$ in every finite interval. In particular, the convergence is uniform in the whole interval $-\infty<x<\infty$ if $f(x)$ is uniformly continuous there.
+
+\subsection{The Mellin Inversion Formulas}
+\textsc{Theorem 1:} Let $s=\sigma+ti$ be a complex variable. Let the function $f(s)$ be regular in the strip $\alpha<\sigma<\beta$ and let
+\[
+\int_{-\infty}^{\infty}|f(\sigma+ti)|\,dt
+\]
+converge in this strip. Furthermore, let the function $f(s)$ tend uniformly to zero with increasing $|t|$ in every strip $\alpha+\delta\le\sigma\le\beta-\delta$ ($\delta>0$, fixed arbitrarily). If for real positive $x$ and fixed $\sigma$ we define
+\begin{equation}
+g(x)=\frac{1}{2\pi i}\int_{\sigma-\infty i}^{\sigma+\infty i}x^{-s}f(s)\,ds,
+\tag{38}
+\end{equation}
+then
+\begin{equation}
+f(s)=\int_0^\infty x^{s-1}g(x)\,dx
+\tag{39}
+\end{equation}
+in the strip $\alpha<\sigma<\beta$.
+
+\emph{Proof:} Since, by assumption, $f(s)$ converges uniformly to zero for $\alpha+\delta\le\sigma\le\beta-\delta$ as $|t|\to\infty$, the path of integration in (38) may be displaced parallel to itself as long as it stays within the strip $\alpha<\sigma<\beta$; thus $g(x)$ does not depend on $\sigma$. If we choose two abscissas $\sigma_1$ and $\sigma_2$ with $\alpha<\sigma_1<\sigma<\sigma_2<\beta$, we have
+\[
+\begin{aligned}
+\int_0^\infty x^{s-1}g(x)\,dx
+&=\int_0^1x^{s-1}dx\,\frac{1}{2\pi i}
+\int_{\sigma_1-\infty i}^{\sigma_1+\infty i}x^{-s_1}f(s_1)\,ds_1\\
+&\quad+\int_1^\infty x^{s-1}dx\,\frac{1}{2\pi i}
+\int_{\sigma_2-\infty i}^{\sigma_2+\infty i}x^{-s_2}f(s_2)\,ds_2\\
+&=J_1+J_2.
+\end{aligned}
+\]
+\footnote{H. Mellin, \"Uber den Zusammenhang zwischen den linearen Differential- und Differenzengleichungen, Acta Math., Vol. 25, 1902, pp. 139--164, esp. 156--162; M. Fujiwara, \"Uber Abelsche erzeugende Funktionen und Darstellbarkeitsbedingungen von Funktionen durch Dirichletsche Reihen, Tohoku math. J., Vol. 17, 1920, pp. 363--383, esp. 379--383; H. Hamburger, \"Uber die Riemannsche Funktionalgleichung der $\zeta$-Funktion (Erste Mitteilung), Math. Zeitschr., Vol. 10, 1921, pp. 240--254, esp. pp. 242--247.}
+
+The order of the integrations in these integrals may be interchanged, because we have the estimate
+\[
+|J_1|\le\frac{1}{2\pi}\int_{-\infty}^{\infty}|f(\sigma_1+ti)|\,dt
+\int_0^1x^{-1+(\sigma-\sigma_1)}\,dx<\infty,
+\]
+\[
+|J_2|\le\frac{1}{2\pi}\int_{-\infty}^{\infty}|f(\sigma_2+ti)|\,dt
+\int_1^\infty x^{-1+(\sigma-\sigma_2)}\,dx<\infty
+\]
+for the interchanged integrals.
+
+We thus obtain
+\[
+\int_0^\infty x^{s-1}g(x)\,dx
+=\frac{1}{2\pi i}\int_{\sigma_2-\infty i}^{\sigma_2+\infty i}\frac{f(s_2)}{s_2-s}\,ds_2
+-\frac{1}{2\pi i}\int_{\sigma_1-\infty i}^{\sigma_1+\infty i}\frac{f(s_1)}{s_1-s}\,ds_1.
+\]
+According to the Cauchy integral formula, the difference on the right side equals $f(s)$, since the integrals over horizontal segments connecting the two vertical lines $s=\sigma_1$ and $s=\sigma_2$ tend to zero for $|t|\to\infty$ (because $f(s)\to0$).
+
+\textsc{Theorem 2:} Let $g(x)$ be piecewise smooth for $x>0$, and let
+\[
+\int_0^\infty x^{\sigma-1}g(x)\,dx
+\]
+be absolutely convergent for $\alpha<\sigma<\beta$. Then the inversion formula (38) follows from (39).
+
+\emph{Proof:} Let us put $x=e^u$. We then have
+\[
+\begin{aligned}
+\frac{1}{2\pi i}\int_{\sigma-\infty i}^{\sigma+\infty i}x^{-s}f(s)\,ds
+&=\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{-u(\sigma+ti)}dt
+\int_{-\infty}^{\infty}e^{v(\sigma+ti)}g(e^v)\,dv\\
+&=\frac{e^{-u\sigma}}{2\pi}\int_{-\infty}^{\infty}dt
+\int_{-\infty}^{\infty}e^{it(v-u)}e^{v\sigma}g(e^v)\,dv.
+\end{aligned}
+\]
+By the Fourier integral theorem (16) the latter expression is equal to $e^{-u\sigma}e^{u\sigma}g(e^u)=g(x)$; the theorem is therefore proved.
+
+\emph{Examples of the Mellin integral transformation:}
+
+(a) Let
+\[
+g(x)=
+\begin{cases}
+1,&0<x<1,\\
+\tfrac12,&x=1,\\
+0,&x>1;
+\end{cases}
+\]
+since the integral
+\[
+\int_0^\infty x^{\sigma-1}g(x)\,dx
+\]
+converges absolutely for $\sigma>0$, we have
+\[
+f(s)=\int_0^\infty x^{s-1}g(x)\,dx=\frac{1}{s}\qquad(\sigma>0).
+\]
+
+from which it follows that
+\[
+g(x)=\frac{1}{2\pi i}\int_{\sigma-\infty i}^{\sigma+\infty i}\frac{x^{-s}}{s}\,ds
+\qquad(\sigma>0).
+\]
+This formula is important in the theory of Dirichlet series.
+
+(b) From the definition of the $\Gamma$-function
+\[
+\Gamma(s)=\int_0^\infty x^{s-1}e^{-x}\,dx
+\qquad(\sigma>0)
+\]
+one obtains
+\[
+e^{-x}=\frac{1}{2\pi i}\int_{\sigma-\infty i}^{\sigma+\infty i}x^{-s}\Gamma(s)\,ds
+\qquad(\sigma>0).
+\]
+
+(c) The formula
+\[
+\Gamma(s)\zeta(s)=\int_0^\infty\frac{x^{s-1}}{e^x-1}\,dx
+\qquad(\sigma>1),
+\]
+where $\zeta(s)$ denotes the Riemann zeta function, leads to
+\[
+\frac{1}{e^x-1}=\frac{1}{2\pi i}\int_{\sigma-\infty i}^{\sigma+\infty i}x^{-s}\Gamma(s)\zeta(s)\,ds
+\qquad(\sigma>1).
+\]
+
+(d) The inversion of
+\[
+\begin{aligned}
+\pi^{-s/2}\Gamma(s/2)\zeta(s)
+&=\int_0^\infty x^{s-1}\sum_{\nu=1}^\infty e^{-\nu^2\pi x}\,dx\\
+&=\int_0^\infty x^{s-1}\frac{\theta(x)-1}{2}\,dx
+\qquad(\sigma>1)
+\end{aligned}
+\]
+is
+\[
+\theta(x)=1+\frac{1}{\pi i}\int_{\sigma-\infty i}^{\sigma+\infty i}
+x^{-s}\pi^{-s/2}\Gamma(s/2)\zeta(s)\,ds
+\qquad(\sigma>1).
+\]
+
+The Mellin transformation is an important tool in the analytic theory of numbers and also occurs frequently in other problems of analysis.
+
+\subsection{The Gibbs Phenomenon}
+If we draw the graphs of a piecewise smooth function $f(x)$ and of its approximations by the partial sums of its Fourier series, then we find that the graphs of the partial sums approach the graph of $f(x)$ in every interval that does not contain a discontinuity of $f(x)$. However, in the immediate vicinity of a jump discontinuity, where the convergence of the Fourier series is not uniform, the graphs of the partial sums contain oscillations which become progressively narrower and move closer to the point of discontinuity as the number of terms in the partial sums increases, but the total oscillation of the approximating curves does not approach the jump of $f(x)$. This is known as the \emph{Gibbs phenomenon}.\footnote{This fact was originally discovered empirically by Gibbs. J. W. Gibbs, Fourier's series, \emph{Nature}, Vol. 59, 1898--99, pp. 200 and 606; Papers, Vol. 2, pp. 258--260, Longmans, Green and Co., London, New York, and Bombay, 1906.}
+
+To investigate it more closely we may, according to \S5, confine ourselves to the particular Fourier series
+\[
+\frac{\pi-x}{2}=\sum_{\nu=1}^\infty\frac{\sin\nu x}{\nu}
+\qquad(0<x<2\pi).
+\]
+With the aid of the formula
+\[
+s_n(x)=\sum_{\nu=1}^n\frac{\sin\nu x}{\nu}
+=-\frac{x}{2}+\int_0^x\frac{\sin(n+\tfrac12)t}{2\sin\tfrac12 t}\,dt,
+\]
+we may write the remainder of this series in the form
+\[
+r_n(x)=\sum_{\nu=n+1}^\infty\frac{\sin\nu x}{\nu}
+=\frac{\pi}{2}-\int_0^x\frac{\sin(n+\tfrac12)t}{2\sin\tfrac12 t}\,dt
+\]
+or
+\[
+r_n(x)=\frac{\pi}{2}-\int_0^{(n+\tfrac12)x}\frac{\sin t}{t}\,dt+\rho_n(x),
+\]
+where
+\[
+\rho_n(x)=\int_0^x
+\frac{2\sin\tfrac{t}{2}-t}{2t\sin\tfrac{t}{2}}
+\sin(n+\tfrac12)t\,dt.
+\]
+By differentiation we see easily that the approximation is worst at the points
+\[
+x_k=\frac{2k\pi}{2n+1}\qquad(k=1,2,\ldots,n),
+\]
+for which the remainder has maxima or minima. Its value at $x_k$ is
+\[
+r_n(x_k)=\frac{\pi}{2}-\int_0^{k\pi}\frac{\sin x}{x}\,dx
++\rho_n\!\left(\frac{2k\pi}{2n+1}\right).
+\]
+For increasing $n$ and fixed $k$, $\rho_n(2k\pi/(2n+1))$ tends to zero. Thus the remainder $r_n(x_k)$, i.e. the deviation of the approximation from $\tfrac12(\pi-x)$ at the point $x_k$ (which approaches the point of discontinuity), tends to the limit
+\[
+\lim_{n\to\infty}r_n(x_k)
+=\frac{\pi}{2}-\int_0^{k\pi}\frac{\sin x}{x}\,dx.
+\]
+In particular $\lim r_n(x_1)\approx-0.2811$; i.e. the approximation curve overshoots the curve of $f(x)$ by about 9 percent of the amount of the jump discontinuity.\footnote{M. B\^ocher, Introduction to the theory of Fourier's series, \emph{Ann. Math.}, Ser. 2, Vol. 7, 1906, pp. 81--152, esp. 123--132; C. Runge, Theorie und Praxis der Reihen, pp. 170--182, G\"oschen, Leipzig, 1904. For generalizations of the Gibbs phenomenon to other orthogonal systems, in particular systems in several variables, see H. Weyl, Die Gibbssche Erscheinung in der Theorie der Kugelfunktionen, \emph{Rend. Circ. mat. Palermo}, Vol. 29, 1910, pp. 308--323; \"Uber die Gibbssche Erscheinung und verwandte Konvergenzph\"anomene, ibid, Vol. 30, 1910, pp. 377--407.}
+
+It may be pointed out that the Gibbs phenomenon does not occur when Fej\'er's arithmetic means are used as the approximation functions.
+
+\subsection{A Theorem on Gram's Determinant}
+If $G'$ is a subdomain of the basic domain $G$, if $\varphi_1,\varphi_2,\ldots,\varphi_n$ are piecewise smooth functions in $G$, and if $\Gamma$ is their Gram determinant for the domain $G$ and $\Gamma'$ that for the domain $G'$, then
+\[
+\Gamma'\le\Gamma.
+\]
+The proof follows immediately from the maximum-minimum property of the eigenvalues. For, $\Gamma$ is the product of the eigenvalues of the quadratic form
+\[
+K(t,t)=\int_G(t_1\varphi_1+\cdots+t_n\varphi_n)^2\,dG,
+\]
+and $\Gamma'$ is the corresponding product for
+\[
+K'(t,t)=\int_{G'}(t_1\varphi_1+\cdots+t_n\varphi_n)^2\,dG.
+\]
+Since, obviously,
+\[
+K'(t,t)\le K(t,t),
+\]
+it follows immediately that every eigenvalue of $K'(t,t)$ is less than or equal to the corresponding eigenvalue of $K(t,t)$.
+
+Another proof may be obtained from the following representation of the Gram determinant, in which we restrict ourselves, for the sake of brevity, to a single variable $x$ in the basic domain $0\le x\le1$:
+\[
+\Gamma=\left|\int_0^1\varphi_i\varphi_k\,dx\right|
+\]
+\[
+=\frac{1}{n!}\int_0^1\!\int_0^1\!\cdots\!\int_0^1
+\left|
+\begin{matrix}
+\varphi_1(x_1)&\varphi_1(x_2)&\cdots&\varphi_1(x_n)\\
+\varphi_2(x_1)&\varphi_2(x_2)&\cdots&\varphi_2(x_n)\\
+\vdots&\vdots&&\vdots\\
+\varphi_n(x_1)&\varphi_n(x_2)&\cdots&\varphi_n(x_n)
+\end{matrix}
+\right|^2
+\,dx_1dx_2\cdots dx_n.
+\]
+This representation corresponds exactly to formula (45) of Chapter I.\footnote{Compare A. Kneser, Zur Theorie der Determinanten, Festschr. H. A. Schwarz, pp. 177--191, Julius Springer, Berlin, 1914; Gerhard W. H. Kowalewski, Einf\"uhrung in die Determinantentheorie einschliesslich der unendlichen und der Fredholmschen Determinanten, Veit, Leipzig, 1909.}
+
+\subsection{Application of the Lebesgue Integral}
+Many topics discussed in this chapter become much more elegant if we use the Lebesgue integral instead of the more elementary Riemann integral. The set of admissible functions or ``spaces'' must be extended to include all functions which are integrable in the Lebesgue sense, and the methods of the Lebesgue theory must be applied.
+
+The Lebesgue theory is based on the concept of the measure of a set of points $\mathfrak M$, all of which may be assumed to lie within a given finite interval. Let us suppose that the points of $\mathfrak M$ are all imbedded in a denumerable set of intervals; these intervals may, in general, overlap. Let $m$ be the lower bound of the sum of the lengths of these intervals; moreover let $m'$ be the corresponding lower bound for the points of the complementary set $\mathfrak M'$, i.e. for those points of the given interval that do not belong to $\mathfrak M$. If $m+m'$ equals the length of the given interval, the set $\mathfrak M$ is said to be \emph{measurable} and $m$ is said to be its \emph{measure}. According to this definition the measure of every denumerable set is zero; such sets are called ``null sets.''
+
+Consider a bounded function $f(x)$ defined in the interval $G$ $(a\le x\le b)$, the values of which lie in an interval $J$. Let us subdivide $J$ into subintervals $J_1,J_2,\ldots,J_n$. If for every such subinterval $J_j$ the set of points of $G$ for which $f(x)$ has values in $J_j$ is measurable, then the function $f(x)$ is said to be \emph{measurable in $G$}. In this case, if $m_j$ denotes the measure of the set of points of $G$ for which $f(x)$ has values in $J_j$, then the sum $\sum_{j=1}^n m_jf_j$ ($f_j$ is any value of $f$ lying in $J_j$) converges as the partition of $J$ is refined, provided only that the lengths of the subintervals $J_j$ tend to zero uniformly. The limit of the sum is called the \emph{Lebesgue integral} or, simply, the integral of the function $f(x)$. It is a natural generalization of the ordinary Riemann integral and is denoted by the same symbol. The integral vanishes for a function which differs from zero only at the points of a null set. Thus a function may be changed arbitrarily in any null set, e.g. in the set of rational points, without affecting the value of its integral. Evidently, the domain of integrable functions has been greatly extended by this new definition. A function which is integrable in the sense of Lebesgue is said to be \emph{summable}.
+
+The concept of the Lebesgue integral may also be applied to functions which are not bounded in the given domain. We simply extend the integration first over those subdomains in which $-M<f(x)<N$, and then let $M$ and $N$ increase independently beyond all bounds. If the limit of the integral exists it is called the Lebesgue integral over the entire domain.
+
+The following important theorems can be derived from these concepts:
+
+(a) \emph{Lebesgue Convergence Theorems.} If a sequence $f_1(x),f_2(x),\ldots$ of functions summable in the interval $a\le x\le b$ is given and if, for every $x$ in the interval, the functions $f_n(x)$ converge with increasing $n$ to a function $F(x)$, then the equation
+\[
+\lim_{n\to\infty}\int f_n(x)\,dx=\int F(x)\,dx
+\]
+is valid (even if the convergence is not uniform) provided that all the functions $f_n(x)$ have absolute values below a fixed bound independent of both $n$ and $x$.
+
+It is, in fact, sufficient that the inequality
+\[
+|f_n(x)|<\varphi(x)
+\]
+hold, where $\varphi(x)$ is a fixed summable function independent of $n$.
+
+These theorems enable us to justify term-by-term integration of infinite series in many cases of nonuniform convergence.
+
+(b) \emph{Convergence in the Mean.} Suppose that the functions $f_1(x),f_2(x),\ldots$ and their squares are summable and that
+\[
+\lim_{\substack{m\to\infty\\ n\to\infty}}\int(f_n-f_m)^2\,dx=0.
+\]
+The sequence of functions $f_n(x)$ is then said to \emph{converge in the mean}. The following theorem holds: From any such sequence of functions it is possible to select a subsequence of $f_n$, which converges pointwise to a summable function $f(x)$ except at points of a set of measure zero.
+
+(c) \emph{Theorem of Fischer and Riesz.}\footnote{F. Riesz, Sur les syst\`emes orthogonaux de fonctions, C. R. Acad. sc. Paris, Vol. 144, 1907, pp. 615--619; \"Uber orthogonale Funktionensysteme, Nachr. Ges. G\"ottingen (math.-phys. Kl.) 1907, pp. 116--122; E. Fischer, Sur la convergence en moyenne, C. R. Acad. sc. Paris, Vol. 144, 1907, pp. 1022--1024.} This theorem may be formulated in two equivalent ways.
+
+Fischer's formulation: Let the functions $f_1(x),f_2(x),\ldots$ and their squares be summable, and assume
+\[
+\lim_{\substack{m\to\infty\\ n\to\infty}}\int(f_n-f_m)^2\,dx=0.
+\]
+Then there exists a square-summable function $f(x)$, such that
+\[
+\lim_{n\to\infty}\int(f_n-f)^2\,dx=0.
+\]
+
+Riesz's formulation: If $\omega_1(x),\omega_2(x),\ldots$ is an arbitrarily given orthogonal system of functions and if $a_1,a_2,\ldots$ are arbitrary real numbers for which $\sum_{\nu=1}^\infty a_\nu^2$ converges, then there exists a summable function $f(x)$ with summable square for which $a_\nu=(f,\omega_\nu)$.
+
+If the concepts of integral and function are generalized in the sense considered here then the above theorem establishes a biunique relationship between square-integrable functions and coordinates $a_\nu$ with a convergent sum of squares.
+
+(d) \emph{Completeness and Closedness of Systems of Functions.} We call a system of functions \emph{closed} if there exists no normalized function orthogonal to all the functions of the system; we assume that these functions and their squares are summable. The following theorem holds: Every closed system of functions is complete and vice versa. In fact, if, e.g. $f(x)$ is different from zero on a set of positive measure and is at the same time orthogonal to all the functions of the orthogonal system, then
+\[
+0=\sum_{\nu=1}^\infty(f,\omega_\nu)^2<\int f^2\,dx;
+\]
+the system of functions is, therefore, not complete. On the other hand, if the system is not complete there exists a function $f(x)$ such that
+\[
+\int f^2\,dx-\sum_{\nu=1}^\infty a_\nu^2>0
+\quad\text{for }a_\nu=(f,\omega_\nu);
+\]
+then, by Fischer's formulation of the Fischer-Riesz theorem, the functions
+\[
+f_n=f-\sum_{\nu=1}^n a_\nu\omega_\nu
+\]
+converge in the mean to a function $\varphi(x)$ which is orthogonal to all the functions $\omega_\nu$. Therefore the system cannot be closed.
+
+\section*{References}
+\addcontentsline{toc}{section}{References}
+\subsection*{Textbooks}
+Borel, E., \emph{Le\c{c}ons sur les fonctions de variables r\'eelles et les d\'eveloppements en s\'eries de polynomes}. Gauthier-Villars, Paris, 1905.
+
+Carslaw, H. S., \emph{Introduction to the theory of Fourier's series and integrals}. 2nd edition. Macmillan, London, 1921.
+
+Heine, E., \emph{Handbuch der Kugelfunktionen}, 1 and 2. 2nd edition. G. Reimer, Berlin, 1878 and 1881.
+
+Hilbert, D., \emph{Grundz\"uge einer allgemeinen Theorie der linearen Integralgleichungen}. B. G. Teubner, Leipzig, 1912. (Cited as ``Integralgleichungen.'')
+
+Hobson, E. W., \emph{The theory of functions of a real variable and the theory of Fourier's series}. Cambridge University Press, Cambridge, 1907.
+
+Lebesgue, H., \emph{Le\c{c}ons sur l'int\'egration et la recherche des fonctions primitives}. Gauthier-Villars, Paris, 1904. \emph{Le\c{c}ons sur les s\'eries trigonom\'etriques}. Gauthier-Villars, Paris, 1906.
+
+Whittaker, E. T., and Watson, G. N., \emph{A course of modern analysis}. 3rd edition. Cambridge University Press, Cambridge, 1920.
+
+\subsection*{Monographs and Articles}
+B\^ocher, M., Introduction to the theory of Fourier's series. \emph{Ann. Math.}, ser. 2, Vol. 7, 1906, pp. 81--152.
+
+Courant, R., \"Uber die L\"osungen der Differentialgleichungen der Physik. \emph{Math. Ann.}, Vol. 85, 1922, pp. 280--325. Zur Theorie der linearen Integralgleichungen. Ibid., Vol. 89, 1923, pp. 161--178.
+
+Hilbert, D., \"Uber das Dirichletsche Prinzip. Festschr. Ges. G\"ottingen 1901, Berlin 1901; reprinted \emph{Math. Ann.}, Vol. 59, 1904, pp. 161--186.
+
+Montel, P., Sur les suites infinies de fonctions. \emph{Ann. Ec. Norm.}, ser. 3, Vol. 24, 1907, pp. 233--334.
+
+Szeg\"o, G., Beitrag zur Theorie der Polynome von Laguerre und Jacobi. \emph{Math. Zeitschr.}, Vol. 1, 1918, pp. 341--356. \"Uber Orthogonalsysteme von Polynomen. Ibid., Vol. 4, 1919, pp. 139--157. \"Uber die Entwicklung einer willk\"urlichen Funktion nach den Polynomen eines Orthogonalsystems. Ibid., Vol. 12, 1922, pp. 61--94.

@@ -1,0 +1,498 @@
+\chapter{Calcul matriciel}
+\origpage{277--292}
+
+Le calcul matriciel n'est pas pour moi une fin en soi, mais un outil permettant la \BellaCorrection{transcription}{tanscription} commode des propriétés d'algèbre linéaire, ou multilinéaire. C'est pourquoi ce chapitre sera assez bref et consacré à la mise en place précise des règles d'emploi du calcul matriciel.
+
+Je laisse les richesses de ce calcul, liées à la forme particulière de certaines matrices aux amateurs et utilisateurs spécialisés.
+
+\BellaSection{1. Définition des matrices}
+
+On va mettre en place essentiellement un ensemble de conventions. Soit $E$ et $F$ deux espaces vectoriels, de dimensions finies respectives $q$ et $p$, sur un corps $K$. On fixe une base $B=(e_1,\ldots,e_q)$ de $E$ ainsi qu'une base $C=(\hat e_1,\ldots,\hat e_p)$ de $F$.
+
+Soit alors $u\in\mathcal L(E,F)$, $u$ est caractérisée par la donnée des $q$ vecteurs $u(e_j)$ pour $j=1,\ldots,q$, et chaque $u(e_j)$ est lui-même caractérisé par la donnée de ses coordonnées dans la base $C$ de $F$. On a
+\[
+\tag{8.1}
+u(e_j)=\sum_{i=1}^{p}u_{i,j}\hat e_i,\qquad u_{i,j}\in K,
+\]
+d'après les Théorèmes 6.75 et 6.77.
+
+L'application $u$ est donc caractérisée par la donnée des $pq$ scalaires $u_{i,j}$, à condition d'avoir un moyen clair de retrouver les images $u(e_j)$.
+
+On dispose ces scalaires sous forme d'un tableau formé de $q$ colonnes, chaque colonne étant constituée des $p$ composantes de $u(e_j)$ dans la base $(\hat e_1,\ldots,\hat e_p)$ et on appelle matrice de $p$ lignes et $q$ colonnes ce tableau $U$, noté
+\[
+\tag{8.2}
+U=\begin{pmatrix}
+u_{11}&u_{12}&\cdots&u_{1j}&\cdots&u_{1q}\\
+\vdots&\vdots&&\vdots&&\vdots\\
+u_{i1}&u_{i2}&\cdots&u_{ij}&\cdots&u_{iq}\\
+\vdots&\vdots&&\vdots&&\vdots\\
+u_{p1}&u_{p2}&\cdots&u_{pj}&\cdots&u_{pq}
+\end{pmatrix}.
+\]
+
+Dans ce tableau, le 1er indice est celui de la ligne, il est constant sur la même ligne, le 2e est celui de la colonne.
+
+Un tel tableau se lit donc déjà en colonnes, la $j$ième colonne donnant le vecteur $u(e_j)$ dans une base.
+
+\medskip\noindent\textsc{Définition 8.3.} --- \emph{On appelle matrice de type $(p,q)$ sur le corps $K$, (ou matrice à $p$ lignes et $q$ colonnes) tout tableau de $pq$ éléments de $K$ disposés en $p$ lignes de $q$ termes chacune donc aussi en $q$ colonnes de $p$ termes chacune.}
+
+\medskip\noindent\textsc{Théorème 8.4.} --- \emph{Il existe une bijection entre $\mathcal L(E,F)$ avec $E$ et $F$ vectoriels sur $K$ de dimensions respectives $q$ et $p$, et l'ensemble noté $M_{p,q}(K)$ des matrices de type $(p,q)$ sur $K$.}
+
+En effet, soit $B=(e_1,\ldots,e_q)$ et $C=(\hat e_1,\ldots,\hat e_p)$ des bases de $E$ et $F$ respectivement, fixées.
+
+Soit $A=(a_{ij})_{\substack{1\le i\le p\\1\le j\le q}}$ une matrice de type $(p,q)$ (c'est la notation couramment employée).
+
+À ce tableau on associe une seule famille de vecteurs $(V_j)_{j=1\ldots q}$ de $F$ chacun étant connu par ses coordonnées $(a_{i,j})_{i=1\ldots p}$ dans la base $C$ (Théorème 6.75).
+
+Comme il existe une seule application $a$ linéaire de $E$ dans $F$ vérifiant, $\forall j=1,\ldots,q$, $a(e_j)=V_j$, (Théorème 6.77), pour toute matrice $A$ de $M_{p,q}(K)$, il existe une et une seule application linéaire $a$ de $E$ dans $F$ ayant pour matrice $A$ par rapport aux bases $B$ et $C$ fixées dans $E$ et dans $F$. \bookend
+
+Cette bijection va nous servir à définir des lois de composition sur $M_{p,q}(K)$, associées aux lois de composition entre applications linéaires. Bien sûr, on peut aussi définir directement ces lois sur les matrices, tableaux de nombres.
+
+Une fois pour toute dans ce paragraphe, on a $E$ et $F$ vectoriels de dimensions $q$ et $p$ et \BellaCorrectionNote{$B=(e_1,\ldots,e_q)$ et $C=(\hat e_1,\ldots,\hat e_p)$}{$B=(e_1,\ldots,e_p)$ et $C=(\hat e_1,\ldots,\hat e_q)$}{Les longueurs imprimées des deux bases sont interverties alors que $\dim E=q$ et $\dim F=p$.} sont des bases fixées de $E$ et $F$ respectivement.
+
+Soient alors $u$ et $v$ dans $\mathcal L(E,F)$ de matrices respectives $U$ et $V$ dans ces bases, avec
+\[
+U=(u_{ij})_{\substack{1\le i\le p\\1\le j\le q}},\qquad
+V=(v_{ij})_{\substack{1\le i\le p\\1\le j\le q}}.
+\]
+C'est que, $\forall j=1,\ldots,q$, on a
+\[
+u(e_j)=\sum_{i=1}^p u_{ij}\hat e_i\qquad\text{et}\qquad
+v(e_j)=\sum_{i=1}^p v_{ij}\hat e_i.
+\]
+
+Soient alors $\lambda$ et $\mu$ deux scalaires et $w=\lambda u+\mu v$ : c'est l'application linéaire définie par les conditions
+\[
+\forall j=1,\ldots,q,\qquad w(e_j)=\lambda u(e_j)+\mu v(e_j),
+\]
+soit, dans la base $C$,
+\[
+w(e_j)=\sum_{i=1}^p(\lambda u_{ij}+\mu v_{ij})\hat e_i.
+\]
+
+\subsection*{8.5.}
+Avec $\lambda=\mu=1$ on sera amené à appeler somme des 2 matrices $U$ et $V$ la matrice $W$ de terme général $w_{ij}=u_{ij}+v_{ij}$.
+
+Donc $W=V+U$ est obtenue en ajoutant terme à terme, et la bijection vue en 8.4 permet de dire que l'ensemble $M_{p,q}(K)$ est muni par cette addition d'une loi de groupe additif, commutatif, par transport de structure. Si $\varphi$ désigne cette bijection (voir 8.4) on a un isomorphisme de groupe additif.
+
+On peut aussi vérifier directement cette structure de groupe, la matrice nulle ayant tous ses termes nuls et $-U$ étant la matrice des $-u_{ij}$ si $u_{ij}$ est le terme général, ($i$ième ligne, $j$ième colonne), de $U$.
+
+\subsection*{8.5.bis}
+De même, avec $\lambda$ quelconque et $\mu=0$, on définit $W=\lambda U$ comme étant la matrice de terme général $w_{ij}=\lambda u_{ij}$ et pour les lois somme et multiplication par un scalaire on vérifie que $M_{p,q}(K)$ est un espace vectoriel.
+
+\medskip\noindent\textsc{Théorème 8.6.} --- \emph{L'ensemble $M_{p,q}(K)$ des matrices à $p$ lignes et $q$ colonnes sur $K$ est un espace vectoriel de dimension $pq$ sur le corps $K$, isomorphe à $\mathcal L(E,F)$, si $E$ et $F$ sont vectoriels de dimensions respectives $q$ et $p$ sur $K$.}
+
+En effet, $B=(e_1,\ldots,e_q)$ et $C=(\hat e_1,\ldots,\hat e_p)$ étant des bases de $E$ et $F$ fixées, on sait que $\mathcal L(E,F)$, de dimension $pq$ admet la base des applications $(u_{ij})_{\substack{1\le i\le p\\1\le j\le q}}$ définies par $u_{ij}(e_j)=\hat e_i$ et $\forall k\ne j$, $u_{ij}(e_k)=0$, (Théorème 6.78).
+
+Mais alors la matrice $E_{ij}$ associée à $u_{ij}$ dans les bases $B$ et $C$, c'est-à-dire la matrice dont tous les termes sont nuls sauf à la $i$ième ligne $j$ième colonne où figure le scalaire 1, est telle que la famille des $(E_{ij})_{\substack{1\le i\le p\\1\le j\le q}}$ devient une base de $M_{p,q}(K)$ car une matrice $A$ quelconque de terme général $\alpha_{ij}$ s'écrit aussi
+\[
+A=\sum_{i=1}^p\sum_{j=1}^q\alpha_{ij}E_{ij}
+\]
+et qu'une telle combinaison ne peut être nulle que si $\forall i=1\ldots p$, $\forall j=1\ldots q$, $\alpha_{ij}=0$. \bookend
+
+\subsection*{Transposition}
+
+On a vu que si $u\in\mathcal L(E,F)$, on définit un homomorphisme ${}^tu$ de $F^*$ dans $E^*$ par
+\[
+\forall\varphi\in F^*,\qquad {}^tu(\varphi)=\varphi\circ u,
+\]
+(définition 6.100).
+
+Si $E$ et $F$ sont de dimensions finies respectives $q$ et $p$, leurs espaces duaux $F^*$ et $E^*$ seront de dimensions $p$ et $q$, (6.108).
+
+Si $B=(e_1,\ldots,e_q)$ et $C=(\hat e_1,\ldots,\hat e_p)$ sont des bases de $E$ et $F$ respectivement, on peut alors chercher la matrice de l'homomorphisme ${}^tu$, dans les bases duales $C^*$ et $B^*$, en fonction de celle de $u$ dans les bases $B$ et $C$.
+
+On note donc $A=(\alpha_{ij})_{\substack{1\le i\le p\\1\le j\le q}}$ la matrice de $u$.
+
+Pour connaître celle de ${}^tu$, on va chercher à décomposer chaque ${}^tu(\hat e_j^*)$ (pour $j=1,\ldots,p$) dans la base $e_1^*,\ldots,e_q^*$ de $E^*$, donc la matrice de ${}^tu$ aura $q$ lignes et $p$ colonnes.
+
+Or ${}^tu(\hat e_j^*)=\hat e_j^*\circ u$ est l'application linéaire de $E$ dans $K$ qui à
+\[
+x=\sum_{i=1}^q x_ie_i
+\]
+associe $\hat e_j^*(u(x))$, avec
+\[
+\hat e_j^*\left(u\left(\sum_{i=1}^q x_ie_i\right)\right)=\sum_{i=1}^q x_i\bigl(\hat e_j^*(u(e_i))\bigr)
+\]
+par linéarité de $\hat e_j^*\circ u$.
+
+Or,
+\[
+u(e_i)=\sum_{r=1}^p\alpha_{ri}\hat e_r,
+\]
+(attention, $i$ est ici indice de colonne), et
+\[
+\hat e_j^*\left(\sum_{r=1}^p\alpha_{ri}\hat e_r\right)=\alpha_{ji},
+\]
+(coordonnée suivant $\hat e_j$ du vecteur), donc
+\[
+(\hat e_j^*\circ u)(x)=\sum_{i=1}^q\alpha_{ji}x_i,
+\]
+avec $x_i=e_i^*(x)$, on a
+\[
+\tag{8.7}
+\forall x\in E,\qquad {}^tu(\hat e_j^*)(x)=\left(\sum_{i=1}^q\alpha_{ji}e_i^*\right)(x)
+\quad\text{d'où}\quad
+{}^tu(\hat e_j^*)=\sum_{i=1}^q\alpha_{ji}e_i^*.
+\]
+
+La $j$ième colonne de la matrice associée à ${}^tu$ est donc
+\[
+\begin{pmatrix}\alpha_{j1}\\\alpha_{j2}\\\vdots\\\alpha_{jq}\end{pmatrix},
+\]
+c'est-à-dire la $j$ième ligne de $A$ en fait.
+
+\medskip\noindent\textsc{Définition 8.8.} --- \emph{Soit une matrice $A\in M_{p,q}(K)$. On appelle matrice transposée de $A$ la matrice à $q$ lignes et $p$ colonnes $B$ de terme général $\beta_{uv}$ avec $\beta_{uv}=\alpha_{vu}$, pour $1\le u\le q$ et $1\le v\le p$.}
+
+On note ${}^tA$ la matrice transposée de $A$, si $A$ est à $p$ lignes et $q$ colonnes, ${}^tA$ est à $q$ lignes et $p$ colonnes, mais surtout ${}^tA$ est la matrice de ${}^tu$ dans les bases duales de celles où $A$ est la \BellaCorrection{matrice}{nature} de $u$.
+
+\medskip\noindent\textsc{Théorème 8.9.} --- \emph{L'application $A\longmapsto{}^tA$ est un isomorphisme de l'espace vectoriel $M_{p,q}(K)$ sur $M_{q,p}(K)$.}
+
+La vérification en est évidente. \bookend
+
+\BellaSection{2. Produit matriciel}
+
+Entre applications linéaires existe le produit de composition, moyennant des hypothèses convenables. Qu'est-ce que cela donne pour les matrices?
+
+Soient $E,F,G$ trois espaces vectoriels sur $K$ de dimensions respectives $p,q,r$.
+
+$B=(e_1,\ldots,e_p)$; $C=(\hat e_1,\ldots,\hat e_q)$; $D=(\eta_1,\ldots,\eta_r)$ sont des bases respectives de $E,F$ et $G$.
+
+Soient $u\in\mathcal L(E,F)$ et $v\in\mathcal L(F,G)$, données par leurs matrices $U$ et $V$ de termes généraux respectifs $u_{ij}$ et $v_{kl}$. L'endomorphisme $w=v\circ u$ de $E$ dans $G$ va avoir une matrice $W\in M_{r,p}(K)$ dans les bases $B$ et $D$ de $E$ et $G$. Si $w_{mn}$ est le terme général de $W$, on voudrait le connaître.
+
+Rien de plus simple : la $n$ième colonne de $W$ traduit la décomposition de $w(e_n)$ dans la base $\eta_1,\ldots,\eta_r$. On a
+\[
+\sum_{m=1}^r w_{m,n}\eta_m=w(e_n)=v(u(e_n))
+=v\left(\sum_{i=1}^q u_{in}\hat e_i\right)
+=\sum_{i=1}^q u_{in}v(\hat e_i).
+\]
+Or $v(\hat e_i)$ est connu par la $i$ième colonne de $V$, donc
+\[
+w(e_n)=\sum_{i=1}^q u_{in}\sum_{m=1}^r v_{mi}\eta_m
+=\sum_{m=1}^r\left(\sum_{i=1}^q v_{mi}u_{in}\right)\eta_m.
+\]
+L'unicité de la décomposition d'un vecteur dans une base d'un espace vectoriel donne alors
+\[
+w_{mn}=\sum_{i=1}^q v_{mi}u_{in}.
+\]
+
+\medskip\noindent\textsc{Définition 8.10.} --- \emph{Soit $A\in M_{q,p}(K)$ et $B\in M_{r,q}(K)$ deux matrices. On définit la matrice produit $C=BA$, de type $(r,p)$, donc appartenant à $M_{r,p}(K)$ par la donnée de son terme général $c_{ij}$ pour $1\le i\le r$ et $1\le j\le p$, avec
+\[
+c_{ij}=\sum_{k=1}^q b_{ik}a_{kj}.
+\]}
+
+Schématiquement, on prend la $i$ième ligne $(b_{i1}\ b_{i2}\ \cdots\ b_{iq})$ de la 1re matrice, $B$, et la $j$ième colonne $(a_{1j},a_{2j},\ldots,a_{qj})^t$ de la 2e, $A$, et on somme les $q$ produits terme à terme pour calculer $c_{ij}$.
+
+\subsection*{8.11.}
+Le produit $C=BA$ n'a de sens que si le nombre de colonnes de $B$ est égal au nombre de lignes de $A$.
+
+Par ailleurs le résultat $C=BA$ est une matrice dont :
+\begin{itemize}[leftmargin=2em]
+\item le nombre de lignes est celui des lignes de $B$,
+\item le nombre de colonnes est celui des colonnes de $A$.
+\end{itemize}
+Avec ces règles, ce produit n'est pas commutatif, mais il est associatif et il y a distributivité.
+
+Ces résultats proviennent en fait des mêmes propriétés pour les endomorphismes, et des bijections associant matrice et homomorphisme quand les bases sont fixées.
+
+\subsection*{Cas particulier des matrices carrées d'ordre $n$}
+
+\medskip\noindent\textsc{Théorème 8.12.} --- \emph{L'ensemble noté $M_n(K)$ des matrices carrées d'ordre $n$ sur $K$ est un anneau pour l'addition et le produit matriciel, unitaire; \BellaCorrectionNote{si $n\ge2$, non commutatif et non intègre}{non commutatif, non intègre}{Pour $n=1$, $M_1(K)\simeq K$ est au contraire un corps commutatif et intègre.}.}
+
+C'est une algèbre, si on considère en outre le produit par un scalaire. Ces résultats peuvent soit se vérifier directement, soit se déduire de la structure d'algèbre non commutative, non intègre de $\operatorname{Hom}(E)$, (Théorème 6.29). \bookend
+
+Quel est le centre de $M_n(K)$, c'est-à-dire l'ensemble des matrices $A$ carrées d'ordre $n$ qui commutent avec toutes les autres?
+
+Comme les matrices $E_{i,j}$, ayant tous leurs termes nuls sauf celui de la $i$ième ligne, $j$ième colonne qui vaut 1, forment une base de $M_n(K)$, $A$ est dans le centre de $M_n(K)$ si et seulement si $A$ commute avec toutes les $E_{ij}$.
+
+Or toutes les colonnes de rang $k\ne j$ de $E_{ij}$ étant nulles, celles de $AE_{ij}$ le seront; de même toutes les lignes de rang $l\ne i$ de $E_{ij}A$ seront nulles comme celles de $E_{ij}$. On s'intéresse au terme de la $i$ième ligne $j$ième colonne des 2 produits $AE_{ij}$ et $E_{ij}A$. On trouve l'égalité $a_{ii}=a_{jj}=a$, constant en $i$.
+
+Mais en prenant le terme de la $l$ième ligne $j$ième colonne, on aura, si $l\ne i$, $a_{li}=0$ car la $l$ième ligne de $E_{ij}$ étant nulle, le 2e membre donne 0.
+
+Finalement $A$ est dans le centre de $M_n(K)$ si et seulement si
+\[
+A=aI_n=\begin{pmatrix}
+a&0&\cdots&0\\0&a&&\vdots\\\vdots&&\ddots&0\\0&\cdots&0&a
+\end{pmatrix}.
+\]
+
+\medskip\noindent\textsc{Définition 8.13.} --- \emph{Une matrice carrée d'ordre $n$, $A$, de terme général $(a_{ij})$ est dite diagonale si et seulement si $\forall i\ne j$, $a_{ij}=0$. Elle est dite scalaire si et seulement si elle est diagonale avec en outre $a_{ii}=a_{jj}=$ constante par rapport à $i$.}
+
+Nous venons de voir que le centre de $M_n(K)$ est formé des matrices scalaires. \bookend
+
+\subsection*{Application du produit}
+
+Soit $E$ et $F$ vectoriels de dimensions respectives $m$ et $n$, $u\in\mathcal L(E,F)$ et $B=(e_1,\ldots,e_m)$, $C=(\hat e_1,\ldots,\hat e_n)$ des bases fixées de $E$ et $F$. Si $U=(u_{ij})_{\substack{1\le i\le n\\1\le j\le m}}$ est la matrice de $u$ dans ces bases, il peut être utile de calculer les coordonnées de $y=u(x)$ dans la base $C$ en fonction de celles de $x$ dans $B$. Posons
+\[
+x=\sum_{j=1}^m\xi_j e_j.
+\]
+On a
+\[
+u(x)=\sum_{j=1}^m\xi_j u(e_j)
+=\sum_{j=1}^m\xi_j\left(\sum_{i=1}^n u_{ij}\hat e_i\right)
+=\sum_{i=1}^n\left(\sum_{j=1}^m u_{ij}\xi_j\right)\hat e_i.
+\]
+Si par ailleurs on note $y=\sum_{i=1}^n y_i\hat e_i$, il en résulte que
+\[
+y_i=\sum_{j=1}^m u_{ij}\xi_j.
+\]
+
+On va globaliser ce résultat.
+
+En effet, on peut considérer la matrice $X\in M_{m,1}(K)$, donc à $m$ lignes et une colonne, formée des coordonnées de $x$ dans la base $B$ :
+\[
+X=\begin{pmatrix}\xi_1\\\xi_2\\\vdots\\\xi_m\end{pmatrix}.
+\]
+Il est inutile de mettre un 2e indice valant 1 pour la colonne, puisqu'il n'y en a qu'une.
+
+Soit de même
+\[
+Y=\begin{pmatrix}y_1\\y_2\\\vdots\\y_n\end{pmatrix}\in M_{n,1}(K)
+\]
+la matrice colonne des coordonnées de $y$.
+
+Si on effectue le produit $UX$ on obtient une matrice dont le nombre de lignes est $n$, celui des lignes de $U$, et le nombre de colonnes est 1, car $X$ n'a qu'une colonne. C'est donc une colonne $UX$ dont le terme de la $i$ième ligne est
+\[
+(u_{i1}\ \cdots\ u_{im})\begin{pmatrix}\xi_1\\\vdots\\\xi_m\end{pmatrix}
+=\sum_{j=1}^m u_{ij}\xi_j.
+\]
+
+\subsection*{8.14.}
+C'est donc la matrice $Y$ des composantes de $y$ d'où : si $X$ et $Y$ sont les matrices colonnes des composantes de $x$ et $y=u(x)$ dans des bases $B$ et $C$ de $E$ et $F$, on a $Y=UX$, produit matriciel, où $U$ est la matrice de $u$ dans les bases $B$ et $C$.
+
+\subsection*{8.15. Calcul par blocs.}
+Soit $A\in M_{p,k}(K)$ et $B\in M_{q,p}(K)$ deux matrices. Le nombre de colonnes de $B$ étant celui des lignes de $A$, le produit $C=BA$ a un sens.
+
+On suppose les indices de ligne de $B$ groupés en $r$ paquets du type
+\[
+I_1=\{1,\ldots,q_1\},\quad I_2=\{q_1+1,\ldots,q_2\},\quad\ldots,\quad
+I_r=\{q_{r-1}+1,\ldots,q_r\},\qquad(q_r=q),
+\]
+et de même les indices de colonnes de $B$ mais en même temps ceux de lignes de $A$ groupés en $s$ paquets
+\[
+J_1=\{1,\ldots,p_1\},\quad\ldots,\quad
+J_s=\{p_{s-1}+1,\ldots,p_s\},\qquad(p_s=p),
+\]
+enfin ceux de colonne de $A$ en $t$ paquets,
+\[
+K_1=\{1,\ldots,k_1\},\quad\ldots,\quad
+K_t=\{k_{t-1}+1,\ldots,k_t\},\qquad(k_t=k).
+\]
+
+On schématise ceci en notant
+\[
+B=\begin{pmatrix}
+B_{11}&B_{12}&\cdots&B_{1s}\\
+B_{21}&B_{22}&\cdots&B_{2s}\\
+\vdots&\vdots&\ddots&\vdots\\
+B_{r1}&B_{r2}&\cdots&B_{rs}
+\end{pmatrix},\qquad
+A=\begin{pmatrix}
+A_{11}&A_{12}&\cdots&A_{1t}\\
+A_{21}&A_{22}&\cdots&A_{2t}\\
+\vdots&\vdots&\ddots&\vdots\\
+A_{s1}&A_{s2}&\cdots&A_{st}
+\end{pmatrix}.
+\]
+On note $A_{uv}$ la matrice extraite de $A$ en ne gardant que les termes d'indice de ligne dans le $u$ième paquet et d'indice de colonne dans le $v$ième paquet.
+
+Les produits matriciels $B_{ij}A_{jl}$ ont un sens car le nombre de colonnes de $B_{ij}$ est le cardinal du $j$ième paquet des indices de colonnes de $B$ donc également celui du $j$ième paquet des indices de ligne de $A$.
+
+Si on fractionne la matrice produit $C=BA$ en blocs associés aux lignes groupées en $r$ paquets correspondant au groupement des lignes de $B$, et aux colonnes groupées en $t$ paquets associés aux paquets de colonnes de $A$, on aura, pour le bloc générique de $C$,
+\[
+C_{uv}=\sum_{l=1}^s B_{ul}A_{lv},
+\]
+car pour un indice $i$ dans le $u$ième paquet d'indices de lignes de $B$ et un indice de colonne dans le $v$ième paquet d'indices de colonnes de $A$, on a
+\[
+c_{ij}=\sum_{k=1}^p b_{ik}a_{kj}
+=\sum_{k=1}^{p_1}b_{ik}a_{kj}+\sum_{k=p_1+1}^{p_2}b_{ik}a_{kj}+\cdots+\sum_{k=p_{s-1}+1}^{p_s}b_{ik}a_{kj},
+\]
+et on a la somme des termes génériques des $B_{ul}A_{lv}$, lorsque $l$ varie.
+
+À quoi correspond cette décomposition en blocs?
+
+On peut l'interpréter comme suit. Soit $A$ la matrice d'un endomorphisme $a$ de $E$ dans $F$, dans des bases $B$ et $C$ de $E$ et $F$ respectivement.
+
+On suppose les vecteurs de $B$ groupés en $t$ paquets, et soient
+\[
+\begin{aligned}
+E_1&=\operatorname{Vect}(e_1,\ldots,e_{k_1}),\qquad
+E_2=\operatorname{Vect}(e_{k_1+1},\ldots,e_{k_2}),\quad\ldots,\quad\\
+E_t&=\operatorname{Vect}(e_{k_{t-1}+1},\ldots,e_{k_t}),\qquad k_t=k=\dim E.
+\end{aligned}
+\]
+De même la base $C$ de $F$ est fractionnée en $s$ paquets et on note
+\[
+F_1=\operatorname{Vect}(\hat e_1,\ldots,\hat e_{p_1}),\quad\ldots,\quad
+F_s=\operatorname{Vect}(\hat e_{p_{s-1}+1},\ldots,\hat e_{p_s}).
+\]
+Si, dans $F=\bigoplus_{u=1}^sF_u$ on note $\pi_u$ la projection de $F$ sur $F_u$ et, dans $E=\bigoplus_{v=1}^tE_v$, si on note $a_v$ la restriction de $a$ à $E_v$ alors, le bloc $A_{uv}$ de $A$ est associé à l'homomorphisme $\pi_u\circ a_v$ de $E_v$ dans $F_u$, rapporté aux bases $\{e_{k_{v-1}+1},\ldots,e_{k_v}\}$ de $E_v$ et $\{\hat e_{p_{u-1}+1},\ldots,\hat e_{p_u}\}$ de $F_u$, avec la convention $k_0=p_0=0$.
+
+\BellaSection{3. Matrices inversibles}
+
+Soit $f$ un automorphisme de $E$, vectoriel de dimension $n$ sur le corps $K$, et $A=(a_{ij})_{\substack{1\le i\le n\\1\le j\le n}}$ la matrice de $f$ dans une base $B$ fixée de $E$. Si $B_1$ est la matrice de $f^{-1}$ dans la même base, les égalités $f\circ f^{-1}=f^{-1}\circ f=\operatorname{id}_E$ se traduiront, matriciellement par
+\[
+AB_1=B_1A=I_n.
+\]
+
+Réciproquement, soit $A\in M_n(K)$ telle qu'il existe $B_1\in M_n(K)$ vérifiant $AB_1=I_n$.
+
+On peut introduire $E=K^n$, le rapporter à une base $B=(e_1,\ldots,e_n)$, la base canonique par exemple, et introduire les endomorphismes $u$ et $v$ de $E$ ayant pour matrices respectives $A$ et $B_1$ dans la base $B$. L'égalité matricielle $AB_1=I_n$ impliquera la relation $u\circ v=\operatorname{id}_E$ qui à son tour implique l'injectivité de $v$ et la surjectivité de $u$, (Théorème 1.20).
+
+Comme $u$ et $v$ sont des endomorphismes de $E$ de dimension finie on sait alors que $v$ injective est surjective et que $u$ surjective est injective d'où $u$ et $v$ bijectives et inverses l'une de l'autre.
+
+Comme alors $v\circ u=u\circ v$, on aura $B_1A=AB_1=I_n$.
+
+\medskip\noindent\textsc{Définition 8.16.} --- \emph{Une matrice \BellaCorrection{carrée}{carré} $A$ de $M_n(K)$ est dite inversible si et seulement si il existe $B\in M_n(K)$ telle que $BA=I_n$ ou $AB=I_n$, ces deux égalités étant équivalentes.}
+
+On a donc justifié le
+
+\medskip\noindent\textsc{Théorème 8.17.} --- \emph{Une matrice \BellaCorrection{carrée}{carré} $A$ de $M_n(K)$ est inversible si et seulement si c'est la matrice d'un automorphisme de $E\simeq K^n$ dans une base fixée de $E$.} \bookend
+
+On note $GL_n(K)$, (se lit groupe linéaire d'ordre $n$ sur $K$), l'ensemble des matrices \BellaCorrection{carrées}{carrés} d'ordre $n$ inversibles. Il est facile de vérifier que, pour le produit de composition c'est un groupe, non commutatif. Mais c'est non stable par addition.
+
+\medskip\noindent\textsc{Théorème 8.18.} --- \emph{Une matrice $A$ carrée d'ordre $n$ est inversible si et seulement si ${}^tA\in GL_n(K)$ et $({}^tA)^{-1}={}^t(A^{-1})$.}
+
+On a vu, (Théorème 6.107) que dans $E$ vectoriel, $(u\in GL(E))\Longleftrightarrow({}^tu\in GL(E^*))$. De plus, la relation $u\circ v=v\circ u=\operatorname{id}_E$ donne
+\[
+{}^t(u\circ v)=({}^tv)\circ({}^tu)={}^t(v\circ u)=({}^tu)\circ({}^tv)={}^t(\operatorname{id}_E).
+\]
+Or ${}^t(\operatorname{id}_E)$, de $E^*$ dans $E^*$ est définie par
+\[
+\forall\varphi\in E^*,\quad {}^t(\operatorname{id}_E)(\varphi)=\varphi\circ\operatorname{id}_E=\varphi,
+\quad\text{soit }{}^t(\operatorname{id}_E)=\operatorname{id}_{E^*}.
+\]
+Donc $({}^tu)\circ({}^tv)=({}^tv)\circ({}^tu)=\operatorname{id}_{E^*}$, d'où, si $v=u^{-1}$,
+\[
+({}^tu)^{-1}={}^tv={}^t(u^{-1}).
+\]
+Il ne reste plus qu'à traduire matriciellement ces résultats, (Théorème 8.9), pour obtenir le théorème 8.18.
+
+\subsection*{8.19. Changement de base.}
+La nature humaine est telle qu'en général on ne sait pas se contenter de ce qu'on a. Ainsi, au lieu d'être bien tranquille à me reposer en vacances, je suis assis à mon bureau pour relire ces notes et tacher de les améliorer. Ainsi, au lieu de traduire des données dans une base d'un espace vectoriel $E$, s'empresse-t-on de chercher d'autres bases, peut-être mieux adaptées aux données, (voir le chapitre X de la réduction des endomorphismes), et se pose alors le problème de « changement de base ».
+
+Soit donc $B=(e_1,\ldots,e_n)$ une première base de $E\simeq K^n$, appelée ancienne base.
+
+On se donne une nouvelle base $C=(\hat e_1,\hat e_2,\ldots,\hat e_n)$ de $E$. Chaque vecteur de $C$ est connu par ses coordonnées dans la base $B$. Comme conventionnellement on disposera ces coordonnées en colonnes dans une matrice, notons pour $j=1,\ldots,n$,
+\[
+\hat e_j=\sum_{i=1}^n p_{ij}e_i,
+\]
+et soit
+\[
+P=\begin{pmatrix}
+p_{11}&\cdots&p_{1j}&\cdots&p_{1n}\\
+p_{21}&\cdots&p_{2j}&\cdots&p_{2n}\\
+\vdots&&\vdots&&\vdots\\
+p_{n1}&\cdots&p_{nj}&\cdots&p_{nn}
+\end{pmatrix}
+\]
+la matrice dont les colonnes sont des colonnes des coordonnées des nouveaux vecteurs en fonction des anciens. C'est la matrice de passage de l'ancienne base $B$, à la nouvelle $C$.
+
+Soit alors un vecteur $x$ de $E$. Il nous faut savoir passer de ses coordonnées dans une base, à ses coordonnées dans l'autre. Posons
+\[
+\tag{8.20}
+x=\sum_{r=1}^n x_re_r=\sum_{s=1}^n x'_s\hat e_s,
+\]
+et soient
+\[
+X=\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix},\qquad
+X'=\begin{pmatrix}x'_1\\x'_2\\\vdots\\x'_n\end{pmatrix}
+\]
+les matrices des coordonnées de $x$ dans l'ancienne base, $B$, et la nouvelle, $C$, respectivement.
+
+La seule chose logique à faire dans l'égalité 8.20, est de remplacer chaque $\hat e_s$ par sa décomposition dans la base $B$ puis d'identifier les coordonnées de $x$, (unicité dans une base donnée).
+
+On a
+\[
+x=\sum_{s=1}^n x'_s\left(\sum_{i=1}^n p_{is}e_i\right),
+\]
+on réordonne en $e_i$,
+\[
+x=\sum_{i=1}^n\left(\sum_{s=1}^n p_{is}x'_s\right)e_i.
+\]
+Comme on a posé $x=\sum_{i=1}^n x_ie_i$, c'est que, $\forall i=1,\ldots,n$, on a
+\[
+x_i=p_{i1}x'_1+p_{i2}x'_2+\cdots+p_{in}x'_n.
+\]
+Donc $x_i$ est le terme de la $i$ième ligne du produit matriciel $PX'$, d'où la relation matricielle $X=PX'$ : la matrice de passage $P$ de l'ancienne base $B$ à la nouvelle $C$, donne immédiatement les anciennes coordonnées en fonction des nouvelles, et on lit en ligne dans $P$ les coefficients de ce changement de variable.
+
+\subsection*{8.21. Intérêt de cette démarche :}
+le plus souvent on connaît des équations $f(x_1,\ldots,x_n)=0$ dans l'ancienne base; en remplaçant chaque $x_i$ en fonction des $x'_j$ on connaît les équations du même ensemble dans la nouvelle base.
+
+\subsection*{8.22. Inconvénient de cette démarche :}
+si ce qui est connu est un vecteur dans l'ancienne base, on ne connaît pas directement ses coordonnées dans la nouvelle base.
+
+Mais la matrice $P$ est régulière, (c'est-à-dire inversible ici), car si on considère l'endomorphisme $p:E\longrightarrow E$ défini par $\forall j=1,\ldots,n$, $e_j\mapsto p(e_j)=\hat e_j$, c'est un automorphisme de $E$, (une base donne une base) dont la matrice dans la base $B$ serait précisément $P$. Mais alors $P^{-1}$ inverse de $P$ existe et en multipliant à gauche la relation $X=PX'$, par $P^{-1}$, il vient $X'=P^{-1}X$, relation donnant les nouvelles coordonnées en fonction des anciennes.
+
+Le chapitre suivant nous dira comment calculer l'inverse de $P$.
+
+Pour l'instant, nous n'avons considéré que les nouvelles ou anciennes coordonnées d'un vecteur. Qu'en est-il pour les matrices associées à des endomorphismes de $E$, ou des homomorphismes de $E$ dans $F$?
+
+Soient donc $E$ et $F$ deux espaces vectoriels de dimensions respectives $p$ et $q$.
+
+Soient $B$ et $B'$ deux bases de $E$, $B$ l'ancienne, $B'$ la nouvelle, et de même $C$ et $C'$ bases de $F$, $C$ l'ancienne, $C'$ la nouvelle.
+
+Soit $a$ un homomorphisme de $E$ dans $F$, de matrice $A$ par rapport aux bases $B$ et $C$, et de matrice $A'$ dans les nouvelles bases $B'$ et $C'$.
+
+Si $x$ de $E$ a pour image $y=a(x)$ dans $F$, on sait calculer les coordonnées de $y$ en fonction de celles de $x$.
+
+Soit $X$ la matrice colonne des composantes de $x$ dans la base $B$ et $Y$ celle des composantes de $y$ dans la base $C$ de $F$, on a l'égalité matricielle $Y=AX$, (voir 8.14).
+
+En utilisant les bases $B'$ et $C'$, avec $X'$ et $Y'$ matrices colonnes des composantes de $x$ et $y$, on a cette fois
+\[
+Y'=A'X',\quad(8.14).
+\]
+Or on vient de voir que, si $P$ est la matrice de passage de $B$ à $B'$ et $Q$ celle de $C$ à $C'$, on a les égalités $X=PX'$ et $Y=QY'$.
+
+On a donc l'égalité $QY'=A(PX')$, soit, comme $Q$ est inversible, en multipliant à gauche par $Q^{-1}$ et en utilisant l'associativité du produit matriciel, on a $Y'=(Q^{-1}AP)X'$ : c'est que la matrice $A'$ associée à $a$ dans les bases $B'$ et $C'$ est $A'=Q^{-1}AP$.
+
+\medskip\noindent\textsc{Théorème 8.23.} --- \emph{Soient $A$ et $A'$ les matrices d'un même homomorphisme $a$ de $E$ dans $F$ quand on change de base dans $E$ et $F$. Si $P$ et $Q$ sont les matrices de passages dans $E$ et $F$ respectivement, on a l'égalité $A'=Q^{-1}AP$, ($A'$ nouvelle matrice).} \bookend
+
+\medskip\noindent\textsc{Définition 8.24.} --- \emph{Deux matrices $A$ et $A'$ de même type $(q,p)$ sont dites équivalentes si et seulement si il existe $U\in GL_p(K)$ et \BellaCorrectionNote{$V\in GL_q(K)$}{$V\in GL_qK)$}{Il manque la parenthèse ouvrante après $GL_q$ dans l'impression.} telles que $A'=VAU$.}
+
+On vérifie facilement qu'il s'agit d'une équivalence et, dans $M_{q,p}(K)$, les classes d'équivalence correspondent aux homomorphismes de $E$, ($\simeq K^p$), dans $F$, ($\simeq K^q$), car on passe de $A$ à $A'$ par des changements de bases dans $E$ et $F$.
+
+En effet, si on fixe $B$ et $C$ bases de $E$ et $F$, soient $A\in M_{q,p}(K)$ et $A'=VAU$ équivalente, et $a$ l'homomorphisme de matrice $A$ dans $B$ et $C$; avec $B'$ telle que $U$ soit matrice de passage de $B$ à $B'$, (les colonnes de $U$ donnent donc les coordonnées des $e'_j$ en fonction des $e_j$), et $C'$ telle que $V^{-1}$ soit matrice de passage de $C$ à $C'$, la matrice de $a$ dans les bases $B'$ et $C'$ est $(V^{-1})^{-1}AU=VAU=A'$. \bookend
+
+Dans le cas particulier de $E=F$, on peut bien sûr prendre des bases différentes dans $E$ espace de départ et $F$ espace d'arrivée, mais si on n'est pas plus « maso » qu'il ne faut, on prendra la même base dans $E$ espace de départ et d'arrivée, pour traduire un endomorphisme $a$.
+
+Mais alors si $B$ est l'ancienne base de $E$, $B'$ une nouvelle base, avec $P$ matrice de passage, si $A$ et $A'$ sont les matrices de $a$ dans ces 2 bases respectivement, la relation précédente donne $A'=P^{-1}AP$, puisqu'ici $Q=P$.
+
+\medskip\noindent\textsc{Définition 8.25.} --- \emph{Deux matrices carrées d'ordre $n$ sur $K$, $A$ et $A'$ sont dites semblables s'il existe $P$ inversible d'ordre $n$ telle que $A'=P^{-1}AP$.}
+
+On vérifie là encore qu'il s'agit d'une relation d'équivalence entre matrices carrées, dont les classes d'équivalence correspondent aux endomorphismes de $E\simeq K^n$.
+
+On peut encore dire que le groupe $GL_n(K)$ agit par automorphismes intérieurs dans $M_n(K)$, et que les orbites associées correspondent aux endomorphismes de $E\simeq K^n$, (4.63 et 4.65).
+
+Terminons ce chapitre en donnant la définition du rang d'une matrice.
+
+\medskip\noindent\textsc{Définition 8.26.} --- \emph{Soit $A\in M_{p,q}(K)$, on appelle rang de $A$, le plus grand entier $r$ tel qu'il existe une matrice carrée d'ordre $r$ extraite de $A$, inversible.}
+
+Une matrice est extraite de $A$ en choisissant des indices de lignes et de colonnes et en ne gardant que les termes de $A$ dont les indices de ligne et de colonne correspondent à ceux choisis, écrits dans l'ordre qu'ils avaient. Un exemple valant mieux qu'un discours, soit
+\[
+A=\begin{pmatrix}
+0&1&2&3&4\\5&6&7&8&9\\10&11&12&13&14\\15&16&17&18&19
+\end{pmatrix}
+\]
+on peut extraire la matrice $B$ correspondant aux colonnes 1 et 4 et aux lignes 1,3,4.
+
+On a
+\[
+B=\begin{pmatrix}0&3\\10&13\\15&18\end{pmatrix}.
+\]
+
+Si $A$ est non nulle, $\exists i$ et $j$ tels que $a_{ij}\ne0$.
+
+La matrice $(1,1)$ extraite, $B=(a_{ij})$ est inversible, ($B^{-1}=(a_{ij}^{-1})$), donc l'ensemble
+\[
+N=\{k;\ k\in\mathbb N,\ \text{il existe }B\text{ carrée d'ordre }k,\text{ inversible, extraite de }A\}
+\]
+est non vide, ($1\in N$) majoré par $\inf(p,q)$ : il admet bien une borne supérieure $r$ que l'on peut appeler rang de $A$, (corollaire 3.45).
+
+Si $A=0$, toute matrice extraite carrée sera nulle donc non inversible, on dit que $A$ est de rang nul.
+
+L'étude des déterminants, faite au chapitre suivant, nous permettra de voir que le rang de $A$, c'est le rang de tout homomorphisme ayant $A$ pour matrice dans des bases adéquates. Pour l'instant justifions le
+
+\medskip\noindent\textsc{Théorème 8.27.} --- \emph{Soit $A\in M_{p,q}(K)$, le rang de ${}^tA$ est celui de $A$.}
+
+Car si $B$ est extraite de $A$, ${}^tB$ est \BellaCorrection{extraite}{extraire} de ${}^tA$ et on a vu que $B$ inversible $\Longleftrightarrow{}^tB$ inversible, (Théorème 8.18), le résultat en découle immédiatement. \bookend

@@ -1,0 +1,131 @@
+\documentclass[11pt,twoside,openright]{ctexbook}
+
+\usepackage[paperwidth=7.5in,paperheight=10in,inner=21mm,outer=17mm,top=20mm,bottom=22mm,headheight=24pt,headsep=7mm,footskip=11mm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{TeXGyreTermes}
+\setsansfont{TeXGyreHeros}
+\setmonofont{TeXGyreCursor}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs,longtable,array,calc}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{emptypage}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{ragged2e}
+\usepackage{setspace}
+
+\definecolor{BellaBlue}{HTML}{4AA8E8}
+\definecolor{BellaTeal}{HTML}{87CEEB}
+\definecolor{BellaSkyDeep}{HTML}{2F86C1}
+\definecolor{BellaInk}{HTML}{274255}
+\definecolor{BellaPale}{HTML}{F3FAFE}
+\definecolor{BellaGray}{HTML}{6F8493}
+
+\hypersetup{
+  unicode=true,
+  colorlinks=true,
+  linkcolor=BellaSkyDeep,
+  urlcolor=BellaSkyDeep,
+  citecolor=BellaSkyDeep,
+  pdftitle={Methods of Mathematical Physics, Volume I},
+  pdfauthor={R. Courant and D. Hilbert},
+  pdfsubject={BellaBook faithful re-typeset final edition - sky-blue palette, restored prefatory matter and complete through the available index ending at printed p.560},
+  bookmarksopen=true,
+  bookmarksnumbered=true
+}
+
+\setlength{\parindent}{1.6em}
+\setlength{\parskip}{0.18em}
+\setstretch{1.13}
+\emergencystretch=2em
+\interfootnotelinepenalty=10000
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+\setlist{nosep,leftmargin=2em}
+\newcommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\vv}[1]{\bm{#1}}
+\newcommand{\ctnote}[1]{\footnote{\textbf{校勘：}#1}}
+
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\S\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}.}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\color{BellaInk}}
+  {\filleft\sffamily\color{BellaBlue}\fontsize{14}{16}\selectfont CHAPTER\,\thechapter}
+  {0.7ex}
+  {\filleft\fontsize{30}{35}\selectfont}
+  [\vspace{1.0ex}\titlerule\vspace{2.5ex}]
+\titlespacing*{\chapter}{0pt}{-8pt}{18pt}
+
+\titleformat{\section}
+  {\Large\bfseries\color{BellaInk}}
+  {\colorbox{BellaBlue}{\color{white}\sffamily\bfseries\thesection}}{0.7em}{}
+\titleformat{\subsection}
+  {\large\bfseries\color{BellaBlue}}
+  {\thesubsection}{0.55em}{}
+
+\renewenvironment{quote}
+  {\begin{tcolorbox}[enhanced,breakable,colback=BellaPale,colframe=BellaBlue!55!white,boxrule=0pt,borderline west={2.2pt}{0pt}{BellaBlue},left=3mm,right=3mm,top=2mm,bottom=2mm,arc=1mm]\small}
+  {\end{tcolorbox}}
+
+\newtcolorbox{keybox}[1][]{enhanced,breakable,colback=BellaPale,colframe=BellaTeal,boxrule=0.6pt,arc=1.5mm,title=#1,fonttitle=\bfseries}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\sffamily\color{BellaGray}\leftmark}
+\fancyhead[RO]{\small\sffamily\color{BellaGray}\rightmark}
+\fancyfoot[LE,RO]{\sffamily\color{BellaBlue}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\chaptermark}[1]{\markboth{CHAPTER \thechapter\quad #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad #1}}
+
+\ctexset{contentsname={Contents}}
+
+\begin{document}
+\frontmatter
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[BellaSkyDeep] (current page.south west) rectangle (current page.north east);
+  \fill[BellaBlue] (current page.south west) rectangle ([xshift=18mm]current page.north west);
+  \fill[BellaTeal] ([yshift=18mm]current page.south west) rectangle ([yshift=24mm]current page.south east);
+  \node[anchor=west,text=white] at ([xshift=32mm,yshift=44mm]current page.west) {\sffamily\fontsize{34}{39}\selectfont\bfseries Methods of};
+  \node[anchor=west,text=white] at ([xshift=32mm,yshift=7mm]current page.west) {\sffamily\fontsize{34}{39}\selectfont\bfseries Mathematical Physics};
+  \node[anchor=west,text=white!88] at ([xshift=32mm,yshift=-26mm]current page.west) {\sffamily\fontsize{21}{25}\selectfont Volume I};
+  \node[anchor=west,text=white!72] at ([xshift=32mm,yshift=-53mm]current page.west) {\sffamily\large R. Courant \quad D. Hilbert};
+\end{tikzpicture}
+\null\cleardoublepage
+
+\input{frontmatter/publication}
+\input{frontmatter/preface}
+
+\tableofcontents
+\clearpage
+
+\mainmatter
+\input{chapters/ch01}
+\input{chapters/ch02}
+\input{chapters/ch03}
+\input{chapters/ch04}
+\input{chapters/ch05}
+\input{chapters/ch06}
+\input{chapters/ch07}
+
+\backmatter
+\input{backmatter/additional_bibliography}
+\input{backmatter/index}
+
+\end{document}

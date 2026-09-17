@@ -1,0 +1,485 @@
+\origpage{256--267}
+
+\BellaSection{4. Extension d'un corps : construction de $\mathbb C$}
+
+\medskip\noindent\textsc{Définition 7.50.} --- \emph{Un polynôme $P\in K[X]$ est dit scindé sur le corps $K$ s'il est constant ou bien si $P$ admet des zéros distincts $a_1,\ldots,a_r$ dans $K$ de multiplicités $k_1,\ldots,k_r$ avec $k_1+k_2+\cdots+k_r=n=$ degré de $P$.}
+
+Cela revient à dire que $P$ admet une décomposition en produit de puissances de polynômes de degré 1, lorsqu'il est non constant.
+
+\subsection*{Exemple}
+
+\[
+X^2-4\text{ est scindé sur }\mathbb Q,
+\]
+\[
+X^2-2\text{ est scindé sur }\mathbb R\text{ mais pas sur }\mathbb Q.
+\]
+
+En effet, si $\sqrt2\in\mathbb Q$, en écrivant $\sqrt2=\dfrac pq$ irréductible, on aurait $2q^2=p^2$ donc 2 divise $p$, avec $p=2p_1$ on a $2q^2=4p_1^2\Rightarrow q^2=2p_1^2$ donc 2 divise $q$, mais alors $p$ et $q$ étant tous deux divisibles par 2, cela contredit $p/q$ irréductible.
+
+Cet exemple, joint au fait que $\mathbb Q$ peut être considéré comme un sous-corps de $\mathbb R$, nous montre qu'un polynôme sera scindé ou non suivant le corps où sont les coefficients.
+
+\medskip\noindent\textsc{Définition 7.51.} --- \emph{Un corps $K$ est dit algébriquement clos si tout polynôme non constant de $K[X]$ admet au moins un zéro dans $K$.}
+
+\medskip\noindent\textsc{Théorème 7.52.} --- \emph{Un corps $K$ est algébriquement clos si et seulement si tout polynôme $P$ de $K[X]$ est scindé sur $K$, ou encore si et seulement si les seuls polynômes irréductibles sont de degré 1.}
+
+Soit $K$ algébriquement clos, $P$ non constant dans $K[X]$, il admet un zéro $a_1$, donc (Théorème 7.38), $P$ est divisible par $X-a_1$, on a $P=(X-a_1)P_1$ avec $d^\circ P_1=(d^\circ P)-1$. Si $d^\circ P_1\ge1$, à son tour $P_1$ est divisible par $X-a_2$, on continue d'où une factorisation du type
+\[
+P=(X-a_1)\cdots(X-a_n)P_n,
+\]
+avec $n=d^\circ P$ et $P_n$ constante non nulle.
+
+On regroupe les $a_i$ égaux d'où à la fois une factorisation de $P$ prouvant qu'il est scindé, mais aussi le fait que $d^\circ P>1\Rightarrow P$ non irréductible. Bien sûr, $P$ de degré 1 est irréductible.
+
+Réciproquement : Si tout polynôme $P$ est scindé, $P$ non constant s'écrira sous la forme
+\[
+P=(\mathrm{cte})\prod_{i=1}^r(X-a_i)^{k_i}
+\]
+avec $k_1+\cdots+k_r=d^\circ P$ donc $P$ admettra des zéros.
+
+En effet, la décomposition donnée en 7.35 dans un anneau principal nous dit que, si les seuls polynômes irréductibles sont de degré 1, on a une décomposition de tout polynôme non nul $P$ du type
+\[
+P=u\prod_{a\in K}(X-a)^{\alpha(a)},
+\]
+avec $u$ inversible dans $K[X]$, c'est-à-dire $u$ dans $K^*$, puisque pour des $a$ différents les $X-a$ ne sont pas associés; on a les $\alpha(a)$ entiers presque tous nuls. Là encore, si $n=\sum_{a\in K}\alpha(a)$ est non nul, $P$ admet au moins un zéro d'où la réciproque. \bookend
+
+\medskip\noindent\textsc{Corollaire 7.53.} --- \emph{Si $K$ est algébriquement clos, $P$ non nul divise $Q$ si et seulement si tout zéro de $P$ est zéro de $Q$ avec une multiplicité supérieure ou égale.}
+
+Puisque
+\[
+P=u\prod_{a\in K}(X-a)^{\alpha(a)}
+\]
+divisera
+\[
+Q=v\prod_{a\in K}(X-a)^{\beta(a)}
+\]
+si et seulement si, $\forall a\in K$, $\alpha(a)\le\beta(a)$. \bookend
+
+Le problème qui se pose, c'est que les corps ne sont pas tous algébriquement clos. Ainsi, $\mathbb Q$ ne l'est pas, ($X^2-2$ non scindé), $\mathbb R$ non plus, ($X^2+1$ non scindé). Comment faire?
+
+\medskip\noindent\textsc{Définition 7.54.} --- \emph{On appelle extension du corps commutatif $K$, tout corps $L$ contenant $K$ comme sous-corps.}
+
+Ainsi, en identifiant $\mathbb Q$ avec son image injective dans $\mathbb R$ (voir chapitre 6 de Topologie) on peut dire que $\mathbb R$ est un sur-corps de $\mathbb Q$.
+
+\medskip\noindent\textsc{Définition 7.55.} --- \emph{Soit $L$ une extension d'un corps $K$ et $a\in L$. On appelle extension simple de $K$ par $a$ dans $L$ le plus petit sous-corps de $L$ contenant $K$ et $a$.}
+
+On la note $K(a)$ et $K(a)$ est visiblement l'intersection de tous les sous-corps de $L$ contenant $K$ et $a$. (Il y en a, ne serait ce que $L$).
+
+On a $K(a)=K\Longleftrightarrow a\in K$.
+
+Soit alors $\theta:K[X]\longrightarrow K(a)$ l'application qui au polynôme
+\[
+P(X)=\sum_{i=0}^{d^\circ P}a_iX^i
+\]
+associe
+\[
+\theta(P)=\sum_{i=0}^{d^\circ P}a_i a^i.
+\]
+Comme les $a_i$ et $a$ sont dans le corps $K(a)$, $\theta(P)\in K(a)$.
+
+Il est immédiat de vérifier que $\theta$ est un morphisme d'anneau de $K[X]$ dans l'anneau $K(a)$. Son noyau $\operatorname{Ker}\theta$ est un idéal de $K[X]$, anneau principal. Donc l'image $\theta(K[X])$ est un anneau isomorphe à l'anneau quotient $K[X]/\operatorname{Ker}\theta$. Il y a alors deux cas de figure.
+
+\subsection*{7.56.}
+
+Si $\operatorname{Ker}\theta=\{0\}$, (donc pour tout polynôme $P$ non nul de $K[X]$ on a $P(a)\ne0$ : l'élément $a$ est alors dit transcendant sur $K$), $K[X]/\operatorname{Ker}\theta\simeq\{P(a);P\in K[X]\}$ est un anneau, (sous-anneau de $K(a)$) intègre, $K[X]$ étant intègre et $\theta$ bijective de $K[X]$ sur cet anneau que l'on notera $K[a]$. Mais alors $K[a]$ admet dans le sur-corps $L$ son corps des fractions (Théorème 5.34) à un isomorphisme près on peut donc dire que \BellaCorrectionNote{$K(a)$}{$L(a)$}{Comme $a\in L$, on aurait $L(a)=L$; le corps des fractions de $K[a]$ est l'extension simple $K(a)$.} est le corps des fractions de l'anneau $K[a]$.
+
+\subsection*{7.57.}
+
+\BellaCorrectionNote{Si}{5.57.}{La numérotation imprimée rompt la suite 7.56, 7.58; il s’agit du numéro 7.57.} $\operatorname{Ker}\theta\ne\{0\}$, soit $P$ le polynôme unitaire engendrant $\operatorname{Ker}\theta$. L'élément $a$ est alors dit algébrique sur $K$, l'extension simple $K(a)$ est dite algébrique sur $K$ et $P$ est le polynôme minimal de $a$ sur $K$.
+
+\medskip\noindent\textsc{Théorème 7.58.} --- \emph{Soit $a$ algébrique sur un corps $K$. Son polynôme minimal est irréductible sur $K$. Il est de degré 2 au moins si $a\notin K$ et $K(a)$ est alors un espace vectoriel de dimension $n$ sur $K$, $n$ degré du polynôme minimal.}
+
+Pour l'instant, on suppose connu un sur-corps $L$ et tout dépend encore de $L$.
+
+Soit donc $a$ algébrique sur un corps $K$ et $L$ un sur-corps dans lequel on considère l'extension simple $K(a)$.
+
+Si $P$ engendre l'idéal $\operatorname{Ker}\theta$, et si $P$ est non irréductible, avec $P(X)=P_1(X)P_2(X)$, puisque $\theta(P)=P(a)=0$, c'est que dans le corps $L$, on a $P_1(a)$ ou $P_2(a)=0$, donc $P_1$ (ou $P_2$) $\in\operatorname{Ker}\theta$, on aurait $P_1$ (ou $P_2$) multiple de $P$ avec un degré strictement inférieur : c'est exclu. D'où $P$ irréductible.
+
+Si $d^\circ P=1$, si $P(X)=\alpha X+\beta$ avec $\alpha\ne0$, comme $\alpha a+\beta=0$ on aurait $a=-\alpha^{-1}\beta\in K$, et si $a\in K$, $X-a$ est un polynôme de $K[X]$ qui annule $a$ donc $\operatorname{Ker}\theta$ est engendré par $X-a$ : le polynôme minimal est bien de degré 1 si et seulement si $a\in K$.
+
+Enfin $P$ étant irréductible, l'idéal qu'il engendre est maximal (Théorème 7.24) donc l'anneau quotient $K[X]/\operatorname{Ker}\theta$ est un corps (Théorème 5.43). Comme ce quotient est isomorphe à \BellaCorrectionNote{$\theta(K[X])=K[a]$}{$\theta(K)=K[a]$}{L'image de $K$ par $\theta$ ne contient que les constantes; l'anneau $K[a]$ est l'image de tout $K[X]$.} c'est que $K[a]$ est un corps, contenant $K$, et $a$, donc contenant $K(a)$, plus petit corps de $L$ contenant $K$ et $a$. Comme on a vu que $\theta$ est à valeurs dans $K(a)$, dans ce cas on a $K(a)=K[a]$.
+
+De plus, pour tout $Q\in K[X]$, la division euclidienne de $Q$ par $P$ polynôme minimal de $a$ donne l'identité
+\[
+Q(X)=P(X)S(X)+R(X)
+\]
+avec $d^\circ R<d^\circ P$. Donc $Q(a)=R(a)$ puisque $P(a)=0$.
+
+Il en résulte que
+\[
+\theta(Q)=R(a)\in\left\{\sum_{i=0}^{n-1}a_i a^i;\ a_i\in K\right\}
+\]
+avec $n=d^\circ P$.
+
+Si on avait $R(a)=0$ avec $d^\circ R<n$, c'est que $R\in\operatorname{Ker}\theta$ idéal engendré par $P$ donc $R=0\cdot P$. Il en résulte que, dans la structure de $L$, espace vectoriel sur $K$, les éléments $1,a,a^2,\ldots,a^{n-1}$ sont indépendants et alors $K[a]=K(a)$ est en fait un espace vectoriel de dimension $n$ sur $K$. \bookend
+
+Il reste une question à régler. On est parti de $L$ sur-corps de $K$, on a considéré $a\in L$ et l'extension simple $K(a)$ qui est transcendante ou algébrique.
+
+Si on part de $L'$ autre sur-corps de $K$ contenant aussi $a$, on aura dans $L'$ l'extension simple notée $K'(a)$, (bien que l'on parte du même corps $K$).
+
+A-t'on encore une extension algébrique si elle l'est sur $K$? Et si oui, quel est le degré du polynôme minimal?
+
+\subsection*{7.59.}
+
+On peut déjà remarquer que, si $a$ est \BellaCorrection{transcendant}{tanscendant} sur $K$ dans $L$ le corps $K(a)$ est espace vectoriel de dimension infinie sur $K$, car pour tout $n$, les éléments $1,a,a^2,\ldots,a^n$ sont libres sur $K$, une combinaison linéaire nulle non triviale fournissant un polynôme non nul dans l'idéal $\operatorname{Ker}\theta$.
+
+\subsection*{7.60.}
+
+Mais alors, il en résulte que si $a$ est algébrique sur $K$ dans une extension $L$ de $K$, il l'est dans toute extension $L'$ de $K$ le contenant, et il en est de même pour $a$ transcendant. De plus le degré du polynôme minimal sera le même.
+
+En effet ce polynôme minimal, lui a ses coefficients dans $K$ donc si on notait
+
+$P$ le polynôme minimal pour l'extension $L$ et
+
+$P'$ le polynôme minimal pour l'extension $L'$
+
+on aurait $P(a)=P'(a)=0$ donc $P'\in\operatorname{Ker}\theta$ donc $P$ divise $P'$, et $P\in\operatorname{Ker}\theta'$ d'où $P'$ divise $P$ et comme $P$ et $P'$ sont unitaires, on a $P=P'$.
+
+\subsection*{7.61.}
+
+Le degré $n$ de ce polynôme minimal est alors le degré de l'élément $a$ sur le corps $K$.
+
+Nous venons donc de justifier que, si $L$ est un sur-corps de $K$, et si $a\in L\setminus K$, le plus petit sous-corps $K(a)$ de $L$ contenant $K$ et $a$ est de deux types possibles :
+
+- soit $K(a)$ est espace vectoriel de dimension finie $n$ sur $K$ et alors $a$ est un zéro dans $K(a)$ d'un polynôme $P$ irréductible de $K[X]$ de degré $n\ge2$,
+
+- soit $K(a)$ est le corps des fractions de $K[a]$ et il sera de dimension infinie en tant qu'espace vectoriel sur $K$ et aucun polynôme $P$ de $K[X]$ n'admet $a$ pour zéro.
+
+On peut considérer le problème dans l'autre sens et, partant de $P\in K[X]$, $P$ irréductible de degré 2 au moins, \BellaCorrectionNote{constituer un (ou des) sur-corps de $K$}{constitue un (ou des) sur-corps de $L$}{Le corps que l'on cherche doit être une extension du corps de départ $K$; $L$ n'est pas encore défini à cet endroit.} dans lequel $P$ admettra au moins un zéro.
+
+\subsection*{7.62.}
+
+La méthode de l'adjonction symbolique due à Cauchy permet de résoudre cette question.
+
+\medskip\noindent\textsc{Théorème 7.63.} --- \emph{Soit un corps $K$ et un polynôme $P\in K[X]$ irréductible de degré 2 au moins. Il existe au moins une extension algébrique simple $L$ de $K$ contenant un zéro $a$ de $P$. Si $L_1$ est une autre extension algébrique simple de $K$ contenant un zéro de $P$, alors $L$ et $L_1$ sont isomorphes.}
+
+Le polynôme $P$ est irréductible donc l'idéal principal $(P)$ qu'il engendre est maximal (Théorème 7.24), l'anneau quotient
+\[
+L=K[X]/(P)
+\]
+est donc un corps (Théorème 5.43).
+
+Soit $\varphi$ l'application de $K$ dans $L$ définie par :
+\[
+\forall k\in K,\qquad \varphi(k)=\text{la classe du polynôme constant }k\text{ dans }L.
+\]
+On sait que $\varphi$ est un morphisme d'anneaux. Il est injectif car
+\[
+\varphi(k)=\varphi(k')\Longleftrightarrow k-k'\text{ multiple de }P,
+\]
+\[
+\Longleftrightarrow k-k'=PQ,
+\]
+avec $k-k'$ de degré $\le0$ et si $Q\ne0$, $d^\circ(PQ)\ge d^\circ P\ge2$. C'est donc que $Q=0$ d'où $k=k'$.
+
+Si on identifie $K$ et son image $\varphi(K)$ dans $L$ on peut dire que $L$ devient un sur-corps de $K$. On retrouve le type de situation qui conduit à dire que $\mathbb N$ est contenu dans $\mathbb Z$ lui-même « contenu » dans $\mathbb Q$.
+
+Soit alors $a$ la classe du polynôme $X$ dans le corps $L$. Si le polynôme $P$ s'écrit
+\[
+P(X)=\alpha_0+\alpha_1X+\cdots+\alpha_nX^n,
+\]
+(avec les $\alpha_n\in K$) la structure quotient implique que 0, classe de $P$ dans $L$ vérifie
+\[
+0=\varphi(\alpha_0)+\varphi(\alpha_1)a+\cdots+\varphi(\alpha_n)a^n
+\]
+ou encore, comme les $\varphi(\alpha_j)$ sont identifiés aux éléments $\alpha_j$ de $K$, que
+\[
+0=\alpha_0+\alpha_1a+\cdots+\alpha_na^n :\qquad\text{dans }L,\text{ le polynôme }P\text{ admet }a\text{ pour zéro.}
+\]
+
+Comme pour $A\in K[X]$, la division euclidienne de $A$ par $P$ conduit à une relation du type
+\[
+A(X)=P(X)S(X)+R(X)\qquad\text{avec }d^\circ R<d^\circ P,
+\]
+si on a
+\[
+R(X)=r_0+r_1X+\cdots+r_kX^k,\qquad(k<n)
+\]
+il vient
+\[
+\operatorname{classe}(A)=r_0+r_1a+\cdots+r_ka^k,
+\]
+d'où $L$ est l'ensemble des éléments du type
+\[
+r_0+r_1a+\cdots+r_{n-1}a^{n-1}
+\]
+avec $r_j\in K$ : $L=K(a)$ est extension algébrique simple de $K$ et contient un zéro $a$ de $P$.
+
+De même que pour le théorème 7.58, on justifierait que si $L_1=K(b)$ est une autre extension algébrique simple contenant un zéro $b$ de $P$ irréductible, on a $L$ et $L_1$ isomorphes par la bijection $\psi$ qui à l'élément générique
+\[
+r_0+r_1a+\cdots+r_{n-1}a^{n-1}
+\]
+de $L$ associe
+\[
+r_0+r_1b+\cdots+r_{n-1}b^{n-1}
+\]
+dans $L_1=K(b)$. \bookend
+
+\medskip\noindent\textsc{Définition 7.64.} --- \emph{Un corps $L$ construit comme au théorème 7.63 s'appelle un corps de rupture du polynôme $P$.}
+
+Soit alors $P$ irréductible sur $K$, de degré $\ge2$. On construit un corps de rupture $L_1$ de $P$; dans ce corps $P$ admet au moins un zéro $a$ donc $X-a$ divise $P\in L_1[X]$. En fait $P$ n'est plus irréductible dans $L_1[X]$. On va justifier, par récurrence sur le degré de $P$, le fait qu'il existe un sur-corps de $K$ dans lequel $P$ sera scindé.
+
+\medskip\noindent\textsc{Définition 7.65.} --- \emph{Soit $P\in K[X]$. On appelle corps de décomposition, ou corps des racines, de $P$ tout sur-corps $L$ de $K$ dans lequel $P$ est scindé.}
+
+\medskip\noindent\textsc{Théorème 7.66.} --- \emph{Tout polynôme $P$ de $K[X]$ admet des corps de décomposition.}
+
+On procède par récurrence sur $d^\circ P$.
+
+Si $d^\circ P=0$, $P$ est scindé sur $K$ qui convient. Il en est de même si $d^\circ P=1$.
+
+Supposons le résultat acquis pour des polynômes de degré $n-1$ au plus.
+
+Soit $P$ de degré $n$, et $Q$ un diviseur irréductible dans $K[X]$ de $P$, (éventuellement $Q=P$ si $P$ est irréductible). On a vu que $Q$ admet un corps de rupture $L_1$, dans lequel existe $a$ racine de $Q$ avec $a\notin K$ si $d^\circ Q\ge2$. Donc il existe $k$ entier $\ge1$ tel que dans $L_1[X]$, $(X-a)^k$ divise $Q$ donc $P$. En écrivant
+\[
+P=(X-a)^kP_1
+\]
+on a $P_1\in L_1[X]$, $d^\circ P_1<n$ donc $P_1$ admet un corps de décomposition $L_2$, sur-corps de $L_1$ donc aussi de $K$.
+
+Dans $L_2[X]$, $P_1$ est scindé, $a\in L_1\subset L_2\Rightarrow$ dans $L_2[X]$,
+\[
+P(X)=(X-a)^kP_1(X)
+\]
+est scindé. \bookend
+
+\medskip\noindent\textsc{Remarque 7.67.} --- \emph{Le fait de savoir que tout polynôme de $K[X]$ admet des corps de décomposition permet de faire certains raisonnements du type suivant.}
+
+Soit $A\in M_n(K)$, matrice carrée d'ordre $n$ sur $K$, de polynôme caractéristique $P$, et $L$ un corps de décomposition de $P$. La matrice $A$ considérée dans $M_n(L)$, (possible car $K$ se plonge dans $L$) ayant son polynôme caractéristique scindé est trigonalisable, donc en travaillant sur la forme triangulaire, on justifie que si $(\lambda_1,\ldots,\lambda_n)$ est le spectre de $A$ dans $L$, pour tout polynôme $Q$, la matrice $Q(A)$ aura $Q(\lambda_1),\ldots,Q(\lambda_n)$ pour spectre. Or la matrice $Q(A)$ se calcule dans $M_n(K)$ si $Q$ est à coefficients dans $K$, donc son spectre ne dépend pas du voyage fait dans le sur-corps, et \BellaCorrectionNote{le spectre de $Q(A)$ sera, dans $L$, l'ensemble des $Q(\lambda_i)$, qui ne sont pas nécessairement dans $K$.}{le spectre de $Q(A)$ sera, dans $K$, l'ensemble des $Q(\lambda_i)\in K$.}{Une matrice à coefficients dans $K$ peut avoir des valeurs propres hors de $K$; par exemple une rotation réelle peut avoir des valeurs propres complexes. Dans un corps de décomposition $L$, le spectre est bien formé des $Q(\lambda_i)$.} (Attention : les $\lambda_i$ ne sont pas forcément toutes dans $K$).
+
+\medskip\noindent\textsc{Définition 7.68.} --- \emph{Une extension $L$ de $K$ est dite algébrique sur $K$ si tout élément de $L$ est algébrique sur $K$.}
+
+Par exemple $\mathbb R$ n'est pas extension algébrique de $\mathbb Q$. C'est ainsi que Hermite a démontré en 1873 que $e$ est transcendant, Lindemann a établi la transcendance de $\pi$ en 1882, et Liouville celle des nombres du \BellaCorrection{type}{types}
+\[
+\sum_{k=0}^{\infty}\frac1{10^{a_k}},\qquad
+0<a_0<a_1<\cdots<a_k<\cdots\quad\text{et}\quad
+\lim_{k\to+\infty}\frac{a_{k+1}}{a_k}=+\infty.
+\]
+Justifier la transcendance d'un réel n'est pas chose facile!
+
+\medskip\noindent\textsc{Définition 7.69.} --- \emph{On appelle clôture algébrique $L$ d'un corps $K$, toute \BellaCorrectionNote{extension algébrique $L$ de $K$ qui soit un corps algébriquement clos}{extension $L$ de $K$ qui soit un corps algébriquement clos}{Sans l'hypothèse que l'extension soit algébrique, un corps algébriquement clos contenant $K$ ne serait pas nécessairement une clôture algébrique de $K$; par exemple $\mathbb C/\mathbb Q$ n'est pas algébrique.}.}
+
+Par utilisation de l'axiome de Zorn, on justifie alors le résultat important suivant :
+
+\medskip\noindent\textsc{Théorème 7.70.} (De Steinitz). --- \emph{Tout corps $K$ admet une clôture algébrique.}
+
+Résultat que nous admettrons.
+
+Ce résultat qui affirme l'existence de la clôture algébrique ne la caractérise pas. Dans le cas du corps $\mathbb R$ au départ, il se trouve que la simple construction de $\mathbb C$ corps de rupture de $X^2+1$ nous fournit une clôture algébrique de $\mathbb R$. Ce résultat découvert par d'Alembert s'appelle encore parfois théorème fondamental de l'algèbre bien que ses justifications fassent intervenir de l'analyse.
+
+Construisons d'abord $\mathbb C$. Le polynôme $X^2+1$ est irréductible sur $\mathbb R$, car tout $\lambda$ réel a un carré $\lambda^2\ge0$, donc différent de $-1$.
+
+Soit $\mathbb C$ un corps de rupture de $X^2+1$ sur $\mathbb R$, $\mathbb C$ \BellaCorrection{est}{et} une extension algébrique de degré 2 sur $\mathbb R$ et si $i$ désigne une racine de $X^2+1$ dans $\mathbb C$, les éléments de $\mathbb C$ s'écrivent $a+ib$ avec $a$ et $b$ réels. De plus $\mathbb C$ est espace vectoriel de dimension 2 sur $\mathbb R$, avec l'addition définie par
+\[
+a+ib+(a'+ib')=(a+a')+i(b+b').
+\]
+
+Pour le produit, on a
+\[
+(a+ib)(a'+ib')=aa'+i(ba'+ab')+i^2bb',
+\]
+or $i^2=-1$, donc le produit s'écrit encore
+\[
+(a+ib)(a'+ib')=(aa'-bb')+i(ab'+ba').
+\]
+
+On retrouve les règles usuelles, que l'on pouvait prendre pour définir une structure sur $\mathbb R^2$, et vérifier ainsi que l'on a un corps alors qu'ici on sait que l'on a un corps.
+
+On suppose donc acquises toutes les propriétés usuelles sur $\mathbb C$.
+
+\medskip\noindent\textsc{Théorème 7.71.} (de d'Alembert). --- \emph{$\mathbb C$ est un corps algébriquement clos.}
+
+Il en existe une justification par l'analyse, faisant intervenir les propriétés des séries entières de variable complexe, et la formule de Green Riemann, je la donnerai après l'étude des séries entières.
+
+Il en existe une justification dite « algébrique », due à Gauss, d'où le nom de théorème de d'Alembert-Gauss qu'on lui donne parfois. J'ai mis le algébrique entre guillemets car elle utilise de l'analyse, à savoir le
+
+\medskip\noindent\textsc{Lemme 7.72.} --- \emph{Soit $P\in\mathbb R[X]$ un polynôme de degré impair, il s'annule sur $\mathbb R$.}
+
+En effet $P$ étant de degré impair a des limites infinies de signes opposés en $+\infty$ et $-\infty$ donc il s'annule sur $\mathbb R$, (théorème des valeurs intermédiaires pour une fonction continue.) \bookend
+
+Pour justifier le théorème de d'Alembert, à ce stade il nous faut admettre des résultats sur les polynômes de plusieurs variables, symétriques.
+
+Soit $Q(X_1,\ldots,X_n)\in K[X_1,\ldots,X_n]$ un polynôme de plusieurs variables. (Je sais, je n'ai pas dit ce que c'est, tant pis, allez voir ailleurs). Il est dit symétrique si, $\forall\sigma\in S_n$, $Q(X_{\sigma(1)},\ldots,X_{\sigma(n)})=Q(X_1,\ldots,X_n)$. Et dans ce cas il existe un autre polynôme $R\in K[X_1,\ldots,X_n]$, tel que
+\[
+Q(X_1,\ldots,X_n)=R(\sigma_1,\sigma_2,\ldots,\sigma_n)
+\]
+avec les $\sigma_j$ fonctions élémentaires symétriques des $X_j$, à savoir :
+\[
+\sigma_1=X_1+X_2+\cdots+X_n,
+\]
+\[
+\sigma_2=X_1X_2+X_1X_3+\cdots+X_1X_n+X_2X_3+\cdots+X_nX_{n-1}
+\]
+$=$ somme des produits 2 à 2,
+\[
+\sigma_3=\text{somme des produits 3 à 3},
+\]
+et pour finir
+\[
+\sigma_n=X_1\cdots X_n,\quad\text{produit des }n\text{ variables.}
+\]
+
+Il y a donc en fait tout un travail à fournir pour avoir le théorème de d'Alembert. Personnellement, j'aime mieux la justification par l'analyse...
+
+Soit alors $Q\in K[X]$ un polynôme scindé. Si on écrit à la fois
+\[
+Q(X)=a_0X^n+a_1X^{n-1}+\cdots+a_n,\qquad a_0\ne0
+\]
+et
+\[
+Q(X)=a_0\prod_{i=1}^n(X-\lambda_i)
+\]
+en mettant en évidence les racines de $Q$ distinctes ou non, on aura
+\[
+\begin{aligned}
+Q(X)=a_0[&X^n-(\lambda_1+\cdots+\lambda_n)X^{n-1}\\
+&+(\sum\text{ produits 2 à 2 des }\lambda_i)X^{n-2}\\
+&-(\sum\text{ produits 3 à 3 des }\lambda_i)X^{n-3}\\
+&+\cdots+(-1)^n\lambda_1\cdots\lambda_n].
+\end{aligned}
+\]
+d'où les relations dites symétriques entre les racines de $Q$ :
+\[
+\tag{7.73}
+\sigma_1=-\frac{a_1}{a_0},\quad
+\sigma_2=(-1)^2\frac{a_2}{a_0},\quad
+\sigma_3=(-1)^3\frac{a_3}{a_0},\quad\ldots,\quad
+\sigma_n=(-1)^n\frac{a_n}{a_0}.
+\]
+
+Il faut remarquer que, si sur le corps $K$ le polynôme $Q$ n'est pas scindé on peut introduire $\overline K$ corps de décomposition \BellaCorrectionNote{de $Q$}{de $K$}{Le corps de décomposition est ici choisi pour le polynôme $Q$, afin de pouvoir le factoriser.} , factoriser $Q$ dans $\overline K[X]$ pour justifier les relations précédentes et obtenir ainsi le fait que même si les $\lambda_j$ ne sont pas dans $K$, leurs fonctions symétriques y seront car les $(-1)^k\dfrac{a_k}{a_0}$ sont dans $K$.
+
+Passons alors à la justification de d'Alembert-Gauss. Soit un polynôme
+\[
+P(X)=a_0X^n+a_1X^{n-1}+\cdots+a_n\in\mathbb C[X],
+\]
+on introduit
+\[
+\overline P(X)=\overline a_0X^n+\overline a_1X^{n-1}+\cdots+\overline a_n,
+\]
+(avec $\overline a_k=\alpha_k-i\beta_k$ si $a_k=\alpha_k+i\beta_k$, $\alpha_k$ et $\beta_k$ étant réels : c'est le conjugué de $a_k$).
+
+Le polynôme $Q=P\overline P$ est à coefficients réels, car c'est un polynôme de degré $2n$, et pour $j\in[0,2n]$, le coefficient $b_{2n-j}$ de $X^j$ dans $Q$ est
+\[
+b_{2n-j}=\sum_{\substack{k,l\in[0,n]\\k+l=2n-j}}a_k\overline a_l,
+\]
+son conjugué
+\[
+\overline b_{2n-j}=\sum_{\substack{k,l\in[0,n]\\k+l=2n-j}}\overline a_k a_l,
+\]
+c'est donc $b_{2n-j}$ vu le rôle symétrique des indices.
+
+Le degré de $Q$ peut s'écrire $2n=2^mn'$ avec en fait $n'$ impair et $m$ entier $\ge1$. Si on prouve que $Q$ a une racine complexe $z$ la relation
+\[
+Q(z)=P(z)\overline P(z)=0
+\]
+donnera $P(z)=0$ ou $\overline P(z)=0$, mais en conjugant, dans le 2e cas, on a $P(\overline z)=0$ : dans les 2 cas $P$ aura un zéro dans $\mathbb C$. Il nous reste donc à justifier l'existence dans $\mathbb C$ d'un zéro de $Q$.
+
+\emph{On va justifier ceci par récurrence sur $m$.}
+
+Soit $L$ un corps de décomposition sur $\mathbb C$, de $Q$ et $z_1,\ldots,z_{2n}$ les zéros, (distincts ou non) de $Q$ dans $L$. On a, dans $L[X]$, la factorisation
+\[
+Q(X)=a_0\overline a_0\prod_{j=1}^{2n}(X-z_j).
+\]
+
+Supposons donnés $N$ nombres réels distincts $c_1,\ldots,c_N$. Pour chaque indice $k\le N$, soit le polynôme
+\[
+Q_k(X)=\prod_{1\le i<j\le2n}\left(X-(z_i z_j+c_k(z_i+z_j))\right).
+\]
+
+C'est un polynôme symétrique en $z_1,z_2,\ldots,z_{2n}$ racines de $Q$, à coefficients réels, (1 est coefficient de $X$, $-1$ celui de $z_iz_j$ et $-c_k$ celui de $z_i$ et de $z_j$), donc d'après le résultat admis, $Q_k$ est un polynôme à coefficients réels par rapport aux fonctions symétriques élémentaires des $z_j$, donc finalement des $(-1)^r\dfrac{b_r}{b_0}$, avec les $b_r$ coefficients réels de $Q$ : on obtient $Q_k$ polynôme en $X$ à coefficients réels. Quel est son degré : c'est le nombre de parties à 2 éléments dans $\{1,\ldots,2n\}$, donc
+\[
+C_{2n}^2=\frac{2n(2n-1)}2
+\]
+soit
+\[
+n(2n-1)=2^{m-1}\cdot n'(2n-1)
+\]
+avec $n'(2n-1)$ impair.
+
+Supposons d'abord $m=1$. Alors chaque $Q_k$, de degré impair admet un zéro réel, donc complexe.
+
+Soit $t_k$ ce zéro : il existe $i_k$ et $j_k$ avec \BellaCorrectionNote{$1\le i_k<j_k\le2n$}{$1<i_k<j_k\le2n$}{Le produit définissant $Q_k$ porte sur toutes les paires $1\le i<j\le2n$; l’indice $i_k=1$ n’est donc pas exclu.} et
+\[
+t_k=z_{i_k}z_{j_k}+c_k(z_{i_k}+z_{j_k}).
+\]
+
+Si on suppose $N>n(2n-1)$, il existe forcément deux indices $k$ et $k'$ distincts associés au même couple $(i_k,j_k)$ avec $1\le i_k<j_k\le2n$. On a donc
+\[
+t_k=z_{i_k}z_{j_k}+c_k(z_{i_k}+z_{j_k})
+\]
+et
+\[
+t_{k'}=z_{i_k}z_{j_k}+c_{k'}(z_{i_k}+z_{j_k})
+\]
+réels donc complexes.
+
+On a un système linéaire permettant de calculer $a=z_{i_k}+z_{j_k}$ et $b=z_{i_k}z_{j_k}$. Les $c_k$ étant distincts, $c_k-c_{k'}\ne0$ et on trouve
+\[
+a=\frac{t_k-t_{k'}}{c_k-c_{k'}},
+\qquad
+b=\frac{c_{k'}t_k-c_kt_{k'}}{c_{k'}-c_k},
+\]
+relations qui prouvent que $a$ et $b$ sont complexes et non dans $L\setminus\mathbb C$.
+
+Mais alors $z_{i_k}$ et $z_{j_k}$ sont solutions de
+\[
+(X-z_{i_k})(X-z_{j_k})=X^2-aX+b\in\mathbb C[X].
+\]
+
+Or
+\[
+X^2-aX+b=\left(X-\frac a2\right)^2-\frac{a^2-4b}{4}.
+\]
+
+En posant $a^2-4b=u+iv$ avec $u$ et $v$ réels on vérifie alors que :
+\[
+\frac12\left(\sqrt{u+\sqrt{u^2+v^2}}+i\sqrt{-u+\sqrt{u^2+v^2}}\right)^2=u+i|v|,
+\]
+(ne pas oublier que $\sqrt{v^2}=|v|$).
+
+Donc si $v\ge0$,
+\[
+\delta=\frac1{\sqrt2}\left(\sqrt{u+\sqrt{u^2+v^2}}+i\sqrt{-u+\sqrt{u^2+v^2}}\right)
+\]
+\footnote{\textbf{校勘：}原式第二个根号内印作 $-u\sqrt{u^2+v^2}$。上一行恒等式给出的正确被开方数为 $-u+\sqrt{u^2+v^2}$；缺少加号时该式一般不能给出 $u+iv$ 的平方根。}
+est dans $\mathbb C$ tel que $\delta^2=u+iv$, (et si $v<0$ on remplace $i$ par $-i$ dans $\delta$).
+
+On a donc $\delta\in\mathbb C$ tel que
+\[
+X^2-aX+b=\left(X-\frac a2\right)^2-\delta^2
+\]
+d'où $z_{i_k}$ et $z_{j_k}$ dans $\mathbb C$ car du type
+\[
+\frac{a\pm\delta}{2}
+\]
+avec $a$ et $\delta$ dans $\mathbb C$.
+
+\emph{Donc si $m=1$, $Q$ admet au moins 2 racines complexes, (éventuellement confondues).}
+
+\emph{Si on suppose le résultat vrai pour $m-1$}, on repart comme précédemment, les $Q_k$ sont de degré $2^{m-1}\cdot($nombre impair$)$ donc ont des racines complexes. La même mise en forme aboutit à $Q$ admet 2 racines complexes, (distinctes ou non), et finalement on a bien justifié le fait que $P\in\mathbb C[X]$ admet au moins un zéro sur $\mathbb C$, (avec bien sûr $d^\circ P\ge1$).
+
+Il est bien évident que, par application itérée de ce résultat et après factorisation des $(X-$ racine trouvée$)$, on a : tout polynôme $P$ de $\mathbb C[X]$ est \BellaCorrection{scindé}{scindée} sur $\mathbb C$. \bookend
+
+\medskip\noindent\textsc{Corollaire 7.74.} --- \emph{Les seuls polynômes irréductibles de $\mathbb R[X]$ sont \BellaCorrectionNote{les polynômes de degré 1 et ceux de degré 2 sans racine réelle}{les constantes non nulles, les polynômes de degré 1 et ceux de degré 2 sans racine réelle}{D'après la définition 7.21, un élément irréductible doit être non inversible; or le Théorème 7.22 établit que les constantes réelles non nulles sont précisément des unités de $\mathbb R[X]$.}.}
+
+Il est clair que les polynômes de degré 1 de $\mathbb R[X]$ sont irréductibles.
+
+Soit $P$ de degré $\ge2$, irréductible sur $\mathbb R$. En particulier $P$ est sans racines \BellaCorrection{réelles}{réelle} (car si $\lambda$ racine, $P$ est divisible par $X-\lambda$, (Théorème 7.38)).
+
+Mais $P$, dans $\mathbb C$, admet des racines. Soit $\lambda=u+iv$ avec $v\ne0$ un zéro de $P$. On a $P(\lambda)=0$ d'où en conjuguant $\overline{P(\lambda)}=0$ soit $P(\overline\lambda)=0$ puisque $P$ est à coefficients réels.
+
+Comme dans $\mathbb C$ on a $\lambda\ne\overline\lambda$, les polynômes $X-\lambda$ et $X-\overline\lambda$ sont non associés (définition 7.32) donc $P$ est divisible, dans $\mathbb C[X]$, par
+\[
+(X-\lambda)(X-\overline\lambda)=(X-u-iv)(X-u+iv)
+=(X-u)^2+v^2=X^2-2uX+(u^2+v^2)\in\mathbb R[X].
+\]
+Donc il existe $Q$ dans $\mathbb R[X]$ tel que
+\[
+P(X)=(X^2-2uX+u^2+v^2)Q(X),
+\]
+car, la division euclidienne, faite dans $\mathbb R[X]$ donne une identité
+\[
+P=(X^2-2uX+u^2+v^2)Q_1+R_1,
+\]
+valable aussi dans $\mathbb C[X]$ et la divisibilité de $P$ par $X^2-2uX+u^2+v^2$ dans $\mathbb C[X]$ donne $R_1=0$, d'où $Q_1=Q\in\mathbb R[X]$. Comme $P$ est irréductible, c'est que $d^\circ P=2$ et $Q$ est un scalaire réel non nul. \bookend
+
+Enfin, pour conclure cet aspect constructif des grands ensembles mathématiques, passage de $\mathbb N$ à $\mathbb Z$ puis à $\mathbb Q$ par symétrisation de demi-groupe, puis de $\mathbb Q$ à $\mathbb R$ par complétion et de $\mathbb R$ à $\mathbb C$ par corps de rupture qui est en même temps une clôture algébrique, signalons que la clôture algébrique de $\mathbb Q$ n'est pas $\mathbb C$ : des nombres \BellaCorrection{transcendants}{trancendants} comme $e$ ou $\pi$ ne sont pas algébriques sur $\mathbb Q$. De plus, on démontre que le cardinal de la clôture algébrique de $\mathbb Q$ est celui de $\mathbb Q$ c'est-à-dire que ce corps est dénombrable.

@@ -1,0 +1,660 @@
+\origpage{382--394}
+
+Cette méthode de calcul de $A^n$ n'est intéressante que si $p$, degré du polynôme annulant $A$, est peu élevé.
+
+Signalons enfin la possibilité de décomposer $A$ en une somme de 2 matrices $B$ et $C$ qui commutent et dont les puissances sont faciles à calculer, voire en somme de 3 matrices $A=B+C+D$ avec peut-être des produits $BC$ ou $CD$ ou... nuls.
+
+\medskip\noindent\emph{Exemple} $A$ est carrée d'ordre $n$ sur $\mathbb C$ avec $a_{ii}=a$ et $a_{ij}=b$ si $i\ne j$. Calcul de $A^q$.
+
+On est porté à écrire
+\[
+A=(a-b)I_n+b
+\underbrace{\begin{pmatrix}
+1&\cdots&1\\
+\vdots&&\vdots\\
+1&\cdots&1
+\end{pmatrix}}_{=L}
+=(a-b)I_n+bL.
+\]
+On vérifie facilement que $L^2=nL$, d'où $L^3=nL^2=n(nL)=n^2L$, et plus généralement, $\forall r\ge1$ on a $L^r=n^{r-1}L$. Comme $bL$ et l'homothétie $(a-b)I_n$ commutent, on a donc, pour $q\ge1$
+\[
+\begin{aligned}
+A^q&=(a-b)^qI_n+\left(\sum_{r=1}^q\binom qr(a-b)^{q-r}b^rn^{r-1}\right)L\\
+&=(a-b)^qI_n+\frac1n\left(\sum_{r=1}^q\binom qr(a-b)^{q-r}b^rn^r\right)L\\
+&=(a-b)^qI_n+\frac1n\left((a-b+bn)^q-(a-b)^q\right)L\\
+&=(a-b)^q\left(I_n-\frac1nL\right)+\frac1n\bigl(a+b(n-1)\bigr)^qL.
+\end{aligned}
+\]
+
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} EXERCICES}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.0em]
+
+\item Soit $A\in M_n(\mathbb R)$ telle que $A^3=A+I$. Montrer que $\det A>0$.
+
+\item Soit $f:\mathbb C_n[X]\longrightarrow\mathbb C_n[X]$,
+\[
+f(P)=(X^2-1)P'(X)-(nX-a)P(X).
+\]
+Montrer que $f$ est un endomorphisme de $\mathbb C_n[X]$. Trouver sa matrice dans la base canonique. Valeurs propres et vecteurs propres.
+
+\item Soit $A\in M_n(\mathbb C)$, et $B$ la matrice bloc
+\[
+B=\begin{pmatrix}2A&-4A\\ A&-A\end{pmatrix}.
+\]
+Montrer que si $A$ est diagonalisable, $B$ l'est.
+
+\item Les matrices
+\[
+A=\begin{pmatrix}3&1&-1\\2&4&-2\\1&1&1\end{pmatrix}
+\qquad\text{et}\qquad
+B=\begin{pmatrix}3&2&1\\1&4&1\\-1&-2&1\end{pmatrix}
+\]
+sont-elles semblables?
+
+\item Quelles sont les matrices $A$ de $M_n(\mathbb C)$ vérifiant $\operatorname{tr}(A^j)=n$ pour tout $j$ de $\{1,\ldots,n\}$?
+
+\item Sous-espaces vectoriels de $\mathbb C^3$ stables par
+\[
+A=\begin{pmatrix}
+1&j&j^2\\
+j&j^2&1\\
+j^2&1&j
+\end{pmatrix}.
+\]
+
+\item Soit $A\in M_n(\mathbb R)$ telle que $A^n=0$ et $A^{n-1}\ne0$. Montrer que $A$ est semblable à la matrice
+\[
+J=\begin{pmatrix}
+0&1&0&\cdots&0\\
+0&0&1&\cdots&0\\
+\vdots&&\ddots&\ddots&\vdots\\
+0&0&0&\cdots&1\\
+0&0&0&\cdots&0
+\end{pmatrix}.
+\]
+
+\item Trouver les matrices $X$ telles que l'on ait
+\[
+X^2=\begin{pmatrix}
+-7&5&-6\\
+-19&10&-12\\
+-13&5&-6
+\end{pmatrix}.
+\]
+
+\item $E$ est l'ensemble des matrices $2\times2$ à coefficients dans $\mathbb Z$ de déterminant égal à 1. Structure de $E$. Montrer que si $A$ de $E$ est tel qu'il existe $p\in\mathbb N^*$ tel que $A^p=I$ alors $A^{12}=I$.
+
+\item Quelles sont les $A$ de $M_n(\mathbb C)$ telles que
+\[
+B=\begin{pmatrix}0&I\\2A&A\end{pmatrix}
+\]
+soit diagonalisable?
+
+\item Soit $A$ dans $M_n(\mathbb C)$. Déterminer le polynôme caractéristique de la comatrice de $A$ en fonction de celui de $A$.
+
+\item Soit la matrice diagonale $D=\operatorname{diag}(1,2,\ldots,n)$. Combien y a-t-il de matrices semblables à $D$ commutant à $D$.
+
+\item $E$ est un $K$-espace vectoriel de dimension $n$; soit $f\in L(E)$ et $x\in E$. On dit que $x$ est cyclique si $(x,f(x),f^2(x),\ldots)$ engendre $E$. Montrer qu'alors $(x,f(x),\ldots,f^{n-1}(x))$ est une base de $E$. Chercher les vecteurs cycliques dans le cas d'un endomorphisme diagonalisable.
+
+\item Soit $A\in M_n(\mathbb R)$ nilpotente. Quel est son polynôme caractéristique? Montrer que $A^n=0$. Soit $P\in M_n(\mathbb R)$ telle que $AP=PA$. Montrer que $\det P=\det(A+P)$.
+
+\item Valeurs propres et vecteurs de $A=(a_{ij})\in M_n(\mathbb R)$ avec:
+\[
+\forall i,\quad a_{ii}=b+a_i^2
+\qquad\text{et}\qquad
+\forall i\ne j,\quad a_{ij}=a_i a_j;
+\]
+$b,a_1\ldots a_n$ réels donnés.
+
+\enlargethispage{3pt}
+\item Éléments propres de la matrice
+\[
+M=\left(\frac{\alpha_i}{\alpha_j}\right)\in M_n(\mathbb C)
+\]
+où \BellaCorrectionNote{$\alpha_1,\ldots,\alpha_n$}{$\alpha_2,\ldots,\alpha_n$}{La matrice fait intervenir $\alpha_j$ au dénominateur pour tout $j$, et la solution introduit $e'_j=\alpha_j e_j$ pour tout $j$; il faut donc supposer aussi $\alpha_1\ne0$.} sont des complexes non nuls.
+
+\item Soit $E$ un $K$-espace vectoriel de dimension $n$, $f\in L(E)$ et
+\[
+T:L(E)\longrightarrow L(E),\qquad g\longmapsto f\circ g.
+\]
+Comparer valeurs propres de $f$ et de $T$. Montrer que $T$ est diagonalisable si et seulement si $f$ l'est.
+
+\item Soit
+\[
+E=\{f;\ f\in C^0([0,+\infty[,\mathbb R),\ \lim_{x\to+\infty}f(x)\text{ existe}\}.
+\]
+On définit $\varphi$ de $E$ dans $E$ par $\varphi(f)(x)=f(x+1)$. Valeurs propres de $\varphi$? Même question pour $\varphi'$ induite par $\varphi$ sur
+\[
+E'=\{f;\ f\in C^\infty([0,+\infty[,\mathbb R),\ \lim_{x\to+\infty}f(x)\text{ existe}\}.
+\]
+
+\item Soit $A\in M_n(\mathbb C)$ ayant toutes ses valeurs propres distinctes. Montrer que
+\[
+\{M,\ M\in M_n(\mathbb C);\ AM=MA\}
+\]
+est espace vectoriel de dimension $n$ ayant $\{I,A,A^2,\ldots,A^{n-1}\}$ pour base.
+
+\item Soit $f\in L(\mathbb R^3)$ n'ayant que $2$ et $-1$ pour valeurs propres. Calculer $f^n$, $\forall n\in\mathbb N$.
+
+\item Soit $E$ vectoriel complexe de dimension finie. Montrer qu'un endomorphisme $u$ de $E$ est diagonalisable si et seulement si tout sous-espace stable de $E$ admet un supplémentaire stable.
+
+\end{enumerate}
+
+\clearpage
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} SOLUTIONS}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.1em]
+
+\item La matrice $A$ vérifiant l'égalité $A^3-A-I=0$, si $\lambda$ est valeur propre (\emph{a priori} complexe) de $A$ elle vérifie $\lambda^3-\lambda-1=0$. Comme $\det A$ est le produit des valeurs propres, (dans $\mathbb C$, on trigonalise la matrice) on étudie les racines réelles de $P(x)=x^3-x-1$, les racines complexes étant 2 à 2 conjuguées et de même multiplicité, donc de produit $>0$.
+
+On a $P'(x)=3x^2-1$ nul en $\pm\dfrac1{\sqrt3}$, d'où le tableau de variations:
+\[
+\begin{array}{c|ccccccc}
+x&-\infty&&-1/\sqrt3&&1/\sqrt3&&+\infty\\ \hline
+P'(x)&&+&0&-&0&+&\\ \hline
+P(x)&-\infty&\nearrow&<0&\searrow&&\nearrow&+\infty
+\end{array}
+\]
+\[
+P\!\left(-\frac1{\sqrt3}\right)
+=-\frac1{3\sqrt3}+\frac1{\sqrt3}-1
+=\frac{2-3\sqrt3}{3\sqrt3}<0.
+\]
+Donc $P$ a une seule racine réelle supérieure à $1/\sqrt3$ donc $>0$: on a bien $\det A>0$.
+
+\item La dérivation étant linéaire $f$ agit linéairement sur $P$. Si $P$ est de degré $n$ de coefficient directeur $a$, $f(P)$ est \emph{a priori} de degré $n+1$ mais le coefficient du terme en $X^{n+1}$ est $na-na=0$, donc $f(P)\in\mathbb C_n[X]$, on a un endomorphisme de $\mathbb C_n[X]$. On a
+\[
+f(X^k)=(k-n)X^{k+1}+aX^k-kX^{k-1}
+\]
+si $k\ge1$, et $f(1)=a-nX$ d'où la matrice $A$ de $f$ dans la base canonique:
+\[
+A=\begin{pmatrix}
+a&-1&0&\cdots&0\\
+-n&a&-2&\ddots&\vdots\\
+0&-(n-1)&a&\ddots&0\\
+\vdots&\ddots&\ddots&\ddots&-n\\
+0&\cdots&0&-1&a
+\end{pmatrix}.
+\]
+La recherche des valeurs propres et vecteurs propres fait intervenir les équations différentielles. On a $\lambda$ valeur propre
+\[
+\Longleftrightarrow\ \exists P\in\mathbb C_n[X]-\{0\},\quad
+(X^2-1)P'-(nX-a+\lambda)P=0.
+\]
+On a une équation différentielle linéaire du $1^{\rm er}$ ordre dont les solutions sont
+\[
+P(x)=k\exp\left(\int\frac{nx-a+\lambda}{x^2-1}\,dx\right).
+\]
+Comme
+\[
+\frac{nx-a+\lambda}{x^2-1}
+=\frac{n-a+\lambda}{2(x-1)}-\frac{-n-a+\lambda}{2(x+1)}
+\]
+on trouve
+\[
+P(x)=k|x-1|^{\frac{n-a+\lambda}{2}}|x+1|^{\frac{n+a-\lambda}{2}}.
+\]
+Ce sont des polynômes si $\dfrac{n-a+\lambda}{2}$ et $\dfrac{n+a-\lambda}{2}$ sont entiers. Pour $\lambda=2p+a-n$, $p\in\{0,1,2,\ldots,n\}$ on a $n+1$ valeurs propres distinctes pour les vecteurs propres
+\[
+(X-1)^p(X+1)^{n-p}.
+\]
+
+\item Le polynôme caractéristique $\chi_C(\lambda)$ de la matrice
+\[
+C=\begin{pmatrix}2&-4\\1&-1\end{pmatrix}
+\]
+est $\chi_C(\lambda)=\lambda^2-\lambda+2$.
+
+Il a deux racines distinctes,
+\[
+\lambda=\frac{1-i\sqrt7}{2}\qquad\text{et}\qquad
+\mu=\frac{1+i\sqrt7}{2},
+\]
+donc $C$ est diagonalisable: il existe $P$ régulière telle que
+\[
+P^{-1}CP=\begin{pmatrix}\lambda&0\\0&\mu\end{pmatrix}.
+\]
+Par ailleurs, il existe $Q\in GL_n(\mathbb C)$ telle que $Q^{-1}AQ=\Lambda$ soit diagonale.
+
+Si on pose
+\[
+P=\begin{pmatrix}\alpha&\beta\\\gamma&\delta\end{pmatrix},\qquad
+P^{-1}=\begin{pmatrix}\alpha'&\beta'\\\gamma'&\delta'\end{pmatrix},
+\]
+un calcul par blocs montre qu'avec les matrices blocs
+\[
+R=\begin{pmatrix}\alpha Q&\beta Q\\\gamma Q&\delta Q\end{pmatrix}
+\quad\text{et}\quad
+R'=\begin{pmatrix}\alpha'Q^{-1}&\beta'Q^{-1}\\\gamma'Q^{-1}&\delta'Q^{-1}\end{pmatrix},
+\]
+on a
+\[
+RR'=\begin{pmatrix}
+(\alpha\alpha'+\beta\gamma')I_n&(\alpha\beta'+\beta\delta')I_n\\
+(\gamma\alpha'+\delta\gamma')I_n&(\gamma\beta'+\delta\delta')I_n
+\end{pmatrix}=I_{2n}
+\]
+puisque $PP^{-1}=\begin{pmatrix}1&0\\0&1\end{pmatrix}$ équivaut à $\alpha\alpha'+\beta\gamma'=1=\gamma\beta'+\delta\delta'$ et $\alpha\beta'+\beta\delta'=\gamma\alpha'+\delta\gamma'=0$.
+Donc $R\in GL_{2n}(\mathbb C)$ et $R'$ est son inverse.
+
+Enfin
+\[
+R^{-1}BR=
+\begin{pmatrix}\alpha'Q^{-1}&\beta'Q^{-1}\\\gamma'Q^{-1}&\delta'Q^{-1}\end{pmatrix}
+\begin{pmatrix}2A&-4A\\A&-A\end{pmatrix}
+\begin{pmatrix}\alpha Q&\beta Q\\\gamma Q&\delta Q\end{pmatrix}
+\]
+va être une matrice bloc, avec des blocs carrés d'ordre $n$ tous proportionnels à $Q^{-1}AQ=\Lambda$, les coefficients provenant du calcul de $P^{-1}CP=\begin{pmatrix}\lambda&0\\0&\mu\end{pmatrix}$ d'où
+\[
+R^{-1}BR=\begin{pmatrix}\lambda\Lambda&0\\0&\mu\Lambda\end{pmatrix}
+\]
+est bien diagonale.
+
+\item Si deux matrices $A$ et $B$ de $M_n(K)$ sont semblables, elles auront même polynôme caractéristique et même forme réduite.
+Ici on trouve $\chi_A(\lambda)=(\lambda-2)^2(\lambda-4)=\chi_B(\lambda)$ et la recherche des vecteurs propres prouve que $A$ et $B$ sont diagonalisables, donc semblables à la matrice $\operatorname{diag}(4,2,2)$: elles sont semblables, sauf erreur.
+
+\item Si $\lambda_1,\ldots,\lambda_p$ sont les valeurs propres distinctes de multiplicités respectives $\alpha_1,\ldots,\alpha_p$, en trigonalisant $A$ on sait que $A^k$ sera semblable à une matrice triangulaire ayant les $\lambda_j^k$, $\alpha_j$ fois, sur la diagonale.
+
+Donc $A$ doit être telle que pour $k=1,2,\ldots,n$,
+\[
+\sum_{j=1}^p\alpha_j\lambda_j^k=n.
+\]
+On peut adjoindre à ces $n$ équations la relation $\sum_{j=1}^p\alpha_j=n$, d'où un système équivalent:
+\[
+\sum_{j=1}^p\alpha_j\lambda_j^{k-1}(\lambda_j-1)=0
+\quad\text{pour }k=1,\ldots,n,
+\]
+(avec la convention $\lambda_j^0=1$).
+
+Pour $k=1,\ldots,p$, les relations
+\BellaCorrectionNote{$\displaystyle\sum_{j=1}^p\alpha_j(\lambda_j-1)\lambda_j^{k-1}=0$}{$\displaystyle\sum_{j=1}^p\alpha_j(j-1)\lambda_j^{k-1}=0$}{Le système précédent contient le facteur $\lambda_j-1$; le passage à $k=1,\ldots,p$ ne change que les exposants.},
+avec des $\lambda_j$ distincts imposent chaque $\alpha_j(\lambda_j-1)=0$, (matrice des $(\lambda_j^{k-1})_{1\le j,k\le p}$ inversible) d'où $\lambda_j=1$, et alors les relations restant sont vérifiées. Donc,
+\BellaCorrectionNote{$\bigl(\operatorname{tr}(A^j)=n\text{ pour }j=1,\ldots,n\bigr)\Longleftrightarrow(1\text{ seule valeur propre de }A)$}{$\bigl(\operatorname{tr} A^j=1\text{ pour }j=-1\ldots n\bigr)\Longleftrightarrow(1\text{ seule valeur propre de }A)$}{L'énoncé de l'exercice impose $\operatorname{tr}(A^j)=n$ pour $j=1,\ldots,n$; la conclusion imprimée altère à la fois le second membre et l'intervalle des indices.}.
+
+\item Les sous-espaces $\{0\}$ et $\mathbb C^3$ sont stables. Ceux de dimension 1 sont les droites vectorielles engendrées par des vecteurs propres. Ceux de dimension 2 sont les noyaux des formes linéaires vecteurs propres de ${}^tA$.
+
+On trouve $\chi_A(\lambda)=-\lambda^3$: 0 est seule valeur propre de $A$, le sous-espace propre étant l'hyperplan $H$ d'équation
+\[
+x+jy+j^2z=0.
+\]
+Donc toute droite $D$ passant par 0 et contenue dans $H$ est stable. Le plan $H$ est stable.
+
+Puis les formes linéaires $\varphi_1$ et $\varphi_2$ de composantes $(1,1,1)$ et $(1,j,j^2)$ étant vecteurs propres de ${}^tA$, engendrent le plan des formes $\varphi=\lambda\varphi_1+\mu\varphi_2$, vecteurs propres de ${}^tA$.
+
+Tout plan $P$ d'équation
+\[
+\lambda(x+y+z)+\mu(x+jy+j^2z)=0
+\]
+est stable par $A$.
+
+\item On retrouve l'étude des endomorphismes nilpotents faite dans la jordanisation, (Ch. X, §4). Si $\alpha$ est l'endomorphisme de matrice $A$ dans une base, (canonique par exemple), de $\mathbb R^n$, il existe un vecteur $u$ de $\mathbb R^n$ tel que $\alpha^{n-1}(u)\ne0$.
+La famille
+\[
+\mathcal B=\{u,\alpha(u),\ldots,\alpha^{n-1}(u)\}
+\]
+est alors libre, donc c'est une base de $\mathbb R^n$, ($n$ vecteurs).
+
+En effet, si on a des $\lambda_j\in\mathbb R$ tels que
+\[
+\sum_{j=0}^{n-1}\lambda_j\alpha^j(u)=0,
+\]
+en prenant l'image par $\alpha^{n-1}$ il reste $\lambda_0\alpha^{n-1}(u)=0\Rightarrow\lambda_0=0$, puis l'image par $\alpha^{n-2},\alpha^{n-3},\ldots,\alpha^0$ impliquera $\lambda_1,\lambda_2,\ldots,\lambda_{n-1}=0$. Dans la base \BellaCorrectionNote{$\mathcal B'$}{$\mathcal B$}{L'ordre imprimé est $\mathcal B=\{u,\alpha(u),\ldots,\alpha^{n-1}(u)\}$; dans cet ordre, la matrice porte les $1$ sous la diagonale et vaut ${}^tJ$. On prend ici l'ordre renversé $\mathcal B'=\{\alpha^{n-1}(u),\alpha^{n-2}(u),\ldots,\alpha(u),u\}$, qui donne exactement $J$.} la matrice de $\alpha$ est $J$, donc $A$ et $J$ sont semblables.
+
+\item Si
+\[
+A=\begin{pmatrix}-7&5&-6\\-19&10&-12\\-13&5&-6\end{pmatrix},
+\]
+le polynôme caractéristique est
+\[
+\chi_A(\lambda)=-\lambda(\lambda^2+3\lambda-11).
+\]
+Il a 3 racines distinctes $0$ et $\dfrac{-3\pm\sqrt{53}}2$ et $A$ est diagonalisable. S'il existe $X$ telle que $X^2=A$, les matrices $X$ et $X^2=A$ commutent donc les sous-espaces propres de l'un sont stables par l'autre: il en résulte que dans une base $\mathcal B=(e_1,e_2,e_3)$ de vecteurs propres pour $A$, pour les valeurs propres
+\[
+0,\qquad \lambda_1=\frac{\sqrt{53}-3}{2}\qquad\text{et}\qquad
+\lambda_2=-\frac{\sqrt{53}+3}{2},
+\]
+la matrice $X'$ semblable à $X$ sera diagonale, du type $0,\mu_1,\mu_2$ avec $\mu_1^2=\lambda_1$ et $\mu_2^2=\lambda_2$.
+
+Sur $\mathbb R$, comme $\lambda_2<0$, il n'y a pas de solution.
+
+Sur $\mathbb C$, en notant $P$ la matrice de passage de la base canonique à une base de vecteurs propres on trouvera 4 solutions
+\[
+X=P\begin{pmatrix}
+0&0&0\\
+0&\varepsilon_1\sqrt{\lambda_1}&0\\
+0&0&i\varepsilon_2\sqrt{-\lambda_2}
+\end{pmatrix}P^{-1}
+\]
+avec $\varepsilon_1\in\{-1,1\}$ et $\varepsilon_2\in\{-1,1\}$.
+
+\item Si
+\[
+A=\begin{pmatrix}a&b\\c&d\end{pmatrix}\in M_2(\mathbb Z)
+\]
+avec $\det A=1$, on a
+\[
+A^{-1}=\begin{pmatrix}d&-b\\-c&a\end{pmatrix}
+\]
+est aussi dans $E$ qui est ainsi stable par passage à l'inverse. La stabilité de $E$ pour le produit est évidente donc $E$ est sous-groupe de $GL_2(\mathbb Q)$.
+
+On en étudie les sous-groupes cycliques (ou monogènes finis).
+Si $A$ est tel que $A^p=I$, son polynôme minimal divisant $X^p-1$, scindé à racines simples sur $\mathbb C$, $A$ est diagonalisable sur $\mathbb C$, et les valeurs propres $\lambda$ et $\mu$ seront des racines $p$ième de l'unité, réelles ou complexes conjuguées, vérifiant
+\[
+\begin{cases}
+\lambda+\mu=a+d\in\mathbb Z,\\
+\lambda\mu=1.
+\end{cases}
+\]
+Si $\lambda=1$, on a $\mu=1$, $A$ est semblable sur $\mathbb C$, à $I$: en fait $A=I$ et alors $A^{12}=I$; si $\lambda=-1$, alors $\mu=-1$ et $A$ est l'homothétie $-I$ d'où encore $A^{12}=I$.
+
+Comme 1 et $-1$ sont les seules racines $p$ième de l'unité réelles, il reste $\lambda$ non réelle, $\mu=\overline\lambda$ et si $\lambda=e^{2ik\pi/p}$, $\lambda+\mu=2\cos\dfrac{2k\pi}{p}=a+d$ est dans $\mathbb Z$, donc $\lambda+\mu\in\{-2,-1,0,1,2\}$, puisque $|\lambda+\mu|\le2$.
+
+Les 2 cas $-2$ et 2 sont écartés, (ils conduisent à $\lambda=-1$ ou 1) il reste donc
+\[
+\cos\frac{2k\pi}{p}=-\frac12,\ 0,\ \text{ou }\frac12
+\]
+d'où
+\[
+\sin\frac{2k\pi}{p}=\pm\frac{\sqrt3}{2},\ \pm1\ \text{ou }\pm\frac{\sqrt3}{2}
+\]
+qui conduisent à
+\[
+\{\lambda,\mu\}=\left\{-\frac12+\frac{i\sqrt3}{2},-\frac12-\frac{i\sqrt3}{2}\right\}
+\Rightarrow\lambda^3=\mu^3=1,
+\]
+\[
+\{\lambda,\mu\}=\{i,-i\}\Rightarrow\lambda^4=\mu^4=1,
+\]
+\[
+\{\lambda,\mu\}=\left\{\frac12+\frac{i\sqrt3}{2},\frac12-\frac{i\sqrt3}{2}\right\}
+\Rightarrow\lambda^6=\mu^6=1.
+\]
+On a donc, en utilisant $A'=\begin{pmatrix}\lambda&0\\0&\mu\end{pmatrix}$ semblable (sur $\mathbb C$) à $A$ l'égalité
+\[
+A'^3=I\quad\text{ou}\quad A'^4=I\quad\text{ou}\quad(A')^6=I,
+\]
+mais si $A'=P^{-1}AP$ on a $A^k=(PA'P^{-1})^k=P(A'^k)P^{-1}$ et si $A'^k=I$ il reste $A^k=PIP^{-1}=I$.
+Finalement on a toujours $A^{12}=I$.
+
+\item Un calcul par blocs, avec $X,Y$ dans $M_{n,1}(\mathbb C)$ et $U=\binom XY\in M_{2n,1}(\mathbb C)$ montre que $BU=\lambda U$ avec $\lambda\in\mathbb C$
+\[
+\Longleftrightarrow
+\begin{cases}Y=\lambda X,\\2AX+AY=\lambda Y,
+\end{cases}
+\Longleftrightarrow
+\begin{cases}Y=\lambda X,\\(2+\lambda)AX=\lambda^2X.
+\end{cases}
+\]
+Si $\lambda=-2$, il vient $0=4X\Rightarrow X=0\Rightarrow Y=-2\cdot0=0$, exclu car on suppose $U\ne0$. Donc $\lambda$ valeur propre de $B$ est forcément $\ne-2$, et alors:
+\[
+\begin{aligned}
+& (U\text{ vecteur propre de }B\text{ pour la valeur propre }\lambda)\\
+&\qquad\Longleftrightarrow\quad U=\binom{X}{\lambda X},\quad
+X\text{ vecteur propre de }A\\
+&\hspace{13em}\text{pour la valeur propre }\frac{\lambda^2}{2+\lambda}.
+\end{aligned}
+\]
+De plus le rang de $\{X_1,\ldots,X_p\}$ est le rang de
+\[
+\left\{\binom{X_1}{\lambda X_1},\ldots,\binom{X_p}{\lambda X_p}\right\}
+\]
+donc la dimension du sous-espace propre $E_\lambda(B)$ est celle du sous-espace propre $E_{\lambda^2/(2+\lambda)}(A)$.
+
+Soit $\mu_1,\ldots,\mu_r$ les valeurs propres distinctes de $A$, et $\alpha_1,\ldots,\alpha_r$ les dimensions des sous-espaces propres associés.
+
+L'équation $\dfrac{\lambda^2}{2+\lambda}=\mu_j$ ou encore $\lambda^2-\mu_j\lambda-2\mu_j$ a pour discriminant $\mu_j(8+\mu_j)$. Donc si $\mu_j\notin\{0,-8\}$, elle donne 2 valeurs distinctes $\lambda_j,\lambda'_j$, valeurs propres de $B$, et des sous-espaces propres de dimension chacun $\alpha_j$.
+
+On a donc, si $\{0,-8\}\cap\operatorname{spectre}(A)=\varnothing$, $B$ admet $2r$ valeurs propres distinctes, et des sous-espaces propres dont la somme des dimensions sera $2\sum_{j=1}^r\alpha_j$. C'est $2n\Longleftrightarrow\sum_{j=1}^r\alpha_j=n$ soit $\Longleftrightarrow A$ diagonalisable.
+
+Si 0 ou $-8$ est valeur propre de $A$, par exemple $\mu_1=0$, la somme des dimensions des sous-espaces propres de $B$ sera $2(\alpha_1+\cdots+\alpha_r)-\alpha_1$ au plus, donc strictement inférieure à $2n$.
+
+D'où
+\[
+(B\text{ diagonalisable})\Longleftrightarrow
+(A\text{ diagonalisable et }0\text{ et }-8\text{ non valeurs propres de }A).
+\]
+
+\item Notons $\chi_A(\lambda)=\det(A-\lambda I_n)$ le polynôme caractéristique de $A$.
+On sait que $A\,{}^t\!\operatorname{com}(A)=(\det A)I_n$, donc si $A$ est inversible ${}^t\!\operatorname{com}(A)=(\det A)A^{-1}$, et comme une matrice et sa transposée ont même polynôme caractéristique, on a:
+\[
+\chi_{\operatorname{com}(A)}(\lambda)=\det\bigl[(\det A)A^{-1}-\lambda I_n\bigr],
+\]
+ou encore, pour $\lambda\ne0$,
+\[
+=\det\left[(-\lambda A^{-1})\left(-\frac{\det A}{\lambda}I_n+A\right)\right]
+=(-\lambda)^n\det A^{-1}\chi_A\left(-\frac{\det A}{\lambda}\right).
+\]
+
+Posons
+\[
+\chi_A(x)=(-x)^n+a_{n-1}(-x)^{n-1}+\cdots+a_0,
+\qquad(a_0=\det A)
+\]
+on a
+\[
+\chi_{\operatorname{com}(A)}(\lambda)
+=\frac1{\det A}(-\lambda)^n\left[\left(\frac{\det A}{\lambda}\right)^n+a_{n-1}\left(\frac{\det A}{\lambda}\right)^{n-1}+\cdots+\det A\right],
+\]
+soit
+\[
+\tag{1}
+\chi_{\operatorname{com}(A)}(\lambda)
+=(-1)^n\left[(\det A)^{n-1}+a_{n-1}\lambda(\det A)^{n-2}+\cdots+a_1\lambda^{n-1}+\lambda^n\right],
+\]
+relation établie pour $\lambda\ne0$, mais comme il s'agit d'un polynôme, valable $\forall\lambda$.
+
+Si $\det A=0$, on utilise la densité de $GL_n(\mathbb C)$ dans $M_n(\mathbb C)$ et la continuité des coefficients de $\chi_{\operatorname{com}A}$ par rapport à ceux de $A$ (expression polynômiale) pour dire que le résultat (1) reste valable et donne
+\[
+\chi_{\operatorname{com}A}(\lambda)=(-1)^n(\lambda^n+a_1\lambda^{n-1}).
+\]
+
+Densité de $GL_n(\mathbb C)$ dans $M_n(\mathbb C)$: si la matrice carrée $B$ est telle que $\det B=0$, c'est que 0 est racine de $\chi_B(\lambda)=\det(B-\lambda I_n)$, mais les zéros d'un polynôme étant isolés, $\exists\alpha>0$ tel que $\forall z$, $0<|z|<\alpha\Rightarrow B-zI_n$ inversible, et
+\[
+\lim_{z\to0}(B-zI_n)=B.
+\]
+
+\item La matrice $D$ admet $n$ sous-espaces propres $E_1,\ldots,E_n$ qui sont des droites.
+Si $A$ commute avec $D$, les sous-espaces propres $E_i$ sont stables par $A$, comme ce sont des droites, ce sont les sous-espaces propres de $A$ qui est donc diagonale. Comme $A$, semblable à $D$ a le même spectre c'est que
+\[
+A=\operatorname{diag}(\sigma(1),\sigma(2),\ldots,\sigma(n))
+\]
+avec $\sigma\in\mathfrak S_n$: il y a $n!$ matrices semblables à $D$ qui commutent avec $D$.
+
+\item On suppose $x\ne0$, sinon \BellaCorrectionNote{$E=\{0\}$ est de dimension $0$}{$E=\{0\}$ n'a pas de dimension}{L'espace vectoriel nul a bien une dimension, égale à $0$.} L'ensemble des entiers $k$ tels que $\{x,f(x),\ldots,f^{(k)}(x)\}$ libre est non vide, (il contient 0), majoré par $n-1$, (il y a au plus $n$ vecteurs dans une famille libre de $E$), donc cet ensemble admet un plus grand élément $p$. La famille
+\[
+\mathcal F=\{x,f(x),\ldots,f^p(x)\}
+\]
+est libre et $\mathcal F\cup\{f^{p+1}(x)\}$ est liée donc
+\[
+f^{p+1}(x)\in\operatorname{Vect}\{x,f(x),\ldots,f^{(p)}(x)\},
+\]
+d'où si $f^{p+1}(x)=\sum_{k=0}^p\alpha_kf^k(x)$, on a
+\[
+f^{p+2}(x)=\sum_{k=0}^p\alpha_kf^{k+1}(x)\in\operatorname{Vect}(\mathcal F)
+\]
+puisque $f^{p+1}(x)\in\operatorname{Vect}(\mathcal F)$, et ainsi $f^{p+2}(x)\in\operatorname{Vect}\mathcal F$. On vérifie par récurrence sur $q$ que $f^{p+q}(x)\in\operatorname{Vect}\mathcal F$, d'où $\mathcal F$ est génératrice pour $E$: c'est une base, donc $\operatorname{card}(\mathcal F)=n\Rightarrow p=n-1$ et $\{x,f(x),\ldots,f^{n-1}(x)\}$ est une base de $E$.
+
+Si $\mathcal B=\{e_1,\ldots,e_n\}$ est une base de vecteurs propres pour les valeurs propres $\lambda_1,\ldots,\lambda_n$, le vecteur $x=\sum_{i=1}^n x_i e_i$ est cyclique si et seulement si la famille $\{x,f(x),\ldots,f^{n-1}(x)\}$ est libre vu ce qui précède. La matrice des composantes de ces vecteurs dans la base $\mathcal B$ est
+\[
+A=\begin{pmatrix}
+x_1&\lambda_1x_1&\cdots&\lambda_1^{n-1}x_1\\
+x_2&\lambda_2x_2&\cdots&\lambda_2^{n-1}x_2\\
+\vdots&\vdots&&\vdots\\
+x_n&\lambda_nx_n&\cdots&\lambda_n^{n-1}x_n
+\end{pmatrix}
+\]
+de déterminant
+\[
+\det A=(x_1x_2\cdots x_n)\det\operatorname{Van\ der\ Monde}(\lambda_1,\lambda_2,\ldots,\lambda_n).
+\]
+Donc, s'il y a une valeur propre multiple, $\det A$ nul pour tout $x$, pas de vecteur cyclique pour $f$, et si toutes les valeurs propres sont distinctes,
+\[
+\begin{aligned}
+(x\text{ cyclique})\Longleftrightarrow{}&
+(x\text{ a chaque coordonnée non nulle}\\
+&\text{ suivant chaque vecteur propre de la base }\mathcal B).
+\end{aligned}
+\]
+(Voir Chapitre 9, exercice n$^\circ$ 6 pour Van der Monde).
+
+\item Comme $A$ est nilpotente, il existe $k\in\mathbb N^*$ tel que $A^k=0$. Si $\lambda$ est une valeur propre et $x$ un vecteur propre non nul associée, on a $A^kx=\lambda^kx=0$ avec $x\ne0$, d'où $\lambda^k=0$ et $\lambda=0$ est seule valeur propre. Le polynôme caractéristique est donc $\chi_A(X)=(-X)^n$. Le théorème de Cayley-Hamilton prouve alors que $A^n=0$. Pour la suite de l'exercice, on se place dans $M_n(\mathbb C)$.
+
+Si $AP=PA$, il existe une base commune de trigonalisation pour $P$ et $A$, donc il existe $Q$ régulière telle que $Q^{-1}AQ$ soit triangulaire supérieure avec des zéros sur la diagonale, et $Q^{-1}PQ$ soit triangulaire avec $p_1\ldots p_n$ sur la diagonale. Alors $Q^{-1}(A+P)Q$ est aussi triangulaire avec $p_1,\ldots,p_n$ sur la diagonale donc $\det(A+P)=p_1\cdots p_n=\det P$, et les calculs de déterminant se font dans $\mathbb R$.
+
+\item $A=bI_n+B$, avec \BellaCorrectionNote{$B$}{b}{Le membre suivant décrit la matrice de rang $1$ ajoutée à $bI_n$; il s'agit donc de $B$, non du scalaire $b$.} matrice dont les lignes par exemple sont $a_1(a_1,\ldots,a_n)$ puis $a_2(a_1,\ldots,a_n)$ et $\ldots$, $a_n(a_1\ldots a_n)$.
+
+Si tous les $a_i$ sont nuls $A$ est l'homothétie $bI_n$.
+
+Si $\sum_{i=1}^n a_i^2\ne0$, (on est sur $\mathbb R$), $B$ de rang 1 admet 0 pour valeur propre d'ordre $n-1$, de sous-espace propre l'hyperplan d'équation
+\[
+a_1x_1+\cdots+a_nx_n=0;
+\]
+et $\sum_{i=1}^n a_i^2=\operatorname{trace}(B)$, valeur propre simple, de vecteur propre $\sum_{i=1}^n a_i e_i$ avec $(e_1\ldots e_n)$ base canonique.
+
+D'où pour $A$, $b$ valeur propre d'ordre $n-1$, vecteurs propres les $a_i e_{i_0}-a_{i_0}e_i$, (si, $a_{i_0}\ne0$), pour $i\in\{1,\ldots,n\}-\{i_0\}$; et $b+\sum_{i=1}^n a_i^2$ valeur propre simple, de vecteur propre $\sum_{i=1}^n a_i e_i$.
+
+\item Si $\mathcal B=(e_1\ldots e_n)$ est la base canonique, et $\mathcal B'$ la base des $e'_i=\alpha_i e_i$, si $u$ est l'endomorphisme de matrice $M$ dans la base $\mathcal B$ on aura
+\[
+u(e'_j)=\alpha_j u(e_j)=\alpha_j\sum_{i=1}^n\frac{\alpha_i}{\alpha_j}e_i
+=\sum_{i=1}^n\alpha_i e_i=e'_1+\cdots+e'_n.
+\]
+Donc $M$ est semblable à
+\[
+M'=\begin{pmatrix}
+1&1&\cdots&1\\
+1&1&\cdots&1\\
+\vdots&\vdots&&\vdots\\
+1&1&\cdots&1
+\end{pmatrix}
+\]
+matrice de rang 1 et de trace $n$ que l'on peut diagonaliser tout de suite.
+
+On a donc 0 valeur propre d'ordre $n-1$ de sous-espace propre l'hyperplan
+\[
+\left\{x;\sum_{i=1}^n x'_i=0\right\}
+=\left\{x;\sum_{i=1}^n\frac{x_i}{\alpha_i}=0\right\}
+\]
+(suivant la base $\mathcal B'$ ou $\mathcal B$ employée)
+
+et $n$ valeur propre simple, de sous-espace propre \BellaCorrectionNote{$\mathbb C v$}{$\mathbb R v$}{La matrice et les espaces propres sont ici sur $\mathbb C$; la droite propre est donc la droite complexe $\mathbb C v$.} avec
+\[
+v=\sum_{i=1}^n\alpha_i e_i.
+\]
+
+\item Il est clair que $T$ est linéaire de $L(E)$ dans $L(E)$.
+Soit $\lambda$ une valeur propre de $f$, $e_1$ un vecteur propre associé, et $\mathcal B=(e_1;e_2,\ldots,e_n)$ une base. On définit $g$ par $g(e_1)=e_1$ et $g(e_i)=0$ si $i\ne1$, alors $f\circ g(e_1)=\lambda e_1$ et $f\circ g(e_i)=0$, $\forall i>1$ donc $f\circ g=\lambda g$: $\lambda$ est valeur propre de $T$.
+
+Soit $\lambda$ une valeur propre de $T$, $g$ vecteur propre associé, comme $g\ne0$ il existe un vecteur $x$ tel que $g(x)\ne0$ et $T(g)=f\circ g=\lambda g$ implique $f(g(x))=\lambda(g(x))$ d'où $\lambda$ valeur propre de $f$.
+
+Pour la diagonalisation, on peut remarquer que si $P(X)\in K[X]$ on a
+\[
+P(f)\circ g=P(T)(g).
+\]
+Alors $f$ diagonalisable $\Rightarrow\exists P\in K[X]$, scindé à racines simples tel que $P(f)=0$ d'où $P(T)=0$ d'où $T$ diagonalisable; et si $T$ est diagonalisable, $\exists Q\in K[X]$ avec $Q$ scindé à racines simples et $Q(T)=0$ d'où pour tout $g$ de $L(E)$, $(Q(f))\circ g=0$, donc $Q(f)=0$, (prendre $g=\operatorname{id}_E$) et $f$ diagonalisable.
+
+\item Il est clair que $E$ est sous-espace vectoriel de $C^0([0,+\infty[,\mathbb R)$, que $E'$ est sous-espace de $E$, et que $\varphi$ est linéaire.
+
+Si $\lambda$ réel est tel qu'il existe $f$ non nulle dans $E$ vérifiant $\varphi(f)=\lambda f$, on a, pour tout $x\ge0$, $f(x+1)=\lambda f(x)$. Faire intervenir les hypothèses, c'est traduire $f\ne0$, donc calculer en $x_0$ tel que $f(x_0)\ne0$, et aller se promener vers $+\infty$, donc calculer en $x_0+2,x_0+3,\ldots$ Une récurrence immédiate prouve que $f(x_0+n)=\lambda^n f(x_0)$ et l'existence de la limite se traduit par
+\[
+\lim_{n\to+\infty}\lambda^n\text{ existe},
+\]
+(car $f(x_0)\ne0$), d'où $\lambda\in]-1,1]$.
+
+\emph{Réciproquement}: si $\lambda\in]-1,1]$, soit $f$ continue de $[0,1]$ dans $\mathbb R$ vérifiant la condition $f(1)=\lambda f(0)$, et $f$ non nulle, (de telles fonctions existent) on pose sur $]n,n+1]$, $f(x)=\lambda^n f(x-n)$. Alors $f$ est continue sur chaque $]n,n+1[$;
+\[
+\lim_{x\to(n+1)^-}f(x)=f(n+1)=\lambda^nf(1)=\lambda^{n+1}f(0),
+\]
+alors que
+\[
+\lim_{x\to(n+1)^+}f(x)=\lim_{t\to0^+}\lambda^{n+1}f(t)=\lambda^{n+1}f(0):
+\]
+il y a continuité en $n+1$, $\forall n\in\mathbb N$. On a bien $f$ continue, vérifiant $f(x+1)=\lambda f(x)$ pour tout $x$. Enfin $\lim_{x\to+\infty}f(x)$ existe et vaut 0 si $\lambda\in]-1,1[$, alors que si $\lambda=1$, on aurait $f$ continue, 1 périodique, ayant une limite en $+\infty$: ce n'est possible qu'avec $f$ constante.
+
+\emph{En résumé}
+
+$\lambda=1$ valeur propre, fonctions propres: les fonctions constantes;
+
+$\lambda\in]-1,1[$ valeur propre, fonctions propres: les fonctions construites comme indiqué.
+
+Sur $E'$, même démarche mais il faut partir de $f$ de classe $C^\infty$ sur $[0,1]$, chaque dérivée vérifiant $f^{(k)}(1)=\lambda f^{(k)}(0)$ et construire $f$ sur \BellaCorrectionNote{$[0,+\infty[$}{$\mathbb R$}{La fonction de $E'$ est définie sur $[0,+\infty[$, et la construction par intervalles $]n,n+1]$, $n\in\mathbb N$, ne définit que ce demi-axe.} par $f(x)=\lambda^nf(x-n)$ sur $]n,n+1]$. De telles fonctions existent (fonction «plateau» par exemple avec $f^{(k)}(1)=f^{(k)}(0)=0$, $\forall k\in\mathbb N$).
+
+\item Comme $\theta:M_n(\mathbb C)\longrightarrow M_n(\mathbb C)$ définie par $\theta(M)=AM-MA$ est linéaire, l'ensemble cherché est $\ker\theta$, c'est un sous-espace de $M_n(\mathbb C)$. Les valeurs propres de $A$ étant distinctes, $A$ est diagonalisable. Avec $P$ régulière telle que $P^{-1}AP=A'=\operatorname{diag}(\lambda_1,\ldots,\lambda_n)$ et $M'=P^{-1}MP$, on a
+\[
+(A\text{ et }M\text{ commutent})\Longleftrightarrow(A'\text{ et }M'\text{ commutent}).
+\]
+Or le terme de la $i$ème ligne $j$ème colonne de $A'M'-M'A'$ est $\lambda_i m'_{ij}-m'_{ij}\lambda_j=(\lambda_i-\lambda_j)m'_{ij}$, donc
+\[
+(A'M'=M'A')\Longleftrightarrow(\forall i\ne j,\ m'_{ij}=0),
+\]
+puisque $\lambda_i-\lambda_j\ne0$.
+
+Il reste les $n$ coefficients diagonaux indépendants donc $\ker\theta$ est de dimension $n$. Comme $I,A,A^2,\ldots,A^{n-1}$ sont dans $\ker\theta$, il reste à justifier leur indépendance pour conclure. C'est équivalent à l'indépendance de $I,A',A'^2,\ldots,A'^{n-1}$, or une relation du type
+\[
+\sum_{k=0}^{n-1}\alpha_k A'^k=0
+\]
+se traduit par les $n$ équations
+\[
+\alpha_0+\lambda_i\alpha_1+\lambda_i^2\alpha_2+\cdots+\lambda_i^{n-1}\alpha_{n-1}=0,
+\quad i=1,\ldots,n,
+\]
+avec les $\lambda_i$ distincts. On a un système homogène, de matrice inversible, (Van der Monde) d'où les $\alpha_k$ nuls.
+
+\item Les deux polynômes caractéristiques possibles de $f$ sont $(2-x)^2(1+x)$ et $(2-x)(1+x)^2$. La division de $x^n$ par le polynôme caractéristique $\chi_f(x)$ va fournir, pour $n\ge3$, l'expression de $f^n$ à l'aide de $I,f,f^2$.
+
+Traitons le cas de $\chi_f(x)=(2-x)^2(1+x)$.
+
+Pour $n\ge3$, soit
+\[
+x^n=\chi_f q_n+a_nx^2+b_nx+c_n.
+\]
+En calculant la valeur prise pour $-1$ et 2, ainsi que dans la dérivée pour 2, il vient:
+\[
+\begin{cases}
+(-1)^n=a_n-b_n+c_n,\\
+2^n=4a_n+2b_n+c_n,\\
+n\,2^{n-1}=4a_n+b_n,
+\end{cases}
+\Longleftrightarrow
+\begin{cases}
+2^n-4(-1)^n=6b_n-3c_n,\\
+2^n-n\,2^{n-1}=b_n+c_n,\\
+n\,2^{n-1}=4a_n+b_n.
+\end{cases}
+\]
+d'où
+\[
+b_n=\frac{2^{n+2}-3n2^{n-1}-4(-1)^n}{9},
+\qquad
+c_n=\frac{5\cdot2^n-6n\cdot2^{n-1}+4(-1)^n}{9}
+\]
+et
+\[
+a_n=(-1)^n+b_n-c_n
+=\frac{-2^n+3n\,2^{n-1}+(-1)^n}{9}
+\]
+mais sans aucune garantie.
+
+\item Soit $u$ vérifiant la propriété, $\lambda$ une valeur propre, (existe car racine du polynôme caractéristique) et $E_\lambda=\ker(u-\lambda\operatorname{id}_E)$ le sous-espace propre associé, il existe $F$ sous-espace de $E$ stable par $u$, tel que $E=E_\lambda\oplus F$.
+
+L'endomorphisme induit, $\widetilde u$, par $u$ sur $F$ admet à son tour des valeurs propres, (on est en dimension finie sur $\mathbb C$), mais si $\mu$ est valeur propre de $\widetilde u$ on a $\mu\ne\lambda$, (l'existence de $x$ dans $F$ avec $\widetilde u(x)=u(x)=\lambda x$ impliquerait $x\in E_\lambda$ d'où $x\in E_\lambda\cap F=\{0\}$, et le sous-espace $\ker(\widetilde u-\mu\operatorname{id}_F)\subset\ker(u-\mu\operatorname{id}_E)$ en fait, mais si $x\in\ker(u-\mu\operatorname{id}_E)$, avec $x=y+z$ décomposé dans $E_\lambda\oplus F$ on a
+\[
+u(x)=\mu x=\mu y+\mu z=u(y)+\widetilde u(z)=\lambda y+\widetilde u(z)
+\]
+avec $\lambda y\in E_\lambda$ et $\widetilde u(z)\in F$ d'où $\widetilde u(z)=\mu z$ donc $z\in\ker(\widetilde u-\mu\operatorname{id}_F)$ et $\mu y=\lambda y\Rightarrow y=0$ car $\lambda\ne\mu$. Finalement $x=z$ est dans $\ker(\widetilde u-\mu\operatorname{id}_F)$.
+
+En notant $E_\mu=\ker(u-\mu\operatorname{id}_E)$ on a $E=E_\lambda\oplus E_\mu\oplus$ (un supplémentaire stable)... et on itère, (ou on raisonne par récurrence sur $\dim E$) finalement $u$ est diagonalisable.
+
+\emph{Réciproquement}, soit $u$ diagonalisable, $\mathcal B=\{e_1,\ldots,e_p\}$ base de vecteurs propres de $E$. Si $F$ est sous-espace stable, de base $\{f_1,\ldots,f_p\}$, le théorème de la base incomplète donne une famille $\{e_{i_1},\ldots,e_{i_{n-p}}\}$ extraite de $\mathcal B$ qui complète $\{f_1,\ldots,f_p\}$ en une base de $E$. Mais alors
+\[
+G=\operatorname{Vect}(e_{i_1},\ldots,e_{i_{n-p}})
+\]
+est supplémentaire de $F$, stable par $u$.
+
+\end{enumerate}

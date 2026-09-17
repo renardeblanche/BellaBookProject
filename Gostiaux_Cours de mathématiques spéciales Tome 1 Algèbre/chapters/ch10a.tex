@@ -1,0 +1,753 @@
+\chapter{Réduction des endomorphismes}
+\origpage{339--358}
+
+L'utilisation des démarches itératives, rendues encore plus importantes par l'informatique, conduit, dans le cadre des endomorphismes $u$ sur les espaces vectoriels $E$, à évaluer les puissances $u^n$ des opérateurs linéaires, ainsi que des puissances du type $(u+v)^n$. Mais dans ce cas, si $u$ et $v$ ne commutent pas, le calcul devient inextricable. Aussi est-il intéressant de savoir si on peut trouver des sous-espaces $F$ de $E$ sur lesquels $u$ commuterait avec tout opérateur linéaire de $F$, c'est-à-dire sur lequel $u$ agirait comme une homothétie, (nous allons justifier que, dans l'anneau $L(E,E)$, le centre est formé des homothéties). C'est cette démarche qui est à l'origine de l'introduction des notions de valeurs propres et de vecteurs propres.
+
+Avant autre chose, justifions donc le
+
+\medskip\noindent\textsc{Théorème 10.1.} --- \emph{Soit un espace vectoriel $E$ sur un corps $K$. Le centre de l'anneau $\operatorname{Hom}(E)$ des endomorphismes de $E$ est l'ensemble des homothéties.}
+
+\subsection*{10.2.}
+On appelle homothétie de rapport $\lambda\in K$, l'application linéaire $h_\lambda$ définie par :
+\[
+\forall x\in E,\qquad h_\lambda(x)=\lambda x.
+\]
+Soit $B=(e_i)_{i\in I}$ une base de $E$, (Théorème 6.71 pour l'existence).
+
+Soit $f$ dans le centre de $\operatorname{Hom}(E)$, (c'est-à-dire l'ensemble des éléments qui commutent pour le produit de composition, avec tous les autres endomorphismes).
+
+Pour $j\in I$ fixé, on décompose $f(e_j)$ en
+\[
+f(e_j)=\sum_{i\in I}\alpha_{ij}e_i,
+\]
+les $(\alpha_{ij})_{i\in I}$ étant presque tous nuls, si $\operatorname{card}I$ est infini, (Théorème 6.75).
+
+Soit alors $g\in\operatorname{Hom}(E)$ définie par $g(e_j)=e_j$ et $\forall i\ne j$, $g(e_i)=0$, (on a vu qu'une application linéaire est déterminée par la donnée des images des vecteurs d'une base, théorème 6.77). Comme $f\circ g=g\circ f$, en particulier
+\[
+f\circ g(e_j)=f(e_j)=\sum_{i\in I}\alpha_{ij}e_i
+=g(f(e_j))=\sum_{i\in I}\alpha_{ij}g(e_i)=\alpha_{jj}e_j
+\]
+d'où, (unicité de la décomposition d'un vecteur dans une base), $\forall i\ne j$, $\alpha_{ij}=0$, et donc $f(e_j)=\alpha_{jj}e_j$.
+
+Si $\operatorname{card}I\ge2$, avec $j\ne k$ dans $I$ et $\alpha_{jj},\alpha_{kk}$ tels que $f(e_k)=\alpha_{kk}e_k$, en considérant $g$ définie par $g(e_j)=e_k$, $g(e_k)=e_j$ et $g(e_i)$ est n'importe quoi, 0 par exemple, pour $i$ dans $I-\{j,k\}$, on aura $(f\circ g)(e_j)=f(e_k)=\alpha_{kk}e_k$ et $(g\circ f)(e_j)=g(\alpha_{jj}e_j)=\alpha_{jj}e_k$, d'où $\alpha_{jj}=\alpha_{kk}$.
+
+En notant $\lambda$ cette valeur commune de tous les scalaires $\alpha_{jj}$, on a donc, $\forall i\in I$, $f(e_i)=\lambda e_i$, résultat vrai si $\operatorname{card}I=1$.
+
+Il est alors facile de voir que, $\forall x\in E$, $f(x)=\lambda x$, donc $f$ est bien une homothétie de rapport $\lambda$. Comme réciproquement, une homothétie $h_\lambda$ commute avec toute application linéaire, (vérification immédiate), on a bien le centre de $\operatorname{Hom}(E)$ constitué des homothéties. \bookend
+
+\medskip\noindent\textsc{Remarque 10.3.} --- Il est parfois utile de savoir que $h$ linéaire de $E$ dans $E$ est une homothétie si et seulement si, $\forall x\in E$, $\exists\lambda_x\in K$, $h(x)=\lambda_x\cdot x$.
+
+La justification du fait que $\lambda_x$ est indépendant de $x$ s'inspirant de la démonstration précédente.
+
+\BellaSection{1. Valeurs spectrales, propres, vecteurs propres}
+
+\medskip\noindent\textsc{Définition 10.4.} --- \emph{Soit $E$ un espace vectoriel sur un corps $K$ et $u$ un endomorphisme de $E$, appelé encore opérateur. Un scalaire $\lambda$ de $K$ est une valeur spectrale de $u$ si et seulement si \BellaCorrectionNote{$u-\lambda\,\mathrm{id}_E$}{$u=-\lambda\,\mathrm{id}_E$}{La condition porte sur la non-bijectivité de $u-\lambda\,\mathrm{id}_E$; l'égalité imprimée rendrait la définition incompatible avec la phrase suivante et avec tout le développement du chapitre.} est non bijective, et $\lambda\in K$ est une valeur propre de $u$ si et seulement si $u-\lambda\,\mathrm{id}_E$ est non injective.}
+
+Toute valeur propre est donc spectrale, la réciproque étant vraie en dimension finie, (corollaire 6.85) car alors pour un endomorphisme les propriétés d'injectivité, de surjectivité et de bijectivité sont équivalentes.
+
+\medskip\noindent\textsc{Définition 10.5.} --- \emph{Soit $u$ un opérateur linéaire \BellaCorrectionNote{sur un espace vectoriel sur $K$}{vectoriel sur $K$}{L'expression imprimée omet l'espace sur lequel agit l'opérateur; le contexte et la définition précédente imposent ce complément.}, on appelle spectre de $u$, l'ensemble $\operatorname{Sp}(u)$ des valeurs spectrales.}
+
+Nous allons, dans ce chapitre, nous consacrer à l'étude des valeurs propres, celle des valeurs spectrales étant d'un domaine plus élevé.
+
+\medskip\noindent\textsc{Définition 10.6.} --- \emph{Soit $u$ un opérateur linéaire sur $E$ vectoriel sur $K$, et $\lambda$ une valeur propre de $u$. On appelle sous-espace propre de $u$ pour la valeur propre $\lambda$ le noyau \BellaCorrectionNote{$\operatorname{Ker}(u-\lambda\,\mathrm{id}_E)$}{$\operatorname{Ker}(u-\mathrm{id}_E)$}{Le facteur $\lambda$ manque dans l'impression; sans lui le sous-espace défini ne dépendrait pas de la valeur propre annoncée.}. Les vecteurs de ce noyau sont les vecteurs propres associés à $\lambda$.}
+
+On a donc :
+
+\medskip\noindent\textsc{Remarque 10.7.} --- $(\lambda\text{ propre de }u)\Longleftrightarrow(\exists x\ne0,\ x\in E,\ u(x)=\lambda x)$.
+
+Cette remarque est fondamentale. Par exemple, elle permet d'obtenir le résultat suivant : si
+\[
+P(X)=\sum_{n=0}^p a_nX^n
+\]
+est un polynôme de $K[X]$, tel que l'endomorphisme
+\[
+P(u)=\sum_{n=0}^p a_nu^n
+\]
+est nul, (avec $u^n=u\circ u\circ\cdots\circ u$, $n$ fois), les valeurs propres $\lambda$ de $u$ dans $K$ doivent être des racines de $P$, (pas forcément toutes les..., il y a une différence entre un article indéfini et un article défini) car, avec $x\ne0$ tel que $u(x)=\lambda x$ on vérifie aisément que $u^n(x)=\lambda^nx$, d'où
+\[
+P(u)(x)=0=\sum_{n=0}^pa_n\lambda^nx
+\]
+soit $P(\lambda)\cdot x=0$ et comme $x\ne0$, c'est que $P(\lambda)=0$.
+
+\medskip\noindent\textsc{Théorème 10.8.} --- \emph{Soit $u$ un endomorphisme de $E$ vectoriel sur $K$. Des sous-espaces propres, $E_1,\ldots,E_n$ en nombre fini, associés à des valeurs propres distinctes, sont en somme directe.}
+
+On va procéder par récurrence sur $n$, en commençant par vérifier la propriété pour $n=2$.
+
+Soient $E_1$ et $E_2$ les noyaux de \BellaCorrectionNote{$u-\lambda_1\,\mathrm{id}$ et $u-\lambda_2\,\mathrm{id}$}{$u-\lambda\,\mathrm{id}$ et $u-\lambda\,\mathrm{id}$}{La phrase suivante utilise explicitement les deux valeurs propres distinctes $\lambda_1$ et $\lambda_2$; les indices ont été omis à l'impression.}. Il faut vérifier que $E_1\cap E_2=\{0\}$, (définition 6.45). Or si $x\in E_1\cap E_2$ on a $u(x)=\lambda_1x=\lambda_2x$, d'où $(\lambda_1-\lambda_2)x=0$ avec $\lambda_1\ne\lambda_2$ donc $x=0$ : on a bien $E_1$ et $E_2$ en somme directe.
+
+On suppose le résultat vrai pour $n-1$ sous-espaces propres associés à des valeurs propres distinctes de $u$, et soient $\lambda_1,\ldots,\lambda_n$, $n$ valeurs propres distinctes de $u$, et $E_1,\ldots,E_n$ les sous-espaces propres associés. Pour justifier qu'ils sont en somme directe, il faut, (Théorème 6.51) vérifier que, $\forall i\in\{1,\ldots,n\}$,
+\[
+E_i\cap\left(\sum_{\substack{j=1\\j\ne i}}^nE_j\right)=\{0\}.
+\]
+Soit $x$ dans cette intersection, $x\in E_i$ d'où $u(x)=\lambda_ix$ et d'autre part
+\[
+x\in\sum_{\substack{j=1\\j\ne i}}^nE_j
+\]
+donc il existe des $x_j$ dans les $E_j$ tels que
+\[
+x=\sum_{\substack{j=1\\j\ne i}}^nx_j.
+\]
+Par linéarité,
+\[
+u(x)=\sum_{\substack{j=1\\j\ne i}}^nu(x_j)
+\]
+avec $u(x_j)=\lambda_jx_j$.
+
+On a donc
+\[
+\lambda_ix=\sum_{\substack{j=1\\j\ne i}}^n\lambda_jx_j
+\]
+mais
+\[
+\lambda_ix=\lambda_i\sum_{\substack{j=1\\j\ne i}}^nx_j
+\]
+d'où l'égalité
+\[
+\sum_{\substack{j=1\\j\ne i}}^n(\lambda_i-\lambda_j)x_j=0.
+\]
+Mais comme les $(E_j)_{j=1\ldots n,\ j\ne i}$ sont en somme directe, (hypothèse de récurrence), chaque $(\lambda_i-\lambda_j)x_j$ est nul (Théorème 6.51) et comme $\lambda_i-\lambda_j\ne0$, (valeurs propres distinctes) c'est que chaque $x_j$ est nul d'où finalement $x=0$. \bookend
+
+Le plus souvent, cette somme directe ne donne pas l'espace entier d'où la définition suivante :
+
+\medskip\noindent\textsc{Définition 10.9.} --- \emph{Un endomorphisme $u$ sur un espace vectoriel $E$ est dit diagonalisable si et seulement si $E$ est somme directe d'un nombre fini de \BellaCorrection{sous-espaces propres}{sous-espace propres}.}
+
+Comme les sous-espaces propres sont forcément en somme directe, cette définition ne fait que préciser le fait que cette somme directe est l'espace entier.
+
+Elle n'est pas pleinement satisfaisante. En effet, on peut remarquer que si $u$ est diagonalisable, avec
+\[
+E=\bigoplus_{i=1}^nE_i,
+\]
+où $E_i=\operatorname{Ker}(u-\lambda_i\mathrm{id})$ est le sous-espace propre associé à la valeur propre $\lambda_i$, si $B_i$ est une base de $E_i$,
+\[
+B=\bigcup_{i=1}^nB_i
+\]
+est une base de $E$, (Théorème 6.81) formée de vecteurs propres, et pour beaucoup d'applications on aurait pu prendre comme définition :
+\[
+(u\text{ diagonalisable})\Longleftrightarrow(\text{existence d'une base de vecteurs propres}).
+\]
+Mais ceci ne conviendrait pas pour les polynômes d'endomorphismes... s'il y a une infinité de valeurs propres distinctes.
+
+Avant d'abandonner ce sujet, un dernier mot : ce cas existe : prendre $E$ vectoriel dénombrable, $B=(e_n)_{n\in\mathbb N}$ une base et définir l'endomorphisme $u$ par $u(e_n)=ne_n$ par exemple : la base $B$ est une base de vecteurs propres et comme on a une infinité de valeurs propres distinctes, on ne peut pas avoir $E$ somme directe d'un nombre fini de sous-espaces propres distincts. Pour réaliser la situation décrite, on peut prendre $E=\mathbb R[X]$ et définir $u$ par : $P(X)\longmapsto Q(X)$ avec $Q(X)=XP'(X)$.
+
+Travaillons dans ce qui suit avec la définition 10.9. Le lecteur curieux pourra vérifier quels résultats restent valables avec la 2ème définition.
+
+\medskip\noindent\textsc{Théorème 10.10.} --- \emph{Soit $u$ un endomorphisme diagonalisable de $E$ et $F$ un sous-espace de $E$, stable par $u$. Alors l'endomorphisme $\bar u$ induit par $u$ sur $F$ est aussi diagonalisable.}
+
+\subsection*{10.11.}
+Rappelons que $\bar u$ est défini de $F$ dans $F$ par $\bar u(x)=u(x)$ alors que la restriction, $u|_F$ serait l'application de $F$ dans $E$ définie par $u|_F(x)=u(x)$.
+
+Soient $E_1,\ldots,E_n$ les sous-espaces propres distincts de $u$, associés aux valeurs propres distinctes $\lambda_1,\ldots,\lambda_n$ de $u$, tels que
+\[
+E=\bigoplus_{i=1}^nE_i.
+\]
+Soit $x\in F$, comme $x\in E$, $\exists$ des $x_i$ dans les $E_i$, tels que
+\[
+x=\sum_{i=1}^nx_i.
+\]
+En fait les $x_i$ sont aussi dans $F$. En prenant les images successives de l'égalité $x=x_1+x_2+\cdots+x_n$ par $u$, et comme $u(x_i)=\lambda_ix_i$ on obtient le système
+\[
+\tag{I}
+\left\{
+\begin{aligned}
+x&=x_1+x_2+\cdots+x_n,\\
+u(x)&=\lambda_1x_1+\lambda_2x_2+\cdots+\lambda_nx_n,\\
+u^2(x)&=(\lambda_1)^2x_1+\cdots+(\lambda_n)^2x_n,\\
+&\ \vdots\\
+u^{n-1}(x)&=(\lambda_1)^{n-1}x_1+\cdots+(\lambda_n)^{n-1}x_n,
+\end{aligned}
+\right.
+\]
+qui se \BellaCorrection{résout}{résoud} en :
+\[
+\tag{II}
+x_i=
+\frac{
+\begin{vmatrix}
+1&\cdots&1&x&1&\cdots&1\\
+\lambda_1&\cdots&\lambda_{i-1}&u(x)&\lambda_{i+1}&\cdots&\lambda_n\\
+\vdots&&\vdots&\vdots&\vdots&&\vdots\\
+\lambda_1^{n-1}&\cdots&\lambda_{i-1}^{n-1}&u^{n-1}(x)&\lambda_{i+1}^{n-1}&\cdots&\lambda_n^{n-1}
+\end{vmatrix}
+}{\det V(\lambda_1,\ldots,\lambda_n)},
+\]
+le numérateur étant un « déterminant vecteur » que l'on développe suivant la $i$ème colonne. (Voir Ch. 9, exercice 6 pour Van der Monde).
+
+(Pour justifier ceci, si $B=(e_k)_{k\in K}$ est une base de $E$, et si les $\mu_k$ sont les formes coordonnées associées dans le dual, (voir 6.109) en prenant l'image de (I) par $\mu_k$ on obtient un système linéaire classique qui donnera la $k$ième coordonnée $\mu_k(x_i)$ par la valeur obtenue dans (II) en remplaçant la colonne de vecteurs par leurs $k$ième coordonnées respectives, voir 9.55).
+
+Il en résulte que
+\[
+x_i\in\operatorname{Vect}(x,u(x),u^2(x),\ldots,u^{n-1}(x))\subset F
+\]
+car $F$ est stable par $u$ et $x\in F$. Donc
+\[
+x=\sum_{i=1}^nx_i\qquad\text{avec }x_i\in F\cap E_i,
+\]
+d'où
+\[
+F=\sum_{i=1}^n(F\cap E_i).
+\]
+Cette somme est directe car
+\[
+(F\cap E_i)\cap\left(\sum_{\substack{j=1\\j\ne i}}^n(F\cap E_j)\right)
+\subset E_i\cap\left(\sum_{\substack{j=1\\j\ne i}}^nE_j\right)=\{0\}.
+\]
+D'où $\bar u$ est diagonalisable. \bookend
+
+\medskip\noindent\textsc{Remarque 10.12.} --- Quand on écrit
+\[
+F=\bigoplus_{j=1}^n(F\cap E_j),
+\]
+certains $F\cap E_j$ peuvent être réduits à $\{0\}$.
+
+\medskip\noindent\textsc{Remarque 10.13.} --- Le résultat précédent, (et le suivant) restent valables avec la définition élargie de diagonalisable.
+
+\medskip\noindent\textsc{Théorème 10.14.} --- \emph{Soient $u$ et $v$ deux endomorphismes qui commutent. Tout sous-espace propre de l'un est stable par l'autre.}
+
+En effet, si $\lambda$ est valeur propre de $u$, et si $x\in\operatorname{Ker}(u-\lambda\mathrm{id})$ on a
+\[
+u(v(x))=v(u(x))=v(\lambda x)=\lambda v(x)
+\]
+car $v$ est linéaire donc $(u-\lambda\mathrm{id})(v(x))=0$, soit $v(x)\in\operatorname{Ker}(u-\lambda\mathrm{id})$. \bookend
+
+\medskip\noindent\textsc{Corollaire 10.15.} --- \emph{Si $u$ et $v$ sont deux endomorphismes de $E$ diagonalisables qui commutent, il existe une base commune de diagonalisation.}
+
+Car si
+\[
+E=\bigoplus_{i=1}^nE_i
+\]
+avec les $E_i$ sous-espaces propres de $u$, comme $u$ et $v$ commutent, $E_i$ est stable par $v$, et comme $v$ est diagonalisable, $v_i$ induit par $v$ sur $E_i$ est diagonalisable, (10.10) donc il existe une base $B_i$ de $E_i$, formée de vecteurs propres pour $v_i$, donc pour $v$. Comme on est dans $E_i$, sous-espace propre de $u$, tous les vecteurs de $B_i$ sont aussi vecteurs propres pour $u$, et finalement
+\[
+B=\bigcup_{i=1}^nB_i
+\]
+est une base de vecteurs propres pour $u$, et pour $v$. \bookend
+
+On appelle \emph{base de diagonalisation} pour $u$ diagonalisable, toute base formée de vecteurs propres.
+
+Ces premiers résultats sur les vecteurs propres montrent l'importance de la commutativité entre opérateurs linéaires, et de la notion de stabilité des sous-espaces. Avant de traiter le cas des espaces vectoriels de dimension finie, justifions le
+
+\medskip\noindent\textsc{Théorème 10.16.} --- \emph{Un hyperplan $H$ de $E$ vectoriel est stable par un endomorphisme $u$ si et seulement si $H$ est le noyau d'une forme linéaire, $\varphi$, vecteur propre non nul de ${}^tu$.}
+
+Rappelons que si $u\in L(E,F)$, ${}^tu\in L(F^*,E^*)$ est défini par ${}^tu(\varphi)=\varphi\circ u$, si $\varphi$ est dans le dual $F^*$ de $F$, (définition 6.100).
+
+Soit $H$ un hyperplan de $E$, stable par $u$ et $\varphi$ dans $E^*$ une forme linéaire ayant $H$ pour noyau. (Si $\{a\}$ est une base d'un supplémentaire de $H$ dans $E$, et $C$ une base de $H$, $B=C\cup\{a\}$ est une base de $E$ et on peut définir $\varphi$ par $\varphi(a)=1$ et $\varphi$ (tout vecteur de $C$) $=0$).
+
+Alors, $\forall x\in H$, $u(x)\in H$ donc $\varphi(x)=0\Rightarrow\varphi(u(x))=0$. Avec $E=H\oplus K a$, ($K$ corps de base) on a $\varphi(a)\ne0$, sinon $\operatorname{Ker}\varphi=E$, donc
+\[
+{}^tu(\varphi)(a)=\varphi(u(a))=\frac{\varphi(u(a))}{\varphi(a)}\varphi(a).
+\]
+Les deux formes linéaires ${}^tu(\varphi)$ et
+\[
+\frac{\varphi(u(a))}{\varphi(a)}\varphi
+\]
+prennent donc la même valeur sur $a$, mais aussi sur $H$, et là, elles s'annulent, donc elles sont égales : avec
+\[
+\lambda=\frac{\varphi(u(a))}{\varphi(a)}
+\]
+on a ${}^tu(\varphi)=\lambda\varphi$ : $\varphi$ est vecteur propre pour la valeur propre $\lambda$ de ${}^tu$.
+
+\emph{Réciproquement} soit $\varphi$ un vecteur propre, dans $E^*$, de ${}^tu$, et $H=\operatorname{Ker}\varphi$, avec $\varphi\ne0$ bien sûr, alors l'hyperplan $H$ est stable pour $u$ car si $x\in H$, on a :
+\[
+\varphi(u(x))={}^tu(\varphi)(x)=(\lambda\varphi)(x)=\lambda\cdot\varphi(x)=0
+\]
+car $x\in\operatorname{Ker}\varphi$.
+
+Ici $\lambda$ est la valeur propre associée à $\varphi$ vecteur propre de ${}^tu$. \bookend
+
+\BellaSection{2. Étude en dimension finie}
+
+Soit $E$ espace vectoriel de dimension finie, $n$, sur un corps $K$. On sait alors que, pour un endomorphisme de $E$, les notions d'injectivité, de surjectivité ou de bijectivité sont équivalentes (corollaire 6.85).
+
+Donc le scalaire $\lambda$ de $K$ sera valeur propre de $u$ si et seulement si c'est une valeur spectrale, (définition 10.4) et c'est pourquoi, en dimension finie, le spectre d'un opérateur devient l'ensemble de ses valeurs propres.
+
+Soit alors $B=\{e_1,\ldots,e_n\}$ une base de $E$ et $U$ la matrice de $u$ dans cette base. Celle de $u-\lambda\mathrm{id}_E$ est $U-\lambda I_n$, $I_n$ matrice diagonale unité d'ordre $n$, et
+\[
+(\lambda\text{ valeur propre de }u)\Longleftrightarrow(\det(U-\lambda I_n)=0),
+\]
+puisque les matrices non inversibles, donc associées à des applications non bijectives, sont celles de déterminant nul, voir Théorème 9.42.
+
+Cette expression $\det(U-\lambda I_n)$ est indépendante du choix de la base $B$ car si $B'$ est une autre base, et si $P$ est la matrice de passage de $B$ à $B'$, la matrice $U'$ de $u$ dans la nouvelle base $B'$ est $U'=P^{-1}UP$, (8.23 et 8.25). Elle conduit à la relation :
+\[
+(\lambda\text{ valeur propre de }u)\Longleftrightarrow(\det(U'-\lambda I_n)=0),
+\]
+or
+\[
+U'-\lambda I_n=P^{-1}UP-\lambda P^{-1}I_nP=P^{-1}(U-\lambda I_n)P
+\]
+d'où
+\[
+\det(U'-\lambda I_n)=\det(P^{-1}(U-\lambda I_n)P)=\det P^{-1}\det(U-\lambda I_n)\det P
+\]
+et comme $\det P^{-1}\det P=1$ dans $K$, commutatif, il reste
+\[
+\det(U'-\lambda I_n)=\det(U-\lambda I_n).
+\]
+
+Cette expression est un polynôme en $\lambda$, de degré $n$.
+
+En effet, si $u_{ij}$ désigne le terme général, ($i$ème ligne, $j$ème colonne) de $U$, en notant $V=U-\lambda I_n$ on aura $v_{ii}=u_{ii}-\lambda$ et si $i\ne j$, $v_{ij}=u_{ij}$ donc $v_{ij}$ est un polynôme de degré 1 ou 0 en $\lambda$, et en utilisant l'expression développée d'un déterminant, on constate que
+\[
+\det(U-\lambda I_n)=\det V=\sum_{\sigma\in\mathfrak S_n}\varepsilon_\sigma
+v_{1,\sigma(1)}v_{2,\sigma(2)}\cdots v_{n,\sigma(n)}
+\]
+est une somme de $n!$ termes, (indexés par les éléments du groupe symétrique des permutations de $\{1,\ldots,n\}$), chaque terme étant un polynôme en $\lambda$ de degré $n$ au plus : on a bien un polynôme de degré $n$ au plus.
+
+On peut facilement préciser les coefficients des termes de degré $n$ et $n-1$. En effet, si $\sigma\ne\mathrm{id}$, $\exists i\in\{1,\ldots,n\}$ tel que $\sigma(i)=j$ avec $j\ne i$. Mais alors dans le terme $\varepsilon_\sigma v_{1\sigma(1)}\cdots v_{i\sigma(i)}\cdots v_{n\sigma(n)}$ le facteur $v_{ij}=u_{ij}$ est de degré 0 en $\lambda$, le produit est de degré $n-1$ au plus; mais en fait $v_{ij}$ est aussi la contribution de la $j$ème colonne : comme $\sigma$ est une bijection on ne peut pas avoir $\sigma(j)=j$, donc le terme $v_{j\sigma(j)}$ ne peut être $v_{jj}$, il est du type $v_{jk}$ avec $k\ne j$, donc lui aussi de degré 0 en $\lambda$.
+
+Finalement, si $\sigma\ne\mathrm{id}$, $\varepsilon_\sigma v_{1\sigma(1)}\cdots v_{n\sigma(n)}$ est de degré $n-2$ au plus. Les termes de degré $n$ et $n-1$ du polynôme $\det(U-\lambda I_n)$ proviennent donc de
+\[
+\varepsilon_{\mathrm{id}}v_{11}v_{22}\cdots v_{nn}=(u_{11}-\lambda)(u_{22}-\lambda)\cdots(u_{nn}-\lambda)
+\]
+et valent donc $(-\lambda)^n$ et $(-\lambda)^{n-1}(u_{11}+u_{22}+\cdots+u_{nn})$ respectivement.
+
+\subsection*{10.17.}
+On sait que
+\[
+\sum_{i=1}^nu_{ii}
+\]
+est ce qu'on appelle la trace de la matrice $U$, ou encore de l'endomorphisme $u$, puisque le polynôme étant indépendant de la base utilisée, on aura le même coefficient de $\lambda^{n-1}$ dans une autre base.
+
+Enfin, pour $\lambda=0$, $\det(U-\lambda I_n)=\det U$, et c'est le terme constant du polynôme. On a finalement obtenu le résultat suivant :
+
+\medskip\noindent\textsc{Théorème 10.18.} --- \emph{Soit $u$ un endomorphisme de $E\simeq K^n$. Les valeurs propres $\lambda$ de $u$ sont les racines, dans $K$, du polynôme noté $\chi_u(\lambda)$ défini par $\chi_u(\lambda)=\det(U-\lambda I_n)$, $U$ étant la matrice de $u$ dans une base $B$ de $E$, et ce polynôme étant indépendant de la base.}
+
+\medskip\noindent\textsc{Définition 10.19.} --- \emph{Ce polynôme $\chi_u(\lambda)=\det(U-\lambda I_n)$ est le polynôme caractéristique de l'endomorphisme $u$.}
+
+C'est une notion attachée aux espaces vectoriels de dimension finie.
+
+On a
+\[
+\chi_u(\lambda)=(-1)^n\lambda^n+(-1)^{n-1}\operatorname{trace}(u)\lambda^{n-1}+\cdots+\det u.
+\]
+Certains préfèrent prendre pour polynôme caractéristique le polynôme unitaire $\det(\lambda I_n-U)$, ce n'est qu'une question de convention.
+
+Du fait de l'existence de ce polynôme caractéristique, il faut comprendre qu'une grande injustice se prépare. En dimension infinie, le fait d'avoir des valeurs propres va être une faveur accordée à certains endomorphismes (allez donc trouver une valeur propre de $u:\mathbb R[X]\longmapsto\mathbb R[X]$ défini par $P\longmapsto Q$ avec $Q(X)=XP(X)$), alors qu'en dimension finie pour peu \BellaCorrection{que le corps}{que que le corps} soit algébriquement clos, ($\mathbb C$ par exemple), tous les endomorphismes auront droit à leurs valeurs propres, racines de leur polynôme caractéristique !
+
+Voyons maintenant comment chercher les vecteurs propres.
+
+On suppose toujours une base $B=\{e_1,\ldots,e_n\}$ de $E$ fixée, et $U$ désigne la matrice de $u$ dans la base $B$.
+
+Soit $\lambda$ une racine du polynôme caractéristique $\chi_u(\lambda)=\det(U-\lambda I_n)$. La matrice $U-\lambda I_n$ est non injective, et son noyau est le sous-espace propre de $u$ pour la valeur propre $\lambda$.
+
+Il est donc de dimension $n-\operatorname{rang}(U-\lambda I_n)$ (corollaire 6.85).
+
+Donc, connaissant $\lambda$, on déterminera $r=\operatorname{rang}(U-\lambda I_n)$, pour connaître la dimension du sous-espace propre $\operatorname{Ker}(u-\lambda\mathrm{id}_E)$, et si on veut que
+\[
+x=\sum_{i=1}^nx_ie_i
+\]
+soit vecteur propre, on doit résoudre le système linéaire
+\[
+(U-\lambda I_n)
+\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}=0
+\]
+pour connaître la matrice $X$ des composantes de $x$ dans la base $B$.
+
+Voir en 9.47 et suivants, la résolution d'un tel système.
+
+\medskip\noindent\textbf{Quelques propriétés du polynôme caractéristique et des valeurs propres}
+
+\medskip\noindent\textsc{Remarque 10.20.} --- On peut calculer le coefficient de $\lambda^{n-2}$. En effet, en reprenant le calcul du début du paragraphe pour $\sigma\ne\mathrm{id}$, dans
+\[
+\varepsilon_\sigma v_{1\sigma(1)}\cdots v_{n\sigma(n)},
+\]
+avec $i$ tel que $j=\sigma(i)$ soit $\ne i$ on a vu que $v_{ij}=u_{ij}$ est de degré 0 en $\lambda$ ainsi que $v_{j\sigma(j)}=v_{jk}$ avec $k\ne j$.
+
+Mais si $\sigma(j)\ne i$, (et $\ne j$ aussi, sinon, $\sigma(j)=j\Rightarrow j=\sigma(j)=\sigma(i)$ exclu car $\sigma$ bijection) en posant $\sigma(j)=k$, on a le terme $u_{jk}$ qui est la contribution de la $k$ème colonne au produit, donc $u_{kk}-\lambda$ ne figurera pas dans le produit qui sera de degré $n-3$ au plus.
+
+Les termes en $\lambda^{n-2}$ proviennent donc des transpositions et de l'identité. Pour une transposition $T_{ij}$ on a
+\[
+-u_{ij}u_{ji}\prod_{\substack{k\ne i\\k\ne j}}(u_{kk}-\lambda)
+\]
+qui donne pour terme en $\lambda^{n-2}$ :
+\[
+-(-\lambda)^{n-2}u_{ij}u_{ji}.
+\]
+Pour $\sigma=\mathrm{id}$, dans $(u_{11}-\lambda)\cdots(u_{nn}-\lambda)$ le terme en $\lambda^{n-2}$ s'obtient en prenant le terme constant dans 2 facteurs : c'est donc
+\[
+\left(\sum_{1\le i<j\le n}u_{ii}u_{jj}\right)(-\lambda)^{n-2},
+\]
+d'où
+\[
+\lambda^{n-2}(-1)^{n-2}
+\left(\sum_{1\le i<j\le n}(u_{ii}u_{jj}-u_{ij}u_{ji})\right)
+\]
+comme terme en $\lambda^{n-2}$.
+
+On pourrait poursuivre ainsi en introduisant les cycles de 3 termes pour chercher le terme en $\lambda^{n-3}$.
+
+\medskip\noindent\textsc{Théorème 10.21.} --- \emph{Soient deux endomorphismes $u$ et $v$ de $E\simeq K^n$ on a $\chi_{uv}(\lambda)=\chi_{vu}(\lambda)$.}
+
+Il y a plusieurs procédés de justification. En voici un. On fixe une base $B$ de $E$ d'où des matrices $U$ et $V$ associées à $u$ et $v$.
+
+En effectuant des produits matriciels par blocs, on constate que
+\[
+\begin{pmatrix}
+VU-\lambda I_n&-V\\
+0&-\lambda I_n
+\end{pmatrix}
+\begin{pmatrix}
+I_n&0\\
+U&I_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+-\lambda I_n&-V\\
+-\lambda U&-\lambda I_n
+\end{pmatrix}
+\]
+alors que
+\[
+\begin{pmatrix}
+I_n&0\\
+U&I_n
+\end{pmatrix}
+\begin{pmatrix}
+-\lambda I_n&-V\\
+0&UV-\lambda I_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+-\lambda I_n&-V\\
+-\lambda U&-\lambda I_n
+\end{pmatrix},
+\]
+d'où en égalant les déterminants de ces deux produits, l'égalité
+\[
+(-\lambda)^n\det(VU-\lambda I_n)=(-\lambda)^n\det(UV-\lambda I_n)
+\]
+donc
+\[
+\det(VU-\lambda I_n)=\det(UV-\lambda I_n)
+\]
+soit $\chi_{vu}(\lambda)=\chi_{uv}(\lambda)$. \bookend
+
+\medskip\noindent\textsc{Théorème 10.22.} --- \emph{Dit d'Hadamard, pour la localisation des valeurs propres. --- Soit une matrice $U$ de terme général $u_{ij}$ complexe. Les valeurs propres de $U$ sont dans la réunion des disques $D_i$ du plan complexe, centrés en $u_{ii}$, de rayon}
+\[
+\Lambda_i=\sum_{\substack{j=1\\j\ne i}}^n|u_{ij}|.
+\]
+
+En effet soit $\lambda$ valeur propre de $u$ et $Z$ un vecteur propre associé, assimilé à une matrice colonne. On choisit bien sûr $Z\ne0$, donc $\exists i$ tel que $|z_i|\ne0$. En prenant les $i$èmes composantes des 2 termes de l'égalité $UZ=\lambda Z$ il vient
+\[
+\sum_{j=1}^nu_{ij}z_j=\lambda z_i,
+\]
+soit encore
+\[
+(\lambda-u_{ii})z_i=\sum_{\substack{j=1\\j\ne i}}^nu_{ij}z_j,
+\]
+d'où en divisant par $z_i\ne0$ et en utilisant l'inégalité triangulaire :
+\[
+|\lambda-u_{ii}|\le\sum_{\substack{j=1\\j\ne i}}^n|u_{ij}|\left|\frac{z_j}{z_i}\right|.
+\]
+Si on a pris la précaution de choisir $i$ tel que, non seulement $z_i\ne0$, mais en fait tel que $|z_i|$ soit le sup de $\{|z_k|;\ k=1,\ldots,n\}$, chaque $|z_j/z_i|$ se majore par 1 et il vient
+\[
+|\lambda-u_{ii}|\le\sum_{\substack{j=1\\j\ne i}}^n|u_{ij}|=\Lambda_i,
+\]
+donc $\lambda$ est dans le disque $D_i$ de centre $u_{ii}$, de rayon $\Lambda_i$ et on a bien trouvé un indice $i$ tel que $\lambda\in D_i$, d'où
+\[
+\operatorname{Sp}(U)\subset\bigcup_{i=1}^nD_i,
+\]
+$\operatorname{Sp}(U)$ désignant le spectre de $U$. \bookend
+
+\medskip\noindent\textsc{Corollaire 10.23.} --- \emph{On a aussi $\operatorname{Sp}(U)\subset\bigcup_{j=1}^n\Delta_j$, avec $\Delta_j$ disque complexe de centre $u_{jj}$ et de rayon}
+\[
+\mu_j=\sum_{\substack{i=1\\i\ne j}}^n|u_{ij}|.
+\]
+
+Comme $\det({}^tA)=\det A$, le spectre de la matrice ${}^tU$ est celui de la matrice $U$. Mais en appliquant Hadamard à ${}^tU$, les disques $D_j$ pour ${}^tU$ sont les $\Delta_j$. \bookend
+
+\medskip\noindent\textsc{Corollaire 10.24.} --- \emph{Si une matrice carrée $U$ complexe est telle que}
+\[
+\forall i=1,\ldots,n,\qquad |u_{ii}|>\sum_{\substack{j=1\\j\ne i}}^n|u_{ij}|,
+\]
+\emph{elle est inversible.}
+
+Car chaque $D_i$ ne contient pas 0, donc $0\notin\bigcup_iD_i$ : 0 ne peut pas être valeur propre, d'où $U$ injective, donc inversible. \bookend
+
+\subsection*{10.25.}
+Une telle matrice, où, pour chaque ligne, le module du terme diagonal est strictement supérieur à la somme des modules des coefficients non diagonaux de la ligne est dite à \emph{diagonale fortement dominante}.
+
+On procède de même pour les colonnes.
+
+Nous allons maintenant essayer de réduire un endomorphisme à une forme plus simple, dans le cas de la dimension finie. On a déjà :
+
+\medskip\noindent\textsc{Théorème 10.26.} --- \emph{Soit $u$ un endomorphisme de $E\simeq K^n$, de polynôme caractéristique $\chi_u(X)$. Si $\lambda$ est une racine de $\chi_u$ de multiplicité $\alpha$, la dimension du sous-espace propre \BellaCorrection{associé}{associée} est inférieure ou égale à $\alpha$.}
+
+Comme $\chi_u(\lambda)=0$, $E_\lambda=\operatorname{Ker}(u-\lambda\mathrm{id}_E)$ est non réduit à 0. Soit $C$ une base de $E_\lambda$ que l'on complète en $B=C\cup D$ base de $E$. On pose $p=\dim E_\lambda$. La matrice de $u$ dans la base $B$ est du type :
+\[
+U=
+\begin{pmatrix}
+\lambda I_p&A\\
+0&B_0
+\end{pmatrix},
+\]
+les $p$ premiers vecteurs étant ceux de $C$, les $n-p$ derniers ceux de $D$.
+
+Donc, vu l'indépendance du choix de la base pour calculer le polynôme caractéristique,
+\[
+\chi_u(X)=\det(U-XI_n)
+=\det\begin{pmatrix}
+(\lambda-X)I_p&A\\
+0&B_0-XI_{n-p}
+\end{pmatrix}
+=(\lambda-X)^p\det(B_0-XI_{n-p});
+\]
+il admet $\lambda$ comme racine avec une multiplicité $\ge p$. Comme on a appelé $\alpha$ cette multiplicité, on a donc $p\le\alpha$, soit encore
+\[
+\dim\operatorname{Ker}(u-\lambda\mathrm{id}_E)\le\text{multiplicité de la valeur propre}.
+\]
+\bookend
+
+Il faut remarquer que l'inégalité peut être stricte. Par exemple la matrice
+\[
+U=
+\begin{pmatrix}
+a&1&0&\cdots&0\\
+0&a&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&a&1\\
+0&\cdots&\cdots&0&a
+\end{pmatrix}
+\]
+est celle d'un endomorphisme $u$ n'ayant que $a$ pour valeur propre, et
+\[
+\chi_u(\lambda)=
+\begin{vmatrix}
+a-\lambda&1&0&\cdots&0\\
+0&a-\lambda&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&a-\lambda&1\\
+0&\cdots&\cdots&0&a-\lambda
+\end{vmatrix}
+=(a-\lambda)^n
+\]
+admet $a$ pour seul zéro, de multiplicité $n$.
+
+Or
+\[
+U-aI_n=
+\begin{pmatrix}
+0&1&0&\cdots&0\\
+0&0&1&\ddots&\vdots\\
+\vdots&\ddots&\ddots&\ddots&0\\
+0&\cdots&0&0&1\\
+0&\cdots&\cdots&0&0
+\end{pmatrix}
+\]
+est de rang $n-1$, le sous-espace propre est de dimension $n-(n-1)=1$, avec $1<n$.
+
+Dans ce cas l'endomorphisme n'est pas diagonalisable. Plus précisément on a :
+
+\medskip\noindent\textsc{Théorème 10.27.} --- \emph{Soit un endomorphisme $u$ sur $E\simeq K^n$. Il est diagonalisable si et seulement si son polynôme caractéristique a toutes ses valeurs propres dans le corps $K$ et si pour chaque valeur propre, la multiplicité est la dimension du sous-espace propre.}
+
+Si $u$ est diagonalisable, avec $\lambda_1,\ldots,\lambda_p$ valeurs propres distinctes de $u$ et $E_1,\ldots,E_p$ les sous-espaces propres associés de dimensions respectives $r_1,\ldots,r_p$, en notant $B_i$ une base de $E_i$, dans la base $B=B_1\cup\cdots\cup B_p$ (vecteurs pris dans cet ordre), la matrice de $u$ est
+\[
+U=\operatorname{diag}(\underbrace{\lambda_1,\ldots,\lambda_1}_{r_1},
+\underbrace{\lambda_2,\ldots,\lambda_2}_{r_2},\ldots,
+\underbrace{\lambda_p,\ldots,\lambda_p}_{r_p})
+\]
+d'où
+\[
+\chi_u(\lambda)=\prod_{j=1}^p(\lambda_j-\lambda)^{r_j}:
+\]
+le polynôme caractéristique a toutes ses racines dans $K$ et, pour chacune d'entre elles, la multiplicité, $r_j$, est la dimension du sous-espace propre associé.
+
+Réciproquement on suppose que $\chi_u(\lambda)$, de degré $n$, a toutes ses racines dans $K$ et, si $\lambda_1,\ldots,\lambda_p$ sont les racines distinctes, de multiplicités respectives $\alpha_1,\ldots,\alpha_p$, on suppose que pour chaque $j\in\{1,\ldots,p\}$,
+\[
+\dim(\operatorname{Ker}(u-\lambda_j\mathrm{id}))=\alpha_j.
+\]
+On sait déjà que les $E_j=\operatorname{Ker}(u-\lambda_j\mathrm{id})$ sont en somme directe, (Théorème 10.8), et
+\[
+F=\bigoplus_{j=1}^pE_j
+\]
+est de dimension
+\[
+\sum_{j=1}^p\alpha_j=\deg(\chi_u)=n,
+\]
+donc $F=E$ : on a bien $E$ somme directe des sous-espaces propres de $u$ qui est donc diagonalisable. \bookend
+
+\medskip\noindent\textsc{Définition 10.28.} --- \emph{Un polynôme $P\in K[X]$ est dit scindé sur $K$ si et seulement si toutes ses racines sont dans $K$.}
+
+Ce qui revient à dire qu'il est du type
+\[
+P(X)=k\prod_{i=1}^p(X-\lambda_i)^{\alpha_i}
+\]
+avec $k\in K^*$, les $\lambda_i\in K$, et $\alpha_1+\alpha_2+\cdots+\alpha_p=\deg(P)$. On prend $k\ne0$ car cette notion n'a pas d'intérêt pour le polynôme nul.
+
+\medskip\noindent\textsc{Corollaire 10.29.} --- \emph{Soit $u$ un endomorphisme de $E\simeq K^n$, dont le polynôme caractéristique n'a que des racines simples toutes dans $K$ alors $u$ est diagonalisable.}
+
+En effet, en notant $\lambda_1,\ldots,\lambda_n$ les $n$ valeurs propres distinctes, on a
+\[
+\chi_u(\lambda)=\prod_{i=1}^n(\lambda_i-\lambda)
+\]
+est scindé sur $K$ et, $\forall i$, $\dim\operatorname{Ker}(u-\lambda_i\mathrm{id}_E)\ge1$ (car $\lambda_i$ valeur propre) donc cette dimension est $\ge$ multiplicité de la racine. Comme elle est toujours $\le$ la multiplicité, (Théorème 10.26), elle lui est égale donc $u$ est diagonalisable. \bookend
+
+Cette condition, suffisante, n'est pas nécessaire : une homothétie est diagonalisable bien que n'ayant qu'une valeur propre, de multiplicité $n$.
+
+Et si on ne peut pas diagonaliser... , c'est fini? Pas forcément, on peut parfois trigonaliser.
+
+\medskip\noindent\textsc{Définition 10.30.} --- \emph{Un endomorphisme $u$ de $E\simeq K^n$, est dit trigonalisable s'il existe une base $B$ dans laquelle la matrice $U$ de $u$ est triangulaire supérieure ou inférieure, peu importe.}
+
+On parle de même d'une matrice trigonalisable $U$ si et seulement si il existe $P$ régulière telle que $P^{-1}UP$ soit triangulaire. Les 2 notions coïncident, si on prend $E=K^n$, rapporté à une base, par exemple la base canonique, et si $u$ est l'endomorphisme de matrice $U$ dans cette base.
+
+Vérifions que trigonale inférieure ou supérieure, peu importe. Soit $B$ base dans laquelle la matrice de $u$ est $T$, triangulaire supérieure. En notant $t_{rs}$ le terme général de $T$, (donc $t_{rs}=0$ si $r>s$), et $\{e_1,\ldots,e_n\}$ la base $B$, on a, $\forall s$, $u(e_s)\in\operatorname{Vect}(e_1,e_2,\ldots,e_s)$.
+
+Soit $C$ la base $B$ numérotée dans l'ordre $e_n,e_{n-1},\ldots,e_1$. Si on note $\varepsilon_k$ le vecteur générique de $C$, on a donc $\varepsilon_k=e_{n-k+1}$.
+
+Mais alors
+\[
+u(\varepsilon_k)=u(e_{n-k+1})\in\operatorname{Vect}(e_1,e_2,\ldots,e_{n-k+1}),
+\]
+or
+\[
+e_1=\varepsilon_n,
+\qquad e_2=\varepsilon_{n-1},\ldots,e_{n-k+1}=\varepsilon_k
+\]
+d'où $u(\varepsilon_k)\in\operatorname{Vect}(\varepsilon_k,\varepsilon_{k+1},\ldots,\varepsilon_n)$ : la matrice de $u$ dans la base $C$ est donc bien triangulaire inférieure. On procède de même si on part d'une matrice triangulaire inférieure. \bookend
+
+\medskip\noindent\textsc{Théorème 10.31.} --- \emph{Soit $u$ un endomorphisme sur $E\simeq K^n$. Il est trigonalisable si et seulement si son polynôme caractéristique est scindé. Même énoncé pour une matrice $U$.}
+
+Si $u$ est trigonalisable, il existe une base $B$ dans laquelle la matrice $U$ de $u$ est triangulaire (supérieure par exemple), donc du type
+\[
+U=
+\begin{pmatrix}
+u_{11}&u_{12}&u_{13}&\cdots&u_{1n}\\
+0&u_{22}&u_{23}&\cdots&u_{2n}\\
+\vdots&\ddots&\ddots&\ddots&\vdots\\
+0&\cdots&0&u_{n-1,n-1}&u_{n-1,n}\\
+0&\cdots&\cdots&0&u_{nn}
+\end{pmatrix}
+\]
+d'où
+\[
+\chi_u(\lambda)=\prod_{i=1}^n(u_{ii}-\lambda):
+\]
+le polynôme caractéristique est scindé.
+
+\emph{Réciproquement}, on procède par récurrence sur $n$. Si $n=1$, toute base de $E=K$ est telle que la \BellaCorrectionNote{matrice $(u_{11})$}{matrice $(1,1)$}{En dimension 1, la matrice d'un endomorphisme est une matrice $1\times1$ dont l'unique coefficient dépend de $u$; la notation imprimée $(1,1)$ ne peut être sa matrice en général.} de $u$ dans cette base est triangulaire.
+
+On suppose le résultat vrai si $\dim E=n-1$, ou pour une matrice carrée d'ordre $n-1$.
+
+Soit $u$ endomorphisme de $E\simeq K^n$, de matrice $U$ dans une base $B$ alors la matrice du transposé de $u$, ${}^tu$, endomorphisme de $E^*$, dans la base duale est ${}^tU$, (définition 8.8), donc $\chi_{{}^tu}=\chi_u$ est scindé sur $K$. (On a
+\[
+\chi_{{}^tu}(\lambda)=\det({}^tU-\lambda I_n)=\det({}^t(U-\lambda I_n))=\det(U-\lambda I_n)).
+\]
+
+Soit $a$ une racine de $\chi_u=\chi_{{}^tu}$ et $\varphi\ne0$, une forme linéaire, vecteur propre de ${}^tu$, on sait que $H=\operatorname{Ker}\varphi$ est un hyperplan de $E$ stable par $u$, (Théorème 10.16).
+
+Si $\bar u$ est induit par $u$ sur $H$, et si $\widetilde U$ est la matrice de $\bar u$ dans une base $C$ de $H$, en prenant un vecteur $\varepsilon\notin H$, $C\cup\{\varepsilon\}$ est une base de $E$ dans laquelle la matrice de $u$ est
+\[
+U'=
+\begin{pmatrix}
+\widetilde U&\begin{matrix}\alpha_1\\\alpha_2\\\vdots\\\alpha_{n-1}\end{matrix}\\
+0\ \cdots\ 0&\alpha_n
+\end{pmatrix}.
+\]
+Donc
+\[
+\chi_u(\lambda)=\det(U'-\lambda I_n)
+=\det(\widetilde U-\lambda I_{n-1})(\alpha_n-\lambda)
+=\chi_{\bar u}(\lambda)(\alpha_n-\lambda).
+\]
+Comme $\chi_u$ est scindé, il en résulte que $\chi_{\bar u}$ est scindé aussi, donc dans $H$ il existe une base $C'$ dans laquelle la matrice $\widetilde U'$ de $\bar u$ est triangulaire supérieure.
+
+La matrice $U''$ de $u$ dans la base $C'\cup\{\varepsilon\}$ devient donc
+\[
+U''=
+\begin{pmatrix}
+\widetilde U'&\begin{matrix}\alpha'_1\\\alpha'_2\\\vdots\\\alpha'_{n-1}\end{matrix}\\
+0\ \cdots\ 0&\alpha_n
+\end{pmatrix}:
+\]
+elle est bien triangulaire supérieure puisque la matrice $\widetilde U'$ l'est.
+
+Il est à remarquer que $\alpha_n$ est inchangé, car le spectre de $\widetilde U$ est celui de $\widetilde U'$, et celui de $U'$ est celui de $U''$, en appelant ici spectre les valeurs propres comptées avec leur multiplicité.
+
+On a bien justifié le résultat. Il est à noter que l'emploi du transposé permet de faire une récurrence en passant directement de l'ordre $n-1$ à l'ordre $n$. \bookend
+
+\medskip\noindent\textsc{Corollaire 10.32.} --- \emph{Tout endomorphisme $u$ de $E\simeq\mathbb C^n$ est trigonalisable.}
+
+\medskip\noindent\textsc{Corollaire 10.33.} --- \emph{Toute matrice carrée complexe, est semblable à une matrice triangulaire.}
+
+C'est évident puisque $\mathbb C$ est algébriquement clos.
+
+Vu la difficulté de la démonstration, on peut se demander s'il s'agit là d'une notion intéressante. Et oui! Par exemple on peut justifier que
+
+\medskip\noindent\textsc{Théorème 10.34.} --- \emph{Soit $\{\lambda_1,\ldots,\lambda_n\}$ le spectre de $u$ endomorphisme de $\mathbb C^n$. Si $P$ est un polynôme, le spectre de $P(u)$ est $\{P(\lambda_1),\ldots,P(\lambda_n)\}$.}
+
+On appelle ici spectre de $u$ l'ensemble de ses valeurs propres comptées avec leur multiplicité : si $\lambda_i$ est valeur propre de multiplicité $\alpha_i$ en tant que racine du polynôme caractéristique, elle est répétée $\alpha_i$ fois.
+
+Soit
+\[
+P(X)=\sum_{k=0}^pa_kX^k
+\]
+un polynôme de $\mathbb C[X]$. Avec $u^k=u\circ\cdots\circ u$, ($k$ fois), on note $P(u)$ l'endomorphisme
+\[
+\sum_{k=0}^pa_ku^k,
+\]
+(avec $u^0=\mathrm{id}_E$).
+
+Le spectre de $u$ étant $\{\lambda_1,\ldots,\lambda_n\}$ et $u$ étant trigonalisable, il existe une base de $\mathbb C^n$ dans laquelle la matrice $U$ de $u$ est triangulaire supérieure avec les $\lambda_i$ sur la diagonale :
+\[
+U=
+\begin{pmatrix}
+\lambda_1&u_{12}&u_{13}&\cdots&u_{1n}\\
+0&\lambda_2&u_{23}&\cdots&u_{2n}\\
+0&0&\lambda_3&\cdots&u_{3n}\\
+\vdots&\vdots&\ddots&\ddots&\vdots\\
+0&0&0&\cdots&\lambda_n
+\end{pmatrix}.
+\]
+Il est alors facile de justifier, (par récurrence sur $k$) que dans cette base, la matrice $U^k$ sera encore triangulaire, avec sur la diagonale, $\lambda_1^k,\lambda_2^k,\ldots,\lambda_n^k$ d'où finalement $P(u)$ aura pour matrice dans cette base une matrice triangulaire supérieure avec, sur la diagonale, les valeurs $P(\lambda_i)$.
+
+Mais comme le spectre d'une matrice triangulaire est formé des éléments diagonaux (calcul évident du polynôme caractéristique) le spectre de $P(u)$ est bien formé des $P(\lambda_i)$. \bookend
+
+\medskip\noindent\textsc{Remarque 10.35.} --- Soit $u$ un endomorphisme de $\mathbb R^n$, son polynôme caractéristique $\chi_u(X)\in\mathbb R[X]$ et peut avoir des racines imaginaires non réelles, $\lambda_k$. Par contre, il se peut que $P(\lambda_k)$ devienne réel. Dans ce cas, si on note $\{\lambda_1,\ldots,\lambda_n\}$ les zéros de $\chi_u$, comptés avec leur multiplicité, le spectre de $u$, (dans $\mathbb R$) est l'ensemble des $\lambda_k$ réels, et si $P(X)\in\mathbb R[X]$, celui de $P(u)$ est l'ensemble des $P(\lambda_j)$ réels, même si les $\lambda_j$ sont complexes.
+
+Par exemple, dans $\mathbb R^2$ si $u$ est une rotation d'angle $\frac\pi2$, de matrice
+\[
+\begin{pmatrix}0&-1\\1&0\end{pmatrix},
+\]
+dans une base orthonormée de $\mathbb R^2$ euclidien, le spectre de cette matrice est $\{i,-i\}$ dans $\mathbb C$, donc vide dans $\mathbb R$, mais le spectre de $u^2$, rotation d'angle $\pi$, donc symétrie, est devenu réel, c'est $\{-1,-1\}$, celui de $u^4$ ($=\mathrm{id}_E$) est $\{1,1\}$.
+
+\medskip\noindent\textsc{Remarque 10.36.} --- Ce qui vient d'être fait pour $\mathbb R$ et $\mathbb C$ est valable pour un corps $K$ quelconque en utilisant $\overline K$, clôture algébrique de $K$ par exemple, (Théorème 7.70) pour obtenir un corps dans lequel le polynôme caractéristique $\chi_u$ d'une matrice de $M_n(K)$ est scindé. On passe dans $\overline K$ pour justifier l'existence d'une forme commode de la matrice, mais si $P\in K[X]$, le calcul de $P(U)$ s'effectue dans l'espace vectoriel $M_n(K)$ des matrices carrées d'ordre $n$ sur $K$.
+
+\medskip\noindent\textsc{Théorème 10.37.} --- \emph{Soient $u$ et $v$ deux endomorphismes trigonalisables qui commutent. Il existe une base commune de $K^n$, de trigonalisation.}
+
+On va employer un résultat, utile en soi.
+
+\medskip\noindent\textsc{Lemme 10.38.} --- \emph{Soient $f$ et $g$ deux endomorphismes de $E$, vectoriel de dimension finie, qui commutent, et qui ont des polynômes caractéristiques scindés. Alors ils ont un vecteur propre non nul, commun, au moins.}
+
+Soit $\lambda$ un zéro de $\chi_f(X)$ polynôme caractéristique de $f$, et $E_\lambda$ le sous-espace propre associé. Comme $f$ et $g$ commutent, $E_\lambda$ est stable par $g$, (Théorème 10.14). Soit $\bar g$ induit par $g$ sur $E_\lambda$, $C$ une base de $E_\lambda$, $D$ une base d'un supplémentaire et $B=C\cup D$ une base de $E$. La matrice de $g$ dans $B$ est du type
+\[
+V=\begin{pmatrix}M&N\\0&P\end{pmatrix},
+\]
+matrice bloc, avec $M$ matrice de $\bar g$ dans la base $C$ de $E_\lambda$.
+
+Donc, si $p=\dim E_\lambda$, on a, (calcul par blocs) :
+\[
+\chi_g(X)=\det(V-XI_n)=\det(M-XI_p)\det(P-XI_{n-p}),
+\]
+avec $\det(M-XI_p)=\chi_{\bar g}(X)$, polynôme caractéristique de $\bar g$.
+
+Ce polynôme caractéristique de $\bar g$ divise donc celui de $g$. Or ce dernier est scindé, donc $\chi_{\bar g}(X)$ est scindé. Soit $\mu$ un zéro dans $K$ de $\chi_{\bar g}$, et $a$ un vecteur propre, $\ne0$, de $\bar g$ pour $\mu$, on a $g(a)=\mu\cdot a=\bar g(a)$, et comme $a\in E_\lambda$ on a aussi $f(a)=\lambda a$ : le vecteur $a$ est vecteur propre non nul, commun pour $f$ et $g$. \bookend
+
+Justifions le théorème 10.37.
+
+Si $u$ et $v$ commutent, il en est de même de ${}^tu$ et de ${}^tv$, (Théorème 6.101). De plus $u$ et $v$ étant trigonalisables, \BellaCorrection{leurs polynômes caractéristiques}{leur polynômes caractéristiques} sont scindés, or $\chi_u=\chi_{{}^tu}$, (on transpose les matrices). Donc ${}^tu$ et ${}^tv$ sont deux endomorphismes du dual $E^*$ qui commutent ayant des polynômes caractéristiques scindés : d'après le lemme 10.38 ils ont des vecteurs propres communs.
+
+Soit $\varphi$ une forme linéaire non nulle, vecteur propre de ${}^tu$ et ${}^tv$. L'hyperplan $H=\operatorname{Ker}\varphi$ est stable par $u$ et par $v$, (Théorème 10.16). Soient $u'$ et $v'$ induits par $u$ et $v$ sur $H$ : ils commutent, comme $u$ et $v$ en fait, et leurs polynômes caractéristiques sont scindés car ils divisent $\chi_u$ et $\chi_v$ qui le sont, justification analogue à celle du lemme 10.38. On comprend que la justification s'achève par récurrence.
+
+Si $n=1$, toute base de $E=K$ est base commune de trigonalisation.
+
+Si le résultat est vrai pour les espaces de dimension $n-1$, soit $E$ de dimension $n$, $H$ construit comme précédemment, $a$ tel que $E=H\oplus K\cdot a$.
+
+Pour $u'$ et $v'$ induits par $u$ et $v$ sur $H$, l'hypothèse de récurrence s'applique : il existe une base $B_1$ de $H$ dans laquelle les matrices $U'$ et $V'$ de $u'$ et $v'$ sont triangulaires supérieures. Mais alors, dans $B=B_1\cup\{a\}$, les matrices $U$ et $V$ de $u$ et $v$ sont
+\[
+U=\begin{pmatrix}U'&\begin{matrix}\alpha_1\\\alpha_2\\\vdots\\\alpha_{n-1}\end{matrix}\\0\ \cdots\ 0&\alpha_n\end{pmatrix}
+\qquad\text{et}\qquad
+V=\begin{pmatrix}V'&\begin{matrix}\beta_1\\\beta_2\\\vdots\\\beta_{n-1}\end{matrix}\\0\ \cdots\ 0&\beta_n\end{pmatrix},
+\]
+elles sont triangulaires supérieures puisque $U'$ et $V'$ le sont. \bookend
+
+\medskip\noindent\textsc{Corollaire 10.39.} --- \emph{Soient $U$ et $V$ deux matrices carrées d'ordre $n$ sur $K$ qui commutent ayant des polynômes caractéristiques scindés, il existe $P$ régulière telle que $P^{-1}UP$ et $P^{-1}VP$ soient triangulaires.}
+
+Il suffit d'introduire $E=K^n$, une base de $E$, par exemple la base canonique, et de considérer les endomorphismes $u$ et $v$ de matrices $U$ et $V$ dans la base $B$. \bookend

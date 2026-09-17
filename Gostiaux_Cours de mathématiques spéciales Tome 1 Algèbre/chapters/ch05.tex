@@ -1,0 +1,743 @@
+\chapter{Anneaux, corps, construction de $\mathbb Q$}
+\origpage{131--161}
+
+\BellaSection{1. Définitions}
+
+\medskip\noindent\textsc{Définition 5.1.} --- \emph{On appelle anneau tout ensemble $A$ muni de deux lois de composition interne, une addition $(+)$ et une multiplication $(\cdot)$ telles que
+\begin{enumerate}[label=\arabic*),leftmargin=2.1em]
+\item $A$ est muni par l'addition d'une structure de groupe abélien,
+\item la loi produit est associative, distributive à droite et à gauche par rapport à l'addition.
+\end{enumerate}}
+
+\medskip\noindent\textsc{Exemple 5.2.} --- $(\mathbb Z,+,\cdot)$ est un anneau.
+
+\medskip\noindent\textsc{Exemple 5.3.} --- Si $A$ est un anneau, $X$ un ensemble quelconque, l'ensemble $A^X$ des applications de $X$ dans $A$ est muni d'une structure d'anneau par les 2 lois suivantes. Si $f$ et $g$ sont des applications de $X$ dans $A$ on pose
+\[
+f+g:x\longmapsto (f+g)(x)=f(x)+g(x)
+\]
+et
+\[
+fg:x\longmapsto(fg)(x)=f(x)\cdot g(x),
+\]
+(somme et produit calculés dans l'anneau $A$).
+
+Il est facile de vérifier que l'addition des applications donne à $A^X$ une structure de groupe abélien, l'élément neutre est la fonction $0$ identiquement nulle, l'opposée de $f$ est $-f$ définie par : $\forall x\in X$, $(-f)(x)=-(f(x))$, opposé de $f(x)$ dans l'anneau, puisque la loi produit est associative et distributive des 2 côtés.
+
+Par exemple, vérifions que $(f+g)h=fh+gh$. En effet
+\begin{align*}
+\forall x\in X,\quad[(f+g)h](x)&=(f+g)(x)\cdot h(x)\\
+&=(f(x)+g(x))\cdot h(x)\\
+&=f(x)\cdot h(x)+g(x)\cdot h(x)
+\end{align*}
+car dans l'anneau $A$ où se trouvent les éléments $f(x)$, $g(x)$, $h(x)$, il y a distributivité.
+
+C'est encore $[(f+g)h](x)=(fh+gh)(x)$, ceci étant vrai $\forall x\in X$ c'est que $(f+g)h=fh+gh$. On procéderait de même pour les autres vérifications. \bookend
+
+\medskip\noindent\textsc{Définition 5.4.} --- \emph{Un anneau $A$ est dit commutatif si la loi multiplicative est commutative, il est dit unitaire s'il y a un élément neutre (noté 1) pour le produit.}
+
+\subsection*{5.5. Calculs dans un anneau}
+
+Soient $a$ et $b$ dans l'anneau $A$, on a
+\[
+(a+b)(a+b)=a^2+ab+ba+b^2
+\]
+et ce n'est que si $A$ est commutatif que,
+\[
+\forall(a,b)\in A^2\qquad (a+b)^2=a^2+2ab+b^2,
+\]
+identité qui a fait les délices ou les cauchemars de bien des générations.
+
+De même, dans $A$ commutatif, on a la relation
+\[
+\tag{5.6}(a+b)^n=a^n+na^{n-1}b+\cdots+C_n^k a^{n-k}b^k+\cdots+b^n,\qquad n\ge1
+\]
+dite formule du binôme de Newton, avec
+\[
+C_n^k=\frac{n!}{k!(n-k)!},
+\]
+et la convention $0!=1$.
+
+Cette formule peut se justifier par récurrence, si on vérifie au préalable l'égalité
+\[
+C_n^k=C_{n-1}^{k-1}+C_{n-1}^k
+\]
+pour $n\ge1$ et $k\ge1$.
+
+De même $x(a)=x(a-b+b)=x(a-b)+xb$ d'où $x(a-b)=xa-xb$, formule valable dans un anneau, et qui conduit si $a=b$, à $x\cdot0=0$.
+
+De même on vérifie que $(a-b)x=ax-bx$, d'où, si $a=b$, $0x=0$ ; mais la propriété $xy=0$, dans un anneau, n'implique pas $x=0$ ou $y=0$. En effet, si on prend l'anneau des applications de $X$ dans $\mathbb Z$, et si on suppose que $X_1\cup X_2$ est une partition de $X$, (donc $X_1\ne\varnothing$, $X_2\ne\varnothing$, $X_1\cap X_2=\varnothing$ et $X_1\cup X_2=X$) on définit $f_1$ et $f_2$ de $X$ dans $\mathbb Z$ par :
+\[
+\forall x\in X_1,\quad f_1(x)=1\quad\text{et}\quad \forall x\in X_2,\quad f_1(x)=0;
+\]
+puis
+\[
+\forall x\in X_1,\quad f_2(x)=0\quad\text{et}\quad \forall x\in X_2,\quad f_2(x)=1.
+\]
+Il est alors \BellaCorrection{facile}{de facile} de voir que $f_1f_2=f_2f_1=0$, application identiquement nulle, bien que $f_1\ne0$, (car $X_1\ne\varnothing\Rightarrow\exists x_1\in X_1$ avec $f_1(x_1)\ne0$) et aussi $f_2\ne0$.
+
+\subsection*{5.7. Une notation et une définition}
+$f_1$ est la fonction caractéristique de $X_1$, notée généralement $\chi_{X_1}$, $\chi$ lettre khi.
+
+Il faut donc faire attention au fait que $xy=0$ n'est pas équivalent à $x=0$ ou $y=0$. Ceci amène à introduire plusieurs définitions.
+
+\medskip\noindent\textsc{Définition 5.8.} --- \emph{Un élément $a$ d'un anneau $A$ est dit diviseur de zéro à gauche (resp. à droite) s'il existe $b$ non nul tel que $ab=0$, (resp. $ba=0$).}
+
+C'est $a$ qui est à gauche dans le produit, si $a$ est diviseur de zéro à gauche.
+
+Un élément $a$ est dit diviseur de zéro s'il l'est à droite et à gauche, donc s'il existe $b$ et $c$ non nuls tels que $ab=0$ et $ca=0$. Bien sûr, si l'anneau est commutatif, les notions de droite et gauche n'ont plus d'intérêt.
+
+\medskip\noindent\textsc{Définition 5.9.} --- \emph{Un anneau $A$ est dit intègre s'il n'a pas d'autres diviseurs de 0, à droite ou à gauche, que 0.}
+
+Dans un anneau intègre $(ab=0)\Longleftrightarrow(a=0)$ ou $(b=0)$. On parle de domaine d'intégrité pour parler d'un anneau intègre, commutatif.
+
+\medskip\noindent\textsc{Définition 5.10.} --- \emph{On appelle sous-anneau d'un anneau $A$ toute partie $B$ de $A$ qui est sous-groupe additif de $A$, stable par produit.}
+
+Ceci revient à dire que $B$ est une partie stable de $A$ pour les deux lois de l'anneau, et munie par ces lois d'une structure d'anneau.
+
+\subsection*{5.11. Critère pratique}
+Une partie $B$ de l'anneau $A$ est un sous-anneau de $A$ si et seulement si $B\ne\varnothing$ ; $\forall(a,b)\in B^2$, $a-b\in B$ et $ab\in B$.
+
+Car $B\ne\varnothing$ et $\forall(a,b)\in B^2$, $a-b\in B$ caractérise les sous-groupes additifs de $A$, (voir 4.5), et la deuxième condition traduit la stabilité de $B$ pour le produit.
+
+\medskip\noindent\textsc{Théorème 5.12.} --- \emph{L'intersection d'une famille $(B_i)_{i\in I}$ de sous-anneaux de $A$ est un sous-anneau de $A$.}
+
+Car $0\in$ chaque $B_i\Rightarrow0\in B=\bigcap_{i\in I}B_i$, d'où $B\ne\varnothing$ ; puis si $a$ et $b$ sont dans $B$, donc dans chaque $B_i$, $a-b$ et $ab$ sont dans chaque sous-anneau $B_i$, donc dans $B$. \bookend
+
+Comme pour les sous-groupes, il en résulte que si $X$ est une partie d'un anneau $A$, on peut considérer la famille $\mathcal F$ des sous-anneaux de $A$ contenant $X$, il y en a, ne serait-ce que $A$, et leur intersection
+\[
+\overline X=\bigcap_{B\in\mathcal F}B.
+\]
+C'est un sous-anneau de $A$, (théorème 5.12), $\overline X$ contient $X$ et $\overline X$ est le plus petit sous-anneau de $A$ contenant $X$ car si $B_0$ est un tel sous-anneau, $B_0$ est dans la famille $\mathcal F$, donc $\overline X\subset B_0$.
+
+On dit encore que $B_0$ est le sous-anneau engendré par $X$.
+
+\medskip\noindent\textsc{Définition 5.13.} --- \emph{On appelle corps, tout anneau $K$ tel que, $K^*=K-\{0\}$ soit muni par le produit, d'une structure de groupe.}
+
+Donc $K$ est unitaire, l'élément neutre, 1, du groupe multiplicatif $K^*$ étant neutre pour le produit dans $K$ car $1\cdot0=0\cdot1=0$, et tout élément non nul admet un inverse pour le produit dans $K$.
+
+Bien sûr, en tant qu'anneau, un corps est intègre, car si $xy=0$, avec $x\ne0$, comme $x^{-1}$ existe, on a $x^{-1}(xy)=x^{-1}0=0$, soit $(x^{-1}x)y=0=1\cdot y=y$, donc $xy=0$ et $x\ne0\Rightarrow y=0$. Mais de même $xy=0$ et $y\ne0\Rightarrow x=(xy)y^{-1}=0y^{-1}=0$, d'où $xy=0\Longleftrightarrow x=0$ ou $y=0$. \bookend
+
+Mais un anneau intègre n'est pas forcément un corps : c'est le cas de $\mathbb Z$. Un corps $K$ est dit commutatif si le produit est commutatif, sinon c'est un corps gauche.
+
+\BellaSection{2. Morphismes d'anneaux, idéal, anneau quotient}
+
+\medskip\noindent\textsc{Définition 5.14.} --- \emph{\BellaCorrection{Soient}{Soit} deux anneaux $A$ et $A'$. On appelle morphisme d'anneaux de $A$ dans $A'$ toute application $f$ de $A$ dans $A'$ telle que $\forall(a,b)\in A^2$, $f(a+b)=f(a)+f(b)$ et $f(ab)=f(a)f(b)$.}
+
+Comme dans le cas des morphismes de groupes, on vérifie très facilement le fait que les images, directes ou réciproques, des sous-anneaux, par un morphisme d'anneaux, sont encore des sous-anneaux.
+
+Car si $f$ est un morphisme de $A$ dans $A'$, si $B$ est sous-anneau de $A$, en particulier $B$ est sous-groupe additif de $A$ et on sait alors (Théorème 4.16) que $f(B)$ est sous-groupe additif de $A'$. De même si $B'$ est sous-anneau de $A'$, avec le même théorème on aura $f^{-1}(B')$ sous-groupe additif de $A$. Il reste à vérifier la stabilité pour le produit.
+
+Soient $y_1$ et $y_2$ dans $f(B)$, il existe $x_1$ et $x_2$ dans $B$ tels que $f(x_1)=y_1$ et $f(x_2)=y_2$ d'où $y_1y_2=f(x_1)f(x_2)=f(x_1x_2)$, (car $f$ morphisme) avec $x_1x_2\in B$, (stable pour le produit) d'où $y_1y_2\in f(B)$ : on a bien $f(B)$ stable pour le produit. De même, si $x_1$ et $x_2$ sont dans $f^{-1}(B')$ on a $x_1x_2\in f^{-1}(B')$ car ceci $\Longleftrightarrow f(x_1x_2)\in B'$ soit encore (f morphisme) $\Longleftrightarrow f(x_1)f(x_2)\in B'$ ce qui est vrai car $B'$ est stable par produit et $f(x_1)$ et $f(x_2)$ sont dans $B'$. \bookend
+
+On vient de justifier le
+
+\medskip\noindent\textsc{Théorème 5.15.} --- \emph{Soient 2 anneaux $A$ et $A'$, $f$ un morphisme de $A$ dans $A'$. Si $B$ est sous-anneau de $A$, $f(B)$ est sous-anneau de $A'$ et si $B'$ est sous-anneau de $A'$ alors $f^{-1}(B')$ est sous-anneau de $A$.} \bookend
+
+En particulier, $\{0\}$ étant sous-anneau de l'anneau $A'$, (vérification facile), si $f$ est un morphisme d'anneaux de $A$ dans $A'$, le noyau de $f$ noté $\operatorname{Ker}f=\{x;x\in A,f(x)=0\}$ est un sous-anneau. Mais de même que pour un morphisme de groupe, le noyau est plus qu'un sous-groupe, puisque c'est un sous-groupe distingué, dans le cadre des anneaux le noyau d'un morphisme est plus qu'un sous-anneau.
+
+En effet, si $a\in\operatorname{Ker}f$, $\forall x\in A$ on a encore $xa\in\operatorname{Ker}f$ car $f(xa)=f(x)f(a)=f(x)\cdot0=0$ ; et de même $ax\in\operatorname{Ker}f$ car $f(ax)=f(a)f(x)=0\cdot f(x)=0$. Ceci conduit à la
+
+\medskip\noindent\textsc{Définition 5.16.} --- \emph{Dans un anneau $A$ on appelle idéal bilatère toute partie $I$ de $A$ qui est sous-groupe additif et telle que $\forall x\in A$ et $\forall i\in I$, $xi\in I$ et $ix\in I$.}
+
+Une partie $I$ de $A$ qui serait sous-groupe additif et qui vérifierait la condition : $\forall x\in A$, $\forall i\in I$, $xi\in I$ serait appelée idéal à gauche (si c'est $\forall x\in A$, $\forall i\in I$, $ix\in I$ qui est vérifiée, on parle d'idéal à droite).
+
+Enfin, il est clair que dans un anneau commutatif les trois notions n'en font qu'une.
+
+Nous venons de voir que le noyau d'un morphisme d'anneaux est un idéal bilatère, en fait on va établir la réciproque, après avoir introduit les anneaux quotients. La démarche est analogue à celle du chapitre IV, §2 concernant les sous-groupes distingués et les groupes quotients.
+
+Soit donc un idéal $I$ bilatère dans l'anneau. On définit une équivalence $\mathcal R$ par :
+\[
+(x\mathcal R y)\Longleftrightarrow(x-y\in I).
+\]
+Comme $I$ est sous-groupe additif de $A$, groupe commutatif, l'ensemble quotient $E=A/\mathcal R$ est déjà muni d'une structure de groupe additif, (voir 4.21, où la notation de la loi de groupe était multiplicative, attention aux confusions!)
+
+La classe $X$ de $x$ est l'ensemble des $y$ tels que $y\mathcal R x$, soit $y-x\in I$ soit encore $y\in x+I=\{x+i,i\in I\}$.
+
+L'équivalence $\mathcal R$ est compatible avec le produit : si $x\mathcal R x'$, c'est que $x-x'\in I$. Donc, $\forall y\in A$, $(x-x')y\in I$, (idéal bilatère donc à droite) soit $xy-x'y\in I$ soit $xy\mathcal R x'y$, ce qui est la traduction de $\mathcal R$ compatible à droite pour le produit.
+
+De même, $x\mathcal R x'\Rightarrow\forall y\in A$, $yx\mathcal R yx'$ car on a $x-x'\in I$ idéal bilatère, donc à gauche, d'où $y(x-x')\in I$ soit $yx-yx'\in I$ soit $yx\mathcal R yx'$.
+
+Il en résulte que $\mathcal R$ est compatible avec le produit de l'anneau $A$, (voir 2.39) car $x\mathcal R x'$ et $y\mathcal R y'$ implique d'abord $xy\mathcal R x'y$, (on multiplie à droite par $y$ dans $x\mathcal R x'$) mais aussi $x'y\mathcal R x'y'$, (compatibilité à gauche dans $y\mathcal R y'$), d'où par transitivité de l'équivalence, $xy\mathcal R x'y'$.
+
+On peut donc, (toujours 2.39), définir sur $E=A/\mathcal R$ le produit : $X\cdot Y=$ classe de $(xy)$ si $x\in X$ et $y\in Y$ car ceci ne dépend pas du choix des représentants. L'ensemble $E$ est alors muni d'une structure d'anneau car la loi $\cdot$ est associative, distributive pour le produit.
+
+Vérifions par exemple que $(X+Y)\cdot Z=XZ+YZ$ : soient $x$, $y$ et $z$ des représentants de ces classes, $x+y$ représente $X+Y$ donc
+\begin{align*}
+(X+Y)\cdot Z&=\text{classe de }((x+y)z)=\text{classe }(xz+yz)\\
+&=\text{classe }(xz)+\text{classe }(yz),\quad(\text{loi $+$ sur le quotient})\\
+&=X\cdot Z+Y\cdot Z.
+\end{align*}
+On procède de même pour la distributivité à droite. On a donc le
+
+\medskip\noindent\textsc{Théorème 5.17.} --- \emph{Soit $I$ un idéal bilatère d'un anneau $A$. La relation d'équivalence $\mathcal R$ définie par $x\mathcal R y\Longleftrightarrow x-y\in I$ est compatible avec la structure d'anneau de $A$ et l'ensemble quotient $A/\mathcal R$ encore noté $A/I$ est muni d'une structure d'anneau.} \bookend
+
+Soit alors la projection canonique $\varphi:x\mapsto X$ classe d'équivalence de $x$, c'est un morphisme d'anneaux de $A$ sur $A/I$, de noyau $I$ car $\varphi(x+y)=X+Y$ et $\varphi(xy)=XY$, si $x\in X$ et $y\in Y$, vu les définitions de $+$ et $\cdot$ sur $A/I$. Donc $\varphi$ est un morphisme. On a $\varphi$ surjectif, car si $X\in A/I$, n'importe quel $x\in X$ est envoyé sur $X$ par $\varphi$, et $\operatorname{Ker}\varphi=I$ car dans l'anneau $A/I$, l'élément nul est la classe d'équivalence de 0 donc c'est $\{x;x-0\in I\}=I$, et on a $\operatorname{Ker}\varphi=\{x;x$ dans la classe de $0\}$, c'est donc la partie $I$ de $A$.
+
+En résumant ce qui précède, on a finalement
+
+\medskip\noindent\textsc{Théorème 5.18.} --- \emph{\BellaCorrection{Une}{Un} partie $I$ d'un anneau $A$ est un idéal bilatère si et seulement si $I$ est le noyau d'un morphisme d'anneaux.} \bookend
+
+Par ailleurs, si $\varphi$ est un morphisme d'anneaux, de $A$ dans $A'$, $\operatorname{Ker}\varphi$ est idéal bilatère de $A$, donc l'ensemble quotient $A/\operatorname{Ker}\varphi$ est un anneau et $\varphi$ se décompose canoniquement en $\varphi=i\circ\bar\varphi\circ s$
+\[
+\begin{array}{ccccc}
+A&\xrightarrow{\ \varphi\ }&A'\\
+{\scriptstyle s}\downarrow&&\uparrow{\scriptstyle i}\\
+A/\operatorname{Ker}\varphi&\xrightarrow{\ \bar\varphi\ }&\varphi(A)
+\end{array}
+\]
+avec $s:x\mapsto$ classe $X$ de $x$ dans $A/\operatorname{Ker}\varphi$, surjection canonique qui est un morphisme ;
+\[
+\bar\varphi:X\mapsto\bar\varphi(X)=\varphi(x)\quad\text{si }x\in X,
+\]
+c'est indépendant du choix de $x$ et c'est un morphisme bijectif ; $i:\varphi(A)\longrightarrow A'$ définie par $y\mapsto i(y)=y$ si $y\in\varphi(A)$ c'est l'injection canonique, là encore morphisme d'anneaux.
+
+\BellaSection{3. Anneaux principaux, caractéristique}
+
+Il est facile de voir que, dans un anneau $A$, les idéaux, \BellaCorrection{bilatères}{bilatère}, à gauche ou à droite, sont stables par intersection, et que $A$ lui-même en est un. On a donc la notion d'idéal, à gauche par exemple, engendré par une partie $S$ de $A$, ce sera l'intersection de tous les idéaux à gauche \BellaCorrectionNote{contenant $S$}{contenant $A$}{L'idéal engendré par $S$ est, par définition, l'intersection des idéaux contenant $S$ ; la phrase suivante confirme ce sens.}, c'est le plus petit idéal à gauche contenant $S$.
+
+\subsection*{5.19. Idéal principal}
+On appelle idéal principal, (à gauche, droite, bilatère) tout idéal qui peut être engendré par un seul élément. On se propose de caractériser les éléments d'un tel idéal.
+
+\medskip\noindent\textsc{Théorème 5.20.} --- \emph{Soit $a$ un élément d'un anneau $A$. L'idéal principal à gauche, engendré par $a$, est l'ensemble
+\[
+(a)_g=\{na+xa;n\in\mathbb Z,x\in A\}.
+\]}
+
+Car cet ensemble contient $a=1\cdot a+0a$, ($1\in\mathbb Z$, $0\in A$, attention), c'est un idéal à gauche :
+
+sous-groupe additif car non vide, et si
+\[
+b=na+xa\quad\text{et}\quad b'=n'a+x'a\quad\text{sont dans }(a)_g,
+\]
+\[
+b-b'=(n-n')a+(x-x')a\quad\text{est dans }(a)_g;
+\]
+(on obtient $xa-x'a=(x-x')a$ par distributivité dans l'anneau),
+
+permis à gauche : si $b=na+xa\in(a)_g$ et $y\in A$, $y\cdot b=y\cdot(na)+(y\cdot x)\cdot a$ avec, si $n\in\mathbb N$, $na=a+a+\cdots+a$, $n$ fois, et si $n<0$, c'est $na=(-a)+(-a)+\cdots+(-a)$, $-n$ fois, que l'on considère. Donc
+\begin{align*}
+y\cdot b&=(ya+ya+\cdots+ya)+(y\cdot x)a\\
+&\quad\text{(ou }((-y)a+(-y)a+\cdots+(-y)a)+(y\cdot x)a\text{)}\\
+&=((ny)\cdot a)+(y\cdot x)a=0a+z\cdot a
+\end{align*}
+avec $z=ny+y\cdot x\in A$.
+
+\medskip\noindent\textsc{Remarque 5.21.} --- Dans le calcul qui vient d'être fait, il faut se rappeler que si $n\in\mathbb N^*$, $na=a+\cdots+a$, ($n$ fois), que $0a=0$ et que si $-n\in\mathbb N^*$, $(-n)a=((-a)+(-a)+\cdots+(-a))$, ($n$ fois), $-a$ opposé de $a$ dans le groupe additif $A$.
+
+Enfin, $(a)_g$ est le plus petit idéal à gauche contenant $a$ ; car si $I$ est un idéal à gauche contenant $a$, forcément $\{na;n\in\mathbb Z\}$ est contenu dans $I$ qui est un sous-groupe additif de $A$ ; de même $I$ étant permis à gauche, $\forall x\in A$, $x\cdot a\in I$, et enfin la stabilité de $I$ pour l'addition implique que $\{na+x\cdot a;n\in\mathbb Z,x\in A\}$ est bien dans $I$. \bookend
+
+On justifierait de même le
+
+\medskip\noindent\textsc{Théorème 5.22.} --- \emph{Soit $a$ un élément de l'anneau $A$. L'idéal principal à droite engendré par $a$ est l'ensemble
+\[
+(a)_d=\{na+a\cdot x;n\in\mathbb Z,x\in A\}
+\]
+et l'idéal principal bilatère engendré par $a$ est l'ensemble
+\[
+(a)=\left\{na+x\cdot a+a\cdot y+\sum_{\lambda\in\Lambda}s_\lambda\cdot a\cdot t_\lambda;
+\begin{array}{l}
+n\in\mathbb Z,\ x\in A,\ y\in A,\\
+s_\lambda\in A,\ t_\lambda\in A,\ \lambda\in\Lambda,\\
+\Lambda\text{ de cardinal fini}
+\end{array}\right\}.
+\]}
+
+L'ensemble $\Lambda$ est un ensemble d'indices.
+
+La technique est la même que pour le Théorème 5.20 on démontre que les ensembles définis sont des idéaux, (à droite, bilatère) contenant $a$, et que tout idéal (à droite, bilatère) contenant $a$ contient forcément l'ensemble donné.
+
+Pour l'idéal bilatère c'est affreux, mais c'est parce qu'un idéal bilatère contenant $a$ doit contenir les $x\cdot a$, $\forall x\in A$ et aussi les $a\cdot y$, $\forall y\in A$ mais alors, si $x\cdot a\in$ l'idéal, $\forall y\in A$, $x\cdot a\cdot y\in$ l'idéal bilatère, et comme on doit avoir un sous-groupe additif, les sommes finies d'éléments de ce type sont dans l'idéal. \bookend
+
+\subsection*{5.23. Cas unitaire et commutatif}
+En fait, dans un anneau unitaire, commutatif tout se simplifie. D'abord, si $e$ est l'élément neutre de l'anneau, $\forall n\in\mathbb N^*$, on a
+\begin{align*}
+na&=a+a+\cdots+a=e\cdot a+e\cdot a+\cdots+e\cdot a\\
+&=(e+e+\cdots+e)\cdot a=(ne)\cdot a
+\end{align*}
+qui est du type $xa$ avec $x\in A$ ; de même, si $-n\in\mathbb N^*$, on a
+\[
+na=(-a)+(-a)+\cdots+(-a)=((-e)+\cdots+(-e))\cdot a=(ne)\cdot a;
+\]
+et enfin $0a=0$ est du type $0\cdot a$, ce qui simplifie les expressions en :
+\[
+(a)_g=\{x\cdot a;x\in A\};\qquad(a)_d=\{a\cdot x;x\in A\}
+\]
+et
+\[
+(a)=\left\{\sum_{\lambda\in\Lambda}s_\lambda a t_\lambda;\ s_\lambda,t_\lambda\text{ dans }A;\ \operatorname{card}(\Lambda)\text{ fini}\right\}.
+\]
+Si de plus l'anneau est commutatif unitaire, les 3 notions coïncident, ce qui simplifie aussi l'idéal bilatère. On a le
+
+\medskip\noindent\textsc{Théorème 5.24.} --- \emph{Dans un anneau commutatif unitaire $A$, l'idéal principal engendré par $a$ est l'ensemble $(a)=\{x\cdot a,x\in A\}=\{ax,x\in A\}$.}
+
+C'est la forme commune prise par $(a)_d$ ou $(a)_g$ dans ce cas. \bookend
+
+\medskip\noindent\textsc{Théorème 5.25.} --- \emph{Tout idéal $I$ de l'anneau $\mathbb Z$ est principal, de la forme $p\mathbb Z=\{$multiple de $p\}$, avec $p\in\mathbb N$.}
+
+En fait, c'est déjà la forme des sous-groupes additifs de $\mathbb Z$, comme on l'a justifié au Théorème 4.42, et le théorème ci-dessus nous dit que $p\cdot\mathbb Z$ est un idéal. \bookend
+
+Cette forme, prise par les idéaux de $\mathbb Z$ est fondamentale pour introduire les notions de p.g.c.d; p.p.c.m, décomposition en facteurs premiers ... utilisées en arithmétique, mais aussi dans les anneaux de polynômes. C'est pourquoi on introduit les notions suivantes.
+
+\medskip\noindent\textsc{Définition 5.26.} --- \emph{On appelle anneau principal tout anneau commutatif unitaire intègre dans lequel tout idéal est principal.}
+
+\medskip\noindent\textsc{Définition 5.27.} --- \emph{On appelle anneau euclidien tout anneau intègre commutatif $A$, tel qu'il existe une application $\varphi$ de $A^*$ dans $\mathbb N$ vérifiant :
+\begin{enumerate}[label=\arabic*),leftmargin=2.1em]
+\item si $b$ divise $a$, alors $\varphi(b)\le\varphi(a)$,
+\item si $a\in A$, si $b\in A-\{0\}$, il existe $q$ et $r$ dans $A$ tels que $a=bq+r$ avec $r=0$ ou $\varphi(r)<\varphi(b)$.
+\end{enumerate}}
+Rappelons que $A^*=A-\{0\}$.
+
+\medskip\noindent\textsc{Théorème 5.28.} --- \emph{Tout anneau unitaire euclidien est principal.}
+
+Car, soit $I$ un idéal de $A$. Si $I$ est réduit à 0, $I=0\cdot A$ est bien un idéal principal. Sinon il existe des $x$ non nuls dans $I$, donc l'ensemble des $\varphi(x)$ ; $x\in I-\{0\}$ est un ensemble non vide d'entiers positifs : il admet un plus petit élément $n_0$, (propriété des entiers, liée à ce que la relation d'ordre entre cardinaux est un bon ordre). Soit $x_0$ dans $I$ tel que $\varphi(x_0)=n_0$. Si $x$ est dans $I$ comme $x_0\ne0$ on utilise le (2e) de la définition 5.27 : il existe $q$ et $r$ dans $A$ avec $x=x_0q+r$ et $(r=0)$ ou $(\varphi(r)<\varphi(x_0))$.
+
+Or $x_0\in I$, idéal $\Rightarrow x_0q\in I$ donc $x-x_0q=r\in I$, (idéal donc aussi sous-groupe additif). Si on avait $r\ne0$, on aurait $r$ dans $I-\{0\}$ avec $\varphi(r)<\varphi(x_0)$, ce qui est exclu par définition de $n_0=\varphi(x_0)$. On a donc $r=0$, d'où $x=x_0q$.
+
+Il en résulte que tout $x$ de $I$ est multiple de $x_0$, d'où l'inclusion $I\subset x_0\cdot A$, l'autre inclusion étant évidente on a bien $I=x_0\cdot A$ est principal. \bookend
+
+L'étude des idéaux principaux a mis en évidence le sous-groupe additif $\mathbb Za=\{na;n\in\mathbb Z\}$ engendré par un élément $a$ de $A$. Il s'agit d'un groupe monogène, donc soit de cardinal infini, soit de cardinal fini, $p$, ordre de $a$, (théorème 4.45).
+
+On note $\nu(a)$ l'ordre de $a$ lorsqu'il engendre un groupe cyclique, c'est-à-dire monogène fini. On sait alors que $\nu(a)$ est le plus petit entier positif $n$ tel que $n\cdot a=0$, élément nul de l'anneau et $(p\cdot a=0)\Longleftrightarrow(p$ multiple de $\nu(a))$.
+
+Dans le cas où, $\forall a\ne0$ dans $A$, $\nu(a)$ existe et où de plus l'ensemble $\{\nu(a);a\in(A-\{0\})\}$ est borné, cet ensemble d'entiers est fini, et si $N=$ le plus petit commun multiple de $\{\nu(a);a\in(A-\{0\})\}$ on a $N\cdot x=0$, $\forall x\in A$, (c'est bien sûr vrai si $x=0$, et aussi $\forall a\in A-\{0\}$ car $N$ est multiple de $\nu(a)$), et $N$ est le plus petit entier vérifiant cela car si $N'\cdot x=0$, $\forall x\in A$, $N'$ est multiple de l'ordre de chaque élément non nul, donc $N'$ est multiple du p.p.c.m. des ordres des éléments non nuls.
+
+\subsection*{5.29. Caractéristique}
+Dans ce cas on dit que l'anneau $A$ est de caractéristique finie $N$.
+
+Sinon, quand il n'existe pas d'entier $N$ non nul tel que, $\forall x\in A$, $N\cdot x=0$ on dit que $A$ est de caractéristique nulle, puisque $0\cdot x=0$, $\forall x$ et que 0 est le seul entier vérifiant cela.
+
+$A$ de caractéristique nulle se rencontre soit s'il existe des $x$ non nuls dans $A$ d'ordre infini, ou bien si l'ensemble des ordres des éléments non nuls de $A$ est infini.
+
+\subsection*{5.30. Exemple de $\mathbb Z/p\mathbb Z$}
+L'anneau $\mathbb Z$ lui, est de caractéristique nulle, mais $p\mathbb Z$ étant un idéal, ($p\in\mathbb N^*$), l'anneau $\mathbb Z/p\mathbb Z$ est de caractéristique $p$, car en tant que groupe additif, $\mathbb Z/p\mathbb Z$ admet $p$ éléments, donc $a$ non nul de $\mathbb Z/p\mathbb Z$ engendre un groupe cyclique de cardinal $\nu(a)$ qui divise card$(\mathbb Z/p\mathbb Z)$ (Théorème 4.59). On a déjà $p$ multiple de tous les ordres $\nu(a)$ des éléments non nuls de $\mathbb Z/p\mathbb Z$. Puis l'élément $\bar1$ de $\mathbb Z/p\mathbb Z$ engendre $\mathbb Z/p\mathbb Z$ en entier, car $n\bar1=$ classe de $n$ est la classe de 0 si et seulement si $n-0$ est multiple de $p$, donc $p$ est bien le plus petit entier $q>0$ tel que $q\bar1=0$. Donc $\bar1$ est d'ordre $p$ : la caractéristique de l'anneau devant être multiple de l'ordre de $\bar1$, c'est un multiple de $p$ d'où $\mathbb Z/p\mathbb Z$ de caractéristique $p$. \bookend
+
+\medskip\noindent\textsc{Remarque 5.31.} --- \emph{Si un anneau est unitaire et si son élément neutre $e$ est d'ordre fini $n$, tout élément de $A-\{0\}$ est d'ordre fini, un diviseur de $n$.}
+
+Car $\forall x\in A-\{0\}$,
+\begin{align*}
+n\cdot x&=x+x+\cdots+x=e\cdot x+e\cdot x+\cdots+e\cdot x\\
+&=(e+e+\cdots+e)\cdot x=(ne)\cdot x=0\cdot x=0,
+\end{align*}
+donc $x$ engendre un groupe additif cyclique d'ordre un diviseur de $n$. \bookend
+
+Si de plus $A$ est unitaire, intègre, si $e$ est d'ordre infini tout élément non nul est aussi d'ordre infini.
+
+Car si pour $x\ne0$, on a $n\in\mathbb N^*$ tel que $n\cdot x=(ne)\cdot x=0$ avec $x\ne0$ dans $A$ intègre, c'est que $ne=0$, (Définition 5.9), ce qui contredit le fait que $e$ est d'ordre infini.
+
+En réunissant ces 2 résultats on a donc :
+
+\medskip\noindent\textsc{Théorème 5.32.} --- \emph{Un anneau unitaire intègre $A$ est de caractéristique $\ne0$, finie, $N$, $\Longleftrightarrow$ son élément neutre $e$ est d'ordre $N$, fini, et $A$ de caractéristique nulle $\Longleftrightarrow e$ d'ordre infini.} \bookend
+
+\BellaSection{4. Corps des fractions d'un anneau intègre unitaire,\texorpdfstring{\newline}{ } construction de $\mathbb Q$}
+
+Au chapitre IV §3, on a construit le symétrisé d'un demi-groupe abélien vérifiant la règle de simplification, rencontrant ainsi le premier exemple de la notion de plongement d'un ensemble dans un autre.
+
+\subsection*{5.33. Plongement}
+On dit qu'on plonge $E$ dans $F$, $E$ et $F$ étant des ensembles, s'il y a une injection $\varphi$ de $E$ dans $F$. En confondant $E$ et son image $\varphi(E)$ dans $F$, on peut dire que l'on considère alors $E$ comme une partie de $F$.
+
+C'est en ce sens que $\mathbb N$ apparaît comme une partie de $\mathbb Z$ bien que les éléments de $\mathbb Z$ soient des classes d'équivalence de couples de $\mathbb N^2$.
+
+Si $E$ et $F$ sont munis de structures analogues, (ensemble ordonné, groupe, anneau, corps...), cette notion de plongement n'a d'intérêt que si $\varphi$ est un morphisme pour ces structures, condition que l'on impose.
+
+Dans ce chapitre, on va se poser la question de plonger un anneau $A$ dans un corps, donc d'obtenir des inverses pour le produit. Pour cela mieux vaut avoir un élément neutre dans $A$, et comme un corps est intègre, (voir 5.13) l'anneau $A$ dont on part doit lui aussi être intègre.
+
+Enfin, pour faciliter l'exposé, on va considérer le cas des anneaux commutatifs.
+
+Soit donc un anneau commutatif intègre unitaire $A$. On peut penser au cas de $\mathbb Z$ que l'on connaît, ce qui facilite la compréhension.
+
+Définir des quotients ou des fractions revient à formaliser ce que l'on sait depuis longtemps des fractions $\frac12$, $\frac24$, ... et en particulier le fait que $\frac12$ ou $\frac24$ c'est « pareil » s'il s'agit de couper une tarte en deux par exemple. Peut-être est-il plus facile de manger deux quarts qu'une moitié ?
+
+Sur cette vision gourmande des choses, établissons le théorème suivant.
+
+\medskip\noindent\textsc{Théorème 5.34.} --- \emph{Soit un anneau intègre unitaire commutatif $A$. Il existe un corps $K$ commutatif, et un morphisme d'anneau injectif $\varphi$ de $A$ dans $K$. De plus si $K'$ est un autre corps commutatif tel qu'il existe $\varphi_1$ morphisme injectif de $A$ dans $K'$, il existe un morphisme injectif $\theta$ de $K$ dans $K'$ tel que $\forall x\in A$, $\varphi_1(x)=\theta(\varphi(x))$.}
+
+Le corps $K$ que l'on va construire est le corps des fractions du domaine d'intégrité unitaire $A$, la deuxième partie du théorème dit que $K$ est unique à isomorphisme près, si on veut que ce soit le plus petit. On procède par petites étapes.
+
+On pose $A^*=A-\{0\}$, soit $C=A\times A^*$. Sur $C$ on définit une relation binaire $\mathcal R$ par
+\[
+((a,b)\mathcal R(a',b'))\Longleftrightarrow(ab'=ba').
+\]
+Penser aux fractions :
+\[
+\left(\frac ab=\frac{a'}{b'}\right)\Longleftrightarrow(ab'=ba').
+\]
+
+\subsection*{5.35. $\mathcal R$ est une équivalence sur $C$}
+\emph{réflexif} car $ab=ba$ donc $(a,b)\mathcal R(a,b)$ ;
+
+\emph{symétrique} : si $ab'=ba'$, par commutativité du produit $a'b=b'a$ soit
+\[
+(a,b)\mathcal R(a',b')\Rightarrow(a',b')\mathcal R(a,b);
+\]
+
+\emph{transitive} si $(a,b)\mathcal R(a',b')$ et $(a',b')\mathcal R(a'',b'')$ on a $ab'=ba'$ et $a'b''=b'a''$. On multiplie la première égalité par $b''$, la deuxième par $b$ d'où
+\[
+ab'b''=ba'b'',\qquad ba'b''=bb'a''.
+\]
+D'où (commutativité du produit dans l'anneau), l'on tire $ab''b'=ba''b'$. Or $b'$ est non nul, (dans $A^*$) et l'anneau étant intègre, l'égalité $(ab''-ba'')b'=0$ implique $ab''-ba''=0$, soit $ab''=ba''$, d'où $(a,b)\mathcal R(a'',b'')$. \bookend
+
+Par ailleurs, sur $C$ on définit 2 lois. Une addition, $+$, et un produit, $\cdot$, par
+\[
+(a,b)+(a_1,b_1)=(ab_1+ba_1,bb_1)
+\]
+et
+\[
+(a,b)\cdot(a_1,b_1)=(aa_1,bb_1),
+\]
+(toujours en pensant à ce que l'on fait sur les fractions usuelles), ce qui a un sens car $bb_1\ne0$ si $b$ et $b_1$ le sont, donc $bb_1\in A^*$.
+
+\subsection*{5.36. Ces lois sont compatibles avec l'équivalence}
+Si $(a,b)\mathcal R(a',b')$ on a $((a,b)+(a_1,b_1))\mathcal R((a',b')+(a_1,b_1))$ car ceci équivaut à
+\[
+(ab_1+ba_1,b b_1)\mathcal R(a'b_1+b'a_1,b'b_1)
+\]
+ou encore à
+\[
+(ab_1+ba_1)b'b_1=bb_1(a'b_1+b'a_1)
+\]
+soit à
+\[
+ab'b_1^2+bb'a_1b_1=ba'b_1^2+bb'b_1a_1.
+\]
+Or $ab'=ba'\Rightarrow ab'b_1^2=ba'b_1^2$, (anneau commutatif), et on a aussi $bb'a_1b_1=bb'b_1a_1$ d'où en sommant, l'égalité voulue.
+
+Si de plus $(a_1,b_1)\mathcal R(a_1',b_1')$, on a de la même façon
+\[
+((a',b')+(a_1,b_1))\mathcal R((a',b')+(a_1',b_1'))
+\]
+et finalement
+\[
+((a,b)+(a_1,b_1))\mathcal R((a',b')+(a_1',b_1'))
+\]
+par transitivité de l'équivalence. Au passage on vient de voir que pour vérifier la compatibilité on peut simplifier la justification.
+
+De même si $(a,b)\mathcal R(a',b')$ on a
+\[
+[(a,b)\cdot(a_1,b_1)]\mathcal R[(a',b')\cdot(a_1,b_1)],
+\]
+car on doit justifier que
+\[
+(ab'=ba')\Rightarrow((aa_1,bb_1)\mathcal R(a'a_1,b'b_1))
+\]
+ce qui sera vrai si on justifie l'égalité $aa_1b'b_1=bb_1a'a_1$.
+
+Mais partant de $ab'=ba'$, en multipliant par $a_1b_1$, et en utilisant la commutativité du produit on obtient bien $aa_1b'b_1=bb_1a'a_1$. \bookend
+
+Il en résulte que, sur l'ensemble quotient $K=C/\mathcal R$, on peut définir deux lois, $+$ et $\cdot$ par : si $X=$ classe de $(a,b)$ et $X'=$ classe de $(a',b')$ on pose
+\[
+X+X'=\text{classe de }(ab'+ba',bb')
+\]
+et
+\[
+X\cdot X'=\text{classe de }(aa',bb').
+\]
+Ces définitions ne dépendent pas du choix des représentants.
+
+\subsection*{5.37. L'ensemble $K$ est muni par $+$ d'une structure de groupe additif commutatif}
+L'élément nul est $0=$ classe$(0,e)=$ classe$(0,b)$, $\forall b\in A^*$, avec $e$ élément neutre pour le produit dans l'anneau $A$.
+
+On a bien $(0,e)\mathcal R(0,b)$ car ceci $\Longleftrightarrow0\cdot b=e\cdot0$, vrai. Il faut vérifier que l'addition est commutative, vrai car $X'+X$ est la classe de $(a'b+b'a,b'b)$ or $a'b+b'a=ab'+ba'$ et $b'b=bb'$, $A$ étant commutatif ; puisque $+$ est associative : avec $X''=$ classe de $(a'',b'')$ on a
+\begin{align*}
+(X+X')+X''&=\text{classe de }(ab'+ba',bb')+\text{classe }(a'',b'')\\
+&=\text{classe de }((ab'+ba')b''+(bb')a'',(bb')b'')\\
+&=\text{classe de }(a(b'b'')+b(a'b''+b'a''),b(b'b''))
+\end{align*}
+(on utilise l'associativité, la distributivité, la commutativité dans l'anneau)
+\[
+(X+X')+X''=\text{classe de }(a,b)+\text{classe de }(a'b''+b'a'',b'b'')=X+(X'+X'')\qquad\text{ouf!}
+\]
+
+Comme $(a,b)+(0,e)=(ae+b0,be)=(a,b)$, l'élément $0=$ classe$(0,e)$ est neutre pour l'addition.
+
+Enfin
+\begin{align*}
+\text{classe}(a,b)+\text{classe}(-a,b)&=\text{classe}(ab+b(-a),b^2)\\
+&=\text{classe}(b(a-a),b^2)\\
+&=\text{classe}(0,b^2)=0
+\end{align*}
+donc tout élément $X=$ classe de $(a,b)$ a un opposé, $-X=$ classe$(-a,b)$. \bookend
+
+\subsection*{5.38. $K$ est un corps commutatif}
+L'ensemble $K$ est muni par les 2 lois d'une structure de corps commutatif.
+
+On doit donc vérifier que $K^*=K-\{0\}$ est un groupe commutatif pour le produit, l'élément unité étant $1=$ classe$(b,b)$, pour tout $b$ de $A^*$ (si $b$ et $c$ sont dans $A^*$, $bc=cb$ dans $A$ commutatif donc $(b,b)\mathcal R(c,c)$ : la définition de 1 a un sens) ; et qu'il y a distributivité.
+
+La loi est associative, car, avec les notations précédentes,
+\begin{align*}
+(XX')X''&=\text{classe}(aa',bb')\cdot\text{classe}(a'',b'')\\
+&=\text{classe}((aa')a'',(bb')b'')\\
+&=\text{classe}(a(a'a''),b(b'b''))=X\cdot(X'X'');
+\end{align*}
+elle est commutative car $aa'=a'a$ et $bb'=b'b$ donc $XX'=X'X$ ;
+il y a distributivité :
+\begin{align*}
+(X+X')\cdot X''&=\text{classe}(ab'+ba',bb')\cdot\text{classe}(a'',b'')\\
+&=\text{classe}[(ab'+ba')a'',(bb')b'']\\
+&=\text{classe}(ab'a''+ba'a'',bb'b'').
+\end{align*}
+Or $XX''=$ classe$(aa'',bb'')$. Si on remarque alors que :
+
+\subsection*{5.39. Remarque}
+$\forall(u,v)\in C$, $\forall w\in A^*$,
+\[
+((u,v)\mathcal R(uw,vw)),
+\]
+(car $A$ est commutatif et c'est équivalent à $u(vw)=v(uw)$), on a encore
+\[
+XX''=\text{classe}(ab'a'',bb'b'').
+\]
+De même $X'X''=$ classe$(a'a'',b'b'')=$ classe$(ba'a'',bb'b'')$ mais alors
+\begin{align*}
+XX''+X'X''&=\text{classe}(ab'a'',bb'b'')+\text{classe}(ba'a'',bb'b'')\\
+&=\text{classe}((ab'a''bb'b''+bb'b''ba'a''),bb'b''bb'b'')\\
+&=\text{classe}((ab'a''+ba'a'')bb'b'',bb'b''bb'b'')\\
+&=\text{classe}(ab'a''+ba'a'',bb'b''),
+\end{align*}
+d'après la remarque 5.39, puisque $bb'b''$ est dans $A^*$.
+
+On a donc justifié l'égalité $(X+X')X''=XX''+X'X''$.
+
+Tout élément admet un inverse, l'élément neutre pour le produit étant 1.
+
+D'abord 1 neutre car
+\[
+X\cdot1=1\cdot X=\text{classe}(a,b)\cdot\text{classe}(e,e)=\text{classe}(ae,be)=\text{classe}(a,b)=X,
+\]
+et si $X\ne0$, $X$ a un inverse : si $X=$ classe de $(a,b)$ on a $a\ne0$, (sinon $X=0$), alors $X^{-1}=$ classe$(b,a)$ existe et $XX^{-1}=X^{-1}X=$ classe$(ab,ba)=1$. \bookend
+
+On a donc pour l'instant construit un corps commutatif $K=C/\mathcal R$. Il reste à plonger l'anneau $A$ dans $K$ et à justifier la deuxième partie du théorème 5.34.
+
+Soit $\varphi$ l'application de $A$ dans $K$, qui à l'élément $a$ de l'anneau $A$ associe $\varphi(a)=$ classe$(a,e)=$ classe$(ab,b)$, ceci pour tout $b$ de $A^*$ vu la remarque 5.39.
+
+$\varphi$ est un morphisme d'anneaux, car
+\begin{align*}
+\varphi(a)+\varphi(b)&=\text{classe}(a,e)+\text{classe}(b,e)\\
+&=\text{classe}(ae+eb,e)=\text{classe}(a+b,e)=\varphi(a+b)
+\end{align*}
+et
+\[
+\varphi(a)\cdot\varphi(b)=\text{classe}(a,e)\cdot\text{classe}(b,e)=\text{classe}(ab,e)=\varphi(ab).
+\]
+Ce morphisme est injectif car $\varphi(a)=\varphi(b)$ revient à dire que les couples $(a,e)$ et $(b,e)$ sont équivalents, donc que $ae=eb$ soit $a=b$.
+
+On a donc construit un corps commutatif $K$ tel qu'il existe un morphisme d'anneau, injectif, de $A$ dans $K$.
+
+Soit alors $K'$ un autre corps, tel qu'il existe un morphisme $\varphi_1$ injectif de $A$ dans $K'$, avec $K'$ commutatif.
+
+On cherche un morphisme $\theta$, injectif, de $K$ dans $K'$, tel que $\forall x\in A$, $\varphi_1(x)=\theta(\varphi(x))$.
+
+Or si $X=$ classe$(a,b)=$ classe$(a,e)\cdot$ classe$(e,b)$, avec $e$ neutre pour le produit dans $A$, on posera, comme $\varphi(a)=$ classe$(a,e)$ :
+\[
+\theta(\text{classe}(a,e))=\varphi_1(a)\quad\text{et}\quad\theta(\text{classe}(b,e))=\varphi_1(b).
+\]
+Comme (classe$(b,e))=$(classe$(e,b))^{-1}$, (inverse dans le corps $K$, car $b\ne0$) on posera
+\[
+\theta(\text{classe}(e,b))=(\varphi_1(b))^{-1}.
+\]
+Ceci a un sens car $b\ne0$ dans $A$, $\varphi_1$ morphisme injectif de $A$ dans $K'$ donc $\varphi_1(b)\ne0$ dans le corps $K'$, donc l'inverse existe.
+
+On pose donc, si $X=$ classe$(a,b)$,
+\[
+\theta(X)=\varphi_1(a)(\varphi_1(b))^{-1}
+\]
+à condition que ceci ait un sens, c'est-à-dire que ce soit indépendant du choix du représentant $(a,b)$ de la classe $X$.
+
+Or si $(a',b')\in X$ aussi, c'est que $ab'=ba'$, d'où, $\varphi_1$ étant un morphisme d'anneaux $\varphi_1(a)\varphi_1(b')=\varphi_1(b)\varphi_1(a')$, avec là encore $\varphi_1(b)\ne0$ et $\varphi_1(b')\ne0$, ($\varphi_1$ injectif et $b$ et $b'$ non nuls), donc ces éléments sont inversibles dans le corps commutatif $K'$, on a bien
+\[
+\varphi_1(a)(\varphi_1(b))^{-1}=\varphi_1(a')(\varphi_1(b'))^{-1}.
+\]
+
+$\theta$ est un morphisme d'anneaux car, si $(a,b)\in X$ et $(a',b')\in X'$ on a
+\begin{align*}
+\theta(X+X')&=\theta(\text{classe}(ab'+ba',bb'))\\
+&=\varphi_1(ab'+ba')\cdot(\varphi_1(bb'))^{-1}\\
+&=(\varphi_1(a)\varphi_1(b')+\varphi_1(b)\varphi_1(a'))\cdot(\varphi_1(b)\varphi_1(b'))^{-1}
+\end{align*}
+car $\varphi_1$ est un morphisme d'anneau.
+Mais $(\varphi_1(b)\varphi_1(b'))^{-1}=(\varphi_1(b'))^{-1}(\varphi_1(b))^{-1}$ et dans $K'$ commutatif, on a $\varphi_1(b')(\varphi_1(b'))^{-1}=1$ et $\varphi_1(b)(\varphi_1(b))^{-1}=1$, d'où
+\[
+\theta(X+X')=\varphi_1(a)(\varphi_1(b))^{-1}+\varphi_1(a')(\varphi_1(b'))^{-1}=\theta(X)+\theta(X').
+\]
+De même
+\begin{align*}
+\theta(XX')&=\theta(\text{classe}(aa',bb'))\\
+&=\varphi_1(aa')(\varphi_1(bb'))^{-1}\\
+&=\varphi_1(a)\varphi_1(a')\cdot(\varphi_1(b)\varphi_1(b'))^{-1}\\
+&=\varphi_1(a)\varphi_1(a')\cdot((\varphi_1(b'))^{-1}(\varphi_1(b))^{-1})\\
+&=\varphi_1(a)(\varphi_1(b))^{-1}\cdot\varphi_1(a')(\varphi_1(b'))^{-1},\quad(K'\text{ commutatif}),\\
+&=\theta(X)\theta(X').
+\end{align*}
+
+Enfin $\theta$ est injectif car $\theta(\text{classe}(a,b))=\varphi_1(a)(\varphi_1(b))^{-1}=0$ dans le corps $K'\Rightarrow\varphi_1(a)=0$. Comme $\varphi_1$ est injectif c'est que $a=0$, donc $X=$ classe$(0,b)=0$.
+
+Le Théorème 5.34 est donc justifié.
+
+On a bien construit le corps $K$ des fractions de l'anneau commutatif unitaire intègre. Si on identifie $A$ et $\varphi(A)$, tout élément $X=$ classe de $(a,b)$ de $K$ se représente par l'une quelconque des fractions $\frac ab$, $\frac{a'}{b'}$, ..., équivalentes au sens $ab'=ba'$.
+
+La règle de calcul
+\[
+\frac ab+\frac{a'}{b'}=\frac{ab'+ba'}{bb'}
+\]
+de réduction au même dénominateur, se comprend alors très bien.
+
+Appliqué à l'anneau $\mathbb Z$, ce procédé conduit au corps $\mathbb Q$ des rationnels.
+
+Il nous restera à construire $\mathbb R$, corps des réels, mais dans ce cas le problème est de nature topologique. \BellaCorrection{Quant}{Quand} au passage de $\mathbb R$ à $\mathbb C$, de nature algébrique, le procédé constructif le plus naturel utilise des propriétés supplémentaires sur les idéaux, propriétés que nous allons aborder.
+
+\BellaSection{5. Idéaux premiers, idéaux maximaux}
+
+\medskip\noindent\textsc{Théorème 5.40.} --- \emph{Soit un anneau unitaire $K$. Les propriétés suivantes sont équivalentes :
+\begin{enumerate}[label=\arabic*),leftmargin=2.1em]
+\item $K$ est un corps,
+\item $K$ est non réduit à $\{0\}$ et ses seuls idéaux à gauche sont $\{0\}$ et $K$.
+\end{enumerate}}
+
+$1)\Rightarrow2)$ Un corps $K$ contient au moins 2 éléments 0 et 1 neutre pour l'addition et le produit, donc $K$ est non réduit $\{0\}$.
+
+Soit $I$ idéal à gauche, différent de $\{0\}$, $\exists x\ne0$, $x\in I$, or dans le corps $K$, $x$ non nul a un inverse, $x^{-1}$, donc $1=x^{-1}\cdot x\in I$ d'où, $\forall y\in K$, $y=y\cdot1\in I$ d'où $I=K$.
+
+$2)\Rightarrow1)$ Il s'agit de prouver que $a$ non nul dans $K$ admet un inverse. Soit $Ka=\{ka,k\in K\}$ l'idéal à gauche engendré par $a$, (voir 5.23), il contient $a=1\cdot a$, ($K$ anneau unitaire), non nul, donc $Ka\ne\{0\}$, le 2) $\Rightarrow Ka=K$, donc il existe $a^{-1}\in K$ tel que $a^{-1}a=1$. Pour l'instant $a^{-1}$ est inverse à gauche de $a$, or $a^{-1}\ne0$, donc on peut appliquer le même raisonnement à $a^{-1}$ au lieu de $a$, il existe donc $b$ tel que $ba^{-1}=1$, mais alors
+\[
+b=b\cdot1=b\cdot(a^{-1}a)=(ba^{-1})\cdot a
+\]
+par associativité du produit, soit $b=1\cdot a=a$, d'où $aa^{-1}=1$ : on a bien existence d'un inverse, des 2 côtés, pour $a\ne0$ : $K$ est un corps. \bookend
+
+\medskip\noindent\textsc{Remarque 5.41.} --- On a le même résultat pour les idéaux à droite, mais pas pour les idéaux bilatères. L'étude de l'algèbre linéaire en fournit un exemple, avec $E$ espace vectoriel de dimension finie, ($\ge2$) sur un corps $K$, $A$ l'anneau des endomorphismes de $E$, $A$ n'a que $\{0\}$ et $A$ comme idéaux bilatères mais ce n'est pas un corps.
+
+Le théorème 5.40 va nous permettre d'établir d'autres résultats.
+
+\medskip\noindent\textsc{Définition 5.42.} --- \emph{Un idéal $I$ de l'anneau commutatif $A$ est dit maximal si $I\ne A$ et si $I\subset J$ avec $J$ idéal $\Rightarrow J=I$ ou $J=A$.}
+
+Donc $I$ est maximal dans l'ensemble partiellement ordonné des idéaux différents de l'anneau.
+
+\medskip\noindent\textsc{Théorème 5.43.} --- \emph{Dans un anneau commutatif unitaire $A$, un idéal $M$ est maximal si et seulement si l'anneau quotient $A/M$ est un corps.}
+
+Dans $A$ commutatif, tout idéal $M$ est bilatère, donc $A/M$ est un anneau (Théorème 5.17). Cherchons les idéaux $I$ de $A/M$. Pour cela soit $\varphi$ le morphisme surjectif $A\to A/M$ qui à $x$ de $A$ associe sa classe d'équivalence.
+
+Si $I$ est un idéal de $A/M$, $\varphi^{-1}(I)$ en est un de $A$, car $I$ sous-groupe additif et $\varphi$ morphisme d'anneau, donc a fortiori de groupe implique déjà que $\varphi^{-1}(I)$ est sous-groupe additif de $A$ ; puis si $a\in A$ et $x\in\varphi^{-1}(I)$, (c'est-à-dire $\varphi(x)\in I$), alors $\varphi(ax)=\varphi(a)\cdot\varphi(x)\in I$ donc $ax\in\varphi^{-1}(I)$, ce qui justifie bien le fait que $\varphi^{-1}(I)$ est un idéal de $A$. De plus, $\forall m\in M$, $\varphi(m)=M=$ élément nul de $A/M$ donc $\varphi(m)$ est un élément de l'idéal $I$ de $A/M$, donc $m\in\varphi^{-1}(I)$.
+
+On a : (I est idéal de $A/M$) $\Rightarrow$ ($\varphi^{-1}(I)$ est idéal de $A$ contenant $M$).
+
+Réciproquement, soit $J$ un idéal de $A$ contenant $M$, comme $\varphi$ est surjective, $\varphi(J)$ est un idéal de $A/M$, (là encore c'est d'abord sous-groupe additif car image d'un sous-groupe additif par un morphisme de groupe, puis, si $A_0=\varphi(a)\in\varphi(J)$, avec $a\in J$, et si $X$ est quelconque dans $A/M=\varphi(A)$ il existe $x$ dans l'anneau $A$ tel que $\varphi(x)=X$ d'où
+\[
+X\cdot A_0=\varphi(x)\varphi(a)=\varphi(xa)
+\]
+car $\varphi$ morphisme, or $x\in A$, $a\in J$ idéal de $A\Rightarrow xa\in J$, donc $XA_0\in\varphi(J)$ qui est bien un idéal.
+
+Le fait que $J$ contient $M$ n'intervient pas en fait.
+
+Enfin, si $J_1$ et $J_2$ sont deux idéaux de $A$ contenant $M$, tels que $\varphi(J_1)=\varphi(J_2)$ alors $J_1=J_2$ car si $x_1\in J_1$, $X_1=\varphi(x_1)\in\varphi(J_1)=\varphi(J_2)$ donc $\exists x_2\in J_2$ tel que $\varphi(x_1)=\varphi(x_2)$, soit $\varphi(x_1-x_2)=0$ ou $x_1-x_2\in M$, or $M\subset J_1\cap J_2$ donc $x_1-x_2\in J_2$.
+
+Comme $x_2\in J_2$ qui, en tant qu'idéal est aussi sous-groupe additif on a : $x_1\in J_2$, d'où $J_1\subset J_2$ ; on justifierait de même $J_2\subset J_1$ d'où $J_1=J_2$, et ici l'inclusion $M\subset J_1\cap J_2$ sert.
+
+On a finalement prouvé qu'il y a bijection entre les idéaux bilatères de $A/M$ et ceux de $A$ contenant $M$.
+
+Mais en fait $A$ est commutatif, donc $A/M$ aussi, si bien que la notion d'idéal bilatère coïncide avec celle d'idéal à gauche, et il y a bijection entre les idéaux \BellaCorrection{à gauche}{à gauches} de $A/M$ et ceux de $A$ contenant $M$.
+
+Mais alors $M$ idéal maximal dans $A$, (commutatif unitaire)
+\[
+\Longleftrightarrow\text{ les seuls idéaux de $A$ contenant $M$ sont $M$ et $A$}
+\]
+\[
+\Longleftrightarrow\text{ les seuls idéaux de $A/M$ sont $\varphi(M)=\{0\}$ et $A/M$}
+\]
+\[
+\Longleftrightarrow A/M\text{ est un corps, d'après le théorème 5.40.}
+\]
+\bookend
+
+En cours de route on a aussi prouvé\BellaCorrection{}{k} :
+
+\medskip\noindent\textsc{Théorème 5.44.} --- \emph{Soient $A$ et $A'$ deux anneaux, $\varphi$ un morphisme de $A$ dans $A'$ ; si $I'$ est idéal de $A'$, $\varphi^{-1}(I')$ est un de $A$ ; si $I$ en est un de $A$, et si $\varphi$ est surjective, alors $\varphi(I)$ est un idéal de $A'$.} \bookend
+
+Cet énoncé est valable pour idéaux à droite, ou à gauche, ou bilatères, la justification donnée dans le cas bilatère s'adaptant sans difficulté.
+
+\medskip\noindent\textsc{Théorème 5.45.} --- \emph{Soit un anneau unitaire $A$ et un corps $K$. Si $f$ est un morphisme d'anneaux \BellaCorrectionNote{non nul}{\text{(sans cette précision)}}{Avec la définition 5.14, un morphisme d'anneaux n'est pas supposé préserver l'unité ; le morphisme nul fournit sinon un contre-exemple. Il suffit de supposer $f\ne0$.} de $K$ dans $A$, alors $f(K)$ est un corps isomorphe à $K$.}
+
+En effet $\operatorname{Ker}f$ est un idéal bilatère, donc à gauche, du corps $K$ puisque $(0)$ est idéal de $A$, or \BellaCorrectionNote{$f\ne0$}{\(f(1_K)=1_A\ne0_A\)}{Cette égalité n'est pas assurée par la définition 5.14 ; l'hypothèse corrigée $f\ne0$ suffit pour exclure $\operatorname{Ker}f=K$.} donc $\operatorname{Ker}f\ne K$.
+
+Le théorème 5.40 $\Rightarrow\operatorname{Ker}f=\{0\}$ car $\operatorname{Ker}f=K$ est exclu, et $\{0\}$ et $K$ sont les seuls idéaux à gauche du corps $K$.
+
+Donc $f$ est injective, et induit une bijection de $K$ sur l'anneau image $f(K)$, qui contient \BellaCorrectionNote{$f(1_K)$ comme élément neutre multiplicatif de $f(K)$}{$1_A=f(1_K)$}{Sans hypothèse de morphisme unitaire, l'unité de l'anneau image est $f(1_K)$, qui n'est pas nécessairement $1_A$.}. Il reste à vérifier que tout $y$ non nul de $f(K)$ a un inverse dans $f(K)$. C'est évident car si $y=f(x)$, on a $x\ne0$, (sinon $y=f(0)=0_A$), donc $x^{-1}$ inverse de $x$ dans $K$ existe et
+\[
+f(x^{-1}x)=f(1_K)=f(x^{-1})f(x)=f(x^{-1})y;
+\]
+on a de même $yf(x^{-1})=f(1_K)$, d'où l'existence d'un inverse de $y$. \bookend
+
+Il nous reste un dernier type d'idéal à définir : l'idéal premier.
+
+\medskip\noindent\textsc{Définition 5.46.} --- \emph{On appelle idéal premier de l'anneau commutatif unitaire $A$ tout idéal $P$ tel que le complémentaire ensembliste $A-P$ soit multiplicativement stable.}
+
+\medskip\noindent\textsc{Théorème 5.47.} --- \emph{Dans $A$ commutatif unitaire, l'idéal $P$ est premier si et seulement si $A/P$ est un anneau intègre.}
+
+Si $P$ est idéal premier, l'anneau étant commutatif, $P$ est bilatère donc on peut considérer l'anneau $A/P$. Soient $X$ et $Y$, 2 éléments non nuls de $A/P$, représentés par $x$ et $y$ respectivement, $x$ et $y$ n'étant pas dans $P$ (élément nul de $A/P$) d'où $xy\in A-P$, stable par produit ; donc $XY=$ classe de $xy$ est non nulle. Par contraposée, on a $(XY=0)\Rightarrow(X$ ou $Y$ nul). Donc $A/P$ est intègre.
+
+Si $A/P$ est un anneau intègre, on veut prouver que $A-P$ est multiplicativement stable. Or si $x\in A-P$ et $y\in A-P$, on a $X=$ classe$(x)$ et $Y=$ classe de $y$, non nulles, donc $XY\ne0$, élément nul de $A/P$, car $A/P$ intègre, d'où $xy$ étant un représentant particulier de la classe $XY$, on a bien $xy\notin P$ : c'est la stabilité multiplicative de $A-P$. \bookend
+
+\medskip\noindent\textsc{Remarque 5.48.} --- Dans un anneau commutatif unitaire, $I$ idéal maximal est premier, car $A/I$ est un corps, donc intègre, mais la réciproque est fausse car dans $\mathbb Z$, $\{0\}$ est idéal premier, $\mathbb Z/\{0\}\simeq\mathbb Z$ étant intègre, mais ce n'est pas un corps, donc $\{0\}$ n'est pas maximal.
+
+Pour clore ce chapitre sur les anneaux, signalons le résultat suivant :
+
+\medskip\noindent\textsc{Théorème 5.49.} --- \emph{Tout anneau intègre de cardinal fini est un corps.}
+
+Pour cela on utilisera le résultat suivant :
+
+\medskip\noindent\textsc{Lemme 5.50.} --- \emph{Tout demi-groupe fini non vide vérifiant la règle de simplification est un groupe.}
+
+Soit $G=\{g_1,\ldots,g_n\}$ un demi-groupe multiplicatif, fini de cardinal $n\ge1$. Dire que $G$ vérifie la règle de simplification, c'est dire qu'une égalité du type $gx=gy$ implique $x=y$, et que $xg=yg$ implique $x=y$, ceci quels que soient $x$ et $y$ de $G$.
+
+Soit alors $g$ fixé dans $G$, l'ensemble des $\{gg_i,i=1,\ldots,n\}$ est de cardinal $n$, (car $gg_i=gg_j\Rightarrow g_i=g_j$ par simplification), donc c'est $G$ entier, en particulier il existe $e\in G$ tel que $ge=g$.
+
+Mais alors $e$ est neutre à gauche car, $\forall x\in G$, on a
+\[
+(ge)x=gx=g(ex)\qquad\text{d'où }x=ex\text{ par simplification.}
+\]
+
+En procédant de même, il existe $e'$ tel que $e'g=g$, car card$\{g_i g,1\le i\le n\}\ge n$ donc $g$ figure dans cet ensemble, d'où $e'$ neutre à droite, car $\forall x\in G$, $x(e'g)=xg=(xe')g$ donne $x=xe'$ par simplification.
+
+Mais $e'$ neutre à droite implique $ee'=e$, alors que $e$ neutre à gauche implique $ee'=e'$, d'où $e=e'$ est élément neutre.
+
+Puis, $g$ étant fixé dans $G$, $e$ figure dans $\{gg_i,1\le i\le n\}=G$, donc il existe $g'$, inverse à droite de $g$, c'est-à-dire tel que $gg'=e$, et de même il existe $g''$ inverse à gauche de $g$, donc tel que $g''g=e$, car $e\in\{g_i g;1\le i\le n\}=G$.
+
+Mais alors
+\[
+g''gg'=g''(gg')=g''e=g''=(g''g)g'=eg'=g'
+\]
+donc en fait, $g'=g''$ est bien inverse de $g$, ce qui achève la justification du lemme.
+
+Quant au théorème, $A$ est anneau intègre, donc $A^*=A-\{0\}$ est demi-groupe, fini, vérifiant la règle de simplification car
+\[
+ax=ay\Longleftrightarrow a(x-y)=0,\qquad(\text{calcul dans un anneau}),
+\]
+avec $a\ne0$ et $A$ intègre, c'est que $x-y=0$ soit $x=y$. On justifie de même que $xa=ya\Rightarrow x=y$, donc $A^*$ est demi-groupe fini vérifiant la règle de simplification : c'est un groupe multiplicatif, donc $A$ est un corps. \bookend
+
+\medskip\noindent\textsc{Corollaire 5.51.} --- \emph{On a $(\mathbb Z/p\mathbb Z$ est un corps$)\Longleftrightarrow(p$ est un nombre premier$)$.}
+
+Car $A=\mathbb Z/p\mathbb Z$ est un anneau de cardinal fini, $p$.
+
+Si $p$ non premier, il existe $p_1$ et $p_2$ entiers avec $0<p_1<p$, $0<p_2<p$ et $p=p_1p_2$, d'où, en notant $\bar x$ la classe de l'entier $x$, $\bar p_1\bar p_2=\bar p=\bar0$, dans $\mathbb Z/p\mathbb Z$, avec $\bar p_1$ et $\bar p_2$ non nuls car $p_1$ et $p_2$ ne sont pas divisibles par $p$. Donc $p$ non premier $\Rightarrow\mathbb Z/p\mathbb Z$ non intègre : a fortiori ce n'est pas un corps.
+
+Si $p$ premier, si $\bar x\bar y=\bar0$, $xy$ est divisible par $p$ premier c'est donc que $x$ ou $y$ est divisible par $p$, c'est-à-dire $\bar x$ ou $\bar y=\bar0$. On a $\mathbb Z/p\mathbb Z$ intègre de cardinal fini, donc c'est un corps. \bookend
+
+On a en fait utilisé le théorème de Gauss. Justifions le
+
+\medskip\noindent\textsc{Théorème de Gauss 5.52.} --- \emph{Si $p$ premier divise $xy$, (dans $\mathbb Z$) c'est que $p$ divise $x$ ou $p$ divise $y$.}
+
+\subsection*{5.53. Rappel}
+Rappelons que $(p$ premier$)\Longleftrightarrow(p$ admet exactement 2 diviseurs dans $\mathbb Z)$, 1 et $p$, donc 1 n'est pas premier.
+
+Soit $p$ premier qui divise $xy$. Si $p$ ne divise pas $x$, la division euclidienne de $x$ par $p$ donne $q\in\mathbb Z$, $r\in\mathbb Z$, vérifiant $x=pq+r$ avec $0<r<p$, $r\ne0$ car $p$ ne divise pas $x$ (Théorème 4.44).
+
+On a $xy=pqy+ry$ d'où $p$ divise $ry=xy-pqy$.
+
+On est ramené à : $p$ premier, $p$ divise $ry$ et $p$ ne divise pas $r$, sinon $p$ diviserait $x=pq+r$, mais en plus on a $0<r<p$, donc le produit $ry\in\{y,2y,3y,\ldots,(p-1)y\}$.
+
+Soit $M=\{$entiers naturels $>0$, $m$, tels que $p$ divise $my\}$, $r\in M$ qui est donc non vide, et admet alors un plus petit élément, $m_0\le r$.
+
+Si $m_0=1$, c'est que $p$ divise $1\cdot y=y$ et on a gagné.
+
+Si $m_0>1$, on divise $p$ par $m_0$, division euclidienne, il existe $q'$ et $r'$ tels que $p=q'm_0+r'$ avec $0\le r'<m_0$, et de plus $r'\ne0$, sinon $p=q'm_0$ avec $m_0\ne1$ et $m_0\le r<p$ implique $q'\ne1$ donc on aurait $p$ non premier.
+
+Mais alors $py=q'm_0y+r'y$ donc $r'y=py-q'm_0y$ est divisible par $p$. On aurait $r'\in M$, avec $r'<m_0$, plus petit élément de $M$, c'est absurde. Donc $m_0=1$ et c'est terminé. \bookend
+
+\input{chapters/ch05_exercises}

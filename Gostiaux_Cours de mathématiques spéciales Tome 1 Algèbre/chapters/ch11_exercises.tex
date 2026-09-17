@@ -1,0 +1,324 @@
+\origpage{421--428}
+
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} EXERCICES}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.0em]
+
+\item Sur $E=\mathbb R^n$ soit une forme bilinéaire symétrique $B$ de signature $(n-1,1)$ et $F$ un sous-espace de $E$ contenant un vecteur $v$ tel que $B(v,v)<0$.
+
+Signature de la restriction de $B$ à $F\times F$.
+
+\item Soit pour $X$ vecteur colonne de $\mathbb R^n$, l'application $\Phi$ définie par
+\[
+\Phi(X)={}^tXX+\alpha({}^tUX)^2,
+\]
+où $\alpha\in\mathbb R$ et $U\in\mathbb R^n$ sont données. Montrer que $\Phi$ est une forme quadratique sur $\mathbb R^n$. En donner la signature.
+
+\item Soit $\alpha\in\mathbb R$. Pour $A\in M_n(\mathbb R)$ on pose
+\[
+q(A)=\operatorname{tr}({}^tAA)+\alpha(\operatorname{tr}A)^2.
+\]
+Montrer que $q$ est une forme quadratique. En donner la signature.
+
+\item Soit $E=\mathbb R_n[X]$, $\alpha\in\mathbb R$, et $k\in\mathbb N$, $(1\le k\le n)$. On pose, pour $P\in E$,
+\[
+\Phi(P)=\int_0^1\bigl(P^{(k)}(t)\bigr)^2\,dt
++\alpha\sum_{i=0}^{k-1}\bigl(P^{(i)}(0)\bigr)^2.
+\]
+Montrer que $\Phi$ est une forme quadratique et déterminer sa signature.
+
+\item Pour $P\in\mathbb R[X]$\footnote{\textbf{校勘：}原文集合符号印为 $\mathbb R[X)$，右括号应为 $]$。} on définit
+\[
+\Phi(P)=\sum_{k\ge0}P(k)P(-k)e^{-k}.
+\]
+Montrer que c'est une forme quadratique. Déterminer, quand on se limite à $\mathbb R_n[X]$, sa signature.
+
+\item Soit $A\in M_n(\mathbb R)$, $B\in M_{n,p}(\mathbb R)$, $C\in M_{p,n}(\mathbb R)$ et $D\in M_p(\mathbb R)$ telles qu'en posant
+\[
+M=\begin{pmatrix}A&B\\ C&D\end{pmatrix}
+\qquad\text{et}\qquad
+J=\begin{pmatrix}I_n&0\\0&-I_p\end{pmatrix}
+\]
+(matrices blocs), on ait ${}^tMJM=J$. Montrer que $A$ est inversible.
+
+\item Base conjuguée de la forme quadratique $Q$ définie sur $\mathbb R^3$ par
+\[
+Q(x,y,z)=x^2+y^2+z^2-2(yz+zx+xy).
+\]
+
+\item Soit $E$ vectoriel sur $K$ de caractéristique différente de 2 et $\varphi$ une forme bilinéaire symétrique non dégénérée ayant des vecteurs isotropes non nuls. Montrer que $\forall c\in K$, $\exists x\in E$, $\varphi(x,x)=c$.
+
+\item Soit $\Phi$ une forme quadratique sur $E\simeq K^n$, non définie et non dégénérée. Montrer qu'il existe une base de vecteurs isotropes, ($K$ de caractéristique $\ne2$).
+
+\item Soit $E=K^n$, $\Phi$ forme quadratique de forme polaire $\varphi$. Existe-t-il une base de $E$, conjuguée pour $\varphi$, contenant un vecteur $a$ non nul donné?
+
+\end{enumerate}
+
+\clearpage
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} SOLUTIONS}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.1em]
+
+\item On va prouver que $F$ est non isotrope.
+
+Procédons par l'absurde: on suppose $F$ isotrope, donc $F\cap F^0\ne\{0\}$.
+
+Soit $x\in F\cap F^0$, $x\ne0$, on a $B(x,x)=0$.
+
+Comme $B$ est non dégénérée, $\{x\}^0$ est de dimension $n-1$, donc on peut trouver $y\notin\{x\}^0$.
+
+La famille $\{x,y\}$ est libre, (s'il existe $\alpha$ réel tel que $y=\alpha x$ on aura $B(x,y)=\alpha B(x,x)=0$, d'où $y\in\{x\}^0$: absurde).
+
+On peut alors trouver $\lambda_1$ et $\lambda_2$ réels tels que, avec $e_1=\lambda_1x+y$ et $e_2=\lambda_2x+y$ on ait $B(e_1,e_1)=1$, $B(e_2,e_2)=-1$, $B(e_1,e_2)=0$ et $\operatorname{Vect}(e_1,e_2)=\operatorname{Vect}(x,y)$.
+
+En effet
+\[
+B(e_1,e_1)=1
+\Longleftrightarrow 2\lambda_1B(x,y)=1-B(y,y)
+\Longleftrightarrow
+\lambda_1=\frac{1-B(y,y)}{2B(x,y)},
+\]
+\[
+B(e_2,e_2)=-1
+\Longleftrightarrow 2\lambda_2B(x,y)=-1-B(y,y)
+\Longleftrightarrow
+\lambda_2=\frac{-1-B(y,y)}{2B(x,y)}.
+\]
+Mais alors
+\[
+\begin{aligned}
+B(e_1,e_2)
+&=(\lambda_1+\lambda_2)B(x,y)+B(y,y)\\
+&=\frac{-2B(y,y)}{2B(x,y)}B(x,y)+B(y,y)=0,
+\end{aligned}
+\]
+et comme $\lambda_1\ne\lambda_2$, $\operatorname{Vect}(e_1,e_2)=\operatorname{Vect}(x,y)$. Soit $P$ ce plan vectoriel, $P$ est non isotrope, car si $z=\alpha_1e_1+\alpha_2e_2\in P\cap P^0$, on a $B(z,e_1)=0=\alpha_1$ et $B(z,e_2)=0=-\alpha_2$ d'où $z=0$.
+
+Mais alors $E=P\oplus P^0$, et $v$ vecteur de $F$ tel que $B(v,v)<0$ se décompose dans cette somme directe en $v=\alpha x+\beta y+z$. On a $v$ dans $F$ et $x$ dans $F^0$, donc $0=B(v,x)=\beta B(y,x)$ car $B(x,x)=0$ et $B(x,z)=0$ aussi car $x\in P$ et $z\in P^0$. Comme $B(y,x)\ne0$, on a $\beta=0$, d'où $v=\alpha x+z$.
+
+De plus, $\forall t\in\mathbb R$, avec $w=tx+z$, comme $x$ est isotrope et $B(x,z)=0$, on aura $B(w,w)=B(v,v)<0$. Mais alors, $x$ et $z$ étant indépendants, on peut trouver $z$ et $w$ indépendants tels que $B(z,z)<0$ et \BellaCorrectionNote{$B(w,w)<0$}{$B(v,v)<0$}{Le vecteur indépendant introduit juste avant est $w=tx+z$; pour conclure à deux directions négatives indépendantes, la seconde inégalité doit porter sur $w$.}: la signature de $B$ comporterait au moins 2 signes $-$, c'est absurde.
+
+Donc $F$ est non isotrope, on a $E=F\oplus F^0$. Le vecteur $v$ est non isotrope dans $F$, avec $G$ conjugué de $\mathbb Rv$ dans $F$, on a la somme directe
+\[
+E=\mathbb Rv\oplus G\oplus F^0,
+\]
+les 3 espaces étant 2 à 2 conjugués. En réunissant $\{v\}$ et des bases conjuguées de $G$ et $F^0$, on en obtient une de $E$. La signature de $B$ étant $(n-1,1)$, et $B(v,v)<0$, c'est que la restriction de $B$ à $G\times G$, (et aussi à $F^0\times F^0$) est définie positive. Finalement la signature de $B|_{F\times F}$ est $(\dim(F)-1,1)$.
+
+\item Si ${}^tX=(x_1,\ldots,x_n)$ et ${}^tU=(u_1,\ldots,u_n)$ on a
+\[
+\Phi(X)=\sum_{i=1}^n x_i^2+\alpha\left(\sum_{i=1}^n u_ix_i\right)^2.
+\]
+C'est un polynôme quadratique, (homogène de degré 2 par rapport aux $x_i$).
+
+On a aussi $\Phi(X)={}^tXX+\alpha({}^tUX)({}^tUX)$. Mais ${}^tUX$ est une matrice $(1,1)$, donc égale à sa transposée ${}^tXU$, d'où
+\[
+\Phi(X)={}^tX(I_n+\alpha U{}^tU)X;
+\]
+$\Phi$ est la forme quadratique de matrice symétrique $B=I_n+\alpha U{}^tU$ dans la base canonique de $\mathbb R^n$. On remarque que $U{}^tU$ a ses $n$ vecteurs colonnes du type $u_jU$, donc proportionnels.
+
+Si $U=0$, $B=I_n$, $\Phi$ a pour signature $(n,0)$.
+
+Si $U\ne0$, $U{}^tU$ est de rang 1, symétrique réelle donc diagonalisable. La valeur propre 0 est d'ordre $n-1$ au moins, et
+\[
+\operatorname{trace}(U{}^tU)={}^tUU=\sum_{i=1}^n u_i^2
+\]
+est valeur propre simple. Les valeurs propres de $B$ sont alors 1 d'ordre $n-1$ et $1+\alpha{}^tUU$ d'ordre 1. Donc:
+\[
+\begin{array}{rcl}
+\alpha{}^tUU>-1&\Rightarrow&\text{signature }(n,0),\\
+\alpha{}^tUU=-1&\Rightarrow&\text{signature }(n-1,0),\\
+\alpha{}^tUU<-1&\Rightarrow&\text{signature }(n-1,1).
+\end{array}
+\]
+
+\item Si $A=(a_{ij})_{1\le i,j\le n}$, le terme de la $i$ème ligne, $i$ème colonne de ${}^tAA$ est $\sum_{k=1}^n(a_{ki})^2$ donc
+\[
+q(A)=\sum_{i=1}^n\sum_{k=1}^n(a_{ki})^2+\alpha(a_{11}+a_{22}+\cdots+a_{nn})^2
+\]
+est un polynôme quadratique par rapport aux $a_{ij}$.
+
+En considérant $A$ comme un vecteur colonne de $\mathbb R^{n^2}$, et en notant $U$ le vecteur de $\mathbb R^{n^2}$ dont toutes les composantes sont nulles sauf celles d'indices associés à $a_{11},a_{22},\ldots,a_{nn}$, qui valent 1, on est ramené à l'exercice 2, d'où, comme ici ${}^tUU=n$,
+\[
+\begin{array}{rcl}
+\alpha>-1/n&:&\text{signature }(n^2,0),\\
+\alpha=-1/n&:&\text{signature }(n^2-1,0),\\
+\alpha<-1/n&:&\text{signature }(n^2-1,1).
+\end{array}
+\]
+
+\item Si on pose
+\[
+\varphi(P,Q)=\int_0^1P^{(k)}(t)Q^{(k)}(t)\,dt
++\alpha\sum_{i=0}^{k-1}P^{(i)}(0)Q^{(i)}(0),
+\]
+les propriétés de linéarité de la dérivation et de l'intégrale montrent que $\varphi$ est bilinéaire symétrique, de forme quadratique associée $\Phi$.
+
+Soit $F=\operatorname{Vect}(1,x,\ldots,x^{k-1})$ et $G=\operatorname{Vect}(x^k,x^{k+1},\ldots,x^n)$. On a $E=F\oplus G$.
+
+Si $P\in E$ se décompose en $P=Q+R$ avec $Q\in F$ et $R\in G$ on aura donc
+\[
+\Phi(P)=\Phi(Q)+2\varphi(Q,R)+\Phi(R).
+\]
+Or
+\[
+\varphi(Q,R)=\int_0^1Q^{(k)}(t)R^{(k)}(t)\,dt
++\alpha\sum_{i=0}^{k-1}Q^{(i)}(0)R^{(i)}(0),
+\]
+c'est nul car $Q$, de degré $k-1$ au plus a sa dérivée $k$ième nulle, et $\forall i\le k-1$, $R^{(i)}(0)=0$.
+
+De même,
+\[
+\Phi(Q)=\alpha\sum_{i=0}^{k-1}(Q^{(i)}(0))^2
+\qquad\text{et}\qquad
+\Phi(R)=\int_0^1(R^{(k)}(t))^2\,dt,
+\]
+donc si $P(t)=\sum_{i=0}^n a_it^i$, il reste
+\[
+\Phi(P)=\int_0^1\left(\sum_{i=k}^n a_i\frac{i!}{(i-k)!}t^{i-k}\right)^2dt
++\alpha\sum_{i=0}^{k-1}(i!)^2a_i^2.
+\]
+
+La forme $\Phi_1=\Phi|_G$ est positive, définie car si $R\in G$ est tel que
+\[
+\int_0^1(R^{(k)}(t))^2dt=0,
+\]
+la dérivée $k$ième de $R$, polynôme de valuation $k$, étant nulle c'est que $R=0$.
+
+La signature de $\Phi_1$ est donc $n-k+1$, et $\Phi_1$ se décompose en une somme de $n-k+1$ carrés de formes linéaires en $a_k,a_{k+1},\ldots,a_n$, donc indépendantes de $a_0,\ldots,a_{k-1}$. On a une décomposition de $\Phi$ en carrés d'où:
+
+si $\alpha>0$, $\Phi$ est définie positive, de signature $(n+1,0)$;
+
+si $\alpha=0$, $\Phi$ est positive, non définie, de signature $(n-k+1,0)$;
+
+si $\alpha<0$, $\Phi$ est non dégénérée, de signature $(n-k+1,k)$.
+
+\item Si $P$ est de degré $n$, de coefficient directeur $a$, le terme général $u_k=P(k)P(-k)e^{-k}$ de la série est tel que $|u_k|\sim a^2k^{2n}e^{-k}$, terme général d'une série convergente donc $\Phi(P)$ existe.
+
+De même
+\[
+\varphi(P,Q)=\frac12\sum_{k\ge0}\bigl(P(k)Q(-k)+Q(k)P(-k)\bigr)e^{-k}
+\]
+est la somme d'une série absolument convergente. $\varphi$ est bilinéaire symétrique avec $\varphi(P,P)=\Phi(P)$ d'où $\Phi$ forme quadratique.
+
+La parité, $(P(k),P(-k))$ peut jouer un rôle. Si $P$ est pair et $Q$ impair, $P(k)Q(-k)=-P(-k)Q(k)$ donc $\varphi(P,Q)=0$.
+
+Soit donc $E=\mathbb R_n[X]$ et
+\[
+F=\operatorname{Vect}(1,x^2,x^4,\ldots,x^{2p},\ldots),\qquad 2p\le n
+\]
+et
+\[
+G=\operatorname{Vect}(x,x^3,\ldots,x^{2p+1},\ldots),\qquad 2p+1\le n.
+\]
+On a $E=F\oplus G$, avec $F\subset G^0$ et $G\subset F^0$, conjugués pour $\varphi$.
+
+Sur $F$,
+\[
+\Phi(P)=\sum_{k\ge0}(P(k))^2e^{-k}\ge0,
+\]
+nul si et seulement si $P(k)=0$ pour tout $k$ de $\mathbb N$ donc si $P=0$; et sur $G$,
+\[
+\Phi(P)=-\sum_{k\ge0}(P(k))^2e^{-k}
+\]
+est de même définie négative. En décomposant en carrés les restrictions de $\Phi$ à $F$ et $G$ on en déduit donc que la signature de $\Phi$ est $(\dim F,\dim G)$ ou encore:
+\[
+\begin{array}{ll}
+\text{si }n=2p,&\text{signature }(p+1,p),\\
+\text{si }n=2p+1,&\text{signature }(p+1,p+1).
+\end{array}
+\]
+
+\item Le calcul par blocs de ${}^tMJM$ donne
+\[
+{}^tMJM=
+\begin{pmatrix}
+{}^tAA-{}^tCC&{}^tAB-{}^tCD\\
+{}^tBA-{}^tDC&{}^tBB-{}^tDD
+\end{pmatrix}.
+\]
+Si ce produit vaut $J$, en particulier on a:
+\[
+{}^tAA-{}^tCC=I_n,
+\]
+soit encore ${}^tAA=I_n+{}^tCC$. Soit alors $X$, matrice colonne d'ordre $n$ des $x_i$, on pose $Y$ la matrice colonne $CX$, matrice colonne d'ordre $p$ des $y_i$. On a
+\[
+{}^tX({}^tAA)X=\sum_{i=1}^n x_i^2+\sum_{j=1}^p y_j^2\ge0,
+\]
+et c'est nul si et seulement si $X=0$, donc ${}^tAA$ est la matrice symétrique d'une forme quadratique définie positive. En particulier
+\[
+\det({}^tAA)=(\det A)^2\ne0
+\]
+d'où $A$ inversible.
+
+\item Une décomposition en carrés par la méthode de Gauss donne
+\begin{align*}
+Q(x,y,z)&=x^2+2x(-y-z)+y^2+z^2-2yz\\
+&=(x-y-z)^2-(y+z)^2+y^2+z^2-2yz\\
+&=(x-y-z)^2-4yz\\
+&=(x-y-z)^2-(y+z)^2+(y-z)^2.
+\end{align*}
+La forme $Q$ est de rang 3, de signature $(2,1)$.
+
+En posant $X=x-y-z$, $Y=y-z$ et $Z=y+z$, on obtient les formes coordonnées dans une nouvelle base $(I,J,K)$, la matrice de passage $P$ étant telle que
+\[
+P^{-1}=
+\begin{pmatrix}
+1&-1&-1\\
+0&1&-1\\
+0&1&1
+\end{pmatrix}
+\qquad\text{d'où}\qquad
+P=
+\begin{pmatrix}
+1&0&1\\
+0&\tfrac12&\tfrac12\\
+0&-\tfrac12&\tfrac12
+\end{pmatrix},
+\]
+les colonnes de $P$ donnent les composantes de $I,J,K$, vecteurs d'une base conjuguée, dans la base initiale. Dans cette base conjuguée, la forme quadratique s'écrit $X^2+Y^2-Z^2$.
+
+\item Soit $\Phi$ la forme quadratique associée à $\varphi$, $a$ vecteur isotrope non nul; la forme est non dégénérée donc $a\notin E^0=\{0\}$: il existe $b\in E$ tel que $\varphi(a,b)\ne0$.
+
+Mais alors, $\forall t\in K$, on a
+\[
+\Phi(ta+b)=t^2\Phi(a)+2t\varphi(a,b)+\Phi(b)=2t\varphi(a,b)+\Phi(b).
+\]
+Avoir $x=ta+b$ tel que $\Phi(x)=c$ revient à prendre
+\[
+t=\frac{c-\Phi(b)}{2\varphi(a,b)}
+\]
+dans $K$ de caractéristique différente de 2, c'est possible, puisque $\varphi(a,b)\ne0$.
+
+\item On prouve, par récurrence sur $k$, que s'il existe $k$ vecteurs isotropes indépendants avec $k<n$, on peut en trouver un $(k+1)$ième indépendant. Ayant $e_1$ isotrope non nul au départ on aura alors une base isotrope. (Si $n=1$, l'existence de $e_1$ isotrope non nul donne la solution).
+
+Soit $F=\operatorname{Vect}(e_1,\ldots,e_k)$, les $e_j$ étant isotropes indépendants.
+
+La forme est non dégénérée donc $\dim F^0=n-k$. On a $1\le k<n$ donc $0<n-k<n$: les sous-espaces $F$ et $F^0$ sont différents de $\{0\}$ et $E$ d'où $F\cup F^0\subsetneq E$. Soit $X\notin F\cup F^0$, il existe $i\le k$, $\varphi(X,e_i)\ne0$ et $\{e_1,\ldots,e_k,X\}$ est famille libre, sinon $X\in F$.
+
+On cherche $t\in K$ tel que $X+te_i$ soit isotrope. Ceci équivaut à
+\[
+t^2\Phi(e_i)+2t\varphi(X,e_i)+\Phi(X)=0
+\]
+d'où, ($\Phi(e_i)=0$ et $K$ de caractéristique $\ne2$) un $t$ vérifiant cela. La matrice de passage de $\{e_1,\ldots,e_k,X\}$ à $\{e_1,\ldots,e_k,X+te_i\}$ étant régulière, (triangulaire avec des 1 sur la diagonale) on a bien un vecteur isotrope de plus, indépendant des précédents: la propriété est récurrente.
+
+\item La question ne se pose que pour $a\ne0$.
+
+Si $a$ non isotrope, on complète en $\{a,e_2,\ldots,e_n\}$ base de $E$, et on remplace chaque $e_j$ par $\hat e_j=e_j+\lambda_ja$ avec $\lambda_j$ tel que $\varphi(a,\hat e_j)=0$ soit $\varphi(a,e_j)+\lambda_j\Phi(a)=0$ d'où
+\[
+\lambda_j=-\varphi(a,e_j)(\Phi(a))^{-1}.
+\]
+On a une base de $E$, et avec $F=\operatorname{Vect}(\hat e_2,\ldots,\hat e_n)=\{a\}^0$, en remplaçant les $\hat e_j$ par les vecteurs d'une base conjuguée de $F$ on répond à la question.
+
+Si $a$ est isotrope, soit $\delta_\varphi(a)$ la forme $x\longmapsto\varphi(x,a)$.
+
+Si $\{a\}^0=\ker\delta_\varphi(a)=E$, avec $F$ supplémentaire de $Ka$ dans $E$ et $C$ base conjuguée de $F$, $\{a\}\cup C$ sera base conjuguée de $E$.
+
+Si $\{a\}^0=\ker\delta_\varphi(a)=H$ est un hyperplan de $E$, il contient $a$, isotrope, et si $B=\{a,e_2,\ldots,e_n\}$ était une base conjuguée de $E$, on aurait forcément $\{a\}^0=E$ puisque $a$ est isotrope: c'est exclu. Donc le problème a une solution sauf si $a$ est isotrope avec $\{a\}^0$ hyperplan.
+
+\end{enumerate}

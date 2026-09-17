@@ -1,0 +1,837 @@
+\chapter{傅里叶级数与傅里叶积分}
+\section{傅里叶级数——从什么是谱谈起}
+
+\noindent\textbf{1. 什么是谱}\quad
+傅里叶级数和傅里叶积分理论系统地首次出现在傅里叶（Jean-Baptiste Joseph Fourier，1768--1830）的名著《热的解析理论》（\textit{Théorie Analytique de la Chaleur}，有中译本，武汉出版社，1993）中。这是一部伟大著作，可以毫无疑问地说，它开创了19世纪数学和物理学的新篇章。麦克斯韦称它是“一首伟大的数学诗”。将近两百年来它的理论和方法渗透到几乎一切数学物理分支中，成为一个十分广泛的数学分支——调和分析，可以说长盛不衰。其实傅里叶这本书最开始是为了应征巴黎科学院的悬赏求解而在1807年提交的一篇报告，到1822年正式成书。书上开宗明义就指出，自然哲学（当时人们对数理科学的称谓）的目的就在于探讨自然界的规律性。牛顿和他的先驱们虽然已取得伟大成就，星体的运动、光的本性、声的传播等等都被归结为几个最基本的规律，但是热却未探讨过，而热现象又是宇宙中最常见、最基本的物理现象。傅里叶研究它，不只着重于国计民生的实际应用（当然他丝毫也未经忽视这一切），而且还有例如下述的种种问题：地球处于太阳的热辐射中，既从太阳吸热，又把热量辐射到空中，怎样才能达到平衡？因为太阳的热辐射而产生的大气运动，怎样影响气候？同样因太阳的热辐射而产生的洋流有什么规律性？傅里叶认为这一切都是牛顿未曾涉足的领域。可是在这部书中同样地没有回答这些问题，而且他关于热的基本概念是错误的，这一点我们在第三章\S1中讲过。那么傅里叶的功绩何在呢？他在这本书中引用牛顿在《自然哲学的数学原理》序言中一段话：“几何学的荣耀在于，它从别处借用很少的原理，就能产生如此众多的成就。”这其实也是牛顿的方法论：把一切机械运动归结为几个根本定律，并进而写成一个二阶常微分方程组：
+\[
+ m_i\frac{d^2x_i}{dt^2}=f_i(t,a,x).
+\]
+傅里叶也力图采取这个方法论，他指出关于热的纷纭万象，其实都可以归结为热的贮存（比热）与传导（导热率），然后明确给出一个二阶偏微分方程——热传导方程。这个方程我们已在第三章\S1中详细讲过。其次他为求解这个偏微分方程提出了系统的方法。这个方法的要点我们将在下面讨论。现在的问题是，经过将近200年的发展，傅里叶的理论与方法已得到极大的发展，我们可否回顾一下，从中得到一些有助于了解人们认识自然界的富有成果的思想？从谱论的角度来看看傅里叶的理论与方法（以下简称为傅里叶分析或调和分析）无疑是十分有教益的。
+
+那么什么是“谱”呢？19世纪关于光谱的研究是物理学的最重要的问题之一。光谱学（spectroscopy）是迈克尔孙（Michelson）和莫莱（Morley）创立的。当时他们测量了镉的谱线，并以其波长作为长度的标准。迈克尔孙因此获得1907年的诺贝尔物理学奖。这个长度标准一直使用到20世纪60年代才使用氪86的橙色谱线代替它。光谱学被用来从复杂的信息中获取有用的信息，或者在如有人说的，去寻找“隐藏着的周期性”。这是怎么回事呢？让我们用一个历史早得多因而更容易理解的力学模型来说明。
+
+第三章中介绍的偏微分方程，除了热传导方程以外，都出现于18世纪中期以前，都是牛顿力学对某些具体情况如弹性体、流体上应用的结果，丹尼尔·伯努利（Daniel Bernoulli）研究了弦的横振动。他的基本模型首先是把弦看成是由微小的物体——微元——组成的因而可以应用质点组的牛顿力学。不过这些质点互相之间是有联系的，这种联系就表现为弦的张力。因而，一个质点的振动就带动了其左右其它质点振动。振动于是沿弦传播开去，就成了波。我们把这个思想用于杆的纵振动。虽然从几何上看不如弦的横振动那么直观，但其物理机制更容易理解。于是设有一杆，位于 $x$ 轴上区间 $[0,L]$ 处。我们认为杆是位于等分点上的 $N$ 个质点组成的，其质量都相同为 $m$，间距也都相同为 $a$，而且相邻的质点是由相同的弹簧连接起来的。令 $q_i(t)$ 表示第 $i$ 个质点之位移（从 $t=0$ 算起），$i=0$ 与 $i=N+1$ 则是杆的两个端点，设杆的两端是固定的，即 $q_0(t)=q_{N+1}(t)=0$。现在我们要求其它的 $q_i(t)$，这里 $i=1,2,\cdots,N$。第 $n$ 个质点原来位于
+\[
+ x=x_n=\frac{nL}{N+1}
+\]
+处，在时刻 $t$，因为它有了位移 $q(x_n,t)$，所以位于 $x_n+q(x_n,t)$ 处。同样第 $n-1$ 和 $n+1$ 个质点现在分别位于 $x_{n-1}+q(x_{n-1},t)=(x_n-a)+q(x_n-a,t)$ 以及 $x_{n+1}+q(x_{n+1},t)=(x_n+a)+q(x_n+a,t)$ 处。于是例如弹簧 $[x_n,x_{n+1}]$ 之长成为 $(x_n+a)+q(x_n+a,t)-x_n-q(x_n,t)=a+q(x_n+a,t)-q(x_n,t)$，其相对伸长（即长度的增量与原来长度之比，亦即弹性力学中的形变）为
+\[
+ \frac{q(x_n+a,t)-q(x_n,t)}{a}.
+\]
+同理，弹簧 $[x_{n-1},x_n]$ 的形变为
+\[
+ \frac{q(x_n-a,t)-q(x_n,t)}{a}.
+\]
+弹性力学告诉我们，$x_n$ 处的质点受的力与形变成正比，其比例系数我们假设对各个弹簧都是一样的，为 $K$，因此，第 $n$ 个质点的运动方程为
+\[
+ m\ddot q_n=\frac{K}{a}(q_{n+1}-2q_n+q_{n-1}).
+\]
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=.85cm,y=.8cm,bella figure,>=stealth]
+  \foreach \x in {0,1,2,3,4,5,6,7,8,9,10}{
+    \fill (\x,0) circle (1.3pt);
+  }
+  \foreach \x in {0,1,2,3,4,5,6,7,8,9}{
+    \draw[decorate,decoration={zigzag,segment length=3pt,amplitude=1.5pt}] (\x+.06,0) -- (\x+.94,0);
+  }
+  \foreach \x/\dx in {0/0,1/-.08,2/.12,3/-.15,4/.12,5/.2,6/-.1,7/.14,8/-.08,9/.08,10/0}{
+    \fill ({\x+\dx},1.35) circle (1.3pt);
+  }
+  \foreach \x/\dx/\nx/\ndx in {0/0/1/-.08,1/-.08/2/.12,2/.12/3/-.15,3/-.15/4/.12,4/.12/5/.2,5/.2/6/-.1,6/-.1/7/.14,7/.14/8/-.08,8/-.08/9/.08,9/.08/10/0}{
+    \draw[decorate,decoration={zigzag,segment length=3pt,amplitude=1.5pt}] ({\x+\dx+.05},1.35) -- ({\nx+\ndx-.05},1.35);
+  }
+  \draw[dashed] (0,0)--(0,1.35);
+  \draw[dashed] (1,0)--(.92,1.35);
+  \draw[dashed] (2,0)--(2.12,1.35);
+  \draw[dashed] (5,0)--(5.2,1.35);
+  \draw[dashed] (10,0)--(10,1.35);
+  \node[left] at (10.4,1.35) {$t$ 时刻位置};
+  \node[left] at (10.4,0) {原来位置};
+  \node[below] at (0,-.05) {$0$};
+  \node[below] at (1,-.05) {$1$};
+  \node[below] at (5,-.05) {$i$};
+  \node[below] at (10,-.05) {$N+1$};
+  \draw[<->] (4.95,1.68)--(5.2,1.68) node[midway,above] {$q_i(t)$};
+  \draw[<->] (5,-.48)--(6,-.48) node[midway,below] {$a$};
+\end{tikzpicture}
+\caption*{图5-1-1}
+\end{figure}
+
+如果杆的质量是平均分布在杆上的，则第 $n$ 个质点之质量可写为 $m=\rho a$，$\rho$ 是密度，它也是一个常数，于是我们有方程组
+\begin{equation}
+ \rho\ddot q_n=c(q_{n+1}-2q_n+q_{n-1}).
+ \tag{1}
+\end{equation}
+以上 $c=K/a^2$，$q_n=q(x_n,t)$。
+
+(1)是一个二阶常微分方程组，我们可以把它写成矩阵形式
+\begin{equation}
+ \rho\ddot q=cAq.
+ \tag{2}
+\end{equation}
+这里 $q$ 是一个列向量 $(q_1,\cdots,q_N)$，除了(2)以外，本来我们还有两个“边值条件”
+\begin{equation}
+ q_0=q(0,t)=0,\qquad q_{N+1}=q(L,t)=0,
+ \tag{3}
+\end{equation}
+但是为了讨论问题方便起见，我们不妨用 $q_0(t)=q_{N+1}(t)$ 来代替(3)，这就好比我们在考虑一个首尾相连的环形杆，虽然不自然，却能更好地说明我们的方法的实质。矩阵 $A$ 是一个三对角矩阵
+\begin{equation}
+ A=
+ \begin{pmatrix}
+ -2&1&&&0\\
+ 1&-2&1&&\\
+ &1&-2&\ddots&\\
+ &&\ddots&\ddots&1\\
+ 0&&&1&-2
+ \end{pmatrix}.
+ \tag{4}
+\end{equation}
+为了求解这个方程组，从数学上说，我们应该设法把未知向量换成一个新的未知向量 $a(t)=(a_1(t),\cdots,a_N(t))$，而使系数矩阵成为一个对角矩阵。为此，首先不妨把质点的编号改动一下：设连同两端一共有 $N+1$ 个点，重新编号为 $a_0(t),\cdots,a_N(t)$，$0$ 和 $N$ 是两个端点，而边值条件是 $a_0(t)=a_N(t)$。这样，我们需求的只有 $a_1(t),\cdots,a_N(t)$。
+
+把 $q(t)$ 换成 $a(t)$ 就相当于作线性变换
+\begin{equation}
+ q_n(t)=\sum_k a_k(t)u_n^k.
+ \tag{5}
+\end{equation}
+注意，我们这里重新编号，于是 $n$ 和 $k$ 都从1变到 $N$。这在物理上是什么意思？常微分方程组(1)是一个“耦合”的（coupled）方程组，意即第 $i$ 个质点的运动受到第 $i-1$ 和第 $i+1$ 两个质点的“牵扯”，而且仿此，所有 $N$ 个质点都牵扯在一起。把 $A$ 化成对角形，得到一个形如
+\[
+ \ddot a=\frac{c}{\rho}\mathcal A a
+\]
+的常微分方程组，其未知函数向量是 $a=(a_1(t),\cdots,a_N(t))$，$\mathcal A$ 是一个对角矩阵
+\[
+ \mathcal A=\begin{pmatrix}
+ \lambda_1&&\\
+ &\ddots&\\
+ &&\lambda_N
+ \end{pmatrix},
+\]
+而方程组成为
+\begin{equation}
+ \ddot a_i=\frac{c}{\rho}\lambda_i a_i,\qquad i=1,\cdots,N.
+ \tag{6}
+\end{equation}
+所有的 $a_i$ 都互不牵扯，物理上称为“解耦”（uncoupled）。一旦实现了解耦，解方程自然很容易，可是在物理上重要的是这个新向量 $a$ 有特殊的物理意义，而反映了这个物理系统的物理本质。所以在物理上，这个新的未知函数向量称为简正模式（normal modes），其各个分量称为简正坐标（normal coordinates），即原来的位置向量 $q(t)$ 对于基函数（basis functions）$u_n^k$ 的线性展开式之系数（对 $k$ 求和，$n$ 则是 $q(t)$ 之分量的标号），至于在数学上它们是什么，下面可以看得很清楚。
+
+下面我们来研究如何求 $u_n^k$ 和 $a_k(t)$。我们已经说了，为方便起见我们不妨讨论周期边值条件 $q_0(t)=q_N(t)$。我们甚至不妨认为 $q_n(t)$ 对一切 $n$ 都有定义，而且适合 $q_n(t)=q_{N+n}(t)$。这就相当于把定义在区间 $[0,1]$ 上的函数周期地拓展到整个 $\mathbb R$ 上。既然如此，由(5)式可见 $u_n^k$ 对于 $n$ 也应有周期性 $u_n^k=u_{n+N}^k$。为了适合这个要求，我们取
+\begin{equation}
+ u_n^k=\frac1{\sqrt N}e^{ik\alpha n}.
+ \tag{7}
+\end{equation}
+而 $e^{ik\alpha N}=1$，所以我们令
+\begin{equation}
+ k\alpha=\frac{2\pi l}{N},\qquad l\text{ 为整数},
+ \tag{8}
+\end{equation}
+$\alpha=L/N$，所以有 $k=2\pi l/L$。至于(6)式中的因子 $1/\sqrt N$ 是为了规范化（物理学家喜欢说“归一化”，其实都是为了把某个向量变成单位长向量）。(8)式中的整数 $l$ 限取 $0<l\le N$ 值，这是因为 $e^{2\pi i l n/N}$ 对 $l$ 有周期 $N$，当 $l$ 越出这个范围时同样的 $u_n^k$ 将会重现。这就相当于物理上说的“分辨力”不够。
+
+现在再来考察(7)式，$n\alpha$ 实际上代表位置，所以是一个空间变量，它与 $e^{ikx}$ 相近，而后者是平面波，$k$ 称为波数，其量纲为 $[L]^{-1}$。(7)中的 $k$ 也是一样，所以(7)实际上是正弦形状的平面波的离散化，它的重要性质是
+
+\noindent\textbf{定理1}\quad 矩阵 $U=(u_n^k)$（$k$ 表示行，$n$ 表示列）是一个酉矩阵。
+
+\noindent\textbf{证}\quad 我们只要证明以下两个等式即可：
+\begin{equation}
+ \sum_{n=1}^N \bar u_n^{k'}u_n^k=\delta_{kk'},
+ \tag{9}
+\end{equation}
+\begin{equation}
+ \sum_{k=1}^N \bar u_{n'}^k u_n^k=\delta_{nn'}.
+ \tag{10}
+\end{equation}
+其实它们只是作简单的三角运算（由简单的三角学公式可以得到如此重要的定理实在大为值得注意）。为证(9)式，令 $k'=2\pi l'/N\alpha$，$k=2\pi l/N\alpha$，则 $l\ne l'$ 时
+\[
+ \sum_{n=1}^N \bar u_n^{k'}u_n^k
+ =\frac1N\sum_{n=1}^N e^{2\pi i(l-l')n/N}
+ =\frac{e^{2\pi i(l-l')/N}}N\cdot\frac{1-e^{2\pi i(l-l')}}{1-e^{2\pi i(l-l')/N}}=0.
+\]
+这里我们应用了等比数列的求和公式，因为 $l$ 与 $l'$ 均在1到 $N$ 中，$l-l'$ 不可能是 $N$ 的整数倍，因而分母不能为0，但分子一定为0。
+
+当 $l=l'$ 时(9)式自然成立。
+
+(10)式的证明与此类似。
+
+还要注意到，$\bar u_n^k=u_n^{-k}$，而 $q(t)$ 应该是实值的，因此(5)式中应取 $a_k(t)=\bar a_{-k}(t)$。注意到这样一些事实以后，我们就完全转到复域中去考查方程组(2)。这里 $A$ 本来是实对称方阵，现在看作复的埃尔米特方阵，线性代数知识告诉我们，它一定可以用一个酉矩阵 $U$ 对角化：
+\[
+ U^{-1}AU=\mathcal A=
+ \begin{pmatrix}
+ \lambda_1&&\\
+ &\ddots&\\
+ &&\lambda_N
+ \end{pmatrix}.
+\]
+$\lambda_1,\cdots,\lambda_N$ 是 $A$ 的特征根。故若将向量 $q$ 变化如下：
+\[
+ q(t)=Ua(t),
+\]
+方程(2)就成为(6)
+\[
+ \rho U\ddot a=cAUa,\qquad \text{即}\qquad \ddot a=\frac{c}{\rho}\mathcal A a.
+\]
+这就是简正模式所满足的方程组(6)。
+
+现在我们来求解方程组(2)。为此，以(5)式代入(1)右，并把(5)中的 $k$ 换成 $k'$，代入以后，对方程双方各乘以 $u_n^k$ 的共轭，并对 $n$ 求和，这时，利用(9)式，有
+\[
+ \sum_n \ddot q_n(t)\bar u_n^k
+ =\frac{c}{\rho}\sum_{k'}\sum_n a_{k'}(t)\bar u_n^k
+ (u_{n+1}^{k'}-2u_n^{k'}+u_{n-1}^{k'}).
+\]
+但是由(7)有 $u_{n\pm1}^{k'}=e^{\pm ik'\alpha}u_n^{k'}$，利用(5)对 $t$ 求导二次，再代入上式左，利用(9)有
+\[
+ \ddot a_k(t)=\frac{c}{\rho}\sum_{k'}a_{k'}\sum_n\bar u_n^k u_n^{k'}
+ (e^{ik'\alpha}-2+e^{-ik'\alpha}).
+\]
+对上式右方再用一次(9)，上式右方成为
+\[
+ \frac{c}{\rho}(e^{ik\alpha}-2+e^{-ik\alpha})a_k(t)=-\omega_k^2a_k(t),
+\]
+\[
+ |\omega_k|=\sqrt{\frac{2c}{\rho}(1-\cos k\alpha)}
+ =2\sqrt{\frac c\rho}\left|\sin\frac{k\alpha}{2}\right|.
+\]
+所以简正坐标 $a_k(t)$ 适合一个完全解耦的方程组
+\begin{equation}
+ \ddot a_k(t)+\omega_k^2a_k(t)=0,
+ \qquad
+ \omega_k=2\sqrt{\frac c\rho}\left|\sin\frac{k\alpha}{2}\right|.
+ \tag{11}
+\end{equation}
+方程(11)即所谓谐振子（harmonic oscillator）方程，它的解就是本书第二章一开始所介绍的指数—三角函数
+\begin{equation}
+ \begin{aligned}
+ a_k(t)&=b_ke^{-i\omega_kt}+\bar b_{-k}e^{i\omega_kt}\\
+ &=A_ke^{-i(\omega_kt+\theta_k)}.
+ \end{aligned}
+ \tag{12}
+\end{equation}
+这里我们取系数为 $b_k$ 与 $\bar b_{-k}$ 目的在于保证 $\bar a_k(t)=a_{-k}(t)$，而这是保证最终 $q_n(t)$ 取实值之所必需。这样我们看到，杆的纵振动的离散模型表明：一个 $N$ 自由度的物理系统的运动独由一些谐振子构成。这些谐振子的频率 $\omega_k$ 全由这个物理系统决定；决定它的关系式
+\[
+ \omega_k=2\sqrt{\frac c\rho}\left|\sin\frac{k\alpha}{2}\right|
+\]
+称为色散关系，在研究这个物理系统的本性时起重要的作用。这些谐振子的振幅 $A_k$ 与初始位相则由初始条件决定。一根杆的纵振动可以是多种多样的，但总是由这些简正模式合成的。所以，分析一个物理系统的状况就应该首先求出这些简正模式，这些简正模式的频率就称为这个物理系统的谱（spectrum），它刻画了这个系统的物理本质。上面讲到的寻找“隐藏着的周期性”就是这个意思。至于一个系统是否有如上类型的隐藏着的周期性，在我们的例子中全决定于一个算子（矩阵就是一个算子）可否对角化。如果可以，我们就看到，谱就是特征根。如果不行，问题将极为复杂。
+
+重要的是要提到，我们虽然只讲了一个机械运动的例子——杆的纵振动，但是这样的问题在研究种种自然现象时都会遇到，特别是在量子力学中。由于不假设读者知道很多量子力学知识，我们只能限于经典物理学中的问题。现在只提一下为什么我们说杆的离散模型讲这么多？一根连续的杆就是 $N\to\infty$ 时的极限状况，它是一个具有无穷自由度的物理系统。当达到这个极限状况时，许多有趣的性质将会被掩盖，特别是色散关系。但是当傅里叶着手研究热传导问题时，他确实是从极限状况开始的。下面我们就仿照傅里叶的方法来考虑连续杆的纵振动。我们从方程(1)开始，并令 $a\to0$，由于(1)中 $c=K/a^2$ 而
+\[
+ \frac1{a^2}[q_{n+1}-2q_n+q_{n-1}]\to\frac{\partial^2q}{\partial x^2},
+\]
+所以代替常微分方程组(1)，我们会得到一个偏微分方程：
+\[
+ \rho\frac{\partial^2q}{\partial t^2}=K\frac{\partial^2q}{\partial x^2},
+ \qquad\text{或写作}\qquad
+ \frac1{a^2}\frac{\partial^2u}{\partial t^2}=\frac{\partial^2u}{\partial x^2}.
+\]
+这里 $a^2=K/\rho$，它不是上面讲到的 $a$，写成 $a^2$ 只不过是为了保证它取正值。除了方程以外还应该有边值条件，如果研究两端固定的杆，就有 $q(0,t)=q(L,t)=0$；如果研究周期情况，则有 $q(0,t)=q(L,t)$。此外，因为(1)是牛顿的动力学方程，求解时应知道初位移与初速，它的连续极限，也就成为相应的初始条件 $q(x,0)=\varphi(x)$，$q_t(x,0)=\psi(x)$。总之，我们会有一个如下的初边值问题（我们把未知函数改写为 $u(x,t)$ 了）：
+\begin{equation}
+ \left\{
+ \begin{aligned}
+ \frac1{a^2}\frac{\partial^2u}{\partial t^2}&=\frac{\partial^2u}{\partial x^2},\quad t\ge0,\\
+ u(0,t)&=u(L,t)=0,\quad 0\le x\le L,\\
+ u(x,0)&=\varphi(x),\qquad u_t(x,0)=\psi(x).
+ \end{aligned}
+ \right.
+ \tag{13}
+\end{equation}
+(13)中的偏微分方程通常称为弦振动方程。这是因为，和常见的情况一样，数学物理中同样的方程可以刻画不同的物理系统，弦的横振动也适合同样的方程。这个方程也有很长久的历史了，达朗贝尔研究过它，丹尼尔·伯努利也研究过它，而且其解法与傅里叶的方法是一样的。只不过傅里叶作了更系统的贡献。这个方法如下：我们来看(5)式，这里 $q(t)$ 写成了一和式，其每一项都是 $t$ 的函数 $a_k(t)$ 与一个与 $t$ 无关，但与 $n$ 有关的 $u_n^k$ 相乘，因为 $n$ 代表离散模型中质点的位置，所以是一个空间变量。这样，在连续模型中我们试图求(13)的这样形状的解：
+\[
+ u(x,t)=X(x)T(t).
+\]
+这里我们当然设 $X(x)\ne0,T(t)\ne0$，否则我们将会得到平凡不足道的解：$u\equiv0$。以 $u$ 的这个表达式代入(13)中的偏微分方程，即有
+\[
+ \frac{X''(x)}{X(x)}=\frac1{a^2}\frac{T''(t)}{T(t)},
+\]
+所以它应该是一个常数 $-\lambda$，于是对 $X(x)$ 和 $T(t)$ 我们分别得到以下的线性常微分方程：
+\[
+ X''(x)=-\lambda X(x),\qquad T''(t)=-\lambda a^2T(t).
+\]
+暂将后一方程放在一边，先看第一个方程。我们想求它的一个非零解 $X(x)\ne0$，但希望这样作出的 $u(x,t)$ 能适合(13)中的边值条件，因此要求
+\begin{equation}
+ \left\{
+ \begin{aligned}
+ X''+\lambda X&=0,\\
+ X(0)=X(L)&=0.
+ \end{aligned}
+ \right.
+ \tag{14}
+\end{equation}
+如果 $\lambda=-\mu^2<0$，则上之方程有解
+\[
+ X(x)=Ae^{\mu x}+Be^{-\mu x}.
+\]
+但因要求 $X(0)=X(L)=0$，就必须有 $A=B=0$，只能得到无意义的零解。所以 $\lambda=-\mu^2<0$ 是不可能的。若 $\lambda=0$，同样又有 $X(x)=A+Bx$，而由边值条件 $X$ 得到零解。因此为使上式有解，必须 $\lambda=\mu^2>0$，但是又非一切正的 $\lambda$ 都可以给出非零的解：当 $\lambda=\mu^2>0$ 时，$X(x)=A\cos\mu x+B\sin\mu x$，由 $X(0)=0$ 即有 $A=0$，再由 $X(L)=0$，又有 $B\sin\mu L=0$。但是 $B=0$ 又是没有用的。因此 $\mu$ 必须取得使 $\sin\mu L=0$，从而 $\mu=k\pi/L$，$k=1,2,3,\cdots$（$k=-1,-2,-3,\cdots$ 给出同样的 $X(x)$）。总之，我们要求参数 $\lambda$ 之值使(14)有非零解。这个问题称为斯图姆—刘维尔问题（Sturm-Liouville，简称 S--L 问题），即求 $\lambda$ 之特定值，使(14)有非零解 $X(x)$。所得的 $\lambda=(k\pi/L)^2$ 称为其固有值（eigenvalue），相应的 $X(x)=B\sin(k\pi x/L)$ 称为相应的固有函数（eigenfunctions）。固有值的全体构成 S--L 问题之谱。固有值与固有函数在许多文献中分别称为特征值与特征函数。它与矩阵的特征根实质一样。于是我们看到 S--L 问题(14)之谱即一组实的、分离的固有值之集合，所以我们说这个问题有离散的谱。固有函数 $X(x)$ 中含有一个特定常数 $B$，我们将这样去取它，使 $X(x)$ 的 $L^2$ 范数为1，在我们的情况下，因为
+\[
+ \int_0^L\sin^2\frac{k\pi x}{L}\,dx
+ =\frac12\int_0^L\left(1-\cos\frac{2k\pi x}{L}\right)dx=\frac L2,
+\]
+故常数 $B^2=2/L$，物理学家喜欢称它为归一化因子。
+
+在解出了 $X(x)$ 后，再来看 $T(t)$。由 $T''(t)+\lambda a^2T=0$ 以及 $\lambda=\mu^2=(k\pi/L)^2$ 即有
+\[
+ T(t)=C\cos\frac{k\pi at}{L}+D\sin\frac{k\pi at}{L}
+ =M_k\cos\left(\frac{k\pi at}{L}+\theta_k\right).
+\]
+这又是一个谐振子，其频率是 $k\pi a/L$（相当于离散模型中的 $\omega_k$，但是现在的 $a$ 相当(1)中的 $a\sqrt{c/\rho}$）。在讨论离散模型时，我们的频率 $\omega_k$ 与两个质点之间的距离 $a$ 之间有色散关系 $\omega_k=2\sqrt{c/\rho}|\sin(ka/2)|$。如果 $a\to0$ 因为 $\sin(ka/2)\sim ka/2$，所以 $\omega_k\sim a\sqrt{c/\rho}\,k$，即在极限情况下 $\omega_k$ 与 $k$ 成正比，色散关系特别简单，称为非色散波。在连续情况下，正是 $\omega_k\sim k$ 这个简单式子把一般的较为复杂的色散关系掩盖起来了。
+
+关于振动与波的讨论我们暂时只能停在这里了，下面再回到傅里叶级数的讨论。
+
+初边值问题(13)中方程与边值条件俱已满足，余下的只有初值条件。为满足它们，需要把所得到的 $X(x)T(t)$ 叠加起来，得
+\[
+ u(x,t)=\sum_{k=0}^{\infty}\left(C_k\cos\frac{k\pi at}{L}+D_k\sin\frac{k\pi at}{L}\right)\sin\frac{k\pi x}{L},
+\]
+这里 $C_k$ 与 $D_k$ 都是未定数。我们需要这样确定它们，使得
+\begin{equation}
+ \varphi(x)=\sum C_k\sin\frac{k\pi x}{L},
+ \qquad
+ \psi(x)=\sum_{k=0}^{\infty}\frac{k\pi a}{L}D_k\sin\frac{k\pi x}{L}.
+ \tag{15}
+\end{equation}
+从初等的微积分教本中我们已熟知，它们正是 $\varphi(x)$ 和 $\psi(x)$ 的傅里叶展开式，而且
+\[
+ C_k=\frac2L\int_0^L\varphi(x)\sin\frac{k\pi x}{L}\,dx,
+\qquad
+ D_k=\frac2{k\pi a}\int_0^L\psi(x)\sin\frac{k\pi x}{L}\,dx.
+\]
+由此以下我们转入纯粹数学的讨论。
+
+\noindent\textbf{2. 傅里叶级数及其收敛性问题}\quad
+第四章一开始我们就指出了，傅里叶由此提出了任意函数都可以展开为傅里叶级数的问题，这对于从18世纪以来就存在的何为函数的争论正如火上加油。其实从18世纪以后，许多数学大师都参加进来，互相间难以至“诋毁”，终于有了狄利克雷的函数定义，黎曼积分的出现与此问题直接相关，勒贝格积分理论也是这样。所以许多人说，傅里叶分析是现代分析数学的起点，但是它不仅改变了整个分析数学的面貌，而且与群表示理论、代数数论、概率论等等都密切相关，出现了调和分析这个广大的分支学科。集合论的研究也始自这个问题，而集合论的出现改变了全部数学的基础这是没有疑问的了。
+
+这个问题的中心，首先是函数 $f(x)$ 在什么条件下可以展开为其傅里叶级数？因此，本节前半部分主要是讨论傅里叶级数如何由谱的问题产生，下面则要讨论其中心问题——收敛性问题。以下为简单起见，我们在区间 $[-\pi,\pi]$ 上讨论 $f(x)$ 之傅里叶级数，而且采用复记号：
+\[
+ f(x)\sim\sum_{k=-\infty}^{\infty}C_ke^{ikx},
+\]
+\begin{equation}
+ C_k=\frac1{2\pi}\int_{-\pi}^{\pi}f(x)e^{-ikx}\,dx.
+ \tag{16}
+\end{equation}
+它与常见的实的记法
+\[
+ f(x)\sim\frac{a_0}{2}+\sum_{k=1}^{\infty}(a_k\cos kx+b_k\sin kx);
+\]
+\begin{equation}
+ a_k=\frac1\pi\int_{-\pi}^{\pi}f(x)\cos kx\,dx,
+ \qquad
+ b_k=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin kx\,dx
+ \tag{17}
+\end{equation}
+不同；在(16)中 $k$ 从 $-\infty$ 变到 $+\infty$，而在(17)中 $k$ 则从0变到 $+\infty$，而且
+\begin{equation}
+ a_k=C_k+C_{-k},\qquad b_k=i(C_k-C_{-k}).
+ \tag{18}
+\end{equation}
+所以积分号前的因子在(16)中是 $1/(2\pi)$，在(17)中则是 $1/\pi$。
+
+(16)或(17)都是适用于 $[-\pi,\pi]$ 上的。但是其右方则是 $\mathbb R$ 上的以 $2\pi$ 为周期的函数，所以在 $[-\pi,\pi]$ 外也是有定义的，而 $f(x)$ 则只在 $[-\pi,\pi]$ 上有定义。因此我们说(16)或(17)代表 $f(x)$ 在 $\mathbb R$ 上以 $2\pi$ 为周期的周期延拓，准确些说则是把 $f(x)$ 在 $[-\pi,\pi]$ 中的一段周期地重现到 $\mathbb R$ 上，(16)或(17)右方以任一长为 $2\pi$ 的区间为基本周期，不论这个基本周期是 $[0,2\pi]$ 或 $[-\pi,\pi]$，只是平移一下 $e^{ikx}$ 之图像而已。但是若 $f(x)$ 原来就是定义在 $\mathbb R$ 上，取其 $[-\pi,\pi]$ 上的一段或取其 $[0,2\pi]$ 上的一段作周期延拓，其结果就可以完全不同。所以作 $f(x)$ 之傅里叶展开(16)或(17)时必须先说清楚是取 $f(x)$ 之“哪一段”来作展开。我们特别要注意，即令 $f(x)$ 在 $\mathbb R$ 上连续，取其 $[-\pi,\pi]$ 上之一段作周期延拓后，可能得到不连续的函数。例如若记周期延拓后所得函数为 $f^*(x)$，则 $f^*(\pi-0)=f(\pi)$，$f^*(\pi+0)=f(-\pi)$，所以在 $x=\pi$ 处会出现一个第一类间断点。对 $f(x)$ 之各阶导数也是这样。这一点下面应该特别注意。
+
+既然得出了 $f(x)$ 之傅里叶展开式(16)或(17)，基本的问题自然就是收敛性问题。但我们不妨从更宽的角度来看待它，而问这些级数与 $f(x)$ 关系如何？例如它们是否收敛，若收敛是否其和一定为 $f(x)$ 等等。要注意，收敛性问题只是问题的一部分，所以我们在(16)或(17)中都未用“$=$”号而用“$\sim$”。首先是，我们打算在什么框架下讨论这些问题。在19世纪中叶狄利克雷和黎曼的时代，自然是在黎曼可积函数类中讨论它。如果没有适当的可积性理论，(16)与(17)中的傅里叶系数公式就无法定义，而且正如第四章一开始就指出的，黎曼积分理论正是这样出来的。到19世纪末，有了勒贝格积分理论（它至少部分地也是由傅里叶级数理论引起的），人们自然会在 $L^1$ 框架下讨论它。$L^2$ 空间中的傅里叶级数理论我们已在第四章\S3中讲了一个头，它后来引导到泛函分析、数学物理学很广阔的天地中去了，我们也就不再讨论它了。$L^1$ 与 $L^2$ 中的傅里叶级数理论都极为细致，由于我们分析数学方面准备不足，只好割爱。在本章中，我们较多地从广义函数角度来讨论它，并适当涉及 $L^1$ 与 $L^2$ 理论。
+
+在进一步讨论(16)或(17)的收敛性前，我们还要作一个约定，因为(16)可以直接由(17)经过关系式(18)导出，所以若对(17)取部分和 $k=0,1,\cdots,N$，则(16)中也只出现 $\sum_{k=-N}^{N}$。因此以下凡讲到(16)的部分和时恒指
+\begin{equation}
+ S_N(x)=\sum_{k=-N}^{N}C_ke^{ikx}.
+ \tag{19}
+\end{equation}
+为了讨论(16)或(17)的收敛性，一个最直接了当的办法是估计 $C_k$ 的大小。这里我们有一个基本的，然而很简单的
+
+\noindent\textbf{定理2}\quad 设 $f(x)$ 由其定义域 $[-\pi,\pi]$ 经过以 $2\pi$ 为周期的延拓后成为一个 $C^m$（$m\ge1$）类函数，则其傅里叶系数 $C_k$（或 $a_k,b_k$）适合估计式
+\begin{equation}
+ |C_k|\le \frac{M}{|k|^m}
+ \qquad
+ \left(|a_k|,|b_k|\le\frac{M}{|k|^m}\right),
+ \tag{20}
+\end{equation}
+这里 $M$ 与 $k$ 无关。
+
+\noindent\textbf{证}\quad 因为 $f(x)$ 在周期延拓后为 $C^m$ 函数，所以 $f(\pi-0)=f(\pi)=f(-\pi)=f(-\pi+0)$。对 $f$ 的不高于 $m$ 阶的导数，也有这样的公式。由分部积分法
+\[
+ \begin{aligned}
+ C_k&=-\frac1{2k\pi i}f(x)e^{-ikx}\bigg|_{-\pi}^{\pi}
+ +\frac1{2k\pi i}\int_{-\pi}^{\pi}f'(x)e^{-ikx}\,dx\\
+ &=\frac1{2k\pi i}\int_{-\pi}^{\pi}f'(x)e^{-ikx}\,dx\\
+ &=\cdots
+ =\frac1{2\pi(ki)^m}\int_{-\pi}^{\pi}f^{(m)}(x)e^{-ikx}\,dx.
+ \end{aligned}
+\]
+上面我们多次应用了分部积分。由此直接得出(20)。
+
+这个定理看来简单，但若 $m\ge2$，由它可以保证(16)或(17)绝对而一致地收敛（有些文献上称为正规收敛），而这个结果对于很一般的 S--L 问题也是适用的，在那里我们没有办法应用指数函数和三角函数那么丰富的性质。但是即令是如此简单的定理，也还有许多值得挖掘的地方。例如，如果 $f(x)$ 在 $x=\pi$ 处有第一类间断点，则 $C_k$ 的表达式的第一项是
+\[
+ -\frac{(-1)^k}{2k\pi i}[f(-\pi+0)-f(\pi-0)]
+ =\frac{(-1)^k}{2k\pi i}[f(\pi+0)-f(\pi-0)]
+\]
+（注意 $f(x)$ 以 $2\pi$ 为周期），从而 $C_k=O(1/k)$；反过来，若 $C_k=O(1/k)$，我们可以猜到，函数会有第一类间断点。本书下面的例子说明确是如此。因此产生了一个根本思想：$f(x)$ 的光滑性与其傅里叶系数衰减速度直接相关。这个重要思想将在本章最后一节中详细讨论。现在我们先要再讲一下 $L^p$ 函数的一个性质。
+
+我们在上一章中已经看到，任一个 $L^p$ 函数（$1\le p<+\infty$）都可以用一个连续函数去按 $L^p$ 系数逼近，但我们没有详细证明，这不是因为这一性质不重要，恰好相反，它是极为重要的，因此我们将在下一章在子空间的稠密性的背景下去讨论它。我们这里只指出，$f(x)\in L^p$ 不但可以用连续函数去逼近，而且可以通过例如磨光算子，用 $C_0^\infty$ 函数，即 $D$ 中的函数去作 $L^p$ 逼近。不但如此，我们还可以用阶梯函数去逼近。所谓区间 $I$ 上的阶梯函数，即把 $I$ 分割成有限多个小区间：
+\[
+ I:\ a=a_0<a_1<\cdots<a_N=b\qquad (I\text{ 即 }[a,b]),
+\]
+而阶梯函数即在每个小区间上各取常数值的函数：
+\[
+ \varphi(x)=A_i,\qquad a_{i-1}\le x\le a_i,\quad i=1,2,\cdots,N.
+\]
+此外还可以证明 $f(x)\in L^p$ 有所谓平均连续性，即对任一 $\varepsilon>0$ 必可找到一个 $\delta$，使当 $|h|<\delta$ 时
+\[
+ \|f(x+h)-f(x)\|=\left(\int_I|f(x+h)-f(x)|^pdx\right)^{1/p}<\varepsilon.
+\]
+这些性质不但对有界的 $I$ 成立，对 $\sigma$ 可测的 $I$ 例如 $I=\mathbb R$ 也是成立的。下面我们将自由地应用这些结果。
+
+首先给出一个重要的定理。
+
+\noindent\textbf{定理3（黎曼--勒贝格引理）}\quad 若 $f(x)\in L^1(\mathbb R)$，则
+\[
+ \int_{-\infty}^{\infty}f(x)e^{-ikx}\,dx\to0\qquad(k\to\infty).
+\]
+
+\noindent\textbf{证}\quad 因为 $f(x)\in L^1(\mathbb R)$，故对任意 $\varepsilon>0$ 必可找到正数 $M$，使
+\[
+ \int_M^{+\infty}|f(x)|dx,\quad \int_{-\infty}^{-M}|f(x)|dx<\frac\varepsilon3.
+\]
+所以
+\[
+ \int_{-\infty}^{\infty}f(x)e^{-ikx}dx
+ =\left[\int_{-\infty}^{-M}+\int_{-M}^{M}+\int_M^{\infty}\right]f(x)e^{-ikx}dx,
+\]
+其中前两项绝对值均小于 $\varepsilon/3$，现在看第三项。由前述 $L^p$ 函数的性质，可以找到一个阶梯函数 $w(x)$，使
+\[
+ \int_{-M}^{M}|f(x)-w(x)|dx<\frac\varepsilon3,
+\]
+而如定理2前所述，$\int_{-M}^{M}w(x)e^{-ikx}dx$ 由有限项
+\[
+ A_j\int_{a_{j-1}}^{a_j}e^{-ikx}dx
+ =\frac{i}{k}A_j\left[e^{-ika_j}-e^{-ika_{j-1}}\right]
+\]
+相加而得，当 $k$ 充分大时它们可以变得任意小。所以只要 $k$ 充分大，必有
+\[
+ \left|\int_{-M}^{M}f(x)e^{-ikx}dx\right|
+ \le\int_{-M}^{M}|f(x)-w(x)|dx
+ +\left|\sum_{j=1}^{N}A_j\int_{a_{j-1}}^{a_j}e^{-ikx}dx\right|
+ <\frac\varepsilon3.
+\]
+因此当 $k$ 充分大时
+\[
+ \left|\int_{-\infty}^{\infty}f(x)e^{-ikx}dx\right|<\varepsilon.
+\]
+特别是，若 $f(x)\in L^1([ -\pi,\pi])$，则 $f(x)$ 之傅里叶系数 $C_k$ 当 $k\to\infty$ 时，必趋于0。
+
+由于这个定理的重要性，我们不妨分析一下其要点何在。实际上，重要的是右方第三个积分的估计：我们用 $w(x)$ 去逼近 $f(x)$，而 $w(x)$ 至少在一个小区间 $[a_{j-1},a_j]$ 上是不变的，而另一个因子 $e^{ikx}$，因为其周期为 $2\pi/k$，这个小区间中包含了它的许多周期。每一个周期中 $e^{ikx}=\cos kx+i\sin kx$ 之实虚部都是正号地变一段，又完全同样地反号再变一段，因此乘上 $w(x)=A_j$ 后，平均地完全抵消了。$f(x)$ 虽然不如 $w(x)$ 一样在某区间中不变，但既可用 $w(x)$ 逼近，也就可以说是缓变的。所以 $\int_{-M}^{M}f(x)e^{ikx}dx$ 中既有缓变因子 $f(x)$，又有急变因子 $e^{-ikx}$，二者相乘又相加，就好像使 $f(x)$ 之值加“权”正负相消了（这里用语不太准确，因为“权”一般总是正的）。这实际上是傅里叶级数的一个“诀窍”：例如在 $\sum C_ke^{ikx}$ 中 $e^{ikx}$ 当 $k$ 充分大时是急变的，即高频成分。我们证明定理2时只利用了关于 $|C_k|$ 的估计，而对 $e^{ikx}$ 之振荡特性用到不多，所以得到的结果必然是比较粗糙的。
+
+但是即令如此，我们通过分部积分以及
+\[
+ \int e^{ikx}dx=\frac1{ik}e^{ikx}+C
+\]
+仍然利用了 $e^{ikx}$ 之振荡特性。话已至此，索性多讲几句在今后可能会对读者有用的话。
+
+\noindent\textbf{3. 阿贝尔变换和第二积分中值定理}\quad
+我们处理的级数是形如 $\sum a_kb_k$ 的，分部积分讨论的是 $f(x)\varphi(x)$ 的积分，如果暂时不谈极限，则也是 $\sum_{k=1}^{N}a_kb_k$ 类型的和式。关于这类和式有一个著名的阿贝尔变换：如果我们记 $B_m=\sum_{k=1}^{m}b_k$，则 $b_k=B_k-B_{k-1}$（规定 $B_0=0$），因此
+\begin{equation}
+ \begin{aligned}
+ S=\sum_{k=1}^{N}a_kb_k
+ &=\sum_{k=1}^{N}a_k(B_k-B_{k-1})\\
+ &=\sum_{k=1}^{N-1}(a_k-a_{k+1})B_k+a_NB_N.
+ \end{aligned}
+ \tag{21}
+\end{equation}
+现在，把这个变换用于无穷级数 $\sum_{k=1}^{\infty}a_kb_k$，为了证明它的收敛，只需应用柯西准则，即对 $\varepsilon>0$ 找一个 $M$，使得对任意的 $N$
+\[
+ \left|\sum_{k=M+1}^{M+N}a_kb_k\right|
+ =\left|\sum_{k=1}^{N}a_{M+k}b_{M+k}\right|<\varepsilon.
+\]
+对此式则可再应用上述阿贝尔变换而有以下两个判别法：
+
+\noindent\textbf{定理4}\quad
+(i)\textbf{阿贝尔判别法}\quad 若 $\sum_{k=1}^{\infty}b_k$ 收敛而 $\{a_k\}$ 是单调有界序列，则上述级数收敛。
+
+(ii)\textbf{狄利克雷判别法}\quad 若 $\sum_{k=1}^{\infty}b_k$ 的部分和序列有界，而 $\{a_k\}$ 单调趋于0，则上述级数收敛。
+
+\noindent\textbf{证}\quad 我们把(21)应用于 $\sum_{k=M+1}^{M+N}a_kb_k$，于是令 $B_k=\sum_{l=1}^{k}b_{M+l}$。先看对于(i)，这时只要 $M$ 充分大则一切 $B_k,B_N$ 都适合 $|B_k|<\varepsilon$，又因 $|a_k|$ 有界，所以 $|a_k|\le A$，从而 $|a_k-a_{k+1}|\le|a_k|+|a_{k+1}|\le2A$，$|a_N|\le A$，应用柯西准则，
+\[
+ |S|=\left|\sum_{k=1}^{N}a_{M+k}b_{M+k}\right|\le2A\varepsilon+A\varepsilon=3A\varepsilon.
+\]
+从而原级数收敛。
+
+在(ii)的情况，一切 $|B_k|\le B$，而 $|a_{M+k}|<\varepsilon$，应用柯西准则，又有
+\[
+ |S|\le2B\varepsilon+B\varepsilon=3B\varepsilon.
+\]
+定理证毕。
+
+阿贝尔变换在积分中有什么类比吗？首先就是分部积分法。现在我们不要太严格，这样可以自由地在积分和定积分之间随意变换。考虑 $\int_I f(x)\varphi(x)dx$，通过把 $I$ 分割成许多小区间 $[x_0,x_1]\cup[x_1,x_2]\cup\cdots\cup[x_{N-1},x_N]$，把它变成积分和
+\[
+ \sum_{k=1}^{N}f(\xi_k)\varphi(\xi_k)\Delta_kx,
+\]
+令 $a_k=f(\xi_k)$，$b_k=\varphi(\xi_k)\Delta_kx$，则
+\[
+ B_m=b_1+\cdots+b_m=\sum_{k=1}^{m}\varphi(\xi_k)\Delta_kx,
+\]
+我们又把它写成 $B(x_m)=\int_{x_0}^{x_m}\varphi(x)dx$（注意 $B(x_0)=0$），于是阿贝尔变换成了
+\begin{equation}
+ \int_I f(x)B'(x)dx
+ =\sum [a(\xi_k)-a(\xi_{k+1})]\int_{x_0}^{x_k}\varphi(x)dx
+ +a(x_N)\int_{x_0}^{x_N}\varphi(x)dx.
+ \tag{22}
+\end{equation}
+但
+\[
+ a(\xi_{k-1})-a(\xi_{k+1})=-\int_{\xi_{k-1}}^{\xi_{k+1}}f'(x)dx.
+\]
+忽略一些“可以忽略的”误差，还注意到 $B(x_0)=0$，并把 $x_N$ 写成 $x$，阿贝尔变换式(22)立即成了分部积分公式
+\[
+ \int_I f(x)\varphi(x)dx=f(x)B(x)\big|_{x_0}^{x}-\int_{x_0}^{x}f'(x)B(x)dx.
+\]
+我们在第四章中就说过积分（黎曼积分）其实就是组合学公式“加上一点极限”。达布关于牛顿—莱布尼茨公式的证明说明了它，分部积分法又一次说明了它。可是，把阿贝尔变换用于积分学对我们当前讨论的傅里叶级数最重要的贡献在于它给出了第二积分中值定理。
+
+\noindent\textbf{定理5（第二积分中值定理）}\quad 设 $f(x)$ 与 $\varphi(x)$ 均定义在 $[a,b]$ 上，$f(x)$ 单调而 $\varphi(x)$ 连续，则必存在 $\xi\in[a,b]$，使
+\begin{equation}
+ \int_a^b\varphi(x)f(x)dx
+ =f(a+0)\int_a^{\xi}\varphi(x)dx+f(b-0)\int_{\xi}^{b}\varphi(x)dx.
+ \tag{23}
+\end{equation}
+
+\noindent\textbf{证}\quad 不失一般性可以设 $f(x)$ 单调下降（否则考虑 $-f(x)$）。单调函数最多有可数多个第一类间断点而且必可积。于是 $\varphi(x)f(x)$ 可积。对单调函数 $f(x)$，$f(a+0),f(b-0)$ 均存在，我们又可设 $f(b-0)=0$，否则可以用 $F(x)=f(x)-f(b-0)$ 代替 $f(x)$。如果我们证明了
+\begin{equation}
+ \begin{aligned}
+ \int_a^b\varphi(x)F(x)dx
+ &=F(a+0)\int_a^{\xi}\varphi(x)dx+F(b-0)\int_{\xi}^{b}\varphi(x)dx\\
+ &=F(a+0)\int_a^{\xi}\varphi(x)dx.
+ \end{aligned}
+ \tag{24}
+\end{equation}
+将 $F(x)=f(x)-f(b-0)$ 代入上式即可得到(23)。
+
+现在作 $[a,b]$ 的一个分划，$a=x_0<x_1<\cdots<x_N=b$，并令
+\[
+ G(x)=\int_a^x\varphi(x)dx
+\]
+为 $\varphi(x)$ 的一个原函数，则 $G(x)$ 是 $[a,b]$ 上的连续函数，从而有最小值 $m$ 和最大值 $M$。我们要作 $\int_a^bF(x)\varphi(x)dx$ 的一个积分和 $\sum_{i=1}^{N}F(\xi_i)\varphi(\xi_i)\Delta_ix$，$\xi_i$ 的取法如下：对下式应用积分中值定理，
+\[
+ G(x_i)-G(x_{i-1})=\int_{x_{i-1}}^{x_i}\varphi(x)dx=\varphi(\xi_i)\Delta_ix,
+\]
+并且利用这样定出的 $\xi_i$ 作上述积分和，于是对 $\sum_{i=1}^{N}F(\xi_i)\varphi(\xi_i)\Delta_ix$ 应用阿贝尔变换，而以 $F(\xi_i)$ 作为 $a_i$，$\varphi(\xi_i)\Delta_ix$ 作为 $b_i$，于是
+\[
+ B_i=b_1+\cdots+b_i=\sum_{j=1}^{i}\int_{x_{j-1}}^{x_j}\varphi(x)dx
+ =\int_a^{x_i}\varphi(x)dx=G(x_i).
+\]
+应用阿贝尔变换有
+\[
+ \sum_{i=1}^{N}F(\xi_i)\varphi(\xi_i)\Delta_ix
+ =\sum_{i=1}^{N-1}[F(\xi_i)-F(\xi_{i+1})]B_i+F(\xi_N)B_N.
+\]
+因为 $F(x)$ 是单调下降而且非负的，$B_i$ 与 $B_N$ 均为 $G(x)$ 之值，从而 $m\le B_i,B_N\le M$，代入上式有
+\[
+ m\left[\sum_{i=1}^{N-1}(F(\xi_i)-F(\xi_{i+1}))+F(\xi_N)\right]
+ \le\sum_{i=1}^{N}F(\xi_i)\varphi(\xi_i)\Delta_ix
+\]
+\[
+ \le M\left[\sum_{i=1}^{N-1}(F(\xi_i)-F(\xi_{i+1}))+F(\xi_N)\right],
+\]
+亦即
+\[
+ mF(\xi_1)\le\sum_{i=1}^{N}F(\xi_i)\varphi(\xi_i)\Delta_ix\le MF(\xi_1).
+\]
+取极限后即得
+\[
+ mF(a+0)\le\int_a^bF(x)\varphi(x)dx\le MF(a+0).
+\]
+由于 $m,M$ 分别是 $\varphi(x)$ 在 $[a,b]$ 上的最小与最大值，由连续函数的中间值定理，一定存在 $\xi\in[a,b]$ 使 $\varphi(\xi)$ 之值适合
+\[
+ \int_a^bF(x)\varphi(x)dx=\varphi(\xi)F(a+0).
+\]
+此即(24)式，从而定理成立。
+
+与关于无穷级数的收敛性相应，关于积分 $\int_a^{+\infty}f(x)\varphi(x)dx$，我们也有相应定理。
+
+\noindent\textbf{定理4$'$}\quad
+(i)\textbf{阿贝尔判别法}\quad 若积分 $\int_a^{+\infty}f(x)dx$ 收敛（但不一定绝对收敛），而 $\varphi(x)$ 单调有界，则 $\int_a^{+\infty}f(x)\varphi(x)dx$ 收敛。
+
+(ii)\textbf{狄利克雷判别法}\quad 若 $f(x)$ 在 $[a,+\infty]$ 的任一子区间 $[a,A]$ 上可积，而且 $\int_a^Af(x)dx$ 对 $A$ 有界；$\varphi(x)$ 当 $x\to+\infty$ 时单调趋于0，则 $\int_a^{+\infty}f(x)\varphi(x)dx$ 收敛。
+
+这个定理的证明我们略去。但要指出，对其它类型的反常积分，也有同样的结果成立。
+
+\noindent\textbf{4. 从广义函数观点看傅里叶级数的收敛性}\quad
+下面我们再回到对傅里叶级数的讨论。我们来看级数(16)或(17)是否在 $x\in[-\pi,\pi]$ 处收敛于 $f(x)$。这里假设已对 $f(x)$ 作了周期延拓。把(16)中 $C_k$ 的公式（积分变量换成 $u$）代入(16)中的级数，则其部分和是
+\[
+ \begin{aligned}
+ S_N(x)&=\frac1{2\pi}\int_{-\pi}^{\pi}f(u)\sum_{k=-N}^{N}e^{-ik(u-x)}du\\
+ &=\frac1\pi\int_{-\pi}^{\pi}f(u)\left[\sum_{k=1}^{N}\cos k(x-u)+\frac12\right]du.
+ \end{aligned}
+\]
+但是
+\[
+ \begin{aligned}
+ \sum_{k=1}^{N}\cos k(x-u)+\frac12
+ &=\left[\sum_{k=1}^{N}\frac{\cos k(x-u)\sin\frac12(x-u)}{\sin\frac12(x-u)}+\frac12\right]\\
+ &=\sum_{k=1}^{N}\frac{\sin[(k+\frac12)(x-u)]-\sin[(k-\frac12)(x-u)]}{2\sin\frac12(x-u)}+\frac12\\
+ &=\frac{\sin[(N+\frac12)(x-u)]}{2\sin\frac12(x-u)}.
+ \end{aligned}
+\]
+令 $u-x=t$ 代入上式，有
+\[
+ S_N(x)=\frac1\pi\int_{-\pi}^{\pi}
+ \frac{\sin(N+\frac12)t}{2\sin\frac t2}f(x+t)dt.
+\]
+为了证明 $\lim_{N\to\infty}S_N(x)=f(x)$，只需证明当 $N\to\infty$ 时
+\begin{equation}
+ S_N(x)-f(x)=\frac1\pi\int_{-\pi}^{\pi}
+ \frac{\sin(N+\frac12)t}{2\sin\frac t2}[f(x+t)-f(x)]dt
+ \tag{25}
+\end{equation}
+趋向0即可。这里我们需要倒用上面的求和程序，而有
+\[
+ \frac1\pi\int_{-\pi}^{\pi}\frac{\sin(N+\frac12)t}{2\sin\frac t2}dt
+ =\frac1\pi\int_{-\pi}^{\pi}\sum_{k=-N}^{N}e^{ikt}dt=1.
+\]
+迄今为止，我们对 $f(x)$ 之光滑性未加限制。为简单计，暂时固定 $x$，并令 $f(t)\in C^\infty$ 且支集在 $x$ 附近，则有
+\[
+ \frac1{2\sin\frac t2}[f(x+t)-f(x)]\in L^1(-\pi,\pi).
+\]
+因此利用黎曼--勒贝格引理即知 $\lim_{N\to\infty}S_N(x)=f(x)$。这样做似乎没有得到好处：我们的结果还未超过定理2，而且还没有考虑到当 $x$ 接近 $[-\pi,\pi]$ 的端点时因 $f(x)$ 周期延拓而可能产生的新的第一类间断点。但是它告诉我们，$\mathbb R$ 上的以 $2\pi$ 为周期的 $C^\infty$ 函数
+\[
+ D_N(t)=\frac1\pi\frac{\sin(N+\frac12)t}{2\sin\frac t2}
+\]
+构成一个 $\delta$ 序列，$D_N(t)$ 称为狄利克雷核，于是我们有
+
+\noindent\textbf{定理6}\quad $\{D_N(t)\}$ 是一个 $\delta$ 序列，亦即
+\begin{equation}
+ D_N(t)\longrightarrow \delta_{2\pi}(t)
+ \qquad\text{in }\mathcal D'(\mathbb R),
+ \tag{26}
+\end{equation}
+其中 $\delta_{2\pi}(t)=\sum_{m\in\mathbb Z}\delta(t-2\pi m)$ 是 $2\pi$ 周期的 Dirac 梳。\jiaokan{原文在(26)及下文写作 $D_N(t)\to\delta(t)$、$\frac1{2\pi}\sum_{k=-\infty}^{\infty}e^{ikt}=\delta(t)$，同时注明收敛于 $\mathcal D'(\mathbb R)$。在通常的 $\mathcal D'(\mathbb R)$ 意义下，正确极限是周期 Dirac 梳 $\sum_{m\in\mathbb Z}\delta(t-2\pi m)$；若在圆周或周期分布空间中工作，才可把它简记为模 $2\pi$ 意义下位于0处的周期 $\delta$。}
+
+这个定理给了我们一个新的视角：注意到 $D_N(t)$ 是由 $\sum_{k=-N}^{N}e^{ik(t-u)}$ 用几何数列求和得出来的（我们只是为了不在复域中迂回，才把它直接化为余弦之和并用了积化和差公式，其实使用几何数列求和结果是一回事，读者自己不妨一试），所以可以写成
+\[
+ \frac1{2\pi}\sum_{k=-\infty}^{\infty}e^{ikt}=\delta_{2\pi}(t)
+ \qquad\text{in }\mathcal D'(\mathbb R).
+\]
+如果再注意到 $\langle\delta_{2\pi}(t),e^{ikt}\rangle=1$（在一个基本周期上理解），则上式左方又可以说成是 $\delta_{2\pi}(t)$ 的傅里叶级数，定理6就可以改述为 $\delta_{2\pi}(t)$ 之傅里叶级数在周期分布意义下收敛于 $\delta_{2\pi}(t)$。这样说法听起来固然颇有新意，但追究到底，因为周期分布上的连续线性泛函之故，所以我们还只是证明了 $D(\mathbb R)$ 函数 $f(x)$ 之傅里叶级数必收敛于 $f(x)$——还远远没有超过定理2！
+
+但是 $\delta$ 不仅是 $D(\mathbb R)$ 上的连续线性泛函，在第二章\S4中就指出了 $\langle\delta,f\rangle=f(0)$ 对连续函数即已成立。上面说的周期 $\delta$ 与 $e^{ikt}$ 的配对就是用的这个结果。于是傅里叶级数收敛问题就变成：$D_N(t)$ 在什么样的空间中可以看成 $\delta$ 序列？为了回答这个问题，我们还是从为 $f(x)$ 定义在 $[-\pi,\pi]$ 上，并经周期延拓到 $\mathbb R^1$ 上，于是在 $x=\pm\pi$ 处会有多余的间断点。现在来考虑
+\[
+ {\small
+ \begin{aligned}
+ S_N(x)-\frac12[f(x+0)+f(x-0)]
+ &=\frac1\pi\int_0^{\pi}\frac{\sin(N+\frac12)t}{2\sin\frac t2}
+ \left[\begin{aligned}f(x+t)&-\frac12f(x+0)\\[-2pt]&-\frac12f(x-0)\end{aligned}\right]dt\\
+ &\quad+\frac1\pi\int_{-\pi}^{0}\frac{\sin(N+\frac12)t}{2\sin\frac t2}
+ \left[\begin{aligned}f(x+t)&-\frac12f(x+0)\\[-2pt]&-\frac12f(x-0)\end{aligned}\right]dt\\
+ &=\frac1\pi\int_0^{\pi}\frac{\sin(N+\frac12)t}{2\sin\frac t2}[f(x+t)-f(x+0)]dt\\
+ &\quad+\frac1\pi\int_0^{\pi}\frac{\sin(N+\frac12)t}{2\sin\frac t2}[f(x-t)-f(x-0)]dt.
+ \end{aligned}
+ }
+\]
+今记
+\[
+ \Psi(x,t)=\frac1{2\pi\sin\frac t2}
+ \{[f(x+t)-f(x+0)]+[f(x-t)-f(x-0)]\}.
+\]
+固定 $x$ 并视 $\Psi$ 为 $t$ 的函数，于是若 $\Psi(x,t)$ 为 $L^1$ 函数即可利用黎曼--勒贝格引理证明级数(16)收敛，而且其和是 $\frac12[f(x+0)+f(x-0)]$，即左、右极限的均值。注意到 $\sin(t/2)\sim t/2$，所以只需
+\[
+ \frac{f(x+h)-f(x+0)}{h}\in L^1
+\]
+即可。但是有许多情况可以保证这一点，例如设 $f(t)$ 在 $t=x$ 处适合赫尔德条件
+\[
+ |f(x+h)-f(x)|\le C|h|^\alpha,\qquad 0<\alpha\le1
+\]
+（$\alpha=1$ 时称此条件为利普希茨条件）即可。
+
+从今天的角度来看，我们自然知道，真正的问题在于在一个尽可能宽的函数空间中寻找一个 $\delta$ 序列，就是找一个含参数的核。这种核为数众多，我们下面还可以看一个很类似的核
+\begin{equation}
+ W_N(t)=\frac1\pi\frac{\sin(N+\frac12)t}{t}.
+ \tag{27}
+\end{equation}
+它与狄利克雷核相近，因为
+\[
+ \int_0^{\pi}\frac{\sin(N+\frac12)t}{2\sin\frac t2}\varphi(t)dt
+ =\int_0^{\pi}\frac{\sin(N+\frac12)t}{t}\Phi(t)\varphi(t)dt,
+\]
+其中 $\Phi(t)=\dfrac{t/2}{\sin(t/2)}$，它在 $[-\pi,\pi]$ 中是很光滑的。我们用参数 $m$ 代替 $N+\frac12$，下面证明 $\frac1\pi\frac{\sin mt}{t}$ 当 $m\to\infty$ 在满足狄利克雷条件的函数类中是 $\delta$ 序列，所谓狄利克雷条件即
+
+(D)：若 $f(x)$ 在 $[-\pi,\pi]$ 上最多只有有限多个第一类间断点，而且可将 $[-\pi,\pi]$ 分为有限多个区间，使 $f(x)$ 在每个区间上均为单调，则称 $f(x)$ 适合条件(D)——狄利克雷条件。
+
+\noindent\textbf{定理7}\quad 核 $W_N(t)$ 在上述函数类中是 $\delta$ 序列，即是说，若 $f(x)$ 适合条件(D)，则有
+\begin{equation}
+ \lim_{N\to\infty}\int_{-\pi}^{\pi}W_N(t)f(t)dt
+ =\frac12[f(0+)+f(0-)].
+ \tag{28}
+\end{equation}
+\jiaokan{原文(28)在积分号外另有一个因子 $1/\pi$，但此前已定义 $W_N(t)=\frac1\pi\frac{\sin(N+1/2)t}{t}$；若再乘 $1/\pi$，极限会多出一个 $1/\pi$。后文使用 $W_N$ 时也不再附加该因子，故删除此处重复的 $1/\pi$。}
+
+在证明此式前，我们先要提到一个著名的积分公式
+\[
+ \int_0^{\infty}\frac{\sin t}{t}dt=\frac\pi2.
+\]
+值得注意的是这个积分收敛但是并不绝对收敛。因为比较详尽的微积分教材都有这个例子，我们就不来重复证明了。现在我们回到定理7的证明。
+
+我们考虑
+\[
+ \frac1\pi\int_{-\pi}^{\pi}\frac{\sin(N+\frac12)t}{t}
+ \left[f(x+t)-\frac12f(x+0)-\frac12f(x-0)\right]dt
+\]
+\[
+ \begin{aligned}
+ &=\frac1\pi\int_0^{\pi}\frac{\sin(N+\frac12)t}{t}[f(x+t)-f(x+0)]dt\\
+ &\quad+\frac1\pi\int_{-\pi}^{0}\frac{\sin(N+\frac12)t}{t}[f(x+t)-f(x-0)]dt.
+ \end{aligned}
+\]
+这里我们已利用了 $\dfrac{\sin(N+1/2)t}{t}$ 是 $t$ 的偶函数，从而
+\[
+ \int_{-\pi}^{\pi}\frac{\sin(N+\frac12)t}{t}\frac12f(x+0)dt
+ =\int_0^{\pi}\frac{\sin(N+\frac12)t}{t}f(x+0)dt.
+\]
+在后一积分中作变量变换 $t\mapsto-t$，则上式可化为
+\begin{equation}
+ \frac1\pi\int_0^{\pi}\frac{\sin(N+\frac12)t}{t}
+ [f(x+t)+f(x-t)-f(x+0)-f(x-0)]dt.
+ \tag{29}
+\end{equation}
+由条件(D)知，只要取 $\delta$ 充分小，$f(x)$ 在 $x$ 之左侧 $[x-\delta,x]$ 和右侧 $[x,x+\delta]$ 中均为单调的，又由于 $\dfrac{\sin(N+1/2)t}{t}$ 在 $[0,\delta]$ 中总是可积的，所以例如对积分
+\[
+ I_1=\frac1\pi\int_0^{\delta}\frac{\sin(N+\frac12)t}{t}[f(x+t)-f(x+0)]dt
+\]
+应用第二积分中值定理，知此积分
+\[
+ \begin{aligned}
+ I_1&=\frac1\pi[f(x+\delta)-f(x+0)]\int_0^{\xi}\frac{\sin(N+\frac12)t}{t}dt\\
+ &=\frac1\pi[f(x+\delta)-f(x+0)]\int_0^{(N+\frac12)\xi}\frac{\sin t}{t}dt.
+ \end{aligned}
+\]
+后面的积分当 $N\to\infty$ 时极限为 $\pi/2$，所以不论 $N$ 和 $\delta$ 如何取，它总是有界的。再由 $f(x)$ 在 $[x,x+\delta]$ 中为单调的假设（单调函数只有第一类间断点），对任意 $\varepsilon>0$ 必可找到一个 $\delta(\varepsilon)$ 使
+\[
+ |f(x+\delta)-f(x+0)|<\frac{\varepsilon}{4M},
+ \qquad
+ M=\sup_{N,\delta}\left|\frac1\pi\int_0^{(N+\frac12)\delta}\frac{\sin t}{t}dt\right|,
+\]
+所以
+\[
+ |I_1|<\frac\varepsilon4.
+\]
+同理当 $\delta$ 充分小时
+\[
+ |I_2|=\left|\frac1\pi\int_0^{\delta}\frac{\sin(N+\frac12)t}{t}[f(x-t)-f(x-0)]dt\right|<\frac\varepsilon4.
+\]
+现在固定这个 $\delta$，它与 $N$ 无关，而(29)中的积分化为
+\[
+ \frac1\pi\int_{\delta}^{\pi}\frac{\sin(N+\frac12)t}{t}
+ [f(x+t)+f(x-t)-f(x+0)-f(x-0)]dt+I_1+I_2.
+\]
+对前一积分可以应用黎曼--勒贝格引理而知当 $N$ 充分大时，其绝对值小于 $\varepsilon/2$。由此知
+\[
+ \lim_{N\to\infty}\int_{-\pi}^{\pi}W_N(t)f(x+t)dt
+ =\frac12[f(x+0)+f(x-0)].
+\]
+但这只是证明了 $W_N(t)$ 是 $\delta$ 序列，还未证明级数(16)是否在条件(D)下收敛于 $f(x)$。于是我们还需证明
+
+\noindent\textbf{定理8（狄利克雷定理）}\quad 设 $f(x)$ 在 $[-\pi,\pi]$ 中适合条件(D)，则级数(16)必收敛，其和为
+\begin{equation}
+ \sum_{k=-\infty}^{\infty}C_ke^{ikx}=\frac12[f(x+0)+f(x-0)].
+ \tag{30}
+\end{equation}
+
+\noindent\textbf{证}\quad 前面已经证明了左方之和为
+\[
+ \lim_{N\to\infty}\int_{-\pi}^{\pi}D_N(t)f(x+t)dt,
+\]
+定理7则证明了上式右方为 $\lim_{N\to\infty}\int_{-\pi}^{\pi}W_N(t)f(x+t)dt$。所以现在需证的只是
+\[
+ \lim_{N\to\infty}\int_{-\pi}^{\pi}[D_N(t)-W_N(t)]f(x+t)dt=0.
+\]
+但是
+\[
+ D_N(t)-W_N(t)=\sin\left(N+\frac12\right)t\left[\frac1{2\sin\frac t2}-\frac1t\right],
+\]
+$\dfrac1{2\sin(t/2)}-\dfrac1t$ 在 $t\in[-\pi,\pi]$ 中只有一个奇点 $t=0$，但是
+\[
+ \frac1{2\sin\frac t2}-\frac1t
+ =\frac12\left(\frac1{\sin\tau}-\frac1\tau\right)
+ =\frac{\tau-\sin\tau}{2\tau\sin\tau}
+\]
+\[
+ =\frac{\frac{\tau^3}{3!}-\frac{\tau^5}{5!}+\cdots}
+ {2\tau^2-\frac{2\tau^4}{3!}+\frac{2\tau^6}{5!}-\cdots}
+ =\frac{\tau}{2\cdot3!}+\sum_{k=2}^{\infty}a_k\tau^k,
+\]
+这里 $\tau=t/2$，而级数在 $\tau=0$ 即 $t=0$ 附近收敛，所以 $D_N(t)-W_N(t)=\Psi(t)\sin(N+\frac12)t$，而 $\Psi$ 在 $[-\pi,\pi]$ 上光滑，因此 $L^1$ 可积，利用黎曼--勒贝格引理即得定理8的证明。
+
+上面我们详细地讨论了级数(16)的收敛性问题并且利用了很细密的数学分析方法。当然读者会问，能不能找到更精密的方法来证明 $D_N(t)$ 即在连续函数空间中也是一个 $\delta$ 序列呢？答案是否定的，因为早在1876年就有人找到了一个连续函数，其傅里叶级数(16)可以在某点不收敛。甚至有这样的例子，即连续函数的傅里叶级数可以在“许多点”上不收敛。如果对 $f(x)$ 只假设可积性，即 $f(x)\in L^1$，科尔莫哥洛夫甚至构造出几乎处处（甚至处处）发散的例子。如果假设 $f(x)\in L^2$，鲁金在1915年就猜测，$L^2$ 函数 $f(x)$ 的傅里叶级数必几乎处处收敛于 $f(x)$（此级数必在 $L^2$ 意义下收敛则上一章\S4就已讲过了，是一个非常简单而又基本的事实）。这个猜测直到1966年才由瑞典数学家卡尔孙（L. Carleson）证明。总之，我们遇到的是这样一个问题，既刻画一个函数类，又刻画一个级数(16)之类；即刻画出一类 $\{C_k\}$，使二者相互一一对应。由此出现了许多结果，使我们看到傅里叶级数理论是一个内容非常丰富而又十分困难的理论，但是我们不能不问，是否能走另外一条路呢？我们想走广义函数的路。下一节我们再详细地讲，现在只简单说几句。
+
+我们现在回到定理2，并且先作一些不严格的讨论。上面我们已经说了，$\delta(x)$ 的傅里叶级数是
+\[
+ \delta_{2\pi}(x)=\sum_{k=-\infty}^{\infty}\frac1{2\pi}e^{ikx}.
+\]
+它在周期分布意义下收敛。如果应用狄利克雷定理，应有
+\begin{equation}
+ \sum_{k=0}^{\infty}\frac{4}{(2k+1)\pi}\sin((2k+1)x)
+ =\begin{cases}
+ 1,&0<x\le\pi,\\
+ -1,&-\pi\le x\le0.
+ \end{cases}
+ \tag{31}
+\end{equation}
+\jiaokan{原文(31)的正弦项排作 $\sin kx$。由系数 $4/((2k+1)\pi)$、右端方波以及下文关于吉卜斯现象的讨论可知，这里应为奇次谐波 $\sin((2k+1)x)$。}
+不过，在间断点 $x=0,\pm\pi$ 应该按狄利克雷定理对级数的和作必要的修改。其实，由 $\delta(x)$ 的展开式逐项积分也可得到它。这个级数可以与定理2的证明联系起来看：若函数本身有第一类间断点，对其傅里叶系数 $C_k=O(1/k)$。把(31)看成一个波（在信号处理中人们时常这样看，而且把 $x$ 解释为时间），则(31)是一个“方波”，在信号处理中它是很重要的。其实第四章一开始就有类似结果，见第四章\S1图4-1-1，
+\[
+ \frac\pi4=\cos x-\frac{\cos3x}{3}+\frac{\cos5x}{5}-\cdots.
+\]
+它与(31)形状不同只是因为它们是同一个函数在不同区间上的展开式。
+
+级数(31)在物理上就表明方波可以用不同频率的正弦波之叠加来逼近。由于方波是很有用的，所以物理学家自然想办法造了种种仪器去生成正弦波（这是很容易的）并把它们合成。其实这些仪器都可以看作是专门用于调和分析的计算机，有了现代的计算机以后，这更是不成问题的小事了。本节开始说到的迈克尔孙就设计了一个“计算机”来用(31)的部分和生成方波。可是试用的结果总是不能满意。他生成的波在间断点外的全各地会有些地方超出方波，高度约为半跃度的9\%。这个现象称为吉卜斯（J. W. Gibbs，就是第四章\S5提到的著名的统计物理学家）现象，因为吉卜斯在1899年《自然》杂志上致信迈克尔孙指出这是一个一般现象。这个缺点显然是(31)不一致收敛造成的，因为如果(31)的部分和 $S_N(f)$ 在 $[-\pi,\pi]$ 上一致收敛，则其极限函数一定连续，而现在极限函数显然是不连续的。所谓一致收敛性就是说在 $f(x)$ 的曲线上下各划出一个宽为 $\varepsilon$ 的带形，当 $N>N(\varepsilon)$ 时，$S_N(f)$ 的曲线一定在 $[-\pi,\pi]$ 区间中全部位于此带内。吉卜斯现象则指出，只要 $\varepsilon<$ 半跃度的9\%，则不论 $N$ 取多大，$S_N(f)$ 的曲线在间断点附近一定会“冒出”这个带形之外。当我们讨论不一致收敛时，注意到在几何上什么是不一致收敛是很有必要的。从实际上生成方波来说，克服吉卜斯现象以改善收敛性是很有必要的。为此，我们可以采用无穷级数的求和法以改善收敛性。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=1.0cm,y=1.2cm,bella figure,>=stealth]
+  \draw[->] (0,0)--(6.4,0) node[right] {$t$};
+  \draw[->] (0,0)--(0,3.1);
+  \draw[thick] (0,2.0)--(5.7,2.0);
+  \node[left] at (0,2.0) {$1$};
+  \draw[thick,smooth] plot coordinates {
+    (0,0) (.45,.95) (.85,1.85) (1.20,2.43) (1.55,2.55)
+    (1.95,2.34) (2.35,1.92) (2.70,1.72) (3.10,1.75)
+    (3.50,2.02) (3.90,2.15) (4.30,2.08) (4.70,1.93) (5.35,1.99)
+  };
+  \draw[thick,smooth] plot coordinates {
+    (0,0) (.55,.48) (1.05,.82) (1.65,1.12) (2.35,1.40)
+    (3.10,1.62) (3.90,1.77) (4.65,1.86) (5.35,1.90)
+  };
+  \node[right] at (5.25,2.12) {$S_N(f)$};
+  \node at (3.85,1.15) {费耶和};
+  \node[below left] at (0,0) {$O$};
+\end{tikzpicture}
+\caption*{图5-1-2}
+\end{figure}
+
+无穷级数理论中有许多求和法，我们下面要讲的是所谓 C--1 求和法（C 是指意大利数学家切萨罗（Cesàro）），把它应用于傅里叶级数的则是匈牙利数学家费耶（Fejér）。其法如下：设有级数 $\sum_{k=0}^{\infty}u_k$，记其部分和为 $U_n=\sum_{k=0}^{n}u_k$，我们考虑序列 $U_0,U_1,\cdots,U_n$ 的算术平均值并记为
+\[
+ \sigma_n=\frac1{n+1}(U_0+U_1+\cdots+U_n),
+\]
+现在问 $\sigma_n$ 之极限是什么？如果 $U_n\to U$，用一点比较简单的极限计算可知 $\sigma_n\to U$，但其逆并不成立。所以 $\{\sigma_n\}$ 的收敛性“好”于 $\{U_n\}$，若 $\sigma_n\to U$，则说级数 $\sum_{k=0}^{\infty}u_k$ 为 C--1 可求和（summable），而其 C--1 和为 $U$。现在把它应用于级数(16)，前面我们已多次计算过它的部分和可写为
+\[
+ \frac1{2\pi}\int_{-\pi}^{\pi}f(u)\sum_{k=-N}^{N}e^{ik(u-x)}du
+ =\frac1{2\pi}\int_{-\pi}^{\pi}f(x+t)\sum_{k=-N}^{N}e^{ikt}dt.
+\]
+我们说这里的 $\sum$ 是它的部分和 $S_N$，尽管实际上它是 $2N+1$ 项之和。计算它们的算术平均值会得到
+\[
+ K_N(t)=\sum_{k=-N}^{N}\left(1-\frac{|k|}{N+1}\right)e^{ikt}.
+\]
+$K_N(t)$ 称为费耶核，可以证明
+\[
+ K_N(t)=\frac1{N+1}\left\{\frac{\sin\frac{N+1}{2}t}{\sin\frac t2}\right\}^2.
+\]
+证法要点如下：注意到
+\[
+ \sin^2\frac t2=\frac12(1-\cos t)=-\frac14e^{-it}+\frac12-\frac14e^{it},
+\]
+所以，经过简单计算即有
+\[
+ \begin{aligned}
+ \sin^2\frac t2\,K_N(t)
+ &=\left(-\frac14e^{-it}+\frac12-\frac14e^{it}\right)
+ \sum_{k=-N}^{N}\left(1-\frac{|k|}{N+1}\right)e^{ikt}\\
+ &=\frac1{N+1}\left(-\frac14e^{-i(N+1)t}+\frac12-\frac14e^{i(N+1)t}\right)\\
+ &=\frac1{N+1}\sin^2\frac{N+1}{2}t.
+ \end{aligned}
+\]
+\jiaokan{原文在这一步最后一式漏印因子 $1/(N+1)$；同时指数应为 $\pm i(N+1)t$，这样才与 $\sin^2\frac{N+1}{2}t=\frac12-\frac14e^{i(N+1)t}-\frac14e^{-i(N+1)t}$ 以及前面给出的费耶核公式一致。}
+值得注意的是，$\dfrac1{2\pi}K_N(t)$ 即使在连续函数空间中也是 $\delta$ 序列，实际上，对任何 $[-\pi,\pi]$ 上的连续函数 $f(x)$，
+\[
+ \lim_{N\to\infty}\frac1{2\pi}\int_{-\pi}^{\pi}f(u)K_N(u-x)du=f(x).
+\]
+\jiaokan{原文此处把 $K_N$ 本身称为 $\delta$ 序列，并在极限积分前漏去因子 $1/(2\pi)$。按前面对 $K_N(t)=\sum_{k=-N}^{N}(1-|k|/(N+1))e^{ikt}$ 的定义，有 $\int_{-\pi}^{\pi}K_N(t)\,dt=2\pi$，故归一化的近似恒等核应为 $K_N/(2\pi)$。}
+这里的证明不难，我们都略去了。总之，连续函数 $f(x)$ 的傅里叶级数(16)必为 C--1 可求和而以 $f(x)$ 为其 C--1 和。看一下图5-1-2\jiaokan{原文作“图4-1-2”，按本章图号及所指“费耶和”的曲线，应为图5-1-2。} 中标注了费耶和的曲线，就看得出它克服了吉卜斯现象。

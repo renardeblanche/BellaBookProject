@@ -1,0 +1,406 @@
+\section{高斯积分}
+
+本章前一部分比较系统地介绍了积分理论。我们先讲了从 19 世纪中黎曼对自古希腊以来的计算面积问题的理论和方法所作的系统的整理，提出了第一个完整的可积性理论。继而介绍了 20 世纪开始时兴起的勒贝格积分理论。我们指出了，黎曼积分的局限性根源在于它是以只具有有限可加性的若尔当测度为基础的，而勒贝格积分理论则是以具有可数可加性的勒贝格测度为基础的。概率也正是一种具有可数可加性的测度，所以勒贝格积分在概率、统计、以至理论物理中起着不可替代的作用绝非偶然。最后我们则介绍了勒贝格可积函数所形成的一个空间的“阶梯”：$\{L^p\},1\le p\le+\infty$，它们提供了重要的解决数学与物理问题的框架。
+
+本章其余部分则介绍一些与积分理论有关的发展。它们都有深刻的、广泛的应用，但又不能说是积分理论的主体的一部分。所以我们的介绍必然更简短一些，可能也显得比较零碎。
+
+这一节要介绍的高斯积分，从计算的方法来讲实在简单不过，但是它的含意深远。我们先从一个理想化的物理问题开始。
+
+设有一个粒子在 $x$ 轴上运动，粒子的位置限定在 $x=nh$（$n$ 为整数）处。如果每过一定时段 $\tau$，粒子就移动一个步长 $h$，到 $x=(n-1)h$，或 $x=(n+1)h$ 处。如果没有任何物理的理由使这个粒子更易向左或向右走，则我们说粒子从 $nh$ 处移到 $(n-1)h$ 或 $(n+1)h$ 的概率都是 $\frac12$。再过一个时段 $\tau$，粒子又继续随机地左、右移动。这里一个重要的假设是，粒子每一步是向左还是向右与其过去各步（即其“历史”）是无关的。如果我们记粒子在第 $n$ 步时，即在 $t=n\tau$ 时粒子已从 $x=ih$ 移动到 $x=jh$ 的概率为 $P(ih-jh,n\tau)$，则原来关于粒子运动的概率的假设是
+\begin{equation}
+ P_{ij}=P(ih-jh,\tau)=
+ \begin{cases}
+ \dfrac12,&|i-j|=1,\\[4pt]
+ 0,&|i-j|\ne1.
+ \end{cases}
+ \tag{1}
+\end{equation}
+
+这样一个模型有两个特点：
+
+\noindent\textbf{(i) 齐次性（或称均匀性）}：概率只依赖于粒子移动的总的路程，亦即从 $x=ih$ 移动到 $x=jh$ 与从 $x=(i+i_0)h$ 移动到 $x=(j+i_0)h$ 的概率是相同的。所以 $P_{ij}=P((i-j)h,\tau)$ 是 $i-j$ 的函数。
+
+\noindent\textbf{(ii) 各向同性}：从 $x=ih$ 移动到 $x=jh$ 的概率与从 $x=jh$ 移动到 $x=ih$ 的概率相同。因此 $P((i-j)h,\tau)$ 其实是 $|i-j|$ 的函数，于是 $P_{ij}=P_{ji}$。
+
+这样建立起来的数学模型称为 1 维随机游动（random walk）。现在我们来计算 $P((i-j)h,n\tau)$。它是设在初始时刻粒子位于 $x=0$ 处而在经过 $n\tau$ 后移动到 $(i-j)h$ 处的概率。一共游动了 $n$ 步，如果其中有 $k$ 步是向右，则有 $n-k$ 步是向左，结果则游动了
+\[
+ kh-(n-k)h=(-n+2k)h=(i-j)h.
+\]
+如果 $i-j$ 和 $n$ 都固定，则由上式 $k$ 可以唯一地确定。问题只在于一旦固定了 $k$，则游动结果必达到 $(i-j)h$。这 $n$ 步中总有 $k$ 步是向右，但是是哪 $k$ 步是不一定的。这些向右移动的步子的选法共有 $\binom nk$ 种，而每一步向右、向左的概率又各为 $\frac12$，所以 $n$ 步后达到 $x=(j-i)h$ 的概率是
+\[
+ \frac1{2^n}\binom nk,
+\]
+即
+\begin{equation}
+ P((i-j)h,n\tau)=\frac1{2^n}\binom nk.
+ \tag{2}
+\end{equation}
+
+我们可以从一个树形图（图4-5-1）来看为什么是这个结果：要想在 $t=n\tau$ 时达到 $P_k$，必须在 $t=(n-1)\tau$ 达到点 $P_{k-1}$ 或点 $P_k$，从点 $P_{k-1}$ 再向前游动有两个可能，到达点 $P_k$ 的概率只有 $\frac12$，从点 $P_k$ 向后也是一样，所以
+\begin{equation}
+\begin{aligned}
+ P((i-j)h,n\tau)
+ &=\frac12P((i-j)h-h,(n-1)\tau)\\
+ &\quad+\frac12P((i-j)h+h,(n-1)\tau).
+\end{aligned}
+ \tag{3}
+\end{equation}
+\jiaokan{扫描本(3)式右端第二项排作 $P((i-j)h,(n-1)\tau)$，遗漏了位移 $+h$；由树形递推及随后的(4)式可知应为 $P((i-j)h+h,(n-1)\tau)$，正文据此改正。}
+但这就是著名的杨辉恒等式
+\[
+ \binom nk=\binom{n-1}{k}+\binom{n-1}{k-1}.
+\]
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=0.68cm,y=0.72cm,bella figure]
+  \foreach \r in {0,...,5}{
+    \foreach \k in {0,...,\r}{
+      \coordinate (N\r-\k) at ({2*\k-\r},{-1.35*\r});
+      \fill (N\r-\k) circle (1.5pt);
+    }
+  }
+  \foreach \r in {0,...,4}{
+    \pgfmathtruncatemacro{\rp}{\r+1}
+    \foreach \k in {0,...,\r}{
+      \pgfmathtruncatemacro{\kp}{\k+1}
+      \draw (N\r-\k)--(N\rp-\k);
+      \draw (N\r-\k)--(N\rp-\kp);
+    }
+  }
+  \node[above] at (N0-0) {$x=0$};
+  \node[left] at (N4-0) {第$n-1$层};
+  \node[left] at (N5-0) {第$n$层};
+  \node[above left] at (N4-2) {$P_{k-1}$};
+  \node[above right] at (N4-3) {$P_k$};
+  \node[above right] at (N5-3) {$P_k$};
+\end{tikzpicture}
+\caption*{图4-5-1}
+\end{figure}
+
+若在(3)式中令 $(i-j)h=x,(n-1)\tau=t$，就得到
+\begin{equation}
+ P(x,t+\tau)=\frac12P(x+h,t)+\frac12P(x-h,t).
+ \tag{4}
+\end{equation}
+这里考虑的是粒子向左与向右的概率同为 $\frac12$ 的情况。如果向右游动与向左游动的概率分别为 $p$ 和 $q=1-p$，而且 $0<p<1$，则代替上式有
+\[
+ P(x,t+\tau)=pP(x+h,t)+qP(x-h,t).
+\]
+\jiaokan{扫描本此式右端第二项的时间变量排作 $\tau$；由上一行的递推关系及离散时间步的含义，应为 $t$，故正文改正。}
+
+上面图的每条水平线 $t=n\tau$ 给出了初始位置为 $x=0$ 的粒子在这一时刻达到各个结点的概率，所以称为一个概率分布。二项式定理给出了
+\begin{equation}
+ \sum_i P((i-j)h,n\tau)=\sum_k\frac1{2^n}\binom nk=1.
+ \tag{5}
+\end{equation}
+（注意，若 $k<0$ 或 $k>n$ 我们规定 $\binom nk=0$，这样在求和号下就不必具体指出 $k$ 的变化范围。）(2)式这种概率分布称为二项分布。
+
+上面给出的是一个离散模型。为了要由宏观量过渡到微观量，就需要令 $h,\tau\to0$，这样就会得到一个连续模型。但为此首先要引入概率分布的密度的概念。如果一个粒子位于长为 $h$ 的某个区间的概率是 $p$，则当区间长 $h\to0$ 时就会想到该粒子恰好位于某一点上的概率，在合理的设想下它可能为 $0$，这恰好是很容易引起问题的。因此我们引入概率密度 $q$ 的概念：粒子位于该区间的概率与 $h$ 成正比而为 $qh$，这样，上面的(5)式（不妨令 $j=0,n\tau=t$）将成为
+\begin{equation}
+ \sum_i P(ih,t)=1\Longleftrightarrow\int q(x,t)\,dx=1.
+ \tag{6}
+\end{equation}
+
+现在我们就可以来引入连续模型了。从(4)式双方减去 $P(x,t)$ 再除以 $\tau$，有
+\[
+ \frac{P(x,t+\tau)-P(x,t)}{\tau}
+ =\frac{h^2}{2\tau}\,
+ \frac{P(x+h,t)-2P(x,t)+P(x-h,t)}{h^2}.
+\]
+再令 $P(x,t)=h q(x,t)$ 即引入概率密度，令 $\tau,h\to0$，但 $\dfrac{h^2}{2\tau}=D$ 不变，即有
+\begin{equation}
+ \frac{\partial q}{\partial t}=D\frac{\partial^2q}{\partial x^2}.
+ \tag{7}
+\end{equation}
+(7)式称为扩散方程，它与第三章 §1 中引入的热传导方程形式是一样的。但是它不是从热作为一种流体这种机械—力学的观点出发的，而在本质上是统计的。它正是爱因斯坦研究布朗运动的基础。爱因斯坦利用已知的种种物理知识指出了扩散系数 $D$ 与其它物理量的关系，并由此进而得出了阿伏伽德罗（Avogadro）常数——标准状况下一摩尔气体中的分子个数——与从其它方法得到的结果相符得很好，这样才使得原子作为一个实体的存在得到了公认。
+
+现在再回到一个粒子在初始时刻位于 $x=0$ 处的扩散（我们用一维随机游动来描述扩散过程）。初始时刻该粒子位于 $x=0$ 处的概率为 1 而位于其它位置（$x\ne0$）处的概率为 0。如果用概率密度来表达，若记该概率密度为 $\delta(x)$，则
+\[
+ \delta(x)=
+ \begin{cases}
+ \infty,&x=0,\\
+ 0,&x\ne0,
+ \end{cases}
+ \qquad
+ \int\delta(x)\,dx=1.
+\]
+正如我们在第二章最后一节所讲的，这个概率密度应该用广义函数来描述，而这个 $\delta(x)$ 正是著名的广义函数——狄拉克（Dirac）测度，或称 $\delta$ 函数。因此，如果用连续模型来讨论它，我们就需要求解以下的柯西问题
+\begin{equation}
+ \frac{\partial q}{\partial t}=D\frac{\partial^2q}{\partial x^2},\qquad q(x,0)=\delta(x).
+ \tag{8}
+\end{equation}
+这样以 $\delta(x)$ 为已知数据的解常称为偏微分方程的基本解。对于扩散方程，基本解是
+\begin{equation}
+ q(x,t)=\frac1{2\sqrt{\pi Dt}}\exp\!\left(-\frac{x^2}{4Dt}\right),\qquad t>0.
+ \tag{9}
+\end{equation}
+这里涉及的广义函数知识在第二章中已讲了一点，下一节再仔细讨论，至于基本解的问题本书已经不可能讲了。
+
+一个概率分布如果其密度是(9)则称为正态分布或高斯分布，因为首先是高斯在讨论观测值的误差分布时遇到了它。这是一个极其重要的分布，不仅因为它出现在许多似乎全不相似的问题中，还因为概率论中有一个著名的定理（棣莫弗（De Moivre）—拉普拉斯定理），大意是说，当一项分布的 $n$ 很大时，可以在一定意义下用正态分布去近似它。现在我们要提到的是，麦克斯韦在研究气体的分子运动论时也得到了它。
+
+麦克斯韦的论证从现在统计物理学的发展来看有不足之处，然而其基本思想仍然是正确的，而且只需简单的微积分知识就可以了解它。
+
+麦克斯韦考虑在一个容器内处于热平衡状态下的气体分子。由于其相互碰撞，分子的速度是随机的，因此我们不能说哪一个确定的分子在给定时刻的准确的速度是多少，而只能问速度在某一个给定范围（例如 $x_1$ 方向的速度在 $v_1$ 到 $v_1+dv_1$ 之间）内的分子数是多少。如果概率密度是 $f(v),v=(v_1,v_2,v_3)\in\mathbf R^3$，则它应该适合以下三个条件：
+
+\noindent\textbf{(i) 规范性条件：}
+\[
+ \int_{\mathbf R^3}f(v)\,dv=1,\qquad dv=dv_1\,dv_2\,dv_3,
+\]
+上式表示气体分子的总数总是固定的，不妨设它为 1。因此 $f(v)$ 必须是 $v$ 的可积函数。
+
+\noindent\textbf{(ii) 统计独立性条件：}这就是说，每个分子在各个运动方向（我们暂设有三个独立方向即 $(x_1,x_2,x_3)$，而不讨论分子是否旋转）上速度的分布是互相独立的。独立性就表示为速度分布（同时考虑三个速度分量）的密度是各个分速度的概率密度函数之乘积，
+\begin{equation}
+ f(v)=f_1(v_1)f_2(v_2)f_3(v_3).
+ \tag{10}
+\end{equation}
+
+\noindent\textbf{(iii) 各向同性条件：}即 $f(v)$ 只依赖于 $v^2=v_1^2+v_2^2+v_3^2$：
+\begin{equation}
+ f(v)=\Phi(v_1^2+v_2^2+v_3^2).
+ \tag{11}
+\end{equation}
+现在我们要证明，只有高斯分布能同时适合以上三个条件。取(10)与(11)之对数，再对 $v_1$ 求导：
+\[
+ \frac1{2v_1}\frac{d}{dv_1}\ln f_1(v_1)=\frac{\Phi'(v^2)}{\Phi(v^2)}.
+\]
+同理，上式右方也等于 $\frac1{2v_2}\frac{d}{dv_2}\ln f_2(v_2)$，$\frac1{2v_3}\frac{d}{dv_3}\ln f_3(v_3)$，因此右方必等于某常数 $A$，而有
+\[
+ \Phi(v^2)=B\exp(Av^2),
+\]
+$B$ 待定。由可积性条件 $A$ 必须为负：$A=-1/a^2$，$a$ 待定。现在求 $B$，由以上可知应有
+\[
+ f_1(\cdot)=f_2(\cdot)=f_3(\cdot)=B^{1/3}\exp(-v^2/a^2).
+\]
+代入规范性条件有
+\[
+ 1=B\left[\int_{-\infty}^{\infty}\exp(-v^2/a^2)\,dv\right]^3
+ =B\bigl(\sqrt{a^2\pi}\bigr)^3,
+\]
+因此 $B^{1/3}=(a^2\pi)^{-1/2}$，而有
+\[
+ f_i(v_i)=(a^2\pi)^{-1/2}\exp(-v_i^2/a^2),
+\]
+而概率密度为
+\[
+ f(v)=(a^2\pi)^{-3/2}\exp(-v^2/a^2).
+\]
+不过这是一个三维的结果，而上面我们对一维随机游动所给出的结果是一维的。上式中的 $a$ 麦克斯韦指出应为
+\[
+ a=\sqrt{2kT/m},
+\]
+$m$ 是分子质量，$T$ 是温度，$k$ 是一个常数，后来称为玻耳兹曼常数。
+
+由麦克斯韦分布
+\begin{equation}
+ f(v)=\left(\frac{m}{2\pi kT}\right)^{3/2}\exp\!\left(-\frac12\frac{mv^2}{kT}\right)
+ \tag{12}
+\end{equation}
+可以得到关于气体的一些宏观物理量。就某一个粒子（气体分子）而言，要准确地说出它的某个物理量（例如动能 $\frac12mv^2$）是不可能的，因为我们只能知道该粒子速度在 $v$ 与 $v+dv$ 之间的概率。但是要计算大量粒子的某个物理量 $f(v)$ 的平均值是可能的：我们只要把 $f(v)$ 按一定概率分布密度 $\rho(v)$ 求平均即可，$f$ 的平均值或者记为 $\bar f$ 或者记为 $\langle f\rangle$：
+\[
+ \bar f=\langle f\rangle=\int f(v)\rho(v)\,dv.
+\]
+（一个量的方差即它与其平均值之偏差之平均值 $\langle[f-\langle f\rangle]^2\rangle$，平均值也称为该物理量的数学期望值。）我们现在就来计算一个气体分子的平均动能：
+\[
+ \left\langle\frac12mv_1^2\right\rangle
+ =\frac m2\int_{-\infty}^{\infty}v_1^2f(v_1)\,dv_1
+ =\frac m2\left(\frac m{2\pi kT}\right)^{1/2}
+ \int_{-\infty}^{\infty}v_1^2\exp\!\left(-\frac12\frac{mv_1^2}{kT}\right)dv_1.
+\]
+令 $\left(\frac m{2kT}\right)^{1/2}v_1=t$，有
+\[
+ \left\langle\frac12mv_1^2\right\rangle
+ =\frac m2\cdot\frac1{\sqrt\pi}\cdot\frac{2kT}{m}
+ \int_{-\infty}^{\infty}t^2\exp(-t^2)\,dt.
+\]
+很明显，分子在 $x_i$ 方向运动所产生的动能与温度成正比，而且各个方向（即各个自由度）运动所产生的动能均相等，所以这三个自由度所生的动能加起来可以得到
+\[
+ \left\langle\frac12mv^2\right\rangle=\frac32kT.
+\]
+上面这些计算都本质地依赖于计算
+\begin{equation}
+ I_n=\int_0^{+\infty}x^ne^{-x^2}\,dx,\qquad n=0,1,2,\ldots.
+ \tag{13}
+\end{equation}
+计算平均动能时就要用到 $2I_2=\int_{-\infty}^{\infty}x^2e^{-x^2}\,dx=\sqrt\pi/2$。计算方法如下：$n=0$ 时就有著名的高斯积分。$n$ 为其它值时在计算许多函数的数学期望值时有用。这里的积分限本可取为 $(-\infty,+\infty)$，但这样一来当 $n$ 为奇数时，因被积函数为奇函数，$(-\infty,+\infty)$ 上之积分为 0。$n$ 为偶数时，被积函数为偶函数，所以 $(-\infty,0)$ 上之积分与 $(0,+\infty)$ 上之积分相等，所以我们只来讨论 $(0,+\infty)$ 上的积分(13)。
+
+先看 $n=0$，利用富比尼定理
+\[
+ \iint_{\text{第一象限}}e^{-(x^2+y^2)}\,dx\,dy
+ =\int_0^{+\infty}e^{-x^2}\,dx\int_0^{+\infty}e^{-y^2}\,dy
+ =I_0^2.
+\]
+左方用极坐标表示为
+\[
+ \int_0^{\pi/2}d\theta\int_0^{+\infty}e^{-r^2}r\,dr
+ =\frac12\int_0^{\pi/2}d\theta\int_0^{+\infty}e^{-t}\,dt\qquad(t=r^2)
+ =\frac\pi4.
+\]
+因此
+\[
+ I_0=\frac{\sqrt\pi}{2}.
+\]
+计算 $I_n$ 可以用分部积分法。首先
+\[
+ I_1=\int_0^\infty xe^{-x^2}\,dx=-\frac12e^{-x^2}\Big|_0^\infty=\frac12.
+\]
+然后利用分部积分法。当 $n\ge2$ 时，注意到 $xe^{-x^2}=-\frac12(e^{-x^2})'$，
+\[
+\begin{aligned}
+ I_n
+ &=\int_0^\infty x\cdot x^{n-1}e^{-x^2}\,dx\\
+ &=-\frac12x^{n-1}e^{-x^2}\Big|_0^\infty
+ +\frac{n-1}{2}\int_0^\infty x^{n-2}e^{-x^2}\,dx\\
+ &=\frac{n-1}{2}I_{n-2}.
+\end{aligned}
+\]
+因此
+\[
+ I_{2m}=\frac{(2m-1)(2m-3)\cdots1}{2^m}I_0
+ =\frac{(2m-1)(2m-3)\cdots1}{2^{m+1}}\sqrt\pi,
+\]
+\begin{equation}
+ I_{2m-1}=\frac12(m-1)!.
+ \tag{14}
+\end{equation}
+
+上面我们讲到当 $n\to\infty$ 时，二项分布将在某种意义下以高斯分布为极限，但是没有详细说明。下面我们来看一下物理学家是怎样用近似方法来得到这个结论的，这对于我们了解微积分的基本思想以及如何应用它们是很有益处的。其中我们还讲到著名的斯特林（Stirling）公式。它也是很有用的。以下材料引自 F. 瑞夫《统计物理学》（《伯克利物理学教程》第五卷，附录 A.1，高斯分布，437--443 页，该书由科学出版社 1979 年出版）。
+
+我们讲到一维随机游动时是规定了粒子向左、向右移动的概率均为 $\frac12$，而有(2)式 $P((i-j)h,n)=\frac1{2^n}\binom nk$。但若向右与向左游动的概率各为 $p$ 与 $q=1-p$，则应有如下的概率
+\begin{equation}
+ P(k,n)=\binom nkp^kq^{n-k}=\frac{n!}{k!(n-k)!}p^kq^{n-k}.
+ \tag{15}
+\end{equation}
+若 $n$ 很大，计算 $n!$ 将是相当困难的。但是因为 $0<p,q<1$，故当 $k\gg1$ 或 $n-k\gg1$ 时，上述概率仍然很小，而 $P(k,n)$ 极大处 $k=\bar k$ 总是在靠近中间的地方（当 $p=q=\frac12$ 时恰好在正中，正如二项定理之系数在“中点”（$n$ 为偶数时）或紧靠“中点”左右两点（$n$ 为奇数时）最大）。所以当我们想找 $P(k,n)$ 的近似公式时，除非 $p\ll1$ 或 $q\ll1$，$k$ 总是随着 $n$ 同样取相当大的值。\jiaokan{扫描本此处作“除非 $p\ll1,q\ll1$”；因 $p+q=1$，二者不可能同时远小于 1，依上下文应为二者之一远小于 1，故改作“或”。}现在我们就来求 $P(k,n)$ 关于 $k$ 的极大值。
+
+$k$ 是一个整数，所以每一次 $k$ 的增量至少是 1，这本来已是相当大的数了，但是如果 $k$ 本身就已很大，其“增量”1 与 $k$ 相比仍然可以认为是“无穷小”，而且它所引起的 $P$ 的变化也是极小的（这是很值得注意的事。在物理学家看来，甚至不太小的数也可以看作是无穷小，所以，一旦离开思辨的天地而进入现实，确有“海阔天空”之感。但是，这是不说明以前讲的数学都是没有意义了呢？暂时不要去争论，而是要多向物理学家学一点东西）：
+\begin{equation}
+ |P(k+1,n)-P(k,n)|\ll P(k,n).
+ \tag{16}
+\end{equation}
+所以我们不妨认为 $k$ 是连续变量而 $P(k,n)$ 是它的光滑函数。我们又知道 $\ln P$ 比之 $P$ 是变化更缓慢的函数，因此，取(15)之对数
+\begin{equation}
+ \ln P=\ln n!-\ln k!-\ln(n-k)!+k\ln p+(n-k)\ln q,
+ \tag{17}
+\end{equation}
+而且双方对 $k$ 取导数：这里我们要注意，因为 $k$ 是一个很大的整数，其增量 $\Delta k=1$ 可以认为是“无穷小”，从而可以认为 $k$ 是连续变量，并且可以用 $\dfrac{\Delta\ln k!}{\Delta k}$ 代替 $\dfrac{d\ln k!}{dk}$，于是
+\[
+ \frac{d\ln k!}{dk}\approx\frac{\ln(k+\Delta k)!-\ln k!}{\Delta k}
+ =\frac{\ln(k+1)!-\ln k!}{1}
+ =\ln\frac{(k+1)!}{k!}=\ln(k+1)\approx\ln k.
+\]
+所以，由(17)对 $k$ 求导即有
+\begin{equation}
+ \frac{d\ln P}{dk}\approx-\ln k+\ln(n-k)+\ln p-\ln q
+ =\ln\frac{n-k}{k}\frac pq.
+ \tag{18}
+\end{equation}
+为了求 $\ln P$ 之极大值应该令上式为 0，即有
+\[
+ k=\bar k=np\qquad(\text{注意 }p+q=1).
+\]
+现将 $\ln P$ 在 $k=\bar k$ 处展开为泰勒级数，注意到 $\left.\dfrac{d\ln P}{dk}\right|_{k=\bar k}=0$，即得
+\[
+ \ln P=\ln P(\bar k,n)+\frac1{2!}\frac{d^2\ln P(\bar k,n)}{dk^2}(k-\bar k)^2,
+\]
+这里我们略去了 $(k-\bar k)^3$ 以及更高阶的量。为了计算 $\dfrac{d^2\ln P}{dk^2}$，我们对(18)再对 $k$ 求导一次，有
+\[
+ \frac{d^2\ln P(\bar k,n)}{dk^2}
+ =-\frac1{\bar k}-\frac1{n-\bar k}
+ =-\frac n{\bar k(n-\bar k)}
+ =-\frac1{npq}.
+\]
+所以可得 $\ln P$ 的近似式
+\[
+ \ln P(k,n)\approx\ln P(\bar k,n)-\frac{(k-\bar k)^2}{2npq},
+\]
+\begin{equation}
+ P(k,n)=\bar P\exp\!\left[-\frac{(k-\bar k)^2}{2npq}\right],
+ \qquad \bar P=P(\bar k,n).
+ \tag{19}
+\end{equation}
+这里 $\bar P=P(\bar k,n)$。为了求它的值，我们要利用规范化条件，即全部概率（从 $k=0$ 到 $k=n$）之和为 1：
+\[
+ \sum_{k=0}^nP(k,n)=\sum_{k=0}^nP(k,n)\,\Delta k,\qquad\Delta k=1.
+\]
+和上面一样的想法使我们把上式看成一个积分和，而有
+\[
+ \int P(k,n)\,dk=1.
+\]
+注意到 $\bar k=np$，则得 $P(k,n)$ 之近似式为
+\begin{equation}
+ P(k,n)=\frac1{\sqrt{2\pi npq}}\exp\!\left[-\frac{(k-np)^2}{2npq}\right].
+ \tag{20}
+\end{equation}
+这正是高斯分布，所以我们说高斯分布是二项分布的极限情况。
+
+上面我们讲到如何近似计算一个大整数 $n$ 之阶乘 $n!$。实际上利用类似的想法可以得到一个很方便的近似式。我们有
+\[
+ \ln n!=\ln1+\ln2+\cdots+\ln n=\sum_{k=1}^n\ln k.
+\]
+和上面一样，我们认为每一项都有一个因子 $1=\Delta k$，而把上式看成一个积分和，这样就可得出一个近似式：
+\[
+ \ln n!\approx\int_1^n\ln x\,dx=[x\ln x-x]_1^n=n\ln n-n+1.
+\]
+所以当 $n\gg1$ 时，略去上式最后一项即有
+\begin{equation}
+ \ln n!\approx n\ln n-n.
+ \tag{21}
+\end{equation}
+但是这还不是最好的近似。更好的还有著名的斯特林公式：
+\begin{equation}
+ \ln n!\approx n\ln n-n+\frac12\ln(2\pi n),
+ \tag{22}
+\end{equation}
+或
+\begin{equation}
+ n!\approx e^{-n}\sqrt{2\pi}\,n^{n+1/2}.
+ \tag{23}
+\end{equation}
+这里的 $\approx$ 表示两边的比值当 $n\to\infty$ 时趋于 1。当 $n\gg1$ 时，因为 $\ln n$ 比之 $n\ln n$ 是低阶量，可以略去，这样就得到(21)式。
+
+当然读者会感到这里的讲法并不严格，但其主要思想是正确的。读者如能找到较详尽的数学分析教材中关于斯特林公式的证明以及概率论教材中关于棣莫弗—拉普拉斯定理的证明就可以看到，主要思想是相同的。但是关于无穷大、无穷小量的估计在那些书中做得细致得多。
+
+最后我们讲一下高斯积分的一个简单的推广。高斯积分主要特点是被积函数是一个指数函数，而其指数是一个负的二次式。因此，我们不妨考虑一个 $n$ 重积分
+\begin{equation}
+ I=\int_{\mathbf R^n}e^{-\langle Ax,x\rangle}\,dx,
+ \tag{24}
+\end{equation}
+这里 $A$ 是一个正定的 $n$ 阶对称矩阵：$A=(a_{ij})$。规定 $A$ 为正定的原因在于当 $|x|\to\infty$ 时，$-\langle Ax,x\rangle\to-\infty$ 而 $e^{-\langle Ax,x\rangle}$ 是可积的。对称矩阵一定可以用正交变换化为对角形，即存在一个正交矩阵 $T$（$T^tT=\mathrm{id}$）使
+\[
+ T^{-1}AT=
+ \begin{pmatrix}
+ \lambda_1&&\\
+ &\ddots&\\
+ &&\lambda_n
+ \end{pmatrix},
+\]
+这里 $\lambda_1,\ldots,\lambda_n$ 是 $A$ 的特征根。因为 $A$ 是对称矩阵，故其特征根均为实数。而当我们设 $A$ 为正定时，$\lambda_1,\lambda_2,\ldots,\lambda_n>0$。现在作变量变换
+\[
+ x=Ty,
+\]
+则
+\[
+\begin{aligned}
+ \langle Ax,x\rangle
+ &=\langle ATy,Ty\rangle
+ =\langle T^tATy,y\rangle\\
+ &=\langle T^{-1}ATy,y\rangle
+ =\sum_{i=1}^n\lambda_i y_i^2.
+\end{aligned}
+\]
+又因正交矩阵之行列式等于 $\pm1$，故
+\[
+ dx=|\det T|\,dy=dy.
+\]
+代入(24)即有
+\begin{equation}
+\begin{aligned}
+ I
+ &=\int_{\mathbf R^n}\exp\!\left(-\sum_{i=1}^n\lambda_i y_i^2\right)dy
+ =\prod_{i=1}^n\int_{-\infty}^{\infty}e^{-\lambda_i y_i^2}\,dy_i\\
+ &=\prod_{i=1}^n\left(\frac\pi{\lambda_i}\right)^{1/2}.
+\end{aligned}
+ \tag{25}
+\end{equation}
+如果 $A$ 不是实矩阵，而只有 $\operatorname{Re}A>0$，也有相应的结果。因为需要更多的预备知识，我们只好从略。

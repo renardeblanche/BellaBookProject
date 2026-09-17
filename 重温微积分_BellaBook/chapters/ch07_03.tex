@@ -1,0 +1,923 @@
+% R43: original printed pp. 469--488, §3 completed
+
+\section{多重线性代数介绍}
+
+向量丛的结构是非常丰富的，以微分流形每一点切空间与余切空间为基础，可以建立许多非常重要的数学对象，其中用得最多的是张量和多重向量。我们需要从这些对象的代数结构上来观察它们。这就是多重线性代数。本节中我们介绍它的两个最重要的部分——张量代数与外代数。
+
+\noindent\textbf{1. 张量代数}\quad
+§1中我们已经通过一些实例介绍了什么是张量。在那里我们是在空间的某个区域中讨论一般的坐标变换，例如 $y=y(x)$。但是在微分学中我们已指出了这种一般的非线性变换局部地可以看成是线性空间中的线性变换。§2中就指出，可以在一点 $P$ 的切空间 $T_PM$ 上用切变换来代替它，所以应该先在线性空间框架中彻底地研究它们。所以又引入了 $T\mathbb R^n$ 上的线性变换。其实我们已经初步地这样做了，我们的处理方式是通过张量的分量来了解张量：在每一个坐标系下指定一组 $n^r$ 个实数，并要求在不同坐标系下的相应的 $n^r$ 实数组有适当的关系。即是说不同坐标系下的分量适合相当的变换关系。这样的讲法当然有很大的好处，例如便于计算。但即使对最简单的张量——即向量，这种讲法与通常微积分教材中对向量的处理就有一些区别。我们不妨再一次概括一下这种讲法。向量，亦即一阶张量我们分成两大类，第一类就是适合线性空间的运算法则的对象称为向量。这些运算法则的几何含意十分清楚，即平行四边形法则。第二类向量就是前一类向量的线性函数，或在用第六章的语言来说就是其线性泛函。但是线性泛函也是线性运算的对象，所以也是向量。不过它所组成的线性空间与第一类向量组成的空间 $V\cong T\mathbb R^n$ 不同，我们称它为 $V$ 之对偶空间，记作 $V^*\cong(T\mathbb R^n)^*$。这一类向量却缺少那么丰富的直观背景，而且因为线性代数理论告诉我们，$(T\mathbb R^n)^*$ 与 $T\mathbb R^n$ 同构，那么二者之间的区别何在呢？为了弄清这个问题就发觉当把向量用分量来表示时就很明白了。从笛卡儿建立解析几何起我们就明白了，坐标系是研究几何对象的好方法。所以在研究向量时，我们首先在 $T\mathbb R^n$ 中取一个基底，也叫做取一个标架。所谓基底就是 $n$ 个线性无关的向量 $e_i\in T\mathbb R^n$，我们记为 $\{e_1,\ldots,e_n\}$，于是有了任一向量 $u\in T\mathbb R^n$，一定有 $n$ 个实数 $u^i\in\mathbb R$ 使 $u=u^ie_i$，这 $n$ 个实数就叫做 $u$ 对上述基底的坐标或分量，我们用 $(u^1,\ldots,u^n)$ 表示。现在我们作一个规定，凡是基底一定用花括号 $\{\cdots\}$ 表示，所以 $\{\cdots\}$ 内的对象都是向量，凡是坐标一定用圆括号 $(\cdots)$ 表示，其中的对象一定是数。我们在§1中讲向量时是用的与坐标无关的处理方法，所以要讨论在标架变换下，坐标如何变换。如果旧标架是 $\{e_1,\ldots,e_n\}$，新标架是 $\{f_1,\ldots,f_n\}$，而有
+\begin{equation}
+ f_i=a_i^{\ j}e_j,
+ \tag{1}
+\end{equation}
+或者写成
+\[
+ \{f\}=A\{e\},
+\]
+$A=(a_i^{\ j})$，而(1)是对上指标求和。同一个向量 $u$ 如在不同的标架下有不同的坐标 $(u^1,\ldots,u^n)$ 与 $(v^1,\ldots,v^n)$，则应有
+\[
+ u=v^if_i=u^ie_i.
+\]
+将(1)代入上式即得
+\begin{equation}
+ u^i=a_j^{\ i}v^j,
+ \tag{2}
+\end{equation}
+或
+\[
+ (v)=(\,{}^tA\,)^{-1}(u).
+\]
+在§1中我们说(1)与(2)是互相逆步的，所以标架的变换与坐标的变换是互相逆步的。这是一个基本的事实。
+
+现在转到对偶空间。如果原空间 $V$ 的标架为 $\{e\}$，后来变成了 $\{f\}$，其对偶空间 $V^*$ 之元，如果后来是 $\{\sigma\}$ 而原来是 $\{\omega\}$，则应有
+\[
+ \langle\omega,e\rangle=\langle\sigma,f\rangle.
+\]
+这里 $e,f,\omega,\sigma$ 都是向量而不是实数。以(1)代入上式，并用转置矩阵处理有
+\[
+ \langle\omega,A^{-1}f\rangle=\langle{}^tA^{-1}\omega,f\rangle=\langle\sigma,f\rangle,
+\]
+因此
+\begin{equation}
+ \sigma={}^tA^{-1}\omega.
+ \tag{3}
+\end{equation}
+它与(1)互相逆步，而与(2)相一致。$V^*$ 中的元应该用 $\{\omega\}=\{\omega^1,\ldots,\omega^n\}$ 或 $\{\sigma\}=\{\sigma^1,\ldots,\sigma^n\}$ 来表示，如果同一个 $u^*\in V^*$ 表示为
+\[
+ u^*=\lambda_i\omega^i=\mu_i\sigma^i,
+\]
+又容易得到
+\begin{equation}
+ \mu_i=a_i^{\ j}\lambda_j,
+ \tag{4}
+\end{equation}
+即 $(\mu)=A(\lambda)$。它与(1)一致而与(2)逆步。§1中我们给出了逆变向量与协变向量的概念。其实是逆变还是协变要看对谁而言。如果以 $V$ 中标架变换公式(1)为准，凡与它一致的就称为协变，与它逆步的就称为逆变。所以上述可以列成一个表：
+
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{.18\textwidth}|>{\centering\arraybackslash}p{.34\textwidth}|>{\centering\arraybackslash}p{.34\textwidth}}
+\toprule
+ & 原空间 $V$ & 对偶空间 $V^*$ \\
+\midrule
+标架 & (1) 基准 & (3) 与(1)逆步 \\
+坐标 & (2) 逆变坐标 & (4) 与(1)一致，协变坐标 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+我们还有一个非常方便的记号：凡用上标表示的均与(1)逆步地变换，凡用下标表示的均与(1)一致地变换。
+
+我们现在希望对张量也能这样地作与坐标无关的处理。这样做的好处是可以对线性代数与解析几何的一些根本问题有更进一步的理解，而且因为张量不再如向量那么直观，作抽象的处理反而更容易。
+
+§1中我们举了两类张量的例子。一类是例如向量积、角动量，另一类如黎曼度量。严格地说第一类还不是一般的张量，而是所谓 $p$ 向量，亦即外积，正是我们下面要讲的。所以现在我们从黎曼度量
+\begin{equation}
+ ds^2=g_{ij}\,dx^i dx^j
+ \tag{5}
+\end{equation}
+开始。§1中我们已经说过了 $(g_{ij})$ 是一个二阶协变张量，$dx^i$ 则是一个一阶逆变张量，但是最好我们把(5)式右方的 $dx^i,dx^j$ 分开来看，认为它们是独立的，类似的情况我们在第三章中也就看过。那里我们在讲高阶微分时曾问过，如果在讲一阶微分 $df=Ah$ 时，我们用 $h$ 表示切向量，再求第二次微分时应看到 $A$ 其实依赖于 $x$，所以 $d(df)=dA\cdot h=Bh\cdot h$。$B$ 在局部坐标下是 $f(x)$ 的二阶偏导数所成的矩阵
+\[
+ \left(\frac{\partial^2f}{\partial x^i\partial x^j}\right),
+\]
+即黑塞矩阵（Hessian matrix）。下标 $0$ 表示在某一点 $x_0$ 计算它。可是为什么计算 $dA=Bh$ 中要用相同的 $h$ 呢？其实应该用 $h\cdot k$ 并不是本质上与 $h$ 不同，二者同为任意的切向量，只不过要强调 $h$ 与 $k$ 的独立性而已。所以二阶微分可以看成是
+\begin{equation}
+ \left(\frac{\partial^2f}{\partial x^i\partial x^j}\right)h^ik^j=(B;h,k),
+ \tag{6}
+\end{equation}
+即 $B$ 作用于两个互相独立的切向量 $h$ 和 $k$。我们这里采用了与向量的内积相似的记号，因为它们实在是相似的：一阶微分是 $A$ 与 $h$ 的内积 $df=(A,h)$，对 $h$ 是线性的；二阶微分是 $B$ 与 $h$ 和 $k$ 的“内积” $(B;h,k)$，它对 $h$ 与 $k$ 分别是线性的，所以称为双线性形式。不同之处则在于 $A$ 是协变向量，$B$ 却不是二阶协变张量——这当然有深刻的原因，即曲率问题。现在回到黎曼度量。在一些很老的历史文献中，都是把 $dx^i$ 与 $dx^j$ 分开来的，前者记为 $dx$，后者记为 $\delta x$，而有
+\[
+ ds^2=g_{ij}\,dx^i\delta x^j.
+\]
+现代的文献中当然已不再这样写，但是老记号给了我们一个启发：怎样来认识张量 $(g_{ij})$？它是由 $dx^i$ 和 $\delta x^j$（它们都在空间 $V$ 中，现在 $V=T_PM$，所以它们是切向量而 $dx^i,\delta x^j$ 是一些数，是切向量的逆变坐标）到 $\mathbb R$ 的映射。因为 $dx^i$ 与 $\delta x^j$ 是互为独立的，所以 $ds^2$ 是由乘积空间 $V\times V$（$=T_PM\times T_PM$）到 $\mathbb R$ 的映射，这个映射是多重线性（multilinear）的。所谓一个映射
+\[
+ T:V\times V\longrightarrow\mathbb R,
+ \qquad (u,v)\longmapsto T(u,v)
+\]
+为多重线性的，即指，当 $u$ 或者 $v$ 固定时，我们得到对另一个变元的线性映射，即
+\begin{align}
+ T(\lambda_1u_1+\lambda_2u_2,v)&=\lambda_1T(u_1,v)+\lambda_2T(u_2,v),\\
+ T(u,\mu_1v_1+\mu_2v_2)&=\mu_1T(u,v_1)+\mu_2T(u,v_2).
+ \tag{7}
+\end{align}
+这样我们就给出
+
+\noindent\textbf{定义1}
+一个由 $V\times V$ 到 $\mathbb R$ 的双线性（bilinear）映射
+\begin{equation}
+ T:V\times V\longrightarrow\mathbb R
+ \tag{8}
+\end{equation}
+称为二阶协变张量（或 $(0,2)$ 型张量）。所有二阶协变张量形成一个线性空间，记作 $\mathcal T^0_2(V)$。
+
+定义中指出 $\mathcal T^0_2(V)$ 是一个线性空间，其实这是有待证明的，只不过因为它是如此明显，所以我们未加证明而在定义中直接指出这一点。于是要问，$\dim\mathcal T^0_2(V)=?$ 我们可以证明 $\dim\mathcal T^0_2(V)=n^2$，而且具体地找出 $n^2$ 个线性无关的二阶协变张量。为此目的，我们还要再引入两个向量的张量积。设 $\omega,\sigma\in V^*$，我们可以定义其张量积为一个二阶协变张量如下：任取 $u,v\in V$，我们定义
+\begin{equation}
+ (\omega\otimes\sigma)(u,v)=\omega(u)\cdot\sigma(v).
+ \tag{9}
+\end{equation}
+很明显它是 $V\times V$ 到 $\mathbb R$ 的双线性映射。
+
+\noindent\textbf{定义2}
+双线性映射(9)称为 $\omega$ 与 $\sigma$ 之张量积，记作 $\omega\otimes\sigma$。
+
+现在我们就很容易找出 $\mathcal T^0_2(V)$ 的一个基底了。令 $\{\omega^1,\ldots,\omega^n\}$ 为 $V^*$ 的一个基底，我们要证明 $\{\omega^i\otimes\omega^j\},i,j=1,\ldots,n$ 就符合要求，为此证明它们是线性无关的。设 $C_{ij}\omega^i\otimes\omega^j=0$，令 $\{e_1,\ldots,e_n\}$ 为 $\{\omega^1,\ldots,\omega^n\}$ 之对偶基底，取 $u=e_{i_0},v=e_{j_0}$，以 $C_{ij}\omega^i\otimes\omega^j$ 作用于 $(u,v)\in V\times V$，有
+\[
+ 0=(C_{ij}\omega^i\otimes\omega^j)(e_{i_0},e_{j_0})=C_{i_0j_0}.
+\]
+所以一切 $C_{ij}=0$，而知 $\{\omega^i\otimes\omega^j\}$ 在 $\mathcal T^0_2(V)$ 中线性无关。其次易见所有二阶协变张量 $T$ 均可写成
+\begin{equation}
+ T=T_{ij}\omega^i\otimes\omega^j.
+ \tag{10}
+\end{equation}
+实际上，只要取 $T_{ij}=T(e_i,e_j)$ 即可。由此可知 $\{\omega^i\otimes\omega^j\}$ 确为 $\mathcal T^0_2(V)$ 的一个基底，而且 $\dim\mathcal T^0_2(V)=n^2$。
+
+现在我们要问，如果在 $V$ 中作一个坐标变换，即由老基底 $\{e_1,\ldots,e_n\}$ 变为新基底 $\{f_1,\ldots,f_n\}$，变换为
+\[
+ f_i=a_i^{\ j}e_j,
+\]
+问 $T$ 应如何改变？一方面看来 $T$ 应该不变，因为按定义，$T:V\times V\to\mathbb R$ 是一个双线性变换，这是与坐标是无关的。但是 $\{\omega^i\}$ 会改变，$(T_{ij})$ 也会改变。实际上，$\{\omega^i\}$ 作为 $V^*$ 之基底（即标架），若在新坐标系下成为 $\{\Omega^i\}$，则应有
+\[
+ \omega^i=a_j^{\ i}\Omega^j,
+\]
+它与 $\{e_1,\ldots,e_n\}$ 的变换是互相逆步的。若 $T$ 在新坐标下为 $(\widetilde T_{ij})$，则由(10)式
+\[
+ T=T_{ij}\omega^i\otimes\omega^j
+ =T_{ij}a_k^{\ i}a_l^{\ j}\Omega^k\otimes\Omega^l
+ =\widetilde T_{kl}\Omega^k\otimes\Omega^l,
+\]
+所以
+\begin{equation}
+ \widetilde T_{kl}=T_{ij}a_k^{\ i}a_l^{\ j}.
+ \tag{11}
+\end{equation}
+所以 $T_{ij}$ 的变化规律和协变向量的变化规律相符。在§1中，我们对张量是用分量来定义的：在某一个坐标系下，一个二阶协变张量即一组 $n^2$ 个实数 $(T_{ij})$，如果在另一个坐标系下，这 $n^2$ 个实数成为 $(\widetilde T_{ij})$，则二者之间应有关系式(11)。这样我们就看到，现在给出的 $\mathcal T^0_2(V)$ 张量都是§1中讲的协变张量。反过来，如果给出一个§1中讲的二阶协变张量 $(T_{ij})$，令
+\[
+ T=T_{ij}\omega^i\otimes\omega^j,
+\]
+则得到我们现在讲的 $\mathcal T^0_2(V)$ 张量，而且§1中给出的分量变化规则，保证了(10)式给出的 $T$ 确实是一个与坐标无关的由 $V\times V$ 到 $\mathbb R$ 的双线性映射，因此也是现在讲的 $\mathcal T^0_2(V)$ 张量。总之，§1的用分量讲的张量与现在作为双线性映射的张量是完全一样的。现在的讲法能帮助我们更好地了解张量的本质，而§1的讲法计算起来更加便利。
+
+以上我们考虑了最常见的二阶协变张量，它的定义显然是 $V^*$ 之元即协变向量之推广。所以协变向量就是一阶协变张量。其余类型的张量皆可仿此处理：我们仍考虑一个 $n$ 维线性空间 $V$，但同时也考虑其对偶空间 $V^*$，其维数仍为 $n$，如果有 $r$ 个 $V^*$，$s$ 个 $V$，我们要研究由
+\[
+ \underbrace{V^*\times\cdots\times V^*}_{r\text{个}}
+ \times
+ \underbrace{V\times\cdots\times V}_{s\text{个}}
+ \longrightarrow\mathbb R
+\]
+的多重线性映射，于是有
+
+\noindent\textbf{定义3}
+上述多重线性映射
+\begin{equation}
+ \underbrace{V^*\times\cdots\times V^*}_{r\text{个}}
+ \times
+ \underbrace{V\times\cdots\times V}_{s\text{个}}
+ \longrightarrow\mathbb R
+ \tag{12}
+\end{equation}
+称为一个 $(r,s)$ 型张量（$r$ 阶逆变，$s$ 阶协变），这种张量构成一个线性空间，记作 $\mathcal T^r_s(V)$。
+
+和前面一样，若 $V$ 和 $V^*$ 有对偶基底 $\{\omega^i\},\{\sigma_i\}$，$i,j=1,2,\ldots,n$，则对 $V^*\times\cdots\times V^*\times V\times\cdots\times V$ 中的元 $\{\mu_1,\ldots,\mu_r;v^1,\ldots,v^s\}$ 我们可以定义张量积
+\begin{align}
+ &(\omega^{i_1}\otimes\cdots\otimes\omega^{i_r}\otimes\sigma_{j_1}\otimes\cdots\otimes\sigma_{j_s})
+ \{\mu_1,\ldots,\mu_r;v^1,\ldots,v^s\}
+ \notag\\
+ &\qquad=\omega^{i_1}(\mu_1)\cdots\omega^{i_r}(\mu_r)\sigma_{j_1}(v^1)\cdots\sigma_{j_s}(v^s).
+ \tag{13}
+\end{align}
+而知一切 $\mathcal T^r_s(V)$ 张量 $t$ 均可写为
+\begin{equation}
+ t=t^{i_1\cdots i_r}_{j_1\cdots j_s}
+ \omega^{i_1}\otimes\cdots\otimes\omega^{i_r}\otimes\sigma_{j_1}\otimes\cdots\otimes\sigma_{j_s}.
+ \tag{14}
+\end{equation}
+于是 $\omega^{i_1}\otimes\cdots\otimes\omega^{i_r}\otimes\sigma_{j_1}\otimes\cdots\otimes\sigma_{j_s}$ 是 $\mathcal T^r_s(V)$ 的基底，从而
+\begin{equation}
+ \dim\mathcal T^r_s(V)=n^{r+s}.
+ \tag{15}
+\end{equation}
+$t^{i_1\cdots i_r}_{j_1\cdots j_s}$ 是 $t$ 的分量，我们时常除了(14)式以外，也用下面的记号：
+\begin{equation}
+ t=t^{i_1\cdots i_r}_{j_1\cdots j_s}.
+ \tag{16}
+\end{equation}
+它表示现在讲的张量与§1中讲的张量完全一样，因此，§1中讲的张量运算的法则——特别是缩并——在此全部适用，我们就不再重复了。
+
+但是现在在张量中增加了一种新的代数运算，即张量积。在最简单的情况下张量积由(9)决定，一般由(13)给出。因此很容易看出，张量积是不可交换的。例如由(9)就可以看到，
+\[
+ (\sigma\otimes\omega)(\mu,v)=\sigma(\mu)\cdot\omega(v),
+\]
+而与 $(\omega\otimes\sigma)(\mu,v)$ 不同。但是，张量积很容易看到是结合的，而且适合分配律。
+
+现在把关于张量的概念用到微分流形上去。设 $M$ 是一个微分流形，于是对每一点 $P\in M$，有一个切空间 $T_PM$ 以及余切空间 $T_P^*M$，二者互为对偶空间。如果 $M$ 上有一个坐标邻域 $U$，\linebreak[2] $P\in M$ 有局部坐标 $(x^1,\ldots,x^n)$，则 $T_PM$ 和 $T_P^*M$ 分别有基底
+\[
+ \left\{\frac{\partial}{\partial x^1},\ldots,\frac{\partial}{\partial x^n}\right\},
+ \qquad \{dx^1,\ldots,dx^n\}.
+\]
+我们现在以 $T_PM$ 为 $V\cong\mathbb R^n$，则可以定义其上的 $(r,s)$ 型张量
+\begin{equation}
+ t_P=t^{i_1\cdots i_r}_{j_1\cdots j_s}(P)
+ \frac{\partial}{\partial x^{i_1}}\otimes\cdots\otimes\frac{\partial}{\partial x^{i_r}}
+ \otimes dx^{j_1}\otimes\cdots\otimes dx^{j_s}\Big|_P.
+ \tag{17}
+\end{equation}
+$\{t_P\}$ 构成一个线性空间 $\mathcal T^r_s(P)$。于是令 $P$ 变动时，将可得到一个丛，即 $M$ 上的张量丛。它有一个全空间
+\[
+ E=\bigcup_{P\in M}\mathcal T^r_s(P),
+\]
+有一个底空间即 $M$，有由 $E$ 到 $M$ 的投影 $\pi:E\to M$，$\mathcal T^r_s(P)$ 也有纤维 $\pi^{-1}(P)=\mathcal T^r_s(P)$。这样一个张量丛不但有一般的微分流形结构，而且有向量丛的结构，特别是局部平凡性，即存在一个同构
+\[
+ \left.\bigcup_{P\in U}t_P\right.\cong U\times\mathcal T^r_s\cong U\times\mathbb R^{n^{r+s}}.
+\]
+这一点和切丛、余切丛是一样的，即是说，所谓局部平凡性即在 $M$ 的一个适当的坐标邻域中各点 $P$ 处纤维 $\pi^{-1}(P)$ 具有相同的基底。但是纤维作为线性空间的“系数”是 $x$ 的函数。所以在研究这类问题时 $M$ 上 $U$ 中的 $C^\infty$ 函数环——以后记作 $\mathcal F$——将有特别作用。对这个张量丛我们也可以定义其 $C^\infty$“切口”（$C^\infty$ section），简单说即在每一个 $\pi^{-1}(P)$ 中取一固定的元，其局部表示是(17)，不过 $t^{i_1\cdots i_r}_{j_1\cdots j_s}(P)$ 是 $C^\infty$ 函数，即为 $\mathcal F$ 中的元。上面我们只是说明了建立张量丛的程序与建立切丛、余切丛一样。但是要实现这个程序，特别是在讨论其局部平凡化时，还有不少计算，在此我们全部略去。不过有一点必须提到：在考虑某一定点 $P$ 处的纤维 $\pi^{-1}(P)$ 时，我们得到的 $\mathcal T^r_s(V)$ 确实是线性空间，因为(17)的系数均为常数；但在讨论 $C^\infty$ 切口以及这些切口的集合时，(17)的“系数”都成了 $\mathcal F$ 中的元。注意，线性空间的系数是一个“域”中的元，本书中除少数特殊情况都是以实数域 $\mathbb R$ 作为“系数”域（应该称为基域），而 $\mathcal F$ 却只是一个环，这样得到的代数结构与线性空间是很不相同的，称为一个模（module）。在研究 $M$ 上的张量丛时就会遇到这方面的问题。我们还要提醒的是：局部平凡化的结果使纤维与底空间的坐标完全分离，所以在(17)中，底空间的坐标只出现在系数 $t^{i_1\cdots i_r}_{j_1\cdots j_s}(P)$ 中，而 $\partial/\partial x^{i_1}\otimes\cdots\otimes dx^{j_s}$ 完全与之无关。这样，如果要对局部坐标求导数，只需在 $t^{i_1\cdots i_r}_{j_1\cdots j_s}(P)$ 中施行即可。
+
+最后我们再讲一点关于记号的问题。我们是由黎曼的度量公式(5)引入度量张量 $(g_{ij})$ 的，但是按上面讲的张量理论，(5)式应如何理解却成了问题。其实，在较古老的文献例如黎曼本人的著作中，$ds^2$ 了解为无穷接近的两点之间的距离。涉及无穷小自然会带来许多麻烦，因此在当代的文献中都是说，在 $M$ 之每点的切空间 $T_PM$ 上引入一个内积，而要求它光滑地依赖于 $P$。所谓内积，即对任一切向量 $X_P\in T_PM$ 赋以一个非负的数 $(X,X)$，即其长度的平方。$X$ 既然是线性空间中的向量，自然无所谓无穷小，而所谓光滑地依赖于 $P$ 是指光滑地依赖于底空间的坐标。所以情况与讨论微分学时把 $x+h$ 中的 $x$ 与 $h$ 严格区别开来作类似。所谓内积就是一个正定二次型，二次型可以由双线性型来刻画，第六章§2定义3中已详细地讲到，因此，我们在 $T_PM$ 上有了一个双线性映射
+\[
+ T_PM\times T_PM\longrightarrow\mathbb R,
+ \qquad X,Y\in T_PM\longmapsto(X,Y)\in\mathbb R.
+\]
+按现在的讲法就是有一个二阶协变张量 $g_{ij}$。如果在 $T_PM$ 中引入标准的基底 $\{\partial/\partial x^1,\ldots,\partial/\partial x^n\}$，从而在 $T_P^*M$ 中有了相应的对偶基 $\{dx^1,\ldots,dx^n\}$，则此张量为
+\begin{equation}
+ T=g_{ij}\,dx^i\otimes dx^j,\qquad (X,X)=(T;X,X).
+ \tag{18}
+\end{equation}
+现在的 $\{dx^1,\ldots,dx^n\}$ 是 $T_P^*M$ 的基底，所以 $dx^i$ 是向量，而与(5)式中的 $dx^i$ 作为切向量 $(dx^1,\ldots,dx^n)$ 的分量，是一些数，二者不同。以它作用到 $(\partial/\partial x^k,\partial/\partial x^l)\in T_PM\times T_PM$ 上去即得
+\[
+ \left(T;\frac{\partial}{\partial x^k},\frac{\partial}{\partial x^l}\right)
+ =\left(\frac{\partial}{\partial x^k},\frac{\partial}{\partial x^l}\right)=g_{kl}.
+\]
+说这个内积光滑地依赖于 $P$ 即指 $g_{ij}$ 是 $x$ 的 $C^\infty$ 函数。如果我们取一个“无穷小”切向量 $(dx^1,\ldots,dx^n)=dx^i\partial/\partial x^i$（$dx^i$ 是分量，是数，$\partial/\partial x^i$ 是基底向量，是切向量），立即得到(5)式。于是我们得到了两个式子(18)与(5)。(18)是张量的表达式，其中 $dx^i$ 是一个余切向量，是 $T_P^*M$ 中的基底 $\{dx^1,\ldots,dx^n\}$ 中的第 $i$ 个元素，(5)则是这个张量作用到切向量 $X=dx^i\partial/\partial x^i$ 的结果，这里 $dx^i$ 是 $X$ 的第 $i$ 个分量，它是一个数，而不是向量。如果把它与作为余切向量的 $dx^i$ 混起来，会发生很大的混淆。总之，黎曼原来使用的记号(5)与现在我们使用的(18)，尽管很相似，却是不相同的。现在的数学家们心里都很明白这个区别，但是 $dx^i$ 这些记号用熟了，也就不太在乎，所以有的文献干脆把(18)写成
+\[
+ ds^2=g_{ij}(x)\,dx^i\otimes dx^j.
+\]
+但是，事关“无穷小量”就更应该说明。其实，一个合适的讲法是，在切向量之长度定义为 $(X,X)^{1/2}$ 以后，如果要求图7-3-1中曲线弧 $\widehat{AB}$ 之长为 $s$，这里 $\widehat{AB}$ 的方程是 $x^i=x^i(t)$ 即 $x=x(t)$，$A$ 点对应于参数 $t=0$，$B$ 点对应于参数 $t_1$，则把 $\widehat{AB}$ 分成若干段，而例如 $\widehat{A_{i-1}A_i}$ 则代以弦 $\overline{A_{i-1}A_i}$，然后再代以 $A_{i-1}$ 处（即 $t=t_{i-1}$ 处）的切线，因此弦将被切向量 $\dot x(t_{i-1})(t_i-t_{i-1})=\dot x(t_{i-1})\Delta t_i$ 取代，其长为 $\sqrt{\langle\dot x(t_{i-1}),\dot x(t_{i-1})\rangle}(t_i-t_{i-1})$（$t_i\ge t_{i-1}$）。把分点 $\{A_i\}$ 取密以求极限可得
+\[
+ s=\int_0^{t_1}\sqrt{\langle\dot x(t),\dot x(t)\rangle}\,dt.
+\]
+所以
+\[
+ ds^2=\langle\dot x(t),\dot x(t)\rangle dt^2=g_{ij}(x)\,dx^i dx^j.
+\]
+这就是通过在 $M$ 上给出切向量长度 $(X,X)$ 以及作典型的积分运算得到黎曼度量公式(1)的方法。这里没有因为无穷小量的介入而导致的任何困难。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.95]
+  \draw[thick] plot[smooth] coordinates {(0,0) (.4,.8) (1,1.35) (1.8,1.75) (2.8,2.0) (3.8,2.08) (4.6,2.0)};
+  \foreach \x/\y/\lab in {0/0/A,1/1.35/A_{i-1},1.8/1.75/A_i,2.8/2/A_{i+1},4.6/2/B}
+    \fill (\x,\y) circle (1.2pt) node[above=2pt] {$\lab$};
+  \draw[dashed] (1,1.35)--(1.8,1.75);
+\end{tikzpicture}
+\caption*{图7-3-1}
+\end{figure}
+
+在一本著名的微分几何教本（M.~Spivak, \textit{Comprehensive Introduction to Differential Geometry}, Vol.~1, Publish or Perish, 1979），153页上说到这类记号问题时讲了一段很有趣的话：“古典的微分几何学家（还有古典分析学家）在讲到坐标 $x^i$ 的无穷小改变 $dx^i$ 时，毫不犹豫。莱布尼茨就是这样，他们谁也不肯承认这种说法是毫无意义的，因为把这些无穷小量相除（只要做得对）总会给出正确结果。最终人们认识到，最接近实情的描述无穷小变化的办法就是描述这个变化的方向，亦即切向量。原来，$df$ 被看作是在点的无穷小变化下函数 $f$ 的变化，现在，$df$ 必须看成是这个变化的函数，那即切向量的函数（就是说 $df$ 要通过 $df(X)=X(f)$ 才能体现出来，所以 $df$ 作为 $X$ 的‘函数’就是说它是 $T_PM$ 的对偶空间 $T_P^*M$ 之元——本书作者注），然后 $dx^i$ 本身也摇身一变成为切向量 $\partial/\partial x^i$ 的函数（即 $dx^i(\partial/\partial x^j)=\delta^i_j$ 是 $dx^i$ 之定义——本书作者注），认识到这一点以后，剩下来要做的只有一件事：搞上一些新定义，但是仍然使用老记号，再让读者慢慢来跟。总之，所有涉及无穷小的古典的概念，都像 $df$ 一样，变成了切向量的函数，唯一例外是无穷小量的商，因为它们自己就变成了切向量 $dc/dt$（$c$ 就是这里讲的曲线 $x=x(t)$——本书作者注）。”
+
+本章所讲的几乎都是老概念、老记号的新理解、新定义，我们所做的一切都是为了帮助“读者慢慢来跟”。
+
+\noindent\textbf{2. 外代数}\quad
+19世纪中叶，人们开始研究高维空间，这不但是由于数学本身的需要，而且许多力学、物理学问题迫切需要它，于是线性代数理论出现了，矩阵、向量、超复数、四元数……可以说使人眼花缭乱。其实都是围绕一个问题：高维空间的几何量要怎样来刻画才好。这个问题的重要性是不言而喻的。当时一位著名数学家格拉斯曼（H.~Grassmann, 1809--1877）作了伟大的贡献。他指出，各种各样几何量原来是互有联系的系统，他的表示方式也是系统的。例如，以 $(x_1,y_1),(x_2,y_2),(x_3,y_3)$ 为顶点的三角形面积是
+\[
+ \frac12\begin{vmatrix}
+ x_1&y_1&1\\x_2&y_2&1\\x_3&y_3&1
+ \end{vmatrix}.
+\]
+如果不管因子 $1/2$，并且只看其矩阵，则其二阶子矩阵
+\[
+ \begin{pmatrix}x_1&y_1\\x_2&y_2\end{pmatrix}
+\]
+的三个二阶子行列式
+\[
+ X=x_1-x_2,\qquad Y=y_1-y_2,\qquad Z=x_1y_2-x_2y_1
+\]
+分别是有向线段 $(x_1,y_1),(x_2,y_2)$ 的两个投影以及原点 $O$ 与这两点所成三角形的有向面积的2倍。既然面积与长度是从同一个根源中来，自然也应该有符号。
+
+线段长有符号，人们都容易接受，面积有符号，在大多数微积分教科书中却不承认。面积的符号与坐标系取何种定向有关。例如设 $x$ 轴与 $y$ 轴成为右手系，则由 $\overrightarrow{OA}$ 到 $\overrightarrow{OB}$ 形成的三角形 $\triangle OAB$，如果 $\overrightarrow{OA}$ 与 $\overrightarrow{OB}$ 也成右手系，则其面积算是正的；由 $\overrightarrow{OB}$ 到 $\overrightarrow{OA}$ 形成的三角形面积就算是负的（图7-3-2）。这一个规定会为整个数学的发展带来很大的好处。坚持这一点的数学家中就有默比乌斯，而默比乌斯带的发现也与此密切相关（1865）。格拉斯曼另一个十分深刻的思想是：应该与坐标的选取无关地探讨几何量的性质，这正是本章的根本指导思想。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[bella figure,scale=.9]
+  \begin{scope}[xshift=-2.3cm]
+    \draw[->] (0,0)--(2.2,0) node[right] {$x$};
+    \draw[->] (0,0)--(0,2.2) node[above] {$y$};
+    \node[below left] at (0,0) {$O$};
+    \draw[->,thick] (.9,.55) arc[start angle=230,end angle=120,radius=.45];
+  \end{scope}
+  \begin{scope}[xshift=2cm]
+    \coordinate (O) at (0,0); \coordinate (A) at (2.3,.8); \coordinate (B) at (.65,2.15);
+    \draw[thick] (O)--(A)--(B)--cycle;
+    \node[left] at (O) {$O$}; \node[right] at (A) {$A$}; \node[above] at (B) {$B$};
+    \draw[->,thick] (1.05,.8) arc[start angle=-40,end angle=55,radius=.45];
+  \end{scope}
+\end{tikzpicture}
+\caption*{图7-3-2}
+\end{figure}
+
+从常用的微积分教本中看到，上述三角形之面积是一个向量 $\overrightarrow{OA}\times\overrightarrow{OB}$，我们自然会问，它是逆变向量还是协变向量？于是取两个标架且设 $A,B$ 两点在这些标架即坐标系中为 $(a^1,a^2),(b^1,b^2)$ 以及 $(\bar a^1,\bar a^2),(\bar b^1,\bar b^2)$。如果标架变换用(1)表示，则经过简单计算即知在新旧坐标系下之面积适合
+\[
+ \frac12\begin{vmatrix}\bar a^1&\bar a^2\\\bar b^1&\bar b^2\end{vmatrix}
+ =\det A\cdot\frac12\begin{vmatrix}a^1&a^2\\b^1&b^2\end{vmatrix}.
+\]
+可见面积这个几何量与向量本质不同。
+
+其实，说面积是一个向量，即向量积 $\overrightarrow{OA}\times\overrightarrow{OB}$ 还有一个限制，即这个说法最多只能用于 $\mathbb R^3$。因为若 $\overrightarrow{OA},\overrightarrow{OB}$ 是 $n$ 维向量：$\overrightarrow{OA}=(a^1,\ldots,a^n)$，$\overrightarrow{OB}=(b^1,\ldots,b^n)$，则当 $n=3$ 时，$\overrightarrow{OA}\times\overrightarrow{OB}$ 的分量恰好是下述 $2\times3$ 矩阵
+\[
+ \begin{pmatrix}a^1&a^2&\cdots&a^n\\ b^1&b^2&\cdots&b^n\end{pmatrix}
+\]
+的三个二阶子行列式（加上适当的 $\pm$ 号）。但是对于一般的 $n$，上述矩阵共有 $\frac12n(n-1)$ 个二阶子行列式，为使它们能够组成一个 $n$ 维向量，必须 $\frac12n(n-1)=n$，即 $n=3$。可见非3维的 $\mathbb R^n$ 中是不可能定义以两个向量的向量积的。通常的微积分教材在讲向量分析与场论时总限于在 $\mathbb R^3$ 上（有的书上未强调这一点）原因在此。但这些二阶子行列式有几何意义正是格拉斯曼的基本思想的一部分。
+
+那么，用什么样的数学工具来表示面积、体积呢？用格拉斯曼建立的外代数。下面我们就来介绍这个理论。我们要提醒读者经常把下面的结果与 $n$ 维平行体的体积和行列式作比较。其实如上所述行列式从几何上看正是“表示”了 $n$ 维平行体的体积。它是一个十分重要的概念，而且又是外代数最好的模型。
+
+我们再回到张量空间，为了简单起见，我们恒取 $V=\mathbb R^n$，以后主要是讨论协变张量，但照顾到外代数习惯用上标记号 $\Lambda^r$，我们也就把 $\mathcal T^0_r$ 型张量暂时记作 $\mathcal T^r$。我们研究过的张量有两类特别重要的，一是对称张量，一是反对称（skew symmetric）张量。设有张量 $T\in\mathcal T^r(\mathbb R^n)$，于是对 $r$ 个 $n$ 维向量 $v_1,\ldots,v_r$，有
+\[
+ T(v_1,\ldots,v_r)\in\mathbb R.
+\]
+如果将 $v_i$ 与 $v_j$ 对换，时而会有
+\begin{equation}
+ T(v_1,\ldots,v_i,\ldots,v_j,\ldots,v_r)
+ =T(v_1,\ldots,v_j,\ldots,v_i,\ldots,v_r),
+ \tag{19a}
+\end{equation}
+时而又会有
+\begin{equation}
+ T(v_1,\ldots,v_i,\ldots,v_j,\ldots,v_r)
+ =-T(v_1,\ldots,v_j,\ldots,v_i,\ldots,v_r).
+ \tag{19b}
+\end{equation}
+相应地就说 $T$ 对于指标 $i$ 和 $j$ 是对称或反对称的。如果 $T$ 对一切 $(i,j)$ 均是对称或反对称的，就说它是对称张量与反对称张量。例如黎曼度量张量就是一个二阶对称协变张量，而反对称张量正是我们要讨论的问题。
+
+如果把一个 $n$ 阶行列式 $\det A$ 的各行为看成一个 $n$ 维向量，则行列式显然是一个 $n$ 阶张量 $T$ 作用于这几个 $n$ 维向量 $v_i=(a_{i1},\ldots,a_{in})$，$i=1,2,\ldots,n$（其实按我们的规定应该写成 $v_i=(a_i^{\ 1},\ldots,a_i^{\ n})$）。现在我们愿照熟知的行列式记号之值
+\[
+ \det A=T(v_1,\ldots,v_n),
+\]
+它就是一个反对称张量作用于这 $n$ 个向量之值（互换行列式之两行将使之变号）。用初等方式定义行列式时要用到置换算子 $\sigma$，每个置换（substitution, permutation）都是若干个对换（transposition）之积，如果是否奇数（偶数）个，则称为奇（偶）置换，从而可以定义 $\sigma$ 之符号函数
+\[
+ \operatorname{sgn}\sigma=
+ \begin{cases}
+ +1,&\sigma\text{ 为偶置换},\\
+ -1,&\sigma\text{ 为奇置换}.
+ \end{cases}
+\]
+有了 $\sigma$ 和 $\operatorname{sgn}\sigma$ 以后，张量的对称性和反对称性可以陈述如下：
+
+\noindent\textbf{定义4}
+设 $T\in\mathcal T^r(\mathbb R^n)$，如果对任意置换 $\sigma$ 以及任意 $r$ 个向量 $v_1,\ldots,v_r$，分别有
+\begin{align}
+ T(v_1,\ldots,v_r)&=T(v_{\sigma(1)},\ldots,v_{\sigma(r)}),\tag{20a}\\
+ T(v_1,\ldots,v_r)&=\operatorname{sgn}\sigma\cdot T(v_{\sigma(1)},\ldots,v_{\sigma(r)}),\tag{20b}
+\end{align}
+就相应称 $T$ 为对称与反对称张量。
+
+(19)和(20)的一致性是明显的。对称张量我们搁置一旁，重要的是反对称张量。所有 $r$ 阶反对称张量构成 $r$ 阶张量作为线性空间的子空间，记为 $\Lambda^r(\mathbb R^n)$：$\Lambda^r(\mathbb R^n)\subset\mathcal T^r(\mathbb R^n)$。每一个 $r$ 阶张量均可反对称化，具体说我们要引进一个反对称化（或称交代化）算子（alternating operator）
+\[
+ \operatorname{Alt}:\mathcal T^r(\mathbb R^n)\longrightarrow\Lambda^r(\mathbb R^n),
+\]
+\begin{equation}
+ \operatorname{Alt}(T)(v_1,\ldots,v_r)
+ =\frac1{r!}\sum_\sigma\operatorname{sgn}\sigma\,
+ T(v_{\sigma(1)},\ldots,v_{\sigma(r)}).
+ \tag{21}
+\end{equation}
+而有
+
+\noindent\textbf{定理1}
+$\operatorname{Alt}:\mathcal T^r(V)\to\Lambda^r(V)$ 是一个投影算子。
+
+\noindent\textbf{证}
+我们要证明的是：$\operatorname{Alt}$ 是一个满射，而且 $\operatorname{Alt}^2=\operatorname{Alt}$。先要注意，如果 $T$ 已经是反对称算子了，则 $\operatorname{Alt}(T)=T$。事实上这时由(20)式知(21)之每一项均等于 $T(v_1,\ldots,v_r)$，因此
+\begin{equation}
+ \operatorname{Alt}(T)(v_1,\ldots,v_r)
+ =\frac1{r!}\sum_\sigma\operatorname{sgn}\sigma\,
+ T(v_{\sigma(1)},\ldots,v_{\sigma(r)})
+ =T(v_1,\ldots,v_r).
+ \tag{22}
+\end{equation}
+这就是说，在 $\Lambda^r(\mathbb R^n)$ 上，$\operatorname{Alt}$ 其实是恒等算子：$\operatorname{Alt}^2=\operatorname{Alt}$。(21)式中要有一个因子 $1/r!$ 的作用就在于此。
+
+再证 $\operatorname{Alt}$ 是满射。为此先证对任意 $T\in\mathcal T^r(\mathbb R^n)$，$\operatorname{Alt}(T)\in\Lambda^r(\mathbb R^n)$。为此取任意置换 $\tau$ 以及 $r$ 个向量 $v_1,\ldots,v_r$，从简单的代数考虑知道 $\operatorname{sgn}(\sigma\tau)=\operatorname{sgn}\sigma\cdot\operatorname{sgn}\tau$，所以
+\begin{align*}
+ \operatorname{Alt}(T)(v_{\tau(1)},\ldots,v_{\tau(r)})
+ &=\frac1{r!}\sum_\sigma\operatorname{sgn}\sigma\,
+ T(v_{\tau\sigma(1)},\ldots,v_{\tau\sigma(r)})\\
+ &=\frac{\operatorname{sgn}\tau}{r!}\sum_{\sigma'}\operatorname{sgn}\sigma'\,
+ T(v_{\sigma'(1)},\ldots,v_{\sigma'(r)})\\
+ &=\operatorname{sgn}\tau\,\operatorname{Alt}(T)(v_1,\ldots,v_r).
+\end{align*}
+所以 $\operatorname{Alt}(T)\in\Lambda^r(\mathbb R^n)$，或写作 $\operatorname{Alt}(\mathcal T^r(\mathbb R^n))\subset\Lambda^r(\mathbb R^n)$。但是(22)告诉我们，在 $\Lambda^r(\mathbb R^n)$ 上，$\operatorname{Alt}$ 实际上是恒等算子，所以
+\[
+ \Lambda^r(\mathbb R^n)=\operatorname{Alt}\Lambda^r(\mathbb R^n)
+ \subset \operatorname{Alt}(\mathcal T^r(\mathbb R^n))\subset\Lambda^r(\mathbb R^n),
+\]
+而此式中所有的“$\subset$”均可写为“$=$”。特别是
+\[
+ \operatorname{Alt}(\mathcal T^r(\mathbb R^n))=\Lambda^r(\mathbb R^n).
+\]
+这样就得到 $\operatorname{Alt}$ 是满射而定理证毕。
+
+$\Lambda^r(\mathbb R^n)$ 作为线性空间是 $\mathcal T^r(\mathbb R^n)$ 的子空间，这是几乎自明的事。下面略去其证明。但是张量还有一种乘法运算：张量积 $\otimes$，若 $T\in\Lambda^r(\mathbb R^n)$，$S\in\Lambda^s(\mathbb R^n)$，$T\otimes S$ 显然不一定仍是反对称的。这就是说，$\otimes$ 不使 $\Lambda^r(\mathbb R^n)$ 封闭。我们还需要另一种乘法，外积。其定义如下：
+
+\noindent\textbf{定义5}
+若 $T\in\Lambda^r(\mathbb R^n)$，$S\in\Lambda^s(\mathbb R^n)$，定义其外积 $T\wedge S\in\Lambda^{r+s}(\mathbb R^n)$ 如下：
+\begin{equation}
+ T\wedge S=\frac{(r+s)!}{r!s!}\operatorname{Alt}(T\otimes S).
+ \tag{23}
+\end{equation}
+
+\noindent\textbf{定理2}
+外积是双线性的、结合的。
+
+\noindent\textbf{证}
+外积的双线性很容易证，在此略去。我们来证明其结合性。除了定义5中的 $T,S$ 外，再加上 $R\in\Lambda^t(\mathbb R^n)$，我们来证明
+\[
+ T\wedge(S\wedge R)=(T\wedge S)\wedge R.
+\]
+为此我们把记号简化一下：用 $\sigma$ 表示 $(1,2,\ldots,r+s+t)$ 的置换，用 $\tau$ 表示 $(1,2,\ldots,r+s+t)$ 中最后 $t$ 个数不动的置换，即只在 $(1,2,\ldots,r+s)$ 中作置换。指标为 $r+s+j,j=1,2,\ldots,t$ 的都不变。这样 $\tau$ 与 $(1,2,\ldots,r+s)$ 之置换 $\sigma'$ 具有相同的符号函数：$\operatorname{sgn}\tau=\operatorname{sgn}\sigma'$。于是
+\begin{align*}
+ &\operatorname{Alt}[\operatorname{Alt}(T\otimes S)\otimes R](v_1,\ldots,v_{r+s+t})\\
+ &=\frac1{(r+s+t)!}\sum_\sigma\operatorname{sgn}\sigma\,
+ \operatorname{Alt}(T\otimes S)(v_{\sigma(1)},\ldots,v_{\sigma(r+s)})
+ R(v_{\sigma(r+s+1)},\ldots,v_{\sigma(r+s+t)})\\
+ &=\frac1{(r+s+t)!(r+s)!}\sum_\sigma\sum_\tau
+ \operatorname{sgn}(\sigma\tau)
+ T(v_{\sigma\tau(1)},\ldots,v_{\sigma\tau(r)})\\
+ &\qquad\qquad\cdot S(v_{\sigma\tau(r+1)},\ldots,v_{\sigma\tau(r+s)})
+ R(v_{\sigma(r+s+1)},\ldots,v_{\sigma(r+s+t)}).
+\end{align*}
+这里我们记 $\varphi=\sigma\tau$，而因 $\tau$ 保持 $(r+s+1,\ldots,r+s+t)$ 之次序不变，故 $\sigma(r+s+j)=\sigma\tau(r+s+j)$，$j=1,\ldots,t$。但是上式中 $\sigma$ 遍取 $(1,2,\ldots,r+s+t)$ 之一切排列时，$\varphi$ 也遍取 $(1,2,\ldots,r+s+t)$ 之一切排列，所以以上式进一步又可化为
+\begin{align*}
+ &\frac1{(r+s)!}\sum_\tau\frac1{(r+s+t)!}\sum_\varphi\operatorname{sgn}\varphi\,
+ T(v_{\varphi(1)},\ldots,v_{\varphi(r)})\\
+ &\qquad\cdot S(v_{\varphi(r+1)},\ldots,v_{\varphi(r+s)})
+ R(v_{\varphi(r+s+1)},\ldots,v_{\varphi(r+s+t)})\\
+ &=\frac1{(r+s)!}\sum_\tau \operatorname{Alt}(T\otimes S\otimes R)(v_1,\ldots,v_{r+s+t})\\
+ &=\operatorname{Alt}(T\otimes S\otimes R)(v_1,\ldots,v_{r+s+t}).
+\end{align*}
+所以
+\[
+ \operatorname{Alt}(T\otimes S\otimes R)
+ =\operatorname{Alt}[\operatorname{Alt}(T\otimes S)\otimes R].
+\]
+而由定义5
+\begin{align*}
+ \operatorname{Alt}(T\otimes S\otimes R)
+ &=\frac{r!s!t!}{(r+s+t)!}(T\wedge S\wedge R),\\
+ \operatorname{Alt}[\operatorname{Alt}(T\otimes S)\otimes R]
+ &=\frac{r!s!}{(r+s)!}\cdot\frac{(r+s)!t!}{(r+s+t)!}[(T\wedge S)\wedge R]\\
+ &=\frac{r!s!t!}{(r+s+t)!}[(T\wedge S)\wedge R].
+\end{align*}
+同样的推理得知，它也应该等于 $\frac{r!s!t!}{(r+s+t)!}[T\wedge(S\wedge R)]$，所以
+\[
+ (T\wedge S)\wedge R=T\wedge(S\wedge R).
+\]
+我们可以把这个公共值定义为 $T\wedge S\wedge R$，由此还可以进一步得到
+
+\noindent\textbf{推论3}
+设 $T_i\in\Lambda^{r_i}(\mathbb R^n),i=1,2,\ldots,k$，则可以定义 $T_1\wedge\cdots\wedge T_k\in\Lambda^{r_1+\cdots+r_k}(\mathbb R^n)$，而且
+\begin{equation}
+ T_1\wedge T_2\wedge\cdots\wedge T_k
+ =\frac{(r_1+r_2+\cdots+r_k)!}{r_1!r_2!\cdots r_k!}
+ \operatorname{Alt}(T_1\otimes\cdots\otimes T_k).
+ \tag{24}
+\end{equation}
+
+定理2证明了外积是结合的，那么它是不是可交换的？实际上它既不如 $A\times B$ 那样是反交换的：$B\times A=-A\times B$，更不是交换的，而有
+
+\noindent\textbf{定理4}
+若 $T\in\Lambda^r(\mathbb R^n),S\in\Lambda^s(\mathbb R^n)$，则
+\begin{equation}
+ T\wedge S=(-1)^{rs}S\wedge T.
+ \tag{25}
+\end{equation}
+
+\noindent\textbf{证}
+我们只需证明
+\[
+ \operatorname{Alt}(T\otimes S)=(-1)^{rs}\operatorname{Alt}(S\otimes T)
+\]
+即可。为此取 $r+s$ 个向量 $v_1,\ldots,v_r,v_{r+1},\ldots,v_{r+s}$，有
+\begin{align*}
+ &\operatorname{Alt}(T\otimes S)(v_1,\ldots,v_{r+s})\\
+ &\quad=\frac1{(r+s)!}\sum_\sigma\operatorname{sgn}\sigma\,
+ T(v_{\sigma(1)},\ldots,v_{\sigma(r)})\\
+ &\qquad\qquad\cdot S(v_{\sigma(r+1)},\ldots,v_{\sigma(r+s)}).
+\end{align*}
+考虑一个特殊的置换 $\tau:(1,\ldots,r,r+1,\ldots,r+s)\mapsto(r+1,\ldots,r+s,1,\ldots,r)$，即将后 $s$ 个元换成前 $r$ 个元。例如把 $r+1$ 变成1，为此 $r+1$ 需要跨过 $1,\ldots,r$ 等 $r$ 个元，因而需要 $r$ 个对换，$r+2$ 变成2，这又要 $r$ 个对换，直到 $r+s$ 变成 $s$，共需 $rs$ 个对换，故 $\operatorname{sgn}\tau=(-1)^{rs}$，而上式成为
+\begin{align*}
+ &\operatorname{Alt}(T\otimes S)(v_1,\ldots,v_{r+s})\\
+ &\quad=\frac1{(r+s)!}\sum_\sigma\operatorname{sgn}\sigma(\operatorname{sgn}\tau)^2
+ S(v_{\sigma\tau(1)},\ldots,v_{\sigma\tau(s)})\\
+ &\qquad\qquad\cdot T(v_{\sigma\tau(s+1)},\ldots,v_{\sigma\tau(r+s)})\\
+ &\quad=\frac{\operatorname{sgn}\tau}{(r+s)!}\sum_\sigma\operatorname{sgn}(\sigma\tau)
+ S(v_{\sigma\tau(1)},\ldots,v_{\sigma\tau(s)})\\
+ &\qquad\qquad\cdot T(v_{\sigma\tau(s+1)},\ldots,v_{\sigma\tau(r+s)})\\
+ &\quad=(-1)^{rs}\operatorname{Alt}(S\otimes T)(v_1,\ldots,v_{r+s}).
+\end{align*}
+定理证毕。
+
+外积之分配律是自明的：
+\begin{equation}
+ T\wedge(S_1+S_2)=T\wedge S_1+T\wedge S_2,
+ \qquad (T_1+T_2)\wedge S=T_1\wedge S+T_2\wedge S.
+ \tag{26}
+\end{equation}
+至此我们看到，$\Lambda^r(\mathbb R^n)$ 是一个线性空间，而 $\bigcup\Lambda^r(\mathbb R^n)$ 对于外积成为一个代数。它服从结合律，但不服从交换律（但又不是反交换的），现在余下的是求出 $\Lambda^r(\mathbb R^n)$ 的维数和基底。这里也附带提到，$\Lambda^0(\mathbb R^n)=\mathcal T^0(\mathbb R^n)\cong\mathbb R$。关于 $\Lambda^r(\mathbb R^n)$ 的维数和基底我们有
+
+\noindent\textbf{定理5}
+当 $r>n$ 时，$\Lambda^r(\mathbb R^n)=\{0\}$，即为零维空间；若 $0\le r\le n$，则
+\[
+ \dim\Lambda^r(\mathbb R^n)=\binom nr,
+\]
+而若 $\{\omega^1,\ldots,\omega^n\}$ 为 $\Lambda^1(\mathbb R^n)=\mathcal T^1(\mathbb R^n)$ 之基底，则 $\Lambda^r(\mathbb R^n)$ 的基底是
+\begin{equation}
+ \{\omega^{i_1}\wedge\cdots\wedge\omega^{i_r};\ 1\le i_1<i_2<\cdots<i_r\le n\}.
+ \tag{27}
+\end{equation}
+
+\noindent\textbf{证}
+令 $\{e_1,\ldots,e_n\}$ 为 $\mathbb R^n$ 的一个基底。若 $r>n$，任取 $e_{i_1},\ldots,e_{i_r}$，其中必有重复者，例如 $e_{i_1}=e_{i_2}$，这时考虑 $\operatorname{Alt}T(e_{i_1},\ldots,e_{i_r})$，因为 $\operatorname{Alt}T$ 是反对称的，故交换两个相同的变元后数值变号而又不变，所以只能为0。于是 $\Lambda^r(\mathbb R^n)$ 之一切元素均为0，而 $\dim\Lambda^r(\mathbb R^n)=0$。
+
+今设 $0\le r\le n$，$\mathcal T^r(\mathbb R^n)$ 之基底是 $\{\omega^{i_1}\otimes\cdots\otimes\omega^{i_r}\}$，这里 $\{\omega^1,\ldots,\omega^n\}\subset(\mathbb R^n)^*$ 是 $\{e_1,\ldots,e_n\}$ 的对偶基。于是 $\Lambda^r(\mathbb R^n)$ 之元必为 $\operatorname{Alt}(\omega^{i_1}\otimes\cdots\otimes\omega^{i_r})$ 之线性组合。现在把 $i_1,\ldots,i_r$ 按大小重排为 $j_1<j_2<\cdots<j_r$（若 $i_1,\ldots,i_r$ 中有相同者前已得知 $\operatorname{Alt}(\omega^{i_1}\otimes\cdots\otimes\omega^{i_r})=0$），而
+\[
+ \operatorname{Alt}(\omega^{i_1}\otimes\cdots\otimes\omega^{i_r})
+ =\pm\operatorname{Alt}(\omega^{j_1}\otimes\cdots\otimes\omega^{j_r}).
+\]
+这样对任意 $T\in\mathcal T^r(\mathbb R^n)$，$\operatorname{Alt}T$ 必可表示为 $\{\omega^{i_1}\wedge\cdots\wedge\omega^{i_r};i_1<\cdots<i_r\}$ 之线性组合。即是说 $\Lambda^r(\mathbb R^n)$ 由它们张成。但是 $\{\omega^{i_1}\wedge\cdots\wedge\omega^{i_r}\}$ 是线性无关的，因为若有
+\[
+ a_{i_1\cdots i_r}\omega^{i_1}\wedge\cdots\wedge\omega^{i_r}=0,
+\]
+把这个张量作用到 $\{e_{k_1},\ldots,e_{k_r}\}$ 上去，即有 $a_{k_1\cdots k_r}=0$。所以 $\{\omega^{i_1}\wedge\cdots\wedge\omega^{i_r}\}$ 是基底。这个基底中元素的个数是由 $n$ 个事物中取 $r$ 个的组合数 $\binom nr$（$\mathcal T^r(\mathbb R^n)$ 之一基底是 $\omega^{i_1}\otimes\cdots\otimes\omega^{i_r}$，这里 $i_1,\ldots,i_r$ 次序不受限制，所以其中所含元素的个数是 $n$ 中取 $r$ 的排列数 $(n)_r=n(n-1)\cdots(n-r+1)=r!\binom nr$）。至此 $\dim\Lambda^r(\mathbb R^n)=\binom nr$。其实，证明的前一部分，也可归入这里，因为当 $r>n$ 时，由定义 $\binom nr=0$。
+
+再回来作代数 $\bigcup\Lambda^r(\mathbb R^n)$。现在知道它应写为
+\[
+ \Lambda(\mathbb R^n)=\bigcup_{r=0}^n\Lambda^r(\mathbb R^n),
+\]
+而其维数为 $\sum_{r=0}^n\binom nr=2^n$。这个代数称为 $\mathbb R^n$ 上的外代数或格拉斯曼代数（Grassmann algebra），$\Lambda^r(\mathbb R^n)$ 中的元称为 $r$ 向量。
+
+这里附带还可以解决一个问题。在 $\mathbb R^n$ 中任取 $r$ 个向量，问它们在什么时候线性相关？因为 $\mathbb R^n\cong(\mathbb R^n)^*$，不妨认为这 $r$ 个向量 $\omega^1,\ldots,\omega^r\in(\mathbb R^n)^*$，于是可以作出 $\omega^1\wedge\cdots\wedge\omega^r$。如果它们是线性相关的，则例如
+\[
+ \omega^r=\sum_{k=1}^{r-1}C_k\omega^k,
+\]
+则
+\[
+ \omega^1\wedge\cdots\wedge\omega^r
+ =\sum_{k=1}^{r-1}C_k\omega^1\wedge\cdots\wedge\omega^{r-1}\wedge\omega^k,
+\]
+右方每一项中 $\omega^k$ 至少出现两次，但由上面已证明 $\omega^k\wedge\omega^k=0$，知上式右方每一项均为0，所以 $\omega^1\wedge\cdots\wedge\omega^r=0$。反之，设它们是线性无关的，则由线性代数中的定理，一定可以把它们扩充成为 $(\mathbb R^n)^*$ 的一个基底。于是 $\omega^1\wedge\cdots\wedge\omega^r$ 是 $\Lambda^r(\mathbb R^n)$ 基底的一个元，它当然不会为0，由此得到
+
+\noindent\textbf{推论6}
+$n$ 维向量 $\omega^1,\ldots,\omega^r$ 为线性相关的充分必要条件是
+\begin{equation}
+ \omega^1\wedge\cdots\wedge\omega^r=0.
+ \tag{28}
+\end{equation}
+
+其实这里的证明与行列式为0的充要条件是其各行线性相关的证明是一致的；也与 $n$ 个向量线性相关的充分必要条件是其构成的 $n$ 维平行体的体积为0是一致的。
+
+至此要问，我们在格拉斯曼所指出的道路上走了多远？按格拉斯曼的思想，我们已将各种几何量构成了格拉斯曼代数
+\[
+ \Lambda(\mathbb R^n)=\bigcup_{r=0}^n\Lambda^r(\mathbb R^n).
+\]
+它是一个分级代数：$\Lambda^0(\mathbb R^n)$ 就是实数域 $\mathbb R$，$\Lambda^1(\mathbb R^n)$ 就是向量空间 $\mathbb R^n$（我们暂时不区分协变与逆变向量，因为二者之区别无非其一在对偶空间中，而 $(\mathbb R^n)^*\cong\mathbb R^n$），$\Lambda^1(\mathbb R^n)$ 中的元可以用 $1\times n$ 矩阵表示，
+\[
+ G_n^1=(x^1,x^2,\ldots,x^n),
+\]
+它的每一个分量即 $1\times1$ 子式恰好是这个向量在各个坐标轴上的投影。再看 $\Lambda^2(\mathbb R^n)$，它的元是以下形式的2向量之线性组合：$u^1\wedge u^2$，如果 $u^i$ 的分量是 $(u^i_1,\ldots,u^i_n)$，则这个2向量可以用 $2\times n$ 矩阵
+\[
+ G_n^2=\begin{pmatrix}
+ u^1_1&u^1_2&\cdots&u^1_n\\
+ u^2_1&u^2_2&\cdots&u^2_n
+ \end{pmatrix}
+\]
+来表示，它的所有的2阶子式
+\[
+ \begin{vmatrix}u^1_i&u^1_j\\u^2_i&u^2_j\end{vmatrix}=u^1_iu^2_j-u^1_ju^2_i
+\]
+恰好是 $u^1,u^2$ 这两个向量是在 $x^ix^j$ 坐标平面上的投影形成的平行四边形的面积，而我们可以把 $G_n^2$ 与下式对应
+\[
+ G_n^2\cong\sum_{i<j}(u^1_iu^2_j-u^1_ju^2_i)e_i\wedge e_j.
+\]
+所以我们就说 $G_n^2$ 是 $u^1,u^2$ 这两个向量所成的平行四边形之面积。读者不要以为这只是一个方便的说法，$u^1,u^2$ 尽管是 $n$ 维向量，但是以它们为基底（当然我们假设 $u^1,u^2$ 不平行，否则上面的讨论就会落了空），确实成为一个2维空间。它确实是平面而不只是像平面。我们中学里学过的平面几何定理（例如三角形的重心定理）在此全都成立，只不过有一些定理需要引入欧氏结构才能证明，如勾股定理。$\Lambda^2_n(\mathbb R^n)$ 的表示法与通常微积分教本中讲的向量 $\overrightarrow{OA}=(a_1,a_2,a_3)$ 与 $\overrightarrow{OB}=(b_1,b_2,b_3)$ 之向量积 $\overrightarrow{OA}\times\overrightarrow{OB}$ 的表示法完全一致：
+\[
+ \overrightarrow{OA}\times\overrightarrow{OB}
+ =\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\a_1&a_2&a_3\\b_1&b_2&b_3\end{vmatrix}
+ =(a_2b_3-a_3b_2)\mathbf i+(a_3b_1-a_1b_3)\mathbf j+(a_1b_2-a_2b_1)\mathbf k.
+\]
+只需把 $\mathbf i,\mathbf j,\mathbf k$ 分别换成 $\mathbf j\wedge\mathbf k,\mathbf k\wedge\mathbf i,\mathbf i\wedge\mathbf j$ 即可。同样，$\Lambda^3_n(\mathbb R^n)$ 对应于 $3\times n$ 矩阵，它构成通常的3维空间，过去学过的初等的立体几何在此都有有效。
+
+最值得注意的是 $\Lambda^n_n(\mathbb R^n)$。$\dim\Lambda^n_n(\mathbb R^n)=1=\dim\Lambda^0_n(\mathbb R^n)$。$\Lambda^0_n(\mathbb R^n)$ 中之元是实数。$\Lambda^n_n(\mathbb R^n)$ 之元是什么？上面已经说了 $\Lambda^n_n(\mathbb R^n)$ 是 $n$ 阶反对称协变张量之空间。取 $\mathbb R^n$ 之任一基底 $\{e_1,\ldots,e_n\}$，则其对偶基 $\{e^1,\ldots,e^n\}$ 是 $(\mathbb R^n)^*$ 之一个基底，而 $e^1\wedge\cdots\wedge e^n$ 是 $\Lambda^n_n(\mathbb R^n)$ 的基底。张量成分则是 $\omega_{1,2,\ldots,n}$，只要看一下它们在 $\mathbb R^n$ 的基底即标架的变换下如何变换就可以知道 $\Lambda^n_n(\mathbb R^n)$ 中的元究竟是什么了。于是设在 $\mathbb R^n$ 中作基底的变换(1)：
+\[
+ f_i=a_i^{\ j}e_j,\qquad\{f\}=A\{e\}.
+\]
+于是 $\{e_i\}$ 之对偶基将按逆步变换变成 $\{f_i\}$ 之对偶基
+\[
+ \{e^i\}=a_j^{\ i}\{f^j\},\qquad \{e^i\}={}^tA\{f^i\}.
+\]
+以下我们记逆步矩阵 $\,{}^tA^{-1}=B=(b_i^{\ j})$。于是有
+
+\noindent\textbf{定理7}
+在上述变换下
+\begin{align}
+ \widetilde\omega_{1,2,\ldots,n}&=\det(a_i^{\ j})\,\omega_{1,2,\ldots,n},\tag{29}\\
+ f^1\wedge\cdots\wedge f^n&=\det(b_i^{\ j})\,e^1\wedge\cdots\wedge e^n.
+ \tag{30}
+\end{align}
+这里 $\widetilde\omega_{1,2,\ldots,n}$ 是张量成分在基底 $\{f_i\}$ 下的表示。
+
+\noindent\textbf{证}
+因为 $\omega_{1,2,\ldots,n}$ 是协变张量成分，故
+\begin{align*}
+ \widetilde\omega_{1,2,\ldots,n}
+ &=a_1^{\ j_1}\cdots a_n^{\ j_n}\omega_{j_1,\ldots,j_n}\\
+ &=\sum_\sigma\operatorname{sgn}\sigma\,
+ a_1^{\ \sigma(1)}\cdots a_n^{\ \sigma(n)}\omega_{1,2,\ldots,n}\\
+ &=\det(a_i^{\ j})\omega_{1,2,\ldots,n}.
+\end{align*}
+这里 $\sigma$ 是变 $(1,2,\ldots,n)$ 为 $(j_1,j_2,\ldots,j_n)$ 之排列。
+
+其次，由 $f^i=b_j^{\ i}e^j$ 有
+\begin{align*}
+ f^1\wedge\cdots\wedge f^n
+ &=b_{j_1}^{\ 1}\cdots b_{j_n}^{\ n}e^{j_1}\wedge\cdots\wedge e^{j_n}\\
+ &=\sum_\sigma\operatorname{sgn}\sigma\,b_{\sigma(1)}^{\ 1}\cdots b_{\sigma(n)}^{\ n}
+ e^1\wedge\cdots\wedge e^n\\
+ &=\det(b_i^{\ j})e^1\wedge\cdots\wedge e^n.
+\end{align*}
+
+前面我们已经数次讲到空间 $\mathbb R^n$ 的定向，其实空间 $\mathbb R^n$ 的定向即给定一个基底的次序，例如 $\{e_1,\ldots,e_n\}$。对偶基 $\{e^1,\ldots,e^n\}$ 的相应次序，既可以认为是给出了 $(\mathbb R^n)^*$ 之定向也可以认为是给出了 $\mathbb R^n$ 的定向。所以若改变 $\{e^i\}$ 之次序为例如 $\{e^2,e^1,e^3,\ldots,e^n\}$，也可以认为 $\mathbb R^n$ 得到了相反的定向。但若对基底作一个变换，新基底的哪一种次序与给定次序的原基底所定义的定向一致？因此定义定向更好的办法是利用定理7：设有 $\mathbb R^n$ 的两个基底 $\{e_i\}$ 与 $\{f_i\}$，自然存在一个非奇异的线性变换 $A=(a_i^{\ j})$ 使(1)成立，因而可以为 $\{f_i\}$ 是 $\{e_i\}$ 的变换。若相应的 $\omega$ 变为 $\widetilde\omega$，当有(29)成立。这里 $\det(a_i^{\ j})\ne0$。我们规定，若 $\det(a_i^{\ j})>0$（$<0$），就说 $\{e_i\}$ 与 $\{f_i\}$ 规定相同（相反）的定向。于是 $\mathbb R^n$ 有两个定向，分别对应于(29)中行列式 $\det(a_i^{\ j})$ 之符号正负。
+
+至今我们还没有在 $\mathbb R^n$ 中引入度量。度量引入外代数以后会得到什么？我们所需的度量（包括欧氏度量以及十分重要的洛伦兹度量），基础在于定义两个向量的内积 $\langle u,v\rangle$。对内积有两个要求：1. 双线性：即对 $u,v$ 分别均为线性的；2. 对称性：$\langle u,v\rangle=\langle v,u\rangle$；3. 本应加上正定性，但是我们刻意地要推广这一点。设有 $\mathbb R^n$ 的基底 $\{e_i\}$，使 $u=u^ie_i,v=v^je_j$，则记
+\begin{equation}
+ \langle u,v\rangle=g_{ij}u^iv^j,
+ \qquad g_{ij}=\langle e_i,e_j\rangle.
+ \tag{31}
+\end{equation}
+通常讲到内积时都规定 $(g_{ij})$ 是正定矩阵，我们要放弃这一点，其原因在于物理学发展到麦克斯韦的电磁场理论以后就很清楚：必须把时间与空间统一起来看成一个4维时空连续统 $(x^0,x^1,x^2,x^3)$，$x^0=ct$，$c$ 是光速。它称为闵可夫斯基时空（Minkowski space-time）记作 $M_4$，它是一个线性空间，当然也就是一个微分流形。但是在 $M_4$ 上不能使用欧几里得度量，因为这不能说明物理问题。我们需要的是如下的洛伦兹度量（Lorentz metric）
+\begin{equation}
+ ds^2=(dx^0)^2-(dx^1)^2-(dx^2)^2-(dx^3)^2.
+ \tag{32}
+\end{equation}
+现在 $(g_{ij})=\operatorname{diag}(1,-1,-1,-1)$ 不是正定的，所以洛伦兹度量不是某种黎曼度量而时常说是一种伪黎曼度量（pseudo-Riemannian metric）。引入洛伦兹度量以研究 $M_4$ 是相对论的基础，相对论的出现是科学史上划时代的大事，所以我们宁可多一些麻烦也放弃 $(g_{ij})$ 正定的要求。代替它，我们要求相应于内积(31)的 $(g_{ij})$ 必须是非蜕化的：$\det(g_{ij})\ne0$。放弃正定性会带来一些麻烦。例如我们也讲 o.n. 系：对两个向量 $u,v$ 若 $\langle u,v\rangle=0$ 就说 $u,v$ 正交，这一点和过去一样，若再能找一个实数 $c$，使 $cu$ 适合 $\langle cu,cu\rangle=c^2\langle u,u\rangle=1$，则以 $cu=u/\langle u,u\rangle^{1/2}$ 代替 $u$ 将得到长为1的向量。在 $(g_{ij})$ 非正定时，可能 $\langle u,u\rangle<0$（这在相对论中有明确的物理意义），从而 $c=\langle u,u\rangle^{-1/2}$ 成为虚数！因此 $u$ 不能规范化。所以现在 o.n. 系之定义中 $\langle u,u\rangle=1$ 的条件将代以 $|\langle u,u\rangle|=1$。尽管有了这样的麻烦，但一个最重要的性质仍得以保存：在 $\mathbb R^n$ 与 $(\mathbb R^n)^*$ 中可以建立同构 $\mathbb R^n\cong(\mathbb R^n)^*$ 如下：设有 $\mathbb R^n$ 的一个基底 $\{e_1,\ldots,e_n\}$ 与它在 $(\mathbb R^n)^*$ 中的对偶基 $\{\omega^1,\ldots,\omega^n\}$，对于 $\mathbb R^n\ni u=u^ie_i$，我们要找 $(\mathbb R^n)^*$ 中的一个元 $u^*=u_i\omega^i$ 使对任意 $v\in\mathbb R^n,v=v^je_j$，有
+\[
+ u^*(v)=\langle u,v\rangle=g_{ij}u^iv^j.
+\]
+但是左式就是 $u_jv^j$，因此为了能建立 $u^*$ 与 $u$ 之一一对应，只需要
+\[
+ g_{ij}u^i=u_j
+\]
+为一同构即可。为了使上式成为同构，必要充分条件是 $(g_{ij})$ 非蜕化，而不是正定。
+
+为了要解上面的方程就应引入 $(g_{ij})$ 之逆矩阵 $(g^{ij})$。这里非常重要的是看到 $(g_{ij})$ 是一个二阶对称协变张量，而 $(g^{ij})$ 则是一个二阶对称逆变张量。我们可以用内积应与坐标的选择无关来证明 $(g_{ij})$ 是一个二阶对称协变张量。§1中我们已经就几个实例——如动能应该与坐标无关、$ds^2$ 应该与坐标无关等——看到了这一点。现在则一般地利用(31)式来证明它。于是设有 $\mathbb R^n$ 的两个基底 $\{e_1,\ldots,e_n\}$ 与 $\{f_1,\ldots,f_n\}$ 且 $f_i=a_i^{\ k}e_k$，这两个坐标系中度量矩阵分别为 $(g_{ij})$，$(\widetilde g_{ij})$，$g_{ij}=\langle e_i,e_j\rangle$ 与 $\widetilde g_{ij}=\langle f_i,f_j\rangle$。如果向量 $u,v$ 在这两个基底下的坐标分别为 $(u^i),(v^i)$ 与 $(\widetilde u^i),(\widetilde v^i)$，则由内积与坐标无关可得
+\[
+ \langle u,v\rangle=g_{ij}u^iv^j
+ =\widetilde g_{kl}\widetilde u^k\widetilde v^l
+ =(\widetilde g_{kl}a_i^{\ k}a_j^{\ l})u^iv^j.
+\]
+因为这个等式对任意 $(u^i),(v^j)$ 都成立，故有
+\[
+ g_{ij}=\widetilde g_{kl}a_i^{\ k}a_j^{\ l}.
+\]
+而知 $(g_{ij})$ 是二阶协变张量。类似地，利用 $(g^{ij})=(g_{ij})^{-1}$，即 $g^{ik}g_{kj}=\delta^i_j$，可证明 $(g^{ij})$ 是一个二阶对称逆变张量。通过计算逆矩阵容易看到，对于洛伦兹度量，有 $g_{00}=g^{00}=1,g_{ij}=g^{ij}=-\delta_{ij},g^0_i=g_i^0=0\ (i\ne0)$。
+
+$(g_{ij})$ 与 $(g^{ij})$ 还有一个重要作用，即可利用它们来实现协变张量与逆变张量的互换。例如，令 $\{e_1,\ldots,e_n\}$ 是 $\mathbb R^n$ 的一个基底，则令 $e^i=g^{ij}e_j$，易证 $\{e^1,\ldots,e^n\}$ 是 $(\mathbb R^n)^*$ 的一个基底，特别重要的是，若 $\{e_1,\ldots,e_n\}$ 是一个关于 $(g_{ij})$ 的 o.n. 系，则 $\{e^1,\ldots,e^n\}$ 是其对偶基底，事实上
+\[
+ \langle e^i,e_j\rangle=g^{ik}\langle e_k,e_j\rangle=g^{ik}g_{kj}=\delta^i_j.
+\]
+在§1中我们常将 $(\mathbb R^n)^*$ 之基底记为 $\{\omega^1,\ldots,\omega^n\}$，下面当 $\{e_1,\ldots,e_n\}$ 是 o.n. 系时我们不再用 $\{\omega^i\}$ 的记号而用 $\{e^i\}$。不过要注意，当基底 $\{e_i\}$ 按(1)变换时，$\{e^i\}$ 一般并不按逆步变换而变。
+
+最重要的是要研究，当 $\mathbb R^n$ 中赋有非蜕化的度量 $(g_{ij})$ 时，$\Lambda^n(\mathbb R^n)$ 的基底 $e^1\wedge\cdots\wedge e^n$ 有何具体特征。首先我们要注意，若取 $\mathbb R^n$ 之基底 $\{e_1,\ldots,e_n\}$ 为关于 $(g_{ij})$ 的 o.n. 系，因为 $\langle e_i,e_j\rangle=\pm\delta_{ij}$，故由(31)
+\[
+ \det(g_{ij})=\det(\langle e_i,e_j\rangle)=\pm1.
+\]
+现在令基底按(1)实行变换，度量 $(g_{ij})$ 若变为 $(\widetilde g_{ij})$，则因 $(g_{ij})$ 是二阶协变张量，故
+\[
+ \widetilde g_{ij}=a_i^{\ k}a_j^{\ l}g_{kl},
+\]
+因此
+\[
+ \widetilde g=\det(\widetilde g_{ij})=[\det(a_i^{\ j})]^2\det(g_{ij})=(\det A)^2g.
+\]
+如果我们限制变换(1)要保持定向不变，从而 $\det A>0$，则当 $\{f_1,\ldots,f_n\}$ 是 o.n. 系，从而 $|\widetilde g|=1$ 时，
+\[
+ 1=\sqrt{|g|}\det A,\qquad \sqrt{|g|}=\det(A^{-1}).
+\]
+引用定理7之第二式，立即有
+\begin{equation}
+ f^1\wedge\cdots\wedge f^n
+ =\det(b_i^{\ j})e^1\wedge\cdots\wedge e^n
+ =\sqrt{|g|}\,e^1\wedge\cdots\wedge e^n.
+ \tag{33}
+\end{equation}
+这是一个很重要的不变式，它告诉我们不论基底 $\{e_1,\ldots,e_n\}$ 如何取，只要以一个 o.n. 系的基底 $\{f_1,\ldots,f_n\}$ 为准而且保持定向不变，(33)式右方之值不变。把这些结果总结起来，我们有
+
+\noindent\textbf{定义6}
+设 $\mathbb R^n$ 中有非蜕化的度量 $(g_{ij})$，以某一个关于 $(g_{ij})$ 的 o.n. 系基底为准，所有与它具有相同定向的基底 $\{e_1,\ldots,e_n\}$，
+\[
+ \sqrt{|g|}\,e^1\wedge\cdots\wedge e^n
+\]
+是不变的，称为 $\mathbb R^n$ 在此度量下的体积元（volume element）。
+
+\noindent\textbf{注}
+对于 $\mathbb R^n$ 的另一个定向，体积元自然是 $-\sqrt{|g|}\,e^1\wedge\cdots\wedge e^n$。
+
+以上我们看到，若 $\mathbb R^n$ 上有内积则必有非蜕化度量 $(g_{ij})$。反过来，有了 $(g_{ij})$ 也一定有内积 $\langle u,v\rangle$，而且适合(31)式。这时，$(\mathbb R^n)^*$ 上也可以定义内积：若 $u=u_i e^i,v=v_j e^j$ 则与(31)对偶，可以定义
+\begin{equation}
+ \langle u,v\rangle=g^{ij}u_iv_j.
+ \tag{34}
+\end{equation}
+总之，有了度量 $(g_{ij})$ 即也可在 $\Lambda^1(\mathbb R^n)$ 上定义内积，从而产生了一个问题：可否在 $\Lambda^p(\mathbb R^n),0\le p\le n$ 上都定义内积？事实上任取两个 $p$ 向量 $\omega=\omega^1\wedge\cdots\wedge\omega^p,\sigma=\sigma^1\wedge\cdots\wedge\sigma^p$，因为 $\Lambda^p(\mathbb R^n)$ 中之元都是 $p$ 向量之线性组合，所以只要能定义 $\langle\omega,\sigma\rangle=\langle\omega^1\wedge\cdots\wedge\omega^p,\sigma^1\wedge\cdots\wedge\sigma^p\rangle$，就可以在 $\Lambda^p(\mathbb R^n)$ 上定义内积。
+
+\noindent\textbf{定理8}
+若 $\mathbb R^n$ 赋有非蜕化的度量 $(g_{ij})$，则在 $\Lambda^p(\mathbb R^n),0\le p\le n$ 上可以定义两个 $p$ 向量 $\omega,\sigma$ 之内积为
+\begin{equation}
+ \langle\omega,\sigma\rangle
+ =\langle\omega^1\wedge\cdots\wedge\omega^p,
+ \sigma^1\wedge\cdots\wedge\sigma^p\rangle
+ =\det\bigl(\langle\omega^i,\sigma^j\rangle\bigr).
+ \tag{35}
+\end{equation}
+
+\noindent\textbf{证}
+(35)显然是(34)之推广。为了证明它是内积，只要证明以下各点即可。
+
+(i) $\langle\omega,\sigma\rangle=\langle\sigma,\omega\rangle$ 是自明的。
+
+(ii) 多重线性。因为 $\det(\langle\omega^i,\sigma^j\rangle)$ 对于例如 $\omega^i$ 或 $\sigma^j$ 均为线性的，所以 $\langle\omega,\sigma\rangle$ 对每一个 $\omega^i$ 与 $\sigma^j,1\le i,j\le p$，均为线性的。
+
+(iii) $\langle\lambda\omega,\sigma\rangle=\lambda\langle\omega,\sigma\rangle$ 是自明的。
+
+(iv) 非蜕化性。即应证明若对 $\forall\sigma\in\Lambda^p(\mathbb R^n)$ 均有 $\langle\omega,\sigma\rangle=0$，则 $\omega=0$。为证明这一点，注意到 $\omega^i,\sigma^i$ 均为 $\Lambda^1(\mathbb R^n)=(\mathbb R^n)^*$ 之元，在 $(\mathbb R^n)^*$ 中相对于 $(g_{ij})$ 取 o.n. 基底 $\{e^1,\ldots,e^n\}$，我们只要证明 $\{e^{i_1}\wedge\cdots\wedge e^{i_p}\},i_1<\cdots<i_p$ 是 $\Lambda^p(\mathbb R^n)$ 之 o.n. 系即可。如果证明到了这一点，则 $\{e^{i_1}\wedge\cdots\wedge e^{i_p}\}$ 是线性无关的，而因为 $\{e^{i_1}\wedge\cdots\wedge e^{i_p}\}$ 中含有 $\binom np$ 个元，$\binom np=\dim\Lambda^p(\mathbb R^n)$，所以 $\{e^{i_1}\wedge\cdots\wedge e^{i_p}\}$ 就成了 $\Lambda^p(\mathbb R^n)$ 之基底。于是非蜕化性就容易证明了。$\{e^{i_1}\wedge\cdots\wedge e^{i_p}\}$ 是 o.n. 系，证如下：
+\[
+ \langle e^{i_1}\wedge\cdots\wedge e^{i_p},e^{j_1}\wedge\cdots\wedge e^{j_p}\rangle
+ =\det(\langle e^{i_r},e^{j_s}\rangle).
+\]
+设 $i_1<i_2<\cdots<i_p,j_1<j_2<\cdots<j_p$。如果 $j_1<i_1$，则 $j_1< $ 一切 $i_s,1\le s\le p$，从而 $\langle e^{i_s},e^{j_1}\rangle=0$，即是说上式右方行列式有一列元素全为0，从而右方与左在此均为0，而只有在 $i_1=j_1$ 时，上式双方可以不为0。于是令 $i_1=j_1$，再看 $i_2$，这时已有 $j_2>j_1=i_1$，如果 $j_2<i_2<\cdots<i_p$，则 $\langle e^{i_s},e^{j_2}\rangle=0$。因此又只有当 $i_2$ 也与 $j_2$ 相等时上式双方可以不为0。仿此进行下去
+\[
+ \langle e^{i_1}\wedge\cdots\wedge e^{i_p},e^{j_1}\wedge\cdots\wedge e^{j_p}\rangle
+ =\begin{cases}
+ 0,&(i_1,\ldots,i_p)\ne(j_1,\ldots,j_p),\\
+ \det(\langle e^{i_r},e^{i_s}\rangle)=\det(\delta^r_s),&(i_1,\ldots,i_p)=(j_1,\ldots,j_p).
+ \end{cases}
+\]
+但因 $\langle e^{i_r},e^{i_r}\rangle=\pm1$，故当 $(i_1,\ldots,i_p)=(j_1,\ldots,j_p)$ 时式右方为一对角形行列式，其主对角线上之元为 $\pm1$，从而其值亦为 $\pm1$。准确些说，其值为 $(-1)^s$，$s$ 是基底中适合 $\langle e^i,e^i\rangle=-1$ 的元素之个数，定理证毕。
+
+上面我们已经看到，有了内积之后，就可以定义 $\mathbb R^n$ 与 $(\mathbb R^n)^*$ 之间同构。现在 $\Lambda^p(\mathbb R^n)$ 也有了内积，我们可以利用它来定义 $\Lambda^p(\mathbb R^n)$ 与 $\Lambda^{n-p}(\mathbb R^n)$ 的一个同构。事实上，若 $\omega\in\Lambda^{n-p}(\mathbb R^n)$，$\sigma\in\Lambda^p(\mathbb R^n)$ 则 $\omega\wedge\sigma\in\Lambda^n(\mathbb R^n)$，但 $\dim\Lambda^n(\mathbb R^n)=1$，其基底只含一个元，即体积元 $e^1\wedge\cdots\wedge e^n$。这里我们假设了 $\{e^1,\ldots,e^n\}$ 是此内积（度量）下的 o.n. 系基底，故
+\[
+ \omega\wedge\sigma=A(\omega,\sigma)e^1\wedge\cdots\wedge e^n.
+\]
+这里 $A(\omega,\sigma)$ 是一个实数，而且因为 $e^1\wedge\cdots\wedge e^n$ 与 $\omega,\sigma$ 无关，易见 $A(\omega,\sigma)$ 对 $\omega$ 与 $\sigma$ 是双线性的。如果固定 $\omega$，则 $A(\omega,\sigma)$ 是 $\sigma\in\Lambda^p(\mathbb R^n)$ 之线性泛函。但因 $\Lambda^p(\mathbb R^n)$ 上已有了内积，故必存在 $\Lambda^p(\mathbb R^n)$ 之一元 $*\omega$（这个元显然线性地依赖于 $\omega$），故有一个线性算子 $*$，使此元可记为 $*\omega$，使 $A(\omega,\sigma)=\langle*\omega,\sigma\rangle$，于是我们有
+
+\noindent\textbf{定理9}
+上面定义的算子 $*$ 称为霍奇（Hodge）$*$ 算子，它是 $\Lambda^{n-p}(\mathbb R^n)$ 到 $\Lambda^p(\mathbb R^n)$ 上的同构：
+\begin{equation}
+ \omega\wedge\sigma=\langle*\omega,\sigma\rangle e^1\wedge\cdots\wedge e^n.
+ \tag{36}
+\end{equation}
+
+\noindent\textbf{证}
+$*: \Lambda^{n-p}(\mathbb R^n)\to\Lambda^p(\mathbb R^n)$ 是线性映射是明显的。现在证它是单射，为此设有某个 $\omega$ 使 $*\omega=0$。于是对任意 $\sigma\in\Lambda^p(\mathbb R^n)$ 有 $\omega\wedge\sigma=0$。因此 $\omega=0$ 而 $*$ 是单射。但 $\Lambda^{n-p}(\mathbb R^n)$ 与 $\Lambda^p(\mathbb R^n)$ 是维数同为 $\binom np$ 的线性空间，所以只要 $*$ 是一个单射线性映射，则必为同构，定理证毕。
+
+\noindent\textbf{注}
+我们在构造 $*$ 算子时使用了一个特定的 o.n. 系 $\{e_1,\ldots,e_n\}$。实际上 $*$ 之定义与 $\{e_i\}$ 之选取无关。这里我们略去证明，而始终应用 $\mathbb R^n$ 关于度量 $(g_{ij})$ 下的 o.n. 系 $\{e^1,\ldots,e^n\}$，$e^i=g^{ij}e_j$。
+
+现在我们在这个基底下计算 $*$ 算子的具体表达式。为此，只需对 $\Lambda^p(\mathbb R^n)$ 的基底 $\{e^{i_1}\wedge\cdots\wedge e^{i_p}\}$ 中的任意元 $\omega=e^{i_1}\wedge\cdots\wedge e^{i_p}$ 来计算 $*\omega$。由定义
+\begin{equation}
+ (e^{i_1}\wedge\cdots\wedge e^{i_p})\wedge\sigma
+ =\langle*\omega,\sigma\rangle e^1\wedge\cdots\wedge e^n,
+ \qquad\forall\sigma\in\Lambda^{n-p}(\mathbb R^n).
+ \tag{37}
+\end{equation}
+这里不妨设 $i_1<i_2<\cdots<i_p$，令 $j_1,\ldots,j_{n-p}$ 是 $\{i_1,\ldots,i_p\}$ 在 $\{1,2,\ldots,n\}$ 中的余集，而且令 $j_1<\cdots<j_{n-p}$。于是除非 $\sigma=he^{j_1}\wedge\cdots\wedge e^{j_{n-p}}$（$h\ne0$ 为一实数），(37)之左方必为0。这样就知道 $*\omega$ 可用 $\Lambda^{n-p}(\mathbb R^n)$ 之基底 $\{e^{j_1}\wedge\cdots\wedge e^{j_{n-p}}\}$ 来表示，即存在非零实数 $c$，使
+\begin{equation}
+ *\omega=ce^{j_1}\wedge\cdots\wedge e^{j_{n-p}},\qquad(c\ne0,c\in\mathbb R).
+ \tag{38}
+\end{equation}
+而(37)成为
+\[
+ he^{i_1}\wedge\cdots\wedge e^{i_p}\wedge e^{j_1}\wedge\cdots\wedge e^{j_{n-p}}
+ =\frac hc\langle e^{j_1},e^{j_1}\rangle\cdots\langle e^{j_{n-p}},e^{j_{n-p}}\rangle e^1\wedge\cdots\wedge e^n.
+\]
+令 $\pi$ 为变 $\{i_1,\ldots,i_p;j_1,\ldots,j_{n-p}\}$ 为 $\{1,2,\ldots,n\}$ 之排列，由上式消去 $h$ 即有
+\[
+ \frac1c=\operatorname{sgn}\pi\,\langle e^{j_1},e^{j_1}\rangle\cdots\langle e^{j_{n-p}},e^{j_{n-p}}\rangle.
+\]
+因为 $\langle e^{j_1},e^{j_1}\rangle=g^{j_1j_1}$ 而 $(g^{ij})=(g_{ij})^{-1}$ 为对角矩阵，$g^{j_1j_1}=1/g_{j_1j_1}=\pm1$，所以
+\[
+ c=\pm1.
+\]
+代入(38)即可得到 $*(e^{i_1}\wedge\cdots\wedge e^{i_p})$ 的表达式。
+
+$*$ 算子有下面的重要性质。
+
+\noindent\textbf{定理10}
+霍奇 $*$ 算子具有以下性质：
+
+（1）对于 $\omega\in\Lambda^p(\mathbb R^n)$，
+\begin{equation}
+ **\omega=(-1)^{p(n-p)+s}\omega,
+ \tag{39}
+\end{equation}
+$s$ 是 o.n. 基底 $\{e_1,\ldots,e_n\}$ 中适合条件 $\langle e^i,e^i\rangle=-1$ 的元素之个数。
+
+（2）若 $\omega,\sigma\in\Lambda^p(\mathbb R^n)$，则
+\begin{align*}
+ \text{(a)}\quad &\omega\wedge*\sigma=\sigma\wedge*\omega=(-1)^s\langle\omega,\sigma\rangle e^1\wedge\cdots\wedge e^n,\\
+ \text{(b)}\quad &\langle*\omega,*\sigma\rangle=(-1)^s\langle\omega,\sigma\rangle.
+\end{align*}
+
+\noindent\textbf{证}
+(1) 我们只需对 $\omega=e^{i_1}\wedge\cdots\wedge e^{i_p}$（$i_1<\cdots<i_p$）证明(39)即可。令 $\{j_1,\ldots,j_{n-p}\}$ 是 $\{i_1,\ldots,i_p\}$ 在 $\{1,2,\ldots,n\}$ 中的余集，而且 $j_1<\cdots<j_{n-p}$，由 $*$ 算子的定义(38)有
+\begin{equation}
+\begin{aligned}
+ **\omega={}&\operatorname{sgn}\rho\cdot\operatorname{sgn}\pi\,
+ \langle e^{j_1},e^{j_1}\rangle\cdots\langle e^{j_{n-p}},e^{j_{n-p}}\rangle\\
+ &\quad\cdot\langle e^{i_1},e^{i_1}\rangle\cdots\langle e^{i_p},e^{i_p}\rangle\,\omega\\
+ ={}&(-1)^s\operatorname{sgn}\rho\cdot\operatorname{sgn}\pi\,\omega.
+\end{aligned}
+ \tag{40}
+\end{equation}
+$\rho$ 与 $\pi$ 分别是把 $\{1,2,\ldots,n\}$ 变为 $\{i_1,\ldots,i_p,j_1,\ldots,j_{n-p}\}$ 与 $\{j_1,\ldots,j_{n-p},i_1,\ldots,i_p\}$ 之置换。但是，为将例如 $i_1,\ldots,i_p,j_1,\ldots,j_{n-p}$ 对换成为 $j_1,\ldots,j_{n-p},i_1,\ldots,i_p$ 共需 $p(n-p)$ 个对换，所以 $\operatorname{sgn}\rho=(-1)^{p(n-p)}\operatorname{sgn}\pi$。代入(40)即得(39)式。
+
+(2)(a) 由外积之反交换性（定理4）以及 $*$ 算子的定义有
+\begin{align*}
+ \omega\wedge*\sigma
+ &=(-1)^{p(n-p)}*\sigma\wedge\omega
+ =(-1)^{p(n-p)}\langle**\sigma,\omega\rangle e^1\wedge\cdots\wedge e^n\\
+ &=(-1)^s\langle\sigma,\omega\rangle e^1\wedge\cdots\wedge e^n
+ =(-1)^s\langle\omega,\sigma\rangle e^1\wedge\cdots\wedge e^n
+ =\sigma\wedge*\omega.
+\end{align*}
+
+(b) 我们有
+\[
+ \omega\wedge*\sigma=\langle*\omega,*\sigma\rangle e^1\wedge\cdots\wedge e^n.
+\]
+与(a)比较，即有
+\[
+ \langle*\omega,*\sigma\rangle=(-1)^s\langle\omega,\sigma\rangle.
+\]
+
+现在我们要用霍奇 $*$ 算子来解释 $\mathbb R^3$ 中古典的向量分析公式。我们仍用箭头或黑体字母作为古典的向量分析公式的向量记号。于是 $\mathbf i=e^1,\mathbf j=e^2,\mathbf k=e^3$。在 $\mathbb R^3$ 中使用笛卡儿直角坐标系，使得协变向量与逆变向量不分，这样 $e^i=e_i$，而我们不必担心上下指标的区别。这时 $n=3,s=0$。设有三个向量：$A=a_1\mathbf i+a_2\mathbf j+a_3\mathbf k=a_1e_1+a_2e_2+a_3e_3$，$B,C$ 的记法与此类似。于是考虑 $p=1$ 的情况，注意到这时 $p(n-p)=2$，很容易看到会出现指标的轮换：
+\[
+ *\mathbf i=*e_1=e_2\wedge e_3,
+ \qquad *\mathbf j=*e_2=e_3\wedge e_1,
+ \qquad *\mathbf k=*e_3=e_1\wedge e_2.
+\]
+$p=2$ 时 $n-p=1,p(n-p)=2$，所以情况会是一样的，利用定理10的(1)有
+\[
+ *(e_2\wedge e_3)=**e_1=e_1,
+ \qquad *(e_3\wedge e_1)=e_2,
+ \qquad *(e_1\wedge e_2)=e_3.
+\]
+$p=0$ 与 $p=3$ 的情况又是一样的。于是
+\[
+ *1=e_1\wedge e_2\wedge e_3,
+ \qquad *(e_1\wedge e_2\wedge e_3)=1.
+\]
+利用这些公式我们可以很容易地解释古典的向量分析中的向量积与混合积。对于前者，我们有
+\[
+ A\times B=(a_2b_3-a_3b_2)\mathbf i+(a_3b_1-a_1b_3)\mathbf j+(a_1b_2-a_2b_1)\mathbf k.
+\]
+现在则求 $A\wedge B$ 得
+\[
+ A\wedge B=(a_2b_3-a_3b_2)e_2\wedge e_3+(a_3b_1-a_1b_3)e_3\wedge e_1+(a_1b_2-a_2b_1)e_1\wedge e_2.
+\]
+于是
+\begin{equation}
+ A\times B=*(A\wedge B).
+ \tag{41}
+\end{equation}
+在讨论混合积之前还要讲一下内积（即标量积）。前面已说过 $*$ 算子定义的基础是内积，反过来内积也可以用 $*$ 来表示。实际上
+\[
+ *A\wedge B=(a_1e_2\wedge e_3+a_2e_3\wedge e_1+a_3e_1\wedge e_2)
+ \wedge(b_1e_1+b_2e_2+b_3e_3)
+\]
+\[
+ =(a_1b_1+a_2b_2+a_3b_3)e_1\wedge e_2\wedge e_3,
+\]
+因此
+\begin{equation}
+ A\cdot B=*(*A\wedge B)=a_1b_1+a_2b_2+a_3b_3.
+ \tag{42}
+\end{equation}
+在古典的向量分析中，以 $A,B,C$ 棱的平行六面体之体积用一个非常奇怪的公式来表示：
+\[
+ V=A\cdot(B\times C)=B\cdot(C\times A)=C\cdot(A\times B).
+\]
+但用 $*$ 算子则非常清楚。只要用分量来表示，利用(42)与(41)即有
+\[
+ A\cdot(B\times C)=*[A\wedge*(B\times C)]=*(A\wedge B\wedge C)
+\]
+\[
+ =\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}\cdot1=V.
+\]
+这里 $V$ 是上述平行六面体之体积。总之把1写成 $*(e_1\wedge e_2\wedge e_3)$ 即知
+\begin{equation}
+ V=*\left\{\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}e_1\wedge e_2\wedge e_3\right\}=*(A\wedge B\wedge C).
+ \tag{43}
+\end{equation}
+这里我们应用了定理7中的(30)。
+
+总之，利用了霍奇 $*$ 算子，立即有
+\[
+ \begin{aligned}
+ A\times B&=\text{以 $A,B$ 为边的平行四边形的有符号的面积}=*(A\wedge B),\\
+ A\cdot(B\times C)&=\text{以 $A,B,C$ 为棱的平行六面体的有符号的体积}=*(A\wedge B\wedge C).
+ \end{aligned}
+\]
+这就很明确地体现了格拉斯曼把几何量分成互相有联系的不同类型的量之系统这个思想。把格拉斯曼的这个思想用到微分流形上将得到更丰富的结果。

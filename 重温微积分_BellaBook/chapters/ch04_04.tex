@@ -1,0 +1,545 @@
+\section{平方可积函数}
+
+\noindent\textbf{1. $L^2$ 空间的定义}\quad 现在考虑一个问题：要测量某个物理量（例如气体压力）在不同条件（例如不同温度）下的值。设有 $N$ 个温度值，第一次测量的结果是
+\[
+ a_1^{(1)},a_2^{(1)},\ldots,a_N^{(1)},
+\]
+第二次测量的结果是
+\[
+ a_1^{(2)},a_2^{(2)},\ldots,a_N^{(2)},
+\]
+应该怎样评估两次测量的偏差？一个最直接的设想是计算每个温度下测量偏差之和：
+\[
+ \frac1N\sum_{k=1}^N\bigl(a_k^{(1)}-a_k^{(2)}\bigr).
+\]
+其实就是平均值。但它显然不能准确反映实际情况：因为各项有正有负可能抵消。在极端的情况下，使得平均值可以为 $0$，而实际两次测量可以出现很大的误差。于是，好一点的方法是用
+\[
+ \frac1N\sum_{k=1}^N\bigl|a_k^{(1)}-a_k^{(2)}\bigr|.
+\]
+它虽然避免了正负相消，但绝对值是很不便运算的。因此，更常见的是考虑
+\begin{equation}
+ \Delta=\frac1N\sum_{k=1}^N\bigl[a_k^{(1)}-a_k^{(2)}\bigr]^2.
+ \tag{1}
+\end{equation}
+当然它的量纲不对，即物理量的单位不对，于是我们再开一次方得到
+\begin{equation}
+ \delta=\left\{\frac1N\sum_{k=1}^N\bigl[a_k^{(1)}-a_k^{(2)}\bigr]^2\right\}^{1/2}.
+ \tag{2}
+\end{equation}
+$\delta$ 的量纲显然与测量值 $a_k^{(1)},a_k^{(2)}$ 一致，因此它是合理的。
+
+$\Delta$ 称为方差，$\delta$ 称为标准差。用方差和标准差来估量偏差，早在高斯以前就有了，而高斯系统地发展了它的理论特别是“最小二乘方”方法。可是我们要从另一个角度来看待它。
+
+从数学上看采用(1)或(2)还有一个极大的好处，如果我们视一次测量的结果为 $N$ 维空间的点 $(a_1^{(1)},\ldots,a_N^{(1)})$ 和 $(a_1^{(2)},\ldots,a_N^{(2)})$，则(2)和(1)，除去因子 $1/\sqrt N$ 后恰好是这两点的欧氏距离及其平方。这样，我们就可以用欧氏几何的概念和工具来处理它们。
+
+以上考虑的是离散的情况，如果把观测压力对温度的变化连续进行，则会得到两个函数 $f^{(1)}(x)$ 和 $f^{(2)}(x)$，而(1)成为 $\int_a^b[f^{(1)}(x)-f^{(2)}(x)]^2\,dx$。总之，我们会得到函数平方的积分。这种情况在物理学中是十分常见的。例如第三章变分法一节中我们看见电场的能也是一些函数的平方之和：$\left(\frac{\partial u}{\partial x}\right)^2+\left(\frac{\partial u}{\partial y}\right)^2+\left(\frac{\partial u}{\partial z}\right)^2$ 的积分。暂时不管导数问题（下一节我们还要仔细讨论），则又是见到了函数平方的积分。总之，我们发现把一个函数平方再积分，用这个量来刻画函数性质，说明种种物理过程应该是十分有效的。
+
+但是马上遇到的问题是：这里的积分是用黎曼积分好还是用勒贝格积分更好？从本章前面各节看，应该可以看得很清楚：应该用勒贝格积分。这一方面是因为我们在第二节中已经看到黎曼积分本质上说是适用于连续函数的积分，而物理学的发展，特别是因统计的思想引入了物理学，使得我们不能不把不连续函数或不光滑函数纳入我们的视野（回想一下布朗运动对数学家的启示），而勒贝格积分理论正是适用于勒贝格可测函数的积分理论。这种测度和积分恰好适合概率论和统计学之需。另一方面则是因为勒贝格积分具有许多重要的性质，特别是完备性，所以本节将讨论以下的函数类。
+
+\noindent\textbf{定义1}\quad 设 $f(x)$ 是 $E\subset\mathbf R$ 上的可测函数，而且 $|f(x)|^2$ 在 $E$ 上可积，这种函数之集合称为平方可积函数空间，记作 $L^2(E)$（或简单记作 $L^2$）。
+
+\noindent\textbf{注1}\quad 是否要求 $E$ 为具有有限测度的可测集？有两种情况：或者要求 $E$ 是具有有限测度的可测集，例如 $E=\Omega\subset\mathbf R^n$ 是一有界开集；或者设有一串上升而穷竭 $\mathbf R^n$ 的子集序列 $\{\Omega_k\}$，并使 $\mathbf R^n$ 的每个紧子集 $K$ 都含于某个 $\Omega_k$ 中。记 $E_k=E\cap\Omega_k$，于是 $E_1\subset E_2\subset\cdots$ 且 $E=\bigcup_{k=1}^{\infty}E_k$ 是 $E_k$ 的外极限。每个 $E_k$ 均有有限测度。这时我们说 $E$ 具有 $\sigma$ 有限测度。在应用上它是很常见的，最常见的即 $E=\mathbf R^n$。当然，$\mathbf R^n$ 也是开集。
+
+\noindent\textbf{注2}\quad $L^2(E)$ 的函数既可取实值，也可取复值，在后一情况下 $|f(x)|^2=f(x)\overline{f(x)}$。
+
+现在要问，若 $f(x)\in L^2(E)$，$f(x)$ 本身是否勒贝格可积？需知，定义中并未要求这一点。注意到
+\[
+ |f(x)|\le \frac{1+|f(x)|^2}{2}.
+\]
+可见，若 $E$ 具有有限测度，上式右方是可积的，因为 $1/2$ 是可积函数。但若 $E$ 只是 $\sigma$ 有限测度而本身并不具有有限测度（我们也说 $m(E)=+\infty$），则上式不说明问题。以 $E=[1,\infty)\subset\mathbf R^1$ 为例，$f(x)=x^{-2/3}$ 是平方可积的，但本身并不可积。定义中一般不要求 $L^2(E)$ 函数本身为勒贝格可积原因在此。
+
+关于 $L^2(E)$ 的性质，我们首先给出
+
+\noindent\textbf{定理1}\quad $L^2(E)$ 是一个线性空间。
+
+\noindent\textbf{证}\quad 设 $f_1(x),f_2(x)\in L^2(E)$，$c_1,c_2$ 是实（或复）常数，则显然 $c_1f_1(x),c_2f_2(x)\in L^2(E)$，余下只需证明 $f_1(x)+f_2(x)\in L^2(E)$ 即可，这是很容易的，因为
+\[
+ |f_1(x)+f_2(x)|^2\le (|f_1(x)|+|f_2(x)|)^2\le 2|f_1(x)|^2+2|f_2(x)|^2.
+\]
+而右方是可积的，左方至少是可测的，而且易证左方也是可积的。
+
+\noindent\textbf{注}\quad 若 $c$ 取复值，我们当然也应令 $f_1(x),f_2(x)$ 为复值（但 $x\in\mathbf R^n$ 仍为实的）函数。复值函数的积分很容易定义：只需其实、虚部均为可积即可，而且本章中一切结果（除专门规定适用于实值函数者——如正性——外）全部适用。量子物理的最基本的函数类（函数空间）就是复值的。
+
+关于 $L^2(E)$ 函数之积则有
+
+\noindent\textbf{定理2}\quad 若 $f(x),g(x)\in L^2(E)$，则 $f(x)g(x)$ 为勒贝格可积。
+
+\noindent\textbf{证}\quad 先看实 $L^2(E)$ 空间，因
+\[
+ (|f(x)|-|g(x)|)^2=|f(x)|^2+|g(x)|^2-2|f(x)g(x)|\ge0,
+\]
+故
+\[
+ |f(x)g(x)|\le\frac12|f(x)|^2+\frac12|g(x)|^2.
+\]
+左方是可测的，右方由定理1是两个可积函数之和故为可积的，因此结论成立。
+
+这个证明对复 $L^2$ 空间自然仍成立，但我们习惯说 $f(x)\overline{g(x)}$ 可积。这当然只是一个记号问题，但是在量子力学中，其中却有深意。
+
+我们在本书之始就提出，定义 $L^2$ 空间有一基本的思想，就是希望它尽可能与欧氏空间在几何上接近。一开始，我们就对离散的情况指出，一次测量的结果 $(a_1^{(1)},\ldots,a_N^{(1)})$ 是 $\mathbf R^N$ 空间中一个向量，那么在连续的情况下一个 $L^2$ 函数 $f(x)$ 自然也可看作一个向量。（而且，现在 $x\in E$ 而 $E$ 中一般有无穷多个点 $x$，$f(x)$ 岂非应看作无穷维空间的向量（或点）吗？$f(x)$ 确实是一个无穷维空间中的向量，但是完全不是刚才讲的意义，这一点下面马上就要讲。）欧氏空间的几何学有两个基本的量，一是长度，二是角度。在离散情况下长度是 $\left(\sum_{k=1}^N|a_k^{(1)}|^2\right)^{1/2}$，那么现在是否应以 $\left(\int_E|f(x)|^2\,dx\right)^{1/2}$ 作为其长度？至于两个向量的夹角可以用内积 $\sum_{k=1}^Na_k^{(1)}a_k^{(2)}$ 来定义，现在是否应定义两个 $L^2$ 函数 $f(x),g(x)$ 之内积为 $\int_E f(x)g(x)\,dx$？确实如此。
+
+\noindent\textbf{定义2}\quad 设 $f(x),g(x)\in L^2(E)$，我们定义 $f(x)$ 之模（或称范数，就是长度）为
+\begin{equation}
+ \|f\|_{L^2}=\left(\int_E|f(x)|^2\,dx\right)^{1/2}.
+ \tag{3}
+\end{equation}
+定义实 $L^2$ 空间中 $f(x)$ 与 $g(x)$ 之内积为
+\begin{equation}
+ \langle f,g\rangle_{L^2}=\int_E f(x)g(x)\,dx.
+ \tag{4}
+\end{equation}
+复 $L^2$ 空间中的 $f(x)$ 与 $g(x)$ 之内积则定义为
+\begin{equation}
+ (f,g)_{L^2}=\int_E f(x)\overline{g(x)}\,dx.
+ \tag{5}
+\end{equation}
+
+\noindent\textbf{注}\quad (4)和(5)都是对两个 $L^2$ 函数规定一个实或复数与之对应，都称为配对。(4)有时称为欧氏配对，用尖括号表示。(5)称为埃尔米特（C. Hermite——法国数学家）配对，用圆括号表示。但是有的书则记号相反。但不论是哪一种配对都有 $\langle f,f\rangle=\|f\|_{L^2}^2$，$(f,f)=\|f\|_{L^2}^2$，模或范数之下标在不发生误会时可以略去。
+
+定义角度的根本公式是余弦定理，因为若有 $\mathbf R^N$ 空间的两个向量 $a,b$，则余弦定律是
+\[
+ a\cdot b=\|a\|\,\|b\|\cos\theta.
+\]
+所以一定有 $\|a\|\,\|b\|\ge|a\cdot b|$。反之，只要有这样的不等式成立，则 $\frac{|a\cdot b|}{\|a\|\,\|b\|}\le1$，所以一定可找到一个角 $\theta$ 使 $a\cdot b=\|a\|\,\|b\|\cos\theta$，$0\le\theta\le\pi$。所以，如果想把角度引入 $L^2(E)$，就应该找一个与余弦定理相应的不等式。
+
+\noindent\textbf{定理3（施瓦茨 Schwarz 不等式）}\quad 若 $f(x),g(x)\in L^2(E)$ 为实值或是复值函数，则有以下的不等式成立
+\begin{equation}
+ \int_E|f(x)g(x)|\,dx\le\left(\int_E|f(x)|^2\,dx\cdot\int_E|g(x)|^2\,dx\right)^{1/2},
+ \tag{6}
+\end{equation}
+而且等号当且仅当 $|f(x)|$ 与 $|g(x)|$ 几乎处处相差一个常数因子时成立。
+
+\noindent\textbf{证}\quad 考虑 $\int_E(\lambda|f(x)|+|g(x)|)^2\,dx$，这里 $\lambda$ 是实数。它当然是非负的，但是可将它写成 $\lambda$ 的二次三项式
+\[
+ A\lambda^2+2B\lambda+C\ge0,
+\]
+其中
+\[
+ A=\int_E|f(x)|^2\,dx,\qquad B=\int_E|f(x)|\,|g(x)|\,dx,\qquad C=\int_E|g(x)|^2\,dx.
+\]
+因此必有 $B^2-AC\le0$，即(6)成立。若等号成立，即 $B^2-AC=0$，则当 $A\ne0$ 时，必有一个 $\lambda$ 使 $A\lambda^2+2B\lambda+C=0$，即
+\[
+ \int_E(\lambda|f(x)|+|g(x)|)^2\,dx=0,
+\]
+从而 $\lambda|f(x)|+|g(x)|=0$ 几乎处处成立，其逆亦真。若 $A=0$，则由 $B^2-AC=0$ 同时应有 $B=0$，这时应考虑 $|f(x)|+\mu|g(x)|\ne0$，结论相同。
+
+当然也就有
+\begin{equation}
+ |\langle f,g\rangle_{L^2}|\quad(\text{或 }|(f,g)_{L^2}|)\le\|f\|_{L^2}\,\|g\|_{L^2}.
+ \tag{7}
+\end{equation}
+
+既然 $f(x)\in L^2(E)$ 看作一个向量时 $\|f\|_{L^2}$ 表示其长，则 $\|f-g\|_{L^2}$ 应表示 $f$ 与另一个 $g\in L^2(E)$ 之距离：$\rho(f,g)$。但是作为一个距离，应该满足以下三个条件：
+
+(i) $\rho(f,g)=\rho(g,f)$；
+
+(ii) $\rho(f,g)\ge0$，$\rho(f,g)=0\Leftrightarrow f=g$；
+
+(iii)（三角形不等式）$\rho(f,g)\le\rho(f,h)+\rho(h,g)$，$h\in L^2(E)$。
+
+用 $\|f-g\|$ 作为 $\rho(f,g)$ 时(i)自然是满足的，至于(ii)，因为
+\[
+ \|f-g\|^2=\int_E|f(x)-g(x)|^2\,dx,
+\]
+所以自然有 $\rho(f,g)\ge0$。由上一节讲的勒贝格积分的正性可知，$\rho(f,g)=0$ 时必有 $f(x)-g(x)=0$ 几乎处处成立。但是在上一节中我们已经指出，两个几乎处处相等的勒贝格可积函数应看作相同的，所以 $f(x)=g(x)$ 与 $0$ 应看作相同的。在这个意义下 $f=g$。
+
+最后证明三角形不等式
+\[
+\begin{aligned}
+ \rho(f,g)^2
+ &=\int_E|f(x)-g(x)|^2\,dx\\
+ &=\int_E[(f-h)+(h-g)]\,[\overline{(f-h)}+\overline{(h-g)}] \,dx\\
+ &=\int_E|f-h|^2\,dx+2\operatorname{Re}\int_E(f-h)\overline{(h-g)}\,dx+\int_E|h-g|^2\,dx\\
+ &\le \|f-h\|^2+2\|f-h\|\,\|h-g\|+\|h-g\|^2\\
+ &=\{\rho(f,h)+\rho(h,g)\}^2.
+\end{aligned}
+\]
+所以(iii)成立。
+
+\noindent\textbf{2. $L^2$ 空间中的规范正交系}\quad 至此，我们已看到 $L^2(E)$ 与欧氏空间非常相似。欧氏空间中的正交坐标系是十分有用的工具，就是说，在 $N$ 维欧氏空间 $E^N$ 中可以找到 $N$ 个互相正交的单位向量 $e_1,\ldots,e_N$，即适合 $\langle e_i,e_j\rangle$（或 $(e_i,e_j)$）$=\delta_{ij}$。因为它们是正交的，所以一定线性无关，证明如下：设有 $N$ 个常数 $c_1,\ldots,c_N$（如果考虑实欧氏空间，它们应为实数，如果考虑复欧氏空间——亦称埃尔米特空间（Hermitian space）——则应取复数）使
+\begin{equation}
+ c_1e_1+\cdots+c_Ne_N=0.
+ \tag{8}
+\end{equation}
+任取 $j$，$1\le j\le N$，并用 $e_j$ 与上式作欧氏的或埃尔米特的内积，则由 $\langle e_i,e_j\rangle=\delta_{ij}$（或 $(e_i,e_j)=\delta_{ij}$）有 $c_i=0$，$i=1,2,\ldots,N$。因此 $e_1,\ldots,e_N$ 线性无关。一个 $N$ 维线性空间 $\mathbf R^N$（不一定是欧氏空间，即我们不一定对它赋以长度与内积）的 $N$ 个线性无关元构成一个基底。即是说 $\mathbf R^N$ 的任意元 $f$ 必可用它们线性表示。实际上，设有任意元 $f\in\mathbf R^N$，则 $f,e_1,\ldots,e_N$ 是 $N+1$ 个元因此必线性相关：即有不全为 $0$ 的常数 $c_0,c_1,\ldots,c_N$ 使
+\begin{equation}
+ c_0f+c_1e_1+\cdots+c_Ne_N=0.
+ \tag{9}
+\end{equation}
+这里一定有 $c_0\ne0$，否则会有不全为 $0$ 的 $c_1,\ldots,c_N$ 使(8)成立，而这与 $e_1,\ldots,e_N$ 线性无关矛盾。既然(9)中的 $c_0\ne0$，则由(9)必有
+\begin{equation}
+ f=\sum_{i=1}^N\alpha_i e_i,\qquad \alpha_i=-\frac{c_i}{c_0}.
+ \tag{10}
+\end{equation}
+问题在于如何去求 $\alpha_i$？在欧氏空间（现在赋予了内积）中这个问题很容易解决。事实上，$f$ 一定能用 $e_1,\ldots,e_N$ 表示，这是由 $\mathbf R^N$ 空间中最多只有 $N$ 个线性无关向量得出的，因此一定有(10)这样的展开式，只不过其系数 $\alpha_1,\ldots,\alpha_N$ 待定而已。为了定出这些系数，用 $e_i$ 与(10)之双方求内积，立即有
+\begin{equation}
+ \alpha_i=\langle f,e_i\rangle,\qquad \text{或 }\alpha_i=(f,e_i).
+ \tag{11}
+\end{equation}
+现在我们问，在 $L^2(E)$ 中能否建立与此平行的理论？首先我们要找到与上述 $e_1,\ldots,e_N$ 相应的对象。
+
+\noindent\textbf{定义3}\quad 若两个 $L^2(E)$ 函数之内积（实或复）为 $0$，则说它们互相正交，若一个 $L^2(E)$ 函数之范数为 $1$ 就称为归一的、规范的（unitary, normalized）（归一函数自然不会几乎处处为 $0$）；若一个 $L^2(E)$ 函数序列 $\{f_k(x)\}$ 适合 $\langle f_i,f_j\rangle=\delta_{ij}$（或 $(f_i,f_j)=\delta_{ij}$），则称 $\{f_k(x)\}$ 为一个归一或规范正交系（以下简称 o.n. 系）。
+
+下面举几个例并设 $E\subset\mathbf R^1$。最重要的 o.n. 系是 $L^2([ -\pi,\pi])$ 上的
+\[
+ \left\{\frac1{\sqrt{2\pi}}e^{ikx}\right\},\qquad k=0,\pm1,\pm2,\ldots,
+\]
+这是因为
+\begin{equation}
+ \int_{-\pi}^{\pi}\frac1{\sqrt{2\pi}}e^{ikx}\,\overline{\frac1{\sqrt{2\pi}}e^{ilx}}\,dx
+ =\frac1{2\pi}\int_{-\pi}^{\pi}e^{i(k-l)x}\,dx=\delta_{kl}.
+ \tag{12}
+\end{equation}
+由于它极端重要，我们将以第五章全章篇幅来讨论。它其实就是通常微积分教材中讲的正、余弦函数的正交性，不过那里用的是 $\frac1{2\pi},\frac1{\sqrt\pi}\sin kx,\frac1{\sqrt\pi}\cos kx$，$k=1,2,\ldots$。三角函数前的因子与 $\frac1{\sqrt{2\pi}}$ 不同是因为例如 $\cos kx=\frac12(e^{ikx}+e^{-ikx})$，已经有了一个因子 $2$。采用复数记号就没有了这个不整齐之处。不过，引用复数更多地是因为量子力学的需要。
+
+这种 o.n. 系在量子力学中起重要作用。$\left\{\frac1{\sqrt{2\pi}}e^{ikx}\right\}$ 是有限区间 $[-\pi,\pi]$ 上适用的，但量子力学中涉及无界区间时就不能用了，这时常用的是 $(-\infty,+\infty)$ 上的埃尔米特多项式：
+\begin{equation}
+ H_n(x)=(-1)^ne^{x^2}\left(\frac d{dx}\right)^ne^{-x^2},\qquad n=0,1,2,\ldots.
+ \tag{13}
+\end{equation}
+它很明显是一个 $n$ 次多项式，为了证明它是一个正交系，我们先注意，它们恰好是 $e^{-s^2+2xs}$ 作为 $s$ 的函数（以 $x$ 为参数）在 $s=0$ 处的泰勒级数的系数（相差一个因子 $1/n!$），这个函数称为埃尔米特多项式的生成函数。事实上
+\[
+ e^{-s^2+2xs}=e^{x^2}e^{-(s-x)^2},
+\]
+所以
+\[
+\begin{aligned}
+ e^{-s^2+2xs}
+ &=\sum_{n=0}^{\infty}\frac1{n!}\left.\left(\frac d{ds}\right)^ne^{-(s-x)^2}e^{x^2}\right|_{s=0}s^n\\
+ &=\sum_{n=0}^{\infty}\frac{e^{x^2}}{n!}\left.\left(\frac d{ds}\right)^ne^{-(s-x)^2}\right|_{s=0}s^n\\
+ &=\sum_{n=0}^{\infty}\frac{e^{x^2}}{n!}\left.\left(-\frac d{dx}\right)^ne^{-(s-x)^2}\right|_{s=0}s^n\\
+ &=\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}e^{x^2}\left(\frac d{dx}\right)^ne^{-x^2}s^n
+ =\sum_{n=0}^{\infty}\frac{H_n(x)}{n!}s^n.
+\end{aligned}
+\]
+
+为了研究 $H_n(x)$ 之正交性，考虑
+\[
+ e^{-s^2+2xs}\,e^{-t^2+2xt}
+ =\sum_{m,n=0}^{\infty}\frac1{m!\,n!}H_m(x)H_n(x)t^ms^n.
+\]
+双方乘以 $e^{-x^2}$ 再对 $x$ 在 $(-\infty,+\infty)$ 上积分，因为 $H_m(x)H_n(x)$ 是 $x$ 的 $m+n$ 次多项式，乘上 $e^{-x^2}$ 后在 $x\to\pm\infty$ 时函数迅速趋于 $0$，而上述级数对 $x$ 一致收敛（也可以用勒贝格控制收敛定理，但是视 $t,s$ 为参数）有
+\[
+\begin{aligned}
+ \int_{-\infty}^{\infty}e^{-x^2}e^{-s^2+2xs-t^2+2xt}\,dx
+ &=\int_{-\infty}^{\infty}e^{2st}e^{-(x-s-t)^2}\,dx\\
+ &=\sum_{m,n=0}^{\infty}\frac{t^ms^n}{m!\,n!}
+ \int_{-\infty}^{\infty}e^{-x^2}H_m(x)H_n(x)\,dx.
+\end{aligned}
+\]
+利用著名的高斯积分 $\int_{-\infty}^{\infty}e^{-\xi^2}\,d\xi=\sqrt\pi$（这个积分太重要了，我们下一节专门讨论它），即知式左方为
+\[
+ e^{2st}\int_{-\infty}^{\infty}e^{-(x-s-t)^2}\,dx
+ =e^{2st}\int_{-\infty}^{\infty}e^{-\xi^2}\,d\xi
+ =\sqrt\pi e^{2st}=\sqrt\pi\sum_{n=0}^{\infty}\frac{2^n}{n!}t^ns^n.
+\]
+与上式右方比较，注意到若两个幂级数相等则其同次幂系数也相等（对于两个自变量 $t$ 和 $s$ 的二重幂级数 $\sum_{m,n=0}^{\infty}a_{mn}t^ms^n$ 也容易证明 $a_{mn}$ 为其和 $F(t,s)$ 的导数 $\frac1{m!n!}\frac{\partial^{m+n}F(0,0)}{\partial t^m\partial s^n}$），即有
+\begin{equation}
+ \int_{-\infty}^{\infty}e^{-x^2}H_m(x)H_n(x)\,dx
+ =\sqrt\pi\,2^n n!\,\delta_{mn}.
+ \tag{14}
+\end{equation}
+我们称此式为 $\{H_n(x)\}$ 以 $e^{-x^2}$ 为权的正交性。引入了权函数 $\rho(x)\ge0$ 后，我们定义
+\begin{equation}
+ \langle f,g\rangle=\int_E\rho(x)f(x)\overline{g(x)}\,dx
+ \tag{15}
+\end{equation}
+和
+\begin{equation}
+ \|f\|^2=\langle f,f\rangle=\int_E\rho(x)|f(x)|^2\,dx
+ \tag{16}
+\end{equation}
+为以 $\rho(x)$ 为权的内积和范数（$\langle f,g\rangle$ 之定义相仿），而且称使得(16)中的 $\|f\|<+\infty$ 的可测函数集合为以 $\rho$ 为权的 $L^2(E)$ 空间。它与上面讲的 $L^2(E)$ 性质相似。
+
+但由(14)可知 $H_m(x)$ 没有规范化，为此我们再添加一个规范化因子（归一化因子）$N_m=(\sqrt\pi\,2^m m!)^{-1/2}$，而称
+\[
+ \frac{(-1)^m}{(\sqrt\pi\,2^m m!)^{1/2}}e^{x^2}\left(\frac d{dx}\right)^me^{-x^2}
+\]
+为规范化（归一化）埃尔米特多项式。
+
+$H_m(x)$ 是以下微分方程
+\[
+ u''-2xu'+2mu=0
+\]
+的以 $e^{-x^2}$ 为权的 $L^2(\mathbf R^1)$ 解。量子力学中常用的许多 o.n. 系都是这样来的。例如当我们讨论具有球对称性的量子力学问题时会遇到要求
+\begin{equation}
+ \frac d{dx}\left[(1-x^2)\frac{du}{dx}\right]+m(m+1)u=0
+ \tag{17}
+\end{equation}
+（勒让德方程）在 $[-1,1]$ 上的多项式解，这个方程的特点是在区间端点 $x=\pm1$ 处有奇点。可以证明
+\begin{equation}
+ P_m(x)=\frac1{2^m m!}\frac{d^m}{dx^m}(x^2-1)^m
+ \tag{18}
+\end{equation}
+是方程(17)的解，也可证明 $\{P_m(x)\}$ 是一个正交系：
+\[
+ \int_{-1}^1P_m(x)P_n(x)\,dx=\frac2{2m+1}\delta_{mn},
+\]
+因此，添加归一化因子 $\sqrt{(2m+1)/2}$ 后，$\left\{\sqrt{\frac{2m+1}{2}}P_m(x)\right\}$ 就成了一个 o.n. 系。(18)称为勒让德多项式 $P_m(x)$ 的罗德里格斯（Rodrigues）公式。
+
+举了以上几个例子以后，设已有 $L^2(E)$ 的 o.n. 系 $\{f_n(x)\}$，任一个 $L^2(E)$ 函数 $f(x)$ 可否仿照 $\mathbf R^N$ 中的坐标展开式(10)写为
+\begin{equation}
+ f(x)=\sum_{n=0}^{\infty}\alpha_nf_n(x)?
+ \tag{19}
+\end{equation}
+如果可能，又如何求系数 $\alpha_n$？至少在一个情况下可知(19)式是不可能的：如果在 $\mathbf R^N$ 中从坐标系 $\{e_1,\ldots,e_N\}$ 中删去若干个而得例如 $\{e_2,\ldots,e_N\}$，则(10)式是不可能，因为这时(10)式右方成为 $\sum_{i=2}^N\alpha_i e_i$，是与 $e_1$ 正交的，它们只构成一个 $N-1$ 维空间，所以 $\sum_{i=2}^N\alpha_i e_i$ 只能表示与 $e_1$ 正交的 $N-1$ 维子空间中的全体向量，而对 $\mathbf R^N$ 中的全部向量它不可能成立。从几何上这是不言而喻的。现在 $L^2(E)$ 在一定意义下是无穷维向量空间（其 o.n. 系含有无穷多个元，上面三个例子都是），如果删除了 o.n. 系中的若干个元，使得它“不完全”了，则至多它只能表示与被删去的元正交的那些向量。这个删减的 o.n. 系称为“不完全的”。在有限维空间，一个 o.n. 系是否完全很容易判断：完全性的充要条件是系中向量个数等于空间维数。但在无限维情况，删去若干向量后，余下的可能仍是无穷个，因此我们要从另一个角度来讨论这个问题：设有 o.n. 系 $\{f_n(x)\}$，任给一个 $f(x)\in L^2(E)$，并且确定正整数 $N$，在长度为 $N$ 的线性组合 $\sum_{k=1}^Nc_kf_k(x)$ 中，怎样选系数 $\{c_1,\ldots,c_N\}$ 能使
+\[
+ \left\|f-\sum_{k=1}^Nc_kf_k\right\|
+\]
+最小？
+
+回答这个问题其实很容易（为简单计设 $f,f_k$ 均为实值函数），经过一些计算，可以得出
+\begin{equation}
+\begin{aligned}
+ \left\|f-\sum_{k=1}^Nc_kf_k\right\|^2
+ &=\|f\|^2-2\sum_{k=1}^N\alpha_kc_k+\sum_{k=1}^Nc_k^2\\
+ &=\|f\|^2-\sum_{k=1}^N\alpha_k^2+\sum_{k=1}^N(\alpha_k-c_k)^2
+ \ge \|f\|^2-\sum_{k=1}^N\alpha_k^2.
+\end{aligned}
+ \tag{20}
+\end{equation}
+\begin{sloppypar}
+这里 $\alpha_k=\langle f,f_k\rangle$，称为 $f$ 对 $\{f_k\}$ 的傅里叶系数。所以当且仅当线性组合 $\sum_{k=1}^Nc_kf_k$ 之系数为 $f$ 之傅里叶系数时，$\left\|f-\sum_{k=1}^Nc_kf_k\right\|$ 将达到其最小值 $\|f\|^2-\sum_{k=1}^N\alpha_k^2$。这里最有趣的是，若把 $N$ 增到大 $M$，再求类似问题之解时，则前 $N$ 个系数 $c_k=\alpha_k$ 不改变，而只要调整 $c_{N+1},\ldots,c_M$ 使之等于 $\alpha_{N+1},\ldots,\alpha_M$ 即可，所以我们可以令 $N\to\infty$ 而有
+\end{sloppypar}
+
+\noindent\textbf{定理4}\quad 若 $f(x)\in L^2(E)$ 而 $\{f_k(x)\}$ 为 $L^2(E)$ 中的 o.n. 系，则有以下的贝塞尔（Bessel）不等式成立：
+\begin{equation}
+ \|f\|^2\ge\sum_{k=1}^{\infty}\alpha_k^2.
+ \tag{21}
+\end{equation}
+
+\noindent\textbf{证}\quad 在(20)中令 $c_k=\alpha_k$，因式左非负，故
+\[
+ \|f\|^2-\sum_{k=1}^N\alpha_k^2\ge0.
+\]
+令 $N\to\infty$，即知 $\sum_{k=1}^{\infty}\alpha_k^2<+\infty$ 且(21)成立。
+
+\noindent\textbf{注}\quad 如果考虑复的 o.n. 系 $\{f_k\}$，则 $\alpha_k^2$ 应改为 $|\alpha_k|^2$。
+
+注意到在 $\mathbf R^N$ 中，两个向量之内积 $a\cdot b$ 即 $a$ 在 $b$ 上之投影。在 $L^2(E)$ 中，如果我们视 o.n. 系 $\{f_n(x)\}$ 是一组单位长的互相正交的向量，即正交坐标系，则 $f(x)\in L^2(E)$ 的傅里叶系数就是向量 $f$ 在这些单位坐标向量上的投影。在 $\mathbf R^N$ 中，按毕达哥拉斯定理，如果这些单位正交坐标向量没有少取的话，则投影的平方和应该就是向量长平方。与此类比，若对任意 $f(x)\in L^2(E)$，(21)式中有等号成立，则应该标志着 o.n. 系 $\{f_n(x)\}$ 中没有“缺少”了哪一个向量。
+
+\noindent\textbf{定义4}\quad 若 $\{f_n(x)\}$ 是 $L^2(E)$ 中的 o.n. 系，若再没有一个非 $0$（即不处处为 $0$）的 $L^2(E)$ 函数与一切 $f_n(x)$ 正交，就说 $\{f_n(x)\}$ 是完全的 o.n. 系。
+
+\noindent\textbf{定理5}\quad o.n. 系 $\{f_n(x)\}$ 为完全的充分必要条件是(21)式对任意 $f(x)\in L^2(E)$ 有等号成立：
+\begin{equation}
+ \|f\|^2=\sum_{k=1}^{\infty}|\alpha_k|^2,\qquad \alpha_k=(f,f_k).
+ \tag{22}
+\end{equation}
+(22)式称为封闭性方程或帕塞瓦尔（Parseval）等式。
+
+\noindent\textbf{证}\quad 充分性。若(22)成立而有非 $0$ 的 $f(x)\in L^2(E)$ 与一切 $f_k(x)$ 正交，因此 $\alpha_k=(f,f_k)=0$，而由(22)有 $f$ 几乎处处为 $0$，这与 $f$ 非 $0$ 矛盾。
+
+必要性。今设 o.n. 系 $\{f_k(x)\}$ 是完全的，证明(22)成立。实际上，任取 $f(x)\in L^2(E)$，而 $\alpha_k=(f,f_k)$，我们来看级数 $\sum_{k=1}^{\infty}\alpha_kf_k$。首先的问题是这个级数在什么意义下收敛。为此，我们形式地记
+\[
+ g(x)=\sum_{k=1}^{\infty}\alpha_kf_k(x),
+\]
+并取此级数的部分和序列 $S_N(x)=\sum_{k=1}^N\alpha_kf_k(x)$，易见
+\[
+ \|S_N(x)-S_M(x)\|^2=\sum_{k=N+1}^{M}|\alpha_k|^2\qquad(M>N).
+\]
+由贝塞尔不等式，$\sum_{k=1}^{\infty}|\alpha_k|^2<+\infty$，故 $N,M$ 充分大时 $\|S_N(x)-S_M(x)\|<\varepsilon$。由下面就要证明的里斯--费希尔（Riesz--Fisher）定理（关于勒贝格可积函数的里斯--费希尔定理即上节之定理19，它们的重要性在上节已讲到了，在 $L^2(E)$ 中这定理也成立，也同样极为重要，见下文）知 $S_N(x)$ 在 $L^2(E)$ 中收敛于一个 $L^2(E)$ 函数，记它为 $g(x)$，此即 $g(x)=\sum_{k=1}^{\infty}\alpha_kf_k(x)$ 的意义。现在再来计算 $g(x)$ 之傅里叶系数。因 $\|S_N(x)-g(x)\|\to0$。取 $N>k$，有
+\[
+ (g,f_k)=(g-S_N,f_k)+(S_N,f_k)=(g-S_N,f_k)+\alpha_k.
+\]
+令 $N\to\infty$，$|(g-S_N,f_k)|\le\|g-S_N\|\to0$，故得 $(g,f_k)=\alpha_k$，而 $(f-g,f_k)=0$。由于我们已设 $\{f_k(x)\}$ 是完全的，所以 $f-g=0$ 几乎处处成立。上面我们还证明了 $\|S_N-g\|\to0$，因此 $\|S_N-f\|\to0$。由下而即将证明的 $L^2(E)$ 中的里斯--费希尔定理，$\|S_N\|\to\|f\|$，但 $\|S_N\|^2=\sum_{k=1}^N|\alpha_k|^2$，令 $N\to\infty$ 即知(22)式成立。
+
+给出了一个 o.n. 系，怎样判定它完全与否？这时常是最吃力的问题，因为应用定理5并不方便，而且这常是最重要的问题。下一章我们就要证明 $\{e^{ikx}\}$ 是 $L^2([ -\pi,\pi])$ 中的完全系。现在我们则回到 $L^2(E)$ 理论中一个最重要的定理。§2 中我们已对勒贝格可积函数证明过一个同名的定理（定理19）。
+
+\noindent\textbf{定理6（里斯--费希尔定理）}\quad 设 $\{f_k(x)\}$ 是 $L^2(E)$ 中的一个柯西序列，即对任一 $\varepsilon>0$，均有 $N(\varepsilon)$ 存在，使当 $n,m>N(\varepsilon)$ 时 $\|f_n-f_m\|<\varepsilon$，则必存在唯一的 $f(x)\in L^2(E)$，使 $\|f_n-f\|\to0$，而且 $\|f_n\|\to\|f\|$。
+
+\noindent\textbf{证}\quad §2 中证明定理19时，我们是假设了 $m(E)<+\infty$ 的，而只在最后提了一句话当 $E$ 为 $\sigma$ 有限时定理也成立，现在我们给出完全的证明。
+
+(i) 先设 $m(E)<+\infty$，注意这时 $L^2(E)$ 函数本身也为勒贝格可积。现在取 $N_1<N_2<\cdots<N_k<\cdots$，使
+\[
+ \|f_{N_{k+1}}-f_{N_k}\|<\frac1{2^k},
+\]
+从而由施瓦茨（Schwarz）不等式
+\[
+ \int_E|f_{N_{k+1}}-f_{N_k}|\,dx\le[m(E)]^{1/2}\|f_{N_{k+1}}-f_{N_k}\|_{L^2}.
+\]
+所以
+\[
+ \sum_{k=1}^{\infty}\int_E|f_{N_{k+1}}-f_{N_k}|\,dx<+\infty,
+\]
+而依照上一节勒维定理的证明可知，$f_{N_1}(x)+\sum_{k=1}^{\infty}[f_{N_{k+1}}(x)-f_{N_k}(x)]$ 几乎处处收敛于某个函数 $f(x)$，亦即 $\{f_k(x)\}$ 有一个子序列 $\{f_{N_k}(x)\}$ 在 $E$ 上几乎处处收敛于 $f(x)$。$f(x)$ 在 $E$ 上显然是可测的。今证它属于 $L^2(E)$。为此，也如 §2 证明定理19 一样，可知当 $n>N(\varepsilon)$ 时
+\[
+ \int_E|f_n(x)-f_{N_k}(x)|^2\,dx<\varepsilon^2.
+\]
+由法图引理即知 $|f_{N_k}(x)|^2$ 之极限函数 $|f(x)|^2$ 适合
+\[
+ \int_E|f_n(x)-f(x)|^2\,dx<\varepsilon^2.
+\]
+因此 $f_n(x)-f(x)\in L^2(E)$，从而 $f(x)\in L^2(E)$，而且
+\begin{equation}
+ \lim_{n\to\infty}\|f_n-f\|=0.
+ \tag{23}
+\end{equation}
+这种意义下的收敛性我们称为 $L^2$ 收敛。
+
+(ii) $E$ 为 $\sigma$ 有限，这时上面证明中用施瓦茨不等式这一步不适用了。我们只有注意到 $E=\lim_{k\to\infty}E_k$，而先在 $E_1$ 上看序列 $\{f_n(x)\}$。如上所述，可知它有一个子序列 $\{f_{N_k}(x)\}$ 在 $E_1$ 上几乎处处收敛于 $f(x)$；继而我们在 $E_2$ 中看 $\{f_{N_k}(x)\}$，和上面一样可以找到 $\{f_{N_k}(x)\}$ 的一个子序列 $\{f_{M_k}(x)\}$，几乎处处收敛于 $E_2$ 中的可测函数 $\widetilde f(x)$。但因 $\{f_{M_k}\}$ 是 $\{f_{N_k}\}$ 的子序列，而后者在 $E_2$ 的子集 $E_1$ 上几乎处处收敛于 $f(x)$，所以 $\widetilde f(x)=f(x)$ 于 $E_1$ 上，或者说 $f(x)$ 可以延拓到 $E_2$ 上仍为可测函数。如此继续并用对角线法，即知在 $E$ 上有一可测函数 $f(x)$，使在每个 $E_k$ 上都可以仿照上面的证明而有
+\begin{equation}
+ \int_{E_k}|f_n(x)-f(x)|^2\,dx<\varepsilon^2.
+ \tag{24}
+\end{equation}
+暂时固定 $n$，由 $f(x)=f_n(x)+f(x)-f_n(x)$，用三角形不等式有
+\[
+ \left(\int_{E_k}|f(x)|^2\,dx\right)^{1/2}
+ \le\varepsilon+\left(\int_{E_k}|f_n(x)|^2\,dx\right)^{1/2}
+ \le\varepsilon+\left(\int_E|f_n(x)|^2\,dx\right)^{1/2}.
+\]
+再令 $k\to\infty$，即知 $f(x)\in L^2(E)$。在(24)中令 $n\to\infty$ 即知
+\[
+ \lim_{n\to\infty}\|f_n-f\|=0,
+\]
+即是说 $L^2$ 收敛也成立。
+
+定理的最后一个论断并非此定理之一部分只是顺便放在这里，因为证明十分容易：利用
+\[
+ f_n(x)=f_n(x)-f(x)+f(x),\qquad f(x)=f(x)-f_n(x)+f_n(x),
+\]
+由三角形不等式有
+\[
+ \|f_n\|\le\|f\|+\|f_n-f\|,\qquad \|f\|\le\|f_n\|+\|f_n-f\|,
+\]
+亦即
+\[
+ \bigl|\|f_n\|-\|f\|\bigr|\le\|f_n-f\|\to0.
+\]
+
+至此我们已经完成了对 $L^2(E)$ 的讨论。可是，在历史上，首先讨论的是另一个空间 $l^2$，这是希尔伯特与施密特在研究具有对称核的积分方程理论时提出来的。$l^2$ 是一个由复数序列组成的空间。在 $L^2(E)$ 中可以找到完全的 o.n. 系（这一点证明尚未完成）$\{f_k(x)\}$ 后，任意 $f(x)\in L^2(E)$ 就都可以展开为以下形状的级数
+\begin{equation}
+ f(x)=\sum_{k=1}^{\infty}\alpha_kf_k(x),\qquad \alpha_k=\langle f,f_k\rangle\quad(\text{或 }\alpha_k=(f,f_k)).
+ \tag{25}
+\end{equation}
+我们不妨称它为 $f(x)$ 之关于 o.n. 系 $\{f_k(x)\}$ 的傅里叶级数。上面证明了它的部分和在(23)式意义下收敛于 $f(x)$，即此级数在 $L^2$ 意义下收敛于 $f(x)$。帕塞瓦尔等式指出
+\begin{equation}
+ \|f\|=\left(\sum_{k=1}^{\infty}|\alpha_k|^2\right)^{1/2}.
+ \tag{26}
+\end{equation}
+(22)式是对实的 $L^2(E)$ 系数讲的，不过这个理论对复值 $L^2$ 函数也成立，这时帕塞瓦尔等式应改写如上，于是我们看见 $L^2(E)$ 函数 $f(x)$ 与一个序列对应：
+\[
+ f(x)\sim(\alpha_1,\alpha_2,\ldots,\alpha_k,\ldots).
+\]
+很容易看到，这个对应是双方 $1$--$1$ 的，而且保持线性空间结构，如同线性代数中讲的线性同构一样。式左的 $f(x)\in L^2(E)$，故有内积与范数，如若还有另一个 $g(x)\in L^2(E)$ 对应于 $(\beta_1,\beta_2,\ldots,\beta_k,\ldots)$，则由 $f(x)=\sum_{k=1}^{\infty}\alpha_kf_k(x)$，$g(x)=\sum_{k=1}^{\infty}\beta_kf_k(x)$，可以证明
+\[
+ \langle f,g\rangle=\sum_{k=1}^{\infty}\alpha_k\beta_k,\qquad (f,g)=\sum_{k=1}^{\infty}\alpha_k\overline{\beta_k},
+\]
+\[
+ \|f\|^2=\sum_{k=1}^{\infty}\alpha_k^2,\qquad \|g\|^2=\sum_{k=1}^{\infty}\beta_k^2.
+\]
+因此，我们在集合 $\{\alpha_1,\alpha_2,\ldots,\alpha_k,\ldots\}$ 中也可以引入内积（实的和复的）和范数
+\[
+ \langle\alpha,\beta\rangle=\sum_{k=1}^{\infty}\alpha_k\beta_k\qquad\left(\text{或 }(\alpha,\beta)=\sum_{k=1}^{\infty}\alpha_k\overline{\beta_k}\right),
+\]
+\begin{equation}
+ \|\alpha\|^2=\sum_{k=1}^{\infty}\alpha_k^2\qquad\left(\text{或 }\|\alpha\|^2=\sum_{k=1}^{\infty}|\alpha_k|^2\right).
+ \tag{27}
+\end{equation}
+这里 $\alpha=(\alpha_1,\alpha_2,\ldots,\alpha_k,\ldots)$，$\beta=(\beta_1,\beta_2,\ldots,\beta_k,\ldots)$。在这个集合中引入线性结构和由上式定义的内积与范数后，我们得到一个空间，记为 $l^2$。$l^2$ 与 $L^2(E)$ 线性同构，这个同构由 $L^2(E)$ 中的一个完全的 o.n. 系来实现，选用不同的完全 o.n. 系会得到不同的同构，但是总是同构。这个同构又是等距的，这一点由(26)式以及很容易证明的
+\[
+ \langle f,g\rangle=\sum_{k=1}^{\infty}\alpha_k\beta_k,\qquad (f,g)=\sum_{k=1}^{\infty}\alpha_k\overline{\beta_k}
+\]
+来实现。不问那个完全的 o.n. 系如何选择，上面的关系式总是不变的。因为 $L^2(E)$ 与 $l^2$ 有上述的等距同构关系，我们把二者看作完全相同的空间，而且上面已提到，在历史上是先有 $l^2$，后来才由里斯提出 $L^2(E)$。$l^2$ 中也有里斯--费希尔定理，但我们不来证明它了。读了第六章中关于完备性的论述就会明白。
+
+至此也可以回答一个问题：$L^2(E)$ 是无穷维空间应如何理解？这不是说 $f(x)\in L^2(E)$ 而 $E$ 中的 $x$ 一般有无穷多个点就说 $f(x)$ 是无穷维向量，而是因为 $L^2(E)$ 与 $l^2$ 同构，而后者显然有一个含无穷多个线性无关向量的基底，例如 $\{(1,0,\ldots,0,\ldots);(0,1,0,\ldots,0,\ldots);\ldots;(0,\ldots,0,1,0,\ldots);\ldots\}$，才说 $l^2$ 是无穷维向量。所以与它同构的 $L^2(E)$ 也有无穷维；而上述 $l^2$ 的基底（或坐标）就对应于 $L^2(E)$ 的一个完全 o.n. 系 $\{f_1(x),f_2(x),\ldots,f_k(x),\ldots\}$。
+
+$L^2(E)$ 空间具有无穷维的欧氏空间（或埃尔米特空间）的结构，因此是性质极丰富而简单性又仅次于 $\mathbf R^N$ 的空间，它是量子力学的基本框架。
+
+\noindent\textbf{3. $L^p$ 空间}\quad 研究了 $L^2(E)$ 后，就可以考虑 $L^p(E)$ 和 $l^p$，这里 $1\le p\le\infty$。$L^p(E)$ 就是 $p$ 次幂勒贝格可积的函数之空间。这时会问当 $p>1$ 时，若 $|f(x)|^p$ 勒贝格可积，$f(x)$ 本身又如何？和 $L^2(E)$ 一样，若 $m(E)<+\infty$，则 $f(x)$ 本身也勒贝格可积，否则就不一定了。当然 $p=1$ 时，$L^p(E)=L^1(E)$ 即勒贝格可积函数空间，而且通常也喜欢用这个记号而不用 $L(E)$；$L^\infty(E)$ 则是另一回事。$L^p(E)$ 也是线性空间，这一点不难证，我们暂时略去。
+
+下面限于 $1<p<\infty$，这个限制极为重要。
+
+$L^p$，$p\ne2$ 和 $L^2$ 最大的差别在于 $L^p$（$p\ne2$）中没有内积，因此就没有 o.n. 系这一重要概念。但在 $L^p$ 中却有与施瓦茨不等式相应的重要不等式。以下我们说，适合关系式 $\frac1p+\frac1q=1$ 的 $p$ 和 $q$（这里 $1<p,q<\infty$）为共轭指数，而 $L^p$ 与 $L^q$ 也称为互相共轭的空间。当然，$p=1$ 时，$q=\infty$，所以 $L^1$ 和 $L^\infty$ 也互相共轭，但其性质与 $1<p,q<\infty$ 极不相同。显然，当 $p=2$ 时也有 $q=2$，所以 $L^2$ 是自共轭的。
+
+\noindent\textbf{定理7（赫尔德（Hölder）不等式）}\quad 设 $f(x)\in L^p(E)$，$g(x)\in L^q(E)$，$\frac1p+\frac1q=1$，$1<p,q<\infty$，则 $f(x)g(x)\in L^1(E)$，而且
+\begin{equation}
+ \int_E|f(x)g(x)|\,dx\le\left(\int_E|f(x)|^p\,dx\right)^{1/p}\left(\int_E|g(x)|^q\,dx\right)^{1/q}.
+ \tag{28}
+\end{equation}
+
+为了证明这个定理，我们先证明：
+
+\noindent\textbf{引理（杨（Young）氏不等式）}\quad 若 $a,b\ge0$，$p,q$ 同上，则
+\begin{equation}
+ ab\le\frac{a^p}{p}+\frac{b^q}{q}.
+ \tag{29}
+\end{equation}
+
+\noindent\textbf{证}\quad 考虑 $0<t<+\infty$ 上的函数 $\varphi(t)=t^\alpha-\alpha t$，$0<\alpha<1$。$0<t<1$ 时 $\varphi'(t)>0$，$1<t<\infty$ 时，$\varphi'(t)<0$，所以 $\varphi(t)$ 当 $t=1$ 时，达到最大值，即 $t^\alpha-\alpha t\le1-\alpha$，而
+\[
+ t^\alpha\le\alpha t+(1-\alpha).
+\]
+如果 $a=b=0$，则(29)自然成立，所以我们可以限于 $b\ne0$ 的情况，令 $\alpha=1/p$，则 $1-\alpha=1-1/p=1/q$，用 $t=a^pb^{-q}$，代入上式双方再乘以 $b^q$，即有
+\[
+ ab\le\frac{a^p}{p}+\frac{b^q}{q}.
+\]
+
+\noindent\textbf{赫尔德不等式的证明}\quad 在上式中令
+\[
+ a=\frac{|f(x)|}{\left(\int_E|f(x)|^p\,dx\right)^{1/p}},\qquad
+ b=\frac{|g(x)|}{\left(\int_E|g(x)|^q\,dx\right)^{1/q}}
+\]
+（暂设两个分母均不为 $0$），则
+\[
+ \int_Ea^p\,dx=1,\qquad \int_Eb^q\,dx=1.
+\]
+以 $a,b$ 代入上式并在 $E$ 上积分即得赫尔德不等式。若上面至少有一个分母为 $0$，例如 $\int_E|f(x)|^p\,dx=0$，则 $f(x)=0$ 几乎处处成立而(28)是自明的。
+
+\noindent\textbf{定理8（闵可夫斯基（Minkowski）不等式）}\quad 若 $f(x),g(x)\in L^p(E)$，$1<p<+\infty$，则
+\begin{equation}
+ \left(\int_E|f(x)+g(x)|^p\,dx\right)^{1/p}
+ \le\left(\int_E|f(x)|^p\,dx\right)^{1/p}+\left(\int_E|g(x)|^p\,dx\right)^{1/p}.
+ \tag{30}
+\end{equation}
+
+\noindent\textbf{证}\quad 在赫尔德不等式中把 $|g(x)|$ 换成 $|f+g|^{p/q}$，即有
+\[
+ \int_E|f(x)|\,|f(x)+g(x)|^{p/q}\,dx
+ \le\left(\int_E|f(x)|^p\,dx\right)^{1/p}
+ \left(\int_E|f(x)+g(x)|^p\,dx\right)^{1/q}.
+\]
+类似地，把 $|f(x)|$ 换成 $|f+g|^{p/q}$，又有
+\[
+ \int_E|g(x)|\,|f(x)+g(x)|^{p/q}\,dx
+ \le\left(\int_E|g(x)|^p\,dx\right)^{1/p}
+ \left(\int_E|f(x)+g(x)|^p\,dx\right)^{1/q}.
+\]
+两式相加，注意到 $1+p/q=p(1/p+1/q)=p$，所以
+\[
+\begin{aligned}
+ \int_E|f+g|^p\,dx
+ &\le\left[\left(\int_E|f(x)|^p\,dx\right)^{1/p}
+ +\left(\int_E|g(x)|^p\,dx\right)^{1/p}\right]\\
+ &\qquad\times\left(\int_E|f(x)+g(x)|^p\,dx\right)^{1/q}.
+\end{aligned}
+\]
+双方除以 $\left(\int_E|f(x)+g(x)|^p\,dx\right)^{1/q}$，即得(30)式。
+
+\noindent\textbf{注}\quad 当 $p=1$ 时 $q=\infty$，$L^1$ 的意义上面已讲过了，$L^\infty(E)$ 则定义为适合
+\[
+ \operatorname{ess\,sup}|f(x)|<+\infty
+\]
+的可测函数空间。若在定理7、8中这样来理解 $L^\infty$，则它们对 $1\le p,q\le+\infty$ 也是成立的。
+
+闵可夫斯基不等式当 $p=2$ 时就是三角形不等式。因此，在 $L^p(E)$ 中我们仍可定义 $f(x)$ 作为一个向量是“长度”，称为模或范数，记作
+\[
+ \|f\|_{L^p}=\left(\int_E|f(x)|^p\,dx\right)^{1/p},\qquad 1\le p<+\infty,
+\]
+\[
+ \|f\|_{L^\infty}=\operatorname{ess\,sup}|f(x)|.
+\]
+尽管我们不能定义内积因此没有角度、正交性与 o.n. 系等概念，但有了向量“长度”，就可以定义两个向量或两个点 $f,g$ 之距离 $\rho(f,g)=\|f-g\|_{L^p}$。很容易看到，它和 $L^2(E)$ 中的距离一样也具有以下三条基本性质
+
+(i) $\rho(f,g)=\rho(g,f)$；
+
+(ii) $\rho(f,g)\ge0$，$\rho(f,g)=0\Leftrightarrow f=g$；
+
+(iii) $\rho(f,g)\le\rho(f,h)+\rho(h,g)$。
+
+所以 $L^p(E)$，$1\le p\le+\infty$ 同样也是性质极丰富的空间：它们有距离，也有线性结构，但除非 $p=2$，没有正交性的概念。它们也提供了一系列十分有用的数学框架。不过我们要注意，$L^1$ 和 $L^\infty$ 空间有许多重要的性质是一般的 $L^p$（$1<p<+\infty$）空间所没有的。在今后的学习过程中这一点应该牢记。
+
+最后我们要问，是否 $L^p(E)$ 空间也适合里斯--费希尔定理？答案是肯定的：
+
+\noindent\textbf{定理9}\quad 若 $\{f_k\}$ 是 $L^p$ 空间中按 $\|\cdot\|_{L^p}$ 范数的柯西序列，则必存在 $f\in L^p(E)$ 使在 $L^p$ 意义下 $\lim_{k\to\infty}f_k=f$。
+
+证明略去。我们只提醒一下，$p<\infty$ 时，$L^p$ 意义下的收敛都是以积分表示的一种平均收敛，只有 $L^\infty$ 收敛性是除了一个零测度集后的一致收敛性。

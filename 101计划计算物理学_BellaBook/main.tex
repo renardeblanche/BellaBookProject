@@ -1,0 +1,155 @@
+\documentclass[11pt,twoside,openright]{ctexbook}
+
+\usepackage[paperwidth=7.5in,paperheight=10in,inner=21mm,outer=17mm,top=20mm,bottom=22mm,headheight=15pt,headsep=7mm,footskip=11mm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{TeXGyreTermes}
+\setsansfont{TeXGyreHeros}
+\setmonofont{TeXGyreCursor}
+\newfontfamily\cyrillicfont{Noto Serif}
+\newcommand{\ChebName}{{\cyrillicfont Чебышёв}}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont{Noto Sans CJK SC}
+\setCJKmonofont{Noto Sans Mono CJK SC}
+
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs,longtable,array,calc,multirow}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning,arrows.meta,decorations.pathreplacing,decorations.pathmorphing,shapes.geometric,patterns}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{emptypage}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\definecolor{BellaBlue}{HTML}{AD363B}
+\definecolor{BellaTeal}{HTML}{CE3238}
+\definecolor{BellaInk}{HTML}{622C2A}
+\definecolor{BellaPale}{HTML}{FBF3F3}
+\definecolor{BellaGray}{HTML}{776667}
+\definecolor{BellaCode}{HTML}{FAF6F6}
+\definecolor{BellaWarn}{HTML}{FFF1F0}
+
+\pdfstringdefDisableCommands{%
+  \def\rusname#1{#1}%
+  \def\ChebName{Чебышёв}%
+}
+
+\hypersetup{
+  unicode=true,
+  colorlinks=true,
+  linkcolor=BellaBlue,
+  urlcolor=BellaTeal,
+  citecolor=BellaTeal,
+  pdftitle={计算物理学},
+  pdfauthor={彭良友、梁昊、陈基},
+  pdfsubject={BellaBook 忠实校勘重排版},
+  bookmarksopen=true,
+  bookmarksnumbered=true
+}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.15em}
+\setstretch{1.15}
+\emergencystretch=2em
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+\setlist{nosep,leftmargin=2em}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\color{BellaInk}}
+  {\filleft\sffamily\color{BellaBlue}\fontsize{14}{16}\selectfont 第\,\thechapter\,章}
+  {0.7ex}
+  {\filleft\fontsize{30}{35}\selectfont}
+  [\vspace{1.0ex}\titlerule\vspace{2.5ex}]
+\titlespacing*{\chapter}{0pt}{-8pt}{18pt}
+
+\titleformat{\section}
+  {\Large\bfseries\color{BellaInk}}
+  {\colorbox{BellaBlue}{\color{white}\sffamily\bfseries\thesection}}{0.7em}{}
+\titleformat{\subsection}
+  {\large\bfseries\color{BellaBlue}}
+  {\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{BellaInk}}
+  {\thesubsubsection}{0.6em}{}
+
+\newtcolorbox{keybox}[1][]{enhanced,breakable,colback=BellaPale,colframe=BellaTeal,boxrule=0.6pt,arc=1.5mm,title=#1,fonttitle=\bfseries}
+\newtcolorbox{algorithmBox}[1][]{enhanced,breakable,colback=white,colframe=BellaGray!70,boxrule=0.6pt,arc=0mm,title=#1,fonttitle=\bfseries,coltitle=BellaInk}
+\newtcolorbox{exerciseBox}[1][]{enhanced,breakable,colback=white,colframe=BellaBlue!70,boxrule=0.6pt,arc=1mm,title=#1,fonttitle=\bfseries,coltitle=BellaInk}
+
+\lstdefinestyle{bellacode}{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{BellaCode},
+  frame=none,
+  numbers=left,
+  numberstyle=\scriptsize\color{BellaGray},
+  numbersep=8pt,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  breaklines=true,
+  xleftmargin=1.6em,
+  framexleftmargin=1.2em,
+  aboveskip=0.4em,
+  belowskip=0.4em
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\sffamily\color{BellaGray}\leftmark}
+\fancyhead[RO]{\small\sffamily\color{BellaGray}\rightmark}
+\fancyfoot[LE,RO]{\sffamily\color{BellaBlue}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\chaptermark}[1]{\markboth{第\thechapter 章\quad #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\quad #1}}
+
+\ctexset{
+  contentsname = {目录},
+  chapter/name = {第,章},
+  appendixname = {附录}
+}
+
+\newcommand{\originalpage}[2]{% visible only as PDF comment anchor in source
+  \phantomsection\label{orig:#1:#2}%
+}
+\newcommand{\jiaokan}[1]{\footnote{\textbf{校勘：}#1}}
+\DeclareRobustCommand{\rusname}[1]{{\cyrillicfont #1}}
+
+\begin{document}
+\frontmatter
+\input{frontmatter/title}
+\input{frontmatter/publication}
+\input{frontmatter/publishing_note}
+\input{frontmatter/preface}
+\input{frontmatter/conventions}
+\tableofcontents
+\clearpage
+
+\mainmatter
+\input{chapters/chapter1}
+\input{chapters/chapter2}
+\input{chapters/chapter3}
+\input{chapters/chapter4}
+\input{chapters/chapter5}
+\input{chapters/chapter6}
+\input{chapters/chapter7}
+\input{chapters/chapter8}
+
+\backmatter
+\input{backmatter/references}
+\input{backmatter/index_manual}
+
+\end{document}

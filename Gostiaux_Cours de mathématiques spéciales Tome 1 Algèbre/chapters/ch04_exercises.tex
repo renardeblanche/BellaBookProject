@@ -1,0 +1,379 @@
+
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} EXERCICES}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.1em]
+\item Soit $a$ un entier impair et $n\ge3$. Montrer que
+\[
+a^{2^{n-2}}\equiv1\pmod{2^n}.
+\]
+Trouver les entiers $n$ tels que le groupe des éléments inversibles de $\mathbb Z/2^n\mathbb Z$ soit cyclique.
+
+\item Soit $G$ un groupe fini et $\varphi$ un morphisme de $G$ dans $G$. Établir l'équivalence
+\[
+(\ker\varphi=\ker\varphi^2)\Longleftrightarrow(\operatorname{Im}\varphi=\operatorname{Im}\varphi^2).
+\]
+
+\item Étudier le groupe multiplicatif de $\mathbb Z/20\mathbb Z$.
+
+\item Soit un groupe $G$ de centre $Z$. Montrer que si $G/Z$ est cyclique, $G$ est abélien. En déduire que si $\operatorname{card}(G)=p^2$ avec $p$ premier, on a $G$ abélien.
+
+\item Soit
+\[
+G=\{M\in M_n(\mathbb R);\ M\text{ triangulaire supérieure inversible}\}.
+\]
+Montrer que $G$ est un groupe, sous-groupe de $GL_n(\mathbb R)$, et que
+\[
+H=\{M=(m_{ij})_{1\le i,j\le n};\ M\in G,\ \forall i,\ m_{ii}=1\}
+\]
+en est un sous-groupe distingué.
+
+\item Soit $G$ un groupe cyclique d'ordre $g$ et $A$ l'ensemble des automorphismes de $G$. Montrer que $A$ est un groupe abélien pour le produit de composition.
+
+\item Soit un groupe multiplicatif $G$. Si $a\in G$, on appelle stabilisateur de $a$ l'ensemble
+\[
+H_a=\{h\in G;\ hah^{-1}=a\}.
+\]
+\begin{enumerate}[label=\arabic*),leftmargin=2em]
+\item Montrer que le stabilisateur de $a$ est un sous-groupe de $G$. Si $G$ est fini, montrer que le nombre de conjugués de $a$ est l'indice dans $G$ de $H_a$.
+\item Si $G$ est d'ordre $p^m$, $p$ premier, $m\ge1$, montrer que le centre de $G$ est d'ordre $p^k$ avec $0<k\le m$.
+\end{enumerate}
+
+\item Soit $G$ un groupe fini, $S$ un sous-groupe. On note
+\[
+N_G(S)=\{x\in G;\ xSx^{-1}=S\}.
+\]
+Montrer que c'est un sous-groupe de $G$ et que le nombre de conjugués de $S$ est l'indice de $N_G(S)$ dans $G$.
+
+En déduire que si $K$ est sous-groupe de $G$ d'indice $n$, alors $K$ admet au plus $n$ conjugués.
+
+En conclure que si $H$ est sous-groupe de $G$ distinct de $G$, l'ensemble $\{xHx^{-1};x\in G\}$ ne recouvre pas $G$.
+
+\item On suppose que $G=\{A_1,A_2,\ldots,A_p\}$ est une partie de $M_n(\mathbb C)$ ayant une structure de groupe pour le produit. Montrer que
+\[
+\operatorname{trace}\!\left(\sum_{i=1}^{p}A_i\right)
+\]
+est un entier divisible par $p$.
+
+\item Montrer que dans le groupe symétrique d'ordre $n$, $S_n$, avec $n\ge3$, toute permutation paire est produit de cycles d'ordre $3$.
+\end{enumerate}
+
+\clearpage
+\begin{center}
+{\Large\sffamily\bfseries\color{BellaLavenderDeep} SOLUTIONS}
+\end{center}
+\vspace{0.8em}
+
+\begin{enumerate}[label=\arabic*.,leftmargin=2.2em,itemsep=1.2em]
+\item Posons $a=2p+1$. On justifie le résultat par récurrence sur $n$.
+
+Si $n=3$, $a^2=(2p+1)^2=4p(p+1)+1$ est congru à $1$ modulo $8$. On suppose
+\[
+a^{2^{n-2}}\equiv1\pmod{2^n}.
+\]
+Donc il existe $q$ dans $\mathbb Z$ tel que
+\[
+a^{2^{n-2}}=2^nq+1.
+\]
+Alors
+\begin{align*}
+a^{2^{n-1}}
+&=\left(a^{2^{n-2}}\right)^2=(2^nq+1)^2\\
+&=2^{2n}q^2+2\cdot2^nq+1\\
+&=2^{n+1}\left(2^{n-1}q^2+q\right)+1
+\end{align*}
+est bien congru à $1$ modulo $2^{n+1}$.
+
+Dans $\mathbb Z/2^n\mathbb Z$, les éléments associés aux $a$ impairs sont donc inversibles, (d'inverse $a^{2^{n-2}-1}$), alors que $b$ pair n'est pas inversible.
+
+En effet, soit $b$ pair avec $0<b<2^n$, on écrit $b=2^r c$, avec $c$ impair, alors forcément $r<n$ et $2^{n-r}\cdot2^rc=0$ dans $\mathbb Z/2^n\mathbb Z$ : $b$ est diviseur de 0.
+
+Il y a donc exactement $\frac12\,2^n=2^{n-1}$ éléments inversibles dans $\mathbb Z/2^n\mathbb Z$. Or si $n\ge3$, si $a$ est impair, comme $a^{2^{n-2}}=1$ dans $\mathbb Z/2^n\mathbb Z$ le groupe cyclique engendré par $a$ n'a pas $2^{n-1}$ éléments : pour $n\ge3$ le groupe des éléments inversibles de $\mathbb Z/2^n\mathbb Z$ n'est pas cyclique.
+
+Pour $n=2$, dans $\mathbb Z/4\mathbb Z$, on a le groupe $\{\bar1,\bar3\}$ à 2 éléments \BellaCorrectionNote{cyclique}{non cyclique}{Un groupe à deux éléments est nécessairement cyclique; ici $\bar3$ est d'ordre $2$ et engendre $\{\bar1,\bar3\}$.} ($\bar1^2=\bar1$ et $\bar3^2=\bar1$). Il n'y a donc que pour $n=1$ \BellaCorrectionNote{ou $n=2$}{ }{La phrase imprimée conclut à tort « Il n'y a que pour $n=1$ ». La correction précédente montre que $n=2$ convient aussi.} que le groupe des éléments inversibles de $\mathbb Z/2^n\mathbb Z$ soit cyclique.
+
+\item On a toujours $\ker\varphi\subset\ker\varphi^2$ et $\operatorname{Im}\varphi^2\subset\operatorname{Im}\varphi$, ainsi que les isomorphismes $G/\ker\varphi\simeq\varphi(G)$ et $G/\ker\varphi^2\simeq\varphi^2(G)$, (premier théorème d'isomorphisme, Théorème 4.23).
+
+Si $\ker\varphi=\ker\varphi^2$, on a donc $\varphi(G)$ et $\varphi^2(G)$ sous-groupes finis de $G$, isomorphes, avec $\varphi^2(G)\subset\varphi(G)$ d'où l'égalité $\varphi(G)=\varphi^2(G)$.
+
+Si $\varphi(G)=\varphi^2(G)$, les groupes quotients $G/\ker\varphi$ et $G/\ker\varphi^2$ ont le même nombre d'éléments donc
+\[
+\frac{\operatorname{card}G}{\operatorname{card}(\ker\varphi)}
+=
+\frac{\operatorname{card}G}{\operatorname{card}(\ker\varphi^2)}
+\]
+d'où $\ker\varphi$ et $\ker\varphi^2$ de même cardinal fini, avec $\ker\varphi\subset\ker\varphi^2$ et l'égalité $\ker\varphi=\ker\varphi^2$.
+
+\item Dans $\mathbb Z/20\mathbb Z$, $\bar x=\bar a$ est inversible s'il existe $\bar y=\bar b$ tel que $\bar a\bar b=\bar1$, soit s'il existe $b$ et $q$ dans $\mathbb Z$ tels que : $ab+20q=1$, ce qui équivaut, (Bézout), à avoir $a$ et 20 premiers entre eux, d'où le groupe
+\[
+G=\{\bar1,\bar3,\bar7,\bar9,\bar{11},\bar{13},\bar{17},\bar{19}\},
+\]
+(on note $1,3,\ldots$ pour $\bar1,\bar3,\ldots$).
+
+L'élément $3$ engendre le sous-groupe cyclique $H=\{3,9,7,1\}$, l'élément $19$ engendre le groupe cyclique $K=\{19,1\}$.
+
+L'application
+\[
+\theta:\BellaCorrectionNote{H\times K}{H\times H}{La ligne suivante de l'original dit elle-même « du groupe produit $H\times K$ »; le domaine doit donc être $H\times K$.}\longrightarrow G,
+\qquad (x,y)\longmapsto xy
+\]
+est un morphisme du groupe produit $H\times K$ dans $G$, injectif car $xy=x'y'\Rightarrow x'^{-1}x=y'y^{-1}\in H\cap K=\{1\}$ d'où $x=x'$ et $y=y'$.
+
+Comme $H\times K$ et $G$ ont tous les deux 8 éléments c'est un isomorphisme donc
+\[
+G\simeq H\times K\simeq(\mathbb Z/4\mathbb Z)\times(\mathbb Z/2\mathbb Z).
+\]
+
+\item On prend une notation multiplicative. Si $G/Z$ est cyclique, il existe $a$ dans $G$ tel que $G/Z$ soit engendré par $\bar a$, classe de $a$, avec $G/Z$ d'ordre fini $r$.
+
+Soient $x$ et $x'$ dans $G$, il existe donc 2 entiers $n$ et $n'$ compris entre 1 et $r$ tels que $x\in\bar a^n$ et $x'\in\bar a^{n'}$, donc il existe $z$ et $z'$ dans le centre tels que $x=za^n$ et $x'=z'a^{n'}$. Mais comme $z$ et $z'$ commutent avec tout élément de $G$, on a
+\[
+xx'=(za^n)(z'a^{n'})=zz'a^{n+n'}=z'za^{n'+n}=(z'a^{n'})(za^n)=x'x,
+\]
+d'où $G$ abélien.
+
+Si card$(G)=p^2$ avec $p$ premier, le centre, sous-groupe distingué de $G$, a son cardinal qui divise $p^2$, donc qui vaut $p^2$, $p$ ou 1. Si card$(Z)=p^2$, $Z=G$ qui est abélien.
+
+Si card$(Z)=p$, le cardinal de $G/Z$ est $p$, premier, donc $G/Z$ est cyclique, mais alors $G$ est abélien, (et card$(Z)=p^2$ en fait).
+
+Enfin card$(Z)=1$ est absurde, car si $G$ opère sur lui-même par automorphismes intérieurs, soit pour $g\in G$,
+\[
+O_g=\{xgx^{-1};\ x\in G\}
+\]
+l'orbite de $g$. On a
+\[
+\operatorname{card}(O_g)=1
+\Longleftrightarrow \forall x\in G,\ xgx^{-1}=g
+\Longleftrightarrow \forall x\in G,\ xg=gx
+\Longleftrightarrow g\in Z
+\Longleftrightarrow g=e.
+\]
+Comme avec $\Gamma_g$ groupe d'isotropie de $g$ on a
+\[
+\operatorname{card}(G)=\operatorname{card}(\Gamma_g)\times\operatorname{card}(O_g),
+\qquad\text{pour }g\ne e,
+\]
+card$(O_g)$ est un diviseur différent de 1 de $p^2$, c'est $p$ ou $p^2$. L'équation aux classes donne $p^2=1+$ multiple de $p$ : absurde. On a bien $G$ abélien.
+
+\item Si $\mathbb R^n$ est rapporté à une base $B=\{e_1,\ldots,e_n\}$ et si $m$ est l'endomorphisme de matrice $M$ triangulaire supérieure dans la base $B$ c'est équivalent à dire que $\forall i=1,\ldots,n$, on a
+\[
+m(e_i)\in\operatorname{Vect}(e_1,e_2,\ldots,e_i).
+\]
+De plus $M$ inversible équivaut à $m_{ii}\ne0$, $\forall i=1,\ldots,n$.
+
+Mais alors $G$ est sous-groupe de $GL_n(\mathbb R)$ car $I_n\in G$, ($G$ non vide), $G$ est stable par produit car si $M$ et $M'$ sont dans $G$, avec $m$ et $m'$ les endomorphismes associés on aura
+\[
+m(m'(e_j))=m\left(\sum_{i=1}^{j}m'_{ij}e_i\right)
+=\sum_{i=1}^{j}m'_{ij}m(e_i).
+\]
+Or si $i\le j$, on a $m(e_i)\in\operatorname{Vect}(e_1,\ldots,e_i)\subset\operatorname{Vect}(e_1,\ldots,e_j)$ d'où finalement, $\forall j=1,\ldots,n$, $mm'(e_j)\in\operatorname{Vect}(e_1,\ldots,e_j)$ donc $MM'\in G$.
+
+Enfin les formules de résolution du système $Y=MX$
+\[
+\left\{
+\begin{aligned}
+y_1&=m_{11}x_1+\cdots+m_{1n}x_n,\\
+y_2&=m_{22}x_2+\cdots+m_{2n}x_n,\\
+&\ \vdots\\
+y_{n-1}&=m_{n-1,n-1}x_{n-1}+m_{n-1,n}x_n,\\
+y_n&=m_{nn}x_n
+\end{aligned}
+\right.
+\]
+donnent, $x_n=\dfrac1{m_{nn}}y_n$, puis $x_{n-1}$ combinaison linéaire de $y_{n-1}$ et $x_n$ donc de $y_{n-1}$ et $y_n$ et, de proche en proche, (cela ne veut rien dire), $x_k$ combinaison linéaire de $y_k,y_{k+1},\ldots,y_n$, soit $X=M^{-1}Y$ avec $M^{-1}$ triangulaire supérieure.
+
+On peut aussi dire que $M^{-1}$ est un polynôme en $M$, (\BellaCorrection{Cayley--Hamilton}{Caley Hamilton}) et la stabilité de $G$ par produit donne alors $M^{-1}$ dans $G$.
+
+Soit alors le groupe multiplicatif $(\mathbb R^*)^n$ pour la loi
+\[
+(x_1,\ldots,x_n)\cdot(y_1,\ldots,y_n)=(x_1y_1,\ldots,x_ny_n).
+\]
+On vérifie que l'application $\varphi:G\longrightarrow(\mathbb R^*)^n$ définie par
+\[
+\varphi(M)=(m_{11},\ldots,m_{nn})
+\]
+est un morphisme de groupe et $H$ en est le noyau, d'où $H$ sous-groupe distingué de $G$.
+
+\item Si $a$ est un générateur de $G$, cyclique d'ordre $g$, noté multiplicativement, on a
+\[
+G=\{a,a^2,\ldots,a^{g-1},a^g\}
+\]
+et $a^g=e$ élément neutre du groupe.
+
+Un automorphisme $\varphi$ de $G$ est alors défini par la donnée de $\varphi(a)=a^k$, avec $k\in\{1,2,\ldots,g\}$ a priori, car on peut calculer les images de tous les éléments, par $\varphi(a^r)=a^{rk}$.
+
+De plus, $\varphi$ est un automorphisme si et seulement si l'image admet aussi $g$ éléments, donc si et seulement si $a^k$ engendre aussi $G$.
+
+Or le groupe engendré par $a^k$ est d'ordre $r$, plus petit entier tel que $kr$ soit multiple de $g$. Si $d$ est le p.g.c.d. de $k$ et $g$, avec $g=dg'$ et $k=dk'$, on a $kg'=(dg')k'$ et $a^k$ engendre un sous-groupe d'ordre $g'=g/d$. On a donc $\varphi$ automorphisme si et seulement si $d=1$, donc si et seulement si $k$ et $g$ sont premiers entre eux : finalement $A$ est de cardinal égal au nombre d'entiers premiers à $g$, inférieurs à $g$, (indicateur d'Euler de $g$).
+
+Il est facile de vérifier que si $\varphi$ et $\psi$ de $A$ sont déterminés par $\varphi(a)=a^k$ et $\psi(a)=a^l$, on aura :
+\[
+(\varphi\circ\psi)(a)=\varphi(a^l)=(\varphi(a))^l=(a^k)^l=a^{kl}
+\]
+alors que
+\[
+(\psi\circ\varphi)(a)=\psi(a^k)=(\psi(a))^k=(a^l)^k=a^{lk},
+\]
+d'où l'égalité $\psi\circ\varphi=\varphi\circ\psi$, le groupe $A$ est abélien.
+
+\item
+\begin{enumerate}[label=\arabic*),leftmargin=2em]
+\item Le stabilisateur $H_a$ de $a$ est non vide, car $e$, élément neutre de $G$ est dans $H_a$; stable par passage à l'inverse, car si $hah^{-1}=a$, on a : $ah^{-1}=h^{-1}a$ puis $a=h^{-1}ah$ donc $h^{-1}\in H_a$; enfin $H_a$ est stable par produit car
+\[
+hah^{-1}=a\quad\text{et}\quad kak^{-1}=a
+\Rightarrow h(kak^{-1})h^{-1}=hah^{-1}=a
+\]
+soit encore
+\[
+(hk)a(hk)^{-1}=a.
+\]
+
+La relation binaire
+\[
+x\mathcal S y\Longleftrightarrow xax^{-1}=yay^{-1}
+\]
+est une relation d'équivalence sur $G$, compatible à gauche car si $x\mathcal S y$, pour tout $t$ de $G$ on a
+\[
+txax^{-1}t^{-1}=tyay^{-1}t^{-1}
+\]
+soit $(tx)\mathcal S(ty)$. La classe d'équivalence de $e$ est l'ensemble des $x$ tels que $xax^{-1}=eae^{-1}=a$, c'est le stabilisateur $H_a$ de $a$, la classe d'équivalence de $x$ est donc $x\cdot H_a$, elle est équipotente à $H_a$, donc la partition de $G$ en classes d'équivalences donne
+\[
+\operatorname{card}(G)=\operatorname{card}(G/\mathcal S)\cdot\operatorname{card}(H_a),
+\qquad
+\operatorname{card}(G/\mathcal S)=\frac{\operatorname{card}(G)}{\operatorname{card}(H_a)}:
+\]
+c'est bien l'indice du stabilisateur de $a$.
+
+Comme le nombre de conjugués différents de $a$ correspond au nombre de classes d'équivalence, on a bien le résultat.
+
+\item Par automorphisme intérieur, l'orbite de $a$ est de cardinal 1 si et seulement si, $\forall h\in G$, $hah^{-1}=a$, soit $ha=ah$, soit encore si et seulement si $a$ est dans le centre $Z$ de $G$.
+
+L'équation aux classes donne donc :
+\[
+\operatorname{card}(G)=p^m=\operatorname{card}Z+
+\sum(\text{cardinaux des orbites des }a\notin Z).
+\]
+Mais si $a\notin Z$, l'orbite de $a$ admet l'indice de $H_a$ comme cardinal, d'après le 1), cet indice est un diviseur de $p^m$, donc du type $p^k$ avec $k\ge1$, (sinon $a\in Z$). La somme des cardinaux des orbites des $a\notin Z$ est divisible par $p$, premier, donc card $Z$ est aussi divisible par $p$ : d'où
+\[
+\operatorname{card}Z=p^q\quad\text{avec }0<q\le m,
+\]
+puisque c'est un sous-groupe de $G$, (donc divise $p^m$) et qu'il est multiple de $p$.
+\end{enumerate}
+
+\item On vérifie comme au 1) du n\textsuperscript{o} 7 que $N_G(S)$ est non vide, stable par produit et passage à l'inverse.
+
+Soit
+\[
+\mathcal A=\{xSx^{-1};\ x\in G\}
+\]
+l'ensemble des conjugués de $S$ et $\varphi:G\longrightarrow\mathcal A$ l'application $x\longmapsto xSx^{-1}$.
+
+On a
+\begin{align*}
+\varphi(x)=\varphi(y)
+&\Longleftrightarrow xSx^{-1}=ySy^{-1}\\
+&\Longleftrightarrow (y^{-1}x)S(x^{-1}y)=S\\
+&\Longleftrightarrow (y^{-1}x)S(y^{-1}x)^{-1}=S\\
+&\Longleftrightarrow y^{-1}x\in N_G(S).
+\end{align*}
+L'équivalence d'application associée à $\varphi$ est l'équivalence associée au sous-groupe $N_G(S)$ par $x\mathcal R y\Longleftrightarrow y^{-1}x\in N_G(S)$. Le nombre d'images distinctes de $\varphi$, (donc le cardinal de $\mathcal A$) est donc l'indice de $N_G(S)$ dans $G$ soit
+\[
+\frac{\operatorname{card}(G)}{\operatorname{card}(N_G(S))}.
+\]
+
+Si $K$ est sous-groupe d'indice $n$ et de cardinal $p$, le cardinal de $G$ est $np$.
+
+Or, si $x\in K$, $xKx^{-1}=K$, (car $xKx^{-1}\subset K$, stable par produit, et $y\mapsto xyx^{-1}$ étant un automorphisme sur $G$, $xKx^{-1}$ et $K$ sont de même cardinal fini). Donc $K\subset N_G(K)$, et comme le nombre de conjugués de $K$ est
+\[
+\frac{np}{\operatorname{card}(N_G(K))}
+\]
+il est inférieur ou égal à
+\[
+\frac{np}{\operatorname{card}K}=\frac{np}{p}=n.
+\]
+
+Soit enfin $H$ un sous-groupe de $G$, distinct de $G$, d'indice $n$ et de cardinal $p$. On a encore card $G=np$ avec $n>1$, sinon card $G=p=$ card $H$, ce qui contredit $H\ne G$.
+
+Chaque conjugué $xHx^{-1}$ de $H$ contient $p$ éléments dont $e$ élément neutre, et donc $p-1$ éléments $\ne e$.
+
+Il y a au plus $n$ conjugués distincts. \BellaCorrectionNote{Si leur réunion recouvrait $G$, on aurait pourtant au plus $n(p-1)$ éléments différents (et $\ne e$) dans cette réunion}{Il y a $n$ conjugués distincts, dont la réunion redonne $G$. On a au plus $n(p-1)$ éléments différents (et $\ne e$) dans cette réunion}{La phrase imprimée affirme simultanément que la réunion des conjugués « redonne $G$ » puis conclut qu'elle ne recouvre pas $G$. Le raisonnement est un argument par contradiction : on suppose que la réunion recouvre $G$ et on obtient la majoration qui suit.}, d'où le cardinal de la réunion des conjugués de $H$ majoré par
+\[
+1+n(p-1)=np-(n-1).
+\]
+Comme $n>1$, on a $1+n(p-1)<np=$ card$(G)$ : la réunion des conjugués de $H$ ne recouvre pas $G$.
+
+\item On fixe $i\in\{1,\ldots,p\}$, la translation à droite $T_i$ par $A_i$ est une bijection de $G$.
+
+Soit
+\[
+A=\sum_{k=1}^{p}A_k,
+\]
+pour $i$ fixé, les $A_kA_i$, $k=1,\ldots,p$ redonnent tous les éléments de $G$, donc $AA_i=A$, et
+\[
+A^2=\sum_{i=1}^{p}AA_i=pA.
+\]
+Mais alors $A$ annule le polynôme $X(X-p)$, ses valeurs propres sont $0$ et $p$, la trace de $A$ est donc $rp$, $r$ multiplicité de $p$ valeur propre de $A$, d'où trace$(A)$ entier multiple de $p$. (Voir ch. 10).
+
+\item Soit un cycle d'ordre 3, $\sigma:i<j<k$ donnant $j,k,i$; c'est une permutation paire, $(i,j)$ donne $(j,k)$ : pas d'inversion, mais $(i,k)$ et $(j,k)$ présentent une inversion, donc des cycles d'ordre 3 ne peuvent engendrer que des éléments de signature 1.
+
+Soit $s$ une permutation d'ordre pair : c'est un produit d'un nombre pair de transpositions et il suffit de prouver qu'un produit de deux transpositions est un produit de cycles d'ordre 3. D'abord, pour toute transposition $T$, on a $T^2=\sigma^3$ si $\sigma$ est un cycle d'ordre 3.
+
+Soient alors $T$ et $T'$ deux transpositions distinctes. On a 2 cas suivant qu'elles ont un élément commun ou non.
+
+\textsc{1er cas} : $T$ et $T'$ sont respectivement les transpositions de $i,j,k$ avec $j$ en commun. Supposons $i<j<k$, $T=T_{i,j}$ et $T'=T_{j,k}$.
+
+On a
+\[
+T'\circ T:(i,j,k)\longmapsto(j,i,k)\longmapsto(k,i,j).
+\]
+Avec $\sigma:(i,j,k)\longmapsto(j,k,i)$, par $\sigma^2$ on aura
+\[
+\sigma^2:(i,j,k)\longmapsto(k,i,j)
+\]
+donc $\sigma^2=T'\circ T$.
+
+\textsc{2e cas} : $T$ et $T'$ portent sur des éléments distincts $i$ et $j$ pour $T$, $k$ et $l$ pour $T'$. On a, a priori trois dispositions possibles :
+\[
+i<j<k<l,\qquad i<k<j<l,\qquad i<k<l<j
+\]
+(vu les rôles symétriques joués par $T$ et $T'$).
+
+Si $i<j<k<l$.
+
+On a
+\[
+(i,j,k,l)\mathrel{\mathop{\longmapsto}\limits^{T'\circ T}}(j,i,l,k).
+\]
+Soit $\sigma:(i,j,k)\longmapsto(j,k,i)$ et $\sigma':(j,k,l)\longmapsto(k,l,j)$, alors par $\sigma\circ\sigma'$ on a
+\[
+(i,j,k,l)\mathrel{\mathop{\longmapsto}\limits^{\sigma'}}(i,k,l,j)
+\mathrel{\mathop{\longmapsto}\limits^{\sigma}}(j,i,l,k)
+\]
+donc $\sigma\circ\sigma'=T'\circ T$.
+
+Si $i<k<j<l$, on a toujours
+\[
+(i,k,j,l)\mathrel{\mathop{\longmapsto}\limits^{T'\circ T}}(j,l,i,k).
+\]
+Soit les cycles $\sigma:(i,k,j)\longmapsto(k,j,i)$ et $\sigma':(k,j,l)\longmapsto(j,l,k)$, par $\sigma'\circ\sigma$ :
+\[
+(i,k,j,l)\mathrel{\mathop{\longmapsto}\limits^{\sigma}}(k,j,i,l)
+\mathrel{\mathop{\longmapsto}\limits^{\sigma'}}(j,l,i,k)
+\]
+donc $T'\circ T=\sigma'\circ\sigma$.
+
+Enfin, si $i<k<l<j$, avec
+\[
+(i,k,l,j)\mathrel{\mathop{\longmapsto}\limits^{T'\circ T}}(j,l,k,i)
+\]
+et $\sigma:(i,l,j)\longmapsto(l,j,i)$ et $\sigma':(k,l,j)\longmapsto(l,j,k)$, on a
+\[
+(i,k,l,j)\mathrel{\mathop{\longmapsto}\limits^{\sigma}}(l,k,j,i)
+\mathrel{\mathop{\longmapsto}\limits^{\sigma'}}(j,l,k,i)
+\]
+donc $T'\circ T=\sigma'\circ\sigma$.
+
+On a bien le résultat.
+\end{enumerate}

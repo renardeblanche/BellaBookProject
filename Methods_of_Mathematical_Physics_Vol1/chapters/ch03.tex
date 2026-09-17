@@ -1,0 +1,1553 @@
+\chapter{Linear Integral Equations}
+
+\section{Introduction}
+
+\subsection{Notation and Basic Concepts}
+Let $K(s,t)$ be a function of the two variables $s$ and $t$ defined and continuous in the region $a\le s\le b$, $a\le t\le b$, and let $\lambda$ be a parameter. Furthermore, let $f(s)$ and $\varphi(s)$ be two functions of the variable $s$ continuous in the interval $a\le s\le b$, which are connected by the functional equation
+\begin{equation}\tag{1}
+f(s)=\varphi(s)-\lambda\int K(s,t)\varphi(t)\,dt.
+\end{equation}
+(All integrals are to be extended over the ``fundamental domain'' as defined above, unless the contrary is explicitly stated.) The functional equation (1) is called a \emph{linear integral equation of the second kind} with the kernel $K(s,t)$. By (1) every continuous function $\varphi(s)$ is transformed into another continuous function $f(s)$; the transformation is linear, since to $c_1\varphi_1+c_2\varphi_2$ there corresponds the analogous combination $c_1f_1+c_2f_2$. We shall be primarily concerned with the problem of solving the integral equation, i.e. with the problem of determining $\varphi(s)$ when $f(s)$ is given or of inverting the \emph{linear integral transformation} (1). Unless the contrary is explicitly stated, we shall assume that all quantities considered are real.
+
+If the function $f(s)$ vanishes identically we are dealing with a \emph{homogeneous integral equation}. If a homogeneous equation possesses a solution other than the trivial solution $\varphi=0$, the solution may be multiplied by an arbitrary constant factor and may therefore be assumed normalized. If $\varphi_1,\varphi_2,\ldots,\varphi_h$ are solutions of the homogeneous equation then all linear combinations $c_1\varphi_1+c_2\varphi_2+\cdots+c_h\varphi_h$ are also solutions. Therefore, if several linearly independent solutions are given we may assume that they are normalized and orthogonal; for, if they were not they could be orthogonalized by the procedure of Ch. II, \S1 without ceasing to be solutions. We shall assume that linearly independent solutions of the same homogeneous integral equation are orthonormal. A value $\lambda$ (possibly complex) for which the homogeneous equation possesses nonvanishing solutions is called an \emph{eigenvalue}\footnote{Such eigenvalues actually correspond to the reciprocals of the quantities called eigenvalues in Chapter I.} of the kernel; the corresponding solutions $\varphi_1,\varphi_2,\ldots,\varphi_h$ (assumed normalized and mutually orthogonal) are called the \emph{eigenfunctions} of the kernel for the eigenvalue $\lambda$. Their number is finite for each eigenvalue. For, applying the Bessel inequality (Ch. II, \S1) to the kernel $K(s,t)$ and the orthonormal functions $\varphi_1,\varphi_2,\ldots,\varphi_h$, we find
+\[
+\lambda^2\int [K(s,t)]^2\,dt
+\ge
+\lambda^2\sum_{i=1}^{h}\left[\int K(s,t)\varphi_i(t)\,dt\right]^2
+=
+\sum_{i=1}^{h}\varphi_i(s)^2;
+\]
+by integrating with respect to $s$ we obtain
+\[
+\lambda^2\iint [K(s,t)]^2\,ds\,dt\ge h.
+\]
+This establishes an upper bound for $h$. Thus \emph{every eigenvalue possesses a finite multiplicity} (i.e. number of linearly independent eigenfunctions).
+
+We shall see in \S6 that the integral equation represents a generalization of the problem of linear algebra which was treated in Ch. I, \S2. Its significance lies in the fact that it enables us to consider a variety of different problems in mathematical analysis from a unified point of view.
+
+\subsection{Functions in Integral Representation}
+In connection with equation (1), it is natural to inquire into the properties of functions that can be represented by an integral of the form
+\begin{equation}\tag{2}
+g(s)=\int K(s,t)h(t)\,dt.
+\end{equation}
+In (2), $g(s)$ is called an \emph{integral transform} of $h(s)$.
+
+If $h(t)$ is piecewise continuous, $g(s)$ is certainly continuous. Moreover, if
+\[
+\int [h(t)]^2\,dt\le M,
+\]
+where $M$ is a fixed bound, then the aggregate of functions defined by (2) is actually equicontinuous; i.e. for every positive $\epsilon$ there exists a positive number $\delta(\epsilon)$ independent of the particular function $h$ such that $|g(s+\eta)-g(s)|<\epsilon$ whenever $|\eta|<\delta$ (compare Ch. II, \S2). From the Schwarz inequality we have
+\[
+|g(s+\eta)-g(s)|^2
+\le M\int [K(s+\eta,t)-K(s,t)]^2\,dt
+\]
+and since the kernel is uniformly continuous our assertion is proved; for, the inequality
+\[
+|K(s+\eta,t)-K(s,t)|<\sigma
+\]
+holds independent of $t$ for arbitrarily small $\sigma$ if $\eta$ is sufficiently small.
+
+Furthermore, if a sequence of kernels $K_n$ is given for which
+\[
+\lim_{n\to\infty}K_n(s,t)=K(s,t)
+\]
+uniformly, then for a given $h(t)$ the relation
+\[
+g(s)=\lim_{n\to\infty}\int K_n(s,t)h(t)\,dt
+\]
+holds, and the convergence is uniform in $s$, since the passage to the limit may be performed under the integral sign. It therefore follows that all functions of the form
+\[
+g_n(s)=\int K_n(s,t)h(t)\,dt,
+\qquad
+g(s)=\int K(s,t)h(t)\,dt
+\]
+for the functions $h(t)$ considered form an equicontinuous set as long as $h$ is restricted by $\int h^2\,dt\le M$. These functions are also uniformly bounded, i.e. their absolute values lie below a common bound. This follows from the Schwarz inequality
+\[
+|g_n(s)|^2\le M\int [K_n(s,t)]^2\,dt;
+\qquad
+|g(s)|^2\le M\int [K(s,t)]^2\,dt.
+\]
+
+\subsection{Degenerate Kernels}
+A kernel, which can be written as a finite sum of products of functions of $s$ and functions of $t$
+\begin{equation}\tag{3}
+A(s,t)=\sum_{i=1}^{p}\alpha_i(s)\beta_i(t),
+\end{equation}
+is called a \emph{degenerate kernel}. Here we may assume that the functions $\alpha_i(s)$ are linearly independent of each other, and that the same is true of the functions $\beta_i(t)$. For, otherwise, one of these functions could be written as a linear combination of the others and $A(s,t)$ as a sum of fewer than $p$ terms of the above form. The possibility of uniform approximation of a continuous function $K(s,t)$ by polynomials (Ch. II, \S4) implies that the kernel $K(s,t)$ may be uniformly approximated by a degenerate kernel, since every polynomial in $s$ and $t$ evidently represents a degenerate kernel.
+
+A degenerate kernel $A(s,t)$ may be transformed into another form, which is often more convenient. We suppose that the $2p$ functions of $s$: $\alpha_1(s),\alpha_2(s),\ldots,\alpha_p(s)$; $\beta_1(s),\beta_2(s),\ldots,\beta_p(s)$ are represented as linear combinations of a system of $q$ orthonormal functions $\omega_1(s),\omega_2(s),\ldots,\omega_q(s)$. This can always be done by orthogonalization of the given functions. Then $A(s,t)$ appears in the form of a double sum
+\begin{equation}\tag{4}
+A(s,t)=\sum_{i,j=1}^{q}c_{ij}\omega_i(s)\omega_j(t).
+\end{equation}
+The products $\omega_i(s)\omega_j(t)$ form a system of $q^2$ functions of $s$ and $t$ in the square $a\le s\le b$, $a\le t\le b$ which are mutually orthogonal and therefore linearly independent. If $A(s,t)$ is \emph{symmetric}, i.e. if $A(s,t)=A(t,s)$ identically, then
+\[
+\sum_{i,j=1}^{q}(c_{ij}-c_{ji})\omega_i(s)\omega_j(t)=0;
+\]
+because of the linear independence of the products $\omega_i(s)\omega_j(t)$ this implies $c_{ij}=c_{ji}$.
+
+A symmetric kernel $K(s,t)$ can always be approximated uniformly by symmetric degenerate kernels $A(s,t)$. To see this we need only replace $A(s,t)$ by $\tfrac12[A(s,t)+A(t,s)]$, which approximates the symmetric kernel $K(s,t)$ if $A(s,t)$ does.
+
+\section{Fredholm's Theorems for Degenerate Kernels}
+The basic theorems of the general theory of integral equations, which were first proved by Fredholm,\footnote{I. Fredholm, Sur une classe d'\'equations fonctionnelles, \emph{Acta Math.}, Vol. 27, 1903, pp. 365--390.} correspond to the basic theorems of the theory of linear equations. They may be formulated in the following way:
+
+\emph{Either the integral equation (1),}
+\[
+f(s)=\varphi(s)-\lambda\int K(s,t)\varphi(t)\,dt,
+\]
+\emph{with fixed $\lambda$ possesses one and only one continuous solution $\varphi(s)$ for each arbitrary continuous function $f(s)$, in particular the solution $\varphi=0$ for $f=0$; or the associated homogeneous equation}
+\begin{equation}\tag{5}
+\psi(s)=\lambda\int K(s,t)\psi(t)\,dt
+\end{equation}
+\emph{possesses a finite positive number $r$ of linearly independent solutions $\psi_1,\psi_2,\ldots,\psi_r$. In the first case the ``transposed'' integral equation}
+\begin{equation}\tag{6}
+g(s)=\varphi(s)-\lambda\int K(t,s)\varphi(t)\,dt
+\end{equation}
+\emph{associated with (1) also possesses a unique solution for every $g$. In the second case the transposed homogeneous equation}
+\begin{equation}\tag{7}
+\chi(s)=\lambda\int K(t,s)\chi(t)\,dt
+\end{equation}
+\emph{also has $r$ linearly independent solutions $\chi_1,\chi_2,\ldots,\chi_r$; the inhomogeneous integral equation (1) has a solution if and only if the given function $f(s)$ satisfies the $r$ conditions}
+\begin{equation}\tag{8}
+(f,\chi_i)=\int f(s)\chi_i(s)\,ds=0
+\qquad (i=1,2,\ldots,r).
+\end{equation}
+\emph{In this case the solution of (1) is determined only up to an additive linear combination $c_1\psi_1+c_2\psi_2+\cdots+c_r\psi_r$; it may be determined uniquely by the additional requirements:}
+\[
+(\varphi,\psi_i)=\int\varphi(s)\psi_i(s)\,ds=0
+\qquad (i=1,2,\ldots,r).
+\]
+
+We shall first prove these theorems for the case of the degenerate kernel $K(s,t)=A(s,t)$ represented by equation (3). Here the theory of our integral equation reduces almost immediately to that of a system of $p$ linear equations in $p$ unknowns. Let us write the integral equation in the form
+\begin{equation}\tag{9}
+f(s)=\varphi(s)-\lambda\sum_{i=1}^{p}\alpha_i(s)\int\beta_i(t)\varphi(t)\,dt.
+\end{equation}
+Now setting $x_i=(\beta_i,\varphi)$, multiplying (9) by $\beta_j(s)$, and integrating with respect to $s$, we obtain the system of equations
+\begin{equation}\tag{10}
+f_j=x_j-\lambda\sum_{i=1}^{p}c_{ji}x_i
+\qquad (j=1,2,\ldots,p)
+\end{equation}
+for the quantities $x_i$, where $f_j=(\beta_j,f)$ and $c_{ji}=(\beta_j,\alpha_i)$. If this system of equations possesses one and only one solution $x_1,x_2,\ldots,x_p$, then the function
+\[
+\varphi(s)=f(s)+\lambda\sum_{i=1}^{p}x_i\alpha_i(s)
+\]
+is certainly a solution of the integral equation, as may be verified by substituting in the integral equation and making use of equations (10). Then the transposed system of equations
+\begin{equation}\tag{11}
+g_j=y_j-\lambda\sum_{i=1}^{p}c_{ij}y_i
+\end{equation}
+also possesses a unique solution $y_1,y_2,\ldots,y_p$, and
+\[
+\varphi(s)=g(s)+\lambda\sum_{i=1}^{p}y_i\beta_i(s)
+\]
+is a solution of the transposed integral equation (6).
+
+If, on the other hand, the homogeneous system of equations
+\begin{equation}\tag{12}
+0=x_j-\lambda\sum_{i=1}^{p}c_{ji}x_i
+\qquad (j=1,2,\ldots,p)
+\end{equation}
+possesses a nontrivial solution $x_1,x_2,\ldots,x_p$, then
+\[
+\psi(s)=\lambda\sum_{i=1}^{p}x_i\alpha_i(s)
+\]
+is a nontrivial solution of the homogeneous integral equation (5). Two linearly independent solutions $x_1,x_2,\ldots,x_p$ and $x'_1,x'_2,\ldots,x'_p$ of (12) evidently yield two linearly independent solutions
+\[
+\psi(s)=\lambda\sum_{i=1}^{p}x_i\alpha_i(s)
+\quad\text{and}\quad
+\psi'(s)=\lambda\sum_{i=1}^{p}x'_i\alpha_i(s)
+\]
+of (5) and conversely.
+
+The existence of $r$ linearly independent solutions $\psi_1,\psi_2,\ldots,\psi_r$ of (5) and therefore of $r$ independent systems of solutions of (12) is equivalent to the existence of the same number of linearly independent solutions $y_{k1},y_{k2},\ldots,y_{kp}$ $(k=1,2,\ldots,r)$ of the transposed system
+\begin{equation}\tag{13}
+g_j=y_j-\lambda\sum_{i=1}^{p}c_{ij}y_i
+\qquad (j=1,2,\ldots,p)
+\end{equation}
+for $g_j=0$, and therefore of $r$ linearly independent solutions
+\[
+\chi_1(s),\chi_2(s),\ldots,\chi_r(s)
+\]
+of the transposed homogeneous integral equation (7); here
+\begin{equation}\tag{14}
+\chi_k(s)=\lambda\sum_{j=1}^{p}y_{kj}\beta_j(s).
+\end{equation}
+
+According to the theory of linear equations, the equations (10), and therefore (13) and (6), always have unique solutions for $r=0$; however, for $r>0$, the inhomogeneous equation (10) and thus the integral equation (1)\ctnote{此处原文误写为 ``integral equation (5)''；(5) 是齐次方程，而此处讨论的是与非齐次线性方程组 (10) 对应的原积分方程 (1)。} can be solved if and only if the conditions
+\begin{equation}\tag{15}
+\sum_{j=1}^{p}f_jy_{kj}=0
+\qquad (k=1,2,\ldots,r)
+\end{equation}
+are satisfied. Because of the definitions of $y_{kj}$ and $f_j$, these conditions are equivalent to
+\begin{equation}\tag{16}
+(f,\chi_k)=0
+\qquad (k=1,2,\ldots,r).
+\end{equation}
+This completes the proof of the Fredholm theorems for the case of degenerate kernels.
+
+\section{Fredholm's Theorems for Arbitrary Kernels}
+In order to utilize the results of the previous section for the treatment of the integral equation with an arbitrary kernel $K(s,t)$, we employ the convergence theorem of Ch. II, \S2.
+
+We suppose that $K(s,t)$ is approximated uniformly by a sequence $A_1(s,t),A_2(s,t),\ldots,$ $A_n(s,t),\ldots$ of degenerate kernels and consider, in addition to the integral equation (1), the approximating integral equations
+\begin{equation}\tag{17}
+f(s)=\varphi(s)-\lambda\int A_n(s,t)\varphi(t)\,dt.
+\end{equation}
+If $\lambda$ is fixed there are two possibilities:
+
+\emph{Case I.} For infinitely many indices $n$ the equation (17) possesses a solution $\rho_n(s)$ for every $f(s)$, and for all these solutions $(\rho_n,\rho_n)=c_n^2\le M$, where $M$ is a bound independent of $n$. In this case we may discard all unsuitable values of $n$ and renumber the kernels $A_n$; without loss of generality we may assume that the condition is satisfied for all $n$.
+
+\emph{Case II.} The above statement is not true. Then, for some particular $f(s)$, either
+
+(a) a solution $\rho_n(s)$ exists for infinitely many $n$ (we may assume, as above, that it exists for all $n$), but $(\rho_n,\rho_n)=c_n^2\to\infty$ as $n\to\infty$, or
+
+(b) a solution exists only for a finite number of values of $n$ (we may assume that it exists for no $n$), and therefore---by the Fredholm theorems for degenerate kernels---the homogeneous integral equation
+\begin{equation}\tag{18}
+0=\varphi(s)-\lambda\int A_n(s,t)\varphi(t)\,dt
+\end{equation}
+possesses a normalized solution $\sigma_n(s)$ for every $n$.
+
+In Case I the functions $\rho_n(s)-f(s)$ are integral transforms of $\rho_n$ by kernels $A_n(s,t)$; according to \S1 they form an equicontinuous and uniformly bounded set. Therefore, by the convergence theorem of Ch. II, \S2, there exists a subsequence of the functions $\rho_n(s)$ which converges uniformly to a limit function $\varphi(s)$. By passing to the limit in the integral equation (17), which is permissible, we see that this limit function satisfies the integral equation (1). In Case I this equation has, therefore, a solution for every $f(s)$.
+
+In Case II (a) we divide the integral equation (17) for $\varphi=\rho_n$ by $c_n$ and set $\rho_n/c_n=\sigma_n$, obtaining the equation
+\[
+\frac{f(s)}{c_n}=\sigma_n(s)-\lambda\int A_n(s,t)\sigma_n(t)\,dt;
+\]
+in Case II (b) we note that equation (18) holds for $\varphi=\sigma_n$. In both cases $\sigma_n$ is normalized; hence the respective sequences of integral transforms $\sigma_n(s)-f(s)/c_n$ and $\sigma_n(s)$ are equicontinuous and uniformly bounded. Therefore subsequences from these sets converge uniformly to limit functions $\psi(s)$, which necessarily satisfy the homogeneous integral equation (5),
+\[
+\psi(s)=\lambda\int K(s,t)\psi(t)\,dt,
+\]
+and are normalized. Thus in Case II the homogeneous equation possesses nontrivial solutions, which we call null solutions or eigenfunctions.
+
+To derive from these considerations the Fredholm theorems as formulated in \S2 we recall the fact, proved in \S1, that for every value of $\lambda$ only a finite number $r$ of linearly independent eigenfunctions can exist. If $r=0$, Case II, which always leads to a normalized solution of (5), is excluded. We are therefore dealing with Case I; i.e., the integral equation (1) possesses a solution for every function $f(s)$. This solution is unique because a nonvanishing difference of two solutions would be a nontrivial solution of (5), in contradiction to the hypothesis that $r=0$, i.e. that no such solution exists. The first Fredholm theorem is thus proved.
+
+Now consider $r>0$. Let $\psi_1,\psi_2,\ldots,\psi_r$ be $r$ mutually orthogonal normalized solutions of (5). Then, since $A_n\Rightarrow K$,\footnote{The arrow $\to$ is occasionally used to denote convergence. We employ the double arrow $\Rightarrow$ to denote uniform convergence.} the functions
+\[
+\delta_{ni}(s)=\psi_i(s)-\lambda\int A_n(s,t)\psi_i(t)\,dt
+\]
+\[
+(i=1,2,\ldots,r;\qquad n=1,2,3,\ldots)
+\]
+satisfy $\delta_{ni}(s)\Rightarrow0$ for $n\to\infty$.
+
+We now define $A'_n(s,t)$ by
+\[
+A'_n(s,t)=A_n(s,t)+\frac{1}{\lambda}\sum_{i=1}^{r}\delta_{ni}(s)\psi_i(t);
+\]
+then the $A'_n(s,t)$ are degenerate kernels which approximate the kernel $K(s,t)$ uniformly. It is easily seen that all these kernels $A'_n(s,t)$ possess the $r$ null solutions $\psi_i(s)$.
+
+There cannot be more than $r$ linearly independent null solutions for sufficiently large $n$. For, if $\psi_{r+1,n}(s)$ were a sequence of additional null solutions, which may be assumed to be orthonormal to $\psi_1,\psi_2,\ldots,\psi_r$, then, by our convergence principle, there would exist a null solution of (5) orthogonal to $\psi_1,\psi_2,\ldots,\psi_r$, and therefore linearly independent of these functions; this would contradict the hypothesis that (5) has exactly $r$ linearly independent null solutions.
+
+Because of the validity of the Fredholm theorems for degenerate kernels the transposed homogeneous integral equations
+\begin{equation}\tag{19}
+\chi(s)=\lambda\int A'_n(t,s)\chi(t)\,dt
+\end{equation}
+also possess exactly $r$ linearly independent null solutions $\chi_{i,n}(s)$ $(i=1,2,\ldots,r)$ for sufficiently large $n$. These solutions may be taken to be orthonormal. Since the degenerate kernels $A'_n(t,s)$ converge uniformly to the kernel $K(t,s)$ we also obtain $r$ mutually orthogonal null solutions $\chi_1(s),\chi_2(s),\ldots,\chi_r(s)$ for this kernel if we pass to the limit, employ our convergence principle, and utilize the equicontinuous and uniformly bounded set of functions $\chi_{i,n}(s)$. The transposed integral equation
+\begin{equation}\tag{20}
+\chi(s)=\lambda\int K(t,s)\chi(t)\,dt
+\end{equation}
+cannot have more than $r$ independent solutions, since otherwise we could, reversing the argument, show that (5) would necessarily also have more than $r$ solutions.
+
+Finally, we note that the conditions
+\begin{equation}\tag{21}
+(f,\chi_i)=\int f(s)\chi_i(s)\,ds=0
+\qquad (i=1,2,\ldots,r)
+\end{equation}
+are certainly necessary for the solvability of the integral equation (1) for $r>0$. This follows immediately if we multiply (1) by $\chi_i(s)$, integrate, and reverse the order of integration, taking (20) into account. To see that conditions (21) are sufficient we confine ourselves to those indices $n$ for which $\lim_{n\to\infty}\chi_{i,n}(s)=\chi_i(s)$ $(i=1,2,\ldots,r)$. The $\epsilon_{in}=(f,\chi_{i,n})$ converge to zero with increasing $n$ because of (21). We now construct the functions
+\[
+f_n(s)=f(s)-\sum_{i=1}^{r}\epsilon_{in}\chi_{i,n}(s);
+\]
+they satisfy $(f_n,\chi_{i,n})=0$ $(i=1,2,\ldots,r)$. Therefore the integral equation
+\begin{equation}\tag{22}
+f_n(s)=\varphi(s)-\lambda\int A'_n(s,t)\varphi(t)\,dt
+\end{equation}
+possesses a solution $\rho_n(s)$ orthogonal to $\psi_1(s),\psi_2(s),\ldots,\psi_r(s)$, since the Fredholm theorems for degenerate kernels are valid.\ctnote{原文此处在 ``$\psi_r(s)$'' 与 ``the Fredholm theorems'' 之间缺少连接词，句法不通；依上下文补入 ``since''。} We see that $(\rho_n,\rho_n)$ is bounded independently of $n$; otherwise, the argument for Case II(a) would yield a solution of (5) orthogonal to $\psi_1(s),\psi_2(s),\ldots,\psi_r(s)$, which is impossible by hypothesis. Therefore our convergence principle again permits us to pass to the limit in the integral equation, and because $f_n(s)\Rightarrow f(s)$, we conclude that (1) has a solution. This completes the proof of all the Fredholm theorems for our kernel $K(s,t)$.
+
+That there exist cases in which the homogeneous equation possesses nontrivial solutions will be seen in the next section.
+
+\section{Symmetric Kernels and Their Eigenvalues}
+The theory of integral equations, like the theory of bilinear forms considered in Chapter I, can be developed in greater detail if the kernel $K(s,t)$ is symmetric, i.e. if it satisfies the relation
+\begin{equation}\tag{23}
+K(s,t)=K(t,s).
+\end{equation}
+The integral equation is then identical with the transposed equation. We shall give a theory of symmetric integral equations which does not depend on the preceding section.
+
+Our main problem is to find values of the parameter $\lambda$ for which the homogeneous integral equation (5) possesses a nontrivial (normalized) solution. As mentioned before, these values $\lambda=\lambda_i$ and the corresponding solutions are known as the eigenvalues and eigenfunctions, respectively, of the kernel $K(s,t)$. We shall now prove the theorem, analogous to that of Ch. I, \S3: \emph{Every continuous symmetric kernel that does not vanish identically possesses eigenvalues and eigenfunctions; their number is denumerably infinite if and only if the kernel is nondegenerate. All eigenvalues of a real symmetric kernel are real.}
+
+\subsection{Existence of an Eigenvalue of a Symmetric Kernel}
+We begin by proving that at least one eigenvalue exists. For this purpose we consider the ``quadratic integral form''
+\begin{equation}\tag{24}
+J(\varphi,\varphi)=\iint K(s,t)\varphi(s)\varphi(t)\,ds\,dt
+\end{equation}
+which takes the place of the quadratic form of Chapter I; $\varphi$ is any function which is continuous or piecewise continuous in the basic domain. The Schwarz inequality yields the relation
+\[
+[J(\varphi,\varphi)]^2\le (\varphi,\varphi)^2\iint K^2(s,t)\,ds\,dt.
+\]
+Therefore $J(\varphi,\varphi)$ is bounded in absolute value if we impose the condition
+\begin{equation}\tag{25}
+(\varphi,\varphi)=1.
+\end{equation}
+
+The integral form is equal to zero for all admissible functions $\varphi$ if and only if the kernel itself vanishes identically. To see this we introduce the ``bilinear integral form''
+\begin{equation}\tag{26}
+J(\varphi,\psi)=J(\psi,\varphi)=\iint K(s,t)\varphi(s)\psi(t)\,ds\,dt
+\end{equation}
+and note the relation
+\begin{equation}\tag{27}
+J(\varphi+\psi,\varphi+\psi)=J(\varphi,\varphi)+2J(\varphi,\psi)+J(\psi,\psi);
+\end{equation}
+then clearly, if the quadratic form vanishes identically the bilinear form also does so. Taking
+\[
+\psi(t)=\int K(s,t)\varphi(s)\,ds
+\]
+in (26), we find that
+\[
+\int\left(\int K(s,t)\varphi(s)\,ds\right)^2dt=0;
+\]
+therefore
+\[
+\int K(s,t)\varphi(s)\,ds=0
+\]
+for arbitrary $\varphi$. If, for a particular value of $t$, we now take $\varphi$ to be equal to $K(s,t)$ we obtain the desired identity $K(s,t)=0$.
+
+If a kernel has the property that $J(\varphi,\varphi)$ can assume only positive or only negative values (unless $\varphi$ vanishes identically) it is said to be \emph{positive definite} or \emph{negative definite}; otherwise it is said to be \emph{indefinite}.
+
+Let us now suppose that $J(\varphi,\varphi)$ can take on positive values. We consider the problem of finding a normalized function $\varphi$ for which $J(\varphi,\varphi)$ assumes the greatest possible value. Since $J(\varphi,\varphi)$ is bounded, there certainly exists a least upper bound $\kappa_1=1/\lambda_1$ for the values of $J(\varphi,\varphi)$; we shall now show that this positive least upper bound is actually attained for a suitable function $\varphi(s)$. We suppose that the kernel $K(s,t)$ is approximated uniformly by a sequence of degenerate symmetric kernels
+\[
+A_n(s,t)=\sum_{i,k=1}^{q_n}c_{ik}^{(n)}\omega_i(s)\omega_k(t),
+\qquad c_{ik}^{(n)}=c_{ki}^{(n)},
+\]
+of the form described at the end of \S1. The maximum problem for the integral form
+\[
+J_n(\varphi,\varphi)=\iint A_n(s,t)\varphi(s)\varphi(t)\,ds\,dt
+\]
+with the subsidiary condition (25) turns out to be equivalent to the corresponding problem for a quadratic form in $q_n$ variables. Indeed, setting
+\[
+(\varphi,\omega_i)=x_i \qquad (i=1,2,\ldots,q_n),
+\]
+we obtain
+\begin{equation}\tag{28}
+J_n(\varphi,\varphi)=\sum_{i,k=1}^{q_n}c_{ik}^{(n)}x_i x_k,
+\end{equation}
+an expression for $J_n(\varphi,\varphi)$ as a quadratic form in $x_1,x_2,\ldots,x_{q_n}$ to be maximized subject to condition (25). Now the Bessel inequality of Ch. II, \S1, 3, applied to $\varphi(s)$ and the orthogonal system of functions $\omega_1(s),\omega_2(s),\ldots,\omega_{q_n}(s)$, gives
+\[
+(\varphi,\varphi)\ge\sum_{i=1}^{q_n}x_i^2;
+\]
+thus the variables in the quadratic form (28) must satisfy the condition $\sum_{i=1}^{q_n}x_i^2\le1$. Therefore the maximum of the form is attained when $\sum_{i=1}^{q_n}x_i^2=1$, since otherwise the value of $J_n(\varphi,\varphi)$ would be increased if we multiply by a suitable factor. We are thus confronted with the problem of transformation to principal axes which was treated in Ch. I, \S3. The maximum of the form is accordingly attained for a set of values $x_1,x_2,\ldots,x_{q_n}$ for which the equations
+\begin{equation}\tag{29}
+\sum_{k=1}^{q_n}c_{ik}^{(n)}x_k=\kappa_{1n}x_i
+\qquad (i=1,2,\ldots,q_n)
+\end{equation}
+hold. The factor of proportionality $\kappa_{1n}$ is moreover equal to the maximum of $J_n(\varphi,\varphi)$. To verify this we multiply (29) by $x_i$ and take the sum, noting that the right side becomes $\kappa_{1n}$ (since $\sum x_i^2=1$), while the left side becomes $J_n(\varphi,\varphi)$. Let us now set
+\[
+\varphi_n(s)=x_1\omega_1(s)+x_2\omega_2(s)+\cdots+x_{q_n}\omega_{q_n}(s),
+\]
+where $x_1,x_2,\ldots,x_{q_n}$ is the maximizing set of values. Because of the orthogonality of the $\omega_i$ and because $\sum_{i=1}^{q_n}x_i^2=1$, this function is normalized. Equations (29) imply relation
+\begin{equation}\tag{30}
+\varphi_n(s)=\frac{1}{\kappa_{1n}}\int A_n(s,t)\varphi_n(t)\,dt
+\end{equation}
+and conversely. For, (30) follows from (29) if we multiply by $\omega_i(s)$ and sum, noting that $x_i=(\varphi_n,\omega_i)$; if on the other hand we multiply (30) by $\omega_i(s)$ and integrate we obtain (29). Thus the function $\varphi_n(s)$ is an eigenfunction of $A_n(s,t)$ belonging to the eigenvalue $\mu_{1n}=1/\kappa_{1n}$, i.e.,
+\begin{equation}\tag{31}
+\varphi_n(s)=\mu_{1n}\int A_n(s,t)\varphi_n(t)\,dt.
+\end{equation}
+
+We now let $n$ increase beyond all bounds. Then $\kappa_{1n}$ must converge to a number $\kappa_1$ which is the corresponding positive upper bound of $J(\varphi,\varphi)$; for, from the relation
+\[
+|K(s,t)-A_n(s,t)|<\epsilon
+\]
+and the Schwarz inequality it follows that
+\[
+[J(\varphi,\varphi)-J_n(\varphi,\varphi)]^2\le\epsilon^2(b-a)^2,
+\]
+where $a$ and $b$ are the limits of integration, provided $(\varphi,\varphi)\le1$. Thus, for sufficiently large $n$, the range of $J_n(\varphi,\varphi)$ coincides arbitrarily closely with the range of $J(\varphi,\varphi)$; the same must therefore be true of the upper bounds of the two ranges. Consequently $\lim_{n\to\infty}\kappa_{1n}=\kappa_1$ exists, and thus all the $\kappa_{1n}$ lie below a fixed bound. Therefore, in virtue of (31) and of the considerations of \S1, the functions $\varphi_n(s)$ are uniformly bounded for all $n$ and form an equicontinuous set. By our convergence theorem it is possible to select a subsequence $\varphi_{n_1},\varphi_{n_2},\ldots$ which converges uniformly to a limit function $\psi_1(s)$. Passing to the limit in equation (30) and in the relations $J_n(\varphi_n,\varphi_n)=\kappa_{1n}$ and $(\varphi_n,\varphi_n)=1$, we obtain the equations
+\begin{equation}\tag{32}
+\kappa_1\psi_1(s)=\int K(s,t)\psi_1(t)\,dt,
+\qquad (\psi_1,\psi_1)=1
+\end{equation}
+and
+\begin{equation}\tag{33}
+J(\psi_1,\psi_1)=\kappa_1.
+\end{equation}
+Thus the function $\psi_1(s)$ solves the maximum problem for the form $J(\varphi,\varphi)$; it is an eigenfunction of the kernel $K(s,t)$. Since it was assumed that $J(\varphi,\varphi)$ can take on positive values, $\kappa_1$ cannot be equal to zero. For any arbitrary function $\psi$ we therefore have the inequality
+\begin{equation}\tag{34}
+J(\psi,\psi)\le\kappa_1(\psi,\psi)
+\end{equation}
+as is seen at once by normalizing $\psi$. (This method of proof is due to Holmgren.)
+
+\subsection{The Totality of Eigenfunctions and Eigenvalues}
+To obtain the other eigenvalues and eigenfunctions we proceed as follows:
+
+We consider the problem of maximizing the integral $J(\varphi,\varphi)$ if, in addition to the condition $(\varphi,\varphi)=1$, the condition
+\[
+(\varphi,\psi_1)=0
+\]
+is imposed. We assume that under these conditions $J(\varphi,\varphi)$ can still take on positive values. By the second subsidiary condition, the range of the integral form $J(\varphi,\varphi)$ is more restricted in the present maximum problem than in the first; hence the maximum $\kappa_2=1/\mu_2$ cannot be greater than the previous maximum $\kappa_1$; i.e., $\kappa_2\le\kappa_1$ and $\mu_2\ge\mu_1$. Here as in the first maximum problem the existence of a solution could be proved by reduction to a quadratic form and passage to the limit. It is, however, more convenient to reduce the problem directly to the problem of determining the first eigenvalue of another kernel.
+
+We form the symmetric function
+\begin{equation}\tag{35}
+K_{(1)}(s,t)=K(s,t)-\frac{\psi_1(s)\psi_1(t)}{\mu_1}.
+\end{equation}
+According to the above result the maximum problem
+\begin{equation}\tag{36}
+J_{(1)}(\varphi,\varphi)=\iint K_{(1)}(s,t)\varphi(s)\varphi(t)\,ds\,dt
+=\max.=\kappa_2=1/\mu_2
+\end{equation}
+with the condition $(\varphi,\varphi)=1$ can be solved by a function $\psi_2(s)$ which satisfies the homogeneous integral equation
+\begin{equation}\tag{37}
+\psi_2(s)=\mu_2\int K_{(1)}(s,t)\psi_2(t)\,dt.
+\end{equation}
+It is assumed here that $J_{(1)}(\varphi,\varphi)$ still admits positive values, so that $\kappa_2>0$. We write equation (37) in the form
+\[
+\psi_2(s)=\mu_2\int K(s,t)\psi_2(t)\,dt
+-\mu_2\frac{\psi_1(s)}{\mu_1}(\psi_2,\psi_1),
+\]
+multiply by $\psi_1(s)$, integrate with respect to $s$, reverse the order of integration in the iterated integral, and note that $(\psi_1,\psi_1)=1$. The right-hand side then vanishes, so that we have
+\begin{equation}\tag{38}
+(\psi_1,\psi_2)=0;
+\end{equation}
+i.e. the eigenfunction $\psi_2$ is orthogonal to the eigenfunction $\psi_1$. Therefore we also have
+\begin{equation}\tag{39}
+\int K(s,t)\psi_2(t)\,dt=\int K_{(1)}(s,t)\psi_2(t)\,dt;
+\end{equation}
+thus $\psi_2(s)$ is an eigenfunction of $K(s,t)$, and $\mu_2$ the corresponding eigenvalue:
+\begin{equation}\tag{40}
+\psi_2(s)=\mu_2\int K(s,t)\psi_2(t)\,dt.
+\end{equation}
+
+Because of the relation $(\psi_2,\psi_1)=0$, the value $\kappa_2$ can also be regarded as the maximum of the integral form $J_{(1)}(\varphi,\varphi)$ subject to the condition $(\varphi,\psi_1)=0$; but under this condition $J_{(1)}(\varphi,\varphi)=J(\varphi,\varphi)$. Therefore the function $\psi_2$ is the solution of the maximum problem formulated at the beginning of this section.
+
+We can continue in the same way, constructing the kernel
+\begin{equation}\tag{41}
+\begin{aligned}
+K_{(2)}(s,t)
+&=K_{(1)}(s,t)-\frac{\psi_2(s)\psi_2(t)}{\mu_2}\\
+&=K(s,t)-\frac{\psi_1(s)\psi_1(t)}{\mu_1}-\frac{\psi_2(s)\psi_2(t)}{\mu_2}
+\end{aligned}
+\end{equation}
+and seeking the maximum of the integral form
+\begin{equation}\tag{42}
+J_{(2)}(\varphi,\varphi)=\iint K_{(2)}(s,t)\varphi(s)\varphi(t)\,ds\,dt,
+\end{equation}
+provided this form can still assume positive values. As above we obtain a normalized solution $\psi_3(s)$, orthogonal to $\psi_1$ and $\psi_2$, and a maximal value $\kappa_3=1/\mu_3$, which satisfy the homogeneous integral equation
+\[
+\psi_3(s)=\mu_3\int K(s,t)\psi_3(t)\,dt.
+\]
+This solution could also be obtained from the problem of maximizing the original integral form by a function which is orthogonal to $\psi_1$ and $\psi_2$. Just as above it is seen that $\mu_2\le\mu_3$.
+
+This procedure may be continued indefinitely, provided that all the kernels $K_{(1)},K_{(2)},\ldots$ give rise to integral forms which can take on positive values. If, on the other hand, there occurs in this sequence a first kernel
+\begin{equation}\tag{43}
+K_{(m)}(s,t)=K(s,t)-\sum_{i=1}^{m}\frac{\psi_i(s)\psi_i(t)}{\mu_i}
+\end{equation}
+for which $J_{(m)}(\varphi,\varphi)\le0$ for all $\varphi$, then we break off the sequence with the eigenfunction $\psi_m(s)$ and the eigenvalue $\mu_m$.
+
+In any case we have the result: The least positive eigenvalue $\mu_1$ of the kernel $K(s,t)$ is the reciprocal of the maximum value $\kappa_1$ which the integral form $J(\varphi,\varphi)$ assumes under the subsidiary condition $(\varphi,\varphi)=1$. This maximum is attained when $\varphi$ is the first eigenfunction $\psi_1$ of $K(s,t)$. The eigenvalues $\mu_h$ $(h=2,3,\ldots)$, ordered in an increasing sequence, are defined recursively as the reciprocals of the maxima $\kappa_h$ which $J(\varphi,\varphi)$ attains under the subsidiary conditions
+\[
+(\varphi,\varphi)=1,
+\qquad
+(\varphi,\psi_\nu)=0
+\qquad(\nu=1,2,3,\ldots,h-1).
+\]
+The maximum $\kappa_h$ is attained for $\varphi=\psi_h$, the $h$-th eigenfunction.
+
+The sequence of positive eigenvalues breaks off when and if, in this sequence of maximum problems, one occurs for which $J(\varphi,\varphi)$ cannot take on positive values.
+
+In an analogous manner we can now obtain a sequence of negative eigenvalues and corresponding eigenfunctions $\mu_{-1},\mu_{-2},\ldots$ and $\psi_{-1}(s),\psi_{-2}(s),\ldots$, provided the form $J(\varphi,\varphi)$ can assume negative values. We need only consider the minimum problems corresponding to the above maximum problems. We thus arrive at an infinite or terminating sequence of negative nonincreasing eigenvalues
+\begin{equation}\tag{44}
+\mu_{-1}\ge\mu_{-2}\ge\mu_{-3}\ge\cdots
+\end{equation}
+and associated mutually orthogonal eigenfunctions
+\[
+\psi_{-1}(s),\psi_{-2}(s),\ldots.
+\]
+The eigenfunctions $\psi_h(s)$ $(h>0)$ are orthogonal to the eigenfunctions $\psi_{-k}(s)$ $(k>0)$. This fact results from the two equations
+\[
+\kappa_h\psi_h(s)=\int K(s,t)\psi_h(t)\,dt,
+\qquad
+\kappa_{-k}\psi_{-k}(s)=\int K(s,t)\psi_{-k}(t)\,dt
+\]
+if we multiply the first by $\psi_{-k}(s)$ and the second by $\psi_h(s)$, subtract one from the other, and integrate; noting that $K(s,t)=K(t,s)$, we obtain
+\[
+(\kappa_h-\kappa_{-k})(\psi_h,\psi_{-k})=0,
+\]
+which proves the orthogonality, since $\kappa_h\ne\kappa_{-k}$.
+
+The continuation of this procedure leads to a sequence of eigenvalues, which may be alternately positive and negative. We order these eigenvalues according to their absolute values and denote them by $\lambda_1,\lambda_2,\ldots$; thus $|\lambda_1|\le|\lambda_2|\le\cdots$. We denote the corresponding eigenfunctions by $\varphi_1,\varphi_2,\ldots$; they form an orthonormal system of functions.
+
+If the kernel $K(s,t)$ possesses only a finite number of eigenvalues $\lambda_1,\lambda_2,\ldots,\lambda_n$ it must be degenerate and can be represented in the form
+\begin{equation}\tag{45}
+K(s,t)=\sum_{i=1}^{n}\frac{\varphi_i(s)\varphi_i(t)}{\lambda_i}.
+\end{equation}
+For, according to the considerations of page 123, the kernel
+\[
+K(s,t)-\sum_{i=1}^{n}\frac{\varphi_i(s)\varphi_i(t)}{\lambda_i}
+=\bar K(s,t)
+\]
+must vanish identically, since both the maximum and the minimum of the associated integral form
+\[
+\bar J(\varphi,\varphi)=\iint \bar K(s,t)\varphi(s)\varphi(t)\,ds\,dt
+\]
+are equal to zero. Thus \emph{a kernel which possesses only a finite number of eigenvalues and eigenfunctions is degenerate. Conversely, a degenerate kernel possesses only a finite number of eigenvalues and eigenfunctions.} Indeed, as we have seen above, the problem of determining the eigenvalues of such a kernel is equivalent to the eigenvalue problem for a quadratic form, where only a finite number of eigenvalues occurs (cf. Chapter I).
+
+According to \S1, an eigenvalue is called \emph{multiple} or \emph{degenerate}, specifically $r$-fold degenerate, if it is associated with $r$ but with no more than $r$ linearly independent eigenfunctions (which may be taken to be orthogonal). Every eigenvalue can have only a finite multiplicity or degeneracy. This theorem, proved in \S1, may also be obtained in the following way: We apply the Bessel inequality to the orthogonal system $\varphi_1,\varphi_2,\ldots$, obtaining
+\begin{equation}\tag{46}
+\int [K(s,t)]^2\,dt\ge\sum_{i=1}^{\infty}\left(\int K(s,t)\varphi_i(t)\,dt\right)^2
+\end{equation}
+or
+\begin{equation}\tag{47}
+\int [K(s,t)]^2\,dt\ge\sum_{i=1}^{\infty}\frac{|\varphi_i(s)|^2}{\lambda_i^2}.
+\end{equation}
+Two conclusions follow: First, the series
+\begin{equation}\tag{48}
+T(s)=\sum_{i=1}^{\infty}\frac{|\varphi_i(s)|^2}{\lambda_i^2}
+\end{equation}
+all of whose terms are positive, converges absolutely. Second, if we integrate with respect to $s$ and note that $(\varphi_i,\varphi_i)=1$ we find
+\begin{equation}\tag{49}
+\iint [K(s,t)]^2\,ds\,dt\ge\sum_{i=1}^{\infty}\frac{1}{\lambda_i^2}.
+\end{equation}
+Thus \emph{the sum of the reciprocals of the squares of the eigenvalues converges.} Therefore the eigenvalues can have no finite point of accumulation; if there are infinitely many eigenvalues, their absolute values must increase beyond all bounds and only a finite number of them can be equal to each other.
+
+From this we shall conclude that the eigenvalues $\lambda_i$ and eigenfunctions $\varphi_i$ defined above by successive extremum problems constitute the totality of the real eigenvalues and eigenfunctions (it will be shown below that no complex eigenvalues can occur). Suppose that $\chi$ is an eigenfunction linearly independent of the $\varphi_i$, and that the corresponding eigenvalue is $\sigma$, which may be taken to be positive. Then, by the above argument, $\chi$ must be orthogonal to all eigenfunctions associated with the eigenvalues $\lambda_i\ne\sigma$. If, however, $\sigma=\mu_h$ is one of the eigenvalues defined above and is $r$-fold, that is if
+\[
+\mu_{h-1}<\mu_h=\mu_{h+1}=\cdots=\mu_{h+r-1}<\mu_{h+r}
+\]
+(``degenerate case''), then $\chi$ may be replaced by an eigenfunction
+\[
+\bar\chi=\chi+c_0\psi_h+\cdots+c_{r-1}\psi_{h+r-1}
+\]
+which is orthogonal to the eigenfunctions $\psi_h,\psi_{h+1},\ldots,\psi_{h+r-1}$, since $\chi$ was assumed to be linearly independent of these functions. For simplicity we denote this function again by $\chi$. Then in either of the cases considered $\chi$ is orthogonal to all eigenfunctions $\psi_i$. Therefore, for every $n$ for which $\mu_{n+1}$ is positive, the relation
+\[
+J(\chi,\chi)=\iint K(s,t)\chi(s)\chi(t)\,ds\,dt
+=\frac{1}{\sigma}(\chi,\chi)\le\frac{1}{\mu_{n+1}}
+\]
+holds, in virtue of the maximum property of the eigenvalues. Hence, if there are infinitely many positive eigenvalues $\mu_n$, it follows from $\lim_{n\to\infty}\mu_n=\infty$ that $(\chi,\chi)=0$, i.e. that $\chi$ vanishes identically. On the other hand, if there are only a finite number $n$ of positive eigenvalues, then $J(\chi,\chi)$ cannot assume positive values under the subsidiary conditions $(\chi,\psi_i)=0$ $(i=1,2,\ldots,n)$; we conclude once more that $(\chi,\chi)=0$ and therefore that $\chi=0$.
+
+This proof holds equally well for negative $\sigma$. Therefore every eigenfunction which is orthogonal to all the $\psi_i$ must vanish identically, which proves our assertion that the $\psi_i$ represent all the possible eigenfunctions.
+
+This fact has interesting consequences which will be useful later.
+
+If $\eta_1(s),\eta_2(s),\ldots$ and $\xi_1(s),\xi_2(s),\ldots$ are two sequences of continuous (or piecewise continuous) functions whose norms lie below a fixed bound $M$, then the relation
+\begin{equation}\tag{50}
+\lim_{n\to\infty}J'_{(n)}(\eta_n,\xi_n)
+=\lim_{n\to\infty}\iint K'_{(n)}(s,t)\eta_n(s)\xi_n(t)\,ds\,dt=0
+\end{equation}
+with the kernel
+\[
+K'_{(n)}(s,t)=K(s,t)-\sum_{i=1}^{n}\frac{\varphi_i(s)\varphi_i(t)}{\lambda_i}
+\]
+holds uniformly; i.e., for a given $M$, the smallness of the left side depends only on $n$.
+
+In fact, by the maximum property of the eigenvalues and eigenfunctions, we have
+\[
+|J'_{(n)}(\eta_n+\xi_n,\eta_n+\xi_n)|
+\le \frac{1}{|\lambda_{n+1}|}N(\eta_n+\xi_n)
+\le \frac{4M}{|\lambda_{n+1}|},\footnote{It follows immediately from Schwarz's inequality that $N(\eta_n+\xi_n)=(\eta_n,\eta_n)+(\xi_n,\xi_n)+2(\eta_n,\xi_n)\le4M$.}
+\]
+\[
+|J'_{(n)}(\eta_n,\eta_n)|\le\frac{M}{|\lambda_{n+1}|},
+\qquad
+|J'_{(n)}(\xi_n,\xi_n)|\le\frac{M}{|\lambda_{n+1}|},
+\]
+and therefore, since $|\lambda_n|\to\infty$ and since
+\[
+J'_{(n)}(\eta+\xi,\eta+\xi)=J'_{(n)}(\eta,\eta)+J'_{(n)}(\xi,\xi)+2J'_{(n)}(\eta,\xi),
+\]
+the assertion follows at once.
+
+Furthermore, \emph{a kernel is positive definite if and only if all its eigenvalues are positive.} For, in this case and only in this case is the minimum of the integral form $J(\varphi,\varphi)$ for normalized $\varphi$ positive. Thus $J(\varphi,\varphi)$ cannot have negative values.
+
+Finally, \emph{all eigenvalues of a real symmetric kernel are real.} Although this fact will become obvious in \S5, we shall prove the theorem here in another, more direct way. The theorem states that there is no complex number $\lambda=p+iq$ where $q\ne0$, with an associated complex function $\varphi(s)=\psi(s)+i\chi(s)$ ($\psi$ and $\chi$ are real functions at least one of which does not vanish identically) such that
+\[
+\varphi(s)=\lambda\int K(s,t)\varphi(t)\,dt.
+\]
+For, the relation
+\[
+\bar\varphi(s)=\bar\lambda\int K(s,t)\bar\varphi(t)\,dt
+\]
+would then have to hold for the conjugate complex quantities $\bar\varphi$ and $\bar\lambda$ and, as above,
+\[
+0=(\lambda-\bar\lambda)\int\varphi(s)\bar\varphi(s)\,ds
+=2iq\int(\psi^2+\chi^2)\,ds;
+\]
+i.e., $q=0$ which proves that $\lambda$ is real.
+
+\subsection{Maximum-Minimum Property of Eigenvalues}
+As in the case of quadratic forms (Chapter I) each eigenvalue $\lambda_n$ of a symmetric kernel and its associated eigenfunction can be directly characterized by a maximum-minimum problem without reference to preceding eigenvalues and eigenfunctions.
+
+Let us consider first the positive eigenvalues $\mu_n$ of the kernel $K(s,t)$ and assume that there are at least $n$ of these. We pose the problem to make $J(\varphi,\varphi)$ a maximum if $\varphi$ is subject to the requirement $(\varphi,\varphi)=1$, and, in addition, to the $n-1$ restrictions
+\begin{equation}\tag{51}
+(\varphi,v_i)=0\qquad(i=1,2,\ldots,n-1),
+\end{equation}
+where $v_1,v_2,\ldots,v_{n-1}$ are any arbitrary given continuous functions. Certainly there exists an upper bound of $J(\varphi,\varphi)$ for some admissible function $\varphi$. This upper bound depends somehow on the choice of the functions $v_1,v_2,\ldots,v_{n-1}$; we may therefore denote it by $\kappa_n[v_1,v_2,\ldots,v_{n-1}]$ or briefly by $\kappa_n\{v_i\}$. In particular, for $v_i=\psi_i$, we have $\kappa_n\{v_i\}=\kappa_n$ by the theorems of the previous section; this upper bound is attained for $\varphi=\psi_n(s)$. We now assert that, for any set of functions $v_1,v_2,\ldots,v_{n-1}$,
+\[
+\kappa_n\{v_i\}\ge\kappa_n.
+\]
+To prove this we construct an admissible function
+\[
+\varphi(s)=c_1\psi_1(s)+c_2\psi_2(s)+\cdots+c_n\psi_n(s)
+\]
+as a linear combination of the eigenfunctions $\psi_1,\psi_2,\ldots,\psi_n$. The conditions $(\varphi,\varphi)=1$ and (51) then take the form
+\[
+\sum_{i=1}^{n}c_i^2=1,
+\qquad
+\sum_{i=1}^{n}c_i(\psi_i,v_h)=0
+\quad(h=1,2,\ldots,n-1).
+\]
+This is a system of $n-1$ homogeneous linear equations in $n$ unknowns $c_i$ with a normality condition; such a system always has a solution. If the resulting function $\varphi$ is substituted in $J(\varphi,\varphi)$, one obtains
+\[
+J(\varphi,\varphi)=\sum_{i,k=1}^{n}c_i c_k J(\psi_i,\psi_k).
+\]
+Since $J(\psi_i,\psi_i)=1/\mu_i$ and $J(\psi_i,\psi_k)=0$ for $i\ne k$ it follows that
+\[
+J(\varphi,\varphi)=\sum_{i=1}^{n}\frac{c_i^2}{\mu_i}
+=\sum_{i=1}^{n}c_i^2\kappa_i
+\ge\kappa_n\sum_{i=1}^{n}c_i^2
+=\kappa_n.
+\]
+The maximum of $J(\varphi,\varphi)$ is thus certainly at least equal to $\kappa_n$, and we obtain the result: \emph{The $n$-th positive eigenvalue $\mu_n$\ctnote{原文此处写作 $\lambda_n$；但本节正特征值序列一直记为 $\mu_1,\mu_2,\ldots$，而 $\lambda_i$ 已用于按绝对值排列的全体正、负特征值。此处按上下文应为 $\mu_n$。} of $K(s,t)$ is the reciprocal of the least value $\kappa_n$ which $\kappa_n\{v_i\}$ attains as the functions $v_i$ are varied; here $\kappa_n\{v_i\}$ is defined as the maximum value (or least upper bound) of $J(\varphi,\varphi)$ for normed functions $\varphi(s)$ subject to the $n-1$ further conditions (51). The minimum of this maximum is attained for}
+\[
+v_1=\psi_1,
+\qquad v_2=\psi_2,\ldots,
+\qquad v_{n-1}=\psi_{n-1}
+\quad\text{and}\quad \varphi=\psi_n.
+\]
+In the same way we define the negative eigenvalues and the associated eigenfunctions $\psi_{-n}$ $(n>0)$ in terms of the maximum of the minimum of $J(\varphi,\varphi)$, subject to the corresponding conditions.
+
+Among the many applications of the above result we mention the following theorem which can be deduced from the maximum-minimum property of the eigenvalues: \emph{If to a kernel $K(s,t)$ a positive definite kernel $K^+(s,t)$ (or a negative definite kernel $K^-(s,t)$) is added, then each positive (or negative) reciprocal eigenvalue of the sum $K+K^+$ (or $K+K^-$) is not less (or not greater) than the corresponding reciprocal eigenvalue of the kernel $K$.}\footnote{See H. Weyl, Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen (mit einer Anwendung auf die Theorie der Hohlraumstrahlung), \emph{Math. Ann.}, Vol. 71, 1912, pp. 441--479.} The proof is analogous to that of the corresponding theorem in Ch. I, \S4.
+
+\section{The Expansion Theorem and Its Applications}
+
+\subsection{Expansion Theorem}
+If we knew that in analogy with the transformation to principal axes of a quadratic form, the kernel could be expanded in a series
+\begin{equation}\tag{52}
+K(s,t)=\sum_{i=1}^{\infty}\frac{\varphi_i(s)\varphi_i(t)}{\lambda_i}
+\end{equation}
+which would converge uniformly in each variable, then it would follow that every function $g(s)$ of the form
+\begin{equation}\tag{53}
+g(s)=\int K(s,t)h(t)\,dt,
+\end{equation}
+where $h(t)$ is any piecewise continuous function, could be expanded in the series
+\[
+g(s)=\sum_{i=1}^{\infty}g_i\varphi_i(s),
+\qquad
+g_i=(g,\varphi_i)=\frac{(h,\varphi_i)}{\lambda_i}.
+\]
+However the relation (52) is not valid in general; we are thus forced to adopt a somewhat different approach to justify the expansion for $g(s)$. Let $g(s)$ be an integral transform of $h(t)$ with symmetric kernel $K(s,t)$ as defined in equation (53); let $h_i=(h,\varphi_i)$ be the expansion coefficients of $h$ with respect to the orthonormal eigenfunctions $\varphi_1,\varphi_2,\ldots$, and let
+\[
+g_i=(g,\varphi_i)=\frac{h_i}{\lambda_i}
+\]
+be the expansion coefficients of $g$; in accordance with the Bessel inequality, the series $\sum_{i=1}^{\infty}h_i^2$ converges. By equation (47), the sum
+\[
+T(s)=\sum_{i=1}^{\infty}\frac{|\varphi_i(s)|^2}{\lambda_i^2}
+\]
+converges and is uniformly bounded in $s$ (by $\max_{a\le s\le b}\int[K(s,t)]^2dt$); in view of the Schwarz inequality, we have
+\[
+\left[\frac{h_n\varphi_n(s)}{\lambda_n}+\cdots+
+\frac{h_m\varphi_m(s)}{\lambda_m}\right]^2
+\le
+(h_n^2+\cdots+h_m^2)
+\left(\frac{|\varphi_n(s)|^2}{\lambda_n^2}+\cdots+
+\frac{|\varphi_m(s)|^2}{\lambda_m^2}\right).
+\]
+Since the remainder $h_n^2+h_{n+1}^2+\cdots+h_m^2$ is arbitrarily small provided $n$ is sufficiently large, and since $|\varphi_n(s)|^2/\lambda_n^2+\cdots+|\varphi_m(s)|^2/\lambda_m^2$ is always below a bound independent of $s$, it follows that the series
+\[
+\sum_{i=1}^{\infty}g_i\varphi_i(s)
+=\sum_{i=1}^{\infty}(h_i/\lambda_i)\varphi_i(s)
+\]
+converges absolutely and uniformly. Its sum
+\[
+\gamma(s)=\lim_{n\to\infty}\sum_{i=1}^{n}g_i\varphi_i(s)
+=\lim_{n\to\infty}\gamma_n(s)
+\]
+is a continuous function of $s$. It remains to be shown that $\gamma(s)$ is identical with $g(s)$. For this purpose we construct the kernel
+\[
+K_{(n)}(s,t)=K(s,t)-\sum_{i=1}^{n}\frac{\varphi_i(s)\varphi_i(t)}{\lambda_i}\footnote{We shall henceforth use this notation for the functions which were denoted by $K'_{(n)}$ on p. 131.}
+\]
+so that
+\[
+g(s)-\gamma_n(s)=\int K_{(n)}(s,t)h(t)\,dt;
+\]
+we multiply this equation by an arbitrary continuous function $w(s)$ and integrate with respect to $s$. Because of relation (50) the right-hand side in the relation
+\[
+\int w(s)(g(s)-\gamma_n(s))\,ds
+=\iint K_{(n)}(s,t)h(t)w(s)\,ds\,dt
+\]
+converges to zero and we obtain
+\[
+\int w(s)(g(s)-\gamma(s))\,ds=0
+\]
+since $\gamma_n(s)\Rightarrow\gamma(s)$. This equation holds for an arbitrary function $w(s)$, in particular for $w(s)=g(s)-\gamma(s)$. Since $g(s)-\gamma(s)$ is continuous the relation $(g-\gamma,g-\gamma)=0$ can hold only if $g(s)-\gamma(s)$ vanishes identically, as was to be proved. We have thus obtained the fundamental expansion theorem:
+
+\emph{Every continuous function $g(s)$ which, as in (53), is an integral transform with symmetric kernel $K(s,t)$ of a piecewise continuous function $h(t)$, can be expanded in a series in the eigenfunctions of $K(s,t)$; this series converges uniformly and absolutely.}
+
+\subsection{Solution of the Inhomogeneous Linear Integral Equation}
+As an application of this theorem we shall derive the formula for the solution of the inhomogeneous integral equation (1),
+\[
+f(s)=\varphi(s)-\lambda\int K(s,t)\varphi(t)\,dt.
+\]
+We assume initially that the parameter $\lambda$ is not equal to any of the eigenvalues $\lambda_i$. If the continuous function $\varphi$ with the expansion coefficients $(\varphi,\varphi_i)$ were a solution of the integral equation, then, by the expansion theorem applied to $h(t)=\lambda\varphi(t)$, the function $\varphi(s)-f(s)=g(s)$ would be given by the uniformly and absolutely convergent series
+\begin{equation}\tag{54}
+g(s)=\varphi(s)-f(s)=\sum_{i=1}^{\infty}c_i\varphi_i(s)
+=\lambda\int K(s,t)\varphi(t)\,dt,
+\end{equation}
+where $c_i=(g,\varphi_i)$. But, because of (54), we must have
+\[
+\begin{aligned}
+c_i=(g,\varphi_i)
+&=\lambda\iint K(s,t)\varphi_i(s)\varphi(t)\,ds\,dt\\
+&=\frac{\lambda}{\lambda_i}(\varphi_i,\varphi)
+=\frac{\lambda}{\lambda_i}(\varphi_i,f)
++\frac{\lambda}{\lambda_i}(\varphi_i,g),
+\end{aligned}
+\]
+from which it follows that
+\begin{equation}\tag{55}
+c_i=f_i\frac{\lambda}{\lambda_i-\lambda}
+\qquad(f_i=(\varphi_i,f)).
+\end{equation}
+We thus obtain the series expansion for $\varphi$,
+\begin{equation}\tag{56}
+\varphi(s)=f(s)+\lambda\sum_{i=1}^{\infty}\frac{f_i}{\lambda_i-\lambda}\varphi_i(s),
+\end{equation}
+which must represent the solution of (1). That this really is so, i.e. that (56) actually provides the solution of (1), is easily seen: The series converges absolutely and uniformly. To prove this we need only note that, for sufficiently large $i$ and a given arbitrary $\lambda$, the relation $|\lambda_i-\lambda|>|\lambda_i|/2$ is sure to hold. Thus, except for a finite number of terms, the series
+\[
+2|\lambda|\sum_{i=1}^{\infty}|f_i|\frac{|\varphi_i(s)|}{|\lambda_i|}
+\]
+is a majorant of our series; the uniform convergence of this majorant has already been proved. If we now substitute the series (56) in (1), we verify immediately that the equation (1) is satisfied.
+
+In conformity with the theory of \S3 this solution fails only if $\lambda=\lambda_i$ is an eigenvalue; it remains valid even in this case if $f(s)$ is orthogonal to all eigenfunctions $\varphi_i$ belonging to the eigenvalue $\lambda_i$.
+
+Since, by \S3, the integral equation (1) fails to have solutions for certain functions $f(s)$ only if $\lambda$ is an eigenvalue, it follows that there can be no eigenvalues of our kernel other than the values $\lambda_i$. The assertion that all the eigenvalues of a real symmetric kernel are real, which was proved on page 132, has now become self-evident.
+
+\subsection{Bilinear Formula for Iterated Kernels}
+Another application of the expansion theorem is obtained setting $h(\sigma)=K(\sigma,t)$. For the ``iterated kernel''
+\[
+K^{(2)}(s,t)=\int K(s,\sigma)K(\sigma,t)\,d\sigma
+\]
+we then have the expansion
+\[
+K^{(2)}(s,t)=\sum_{i=1}^{\infty}\frac{\varphi_i(s)}{\lambda_i}
+\int K(\sigma,t)\varphi_i(\sigma)\,d\sigma
+\]
+or
+\begin{equation}\tag{57}
+K^{(2)}(s,t)=\sum_{i=1}^{\infty}\frac{\varphi_i(s)\varphi_i(t)}{\lambda_i^2}.
+\end{equation}
+In the same way, the subsequent iterated kernels
+\[
+\begin{aligned}
+K^{(3)}(s,t)
+&=\int K^{(2)}(s,\sigma)K(\sigma,t)\,d\sigma\\
+&=\iint K(s,\sigma_1)K(\sigma_1,\sigma_2)K(\sigma_2,t)\,d\sigma_1\,d\sigma_2,
+\end{aligned}
+\]
+\[
+\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots
+\]
+\[
+\begin{aligned}
+K^{(n)}(s,t)
+&=\int K^{(n-1)}(s,\sigma)K(\sigma,t)\,d\sigma\\
+&=\int\cdots\int K(s,\sigma_1)K(\sigma_1,\sigma_2)\cdots K(\sigma_{n-1},t)\,
+ d\sigma_1\cdots d\sigma_{n-1}.
+\end{aligned}
+\]
+admit the expansions
+\begin{equation}\tag{58}
+K^{(n)}(s,t)=\sum_{i=1}^{\infty}\frac{\varphi_i(s)\varphi_i(t)}{\lambda_i^n}
+\qquad(n=2,3,\ldots),
+\end{equation}
+all of which converge absolutely and uniformly both in $s$ and in $t$, and uniformly in $s$ and $t$ together (see subsection 4).
+
+From (57) it follows that
+\[
+K^{(2)}(s,s)=\sum_{i=1}^{\infty}\frac{|\varphi_i(s)|^2}{\lambda_i^2};
+\]
+thus
+\[
+\lim_{n\to\infty}\left(K^{(2)}(s,s)-\sum_{i=1}^{n}\frac{|\varphi_i(s)|^2}{\lambda_i^2}\right)=0.
+\]
+But this means that
+\begin{equation}\tag{59}
+\lim_{n\to\infty}\int\left[K(s,t)-\sum_{i=1}^{n}\frac{\varphi_i(s)\varphi_i(t)}{\lambda_i}\right]^2dt=0;
+\end{equation}
+i.e., the series $\sum_{i=1}^{\infty}\varphi_i(s)\varphi_i(t)/\lambda_i$ converges in the mean to $K(s,t)$. If, for fixed $s$, this series converges uniformly in $t$ and therefore represents a continuous function $L(s,t)$ of $t$, we must have $K=L$. For, in this case we can carry out the passage to the limit in (59) under the integral sign, obtaining
+\[
+\int[K(s,t)-L(s,t)]^2dt=0
+\]
+and, therefore, $K-L=0$.
+
+\subsection{Mercer's Theorem}
+Formula (58) for $n>1$ may be regarded as a substitute for equation (52), which in general cannot be proved. However, for an important special case, we can state the following theorem: \emph{If $K(s,t)$ is a definite continuous symmetric kernel, or if it has only a finite number of eigenvalues of one sign, the expansion (52) is valid and converges absolutely and uniformly.}\footnote{T. Mercer, Functions of positive and negative type and their connection with the theory of integral equations, \emph{Trans. Lond. Phil. Soc. (A)}, Vol. 209, 1909, pp. 415--446.}
+
+In the proof we shall assume initially that $K(s,t)$ is positive definite, i.e. that all eigenvalues $\lambda_i$ are positive. We first remark that, for every positive definite kernel $H(s,t)$, the inequality $H(s,s)\ge0$ holds. For, if $H(s_0,s_0)<0$, there would be a neighborhood of the point $s=s_0$, $t=s_0$, say $|s-s_0|<\epsilon$, $|t-s_0|<\epsilon$, such that $H(s,t)<0$ everywhere in this region. We then define the function $\varphi(s)$ by $\varphi(s)=1$ for $|s-s_0|\le\epsilon$, and by $\varphi(s)=0$ elsewhere. For this function we have
+\[
+\iint H(s,t)\varphi(s)\varphi(t)\,ds\,dt<0
+\]
+in contradiction to the hypothesis that $H$ is positive definite. If we now apply this result to the positive definite kernel
+\[
+H=K(s,t)-\sum_{i=1}^{n}\frac{\varphi_i(s)\varphi_i(t)}{\lambda_i},
+\]
+we obtain
+\[
+K(s,s)-\sum_{i=1}^{n}\frac{|\varphi_i(s)|^2}{\lambda_i}\ge0.
+\]
+Therefore the series
+\[
+\sum_{i=1}^{\infty}\frac{|\varphi_i(s)|^2}{\lambda_i},
+\]
+all the terms of which are positive, converges for every value of $s$. Because of the relation
+\[
+\begin{aligned}
+&\left(
+\frac{\varphi_n(s)}{\sqrt{\lambda_n}}\frac{\varphi_n(t)}{\sqrt{\lambda_n}}
++\cdots+
+\frac{\varphi_m(s)}{\sqrt{\lambda_m}}\frac{\varphi_m(t)}{\sqrt{\lambda_m}}
+\right)^2\\
+&\qquad\le
+\left(\frac{|\varphi_n(s)|^2}{\lambda_n}+\cdots+\frac{|\varphi_m(s)|^2}{\lambda_m}\right)
+\left(\frac{|\varphi_n(t)|^2}{\lambda_n}+\cdots+\frac{|\varphi_m(t)|^2}{\lambda_m}\right).
+\end{aligned}
+\]
+(Schwarz inequality) the series $\sum_{i=1}^{\infty}\varphi_i(s)\varphi_i(t)/\lambda_i$ also converges absolutely; it converges uniformly in $t$ for fixed $s$ and in $s$ for fixed $t$. Thus the function defined by this series is continuous in $s$ for fixed $t$ and conversely. In view of subsection 3, it is therefore equal to the kernel $K$.
+
+Finally we show that this series also converges uniformly in both variables together; because of the above inequality it suffices to verify the uniformity of the convergence of the series
+\[
+\sum_{i=1}^{\infty}\frac{|\varphi_i(s)|^2}{\lambda_i}.
+\]
+But, according to what we have just proved, this series is equal to $K(s,s)$, which is a continuous function. Now the following theorem holds:\footnote{Compare footnote on p. 57.} if a series of positive continuous functions of one variable converges to a continuous function, the convergence of the series is uniform in the interval in question. This theorem leads immediately to the result stated.
+
+The existence of a finite number of negative eigenvalues cannot alter the convergence of the series (52), since the kernel can be made positive definite by subtraction of the terms $\varphi_i(s)\varphi_i(t)/\lambda_i$ belonging to negative eigenvalues. Thus our convergence theorem is completely proved.
+
+\section{Neumann Series and the Reciprocal Kernel}
+The preceding theory of integral equations implies a prescription for actually computing solutions with arbitrary accuracy (see also \S8). It does not give the solutions, however, in an elegant closed form such as was obtained in the theory of equations in Chapter I. To find comparable explicit solutions we shall use a method analogous to that of Chapter I. We rewrite the integral equation (1), inserting in place of $\varphi(t)$ in the integral the expression obtained from (1), and repeat this procedure indefinitely. With the aid of the iterated kernels we thus write (1) in the form
+\[
+\begin{aligned}
+\varphi(s)
+&=f(s)+\lambda\int K(s,t)f(t)\,dt
++\lambda^2\int K^{(2)}(s,t)\varphi(t)\,dt\\
+&=f(s)+\lambda\int K(s,t)f(t)\,dt
++\lambda^2\int K^{(2)}(s,t)f(t)\,dt
++\lambda^3\int K^{(3)}(s,t)\varphi(t)\,dt\\
+&=\cdots,
+\end{aligned}
+\]
+and see, just as in Chapter I, that the solution is given by the infinite series
+\begin{equation}\tag{60}
+\varphi(s)=f(s)+\lambda\int K(s,t)f(t)\,dt
++\lambda^2\int K^{(2)}(s,t)f(t)\,dt+\cdots,
+\end{equation}
+provided that this series converges uniformly. If, moreover, we postulate the uniform convergence of
+\begin{equation}\tag{61}
+\mathfrak{K}(s,t)=K(s,t)+\lambda K^{(2)}(s,t)+\lambda^2K^{(3)}(s,t)+\cdots,
+\end{equation}
+then the solution of the integral equation (1)
+\[
+f(s)=\varphi(s)-\lambda\int K(s,t)\varphi(t)\,dt
+\]
+is represented by the ``reciprocal integral equation''
+\begin{equation}\tag{62}
+\varphi(s)=f(s)+\lambda\int \mathfrak{K}(s,t)f(t)\,dt.
+\end{equation}
+The function $\mathfrak{K}(s,t)=\mathfrak{K}(s,t;\lambda)$ is therefore called the \emph{reciprocal} or \emph{resolvent kernel}.
+
+Series (60) and (61) are known as \emph{Neumann's series}. They converge uniformly if $|\lambda|$ is sufficiently small, e.g. if $|\lambda|<1/(b-a)M$, where $M$ is an upper bound of the absolute value of $K(s,t)$. Thus, for sufficiently small $|\lambda|$, the reciprocal kernel is an analytic function of $\lambda$. It satisfies the relations
+\begin{equation}\tag{63}
+\begin{aligned}
+\mathfrak{K}(s,t;\lambda)
+&=K(s,t)+\lambda\int K(s,\sigma)\mathfrak{K}(\sigma,t;\lambda)\,d\sigma,\\
+\mathfrak{K}(s,t;\lambda)
+&=K(s,t)+\lambda\int K(\sigma,t)\mathfrak{K}(s,\sigma;\lambda)\,d\sigma,\\
+\mathfrak{K}(s,t;\lambda)-\mathfrak{K}(s,t;\lambda')
+&=(\lambda-\lambda')\int \mathfrak{K}(s,\sigma;\lambda)\mathfrak{K}(\sigma,t;\lambda')\,d\sigma;
+\end{aligned}
+\end{equation}
+this can be immediately verified by substitution.
+
+If the kernel $K(s,t)$ is symmetric we can find a remarkable form for the resolvent kernel, which shows how the analytic function $\mathfrak{K}$ depends on $\lambda$. Assuming $|\lambda|$ to be sufficiently small, we make use of the series expansion (58) for the symmetric kernels $K^{(2)}(s,t)$, $K^{(3)}(s,t)$, $\ldots$ and take the sum of the geometric series occurring in (61); we immediately obtain
+\begin{equation}\tag{64}
+\mathfrak{K}(s,t;\lambda)
+=K(s,t)+\lambda\sum_{i=1}^{\infty}
+\frac{\varphi_i(s)\varphi_i(t)}{\lambda_i(\lambda_i-\lambda)}.
+\end{equation}
+By proceeding as in \S5, 1 and 2, we see that the series on the right converges for every value of $\lambda$ which is not an eigenvalue, and the convergence is uniform in $s$ and $t$.
+
+Relation (64) which has so far been proved only for sufficiently small $|\lambda|$ provides the analytic continuation of the resolvent $\mathfrak{K}(s,t;\lambda)$ into the entire complex $\lambda$-plane, with the eigenvalues $\lambda_i$ appearing as simple poles. Thus (64) represents the decomposition of the resolvent into partial fractions, and we may express the result as follows: \emph{The resolvent of a symmetric kernel is a meromorphic function of $\lambda$ which possesses simple poles at the eigenvalues of the integral equation. Its residues at the poles $\lambda_i$ provide the eigenfunctions belonging to these eigenvalues.} From the Neumann series and the representation (64) it follows that the radius of convergence of the Neumann series is equal to the absolute value of the eigenvalue with the smallest square.
+
+According to the general theory of functions, the resolvent $\mathfrak{K}(s,t;\lambda)$, being a meromorphic function, can be represented as the quotient of two integral transcendental functions; it is to be expected that each of these functions can be expanded in an everywhere convergent power series the coefficients of which can be obtained directly from the given kernel. In the algebraic case we have such a representation in the formulas of Ch. I, \S2. It is reasonable to suppose that very similar formulas can be obtained here. We may expect, furthermore, that these formulas are in no way restricted to symmetric kernels only, but remain valid for arbitrary continuous unsymmetric kernels. Such representations have been obtained by Fredholm, who then used them as the starting point of the theory. In the next section we shall derive Fredholm's formulas, again approximating the kernel uniformly by degenerate kernels $A_n(s,t)$ and then passing to the limit $n\to\infty$.\footnote{This method was first employed by Goursat: Sur un cas \`el\'ementaire de l'\'equation de Fredholm, \emph{Bull. Soc. math. France}, Vol. 35, 1907, pp. 163--173. Compare also H. Lebesgue, Sur la m\'ethode de M. Goursat pour la r\'esolution de l'\'equation de Fredholm, ibid., Vol. 36, 1909, pp. 3--19.}
+
+\section{The Fredholm Formulas}
+Since we shall not make any use of the Fredholm formulas later on, we omit some intermediate calculations involving determinants.\footnote{See G. Kowalewski, \emph{Einf\"uhrung in die Determinantentheorie}, Veit, Leipzig, 1909.}
+
+We shall employ essentially the same procedure and terminology as in Ch. I, \S2. For a degenerate kernel
+\[
+K(s,t)=A(s,t)=\sum_{p=1}^{n}\alpha_p(s)\beta_p(t),
+\]
+the integral equation (1) goes over into
+\begin{equation}\tag{65}
+\varphi(s)=f(s)+\lambda\sum_{p=1}^{n}x_p\alpha_p(s)
+=f(s)+\lambda E'(\alpha(s),x)
+\end{equation}
+if we set $x_p=(\varphi,\beta_p)$ as before. Making use of the notation
+\[
+y_p=(f,\beta_p),\qquad k_{pq}=(\alpha_q,\beta_p),
+\]
+we obtain the system of equations
+\begin{equation}\tag{66}
+y_p=x_p-\lambda\sum_{q=1}^{n}k_{pq}x_q
+\end{equation}
+for the quantities $x_p$. The solution of this system is given by
+\[
+E(u,x)=-\frac{\Delta(u,y;\lambda)}{\Delta(\lambda)}
+\]
+and, thus, the solution of (1) is
+\begin{equation}\tag{67}
+\varphi(s)=f(s)+\lambda E'(\alpha(s),x)
+=f(s)-\lambda\frac{\Delta(\alpha(s),y;\lambda)}{\Delta(\lambda)};
+\end{equation}
+in (67), we have
+\begin{equation}\tag{68}
+\begin{aligned}
+\Delta(u,y;\lambda)
+&=\Delta_1(u,y)-\lambda\Delta_2(u,y)+\cdots
++(-1)^{n-1}\lambda^{n-1}\Delta_n(u,y),\\
+\Delta(\lambda)
+&=1-\lambda\Delta_1+\cdots+(-1)^n\lambda^n\Delta_n;
+\end{aligned}
+\end{equation}
+with
+\begin{equation}\tag{69}
+\Delta_h(u,y)=\sum
+\begin{vmatrix}
+0&u_{p_1}&u_{p_2}&\cdots&u_{p_h}\\
+y_{p_1}&k_{p_1p_1}&k_{p_1p_2}&\cdots&k_{p_1p_h}\\
+y_{p_2}&k_{p_2p_1}&k_{p_2p_2}&\cdots&k_{p_2p_h}\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+y_{p_h}&k_{p_hp_1}&k_{p_hp_2}&\cdots&k_{p_hp_h}
+\end{vmatrix},
+\qquad
+\Delta_h=\sum
+\begin{vmatrix}
+k_{p_1p_1}&k_{p_1p_2}&\cdots&k_{p_1p_h}\\
+k_{p_2p_1}&k_{p_2p_2}&\cdots&k_{p_2p_h}\\
+\vdots&\vdots&\ddots&\vdots\\
+k_{p_hp_1}&k_{p_hp_2}&\cdots&k_{p_hp_h}
+\end{vmatrix}.
+\end{equation}
+In (69) the summation indices $p_1,p_2,\ldots,p_h$ run independently from 1 to $n$ with $p_1<p_2<\cdots<p_h$.
+
+The sum of determinants $\Delta(\alpha(s),y;\lambda)$ may evidently be written in the form
+\[
+\int \Delta[\alpha(s),\beta(t);\lambda]f(t)\,dt,
+\]
+so that the solution (67) of the integral equation takes on the form
+\begin{equation}\tag{62'}
+\varphi(s)=f(s)+\lambda\int \mathfrak{K}(s,t;\lambda)f(t)\,dt
+\end{equation}
+with the resolvent
+\begin{equation}\tag{70}
+\mathfrak{K}(s,t;\lambda)
+=-\frac{\Delta(\alpha(s),\beta(t);\lambda)}{\Delta(\lambda)}
+=\frac{D(s,t;\lambda)}{D(\lambda)}.
+\end{equation}
+
+In the formulas (69) the summation, instead of extending only over all sets of indices for which $p_1<p_2<\cdots<p_h$, may just as well extend over all possible combinations, the result being divided by $h!$. Making use of this fact and of the definition of $k_{pq}$, and employing certain simple theorems concerning determinants, we obtain the formulas
+\begin{equation}\tag{71}
+\begin{aligned}
+D(s,t;\lambda)&=-\Delta(\alpha(s),\beta(t);\lambda)\\
+&=D_0(s,t)-\frac{1}{1!}D_1(s,t)\lambda
++\frac{1}{2!}D_2(s,t)\lambda^2-\cdots
++\frac{(-1)^{n-1}}{(n-1)!}D_{n-1}(s,t)\lambda^{n-1},\\
+D(\lambda)&=\Delta(\lambda)\\
+&=1-\frac{1}{1!}D_1\lambda+\frac{1}{2!}D_2\lambda^2-\cdots
++\frac{(-1)^n}{n!}D_n\lambda^n,
+\end{aligned}
+\end{equation}
+where we have used the abbreviations
+\begin{equation}\tag{72}
+\begin{aligned}
+D_h(s,t)
+&=\int\!\cdots\!\int
+\begin{vmatrix}
+A(s,t)&A(s,s_1)&\cdots&A(s,s_h)\\
+A(s_1,t)&A(s_1,s_1)&\cdots&A(s_1,s_h)\\
+\vdots&\vdots&\ddots&\vdots\\
+A(s_h,t)&A(s_h,s_1)&\cdots&A(s_h,s_h)
+\end{vmatrix}
+ ds_1ds_2\cdots ds_h,\\[1ex]
+D_h
+&=\int\!\cdots\!\int
+\begin{vmatrix}
+A(s_1,s_1)&A(s_1,s_2)&\cdots&A(s_1,s_h)\\
+A(s_2,s_1)&A(s_2,s_2)&\cdots&A(s_2,s_h)\\
+\vdots&\vdots&\ddots&\vdots\\
+A(s_h,s_1)&A(s_h,s_2)&\cdots&A(s_h,s_h)
+\end{vmatrix}
+ ds_1ds_2\cdots ds_h,
+\end{aligned}
+\end{equation}
+for $h=1,2,\ldots,n$, and $D_0(s,t)=A(s,t)$.
+
+Thus the integral rational functions $D(s,t;\lambda)$ and $D(\lambda)$ of $\lambda$ have been written down explicitly in terms of the given kernel. The series (71) may be formally continued as infinite series since the quantities $D_h$ for $h>n$ and $D_h(s,t)$ for $h>n-1$, as defined by (72), all vanish for the degenerate kernel $A(s,t)=\sum_{p=1}^{n}\alpha_p(s)\beta_p(t)$.
+
+Now, if the arbitrary continuous kernel $K(s,t)$ is approximated uniformly by a sequence of degenerate kernels, then the corresponding expressions (72) converge to the corresponding determinants of the kernel $K(s,t)$. The infinite series
+\begin{equation}\tag{73}
+\begin{aligned}
+D(s,t;\lambda)&=D_0(s,t)-\frac{\lambda}{1!}D_1(s,t)+\cdots,\\
+D(\lambda)&=1-\frac{\lambda}{1!}D_1+\frac{\lambda^2}{2!}D_2-\cdots,
+\end{aligned}
+\end{equation}
+where $A$ is replaced by $K$ in (72), represent integral transcendental functions of $\lambda$ for the nondegenerate kernel $K(s,t)$. To see this it is only necessary to show that they converge for every value of $\lambda$. If $|K(s,t)|\le M$ for all $s$ and $t$, then, by Hadamard's inequality for determinants (Ch. I, \S5, 2),
+\[
+|D_h(s,t)|\le \sqrt{(h+1)^{h+1}}\,M^{h+1}(b-a)^h,
+\qquad
+|D_h|\le \sqrt{h^h}\,M^h(b-a)^h.
+\]
+Now the series
+\[
+\sum_{h=0}^{\infty}\sqrt{(h+1)^{h+1}}\,M^{h+1}(b-a)^h\frac{\lambda^h}{h!},
+\qquad
+1+\sum_{h=1}^{\infty}\sqrt{h^h}\,M^h(b-a)^h\frac{\lambda^h}{h!}
+\]
+converge for every value of $\lambda$\footnote{This can be seen from the fact that $1/h!<e^h/h^h$, since the term $h^h/h!$ occurs in the expansion of $e^h$. Therefore the $h$-th root of the coefficient of $\lambda^h$ in the series on the right is less than $M(b-a)e/h^{1/2}$ and, consequently, converges to zero for $h\to\infty$; the same is true for the other series.} and are majorants of the series of the absolute values of the terms of (73). Thus the assertion is proved. It follows that, for every value of $\lambda$, the convergence relations
+\[
+\lim_{n\to\infty}D_n(s,t;\lambda)=D(s,t;\lambda),
+\qquad
+\lim_{n\to\infty}D_n(\lambda)=D(\lambda)
+\]
+hold uniformly in $s$ and $t$, where the quantities with index $n$ refer to the $n$-th approximating degenerate kernel $A_n(s,t)$ and those without index to $K(s,t)$. Therefore, as long as $\lambda$ is not one of the zeros $\lambda_i$ of $D(\lambda)$, we have, for the resolvent of the kernel $K(s,t)$,
+\begin{equation}\tag{74}
+\mathfrak{K}(s,t;\lambda)
+=\frac{D_0(s,t)-\dfrac{\lambda}{1!}D_1(s,t)+\cdots}
+{1-\dfrac{\lambda}{1!}D_1+\dfrac{\lambda^2}{2!}D_2-\cdots}
+=\lim_{n\to\infty}\mathfrak{K}_n(s,t;\lambda);
+\end{equation}
+thus, for the solution of an integral equation with arbitrary kernel $K(s,t)$ we obtain the formula
+\begin{equation}\tag{75}
+\varphi(s)=f(s)+\lambda\int \mathfrak{K}(s,t;\lambda)f(t)\,dt.
+\end{equation}
+The above formulas are known as the \emph{Fredholm formulas} in honor of their discoverer. Evidently the relation
+\begin{equation}\tag{76}
+D_h=\int D_{h-1}(s,s)\,ds
+\end{equation}
+holds. Note that we also have\footnote{See Fredholm, loc. cit.}
+\begin{equation}\tag{77}
+D'(\lambda)=-\int D(s,s;\lambda)\,ds
+\end{equation}
+and that the $m$-th derivative is given by
+\begin{equation}\tag{78}
+D^{(m)}(\lambda)=(-1)^m\int\!\cdots\!\int
+D\!\left(\left.\begin{matrix}s_1,s_2,\ldots,s_m\\s_1,s_2,\ldots,s_m\end{matrix}\right|\lambda\right)
+ ds_1ds_2\cdots ds_m,
+\end{equation}
+where
+\begin{equation}\tag{79}
+D\!\left(\left.\begin{matrix}s_1,s_2,\ldots,s_m\\t_1,t_2,\ldots,t_m\end{matrix}\right|\lambda\right)
+=\sum_{h=1}^{\infty}\frac{(-\lambda)^h}{h!}
+D_h\!\left(\begin{matrix}s_1,s_2,\ldots,s_m\\t_1,t_2,\ldots,t_m\end{matrix}\right)
+\end{equation}
+and
+\begin{equation}\tag{80}
+\begin{aligned}
+&D_h\!\left(\begin{matrix}s_1,s_2,\ldots,s_m\\t_1,t_2,\ldots,t_m\end{matrix}\right)\\
+&\quad=\int\!\cdots\!\int
+\begin{vmatrix}
+K(s_1,t_1)&\cdots&K(s_1,t_m)&K(s_1,\sigma_1)&\cdots&K(s_1,\sigma_h)\\
+K(s_2,t_1)&\cdots&K(s_2,t_m)&K(s_2,\sigma_1)&\cdots&K(s_2,\sigma_h)\\
+\vdots&&\vdots&\vdots&&\vdots\\
+K(s_m,t_1)&\cdots&K(s_m,t_m)&K(s_m,\sigma_1)&\cdots&K(s_m,\sigma_h)\\
+K(\sigma_1,t_1)&\cdots&K(\sigma_1,t_m)&K(\sigma_1,\sigma_1)&\cdots&K(\sigma_1,\sigma_h)\\
+\vdots&&\vdots&\vdots&&\vdots\\
+K(\sigma_h,t_1)&\cdots&K(\sigma_h,t_m)&K(\sigma_h,\sigma_1)&\cdots&K(\sigma_h,\sigma_h)
+\end{vmatrix}
+ d\sigma_1\cdots d\sigma_h.
+\end{aligned}
+\end{equation}
+We add the remark that the null solutions are obtained for the zeros $\lambda=\lambda_i$ of $D(\lambda)$, in the case of simple poles, by determining the residues of the resolvent $\mathfrak{K}(s,t;\lambda)$ at these points. The proof follows easily from our formulas.\footnote{For further details concerning the formal apparatus of the Fredholm theory see, for example, G. Kowalewski, \emph{Einf\"uhrung in die Determinantentheorie}, Veit, Leipzig, 1909.}
+
+\section{Another Derivation of the Theory}
+The general theory of integral equations as formulated above is based on the fact that from the family of solutions of the approximating integral equations it is possible to select a sequence which converges uniformly to a solution of the given integral equation. Nevertheless, the concepts of measure of independence and of asymptotic dimension of a sequence of functions, introduced in Ch. II, \S3 enable us to base the theory of integral equations on a somewhat different foundation. Since this procedure provides some relevant additional insight it will be presented here.
+
+\subsection{A Lemma}
+\emph{Let $\psi_1(s),\psi_2(s),\ldots$ be a sequence of functions whose norms are all below a fixed bound $M$ and for which the relation}
+\begin{equation}\tag{81}
+\psi_n(s)-\lambda\int K(s,t)\psi_n(t)\,dt\Rightarrow0
+\end{equation}
+\emph{holds in the sense of uniform convergence. Then the functions $\psi_n(s)$ form a smooth sequence of functions with finite asymptotic dimension $r$.}
+
+To prove this we note that relation (81) remains valid if the functions $\psi_n(s)$ are replaced by any functions $\chi_n(s)$ which are of the form
+\[
+\chi_n(s)=x_1\psi_{n_1}+x_2\psi_{n_2}+\cdots+x_p\psi_{n_p}.
+\]
+The absolute values of the coefficients $x_1,x_2,\ldots,x_p$ are assumed to be bounded, and the functions
+\[
+\psi_{n_1},\psi_{n_2},\ldots,\psi_{n_p}
+\]
+are any $p$ functions of the sequence $\psi_n$ such that the indices $n_i$ tend to infinity with $n$. Now if, among the functions $\psi_n(s)$, there are sets of $r$ functions each with arbitrarily large indices $n$ such that the measure of independence of each of these sets remains above a fixed bound $\alpha$, if, in other words, the asymptotic dimension of the sequence is at least $r$, then we may orthogonalize the functions of these sets; the coefficients that arise in this orthogonalization process will all be less than the bound $1/\sqrt{\alpha}$ (Ch. II, \S3, 1). We thus obtain sets of $r$ mutually orthogonal functions $\omega_{n,i}(s)$ $(i=1,2,\ldots,r;\ n=1,2,\ldots)$ for which the limit equation
+\begin{equation}\tag{82}
+\lim_{n\to\infty}\left(\omega_{n,i}(s)-\lambda\int K(s,t)\omega_{n,i}(t)\,dt\right)=0
+\end{equation}
+holds uniformly in $s$. The usual argument using Bessel's inequality\footnote{See \S4, 2 of this chapter (p. 130).} leads to the result
+\[
+\iint[K(s,t)]^2\,ds\,dt
+\ge\sum_{i=1}^{r}\int\left[\int K(s,t)\omega_{n,i}(t)\,dt\right]^2ds
+\]
+for every $n$; and from this and from equation (82) it follows that
+\[
+\iint[K(s,t)]^2\,ds\,dt\ge\frac{r}{\lambda^2}.
+\]
+We have thus found a finite bound for the asymptotic dimension of the sequence; that the sequence is smooth follows immediately from (82). For, if $\epsilon_n$ denotes a number which tends to zero as $n$ increases, the Schwarz inequality leads to
+\[
+|\psi_n(s)|^2\le M\lambda^2\int[K(s,t)]^2\,dt+\epsilon_n
+\]
+which means that the functions $\psi_n(s)$ are uniformly bounded; similarly the relation
+\[
+(x_1\psi_{n_1}+\cdots+x_p\psi_{n_p})^2
+\le\epsilon\lambda^2\int[K(s,t)]^2\,dt+\epsilon_n
+\]
+follows from
+\[
+\int(x_1\psi_{n_1}+\cdots+x_p\psi_{n_p})^2\,ds<\epsilon.
+\]
+Therefore the sequence is smooth.
+
+\subsection{Eigenfunctions of a Symmetric Kernel}
+We shall employ the lemma just proved to obtain the eigenfunctions of a symmetric kernel $K(s,t)$ which we approximate uniformly by the degenerate symmetric kernels $A_n(s,t)$. As before, let $\mu_1^{(n)},\mu_2^{(n)},\ldots$ and $\mu_{-1}^{(n)},\mu_{-2}^{(n)},\ldots$ denote the positive and negative eigenvalues, respectively, of $A_n(s,t)$, and let $\psi_1^{(n)}(s),\psi_2^{(n)}(s),\ldots$, $\psi_{-1}^{(n)}(s),\psi_{-2}^{(n)}(s),\ldots$ be the corresponding eigenfunctions. Multiple eigenvalues are supposed to be written down an appropriate number of times. Let
+\[
+J_n(\varphi,\varphi)=\iint A_n(s,t)\varphi(s)\varphi(t)\,ds\,dt
+\]
+and
+\[
+J(\varphi,\varphi)=\iint K(s,t)\varphi(s)\varphi(t)\,ds\,dt
+\]
+be the integral forms belonging to $A_n$ and $K$, respectively, and let us assume, as we may, that $J(\varphi,\varphi)$ admits positive values. Then $\kappa_1^{(n)}=1/\mu_1^{(n)}$ is the maximum of $J_n(\varphi,\varphi)$ for a normalized function; let $\kappa_1=1/\mu_1$ be the upper bound of $J(\varphi,\varphi)$ under the same normalization condition. Since, for sufficiently large $n$, the values of $J(\varphi,\varphi)$ and $J_n(\varphi,\varphi)$ differ by less than any arbitrarily small fixed number, we must have $\lim_{n\to\infty}\mu_1^{(n)}=\mu_1$. Therefore relation
+\begin{equation}\tag{83}
+\psi_1^{(n)}(s)-\mu_1\int K(s,t)\psi_1^{(n)}(t)\,dt\Rightarrow0
+\end{equation}
+follows from $\psi_1^{(n)}(s)-\mu_1^{(n)}\int A_n(s,t)\psi_1^{(n)}(t)\,dt=0$ since $A_n(s,t)\Rightarrow K(s,t)$. Consequently, in virtue of our lemma, the functions $\psi_1^{(n)}$ form a smooth sequence of finite positive dimension $r$ (the vanishing of $r$ would contradict the normalization of the functions $\psi_1^{(n)}$). According to Ch. II, \S3 they therefore determine a linear space of functions with the normalized orthogonal components $\psi_{1,1}(s),\psi_{1,2}(s),\ldots,\psi_{1,r}(s)$, which are necessarily solutions of the homogeneous integral equation
+\[
+\psi_{1,i}(s)=\mu_1\int K(s,t)\psi_{1,i}(t)\,dt
+\qquad(i=1,2,\ldots,r);
+\]
+thus the functions $\psi_1^{(n)}$ are eigenfunctions of $K(s,t)$ belonging to the eigenvalue $\mu_1$.
+
+In exactly the same way we may obtain the remaining eigenvalues and eigenfunctions of $K(s,t)$. Thus, for example, $\kappa_h^{(n)}=1/\mu_h^{(n)}$ is the minimum, obtained by a suitable choice of $v_1(s),v_2(s),\ldots,v_{h-1}(s)$, of the maximum of $J_n(\varphi,\varphi)$ subject to the conditions $(\varphi,\varphi)=1$ and $(\varphi,v_i)=0$ $(i=1,2,\ldots,h-1)$.
+
+If we now define $\kappa_h=1/\mu_h$ as the analogous lower bound of the upper bound of $J(\varphi,\varphi)$, then we again have $\lim_{n\to\infty}\mu_h^{(n)}=\mu_h$ because of the proximity of the values of $J_n(\varphi,\varphi)$ to those of $J(\varphi,\varphi)$. This leads to the relation
+\[
+\psi_h^{(n)}(s)-\mu_h\int K(s,t)\psi_h^{(n)}(t)\,dt\Rightarrow0;
+\]
+and the rest of the argument proceeds as above. To obtain the negative eigenvalues and the corresponding eigenfunctions, we must consider the corresponding minimum or maximum-minimum problems. If only a finite number of eigenvalues of one or the other sign occur we simply break off the procedure at the appropriate stage.
+
+\subsection{Unsymmetric Kernels}
+This method also provides simplification for the unsymmetric integral equation (1). A brief indication will suffice; we employ the same notation as before. In Case I, suppose the quantities $\rho_n$ and $c_n$ are such that for all $n$ the norm $c_n^2$ remains below the bound $M$. Then the norm of the difference $\rho_n-\rho_m=\zeta_{nm}$ also remains bounded, namely less than $4M$. Furthermore
+\[
+\lim_{n,m\to\infty}\left[\zeta_{nm}(s)-\lambda\int K(s,t)\zeta_{nm}(t)\,dt\right]=0
+\]
+uniformly in $s$. Therefore, by our lemma, every subsequence of the double sequence $\zeta_{nm}$ in which $n$ and $m$ both tend to infinity possesses a bounded asymptotic dimension $r$, and the bound of $r$ depends only on $K(s,t)$ and $\lambda$. Thus our double sequence $\zeta_{nm}$ defines, through a limiting process, a linear space of functions (see Ch. II, \S3), with a finite number $r$ of orthogonal components $\psi_1(s),\psi_2(s),\ldots,\psi_r(s)$, unless the asymptotic dimension of every subsequence is zero, i.e. unless $\zeta_{nm}\Rightarrow0$. In the latter case the $\rho_n(s)$ simply converge uniformly to a solution of the integral equation (1). In the case $r>0$ the $\psi_i(s)$ are solutions of the homogeneous equation. We replace $\rho_n$ by a function
+\[
+\eta_n(s)=\rho_n(s)+x_1\psi_1(s)+\cdots+x_r\psi_r(s)
+\]
+which is orthogonal to $\psi_1(s),\psi_2(s),\ldots,\psi_r(s)$. For these functions the relation
+\[
+\left[\eta_n(s)-\lambda\int K(s,t)\eta_n(t)\,dt\right]-f(s)\Rightarrow0
+\]
+certainly holds. As above, we may now apply the lemma to the differences $\eta_n-\eta_m=\zeta_{nm}$; we arrive easily at the conclusion that the dimension of every partial subsequence of this sequence must be zero, i.e. that the functions $\eta_n(s)$ converge uniformly to a solution of the integral equation orthogonal to the functions $\psi_i(s)$.
+
+Similarly, in Case II we obtain, with the aid of the lemma, a linear space of solutions of the homogeneous integral equation as the limit set of the sequence $\sigma_n(s)=\rho_n(s)/c_n$.
+
+In this way the second approach provides more precise information concerning the nature of the convergence relations which obtain here. In particular, we see that a solution of the homogeneous or inhomogeneous equation may be approximated as closely as desired by considering approximating integral equations with the kernels $A_n(s,t)$.
+
+\subsection{Continuous Dependence of Eigenvalues and Eigenfunctions on the Kernel}
+In considering how the solutions of integral equations vary with the kernel, we restrict ourselves to the eigenvalue problem for a symmetric kernel $K(s,t)$. Suppose that the kernel $K(s,t)$ is the uniform limit of a sequence of other symmetric kernels $K_n(s,t)$ $(n=1,2,\ldots)$. If we consider functions $\varphi$ for which $(\varphi,\varphi)\le M$, then the values of the quadratic integral forms $J_n(\varphi,\varphi)$ and $J(\varphi,\varphi)$, with the kernels $K_n$ and $K$, respectively, will differ arbitrarily little for sufficiently large $n$. The same is therefore true of the maxima and minima of these forms under the conditions $(\varphi,\varphi)=1$, $(\varphi,v_i)=0$, and also for the minima of the maxima or the maxima of the minima. In other words: \emph{The $h$-th positive and $h$-th negative eigenvalues vary continuously with the kernel.} As far as the eigenfunctions are concerned, we cannot expect actual continuity in view of the arbitrariness of sign and of the occurrence of multiple eigenvalues. Instead, the following is true: \emph{Let $\lambda_h$ be an $r$-fold eigenvalue of the kernel $K(s,t)$, i.e. let}
+\[
+\lambda_h=\lim\lambda_h^{(n)}=\lim\lambda_{h+1}^{(n)}=\cdots=\lim\lambda_{h+r-1}^{(n)},
+\]
+\emph{but assume that this relation does not hold for $\lambda_{h-1}^{(n)}$ and $\lambda_{h+r}^{(n)}$. Then, for increasing $n$, the linear space formed from the eigenfunctions $\psi_h^{(n)}(s),\psi_{h+1}^{(n)}(s),\ldots,\psi_{h+r-1}^{(n)}(s)$ of the kernel $K_n(s,t)$ converges}\footnote{For the notion of convergence of linear families see Ch. II, \S3, 2.} \emph{uniformly to the linear space of the eigenfunctions of $K(s,t)$ for the eigenvalue $\lambda_h$.}
+
+This theorem is a complete expression of the continuity properties of the eigenfunctions. It may be proved almost immediately on the basis of our lemma by noting that, for the sequence of eigenfunctions $\psi_{h+k}^{(n)}(s)$ $(0\le k<r)$, the limit relation
+\[
+\left[\psi_{h+k}^{(n)}(s)-\lambda_h\int K(s,t)\psi_{h+k}^{(n)}(t)\,dt\right]\Rightarrow0
+\]
+holds, and that this sequence is certainly of asymptotic dimension $r$.
+
+\section{Extensions of the Theory}
+The developments of \S\S1 to 6 and of \S8 can be significantly generalized in two directions.
+
+In the first place, all the arguments remain valid if we consider integral equations for functions of several, say $m$, independent variables. Thus, suppose $f(s)$ and $\varphi(s)$ are continuous functions of the variables $s_1,s_2,\ldots,s_m$ in a fixed finite region $G$; suppose also that $K(s,t)$ is a continuous function of the variables $s_1,s_2,\ldots,s_m$ and $t_1,t_2,\ldots,t_m$, each set of variables ranging over the region $G$; let $ds$ denote the volume element $ds_1ds_2\cdots ds_m$ of $G$ and $dt$ the corresponding volume element $dt_1dt_2\cdots dt_m$ with the understanding that all integrals are to be taken over the region $G$. Then the integral equation
+\[
+f(s)=\varphi(s)-\lambda\int K(s,t)\varphi(t)\,dt
+\]
+is an integral equation for a function $\varphi(s)$ of $m$ variables, and its kernel $K(s,t)$ is a function of $2m$ variables; our whole theory remains valid word for word.
+
+Secondly, the requirement that the kernel be continuous is far more stringent than necessary. It can be considerably relaxed without impairing the results. We shall not attempt to obtain the most general conditions under which the theory is valid; we shall merely extend the theory sufficiently far to treat the most important applications. Let us first consider kernels $K(s,t)$ which are functions of only two variables. Our previous arguments, apart from those that lead to Mercer's theorem (\S5, 4), remain valid, with inessential modifications, for piecewise continuous kernels, since, as shown in Chapter I, any piecewise continuous function can be approximated in the mean as closely as desired by a continuous function. The arguments can also be justified, moreover, for kernels which are infinite at some points, provided that the integrals
+\[
+\iint [K(s,t)]^2\,ds\,dt,
+\qquad
+\int [K(s,t)]^2\,ds,
+\qquad
+\int [K(s,t)]^2\,dt
+\]
+exist and that the latter two integrals, regarded as functions of $t$ and of $s$, respectively, remain below a fixed bound. The latter assumptions will be satisfied if, for example, the kernel becomes infinite for $s=t$ of order less than $\tfrac12$\ctnote{原文此处误作 ``less that''；依句义应为 ``less than''。}, i.e. if $K(s,t)$ is of the form
+\[
+K(s,t)=H(s,t)|s-t|^{-\alpha}
+\]
+with $0\le \alpha<\tfrac12$ and $H(s,t)$ continuous everywhere. To show that for such a kernel the theorems obtained are valid, it is sufficient to approximate the kernel by continuous degenerate kernels $A_n(s,t)$ in such a way that the following conditions are satisfied:
+\[
+\int [K(s,t)-A_n(s,t)]^2\,dt
+\]
+becomes arbitrarily small uniformly in $s$ as $n\to\infty$ and
+\[
+\int [A_n(s+\eta,t)-A_n(s,t)]^2\,dt
+\]
+becomes arbitrarily small uniformly in $s$ and in $n$ if $|\eta|$ is taken sufficiently small. All our arguments can then be carried out. Likewise, in the case of two independent variables, all our theorems remain valid if, for $s_1=t_1$, $s_2=t_2$, the kernel becomes infinite of less than the first order, since in this case the convergence of the integral
+\[
+\iint [K(s_1,s_2,t_1,t_2)]^2\,ds_1ds_2
+\]
+is not affected. Analogously, we may admit singularities of order less than $\tfrac32$ in the case of three variables; in general for $n$ variables singularities of order less than $n/2$ are permissible in $K$.
+
+We finally note without proof that it is not difficult to extend our theory to integral equations for which only the above hypothesis concerning the integrals of $K^2(s,t)$ are satisfied. No additional requirements such as continuity of the kernel are needed.
+
+\section{Supplement and Problems for Chapter III}
+\subsection{Problems}
+Show that:
+
+(a) The kernel
+\[
+\sum_{n=1}^{\infty}\frac{\sin ns\,\sin nt}{n}
+=\frac12\log\left|\frac{\sin\frac{s+t}{2}}{\sin\frac{s-t}{2}}\right|
+\qquad (0\le s,t\le\pi)
+\]
+has the eigenvalues $\lambda_n=2n/\pi$ and the eigenfunctions $\sin nt$.
+
+(b) The symmetric kernel
+\[
+\frac{1}{2\pi}\frac{1-h^2}{1-2h\cos(s-t)+h^2}
+\qquad (0\le s,t\le2\pi)
+\]
+with $|h|<1$ has the eigenfunctions $1$, $\sin ns$, $\cos ns$, with the eigenvalues $1$, $1/h^n$, $1/h^n$.
+
+(c) For the symmetric kernel
+\[
+K(s,t)=\frac{1}{\sqrt{\pi}}e^{(s^2+t^2)/2}
+\int_{-\infty}^{s}e^{-\tau^2}\,d\tau
+\int_t^{\infty}e^{-\tau^2}\,d\tau
+\qquad (s\le t)
+\]
+the Hermite orthogonal functions
+\[
+e^{s^2/2}\frac{d^n e^{-s^2}}{ds^n}
+\]
+are eigenfunctions with the eigenvalues $\lambda_n=2n+2$.
+
+(d) The eigenfunctions of the symmetric kernel
+\[
+K(s,t)=e^{(s+t)/2}\int_t^{\infty}\frac{e^{-\tau}}{\tau}\,d\tau
+\qquad (0\le s\le t)
+\]
+are the Laguerre orthogonal functions
+\[
+e^{-s/2}
+\left.
+\frac{\partial^n}{\partial h^n}
+\frac{e^{-sh/(1-h)}}{1-h}
+\right|_{h=0};
+\]
+the associated eigenvalues are $\lambda_n=n+1$.\footnote{See R. Neumann, \emph{Die Entwicklung willk\"urlicher Funktionen nach den Hermiteschen und Laguerreschen Orthogonalfunktionen usw.}, Dissertation, Breslau, 1912.}
+
+\subsection{Singular Integral Equations}
+The general theory may no longer be valid if the kernel possesses singularities of too high an order, or if, in the case of an infinite fundamental domain, it fails to go to zero fast enough at infinity (the kernels considered in the previous subsection converge strongly enough).
+
+We shall now give some examples of integral equations with eigenvalues of infinite multiplicity.
+
+The integral formula
+\[
+\int_0^{\infty}\sin st\left(\sqrt{\frac{\pi}{2}}e^{-at}+\frac{t}{a^2+t^2}\right)dt
+=\sqrt{\frac{\pi}{2}}\left(\sqrt{\frac{\pi}{2}}e^{-as}+\frac{s}{a^2+s^2}\right)
+\]
+\ctnote{原文等式右端漏乘了一个 $\sqrt{\pi/2}$，并据此在下文把相应的积分方程特征值写成了 $\lambda=1$。由 $\int_0^\infty e^{-at}\sin st\,dt=s/(a^2+s^2)$ 与 $\int_0^\infty t\sin st/(a^2+t^2)\,dt=(\pi/2)e^{-as}$ 可直接核对；按本章约定 $\varphi=\lambda K\varphi$，这里应有 $\lambda=\sqrt{2/\pi}$。}
+holds identically in $a$. Therefore, in the fundamental domain $0\le s,t<\infty$, the kernel $\sin st$ has infinitely many eigenfunctions for the eigenvalue $\lambda=\sqrt{2/\pi}$.
+
+Hermite's orthogonal functions (see subsection 1(c)) are eigenfunctions of the kernel $e^{ist}$ with the eigenvalues $i^{-n}/\sqrt{2\pi}$. Thus each of the four numbers $\pm1/\sqrt{2\pi}$, $\pm i/\sqrt{2\pi}$ is an eigenvalue of this kernel of infinite multiplicity.
+
+An example of an integral equation\footnote{Related integral equations have been treated by E. Hopf, \emph{\"Uber lineare Integralgleichungen mit positivem Kern}, Sitzungsber. Akad. Berlin (math.-phys. Kl.), 1928, pp. 233--275. See also the articles by U. Wegner, G. H. Hardy, and E. C. Titchmarsh cited there.} with infinitely many eigenvalues in a finite interval is the equation
+\[
+\varphi(s)=\lambda\int_{-\infty}^{\infty}e^{-|s-t|}\varphi(t)\,dt;
+\]
+its solutions are $e^{\alpha is}$ with the eigenvalues $\lambda=\tfrac12(1+\alpha^2)$. Thus every $\lambda>\tfrac12$ is an eigenvalue.
+
+\subsection{E. Schmidt's Derivation of the Fredholm Theorems}
+Let us take $\lambda=1$ and let us write the kernel $K(s,t)$ in the form
+\[
+K(s,t)=\sum_{\nu=1}^{n}\alpha_\nu(s)\beta_\nu(t)+k(s,t),
+\]
+with
+\[
+\iint [k(s,t)]^2\,ds\,dt<1.
+\]
+According to \S6, the Neumann series for $k(s,t)$ converges for $\lambda=1$ and therefore represents the resolvent $\kappa(s,t)$ of the kernel $k(s,t)$. Writing the integral equation (1) in the form
+\[
+f_1(s)=\varphi(s)-\int k(s,t)\varphi(t)\,dt
+\]
+with
+\[
+f_1(s)=f(s)+\sum_{\nu=1}^{n}x_\nu\alpha_\nu(s)
+\qquad (x_\nu=(\varphi,\beta_\nu))
+\]
+we thus have the formula
+\[
+\varphi(s)=f(s)+\sum_{\nu=1}^{n}x_\nu\alpha_\nu(s)
++\int\kappa(s,t)\left[f(t)+\sum_{\nu=1}^{n}x_\nu\alpha_\nu(t)\right]dt
+\]
+or
+\[
+\begin{aligned}
+f_2(s)
+&=f(s)+\int\kappa(s,t)f(t)\,dt\\
+&=\varphi(s)-\int\left[\sum_{\nu=1}^{n}\bigl(\alpha_\nu(s)\beta_\nu(t)+\gamma_\nu(s)\beta_\nu(t)\bigr)\right]\varphi(t)\,dt,
+\end{aligned}
+\]
+with
+\[
+\gamma_\nu(s)=\int\kappa(s,\tau)\alpha_\nu(\tau)\,d\tau.
+\]
+In this way, the given integral equation is reduced in a single step to one with a degenerate kernel.\footnote{E. Schmidt, Zur Theorie der linearen und nicht linearen Integralgleichungen. Part II: Aufl\"osung der allgemeinen linearen Integralgleichung, \emph{Math. Ann.}, Vol. 64, 1907, pp. 161--174.}
+
+\subsection{Enskog's Method for Solving Symmetric Integral Equations}
+We consider a positive definite kernel $K(s,t)$, the first eigenvalue of which is greater than 1, i.e. a kernel for which the inequality
+\[
+\int|\varphi(s)|^2\,ds-\iint K(s,t)\varphi(s)\varphi(t)\,ds\,dt>0
+\]
+is valid for all $\varphi$. The integral equation (1) (assuming $\lambda=1$) may be written in the form $f(s)=J(\varphi)$, where
+\[
+J(\varphi)=\varphi(s)-\int K(s,t)\varphi(t)\,dt.
+\]
+From any complete system of functions $\varphi_1,\varphi_2,\ldots$, we now construct, by a process analogous to the orthogonalization process described in Chapter II, a system of functions $v_1(s),v_2(s),\ldots$ with the property that
+\[
+\int v_iJ(v_k)\,ds=\delta_{ik}.
+\]
+\footnote{$\delta_{ik}$ is the ``Kronecker delta,'' defined by $\delta_{ii}=1$, $\delta_{ik}=0$ for $i\ne k$.}
+Such a system is known as a ``complete system polar with respect to the kernel $K(s,t)$.'' If we set
+\[
+a_\nu=\int\varphi J(v_\nu)\,ds=\int v_\nu f\,ds,
+\]
+we immediately obtain
+\[
+\varphi(s)=\sum_{\nu=1}^{\infty}a_\nu v_\nu(s),
+\]
+provided that this series converges uniformly. Incidentally, the functions $v_\nu$ satisfy the ``completeness relation''
+\[
+\int\varphi(s)J[\varphi(s)]\,ds=\sum_{\nu=1}^{\infty}a_\nu^2,
+\]
+no matter how the piecewise continuous function $\varphi(s)$ is chosen.\footnote{D. Enskog, \emph{Kinetische Theorie der Vorg\"ange in m\"assig verd\"unnten Gasen}, Dissertation, Uppsala, 1917.}
+
+\subsection{Kellogg's Method for Determination of Eigenfunctions}
+Starting with an arbitrary normalized function $\varphi_0(s)$, we determine the functions $\varphi_\nu(s)$ and the numbers $\lambda_\nu$ from the relations
+\[
+\varphi_{\nu+1}(s)=\lambda_{\nu+1}\int K(s,t)\varphi_\nu(t)\,dt,
+\qquad N\varphi_\nu=1.
+\]
+The passage to the limit can be carried out and leads to an eigenvalue and associated eigenfunction of the kernel or its iterated kernel.
+
+The reader may establish the connection between this approach and the notion of asymptotic dimension and carry out the derivation from this point of view.\footnote{O. D. Kellogg, On the existence and closure of sets of characteristic functions, \emph{Math. Ann.}, Vol. 86, 1922, p. 14--17.}
+
+\subsection{Symbolic Functions of a Kernel and Their Eigenvalues}
+For the integral operator associated with a given kernel, spectral relations analogous to those developed for matrices in Chapter I exist. Let us consider, in particular, an integral rational function
+\[
+f(u)=\sum_{\nu=1}^{n}a_\nu u^\nu
+\]
+which vanishes for $u=0$; we replace the powers of $u$ by the corresponding iterated kernels of the symmetric kernel $K(s,t)$ and thus obtain the kernel
+\[
+H(s,t)=f[K]=\sum_{\nu=1}^{n}a_\nu K^{(\nu)}(s,t).
+\]
+The following theorem now holds: \emph{The eigenfunctions $\varphi_i$ of $H$ are identical with the eigenfunctions of $K$, and the corresponding reciprocal eigenvalues $\eta_i$ of $H$ are connected with the reciprocal eigenvalues $\kappa_i$ of $K$ by the equation}
+\[
+\eta_i=f(\kappa_i).
+\]
+We may, in fact, verify immediately that each eigenfunction $\varphi_i$ of $K$ belonging to the eigenvalue $\lambda_i=1/\kappa_i$ is also an eigenfunction of $H$ with the eigenvalue $1/f(\kappa_i)$. Since the relation
+\[
+\iint[H(s,t)]^2\,ds\,dt=\sum_{i=1}^{\infty}[f(\kappa_i)]^2
+\]
+holds we see that $H$ has no other eigenvalues and eigenfunctions.
+
+\subsection{Example of an Unsymmetric Kernel without Null Solutions}
+The kernel
+\[
+K(s,t)=\sum_{\nu=1}^{\infty}\frac{\sin \nu s\,\sin(\nu+1)t}{\nu^2}
+\]
+has, in the region $0\le s,t\le2\pi$, no null solutions. For, the iterated kernels are
+\[
+K^{(n)}(s,t)=\pi^{n-1}\sum_\nu
+\frac{\sin \nu s\,\sin(\nu+n)t}
+{\nu^2(\nu+1)^2\cdots(\nu+n-1)^2},
+\]
+and therefore the Neumann series converges for all values of $\lambda$. The same result may be obtained by showing that the function $D(\lambda)$ associated with $K$ is a constant for this kernel.\footnote{Similar kernels may be found in Goursat, \emph{Cours d'analyse} (see bibliography).}
+
+\subsection{Volterra Integral Equation}
+If $K(s,t)=0$ for $s<t$, the integral equation may be written in the form
+\[
+f(s)=\varphi(s)-\lambda\int_a^s K(s,t)\varphi(t)\,dt.
+\]
+Integral equations of this type have been treated in particular by Volterra. The reader may show that the resolvent for this equation is an integral transcendental function of $\lambda$, and that therefore Volterra's integral equation possesses one and only one solution for every $\lambda$, consequently, no null solution for any $\lambda$ and its Neumann series converges.\footnote{V. Volterra, \emph{Le\c{c}ons sur les equations integrales et les equations integro-differentielles}, Chapter II, Gauthier-Villars, Paris, 1913.}
+
+\subsection{Abel's Integral Equation}
+Abel studied a particular integral equation of the Volterra type, which is important in many applications, in order to solve the following problem: Let a material point of mass $m$ move under the influence of gravity on a smooth curve lying in a vertical plane. Let the time $t$ which is required for the point to move along the curve from the height $x$ to the lowest point of the curve be a given function $f$ of $x$. What is the equation of the curve? This problem leads to the integral equation
+\[
+f(x)=\int_0^x\frac{\varphi(t)\,dt}{\sqrt{2g(x-t)}}.
+\]
+If we assume that $f(x)$ is a continuously differentiable function vanishing at $x=0$, the solution of the equation turns out to be
+\[
+\varphi(x)=\frac{\sqrt{2g}}{\pi}\int_0^x\frac{f'(t)\,dt}{\sqrt{x-t}},
+\]
+where $g$ is the acceleration of gravity; the equation of the curve is
+\[
+y=\int_0^x\sqrt{|\varphi^2(t)-1|}\,dt.
+\]
+More generally, we may consider the equation
+\[
+f(x)=\int_a^x\frac{\varphi(s)\,ds}{(x-s)^\alpha}
+\qquad (0<\alpha<1),
+\]
+\ctnote{原文此式将积分微分误写为 $dt$，且把分母写成 $(s-x)^\alpha$；下页反演公式同样写成 $(s-x)^{1-\alpha}$。由于积分区间为 $a\le s\le x$，并按 Abel 积分方程的标准反演公式，这三处均应分别为 $ds$、$(x-s)^\alpha$ 和 $(x-s)^{1-\alpha}$。}
+the solution of which, for continuously differentiable $f(x)$, is
+\[
+\varphi(x)=\frac{\sin\alpha\pi}{\pi}\frac{f(a)}{(x-a)^{1-\alpha}}
++\frac{\sin\alpha\pi}{\pi}\int_a^x\frac{f'(s)\,ds}{(x-s)^{1-\alpha}}.
+\]
+\footnote{Abel, Solution de quelques probl\`emes \`a l'aide d'int\'egrales d\'efinies, Works, Christiania, 1881, I, pp. 11--27; B\^ocher, \emph{Integral Equations}, p. 8, Cambridge University Press, Cambridge, 1909.}
+
+\subsection{Adjoint Orthogonal Systems belonging to an Unsymmetric Kernel}
+From an unsymmetric kernel $K(s,t)$ we may construct the two symmetric kernels
+\[
+K'(s,t)=\int K(s,\sigma)K(t,\sigma)\,d\sigma
+\]
+and
+\[
+K''(s,t)=\int K(\sigma,s)K(\sigma,t)\,d\sigma.
+\]
+Then there exists a sequence of pairs of functions and associated values $\lambda$ such that
+\[
+\varphi_\nu(s)=\lambda_\nu\int K(s,t)\psi_\nu(t)\,dt,
+\qquad
+\psi_\nu(s)=\lambda_\nu\int K(t,s)\varphi_\nu(t)\,dt,
+\]
+\[
+\varphi_\nu(s)=\lambda_\nu^2\int K'(s,t)\varphi_\nu(t)\,dt,
+\qquad
+\psi_\nu(s)=\lambda_\nu^2\int K''(s,t)\psi_\nu(t)\,dt.
+\]
+Every function which can be written in the form $\int K(s,t)h(t)\,dt$ admits of an absolutely and uniformly convergent expansion in a series of functions of the orthogonal system $\varphi_\nu$; similarly, any function of the form $\int K(t,s)h(t)\,dt$ can be expanded in a series of the functions $\psi_\nu$. The relation
+\[
+K(s,t)=\sum_{\nu=1}^{\infty}\frac{\varphi_\nu(s)\psi_\nu(t)}{\lambda_\nu}
+\]
+holds, provided the series on the right converges uniformly in each variable. The kernel $K$ is determined uniquely by the values $\lambda_\nu$ and by the two independent orthogonal systems.\footnote{E. Schmidt, Zur Theorie der linearen und nichtlinearen Integralgleichungen. I. Entwicklung willk\"urlicher Funktionen nach Systemen vorgeschriebener, \emph{Math. Ann.}, Vol. 63, 1907, pp. 433--476.}
+
+\subsection{Integral Equations of the First Kind}
+An integral equation of the first kind is an equation of the form
+\begin{equation}\tag{84}
+f(s)=\int K(s,t)\varphi(t)\,dt.
+\end{equation}
+We have seen, for example, that a function can be expanded in a series of the eigenfunctions of a kernel if a solution of the integral equation of the first kind (53) exists. Other examples are given by the Fourier integral and the Mellin integral transformation (Ch. II, \S10, 8). The specific difficulty of the theory of integral equations of the first kind is due to the following fact: for a continuous kernel $K(s,t)$, the equation (84) transforms the manifold of all piecewise continuous functions $\varphi(s)$ into a more restrictive manifold, since all functions $f(s)$ obtained this way are certainly continuous. If $K(s,t)$ is differentiable every piecewise continuous function, and in fact every integrable function, is transformed into a differentiable function. Thus, in general, the integral equation with continuous $f(s)$ cannot be solved by a continuous function $\varphi$. For more general classes of functions $f(s)$ we may expect (84) to be solvable only if $K(s,t)$ deviates from regular behavior in some way. The reader may consider the preceding and subsequent examples of such integral equations from this point of view; an infinite fundamental domain has the same effect as a singularity of the kernel.
+
+For a symmetric kernel, one may attempt a solution of the form
+\[
+\varphi(s)=\sum_{\nu=1}^{\infty}\lambda_\nu x_\nu\varphi_\nu(s),
+\]
+where $x_\nu=(f,\varphi_\nu)$ are the Fourier expansion coefficients of $f$ with respect to the system $\varphi_1,\varphi_2,\ldots$ of eigenfunctions of the kernel. If this series converges uniformly---a condition that restricts $f(s)$ in view of the increase in $\lambda_\nu$ with increasing $\nu$---then it actually provides a solution of (84).
+
+The general case is covered by a theorem of Picard\footnote{E. Picard, Sur un th\'eor\`eme g\'en\'eral relatif aux \'equations int\'egrales de premi\`ere esp\`ece et sur quelques probl\`emes de physique math\'ematique. \emph{Rend. Circ. math. Palermo}, V. 29, 1910, pp. 79--97.} which gives necessary and sufficient conditions for the existence of a square integrable solution $\varphi(s)$ of an equation of the first kind
+\[
+f(s)=\int K(s,t)\varphi(t)\,dt
+\]
+with an arbitrary (possibly unsymmetric) kernel $K$: If $\varphi_i$, $\psi_i$ are the pairs of adjoint functions belonging to $K(s,t)$, as defined in subsection 10, and $\lambda_i$ the corresponding eigenvalues, then the above integral equation can be solved if and only if the series
+\[
+\sum_{i=1}^{\infty}\lambda_i^2\left(\int f(s)\varphi_i(s)\,ds\right)^2
+\]
+converges.
+
+\subsection{Method of Infinitely Many Variables}
+If $\omega_1(s),\omega_2(s),\ldots$ is a complete orthogonal system in the fundamental domain, and if we define
+\[
+x_i=(\varphi,\omega_i),\qquad f_i=(f,\omega_i),\qquad
+k_{pq}=\iint K(s,t)\omega_p(s)\omega_q(t)\,ds\,dt,
+\]
+then the integral equation (1) leads immediately to the system
+\[
+f_i=x_i-\lambda\sum_{j=1}^{\infty}k_{ij}x_j
+\qquad (i=1,2,\ldots)
+\]
+of infinitely many linear algebraic equations for the infinitely many unknowns $x_1,x_2,\ldots$. The sums
+\[
+\sum_{i=1}^{\infty}x_i^2,\qquad
+\sum_{i=1}^{\infty}f_i^2,\qquad
+\sum_{i,j=1}^{\infty}k_{ij}^2
+\]
+converge, as may be deduced from Bessel's inequality. The theory of the solutions of this system of equations then leads to the theorems about the integral equation (1).
+
+\subsection{Minimum Properties of Eigenfunctions}
+The eigenfunctions $\varphi_1,\varphi_2,\ldots$ of a symmetric kernel, or the two orthogonal systems $\varphi_i$ and $\psi_i$ for an unsymmetric kernel, and the corresponding eigenvalues $\lambda_i$, may be obtained from the following minimum problem: The kernel $K(s,t)$ is to be approximated by a degenerate kernel
+\[
+A_n(s,t)=\sum_{i=1}^{n}\frac{\Phi_i(s)\Psi_i(t)}{\Lambda_i}
+\]
+in such a way that
+\[
+\iint (K-A_n)^2\,ds\,dt
+\]
+becomes as small as possible. The reader may prove that the solution is given by $\Phi_i=\varphi_i$, $\Psi_i=\psi_i$, $\Lambda_i=\lambda_i$.
+
+\subsection{Polar Integral Equations}
+For kernels of the form $K(s,t)=A(s)S(s,t)$, where $S(s,t)$ is symmetric and $A(s)$ is continuous except for a finite number of jumps, it is possible to derive results similar to those obtained for symmetric kernels. The case where $S(s,t)$ is definite, i.e. where it has only positive (or only negative) eigenvalues, has been studied extensively. In this case, which has been treated by Hilbert\footnote{D. Hilbert, \emph{Integralgleichungen}, Chapter 15. Here a somewhat different form is taken for the polar integral equation.} and Garbe,\footnote{E. Garbe, Zur Theorie der Integralgleichung dritter Art. \emph{Math. Ann.}, Vol. 76, 1915, pp. 527--547.} the integral equation is said to be \emph{polar} or \emph{of the third kind}. As was the case for symmetric kernels, the resolvent has only simple and real poles. For the corresponding residues, which yield the ``polar eigenfunctions,'' an expansion development theorem holds which is analogous to that formulated by Hilbert for symmetric kernels. In particular, if the iterated kernel $K^{(2)}(s,t)$ does not vanish identically at least one eigenvalue exists. Incidentally, the theorem that the resolvent has only real simple poles remains valid if $S(s,t)$ is simply assumed to be \emph{positive}; the additional theorem that there is at least one eigenvalue holds if $S(s,t)$ is positive and $K^{(2)}(s,t)$ does not vanish identically.\footnote{J. Marty, Sur une \'equation int\'egrale. \emph{C. R. Acad. sc. Paris}, Vol. 150, 1910, pp. 515--518. D\'eveloppements suivant certaines solutions singuli\`eres, ibid., pp. 603--606. Existence de solutions singuli\`eres pour certaines \'equations de Fredholm, ibid., pp. 1031--1033.}
+
+\subsection{Symmetrizable Kernels}
+Kernels for which the resolvent has only real simple poles may be characterized in the following simple manner: In order that a kernel have this property it is necessary that there exist a kernel $S(s,t)$ such that the kernels
+\[
+\int S(s,\tau)K(\tau,t)\,d\tau
+\qquad\text{and}\qquad
+\int K(s,\tau)S(\tau,t)\,d\tau
+\]
+are symmetric. Such kernels $K(s,t)$ are said to be \emph{symmetrizable}. Conversely, if for a suitable positive definite symmetric kernel $S(s,t)$ at least one of the above integrals represents a symmetric kernel, then all the poles of the resolvent of $K(s,t)$ are real and simple.\footnote{J. Marty, Valeurs singuli\`eres d'une \'equation de Fredholm, \emph{C. R. Acad. sc. Paris}, Vol. 150, 1910, pp. 1499--1502.}
+
+\subsection{Determination of the Resolvent Kernel by Functional Equations}
+Prove that the resolvent of $K(s,t)$ is uniquely determined by the equations (63).
+
+\subsection{Continuity of Definite Kernels}
+Prove that, if a definite symmetric kernel $K(s,t)$ is piecewise continuous for $0\le s,t\le1$ and if it is continuous at all points $s=t$ and has continuous eigenfunctions, then it is continuous everywhere in the region $0\le s,t\le1$.
+
+\subsection{Hammerstein's Theorem}
+If the kernel $K(s,t)$ is continuous in the fundamental domain $0\le s,t\le1$ and has uniformly bounded first derivatives in this domain, then the bilinear formula holds for the kernel itself and not only for the iterated kernel $K^{(2)}(s,t)$. The requirement of bounded differentiability can actually be replaced by considerably less restrictive conditions.\footnote{A. Hammerstein, \"Uber die Entwicklung des Kerns linearer Integralgleichungen und Eigenfunktionen. Sitzungsber. Akad. Berlin (phys.-math. Kl.), 1923, pp. 181--184.}
+
+\section*{References}
+\addcontentsline{toc}{section}{References}
+We refer particularly to the article by E. Hellinger and O. Toeplitz in the \emph{Enzyklop\"adie der mathematischen Wissenschaften}, Vol. 2. This article contains a unified exposition of the theory of integral equations and deals in detail with the connection between this theory and other fields of analysis. We may further refer to the review article by H. Hahn, Bericht \"uber die Theorie der linearen Integralgleichungen, \emph{Jahresber. d. deutschen Mathematiker-Vereinigung}, Vol. 20, 1911, pp. 69--117.
+
+\subsection*{Textbooks}
+B\^ocher, M., \emph{An introduction to the study of integral equations}. Cambridge tracts, Vol. 10, Cambridge University Press, Cambridge 1909.
+
+Goursat, E., \emph{Cours d'analyse math\'ematique}, Vol. 3, 3rd ed., Gauthier-Villars, Paris 1923, pp. 323--544.
+
+Kneser, A., \emph{Die Integralgleichungen und ihre Anwendungen in der mathematischen Physik}. 2nd ed., Vieweg, Braunschweig 1922.
+
+Kowalewski, G., \emph{Einf\"uhrung in die Determinantentheorie, einschliesslich der unendlichen und der Fredholmschen Determinanten}. De Gruyter, Leipzig, 1909.
+
+Lalesco, T., \emph{Introduction \`a la th\'eorie des \'equations int\'egrales}. Hermann, Paris, 1912. (Containing a detailed bibliography up to 1912.)
+
+Vivanti, G., \emph{Elementi della teoria delle equazioni integrali lineare}. Mailand, 1916. (German edition F. Schwank, Hannover 1929.)
+
+Volterra, V., \emph{Le\c{c}ons sur les \'equations int\'egrales et les \'equations int\'egro-diff\'erentielles}. Gauthier-Villars, Paris, 1913.
+
+\subsection*{Monographs and Articles}
+Carleman, T., Sur les \'equations int\'egrales singuli\`eres \`a noyau r\'eel et symm\'etrique. \emph{Uppsala Univ. \AA rsskrift} 1923.
+
+Courant, R., Zur Theorie der linearen Integralgleichungen. \emph{Math. Ann.}, Vol. 89, 1923, pp. 161--178.
+
+Fredholm, I., Sur une classe d'\'equations fonctionnelles. \emph{Acta math.}, Vol. 27, 1903, pp. 365--390.
+
+Goursat, E., Recherches sur les \'equations int\'egrales lin\'eaires. \emph{Ann. Fac. sc. Toulouse}, Series 2, Vol. 10, 1908, pp. 5--98.
+
+Hilbert, D., \emph{Grundz\"uge einer allgemeinen Theorie der linearen Integralgleichungen}. Leipzig and Berlin, 1912. (Reprint of six communications from the Nachrichten der K. Gesellschaft der Wissenschaften zu G\"ottingen, 1904--1910.)
+
+Holmgren, E., Das Dirichletsche Prinzip und die Theorie der linearen Integralgleichungen. \emph{Math. Ann.}, Vol. 69, 1910, pp. 498--513.
+
+Landsberg, G., Theorie der Elementarteiler linearer Integralgleichungen. \emph{Math. Ann.}, Vol. 69, 1910, pp. 227--265.
+
+Schmidt, E., Zur Theorie der linearen und nichtlinearen Integralgleichungen. \emph{Math. Ann.}, Vol. 63, 1907, pp. 433--476. Ibid., Vol. 64, 1907, pp. 161--174.
+
+Schur, I., \"Uber die charakteristischen Wurzeln einer linearen Substitution mit einer Anwendung auf die Theorie der Integralgleichungen. \emph{Math. Ann.}, Vol. 66, 1909, pp. 488--510.
+
+Weyl, H., Singul\"are Integralgleichungen mit besonderer Ber\"ucksichtigung des Fourierschen Integraltheorems. Dissertation, G\"ottingen, 1908.

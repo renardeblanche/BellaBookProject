@@ -1,0 +1,406 @@
+\Needspace{6\baselineskip}
+\noindent\textbf{注4}\quad 上面我们讲到在 $m>1$ 时，必须利用(12)式过渡到一个自变量的情况，然后再用拉格朗日公式。于是要问，在 $n>1$ 时是否也有与拉格朗日公式相应的公式？很遗憾，没有，而且有反例说明不可能有。但是注意到即使在一元函数情况下，公式
+\[
+ f(b)-f(a)=f'(\xi)(b-a)
+\]
+中的 $\xi$ 之确切位置也并不清楚，而在使用上式时，我们时常只能满足于一个不等式，即由
+\[
+ m\le |f'(\xi)|\le M
+\]
+可以得出
+\[
+ m|b-a|\le |f(b)-f(a)|\le M|b-a|.
+\]
+在 $n>1$ 时我们也可以得到这样一个不等式。而且我们就把相应的不等式称为 $n>1$ 时的中值定理：
+
+\noindent\textbf{定理2（中值定理）}\quad 设在一维空间 $\mathbb R$ 中有闭区间 $I=[a,b]$，$f:I\to\mathbb R^n\ (n\ge1)$ 在 $[a,b]$ 上连续而在开区间 $(a,b)$ 上可微，则若
+\begin{equation}
+ \lVert A(x)\rVert\le M,\qquad x\in(a,b),
+ \tag{16}
+\end{equation}
+必有
+\begin{equation}
+ \lVert f(b)-f(a)\rVert\le M(b-a).
+ \tag{17}
+\end{equation}
+
+\noindent\textbf{证}\quad 先解释一下记号。现在我们处理的情况是 $m=1,n\ge1$。因此，$A(x)$ 是一个 $n\times1$ 矩阵即一个竖向量，$f(x)$ 也是一样。竖向量的范数和横向量的范数一样，我们可以取为欧几里得范数。但是我们想借此机会讲一下一般的线性算子 $A(x):\mathbb R^m\to\mathbb R^n$ 的范数如何定义。$A(x)$ 作用于 $h\in\mathbb R^m$，我们定义算子 $A(x)$ 之范数为
+\begin{equation}
+ \lVert A(x)\rVert=\sup\frac{\lVert A(x)h\rVert}{\lVert h\rVert}.
+ \tag{18}
+\end{equation}
+这个定义对于更一般的空间（包括无穷维空间）上的线性算子也是适用的。但现在 $A(x)$ 是一个 $n\times m$ 矩阵，我们自然要问 $\lVert A(x)\rVert$ 怎样用 $A(x)$ 的元素来表示呢？这就要看如何定义 $\lVert h\rVert$（虽然 $\lVert h\rVert$ 之不同定义是等价的，但却会影响 $\lVert A(x)\rVert$ 之定义）。这个问题我们在此不讲了。现在只提到 $\lVert A(x)\rVert$ 以 $x$ 为参数，若当 $x$ 在一个有界闭集（以后将说明这种集合应称为紧集，详见第六章）中变化时 $A(x)$ 之元素是连续的，则 $\lVert A(x)\rVert$ 有界：$\sup_x\lVert A(x)\rVert<+\infty$，所以，(17)中的 $M$ 就是 $\sup\lVert A(x)\rVert$。
+
+这个定理看起来很简单，其实并不容易证。我们并未假设 $f(x)$ 在区间端点 $a,b$ 可微。那么，拉格朗日公式中也未假设 $f(x)$ 在 $x=a,b$ 时有导数，为什么又很容易证呢？这是因为 $n=1$ 时有罗尔定理可用，而 $n>1$ 时就没有了。罗尔定理是一个不起眼的定理，罗尔其人也是一个不起眼的人。其实，此人在微分学发展中有过重要贡献，他的定理也应该注意。
+
+定理证明如下，先证对任意小的正数 $\eta>0$ 均有
+\begin{equation}
+ \lVert f(b)-f(a)\rVert\le(M+\eta)(b-a)+\eta.
+ \tag{19}
+\end{equation}
+然后再令 $\eta\to0$ 即得(17)。(19)中右方有一个多余的 $\eta$ 在，这是由于我们只假设了 $f(x)$ 在 $(a,b)$ 中可微，而不是在 $[a,b]$ 上可微。这一点从证明过程中即可看到。
+
+(19)的证明表面上很简单，读者可能会想，既已假设 $f$ 可微，所以
+\[
+ \lVert f(a+h)-f(a)\rVert=\lVert f'(a)h+o(h)\rVert
+ \le(M+\eta)\lVert h\rVert+\eta.
+\]
+实际上远不如想象的简单，一则 $f$ 在 $a$ 点并不可微，因此上式第一行并不一定成立。其次，也更重要的是尽管 $o(h)$ 对 $h$ 是高阶无穷小，但不等式 $\lVert o(h)\rVert\le\eta\lVert h\rVert$ 是当 $\lVert h\rVert$ 很小时才成立的，现在 $h=b-a$，所以 $\lVert h\rVert=b-a$ 并不很小，从而 $\lVert o(h)\rVert\le\eta\lVert h\rVert$ 也不一定对。因此，我们要采用一种所谓“连续拓展法”来证明它，即先证明在 $x-a$ 附近有
+\[
+ \lVert f(x)-f(a)\rVert\le(M+\eta)(x-a)+\eta.
+\]
+因此这个不等式可以从 $a$ 向右推开去。推到什么地方为止？如果推到某一个子区间，标准的方法是证明这个子区间在 $[a,b]$ 中又开又闭，而 $[a,b]$ 中又开又闭又非空的子区间就是 $[a,b]$，由此定理得证。但是这样就必须用拓扑学的语言，而我们并不假设读者具有这种准备。所以下面我们用的思想来自拓扑学，但语言来自古典的微积分。
+
+考虑一个集合
+\[
+ J=\{\xi\in[a,b],\ \text{当 }a\le x\le\xi\text{ 时，}
+ \lVert f(\xi)-f(a)\rVert\le(M+\eta)(\xi-a)+\eta\}.
+\]
+先证明 $J$ 是非空的。事实上，当 $\xi=a$ 时，上式当然成立。因为 $f(x)$ 在 $a$ 连续，必有一个正数 $\rho$，使当 $a\le x\le a+\rho$ 时
+\[
+ \lVert f(x)-f(a)\rVert\le\eta\le(M+\eta)(x-a)+\eta.
+\]
+注意，我们这里只应用了 $f(x)$ 在 $a$ 连续，而完全不需要 $f(x)$ 在 $a$ 可微。总之，$[a,a+\rho]$ 在 $J$ 中。我们令
+\[
+ c=\sup J,
+\]
+于是有一串 $c_n\to c$，而
+\[
+ \lVert f(c_n)-f(a)\rVert\le(M+\eta)(c_n-a)+\eta.
+\]
+令 $c_n\to c$ 即有
+\[
+ \lVert f(c)-f(a)\rVert\le(M+\eta)(c-a)+\eta.
+\]
+所以 $c\in J$。现在有两个可能性，首先是 $c=b$，这就是说 $[a,b]$ 全在 $J$ 中，从而在 $[a,b]$ 上(19)成立。在(19)式中令 $\eta\to0$ 即得定理之证。或者是 $c<b$，这时 $a<c<b$，而 $f(x)$ 在 $c$ 可微，我们终于可以利用 $f(x)$ 在 $x=c$ 处可微了。
+
+取一个正数 $\delta$ 使 $c+\delta\le b$，只要 $\delta$ 充分小，对于 $z\in(c,c+\delta)$ 有
+\[
+ f(z)-f(c)=f'(c)(z-c)+o(z-c).
+\]
+当 $\delta$ 充分小时，$|z-c|<\delta$，从而 $\lVert o(z-c)\rVert<\eta(z-c)$，又因 $\lVert f'(c)\rVert\le M$，所以
+\[
+ \lVert f(z)-f(c)\rVert\le(M+\eta)(z-c).
+\]
+因此
+\begin{align*}
+ \lVert f(z)-f(a)\rVert
+ &\le\lVert f(c)-f(a)\rVert+\lVert f(z)-f(c)\rVert\\
+ &\le(M+\eta)(c-a)+(M+\eta)(z-c)+\eta\\
+ &\le(M+\eta)(z-a)+\eta.
+\end{align*}
+所以 $c+\delta\in J$，这与 $c=\sup J$ 矛盾。于是定理得证。
+
+作为中值定理的一个应用，我们来证明一个十分重要而证明起来颇不简单的，似乎不言而喻的定理。
+
+\noindent\textbf{定理3}\quad 设 $f:U\subset\mathbb R^m\to\mathbb R^n$ 是定义2中讲的可微函数。若 $A(x)=0$ 于 $U$ 中，则 $f(x)\equiv\mathrm{const}$。这里设 $U$ 是连通的。
+
+\noindent\textbf{证}\quad 任取一点 $A\in U$，设其坐标为 $x_A$，因为 $U$ 是开集所以必有一以 $A$ 为心的球含于 $U$ 内。今证在此球内 $f(x)=f(x_A)$。为此，在球内任取一点 $B$，设其坐标为 $x_B$，于是联结 $AB$ 的线段全在球内，其方程为
+\[
+ x=(1-t)x_A+tx_B,\qquad 0\le t\le1.
+\]
+$A$ 点与 $B$ 点分别对应于参数值 $t=0,t=1$，令
+\[
+ \Phi(t)=f[(1-t)x_A+tx_B].
+\]
+于是 $\Phi(t):I\to\mathbb R^n$，$I=[0,1]$。很明显 $\Phi(t)$ 是 $t$ 的可微函数。因为已设 $A(x)=0$，所以 $\Phi'(t)=0,t\in I$，而可取(16)中的 $M=0$。对于 $\Phi(t)$ 显然可适用中值定理，从而
+\[
+ \Phi(1)-\Phi(0)=0.
+\]
+或 $f(x_B)=f(x_A)$。此式在上述球内之任一点 $x_B$ 处均成立，所以在此球内有 $f(x)\equiv f(x_A)$。
+
+现在可以用此球内任一点作为中心，再作其它的球，只要此球含于 $U$ 内，必有 $f(x)\equiv f(x_A)$ 于其中。现在令
+\[
+ V=\{x:x\in U,\ f(x)=f(x_A)\}.
+\]
+于是 $V$ 非空。$V$ 一定是开的，因为若 $x_0\in V\subset U$，$x_0$ 必为开集 $U$ 之内点，因此必有以 $x_0$ 为心的球 $W\subset U$，而且由上证，在 $W$ 内 $f(x)=f(x_0)=f(x_A)$，而 $W\subset V$。这样，$V$ 一定是非空开集。另一方面 $V$ 又一定是闭的。因为若 $x_0\in\overline V$ 而且 $x_0\in U$，则由定理的条件，$f(x)$ 在 $x_0$ 为连续的。$x_0$ 在 $V$ 的闭包中，所以存在一个序列 $\{x_n\}\subset V,x_n\to x_0$。由 $f(x)$ 之连续性，$f(x_0)=\lim_{n\to\infty}f(x_n)=\lim_{n\to\infty}f(x_A)=f(x_A)$。因此 $x_0\in V$，这样又得到 $V$ 是闭的。一个连通集 $U$ 的非空的既开又闭的子集必是 $U$ 本身，所以 $V=U$。即在 $U$ 中 $f(x)=f(x_A)$。定理证毕。
+
+\noindent\textbf{注1}\quad 这个定理的证明有两点特别值得注意。首先是我们先把待证的定理化到一个球内。球的特点是：球内任一点均可用直线段（实即半径）与球心连接。凡具有这种性质的区域称为对一点（现在的球心）为星形的区域。而在直线段上，自变量 $t$ 恒在 $I=[0,1]$ 中，而问题化为 $m=1,n\ge1$ 的特例。这是一个常用的方法，下面讲泰勒公式时还要用它，这是一个与拓扑学的一些重要概念有关的方法。
+
+\noindent\textbf{注2}\quad 我们两次使用了连续拓展法。第一次读者可能不感到太奇怪，第二次则可能有不少读者感到生疏。可能人们会以为，既已证明在一球内 $f(x)\equiv f(x_A)$，仿此可以作一串球，一直达到 $x_B$ 处，然后即知在 $U$ 内 $f(x)\equiv f(x_A)$。但是稍想一下，真正可以作一串球从 $x_A$ 一直拓展到 $x_B$ 吗？直觉地来看确是如此，但是考虑到高维空间区域的构造可能极为复杂，这时读者就不会那么有把握了。我们第二次使用这个方法倒不止是拓扑学的思想、微积分的语言了，而是拓扑学的证明。读者一定会问，何以连通性就会得出这一大套结论？读到第六章时才回过来看着这个证明就容易懂了。
+
+\noindent\textbf{注3}\quad 这个定理假设了 $U$ 是连通的。若没有这个假设，$U$ 必可分成若干个连通子区域之并：
+\[
+ U=\bigcup_i U_i,
+\]
+每一个 $U_i$ 都是连通的。若在不同的 $U_i$ 中各取 $x_A$，当可证明 $f(x)$ 在每个 $U_i$ 中分别等于一个常数，$f(x)=C_i,x\in U_i$，而这些 $C_i$ 彼此可能不同。这种 $f(x)$ 称为局部常值函数。
+
+下面我们来看一下微分作为一个运算，亦即微分算子 $d$ 的性质。
+
+第一个性质几乎是自明的，即\textbf{线性性质}
+\begin{equation}
+ d(C_1f_1+C_2f_2)=C_1df_1+C_2df_2,\qquad C_1,C_2\text{ 是常数}.
+ \tag{20}
+\end{equation}
+第二个性质称为\textbf{莱布尼茨性质}：若 $f_1,f_2$ 可微，则 $f_1f_2$ 也可微，而且以下的莱布尼茨公式成立：
+\begin{equation}
+ d(f_1f_2)=f_1df_2+f_2df_1.
+ \tag{21}
+\end{equation}
+证明很简单：
+\begin{align*}
+ (f_1f_2)(x+h)-(f_1f_2)(x)
+ &= [f_1(x+h)-f_1(x)]f_2(x+h)\\
+ &\quad+f_1(x)[f_2(x+h)-f_2(x)]\\
+ &= [df_1\cdot h+o(h)][f_2(x)+o(1)]+f_1(x)[df_2\cdot h+o(h)]\\
+ &= (f_2df_1+f_1df_2)h+o(h).
+\end{align*}
+在数学中有许多乘积：向量的数量积、向量积、外积等等，也有许多求导或微分：普通的求导和微分、外微分、协变导数等等，而一定要适合(21)（或者其某一项前加上一个因子 $(-1)^s$）这样的公式。所以，只要有这种类型的公式成立，我们就称相应的算子为导子(derivation)或反导子(anti-derivation)即 $(-1)^s=-1$ 的情况。
+
+可是关于微分算子 $d$ 最重要的性质无疑是下面的链式法则，而这就导致对微分作内蕴的处理。
+
+\noindent\textbf{3. 微分的内蕴性质}\quad 以上的讨论都是对某一固定的坐标系进行的，所以要问如果有了坐标变换，这些结果是否仍成立，或有改变？如果有改变，则新老坐标系中相应的结果有什么关系？为了回答这个问题，首先要问，哪一些坐标变换是容许的。这就导致了微分同胚的概念。
+
+\noindent\textbf{定义3}\quad 设有 $\mathbb R^n$ 中的开区域 $U$ 与 $V$，各赋有坐标 $x=(x_1,\cdots,x_n)$ 与 $y=(y_1,\cdots,y_n)$，若 $U$ 与 $V$ 之间有一映射 $\varphi:U\to V$，$y_i=\varphi_i(x_1,\cdots,x_n)$，它有逆映射 $\psi=\varphi^{-1}:V\to U$，$x_i=\psi_i(y_1,\cdots,y_n)$，从而实现了 $U$ 与 $V$ 之间的一一对应，再设 $\varphi_i$ 与 $\psi_i$ 分别在 $U$ 与 $V$ 中为 $C^k$ 可微，则称 $\varphi$（或 $\psi$）为 $U\to V$（或 $V\to U$）的 $C^k$ 微分同胚。
+
+现在来看链式法则。我们有
+
+\noindent\textbf{定理4}\quad 设 $U\subset\mathbb R^m$ 是一个开集，$x_0\in U$，$f:U\to\mathbb R^n$ 在 $x_0$ 处可微。又设 $g:V\to\mathbb R^p$ 在 $y_0=f(x_0)$ 处可微，这里 $V\subset\mathbb R^n$ 且 $f(U)\subset V$。则 $\Phi=g\circ f:U\to\mathbb R^p$ 在 $x_0$ 处也可微，而且
+\begin{equation}
+ d\Phi(x_0)=dg(y_0)\circ df(x_0).
+ \tag{22}
+\end{equation}
+
+\noindent\textbf{证}\quad 在证明之前先要回顾一下可微映射的定义。关于映射 $f:U\to\mathbb R^n$ 的可微性的定义中，在 $\mathbb R^m$（$U\subset\mathbb R^m$）与 $\mathbb R^n$ 中都是取定了坐标系的，所以我们先在 $\mathbb R^m,\mathbb R^n$ 与 $\mathbb R^p$ 中都取定坐标系，这样 $df(x_0)$ 与 $dg(y_0)$ 是两个确定的矩阵。现在由可微性的定义即有
+\[
+ f(x_0+h)=f(x_0)+df(x_0)\cdot h+o_1(h),
+\]
+\[
+ g(y_0+k)=g(y_0)+dg(y_0)\cdot k+o_2(k),
+\]
+而且对任意 $\varepsilon_1>0$，必可找到 $\delta_1>0$ 使当 $\lVert h\rVert<\delta_1$ 时，
+\[
+ \lVert o_1(h)\rVert<\varepsilon_1\lVert h\rVert.
+\]
+对于 $k$ 也有 $\varepsilon_2,\delta_2$，使当 $\lVert k\rVert<\delta_2$ 时，$\lVert o_2(k)\rVert<\varepsilon_2\lVert k\rVert$。而且因为 $df(x_0),dg(y_0)$ 是确定的矩阵，所以必有适当的正数 $M>0$ 使
+\[
+ \lVert df(x_0)\cdot h\rVert\le M\lVert h\rVert,\qquad
+ \lVert dg(y_0)\cdot k\rVert\le M\lVert k\rVert.
+\]
+现在我们来计算 $\Phi(x_0+h)-\Phi(x_0)$，我们有
+\[
+ \Phi(x_0+h)=(g\circ f)(x_0+h)=g[f(x_0)+df(x_0)h+o_1(h)]
+\]
+\[
+ =g(y_0+k)=g(y_0)+dg(y_0)k+o_2(k),
+\]
+这里 $k=df(x_0)h+o_1(h)$，所以当 $\lVert h\rVert<\delta$ 时，
+\[
+ \lVert k\rVert\le\lVert df(x_0)h\rVert+\lVert o_1(h)\rVert\le(M+\varepsilon_1)\lVert h\rVert
+ \le(M+1)\lVert h\rVert.
+\]
+所以
+\begin{align}
+ \Phi(x_0+h)
+ &=\Phi(x_0)+dg(y_0)[df(x_0)h+o_1(h)]+o_2(k)\\
+ &=\Phi(x_0)+dg(y_0)\cdot df(x_0)h+dg(y_0)o_1(h)+o_2(k).
+ \tag{23}
+\end{align}
+当 $\lVert h\rVert<\min\left(\delta_1,\dfrac{\delta_2}{M+2}\right)$ 时，一方面有
+\begin{equation}
+ \lVert dg(y_0)o_1(h)\rVert\le M\varepsilon_1\lVert h\rVert,
+ \tag{24}
+\end{equation}
+同时又有
+\[
+ \lVert k\rVert\le(M+1)\lVert h\rVert<\delta_2,
+\]
+从而
+\begin{equation}
+ \lVert o_2(k)\rVert<\varepsilon_2\lVert k\rVert\le(M+1)\varepsilon_2\lVert h\rVert.
+ \tag{25}
+\end{equation}
+合并(24),(25)即知当 $\lVert h\rVert<\min\left(\delta_1,\dfrac{\delta_2}{M+2}\right)$ 时
+\[
+ \lVert dg(y_0)o_1(h)+o_2(k)\rVert<[M\varepsilon_1+(M+1)\varepsilon_2]\lVert h\rVert.
+\]
+由 $\varepsilon_1,\varepsilon_2$ 任意性，知道上式右方比之 $h$ 是高阶无穷小。所以(23)式最终化为
+\[
+ \Phi(x_0+h)=\Phi(x_0)+dg(y_0)\cdot df(x_0)h+o(h),
+\]
+因此 $\Phi$ 在 $x_0$ 是可微的，而且其微分是
+\[
+ d\Phi(x_0)=dg(y_0)\circ df(x_0).
+\]
+这样在指定的坐标系下定理得到了证明。当然，对任意的坐标系这个证明均有效，所以(22)式成立。证明暂止于此。
+
+余下的是，如果在 $U$ 中作坐标变换
+\[
+ x'_i=X_i(x_1,\cdots,x_m),\qquad i=1,2,\cdots,m,
+\]
+类似地，也在 $\mathbb R^n$ 和 $\mathbb R^p$ 中作坐标变换
+\[
+ y'_i=Y_i(y_1,\cdots,y_n),\qquad i=1,2,\cdots,n,
+\]
+\[
+ z'_j=Z_j(z_1,\cdots,z_p),\qquad j=1,2,\cdots,p,
+\]
+会得到什么结果？这里有两个问题，首先，上述坐标变换是 $C^k$ 微分同胚，而且因为问题只涉及一阶导数，所以只需考虑 $k=1$ 的情况。这样的微分同胚是否存在？这是一个很大的问题。下面我们会看到，局部的微分同胚总是存在的，而整体的则不一定。但是迄今为止，我们引进的概念全是局部的，所以不妨设 $U$ 是 $x_0$ 的一个充分小的邻域，它在微分同胚下变成 $x'_0$ 的邻域 $U'$。对于 $y_0=f(x_0)$，我们未必设 $g:\mathbb R^n\to\mathbb R^p$，而只要设 $g:V\to\mathbb R^p$ 为可微，$V$ 是 $y_0$ 的一个邻域，而且 $f(U)\subset V$，$y_0$ 与 $V$ 在微分同胚 $Y$ 下变为 $y'_0$ 与 $V'$。最后，令 $z_0=g(y_0)=\Phi(x_0)$，$z_0$ 有一个邻域 $W$，使 $g(V)\subset W$。同样，在微分同胚 $Z$ 下也有 $z'_0$ 与 $W'$。其次，在不同坐标系下得出的微分如 $d\Phi,dg$ 与 $df$ 有什么关系。这里我们先统一一下我们的用语。如果 $f:U\to V$ 是一个映射，我们称 $U$ 为映射的源空间(source space)，$V$ 为映射的靶空间(target space)。于是我们的问题成为，若在源空间（靶空间）中作坐标变换，$df$ 将如何变换？为了回答这个问题我们需要一个引理。
+
+\noindent\textbf{引理5}\quad 若 $X:U\to U'$ 是一微分同胚，则 $dX\cdot dX^{-1}=I,dX^{-1}\cdot dX=I$。
+
+\noindent\textbf{证}\quad $X,X^{-1}$ 以及 $id$（恒等映射）都是可微的，所以可以应用定理4而有
+\[
+ d(id)=dX\circ dX^{-1},\qquad d(id)=dX^{-1}\circ dX.
+\]
+但是 $id$ 是一个常系数的线性变换，定义2后紧接着就说了，其微分等于其自身，即也是一个恒等变换 $I$，所以引理得证。
+
+我们不妨在一个坐标系下看看这个引理意味着什么。定理1指出，微分就是雅可比矩阵：
+\[
+ dX=\frac{\partial(x'_1,\cdots,x'_m)}{\partial(x_1,\cdots,x_m)},\qquad
+ dX^{-1}=\frac{\partial(x_1,\cdots,x_m)}{\partial(x'_1,\cdots,x'_m)}.
+\]
+所以，引理5用矩阵来表达就是
+\[
+ \frac{\partial(x'_1,\cdots,x'_m)}{\partial(x_1,\cdots,x_m)}=
+ \left[\frac{\partial(x_1,\cdots,x_m)}{\partial(x'_1,\cdots,x'_m)}\right]^{-1}.
+\]
+这个结论用矩阵乘法直接验证并不难，因为这两个矩阵之积
+\[
+ \frac{\partial(x'_1,\cdots,x'_m)}{\partial(x_1,\cdots,x_m)}
+ \cdot
+ \frac{\partial(x_1,\cdots,x_m)}{\partial(x'_1,\cdots,x'_m)}
+\]
+之第 $k$ 行第 $l$ 列的元素是
+\[
+ \sum_{r=1}^m\frac{\partial x'_k}{\partial x_r}\frac{\partial x_r}{\partial x'_l}
+ =\frac{\partial x'_k}{\partial x'_l}=\delta_{kl}.
+\]
+但是引理5的表达显然更能说明问题的本质。
+
+读者又可能会问，上面的记号 $dX^{-1}$ 究竟是指逆映射 $X^{-1}$ 的微分 $d(X^{-1})$，还是微分 $dX$ 作为一个映射的逆映射 $(dX)^{-1}$？其实，引理5正是说明，它们是一回事，而且既是左逆又是右逆。
+
+现在来看源空间中的坐标变换 $X:U\to\widetilde U$，原来的映射 $f:U\to V$ 衍生出新映射 $\widetilde f:\widetilde U\to V$，这里 $\widetilde f=f\circ X^{-1}$。于是由定理4和引理5有
+\[
+ d\widetilde f=df\circ dX^{-1}.
+\]
+因此，源空间的坐标变换相应于将微分 $df$ 右乘以 $dX^{-1}$。类似于此，若在靶空间中作坐标变换 $Y:V\to\widetilde V$，原来的映射将衍生出新映射 $\widetilde f:U\to\widetilde V$，$\widetilde f=Y\circ f$。于是又有
+\[
+ d\widetilde f=dY\circ df.
+\]
+所以靶空间中的坐标变换相当于用 $dY$ 左乘 $df$。所以，如果对定理4中的 $U,V,W$ 都作变换 $X,Y,Z$，则 $f$ 生成
+\[
+ \widetilde\Phi=Z\circ g\circ Y^{-1}\circ Y\circ f\circ X^{-1}=\widetilde g\circ\widetilde f,
+\]
+\begin{equation}
+ d\widetilde\Phi=dZ\circ dg\circ dY^{-1}\circ dY\circ df\circ dX^{-1}=d\widetilde g\circ d\widetilde f.
+ \tag{26}
+\end{equation}
+不过这里的 $\widetilde f$ 与上面的不同：在上面 $\widetilde f$ 是由 $f$ 经过源空间的坐标变换而得，故 $\widetilde f=f\circ X^{-1}$；现在则源空间与靶空间都作了变换，所以 $\widetilde f=Y\circ f\circ X^{-1}$。同样，$\widetilde g=Z\circ g\circ Y^{-1}$。(26)形式上与(22)是一样的，这就是说，无论坐标系如何选取，(22)都是成立的。也就是说(22)是一个与坐标选择无关的结果，定理4证明至此完成。
+
+定理4是一个很深刻的结果。它告诉我们，两个映射的复合原本是一个很复杂的映射，但是如果考虑其线性化，则 $d\Phi$ 等于两个线性映射的复合：$d\Phi=dg\circ df$。线性映射可以用一个矩阵来表现，它的复合很简单：先用一个矩阵作用于一个向量（例如前述的 $h$），再用第二个矩阵作用上去。本来，$\Phi=g\circ f$ 的意思也是先对源空间中的元素施以 $f$，再继续施以 $g$。不过 $g\circ f$ 到底是什么就很难说了，$f$ 和 $g$ 的定义域和值域的关系也会出麻烦。现在好了，反正 $dg$ 和 $df$ 都是线性变换，其定义域总是一个整个的线性空间，例如 $df$ 定义在 $\mathbb R^m$ 上，尽管 $df$ 不一定把整个 $\mathbb R^m$ 映到整个 $\mathbb R^n$ 上，但其值域总在 $\mathbb R^n$ 中，即在 $dg$ 的定义域内，因此 $dg\circ df$ 总是有意义的。一般的映射就不一定能行，所以上面才有例如 $f(U)\subset V,g(V)\subset W$ 这样的限制。其次是 $dg\circ df$ 在一定坐标系下很容易计算，它就是矩阵的乘法。这是因为，若我们把 $f$ 写成 $y_i=f_i(x_1,\cdots,x_m),i=1,\cdots,n$，则 $df$ 的矩阵表示是
+\[
+ \frac{\partial(f_1,\cdots,f_n)}{\partial(x_1,\cdots,x_m)}=
+ \frac{\partial(y_1,\cdots,y_n)}{\partial(x_1,\cdots,x_m)}.
+\]
+同样，若把 $g$ 写成 $w_i=g_i(y_1,\cdots,y_n)$，则 $dg$ 的矩阵表示是 $\dfrac{\partial(g_1,\cdots,g_p)}{\partial(y_1,\cdots,y_n)}$，而且若以 $y_i=f_i(x)$ 代入 $g$ 后，$w_i$ 将是 $\Phi(x)$ 的坐标：$w_i=\Phi_i$。但是
+\[
+ \frac{\partial(g_1,\cdots,g_p)}{\partial(y_1,\cdots,y_n)}
+ \frac{\partial(y_1,\cdots,y_n)}{\partial(x_1,\cdots,x_m)}
+\]
+的第 $k$ 行 $l$ 列的元素是
+\[
+ \sum_{i=1}^n\frac{\partial g_k}{\partial y_i}\frac{\partial y_i}{\partial x_l}
+ =\frac{\partial g_k}{\partial x_l}.
+\]
+所以上述矩阵之积是 $\dfrac{\partial(w_1,\cdots,w_p)}{\partial(x_1,\cdots,x_m)}$ 即 $d\Phi$ 的矩阵表示。前面我们已经说了，$dX^{-1}$ 的矩阵表示就是 $dX$ 的矩阵表示的逆矩阵，现在又看到线性变换之积（即复合）对应于相应矩阵的乘积。所以我们有时就说，微分算子把一般的映射变成了矩阵计算问题。准确些说，则是一般的映射通过线性化以后归结为其切映射，而再通过引入坐标化成了很容易处理的矩阵计算，这正是线性化的真正的有力之处。
+
+\noindent\textbf{注1}\quad 上面例如在引理5中我们说到 $X$ 是 $U$ 与 $U'$ 之间的微分同胚之类的话，怎样来判断 $X$ 是否微分同胚呢？由引理5，$dX\circ dX^{-1}=I$，于是沿用上面的记号，有
+\[
+ \frac{\partial(x'_1,\cdots,x'_n)}{\partial(x_1,\cdots,x_n)}=
+ \left[\frac{\partial(x_1,\cdots,x_n)}{\partial(x'_1,\cdots,x'_n)}\right]^{-1},
+\]
+从而 $\dfrac{\partial(x'_1,\cdots,x'_n)}{\partial(x_1,\cdots,x_n)}$ 与 $\dfrac{\partial(x_1,\cdots,x_n)}{\partial(x'_1,\cdots,x'_n)}$ 均为非奇异的，即其行列式均不为0。于是许多人可能设想，这也是 $X$ 成为微分同胚的充分条件。很遗憾，恰好不是，这只是 $X$ 成为局部微分同胚的充分必要条件。这一点在§5中讲了反函数定理以后就清楚了，局部微分同胚和整体微分同胚是很不相同的。
+
+\noindent\textbf{注2}\quad 上文中我们说到雅可比矩阵才是导数概念的合适的推广。从上一段讨论中可以看得更清楚：定理4讲的 $d\Phi=dg\circ df$，上面说了，正是雅可比矩阵的乘法公式，而它也就是复合函数的导数公式
+\[
+ \frac{d\,g[f(x)]}{dx}=\left.\frac{dg}{dy}\right|_{y=f(x)}\cdot\frac{df}{dx}
+\]
+的推广；引理5的 $dX^{-1}=(dX)^{-1}$ 正是反函数导数公式
+\[
+ \frac{dy}{dx}=\frac1{dx/dy}
+\]
+的推广。正如通常的微积分教本中在讲到反函数求导公式时，要加上 $\dfrac{dy}{dx}\ne0,\dfrac{dx}{dy}\ne0$ 这样的限制一样，引理5中要求 $x$ 与 $x'$ 均为彼此的可微函数，就自然导致了 $\dfrac{\partial(x'_1,\cdots,x'_n)}{\partial(x_1,\cdots,x_n)}$ 与 $\dfrac{\partial(x_1,\cdots,x_n)}{\partial(x'_1,\cdots,x'_n)}$ 均为连续函数，因为它们均有逆矩阵，所以它们均不可能为0，也不可能在某点趋向无穷大。
+
+\noindent\textbf{注3}\quad 通常的微积分教本在讲到复合函数的微分时都会讲到一阶微分的形式不变性，其意思是，以一元函数为例，如果有复合函数 $\Phi(x)=g[f(x)]=(g\circ f)(x)$，令 $y=g(x)$，则一方面有
+\[
+ d\Phi=\Phi'(y)y'(x)dx=\frac{d\Phi}{dx}dx,
+\]
+另一方面由 $y'(x)dx=dy$ 又有
+\[
+ d\Phi=\Phi'(y)dy.
+\]
+所以不论 $y$ 是中间变量（如后一式）或 $x$ 是自变量（如前一式），$d\Phi$ 的“表现形式”都是一样的。我们在这里不采用这个说法。因为 $\mathbb R^m$ 中可以有无穷多个坐标，用 $x$ 还是用 $x'$ 为坐标应该都是一样的，无所谓自变量与中间变量之别。对坐标 $x$ 有前一式，对坐标 $y$ 有后一式，其形式都是一样的，说明 $d\Phi$ 其实与坐标的选取无关。其间的联系就是定理4。所以真正重要的是定理4，它表明 $d\Phi$ 是一个内蕴的对象，而问题出现在，讨论高阶微分时就不再有这样有利的情况，而这正表明我们将揭开整个数学的新篇章了。
+
+\noindent\textbf{4. 曲线、方向场、方向导数}\quad 关于一阶微分与坐标选取的关系的讨论至此为止。下面我们将要讨论一些新的概念。在这以前，我们先从一个具体问题看一下，限制使用一定的坐标会带来什么样的问题。
+
+设有曲线如图3-2-3(a)，从直观看来，它在 $P$ 点有切线 $PQ$ 平行于 $y$ 轴，因而斜率为 $\infty$。如果按可微性的定义，它在 $P$ 点是不可微的。因为 $f(x+h)-f(x)=QP$，而 $h=QR$，因而当 $h\to0$ 时，$QP/QR=+\infty$，所以找不到一个数 $A$ 使
+\[
+ f(x+h)-f(x)=Ah+o(h).
+\]
+但是从几何上看，它完全是一个“很好”的曲线。如果我们把坐标轴逆时针倾斜一个小角度，或者说把曲线顺时针倾斜一个小角度如图3-2-3(b)，则这个曲线立刻就成了一个可微函数的图像。因此，研究一条曲线的性质时，必须设法把曲线本身的性质与坐标的性质区别开来。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=0.78cm,y=0.78cm,>=stealth,bella figure]
+  \begin{scope}
+    \draw[->] (0,0)--(4.8,0) node[right=2pt,fill=none] {$x$};
+    \draw[->] (0,0)--(0,5.1) node[above=2pt,fill=none] {$y$};
+    \draw[thick,smooth] plot coordinates {(0.6,0.2) (1.25,0.55) (1.75,1.25) (1.95,2.1) (2.05,3.05) (2.35,3.65) (3.0,4.05) (3.7,4.25)};
+    \coordinate (P) at (2.02,2.35);
+    \coordinate (Q) at (2.02,3.55);
+    \coordinate (R) at (2.82,3.55);
+    \fill (P) circle (1.1pt) node[left=3pt] {$P$};
+    \fill (Q) circle (1.1pt) node[left=3pt] {$Q$};
+    \fill (R) circle (1.1pt) node[right=3pt] {$R$};
+    \draw[thick] (1.98,1.2)--(2.08,4.25);
+    \draw[dashed] (Q)--(R)--(2.82,0);
+    \node[below left=3pt,fill=none] at (2.02,0) {$x$};
+    \node[below right=3pt,fill=none] at (2.82,0) {$x+h$};
+    \node at (2.4,-1.05) {a)};
+  \end{scope}
+  \begin{scope}[xshift=7.0cm]
+    \draw[->] (0,0)--(4.8,0) node[right=2pt,fill=none] {$x$};
+    \draw[->] (0,0)--(0,5.1) node[above=2pt,fill=none] {$y$};
+    \draw[thick,smooth] plot coordinates {(0.7,0.7) (1.2,1.05) (1.75,1.65) (2.2,2.45) (2.75,3.15) (3.35,3.7) (4.15,4.0)};
+    \coordinate (P2) at (2.12,2.32);
+    \fill (P2) circle (1.1pt) node[left=3pt] {$P$};
+    \draw[thick] (1.15,0.45)--(3.25,4.55);
+    \node[right=3pt] at (3.0,4.3) {$T$};
+    \node at (2.4,-0.75) {b)};
+  \end{scope}
+\end{tikzpicture}
+\caption*{图3-2-3}
+\end{figure}
+
+讲到这里，我们附带要提起一件在数学史上很有影响的事。19世纪，当傅里叶讨论热的传导时，他得到了下面的级数
+\[
+ \cos x-\frac13\cos3x+\frac15\cos5x-\cdots.
+\]
+它是处处收敛的，其和例如在 $[-\pi,\pi]$ 之间是
+\[
+ s(x)=\begin{cases}
+ \dfrac{\pi}{4},& |x|<\dfrac{\pi}{2},\\[3pt]
+ 0,& |x|=\dfrac{\pi}{2},\\[3pt]
+ -\dfrac{\pi}{4},& \dfrac{\pi}{2}<|x|<\pi,\\[3pt]
+ 0,& |x|=\pi.
+ \end{cases}
+\]
+（见第二章§4，图2-4-1）。这是一个方波，从我们今天的观点看来是一个不连续函数。但是傅里叶不这么看，他认为极限函数的图像是若干条水平线段，即该图上的黑线，加上一些垂直线段，即该图上的虚线合成的，因而肯定是连续曲线。凡是可以笔不离纸地一笔画出来的图像，在傅里叶看来都是连续函数的图像（傅里叶发表他的结果早于柯西著名的《分析教程》——其中清楚地给出了连续性的定义——一年）。再说，只要把图形逆时针稍微倾斜一点就会得到在 $x=\dfrac{\pi}{2}$ 处连续的图像——包括虚线——而顺时针倾斜一点又会得到在 $x=-\dfrac{\pi}{2}$ 处连续的图像。所以，有什么理由否定方波曲线是连续函数的图像呢？这个例子以及其他类似问题在19世纪初年引起了轩然大波，我们将在第五章中仔细讨论。也正是由此，狄利克雷才给出了函数的定义：有一个 $x$ 必有一个（注意，只有一个没有多个）$y\cdots\cdots$。而对于方波，例如当 $x=\dfrac{\pi}{2}$ 时，虚线上的哪一点才算相应的函数值呢？所以它不是连续函数的图像，甚至任一条平行于 $y$ 轴的直线，例如 $x=1$ 都不可能是某函数（更不说连续函数了）的图像。终究我们回答不出来，当 $x=1$ 时有没有某个 $y$ 与之对应！狄利克雷的函数定义的一个现代的表述如下：一个函数 $f$ 即 $X\times Y=\{(x,y):x\in X,y\in Y\}$ 的一个子集 $F$，而且对同一个 $x$，不存在 $y_1\ne y_2$ 使 $(x,y_1),(x,y_2)\in F$。这里 $x$ 与 $y$ 明显地不对称，所以有许多书上强调说 $(x,y)$ 是一个有序偶，它不允许 $(x,y_1),(x,y_2)$ 同属于 $F$（当然，$y_1\ne y_2$）但允许 $(x_1,y),(x_2,y)$ 同属于 $F$，尽管 $x_1\ne x_2$。$F$ 中的 $(x,y)$ 之第一个分量 $x$ 之集 $\Omega$ 称为 $f$ 之定义域，第二个分量 $y$ 之集称为 $f$ 的值域。$F$ 中的 $(x,y)$ 之第二个分量 $y$ 全由第一个分量 $x$ 决定：有了一个 $x\in\Omega$，必有一个且只有一个 $y$ 使 $(x,y)\in F$，所以记作 $y=f(x)$。$F$ 也称为 $f$ 之图像。既然 $F$ 中 $x$ 与 $y$ 不对称，则不是任意曲线可以是某一函数的图像。上面的 $x=1$ 就是一个很好的例子。这样一来，对什么是曲线就需要定义。
+
+\noindent\textbf{定义4}\quad $\mathbb R^n$ 中的 $C^k\ (k\ge1)$ 曲线就是一个由区间 $I=(a,b)\subset\mathbb R$ 到 $\mathbb R^n$ 中的 $C^k$ 映射 $\alpha$：
+\begin{equation}
+ \alpha:I\to\mathbb R^n,\qquad t\mapsto\alpha(t)\in\mathbb R^n.
+ \tag{27}
+\end{equation}
+我们习惯是说这个映射的像为一曲线，但现在则说映射本身是曲线，映射的像时常称为曲线的迹(trace)。$t$ 称为曲线的参数。如果令 $t=t(\tau)$，这里 $t(\tau)\in C^k,\tau\in(\alpha,\beta)$，而且 $t'(\tau)\ne0$，曲线也可以写成
+\[
+ \alpha\circ t:J\to\mathbb R^n,\qquad \tau\mapsto\alpha(t(\tau))\in\mathbb R^n,
+\]
+这里 $J=(\alpha,\beta)$（如果 $t'(\tau)<0$，则 $I$ 应为 $(\beta,\alpha)$）。这称为曲线的重新参数化。有时，我们选曲线的弧长 $s$ 为参数，并且以 $t=a$ 作为弧长的起点，于是
+\[
+ s(t)=\int_a^t\left[\sum_{i=1}^n x_i'^2(t)\right]^{1/2}dt.
+\]
+这样做时常会得到较简洁的结果。
+
+如果给出一个 $C^1$ 曲线 $\alpha$，则 $\alpha'(t)$ 对每个 $t$ 都是 $\mathbb R^n$ 中的一个元，因此是一个向量。我们称它为此曲线在 $t$ 点的切向量。因为时常是以时间作为参数 $t$ 的，所以切向量也称为速度向量。而当我们确实在研究一个物理或力学问题，而 $t$ 又确实代表时间，则 $\alpha'(t)$ 时常写为 $\dot\alpha(t)$。这是牛顿留下的传统，沿用至今。

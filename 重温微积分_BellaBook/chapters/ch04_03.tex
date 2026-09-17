@@ -1,0 +1,794 @@
+\section{勒贝格积分的初步介绍（续）}
+
+\noindent\textbf{5. 勒贝格积分怎样改进黎曼积分的不足之处}\quad 前节末尾我们指出例如在变分问题中我们需要以下类型的定理：若有一串可积函数 $u_n(x)$，而且对任意 $\varepsilon>0$ 都有正整数 $N=N(\varepsilon)$ 存在，使当 $n,m>N$ 时，
+\[
+ \int_E|u_m(x)-u_n(x)|\,dx<\varepsilon,
+\]
+这时是否有一个可积函数 $u(x)$ 存在，使
+\[
+ \int_E|u_n(x)-u(x)|\,dx<\varepsilon,
+\]
+亦即在某种意义下 $\lim_{n\to\infty}u_n(x)=u(x)$？这样提出问题很像极限理论中的柯西准则：若有一个实数柯西序列 $\{a_n\}$，则必有一实数 $a$ 存在，使 $\lim a_n=a$。这当然是要证明的。我们在第六章中讲实数理论时要讲到，如果 $a_n$ 全是有理数，则若限制在有理数中，这个极限 $a$ 一般是找不到的，一定要对有理数集合中补充上无理数成为实数集合才一定能找到作为极限的实数 $a$。但若 $a_n$ 为实数（有理或无理），则一定可找到实数 $a$ 而不着再补充新种类的数了。这就称为实数的完备性以及有理数系的不完备性。现在的情况很类似：如果规定只考虑黎曼可积函数，则不一定有黎曼可积的极限函数 $u(x)$ 使得
+\[
+ \lim_{n\to\infty}\int_E|u_n(x)-u(x)|\,dx=0,
+\]
+但若规定 $u_n(x)$ 是勒贝格可积，则一定有勒贝格可积的 $u(x)$ 使上式成立。所以这个性质称为勒贝格可积函数空间的完备性。下面我们就要证明它（以后还要证明，一切勒贝格可积函数都可以这样构造出来），这是勒贝格积分理论的一个核心定理。
+
+\noindent\textbf{定理19（里斯--费希尔（Riesz--Fisher）定理）}\quad 设 $E$ 为具有有限测度的可测集，$\{f_n(x)\}$ 是 $E$ 上的勒贝格可积函数序列，而且
+\begin{equation}
+ \int_E|f_n(x)-f_m(x)|\,dx\to0,\qquad n,m\to\infty,
+ \tag{43}
+\end{equation}
+则必存在在 $E$ 上勒贝格可积的函数 $f(x)$，使当 $n\to\infty$ 时
+\begin{equation}
+ \int_E|f_n(x)-f(x)|\,dx\to0.
+ \tag{44}
+\end{equation}
+反之，由(44)也可得到(43)。
+
+\noindent\textbf{证}\quad 取 $\varepsilon_k=2^{-k}$，则一定可以找到一串上升的正整数 $n_k$，使当 $n,m\ge n_k$ 时，
+\[
+ \int_E|f_n(x)-f_m(x)|\,dx<\varepsilon_k.
+\]
+特别是
+\[
+ \int_E|f_{n_{k+1}}(x)-f_{n_k}(x)|\,dx<2^{-k}.
+\]
+令
+\[
+ u_k(x)=f_{n_{k+1}}(x)-f_{n_k}(x),\qquad u_0(x)=f_{n_1}(x),
+\]
+则 $u_k(x)$ 勒贝格可积，而且
+\[
+ \sum_{k=0}^{\infty}\int_E|u_k(x)|\,dx<\sum_{k=1}^{\infty}2^{-k}<+\infty.
+\]
+由勒维定理，$\sum_{k=0}^{\infty}|u_k(x)|$ 几乎处处收敛，其和 $F(x)$ 也是勒贝格可积的。进而看级数 $\sum_{k=0}^{\infty}u_k(x)$，它必几乎处处绝对收敛。令其部分和为 $S_N(x)$，则 $\lim_{N\to\infty}S_N(x)=f(x)$ 几乎处处成立，而且是可测函数，但是
+\[
+ |S_N(x)|\le\sum_{k=0}^{N}|u_k(x)|\le\sum_{k=0}^{\infty}|u_k(x)|=F(x).
+\]
+而且 $|f(x)-S_N(x)|\to0$ 几乎处处成立，
+\[
+ |f(x)-S_N(x)|\le\sum_{k=N+1}^{\infty}|u_k(x)|\le F(x),
+\]
+再用一次勒贝格控制收敛定理有
+\[
+ \int_E|f(x)-S_N(x)|\,dx
+ =\int_E|f(x)-f_{n_{N+1}}(x)|\,dx\to0.
+\]
+特别是
+\[
+ \int_E|f(x)-f_n(x)|\,dx
+ \le\int_E|f(x)-f_{n_{N+1}}(x)|\,dx
+ +\int_E|f_{n_{N+1}}(x)-f_n(x)|\,dx\to0.
+\]
+定理证毕。
+
+如果 $E$ 不一定有有限测度而与定理15、16一样，这个定理仍成立。
+
+关于勒贝格积分的基本概念和性质，我们就介绍至此。数学中还有多种其它积分理论，但是都适合同样的框架：每个积分都是一个泛函，即对某一函数类——可积函数类——的一个元 $f$ 给定一个值 $I(f)$。如果 $I(f)$ 具有某些性质，则可以利用这些性质来对积分理论作公理化的处理。例如我们可以要求
+
+(i) $I(f)$ 是线性泛函：$I(af+bg)=aI(f)+bI(g)$，这里 $a,b$ 是实数。
+
+(ii) 正性：$f\ge0$ 时，$I(f)\ge0$。
+
+(iii) 关于单调收敛的连续性：若 $f_n(x)$ 下降趋于0，则 $I(f_n)$ 也下降趋于0。
+
+黎曼积分和勒贝格积分都具有这些性质，其中的(iii)，对于黎曼积分即是迪尼定理，对于勒贝格积分即是勒维定理。进一步我们可以称适合它们的泛函就是积分，这样就为积分理论提供了一个公理化框架。它与勒贝格积分理论不同，它不是以测度理论为基础的。这种积分有时称为丹尼尔（Daniell）积分，它是很有用处的。
+
+\noindent\textbf{1. 有界变差函数}\quad 上一节我们讨论了函数在勒贝格意义下的可积性以及勒贝格积分的主要性质，特别是我们证明了里斯--费希尔定理从而说明了勒贝格积分确实在完备性问题上克服了黎曼积分的缺点。我们也看到，之所以能够得到较好的结果是由于我们使用了具有可数可加性的勒贝格测度，这样可以用分划 $f(x)$ 之值域来代替分划自变量 $x$ 的变化区域即 $f(x)$ 之定义域。当然，这样做是有代价的：我们不得不放弃黎曼积分和对被积函数的线性关系，以及自变量变化区域中的组合关系：
+\[
+ b-a=(b-x_{n-1})+(x_{n-1}-x_{n-2})+\cdots+(x_1-a).
+\]
+这样，一些在黎曼积分中几乎是自明的事情，现在证明起来颇多麻烦。本节中我们还要讲两个重要问题：积分在什么意义下是微分的逆运算以及二重积分化为逐次积分的问题。本节的讨论也有上面说的特点，即论证比较细致使人感到繁琐，而结论则似乎并不多于连续函数的黎曼积分中的相应结果，给人的感觉是不太合算。因此，读者完全可以跳过本节到他认为自己比较习惯于这种细密的推理时再回到本节。好在本节的结论读者现在就会认为是不言而喻的。
+
+关于积分与微分互为逆运算的问题，读者都十分习惯于柯西的结果，若 $f(x)$ 在 $[a,b]$ 上连续，则 $\int_a^x f(t)\,dt$ 是 $f(x)$ 在 $[a,b]$ 上的原函数，若能再找到一个原函数 $F(x)$，则必有
+\begin{equation}
+ \int_a^b f(x)\,dx=F(b)-F(a).
+ \tag{1}
+\end{equation}
+到了黎曼的时代，因为不连续函数已进入了人们的视野，达布发现，应该区别关于 $f(x)$ 的两件事，一是可积，二是有原函数 $F(x)$。（注意，这里原函数是指处处适合 $F'(x)=f(x)$ 的函数。）上面两件事是互相独立的。这时 $\int_a^x f(t)\,dt$ 是否也是一个原函数，且(1)成立？
+
+于是自然要问，在勒贝格积分的框架下能得到什么样的结果？是否能使积分与求导恰为逆运算？遗憾的是，这是办不到的。现在我们把问题分成两个：
+
+I. 若 $f(x)$ 在 $[a,b]$ 上勒贝格可积，则 $F(x)=\int_a^x f(t)\,dt$ 是否 $f(x)$ 的原函数，而(1)成立？
+
+首先，原函数意义要改动一下，因为若在一个零测度集上改变 $f(x)$，则 $\int_a^x f(t)\,dt$ 不会改变，从而 $F'(x)=f(x)$ 只能几乎处处成立。所以下面凡讲到原函数均指几乎处处意义下的原函数。
+
+II. $F(x)$ 要适合什么条件才有某个勒贝格可积的导函数 $f(x)=F'(x)$，而且使
+\[
+ F(x)=\int_a^x f(t)\,dt+C?
+\]
+
+第一个问题答案很清楚，若 $f(x)$ 为勒贝格可积，则 $F(x)=\int_a^x f(t)\,dt$ 一定几乎处处以 $f(x)$ 为导数。这里要利用以下的性质，即不定积分必为有界变差函数。那么，什么是有界变差函数呢？以下我们只限于一元函数，因为多元函数的情况是很不一样的。
+
+设 $f(x)$ 定在 $[a,b]$ 上，现在作 $[a,b]$ 的一个分划
+\[
+ P:\ a=x_0<x_1<\cdots<x_n=b.
+\]
+作
+\[
+ V=\sum_{i=0}^{n-1}|f(x_{i+1})-f(x_i)|,
+\]
+则 $\sup_PV$ 称为 $f(x)$ 在 $[a,b]$ 上的全变差。
+
+\noindent\textbf{定义1}\quad 若
+\[
+ V_a^b(f)=\sup_PV<+\infty,
+\]
+则称 $f(x)$ 是 $[a,b]$ 上的有界变差函数。
+
+很明显，单调函数 $f(x)$ 都是有界变差的，因为不失一般性，不妨限于考虑单调不减的 $f(x)$。
+这时，$|f(x_{i+1})-f(x_i)|=f(x_{i+1})-f(x_i)\ge0$，因此
+\[
+\begin{aligned}
+V&=|f(x_n)-f(x_{n-1})|+\cdots+|f(x_1)-f(x_0)|\\
+ &= [f(x_n)-f(x_{n-1})]+\cdots+[f(x_1)-f(x_0)]\\
+ &=f(b)-f(a).
+\end{aligned}
+\]
+所以，$V_a^b(f)=\sup_PV=f(b)-f(a)<+\infty$，从而单调函数 $f(x)$ 具有有界变差。重要的是其逆在某种程度上也成立，我们有
+
+\noindent\textbf{定理1}\quad $[a,b]$ 上的有界变差函数 $f(x)$ 必可写为两个单调不减函数之差。
+
+\noindent\textbf{证}\quad 任取 $c\in[a,b]$，于是得到 $[a,b]=[a,c]\cup[c,b]$，当我们作 $[a,b]$ 之任一分划 $P$ 时都不妨把 $c$ 当作一个分点：$c=x_m$，于是
+\begin{equation}
+ \sum_{i=0}^{n-1}|f(x_{i+1})-f(x_i)|
+ =\sum_{i=0}^{m-1}|f(x_{i+1})-f(x_i)|
+ +\sum_{i=m}^{n-1}|f(x_{i+1})-f(x_i)|.
+ \tag{2}
+\end{equation}
+现在从左、右双侧来对分划 $P$ 取上确界。
+
+先看右方，固定 $c$ 不动，而得到 $[a,c]$ 的分划 $P_1$、$[c,b]$ 的分划 $P_2$，因此
+\begin{equation}
+ \sum_{i=0}^{m-1}|f(x_{i+1})-f(x_i)|\le V_a^c(f),\qquad
+ \sum_{i=m}^{n-1}|f(x_{i+1})-f(x_i)|\le V_c^b(f).
+ \tag{3}
+\end{equation}
+我们很容易证明，当 $f$ 在 $[a,b]$ 上有界变差时，它在任一子区间上也有有界变差，所以上面两个式子右方均为有限数，但是我们并不需要这件事，读者如愿去证明也不难。以(3)代入(2)之右方即知
+\[
+ \sum_{i=0}^{n-1}|f(x_{i+1})-f(x_i)|\le V_a^c(f)+V_c^b(f).
+\]
+此式对任何以 $c$ 作为一个分点的分划 $P$ 均成立。对于不以 $c$ 为分点的分划，在增加一个分点 $c$ 以后，其相应的变差 $V$ 不减，所以上式对任意分划 $P$（不论是否含 $c$ 作为分点）均成立。取上确界以后即得
+\begin{equation}
+ V_a^b(f)\le V_a^c(f)+V_c^b(f).
+ \tag{4}
+\end{equation}
+另一方面，从(2)的左方看应有
+\[
+ \sum_{i=0}^{m-1}|f(x_{i+1})-f(x_i)|
+ +\sum_{i=m}^{n-1}|f(x_{i+1})-f(x_i)|\le V_a^b(f).
+\]
+作适当分划，总可以使
+\[
+ \sum_{i=0}^{m-1}|f(x_{i+1})-f(x_i)|\ge V_a^c(f)-\varepsilon,
+\]
+$\varepsilon>0$ 是任意小正数，同样
+\[
+ \sum_{i=m}^{n-1}|f(x_{i+1})-f(x_i)|\ge V_c^b(f)-\varepsilon.
+\]
+代入上式再令 $\varepsilon\to0$，又有
+\begin{equation}
+ V_a^c(f)+V_c^b(f)\le V_a^b(f).
+ \tag{5}
+\end{equation}
+比较(4)、(5)两式即有
+\begin{equation}
+ V_a^b(f)=V_a^c(f)+V_c^b(f).
+ \tag{6}
+\end{equation}
+现在把 $V_a^b(f)$ 中的 $b$ 代以变量 $x$，则得到一个函数 $V(x)$，$V(x)$ 显然是不减的，因为若 $x_1<x_2$，则由(6)
+\[
+ V(x_2)=V(x_1)+V_{x_1}^{x_2}(f).
+\]
+但是 $V_{x_1}^{x_2}(f)\ge0$，这由全变差之定义自明。考虑差 $W(x)=V(x)-f(x)$ 可以证明这个差 $W(x)$ 也是不减的，这是因为
+\[
+\begin{aligned}
+ W(x_2)-W(x_1)
+ &=V(x_2)-V(x_1)-[f(x_2)-f(x_1)]\\
+ &=V_{x_1}^{x_2}(f)-[f(x_2)-f(x_1)]
+ \ge V_{x_1}^{x_2}(f)-|f(x_2)-f(x_1)|.
+\end{aligned}
+\]
+但是很明显有 $|f(x_2)-f(x_1)|\le V_{x_1}^{x_2}(f)$，因为左方只是 $f(x)$ 在区间 $[x_1,x_2]$ 对一个特殊分划——分点只有 $x_1,x_2$ 两点——的变差，而右方是 $f(x)$ 对一切分划的变差的上确界，所以，
+\[
+ W(x_2)\ge W(x_1),
+\]
+而 $W(x)$ 是不减的。由于 $f(x)=V(x)-W(x)$，故定理得证。
+
+\noindent\textbf{推论}\quad 若有界变差函数 $f(x)$ 还是 $[a,b]$ 上的连续函数，则它必可表示为两个连续不减函数之差。
+
+\noindent\textbf{证}\quad 我们只需证明 $V(x)$ 为连续即可。取 $x_0\in[a,b]$，为方便起见我们来看 $V(x)$ 在 $x_0$ 之右连续性（左连续证明一样），因为 $f(x)$ 在 $x_0$ 连续，故必为右连续。对任意 $\varepsilon>0$，必可找到 $\delta(\varepsilon)>0$，使若 $x_1\in[x_0,x_0+\delta]$，当有 $|f(x_1)-f(x_0)|<\varepsilon/2$。因为 $f(x)$ 在 $[a,b]$ 上为有界变差的，所以在 $[x_0,b]$ 上也有有界变差。因此对任意 $\varepsilon>0$ 都可以找到 $[x_0,b]$ 的一个分划 $P:x_0<x_1<\cdots<x_n=b$，而且 $|x_1-x_0|<\delta$，使得
+\[
+ \sum_{i=0}^{n-1}|f(x_{i+1})-f(x_i)|>V_{x_0}^b(f)-\frac{\varepsilon}{2},
+\]
+或者
+\[
+\begin{aligned}
+ V_{x_0}^b(f)
+ &<\sum_{i=0}^{n-1}|f(x_{i+1})-f(x_i)|+\frac{\varepsilon}{2}\\
+ &=|f(x_1)-f(x_0)|+\sum_{i=1}^{n-1}|f(x_{i+1})-f(x_i)|+\frac{\varepsilon}{2}\\
+ &<\varepsilon+\sum_{i=1}^{n-1}|f(x_{i+1})-f(x_i)|\le\varepsilon+V_{x_1}^b(f).
+\end{aligned}
+\]
+这样一来
+\[
+ 0\le V_{x_0}^b(f)-V_{x_1}^b(f)<\varepsilon,
+\]
+而
+\[
+ V(x_1)-V(x_0)=V_{x_0}^{x_1}(f)=V_{x_0}^b(f)-V_{x_1}^b(f)<\varepsilon.
+\]
+所以 $V(x)$ 在 $x_0$ 点为右连续。同理 $V(x)$ 在 $x_0$ 也是左连续的，而 $V(x)$ 在 $[a,b]$ 上连续（但在两个端点则只能是左或右连续），$W(x)=V(x)-f(x)$ 亦然。\jiaokan{此处应为 $W(x)=V(x)-f(x)$，与前文对 $W$ 的定义一致；排印误作 $f(x)-V(x)$。}推论得证。
+
+\noindent\textbf{注}\quad 用上法可以证明若 $f(x)$ 为单侧连续，则 $V(x),W(x)$ 也一样。
+
+定理1的逆亦真，单调不减函数之差也一定是有界变差函数，实际上，这个逆定理是下述定理的特例。
+
+\noindent\textbf{定理2}\quad 若 $f_1(x),f_2(x)$ 均为 $[a,b]$ 上的有界变差函数，$a,b$ 为实数，则 $af_1(x)+bf_2(x)$ 也为有界变差函数。
+
+\noindent\textbf{证}\quad 由
+\[
+\begin{aligned}
+&\sum_{i=0}^{n-1}|[af_1(x_{i+1})+bf_2(x_{i+1})]-[af_1(x_i)+bf_2(x_i)]|\\
+&\quad\le |a|\sum_{i=0}^{n-1}|f_1(x_{i+1})-f_1(x_i)|
+      +|b|\sum_{i=0}^{n-1}|f_2(x_{i+1})-f_2(x_i)|\\
+&\quad\le |a|V_a^b(f_1)+|b|V_a^b(f_2)
+\end{aligned}
+\]
+即知。
+
+\noindent\textbf{注}\quad 也很容易证明 $f_1(x)f_2(x)$、$f_1(x)/f_2(x)$（若 $f_2(x)\ne0$）也都是有界变差函数。
+
+下面我们要证明，$[a,b]$ 上的单调函数必在 $[a,b]$ 上几乎处处有导数，所以有界变差函数也几乎处处有导数。这个重要结论证明较长，我们放在后面，现在就可以回答第一个问题。
+
+\noindent\textbf{定理3（勒贝格定理）}\quad 若 $f(x)$ 在 $[a,b]$ 上勒贝格可积，则其不定积分
+\[
+ F(x)=\int_a^x f(t)\,dt
+\]
+必为 $[a,b]$ 上之有界变差函数，且几乎处处有
+\begin{equation}
+ \frac{d}{dx}\int_a^x f(t)\,dt=f(x).
+ \tag{7}
+\end{equation}
+
+\noindent\textbf{证}\quad 仿照定义勒贝格可积函数那样，把 $f(x)$ 写为
+\[
+ f(x)=f_+(x)-f_-(x),\qquad f_\pm(x)\ge0,
+\]
+则有
+\[
+ F(x)=\int_a^x f_+(t)\,dt-\int_a^x f_-(t)\,dt=F_+(x)-F_-(x).
+\]
+因为 $f_\pm(x)\ge0$，所以 $F_\pm(x)$ 均为单调不减，所以由定理2，$F(x)$ 是有界变差函数，而且易见 $F_\pm(x)$ 都是连续函数。余下的仅是证明(7)式，这里我们需要一个引理。
+
+\noindent\textbf{引理4}\quad 若 $f(x)$ 在 $[a,b]$ 上为勒贝格可积，且对一切 $x\in[a,b]$，
+\[
+ \int_a^x f(t)\,dt=0,
+\]
+则在 $[a,b]$ 上，$f(x)$ 几乎处处为0。
+
+\noindent\textbf{证}\quad 用反证法。设结论不成立，从而可以找到一个正测度集 $E$，使 $f(x)>0$（或 $<0$）于 $E$ 上，因为 $E^c$ 必可含于 $[a,b]$ 的一个测度小于 $b-a$ 的开子集内，从而 $E$ 中必含一个具有正测度的闭子集，我们不妨设 $E$ 就是这个闭集，但由 $\int_a^x f(t)\,dt=0$ 对一切 $x\in[a,b]$ 成立，从而 $f(x)$ 在任一闭集 $E$ 上之积分为0，因为这个积分将化为 $[a,b]$ 上之积分（由假设为0）以及一个开集 $E^c$ 上之积分的差。但 $E^c=\bigcup(a_k,b_k)$，而
+\[
+ \int_{a_k}^{b_k}f(t)\,dt=\int_a^{b_k}f(t)\,dt-\int_a^{a_k}f(t)\,dt=0,
+\]
+从而 $\int_{E^c}f(t)\,dt=0$。但这与 $f(x)$ 在 $E$ 上为正矛盾（见上节(28)式）。
+
+\noindent\textbf{定理3的证明（继续）}\quad 和前面处理许多有关勒贝格积分的问题一样，通过作 $[f(x)]_N$ 把问题化为 $f(x)$ 为有界勒贝格可积的特例。所以不妨先设 $|f(x)|\le M$，这时一方面由前面已证的那样 $F(x)$ 是有界变差的，从而几乎处处有导数，即对 $x$ 几乎处处有
+\begin{equation}
+ \lim_{l\to0}\frac{F(x+l)-F(x)}{l}=F'(x);
+ \tag{8}
+\end{equation}
+另一方面
+\[
+ \left|\frac{F(x+l)-F(x)}{l}\right|
+ =\left|\frac1l\int_x^{x+l}f(t)\,dt\right|\le M,
+\]
+所以用勒贝格控制收敛定理有
+\begin{equation}
+ \lim_{l\to0}\int_a^x\frac{F(t+l)-F(t)}{l}\,dt
+ =\int_a^xF'(t)\,dt.
+ \tag{9}
+\end{equation}
+然而其左方的积分又等于
+\[
+ \frac1l\int_{a+l}^{x+l}F(t)\,dt-\frac1l\int_a^xF(t)\,dt
+ =\frac1l\left[\int_x^{x+l}-\int_a^{a+l}\right]F(t)\,dt.
+\]
+由 $F(x)$ 之连续性，可以把这两个积分均理解为黎曼积分，而知其极限是 $F(x)-F(a)=\int_a^x f(t)\,dt$，代入(9)即得
+\[
+ \int_a^x[F'(t)-f(t)]\,dt=0.
+\]
+由引理4即知，当 $f(x)$ 为有界可积时，$F'(x)=f(x)$ 几乎处处成立。
+
+为了对一般的可积（不一定有界的）$f(x)$ 证明我们的结果，又需要另一个引理。
+
+\noindent\textbf{引理5}\quad 若 $\varphi(x)$ 在 $[a,b]$ 上连续非减，则 $\varphi'(x)$ 为勒贝格可积，且
+\begin{equation}
+ \int_\alpha^\beta\varphi'(x)\,dx\le\varphi(\beta)-\varphi(\alpha),
+ \qquad [\alpha,\beta]\subset[a,b].
+ \tag{10}
+\end{equation}
+
+\noindent\textbf{证}\quad 因为 $\varphi(x)$ 非减从而是有界变差函数，故 $\varphi'(x)$ 几乎处处存在。但是另一方面
+\[
+ \frac{\varphi(x+l)-\varphi(x)}{l}\ge0,
+\]
+因为 $\varphi(x)$ 是非减的，故由法图引理
+\[
+ \lim_{l\to0}\int_\alpha^\beta\frac{\varphi(x+l)-\varphi(x)}{l}\,dx
+ \ge\int_\alpha^\beta\lim_{l\to0}\frac{\varphi(x+l)-\varphi(x)}{l}\,dx
+ =\int_\alpha^\beta\varphi'(x)\,dx.
+\]
+再由 $\varphi(x)$ 之连续性，仿照上面的证明又知左方为 $\varphi(\beta)-\varphi(\alpha)$，故引理证毕。
+
+\noindent\textbf{定理3之证明的完成}\quad 不妨设 $f(x)\ge0$（即只看 $f_+(x)$）。作 $[f(x)]_N$，有 $f(x)-[f(x)]_N\ge0$，从而
+\[
+ \int_a^x|f(t)-[f(t)]_N|\,dt
+\]
+不减，连续且几乎处处有导数存在，其导数自然非负。因此
+\begin{equation}
+ \frac{d}{dx}\left|\int_a^x f(t)\,dt\right|
+ \ge \frac{d}{dx}\int_a^x[f(t)]_N\,dt.
+ \tag{11}
+\end{equation}
+但 $[f(x)]_N$ 是有界可积的，故右方几乎处处为 $[f(x)]_N$，左方则由 $F(x)$ 之定义为 $\frac{d}{dx}F(x)$，于是
+\[
+ F'(x)\ge[f(x)]_N
+ \qquad\text{在 }[a,b]\text{ 上几乎处处成立}.
+\]
+双方积分，再令 $N\to\infty$，有
+\[
+ \int_a^bF'(x)\,dx\ge\int_a^bf(x)\,dx=F(b)-F(a),
+\]
+但是，引理5又告诉我们
+\[
+ \int_a^bF'(x)\,dx\le F(b)-F(a),
+\]
+所以
+\[
+ \int_a^b|F'(x)-f(x)|\,dx=0.
+\]
+由引理4即得定理之证。
+
+\medskip
+\noindent\textbf{2. 单调函数的导数}\quad 定理3的证明依赖于单调函数几乎处处有导数这一重要结果。现在我们来给予证明。它的基本思想是考虑
+\[
+ \frac1l[f(x+l)-f(x)]
+\]
+的极限问题。这个极限可能不存在。但是分别考虑 $l>0$ 与 $l<0$，亦即考虑左、右极限，如果左右极限也不存在，则至少其上、下极限存在，于是我们考虑四个数
+\[
+ D^+f(x)=\overline{\lim}_{l\to+0}\frac1l[f(x+l)-f(x)];
+\]
+\[
+ D_+f(x)=\underline{\lim}_{l\to+0}\frac1l[f(x+l)-f(x)];
+\]
+\[
+ D^-f(x)=\overline{\lim}_{l\to-0}\frac1l[f(x+l)-f(x)];
+\]
+\[
+ D_-f(x)=\underline{\lim}_{l\to-0}\frac1l[f(x+l)-f(x)].
+\]
+$+$ 号分别表示右、左极限，写在 $D$ 的上、下角分别表示上、下极限。所以这四个数分别称为右上、右下、左上、左下导数。所谓 $f(x)$ 在某点 $x$ 有导数，就是指在 $x$ 点的这四个数相等。而只要有任何两个不相等，则 $f(x)$ 在 $x$ 点不可导，然后，我们就分别考虑四个集合。例如
+\[
+ E=\{x:D_-f(x)<D^-f(x)\}
+\]
+并证明 $m(E)=0$，这样我们将证得以下的极重要的定理：
+
+\noindent\textbf{定理6（勒贝格）}\quad 若定义在 $[a,b]$ 上的函数 $f(x)$ 是单调的，则 $f'(x)$ 几乎处处存在。
+
+这个定理虽然陈述十分明确，其证明则相当复杂。下面我们只对 $f(x)$ 单调不减的情况证明，先证一个引理。
+
+\noindent\textbf{引理7（里斯）}\quad 设 $G(x)$ 在 $[a,b]$ 上连续，如果在 $x\in[a,b]$ 右方有一点 $\xi$ 在 $[a,b]$ 中，使 $G(x)<G(\xi)$，则称 $x$ 为上升点。所有的上升点成为一个开集，而由许多区间组成，若 $(a_k,b_k)$ 是一个组成区间，则必有
+\begin{equation}
+ G(a_k)\le G(b_k).
+ \tag{12}
+\end{equation}
+
+\noindent\textbf{证}\quad 因为 $G(x)$ 是连续的，故上升点 $x$ 的某个邻域中之点也都是上升点，因此，上升点之集合相对于 $[a,b]$ 是开集，而由若干个开区间 $(a_k,b_k)$ 组成（但可能有一个是 $[a,b_k)$ 这也是一个相对开区间），今证对一切 $x\in(a_k,b_k)$ 均有 $G(x)\le G(b_k)$，然后，令 $x\to a_k$ 即得(12)式。在证明之前先提醒一下，在 $[b_k,b]$ 中的一切 $x$，均有
+\begin{equation}
+ G(x)\le G(b_k),
+ \tag{13}
+\end{equation}
+否则，$b_k$ 也是一个上升点，从而 $[b_k,b_k+\eta)$（$\eta>0$ 是一个常数）都是上升点，而 $(a_k,b_k)$ 不再是上升点集合的组成区间，$(a_k,b_k+\eta)$ 才是。
+
+现证在 $(a_k,b_k)$ 内，(13)也成立，我们用反证法明它。若有一点 $x_0\in(a_k,b_k)$ 使 $G(x_0)>G(b_k)$，寻找 $(a_k,b_k)$ 中等于 $G(x_0)$ 的最右一点：
+\begin{equation}
+ x_0'=\sup\{x\in(a_k,b_k):G(x_0)=G(x)\}.
+ \tag{14}
+\end{equation}
+$x_0'$ 当然不是 $b_k$，因为上面已设 $G(x_0)>G(b_k)$ 而不可能等于 $G(x_0)$，因此 $x_0'$ 是 $(a_k,b_k)$ 的内点，这个 $x_0'$ 也是一个上升点，而且有一个非空区间 $[x_0',b_k]$ 使得在此区间内(13)式也成立，不然的话，应有 $x_0^*\in(x_0',b_k]$ 使 $G(x_0^*)>G(b_k)$。如果 $G(x_0^*)=G(x_0')=G(x_0)$，则与(14)相矛盾，若 $G(x_0^*)>G(x_0')=G(x_0)>G(b_k)$，则由连续函数的中值定值理，应有另一点 $x\in(x_0^*,b_k]$ 使 $G(x)=G(x_0)$，这又与(14)矛盾。
+
+总之，在 $[x_0',b_k]$ 中，$G(x)\le G(b_k)$，在 $[b_k,b]$ 中(13)式即 $G(x)\le G(b_k)$ 也成立。否则 $b_k$ 也是上升点，而如前所说，这是不可能的。总之在 $[x_0',b]$ 中 $G(x)\le G(b_k)<G(x_0')$，这与 $x_0'$ 是上升点相矛盾，从而引理得证。
+
+现在开始证明定理6，我们又分成几个步骤。每一步分别考虑 $f'(x)$ 不存在的一种可能情况，并且证明每种情况都只能在一个零测度集上成立。但是我们暂且仅限于 $f(x)$ 不仅单调而且连续的情况。
+
+1. $E=\{x:D^+f(x)=+\infty\}$ 是零测度集之证明。对 $E$ 中的 $x$，对任意固定的大数 $C$，必可找到 $\xi>x$ 使
+\[
+ \frac{f(\xi)-f(x)}{\xi-x}>C,
+\]
+亦即
+\[
+ f(x)-Cx<f(\xi)-C\xi.
+\]
+这就是说，$E$ 中的 $x$ 必定都是 $f(x)-Cx$ 的上升点，因而 $E$ 是一个开集，而 $E$ 是若干开区间 $(a_k,b_k)$ 之并：$E=\bigcup(a_k,b_k)$，而由里斯引理
+\[
+ f(a_k)-Ca_k\le f(b_k)-Cb_k,
+\]
+即 $C(b_k-a_k)\le f(b_k)-f(a_k)$。对 $k$ 相加，注意到 $f$ 是单调不减的，故有
+\[
+ Cm(E)=C\sum_k(b_k-a_k)\le\sum_k[f(b_k)-f(a_k)]\le f(b)-f(a).
+\]
+由 $C$ 之任意性即得 $m(E)=0$。
+
+2. $E=\{x:D^+f(x)>D_-f(x)\}$ 为零测度集之证明。可以取 $c,C$ 为适合 $D_-f(x)<c<C<D^+f(x)$ 之一切可能的有理数，而把 $E$ 分成可数多个集 $E_{c,C}$ 之并：
+\[
+ E_{c,C}=\{x:D_-f(x)<c<C<D^+f(x)\},
+\]
+再来证明每一个 $E_{c,C}$ 均为零测度集。
+
+这时我们要把上升点的定义稍加修改。其实前面讲的 $\xi>x$ 在 $x$ 右方，所以确切一点应该称这种 $x$ 为右上升点。与此相应，若在 $x$ 左方某点 $\xi$ 处，即 $\xi<x$ 处，有 $G(\xi)>G(x)$，就称 $x$ 点为 $G(x)$ 的左上升点，而对于结论 $G(a_k)\ge G(b_k)$ 里斯引理仍成立。于是对于 $x\in E$，由 $D_-f(x)<c$ 知必有 $\xi<x$ 使
+\[
+ \frac{f(\xi)-f(x)}{\xi-x}<c,
+\]
+亦即
+\[
+ f(\xi)-c\xi>f(x)-cx\qquad(\text{注意 }\xi-x<0),
+\]
+而知 $x$ 是 $G(x)=f(x)-cx$ 之左上升点，仿照引理7的证明知 $E_{c,C}\subset\bigcup(a_k,b_k)$，而 $G(a_k)\ge G(b_k)$，即
+\begin{equation}
+ f(b_k)-f(a_k)\le c(b_k-a_k).
+ \tag{15}
+\end{equation}
+现在我们限制取一个 $(a_k,b_k)$ 来研究，以它代替 $(a,b)$。注意一个函数 $G(x)$ 在 $(a,b)$ 的右上升点之概念与它在 $(a_k,b_k)\subset(a,b)$ 中的右上升点概念不同。对于后者，一定存在 $\xi>x$ 于 $(a_k,b_k)$ 中适合 $G(\xi)>G(x)$，这个 $\xi$ 不一定在 $(a_k,b_k)$ 中；对于前者，则这个 $\xi$ 不但在 $(a,b)$ 中而且要求在某一个子区间 $(a_k,b_k)$ 中。所以后一意义下的右上升点不一定是前一种意义下的右上升点。所以当我们要求出 $G(x)$ 在 $(a_k,b_k)$ 中的右上升点时，将得到的是 $(a_k,b_k)$ 的若干个子区间 $(a_{kj},b_{kj})\subset(a_k,b_k)$，这里 $k$ 固定但 $j$ 可以变化。现在把这个概念用于 $E_{c,C}$ 中。由于在 $E_{c,C}$ 中 $D^+f(x)>C$，故对 $x\in E_{c,C}$ 必有 $\xi>x$ 使
+\[
+ \frac{f(\xi)-f(x)}{\xi-x}>C.
+\]
+所以 $x$ 必是 $f(x)-Cx$ 相对于 $(a_k,b_k)$ 的右上升点，这样
+\[
+ (a_k,b_k)=\bigcup_j(a_{kj},b_{kj}),
+\]
+而由里斯引理有
+\[
+ f(b_{kj})-f(a_{kj})\ge C(b_{kj}-a_{kj}).
+\]
+对 $j$ 求和有
+\[
+ \sum_j(b_{kj}-a_{kj})\le\frac1C\sum_j[f(b_{kj})-f(a_{kj})]
+ \le\frac1C[f(b_k)-f(a_k)].
+\]
+再用(15)式并且对 $k$ 求和，就有
+\begin{equation}
+ \sum_k\sum_j(b_{kj}-a_{kj})\le\frac{c}{C}\sum_k(b_k-a_k)
+ \le\frac{c}{C}(b-a).
+ \tag{16}
+\end{equation}
+再用 $(a_{kj},b_{kj})$，并在其中考查 $E_{c,C}$，又可以得到更精细的覆盖（现在小区间下有4个脚标了，因为 $D_-f<c$ 与 $D^+f>C$ 又都各用了一次）：
+\[
+ \sum_k\sum_j\sum_m\sum_n(b_{kjmn}-a_{kjmn})
+ \le\frac{c}{C}\sum_k\sum_j(b_{kj}-a_{kj})
+ \le\left(\frac{c}{C}\right)^2(b-a).
+\]
+如此进行 $p$ 个循环会发现
+\begin{equation}
+ m_e(E_{c,C})\le\left(\frac{c}{C}\right)^p(b-a)\to0.
+ \tag{17}
+\end{equation}
+所以 $E_{c,C}$ 是零测度集。再对 $c,C$ 求和，因为一共只有可数多个 $E_{c,C}$，所以有 $m(E)=0$。
+
+3. $E=\{x:D^-f(x)>D_+f(x)\}$ 为零测度集之证明。
+
+现在在与 $[a,b]$ 对称的区间 $[-b,-a]$ 上定义函数 $f^*(y)$ 如下（图4-3-1）：
+\[
+ f^*(y)=-f(x),\qquad y=-x.
+\]
+显然 $f^*(y)$ 在 $[-b,-a]$ 上是上升的，而且由前面的证明知
+\[
+ m\{y:D^+f^*(y)=+\infty\}=0,
+\]
+\[
+ m\{y:D^+f^*(y)>D_-f^*(y)\}=0.
+\]
+但是若取 $k$ 充分小使 $y+k$ 仍在 $[-b,-a]$ 中（$y$ 为端点时需要作的修改是自明的），则
+\[
+ f^*(y+k)=-f(x-k),
+\]
+\[
+ \frac{f^*(y+k)-f^*(y)}{k}
+ =-\frac{f(x-k)-f(x)}{k}.
+\]
+记 $h=-k$，则当 $k\to0\pm$ 时，$h\to0\mp$，因此上式成为
+\[
+ \frac{f^*(y+k)-f^*(y)}{k}
+ =\frac{f(x+h)-f(x)}{h}.
+\]
+双方取上、下极限，即有
+\[
+ D^\pm f^*(y)=D^\mp f(x).
+\]
+从而
+\[
+ m(E)=m\{x:D^-f(x)=+\infty\}=0
+\]
+以及
+\begin{equation}
+ m(E)=m\{x:D^-f(x)>D_+f(x)\}=0.
+ \tag{18}
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[x=0.9cm,y=0.9cm,bella figure]
+  \draw[->] (-5.4,0)--(5.4,0) node[right] {$x$};
+  \draw[->] (0,-3.0)--(0,3.1) node[above] {$y$};
+  \draw[dashed] (-4.2,0)--(-4.2,-2.45);
+  \draw[dashed] (-2.2,0)--(-2.2,-1.25);
+  \draw[dashed] (2.2,0)--(2.2,1.25);
+  \draw[dashed] (4.2,0)--(4.2,2.45);
+  \draw[thick] (2.2,1.25) -- (2.2,1.65);
+  \draw[thick,smooth] plot coordinates {(2.2,1.65) (2.75,1.95) (3.45,2.15) (4.2,2.35)};
+  \draw[thick] (4.2,2.35)--(4.2,0);
+  \draw[thick] (-2.2,-1.25) -- (-2.2,-1.65);
+  \draw[thick,smooth] plot coordinates {(-2.2,-1.65) (-2.75,-1.95) (-3.45,-2.15) (-4.2,-2.35)};
+  \draw[thick] (-4.2,-2.35)--(-4.2,0);
+  \node[above] at (3.45,2.15) {$f(x)$};
+  \node[below] at (-3.45,-2.15) {$f^*(y)$};
+  \node[below] at (-4.2,0) {$-b$};
+  \node[below] at (-2.2,0) {$-a$};
+  \node[below left] at (0,0) {$O$};
+  \node[below] at (2.2,0) {$a$};
+  \node[below] at (4.2,0) {$b$};
+\end{tikzpicture}
+\caption*{图4-3-1}
+\end{figure}
+
+\noindent\textbf{4. 不连续情况的证明}\quad 总结前几段得知对于连续单调不减的 $f(x)$，1. 几乎处处有 $D^+f(x)<+\infty$；2. 几乎处处有 $D^+f(x)\le D_-f(x)$；3. 几乎处处有 $D^-f(x)\le D_+f(x)$。再加上自然就成立的下极限不大于上极限，我们终于得知
+\[
+ 0\le D_+f(x)\le D^+f(x)\le D_-f(x)\le D^-f(x)\le D_+f(x)<+\infty
+\]
+几乎处处成立。最左方的“$0\le$”来自 $f(x)$ 不减的假设，使得 $D^+f,D_+f\ge0$。由于这个不等式串首尾均是有限的 $D^+f(x)$，所以在 $[a,b]$ 上，对于连续的不减函数 $f(x)$，几乎处处有
+\begin{equation}
+ 0\le D_+f(x)=D^+f(x)=D_-f(x)=D^-f(x)<+\infty,
+ \tag{19}
+\end{equation}
+亦即这样的 $f(x)$ 在 $[a,b]$ 上几乎处处有导数 $f'(x)$。于是对连续的不减函数 $f(x)$，勒贝格定理（定理6）成立。为了把这个结论推广到一般的非减函数，需要注意非减函数只有第一类间断点。若 $x_0$ 是一个间断点，则 $f(x_0-0)\le f(x_0+0)$ 均存在，而 $f(x_0+0)-f(x_0-0)$ 是该点的跃度。注意到
+\[
+ \sum[f(x_0+0)-f(x_0-0)]\le f(b)-f(a)
+\]
+（$\sum$ 是对所有间断点求和），所以跃度 $\ge1$ 的间断点为数有限；$\tfrac12\le$ 跃度 $<1$ 的间断点也只有有限个。这样一来间断点最多有可数多个。我们不要以为这可数多个间断点必将 $[a,b]$ 分成可数多个小区间，在每一个小区间中 $f(x)$ 均连续，因此可以利用上面的证明。因为这些间断点可能是处处稠密的，所以它们把 $[a,b]$ 划分为可数多个小区间这个很直观的图像并不正确。§1 就举了一个这样的例子。（其实，上面讲的间断点可数的证明也不严格，因为在不清楚它们是否可数之前，“$\sum$”的记号是不能用的，但读者不难自行改正。）所以，我们需要把里斯引理修改如下：设引理7中的 $G(x)$ 只是单调不减而不一定连续。我们定义 $x\in[a,b]$ 为右上升点：如果在它的右方有点 $\xi>x$ 存在，且使
+\[
+ \max[G(x),G(x-0),G(x+0)]<G(\xi-0),
+\]
+则称 $x$ 为右上升点，这种右上升点仍成开集，从而由可数多个开区间 $(a_k,b_k)$ 组成。里斯引理指出
+\[
+ G(a_k+0)\le G(b_k-0).
+\]
+左上升点情况也一样，然后定理6的证明就不需改变了。至此定理6证毕。
+
+问题 I 的解答至此已明白了。下面转向问题 II。
+
+\medskip
+\noindent\textbf{3. 原函数，绝对连续性}\quad 问题 II 和问题 I 的角度是不一样的。问题 I 是已知一个勒贝格可积的函数 $f(x)$，问它的积分 $\int_a^x f(t)\,dt$ 有何性质，答案是，它是一个在几乎处处意义下的原函数。因此，只要任意找到一个绝对连续的（定义见后文）原函数 $F(x)$，必有
+\begin{equation}
+ \int_a^b f(t)\,dt=F(b)-F(a).
+ \tag{20}
+\end{equation}
+问题 II 则是另一回事。已知 $F(x)$，问在何时 $F(x)$ 是一个勒贝格可积函数 $f(x)$ 的几乎处处意义下的原函数 $F'(x)=f(x)$（a.e.），从而(20)成立？在问题 I 的答案中已经看到，当 $f(x)$ 是勒贝格可积函数时，$F(x)=\int_a^x f(t)\,dt$ 是连续的，而且具有有界变差，所以自然会问，连续的有界变差函数是否问题 II 的解答？很可惜，有反例指出并不如此。可以找到一个连续的不减函数 $F(x)$ 使得
+\[
+ \int_a^bF'(x)\,dx<F(b)-F(a).
+\]
+问题 II 的解答是 $F(x)$ 是 $[a,b]$ 上的绝对连续函数。什么是绝对连续函数呢？
+
+\noindent\textbf{定义2}\quad 设 $F(x)$ 定义在 $[a,b]$ 上，若对任一 $\varepsilon>0$ 均可找到 $\delta(\varepsilon)>0$ 使若 $[a,b]$ 的任意的有限多个并不重叠的区间 $[a_1,b_1],\ldots,[a_n,b_n]$ 之总长度小于 $\delta(\varepsilon)$，$F(x)$ 的下述变差小于 $\varepsilon$：
+\begin{equation}
+ \sum_{k=1}^n|F(b_k)-F(a_k)|<\varepsilon,
+ \tag{21}
+\end{equation}
+就说 $F(x)$ 在 $[a,b]$ 上绝对连续。
+
+绝对连续函数有一些简单的性质：
+
+(1) 它是连续的，只要令 $n=1$ 就可以看到，因此它必然是有界的。
+
+(2) 它具有有界变差，只要把 $[a,b]$ 分成若干小区间之并，使每一个小区间之长小于 $\delta$，然后在这些小区间上任作分划，即可用(21)式证明 $f(x)$ 在每个小区间上都有有界变差，从而在 $[a,b]$ 上也有有界变差。
+
+(3) 绝对连续函数组成一个线性空间，两个绝对连续函数之积也是绝对连续的。
+
+以上性质均容易证明，我们略去。
+
+以下的目的是证明，问题 II 的答案是：$F(x)$ 在 $[a,b]$ 上绝对连续。为了证明它，我们又需要一个看来几乎自明但实际上不太易证的引理。
+
+\noindent\textbf{引理8}\quad 若 $F(x)$ 在 $[a,b]$ 上不减，且为绝对连续，则当 $F'(x)=0$（a.e.）时，$F(x)\equiv\text{const}.$
+
+\noindent\textbf{证}\quad 先说一下这个引理实际上不太易证明的原因。在通常的微积分教材中，由 $F'(x)=0$ 得证 $F(x)=\text{const}$ 是用了拉格朗日定理的，而这就要求 $F'(x)$ 处处存在而非几乎处处存在。$F(x)$ 的绝对连续性与单调性都只能保证 $F'(x)$ 几乎处处存在。
+
+由于 $F(x)$ 不减，所以它映 $[a,b]$ 为区间 $\delta=[F(a),F(b)]$。今证\[m([F(a),F(b)])=0,\]从而 $[F(a),F(b)]$ 缩为一点而引理得证。设 $Z$ 为使 $F'(x)$ 不存在或存在而不为0之点 $x$ 的集合，于是 $m(Z)=0$。记 $E$ 为 $Z$ 之余集，于是 $m(E)=b-a$，显然
+\[
+ \delta=F(Z)\cup F(E).
+\]
+我们再分别证明 $F(Z)$ 与 $F(E)$ 均为0测度集。
+
+对于任一 $\varepsilon>0$，按绝对连续性条件找到 $\delta(\varepsilon)>0$，然后用一组（可能有可数多个）长度 $<\delta$ 的互不重叠（但端点可以相接）的小区间 $\{\Delta_k\}$ 把 $Z$ 覆盖起来，
+\[
+ Z\subset\Delta_1\cup\cdots\cup\Delta_k\cup\cdots,
+ \qquad F(Z)\subset\bigcup_{k=1}^{\infty}F(\Delta_k).
+\]
+显然
+\[
+ \bigcup_{k=1}^{\infty}F(\Delta_k)
+ =\lim_{N\to\infty}\bigcup_{k=1}^NF(\Delta_k).
+\]
+由绝对连续性，$m_e\left(\bigcup_{k=1}^NF(\Delta_k)\right)<\varepsilon$，它的外极限 $\bigcup_{k=1}^{\infty}F(\Delta_k)$ 之外测度也小于 $\varepsilon$，$m_e(F(Z))<\varepsilon$ 自然也成立。由 $\varepsilon$ 之任意性知 $F(Z)$ 有零测度。
+
+至于 $F(E)$，则注意到对 $x\in E$，$F'(x)=0$，从而 $D^+F(x)<\varepsilon$，所以必有一个 $\xi>x$ 使
+\[
+ \frac{F(\xi)-F(x)}{\xi-x}<\varepsilon.
+\]
+也就是说 $\varepsilon\xi-F(\xi)>\varepsilon x-F(x)$，而 $x$ 是 $\varepsilon x-F(x)$ 之右上升点。由里斯引理（引理7）\jiaokan{此处编号应为“引理7”；里斯引理即本节前述引理7。}，所有的右上升点之集合为若干个开区间 $(a_k,b_k)$ 之并，而且，$\varepsilon a_k-F(a_k)\le\varepsilon b_k-F(b_k)$，即有 $F(b_k)-F(a_k)<\varepsilon(b_k-a_k)$，对 $k$ 求和有
+\[
+ \sum_k[F(b_k)-F(a_k)]<\varepsilon\sum_k(b_k-a_k)\le\varepsilon(b-a).
+\]
+但 $F(E)\subset\bigcup_k[F(a_k),F(b_k)]$，所以，$m_e(F(E))<\varepsilon(b-a)$，而知 $F(E)$ 也是零测度集。引理证毕。
+
+这个引理有点怪：为什么要假设“$F(x)$ 不减”？似乎只要 $F'(x)=0$ 即应有 $F(x)\equiv\text{const}$。关键是我们没有了拉格朗日公式。在第三章我们就一再指出拉格朗日公式的重要性，这里又是一个证据。看来，拉格朗日公式有点“娇嫩”，只要有一点不可求导，它就不适用了。然而，最后我们还是可以抛弃 $F(x)$ 不减这个假设，由下面即将证明的定理9，只要 $F(x)$ 绝对连续，而且 $F'(x)=0$\jiaokan{此处自变量应为 $x$；排印作 $F'(0)=0$，与“几乎处处”的语义及上下文不相容。}（a.e.），则
+\[
+ F(b)-F(a)=\int_a^bF'(t)\,dt=0.
+\]
+
+\noindent\textbf{定理9（勒贝格）}\quad $F(x)$ a.e. 具有勒贝格可积的导数 $F'(x)$ 且使(20)成立（取 $f(x)=F'(x)$）之充分必要条件是，$F(x)$ 在 $[a,b]$ 上绝对连续。
+
+\noindent\textbf{证}\quad 必要性。对于任一 $\varepsilon>0$，取 $[a,b]$ 的有限多个互不重叠的子区间 $[a_k,b_k]$，记 $E=\bigcup_{k=1}^N[a_k,b_k]$，则
+\[
+ \sum_{k=1}^N|F(b_k)-F(a_k)|
+ =\sum_{k=1}^N\left|\int_{a_k}^{b_k}F'(t)\,dt\right|
+ \le\sum_{k=1}^N\int_{a_k}^{b_k}|F'(t)|\,dt
+ =\int_E|F'(t)|\,dt.
+\]
+但是由勒贝格可积函数的性质(iv)：积分对积分区域之连续性可知，一定存在 $\delta(\varepsilon)$，而当 $m(E)<\delta$ 时上式右方小于 $\varepsilon$，因此 $F(x)$ 绝对连续。
+
+充分性。设 $F(x)$ 为绝对连续，它必具有有界变差，且因 $F(x)$ 连续，故可写为两个连续不减函数之差。所以，不失一般性可设 $F(x)$ 为连续不减函数。引理5告诉我们 $F'(x)$ 为可积的，而且
+\[
+ \int_\alpha^\beta F'(x)\,dx\le F(\beta)-F(\alpha).
+\]
+由必要性的证明知 $G(x)=\int_a^xF'(t)\,dt$ 也是绝对连续的，从而 $F(x)-G(x)$ 也是绝对连续的，它还是不减的，因为由引理5
+\[
+ F(\beta)-F(\alpha)-[G(\beta)-G(\alpha)]
+ =F(\beta)-F(\alpha)-\int_\alpha^\beta F'(t)\,dt\ge0.
+\]
+最后
+\[
+ \frac{d}{dx}[F(x)-G(x)]
+ =F'(x)-\frac{d}{dx}\int_a^xF'(t)\,dt=0\qquad(\text{a.e.}),
+\]
+所以由引理8，$F(x)-G(x)=\text{const}$，而这个常数等于 $F(a)-G(a)$，故
+\[
+ F(x)=G(x)+F(a)-G(a)=F(a)+\int_a^xF'(t)\,dt.
+\]
+这就是(20)式，至此定理证毕。
+
+经过这样复杂的讨论，可以把积分与微分互为逆运算这个命题的内涵归结如下：
+
+I\quad 在黎曼连续函数框架下
+\[
+ \text{连续函数类}\ \mathrel{\substack{\xrightarrow{\int_a^x}\\[-1.2ex]\xleftarrow{\frac{d}{dx}}}}\ C^1\text{ 函数类}.
+\]
+
+II\quad 黎曼可积函数框架下
+\[
+ (R)\text{ 可积函数类}\ \mathrel{\substack{\xrightarrow{\int_a^x}\\[-1.2ex]\xleftarrow{\frac{d}{dx}}}}\ (?)
+\]
+
+III\quad 勒贝格积分框架下
+\[
+ (L)\text{ 可积函数类}\ \mathrel{\substack{\xrightarrow{\int_a^x}\\[-1.2ex]\xleftarrow{\frac{d}{dx}}}}\ \text{绝对连续函数类}.
+\]
+
+但是在这两种积分框架下都得不到人们以为自然会成立的结论：若 $F'(x)=f(x)$，则 $F(x)=F(a)+\int_a^x f(t)\,dt$。即是说我们不会得到那么简单的结论：积分与微分互为逆运算。
+
+在进入下一个问题之前，我们再讲一个十分有用的结果，即在勒贝格积分框架下的分部积分法。
+
+\noindent\textbf{定理10（分部积分法）}\quad 设 $\Phi(x)$ 和 $\Psi(x)$ 是 $[a,b]$ 区间上的绝对连续函数，其导数是勒贝格可积函数 $\varphi(x)$ 与 $\psi(x)$，则有
+\begin{equation}
+ \int_a^b\Phi(x)\psi(x)\,dx+\int_a^b\varphi(x)\Psi(x)\,dx
+ =\Phi(b)\Psi(b)-\Phi(a)\Psi(a).
+ \tag{22}
+\end{equation}
+
+\noindent\textbf{证}\quad 由绝对连续函数的性质，$\Phi(x)\Psi(x)$ 也是绝对连续的，而且几乎处处有
+\[
+ \frac{d}{dx}[\Phi(x)\Psi(x)]=\Phi(x)\psi(x)+\varphi(x)\Psi(x),
+\]
+双方在 $[a,b]$ 上积分即得(22)，证毕。
+
+\noindent\textbf{注}\quad 采用常见的写法，(22)就是
+\begin{equation}
+ \int_a^b\Phi(x)\psi(x)\,dx
+ =\left.\Phi(x)\Psi(x)\right|_a^b-\int_a^b\varphi(x)\Psi(x)\,dx.
+ \tag{23}
+\end{equation}
+
+\medskip
+\noindent\textbf{4. 二重积分与富比尼（Fubini）定理}\quad 本书介绍测度只讲了一维空间中集合的测度，原因是 $\mathbf R^n$ 中集合的测度从基本思想、基本性质来看虽与一维情况没有差别，计算要复杂得多。其原因在于随维数的增加，集合的构造要复杂多了。例如 $\mathbf R^1$ 中的开集必是至多可数多个开区间的并，但在高维空间则不然（这时的开区间要代以 $n$ 维开长方体 $\prod_{i=1}^n(a_i,b_i)$）。$\mathbf R^n$ 中的勒贝格测度正是以 $n$ 维长方体的体积 $\prod_{i=1}^n(b_i-a_i)$ 为基础，而可以通过外测度等一连串手续像 $\mathbf R^1$ 中的测度一样建立起来，而且也有可数可加性。有了可测集以后就有可测函数理论，就有勒贝格积分理论，而前面的那些结果都是成立的。正因为在这些基本方面都一致，为了避免过于冗长的计算，我们在前面就没有去讨论它，读者完全可以把 $\mathbf R^1$ 的理论平行地用于 $\mathbf R^n$。现在也一样，我们只限于介绍 $\mathbf R^2$ 的情况，对于 $\mathbf R^n$ 的情况，读者自己会得出清晰的表述。这里的重要结果的证明均略去。
+
+$\mathbf R^n$ 中的测度与积分理论终究还有与 $\mathbf R^1$ 不同之处。这就是化重积分为逐次积分的问题。下面我们恒认为所要讨论的函数 $f(x,y)$ 是在 $\mathbf R^2$ 全空间或充分大的矩形 $A=[a,b]\times[c,d]$ 上求积分，因为只要用积分区域 $\Omega$ 的特征函数 $\chi_\Omega(x,y)$ 去乘 $f(x,y)$，就可以把积分 $\iint_\Omega f(x,y)\,dx\,dy$ 化为 $\iint_{\mathbf R^2}\chi_\Omega f(x,y)\,dx\,dy$。如果 $f(x,y)$ 是 $A$ 上的连续函数，则由通常的微积分教材知
+\begin{equation}
+ \iint_A f(x,y)\,dx\,dy
+ =\int_a^b dx\int_c^d f(x,y)\,dy
+ =\int_c^d dy\int_a^b f(x,y)\,dx.
+ \tag{24}
+\end{equation}
+但若 $f(x,y)$ 仅是黎曼可积，§1 定理(11)则只给出
+\[
+ \iint_A f(x,y)\,dx\,dy
+ =\int_a^b dx\int_c^d f(x,y)\,dy
+ =\int_a^b dx\,\overline{\int_c^d}f(x,y)\,dy
+\]
+\[
+ =\int_c^d dy\int_a^b f(x,y)\,dx
+ =\int_c^d dy\,\overline{\int_a^b}f(x,y)\,dx,
+\]
+即内层积分换成了上、下积分。现在问，如果把黎曼可积改为勒贝格可积又当如何？这时我们有
+
+\noindent\textbf{定理11（富比尼（Fubini）定理）}\quad 设 $f(x,y)$ 在矩形 $A=[a,b]\times[c,d]$ 上勒贝格可积，则
+
+(1) 若视 $f(x,y)$ 为 $y$ 之函数而 $x$ 为参数，则对几乎所有 $x\in[a,b]$，$f(x,y)$ 是 $y$ 在 $[c,d]$ 上的勒贝格可积函数，而且
+\[
+ I(x)=\int_c^d f(x,y)\,dy
+\]
+在 $[a,b]$ 上勒贝格可积；
+
+(2) 将 $x$ 与 $y$ 对调，相应结果也成立；
+
+(3) 二重积分可以化为逐次积分即有
+\[
+ \iint_A f(x,y)\,dx\,dy
+ =\int_a^b dx\int_c^d f(x,y)\,dy
+ =\int_c^d dy\int_a^b f(x,y)\,dx.
+\]
+把这个结果用于测度问题，我们知道 $\Omega\subset A$ 为可测集的充分必要条件是特征函数 $\chi_\Omega(x,y)$ 为勒贝格可积，而且
+\[
+ m(\Omega)=\iint_A\chi_\Omega(x,y)\,dx\,dy.
+\]
+应用富比尼定理于 $\chi_\Omega(x,y)$ 有
+\[
+ m(\Omega)=\int_a^b dx\int_c^d\chi_\Omega(x,y)\,dy
+ =\int_c^d dy\int_a^b\chi_\Omega(x,y)\,dx.
+\]
+但是例如 $\int_c^d\chi_\Omega(x,y)\,dy=m_\Omega(x)$ 表示 $\Omega$ 在直线 $x=\text{常数}$ 上截出的一维集合的线性测度，因此我们又有
+
+\noindent\textbf{定理12}\quad 若 $\Omega\subset A$ 是可测集，则 $\Omega$ 与直线 $x=x_0$（或 $y=y_0$）之交线对几乎一切 $x_0$（或 $y_0$）为一维可测集，其测度 $m_\Omega(x_0)$（$m_\Omega(y_0)$）是 $x_0$（或 $y_0$）的勒贝格可积函数，而且
+\begin{equation}
+ m(\Omega)=\int_a^b m_\Omega(x)\,dx=\int_c^d m_\Omega(y)\,dy.
+ \tag{25}
+\end{equation}
+
+(24)中两个逐次积分相等就表示当 $f(x,y)$ 为勒贝格可积函数时逐次积分可以交换次序。但如果没有定理中给出的条件，交换次序一般是不可能的。下面是一个例子：
+\[
+\begin{aligned}
+ \int_0^1dx\int_0^\infty(e^{-xy}-e^{-2xy})\,dy
+ &=\int_0^1\left[\left.-\frac1x e^{-xy}\right|_0^\infty
+ +\left.\frac1x e^{-2xy}\right|_0^\infty\right]dx\\
+ &=\int_0^1\left(-\frac1x+\frac1x\right)dx=0.
+\end{aligned}
+\]
+但是
+\[
+\begin{aligned}
+ \int_0^\infty dy\int_0^1(e^{-xy}-2e^{-2xy})\,dx
+ &=\int_0^\infty\left[\left.-\frac1y e^{-xy}\right|_0^1
+ +\left.\frac1y e^{-2xy}\right|_0^1\right]dy\\
+ &=\int_0^\infty\frac{e^{-y}}{y}(e^{-y}-1)\,dy<0.
+\end{aligned}
+\]
+但是在一定条件下，逐次积分仍可交换积分次序：
+
+\noindent\textbf{定理13（托乃利（Tonelli）定理）}\quad 若 $f(x,y)\ge0$ 为可测函数，则(24)式中的三个积分中只要有一个存在，另外两个一定也存在，且(24)式成立。
+
+下一章中我们将再陈述这两个定理，但积分区域改为 $\mathbf R^n\times\mathbf R^m$。
+
+最后我们还要提一下，多重积分的变量变换公式
+\[
+ \int_{\Omega_x}f(x)\,dx
+ =\int_{\Omega_y}f[x(y)]\left|\frac{\partial(x^1,\ldots,x^n)}{\partial(y^1,\ldots,y^n)}\right|dy
+\]
+对勒贝格积分也成立，这里 $x=x(y)$ 是由 $\Omega_y$ 到 $\Omega_x$ 的 $C^1$ 映射且其逆也是。这个结论在最后一章中要反复用到，不过其证明涉及如何从测度的观点研究导数，于此只好暂略。

@@ -1,0 +1,503 @@
+\origpage{314--327}
+
+\BellaSection{3. Calcul des déterminants}
+
+La théorie c'est bien mais cela ne suffit pas toujours et si les mathématiques, jeu de l'esprit, tiennent dans la tête, elles passent aussi par les mains. Donc, au charbon! Comment fait-on pour calculer des déterminants et dans quel but.
+
+Soit $A=(a_{ij})_{1\le i,j\le n}$ une matrice de $M_n(K)$, qui peut être la matrice d'un endomorphisme dans une base, ou la matrice des composantes de $n$ vecteurs dans une base.
+
+On a
+\[
+\det A=\sum_{\sigma\in\mathfrak S_n}\varepsilon_\sigma a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}.
+\]
+
+Si on fixe les indices $i$ et $j$, le terme $a_{ij}$ figure dans les produits associés aux $\sigma$ de $\mathfrak S_n$ tels que $\sigma(i)=j$, et il y figure au degré 1. Si on groupe ensemble ces produits on pourra factoriser $a_{ij}$ et écrire
+\[
+\sum_{\substack{\sigma\in\mathfrak S_n\\\sigma(i)=j}}
+\varepsilon_\sigma a_{1,\sigma(1)}\cdots a_{i-1,\sigma(i-1)}a_{ij}a_{i+1,\sigma(i+1)}\cdots a_{n,\sigma(n)}
+=a_{ij}A_{ij}.
+\]
+
+\medskip\noindent\textsc{Définition 9.32.} --- \emph{Soit $A\in M_n(K)$. On appelle cofacteur de l'élément $a_{ij}$ de $A$, le facteur $A_{ij}$ de $a_{ij}$ quand on groupe tous les termes de $\det A$ contenant $a_{ij}$ en facteur.}
+
+\medskip\noindent\textsc{Théorème 9.33.} --- \emph{Soit $A\in M_n(K)$. On a}
+\[
+\det A=\sum_{j=1}^n a_{ij}A_{ij}
+\]
+\emph{(développement suivant la $i$ième ligne), ou}
+\[
+\det A=\sum_{i=1}^n a_{ij}A_{ij}
+\]
+\emph{(développement suivant la $j$ième colonne).}
+
+Travaillons en colonne par exemple. Chaque produit intervenant dans $\det A$ contient un terme de la $j$ième colonne, ($j$ étant fixé), et un seul, car les indices de colonnes, $\sigma(1),\ldots,\sigma(n)$ redonnent $\{1,\ldots,n\}$.
+
+On groupe donc ensemble les termes contenant $a_{1j}$, associés aux $\sigma$ tels que $\sigma(1)=j$, puis ceux contenant $a_{2j}$, ... et après factorisation de ces termes on obtient bien
+\[
+\det A=a_{1j}A_{1j}+a_{2j}A_{2j}+\cdots+a_{nj}A_{nj}.
+\]
+\bookend
+
+Si on dispose d'un moyen de calculer les $A_{ij}$, c'est terminé.
+
+\medskip\noindent\textsc{Définition 9.34.} --- \emph{Soit $A\in M_n(K)$. On appelle mineur relatif à $a_{ij}$ le déterminant $D_{ij}$ de la matrice d'ordre $n-1$ obtenue en retirant de $A$ la $i$ième ligne et la $j$ième colonne.}
+
+\medskip\noindent\textsc{Théorème 9.35.} --- \emph{On a $A_{ij}=(-1)^{i+j}D_{ij}$.}
+
+Donc le calcul de $\det A$ sera ramené à celui de $n$ déterminants d'ordre $n-1$, d'où une récurrence descendante.
+
+On commence par $i=n$, $j=n$ : $A_{nn}$ est obtenu en factorisant $a_{nn}$ dans
+\[
+\sum_{\substack{\sigma\in\mathfrak S_n\\\sigma(n)=n}}
+\varepsilon_\sigma a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n-1,\sigma(n-1)}a_{nn},
+\]
+donc on a
+\[
+A_{nn}=\sum_{\substack{\sigma\in\mathfrak S_n\\\sigma(n)=n}}
+\varepsilon_\sigma a_{1,\sigma(1)}\cdots a_{n-1,\sigma(n-1)}.
+\]
+
+Or si $\sigma(n)=n$, $\sigma$ ne permute entre eux que $1,2,\ldots,n-1$ et en notant $\sigma'=\sigma_{|\{1,\ldots,n-1\}}$, on a $\varepsilon_{\sigma'}=\varepsilon_\sigma$, puisque la signature de la permutation est
+\[
+\varepsilon_\sigma=\prod_{1\le i<j\le n}\frac{\sigma(i)-\sigma(j)}{i-j}
+\qquad\text{(définition 4.52)},
+\]
+et que, si $\sigma(n)=n$, chaque fois que $j=n$, on aura en numérateur les $n-1$ termes $\sigma(i)-n$ qui décrivent l'ensemble des $i-n$ dans un autre ordre. Ils se simplifient et il reste
+\[
+\varepsilon_\sigma=\prod_{1\le i<j\le n-1}\frac{\sigma(i)-\sigma(j)}{i-j}=\varepsilon_{\sigma'}.
+\]
+
+Donc
+\[
+A_{nn}=\sum_{\sigma'\in\mathfrak S_{n-1}}\varepsilon_{\sigma'}
+ a_{1,\sigma'(1)}\cdots a_{n-1,\sigma'(n-1)}
+\]
+est l'expression développée du déterminant de la matrice des $(a_{ij})_{1\le i,j\le n-1}$ obtenue en supprimant, dans $A$, la $n$ième ligne et la $n$ième colonne.
+
+Comme $(-1)^{n+n}=1$, l'expression $A_{nn}=(-1)^{n+n}D_{nn}$ est vérifiée.
+
+Pour $i$ et $j$ quelconques, on part de la matrice $A$ et, par des permutations, on va amener la $i$ième ligne en dernière position puis la $j$ième colonne en dernière position. On obtient une matrice $A'$. Pour les déterminants : il y a eu $n-i$ transpositions successives de la $i$ième ligne avec les suivantes, et $n-j$ transpositions de colonnes.
+
+Donc
+\[
+\det A=(-1)^{n-i+n-j}\det A'.
+\]
+Le cofacteur $A_{ij}$ de $a_{ij}$ sera donc le facteur de $a_{ij}$ dans $(-1)^{2n-i-j}\det A'$, mais dans $A'$, $a_{ij}$ est en $n$ième ligne, $n$ième colonne, donc
+\[
+A_{ij}=(-1)^{i+j}D'_{nn}
+\]
+avec $D'_{nn}$, mineur de $a'_{nn}=a_{ij}$ dans $A'$. Or $D'_{nn}$ se calcule dans la matrice obtenue, $A'$, en lui supprimant sa $n$ième ligne qui était la $i$ième de $A$ et sa $n$ième colonne qui était la $j$ième colonne de $A$. Comme la disposition relative des autres lignes et colonnes est inchangée, on a $D'_{nn}=D_{ij}$, déterminant de la matrice obtenue à partir de $A$ en lui supprimant la $i$ième ligne et la $j$ième colonne.
+
+Finalement on a bien $A_{ij}=(-1)^{i+j}D_{ij}$. \bookend
+
+\medskip\noindent\textsc{9.36. Remarque.} Pour calculer $\det A$ en développant suivant une ligne, ou une colonne, on peut remarquer que les cofacteurs des termes nuls de cette ligne (ou de cette colonne) n'interviendront pas. On a donc intérêt à choisir la ligne, (ou la colonne) ayant le plus de termes nuls.
+
+On a même intérêt à «faire apparaître des zéros» et ceci par des combinaisons de lignes, ou de colonnes car :
+
+\medskip\noindent\textsc{Théorème 9.37.} --- \emph{Soit $A\in M_n(K)$. On note $C_1,\ldots,C_n$ ses $n$ vecteurs colonnes et $L_1,\ldots,L_n$ ses vecteurs lignes. Si $A'$ est la matrice obtenue en ajoutant à une colonne $C_j$ une combinaison linéaire des autres on a $\det A=\det A'$. De même $\det A$ ne change pas si on ajoute à une ligne $L_i$ une combinaison linéaire des autres.}
+
+Si on remplace $C_j$ par $C_j+\sum_{\substack{k=1\\k\ne j}}^n\lambda_kC_k$, la $n$-linéarité de $\det A$ par rapport à ses vecteurs colonnes donnera
+\[
+\det A'=\det A+\sum_{\substack{k=1\\k\ne j}}^n\lambda_k
+\det(C_1,\ldots,\boxed{C_k},\ldots,C_n),
+\]
+$C_k$ étant en $j$ième position.
+
+Comme $j\ne k$, la colonne $C_k$ figure aussi en $k$ième position. On a deux vecteurs colonnes égaux, or $\det$ est forme alternée par rapport aux vecteurs colonnes donc tous ces termes sont nuls. Le résultat pour les lignes s'obtient en considérant $\det A=\det({}^tA)$, (Théorème 9.29). \bookend
+
+Voyons des cas particuliers intéressants.
+
+\medskip\noindent\textsc{9.38. Déterminant d'une matrice triangulaire}
+
+Soit
+\[
+T=\begin{pmatrix}
+ t_{11}&t_{12}&\cdots&t_{1n}\\
+ 0&t_{22}&\cdots&t_{2n}\\
+ 0&0&t_{33}&\cdots\\
+ \vdots&\vdots&\ddots&\ddots\\
+ 0&0&\cdots&t_{nn}
+\end{pmatrix}
+\]
+une matrice dont tous les termes sous la diagonale sont nuls.
+
+On a $\det T=t_{11}t_{22}\cdots t_{nn}$, produit des termes diagonaux.
+
+Car en développant par rapport à la 1re colonne, seul $t_{11}$ est non nul donc
+\[
+\det T=t_{11}\begin{vmatrix}
+ t_{22}&t_{23}&\cdots&t_{2n}\\
+ 0&t_{33}&\cdots&\vdots\\
+ \vdots&\ddots&\ddots&\vdots\\
+ 0&\cdots&0&t_{nn}
+\end{vmatrix},
+\]
+(car $(-1)^{1+1}=1$), et on continue en développant le déterminant d'ordre $n-1$, triangulaire, obtenu. \bookend
+
+\medskip\noindent\textsc{9.39. Cas d'une matrice triangulaire par blocs}
+
+Soit
+\[
+A=\begin{pmatrix}A_{11}&A_{12}\\0&A_{22}\end{pmatrix}
+\]
+une matrice de $M_n(K)$, avec $A_{11}$ carrée d'ordre $p$, $A_{22}$ carrée d'ordre $q$ et $A_{12}$ matrice à $p$ lignes et $q$ colonnes. On a :
+\[
+\det A=\det A_{11}\det A_{22}.
+\]
+En effet
+\[
+\det A=\sum_{\sigma\in\mathfrak S_n}\varepsilon_\sigma
+ a_{1,\sigma(1)}\cdots a_{p,\sigma(p)}a_{p+1,\sigma(p+1)}\cdots a_{p+q,\sigma(p+q)}.
+\]
+
+Dans le terme général de cette somme, si pour un $i>p$ on a $\sigma(i)\le p$ le terme $a_{i,\sigma(i)}$ est nul. Donc il ne reste que des termes associés aux $\sigma$ de $\mathfrak S_n$ qui permutent ensemble $\{p+1,\ldots,n\}$ et donc aussi ensemble $\{1,\ldots,p\}$.
+
+Soit une permutation, elle induit \BellaCorrection{une permutation}{un permutation} $\sigma'$ de $\{1,\ldots,p\}$, définie par $\sigma'(i)=\sigma(i)$ si $i\le p$, et une permutation $\sigma''$ de $\{1,\ldots,q\}$ définie, (c'est plus subtil), par
+\[
+\sigma(p+k)=p+\sigma''(k)
+\]
+car les éléments $p+1,p+2,\ldots,p+q=n$ sont permutés par $\sigma$, donc si $k$ décrit $\{1,\ldots,q\}$, l'application $k\longmapsto\sigma(p+k)-p$ est une permutation de $\{1,\ldots,q\}$.
+
+De plus $\varepsilon_\sigma=\varepsilon_{\sigma'}\varepsilon_{\sigma''}$, (vérification laissée au lecteur) d'où
+\[
+\begin{aligned}
+\det A
+&=\sum_{\substack{\sigma'\in\mathfrak S_p\\\sigma''\in\mathfrak S_q}}
+\varepsilon_{\sigma'}\varepsilon_{\sigma''}
+ a_{1,\sigma'(1)}\cdots a_{p,\sigma'(p)}
+ a_{p+1,p+\sigma''(1)}\cdots a_{p+q,p+\sigma''(q)}\\
+&=\left(\sum_{\sigma'\in\mathfrak S_p}\varepsilon_{\sigma'}a_{1,\sigma'(1)}\cdots a_{p,\sigma'(p)}\right)
+\left(\sum_{\sigma''\in\mathfrak S_q}\varepsilon_{\sigma''}a_{p+1,p+\sigma''(1)}\cdots a_{p+q,p+\sigma''(q)}\right),
+\end{aligned}
+\]
+où on a factorisé $\det(A_{11})$ qui est constant par rapport à $\sigma''$ et on trouve bien
+\[
+\det A=\det A_{11}\det A_{22}.
+\]
+
+Ce résultat se généralise, par récurrence à
+\[
+A=\begin{pmatrix}
+A_{11}&A_{12}&\cdots&A_{1k}\\
+0&A_{22}&\cdots&A_{2k}\\
+\vdots&\ddots&\ddots&\vdots\\
+0&\cdots&0&A_{kk}
+\end{pmatrix}
+\qquad\text{et}\qquad
+\det A=\prod_{i=1}^k\det A_{ii}.
+\]
+
+Les cofacteurs, (définition 9.32) vont nous servir à calculer l'inverse d'une matrice carrée $A$ inversible.
+
+\medskip\noindent\textsc{Définition 9.40.} --- \emph{Soit $A\in M_n(K)$ on appelle comatrice de $A$, la matrice carrée notée $\operatorname{com}(A)$ dont le terme général est $A_{ij}$, cofacteur de $a_{ij}$.}
+
+\medskip\noindent\textsc{Théorème 9.41.} --- \emph{Soit $A\in M_n(K)$. On a}
+\[
+A\,{}^t\!\operatorname{com}(A)=(\det A)I_n={}^t\!\operatorname{com}(A)\,A.
+\]
+
+Posons $B=(\beta_{ij})_{1\le i,j\le n}={}^t\!\operatorname{com}(A)$. On a $\beta_{ij}=A_{ji}$ avec $A_{ij}$ cofacteur de $a_{ij}$ dans $A$.
+
+Soit $D=AB$, son terme général est
+\[
+d_{rs}=\sum_{k=1}^n a_{rk}\beta_{ks}=\sum_{k=1}^n a_{rk}A_{sk}.
+\]
+
+Mais alors, si $s=r$,
+\[
+d_{rr}=\sum_{k=1}^n a_{rk}A_{rk}
+\]
+est l'expression de $(\det A)$ obtenue en développant suivant la $r$ième ligne, donc $d_{rr}=\det A$.
+
+Si $s\ne r$, l'expression $d_{rs}$ est le déterminant de la matrice $A'$ obtenue en remplaçant la $s$ième ligne de $A$ par la $r$ième de $A$, déterminant calculé en développant $\det A'$ suivant sa $s$ième ligne.
+
+En effet, les cofacteurs $A'_{sk}$ sont égaux à $(-1)^{s+k}D'_{sk}$ avec $D'_{sk}$, mineur obtenu dans $A'$ en supprimant la $s$ième ligne et la $k$ième colonne. Mais alors, ce qui reste dans $A'$ vient de $A$, donc $D'_{sk}=D_{sk}$ et $A'_{sk}=A_{sk}$.
+
+On a donc
+\[
+\sum_{k=1}^n a_{rk}A_{sk}=\sum_{k=1}^n a'_{sk}A'_{sk}=\det A'=0
+\]
+car, dans $A'$, la ligne $L_r$ figure en $r$ième ligne et aussi en $s$ième ligne.
+
+Finalement, $\forall r\ne s$, $d_{rs}=0$ d'où
+\[
+A\,{}^t\!\operatorname{com}(A)=(\det A)I_n.
+\]
+La formule $(\det A)I_n={}^t\!\operatorname{com}(A)\,A$ se justifie de façon analogue en travaillant en colonnes. \bookend
+
+\medskip\noindent\textsc{Théorème 9.42.} --- \emph{Soit $A\in M_n(K)$, $A$ est inversible si et seulement si $\det A\ne0$ et}
+\[
+A^{-1}=\frac1{\det A}\,{}^t\!\operatorname{com}(A).
+\]
+
+Si $\det A\ne0$, le théorème 9.41 donne
+\[
+A\frac1{\det A}{}^t\!\operatorname{com}(A)
+=\frac1{\det A}{}^t\!\operatorname{com}(A)A=I_n
+\]
+d'où $A$ inversible et son inverse $A^{-1}$ connu.
+
+Si $A$ inversible, l'égalité $A\cdot A^{-1}=I_n$ donne $(\det A)(\det A^{-1})=1$ donc $\det A\ne0$ d'où le théorème. \bookend
+
+\medskip\noindent\textsc{9.43. Remarque.} On emploie aussi le terme de matrice régulière lorsque $\det A\ne0$. C'est parce qu'on peut introduire la notion de déterminant, et de matrice, lorsque les scalaires sont dans un anneau commutatif.
+
+Dans ce cas cependant, la non nullité du scalaire $\det A$ n'implique pas l'existence d'un inverse. Les deux notions de matrice régulière et de matrice inversible deviennent alors distinctes.
+
+\BellaSection{4. Applications des déterminants}
+
+Nous avons rencontré plusieurs fois le terme rang. D'abord le rang de $f\in L(E,F)$ : c'est $\dim f(E)$ lorsque ce sous-espace est de dimension finie, (définition 6.86).
+
+Puis le rang d'une matrice $A$, plus grand entier $r$ tel qu'il existe une matrice carrée d'ordre $r$, inversible, extraite de $A$, (définition 8.26).
+
+Il nous manque la définition du rang d'une famille de vecteurs, qui aurait pu être donnée dans les espaces vectoriels.
+
+\medskip\noindent\textsc{Définition 9.44.} --- \emph{On appelle rang d'un ensemble $(X_i)_{i\in I}$ de vecteurs de $E$ vectoriel, le plus grand entier $r$ tel que l'on puisse extraire de $(X_i)_{i\in I}$ une sous-famille libre de $r$ vecteurs.}
+
+Le plus souvent ceci s'applique avec $\operatorname{card}I$ fini, mais ce n'est pas obligé.
+
+Nous allons relier toutes ces notions.
+
+\medskip\noindent\textsc{Théorème 9.45.} --- \emph{Le rang d'un système fini de vecteurs de $E$ espace vectoriel de dimension finie, est le rang de la matrice de ses coordonnées dans une base quelconque, $B$, de $E$.}
+
+Soit $E$ de dimension $n$ sur $K$, $x_1,\ldots,x_p$ des vecteurs de $E$ et $B=(e_1,\ldots,e_n)$ une base de $E$. Soit par ailleurs $X_1,\ldots,X_p$ les vecteurs colonnes des coordonnées des $x_j$ dans la base $B$.
+
+Soit $r$ le rang de la famille $\{x_1,\ldots,x_p\}$ et $r'$ celui de la matrice
+\[
+A=(X_1\mid X_2\mid\cdots\mid X_p),
+\]
+matrice $n$ lignes, $p$ colonnes des coordonnées des $x_j$.
+
+On suppose la famille $(x_1,\ldots,x_r)$ libre, sinon, on permute les vecteurs de façon à ce que les $r$ premiers soient libres et dans la matrice $A$, on permutera de la même façon les colonnes, ce qui ne changera pas le rang de la matrice obtenue puisque le caractère inversible d'une matrice se traduit finalement par un déterminant $\ne0$, et qu'une permutation de colonnes transforme éventuellement un déterminant en son opposé.
+
+On a forcément $r\le n$. Si $r=n$, la famille $(x_1,\ldots,x_n)$ est libre dans $E$ de dimension $n$ donc $\det_B(x_1,\ldots,x_n)\ne0$, (Théorème 9.19), d'où la \BellaCorrectionNote{matrice carrée extraite de $A$ avec les $n$ premières colonnes et les $n$ lignes, inversible}{matière carrée extraite de $A$ avec les $n$ premières colonnes et les $n$ lignes inversibles}{Il s'agit de la matrice carrée d'ordre $n$ formée des $n$ premières colonnes; c'est cette matrice qui est inversible.}, (Théorème 9.42), donc rang $A\ge n$. Comme il n'y a que $n$ lignes dans $A$, forcément le rang de $A$ est $\le n$ donc on a $r'=\operatorname{rang}A=n$.
+
+Si $r<n$, le théorème de la base incomplète nous dit qu'il existe $n-r$ vecteurs $e_{i_1},e_{i_2},\ldots,e_{i_{n-r}}$ extraits de $B$ tels que $(x_1,\ldots,x_r,e_{i_1},\ldots,e_{i_{n-r}})$ soit de rang $n$.
+
+Soit $A'$ matrice des coordonnées de ces vecteurs dans la base $B$. On a
+\[
+A'=(X_1\mid X_2\mid\cdots\mid X_r\mid e_{i_1}\mid\cdots\mid e_{i_{n-r}}),
+\]
+les $r$ premières colonnes étant les $r$ premières colonnes de $A$ et les $n-r$ dernières colonnes étant formées de termes tous nuls sauf un valant 1, situé sur les lignes distinctes, d'indices $i_1,\ldots,i_{n-r}$.
+
+Si on permute ces lignes pour les amener en positions respectives $r+1,r+2,\ldots,n$, on obtient la matrice
+\[
+A''=\left(\begin{array}{c|c}
+X'_1\ \ X'_2\ \ \cdots\ \ X'_r&0\\\hline
+*&I_{n-r}
+\end{array}\right),
+\]
+où $X'_1,\ldots,X'_r$ sont les vecteurs colonnes des coordonnées de $x_1,\ldots,x_r$ mais les lignes d'indices $i_1,\ldots,i_{n-r}$ ayant été permutées dans les positions $r+1,\ldots,n$.
+
+On a $\det A'\ne0$, donc aussi $\det A''\ne0$, ($\det A''=\pm\det A'$). En développant successivement $\det A''$ par rapport à ses dernières colonnes il vient
+\[
+\det A''=\begin{vmatrix}
+x'_{11}&\cdots&x'_{1r}\\
+\vdots&&\vdots\\
+x'_{r1}&\cdots&x'_{rr}
+\end{vmatrix}\ne0.
+\]
+Comme les lignes de ce déterminant d'ordre $r$ proviennent de lignes de la matrice des $r$ premières colonnes de $A'$, donc de $A$, on a finalement extrait de $A$ un déterminant d'ordre $r$ non nul, d'où $(\operatorname{rang}A)\ge r$.
+
+Puis avec $r'=\operatorname{rang}A$, il y a un déterminant non nul d'ordre $r'$ extrait de $A$. Soient $j_1,\ldots,j_{r'}$ les indices de colonnes associées : la famille $\{X_{j_1},\ldots,X_{j_{r'}}\}$ est libre, sinon l'un des vecteurs serait combinaison linéaire des autres, mais alors, dans la matrice carrée d'ordre $r'$ extraite inversible, une colonne serait combinaison linéaire des autres, on aurait un déterminant nul, c'est absurde.
+
+Mais alors le rang $r$ des vecteurs est $\ge r'$, d'où $r=r'$. \bookend
+
+\medskip\noindent\textsc{Corollaire 9.46.} --- \emph{Le rang de $f\in L(E,F)$, $E$ et $F$ espaces de dimension finie, est le rang de la matrice $A$ associée à $f$ dans des bases de $E$ et $F$ données.}
+
+Car si $n=\dim F$, $p=\dim E$, $\{e_1,\ldots,e_p\}$ base de $E$ et $C=(c_1,\ldots,c_n)$ base de $F$, on a
+\[
+\operatorname{rang}f=\dim f(E)=\operatorname{rang}(f(e_1),\ldots,f(e_p)),
+\]
+(famille de vecteurs), soit rang $f=$ rang de la matrice des composantes des $f(e_j)$ dans la base $C$ de $F$, mais cette matrice c'est précisément $A$. \bookend
+
+Cette liaison entre rang d'une famille de vecteurs, d'un endomorphisme et d'une matrice va nous permettre de traiter la résolution des systèmes d'équations linéaires.
+
+\medskip\noindent\textsc{9.47.} On appelle système linéaire de $p$ équations à $n$ inconnues sur un corps $K$ la donnée de $p$ équations du type
+\[
+(I)\qquad
+\begin{cases}
+a_{11}x_1+\cdots+a_{1n}x_n=\beta_1,\\
+a_{21}x_1+\cdots+a_{2n}x_n=\beta_2,\\
+\hfill\vdots\\
+a_{p1}x_1+\cdots+a_{pn}x_n=\beta_p,
+\end{cases}
+\]
+où les $a_{ij}$ et les $\beta_i$ sont dans $K$. On appelle solution de ce système tout $n$-uplet $(x_1,\ldots,x_n)$ vérifiant $(I)$.
+
+\medskip\noindent\textsc{9.48.} Un tel système est dit homogène si et seulement si chaque $\beta_i=0$ (et dans ce cas il admet déjà le $n$-uplet $(0,0,\ldots,0)$ comme solution).
+
+On peut interpréter $(I)$ de 2 façons.
+
+\emph{1re interprétation.} On introduit les $n$ vecteurs $V_1,\ldots,V_n$ de $K^p$ définis par
+\[
+V_j=\sum_{i=1}^p a_{ij}e_i
+\]
+si $(e_1,\ldots,e_p)$ est une base de $K^p$, ainsi que
+\[
+B=\sum_{i=1}^p\beta_i e_i.
+\]
+Alors $(x_1,\ldots,x_n)$ est solution de $(I)$ si et seulement si $B\in\operatorname{Vect}(V_1,\ldots,V_n)$ et
+\[
+B=\sum_{j=1}^n x_jV_j.
+\]
+
+\emph{2e interprétation.} On introduit $E=K^n$ et $F=K^p$ rapportés à des bases $B$ et $C$, et $f$ \BellaCorrectionNote{l'application linéaire}{l'endomorphisme}{Ici $f:E\to F$ avec $E=K^n$ et $F=K^p$; si $p\ne n$, $f$ n'est pas un endomorphisme.} de matrice $A=(a_{ij})_{\substack{1\le i\le p\\1\le j\le n}}$ dans ces bases.
+
+Si $b$ est le vecteur de $F$ de coordonnées $\beta_1,\ldots,\beta_p$, on aura $x$ de coordonnées $(x_1,\ldots,x_n)$ dans $B$ est solution si et seulement si le vecteur $x$ ayant les $x_i$ pour coordonnées dans $B$ vérifie $f(x)=b$, égalité vectorielle ayant pour transcription matricielle $AX=B$, avec $X$ matrice colonne d'ordre $n$ des $x_j$ et $B$ matrice d'ordre $p$ des $\beta_j$.
+
+Donc $(I)$ aura des solutions si et seulement si $b\in\operatorname{Im}f$, et dans ce cas, si $x_0$ est une solution, toute autre solution vérifiant $f(x)=f(x_0)$ est telle que $f(x-x_0)=0$, (linéarité de $f$), d'où $x-x_0\in\ker f$ et $x\in x_0+\ker f$.
+
+Comme réciproquement pour $x_0$ solution de $(I)$ et $t\in\ker f$ on aura $f(x_0+t)=f(x_0)+f(t)=b$, on sait déjà que si le système $(I)$ a des solutions ce sont les éléments d'un espace affine $x_0+\ker f$. Mais il peut ne pas y avoir de solutions.
+
+Considérons donc la condition $b\in\operatorname{Im}f$. Le sous-espace $\operatorname{Im}f$ de $K^p$ est de rang $r$, $r$ rang de $f$ donc rang de la matrice $A$, soit encore rang des vecteurs $V_1,\ldots,V_n$ de la 1re interprétation.
+
+\emph{1er cas : rang $r=p=$ nombre d'équations.} Alors $\operatorname{Im}f=K^p$ contient forcément $b$ donc il y a des antécédents $x_0$ tels que $f(x_0)=b$.
+
+\medskip\noindent\textsc{9.49.} \emph{Si le rang $r$ du système est égal au nombre, $p$, d'équations le système admet des solutions qui forment un espace affine de dimension $n-p$ ($n$ nombre d'inconnues).}
+
+En effet, rang $f+\dim\ker f=\dim E=n\Rightarrow\dim(\ker f)=n-p$. \bookend
+
+\emph{2e cas : rang $r<p$.} Il y a des équations en trop : les ennuis commencent.
+
+Prenons l'interprétation vectorielle. La famille $(V_1,\ldots,V_n)$ des vecteurs colonnes de $A$ est de rang $r$ dans $K^p$. Il existe donc une sous-famille $\{V_{j_1},\ldots,V_{j_r}\}$ extraite libre, et $\forall j\le n$, $j\notin\{j_1,\ldots,j_r\}$, on a $V_j\in\operatorname{Vect}(V_{j_1},\ldots,V_{j_r})$ d'où $\operatorname{Vect}(V_1,\ldots,V_n)=\operatorname{Vect}(V_{j_1},\ldots,V_{j_r})$ et la condition d'existence des solutions est ramenée à :
+\[
+((I)\text{ a des solutions})\Longleftrightarrow(B\in\operatorname{Vect}(V_{j_1},\ldots,V_{j_r})).
+\]
+Comme la famille $(V_{j_1},\ldots,V_{j_r})$ est libre, ceci équivaut à : $(V_{j_1},\ldots,V_{j_r},B)$ liée (Théorème 6.61), donc\footnote{\textbf{校勘：}原文写作“rang de cette famille $<r$”。但该族已经包含 $r$ 个自由向量，故其秩至少为 $r$；增广后的 $r+1$ 个向量相关，应写成秩 $<r+1$，于是秩恰为 $r$。}
+\[
+\Longleftrightarrow\ \operatorname{rang}\text{ de cette famille}<r+1,
+\]
+(donc $=r$ puisque $V_{j_1},\ldots,V_{j_r}$ est déjà libre),
+\[
+\Longleftrightarrow\ \text{rang de la matrice des composantes de ces vecteurs est }r,
+\]
+\[
+\Longleftrightarrow\ \text{tous les mineurs d'ordre }r+1\text{ sont nuls.}
+\]
+
+Comme $(V_{j_1},\ldots,V_{j_r})$ est libre, il existe un déterminant d'ordre $r$ non nul dans la matrice des composantes de ces vecteurs. Soient $i_1,\ldots,i_r$ les lignes correspondantes.
+
+Les inconnues d'indices $j_k$, $1\le k\le r$ sont dites principales et les équations d'indices $i_k$, $1\le k\le r$ sont dites principales.
+
+Si on a une solution à $(I)$, tous les mineurs d'ordre $r+1$ de la matrice
+\[
+M=\begin{pmatrix}
+a_{1,j_1}&a_{1,j_2}&\cdots&a_{1,j_r}&\beta_1\\
+a_{2,j_1}&a_{2,j_2}&\cdots&a_{2,j_r}&\beta_2\\
+\vdots&\vdots&&\vdots&\vdots\\
+a_{p,j_1}&a_{p,j_2}&\cdots&a_{p,j_r}&\beta_p
+\end{pmatrix}
+\]
+étant nuls, en particulier les $p-r$ déterminants obtenus en prenant la ligne de rang $i\notin\{i_1,\ldots,i_r\}$ :
+\[
+C_i=\begin{vmatrix}
+a_{i_1,j_1}&\cdots&a_{i_1,j_r}&\beta_{i_1}\\
+\vdots&&\vdots&\vdots\\
+a_{i_r,j_1}&\cdots&a_{i_r,j_r}&\beta_{i_r}\\
+a_{i,j_1}&\cdots&a_{i,j_r}&\beta_i
+\end{vmatrix}
+\]
+doivent être nuls.
+
+\medskip\noindent\textsc{9.50.} Ces $p-r$ déterminants sont appelés les caractéristiques du système car on va voir que, réciproquement, s'ils sont nuls on a des solutions.
+
+En effet, si on considère les $C_i$ on s'aperçoit que pour $i'\ne i$ on passe de $C_i$ à $C_{i'}$, en ne changeant que la dernière ligne, ce qui ne change pas les cofacteurs des termes de la dernière ligne.
+
+Soient donc $\alpha_1,\ldots,\alpha_r,\beta$ les cofacteurs de cette dernière ligne, on a
+\[
+C_i=\alpha_1a_{i,j_1}+\alpha_2a_{i,j_2}+\cdots+\alpha_ra_{i,j_r}+\beta\beta_i,
+\]
+et considérons
+\[
+\alpha_1V_{j_1}+\alpha_2V_{j_2}+\cdots+\alpha_rV_{j_r}+\beta B.
+\]
+La $k$ième coordonnée est
+\[
+\alpha_1a_{k,j_1}+\alpha_2a_{k,j_2}+\cdots+\alpha_ra_{k,j_r}+\beta\beta_k,
+\]
+c'est donc le déterminant
+\[
+\begin{vmatrix}
+a_{i_1,j_1}&\cdots&a_{i_1,j_r}&\beta_{i_1}\\
+\vdots&&\vdots&\vdots\\
+a_{i_r,j_1}&\cdots&a_{i_r,j_r}&\beta_{i_r}\\
+a_{k,j_1}&\cdots&a_{k,j_r}&\beta_k
+\end{vmatrix},
+\]
+qui est toujours nul si on a supposé tous les caractéristiques nuls car si $k\notin\{i_1,\ldots,i_r\}$, on a un caractéristique, donc 0, et si $k\in\{i_1,\ldots,i_r\}$\footnote{\textbf{校勘：}原文为“$k\in\{i_1,\ldots,i_2\}$”。这里应是全部 $r$ 个主方程指标 $i_1,\ldots,i_r$；当 $k$ 取其中之一时，该行列式出现两行相同。} on a 2 lignes égales : on a un vecteur nul.
+
+Comme $\beta$, le cofacteur de $\beta_i$ dans $C_i$ est
+\[
+\begin{vmatrix}
+a_{i_1,j_1}&\cdots&a_{i_1,j_r}\\
+\vdots&&\vdots\\
+a_{i_r,j_1}&\cdots&a_{i_r,j_r}
+\end{vmatrix}\ne0,
+\]
+la nullité du vecteur implique
+\[
+B=-\frac1\beta(\alpha_1V_{j_1}+\cdots+\alpha_rV_{j_r})\in\operatorname{Vect}(V_{j_1},\ldots,V_{j_r})
+\]
+d'où l'existence de solutions. \bookend
+
+On vient de justifier le théorème de Rouché.
+
+\medskip\noindent\textsc{Théorème 9.51. (dit de Rouché).} --- \emph{Soit un système de $p$ équations à $n$ inconnues de rang $r$.}
+
+\emph{Si $r=p$, le système a des solutions qui forment un espace affine de dimension $n-r$.}
+
+\emph{Si $r<p$ et si l'un des $p-r$ \BellaCorrection{caractéristiques}{caractéristique} est non nul, il n'y a pas de solutions.}
+
+\emph{Si $r<p$ et si les $p-r$ caractéristiques sont tous nuls, il y a des solutions qui forment un espace affine de dimension $n-r$.}
+
+\medskip\noindent\textsc{Remarque 9.52.} --- Si le système est homogène, (9.48), il y a toujours la solution nulle, c'est donc que, le cas échéant, les caractéristiques sont nuls, ce qui est évident leur dernière colonne étant nulle.
+
+\medskip\noindent\textsc{Remarque 9.53.} --- On détermine le rang $r$ du système, quand on extrait un déterminant, $D_r$, non nul d'ordre $r$, on obtient les $p-r$ caractéristiques en le bordant.
+
+On prend une équation non principale, (la $i$ième) et sous $D_r$ on met la ligne $L$ des coefficients des inconnues principales ainsi que du second membre $\beta_i$ en fin de ligne, et on borde à droite $D_r$ par la colonne $C$ des coefficients «second membre» $\beta_{i_k}$ d'indices correspondants aux équations principales, $C$ se terminant en bas par $\beta_i$.
+\[
+\begin{array}{c|c}
+D_r&C\\\hline
+L&\beta_i
+\end{array}
+\]
+Cette technique peut servir \BellaCorrection{entre autres}{entre autre} dans l'étude des vecteurs propres en dimension finie.
+
+\medskip\noindent\textsc{Remarque 9.54.} --- \emph{Comment trouve-t-on, les solutions ?}
+
+Supposons d'abord que $n=p=r$ : le système $(I)$ s'écrit donc matriciellement $(I):AX=B$ avec $A\in GL_n(K)$, $X$ et $B$ matrices colonnes d'ordre $n$.
+
+Il a une solution unique : $X=A^{-1}B$.
+
+Comme
+\[
+A^{-1}=\frac1{\det A}{}^t\!\operatorname{com}(A),
+\]
+si on note $A_{ij}$ le cofacteur de $a_{ij}$ on a
+\[
+X=\frac1{\det A}\,{}^t\!\operatorname{com}(A)B.
+\]
+La $i$ième coordonnée est
+\[
+x_i=\frac1{\det A}(A_{1i}\ A_{2i}\ \cdots\ A_{ni})
+\begin{pmatrix}\beta_1\\\vdots\\\beta_n\end{pmatrix}
+\]
+car la $i$ième ligne de ${}^t\!\operatorname{com}(A)$ vient de la $i$ième colonne de la comatrice, soit encore
+\[
+x_i=\frac1{\det A}\sum_{k=1}^n\beta_kA_{ki}.
+\]
+Or $\sum_{k=1}^n\beta_kA_{ki}$ est le développement suivant la $i$ième colonne du déterminant de la matrice $A_i$ obtenue en remplaçant la $i$ième colonne de $A$ par celle des seconds membres.
+
+\medskip\noindent\textsc{9.55.} Un tel système (avec $A$ inversible), est dit de Cramer et les formules
+\[
+x_i=\frac{
+\begin{vmatrix}
+a_{11}&\cdots&a_{1,i-1}&\beta_1&a_{1,i+1}&\cdots&a_{1n}\\
+\vdots&&\vdots&\vdots&\vdots&&\vdots\\
+a_{n1}&\cdots&a_{n,i-1}&\beta_n&a_{n,i+1}&\cdots&a_{nn}
+\end{vmatrix}}
+{\det((a_{uv})_{1\le u,v\le n})}
+\]
+sont \BellaCorrection{dites}{dits} de Cramer.
+
+\emph{Cas général de $p$ équations à $n$ inconnues de rang $r$, et lorsque les $p-r$ caractéristiques sont nuls.} On choisit des valeurs arbitraires des $n-r$ inconnues non principales, et il reste un système de Cramer de rang $r$ à résoudre.

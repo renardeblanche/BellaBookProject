@@ -1,0 +1,26 @@
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[BellaInk] (current page.south west) rectangle (current page.north east);
+  \fill[BellaBlue] (current page.south west) rectangle ([xshift=18mm]current page.north west);
+  \fill[BellaTeal] ([yshift=18mm]current page.south west) rectangle ([yshift=24mm]current page.south east);
+  \node[anchor=west,text=white] at ([xshift=7mm,yshift=42mm]current page.center)
+    {\sffamily\fontsize{40}{46}\selectfont\bfseries 计算物理学};
+  \node[anchor=west,text=white!90] at ([xshift=7mm,yshift=6mm]current page.center)
+    {\sffamily\fontsize{18}{22}\selectfont 彭良友\quad 梁昊\quad 陈基\quad 编著};
+  \node[anchor=west,text=white!72] at ([xshift=7mm,yshift=-23mm]current page.center)
+    {\sffamily\large “101计划”核心教材·物理学领域};
+  \node[anchor=west,text=white!58] at ([xshift=7mm,yshift=-88mm]current page.center)
+    {\sffamily\small BellaBook 忠实校勘重排版 · 2026};
+\end{tikzpicture}
+\null\clearpage
+
+\thispagestyle{empty}
+\vspace*{22mm}
+\begin{flushright}
+{\fontsize{34}{40}\selectfont\bfseries 计算物理学}\par
+\vspace{18mm}
+{\Large 彭良友\quad 梁昊\quad 陈基\quad 编著}\par
+\vfill
+{\large 北京大学出版社}\par
+\end{flushright}
+\clearpage

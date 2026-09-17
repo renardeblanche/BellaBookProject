@@ -1,0 +1,146 @@
+\subsection*{5. $C^\infty$ 函数}
+
+现在回到实变量 $x=(x_1,\ldots,x_n)$ 的 $C^\infty$ 函数的研究。与复变量解析函数不同的是，一个实变量的 $C^\infty$ 函数可以在一个开集上不恒为0，而在另一个相当大的开集上恒为0。前面我们已经见到过一个这样的例子，但是以后用得最多的是
+\begin{equation}
+ f(x)=
+ \begin{cases}
+ \exp\!\left(\dfrac{1}{|x|^2-1}\right),& |x|<1,\\[4pt]
+ 0,& |x|\ge1.
+ \end{cases}
+ \tag{24}
+\end{equation}
+它在球面 $|x|=1$ 上也是 $C^\infty$ 的，这是很容易证明的。
+
+在往下讲之前，先介绍一个概念和记号。
+
+\noindent\textbf{定义3}\quad 设 $f(x)$ 定义于 $\Omega\subset\mathbb R^n$ 上，我们称使得 $f(x)\ne0$ 的点 $x$ 之集合的闭包为其支集，并记为
+\[
+ \operatorname{supp}f=\overline{\{x;\ f(x)\ne0\}}.
+\]
+$\operatorname{supp}f$ 一定是相对于 $\Omega$ 的闭集。要注意，并不是 $f(x)$ 在 $\operatorname{supp}f$ 上不为0。例如定义在 $x\ne0$ 处的 $f(x)=\sin\dfrac1x$，$f\!\left(\dfrac1{n\pi}\right)=0$，但在 $\dfrac1{n\pi}$ 的任意小邻域中都有使 $\sin\dfrac1x\ne0$ 的 $x$ 点，所以 $\dfrac1{n\pi}$ 虽然使 $f(x)=0$ 却属于其支集。而且虽支集 $J=\{x;\ x\in\mathbb R,\ x\ne0\}$ 的点，还要注意，这个例子中的 $\Omega=\{x;\ x\in\mathbb R,\ x\ne0\}$ 对于 $\mathbb R$ 并非闭集，而是开集，但是对于 $\Omega$ 是一个闭集。一个集合为开为闭需视相对于哪个集合而言，这对我们理解何为开集、何为闭集大有关系，这就是子空间拓扑问题，我们在第六章中会解释这个问题。总之，$C^\infty$ 函数与解析函数是完全不同的对象。
+
+我们下面用得最多的将是具有紧支集的 $C^\infty$ 函数。所谓紧就是有界闭，$\Omega$ 的紧子集 $K$ 当 $\Omega$ 为开时必与 $\Omega$ 之边缘 $\partial\Omega$ 有一个正的距离，这个正距离的存在关系极为重大，从§3讲阿贝尔定理就可以看到这一点，请读者务必十分注意。具紧支集的 $C^\infty(\Omega)$ 函数之集合（或称空间）记为 $C_0^\infty(\Omega)$，在不发生误会时就记为 $C_0^\infty$。(24)的支集是单位球 $|x|\le1$，但是我们可以作出支集几乎是任意集合的 $C_0^\infty$ 函数，而且涉及数学分析中一个常用的技巧——磨光（mollifying）技术。
+
+设 $K\subset\mathbb R^m$，而且其边界比较规则，我们定义其特征函数 $\chi_K(x)$ 为
+\begin{equation}
+ \chi_K(x)=
+ \begin{cases}
+ 1,&x\in K,\\
+ 0,&x\notin K.
+ \end{cases}
+ \tag{25}
+\end{equation}
+$K$ 之边界比较规则是为了保证 $\chi_K(x)$ 可积分。规则到什么程度才能保证 $\chi_K(x)$ 可积，下一章中关于多重积分的介绍中会讲到。
+
+任取 $\delta\ge0$，我们定义
+\begin{equation}
+ j_\delta(x-y)=
+ \begin{cases}
+ \exp\!\left(\dfrac{1}{|x-y|^2/\delta^2-1}\right),&|x-y|<\delta,\\[6pt]
+ 0,&|x-y|\ge\delta.
+ \end{cases}
+ \tag{26}
+\end{equation}
+于是
+\[
+ \int_{\mathbb R^m}j_\delta(x-y)\,dy
+ =\delta^m\int_{\mathbb R^m}\exp\!\left(\frac1{|x|^2-1}\right)dx
+ =L\delta^m.
+\]
+这里
+\[
+ L=\int_{\mathbb R^m}\exp\!\left(\frac1{|x|^2-1}\right)dx>0.
+\]
+现在作积分
+\begin{equation}
+ \Phi_\delta(x)=\frac1{L\delta^m}\int_{\mathbb R^m}j_\delta(x-y)\chi_K(y)\,dy.
+ \tag{27}
+\end{equation}
+利用积分号下求导很容易看到 $\Phi_\delta(x)\in C^\infty$。今证它有紧支集。为此要注意，(27)式实际上只在 $K$ 上积分，所以(27)中的 $y$ 只在 $K$ 中。注意 $x$，如果 $x$ 离 $K$ 的距离大于 $\delta$，即
+\[
+ x\notin K_\delta=\{x;\operatorname{dist}(x,K)\le\delta\},
+\]
+则(27)中的 $|x-y|\ge\delta$，从而 $j_\delta(x-y)=0$，而积分(27)为0，所以 $\operatorname{supp}\Phi_\delta\subset K_\delta$，而 $\Phi_\delta\in C_0^\infty$。
+
+$K_\delta$ 是一个比 $K$ 更大的紧集：它包含 $K$，而且我们记另一个比 $K$ 较小的紧集 $K^\delta$ 为含于 $K$ 内，且到 $\partial K$ 之距离不小于 $\delta$ 的集合为
+\[
+ K^\delta=\{x;\ x\in K,\operatorname{dist}(x,\partial K)\ge\delta\}.
+\]
+设 $\delta$ 充分小时 $K^\delta\ne\varnothing$，则 $x\in K^\delta$，以 $x$ 为心、$\delta$ 为半径之小球 $B_\delta(x)\subset K$，且
+\[
+ \Phi_\delta(x)=\frac1{L\delta^m}\int_{B_\delta(x)}j_\delta(x-y)\,dy=1.
+\]
+这个结果告诉我们当 $\delta\to0$ 时 $\Phi_\delta(x)$ 在某种意义下逼近 $\chi_K(x)$，因为除了在 $K$ 附近的一个很“窄”的带形区域（即到 $K$ 距离不到 $\delta$ 处）之外，$\Phi_\delta(x)$ 就是 $\chi_K(x)$。这种逼近是很有用的。实际上对任意连续函数 $f(x)$ 都可以用 $C_0^\infty$ 函数去逼近。如果设 $f(x)$ 在 $\Omega$ 上连续，令
+\begin{equation}
+ f_\delta(x)=\frac1{L\delta^m}\int_{\mathbb R^m}j_\delta(x-y)(\chi_\Omega f)(y)\,dy
+ \tag{28}
+\end{equation}
+即可。这里有一个小小的技术问题。我们用 $\chi_\Omega f$ 代替 $f$，这样就不必在 $\Omega$ 上积分，而可以用全空间 $\mathbb R^n$ 上的积分了。更重要的是，即令 $f$ 是 $\Omega$ 上的连续函数，它也不一定在 $\Omega$ 上可积，因为 $f$ 在趋向 $\partial\Omega$ 时可以无界，这就是我们在常用的微积分教本中讲的反常积分问题。这时，我们通常说 $f$ 在区域 $\Omega$ 内局部可积，就是在含于 $\Omega$ 内的任一紧子集（即有界闭集）上可积。但是即令如此，(28)与(27)仍有区别：(28)是在 $\Omega$ 上积分，$\Omega$ 不一定是紧集，其上的连续函数不一定可积，而(27)则是在 $K$ 上积分，$K$ 是我们假设为紧的。不过我们要注意，这两个积分之被积函数还含有因子 $j_\delta(x-y)$，它只在球 $|x-y|\le\delta$ 上不为0，而积分(28)实际上是在球 $|x-y|\le\delta$ 上积分的。对于固定的 $x$，这确实是一个紧集。于是我们有
+
+\noindent\textbf{定理9}\quad 若 $f(x)$ 在开集 $\Omega$ 上连续，则对 $\Omega$ 内之任一紧子集 $K$，$C_0^\infty$ 函数 $f_\delta(x)$ 在 $K$ 上一致收敛于 $f(x)$。
+
+\noindent\textbf{证}\quad 因为 $\Omega$ 是开集，它的任一个紧子集 $K$ 离 $\partial\Omega$ 必有一个正距离 $\delta_0$。以下我们恒设 $\delta<\delta_0$。以下恒设 $x\in K$。
+
+因为
+\[
+ \frac1{L\delta^m}\int j_\delta(x-y)\,dy=1,
+\]
+所以
+\[
+ f(x)=\frac1{L\delta^m}\int j_\delta(x-y)f(x)\,dy.
+\]
+现在 $K$ 离 $\partial\Omega$ 之距离 $\ge\delta_0$，而此积分中的 $y$ 又必须适合 $|x-y|\le\delta$，否则 $j_\delta(x-y)=0$。如果 $\delta<\delta_0/2$，则这样的 $y$ 必含于某个稍大于 $K$ 之紧集 $K_1$ 中，$K_1$ 离 $\partial\Omega$ 之距离 $\ge\delta_0/2$，所以 $y\in\Omega$，$\chi_\Omega(y)=1$，$(\chi_\Omega f)(y)=f(y)$，而有
+\[
+ f(x)-f_\delta(x)
+ =\frac1{L\delta^m}\int_{|x-y|\le\delta}j_\delta(x-y)[f(x)-f(y)]\,dy.
+\]
+现在 $x$ 和 $y$ 全在紧集 $K_1$ 中，$f$ 在此紧集中必为一致连续的，所以 $\delta$ 充分小时 $|f(x)-f(y)|<\varepsilon$，$\varepsilon$ 是任意指定的正数。注意到 $j_\delta(x-y)\ge0$，立即有
+\[
+ |f(x)-f_\delta(x)|
+ \le\frac1{L\delta^m}\int j_\delta(x-y)|f(x)-f(y)|\,dy<\varepsilon.
+\]
+这就是说当 $\delta\to0$ 时，$f_\delta(x)$ 在 $K$ 中一致收敛于 $f(x)$，证毕。
+
+(28)式是一个积分算子：它以 $\dfrac1{L\delta^m}j_\delta(x-y)$ 为核，作用在 $\chi_\Omega f$ 上。这个算子称为磨光算子（mollifier），$\dfrac1{L\delta^m}j_\delta(x-y)$ 称为磨光核。这个定理告诉我们，一个函数 $f$（乘上 $\chi_\Omega$ 是为了使它处理起来更方便）经过磨光就能得到一个 $C_0^\infty$ 函数族 $\{f_\delta\}$ 去逼近它。当 $f$ 是连续函数时，则可以使 $\{f_\delta\}$ 一致收敛于它。当 $f$ 是其他函数类之元时，则可以在相应的意义下使 $\{f_\delta\}$ 收敛于它。这是现代数学中为了克服函数不光滑性常用的方法。它告诉我们，$C_0^\infty$ 函数是很多很多的。
+
+$C_0^\infty$ 函数另一个重要的用途是利用它来构造单位分解。这是把整体性问题分解为局部性问题，或把局部性结果拼接成整体性结果的工具，它的基础是 $\mathbb R^n$ 中紧集（即有界闭集）的一个重要性质。
+
+\noindent\textbf{定理10（海涅--博雷尔（Heine--Borel）定理或有限覆盖定理）}\quad 设 $K\subset\mathbb R^n$ 为一紧集，$\{U_\lambda\}$ 是一族开集且覆盖 $K$：$\bigcup_\lambda U_\lambda\supset K$，则从 $\{U_\lambda\}$ 中必可找出有限多个：$U_1,\ldots,U_N$ 仍可覆盖 $K$：
+\[
+ \bigcup_{i=1}^N U_i\supset K.
+\]
+这个定理的证明见第六章。$\{U_\lambda\}$ 称为 $K$ 的一个开覆盖。这里参数 $\lambda$ 可以是有限多个，可数无穷多个，不可数无穷多个，总之是要覆盖 $K$。本章中我们已多次讲到紧集的概念，紧性是整个数学中最基本的概念之一。在通常的微积分教本中时常用有界闭集的说法来代替紧集，这是不恰当的。在第六章我们要详细讨论这个概念，到那时才能明白，在什么情况下才能用有界闭这个概念来代替紧性，也才能明白定理10为什么是一个需要证明的结果，它与微积分学中其它的基本概念又有什么关系和什么区别。又附带说一句，Borel 常译为波莱尔。
+
+在承认了定理10之后，我们要在 $\mathbb R^n$ 中构造所谓单位分解。下面的记号与名词仍与定理10相同。
+
+\noindent\textbf{定理11（单位分解的存在定理）}\quad 对于上述的 $K$、开覆盖 $\{U_\lambda\}$ 以及有限的子覆盖 $U_1,\ldots,U_N$，一定存在函数 $\Phi_j(x)\in C_0^\infty(\mathbb R^n)$，$j=1,\ldots,N$，适合以下要求：
+
+（1）每个 $\Phi_j$ 的支集必在某一 $U_i$ 中（$i$ 与 $j$ 不一定相同）；
+
+（2）$0\le\Phi_j(x)\le1$，$1\le j\le N$；
+
+（3）
+\begin{equation}
+ \sum_{j=1}^N\Phi_j(x)=1.
+ \tag{29}
+\end{equation}
+$\{\Phi_j(x)\}$ 称为 $K$ 的从属于覆盖 $\{U_i\}$ 的 $C_0^\infty$ 单位分解。
+
+\noindent\textbf{证}\quad 任一点 $x\in K$ 必含于某个 $U_i$ 中，从而也必含于一个开的小球 $K_j$ 中，这里 $K_j\subset U_i$，所以 $\{K_j\}$ 也成了 $K$ 的一个开覆盖而必可以从其中选出有限多个 $K_1,\ldots,K_l$，使 $K\subset\bigcup_{j=1}^lK_j$，而每个 $K_j$ 含于一个 $U_i$ 中。这里 $i$ 与 $j$ 不一定相同，而且同一个 $U_i$ 可以含于好几个 $K_j$ 内，因而 $\{K_j\}$ 之个数与 $\{U_i\}$ 之个数也不一定相同。必要时稍为缩小 $K_j$，可以设 $K_j\subset U_i$，而 $\operatorname{dist}(K_j,\partial U_i)=\delta_j>0$，于是用上面的方法对 $\chi_{K_j}(x)$ 作磨光，即用(27)式作 $\varphi_j(x)\in C_0^\infty$，很明显 $\chi_{K_j}(x)=1$ 于 $K_j$ 中，而且必要时稍微缩小 $K_j$，当 $x\in K_j$ 时有
+\[
+ 0\le\varphi_j(x)=\frac1{L\delta_j^m}\int j_{\delta_j}(x-y)\chi_{K_j}(y)\,dy
+ =\frac1{L\delta_j^m}\int j_{\delta_j}(x-y)\,dy=1.
+\]
+因为 $\bigcup_jK_j\supset K$，故对任意 $x\in K$，必至少有一项 $\varphi_j(x)=1$，从而
+\[
+ \sum_j\varphi_j(x)>0.
+\]
+令
+\[
+ \Phi_j(x)=\varphi_j(x)\bigg/\sum_j\varphi_j(x),
+\]
+易见 $\{\Phi_j(x)\}$ 即是所求的单位分解。
+
+以上我们只对紧集的开覆盖证明了单位分解的存在。实际上即令 $K$ 不是紧集，单位分解也是有的，但其概念要稍作微改，详细的讨论见第六章和专门的参考书籍。
+
+以上我们讲的是 $C_0^\infty$ 单位分解，也可以构造 $C_0^\omega$ 单位分解，但是不可能作出解析的单位分解，因为解析函数除非恒为0是不会有紧支集的，这里也表现了解析函数与 $C^\infty$ 函数的区别。

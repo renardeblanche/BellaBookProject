@@ -1,0 +1,1005 @@
+\origpage{201--227}
+
+\BellaSection{7. Propriétés des bases}
+
+Afin de s'assurer que la notion de base sert à quelque chose, il est bon d'établir quelques propriétés utiles. La première c'est la décomposition unique dans une base. On va également voir que les bases servent à caractériser les applications linéaires.
+
+\medskip\noindent\textsc{Théorème 6.75.} --- \emph{Soit $\mathcal B=(e_i)_{i\in I}$ une base d'un espace vectoriel $E$ sur le corps $K$. Pour chaque vecteur $X$ de $E$ il existe une et une seule famille $(x_i)_{i\in I}$ de scalaires de $K$, presque tous nuls, telle que
+\[
+X=\sum_{i\in I}x_i e_i.
+\]}
+
+\medskip\noindent\textbf{6.75.bis} Rappelons que famille $(x_i)_{i\in I}$ de scalaires presque tous nuls, signifie que le cardinal de l'ensemble des $i$ tel que $x_i\ne0$ est fini. C'est forcément le cas en dimension finie, sur de tels espaces le presque tous nuls est inutile.
+
+Il faut par ailleurs remarquer que la notation $\sum_{i\in I}x_i e_i$ représente une somme finie, que l'on pourrait indexer par les indices $i$ en nombre fini tels que $x_i\ne0$. L'ennui c'est qu'il faudrait changer d'ensemble d'indices en changeant de vecteurs, d'où l'utilisation de ce presque tous nuls.
+
+La justification du théorème est immédiate.
+
+Soit $X$ de $E=\operatorname{Vect}(\mathcal B)$, donc (Théorème 6.19), il existe une partie finie de $\mathcal B$, $\{e_{i_1},e_{i_2},\ldots,e_{i_n}\}$ par exemple, telle que $X$ soit combinaison linéaire de $e_{i_1},\ldots,e_{i_n}$ : d'où des scalaires $x_{i_1},\ldots,x_{i_n}$ tels que
+\[
+X=\sum_{k=1}^n x_{i_k}e_{i_k}.
+\]
+En posant $x_i=0$, $\forall i\ne i_1,\ne i_2,\ldots,\ne i_n$, on définit bien une famille $(x_i)_{i\in I}$ de scalaires de $K$ presque tous nuls telle que
+\[
+X=\sum_{i\in I}x_i e_i.
+\]
+
+Si on avait 2 écritures possibles,
+\[
+X=\sum_{i\in I}x_i e_i=\sum_{i\in I}x'_i e_i,
+\]
+on en déduit que
+\[
+0=\sum_{i\in I}(x_i-x'_i)e_i,
+\]
+les sommes portant \emph{a priori} sur un ensemble fini d'indices, ceux associés à des $x_i\ne0$ et à des $x'_i\ne0$ : pour préciser les choses on peut noter
+\[
+I_1=\{i,x_i\ne0\},\qquad I_2=\{i,x'_i\ne0\},\qquad I_3=I_1\cup I_2
+\]
+est fini, et on ne garde que
+\[
+X=\sum_{i\in I_3}x_i e_i=\sum_{i\in I_3}x'_i e_i
+\quad\Longrightarrow\quad
+\sum_{i\in I_3}(x_i-x'_i)e_i=0.
+\]
+D'où, $I_3$ étant une partie finie de $I$ et $\mathcal B$ une famille libre, on a $x_i-x'_i=0$, $\forall i\in I_3$. Comme pour $i\notin I_3$, $x_i=0=x'_i$ on a bien $x_i=x'_i$, $\forall i\in I$. \bookend
+
+\medskip\noindent\textsc{Définition 6.76.} --- \emph{Les scalaires $x_i$ ainsi introduits sont les coordonnées de $X$ dans la base $\mathcal B$.}
+
+Un vecteur est donc caractérisé par la donnée de ses coordonnées dans une base.
+
+Passons aux applications linéaires.
+
+On va voir que si $\mathcal B=(e_i)_{i\in I}$ est une base de $E$, la donnée de $u$ application linéaire de $E$ dans $F$ équivaut à la donnée des images $u(e_i)$ des vecteurs de cette base.
+
+\medskip\noindent\textsc{Théorème 6.77.} --- \emph{Soient $E$ et $F$ deux espaces vectoriels sur un corps $K$, $\mathcal B=(e_i)_{i\in I}$ une base de $E$ et $(Y_i)_{i\in I}$ une famille de vecteurs de $F$ indexée par le même ensemble d'indices. Alors il existe une et une seule application linéaire $u$ de $E$ dans $F$ telle que, $\forall i\in I$, $u(e_i)=Y_i$. De plus on a
+\[
+\begin{aligned}
+u\text{ injective}&\Longleftrightarrow (Y_i)_{i\in I}\text{ est libre},\\
+u\text{ surjective}&\Longleftrightarrow (Y_i)_{i\in I}\text{ est génératrice de }F,\\
+u\text{ isomorphisme}&\Longleftrightarrow (Y_i)_{i\in I}\text{ est une base de }F.
+\end{aligned}
+\]}
+
+Existence et unicité de $u$ : il faut pouvoir définir $u(X)$ pour un $X$ quelconque de $E$.
+
+Comme $\mathcal B$ est une base, à $X$ on associe la famille unique de ses coordonnées dans la base et si
+\[
+X=\sum_{i\in I}x_i e_i
+\]
+avec des $x_i$ presque tous nuls comme $u$ doit être linéaire, on doit avoir forcément
+\[
+u(X)=\sum_{i\in I}x_i u(e_i)=\sum_{i\in I}x_iY_i
+\]
+vu les conditions imposées sur $u$.
+
+Il y a donc une et une seule définition possible de $u$. Le problème est de vérifier que $u$ ainsi définie est linéaire, or si on a $X'=\sum_{i\in I}x'_i e_i$, et si $\lambda$ et $\lambda'$ sont 2 scalaires, on aura
+\[
+\lambda X+\lambda'X'=\sum_{i\in I}(\lambda x_i+\lambda' x'_i)e_i,
+\]
+avec en fait un nombre fini seulement de $\lambda x_i+\lambda' x'_i$ non nuls; on posera donc
+\[
+u(\lambda X+\lambda'X')=\sum_{i\in I}(\lambda x_i+\lambda' x'_i)Y_i,
+\]
+expression qui s'écrit en fait
+\[
+\lambda\sum_{i\in I}x_iY_i+\lambda'\sum_{i\in I}x'_iY_i
+\]
+soit $\lambda u(X)+\lambda'u(X')$.
+
+On a bien justifié l'existence et l'unicité de $u$ linéaire.
+
+On a alors si $u$ injective, si $\{i_1,\ldots,i_n\}$ est une partie finie de $I$ et si $\lambda_1,\ldots,\lambda_n$ sont des scalaires tels que
+\[
+\sum_{k=1}^n\lambda_kY_{i_k}=0,
+\]
+c'est encore
+\[
+u\left(\sum_{k=1}^n\lambda_ke_{i_k}\right)=0,
+\]
+donc
+\[
+X=\sum_{k=1}^n\lambda_ke_{i_k}\in\operatorname{Ker} u=\{0\}
+\]
+(injectivité de $u$) donc $X$ est nul, or les $\lambda_k$ apparaissent comme ses coordonnées dans la base $\mathcal B$, donc les $\lambda_k$ sont nuls : on a justifié que la seule combinaison linéaire nulle des $(Y_{i_k})_{1\le k\le n}$ est celle avec des coefficients nuls : la famille $\{Y_{i_1},\ldots,Y_{i_n}\}$ est libre, ceci est vrai pour toute partie extraite de $I$ : finalement $(Y_i)_{i\in I}$ est libre.
+
+Réciproquement on suppose la famille des $(Y_i)_{i\in I}$ libre.
+
+Si $X=\sum_{i\in I}x_i e_i$ est dans $\operatorname{Ker} u$, en notant $\{i_1,\ldots,i_n\}$ la partie finie de $I$ associée, \emph{a priori}, à des $x_i$ non nuls, on aura
+\[
+u(X)=0=\sum_{k=1}^n x_{i_k}Y_{i_k},
+\]
+or $(Y_i)_{i\in I}$ est libre, donc les $x_{i_k}$ sont tous nuls, et finalement $X$ est nul : on a $u$ injective.
+
+Donc $u$ injective $\Longleftrightarrow (Y_i)_{i\in I}$ libre.
+
+On a $u$ surjective $\Longleftrightarrow (Y_i)_{i\in I}$ génératrice, en effet
+\[
+(Y_i)_{i\in I}\text{ génératrice}\Longleftrightarrow \operatorname{Vect}(u(e_i)_{i\in I})=F
+\]
+or l'élément générique de $\operatorname{Vect}(u(e_i)_{i\in I})$ est $\sum_{i\in I}x_i u(e_i)$, les $x_i$ étant presque tous nuls, soit encore $u(\sum_{i\in I}x_i e_i)$ par linéarité de $u$. Comme $\sum_{i\in I}x_i e_i$ est l'élément générique de $E$, on a donc $\operatorname{Vect}(u(e_i)_{i\in I})=u(E)$ en fait, d'où l'équivalence.
+
+En réunissant ces 2 caractérisations, on a celle des bijections.
+
+Le théorème va nous permettre de mieux connaître l'espace vectoriel $\mathcal L(E,F)$, si on connaît des bases de $E$ et de $F$.
+
+\medskip\noindent\textsc{Théorème 6.78.} --- \emph{Soient $E$ et $F$ deux espaces vectoriels sur un corps $K$, $\mathcal B=(e_j)_{j\in J}$ une base de $E$ et $\mathcal C=(\varepsilon_i)_{i\in I}$ une base de $F$. Les applications $(u_{i,j})_{(i,j)\in I\times J}$ linéaires, définies pour chaque couple $(i,j)$ de $I\times J$ par les conditions :
+\[
+u_{i,j}(e_j)=\varepsilon_i\qquad\text{et}\qquad \forall j'\ne j,\ j'\in J,\quad u_{i,j}(e_{j'})=0
+\]
+forment une famille libre de $\mathcal L(E,F)$. C'est une base de $\mathcal L(E,F)$ si et seulement si $E$, (espace de départ) est de dimension finie.}
+
+Il faut bien comprendre que pour un couple $(i,j)$ fixé de $I\times J$, $u_{i,j}$ est la seule application linéaire qui envoie tous les vecteurs de la base $\mathcal B$ de $E$ sur 0 sauf le $e_j$ qui est envoyé sur $\varepsilon_i$.
+
+La façon d'indexer les applications servira lors du calcul matriciel. Le théorème 6.77 justifie l'existence des $u_{i,j}$ linéaires de $E$ dans $F$ vérifiant les conditions données.
+
+Cette famille est libre, car si on prend un nombre fini des couples $(i,j)$, disons
+\[
+(i_1,j_1),(i_2,j_2),\ldots,(i_n,j_n),
+\]
+et si on a des scalaires $\lambda_1,\ldots,\lambda_n$ tels que l'application linéaire
+\[
+\sum_{k=1}^n\lambda_k u_{i_k,j_k}
+\]
+soit l'élément nul de $\mathcal L(E,F)$, c'est-à-dire l'application linéaire identiquement nulle, et si $j$ est l'un des indices de l'ensemble $\{j_1,\ldots,j_n\}$, en particulier l'image de $e_j$ est nulle.
+
+Attention, les $n$ couples $(i_k,j_k)$ sont distincts, mais pas forcément les $n$ indices $j_1,\ldots,j_n$. Seulement, si $j\in\{j_1,\ldots,j_n\}$ et si pour plusieurs valeurs de $k$ on a $j_k=j$, les $i_k$ associés seront distincts. On peut donc écrire l'image de $e_j$ sous la forme :
+\[
+\left(\sum_{k=1}^n\lambda_k u_{i_k,j_k}\right)(e_j)
+=
+\sum_{\substack{1\le k\le n\\j_k=j}}\lambda_k\varepsilon_{i_k}=0,
+\]
+(car si $j_k\ne j$, $u_{i_k,j_k}$ envoie $e_j$ sur 0 et si $j_k=j$, $u_{i_k,j}$ envoie $e_j$ sur $\varepsilon_{i_k}$), et comme les $i_k$, en nombre fini, qui restent sont distincts, et que $\mathcal C=(\varepsilon_i)_{i\in I}$ est une base de $F$, les $\lambda_k$ associés aux $k$ tels que $j_k=j$ sont nuls. En faisant cela pour tout $j$ de $\{j_1,j_2,\ldots,j_n\}$ on obtient finalement la nullité de tous les $\lambda_k$, $k$ variant de 1 à $n$, et le fait que toute famille finie extraite de $(u_{i,j})_{(i,j)\in I\times J}$ est libre ce qui est la justification du fait que cette famille est libre.
+
+Supposons alors $E$ de dimension finie, $n$, et soit $\mathcal B=\{e_1,\ldots,e_n\}$ une base de $E$, on va prouver que la famille des $(u_{i,j})$ est alors une base de $\mathcal L(E,F)$, c'est-à-dire qu'elle est génératrice. Soit donc $u\in\mathcal L(E,F)$.
+
+Pour chaque $j$ compris entre 1 et $n$, $u(e_j)$ se décompose dans la base $\mathcal C=(\varepsilon_i)_{i\in I}$ de $F$ : il existe donc des scalaires presque tous nuls, que l'on note $x_{i,j}$, (l'indice $j$ pour rappeler qu'on travaille pour $e_j$), tels que
+\[
+u(e_j)=\sum_{i\in I}x_{i,j}\varepsilon_i.
+\]
+En fait, on peut introduire, pour chaque $j$ de $\{1,\ldots,n\}$, la partie finie $I_j$ de $I$ telle que
+\[
+x_{i,j}\ne0\Longleftrightarrow i\in I_j,
+\]
+(éventuellement $I_j$ est vide si $u(e_j)=0$).
+
+Soit
+\[
+L=\bigcup_{j=1}^n I_j,
+\]
+c'est une partie finie de $I$, et si pour un $j$ fixé, on a $i\in L$ et $i\notin I_j$ on pose $x_{i,j}=0$. Il en résulte que
+\[
+\sum_{i\in L}x_{i,j}\varepsilon_i
+=
+\sum_{i\in I_j}x_{i,j}\varepsilon_i
+=u(e_j),
+\qquad(i\notin I_j\Rightarrow x_{i,j}=0)
+\]
+mais on a aussi $\varepsilon_i=u_{i,j}(e_j)$ d'où l'égalité
+\[
+u(e_j)=\sum_{i\in L}x_{i,j}u_{i,j}(e_j).
+\]
+Enfin, pour $j'\ne j$, chaque $u_{i,j'}(e_j)=0$, donc on a aussi
+\[
+\left[\sum_{j'=1}^n\left(\sum_{i\in L}x_{i,j'}u_{i,j'}\right)\right](e_j)
+=
+\sum_{i\in L}x_{i,j}u_{i,j}(e_j)
+=
+\sum_{i\in I_j}x_{i,j}\varepsilon_i
+=u(e_j).
+\]
+La combinaison linéaire finie $\sum_{j'=1}^n\sum_{i\in L}x_{i,j'}u_{i,j'}$, d'une part et $u$ d'autre part donnent la même image de chaque vecteur $e_j$ de la base $\mathcal B$ de $E$ : elles coïncident d'après le théorème 6.77. On vient donc de vérifier que, si $\dim(E)$ finie la famille des $(u_{i,j})_{(i,j)\in I\times J}$ est une base de $\mathcal L(E,F)$ car libre et génératrice. \bookend
+
+\emph{Remarque :} Si $\dim E$ infinie, cette famille libre des $(u_{i,j})$ n'est jamais une base, donc jamais génératrice, car chaque $u_{i,j}$ envoyant toute la base $\mathcal B$ sur 0 sauf $e_j$ sur $\varepsilon_i$ une combinaison linéaire d'un nombre fini des $u_{i,j}$ envoie tous les vecteurs de $\mathcal B$ sur 0 sauf un nombre fini. Il en résulte que par exemple l'application $u$ envoyant chaque $e_j$, (en nombre infini) sur un $\varepsilon_{i_0}$ fixé, ($u$ existe d'après le Théorème 6.77, appliqué à la base $\mathcal B=(e_j)_{j\in J}$ de $E$ et la famille constante $(Y_j)_{j\in J}$ de $F$ avec $\forall j\in J$, $Y_j=\varepsilon_{i_0}$), ne peut pas être dans $\operatorname{Vect}((u_{i,j})_{(i,j)\in I\times J})$.
+
+\emph{Cas particulier de $E$ et $F$ tous les deux de dimension finie.}
+
+\medskip\noindent\textsc{Corollaire 6.79.} --- \emph{Si $E$ est de dimension finie, $p$, et $F$ de dimension finie, $n$, l'espace vectoriel $\mathcal L(E,F)$ est de dimension finie $np$.}
+
+Car avec $\mathcal B=(e_j)_{1\le j\le p}$ base de $E$ et $\mathcal C=(\varepsilon_i)_{1\le i\le n}$ base de $F$, il y a alors $np$ applications du type $u_{i,j}$, qui forment une base de $\mathcal L(E,F)$ qui est donc de dimension finie $np$. \bookend
+
+Les deux théorèmes d'isomorphisme, (Théorèmes 6.41 et 6.43) vont nous fournir des égalités intéressantes, quand on appliquera le résultat suivant, valable en fait en dimension quelconque :
+
+\medskip\noindent\textsc{Théorème 6.80.} --- \emph{Deux espaces vectoriels $E$ et $F$ sont isomorphes si et seulement si ils ont des bases équipotentes.}
+
+On dira que les espaces sont isomorphes s'il y a un isomorphisme de l'un sur l'autre.
+
+En effet si $E$ et $F$ sont isomorphes, soit $u$ un isomorphisme de $E$ sur $F$, $\mathcal B=(e_j)_{j\in J}$ une base de $E$, d'après le théorème 6.77, $u$ est la seule application linéaire envoyant chaque $e_j$ sur $u(e_j)$ \BellaCorrectionNote{vecteur de $F$}{vecteur de $E$}{Puisque $u:E\to F$, l'image $u(e_j)$ appartient à $F$.} et $u$ étant bijective, cette famille $\mathcal C=(u(e_j))_{j\in J}$ est une base de $F$ qui admet donc des bases équipotentes à celles de $E$.
+
+\emph{Réciproque}
+
+Si $E$ et $F$ admettent des bases équipotentes, on peut les indexer par le même ensemble d'indices, $J$, donc soit $\mathcal B=(e_j)_{j\in J}$ une base de $E$ et $\mathcal C=(\varepsilon_j)_{j\in J}$ une base de $F$, toujours d'après le théorème 6.77, il existe une et une seule application linéaire envoyant chaque $e_j$ sur $\varepsilon_j$, cette application étant bijective puisque $\mathcal C$ est une base de $F$. On a bien $E$ et $F$ isomorphes. \bookend
+
+De même, quelque soit la dimension des espaces on peut établir un lien entre somme directe et bases.
+
+\medskip\noindent\textsc{Théorème 6.81.} --- \emph{Soit un espace vectoriel $E$ somme directe de $n$ sous-espaces $F_1,F_2,\ldots,F_n$ et soit, pour chaque $i=1,2,\ldots,n$, $\mathcal B_i$ une base de $F_i$, alors $\mathcal B=\bigcup_{i=1}^n\mathcal B_i$ est une base de $E$, les $\mathcal B_i$ étant 2 à 2 disjointes.}
+
+Car si $X\in E$, $X$ s'écrit dans la somme directe $E=\bigoplus_{i=1}^n F_i$ sous la forme $X=X_1+\cdots+X_n$ avec chaque $X_i$ dans $F_i=\operatorname{Vect}\mathcal B_i$, donc $X_i$ est combinaison linéaire d'un nombre fini d'éléments de $\mathcal B_i$, donc de $\mathcal B$. En sommant pour $i$ variant de 1 à $n$, on obtient $X$ combinaison linéaire d'un nombre fini d'éléments de $\mathcal B$.
+
+Il est clair que si $i\ne j$, $\mathcal B_i\cap\mathcal B_j=\varnothing$ sinon, si $e\in\mathcal B_i\cap\mathcal B_j$ on aurait $e\ne0$ dans
+\[
+F_i\cap\left(\sum_{\substack{k=1\\k\ne i}}^n F_k\right),
+\]
+(car $e$ dans $F_j\subset\sum_{k\ne i}F_k$) ce qui est exclu.
+
+$\mathcal B$ est enfin partie libre de $E$, car si on a une combinaison d'un nombre fini des éléments de $\mathcal B$, nulle, soit $X$ cette combinaison linéaire. On peut noter
+\[
+\mathcal B_1=\{e_{i_1},i_1\in I_1\},\quad \mathcal B_2=\{e_{i_2},i_2\in I_2\},\quad\ldots,\quad \mathcal B_n=\{e_{i_n},i_n\in I_n\}
+\]
+les bases de $F_k$, les ensembles d'indices $I_1,\ldots,I_n$ étant disjoints, puis introduire les parties finies suivantes :
+\[
+J_1=\{i_1\in I_1,e_{i_1}\text{ intervient avec le coefficient }x_{i_1}\text{ dans }X\},
+\]
+\[
+J_2=\{i_2\in I_2,e_{i_2}\text{ intervient avec le coefficient }x_{i_2}\text{ dans }X\},
+\]
+et enfin
+\[
+J_n=\{i_n\in I_n,e_{i_n}\text{ intervient avec le coefficient }x_{i_n}\text{ dans }X\};
+\]
+alors
+\[
+X=\sum_{k=1}^n\left(\sum_{i_k\in J_k}x_{i_k}e_{i_k}\right)=0.
+\]
+Si on pose $X_k=\sum_{i_k\in J_k}x_{i_k}e_{i_k}$, l'écriture $X_1+\cdots+X_n=0$ avec les $X_j\in F_j$ et $E=\bigoplus_{j=1}^nF_j$ implique que chaque $X_k=0$, (théorème 6.51), mais alors chaque $x_{i_k}$ est nul, $X_k$ étant décomposé dans une base $\mathcal B_k$ de $F_k$.
+
+Finalement $\mathcal B$ est bien libre et génératrice : c'est une base de $E$. \bookend
+
+\medskip\noindent\textsc{Théorème 6.82.} --- \emph{Soit $\mathcal B=(e_i)_{i\in I}$ une base d'un espace vectoriel $E$ et $I=\bigcup_{k=1}^n I_k$ une partition de $I$. En posant $\mathcal B_k=(e_i)_{i\in I_k}$ et $F_k=\operatorname{Vect}\mathcal B_k$, on a
+\[
+E=\bigoplus_{k=1}^n F_k.
+\]}
+
+Car tout $X$ de $E$ se décompose en combinaison d'un nombre fini des $e_i$.
+
+En reprenant les notations de la justification précédente, avec $J_1$ ensemble des $i_1$ de $I_1$ tels que $e_{i_1}$ intervient avec le coefficient $x_{i_1}$ dans $X$, ... on arrive à
+\[
+X=\sum_{k=1}^n X_k\qquad\text{avec}\qquad X_k=\sum_{i_k\in J_k}x_{i_k}e_{i_k}\in F_k.
+\]
+Donc on a déjà composé chaque $X$ de $E$ sous la forme $\sum_{k=1}^nX_k$ avec les $X_k\in F_k$.
+
+Puis si une telle somme est nulle, en décomposant $X_k$ dans la base $\mathcal B_k$ de $F_k$, sous la forme
+\[
+X_k=\sum_{i_k\in I_k}x_{i_k}e_{i_k},
+\]
+les $x_{i_k}$ étant presque tous nuls, on a
+\[
+X=\sum_{k=1}^nX_k=0
+=\sum_{k=1}^n\left(\sum_{i_k\in I_k}x_{i_k}e_{i_k}\right).
+\]
+C'est une combinaison linéaire nulle d'un nombre fini des $e_i$ de $\mathcal B=\bigcup_{k=1}^n\mathcal B_k$, base donc famille libre : tous les $x_{i_k}$ sont nuls d'où chaque $X_k=0$. On a bien vérifié l'une des conditions de somme directe (Théorème 6.51). \bookend
+
+On applique tout ce qui précède aux espaces vectoriels de dimension finie. On a
+
+\medskip\noindent\textsc{Corollaire 6.83.} --- \emph{Soient $G$ et $F$ deux sous-espaces supplémentaires d'un espace vectoriel $E$ de dimension finie : on a
+\[
+\dim E=\dim F+\dim G.
+\]}
+
+Car une base de $E$ est obtenue en réunissant une base de $F$ et une de $G$, ces bases étant disjointes : c'est le théorème 6.81. \bookend
+
+\medskip\noindent\textsc{Corollaire 6.84.} --- \emph{Soit $F$ un sous-espace vectoriel de $E$ espace de dimension finie : on a
+\[
+\dim(E/F)=\dim E-\dim F.
+\]}
+
+Car $F$ admet des supplémentaires (Théorème 6.69). Soit $G$ un supplémentaire de $F$ et $p$ la projection sur $G$ de noyau $F$. Les espaces vectoriels $E/\operatorname{Ker} p$ et $p(E)$ sont isomorphes (premier théorème d'isomorphisme, théorème 6.41), donc de même dimension. Comme $\operatorname{Ker} p=F$ et $p(E)=G$ on a finalement
+\[
+\dim(E/F)=\dim G=\dim E-\dim F
+\]
+vu le corollaire 6.83 puisque $E=F\oplus G$. \bookend
+
+\medskip\noindent\textsc{Corollaire 6.85.} --- \emph{Soit $E$ un espace vectoriel de dimension finie, $F$ un espace vectoriel de dimension quelconque, et $f$ linéaire de $E$ dans $F$. On a
+\[
+\dim(E)=\dim(f(E))+\dim(\operatorname{Ker} f).
+\]}
+
+Car les espaces vectoriels $E/\operatorname{Ker} f$ et $f(E)$ sont isomorphes, (premier théorème d'isomorphisme, théorème 6.41) donc de même dimension (Théorème 6.80) et on applique le corollaire 6.84 pour calculer $\dim(E/\operatorname{Ker} f)$ d'où
+\[
+\dim E-\dim(\operatorname{Ker} f)=\dim(f(E))
+\]
+ce qui est le résultat. \bookend
+
+\textsc{Conséquence} si $E$ et $F$ sont de même dimension finie, on a, pour $f\in\mathcal L(E,F)$ :
+\[
+(f\text{ injective})\Longleftrightarrow(f\text{ surjective})\Longleftrightarrow(f\text{ bijective}).
+\]
+
+\medskip\noindent\textsc{Définition 6.86.} --- \emph{Soient $E$ et $F$ deux espaces vectoriels, $f\in\mathcal L(E,F)$. Lorsque $f(E)$ est un sous-espace de dimension finie de $F$, sa dimension est appelée rang de $f$.}
+
+\medskip\noindent\textsc{Corollaire 6.87.} --- \emph{Soient $F$ et $G$ deux sous-espaces d'un espace vectoriel $E$ de dimension finie : on a
+\[
+\dim(F+G)=\dim F+\dim G-\dim(F\cap G).
+\]}
+
+C'est la traduction, en dimension, du 2e théorème d'isomorphisme, (Théorème 6.43), qui nous dit, (si tant est qu'il ait la parole), que
+\[
+(F+G)/F\simeq G/(F\cap G)
+\]
+d'où en prenant les dimensions (6.80 et 6.84) :
+\[
+\dim(F+G)-\dim F=\dim G-\dim(F\cap G)
+\]
+ce qui est la formule voulue. \bookend
+
+Ces quelques corollaires sont des outils bien commodes pour l'étude des situations rencontrées dans les espaces vectoriels. Avant d'aborder un paragraphe bien plus mystérieux, il reste une remarque à faire :
+
+\medskip\noindent\textsc{Remarque 6.88.} --- Soit $E$ un espace vectoriel de dimension finie.
+\begin{enumerate}[label=\arabic*),leftmargin=2.1em]
+\item Si on a $F$ sous-espace de $E$ et $\dim F=\dim E$ alors $F=E$.
+\item Si $G\subset E$ avec $G\simeq E$ alors $G=E$.
+\end{enumerate}
+Mais ces 2 résultats sont faux en dimension infinie où on peut rencontrer $F$ sous-espace strict de $E$, $F$ et $E$ étant de même dimension, (donc isomorphes).
+
+En dimension finie, ($n=\dim E$) si $\mathcal B$ est une base de $F$ et si $\operatorname{card}\mathcal B=n$, (c'est le cas si $\dim F=\dim E$ ou si $F$ est isomorphe à $E$) le théorème de la base incomplète (Théorème 6.66) nous dit que $\mathcal B$ est base de $E$ donc $F$ (ou $G$) $=E$.
+
+En dimension infinie, reprenons $E=K[X]$ espace des polynômes sur $K$. On note
+\[
+e_0=(1,0,0,\ldots,0,\ldots)
+\]
+la suite où tous les termes sont nuls sauf le premier et plus généralement
+\[
+e_p=(0,\ldots,0,1,0,\ldots),\qquad(1\text{ au rang }p+1).
+\]
+On peut vérifier que $(e_n)_{n\in\mathbb N}$ est une base de $E$.
+
+On a $F=\operatorname{Vect}(e_{2n})_{n\in\mathbb N}$ est sous-espace strict de $E$, (on a les polynômes pairs) et pourtant les bases $(e_n)_{n\in\mathbb N}$ et $(e_{2n})_{n\in\mathbb N}$ sont équipotentes d'où $F$ isomorphe à $E$ avec $F\subsetneq E$.
+
+
+\BellaSection{8. Dualité, espace dual}
+
+\medskip\noindent\textsc{Définition 6.89.} --- \emph{Soit $E$ un espace vectoriel sur un corps $K$, on appelle espace vectoriel dual de $E$, l'espace vectoriel $\mathcal L(E,K)$ des applications linéaires de $E$ dans le corps $K$.}
+
+On note encore $E^*$ cet espace vectoriel et on appelle forme linéaire tout élément de $E^*$, c'est-à-dire toute application linéaire de $E$ dans le corps $K$.
+
+\medskip\noindent\textbf{6.90.} Si $f$ est un élément non nul du dual, son noyau est appelé hyperplan de $E$. C'est un sous-espace de $E$ dont les supplémentaires sont de dimension 1.
+
+En effet, soit $H=\operatorname{Ker} f$ le noyau de $f$ élément non nul du dual. Le premier théorème d'isomorphisme (Théorème 6.41) nous dit que $E/\operatorname{Ker} f$ est isomorphe à $f(E)$. Mais $f(E)$ est sous-espace vectoriel du corps $K$, non réduit à $\{0\}$ car $f\ne0$, donc $f(E)=K$, (si on a $\lambda\ne0$ dans $f(E)$, $\forall\mu\in K$, $\mu=(\lambda^{-1}\mu)\lambda$ donc si le vecteur $X$ de $E$ est tel que $f(X)=\lambda$ on a $f(\lambda^{-1}\mu\cdot X)=\mu$). Or $K$ est espace vectoriel de dimension 1 sur lui-même, le scalaire $1_K$ (élément neutre de $K$ pour le produit) formant une base.
+
+Soit alors $L$ un supplémentaire de $H$ dans $E$, (il y en a, théorème 6.73), en utilisant la projection sur $L$, de noyau $H$, on sait aussi que $E/H=E/\operatorname{Ker} f\simeq L$, d'où $L$ et $f(E)$ isomorphes donc de bases équipotentes : on a bien $L$ de dimension 1. En fait on a la réciproque : si un sous-espace $H$ de $E$ admet pour supplémentaires des sous-espaces de dimension 1, c'est le noyau d'une forme linéaire.
+
+Car soit $L$ un supplémentaire de $H$, $\mathcal B_1$ une base de $H$, $\{a\}$ une base de $L$, (de cardinal 1 par hypothèse), comme $E$ est somme directe de $L$ et $H$ on a $\mathcal B=\mathcal B_1\cup\{a\}$ base de $E$, (Théorème 6.81).
+
+On définit alors $f$ linéaire de $E$ dans $K$ en se donnant l'image des vecteurs de la base $\mathcal B$, (Théorème 6.77) et pour cela on pose $f(a)=1$ et tout vecteur de $\mathcal B_1$ est envoyé sur 0.
+
+Soit $X$ de $E$, décomposé en $X=Y+\lambda\cdot a$ avec $Y\in H$ et $\lambda$ scalaire, décomposition unique dans la somme directe $E=H\oplus L$. On a alors
+\[
+f(X)=f(Y)+\lambda f(a)=0+\lambda=\lambda
+\]
+donc
+\[
+X\in\operatorname{Ker} f\Longleftrightarrow\lambda=0\Longleftrightarrow X\in H.
+\]
+On a bien construit $f$ de noyau $H$. Il y a non unicité de $f$, d'abord parce que $\varphi$ envoyant $\mathcal B_1$ sur 0 et $a$ sur un scalaire $\ne0$ convient aussi, ensuite parce que $L$ n'est pas unique. \bookend
+
+\medskip\noindent\textsc{Définition 6.91.} --- \emph{On appelle codimension d'un sous-espace vectoriel $F$ de l'espace $E$ la dimension de $E/F$, ou, ce qui est équivalent, la dimension des supplémentaires de $F$ dans $E$.}
+
+Bien sûr, dans cette définition, si $E/F$ est de dimension infinie, la codimension devient un cardinal infini.
+
+Avec cette définition on a établi le
+
+\medskip\noindent\textsc{Théorème 6.92.} --- \emph{Soit $E$ un espace vectoriel sur un corps $K$, un sous-espace $H$ est un hyperplan de $E$ si et seulement si il est de codimension 1.} \bookend
+
+Au fait, pourquoi hyperplan? Parce que, historiquement, les espaces vectoriels ont été abordés par l'étude de la géométrie, et de l'espace de dimension 3, espace « usuel » dans lequel les sous-espaces de codimension 1 sont de dimension $3-1=2$, donc sont les plans. La généralisation de cette notion fait passer aux hyperplans, comme on passe des marchés aux hypermarchés! C'est du langage hyperbolique.
+
+\medskip\noindent\textbf{Orthogonalité}
+
+\medskip\noindent\textsc{Définition 6.93.} --- \emph{Une forme linéaire $f$, $f\in E^*$, et un vecteur $X$ de $E$ sont dits orthogonaux si et seulement si $f(X)=0$.}
+
+Donc c'est, pour $f\ne0$, traduire que $X$ est dans l'hyperplan $\operatorname{Ker} f$.
+
+\medskip\noindent\textsc{Définition 6.94.} --- \emph{Soit $A$ une partie de l'espace vectoriel $E$. On appelle orthogonal de $A$, l'ensemble des $f$ du dual tels que, $\forall X\in A$, $f(X)=0$.}
+
+On le note $A^\perp$, on a donc
+\[
+A^\perp=\{f;\ f\in E^*,\ \forall X\in A,\ f(X)=0\}.
+\]
+
+En remarquant que, pour un hyperplan $H$ de $E$, tout $f$ du dual tel que $\operatorname{Ker} f=H$ s'appelle encore une équation de l'hyperplan, on peut interpréter $A^\perp$ comme l'ensemble des équations des hyperplans contenant la partie $A$, ensemble auquel on adjoint la forme nulle.
+
+\medskip\noindent\textsc{Théorème 6.95.} --- \emph{Soit $A$ une partie de l'espace vectoriel $E$, alors $A^\perp$ est un sous-espace vectoriel de $E^*$. Si $A\subset B$, $B^\perp\subset A^\perp$. On a $A^\perp=(\operatorname{Vect}A)^\perp$.}
+
+D'abord $A^\perp$ non vide car la forme identiquement nulle annule tout vecteur de $A$, donc est dans $A^\perp$, puis $A^\perp$ stable par combinaison linéaire : si $f$ et $g$ sont dans $A^\perp$, $\lambda$ et $\mu$ dans le corps, alors $\forall X\in A$ on a
+\[
+(\lambda f+\mu g)(X)=\lambda f(X)+\mu g(X)=0
+\]
+puisque $f(X)$ et $g(X)$ sont nuls.
+
+Il est clair que si $A\subset B$, et si un hyperplan contient $B$, alors il contient $A$ donc les équations des hyperplans contenant $B$, sont parmi les équations des hyperplans contenant $A$, soit $B^\perp\subset A^\perp$.
+
+Enfin, pour un hyperplan (sous-espace vectoriel) contenir $A$ équivaut à contenir $\operatorname{Vect}A$ d'où en passant aux équations $A^\perp=(\operatorname{Vect}A)^\perp$. \bookend
+
+\medskip\noindent\textsc{Théorème 6.96.} --- \emph{Soient $F$ et $G$ deux sous-espaces vectoriels de $E$. On a
+\[
+(F+G)^\perp=F^\perp\cap G^\perp
+\qquad\text{et}\qquad
+(F\cap G)^\perp=F^\perp+G^\perp.
+\]}
+
+La première égalité est facile à justifier : $F\subset(F+G)$ et $G\subset(F+G)$ impliquent $(F+G)^\perp\subset F^\perp$ et $(F+G)^\perp\subset G^\perp$ d'où $(F+G)^\perp\subset(F^\perp\cap G^\perp)$; puis si $f\in F^\perp\cap G^\perp$, pour $X$ de $(F+G)$ écrit sous la forme $y+z$ avec $y$ dans $F$ et $z$ dans $G$ on a $f(X)=f(y)+f(z)$, (linéarité). Or $f$ est dans $F^\perp$ et $y$ dans $F$ d'où $f(y)=0$ et $f$ dans $G^\perp$, $z$ dans $G$ donne $f(z)=0$, donc $f(X)=0$ : on a bien $f\in(F+G)^\perp$; d'où l'égalité $(F+G)^\perp=F^\perp\cap G^\perp$.
+
+Pour la deuxième égalité on a : $(F\cap G)\subset F$ et $(F\cap G)\subset G$ d'où $F^\perp$ et $G^\perp$ sous-espaces de $(F\cap G)^\perp$ donc \emph{a fortiori}
+\[
+F^\perp+G^\perp=\operatorname{Vect}(F^\perp\cup G^\perp)\subset(F\cap G)^\perp.
+\]
+
+Pour l'autre inclusion, soit $\varphi\in(F\cap G)^\perp$ que l'on veut décomposer en $\varphi_1+\varphi_2$ avec $\varphi_1\in F^\perp$ et $\varphi_2\in G^\perp$. Pour cela, on part de $\mathcal B_1$ base de $F\cap G$, il existe $\mathcal C_1$ tel que $\mathcal B_1\cup\mathcal C_1$ soit une base de $F$ et il existe $\mathcal C_2$ tel que $\mathcal B_1\cup\mathcal C_2$ soit une base de $G$, ceci par application adéquate du théorème de la base incomplète : théorème 6.72.
+
+On a $\mathcal B_1\cup\mathcal C_1\cup\mathcal C_2$ famille libre car si on a des scalaires $\lambda_i$, $\mu_j$, $\rho_k$ presque tous nuls tels que
+\[
+\sum_{X_i\in\mathcal B_1}\lambda_iX_i+\sum_{Y_j\in\mathcal C_1}\mu_jY_j+\sum_{Z_k\in\mathcal C_2}\rho_kZ_k=0,
+\]
+en posant
+\[
+X=\sum_{X_i\in\mathcal B_1}\lambda_iX_i+\sum_{Y_j\in\mathcal C_1}\mu_jY_j
+\qquad\text{et}\qquad
+Z=\sum_{Z_k\in\mathcal C_2}\rho_kZ_k,
+\]
+on a $X$ dans $F$ et $Z$ dans $G$, de plus $Z=-X$ donc $Z\in F\cap G=\operatorname{Vect}(\mathcal B_1)$.
+
+Or $\mathcal B_1\cup\mathcal C_2$ est une base de $G$, le vecteur $Z$ devant se décomposer uniquement en fonction des vecteurs de $\mathcal B_1$, c'est que ses coordonnées suivant les vecteurs de $\mathcal C_2$ sont nulles, d'où chaque $\rho_k=0$ mais alors $X=0$ avec $X$ décomposé dans la base $\mathcal B_1\cup\mathcal C_1$ de $F$ d'où chaque $\lambda_i=0$ et chaque $\mu_j=0$ : la famille $\mathcal B_1\cup\mathcal C_1\cup\mathcal C_2$ est bien libre : on la complète en $\mathcal B_1\cup\mathcal C_1\cup\mathcal C_2\cup\mathcal L$ base de $E$ et on définit
+\[
+\begin{array}{c|cccc}
+&\mathcal B_1&\mathcal C_1&\mathcal C_2&\mathcal L\\\hline
+\varphi_1&0&0&\varphi&\varphi\\
+\varphi_2&0&\varphi&0&0
+\end{array}
+\]
+au sens où les formes linéaires prennent sur chacun de ces ensembles de vecteurs les valeurs indiquées.
+
+On a bien $\varphi_1$ nulle sur $\mathcal B_1\cup\mathcal C_1$ base de $F$ donc $\varphi_1\in F^\perp$, $\varphi_2$ nulle sur $\mathcal B_1\cup\mathcal C_2$ base de $G$ donc $\varphi_2\in G^\perp$, et $\varphi_1+\varphi_2=\varphi$ sur $\mathcal C_1$, sur $\mathcal C_2$, sur $\mathcal L$ et aussi sur $\mathcal B_1$ car alors $\varphi=0$.
+
+On a donc décomposé $\varphi$ de $(F\cap G)^\perp$ en $\varphi_1+\varphi_2\in F^\perp+G^\perp$ d'où finalement l'égalité voulue. \bookend
+
+\medskip\noindent\textbf{6.97. Interprétation géométrique :} les hyperplans contenant $F+G$ sont exactement ceux qui contiennent $F$ et $G$. Le deuxième point ne s'interprète pas puisque le $F^\perp+G^\perp$ ne correspond pas directement à des hyperplans.
+
+\medskip\noindent\textbf{6.98.} De manière analogue, si $A$ est une partie du dual cette fois, on définit son orthogonal par
+\[
+A^\perp=\{X;\ X\in E,\ \forall f\in A,\ f(X)=0\}.
+\]
+C'est encore
+\[
+A^\perp=\bigcap_{f\in A}\operatorname{Ker} f
+\]
+ce qui permet de justifier facilement
+\begin{enumerate}[label=\arabic*),leftmargin=2.1em]
+\item que $A^\perp$ est sous-espace vectoriel de $E$, (intersection de sous-espaces);
+\item que $A\subset B\Rightarrow B^\perp\subset A^\perp$, (dans $B^\perp$ on a déjà l'intersection des $\operatorname{Ker} f$ pour les $f$ de $A$, et on coupe encore, $B^\perp$ diminue donc ... ).
+\item On peut vérifier que $(\operatorname{Vect}A)^\perp=A^\perp$, car $A\subset\operatorname{Vect}A$ donne déjà $(\operatorname{Vect}A)^\perp\subset A^\perp$, puis si $X\in A^\perp$ et $f\in\operatorname{Vect}A$, $f$ est combinaison linéaire d'un nombre fini d'éléments de $A$, soient $f_1,\ldots,f_n$ ces éléments, $\lambda_1,\ldots,\lambda_n$ les scalaires coefficients de la combinaison linéaire, on a alors
+\[
+f=\sum_{i=1}^n\lambda_i f_i\qquad\text{donc}\qquad f(X)=\sum_{i=1}^n\lambda_i f_i(X)=0,
+\]
+chaque $f_i(X)$ étant nul puisque $X$ est dans $A^\perp$ et les $f_i$ dans $A$. Le vecteur $X$ annule bien chaque $f$ de $\operatorname{Vect}A$ : $X\in(\operatorname{Vect}A)^\perp$ d'où l'inclusion $A^\perp\subset(\operatorname{Vect}A)^\perp$ et l'égalité.
+\end{enumerate}
+
+\medskip\noindent\textsc{Théorème 6.99.} --- \emph{Soit $S$ une partie de l'espace vectoriel $E$, on a
+\[
+(S^\perp)^\perp=\operatorname{Vect}S.
+\]}
+
+D'abord $S^\perp=(\operatorname{Vect}S)^\perp$ (Théorème 6.95), et si on prend un vecteur $X$ de $\operatorname{Vect}S$, pour tout $f$ de $(\operatorname{Vect}S)^\perp$ on a $f(X)=0$ donc $X$ est bien dans l'orthogonal de la partie $(\operatorname{Vect}S)^\perp$ du dual $E^*$, d'où l'inclusion
+\[
+\operatorname{Vect}S\subset((\operatorname{Vect}S)^\perp)^\perp.
+\]
+On va prouver l'autre inclusion en justifiant que, si $X\notin\operatorname{Vect}S$, alors $X\notin((\operatorname{Vect}S)^\perp)^\perp$.
+
+Soit donc $\mathcal C$ une base de $\operatorname{Vect}(S)$, $X\notin\operatorname{Vect}(S)$ donc $\mathcal C\cup\{X\}$ est une famille libre (Théorème 6.61), car si $\mathcal C\cup\{X\}$ liée, on obtiendrait $X$ combinaison linéaire d'un nombre fini de vecteurs de $\mathcal C$.
+
+On complète en $\mathcal B=\mathcal C\cup\{X\}\cup\mathcal L$ base de $E$, (Théorème 6.72, dit de la base incomplète) et on définit une forme linéaire $\mu$ en donnant les images des vecteurs de $\mathcal B$, (Théorème 6.77). Pour cela, $\mu$ envoie $\mathcal C$ sur 0, donc $\mu$ annule $\operatorname{Vect}(\mathcal C)=\operatorname{Vect}(S)$, soit $\mu\in(\operatorname{Vect}S)^\perp$; et on impose $\mu(X)=1$, et n'importe quoi pour $\mu(\mathcal L)$.
+
+On a $\mu\in(\operatorname{Vect}S)^\perp$ et $\mu(X)=1$ donc $X\notin((\operatorname{Vect}S)^\perp)^\perp$.
+
+On a bien justifié l'inclusion $((\operatorname{Vect}S)^\perp)^\perp\subset\operatorname{Vect}S$ et l'égalité souhaitée. \bookend
+
+Une autre notion utile dans le dual est celle de transposition.
+
+\medskip\noindent\textsc{Définition 6.100.} --- \emph{Soient $E$ et $F$ deux espaces vectoriels sur un corps $K$, $E^*$ et $F^*$ leurs duaux et $u\in\mathcal L(E,F)$. On appelle transposée de $u$ l'application notée ${}^tu$ de $F^*$ dans $E^*$ définie par :
+\[
+\forall\varphi\in F^*,\qquad {}^tu(\varphi)=\varphi\circ u,
+\]
+(${}^tu$ se lit transposée de $u$).}
+
+Ceci a un sens car $u$ est linéaire de $E$ dans $F$ et $\varphi$ de $F$ dans le corps $K$ donc $\varphi\circ u$ est linéaire de $E$ dans $K$ : on a bien ${}^tu(\varphi)\in E^*$.
+
+\medskip\noindent\textsc{Théorème 6.101.} --- \emph{L'application ${}^tu$ est linéaire, la transposition est linéaire et ${}^t(u\circ v)={}^tv\circ{}^tu$, (sous réserve que $u\circ v$ ait un sens).}
+
+On a
+\[
+{}^tu(\lambda_1\varphi_1+\lambda_2\varphi_2)=(\lambda_1\varphi_1+\lambda_2\varphi_2)\circ u:
+\]
+c'est l'application de $E$ dans $K$ qui à un vecteur $X$ de $E$ associe $(\lambda_1\varphi_1+\lambda_2\varphi_2)(u(X))$ ce qui vaut, compte tenu de la structure vectorielle, $\lambda_1\varphi_1(u(X))+\lambda_2\varphi_2(u(X))$ soit
+\[
+[\lambda_1{}^tu(\varphi_1)+\lambda_2{}^tu(\varphi_2)](X).
+\]
+Ceci étant vrai $\forall X\in E$, c'est que
+\[
+{}^tu(\lambda_1\varphi_1+\lambda_2\varphi_2)=\lambda_1{}^tu(\varphi_1)+\lambda_2{}^tu(\varphi_2)
+\]
+d'où la linéarité de ${}^tu$.
+
+L'application transposition : $u\longmapsto{}^tu$ est elle aussi linéaire de $\mathcal L(E,F)$ dans $\mathcal L(F^*,E^*)$.
+
+Car si $u,v$ sont dans $\mathcal L(E,F)$ et $\lambda,\mu$ dans le corps $K$, ${}^t(\lambda u+\mu v)$ est définie par
+\[
+\varphi\longmapsto{}^t(\lambda u+\mu v)(\varphi)=\varphi\circ(\lambda u+\mu v)
+\]
+ce qui, compte tenu de la linéarité de $\varphi$, vaut $\lambda\varphi\circ u+\mu\varphi\circ v$ (calculer pour un $X$ quelconque de $E$ pour le vérifier).
+
+C'est encore $\lambda{}^tu(\varphi)+\mu{}^tv(\varphi)$ soit $(\lambda{}^tu+\mu{}^tv)(\varphi)$, d'après cette fois la structure vectorielle de $\mathcal L(F^*,E^*)$.
+
+L'égalité
+\[
+{}^t(\lambda u+\mu v)(\varphi)=(\lambda{}^tu+\mu{}^tv)(\varphi)
+\]
+étant valable pour tout $\varphi$ de $F^*$, c'est que ${}^t(\lambda u+\mu v)=\lambda{}^tu+\mu{}^tv$, ce qui est bien la linéarité de la transposition.
+
+Enfin soient $E,F,G$ trois espaces vectoriels et $u$ linéaire de $E$ dans $F$, $v$ linéaire de $F$ dans $G$. Alors $v\circ u$ est linéaire de $E$ dans $G$ et, pour tout $\psi$ de $G^*$ on a
+\[
+\begin{aligned}
+{}^t(v\circ u)(\psi)&=\psi\circ(v\circ u), &&\text{définition de }{}^t(v\circ u),\\
+&=(\psi\circ v)\circ u, &&\text{par associativité du produit de composition},\\
+&=({}^tv(\psi))\circ u,\\
+&={}^tu({}^tv(\psi))=({}^tu\circ{}^tv)(\psi).
+\end{aligned}
+\]
+C'est vrai pour tout $\psi$ de $G^*$ donc ${}^t(v\circ u)={}^tu\circ{}^tv$. \bookend
+
+\medskip\noindent\textsc{Théorème 6.102.} --- \emph{Soient $E$ et $F$ deux espaces vectoriels et $u\in\mathcal L(E,F)$. On a
+\[
+\operatorname{Ker}({}^tu)=(u(E))^\perp.
+\]}
+
+Car $\varphi$ de $F^*$ est dans $\operatorname{Ker}({}^tu)$ si et seulement si ${}^tu(\varphi)=\varphi\circ u=0$, c'est-à-dire $\forall X\in E$, $\varphi(u(X))=0$ ce qui est la transcription de $\varphi$ orthogonal à tout vecteur de l'image $u(E)$ d'où l'équivalence. \bookend
+
+\medskip\noindent\textsc{Corollaire 6.103.} --- \emph{On a $u$ surjective $\Longleftrightarrow {}^tu$ injective.}
+
+En effet établissons d'abord un lemme.
+
+\medskip\noindent\textsc{Lemme 6.104.} --- \emph{Soit $X$ un vecteur non nul de $E$, il existe des formes linéaires non nulles sur $X$.}
+
+Car la famille libre $\{X\}$ se complète en $\{X\}\cup\mathcal C$ base $\mathcal B$ de $E$ et la forme coordonnée $\mu$ qui envoie $X$ sur 1 et tout vecteur de $\mathcal C$ sur 0 convient. \bookend
+
+Soit alors $H$ un sous-espace strict de $F$, et $X$ vecteur de $F\setminus H$, on a $X\ne0$, (car $0\in H$), donc il existe une forme $\mu$ non nulle sur $X$, nulle sur $H$, d'où un $\mu$ non nul dans $H^\perp$ :
+\[
+H\subsetneq F\Longrightarrow H^\perp\ne\{0\}.
+\]
+Comme par ailleurs $F^\perp=\{\mu;\ \mu\in F^*,\ \mu=0\}$, c'est $F^\perp=\{0\}$, d'où finalement, pour $H$ sous-espace de $F$, on a
+\[
+H^\perp=\{0\}\Longleftrightarrow H=F.
+\]
+Il en résulte que
+\[
+u\text{ surjective}\Longleftrightarrow u(E)=F\Longleftrightarrow(u(E))^\perp=\{0\}
+\Longleftrightarrow\operatorname{Ker}({}^tu)=\{0\}
+\]
+soit $u$ surjective $\Longleftrightarrow{}^tu$ injective. \bookend
+
+\medskip\noindent\textsc{Théorème 6.105.} --- \emph{Soient $E$ et $F$ deux espaces vectoriels et $u\in\mathcal L(E,F)$. On a
+\[
+\operatorname{Im}({}^tu)=(\operatorname{Ker} u)^\perp.
+\]}
+
+Soit $\varphi\in\operatorname{Im}({}^tu)$, il existe $\psi$ dans $F^*$ tel que $\varphi={}^tu(\psi)=\psi\circ u$ donc, $\forall X\in\operatorname{Ker} u$,
+\[
+\varphi(X)=\psi(u(X))=\psi(0)=0:
+\]
+on a bien $\varphi\in(\operatorname{Ker} u)^\perp$.
+
+Réciproquement soit $\varphi\in(\operatorname{Ker} u)^\perp$, on veut l'écrire sous la forme $\varphi={}^tu(\psi)=\psi\circ u$, avec $\psi$ dans $F^*$, c'est-à-dire factoriser $u$ à travers $\varphi$ or on sait (Théorème 6.54), que c'est possible si et seulement si $\operatorname{Ker} u\subset\operatorname{Ker}\varphi$, ce qui est le cas ici car $\forall X\in\operatorname{Ker} u$, $\varphi(X)=0$, donc $X\in\operatorname{Ker}\varphi$. \bookend
+
+\medskip\noindent\textsc{Corollaire 6.106.} --- \emph{On a $u$ injective $\Longleftrightarrow{}^tu$ surjective.}
+
+Car soit $E$ un espace vectoriel, on a $\{0\}^\perp=E^*$ car tout $\varphi$ de $E^*$ annule bien 0, et si $H$ est sous-espace $\ne\{0\}$ de $E$, avec $X\ne0$ dans $H$, il existe une forme coordonnée $\mu$ non nulle en $X$, (lemme 6.104), donc $\mu\notin H^\perp$ qui est donc différent de $E^*$. Il en résulte qu'avec $H$ sous-espace vectoriel de $E$ on a
+\[
+H^\perp=E^*\Longleftrightarrow H=\{0\},
+\]
+et donc ici, que
+\[
+u\text{ injective}\Longleftrightarrow\operatorname{Ker} u=\{0\}\Longleftrightarrow(\operatorname{Ker} u)^\perp=E^*
+\Longleftrightarrow\operatorname{Im}({}^tu)=E^*
+\]
+soit $u$ injective $\Longleftrightarrow{}^tu$ surjective. \bookend
+
+Il en résulte que l'on a :
+
+\medskip\noindent\textsc{Théorème 6.107.} --- \emph{Soit $E$ un espace vectoriel sur un corps $K$, on a, pour $u$ application linéaire de $E$ dans $E$,
+\[
+u\in GL(E)\Longleftrightarrow{}^tu\in GL(E^*).
+\]}
+
+C'est une conséquence immédiate des corollaires 6.103 et 6.106. \bookend
+
+Et les bases dans tout cela?
+
+Soit $\mathcal B=(e_i)_{i\in I}$ une base de l'espace vectoriel $E$, comme $K$ est de dimension finie, 1, sur lui-même, il résulte du théorème 6.78, que les applications $(e_i^*)_{i\in I}$, linéaires de $E$ dans $K$ définies par les conditions :
+\[
+e_i^*(e_j)=0\quad\text{si }j\ne i\qquad\text{et}\qquad e_i^*(e_i)=1
+\]
+forment une famille libre de $E^*$, (car $\{1\}$ est une base de $K$ espace vectoriel sur lui-même).
+
+Cette famille est une base de $E^*\Longleftrightarrow\dim E$ finie, (toujours d'après le Théorème 6.78) et dans ce cas, si $n=\dim E$, on a aussi $\dim E^*=n$.
+
+\medskip\noindent\textbf{6.108.} Dans ce cas $\{e_1^*,\ldots,e_n^*\}$ est la base duale de $E^*$, mais il faut bien noter qu'en dimension infinie, la famille des $(e_i^*)_{i\in I}$ est libre mais non génératrice.
+
+\medskip\noindent\textsc{Remarque 6.109.} --- Si
+\[
+X=\sum_{j\in I}x_j e_j
+\]
+avec les $x_j$ presque tous nuls, on a
+\[
+e_i^*(X)=\sum_{j\in I}x_j e_i^*(e_j)
+\]
+par linéarité, avec, pour $j\ne i$, $e_i^*(e_j)=0$ et $e_i^*(e_i)=1$, il reste $e_i^*(X)=x_i$ : $e_i^*$ est l'application qui à $X$ associe sa coordonnée suivant $e_i$, dans sa décomposition dans la base $\mathcal B$ d'où le nom de forme coordonnée.
+
+Quelques résultats en dimension finie qui peuvent conduire à des justifications plus simples des théorèmes 6.96, 6.99, et 6.102 et 6.105, résultats non valables en dimension infinie.
+
+\medskip\noindent\textsc{Théorème 6.110.} --- \emph{Soit $F$ sous-espace vectoriel de dimension $p$, de $E$ espace de dimension $n$. On a
+\[
+\dim F^\perp=n-p.
+\]}
+
+Car si $\{e_1,\ldots,e_p\}$ est une base de $F$, que l'on complète en
+\[
+\mathcal B=\{e_1,\ldots,e_p,e_{p+1},\ldots,e_n\}
+\]
+base de $E$, avec $\mathcal B^*$ base duale de $E^*$, on a
+\[
+\varphi=\sum_{i=1}^n\lambda_i e_i^*\in F^\perp=(\operatorname{Vect}(e_1,\ldots,e_p))^\perp
+\]
+si et seulement si pour tout $j\le p$, $\varphi(e_j)=0$ soit
+\[
+\sum_{i=1}^n\lambda_i e_i^*(e_j)=0.
+\]
+Il ne reste que $\lambda_j=0$, $\forall j=1,\ldots,p$, ce qui équivaut à
+\[
+\varphi=\sum_{j=p+1}^n\lambda_j e_j^*
+\]
+donc $F^\perp=\operatorname{Vect}(e_{p+1}^*,\ldots,e_n^*)$ est de dimension $n-p$. \bookend
+
+Voyons, à titre d'exemple, comment la justification du Théorème 6.96, 2e partie est simplifiée, si $E$ est de dimension finie, $n$.
+
+On veut prouver que $(F\cap G)^\perp=F^\perp+G^\perp$. On vérifie facilement que
+\[
+F^\perp+G^\perp\subset(F\cap G)^\perp,
+\]
+(car $(F\cap G)\subset F$ et $(F\cap G)\subset G$ impliquent $F^\perp\subset(F\cap G)^\perp$ et $G^\perp\subset(F\cap G)^\perp$ d'où $(F^\perp+G^\perp)\subset(F\cap G)^\perp$).
+
+Puis
+\[
+\begin{aligned}
+\dim(F^\perp+G^\perp)
+&=\dim F^\perp+\dim G^\perp-\dim(F^\perp\cap G^\perp)\\
+&=n-\dim F+n-\dim G-\dim(F+G)^\perp.
+\end{aligned}
+\]
+La première partie du Théorème 6.96 donne $(F+G)^\perp=F^\perp\cap G^\perp$. On a donc
+\[
+\begin{aligned}
+\dim(F^\perp+G^\perp)
+&=2n-\dim F-\dim G-(n-\dim(F+G))\\
+&=n-\dim F-\dim G+(\dim F+\dim G-\dim F\cap G)\\
+&=n-\dim(F\cap G)=\dim(F\cap G)^\perp,
+\end{aligned}
+\]
+(on utilise abondamment le corollaire 6.87). Mais la remarque 6.88 prouve l'égalité des deux sous-espaces, (inclusion et dimensions égales, finies). \bookend
+
+\medskip\noindent\textsc{Théorème 6.111.} --- \emph{Soient $E$ et $F$ deux espaces vectoriels de dimensions finies $n$ et $p$ respectivement, et $u\in\mathcal L(E,F)$. Alors $u$ et ${}^tu$ ont le même rang.}
+
+Car si $r=\operatorname{rang}u$, si $\{Y_1,\ldots,Y_r\}$ est une base de $u(E)$, si on choisit $X_1,\ldots,X_r$ dans $E$ tels que $u(X_i)=Y_i$, ($i=1,\ldots,r$), la famille $\{X_1,\ldots,X_r\}$ est libre, (si elle était liée, les images par $u$ le seraient).
+
+On complète en $\{Y_1,\ldots,Y_r,Z_1,\ldots,Z_{p-r}\}$ base de $F$ cette famille libre des $Y_i$.
+
+Soit
+\[
+\mathcal B^*=\{Y_1^*,\ldots,Y_r^*,Z_1^*,\ldots,Z_{p-r}^*\}
+\]
+la base duale de $F^*$, le rang de ${}^tu$ est la dimension de l'espace vectoriel engendré par les ${}^tu(Y_i^*)$ et les ${}^tu(Z_k^*)$. Or ${}^tu(Z_k^*)=Z_k^*\circ u=0$ car pour tout $X$ de $E$, $u(X)\in\operatorname{Vect}(Y_1,\ldots,Y_r)$ donc a sa coordonnée suivant $Z_k$ nulle, $Z_k^*(u(X))=$ coordonnée de $u(X)$ suivant $Z_k$, d'après 6.109. Il reste
+\[
+\operatorname{rang}({}^tu)=\dim\operatorname{Vect}({}^tu(Y_1^*),\ldots,{}^tu(Y_r^*)),
+\]
+mais ces formes, égales à $Y_1^*\circ u,Y_2^*\circ u,\ldots,Y_r^*\circ u$ sont libres car si on a des scalaires $\lambda_1,\ldots,\lambda_r$ tels que
+\[
+\sum_{i=1}^r\lambda_iY_i^*\circ u=0,
+\]
+en prenant l'image de $X_j$ on trouve 0, or $Y_i^*(u(X_j))=Y_i^*(Y_j)=0$ sauf si $i=j$, et $Y_j^*(Y_j)=1$. Il reste $\lambda_j=0$, ceci pour $j=1,\ldots,r$.
+
+Finalement ${}^tu(F^*)$ est bien de dimension $r$, d'où $\operatorname{rang}({}^tu)=r$. \bookend
+
+En fait ce théorème reste valable, quelles que soient les dimensions de $E$ et $F$, dès que $u$ est de rang fini. On a le :
+
+\medskip\noindent\textsc{Théorème 6.112.} --- \emph{Soient $E$ et $F$ deux espaces vectoriels, $u\in\mathcal L(E,F)$. Si $r=\operatorname{rang}u=\dim u(E)$ est fini alors ${}^tu$ est aussi de rang fini, $r$.}
+
+On suppose $u$ de rang fini $r$, soit $\{Y_1,\ldots,Y_r\}$ une base de $u(E)$ et des vecteurs $(X_i)_{1\le i\le r}$ de $E$ tels que $u(X_i)=Y_i$. En considérant la justification du théorème 6.111, on s'aperçoit qu'elle reste valable si $F$ est de dimension finie : la dimension de $E$ n'intervenant pas en fait.
+
+Donc on suppose ici $F$ de dimension infinie. On complète la famille libre $\{Y_1,\ldots,Y_r\}$ en
+\[
+\mathcal B=\{Y_1,\ldots,Y_r\}\cup(Z_j)_{j\in J}
+\]
+base de $F$ (théorème de la base incomplète), d'où, dans $F^*$, la famille libre notée $\mathcal L$ formée des formes coordonnées $(Y_i^*)_{1\le i\le r}$ et $(Z_j^*)_{j\in J}$ qui envoient chacune toute la base sur 0 sauf un vecteur d'image 1.
+
+Cette famille libre, n'est pas une base de $F^*$, (6.108) car $F$ est de dimension infinie mais il existe $\mathcal C$ famille libre de $F^*$ telle que $\mathcal L\cup\mathcal C$ soit base de $F^*$, là encore théorème de la base incomplète.
+
+L'image ${}^tu(F^*)$ est alors engendrée par les images des vecteurs de cette base $\mathcal L\cup\mathcal C=(Y_i^*)_{1\le i\le r}\cup(Z_j^*)_{j\in J}\cup\mathcal C$ par ${}^tu$.
+
+On aura ${}^tu(Z_j^*)=0$ car c'est $Z_j^*\circ u$ et $\forall X\in E$, $u(X)\in u(E)=\operatorname{Vect}(Y_1,\ldots,Y_r)$, donc a des coordonnées nulles suivant les $Z_j$.
+
+Mais \emph{a priori}, si $\varphi\in\mathcal C$, il n'y a aucune raison pour que ${}^tu(\varphi)=0$. Aussi la démonstration consiste à remplacer $\mathcal C$ par une famille libre $\mathcal C'$ formée de $\varphi'$ tels que ${}^tu(\varphi')=0$, soit $\varphi'\circ u=0$, ou $\varphi'$ nulle sur $u(E)$.
+
+Pour cela, si $\varphi\in\mathcal C$, on définit $\varphi'$ associée par :
+\[
+\varphi'=\varphi-\sum_{i=1}^r\varphi(Y_i)Y_i^*.
+\]
+
+$\varphi'$ est bien un élément de $F^*$, et sur chaque vecteur $Y_k$, ($1\le k\le r$) de la base considérée de $u(E)$ on a
+\[
+\varphi'(Y_k)=\varphi(Y_k)-\sum_{i=1}^r\varphi(Y_i)Y_i^*(Y_k),
+\]
+avec $Y_i^*(Y_k)=0$ sauf si $i=k$, et alors $Y_k^*(Y_k)=1$, il reste donc $\varphi'(Y_k)=0$ : on a bien $\varphi'\circ u=0$.
+
+Si on note $\mathcal C'=\{\varphi'\text{ ainsi associés aux }\varphi\text{ de }\mathcal C\}$ on a $\mathcal L\cup\mathcal C'$ base de $F^*$ car tout élément de $F^*$ est combinaison linéaire d'un nombre fini d'éléments de $\mathcal L\cup\mathcal C$. Si on remplace les $\varphi$ de $\mathcal C$ intervenant par les $\varphi'$ associés on garde une combinaison linéaire des mêmes éléments de $\mathcal L$, des $\varphi'$ en nombre fini, et en plus de $Y_1^*,\ldots,Y_r^*$ qui sont dans $\mathcal L$; finalement tout élément de $F^*$ est combinaison linéaire d'un nombre fini d'éléments de $\mathcal L\cup\mathcal C'$ qui est donc partie génératrice de $F^*$. C'est une famille libre, (donc une base) car supposons que l'on ait une combinaison linéaire finie, nulle des éléments de $\mathcal L\cup\mathcal C'$.
+
+En notant $\mathcal C=(\varphi_l)_{l\in L}$, et en indexant $\mathcal C'$ par le même ensemble, et quitte à rajouter à la combinaison linéaire non nulle, 0 fois chaque $Y_i^*$ n'y figurant pas, on peut écrire cette combinaison sous la forme
+\[
+\sum_{i=1}^r y_iY_i^*+\sum_{a=1}^p z_{j_a}Z_{j_a}^*+\sum_{b=1}^q t_{l_b}\varphi'_{l_b}=0,
+\]
+car pour prendre un nombre fini, $p$, des $Z_j^*$, on indexe les indices $j$ par un indice, ici $a$, variant de 1 à $p$. On procède de même pour les $\varphi'_l$.
+
+On remplace chaque $\varphi'_{l_b}$ par
+\[
+\varphi_{l_b}-\sum_{i=1}^r\varphi_{l_b}(Y_i)Y_i^*,
+\]
+il reste
+\[
+\sum_{i=1}^r\left(y_i-\sum_{b=1}^q t_{l_b}\varphi_{l_b}(Y_i)\right)Y_i^*
++\sum_{a=1}^p z_{j_a}Z_{j_a}^*
++\sum_{b=1}^q t_{l_b}\varphi_{l_b}=0,
+\]
+(c'est affreux, mais il faut savoir s'accrocher, comme le fou à son pinceau).
+
+En tout cas, $y_i-\sum_{b=1}^q t_{l_b}\varphi_{l_b}(Y_i)$ est un scalaire, et là, c'est une combinaison linéaire des vecteurs de la base $\mathcal L\cup\mathcal C$ de $F^*$ donc les $t_{l_b}$ sont nuls, les $z_{j_a}$ aussi, il reste $\sum_{i=1}^r y_iY_i^*=0$ donc les $y_i$ aussi sont nuls : on a finalement une base $\mathcal L\cup\mathcal C'$ de $F^*$.
+
+En revenant à la justification du théorème, l'image de ${}^tu$ est engendrée par
+\begin{itemize}[leftmargin=2em]
+\item les ${}^tu(Y_i^*)_{1\le i\le r}$,
+\item les ${}^tu(Z_j^*)$ qui sont nuls,
+\item et les ${}^tu(\varphi')$, $\forall\varphi'\in\mathcal C'$, mais on a construit les $\varphi'$ pour avoir 0.
+\end{itemize}
+Il reste
+\[
+{}^tu(F^*)=\operatorname{Vect}({}^tu(Y_i^*)_{1\le i\le r}),
+\]
+et on termine comme pour le théorème 6.111 cette famille est libre car si on a des scalaires $\lambda_1,\ldots,\lambda_r$ tels que
+\[
+\sum_{i=1}^r\lambda_i{}^tu(Y_i^*)=0,
+\]
+en prenant l'image de $X_k$ choisi tel que $u(X_k)=Y_k$, on a
+\[
+0=\left(\sum_{i=1}^r\lambda_i{}^tu(Y_i^*)\right)(X_k)
+=\sum_{i=1}^r\lambda_iY_i^*(u(X_k))=\lambda_k,
+\]
+donc $\lambda_k$ nul.
+
+Il en résulte que les $({}^tu(Y_i^*))_{1\le i\le r}$ forment une base de ${}^tu(F^*)$ donc ${}^tu$ est bien de rang $r$. Ouf! \bookend
+
+Il reste une question à aborder.
+
+Si $E$ est de dimension finie, $n$, son dual $E^*$ est aussi de dimension $n$. Si $E$ est de dimension infinie, et si $\mathcal B$ est une base de $E$, les formes coordonnées forment une famille libre de $E^*$, pas une base mais ... quelle est la dimension du dual $E^*$ ?
+
+Une base de $E^*$ pourrait-elle être équipotente à une de $E$? La réponse à cette question passionnante est connue : si $E$ est de dimension infinie, son dual a une dimension strictement plus grande, ou encore une base de $E^*$ a un cardinal strictement supérieur \BellaCorrectionNote{au cardinal}{ou cardinal}{Correction de la préposition dans le texte imprimé.} d'une base de $E$.
+
+C'est ce qui va être justifié par le théorème suivant :
+
+\medskip\noindent\textsc{Théorème 6.113. (d'Erdös Kaplansky)} --- \emph{Soit $E$ un espace vectoriel de dimension infinie sur un corps $K$. La dimension de son dual $E^*$ est $\operatorname{card}(E^*)$.}
+
+Oui, cela surprend! Cela ne signifie pas que $E^*$ est une base de $E^*$, ce qui serait ridicule, mais qu'une base de $E^*$ est équipotente à $E^*$, ce qui ne l'empêche pas d'avoir «moins d'éléments» au sens intuitif du «moins» qui dit qu'il y a «moins» d'entiers que de rationnels bien qu'il y en ait « autant » puisque ces deux ensembles sont équipotents.
+
+On comprend que la justification ne va pas être facile, et s'il y a encore des lecteurs, qu'ils s'accrochent bien pour se plonger dans les délices des infinis. A moins que, raisonnablement, ils passent à autre chose.
+
+Comme une base $\mathcal B$ de $E^*$ est contenue dans $E^*$, on a déjà
+\[
+\dim(E^*)=\operatorname{card}\mathcal B\le\operatorname{card}(E^*),
+\]
+il suffit donc de justifier l'autre inégalité. On peut considérer qu'une moitié du travail est faite, la plus petite.
+
+Soit $\mathcal C=(e_i)_{i\in I}$ une base de $E$. Comme une forme linéaire $\varphi$ est déterminée par les valeurs prises sur les $e_i$, on a :
+
+\medskip\noindent\textsc{Lemme 6.114.} --- \emph{L'espace vectoriel $E^*$ est isomorphe à $K^I$ espace vectoriel des applications de $I$ dans $K$.}
+
+On définit l'application $\theta$ de $E^*$ dans $K^I$ par : $\theta(\varphi)$ est l'application $i\longmapsto\varphi(e_i)$ de $I$ dans $K$.
+
+$\theta$ linéaire : si $\varphi$ et $\psi$ sont dans $E^*$, $\lambda$ et $\mu$ dans $K$, $\theta(\lambda\varphi+\mu\psi)$ est l'application de $I$ dans $K$ qui à $i$ associe $(\lambda\varphi+\mu\psi)(e_i)$ soit
+\[
+\lambda\varphi(e_i)+\mu\psi(e_i)=\lambda\theta(\varphi)(i)+\mu\theta(\psi)(i)
+=[\lambda\theta(\varphi)+\mu\theta(\psi)](i).
+\]
+Ceci étant vrai pour tout $i$ de $I$ c'est que $\theta(\lambda\varphi+\mu\psi)$ est bien $\lambda\theta(\varphi)+\mu\theta(\psi)$.
+
+$\theta$ injective : si $\theta(\varphi)=0$, la forme $\varphi$ valant 0 sur la base $\mathcal C$ de $E$ est nulle.
+
+$\theta$ surjective : car la donnée d'une application $a$ de $I$ dans $K$ détermine une forme $\varphi$ valant $a(i)$ sur $e_i$ (Théorème 6.77). \bookend
+
+Par ailleurs, $(e_i)_{i\in I}$ étant base de $E$, les vecteurs de $E$ sont identifiés aux familles $(a_i)_{i\in I}$ de scalaires presque tous nuls, on va noter $K^{[I]}$ l'espace vectoriel des applications de $I$ dans $K$ à valeurs presque toutes nulles, c'est-à-dire telles que $\operatorname{card}\{i,a_i\ne0\}$ est fini. Le fait que $K^{[I]}$ soit un espace vectoriel, sous-espace de $K^I$ en fait, est facile à vérifier.
+
+\medskip\noindent\textsc{Lemme 6.115.} --- \emph{Soit $I$ un ensemble, $a^{(1)},a^{(2)},\ldots,a^{(k)}$ des applications distinctes en nombre fini dans $K$. Alors il existe une partie $J$ de cardinal fini, $J\subset I$, telle que les éléments $(a_i^{(p)})_{i\in J}$ de $K^{\operatorname{card}J}$ soient distincts, (pour $p=1,2,\ldots,k$).}
+
+Digérons d'abord les notations. Une application $a$ de $I$ dans $K$ est ici notée comme une famille $(a_i)_{i\in I}$, $a_i$ étant la valeur prise par la fonction $a$ en $i$. C'est la notation utilisée pour les suites que l'on généralise ici.
+
+Comme on considère plusieurs applications, on les indexe par un indice $p$ variant de 1 à $k$, et placé en haut à droite, entre parenthèses pour ne pas confondre avec des puissances.
+
+Enfin si $\operatorname{card}(J)=n$ est un entier, $K^n$ est un espace vectoriel sur $K$, celui des $n$-uplets, (exemple 6.3).
+
+Soient alors $p$ et $q$ distincts dans $\{1,2,\ldots,k\}$, les fonctions $a^{(p)}$ et $a^{(q)}$ étant distinctes, il existe un élément $j_{p,q}$ de $I$ où elles prennent des valeurs différentes, donc
+\[
+a_{j_{p,q}}^{(p)}\ne a_{j_{p,q}}^{(q)}.
+\]
+Si
+\[
+J=\bigcup_{\{p,q\}\text{ paire de }\{1,2,\ldots,k\}}\{j_{p,q}\}
+\]
+est un ensemble formé d'indices ainsi associés aux $\frac{k(k-1)}2$ sous-ensembles à 2 éléments de $\{1,\ldots,k\}$ et si $n=\operatorname{card}J$, on a $n\le\frac{k(k-1)}2$, et les $n$-uplets $(a_i^{(p)})_{i\in J}$ pour $p=1,2,\ldots,k$ sont bien distincts. \bookend
+
+\medskip\noindent\textsc{Lemme 6.116.} --- \emph{Soit $n$ un entier $\ge1$, $b^{(1)},b^{(2)},\ldots,b^{(k)}$ des $n$-uplets distincts. Il existe un polynôme $P$ à $n$ indéterminées $X_1,\ldots,X_n$ sur $K$, tel que $P(b^{(1)})\ne0$ et $P(b^{(s)})=0$ si $2\le s\le k$.}
+
+Rappelons que si
+\[
+P(X_1,\ldots,X_n)=\sum_{(j_1,j_2,\ldots,j_n)\in\mathbb N^n}u_{j_1\cdots j_n}X_1^{j_1}X_2^{j_2}\cdots X_n^{j_n}
+\]
+avec les scalaires $u_{j_1\cdots j_n}$ de $K$, indexés par $\mathbb N^n$, presque tous nuls, et si le $n$-uplet $b^{(s)}$ de $K^n$ vaut $b^{(s)}=(b_1^{(s)},b_2^{(s)},\ldots,b_n^{(s)})$ on a
+\[
+P(b^{(s)})=\sum_{j_1,\ldots,j_n}u_{j_1\cdots j_n}(b_1^{(s)})^{j_1}(b_2^{(s)})^{j_2}\cdots(b_n^{(s)})^{j_n}.
+\]
+
+On justifie le lemme par récurrence sur $k$.
+
+Si $k=2$, on a $b^{(1)}\ne b^{(2)}$ donc il existe un indice $j$ dans $\{1,\ldots,n\}$ tel que $b_j^{(1)}\ne b_j^{(2)}$, le polynôme
+\[
+P(X_1,\ldots,X_n)=X_j-b_j^{(2)}
+\]
+s'annule sur le $n$-uplet $b^{(2)}$ et pas sur $b^{(1)}$, car $P(b^{(1)})=b_j^{(1)}-b_j^{(2)}\ne0$.
+
+Si on suppose le résultat vrai à l'ordre $k$, soient $b^{(1)},\ldots,b^{(k)},b^{(k+1)}$ des points distincts de $K^n$, on sait (hypothèse de récurrence) qu'il existe un polynôme $Q$ en $X_1,\ldots,X_n$, tel que $Q(b^{(1)})\ne0$ et $Q(b^{(s)})=0$ pour $s=2,3,\ldots,k$. Puis, (cas de $k=2$), il existe un polynôme en $X_1,\ldots,X_n$ également, $R$, tel que $R(b^{(1)})\ne0$ et $R(b^{(k+1)})=0$. Alors
+\[
+P(X_1,\ldots,X_n)=Q(X_1,\ldots,X_n)R(X_1,\ldots,X_n)
+\]
+est tel que $P(b^{(1)})=Q(b^{(1)})R(b^{(1)})\ne0$, et pour $s=2,\ldots,k,k+1$, $P(b^{(s)})=0$ car soit $Q(b^{(s)})=0$ soit $R(b^{(s)})=0$. \bookend
+
+Avant de continuer, un petit peu de gymnastique mentale.
+
+Soit $I$ un ensemble, $S=\{X_i,i\in I\}$ un ensemble d'indéterminées indexées par $I$, donc en bijection avec $I$.
+
+\medskip\noindent\textbf{6.117.} On introduit $A=K[S]$ l'ensemble des polynômes ayant $S$ comme ensemble d'indéterminées.
+
+On a donc
+\[
+\begin{aligned}
+P\in A\quad\Longleftrightarrow\quad &\exists I'\text{ partie finie de }I,\\
+& P\text{ est un polynôme par rapport aux indéterminées }X_i,\ i\in I'.
+\end{aligned}
+\]
+
+Si $Q\in A$ est polynôme par rapport aux $X_i$ avec $i\in I''$, et $\operatorname{card}I''$ fini, avec $I'''=I'\cup I''$, de cardinal fini, on a aussi $P$ et $Q$ polynômes par rapport aux indéterminées $X_i$, en nombre fini, associées aux $i$ de $I'''$, donc on peut définir $P+Q$ et $PQ$ avec les règles usuelles, ainsi que $\lambda\cdot P$ si $\lambda$ est un scalaire, si bien qu'avec un peu de réflexion on parvient à concevoir que $A$ est une algèbre.
+
+Revenons à nos moutons, avec $E$ vectoriel de dimension infinie, $\mathcal C=(e_i)_{i\in I}$ une base de $E$, $S=(X_i)_{i\in I}$ une famille d'indéterminées indexées par $I$ et $A$ l'algèbre des polynômes aux indéterminées $(X_i)_{i\in I}$.
+
+\medskip\noindent\textsc{Lemme 6.118.} --- \emph{Soit $a$ dans $K^I$, une application de $I$ dans $K$, (on notera $a_i$ la valeur prise par $a$ en $i$). Soit $\delta_a$ l'application de $A=K[S]$ dans $K$ définie par $\delta_a(P)=P(a)$. La famille $(\delta_a)_{a\in K^I}$ est libre dans $A^*$, dual de $A$.}
+
+Un point pour comprendre, si tant est que cela soit encore possible! Si $P$ est un polynôme de $K[S]$, par rapport aux variables $X_{i_1},\ldots,X_{i_r}$ en nombre fini, (les $i_k\in I$), $P(a)$ désigne la valeur prise par $P$ quand on remplace les indéterminées $X_{i_1},\ldots,X_{i_r}$ par $a_{i_1},\ldots,a_{i_r}$.
+
+Retour au lemme. Soient $a^{(1)},a^{(2)},\ldots,a^{(k)}$ des éléments distincts en nombre fini de $K^I$, on va prouver que les applications $\delta_{a^{(p)}}$, $p=1,\ldots,k$, sont des éléments indépendants de $A^*$.
+
+D'abord ce sont des éléments de $A^*$ dual de $A$ car l'application qui pour $a$ fixé dans $K^I$, associe $P(a)$ au polynôme $P$ variant dans $A$ est bien linéaire en $P$, car
+\[
+(\lambda P+\mu Q)(a)=\lambda P(a)+\mu Q(a)
+\]
+par définition de la structure vectorielle sur $A$. De plus c'est à valeurs dans le corps de base.
+
+Si on a des scalaires $\lambda_1,\ldots,\lambda_k$ tels que
+\[
+\sum_{p=1}^k\lambda_p\delta_{a^{(p)}}=0,
+\]
+il faut prouver qu'ils sont tous nuls.
+
+Procédons par l'absurde : on les suppose non tous nuls, par exemple $\lambda_1\ne0$. Le lemme 6.115 nous dit qu'il existe une partie $J$ de $I$, de cardinal fini, $n$, et telle qu'en posant
+\[
+b^{(p)}=(a_i^{(p)})_{i\in J},
+\]
+on obtient $b^{(1)},\ldots,b^{(k)}$ qui sont $k$ éléments distincts de $K^n$.
+
+D'après le lemme 6.116, il existe alors un polynôme par rapport aux $(X_i)_{i\in J}$ donc $P\in A$ vu la définition de $A$, tel que $P(b^{(1)})\ne0$ et $P(b^{(s)})=0$ pour $s=2,3,\ldots,k$. Mais il est clair que l'on a
+\[
+P(b^{(s)})=P(a^{(s)})=\delta_{a^{(s)}}(P),
+\]
+d'où $\delta_{a^{(1)}}(P)\ne0$ et $\delta_{a^{(s)}}(P)=0$, pour $s=2,\ldots,k$.
+
+(Dans $P(b^{(s)})$, $P$ est considéré comme un polynôme en $n$ variables, et on le calcule en $b^{(s)}$ qui est un $n$-uplet, alors que dans $P(a)$ on considère $P$ en tant qu'élément de $A$.)
+
+On a donc
+\[
+\left(\sum_{p=1}^k\lambda_p\delta_{a^{(p)}}\right)(P)=\lambda_1\delta_{a^{(1)}}(P)\ne0
+\]
+avec $\lambda_1\ne0$ : c'est absurde. \bookend
+
+Il nous reste un dernier lemme à justifier, avant de passer au théorème d'Erdös Kaplansky.
+
+\medskip\noindent\textsc{Lemme 6.119.} --- \emph{Soit $E$ un espace vectoriel de dimension infinie, $\mathcal C=(e_i)_{i\in I}$ une base de $E$ et $S=(X_i)_{i\in I}$ une famille d'indéterminées indexée par $I$. Alors $E$ est isomorphe à l'espace vectoriel $A=K[S]$ des polynômes par rapport aux indéterminées $(X_i)_{i\in I}$.}
+
+En effet
+\[
+\begin{aligned}
+\mathcal M&=\{\text{monômes unitaires par rapport aux }X_i\}\\
+&=\{1\}\cup\Bigl\{X_{i_1}^{p_1}\cdots X_{i_k}^{p_k};\ \{i_1,\ldots,i_k\}\text{ partie finie de }I,\\
+&\hspace{8.5em}p_1,\ldots,p_k\in\mathbb N^*\Bigr\}.
+\end{aligned}
+\]
+est une base de $A$ car un polynôme est combinaison linéaire de monômes, et une combinaison linéaire de monômes est identiquement nulle si et seulement si chaque coefficient est nul.
+
+Il existe une injection de $I$ dans $\mathcal M$ : tout simplement $i\longmapsto X_i$ donc $\operatorname{card}\mathcal M\ge\operatorname{card}I$.
+
+En ne considérant que $\mathcal M'$, l'ensemble des monômes autres que 1, de tels monômes sont caractérisés par la donnée de la partie $\{i_1,\ldots,i_k\}$ des indices des variables, partie finie non vide de $I$, et des valeurs $p_1,\ldots,p_k$ dans $\mathbb N^*$. De plus, $\mathcal M$ est de cardinal infini, comme $I$, donc $\mathcal M'$ aussi puisque $\mathcal M'\cup\{1\}=\mathcal M$, et $\operatorname{card}(\mathcal M')=\operatorname{card}(\mathcal M)$.
+
+Soit $J=\{i_1,\ldots,i_k\}$ une partie finie de $k$ éléments de $I$. Les applications de $J$ dans $\mathbb N^*$ sont les éléments de $\mathbb N^*\times\mathbb N^*\times\cdots\times\mathbb N^*$, ($k$ fois), le cardinal de cet ensemble est $(\operatorname{card}\mathbb N)^k=\operatorname{card}\mathbb N$, (proposition 3.52), il existe donc une bijection $\theta_J$ de l'ensemble des applications de $J$ dans $\mathbb N^*$ sur l'ensemble $\mathbb N$.
+
+On considère alors l'ensemble $\mathcal F$ des sous-familles finies $(i_1,\ldots,i_k)$ de $I$. L'application $\theta$ qui au monôme $X_{i_1}^{p_1}\cdots X_{i_k}^{p_k}$ associe le couple
+\[
+(J,\theta_J(p_1,\ldots,p_k))\quad\text{de }\mathcal F\times\mathbb N
+\]
+avec $J=(i_1,\ldots,i_k)$ et $\theta_J(p_1,\ldots,p_k)$ le nombre entier associé par $\theta_J$ à l'application $i_1\mapsto p_1;\ldots;i_k\mapsto p_k$ est une bijection de $\mathcal M'$ sur $\mathcal F\times\mathbb N$, vu la caractérisation des monômes.
+
+Or le cardinal de l'ensemble $\mathcal F$ des parties finies de $I$, de cardinal infini, est encore $\operatorname{card}(I)$. On a vu dans la justification du théorème 6.74, que si $A_k$ est l'ensemble des parties de $k$ éléments de $I$, on a $\operatorname{card}A_k=\operatorname{card}I$ d'où une bijection $\varphi_k$ de $A_k$ sur $I$ d'où une, $\varphi$, de $\mathcal F$ sur $\mathbb N^*\times I$, celle qui à la partie finie non vide $J=\{i_1,\ldots,i_k\}$ va associer le couple $(k,\varphi_k(J))$. Donc $\mathcal F$ et $\mathbb N^*\times I$ sont équipotents,
+\[
+\operatorname{card}(\mathcal F)=\operatorname{card}(\mathbb N^*)\times\operatorname{card}(I)=\operatorname{card}(I)
+\]
+d'après la proposition 3.52, $\operatorname{card}(\mathbb N^*)$ étant le plus petit cardinal infini.
+
+On a finalement
+\[
+\operatorname{card}(\mathcal M')=\operatorname{card}(\mathcal F)\times\operatorname{card}(\mathbb N)=\operatorname{card}(I),
+\]
+et $A$ et $E$ ont bien des bases équipotentes : ils sont isomorphes. \bookend
+
+Si $u$ est un isomorphisme de $E$ sur $A$, ${}^tu$ en est un de $A^*$ sur $E^*$ (théorème 6.107) qui sont donc isomorphes : $E^*$ et $A^*$ ont même dimension, infinie.
+
+Mais la famille $(\delta_a)_{a\in K^I}$ est libre dans $A^*$, (lemme 6.118), donc
+\[
+\dim E^*=\dim A^*\ge\operatorname{card}((\delta_a)_{a\in K^I})=\operatorname{card}(K^I)
+\]
+et $K^I$ étant isomorphe à $E^*$, (lemme 6.114), ces 2 ensembles sont équipotents d'où l'inégalité $\dim(E^*)\ge\operatorname{card}(E^*)$ voulue, ce qui achève la justification du théorème d'Erdös Kaplansky. On a bien, pour $E$ de dimension infinie, $E^*$ de dimension $\operatorname{card}(E^*)$ aussi bizarre que cela paraisse. \bookend
+
+\medskip\noindent\textsc{Corollaire 6.120.} --- \emph{Pour $E$, vectoriel de dimension infinie, $E$ et $E^*$ ne sont jamais isomorphes.}
+
+En effet, $E^*$ a ses bases de cardinal, celui de $E^*$, donc encore de cardinal celui de $K^I$. Or $K$ admet au moins 2 éléments, 0 et 1 les éléments neutres des 2 lois, donc $\{0,1\}^I$, ensemble des applications de $I$ dans $\{0,1\}$ s'injecte canoniquement dans $K^I$, ensemble des applications de $I$ dans $K$, ce qui donne
+\[
+\operatorname{card}(K^I)\ge\operatorname{card}(\{0,1\}^I).
+\]
+Or on aurait pu établir, dans le chapitre sur les cardinaux, le théorème suivant :
+
+\medskip\noindent\textsc{Théorème 6.121.} --- \emph{Pour tout ensemble $I$ on a
+\[
+\operatorname{card}\{0,1\}^I=2^{\operatorname{card}I}>\operatorname{card}I,
+\]
+que nous justifierons ensuite.}
+
+Si on l'applique ici, on obtient finalement
+\[
+\dim(E^*)=\operatorname{card}(K^I)\ge2^{\operatorname{card}(I)}>\operatorname{card}(I)=\dim(E):
+\]
+$E$ et $E^*$ ne sont pas isomorphes puisque leurs bases ne sont pas équipotentes. \bookend
+
+Retour au théorème 6.121. Par convention, $2^0=1$, c'est bien $>0$.
+
+Si $I\ne\varnothing$, il existe une injection de $I$ dans $\{0,1\}^I$, celle qui à $i$ de $I$ associe l'application $\chi_i$ définie par $\chi_i(i)=1$ et, $\forall j\ne i$, $j\in I$, $\chi_i(j)=0$. Donc
+\[
+\operatorname{card}(I)\le\operatorname{card}(\{0,1\}^I).
+\]
+
+Il n'y a pas de bijection $\varphi$ de $I$ sur $\{0,1\}^I$ car si $\varphi$ en est une, on définit $f$ de $I$ dans $\{0,1\}$ comme suit.
+
+Pour $i\in I$, soit $\varphi(i)$ l'application de $I$ dans $\{0,1\}$ associée à $i$.
+
+Si $\varphi(i)$ envoie $i$ sur 1 on pose $f(i)=0$,
+
+si $\varphi(i)$ envoie $i$ sur 0 on pose $f(i)=1$.
+
+L'application $f$ de $I$ dans $\{0,1\}$ ainsi définie n'est jamais image par $\varphi$ d'un élément de $I$ car si on suppose l'existence de $i_0$ dans $I$ tel que $\varphi(i_0)=f$, la valeur prise par $f$ en $i_0$ est forcément différente de celle prise par l'application $\varphi(i_0)$ en $i_0$.
+
+Donc l'inégalité $\operatorname{card}(I)\le\operatorname{card}(\{0,1\}^I)$ est stricte ce qui justifie le théorème. \bookend

@@ -1,0 +1,508 @@
+\chapter{Algèbre extérieure, déterminants}
+\origpage{301--314}
+
+Les déterminants apparaissent comme un cas particulier dans l'étude \BellaCorrection{plus générale}{plus générales} de l'algèbre extérieure, étude dont les résultats servent en calcul différentiel. C'est pourquoi je préfère les aborder de cette façon générale.
+
+\BellaSection{1. Formes multilinéaires antisymétriques et alternées}
+
+\medskip\noindent\textsc{Définition 9.1.} --- \emph{Soit $E$ espace vectoriel sur un corps $K$. On appelle forme $p$ linéaire sur $E$, ($p\in\mathbb N^*$) toute application $f$ de $E^p$ dans $K$ qui est linéaire par rapport à chacune de ses variables.}
+
+Si on note $f(X_1,\ldots,X_p)$ l'image par $f$ du $p$-uplet $(X_1,\ldots,X_p)$ c'est donc que, pour chaque $i\le p$, en considérant les $X_j$ pour $j\ne i$ comme fixés, la fonction de la seule variable $X_i$ est linéaire.
+
+\medskip\noindent\textsc{Définition 9.2.} --- \emph{Une forme $p$ linéaire, ($p\ge 2$) est dite alternée si elle s'annule lorsque deux des variables prennent des valeurs égales.}
+
+\medskip\noindent\textsc{Définition 9.3.} --- \emph{Une forme $p$ linéaire, ($p\ge 2$) est dite antisymétrique si elle prend deux valeurs opposées lorsqu'on permute deux vecteurs.}
+
+\medskip\noindent\textsc{Théorème 9.4.} --- \emph{Une forme alternée est antisymétrique; si le corps $K$ est de caractéristique $\ne 2$, une forme antisymétrique est alternée.}
+
+Soit $f$ alternée, on veut permuter $X_i$ et $X_j$ avec par exemple $i<j$. En fait on calcule la valeur de $f$ en prenant en $i$ième et $j$ième position le même vecteur $X_i+X_j$. On a 0, ($f$ alternée) que l'on développe par multilinéarité en 4 termes :
+\begin{align*}
+f(\ldots,X_i+X_j,\ldots,X_i+X_j,\ldots)&=0\\
+&=f(\ldots,X_i,\ldots,X_i,\ldots)+f(\ldots,X_i,\ldots,X_j,\ldots)\\
+&\quad+f(\ldots,X_j,\ldots,X_i,\ldots)+f(\ldots,X_j,\ldots,X_j,\ldots).
+\end{align*}
+Les 2 termes associés aux mêmes vecteurs sont nuls, il reste donc 2 valeurs opposées quand on permute $X_i$ et $X_j$.
+
+\emph{Réciproquement}, si $f$ est antisymétrique, et si en $i$ième position et $j$ième position, (avec par exemple $i<j$) on met le même vecteur $T$, en permutant $X_i=T$ et $X_j=T$ on obtient la même valeur, mais aussi son opposée puisque $f$ est antisymétrique.
+
+Donc
+\[
+f(\ldots,T,\ldots,T,\ldots)=-f(\ldots,T,\ldots,T,\ldots)
+\]
+d'où
+\[
+2f(\ldots,T,\ldots,T,\ldots)=0.
+\]
+Si $\operatorname{caract}K=2$, on ne va pas plus loin, sinon on conclut $f(\ldots,T,\ldots,T,\ldots)=0$ donc $f$ est alternée. \bookend
+
+Par la suite on supposera le corps de caractéristique différente de 2, mais on s'efforcera d'établir les résultats les plus généraux, donc sur les formes alternées.
+
+\medskip\noindent\textsc{Théorème 9.5.} --- \emph{Soit $f$ une forme $p$ linéaire sur $E$. L'application $g$ de $E^p$ dans $K$ définie par}
+\[
+g(X_1,\ldots,X_p)=\sum_{\sigma\in\mathfrak S_p}\varepsilon_\sigma f(X_{\sigma(1)},\ldots,X_{\sigma(p)})
+\]
+\emph{est une forme $p$ linéaire alternée.}
+
+Rappelons que $\mathfrak S_p$ est le groupe des permutations de $\{1,2,\ldots,p\}$ et que $\varepsilon_\sigma$ est la signature de la permutation $\sigma$, (voir 4.46 et 4.52).
+
+$X_i\longmapsto f(X_{\sigma(1)},\ldots,X_{\sigma(p)})$ est linéaire car $f$ est linéaire par rapport à sa variable de rang $j=\sigma^{-1}(i)$, place où intervient $X_i$.
+
+Donc $g$ est une combinaison de $p!$ applications linéaires en $X_i$, on a bien $g$ linéaire par rapport à chacune de ses variables.
+
+On a $g$ alternée : supposons que $X_i=X_j=Z$, (avec $i\ne j$). Soit $T$ la transposition de $i$ et $j$ et $H=\{\mathrm{id},T\}$ le sous-groupe de $\mathfrak S_p$ engendré par $T$.
+
+On prend l'équivalence associée à droite au sous-groupe $H$ :
+\[
+(\sigma\mathrel R\sigma')\Longleftrightarrow(\sigma'\sigma^{-1}\in H)
+\Longleftrightarrow(\sigma'\in H\sigma)
+\Longleftrightarrow(\sigma'\in\{\sigma,T\sigma\}).
+\]
+Chaque classe d'équivalence ayant 2 éléments, si $A$ est un ensemble de représentants de ces classes, les autres éléments sont ceux de $TA$, et les classes d'équivalences formant une partition, on a $\mathfrak S_p=A\cup TA$ d'où
+\[
+\begin{aligned}
+g(X_1,\ldots,X_p)=\sum_{\sigma\in A}\bigl(&\varepsilon_\sigma f(X_{\sigma(1)},\ldots,X_{\sigma(p)})\\
+&+\varepsilon_{T\sigma}f(X_{T\sigma(1)},\ldots,X_{T\sigma(p)})\bigr).
+\end{aligned}
+\]
+Or $\varepsilon_{T\sigma}=\varepsilon_T\varepsilon_\sigma=-\varepsilon_\sigma$; puis si $\sigma(k)\notin\{i,j\}$, $T\sigma(k)=\sigma(k)$ et si $\sigma(k)=i$, $T\sigma(k)=j$ mais $X_{\sigma(k)}=X_i=X_j=X_{T\sigma(k)}$, alors que si $\sigma(k)=j$, $T\sigma(k)=i$ et $X_{\sigma(k)}=X_j=X_i=X_{T\sigma(k)}$.
+
+Finalement les termes sont 2 à 2 opposés, donc $g(X_1,\ldots,X_p)=0$ lorsque $X_i=X_j$ pour $i\ne j$. \bookend
+
+\medskip\noindent\textsc{Définition 9.6.} --- On appelle antisymétrisée de $f$, $p$ linéaire, l'application $g$ définie par
+\[
+g(X_1,\ldots,X_p)=\sum_{\sigma\in\mathfrak S_p}\varepsilon_\sigma f(X_{\sigma(1)},\ldots,X_{\sigma(p)}).
+\]
+
+Soient en particulier $f_1,\ldots,f_p$ des éléments du dual $E^*$, l'application
+\[
+f:(X_1,\ldots,X_p)\longmapsto\prod_{i=1}^pf_i(X_i)
+\]
+est visiblement $p$ linéaire, et son antisymétrisée s'appelle le produit extérieur des formes $f_1,\ldots,f_p$. On le note $f_1\wedge f_2\wedge\cdots\wedge f_p$.
+
+\medskip\noindent\textsc{Définition 9.7.} --- \emph{On appelle produit extérieur de $p$ formes linéaires $f_1,\ldots,f_p$ l'application $p$ linéaire alternée $f_1\wedge\cdots\wedge f_p$ définie par :}
+\[
+(f_1\wedge\cdots\wedge f_p)(X_1,\ldots,X_p)=
+\sum_{\sigma\in\mathfrak S_p}\varepsilon_\sigma f_1(X_{\sigma(1)})\cdots f_p(X_{\sigma(p)}).
+\]
+
+\medskip\noindent\textsc{Théorème 9.8.} --- \emph{L'application $(f_1,\ldots,f_p)\longmapsto f_1\wedge\cdots\wedge f_p$ est alternée.}
+
+Il ne s'agit pas d'une forme, mais on a un résultat nul si deux formes $f_i$ et $f_j$ sont égales.
+
+On suppose, avec $i\ne j$, que $f_i=f_j$ et toujours avec $T$ transposition de $i$ et $j$ et $H=\{e,T\}$ sous-groupe engendré, on considère cette fois l'équivalence associée à gauche
+\[
+(\sigma\mathrel{R'}\sigma')\Longleftrightarrow(\sigma^{-1}\sigma'\in H)
+\Longleftrightarrow(\sigma'\in\sigma H).
+\]
+Si $B$ est un ensemble de représentants des classes d'équivalence, les autres éléments sont ceux de \BellaCorrectionNote{$BT$}{$\sigma B$}{Pour les classes $\sigma H=\{\sigma,\sigma T\}$, l'ensemble complémentaire des représentants est obtenu par multiplication à droite par $T$; la notation imprimée $\sigma B$ ne dépend d'aucun $\sigma$ fixé et ne peut convenir.} et $\mathfrak S_p=B\cup BT$, (partition) d'où
+\[
+\begin{aligned}
+(f_1\wedge\cdots\wedge f_p)(X_1,\ldots,X_p)
+=\sum_{\sigma\in B}\varepsilon_\sigma\bigl(&f_1(X_{\sigma(1)})\cdots f_p(X_{\sigma(p)})\\
+&-f_1(X_{\sigma T(1)})\cdots f_p(X_{\sigma T(p)})\bigr).
+\end{aligned}
+\]
+Si $k\notin\{i,j\}$, $T(k)=k$, dans les 2 produits on a $f_k(X_{\sigma(k)})$; si $k=i$, $T(k)=j$ on a d'une part $f_i(X_{\sigma(i)})$ et d'autre part $f_i(X_{\sigma(j)})$ or $f_i=f_j$ donc on trouve les facteurs $f_i(X_{\sigma(i)})$ et $f_j(X_{\sigma(j)})$.
+
+Pour $k=j$, on retrouve $f_j(X_{\sigma(j)})$ dans le 1er produit et cette fois $f_i(X_{\sigma(i)})$ dans le 2e. Le corps $K$ étant commutatif, (hypothèse faite sur les espaces vectoriels) on a 2 produits égaux qui s'annulent, d'où $f_1\wedge\cdots\wedge f_p=0$. \bookend
+
+\subsection*{9.9.}
+On note $\bigwedge^pE^*$ l'ensemble des formes $p$ linéaires alternées sur $E$.
+
+Cette notation se lit algèbre extérieure d'ordre $p$ sur $E$. En calcul différentiel on sera amené à définir des produits entre formes $p$ linéaires alternées et $q$ linéaires alternées d'où la dénomination extérieure.
+
+Il est facile de voir que $\bigwedge^pE^*$ est un sous-espace vectoriel de celui des applications de $E^p$ dans $K$, et on a :
+
+\medskip\noindent\textsc{Corollaire 9.10.} --- \emph{L'application $(f_1,\ldots,f_p)\longmapsto f_1\wedge\cdots\wedge f_p$ de \BellaCorrectionNote{$(E^*)^p$}{$E^p$}{Les arguments $f_i$ sont des formes linéaires, donc des éléments de $E^*$; le domaine correct de cette application est $(E^*)^p$.} dans $\bigwedge^pE^*$ est $p$ linéaire alternée.}
+
+Il reste la $p$ linéarité à justifier. Or si on remplace $f_i$ par
+\[\lambda_i'f_i'+\lambda_i''f_i''\]
+chaque terme
+\[\varepsilon_\sigma f_1(X_{\sigma(1)})\cdots f_p(X_{\sigma(p)})\]
+va se scinder en deux :
+\[
+\lambda_i'\varepsilon_\sigma f_1(X_{\sigma(1)})\cdots f_i'(X_{\sigma(i)})\cdots f_p(X_{\sigma(p)})
+\]
+\[
++\lambda_i''\varepsilon_\sigma f_1(X_{\sigma(1)})\cdots f_i''(X_{\sigma(i)})\cdots f_p(X_{\sigma(p)})
+\]
+d'après les règles de calcul dans le corps $K$. On regroupera ensemble les termes contenant $\lambda_i'$ que l'on factorisera, ainsi que ceux contenant $\lambda_i''$ d'où finalement
+\begin{align*}
+f_1\wedge\cdots\wedge(\lambda_i'f_i'+\lambda_i''f_i'')\wedge\cdots\wedge f_p
+&=\lambda_i'f_1\wedge\cdots\wedge f_i'\wedge\cdots\wedge f_p\\
+&\quad+\lambda_i''f_1\wedge\cdots\wedge f_i''\wedge\cdots\wedge f_p.
+\end{align*}
+
+\medskip\noindent\textsc{Corollaire 9.11.} --- \emph{Si $\sigma\in\mathfrak S_p$ on a $f_{\sigma(1)}\wedge\cdots\wedge f_{\sigma(p)}=\varepsilon_\sigma f_1\wedge\cdots\wedge f_p$.}
+
+L'application étant alternée est antisymétrique, (Théorème 9.4), et en décomposant $\sigma$ en un produit de transpositions, on obtient le corollaire, vu la définition de la signature (4.54). \bookend
+
+\medskip\noindent\textsc{Théorème 9.12.} --- \emph{Soit $E$ espace vectoriel de dimension finie, $n$, sur le corps $K$. Si $p>n$, $\bigwedge^pE^*=\{0\}$, et si $p\le n$, $\bigwedge^pE^*$ est un espace vectoriel de dimension $\binom np$. Si $B=\{e_1,\ldots,e_n\}$ est une base de $E$, les formes $p$ linéaires alternées $e_{i_1}^*\wedge\cdots\wedge e_{i_p}^*$ associées aux $p$-uplets ordonnés \BellaCorrectionNote{$1\le i_1<i_2<\cdots<i_p\le n$}{$1\le i_1\le i_2<\cdots<i_p\le n$}{Les indices doivent être deux à deux distincts; la démonstration et la base annoncée utilisent partout les inégalités strictes.} en constituent une base.}
+
+Si $p>n$ et si $g$ est $p$ linéaire alternée, quand on calcule $g(X_1,\ldots,X_p)$, comme la famille $\{X_1,\ldots,X_p\}$ est liée, ($p>n$, dimension de l'espace) l'un des $X_i$ est combinaison linéaire des autres.
+
+Si
+\[
+X_i=\sum_{\substack{j=1\\j\ne i}}^p\lambda_jX_j,
+\]
+en utilisant la linéarité de $g$ par rapport à sa $i$ième variable, $g(X_1,\ldots,X_p)$ devient une somme de $p-1$ termes du type $\lambda_jg(\ldots,X_j,\ldots,X_j,\ldots)$ avec $X_j$ figurant en 2 positions, la $j$ième et la $i$ième d'où $g=0$.
+
+On suppose $p\le n$. Il y a alors $\binom np$ façons de choisir $p$ indices distincts pris dans $\{1,\ldots,n\}$, chaque partie de $p$ indices ne s'ordonnant en croissant que d'une façon.
+
+La famille des $e_{i_1}^*\wedge\cdots\wedge e_{i_p}^*$ avec $1\le i_1<i_2<\cdots<i_p\le n$ est libre car si on calcule
+\[
+(e_{i_1}^*\wedge\cdots\wedge e_{i_p}^*)(e_{j_1},\ldots,e_{j_p}),
+\qquad j_1<j_2<\cdots<j_p,
+\]
+c'est
+\[
+\sum_{\sigma\in\mathfrak S_p}\varepsilon_\sigma e_{i_1}^*(e_{j_{\sigma(1)}})\cdots e_{i_p}^*(e_{j_{\sigma(p)}}).
+\]
+Or $e_{i_k}^*(e_{j_{\sigma(k)}})=0$ sauf si $i_k=j_{\sigma(k)}$.
+
+Le terme générique est donc nul sauf si $i_1=j_{\sigma(1)},i_2=j_{\sigma(2)},\ldots,i_p=j_{\sigma(p)}$.
+
+Comme les $i_k$ et $j_k$ sont indexés en croissant, ceci n'est possible que si $\sigma=\mathrm{identité}$ et $i_1=j_1,\ldots,i_p=j_p$.
+
+D'où, pour $1\le i_1<\cdots<i_p\le n$ et $1\le j_1<j_2<\cdots<j_p\le n$ on a
+\[
+(e_{i_1}^*\wedge\cdots\wedge e_{i_p}^*)(e_{j_1},\ldots,e_{j_p})=
+\begin{cases}
+1,&i_1=j_1,\ldots,i_p=j_p,\\
+0,&\text{sinon.}
+\end{cases}
+\]
+Si on a alors une combinaison linéaire nulle
+\[
+\sum_{1\le i_1<i_2<\cdots<i_p\le n}\lambda_{i_1\ldots i_p}
+ e_{i_1}^*\wedge\cdots\wedge e_{i_p}^*=0,
+\]
+en calculant en $(e_{i_1},\ldots,e_{i_p})$ il reste $\lambda_{i_1\ldots i_p}=0$ d'où la famille libre.
+
+La famille des $e_{i_1}^*\wedge\cdots\wedge e_{i_p}^*$ est génératrice de $\bigwedge^pE^*$.
+
+En effet soit $g\in\bigwedge^pE^*$ et considérons
+\[
+g'=\sum_{1\le i_1<\cdots<i_p\le n}g(e_{i_1},\ldots,e_{i_p})
+ e_{i_1}^*\wedge\cdots\wedge e_{i_p}^*.
+\]
+La forme $g-g'$ s'annule sur chaque $(e_{j_1},\ldots,e_{j_p})$ avec $1\le j_1<\cdots<j_p$ car
+\[
+g'(e_{j_1},\ldots,e_{j_p})=
+\sum_{1\le i_1<\cdots<i_p\le n}g(e_{i_1},\ldots,e_{i_p})
+(e_{i_1}^*\wedge\cdots\wedge e_{i_p}^*)(e_{j_1},\ldots,e_{j_p})
+\]
+avec $(e_{i_1}^*\wedge\cdots\wedge e_{i_p}^*)(e_{j_1},\ldots,e_{j_p})=0$ sauf si $i_1=j_1,i_2=j_2,\ldots,i_p=j_p$, donc il reste $g'(e_{j_1},\ldots,e_{j_p})=g(e_{j_1},\ldots,e_{j_p})$.
+
+Or on a le
+
+\medskip\noindent\textsc{Lemme 9.13.} --- \emph{Un élément $h\in\bigwedge^pE^*$ est nul si et seulement si il s'annule sur tous les $(e_{j_1},\ldots,e_{j_p})$ avec $1\le j_1<\cdots<j_p\le n$.}
+
+Il résultera du lemme que $g-g'=0$ d'où $g=g'$ sera bien combinaison linéaire des $e_{i_1}^*\wedge\cdots\wedge e_{i_p}^*$. \bookend
+
+Justifions le lemme. Si $h=0$, il est évident que pour tout $p$-uplet
+\[(e_{j_1},\ldots,e_{j_p})\]
+on a $h(e_{j_1},\ldots,e_{j_p})=0$.
+
+Réciproquement. On calcule $h(x_1,\ldots,x_p)$ avec
+\[
+x_k=\sum_{r_k=1}^n\xi_{r_k,k}e_{r_k}.
+\]
+On a
+\begin{align*}
+h(x_1,x_2,\ldots,x_p)
+&=h\left(\sum_{r_1=1}^n\xi_{r_1,1}e_{r_1},x_2,\ldots,x_p\right)\\
+&=\sum_{r_1=1}^n\xi_{r_1,1}h(e_{r_1},x_2,\ldots,x_p)
+\end{align*}
+par linéarité de $h$ par rapport à la première variable.
+
+Puis $x_2=\sum_{r_2=1}^n\xi_{r_2,2}e_{r_2}$ et $h$ est linéaire par rapport à la deuxième variable. On obtient donc
+\[
+h(x_1,\ldots,x_p)=\sum_{r_1=1}^n\sum_{r_2=1}^n
+\xi_{r_1,1}\xi_{r_2,2}h(e_{r_1},e_{r_2},x_3,\ldots,x_p)
+\]
+et en continuant à développer on parvient à :
+\[
+h(x_1,x_2,\ldots,x_p)=\sum_{r_1=1}^n\sum_{r_2=1}^n\cdots\sum_{r_p=1}^n
+\xi_{r_1,1}\cdots\xi_{r_p,p}h(e_{r_1},e_{r_2},\ldots,e_{r_p}).
+\]
+Or chaque $h(e_{r_1},\ldots,e_{r_p})$ est nul car soit 2 des $e_{r_j}$ au moins sont égaux, et alors $h$, alternée, prend une valeur nulle; soit les indices $r_1,\ldots,r_p$ sont distincts mais il existe alors $\sigma\in\mathfrak S_p$ tel que
+\[
+r_{\sigma(1)}<r_{\sigma(2)}<\cdots<r_{\sigma(p)}
+\]
+et
+\[
+h(e_{r_1},\ldots,e_{r_p})=\varepsilon_\sigma h(e_{r_{\sigma(1)}},\ldots,e_{r_{\sigma(p)}})=0
+\]
+puisqu'ici, les indices étant ordonnés, l'hypothèse s'applique.
+
+On a finalement $h=0$, d'où le lemme, et le théorème 9.12. \bookend
+
+Ce théorème 9.12, dans le cas de $p=n=\dim(E)$ va nous conduire aux déterminants.
+
+En effet, sur $E$ de dimension $n$, l'espace $\bigwedge^nE^*$ des formes $n$ linéaires alternées est de dimension 1.
+
+Soit alors $B=\{e_1,\ldots,e_n\}$ une base de $E$, la forme $n$ linéaire alternée $e_1^*\wedge e_2^*\wedge\cdots\wedge e_n^*$ est une base de l'espace vectoriel $\bigwedge^nE^*$, (d'après le théorème 9.12).
+
+\medskip\noindent\textsc{Définition 9.14.} --- \emph{Soit $E$ espace vectoriel de dimension finie $n$ sur le corps $K$, et $B=(e_1,\ldots,e_n)$ une base de $E$. On appelle déterminant dans la base $B$ la forme $n$-linéaire alternée $\det_B=e_1^*\wedge\cdots\wedge e_n^*$.}
+
+Vu la définition du produit extérieur, on a donc
+\[
+\tag{9.15}
+\det_B(X_1,\ldots,X_n)=\sum_{\sigma\in\mathfrak S_n}\varepsilon_\sigma
+\xi_{1,\sigma(1)}\xi_{2,\sigma(2)}\cdots\xi_{n,\sigma(n)}
+\]
+car si $X_j=\sum_{i=1}^n\xi_{i,j}e_i$, on a $e_i^*(X_{\sigma(i)})=\xi_{i,\sigma(i)}$.
+
+\BellaSection{2. Premières propriétés des déterminants}
+
+La forme de l'expression développée de $\det_B(X_1,\ldots,X_n)$ conduit à définir le déterminant d'une matrice, puisque le second membre en fait ne dépend que des $n^2$ scalaires $(\xi_{i,j})_{\substack{1\le i\le n\\1\le j\le n}}$, c'est-à-dire de la matrice des composantes des vecteurs $X_1,\ldots,X_n$ dans la base $B$.
+
+\medskip\noindent\textsc{Définition 9.16.} --- \emph{Soit $A=(a_{ij})_{\substack{1\le i\le n\\1\le j\le n}}$ une matrice carrée d'ordre $n$ sur un corps $K$. On appelle déterminant de la matrice $A$ le scalaire noté}
+\[
+\det(A)=\sum_{\sigma\in\mathfrak S_n}\varepsilon_\sigma a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}.
+\]
+
+Pour retrouver les notions du §1, on peut considérer $E=K^n$ rapporté à sa base canonique $B=(e_1,\ldots,e_n)$ et considérer les vecteurs
+\[
+X_j=\sum_{i=1}^na_{ij}e_i,
+\]
+vecteurs colonnes de $A$, on a alors :
+
+\subsection*{9.17.}
+$\det A=\det_B(X_1,\ldots,X_n)$ en fait.
+
+\medskip\noindent\textsc{Remarque 9.18.} --- Soit $A\in M_n(K)$, $\det A$ est une somme de $n!$ termes qui sont tous, au signe près, des produits de $n$ scalaires chaque produit contenant un et un seul terme de chaque ligne, (les premiers indices varient de 1 à $n$), un et un seul terme de chaque colonne, (les seconds indices étant images de $\{1,\ldots,n\}$ par une permutation de cet ensemble). Cette remarque sert lors de l'étude du polynôme caractéristique d'un endomorphisme en dimension \BellaCorrection{finie}{fini}, (voir 10.18).
+
+\medskip\noindent\textsc{Théorème 9.19.} --- \emph{Dans $E$ vectoriel de dimension finie, $n$, une famille de $n$ vecteurs $\{X_1,\ldots,X_n\}$ est libre si et seulement si dans une base $B$ on a $\det_B(X_1,\ldots,X_n)\ne0$ et c'est équivalent à $\det_C(X_1,\ldots,X_n)\ne0$ pour toute base $C$.}
+
+Soit $B=(e_1,\ldots,e_n)$ une base de $E$.
+
+Si $(X_1,\ldots,X_n)$ est une famille libre de $n$ vecteurs dans $E$ de dimension $n$, c'est une base, donc la forme $n$ linéaire alternée $X_1^*\wedge\cdots\wedge X_n^*$, associée à la base duale de $(X_1,\ldots,X_n)$, est non nulle, (elle vaut 1 sur le $n$-uplet $X_1,\ldots,X_n$) : la forme $e_1^*\wedge\cdots\wedge e_n^*$ lui est proportionnelle puisque $\bigwedge^nE^*$ est de dimension 1.
+
+Soit $\lambda$ tel que
+\[
+e_1^*\wedge\cdots\wedge e_n^*=\lambda X_1^*\wedge\cdots\wedge X_n^*.
+\]
+On a
+\[
+(e_1^*\wedge\cdots\wedge e_n^*)(X_1,\ldots,X_n)=\lambda,
+\]
+et ce scalaire $\lambda$ est $\ne0$, puisque
+\[
+(e_1^*\wedge\cdots\wedge e_n^*)(e_1,\ldots,e_n)=1=
+\lambda(X_1^*\wedge\cdots\wedge X_n^*)(e_1,\ldots,e_n).
+\]
+
+Si $(X_1,\ldots,X_n)$ est famille liée l'un des $X_j$ est combinaison linéaire des autres et, comme on l'a vu dans la justification du théorème 9.12, $(e_1^*\wedge\cdots\wedge e_n^*)(X_1,\ldots,X_n)=0$.
+
+Il en résulte, par contraposée, que si $(e_1^*\wedge\cdots\wedge e_n^*)(X_1,\ldots,X_n)\ne0$, la famille $(X_1,\ldots,X_n)$ est libre. \bookend
+
+\medskip\noindent\textsc{Corollaire 9.20.} --- \emph{Soit une matrice carrée $A$, on a $\det A=0$ si et seulement si la famille des vecteurs colonnes est liée.}
+
+C'est encore si et seulement si l'un des vecteurs colonnes \BellaCorrection{est}{et} combinaison linéaire des autres. \bookend
+
+Si nous avons défini le déterminant d'une matrice, c'est pour en faire quelque chose, et le relier au déterminant d'un endomorphisme en liaison avec sa matrice dans une base.
+
+Soit donc $E$ vectoriel de dimension $n$, $u\in\operatorname{Hom}(E)$ un endomorphisme de $E$ et $g\in\bigwedge^nE^*$, (espace de dimension 1), $g$ supposée non nulle.
+
+\subsection*{9.21.}
+On définit $g_u:E^n\longmapsto K$ par :
+\[
+g_u(X_1,\ldots,X_n)=g(u(X_1),\ldots,u(X_n)).
+\]
+La linéarité de $u$ et la $n$ linéarité de $g$ impliquent la $n$ linéarité de $g_u$. De même si $X_i=X_j$, on a $u(X_i)=u(X_j)$, le 2e membre est nul, donc $g_u$ est alternée. Mais alors $g_u\in\bigwedge^nE^*$, droite vectorielle engendrée par $g$, donc il existe un facteur de proportionnalité $\alpha(u,g)\in K$ tel que
+\[
+g_u=\alpha(u,g)g.
+\]
+Le facteur ne dépend pas de $g\ne0$ dans $\bigwedge^nE^*$, car, partant de $h\ne0$ dans $\bigwedge^nE^*$, $h$ serait proportionnelle à $g$, et si $h=\lambda g$ on aura
+\[
+h_u(X_1,\ldots,X_n)=(\lambda g)(u(X_1),\ldots,u(X_n))=\lambda g_u(X_1,\ldots,X_n),
+\]
+d'où
+\[
+h_u=\lambda\alpha(u,g)g=\alpha(u,g)(\lambda g)=\alpha(u,g)h,
+\]
+le corps $K$ étant commutatif.
+
+\medskip\noindent\textsc{Définition 9.22.} --- \emph{Soit $E\simeq K^n$ et $u\in\operatorname{Hom}(E)$. On appelle déterminant de $u$, le scalaire $\det u$ tel que, $\forall g\in\bigwedge^nE^*$, la forme $g_u$ $n$-linéaire alternée définie par $g_u(X_1,\ldots,X_n)=g(u(X_1),\ldots,u(X_n))$ vérifie $g_u=(\det u)g$.}
+
+\medskip\noindent\textsc{Théorème 9.23.} --- \emph{Le déterminant de $u$ est le déterminant de chaque matrice de $u$ dans une base $B$ fixée de $E$.}
+
+Car si $B=(e_1,\ldots,e_n)$ est une base de $E$, $A=(\alpha_{ij})$ est la matrice de $u$ dans cette base, les vecteurs colonnes
+\[
+X_j=\begin{pmatrix}\alpha_{1j}\\ \vdots\\ \alpha_{nj}\end{pmatrix}
+\]
+de $A$ correspondent aux vecteurs
+\[
+u(e_j)=\sum_{i=1}^n\alpha_{ij}e_i.
+\]
+Si on prend $g=e_1^*\wedge\cdots\wedge e_n^*$ pour calculer $\det u$, on a, (définition 9.17),
+\[
+\det A=\det_B(u(e_1),\ldots,u(e_n))=(e_1^*\wedge\cdots\wedge e_n^*)(u(e_1),\ldots,u(e_n)).
+\]
+Puis la relation $g_u=(\det u)g$, calculée sur le $n$-uplet $(e_1,\ldots,e_n)$ donne :
+\[
+g_u(e_1,\ldots,e_n)=(e_1^*\wedge\cdots\wedge e_n^*)(u(e_1),\ldots,u(e_n))
+=(\det u)g(e_1,\ldots,e_n)
+\]
+d'où
+\[
+\det u=\det A.
+\]
+\bookend
+
+Il résulte de ce théorème, que le déterminant de 2 matrices semblables, caractérisant le même endomorphisme dans des bases différentes, doit être le même. On va retrouver ce résultat en prouvant d'abord que :
+
+\medskip\noindent\textsc{Théorème 9.24.} --- \emph{Soient $u$ et $v$ deux endomorphismes de $E\simeq K^n$. On a $\det(u\circ v)=(\det u)(\det v)$.}
+
+Car, avec $g$ non nul de $\bigwedge^nE^*$, on définit $g_{u\circ v}$ par
+\begin{align*}
+g_{u\circ v}(X_1,\ldots,X_n)
+&=g(u(v(X_1)),u(v(X_2)),\ldots,u(v(X_n)))\\
+&=g_u[v(X_1),\ldots,v(X_n)]\\
+&=(\det u)g(v(X_1),\ldots,v(X_n))\\
+&=(\det u)g_v(X_1,\ldots,X_n)\\
+&=(\det u)(\det v)g(X_1,\ldots,X_n)
+\end{align*}
+et ceci étant vrai quels que soient $X_1,\ldots,X_n$ c'est que $g_{u\circ v}=(\det u)(\det v)g$. Mais $g_{u\circ v}=(\det(u\circ v))g$ d'où l'égalité $\det(u\circ v)=(\det u)(\det v)$. \bookend
+
+\medskip\noindent\textsc{Remarque 9.25.} --- Le corps $K$ étant commutatif, on a :
+\[
+\det(u\circ v)=\det u\det v=\det v\det u=\det(v\circ u),
+\]
+bien qu'en général $u\circ v\ne v\circ u$.
+
+Soit alors $A$ et $A'=P^{-1}AP$ deux matrices semblables, on aura
+\begin{align*}
+\det A'&=\det(P^{-1}AP)=(\det P^{-1})(\det A)(\det P)\\
+&=\det A\det(P^{-1})\det P\\
+&=\det A\det(P^{-1}P).
+\end{align*}
+Or $P^{-1}P=I_n$ est associé à $\operatorname{id}_E$, et pour $g\in\bigwedge^nE^*$ on a $g_{\operatorname{id}_E}=g$ donc $\det(\operatorname{id}_E)=\det I_n=1$, d'où $\det A=\det A'$ résultat pressenti au théorème 9.23.
+
+Mais au passage on vient de voir que si $P$ est inversible, on a
+\[
+\det(P^{-1})=\frac1{\det P}=(\det P)^{-1},
+\]
+avec donc $\det P\ne0$.
+
+En fait, on a :
+
+\medskip\noindent\textsc{Théorème 9.26.} --- \emph{Un endomorphisme $u$ de $E\simeq K^n$ est inversible si et seulement si $\det u\ne0$, et on aura $\det(u^{-1})=(\det u)^{-1}$.}
+
+Car $u$ inversible a un inverse, $u^{-1}$, et l'égalité $u\circ u^{-1}=\operatorname{id}_E$ implique $(\det u)(\det u^{-1})=1$ d'où $\det u\ne0$ et $\det(u^{-1})=(\det u)^{-1}$.
+
+Réciproquement, si $\det u\ne0$, avec $A$ matrice de $u$ dans une base $B=(e_1,\ldots,e_n)$ de $E$, on a
+\[
+(e_1^*\wedge\cdots\wedge e_n^*)(u(e_1),\ldots,u(e_n))\ne0
+\]
+\begin{sloppypar}
+(les $u(e_j)$ associés aux vecteurs colonnes de $A$ d'après 9.17), donc la famille des vecteurs $(u(e_1),\ldots,u(e_n))$ est libre, (Théorème 9.19), c'est que l'image $u(E)$ est de dimension $n$ dans $E$ lui-même de dimension $n$, on a $\dim(\ker u)=0$ d'où $u$ injective et surjective. \bookend
+\end{sloppypar}
+
+\medskip\noindent\textsc{Corollaire 9.27.} --- \emph{Pour une matrice carrée $A$, on a $A$ inversible $\Longleftrightarrow\det A\ne0$ et $(\det A)^{-1}=\det(A^{-1})$.}
+
+\medskip\noindent\textsc{Remarque 9.28.} --- Dans le chapitre X de la réduction des endomorphismes, on traduira, en dimension finie, la propriété $\lambda$ valeur propre de $u$, par un déterminant nul, ce qui donnera le polynôme caractéristique de l'endomorphisme $u$, (Théorème 10.18).
+
+\medskip\noindent\textsc{Théorème 9.29.} --- \emph{Soit $E$ vectoriel de dimension finie $n$ sur le corps $K$ et $u\in\operatorname{Hom}E$, on a $\det u=\det({}^tu)$. On a de même : soit $A\in M_n(K)$, $\det A=\det({}^tA)$.}
+
+Soit $B=(e_1,\ldots,e_n)$ une base de $E$. On considère $B^*=(e_1^*,\ldots,e_n^*)$ base duale dans $E^*$ et, pour calculer $\det({}^tu)$, si on applique ce qui précède, on doit introduire le bidual $(E^*)^*$ ainsi que la base $B^{**}$ duale de $B^*$ dans le bidual. Vous pouvez passer à la page suivante!
+
+Si on note $\widetilde B=(\widetilde e_1,\ldots,\widetilde e_n)$ cette base $B^{**}$, $\widetilde e_j$ est définie par $\widetilde e_j(e_i^*)=0$ si $i\ne j$, 1 si $i=j$.
+
+Soit alors $g=\widetilde e_1\wedge\cdots\wedge\widetilde e_n$ un élément de $\bigwedge^n(E^*)^*$, le scalaire $\det({}^tu)$ est tel que $g_{{}^tu}=\det({}^tu)g$, avec $g_{{}^tu}$ définie, sur $(E^*)^n$, par
+\[
+g_{{}^tu}(\varphi_1,\ldots,\varphi_n)=g({}^tu(\varphi_1),\ldots,{}^tu(\varphi_n))
+=g(\varphi_1\circ u,\ldots,\varphi_n\circ u).
+\]
+En particulier, on aura
+\[
+g_{{}^tu}(e_1^*,\ldots,e_n^*)=\det({}^tu)\,g(e_1^*,\ldots,e_n^*)
+\]
+et aussi
+\[
+=g(e_1^*\circ u,e_2^*\circ u,\ldots,e_n^*\circ u).
+\]
+Or
+\[
+g(e_1^*,\ldots,e_n^*)=(\widetilde e_1\wedge\cdots\wedge\widetilde e_n)(e_1^*,\ldots,e_n^*)=1
+\]
+puisque la base des $\widetilde e_i$ est duale de celle des $e_i^*$.
+
+Donc
+\begin{align*}
+\det({}^tu)&=(\widetilde e_1\wedge\cdots\wedge\widetilde e_n)(e_1^*\circ u,\ldots,e_n^*\circ u)\\
+&=\sum_{\sigma\in\mathfrak S_n}\varepsilon_\sigma
+\widetilde e_1(e_{\sigma(1)}^*\circ u)\cdots
+\widetilde e_n(e_{\sigma(n)}^*\circ u).
+\end{align*}
+
+Soit \BellaCorrectionNote{l'isomorphisme $\theta$}{l'isomorphisme}{Le texte utilise ensuite $\theta(e_i)$ sans avoir nommé cet isomorphisme; on introduit ici la notation $\theta$.} entre le bidual et $E$ qui à un vecteur $x$ associe la forme linéaire $\widetilde x$ de $E^*\longmapsto K$ définie par
+\[
+\widetilde x(f)=f(x)
+\]
+(on vérifie facilement que $\widetilde x$ est une forme linéaire de $E^*$ dans $K$ et que $x\longmapsto\widetilde x$ est elle-même linéaire injective, car $\widetilde x(f)=0$, $\forall f\Rightarrow x=0$ sinon $x$ est alors dans une base de $E$ et la forme coordonnée suivant $x$ vaut 1 en $x$. Comme $\dim E=\dim E^*=\dim E^{**}=n$ ici, $x\longmapsto\widetilde x$ est un isomorphisme).
+
+On a alors, pour tout $e_j^*$,
+\[
+\theta(e_i)(e_j^*)=e_j^*(e_i)=
+\begin{cases}1,&i=j,\\0,&i\ne j,\end{cases}
+\]
+donc $\theta(e_i)=\widetilde e_i$ précédemment introduit.
+
+Mais alors
+\[
+\widetilde e_j(e_{\sigma(j)}^*\circ u)=e_{\sigma(j)}^*(u(e_j))
+\]
+et
+\[
+\det({}^tu)=\sum_{\sigma\in\mathfrak S_n}\varepsilon_\sigma
+ e_{\sigma(1)}^*(u(e_1))\cdots e_{\sigma(n)}^*(u(e_n)).
+\]
+
+Si on veut réordonner le produit pour mettre en première position $e_1^*(u(e_k))$ on doit avoir $\sigma(k)=1$ donc $k=\sigma^{-1}(1)$ d'où
+\[
+\det({}^tu)=\sum_{\sigma\in\mathfrak S_n}\varepsilon_\sigma
+ e_1^*(u(e_{\sigma^{-1}(1)}))\cdots e_n^*(u(e_{\sigma^{-1}(n)}))
+\]
+et comme $\varepsilon_{\sigma^{-1}}=\varepsilon_\sigma$, et que $\sigma^{-1}$ parcourt $\mathfrak S_n$ quand $\sigma$ parcourt $\mathfrak S_n$ en posant $\sigma'=\sigma^{-1}$ on a encore
+\[
+\begin{aligned}
+\det({}^tu)
+&=\sum_{\sigma'\in\mathfrak S_n}\varepsilon_{\sigma'}
+ e_1^*(u(e_{\sigma'(1)}))\cdots e_n^*(u(e_{\sigma'(n)}))\\
+&=(e_1^*\wedge\cdots\wedge e_n^*)(u(e_1),\ldots,u(e_n))=\det u.
+\end{aligned}
+\]
+Ouf! \bookend
+
+Cette démonstration est ici ridicule par excès d'abstraction. En effet si $A$ est la matrice de $u$ dans la base $B$, on sait que ${}^tA$ est celle de ${}^tu$ dans la base duale, (voir 8.8).
+
+On a $\det u=\det A$, (Théorème 9.23) et aussi $\det({}^tu)=\det({}^tA)$. Posons $B={}^tA$, donc $\beta_{ij}=\alpha_{ji}$ en prenant les termes généraux.
+
+Alors
+\[
+\det u=\det A=\sum_{\sigma\in\mathfrak S_n}\varepsilon_\sigma
+\alpha_{1,\sigma(1)}\cdots\alpha_{n,\sigma(n)},
+\]
+et
+\[
+\alpha_{1,\sigma(1)}\cdots\alpha_{n,\sigma(n)}=
+\alpha_{\sigma^{-1}(1),1}\cdots\alpha_{\sigma^{-1}(n),n},
+\]
+en permutant les termes pour que les indices de colonnes croissent. Comme $\sigma^{-1}$ décrit $\mathfrak S_n$ lorsque $\sigma$ le décrit et que $\varepsilon_{\sigma^{-1}}=\varepsilon_\sigma$ on a
+\begin{align*}
+\det u&=\sum_{\sigma^{-1}\in\mathfrak S_n}\varepsilon_{\sigma^{-1}}
+\alpha_{\sigma^{-1}(1),1}\cdots\alpha_{\sigma^{-1}(n),n}\\
+&=\sum_{\sigma^{-1}\in\mathfrak S_n}\varepsilon_{\sigma^{-1}}
+\beta_{1,\sigma^{-1}(1)}\cdots\beta_{n,\sigma^{-1}(n)}\\
+&=\det B=\det({}^tu).
+\end{align*}
+\bookend
+
+\medskip\noindent\textsc{Conséquence 9.30.} --- Sachons faire preuve de bons sens et utiliser les connaissances déjà acquises, parfois péniblement, pour nous faciliter le travail!
+
+\medskip\noindent\textsc{Conséquence 9.31.} --- Ce qui a été dit pour les colonnes peut se dire pour les lignes. En particulier : une matrice $A$ est inversible, ou de déterminant non nul, si et seulement si la famille de ses vecteurs lignes est indépendante dans $K^n$.
+
+Car $A$ inversible $\Longleftrightarrow (\det A\ne0)$, (corollaire 9.27), or $\det A=\det({}^tA)$ et $\det({}^tA)\ne0\Longleftrightarrow$ (famille des vecteurs colonnes de ${}^tA$ libre), (corollaire 9.20), et enfin les vecteurs colonnes de ${}^tA$ sont les vecteurs lignes de $A$. \bookend

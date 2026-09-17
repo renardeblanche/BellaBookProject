@@ -1,0 +1,66 @@
+\chapter*{约定、记号与单位}
+\addcontentsline{toc}{chapter}{约定、记号与单位}
+
+如未注明，本书所进行的操作均是在实数域下进行的。
+
+\begin{enumerate}[label=(\arabic*)]
+\item \textbf{公式。}本文中的矩阵均用大写黑正体表示，如
+\[
+\mathbf A,
+\]
+而在表达其矩阵元时，会使用括号加下标或者小写字母加下标的形式，如
+\[
+(\mathbf A)_{ij},\qquad a_{ij}.
+\]
+向量通常用小写黑斜体表示，如
+\[
+\bm x,
+\]
+向量分量则表示为
+\[
+x_i.
+\]
+单位矩阵记作 $\mathbf I$：
+\[
+(\mathbf I)_{ij}=\delta_{ij},
+\]
+而当需要明确指定其阶数 $n$ 时，记作
+\[
+\mathbf I_n.
+\]
+
+\item \textbf{伪代码。}
+\begin{enumerate}[label=(\roman*)]
+\item 循环结构：
+\begin{lstlisting}[style=bellacode,numbers=none]
+do i = 1,n
+    ...
+end
+
+while(cond)
+    ...
+end
+
+do
+    ...
+end while(cond)
+\end{lstlisting}
+\item 判断结构：
+\begin{lstlisting}[style=bellacode,numbers=none]
+if(cond)
+    ...
+elseif(cond)
+    ...
+else
+    ...
+end
+\end{lstlisting}
+\item 二元运算：
+\begin{itemize}
+\item \texttt{a \&\& b}（与）
+\item \texttt{a || b}（或）
+\item \texttt{a.b}（指标缩并：$\sum_j a_{ij}b_{jk}$）
+\end{itemize}
+\end{enumerate}
+\end{enumerate}
+\clearpage
